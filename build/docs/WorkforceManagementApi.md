@@ -109,6 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistoricalBulk) | **POST** /api/v2/workforcemanagement/adherence/historical/bulk | Request a historical adherence report in bulk
 [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanations) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations | Add an adherence explanation for the requested user
 [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query | Query adherence explanations for the given agent across a specified range
+[**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi.html#postWorkforcemanagementAgentsMePossibleworkshifts) | **POST** /api/v2/workforcemanagement/agents/me/possibleworkshifts | Get agent possible work shifts for requested time frame
 [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | **POST** /api/v2/workforcemanagement/agentschedules/mine | Get published schedule for the current user
 [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivitycodes) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Create a new activity code
 [**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query | Query adherence explanations across an entire business unit for the requested period
@@ -5887,6 +5888,56 @@ apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body
 ### Return type
 
 **AgentQueryAdherenceExplanationsResponse**
+
+<a name="postWorkforcemanagementAgentsMePossibleworkshifts"></a>
+
+# AgentPossibleWorkShiftsResponse postWorkforcemanagementAgentsMePossibleworkshifts(body)
+
+
+POST /api/v2/workforcemanagement/agents/me/possibleworkshifts
+
+Get agent possible work shifts for requested time frame
+
+Requires ANY permissions:
+
+* wfm:agentPossibleWorkShifts:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementAgentsMePossibleworkshifts(body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAgentsMePossibleworkshifts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAgentsMePossibleworkshifts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | body |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentPossibleWorkShiftsResponse**
 
 <a name="postWorkforcemanagementAgentschedulesMine"></a>
 

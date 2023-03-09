@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersSearch**](SearchApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
 [**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
+[**postConversationsParticipantsAttributesSearch**](SearchApi.html#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
 [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
 [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
 [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
@@ -493,6 +494,56 @@ apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
 ### Return type
 
 **AnalyticsConversationWithoutAttributesMultiGetResponse**
+
+<a name="postConversationsParticipantsAttributesSearch"></a>
+
+# JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
+
+
+POST /api/v2/conversations/participants/attributes/search
+
+Search conversations
+
+Requires ANY permissions:
+
+* conversation:participant:attributesview
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postConversationsParticipantsAttributesSearch(body)
+  .then((data) => {
+    console.log(`postConversationsParticipantsAttributesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsParticipantsAttributesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonCursorSearchResponse**
 
 <a name="postDocumentationGknSearch"></a>
 

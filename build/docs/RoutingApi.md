@@ -83,6 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserQueues**](RoutingApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
 [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
+[**getUserSkillgroups**](RoutingApi.html#getUserSkillgroups) | **GET** /api/v2/users/{userId}/skillgroups | Get skill groups for a user
 [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | **PATCH** /api/v2/routing/conversations/{conversationId} | Update attributes of an in-queue conversation
 [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
@@ -3676,7 +3677,7 @@ apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opt
 
 <a name="getRoutingSmsPhonenumber"></a>
 
-# SmsPhoneNumber getRoutingSmsPhonenumber(addressId)
+# SmsPhoneNumber getRoutingSmsPhonenumber(addressId, opts)
 
 
 GET /api/v2/routing/sms/phonenumbers/{addressId}
@@ -3701,8 +3702,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
+let opts = { 
+  'expand': "expand_example" // String | Expand response with additional information
+};
 
-apiInstance.getRoutingSmsPhonenumber(addressId)
+apiInstance.getRoutingSmsPhonenumber(addressId, opts)
   .then((data) => {
     console.log(`getRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3718,6 +3722,7 @@ apiInstance.getRoutingSmsPhonenumber(addressId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
+ **expand** | **String** | Expand response with additional information | [optional] <br />**Values**: compliance |
 {: class="table table-striped"}
 
 ### Return type
@@ -4172,6 +4177,64 @@ apiInstance.getUserRoutingskills(userId, opts)
 ### Return type
 
 **UserSkillEntityListing**
+
+<a name="getUserSkillgroups"></a>
+
+# UserSkillGroupEntityListing getUserSkillgroups(userId, opts)
+
+
+GET /api/v2/users/{userId}/skillgroups
+
+Get skill groups for a user
+
+Requires ANY permissions:
+
+* routing:skillGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'after': "after_example", // String | The cursor that points to the next page
+  'before': "before_example" // String | The cursor that points to the previous page
+};
+
+apiInstance.getUserSkillgroups(userId, opts)
+  .then((data) => {
+    console.log(`getUserSkillgroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserSkillgroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **after** | **String** | The cursor that points to the next page | [optional]  |
+ **before** | **String** | The cursor that points to the previous page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserSkillGroupEntityListing**
 
 <a name="patchRoutingConversation"></a>
 

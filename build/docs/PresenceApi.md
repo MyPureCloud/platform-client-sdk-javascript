@@ -289,7 +289,9 @@ GET /api/v2/presencedefinitions/{presenceId}
 
 Get a Presence Definition
 
-Requires NO permissions:
+Requires ALL permissions:
+
+* presence:presenceDefinition:view
 
 ### Example Usage
 

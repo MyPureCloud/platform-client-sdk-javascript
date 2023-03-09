@@ -1,10 +1,11 @@
 import { default as axios } from 'axios';
 import Configuration from './configuration.js';
 import { default as qs } from 'qs';
+const { HttpsProxyAgent } = require('hpagent')
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 159.0.0
+ * @version 160.0.0
  */
 class ApiClient {
 	/**
@@ -273,16 +274,21 @@ class ApiClient {
 				reject(new Error('The client credentials grant is not supported in a browser.'));
 				return;
 			}
-
 			const headers = {
 				'Authorization': `Basic ${authHeader}`
+			}
+			let httpsAgent;
+			if (this.proxy !== undefined){
+				httpsAgent = new HttpsProxyAgent({
+				    proxy : `${this.proxy.protocol}://${this.proxy.host}:${this.proxy.port}`
+				});
 			}
 			axios({
 				method: `POST`,
 				url: `https://login.${this.config.environment}/oauth/token`,
 				headers: headers,
 				data: 'grant_type=client_credentials',
-				proxy: this.proxy
+				httpsAgent: httpsAgent
 			})
 				.then((response) => {
 					// Logging
@@ -979,10 +985,16 @@ class ApiClient {
 			sendRequest(this);
 			function sendRequest(that) {
 				var url = that.buildUrl(path, pathParams);
+				let httpsAgent;
+				if (that.proxy !== undefined){
+				    httpsAgent = new HttpsProxyAgent({
+					proxy : `${that.proxy.protocol}://${that.proxy.host}:${that.proxy.port}`
+				    });
+				}
 				var request = {
 					method: httpMethod,
 					url: url,
-					proxy: that.proxy,
+                    			httpsAgent: httpsAgent,
 					timeout: that.timeout,
 					params: that.serialize(queryParams)
 				};

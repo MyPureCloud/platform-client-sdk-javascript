@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
 [**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | **DELETE** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Delete an Outbound Digital Rule Set
 [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
+[**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#deleteOutboundDnclistCustomexclusioncolumns) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Deletes all or expired custom exclusion column entries from a DNC list.
 [**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Deletes all or expired email addresses from a DNC list.
 [**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Deletes all or expired phone numbers from a DNC list.
 [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
@@ -88,6 +89,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | **GET** /api/v2/outbound/sequences | Query a list of dialer campaign sequences.
 [**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | **GET** /api/v2/outbound/settings | Get the outbound settings for this organization
 [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | **GET** /api/v2/outbound/wrapupcodemappings | Get the Dialer wrap up code mapping.
+[**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#patchOutboundDnclistCustomexclusioncolumns) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Add entries to or delete entries from a DNC list.
 [**patchOutboundDnclistEmailaddresses**](OutboundApi.html#patchOutboundDnclistEmailaddresses) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add emails to or Delete emails from a DNC list.
 [**patchOutboundDnclistPhonenumbers**](OutboundApi.html#patchOutboundDnclistPhonenumbers) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add numbers to or delete numbers from a DNC list.
 [**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | **PATCH** /api/v2/outbound/settings | Update the outbound settings for this organization
@@ -786,6 +788,62 @@ apiInstance.deleteOutboundDnclist(dncListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundDnclistCustomexclusioncolumns"></a>
+
+# void deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
+
+
+DELETE /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns
+
+Deletes all or expired custom exclusion column entries from a DNC list.
+
+This operation is only for Internal DNC lists of custom exclusion column entries
+
+Requires ANY permissions:
+
+* outbound:dnc:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+};
+
+apiInstance.deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
+  .then(() => {
+    console.log('deleteOutboundDnclistCustomexclusioncolumns returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDnclistCustomexclusioncolumns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4548,6 +4606,60 @@ This endpoint does not need any parameter.
 ### Return type
 
 **WrapUpCodeMapping**
+
+<a name="patchOutboundDnclistCustomexclusioncolumns"></a>
+
+# void patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
+
+
+PATCH /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns
+
+Add entries to or delete entries from a DNC list.
+
+Only Internal DNC lists may be deleted from
+
+Requires ANY permissions:
+
+* outbound:dnc:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = {}; // Object | DNC Custom exclusion column entries
+
+apiInstance.patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
+  .then(() => {
+    console.log('patchOutboundDnclistCustomexclusioncolumns returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundDnclistCustomexclusioncolumns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **Object** | DNC Custom exclusion column entries |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="patchOutboundDnclistEmailaddresses"></a>
 

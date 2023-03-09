@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLearningModulesAssignments**](LearningApi.html#getLearningModulesAssignments) | **GET** /api/v2/learning/modules/assignments | Get all learning modules of an organization including assignments for a specific user
 [**getLearningModulesCoverartCoverArtId**](LearningApi.html#getLearningModulesCoverartCoverArtId) | **GET** /api/v2/learning/modules/coverart/{coverArtId} | Get a specific Learning Module cover art using ID
 [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
+[**patchLearningAssignmentReschedule**](LearningApi.html#patchLearningAssignmentReschedule) | **PATCH** /api/v2/learning/assignments/{assignmentId}/reschedule | Reschedule Learning Assignment
 [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | **POST** /api/v2/learning/assessments/scoring | Score learning assessment for preview
 [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | **POST** /api/v2/learning/assignments/{assignmentId}/reassign | Reassign Learning Assignment
 [**postLearningAssignmentReset**](LearningApi.html#postLearningAssignmentReset) | **POST** /api/v2/learning/assignments/{assignmentId}/reset | Reset Learning Assignment
@@ -31,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postLearningModulePublish**](LearningApi.html#postLearningModulePublish) | **POST** /api/v2/learning/modules/{moduleId}/publish | Publish a Learning module
 [**postLearningModules**](LearningApi.html#postLearningModules) | **POST** /api/v2/learning/modules | Create a new learning module
 [**postLearningRulesQuery**](LearningApi.html#postLearningRulesQuery) | **POST** /api/v2/learning/rules/query | Get users for learning module rule
+[**postLearningScheduleslotsQuery**](LearningApi.html#postLearningScheduleslotsQuery) | **POST** /api/v2/learning/scheduleslots/query | Get list of possible slots where a learning activity can be scheduled.
 [**putLearningModule**](LearningApi.html#putLearningModule) | **PUT** /api/v2/learning/modules/{moduleId} | Update a learning module
 [**putLearningModuleRule**](LearningApi.html#putLearningModuleRule) | **PUT** /api/v2/learning/modules/{moduleId}/rule | Update a learning module rule
 {: class="table table-striped"}
@@ -267,7 +269,7 @@ apiInstance.getLearningAssignments(opts)
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
  **userId** | **[String]** | Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
  **types** | **[String]** | Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
- **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
+ **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
 
@@ -343,7 +345,7 @@ apiInstance.getLearningAssignmentsMe(opts)
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
  **types** | **[String]** | Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
- **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
+ **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
 
@@ -690,7 +692,7 @@ apiInstance.getLearningModulesAssignments(userIds, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **searchTerm** | **String** | Search Term (searches by name and description) | [optional]  |
  **overdue** | **String** | Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned. | [optional] [default to Any]<br />**Values**: True, False, Any |
- **assignmentStates** | **[String]** | Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed |
+ **assignmentStates** | **[String]** | Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: coverArt |
 {: class="table table-striped"}
 
@@ -794,6 +796,60 @@ apiInstance.patchLearningAssignment(assignmentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The ID of Learning Assignment |  |
  **body** | **Object** | The Learning Assignment to be updated | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningAssignment**
+
+<a name="patchLearningAssignmentReschedule"></a>
+
+# LearningAssignment patchLearningAssignmentReschedule(assignmentId, opts)
+
+
+PATCH /api/v2/learning/assignments/{assignmentId}/reschedule
+
+Reschedule Learning Assignment
+
+Requires ANY permissions:
+
+* learning:assignment:reschedule
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
+let opts = { 
+  'body': {} // Object | The Learning assignment reschedule model
+};
+
+apiInstance.patchLearningAssignmentReschedule(assignmentId, opts)
+  .then((data) => {
+    console.log(`patchLearningAssignmentReschedule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchLearningAssignmentReschedule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assignmentId** | **String** | The ID of Learning Assignment |  |
+ **body** | **Object** | The Learning assignment reschedule model | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1373,6 +1429,56 @@ apiInstance.postLearningRulesQuery(pageSize, pageNumber, body)
 ### Return type
 
 **LearningAssignmentUserListing**
+
+<a name="postLearningScheduleslotsQuery"></a>
+
+# LearningScheduleSlotsQueryResponse postLearningScheduleslotsQuery(body)
+
+
+POST /api/v2/learning/scheduleslots/query
+
+Get list of possible slots where a learning activity can be scheduled.
+
+Requires ANY permissions:
+
+* learning:scheduleSlot:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let body = {}; // Object | The slot search request
+
+apiInstance.postLearningScheduleslotsQuery(body)
+  .then((data) => {
+    console.log(`postLearningScheduleslotsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningScheduleslotsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The slot search request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningScheduleSlotsQueryResponse**
 
 <a name="putLearningModule"></a>
 

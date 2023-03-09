@@ -333,6 +333,10 @@
       "class": "SystemMessageSystemMessage"
     },
     {
+      "topic": "v2.taskmanagement.workitems.queues.{id}",
+      "class": "WorkitemsQueueEventsNotificationWorkitem"
+    },
+    {
       "topic": "v2.taskmanagement.workitems.users.{id}",
       "class": "WorkitemsUserEventsNotificationWorkitem"
     },

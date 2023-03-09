@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 159.0.0
+	 * @version 160.0.0
 	 */
 
 	/**
@@ -4695,6 +4695,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search conversations
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postConversationsParticipantsAttributesSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsParticipantsAttributesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/participants/attributes/search', 
 			'POST', 
 			{  },
 			{  },

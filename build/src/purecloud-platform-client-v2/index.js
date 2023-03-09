@@ -23,6 +23,7 @@ import GeolocationApi from './api/GeolocationApi.js';
 import GreetingsApi from './api/GreetingsApi.js';
 import GroupsApi from './api/GroupsApi.js';
 import IdentityProviderApi from './api/IdentityProviderApi.js';
+import InfrastructureAsCodeApi from './api/InfrastructureAsCodeApi.js';
 import IntegrationsApi from './api/IntegrationsApi.js';
 import JourneyApi from './api/JourneyApi.js';
 import KnowledgeApi from './api/KnowledgeApi.js';
@@ -99,7 +100,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 159.0.0
+ * @version 160.0.0
  */
 class platformClient {
 	constructor() {
@@ -223,6 +224,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/IdentityProviderApi}
 		 */
 		this.IdentityProviderApi = IdentityProviderApi;
+		/**
+		 * The InfrastructureAsCodeApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/InfrastructureAsCodeApi}
+		 */
+		this.InfrastructureAsCodeApi = InfrastructureAsCodeApi;
 		/**
 		 * The IntegrationsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/IntegrationsApi}

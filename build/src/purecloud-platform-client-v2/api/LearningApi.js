@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 159.0.0
+	 * @version 160.0.0
 	 */
 
 	/**
@@ -414,6 +414,35 @@ class LearningApi {
 	}
 
 	/**
+	 * Reschedule Learning Assignment
+	 * 
+	 * @param {String} assignmentId The ID of Learning Assignment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The Learning assignment reschedule model
+	 */
+	patchLearningAssignmentReschedule(assignmentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling patchLearningAssignmentReschedule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}/reschedule', 
+			'PATCH', 
+			{ 'assignmentId': assignmentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Score learning assessment for preview
 	 * 
 	 * @param {Object} body Assessment form and answers to score
@@ -691,6 +720,31 @@ class LearningApi {
 			'POST', 
 			{  },
 			{ 'pageSize': pageSize,'pageNumber': pageNumber },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of possible slots where a learning activity can be scheduled.
+	 * 
+	 * @param {Object} body The slot search request
+	 */
+	postLearningScheduleslotsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLearningScheduleslotsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/scheduleslots/query', 
+			'POST', 
+			{  },
+			{  },
 			{  },
 			{  },
 			body, 

@@ -267,7 +267,7 @@ void (no response body)
 
 <a name="postNotificationsChannelSubscriptions"></a>
 
-# ChannelTopicEntityListing postNotificationsChannelSubscriptions(channelId, body)
+# ChannelTopicEntityListing postNotificationsChannelSubscriptions(channelId, body, opts)
 
 
 POST /api/v2/notifications/channels/{channelId}/subscriptions
@@ -291,8 +291,11 @@ let apiInstance = new platformClient.NotificationsApi();
 
 let channelId = "channelId_example"; // String | Channel ID
 let body = [{}]; // Object | Body
+let opts = { 
+  'ignoreErrors': false // Boolean | Optionally prevent throwing of errors for failed permissions checks.
+};
 
-apiInstance.postNotificationsChannelSubscriptions(channelId, body)
+apiInstance.postNotificationsChannelSubscriptions(channelId, body, opts)
   .then((data) => {
     console.log(`postNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -309,6 +312,7 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
  **body** | **Object** | Body |  |
+ **ignoreErrors** | **Boolean** | Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -362,7 +366,7 @@ This endpoint does not need any parameter.
 
 <a name="putNotificationsChannelSubscriptions"></a>
 
-# ChannelTopicEntityListing putNotificationsChannelSubscriptions(channelId, body)
+# ChannelTopicEntityListing putNotificationsChannelSubscriptions(channelId, body, opts)
 
 
 PUT /api/v2/notifications/channels/{channelId}/subscriptions
@@ -386,8 +390,11 @@ let apiInstance = new platformClient.NotificationsApi();
 
 let channelId = "channelId_example"; // String | Channel ID
 let body = [{}]; // Object | Body
+let opts = { 
+  'ignoreErrors': false // Boolean | Optionally prevent throwing of errors for failed permissions checks.
+};
 
-apiInstance.putNotificationsChannelSubscriptions(channelId, body)
+apiInstance.putNotificationsChannelSubscriptions(channelId, body, opts)
   .then((data) => {
     console.log(`putNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -404,6 +411,7 @@ apiInstance.putNotificationsChannelSubscriptions(channelId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
  **body** | **Object** | Body |  |
+ **ignoreErrors** | **Boolean** | Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

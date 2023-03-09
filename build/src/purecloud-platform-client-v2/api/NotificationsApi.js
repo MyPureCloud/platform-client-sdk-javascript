@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 159.0.0
+	 * @version 160.0.0
 	 */
 
 	/**
@@ -149,8 +149,12 @@ class NotificationsApi {
 	 * 
 	 * @param {String} channelId Channel ID
 	 * @param {Array.<Object>} body Body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.ignoreErrors Optionally prevent throwing of errors for failed permissions checks. (default to false)
 	 */
-	postNotificationsChannelSubscriptions(channelId, body) { 
+	postNotificationsChannelSubscriptions(channelId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null) {
 			throw 'Missing the required parameter "channelId" when calling postNotificationsChannelSubscriptions';
@@ -164,7 +168,7 @@ class NotificationsApi {
 			'/api/v2/notifications/channels/{channelId}/subscriptions', 
 			'POST', 
 			{ 'channelId': channelId },
-			{  },
+			{ 'ignoreErrors': opts['ignoreErrors'] },
 			{  },
 			{  },
 			body, 
@@ -199,8 +203,12 @@ class NotificationsApi {
 	 * 
 	 * @param {String} channelId Channel ID
 	 * @param {Array.<Object>} body Body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.ignoreErrors Optionally prevent throwing of errors for failed permissions checks. (default to false)
 	 */
-	putNotificationsChannelSubscriptions(channelId, body) { 
+	putNotificationsChannelSubscriptions(channelId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null) {
 			throw 'Missing the required parameter "channelId" when calling putNotificationsChannelSubscriptions';
@@ -214,7 +222,7 @@ class NotificationsApi {
 			'/api/v2/notifications/channels/{channelId}/subscriptions', 
 			'PUT', 
 			{ 'channelId': channelId },
-			{  },
+			{ 'ignoreErrors': opts['ignoreErrors'] },
 			{  },
 			{  },
 			body, 

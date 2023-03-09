@@ -168,6 +168,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
 [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | Create a WhatsApp Integration
 [**postConversationsMessagingSupportedcontent**](ConversationsApi.html#postConversationsMessagingSupportedcontent) | **POST** /api/v2/conversations/messaging/supportedcontent | Create a Supported Content profile
+[**postConversationsParticipantsAttributesSearch**](ConversationsApi.html#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
 [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationSecureattributes**](ConversationsApi.html#putConversationSecureattributes) | **PUT** /api/v2/conversations/{conversationId}/secureattributes | Set the secure attributes on a conversation.
 [**putConversationTags**](ConversationsApi.html#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
@@ -8530,6 +8531,56 @@ apiInstance.postConversationsMessagingSupportedcontent(body)
 ### Return type
 
 **SupportedContent**
+
+<a name="postConversationsParticipantsAttributesSearch"></a>
+
+# JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
+
+
+POST /api/v2/conversations/participants/attributes/search
+
+Search conversations
+
+Requires ANY permissions:
+
+* conversation:participant:attributesview
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postConversationsParticipantsAttributesSearch(body)
+  .then((data) => {
+    console.log(`postConversationsParticipantsAttributesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsParticipantsAttributesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonCursorSearchResponse**
 
 <a name="putConversationParticipantFlaggedreason"></a>
 

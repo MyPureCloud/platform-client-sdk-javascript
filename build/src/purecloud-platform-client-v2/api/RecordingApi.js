@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 159.0.0
+	 * @version 160.0.0
 	 */
 
 	/**
@@ -707,51 +707,6 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-	 * 
-	 * @param {String} settingsId Settings Id
-	 */
-	getRecordingLocalkeysSetting(settingsId) { 
-		// verify the required parameter 'settingsId' is set
-		if (settingsId === undefined || settingsId === null) {
-			throw 'Missing the required parameter "settingsId" when calling getRecordingLocalkeysSetting';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/recording/localkeys/settings/{settingsId}', 
-			'GET', 
-			{ 'settingsId': settingsId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * gets a list local key settings data. Replaced by API recording/keyconfigurations
-	 * 
-	 */
-	getRecordingLocalkeysSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/recording/localkeys/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Gets media retention policy list with query options to filter on name and enabled.
 	 * for a less verbose response, add summary=true to this endpoint
 	 * @param {Object} opts Optional parameters
@@ -1234,31 +1189,6 @@ class RecordingApi {
 	}
 
 	/**
-	 * create settings for local key creation. Replaced by API recording/keyconfigurations
-	 * 
-	 * @param {Object} body Local Encryption Configuration
-	 */
-	postRecordingLocalkeysSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingLocalkeysSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/recording/localkeys/settings', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create media retention policy
 	 * Policy does not work retroactively
 	 * @param {Object} body Policy
@@ -1591,36 +1521,6 @@ class RecordingApi {
 			'/api/v2/recording/keyconfigurations/{keyConfigurationId}', 
 			'PUT', 
 			{ 'keyConfigurationId': keyConfigurationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-	 * 
-	 * @param {String} settingsId Settings Id
-	 * @param {Object} body Local Encryption metadata
-	 */
-	putRecordingLocalkeysSetting(settingsId, body) { 
-		// verify the required parameter 'settingsId' is set
-		if (settingsId === undefined || settingsId === null) {
-			throw 'Missing the required parameter "settingsId" when calling putRecordingLocalkeysSetting';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRecordingLocalkeysSetting';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/recording/localkeys/settings/{settingsId}', 
-			'PUT', 
-			{ 'settingsId': settingsId },
 			{  },
 			{  },
 			{  },

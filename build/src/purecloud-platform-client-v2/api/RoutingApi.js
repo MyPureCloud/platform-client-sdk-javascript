@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 159.0.0
+	 * @version 160.0.0
 	 */
 
 	/**
@@ -1808,8 +1808,12 @@ class RoutingApi {
 	 * Get a phone number provisioned for SMS.
 	 * 
 	 * @param {String} addressId Address ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand response with additional information
 	 */
-	getRoutingSmsPhonenumber(addressId) { 
+	getRoutingSmsPhonenumber(addressId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null) {
 			throw 'Missing the required parameter "addressId" when calling getRoutingSmsPhonenumber';
@@ -1819,7 +1823,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'GET', 
 			{ 'addressId': addressId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -2044,6 +2048,37 @@ class RoutingApi {
 			'GET', 
 			{ 'userId': userId },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get skill groups for a user
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.after The cursor that points to the next page
+	 * @param {String} opts.before The cursor that points to the previous page
+	 */
+	getUserSkillgroups(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserSkillgroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/skillgroups', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'before': opts['before'] },
 			{  },
 			{  },
 			null, 

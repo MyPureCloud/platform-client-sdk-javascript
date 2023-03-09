@@ -40,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserRoutinglanguages**](UsersApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
 [**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
+[**getUserSkillgroups**](UsersApi.html#getUserSkillgroups) | **GET** /api/v2/users/{userId}/skillgroups | Get skill groups for a user
 [**getUserState**](UsersApi.html#getUserState) | **GET** /api/v2/users/{userId}/state | Get user state information.
 [**getUserStation**](UsersApi.html#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
 [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
@@ -1819,6 +1820,64 @@ apiInstance.getUserRoutingstatus(userId)
 
 **RoutingStatus**
 
+<a name="getUserSkillgroups"></a>
+
+# UserSkillGroupEntityListing getUserSkillgroups(userId, opts)
+
+
+GET /api/v2/users/{userId}/skillgroups
+
+Get skill groups for a user
+
+Requires ANY permissions:
+
+* routing:skillGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'after': "after_example", // String | The cursor that points to the next page
+  'before': "before_example" // String | The cursor that points to the previous page
+};
+
+apiInstance.getUserSkillgroups(userId, opts)
+  .then((data) => {
+    console.log(`getUserSkillgroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserSkillgroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **after** | **String** | The cursor that points to the next page | [optional]  |
+ **before** | **String** | The cursor that points to the previous page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserSkillGroupEntityListing**
+
 <a name="getUserState"></a>
 
 # UserState getUserState(userId)
@@ -2282,7 +2341,7 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **activityId** | **String** | Specifies the activity ID, maps to either assignment or appointment ID |  |
- **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
+ **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External |
 {: class="table table-striped"}
 
 ### Return type

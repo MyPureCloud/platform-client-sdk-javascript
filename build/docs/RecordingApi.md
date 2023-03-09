@@ -31,8 +31,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user's organization
 [**getRecordingKeyconfiguration**](RecordingApi.html#getRecordingKeyconfiguration) | **GET** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Get the encryption key configurations
 [**getRecordingKeyconfigurations**](RecordingApi.html#getRecordingKeyconfigurations) | **GET** /api/v2/recording/keyconfigurations | Get a list of key configurations data
-[**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | **GET** /api/v2/recording/localkeys/settings/{settingsId} | Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-[**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | **GET** /api/v2/recording/localkeys/settings | gets a list local key settings data. Replaced by API recording/keyconfigurations
 [**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | **GET** /api/v2/recording/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
 [**getRecordingMediaretentionpolicy**](RecordingApi.html#getRecordingMediaretentionpolicy) | **GET** /api/v2/recording/mediaretentionpolicies/{policyId} | Get a media retention policy
 [**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | **GET** /api/v2/recording/recordingkeys | Get encryption key list
@@ -51,7 +49,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRecordingKeyconfigurations**](RecordingApi.html#postRecordingKeyconfigurations) | **POST** /api/v2/recording/keyconfigurations | Setup configurations for encryption key creation
 [**postRecordingKeyconfigurationsValidate**](RecordingApi.html#postRecordingKeyconfigurationsValidate) | **POST** /api/v2/recording/keyconfigurations/validate | Validate encryption key configurations without saving it
 [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | **POST** /api/v2/recording/localkeys | create a local key management recording key
-[**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | **POST** /api/v2/recording/localkeys/settings | create settings for local key creation. Replaced by API recording/keyconfigurations
 [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
 [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | **POST** /api/v2/recording/recordingkeys | Create encryption key
 [**postRecordingUploadsReports**](RecordingApi.html#postRecordingUploadsReports) | **POST** /api/v2/recording/uploads/reports | Creates a recording upload status report
@@ -64,7 +61,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#putRecordingCrossplatformMediaretentionpolicy) | **PUT** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Update a media retention policy
 [**putRecordingJob**](RecordingApi.html#putRecordingJob) | **PUT** /api/v2/recording/jobs/{jobId} | Execute the recording bulk job.
 [**putRecordingKeyconfiguration**](RecordingApi.html#putRecordingKeyconfiguration) | **PUT** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Update the encryption key configurations
-[**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | **PUT** /api/v2/recording/localkeys/settings/{settingsId} | Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
 [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | **PUT** /api/v2/recording/mediaretentionpolicies/{policyId} | Update a media retention policy
 [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | **PUT** /api/v2/recording/recordingkeys/rotationschedule | Update key rotation schedule
 [**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | **PUT** /api/v2/recording/settings | Update the Recording Settings for the Organization
@@ -1398,103 +1394,6 @@ This endpoint does not need any parameter.
 
 **RecordingEncryptionConfigurationListing**
 
-<a name="getRecordingLocalkeysSetting"></a>
-
-# LocalEncryptionConfiguration getRecordingLocalkeysSetting(settingsId)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/recording/localkeys/settings/{settingsId}
-
-Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-
-Requires ANY permissions:
-
-* recording:encryptionKey:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let settingsId = "settingsId_example"; // String | Settings Id
-
-apiInstance.getRecordingLocalkeysSetting(settingsId)
-  .then((data) => {
-    console.log(`getRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRecordingLocalkeysSetting');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **settingsId** | **String** | Settings Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-**LocalEncryptionConfiguration**
-
-<a name="getRecordingLocalkeysSettings"></a>
-
-# LocalEncryptionConfigurationListing getRecordingLocalkeysSettings()
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/recording/localkeys/settings
-
-gets a list local key settings data. Replaced by API recording/keyconfigurations
-
-Requires ANY permissions:
-
-* recording:encryptionKey:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-apiInstance.getRecordingLocalkeysSettings()
-  .then((data) => {
-    console.log(`getRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRecordingLocalkeysSettings');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-
-### Return type
-
-**LocalEncryptionConfigurationListing**
-
 <a name="getRecordingMediaretentionpolicies"></a>
 
 # PolicyEntityListing getRecordingMediaretentionpolicies(opts)
@@ -2448,57 +2347,6 @@ apiInstance.postRecordingLocalkeys(body)
 
 **EncryptionKey**
 
-<a name="postRecordingLocalkeysSettings"></a>
-
-# LocalEncryptionConfiguration postRecordingLocalkeysSettings(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-POST /api/v2/recording/localkeys/settings
-
-create settings for local key creation. Replaced by API recording/keyconfigurations
-
-Requires ANY permissions:
-
-* recording:encryptionKey:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let body = {}; // Object | Local Encryption Configuration
-
-apiInstance.postRecordingLocalkeysSettings(body)
-  .then((data) => {
-    console.log(`postRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRecordingLocalkeysSettings');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Local Encryption Configuration |  |
-{: class="table table-striped"}
-
-### Return type
-
-**LocalEncryptionConfiguration**
-
 <a name="postRecordingMediaretentionpolicies"></a>
 
 # Policy postRecordingMediaretentionpolicies(body)
@@ -3127,59 +2975,6 @@ apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)
 ### Return type
 
 **RecordingEncryptionConfiguration**
-
-<a name="putRecordingLocalkeysSetting"></a>
-
-# LocalEncryptionConfiguration putRecordingLocalkeysSetting(settingsId, body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-PUT /api/v2/recording/localkeys/settings/{settingsId}
-
-Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
-
-Requires ANY permissions:
-
-* recording:encryptionKey:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let settingsId = "settingsId_example"; // String | Settings Id
-let body = {}; // Object | Local Encryption metadata
-
-apiInstance.putRecordingLocalkeysSetting(settingsId, body)
-  .then((data) => {
-    console.log(`putRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putRecordingLocalkeysSetting');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **settingsId** | **String** | Settings Id |  |
- **body** | **Object** | Local Encryption metadata |  |
-{: class="table table-striped"}
-
-### Return type
-
-**LocalEncryptionConfiguration**
 
 <a name="putRecordingMediaretentionpolicy"></a>
 

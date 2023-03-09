@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 159.0.0
+	 * @version 160.0.0
 	 */
 
 	/**
@@ -3031,6 +3031,31 @@ class WorkforceManagementApi {
 			'POST', 
 			{ 'agentId': agentId },
 			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get agent possible work shifts for requested time frame
+	 * 
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementAgentsMePossibleworkshifts(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentsMePossibleworkshifts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/me/possibleworkshifts', 
+			'POST', 
+			{  },
+			{  },
 			{  },
 			{  },
 			body, 

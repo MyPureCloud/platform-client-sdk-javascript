@@ -44,6 +44,8 @@ docs/GroupsApi.json
 docs/GroupsApi.md
 docs/IdentityProviderApi.json
 docs/IdentityProviderApi.md
+docs/InfrastructureAsCodeApi.json
+docs/InfrastructureAsCodeApi.md
 docs/IntegrationsApi.json
 docs/IntegrationsApi.md
 docs/JourneyApi.json
@@ -256,6 +258,7 @@ docs/deleteOutboundContactlistfilter-example.txt
 docs/deleteOutboundContactlists-example.txt
 docs/deleteOutboundDigitalruleset-example.txt
 docs/deleteOutboundDnclist-example.txt
+docs/deleteOutboundDnclistCustomexclusioncolumns-example.txt
 docs/deleteOutboundDnclistEmailaddresses-example.txt
 docs/deleteOutboundDnclistPhonenumbers-example.txt
 docs/deleteOutboundMessagingcampaign-example.txt
@@ -688,6 +691,8 @@ docs/getIdentityprovidersPing-example.txt
 docs/getIdentityprovidersPurecloud-example.txt
 docs/getIdentityprovidersPureengage-example.txt
 docs/getIdentityprovidersSalesforce-example.txt
+docs/getInfrastructureascodeJob-example.txt
+docs/getInfrastructureascodeJobs-example.txt
 docs/getIntegration-example.txt
 docs/getIntegrationConfigCurrent-example.txt
 docs/getIntegrations-example.txt
@@ -964,8 +969,6 @@ docs/getRecordingJobFailedrecordings-example.txt
 docs/getRecordingJobs-example.txt
 docs/getRecordingKeyconfiguration-example.txt
 docs/getRecordingKeyconfigurations-example.txt
-docs/getRecordingLocalkeysSetting-example.txt
-docs/getRecordingLocalkeysSettings-example.txt
 docs/getRecordingMediaretentionpolicies-example.txt
 docs/getRecordingMediaretentionpolicy-example.txt
 docs/getRecordingRecordingkeys-example.txt
@@ -1072,10 +1075,12 @@ docs/getSpeechandtextanalyticsConversation-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturl-example.txt
 docs/getSpeechandtextanalyticsProgram-example.txt
 docs/getSpeechandtextanalyticsProgramMappings-example.txt
+docs/getSpeechandtextanalyticsProgramTranscriptionengines-example.txt
 docs/getSpeechandtextanalyticsPrograms-example.txt
 docs/getSpeechandtextanalyticsProgramsGeneralJob-example.txt
 docs/getSpeechandtextanalyticsProgramsMappings-example.txt
 docs/getSpeechandtextanalyticsProgramsPublishjob-example.txt
+docs/getSpeechandtextanalyticsProgramsTranscriptionenginesDialects-example.txt
 docs/getSpeechandtextanalyticsProgramsUnpublished-example.txt
 docs/getSpeechandtextanalyticsSentimentDialects-example.txt
 docs/getSpeechandtextanalyticsSentimentfeedback-example.txt
@@ -1191,6 +1196,8 @@ docs/getUserRoutinglanguages-example.txt
 docs/getUserRoutingskills-example.txt
 docs/getUserRoutingskills-example.txt
 docs/getUserRoutingstatus-example.txt
+docs/getUserSkillgroups-example.txt
+docs/getUserSkillgroups-example.txt
 docs/getUserState-example.txt
 docs/getUserStation-example.txt
 docs/getUserSuperiors-example.txt
@@ -1381,9 +1388,11 @@ docs/patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/patchLanguageunderstandingDomain-example.txt
 docs/patchLanguageunderstandingMinerDraft-example.txt
 docs/patchLearningAssignment-example.txt
+docs/patchLearningAssignmentReschedule-example.txt
 docs/patchLocation-example.txt
 docs/patchMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchOrganizationsFeature-example.txt
+docs/patchOutboundDnclistCustomexclusioncolumns-example.txt
 docs/patchOutboundDnclistEmailaddresses-example.txt
 docs/patchOutboundDnclistPhonenumbers-example.txt
 docs/patchOutboundSettings-example.txt
@@ -1573,6 +1582,8 @@ docs/postConversationsMessagingIntegrationsOpen-example.txt
 docs/postConversationsMessagingIntegrationsTwitter-example.txt
 docs/postConversationsMessagingIntegrationsWhatsapp-example.txt
 docs/postConversationsMessagingSupportedcontent-example.txt
+docs/postConversationsParticipantsAttributesSearch-example.txt
+docs/postConversationsParticipantsAttributesSearch-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
 docs/postEmployeeperformanceExternalmetricsData-example.txt
@@ -1638,6 +1649,7 @@ docs/postGroupMembers-example.txt
 docs/postGroups-example.txt
 docs/postGroupsSearch-example.txt
 docs/postGroupsSearch-example.txt
+docs/postInfrastructureascodeJobs-example.txt
 docs/postIntegrations-example.txt
 docs/postIntegrationsActionDraft-example.txt
 docs/postIntegrationsActionDraftPublish-example.txt
@@ -1697,6 +1709,7 @@ docs/postLearningModuleJobs-example.txt
 docs/postLearningModulePublish-example.txt
 docs/postLearningModules-example.txt
 docs/postLearningRulesQuery-example.txt
+docs/postLearningScheduleslotsQuery-example.txt
 docs/postLicenseInfer-example.txt
 docs/postLicenseOrganization-example.txt
 docs/postLicenseToggle-example.txt
@@ -1767,7 +1780,6 @@ docs/postRecordingJobs-example.txt
 docs/postRecordingKeyconfigurations-example.txt
 docs/postRecordingKeyconfigurationsValidate-example.txt
 docs/postRecordingLocalkeys-example.txt
-docs/postRecordingLocalkeysSettings-example.txt
 docs/postRecordingMediaretentionpolicies-example.txt
 docs/postRecordingRecordingkeys-example.txt
 docs/postRecordingUploadsReports-example.txt
@@ -1886,6 +1898,7 @@ docs/postWorkforcemanagementAdherenceHistorical-example.txt
 docs/postWorkforcemanagementAdherenceHistoricalBulk-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
+docs/postWorkforcemanagementAgentsMePossibleworkshifts-example.txt
 docs/postWorkforcemanagementAgentschedulesMine-example.txt
 docs/postWorkforcemanagementBusinessunitActivitycodes-example.txt
 docs/postWorkforcemanagementBusinessunitAdherenceExplanationsQuery-example.txt
@@ -2066,7 +2079,6 @@ docs/putQualitySurveysScorable-example.txt
 docs/putRecordingCrossplatformMediaretentionpolicy-example.txt
 docs/putRecordingJob-example.txt
 docs/putRecordingKeyconfiguration-example.txt
-docs/putRecordingLocalkeysSetting-example.txt
 docs/putRecordingMediaretentionpolicy-example.txt
 docs/putRecordingRecordingkeysRotationschedule-example.txt
 docs/putRecordingSettings-example.txt
@@ -2091,6 +2103,7 @@ docs/putScimV2Group-example.txt
 docs/putScimV2User-example.txt
 docs/putSpeechandtextanalyticsProgram-example.txt
 docs/putSpeechandtextanalyticsProgramMappings-example.txt
+docs/putSpeechandtextanalyticsProgramTranscriptionengines-example.txt
 docs/putSpeechandtextanalyticsSettings-example.txt
 docs/putSpeechandtextanalyticsTopic-example.txt
 docs/putTelephonyProvidersEdge-example.txt
@@ -2163,6 +2176,7 @@ src/purecloud-platform-client-v2/api/GeolocationApi.js
 src/purecloud-platform-client-v2/api/GreetingsApi.js
 src/purecloud-platform-client-v2/api/GroupsApi.js
 src/purecloud-platform-client-v2/api/IdentityProviderApi.js
+src/purecloud-platform-client-v2/api/InfrastructureAsCodeApi.js
 src/purecloud-platform-client-v2/api/IntegrationsApi.js
 src/purecloud-platform-client-v2/api/JourneyApi.js
 src/purecloud-platform-client-v2/api/KnowledgeApi.js

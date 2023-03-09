@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 159.0.0
+	 * @version 160.0.0
 	 */
 
 	/**
@@ -346,6 +346,35 @@ class OutboundApi {
 			'DELETE', 
 			{ 'dncListId': dncListId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes all or expired custom exclusion column entries from a DNC list.
+	 * This operation is only for Internal DNC lists of custom exclusion column entries
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC entries that are expired (default to false)
+	 */
+	deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistCustomexclusioncolumns';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns', 
+			'DELETE', 
+			{ 'dncListId': dncListId },
+			{ 'expiredOnly': opts['expiredOnly'] },
 			{  },
 			{  },
 			null, 
@@ -2177,6 +2206,36 @@ class OutboundApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add entries to or delete entries from a DNC list.
+	 * Only Internal DNC lists may be deleted from
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} body DNC Custom exclusion column entries
+	 */
+	patchOutboundDnclistCustomexclusioncolumns(dncListId, body) { 
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistCustomexclusioncolumns';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOutboundDnclistCustomexclusioncolumns';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns', 
+			'PATCH', 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

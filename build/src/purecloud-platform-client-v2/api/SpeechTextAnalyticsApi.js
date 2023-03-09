@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 159.0.0
+	 * @version 160.0.0
 	 */
 
 	/**
@@ -225,6 +225,31 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get transcription engine settings of a program
+	 * 
+	 * @param {String} programId The id of the program
+	 */
+	getSpeechandtextanalyticsProgramTranscriptionengines(programId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramTranscriptionengines';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines', 
+			'GET', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of Speech and Text Analytics programs
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -315,6 +340,26 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/programs/publishjobs/{jobId}', 
 			'GET', 
 			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get supported dialects for each transcription engine
+	 * 
+	 */
+	getSpeechandtextanalyticsProgramsTranscriptionenginesDialects() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/transcriptionengines/dialects', 
+			'GET', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -786,6 +831,36 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}/mappings', 
+			'PUT', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update transcription engine settings of a program
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} body Program transcription engine setting
+	 */
+	putSpeechandtextanalyticsProgramTranscriptionengines(programId, body) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramTranscriptionengines';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsProgramTranscriptionengines';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines', 
 			'PUT', 
 			{ 'programId': programId },
 			{  },
