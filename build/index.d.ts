@@ -1017,9 +1017,11 @@ declare class ConversationsApi {
   	getConversationSecureattributes(conversationId: string): Promise<Models.ConversationSecureAttributes>; 
   	getConversations(opts?: ConversationsApi.getConversationsOptions): Promise<Models.ConversationEntityListing>; 
   	getConversationsCall(conversationId: string): Promise<Models.CallConversation>; 
+  	getConversationsCallParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCallParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsCallParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCallParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsCallParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
   	getConversationsCallback(conversationId: string): Promise<Models.CallbackConversation>; 
+  	getConversationsCallbackParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCallbackParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsCallbackParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCallbackParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsCallbackParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
   	getConversationsCallbacks(): Promise<Models.CallbackConversationEntityListing>; 
@@ -1029,10 +1031,12 @@ declare class ConversationsApi {
   	getConversationsChat(conversationId: string): Promise<Models.ChatConversation>; 
   	getConversationsChatMessage(conversationId: string, messageId: string): Promise<Models.WebChatMessage>; 
   	getConversationsChatMessages(conversationId: string, opts?: ConversationsApi.getConversationsChatMessagesOptions): Promise<Models.WebChatMessageEntityList>; 
+  	getConversationsChatParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsChatParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsChatParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsChatParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsChatParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
   	getConversationsChats(): Promise<Models.ChatConversationEntityListing>; 
   	getConversationsCobrowsesession(conversationId: string): Promise<Models.CobrowseConversation>; 
+  	getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCobrowsesessionParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsCobrowsesessionParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCobrowsesessionParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsCobrowsesessionParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
   	getConversationsCobrowsesessions(): Promise<Models.CobrowseConversationEntityListing>; 
@@ -1040,6 +1044,7 @@ declare class ConversationsApi {
   	getConversationsEmailMessage(conversationId: string, messageId: string): Promise<Models.EmailMessage>; 
   	getConversationsEmailMessages(conversationId: string): Promise<Models.EmailMessageListing>; 
   	getConversationsEmailMessagesDraft(conversationId: string): Promise<Models.EmailMessage>; 
+  	getConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsEmailParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsEmailParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsEmailParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsEmailParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
   	getConversationsEmailSettings(conversationId: string): Promise<Models.EmailsSettings>; 
@@ -1050,6 +1055,7 @@ declare class ConversationsApi {
   	getConversationsMessageCommunicationMessagesMediaMediaId(conversationId: string, communicationId: string, mediaId: string): Promise<Models.MessageMediaData>; 
   	getConversationsMessageDetails(messageId: string, opts?: ConversationsApi.getConversationsMessageDetailsOptions): Promise<Models.MessageData>; 
   	getConversationsMessageMessage(conversationId: string, messageId: string, opts?: ConversationsApi.getConversationsMessageMessageOptions): Promise<Models.MessageData>; 
+  	getConversationsMessageParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsMessageParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsMessageParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsMessageParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsMessageParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
   	getConversationsMessages(): Promise<Models.MessageConversationEntityListing>; 
@@ -1070,6 +1076,10 @@ declare class ConversationsApi {
   	getConversationsMessagingSupportedcontentDefault(): Promise<Models.SupportedContent>; 
   	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<Models.SupportedContent>; 
   	getConversationsMessagingThreadingtimeline(): Promise<Models.ConversationThreadingWindow>; 
+  	getConversationsScreenshareParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsScreenshareParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
+  	getConversationsSettings(): Promise<Models.Settings>; 
+  	getConversationsSocialParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsSocialParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
+  	getConversationsVideoParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsVideoParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	patchConversationParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
   	patchConversationParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<void>; 
   	patchConversationSecureattributes(conversationId: string, body: Models.ConversationSecureAttributes): Promise<string>; 
@@ -1104,6 +1114,7 @@ declare class ConversationsApi {
   	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId: string, body: Models.TwitterIntegrationRequest): Promise<Models.TwitterIntegration>; 
   	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, body: Models.WhatsAppIntegrationUpdateRequest): Promise<Models.WhatsAppIntegration>; 
   	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string, body: Models.SupportedContent): Promise<Models.SupportedContent>; 
+  	patchConversationsSettings(body: Models.Settings): Promise<void>; 
   	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
   	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
@@ -1117,10 +1128,12 @@ declare class ConversationsApi {
   	postConversationParticipantSecureivrsessions(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantSecureivrsessionsOptions): Promise<Models.SecureSession>; 
   	postConversationsCall(conversationId: string, body: Models.CallCommand): Promise<Models.Conversation>; 
   	postConversationsCallParticipantCoach(conversationId: string, participantId: string): Promise<void>; 
+  	postConversationsCallParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCallParticipantCommunicationWrapupOptions): Promise<void>; 
   	postConversationsCallParticipantConsult(conversationId: string, participantId: string, body: Models.ConsultTransfer): Promise<Models.ConsultTransferResponse>; 
   	postConversationsCallParticipantMonitor(conversationId: string, participantId: string): Promise<void>; 
   	postConversationsCallParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsCallParticipants(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
+  	postConversationsCallbackParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCallbackParticipantCommunicationWrapupOptions): Promise<void>; 
   	postConversationsCallbackParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsCallbacks(body: Models.CreateCallbackCommand): Promise<Models.CreateCallbackResponse>; 
   	postConversationsCallbacksBulkDisconnect(body: Models.BulkCallbackDisconnectRequest): Promise<void>; 
@@ -1128,12 +1141,15 @@ declare class ConversationsApi {
   	postConversationsCalls(body: Models.CreateCallRequest): Promise<Models.CreateCallResponse>; 
   	postConversationsChatCommunicationMessages(conversationId: string, communicationId: string, body: Models.CreateWebChatMessageRequest): Promise<Models.WebChatMessage>; 
   	postConversationsChatCommunicationTyping(conversationId: string, communicationId: string): Promise<Models.WebChatTyping>; 
+  	postConversationsChatParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsChatParticipantCommunicationWrapupOptions): Promise<void>; 
   	postConversationsChatParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsChats(body: Models.CreateWebChatRequest): Promise<Models.ChatConversation>; 
+  	postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCobrowsesessionParticipantCommunicationWrapupOptions): Promise<void>; 
   	postConversationsCobrowsesessionParticipantReplace(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationsCobrowsesessionParticipantReplaceOptions): Promise<void>; 
   	postConversationsEmailInboundmessages(conversationId: string, body: Models.InboundMessageRequest): Promise<Models.EmailConversation>; 
   	postConversationsEmailMessages(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessageReply>; 
   	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId: string, body: Models.CopyAttachmentsRequest): Promise<Models.EmailMessage>; 
+  	postConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsEmailParticipantCommunicationWrapupOptions): Promise<void>; 
   	postConversationsEmailParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsEmails(body: Models.CreateEmailRequest): Promise<Models.EmailConversation>; 
   	postConversationsEmailsAgentless(body: Models.AgentlessEmailSendRequestDto): Promise<Models.AgentlessEmailSendResponseDto>; 
@@ -1144,6 +1160,7 @@ declare class ConversationsApi {
   	postConversationsMessageCommunicationMessagesMedia(conversationId: string, communicationId: string): Promise<Models.MessageMediaData>; 
   	postConversationsMessageCommunicationTyping(conversationId: string, communicationId: string, body: Models.MessageTypingEventRequest): Promise<void>; 
   	postConversationsMessageMessagesBulk(conversationId: string, opts?: ConversationsApi.postConversationsMessageMessagesBulkOptions): Promise<Models.TextMessageListing>; 
+  	postConversationsMessageParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsMessageParticipantCommunicationWrapupOptions): Promise<void>; 
   	postConversationsMessageParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.MessageConversation>; 
   	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest): Promise<Models.SendAgentlessOutboundMessageResponse>; 
@@ -1155,6 +1172,9 @@ declare class ConversationsApi {
   	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
   	postConversationsMessagingSupportedcontent(body: Models.SupportedContent): Promise<Models.SupportedContent>; 
   	postConversationsParticipantsAttributesSearch(body: Models.ConversationParticipantSearchRequest): Promise<Models.JsonCursorSearchResponse>; 
+  	postConversationsScreenshareParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsScreenshareParticipantCommunicationWrapupOptions): Promise<void>; 
+  	postConversationsSocialParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsSocialParticipantCommunicationWrapupOptions): Promise<void>; 
+  	postConversationsVideoParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsVideoParticipantCommunicationWrapupOptions): Promise<void>; 
   	putConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>; 
   	putConversationSecureattributes(conversationId: string, body: Models.ConversationSecureAttributes): Promise<string>; 
   	putConversationTags(conversationId: string, body: Models.ConversationTagsUpdate): Promise<string>; 
@@ -1189,7 +1209,13 @@ declare namespace ConversationsApi {
 	export interface getConversationsOptions { 
 		"communicationType"?: string;
 	}
+	export interface getConversationsCallParticipantCommunicationWrapupOptions { 
+		"provisional"?: boolean;
+	}
 	export interface getConversationsCallParticipantWrapupOptions { 
+		"provisional"?: boolean;
+	}
+	export interface getConversationsCallbackParticipantCommunicationWrapupOptions { 
 		"provisional"?: boolean;
 	}
 	export interface getConversationsCallbackParticipantWrapupOptions { 
@@ -1207,10 +1233,19 @@ declare namespace ConversationsApi {
 		"sortOrder"?: string;
 		"maxResults"?: number;
 	}
+	export interface getConversationsChatParticipantCommunicationWrapupOptions { 
+		"provisional"?: boolean;
+	}
 	export interface getConversationsChatParticipantWrapupOptions { 
 		"provisional"?: boolean;
 	}
+	export interface getConversationsCobrowsesessionParticipantCommunicationWrapupOptions { 
+		"provisional"?: boolean;
+	}
 	export interface getConversationsCobrowsesessionParticipantWrapupOptions { 
+		"provisional"?: boolean;
+	}
+	export interface getConversationsEmailParticipantCommunicationWrapupOptions { 
 		"provisional"?: boolean;
 	}
 	export interface getConversationsEmailParticipantWrapupOptions { 
@@ -1221,6 +1256,9 @@ declare namespace ConversationsApi {
 	}
 	export interface getConversationsMessageMessageOptions { 
 		"useNormalizedMessage"?: boolean;
+	}
+	export interface getConversationsMessageParticipantCommunicationWrapupOptions { 
+		"provisional"?: boolean;
 	}
 	export interface getConversationsMessageParticipantWrapupOptions { 
 		"provisional"?: boolean;
@@ -1290,6 +1328,15 @@ declare namespace ConversationsApi {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 	}
+	export interface getConversationsScreenshareParticipantCommunicationWrapupOptions { 
+		"provisional"?: boolean;
+	}
+	export interface getConversationsSocialParticipantCommunicationWrapupOptions { 
+		"provisional"?: boolean;
+	}
+	export interface getConversationsVideoParticipantCommunicationWrapupOptions { 
+		"provisional"?: boolean;
+	}
 	export interface patchConversationsCobrowsesessionParticipantOptions { 
 		"body"?: Models.MediaParticipantRequest;
 	}
@@ -1311,8 +1358,23 @@ declare namespace ConversationsApi {
 	export interface postConversationParticipantSecureivrsessionsOptions { 
 		"body"?: Models.CreateSecureSession;
 	}
+	export interface postConversationsCallParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
+	}
+	export interface postConversationsCallbackParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
+	}
+	export interface postConversationsChatParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
+	}
+	export interface postConversationsCobrowsesessionParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
+	}
 	export interface postConversationsCobrowsesessionParticipantReplaceOptions { 
 		"body"?: Models.TransferRequest;
+	}
+	export interface postConversationsEmailParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
 	}
 	export interface postConversationsMessageCommunicationMessagesOptions { 
 		"useNormalizedMessage"?: boolean;
@@ -1320,6 +1382,18 @@ declare namespace ConversationsApi {
 	export interface postConversationsMessageMessagesBulkOptions { 
 		"useNormalizedMessage"?: boolean;
 		"body"?: Array<string>;
+	}
+	export interface postConversationsMessageParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
+	}
+	export interface postConversationsScreenshareParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
+	}
+	export interface postConversationsSocialParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
+	}
+	export interface postConversationsVideoParticipantCommunicationWrapupOptions { 
+		"body"?: Models.ExtendedWrapup;
 	}
 }
 
@@ -30291,6 +30365,11 @@ declare namespace Models {
 		"outbound"?: string;
 	}
 	
+	export interface Settings { 
+		"communicationBasedACW"?: boolean;
+		"includeNonAgentConversationSummary"?: boolean;
+	}
+	
 	export interface Share { 
 		"id"?: string;
 		"name"?: string;
@@ -32285,6 +32364,7 @@ declare namespace Models {
 	export interface TriggerTarget { 
 		"type"?: string;
 		"id"?: string;
+		"workflowTargetSettings"?: Models.WorkflowTargetSettings;
 	}
 	
 	export interface Trunk { 
@@ -36859,6 +36939,10 @@ declare namespace Models {
 	export interface WorkdayValuesTrendItem { 
 		"dateWorkday"?: string;
 		"value"?: number;
+	}
+	
+	export interface WorkflowTargetSettings { 
+		"dataFormat"?: string;
 	}
 	
 	export interface WorkitemsEventsNotificationCustomAttribute { 

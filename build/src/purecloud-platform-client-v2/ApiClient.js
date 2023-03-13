@@ -5,7 +5,7 @@ const { HttpsProxyAgent } = require('hpagent')
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 160.0.0
+ * @version 160.1.0
  */
 class ApiClient {
 	/**

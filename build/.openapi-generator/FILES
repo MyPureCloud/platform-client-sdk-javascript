@@ -504,9 +504,11 @@ docs/getConversationRecordings-example.txt
 docs/getConversationSecureattributes-example.txt
 docs/getConversations-example.txt
 docs/getConversationsCall-example.txt
+docs/getConversationsCallParticipantCommunicationWrapup-example.txt
 docs/getConversationsCallParticipantWrapup-example.txt
 docs/getConversationsCallParticipantWrapupcodes-example.txt
 docs/getConversationsCallback-example.txt
+docs/getConversationsCallbackParticipantCommunicationWrapup-example.txt
 docs/getConversationsCallbackParticipantWrapup-example.txt
 docs/getConversationsCallbackParticipantWrapupcodes-example.txt
 docs/getConversationsCallbacks-example.txt
@@ -516,10 +518,12 @@ docs/getConversationsCallsMaximumconferenceparties-example.txt
 docs/getConversationsChat-example.txt
 docs/getConversationsChatMessage-example.txt
 docs/getConversationsChatMessages-example.txt
+docs/getConversationsChatParticipantCommunicationWrapup-example.txt
 docs/getConversationsChatParticipantWrapup-example.txt
 docs/getConversationsChatParticipantWrapupcodes-example.txt
 docs/getConversationsChats-example.txt
 docs/getConversationsCobrowsesession-example.txt
+docs/getConversationsCobrowsesessionParticipantCommunicationWrapup-example.txt
 docs/getConversationsCobrowsesessionParticipantWrapup-example.txt
 docs/getConversationsCobrowsesessionParticipantWrapupcodes-example.txt
 docs/getConversationsCobrowsesessions-example.txt
@@ -527,6 +531,7 @@ docs/getConversationsEmail-example.txt
 docs/getConversationsEmailMessage-example.txt
 docs/getConversationsEmailMessages-example.txt
 docs/getConversationsEmailMessagesDraft-example.txt
+docs/getConversationsEmailParticipantCommunicationWrapup-example.txt
 docs/getConversationsEmailParticipantWrapup-example.txt
 docs/getConversationsEmailParticipantWrapupcodes-example.txt
 docs/getConversationsEmailSettings-example.txt
@@ -537,6 +542,7 @@ docs/getConversationsMessage-example.txt
 docs/getConversationsMessageCommunicationMessagesMediaMediaId-example.txt
 docs/getConversationsMessageDetails-example.txt
 docs/getConversationsMessageMessage-example.txt
+docs/getConversationsMessageParticipantCommunicationWrapup-example.txt
 docs/getConversationsMessageParticipantWrapup-example.txt
 docs/getConversationsMessageParticipantWrapupcodes-example.txt
 docs/getConversationsMessages-example.txt
@@ -557,6 +563,10 @@ docs/getConversationsMessagingSupportedcontent-example.txt
 docs/getConversationsMessagingSupportedcontentDefault-example.txt
 docs/getConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/getConversationsMessagingThreadingtimeline-example.txt
+docs/getConversationsScreenshareParticipantCommunicationWrapup-example.txt
+docs/getConversationsSettings-example.txt
+docs/getConversationsSocialParticipantCommunicationWrapup-example.txt
+docs/getConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/getDataextensionsCoretype-example.txt
 docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
@@ -1361,6 +1371,7 @@ docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/patchConversationsSettings-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchExternalcontactsContactIdentifiers-example.txt
 docs/patchGeolocationsSettings-example.txt
@@ -1545,10 +1556,12 @@ docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationRecordingAnnotations-example.txt
 docs/postConversationsCall-example.txt
 docs/postConversationsCallParticipantCoach-example.txt
+docs/postConversationsCallParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallParticipantConsult-example.txt
 docs/postConversationsCallParticipantMonitor-example.txt
 docs/postConversationsCallParticipantReplace-example.txt
 docs/postConversationsCallParticipants-example.txt
+docs/postConversationsCallbackParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallbackParticipantReplace-example.txt
 docs/postConversationsCallbacks-example.txt
 docs/postConversationsCallbacksBulkDisconnect-example.txt
@@ -1556,12 +1569,15 @@ docs/postConversationsCallbacksBulkUpdate-example.txt
 docs/postConversationsCalls-example.txt
 docs/postConversationsChatCommunicationMessages-example.txt
 docs/postConversationsChatCommunicationTyping-example.txt
+docs/postConversationsChatParticipantCommunicationWrapup-example.txt
 docs/postConversationsChatParticipantReplace-example.txt
 docs/postConversationsChats-example.txt
+docs/postConversationsCobrowsesessionParticipantCommunicationWrapup-example.txt
 docs/postConversationsCobrowsesessionParticipantReplace-example.txt
 docs/postConversationsEmailInboundmessages-example.txt
 docs/postConversationsEmailMessages-example.txt
 docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
+docs/postConversationsEmailParticipantCommunicationWrapup-example.txt
 docs/postConversationsEmailParticipantReplace-example.txt
 docs/postConversationsEmails-example.txt
 docs/postConversationsEmailsAgentless-example.txt
@@ -1572,6 +1588,7 @@ docs/postConversationsMessageCommunicationMessages-example.txt
 docs/postConversationsMessageCommunicationMessagesMedia-example.txt
 docs/postConversationsMessageCommunicationTyping-example.txt
 docs/postConversationsMessageMessagesBulk-example.txt
+docs/postConversationsMessageParticipantCommunicationWrapup-example.txt
 docs/postConversationsMessageParticipantReplace-example.txt
 docs/postConversationsMessages-example.txt
 docs/postConversationsMessagesAgentless-example.txt
@@ -1584,6 +1601,9 @@ docs/postConversationsMessagingIntegrationsWhatsapp-example.txt
 docs/postConversationsMessagingSupportedcontent-example.txt
 docs/postConversationsParticipantsAttributesSearch-example.txt
 docs/postConversationsParticipantsAttributesSearch-example.txt
+docs/postConversationsScreenshareParticipantCommunicationWrapup-example.txt
+docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
+docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
 docs/postEmployeeperformanceExternalmetricsData-example.txt

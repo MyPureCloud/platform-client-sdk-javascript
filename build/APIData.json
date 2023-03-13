@@ -6050,6 +6050,35 @@
     "return": "CallConversation",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\n\n// Get call conversation\napiInstance.getConversationsCall(conversationId)\n  .then((data) => {\n    console.log(`getConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsCall\");\n    console.error(err);\n  });"
   },
+  "getconversationscallparticipantcommunicationwrapup": {
+    "operationId": "getconversationscallparticipantcommunicationwrapup",
+    "functionName": "getConversationsCallParticipantCommunicationWrapup",
+    "signature": "getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsCallParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsCallParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
   "getconversationscallparticipantwrapup": {
     "operationId": "getconversationscallparticipantwrapup",
     "functionName": "getConversationsCallParticipantWrapup",
@@ -6106,6 +6135,35 @@
     ],
     "return": "CallbackConversation",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\n\n// Get callback conversation\napiInstance.getConversationsCallback(conversationId)\n  .then((data) => {\n    console.log(`getConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsCallback\");\n    console.error(err);\n  });"
+  },
+  "getconversationscallbackparticipantcommunicationwrapup": {
+    "operationId": "getconversationscallbackparticipantcommunicationwrapup",
+    "functionName": "getConversationsCallbackParticipantCommunicationWrapup",
+    "signature": "getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsCallbackParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsCallbackParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "getconversationscallbackparticipantwrapup": {
     "operationId": "getconversationscallbackparticipantwrapup",
@@ -6267,6 +6325,35 @@
     "return": "WebChatMessageEntityList",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet opts = { \n  \"after\": \"after_example\", // String | If specified, get the messages chronologically after the id of this message\n  \"before\": \"before_example\", // String | If specified, get the messages chronologically before the id of this message\n  \"sortOrder\": \"ascending\", // String | Sort order\n  \"maxResults\": 100 // Number | Limit the returned number of messages, up to a maximum of 100\n};\n\n// Get the messages of a chat conversation.\napiInstance.getConversationsChatMessages(conversationId, opts)\n  .then((data) => {\n    console.log(`getConversationsChatMessages success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsChatMessages\");\n    console.error(err);\n  });"
   },
+  "getconversationschatparticipantcommunicationwrapup": {
+    "operationId": "getconversationschatparticipantcommunicationwrapup",
+    "functionName": "getConversationsChatParticipantCommunicationWrapup",
+    "signature": "getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsChatParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsChatParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
   "getconversationschatparticipantwrapup": {
     "operationId": "getconversationschatparticipantwrapup",
     "functionName": "getConversationsChatParticipantWrapup",
@@ -6330,6 +6417,35 @@
     ],
     "return": "CobrowseConversation",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\n\n// Get cobrowse conversation\napiInstance.getConversationsCobrowsesession(conversationId)\n  .then((data) => {\n    console.log(`getConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsCobrowsesession\");\n    console.error(err);\n  });"
+  },
+  "getconversationscobrowsesessionparticipantcommunicationwrapup": {
+    "operationId": "getconversationscobrowsesessionparticipantcommunicationwrapup",
+    "functionName": "getConversationsCobrowsesessionParticipantCommunicationWrapup",
+    "signature": "getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsCobrowsesessionParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsCobrowsesessionParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "getconversationscobrowsesessionparticipantwrapup": {
     "operationId": "getconversationscobrowsesessionparticipantwrapup",
@@ -6441,6 +6557,35 @@
     ],
     "return": "EmailMessage",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\n\n// Get conversation draft reply\napiInstance.getConversationsEmailMessagesDraft(conversationId)\n  .then((data) => {\n    console.log(`getConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsEmailMessagesDraft\");\n    console.error(err);\n  });"
+  },
+  "getconversationsemailparticipantcommunicationwrapup": {
+    "operationId": "getconversationsemailparticipantcommunicationwrapup",
+    "functionName": "getConversationsEmailParticipantCommunicationWrapup",
+    "signature": "getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsEmailParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsEmailParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "getconversationsemailparticipantwrapup": {
     "operationId": "getconversationsemailparticipantwrapup",
@@ -6607,6 +6752,35 @@
     ],
     "return": "MessageData",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet messageId = \"messageId_example\"; // String | messageId\nlet opts = { \n  \"useNormalizedMessage\": false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)\n};\n\n// Get conversation message\napiInstance.getConversationsMessageMessage(conversationId, messageId, opts)\n  .then((data) => {\n    console.log(`getConversationsMessageMessage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsMessageMessage\");\n    console.error(err);\n  });"
+  },
+  "getconversationsmessageparticipantcommunicationwrapup": {
+    "operationId": "getconversationsmessageparticipantcommunicationwrapup",
+    "functionName": "getConversationsMessageParticipantCommunicationWrapup",
+    "signature": "getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsMessageParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsMessageParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "getconversationsmessageparticipantwrapup": {
     "operationId": "getconversationsmessageparticipantwrapup",
@@ -7034,6 +7208,100 @@
     "signature": "getConversationsMessagingThreadingtimeline()",
     "return": "ConversationThreadingWindow",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\n// Get conversation threading window timeline for each messaging type\napiInstance.getConversationsMessagingThreadingtimeline()\n  .then((data) => {\n    console.log(`getConversationsMessagingThreadingtimeline success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsMessagingThreadingtimeline\");\n    console.error(err);\n  });"
+  },
+  "getconversationsscreenshareparticipantcommunicationwrapup": {
+    "operationId": "getconversationsscreenshareparticipantcommunicationwrapup",
+    "functionName": "getConversationsScreenshareParticipantCommunicationWrapup",
+    "signature": "getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsScreenshareParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsScreenshareParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
+  "getconversationssettings": {
+    "operationId": "getconversationssettings",
+    "functionName": "getConversationsSettings",
+    "signature": "getConversationsSettings()",
+    "return": "Settings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\n// Get Settings\napiInstance.getConversationsSettings()\n  .then((data) => {\n    console.log(`getConversationsSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsSettings\");\n    console.error(err);\n  });"
+  },
+  "getconversationssocialparticipantcommunicationwrapup": {
+    "operationId": "getconversationssocialparticipantcommunicationwrapup",
+    "functionName": "getConversationsSocialParticipantCommunicationWrapup",
+    "signature": "getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsSocialParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsSocialParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
+  "getconversationsvideoparticipantcommunicationwrapup": {
+    "operationId": "getconversationsvideoparticipantcommunicationwrapup",
+    "functionName": "getConversationsVideoParticipantCommunicationWrapup",
+    "signature": "getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "provisional",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedWrapupCode",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"provisional\": false // Boolean | Indicates if the wrap-up code is provisional.\n};\n\n// Get the wrap-up for this conversation communication. \napiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then((data) => {\n    console.log(`getConversationsVideoParticipantCommunicationWrapup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsVideoParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "patchconversationparticipant": {
     "operationId": "patchconversationparticipant",
@@ -7797,6 +8065,19 @@
     "return": "SupportedContent",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet supportedContentId = \"supportedContentId_example\"; // String | Supported Content ID\nlet body = {}; // Object | SupportedContent\n\n// Update a supported content profile\napiInstance.patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)\n  .then((data) => {\n    console.log(`patchConversationsMessagingSupportedcontentSupportedContentId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchConversationsMessagingSupportedcontentSupportedContentId\");\n    console.error(err);\n  });"
   },
+  "patchconversationssettings": {
+    "operationId": "patchconversationssettings",
+    "functionName": "patchConversationsSettings",
+    "signature": "patchConversationsSettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet body = {}; // Object | Settings\n\n// Update Settings\napiInstance.patchConversationsSettings(body)\n  .then(() => {\n    console.log(\"patchConversationsSettings returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchConversationsSettings\");\n    console.error(err);\n  });"
+  },
   "postconversationassign": {
     "operationId": "postconversationassign",
     "functionName": "postConversationAssign",
@@ -7974,6 +8255,34 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\n\n// Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.\napiInstance.postConversationsCallParticipantCoach(conversationId, participantId)\n  .then(() => {\n    console.log(\"postConversationsCallParticipantCoach returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsCallParticipantCoach\");\n    console.error(err);\n  });"
   },
+  "postconversationscallparticipantcommunicationwrapup": {
+    "operationId": "postconversationscallparticipantcommunicationwrapup",
+    "functionName": "postConversationsCallParticipantCommunicationWrapup",
+    "signature": "postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsCallParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsCallParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
   "postconversationscallparticipantconsult": {
     "operationId": "postconversationscallparticipantconsult",
     "functionName": "postConversationsCallParticipantConsult",
@@ -8057,6 +8366,34 @@
     ],
     "return": "Conversation",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet body = {}; // Object | Conversation\n\n// Add participants to a conversation\napiInstance.postConversationsCallParticipants(conversationId, body)\n  .then((data) => {\n    console.log(`postConversationsCallParticipants success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsCallParticipants\");\n    console.error(err);\n  });"
+  },
+  "postconversationscallbackparticipantcommunicationwrapup": {
+    "operationId": "postconversationscallbackparticipantcommunicationwrapup",
+    "functionName": "postConversationsCallbackParticipantCommunicationWrapup",
+    "signature": "postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsCallbackParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsCallbackParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "postconversationscallbackparticipantreplace": {
     "operationId": "postconversationscallbackparticipantreplace",
@@ -8179,6 +8516,34 @@
     "return": "WebChatTyping",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet communicationId = \"communicationId_example\"; // String | communicationId\n\n// Send a typing-indicator on behalf of a communication in a chat conversation.\napiInstance.postConversationsChatCommunicationTyping(conversationId, communicationId)\n  .then((data) => {\n    console.log(`postConversationsChatCommunicationTyping success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsChatCommunicationTyping\");\n    console.error(err);\n  });"
   },
+  "postconversationschatparticipantcommunicationwrapup": {
+    "operationId": "postconversationschatparticipantcommunicationwrapup",
+    "functionName": "postConversationsChatParticipantCommunicationWrapup",
+    "signature": "postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsChatParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsChatParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
   "postconversationschatparticipantreplace": {
     "operationId": "postconversationschatparticipantreplace",
     "functionName": "postConversationsChatParticipantReplace",
@@ -8215,6 +8580,34 @@
     ],
     "return": "ChatConversation",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet body = {}; // Object | Create web chat request\n\n// Create a web chat conversation\napiInstance.postConversationsChats(body)\n  .then((data) => {\n    console.log(`postConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsChats\");\n    console.error(err);\n  });"
+  },
+  "postconversationscobrowsesessionparticipantcommunicationwrapup": {
+    "operationId": "postconversationscobrowsesessionparticipantcommunicationwrapup",
+    "functionName": "postConversationsCobrowsesessionParticipantCommunicationWrapup",
+    "signature": "postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsCobrowsesessionParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsCobrowsesessionParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "postconversationscobrowsesessionparticipantreplace": {
     "operationId": "postconversationscobrowsesessionparticipantreplace",
@@ -8295,6 +8688,34 @@
     ],
     "return": "EmailMessage",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet body = {}; // Object | Copy Attachment Request\n\n// Copy attachments from an email message to the current draft.\napiInstance.postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body)\n  .then((data) => {\n    console.log(`postConversationsEmailMessagesDraftAttachmentsCopy success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsEmailMessagesDraftAttachmentsCopy\");\n    console.error(err);\n  });"
+  },
+  "postconversationsemailparticipantcommunicationwrapup": {
+    "operationId": "postconversationsemailparticipantcommunicationwrapup",
+    "functionName": "postConversationsEmailParticipantCommunicationWrapup",
+    "signature": "postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsEmailParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsEmailParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "postconversationsemailparticipantreplace": {
     "operationId": "postconversationsemailparticipantreplace",
@@ -8484,6 +8905,34 @@
     "return": "TextMessageListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | \nlet opts = { \n  \"useNormalizedMessage\": false, // Boolean | If true, response removes deprecated fields (textBody, media, stickers)\n  \"body\": [\"body_example\"] // [String] | messageIds\n};\n\n// Get messages in batch\napiInstance.postConversationsMessageMessagesBulk(conversationId, opts)\n  .then((data) => {\n    console.log(`postConversationsMessageMessagesBulk success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsMessageMessagesBulk\");\n    console.error(err);\n  });"
   },
+  "postconversationsmessageparticipantcommunicationwrapup": {
+    "operationId": "postconversationsmessageparticipantcommunicationwrapup",
+    "functionName": "postConversationsMessageParticipantCommunicationWrapup",
+    "signature": "postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsMessageParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsMessageParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
   "postconversationsmessageparticipantreplace": {
     "operationId": "postconversationsmessageparticipantreplace",
     "functionName": "postConversationsMessageParticipantReplace",
@@ -8646,6 +9095,90 @@
     ],
     "return": "JsonCursorSearchResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SearchApi();\n\nlet body = {}; // Object | Search request options\n\n// Search conversations\napiInstance.postConversationsParticipantsAttributesSearch(body)\n  .then((data) => {\n    console.log(`postConversationsParticipantsAttributesSearch success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsParticipantsAttributesSearch\");\n    console.error(err);\n  });"
+  },
+  "postconversationsscreenshareparticipantcommunicationwrapup": {
+    "operationId": "postconversationsscreenshareparticipantcommunicationwrapup",
+    "functionName": "postConversationsScreenshareParticipantCommunicationWrapup",
+    "signature": "postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsScreenshareParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsScreenshareParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
+  "postconversationssocialparticipantcommunicationwrapup": {
+    "operationId": "postconversationssocialparticipantcommunicationwrapup",
+    "functionName": "postConversationsSocialParticipantCommunicationWrapup",
+    "signature": "postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsSocialParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsSocialParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
+  },
+  "postconversationsvideoparticipantcommunicationwrapup": {
+    "operationId": "postconversationsvideoparticipantcommunicationwrapup",
+    "functionName": "postConversationsVideoParticipantCommunicationWrapup",
+    "signature": "postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "participantId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet opts = { \n  \"body\": {} // Object | Wrap-up\n};\n\n// Apply wrap-up for this conversation communication\napiInstance.postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)\n  .then(() => {\n    console.log(\"postConversationsVideoParticipantCommunicationWrapup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsVideoParticipantCommunicationWrapup\");\n    console.error(err);\n  });"
   },
   "putconversationparticipantflaggedreason": {
     "operationId": "putconversationparticipantflaggedreason",

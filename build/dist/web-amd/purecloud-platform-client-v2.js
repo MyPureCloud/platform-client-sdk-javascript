@@ -401,7 +401,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 160.0.0
+	 * @version 160.1.0
 	 */
 	class ApiClient {
 		/**
@@ -1491,7 +1491,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -1805,7 +1805,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -3059,7 +3059,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -6107,7 +6107,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -6278,7 +6278,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -7506,7 +7506,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -7586,7 +7586,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -7677,7 +7677,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -8254,7 +8254,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -9394,7 +9394,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -10062,6 +10062,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsCallParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsCallParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsCallParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get the wrap-up for this conversation participant. 
 		 * 
 		 * @param {String} conversationId conversationId
@@ -10141,6 +10180,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsCallbackParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsCallbackParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
 				{  },
 				{  },
 				null, 
@@ -10389,6 +10467,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsChatParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get the wrap-up for this conversation participant. 
 		 * 
 		 * @param {String} conversationId conversationId
@@ -10488,6 +10605,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
 				{  },
 				{  },
 				null, 
@@ -10677,6 +10833,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsEmailParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsEmailParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsEmailParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
 				{  },
 				{  },
 				null, 
@@ -10954,6 +11149,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId,'messageId': messageId },
 				{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsMessageParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsMessageParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsMessageParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
 				{  },
 				{  },
 				null, 
@@ -11491,6 +11725,143 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get Settings
+		 * 
+		 */
+		getConversationsSettings() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/settings', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsSocialParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsSocialParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsSocialParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the wrap-up for this conversation communication. 
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+		 */
+		getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationsVideoParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling getConversationsVideoParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling getConversationsVideoParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'GET', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{ 'provisional': opts['provisional'] },
 				{  },
 				{  },
 				null, 
@@ -12647,6 +13018,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Update Settings
+		 * 
+		 * @param {Object} body Settings
+		 */
+		patchConversationsSettings(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchConversationsSettings';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/settings', 
+				'PATCH', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Index conversation properties
 		 * 
 		 * @param {String} conversationId conversationId
@@ -13029,6 +13425,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsCallParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Initiate and update consult transfer
 		 * 
 		 * @param {String} conversationId conversationId
@@ -13152,6 +13587,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsCallbackParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsCallbackParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsCallbackParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -13359,6 +13833,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsChatParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsChatParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsChatParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Replace this participant with the specified user and/or address
 		 * 
 		 * @param {String} conversationId conversationId
@@ -13412,6 +13925,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -13536,6 +14088,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsEmailParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsEmailParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsEmailParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -13837,6 +14428,45 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsMessageParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Replace this participant with the specified user and/or address
 		 * 
 		 * @param {String} conversationId conversationId
@@ -14115,6 +14745,123 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsSocialParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsSocialParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsSocialParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Apply wrap-up for this conversation communication
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * @param {String} communicationId communicationId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Wrap-up
+		 */
+		postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsVideoParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsVideoParticipantCommunicationWrapup';
+			}
+			// verify the required parameter 'communicationId' is set
+			if (communicationId === undefined || communicationId === null) {
+				throw 'Missing the required parameter "communicationId" when calling postConversationsVideoParticipantCommunicationWrapup';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -14667,7 +15414,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -14753,7 +15500,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -14805,7 +15552,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -14901,7 +15648,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -16859,7 +17606,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -17030,7 +17777,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -17101,7 +17848,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -18718,7 +19465,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -18848,7 +19595,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -18979,7 +19726,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -19434,7 +20181,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -19840,7 +20587,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -20596,7 +21343,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -20698,7 +21445,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -22298,7 +23045,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -23178,7 +23925,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -25610,7 +26357,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -26623,7 +27370,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -26841,7 +27588,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -27656,7 +28403,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -27894,7 +28641,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -28130,7 +28877,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -28281,7 +29028,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -28432,7 +29179,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -28665,7 +29412,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -29031,7 +29778,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -29302,7 +30049,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -29705,7 +30452,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -31000,7 +31747,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -34596,7 +35343,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -35102,7 +35849,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -35341,7 +36088,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -36920,7 +37667,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -38557,7 +39304,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -39041,7 +39788,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -42541,7 +43288,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -43418,7 +44165,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -43837,7 +44584,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -44447,7 +45194,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -45376,7 +46123,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -45523,7 +46270,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -45662,7 +46409,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -45933,7 +46680,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -46061,7 +46808,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -49695,7 +50442,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -49823,7 +50570,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -49929,7 +50676,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -50105,7 +50852,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -50176,7 +50923,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -50361,7 +51108,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -52749,7 +53496,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -52860,7 +53607,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -53527,7 +54274,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -54071,7 +54818,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -54593,7 +55340,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -54639,7 +55386,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -54785,7 +55532,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 160.0.0
+		 * @version 160.1.0
 		 */
 
 		/**
@@ -59529,7 +60276,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 160.0.0
+	 * @version 160.1.0
 	 */
 	class platformClient {
 		constructor() {
