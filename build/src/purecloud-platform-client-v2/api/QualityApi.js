@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 160.1.0
+	 * @version 161.0.0
 	 */
 
 	/**
@@ -398,7 +398,7 @@ class QualityApi {
 	 * @param {Boolean} opts.agentHasRead agent has the evaluation
 	 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations
 	 * @param {Number} opts.maximum maximum
-	 * @param {String} opts.sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
+	 * @param {String} opts.sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId
 	 */
 	getQualityEvaluationsQuery(opts) { 
 		opts = opts || {};

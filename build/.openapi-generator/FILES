@@ -932,6 +932,7 @@ docs/getOutboundSequence-example.txt
 docs/getOutboundSequences-example.txt
 docs/getOutboundSettings-example.txt
 docs/getOutboundWrapupcodemappings-example.txt
+docs/getPresenceSettings-example.txt
 docs/getPresenceSource-example.txt
 docs/getPresenceSources-example.txt
 docs/getPresenceUserPrimarysource-example.txt
@@ -1872,7 +1873,6 @@ docs/postTelephonyProvidersEdgesPhonebasesettings-example.txt
 docs/postTelephonyProvidersEdgesPhones-example.txt
 docs/postTelephonyProvidersEdgesPhonesReboot-example.txt
 docs/postTelephonyProvidersEdgesSiteOutboundroutes-example.txt
-docs/postTelephonyProvidersEdgesSiteRebalance-example.txt
 docs/postTelephonyProvidersEdgesSites-example.txt
 docs/postTelephonyProvidersEdgesTrunkbasesettings-example.txt
 docs/postTelephonySiptracesDownload-example.txt
@@ -2086,6 +2086,7 @@ docs/putOutboundSchedulesMessagingcampaign-example.txt
 docs/putOutboundSchedulesSequence-example.txt
 docs/putOutboundSequence-example.txt
 docs/putOutboundWrapupcodemappings-example.txt
+docs/putPresenceSettings-example.txt
 docs/putPresenceSource-example.txt
 docs/putPresenceUserPrimarysource-example.txt
 docs/putPresencedefinition-example.txt

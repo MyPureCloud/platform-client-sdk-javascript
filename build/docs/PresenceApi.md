@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deletePresenceSource**](PresenceApi.html#deletePresenceSource) | **DELETE** /api/v2/presence/sources/{sourceId} | Delete a Presence Source
 [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | **DELETE** /api/v2/presencedefinitions/{presenceId} | Delete a Presence Definition
+[**getPresenceSettings**](PresenceApi.html#getPresenceSettings) | **GET** /api/v2/presence/settings | Get the presence settings
 [**getPresenceSource**](PresenceApi.html#getPresenceSource) | **GET** /api/v2/presence/sources/{sourceId} | Get a Presence Source
 [**getPresenceSources**](PresenceApi.html#getPresenceSources) | **GET** /api/v2/presence/sources | Get a list of Presence Sources
 [**getPresenceUserPrimarysource**](PresenceApi.html#getPresenceUserPrimarysource) | **GET** /api/v2/presence/users/{userId}/primarysource | Get a user's Primary Presence Source
@@ -21,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user's presence
 [**postPresenceSources**](PresenceApi.html#postPresenceSources) | **POST** /api/v2/presence/sources | Create a Presence Source
 [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition
+[**putPresenceSettings**](PresenceApi.html#putPresenceSettings) | **PUT** /api/v2/presence/settings | Update the presence settings
 [**putPresenceSource**](PresenceApi.html#putPresenceSource) | **PUT** /api/v2/presence/sources/{sourceId} | Update a Presence Source
 [**putPresenceUserPrimarysource**](PresenceApi.html#putPresenceUserPrimarysource) | **PUT** /api/v2/presence/users/{userId}/primarysource | Update a user's Primary Presence Source
 [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | **PUT** /api/v2/presencedefinitions/{presenceId} | Update a Presence Definition
@@ -127,6 +129,51 @@ apiInstance.deletePresencedefinition(presenceId)
 ### Return type
 
 void (no response body)
+
+<a name="getPresenceSettings"></a>
+
+# PresenceSettings getPresenceSettings()
+
+
+GET /api/v2/presence/settings
+
+Get the presence settings
+
+Requires ALL permissions:
+
+* presence:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+apiInstance.getPresenceSettings()
+  .then((data) => {
+    console.log(`getPresenceSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getPresenceSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**PresenceSettings**
 
 <a name="getPresenceSource"></a>
 
@@ -740,6 +787,56 @@ apiInstance.postPresencedefinitions(body)
 ### Return type
 
 **OrganizationPresence**
+
+<a name="putPresenceSettings"></a>
+
+# PresenceSettings putPresenceSettings(body)
+
+
+PUT /api/v2/presence/settings
+
+Update the presence settings
+
+Requires ALL permissions:
+
+* presence:settings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let body = {}; // Object | Presence Settings
+
+apiInstance.putPresenceSettings(body)
+  .then((data) => {
+    console.log(`putPresenceSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putPresenceSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Presence Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PresenceSettings**
 
 <a name="putPresenceSource"></a>
 

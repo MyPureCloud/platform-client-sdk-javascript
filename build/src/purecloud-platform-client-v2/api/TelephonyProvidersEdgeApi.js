@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 160.1.0
+	 * @version 161.0.0
 	 */
 
 	/**
@@ -3022,31 +3022,6 @@ class TelephonyProvidersEdgeApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Triggers the rebalance operation.
-	 * 
-	 * @param {String} siteId Site ID
-	 */
-	postTelephonyProvidersEdgesSiteRebalance(siteId) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling postTelephonyProvidersEdgesSiteRebalance';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/rebalance', 
-			'POST', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

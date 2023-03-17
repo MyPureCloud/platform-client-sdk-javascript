@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 160.1.0
+	 * @version 161.0.0
 	 */
 
 	/**
@@ -60,6 +60,26 @@ class PresenceApi {
 			'/api/v2/presencedefinitions/{presenceId}', 
 			'DELETE', 
 			{ 'presenceId': presenceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the presence settings
+	 * 
+	 */
+	getPresenceSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/settings', 
+			'GET', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -379,6 +399,31 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/presencedefinitions', 
 			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the presence settings
+	 * 
+	 * @param {Object} body Presence Settings
+	 */
+	putPresenceSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putPresenceSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/settings', 
+			'PUT', 
 			{  },
 			{  },
 			{  },

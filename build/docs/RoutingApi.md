@@ -3975,7 +3975,8 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
   'sortOrder': "ascending", // String | Sort order
-  'name': "name_example" // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)
+  'name': "name_example", // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)
+  'divisionId': ["divisionId_example"] // [String] | Filter by division ID(s)
 };
 
 apiInstance.getRoutingWrapupcodes(opts)
@@ -3998,6 +3999,7 @@ apiInstance.getRoutingWrapupcodes(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name]<br />**Values**: name, id |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **name** | **String** | Wrapup code's name ('Sort by' param is ignored unless this field is provided) | [optional]  |
+ **divisionId** | **[String]** | Filter by division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

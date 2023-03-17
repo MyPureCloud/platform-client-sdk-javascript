@@ -117,7 +117,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhones) | **POST** /api/v2/telephony/providers/edges/phones | Create a new Phone
 [**postTelephonyProvidersEdgesPhonesReboot**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonesReboot) | **POST** /api/v2/telephony/providers/edges/phones/reboot | Reboot Multiple Phones
 [**postTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteOutboundroutes) | **POST** /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes | Create outbound route
-[**postTelephonyProvidersEdgesSiteRebalance**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteRebalance) | **POST** /api/v2/telephony/providers/edges/sites/{siteId}/rebalance | Triggers the rebalance operation.
 [**postTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSites) | **POST** /api/v2/telephony/providers/edges/sites | Create a Site.
 [**postTelephonyProvidersEdgesTrunkbasesettings**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesTrunkbasesettings) | **POST** /api/v2/telephony/providers/edges/trunkbasesettings | Create a Trunk Base Settings object
 [**putTelephonyProvidersEdge**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdge) | **PUT** /api/v2/telephony/providers/edges/{edgeId} | Update a edge.
@@ -5989,57 +5988,6 @@ apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 ### Return type
 
 **OutboundRouteBase**
-
-<a name="postTelephonyProvidersEdgesSiteRebalance"></a>
-
-# void postTelephonyProvidersEdgesSiteRebalance(siteId)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance
-
-Triggers the rebalance operation.
-
-Requires ANY permissions:
-
-* telephony:plugin:all
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let siteId = "siteId_example"; // String | Site ID
-
-apiInstance.postTelephonyProvidersEdgesSiteRebalance(siteId)
-  .then(() => {
-    console.log('postTelephonyProvidersEdgesSiteRebalance returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postTelephonyProvidersEdgesSiteRebalance');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String** | Site ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
 
 <a name="postTelephonyProvidersEdgesSites"></a>
 

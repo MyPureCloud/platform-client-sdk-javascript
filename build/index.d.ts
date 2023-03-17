@@ -3381,6 +3381,7 @@ declare namespace OutboundApi {
 declare class PresenceApi {  
   	deletePresenceSource(sourceId: string): Promise<void>; 
   	deletePresencedefinition(presenceId: string): Promise<void>; 
+  	getPresenceSettings(): Promise<Models.PresenceSettings>; 
   	getPresenceSource(sourceId: string): Promise<Models.Source>; 
   	getPresenceSources(opts?: PresenceApi.getPresenceSourcesOptions): Promise<Models.SourceEntityListing>; 
   	getPresenceUserPrimarysource(userId: string): Promise<Models.UserPrimarySource>; 
@@ -3393,6 +3394,7 @@ declare class PresenceApi {
   	patchUserPresencesPurecloud(userId: string, body: Models.UserPresence): Promise<Models.UserPresence>; 
   	postPresenceSources(body: Models.Source): Promise<Models.Source>; 
   	postPresencedefinitions(body: Models.OrganizationPresence): Promise<Models.OrganizationPresence>; 
+  	putPresenceSettings(body: Models.PresenceSettings): Promise<Models.PresenceSettings>; 
   	putPresenceSource(sourceId: string, body: Models.Source): Promise<Models.Source>; 
   	putPresenceUserPrimarysource(userId: string, body: Models.UserPrimarySource): Promise<Models.UserPrimarySource>; 
   	putPresencedefinition(presenceId: string, body: Models.OrganizationPresence): Promise<Models.OrganizationPresence>; 
@@ -3981,7 +3983,7 @@ declare class RoutingApi {
   	postRoutingSkills(body: Models.RoutingSkill): Promise<Models.RoutingSkill>; 
   	postRoutingSmsAddresses(body: Models.SmsAddressProvision): Promise<Models.SmsAddress>; 
   	postRoutingSmsPhonenumbers(body: Models.SmsPhoneNumberProvision): Promise<Models.SmsPhoneNumber>; 
-  	postRoutingWrapupcodes(body: Models.WrapupCode): Promise<Models.WrapupCode>; 
+  	postRoutingWrapupcodes(body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>; 
   	postUserRoutinglanguages(userId: string, body: Models.UserRoutingLanguagePost): Promise<Models.UserRoutingLanguage>; 
   	postUserRoutingskills(userId: string, body: Models.UserRoutingSkillPost): Promise<Models.UserRoutingSkill>; 
   	putRoutingEmailDomainRoute(domainName: string, routeId: string, body: Models.InboundRoute): Promise<Models.InboundRoute>; 
@@ -3993,7 +3995,7 @@ declare class RoutingApi {
   	putRoutingSmsPhonenumber(addressId: string, body: Models.SmsPhoneNumber): Promise<Models.SmsPhoneNumber>; 
   	putRoutingUserUtilization(userId: string, body: Models.Utilization): Promise<Models.AgentMaxUtilization>; 
   	putRoutingUtilization(body: Models.Utilization): Promise<Models.Utilization>; 
-  	putRoutingWrapupcode(codeId: string, body: Models.WrapupCode): Promise<Models.WrapupCode>; 
+  	putRoutingWrapupcode(codeId: string, body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>; 
   	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>; 
   	putUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>;
 }
@@ -4160,6 +4162,7 @@ declare namespace RoutingApi {
 		"sortBy"?: string;
 		"sortOrder"?: string;
 		"name"?: string;
+		"divisionId"?: Array<string>;
 	}
 	export interface getUserQueuesOptions { 
 		"pageSize"?: number;
@@ -4757,7 +4760,6 @@ declare class TelephonyProvidersEdgeApi {
   	postTelephonyProvidersEdgesPhones(body: Models.Phone): Promise<Models.Phone>; 
   	postTelephonyProvidersEdgesPhonesReboot(body: Models.PhonesReboot): Promise<void>; 
   	postTelephonyProvidersEdgesSiteOutboundroutes(siteId: string, body: Models.OutboundRouteBase): Promise<Models.OutboundRouteBase>; 
-  	postTelephonyProvidersEdgesSiteRebalance(siteId: string): Promise<void>; 
   	postTelephonyProvidersEdgesSites(body: Models.Site): Promise<Models.Site>; 
   	postTelephonyProvidersEdgesTrunkbasesettings(body: Models.TrunkBase): Promise<Models.TrunkBase>; 
   	putTelephonyProvidersEdge(edgeId: string, body: Models.Edge): Promise<Models.Edge>; 
@@ -7838,6 +7840,8 @@ declare namespace Models {
 		"id"?: string;
 		"analysisEnabled"?: boolean;
 		"analysisDays"?: number;
+		"dateLastCalculated"?: string;
+		"dateLastActive"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -17279,10 +17283,22 @@ declare namespace Models {
 		"transcriptTopics"?: Array<Models.TranscriptTopic>;
 	}
 	
+	export interface EvaluationSettings { 
+	}
+	
+	export interface EvaluationSettingsAssignee { 
+	}
+	
 	export interface EvaluationSource { 
 		"id"?: string;
 		"name"?: string;
 		"type"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface EvaluationVersion { 
+		"id"?: string;
+		"name"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -24453,6 +24469,12 @@ declare namespace Models {
 	export interface PagedNamespaceListing { 
 	}
 	
+	export interface PagelessDomainEntityListingEvaluationVersion { 
+		"total"?: number;
+		"entities"?: Array<Models.EvaluationVersion>;
+		"selfUri"?: string;
+	}
+	
 	export interface PagingSpec { 
 		"pageSize": number;
 		"pageNumber": number;
@@ -25392,6 +25414,13 @@ declare namespace Models {
 		"primary"?: boolean;
 		"message"?: string;
 		"modifiedDate"?: string;
+	}
+	
+	export interface PresenceSettings { 
+		"id"?: string;
+		"name"?: string;
+		"restorePresenceSettings"?: Models.RestorePresenceSettings;
+		"selfUri"?: string;
 	}
 	
 	export interface ProcessScheduleUpdateUploadRequest { 
@@ -29194,6 +29223,12 @@ declare namespace Models {
 		"details"?: string;
 	}
 	
+	export interface RestorePresenceSettings { 
+		"enabled": boolean;
+		"restoreTimeMilliseconds": number;
+		"restoreOnQueueEnabled": boolean;
+	}
+	
 	export interface ResultCounters { 
 		"success"?: number;
 		"failure"?: number;
@@ -30335,6 +30370,10 @@ declare namespace Models {
 		"recordingState"?: string;
 	}
 	
+	export interface SetSmsPhoneNumberActionSettings { 
+		"senderSmsPhoneNumber": string;
+	}
+	
 	export interface SetTimeOffLimitValuesRequest { 
 		"values"?: Array<Models.TimeOffLimitRange>;
 		"metadata": Models.WfmVersionedEntityMetadata;
@@ -30532,6 +30571,7 @@ declare namespace Models {
 		"enabled"?: boolean;
 		"cannedResponseId"?: string;
 		"alwaysIncluded"?: boolean;
+		"inclusionType"?: string;
 	}
 	
 	export interface SignedData { 
@@ -30901,6 +30941,12 @@ declare namespace Models {
 	export interface SpeechTextAnalyticsSettingsResponse { 
 		"defaultProgram"?: Models.AddressableEntityRef;
 		"expectedDialects"?: Array<string>;
+	}
+	
+	export interface StarrableDivision { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface StatEventCampaignTopicIntervalMetrics { 
@@ -37173,10 +37219,11 @@ declare namespace Models {
 	export interface WrapupCode { 
 		"id"?: string;
 		"name": string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
+		"division"?: Models.StarrableDivision;
+		"dateCreated": string;
+		"dateModified": string;
+		"createdBy": string;
 		"modifiedBy"?: string;
-		"createdBy"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -37191,6 +37238,16 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface WrapupCodeRequest { 
+		"id"?: string;
+		"name": string;
+		"dateCreated": string;
+		"dateModified": string;
+		"createdBy": string;
+		"modifiedBy"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface WrapupDetailEventTopicWrapupEvent { 
@@ -37235,6 +37292,12 @@ declare namespace Models {
 	
 	export interface WritableEntity { 
 		"id"?: string;
+	}
+	
+	export interface WritableStarrableDivision { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
 	}
 	
 }
