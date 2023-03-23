@@ -17156,6 +17156,12 @@ declare namespace Models {
 		"totalCriticalScore"?: number;
 	}
 	
+	export interface EvaluationQualityV2TopicEvaluationSource { 
+		"evaluationSourceType"?: string;
+		"evaluationSourceId"?: string;
+		"evaluationSourceName"?: string;
+	}
+	
 	export interface EvaluationQualityV2TopicEvaluationV2 { 
 		"id"?: string;
 		"conversationId"?: string;
@@ -17179,6 +17185,9 @@ declare namespace Models {
 		"conversationDate"?: string;
 		"mediaType"?: Array<string>;
 		"calibration"?: Models.EvaluationQualityV2TopicCalibration;
+		"evaluationSource"?: Models.EvaluationQualityV2TopicEvaluationSource;
+		"assigneeUserId"?: string;
+		"previousAssigneeUserId"?: string;
 	}
 	
 	export interface EvaluationQualityV2TopicUser { 
@@ -20222,16 +20231,6 @@ declare namespace Models {
 		"user"?: Models.JourneySessionEventsNotificationUser;
 	}
 	
-	export interface JourneySessionEventsNotificationCustomEventAttribute { 
-		"value"?: string;
-		"dataType"?: string;
-	}
-	
-	export interface JourneySessionEventsNotificationCustomEventAttributeList { 
-		"values"?: Array<string>;
-		"dataType"?: string;
-	}
-	
 	export interface JourneySessionEventsNotificationDevice { 
 		"type"?: string;
 		"isMobile"?: boolean;
@@ -20327,8 +20326,6 @@ declare namespace Models {
 		"type"?: string;
 		"outcomeAchievements"?: Array<Models.JourneySessionEventsNotificationOutcomeAchievement>;
 		"segmentAssignments"?: Array<Models.JourneySessionEventsNotificationSegmentAssignment>;
-		"attributes"?: { [key: string]: Models.JourneySessionEventsNotificationCustomEventAttribute; };
-		"attributeLists"?: { [key: string]: Models.JourneySessionEventsNotificationCustomEventAttributeList; };
 		"awayDate"?: string;
 		"browser"?: Models.JourneySessionEventsNotificationBrowser;
 		"device"?: Models.JourneySessionEventsNotificationDevice;
@@ -37033,6 +37030,13 @@ declare namespace Models {
 		"alertTimeoutSeconds"?: number;
 		"queueId"?: string;
 		"customFields"?: { [key: string]: Models.WorkitemsEventsNotificationCustomAttribute; };
+		"wrapup"?: Models.WorkitemsEventsNotificationWrapup;
+	}
+	
+	export interface WorkitemsEventsNotificationWrapup { 
+		"code"?: string;
+		"userId"?: string;
+		"op"?: string;
 	}
 	
 	export interface WorkitemsQueueEventsNotificationCustomAttribute { 
@@ -37077,6 +37081,13 @@ declare namespace Models {
 		"alertTimeoutSeconds"?: number;
 		"queueId"?: string;
 		"customFields"?: { [key: string]: Models.WorkitemsQueueEventsNotificationCustomAttribute; };
+		"wrapup"?: Models.WorkitemsQueueEventsNotificationWrapup;
+	}
+	
+	export interface WorkitemsQueueEventsNotificationWrapup { 
+		"code"?: string;
+		"userId"?: string;
+		"op"?: string;
 	}
 	
 	export interface WorkitemsUserEventsNotificationCustomAttribute { 
@@ -37121,6 +37132,13 @@ declare namespace Models {
 		"alertTimeoutSeconds"?: number;
 		"queueId"?: string;
 		"customFields"?: { [key: string]: Models.WorkitemsUserEventsNotificationCustomAttribute; };
+		"wrapup"?: Models.WorkitemsUserEventsNotificationWrapup;
+	}
+	
+	export interface WorkitemsUserEventsNotificationWrapup { 
+		"code"?: string;
+		"userId"?: string;
+		"op"?: string;
 	}
 	
 	export interface Workspace { 
