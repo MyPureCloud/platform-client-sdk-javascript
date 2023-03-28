@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 161.0.1
+	 * @version 162.0.0
 	 */
 
 	/**
@@ -22,7 +22,7 @@ class ChatApi {
 
 	/**
 	 * Get Chat Settings.
-	 * 
+	 * This route is deprecated, please use /chats/settings instead
 	 */
 	getChatSettings() { 
 
@@ -41,8 +41,28 @@ class ChatApi {
 	}
 
 	/**
-	 * Patch Chat Settings.
+	 * Get Chat Settings.
 	 * 
+	 */
+	getChatsSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch Chat Settings.
+	 * This route is deprecated, please use /chats/settings instead
 	 * @param {Object} body Chat
 	 */
 	patchChatSettings(body) { 
@@ -66,8 +86,33 @@ class ChatApi {
 	}
 
 	/**
-	 * Update Chat Settings.
+	 * Patch Chat Settings.
 	 * 
+	 * @param {Object} body Chat
+	 */
+	patchChatsSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchChatsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/settings', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Chat Settings.
+	 * This route is deprecated, please use /chats/settings instead
 	 * @param {Object} body Chat
 	 */
 	putChatSettings(body) { 
@@ -78,6 +123,31 @@ class ChatApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/chat/settings', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Chat Settings.
+	 * 
+	 * @param {Object} body Chat
+	 */
+	putChatsSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putChatsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/settings', 
 			'PUT', 
 			{  },
 			{  },

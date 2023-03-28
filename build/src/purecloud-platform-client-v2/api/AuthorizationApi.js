@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 161.0.1
+	 * @version 162.0.0
 	 */
 
 	/**
@@ -386,6 +386,7 @@ class AuthorizationApi {
 	 * Get the organization role specified by its ID.
 	 * @param {String} roleId Role ID
 	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.userCount Fetch the count of users who have this role granted in at least one division (default to true)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role
 	 */
 	getAuthorizationRole(roleId, opts) { 
@@ -400,7 +401,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/roles/{roleId}', 
 			'GET', 
 			{ 'roleId': roleId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'userCount': opts['userCount'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

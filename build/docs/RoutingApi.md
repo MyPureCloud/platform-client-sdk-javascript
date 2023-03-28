@@ -1591,7 +1591,8 @@ let apiInstance = new platformClient.RoutingApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'excludeStatus': false // Boolean | Exclude MX record data
+  'excludeStatus': false, // Boolean | Exclude MX record data
+  'filter': "filter_example" // String | Optional search filter
 };
 
 apiInstance.getRoutingEmailDomains(opts)
@@ -1612,6 +1613,7 @@ apiInstance.getRoutingEmailDomains(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **excludeStatus** | **Boolean** | Exclude MX record data | [optional] [default to false] |
+ **filter** | **String** | Optional search filter | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1770,7 +1772,7 @@ apiInstance.getRoutingEmailOutboundDomainSearch(domainId)
 
 <a name="getRoutingEmailOutboundDomains"></a>
 
-# OutboundDomainEntityListing getRoutingEmailOutboundDomains()
+# OutboundDomainEntityListing getRoutingEmailOutboundDomains(opts)
 
 
 GET /api/v2/routing/email/outbound/domains
@@ -1794,7 +1796,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
 
-apiInstance.getRoutingEmailOutboundDomains()
+let opts = { 
+  'filter': "filter_example" // String | Optional search filter
+};
+
+apiInstance.getRoutingEmailOutboundDomains(opts)
   .then((data) => {
     console.log(`getRoutingEmailOutboundDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1806,8 +1812,11 @@ apiInstance.getRoutingEmailOutboundDomains()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filter** | **String** | Optional search filter | [optional]  |
+{: class="table table-striped"}
 
 ### Return type
 

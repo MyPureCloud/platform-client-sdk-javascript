@@ -710,6 +710,7 @@ declare namespace AuthorizationApi {
 		"query"?: string;
 	}
 	export interface getAuthorizationRoleOptions { 
+		"userCount"?: boolean;
 		"expand"?: Array<string>;
 	}
 	export interface getAuthorizationRoleSubjectgrantsOptions { 
@@ -770,8 +771,11 @@ declare namespace BillingApi {
 
 declare class ChatApi {  
   	getChatSettings(): Promise<Models.ChatSettings>; 
+  	getChatsSettings(): Promise<Models.ChatSettings>; 
   	patchChatSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>; 
-  	putChatSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>;
+  	patchChatsSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>; 
+  	putChatSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>; 
+  	putChatsSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>;
 }
 
 declare namespace ChatApi { 
@@ -3904,7 +3908,7 @@ declare class RoutingApi {
   	getRoutingEmailOutboundDomain(domainId: string): Promise<Models.OutboundDomain>; 
   	getRoutingEmailOutboundDomainActivation(domainId: string): Promise<Models.EmailOutboundDomainResult>; 
   	getRoutingEmailOutboundDomainSearch(domainId: string): Promise<Models.OutboundDomain>; 
-  	getRoutingEmailOutboundDomains(): Promise<Models.OutboundDomainEntityListing>; 
+  	getRoutingEmailOutboundDomains(opts?: RoutingApi.getRoutingEmailOutboundDomainsOptions): Promise<Models.OutboundDomainEntityListing>; 
   	getRoutingEmailSetup(): Promise<Models.EmailSetup>; 
   	getRoutingLanguage(languageId: string): Promise<Models.Language>; 
   	getRoutingLanguages(opts?: RoutingApi.getRoutingLanguagesOptions): Promise<Models.LanguageEntityListing>; 
@@ -4023,6 +4027,10 @@ declare namespace RoutingApi {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"excludeStatus"?: boolean;
+		"filter"?: string;
+	}
+	export interface getRoutingEmailOutboundDomainsOptions { 
+		"filter"?: string;
 	}
 	export interface getRoutingLanguagesOptions { 
 		"pageSize"?: number;
@@ -9557,6 +9565,13 @@ declare namespace Models {
 		"callbackScheduledTime"?: string;
 	}
 	
+	export interface CallbackMediaSettings { 
+		"enableAutoAnswer"?: boolean;
+		"alertingTimeoutSeconds"?: number;
+		"serviceLevel"?: Models.ServiceLevel;
+		"subTypeSettings"?: { [key: string]: Models.BaseMediaSettings; };
+	}
+	
 	export interface Campaign { 
 		"id"?: string;
 		"name": string;
@@ -13637,7 +13652,7 @@ declare namespace Models {
 		"memberCount"?: number;
 		"userMemberCount"?: number;
 		"joinedMemberCount"?: number;
-		"mediaSettings"?: { [key: string]: Models.MediaSetting; };
+		"mediaSettings"?: Models.QueueMediaSettings;
 		"routingRules"?: Array<Models.RoutingRule>;
 		"bullseye"?: Models.Bullseye;
 		"acwSettings"?: Models.AcwSettings;
@@ -18041,6 +18056,7 @@ declare namespace Models {
 		"name"?: string;
 		"uploadDestinationUri"?: string;
 		"uploadMethodType"?: string;
+		"headers"?: { [key: string]: string; };
 		"selfUri"?: string;
 	}
 	
@@ -22578,7 +22594,7 @@ declare namespace Models {
 		"waveformData"?: Array<number>;
 	}
 	
-	export interface MediaSetting { 
+	export interface MediaSettings { 
 		"enableAutoAnswer"?: boolean;
 		"alertingTimeoutSeconds"?: number;
 		"serviceLevel"?: Models.ServiceLevel;
@@ -25805,7 +25821,7 @@ declare namespace Models {
 		"memberCount"?: number;
 		"userMemberCount"?: number;
 		"joinedMemberCount"?: number;
-		"mediaSettings"?: { [key: string]: Models.MediaSetting; };
+		"mediaSettings"?: Models.QueueMediaSettings;
 		"routingRules"?: Array<Models.RoutingRule>;
 		"bullseye"?: Models.Bullseye;
 		"acwSettings"?: Models.AcwSettings;
@@ -28168,6 +28184,14 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface QueueMediaSettings { 
+		"call"?: Models.MediaSettings;
+		"callback"?: Models.CallbackMediaSettings;
+		"chat"?: Models.MediaSettings;
+		"email"?: Models.MediaSettings;
+		"message"?: Models.MediaSettings;
+	}
+	
 	export interface QueueMember { 
 		"id"?: string;
 		"name"?: string;
@@ -28258,7 +28282,7 @@ declare namespace Models {
 		"memberCount"?: number;
 		"userMemberCount"?: number;
 		"joinedMemberCount"?: number;
-		"mediaSettings"?: { [key: string]: Models.MediaSetting; };
+		"mediaSettings"?: Models.QueueMediaSettings;
 		"routingRules"?: Array<Models.RoutingRule>;
 		"bullseye"?: Models.Bullseye;
 		"acwSettings"?: Models.AcwSettings;
@@ -30274,6 +30298,11 @@ declare namespace Models {
 		"abandonRate"?: Models.BuAbandonRate;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
 		"selfUri"?: string;
+	}
+	
+	export interface ServiceGoalTemplateImpactOverride { 
+		"enabled": boolean;
+		"impact": Models.WfmServiceGoalImpactSettings;
 	}
 	
 	export interface ServiceGoalTemplateList { 
@@ -33788,7 +33817,7 @@ declare namespace Models {
 		"memberCount"?: number;
 		"userMemberCount"?: number;
 		"joinedMemberCount"?: number;
-		"mediaSettings"?: { [key: string]: Models.MediaSetting; };
+		"mediaSettings"?: Models.QueueMediaSettings;
 		"routingRules"?: Array<Models.RoutingRule>;
 		"bullseye"?: Models.Bullseye;
 		"acwSettings"?: Models.AcwSettings;

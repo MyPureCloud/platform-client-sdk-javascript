@@ -216,6 +216,8 @@ GET /api/v2/analytics/botflows/{botFlowId}/reportingturns
 
 Get Reporting Turns.
 
+Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
+
 Requires ANY permissions:
 
 * analytics:botFlowReportingTurn:view

@@ -164,7 +164,7 @@ DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{
 
 Delete a grant of a role in a division
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * authorization:grant:delete
 
@@ -776,6 +776,7 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
 let opts = { 
+  'userCount': true, // Boolean | Fetch the count of users who have this role granted in at least one division
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role
 };
 
@@ -795,6 +796,7 @@ apiInstance.getAuthorizationRole(roleId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
+ **userCount** | **Boolean** | Fetch the count of users who have this role granted in at least one division | [optional] [default to true]<br />**Values**: true, false |
  **expand** | **[String]** | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role | [optional] <br />**Values**: unusedPermissions |
 {: class="table table-striped"}
 
@@ -1780,7 +1782,7 @@ POST /api/v2/authorization/subjects/{subjectId}/bulkadd
 
 Bulk-grant roles and divisions to a subject.
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * authorization:grant:add
 
@@ -1836,7 +1838,7 @@ POST /api/v2/authorization/subjects/{subjectId}/bulkremove
 
 Bulk-remove grants from a subject.
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * authorization:grant:delete
 
@@ -1947,7 +1949,7 @@ POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{ro
 
 Make a grant of a role in a division
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * authorization:grant:add
 

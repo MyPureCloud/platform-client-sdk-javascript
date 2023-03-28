@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 161.0.1
+	 * @version 162.0.0
 	 */
 
 	/**
@@ -759,6 +759,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.excludeStatus Exclude MX record data (default to false)
+	 * @param {String} opts.filter Optional search filter
 	 */
 	getRoutingEmailDomains(opts) { 
 		opts = opts || {};
@@ -768,7 +769,7 @@ class RoutingApi {
 			'/api/v2/routing/email/domains', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'excludeStatus': opts['excludeStatus'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'excludeStatus': opts['excludeStatus'],'filter': opts['filter'] },
 			{  },
 			{  },
 			null, 
@@ -856,14 +857,18 @@ class RoutingApi {
 	/**
 	 * Get outbound domains
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.filter Optional search filter
 	 */
-	getRoutingEmailOutboundDomains() { 
+	getRoutingEmailOutboundDomains(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/outbound/domains', 
 			'GET', 
 			{  },
-			{  },
+			{ 'filter': opts['filter'] },
 			{  },
 			{  },
 			null, 

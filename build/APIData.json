@@ -3789,12 +3789,17 @@
   "getauthorizationrole": {
     "operationId": "getauthorizationrole",
     "functionName": "getAuthorizationRole",
-    "signature": "getAuthorizationRole(roleId, expand)",
+    "signature": "getAuthorizationRole(roleId, userCount, expand)",
     "parameters": [
       {
         "name": "roleId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "userCount",
+        "type": "Boolean",
+        "required": "false"
       },
       {
         "name": "expand",
@@ -3803,7 +3808,7 @@
       }
     ],
     "return": "DomainOrganizationRole",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AuthorizationApi();\n\nlet roleId = \"roleId_example\"; // String | Role ID\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role\n};\n\n// Get a single organization role.\napiInstance.getAuthorizationRole(roleId, opts)\n  .then((data) => {\n    console.log(`getAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuthorizationRole\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AuthorizationApi();\n\nlet roleId = \"roleId_example\"; // String | Role ID\nlet opts = { \n  \"userCount\": true, // Boolean | Fetch the count of users who have this role granted in at least one division\n  \"expand\": [\"expand_example\"] // [String] | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role\n};\n\n// Get a single organization role.\napiInstance.getAuthorizationRole(roleId, opts)\n  .then((data) => {\n    console.log(`getAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuthorizationRole\");\n    console.error(err);\n  });"
   },
   "getauthorizationrolecomparedefaultrightroleid": {
     "operationId": "getauthorizationrolecomparedefaultrightroleid",
@@ -4422,6 +4427,13 @@
     "return": "ChatSettings",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\n// Get Chat Settings.\napiInstance.getChatSettings()\n  .then((data) => {\n    console.log(`getChatSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatSettings\");\n    console.error(err);\n  });"
   },
+  "getchatssettings": {
+    "operationId": "getchatssettings",
+    "functionName": "getChatsSettings",
+    "signature": "getChatsSettings()",
+    "return": "ChatSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\n// Get Chat Settings.\napiInstance.getChatsSettings()\n  .then((data) => {\n    console.log(`getChatsSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsSettings\");\n    console.error(err);\n  });"
+  },
   "patchchatsettings": {
     "operationId": "patchchatsettings",
     "functionName": "patchChatSettings",
@@ -4436,6 +4448,20 @@
     "return": "ChatSettings",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet body = {}; // Object | Chat\n\n// Patch Chat Settings.\napiInstance.patchChatSettings(body)\n  .then((data) => {\n    console.log(`patchChatSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchChatSettings\");\n    console.error(err);\n  });"
   },
+  "patchchatssettings": {
+    "operationId": "patchchatssettings",
+    "functionName": "patchChatsSettings",
+    "signature": "patchChatsSettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ChatSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet body = {}; // Object | Chat\n\n// Patch Chat Settings.\napiInstance.patchChatsSettings(body)\n  .then((data) => {\n    console.log(`patchChatsSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchChatsSettings\");\n    console.error(err);\n  });"
+  },
   "putchatsettings": {
     "operationId": "putchatsettings",
     "functionName": "putChatSettings",
@@ -4449,6 +4475,20 @@
     ],
     "return": "ChatSettings",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet body = {}; // Object | Chat\n\n// Update Chat Settings.\napiInstance.putChatSettings(body)\n  .then((data) => {\n    console.log(`putChatSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putChatSettings\");\n    console.error(err);\n  });"
+  },
+  "putchatssettings": {
+    "operationId": "putchatssettings",
+    "functionName": "putChatsSettings",
+    "signature": "putChatsSettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ChatSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet body = {}; // Object | Chat\n\n// Update Chat Settings.\napiInstance.putChatsSettings(body)\n  .then((data) => {\n    console.log(`putChatsSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putChatsSettings\");\n    console.error(err);\n  });"
   },
   "deletecoachingappointment": {
     "operationId": "deletecoachingappointment",
@@ -26584,7 +26624,7 @@
   "getroutingemaildomains": {
     "operationId": "getroutingemaildomains",
     "functionName": "getRoutingEmailDomains",
-    "signature": "getRoutingEmailDomains(pageSize, pageNumber, excludeStatus)",
+    "signature": "getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter)",
     "parameters": [
       {
         "name": "pageSize",
@@ -26600,10 +26640,15 @@
         "name": "excludeStatus",
         "type": "Boolean",
         "required": "false"
+      },
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "InboundDomainEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"excludeStatus\": false // Boolean | Exclude MX record data\n};\n\n// Get domains\napiInstance.getRoutingEmailDomains(opts)\n  .then((data) => {\n    console.log(`getRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingEmailDomains\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"excludeStatus\": false, // Boolean | Exclude MX record data\n  \"filter\": \"filter_example\" // String | Optional search filter\n};\n\n// Get domains\napiInstance.getRoutingEmailDomains(opts)\n  .then((data) => {\n    console.log(`getRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingEmailDomains\");\n    console.error(err);\n  });"
   },
   "getroutingemailoutbounddomain": {
     "operationId": "getroutingemailoutbounddomain",
@@ -26650,9 +26695,16 @@
   "getroutingemailoutbounddomains": {
     "operationId": "getroutingemailoutbounddomains",
     "functionName": "getRoutingEmailOutboundDomains",
-    "signature": "getRoutingEmailOutboundDomains()",
+    "signature": "getRoutingEmailOutboundDomains(filter)",
+    "parameters": [
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
+      }
+    ],
     "return": "OutboundDomainEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\n// Get outbound domains\napiInstance.getRoutingEmailOutboundDomains()\n  .then((data) => {\n    console.log(`getRoutingEmailOutboundDomains success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingEmailOutboundDomains\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"filter\": \"filter_example\" // String | Optional search filter\n};\n\n// Get outbound domains\napiInstance.getRoutingEmailOutboundDomains(opts)\n  .then((data) => {\n    console.log(`getRoutingEmailOutboundDomains success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingEmailOutboundDomains\");\n    console.error(err);\n  });"
   },
   "getroutingemailsetup": {
     "operationId": "getroutingemailsetup",
