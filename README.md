@@ -27,7 +27,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/162.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/163.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -44,7 +44,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/162.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/163.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -376,22 +376,21 @@ Extended response object example (`body` and `text` have been truncated):
 
 ### Using a Proxy (Node.js only)
 
-Using a proxy is accomplished by setting the proxy settings on the `client` object
+Using a proxy is accomplished by setting the `proxyAgent` on the `ApiClient` object.
+The `proxyAgent` will be used to set the `httpsAgent` on the axios request object used in all api calls. See [axios documentation](https://axios-http.com/docs/req_config) for details.
+We recommended using the npm package `hpagent` https://www.npmjs.com/package/hpagent to create a proxyAgent although other options are available.
+An example using `hpagent` to create the proxy is shown below
 
-NOTE: SDK proxy configuration is only available in the node.js package due to the axios proxy incompatibility with browsers.
+NOTE: The hpagent package is a NodeJS package. As such, web applications that wish to use this proxy must configure their build tools to handle transpiling and polyfilling the NodeJS package for their desired web target.
 
 ```javascript
+const {HttpsProxyAgent} = require('hpagent')
 const client = platformClient.ApiClient.instance;
-// Documentation: https://axios-http.com/docs/req_config
-client.proxy = {
-  host: '172.1.1.100',
-  port: 443,
-  protocol: 'https',
-  auth: {
-    username: 'john_doe',
-    password: 'abc123'
-  }
-};
+
+agent = new HttpsProxyAgent({
+  proxy: proxyUrl,
+});
+client.setProxyAgent(agent)
 ```
 
 

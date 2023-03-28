@@ -1,11 +1,10 @@
 import { default as axios } from 'axios';
 import Configuration from './configuration.js';
 import { default as qs } from 'qs';
-const { HttpsProxyAgent } = require('hpagent')
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 162.0.0
+ * @version 163.0.0
  */
 class ApiClient {
 	/**
@@ -277,18 +276,12 @@ class ApiClient {
 			const headers = {
 				'Authorization': `Basic ${authHeader}`
 			}
-			let httpsAgent;
-			if (this.proxy !== undefined){
-				httpsAgent = new HttpsProxyAgent({
-				    proxy : `${this.proxy.protocol}://${this.proxy.host}:${this.proxy.port}`
-				});
-			}
 			axios({
 				method: `POST`,
 				url: `https://login.${this.config.environment}/oauth/token`,
 				headers: headers,
 				data: 'grant_type=client_credentials',
-				httpsAgent: httpsAgent
+				httpsAgent: this.proxyAgent
 			})
 				.then((response) => {
 					// Logging
@@ -966,6 +959,14 @@ class ApiClient {
 	}
 
 	/**
+	 * @description Sets the proxy agent axios will use for requests 
+	 * @param {any} agent - The proxy agent
+	 */
+	setProxyAgent(agent) {
+		this.proxyAgent = agent
+	}
+
+	/**
 	 * Invokes the REST service using the supplied settings and parameters.
 	 * @param {String} path The base URL to invoke.
 	 * @param {String} httpMethod The HTTP method to use.
@@ -985,16 +986,10 @@ class ApiClient {
 			sendRequest(this);
 			function sendRequest(that) {
 				var url = that.buildUrl(path, pathParams);
-				let httpsAgent;
-				if (that.proxy !== undefined){
-				    httpsAgent = new HttpsProxyAgent({
-					proxy : `${that.proxy.protocol}://${that.proxy.host}:${that.proxy.port}`
-				    });
-				}
 				var request = {
 					method: httpMethod,
-					url: url,
-                    			httpsAgent: httpsAgent,
+					url: url,	
+					httpsAgent: that.proxyAgent,
 					timeout: that.timeout,
 					params: that.serialize(queryParams)
 				};

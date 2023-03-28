@@ -6,8 +6,8 @@ declare module 'purecloud-platform-client-v2' {
 
 declare class ApiClientClass {
 	instance: ApiClientClass;
-	proxy: ProxyConfig;
 	config: Configuration;
+    private proxyAgent: any;
 
 	callApi(path: string, httpMethod: string, pathParams: { [key: string]: string; }, queryParams: { [key: string]: object; }, headerParams: { [key: string]: object; }, formParams: { [key: string]: object; }, bodyParam: any, authNames: Array<string>, contentTypes: Array<string>, accepts: Array<string>): Promise<any>;
 	loginClientCredentialsGrant(clientId: string, clientSecret: string): Promise<AuthData>;
@@ -20,6 +20,7 @@ declare class ApiClientClass {
 	setPersistSettings(doPersist: boolean, prefix?: string): void;
 	setReturnExtendedResponses(returnExtended: boolean): void;
 	setStorageKey(storageKey: string): void;
+	setProxyAgent(agent: any): void;
 }
 
 declare class LoginImplicitGrantOptions {
