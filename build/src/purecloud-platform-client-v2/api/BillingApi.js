@@ -5,7 +5,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 163.0.0
+	 * @version 164.0.0
 	 */
 
 	/**

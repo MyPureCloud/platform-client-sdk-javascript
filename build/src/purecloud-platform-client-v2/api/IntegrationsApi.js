@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 163.0.0
+	 * @version 164.0.0
 	 */
 
 	/**

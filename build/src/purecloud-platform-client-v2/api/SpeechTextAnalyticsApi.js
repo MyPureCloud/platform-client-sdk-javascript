@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 163.0.0
+	 * @version 164.0.0
 	 */
 
 	/**

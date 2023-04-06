@@ -839,6 +839,8 @@ docs/getOauthAuthorization-example.txt
 docs/getOauthAuthorizations-example.txt
 docs/getOauthClient-example.txt
 docs/getOauthClientUsageQueryResult-example.txt
+docs/getOauthClientUsageQueryResult-example.txt
+docs/getOauthClientUsageSummary-example.txt
 docs/getOauthClientUsageSummary-example.txt
 docs/getOauthClients-example.txt
 docs/getOauthScope-example.txt
@@ -1343,6 +1345,7 @@ docs/patchCoachingNotification-example.txt
 docs/patchConversationParticipant-example.txt
 docs/patchConversationParticipantAttributes-example.txt
 docs/patchConversationSecureattributes-example.txt
+docs/patchConversationsAftercallworkConversationIdParticipantCommunication-example.txt
 docs/patchConversationsCall-example.txt
 docs/patchConversationsCallParticipant-example.txt
 docs/patchConversationsCallParticipantAttributes-example.txt
@@ -1745,6 +1748,7 @@ docs/postMobiledevices-example.txt
 docs/postNotificationsChannelSubscriptions-example.txt
 docs/postNotificationsChannels-example.txt
 docs/postOauthClientSecret-example.txt
+docs/postOauthClientUsageQuery-example.txt
 docs/postOauthClientUsageQuery-example.txt
 docs/postOauthClients-example.txt
 docs/postOrgauthorizationPairings-example.txt

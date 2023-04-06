@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 163.0.0
+	 * @version 164.0.0
 	 */
 
 	/**
@@ -2572,6 +2572,46 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}/secureattributes', 
 			'PATCH', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update after-call work for this conversation communication.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body AfterCallWorkUpdate
+	 */
+	patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}', 
+			'PATCH', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
 			{  },
 			{  },
 			{  },

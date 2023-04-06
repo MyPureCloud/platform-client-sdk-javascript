@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 163.0.0
+	 * @version 164.0.0
 	 */
 
 	/**
@@ -91,7 +91,7 @@ class AuditApi {
 	 * @param {String} transactionId Transaction ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (default to 25)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getAuditsQueryTransactionIdResults(transactionId, opts) { 
