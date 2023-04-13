@@ -1117,8 +1117,6 @@ docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticPing-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticRoute-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticTracepath-example.txt
-docs/getTelephonyProvidersEdgeLine-example.txt
-docs/getTelephonyProvidersEdgeLines-example.txt
 docs/getTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/getTelephonyProvidersEdgeLogicalinterfaces-example.txt
 docs/getTelephonyProvidersEdgeLogsJob-example.txt
@@ -2135,7 +2133,6 @@ docs/putSpeechandtextanalyticsProgramTranscriptionengines-example.txt
 docs/putSpeechandtextanalyticsSettings-example.txt
 docs/putSpeechandtextanalyticsTopic-example.txt
 docs/putTelephonyProvidersEdge-example.txt
-docs/putTelephonyProvidersEdgeLine-example.txt
 docs/putTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/putTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/putTelephonyProvidersEdgesDid-example.txt

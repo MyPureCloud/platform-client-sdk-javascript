@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 164.0.0
+	 * @version 165.0.0
 	 */
 
 	/**
@@ -649,66 +649,6 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{ 'edgeId': edgeId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get line
-	 * 
-	 * @param {String} edgeId Edge ID
-	 * @param {String} lineId Line ID
-	 */
-	getTelephonyProvidersEdgeLine(edgeId, lineId) { 
-		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
-			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeLine';
-		}
-		// verify the required parameter 'lineId' is set
-		if (lineId === undefined || lineId === null) {
-			throw 'Missing the required parameter "lineId" when calling getTelephonyProvidersEdgeLine';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}', 
-			'GET', 
-			{ 'edgeId': edgeId,'lineId': lineId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of lines.
-	 * 
-	 * @param {String} edgeId Edge ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getTelephonyProvidersEdgeLines(edgeId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
-			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeLines';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/{edgeId}/lines', 
-			'GET', 
-			{ 'edgeId': edgeId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 
@@ -1555,7 +1495,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Value by which to sort (default to name)
-	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
+	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.
 	 */
 	getTelephonyProvidersEdgesLines(opts) { 
 		opts = opts || {};
@@ -3098,41 +3038,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/{edgeId}', 
 			'PUT', 
 			{ 'edgeId': edgeId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a line.
-	 * 
-	 * @param {String} edgeId Edge ID
-	 * @param {String} lineId Line ID
-	 * @param {Object} body Line
-	 */
-	putTelephonyProvidersEdgeLine(edgeId, lineId, body) { 
-		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
-			throw 'Missing the required parameter "edgeId" when calling putTelephonyProvidersEdgeLine';
-		}
-		// verify the required parameter 'lineId' is set
-		if (lineId === undefined || lineId === null) {
-			throw 'Missing the required parameter "lineId" when calling putTelephonyProvidersEdgeLine';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgeLine';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}', 
-			'PUT', 
-			{ 'edgeId': edgeId,'lineId': lineId },
 			{  },
 			{  },
 			{  },

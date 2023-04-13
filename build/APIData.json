@@ -31246,49 +31246,6 @@
     "return": "EdgeNetworkDiagnosticResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet edgeId = \"edgeId_example\"; // String | Edge Id\n\n// Get networking-related information from an Edge for a target IP or host.\napiInstance.getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdgeDiagnosticTracepath success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdgeDiagnosticTracepath\");\n    console.error(err);\n  });"
   },
-  "gettelephonyprovidersedgeline": {
-    "operationId": "gettelephonyprovidersedgeline",
-    "functionName": "getTelephonyProvidersEdgeLine",
-    "signature": "getTelephonyProvidersEdgeLine(edgeId, lineId)",
-    "parameters": [
-      {
-        "name": "edgeId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "lineId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "return": "EdgeLine",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet edgeId = \"edgeId_example\"; // String | Edge ID\nlet lineId = \"lineId_example\"; // String | Line ID\n\n// Get line\napiInstance.getTelephonyProvidersEdgeLine(edgeId, lineId)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdgeLine success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdgeLine\");\n    console.error(err);\n  });"
-  },
-  "gettelephonyprovidersedgelines": {
-    "operationId": "gettelephonyprovidersedgelines",
-    "functionName": "getTelephonyProvidersEdgeLines",
-    "signature": "getTelephonyProvidersEdgeLines(edgeId, pageSize, pageNumber)",
-    "parameters": [
-      {
-        "name": "edgeId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "pageSize",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "pageNumber",
-        "type": "Number",
-        "required": "false"
-      }
-    ],
-    "return": "EdgeLineEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet edgeId = \"edgeId_example\"; // String | Edge ID\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1 // Number | Page number\n};\n\n// Get the list of lines.\napiInstance.getTelephonyProvidersEdgeLines(edgeId, opts)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdgeLines success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdgeLines\");\n    console.error(err);\n  });"
-  },
   "gettelephonyprovidersedgelogicalinterface": {
     "operationId": "gettelephonyprovidersedgelogicalinterface",
     "functionName": "getTelephonyProvidersEdgeLogicalinterface",
@@ -31977,7 +31934,7 @@
       }
     ],
     "return": "LineEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"name\": \"name_example\", // String | Name\n  \"sortBy\": \"name\", // String | Value by which to sort\n  \"expand\": [\"expand_example\"] // [String] | Fields to expand in the response, comma-separated\n};\n\n// Get a list of Lines\napiInstance.getTelephonyProvidersEdgesLines(opts)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdgesLines success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdgesLines\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"name\": \"name_example\", // String | Name\n  \"sortBy\": \"name\", // String | Value by which to sort\n  \"expand\": [\"expand_example\"] // [String] | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.\n};\n\n// Get a list of Lines\napiInstance.getTelephonyProvidersEdgesLines(opts)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdgesLines success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdgesLines\");\n    console.error(err);\n  });"
   },
   "gettelephonyprovidersedgeslinestemplate": {
     "operationId": "gettelephonyprovidersedgeslinestemplate",
@@ -33125,30 +33082,6 @@
     "return": "Edge",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet edgeId = \"edgeId_example\"; // String | Edge ID\nlet body = {}; // Object | Edge\n\n// Update a edge.\napiInstance.putTelephonyProvidersEdge(edgeId, body)\n  .then((data) => {\n    console.log(`putTelephonyProvidersEdge success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putTelephonyProvidersEdge\");\n    console.error(err);\n  });"
   },
-  "puttelephonyprovidersedgeline": {
-    "operationId": "puttelephonyprovidersedgeline",
-    "functionName": "putTelephonyProvidersEdgeLine",
-    "signature": "putTelephonyProvidersEdgeLine(edgeId, lineId, body)",
-    "parameters": [
-      {
-        "name": "edgeId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "lineId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      }
-    ],
-    "return": "EdgeLine",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet edgeId = \"edgeId_example\"; // String | Edge ID\nlet lineId = \"lineId_example\"; // String | Line ID\nlet body = {}; // Object | Line\n\n// Update a line.\napiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)\n  .then((data) => {\n    console.log(`putTelephonyProvidersEdgeLine success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putTelephonyProvidersEdgeLine\");\n    console.error(err);\n  });"
-  },
   "puttelephonyprovidersedgelogicalinterface": {
     "operationId": "puttelephonyprovidersedgelogicalinterface",
     "functionName": "putTelephonyProvidersEdgeLogicalinterface",
@@ -34159,7 +34092,7 @@
   "getusersdevelopmentactivities": {
     "operationId": "getusersdevelopmentactivities",
     "functionName": "getUsersDevelopmentActivities",
-    "signature": "getUsersDevelopmentActivities(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
+    "signature": "getUsersDevelopmentActivities(userId, moduleId, interval, completionInterval, overdue, pass, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
     "parameters": [
       {
         "name": "userId",
@@ -34187,6 +34120,11 @@
         "required": "false"
       },
       {
+        "name": "pass",
+        "type": "String",
+        "required": "false"
+      },
+      {
         "name": "pageSize",
         "type": "Number",
         "required": "false"
@@ -34218,12 +34156,12 @@
       }
     ],
     "return": "DevelopmentActivityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet opts = { \n  \"userId\": [\"userId_example\"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.\n  \"moduleId\": \"moduleId_example\", // String | Specifies the ID of the learning module.\n  \"interval\": \"interval_example\", // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"completionInterval\": \"completionInterval_example\", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"overdue\": \"Any\", // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"Desc\", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)\n  \"types\": [\"types_example\"], // [String] | Specifies the activity types.\n  \"statuses\": [\"statuses_example\"], // [String] | Specifies the activity statuses to filter by\n  \"relationship\": [\"relationship_example\"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.\n};\n\n// Get list of Development Activities\napiInstance.getUsersDevelopmentActivities(opts)\n  .then((data) => {\n    console.log(`getUsersDevelopmentActivities success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUsersDevelopmentActivities\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet opts = { \n  \"userId\": [\"userId_example\"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.\n  \"moduleId\": \"moduleId_example\", // String | Specifies the ID of the learning module.\n  \"interval\": \"interval_example\", // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"completionInterval\": \"completionInterval_example\", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"overdue\": \"Any\", // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned\n  \"pass\": \"Any\", // String | Specifies if only the failed (pass is False) or passed (pass is True) activities are returned. If pass is Any or if the pass parameter is not supplied, all activities are returned\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"Desc\", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)\n  \"types\": [\"types_example\"], // [String] | Specifies the activity types.\n  \"statuses\": [\"statuses_example\"], // [String] | Specifies the activity statuses to filter by\n  \"relationship\": [\"relationship_example\"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.\n};\n\n// Get list of Development Activities\napiInstance.getUsersDevelopmentActivities(opts)\n  .then((data) => {\n    console.log(`getUsersDevelopmentActivities success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUsersDevelopmentActivities\");\n    console.error(err);\n  });"
   },
   "getusersdevelopmentactivitiesme": {
     "operationId": "getusersdevelopmentactivitiesme",
     "functionName": "getUsersDevelopmentActivitiesMe",
-    "signature": "getUsersDevelopmentActivitiesMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
+    "signature": "getUsersDevelopmentActivitiesMe(moduleId, interval, completionInterval, overdue, pass, pageSize, pageNumber, sortOrder, types, statuses, relationship)",
     "parameters": [
       {
         "name": "moduleId",
@@ -34246,6 +34184,11 @@
         "required": "false"
       },
       {
+        "name": "pass",
+        "type": "String",
+        "required": "false"
+      },
+      {
         "name": "pageSize",
         "type": "Number",
         "required": "false"
@@ -34277,7 +34220,7 @@
       }
     ],
     "return": "DevelopmentActivityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet opts = { \n  \"moduleId\": \"moduleId_example\", // String | Specifies the ID of the learning module.\n  \"interval\": \"interval_example\", // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"completionInterval\": \"completionInterval_example\", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"overdue\": \"Any\", // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"Desc\", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)\n  \"types\": [\"types_example\"], // [String] | Specifies the activity types.\n  \"statuses\": [\"statuses_example\"], // [String] | Specifies the activity statuses to filter by\n  \"relationship\": [\"relationship_example\"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.\n};\n\n// Get list of Development Activities for current user\napiInstance.getUsersDevelopmentActivitiesMe(opts)\n  .then((data) => {\n    console.log(`getUsersDevelopmentActivitiesMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUsersDevelopmentActivitiesMe\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet opts = { \n  \"moduleId\": \"moduleId_example\", // String | Specifies the ID of the learning module.\n  \"interval\": \"interval_example\", // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"completionInterval\": \"completionInterval_example\", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"overdue\": \"Any\", // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned\n  \"pass\": \"Any\", // String | Specifies if only the failed (pass is False) or passed (pass is True) activities are returned. If pass is Any or if the pass parameter is not supplied, all activities are returned\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"Desc\", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)\n  \"types\": [\"types_example\"], // [String] | Specifies the activity types.\n  \"statuses\": [\"statuses_example\"], // [String] | Specifies the activity statuses to filter by\n  \"relationship\": [\"relationship_example\"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.\n};\n\n// Get list of Development Activities for current user\napiInstance.getUsersDevelopmentActivitiesMe(opts)\n  .then((data) => {\n    console.log(`getUsersDevelopmentActivitiesMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUsersDevelopmentActivitiesMe\");\n    console.error(err);\n  });"
   },
   "getusersdevelopmentactivity": {
     "operationId": "getusersdevelopmentactivity",

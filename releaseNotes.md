@@ -1,154 +1,59 @@
-Platform API version: 6814
+Platform API version: 6826
 
 
-# Major Changes (10 changes)
+# Major Changes (6 changes)
 
-**POST /api/v2/oauth/clients/{clientId}/usage/query** (1 change)
+**/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}** (1 change)
 
-* Tag Usage was added
+* Path /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId} was removed
 
-**GET /api/v2/oauth/clients/{clientId}/usage/summary** (1 change)
+**/api/v2/telephony/providers/edges/{edgeId}/lines** (1 change)
 
-* Tag Usage was added
+* Path /api/v2/telephony/providers/edges/{edgeId}/lines was removed
 
-**GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}** (1 change)
+**GET /api/v2/users/development/activities/me** (1 change)
 
-* Tag Usage was added
+* Parameter pass was added
 
-**GET /api/v2/routing/wrapupcodes** (1 change)
+**GET /api/v2/users/development/activities** (1 change)
 
-* Parameter id was added
+* Parameter pass was added
 
-**ExtendedWrapup** (1 change)
+**EdgeLine** (1 change)
 
-* Model ExtendedWrapup was removed
+* Model EdgeLine was removed
 
-**JourneyAggregateQueryPredicate** (2 changes)
+**EdgeLineEntityListing** (1 change)
 
-* Enum value journeyCustomerId was removed from property dimension
-* Enum value journeyCustomerIdType was removed from property dimension
+* Model EdgeLineEntityListing was removed
 
-**JourneyAggregationQuery** (2 changes)
 
-* Enum value journeyCustomerId was removed from property groupBy
-* Enum value journeyCustomerIdType was removed from property groupBy
+# Minor Changes (6 changes)
 
-**MediaParticipantRequest** (1 change)
+**EventMessage** (1 change)
 
-* Property wrapup was changed from ExtendedWrapup to WrapupInput
+* Enum value CAMPAIGN_INVALIDATED was added to property code
 
+**DevelopmentActivity** (2 changes)
 
-# Minor Changes (37 changes)
+* Optional property isModuleArchived was added
+* Optional property archivalMode was added
 
-**/api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}** (2 changes)
+**LearningAssignment** (1 change)
 
-* Path was added
-* Operation PATCH was added
+* Optional property isLatest was added
 
-**AnalyticsEvaluation** (1 change)
+**LearningModule** (1 change)
 
-* Optional property assigneeId was added
+* Optional property reassignSummaryData was added
 
-**EvaluationDetailQueryPredicate** (1 change)
+**AssignedLearningModule** (1 change)
 
-* Enum value assigneeId was added to property dimension
-
-**ViewFilter** (4 changes)
-
-* Optional property isAnalyzedForSensitiveData was added
-* Optional property hasSensitiveData was added
-* Optional property subPath was added
-* Optional property userState was added
-
-**AuditLogMessage** (4 changes)
-
-* Enum value Grammar was added to property entityType
-* Enum value GrammarLanguage was added to property entityType
-* Enum value SkillGroupDefinition was added to property entityType
-* Enum value StaffingGroup was added to property entityType
-
-**EntityChange** (4 changes)
-
-* Enum value Grammar was added to property entityType
-* Enum value GrammarLanguage was added to property entityType
-* Enum value SkillGroupDefinition was added to property entityType
-* Enum value StaffingGroup was added to property entityType
-
-**AuditQueryEntity** (4 changes)
-
-* Enum value Grammar was added to property name
-* Enum value GrammarLanguage was added to property name
-* Enum value SkillGroupDefinition was added to property name
-* Enum value StaffingGroup was added to property name
-
-**UserReferenceWithName** (1 change)
-
-* id is no longer readonly
-
-**Evaluation** (1 change)
-
-* Optional property assigned was added
-
-**EvaluationReference** (1 change)
-
-* Model was added
-
-**Message** (1 change)
-
-* Optional property byoSmsIntegrationId was added
-
-**AfterCallWorkUpdate** (1 change)
-
-* Model was added
-
-**WrapupInput** (1 change)
-
-* Model was added
-
-**ConversationNormalizedMessage** (1 change)
-
-* Optional property byoSmsIntegrationId was added
-
-**MessageMediaParticipant** (1 change)
-
-* Optional property monitoredParticipantId was added
-
-**DigitalCondition** (1 change)
-
-* Optional property dataActionConditionSettings was added
-
-**OrganizationPresenceDefinition** (1 change)
-
-* Model was added
-
-**EvaluationResponse** (1 change)
-
-* Optional property assigned was added
-
-**UserMe** (1 change)
-
-* Optional property divisionedPresenceDefinitions was added
-
-**FileUploadSettings** (2 changes)
-
-* Optional property enableAttachments was added
-* Optional property useSupportedContentProfile was added
-
-**SupportedContentProfile** (1 change)
-
-* Model was added
-
-**WebDeployment** (1 change)
-
-* Optional property supportedContentProfile was added
-
-**ExpandableWebDeployment** (1 change)
-
-* Optional property supportedContentProfile was added
+* Optional property reassignSummaryData was added
 
 
 # Point Changes (1 change)
 
-**GET /api/v2/audits/query/{transactionId}/results** (1 change)
+**GET /api/v2/telephony/providers/edges/lines** (1 change)
 
-* Description was changed for parameter pageSize
+* Description was changed for parameter expand
