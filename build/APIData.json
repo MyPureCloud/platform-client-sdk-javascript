@@ -15381,7 +15381,7 @@
       }
     ],
     "return": "KnowledgeGuestDocumentResponseListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet opts = { \n  \"categoryId\": [\"categoryId_example\"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.\n  \"pageSize\": 10 // Number | Number of entities to return. Maximum of 200.\n};\n\n// Get documents.\napiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeGuestSessionDocuments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeGuestSessionDocuments\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet opts = { \n  \"categoryId\": [\"categoryId_example\"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.\n  \"pageSize\": 3.4 // Number | Number of entities to return. Maximum of 200.\n};\n\n// Get documents.\napiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeGuestSessionDocuments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeGuestSessionDocuments\");\n    console.error(err);\n  });"
   },
   "getknowledgeknowledgebase": {
     "operationId": "getknowledgeknowledgebase",
@@ -27580,7 +27580,7 @@
   "getroutingsmsphonenumbers": {
     "operationId": "getroutingsmsphonenumbers",
     "functionName": "getRoutingSmsPhonenumbers",
-    "signature": "getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language)",
+    "signature": "getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId)",
     "parameters": [
       {
         "name": "phoneNumber",
@@ -27626,10 +27626,15 @@
         "name": "language",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "integrationId",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "SmsPhoneNumberEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"phoneNumber\": \"phoneNumber_example\", // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.\n  \"phoneNumberType\": [\"phoneNumberType_example\"], // [String] | Filter on phone number type\n  \"phoneNumberStatus\": [\"phoneNumberStatus_example\"], // [String] | Filter on phone number status\n  \"countryCode\": [\"countryCode_example\"], // [String] | Filter on country code\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortBy\": \"sortBy_example\", // String | Optional field to sort results\n  \"sortOrder\": \"sortOrder_example\", // String | Sort order\n  \"language\": en-US // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations\n};\n\n// Get a list of provisioned phone numbers.\napiInstance.getRoutingSmsPhonenumbers(opts)\n  .then((data) => {\n    console.log(`getRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingSmsPhonenumbers\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"phoneNumber\": \"phoneNumber_example\", // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.\n  \"phoneNumberType\": [\"phoneNumberType_example\"], // [String] | Filter on phone number type\n  \"phoneNumberStatus\": [\"phoneNumberStatus_example\"], // [String] | Filter on phone number status\n  \"countryCode\": [\"countryCode_example\"], // [String] | Filter on country code\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortBy\": \"sortBy_example\", // String | Optional field to sort results\n  \"sortOrder\": \"sortOrder_example\", // String | Sort order\n  \"language\": en-US, // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations\n  \"integrationId\": \"integrationId_example\" // String | Filter on the Genesys Cloud integration id to which the phone number belongs to\n};\n\n// Get a list of provisioned phone numbers.\napiInstance.getRoutingSmsPhonenumbers(opts)\n  .then((data) => {\n    console.log(`getRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingSmsPhonenumbers\");\n    console.error(err);\n  });"
   },
   "getroutinguserutilization": {
     "operationId": "getroutinguserutilization",
@@ -31036,141 +31041,6 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet trunkBaseSettingsId = \"trunkBaseSettingsId_example\"; // String | Trunk Base ID\n\n// Delete a Trunk Base Settings object by ID\napiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)\n  .then(() => {\n    console.log(\"deleteTelephonyProvidersEdgesTrunkbasesetting returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteTelephonyProvidersEdgesTrunkbasesetting\");\n    console.error(err);\n  });"
   },
-  "getconfigurationschemasedgesvnext": {
-    "operationId": "getconfigurationschemasedgesvnext",
-    "functionName": "getConfigurationSchemasEdgesVnext",
-    "signature": "getConfigurationSchemasEdgesVnext(pageSize, pageNumber)",
-    "parameters": [
-      {
-        "name": "pageSize",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "pageNumber",
-        "type": "Number",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaCategoryEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1 // Number | Page number\n};\n\n// Lists available schema categories (Deprecated)\napiInstance.getConfigurationSchemasEdgesVnext(opts)\n  .then((data) => {\n    console.log(`getConfigurationSchemasEdgesVnext success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConfigurationSchemasEdgesVnext\");\n    console.error(err);\n  });"
-  },
-  "getconfigurationschemasedgesvnextschemacategory": {
-    "operationId": "getconfigurationschemasedgesvnextschemacategory",
-    "functionName": "getConfigurationSchemasEdgesVnextSchemaCategory",
-    "signature": "getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, pageSize, pageNumber)",
-    "parameters": [
-      {
-        "name": "schemaCategory",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "pageSize",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "pageNumber",
-        "type": "Number",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaReferenceEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet schemaCategory = \"schemaCategory_example\"; // String | Schema category\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1 // Number | Page number\n};\n\n// List schemas of a specific category (Deprecated)\napiInstance.getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts)\n  .then((data) => {\n    console.log(`getConfigurationSchemasEdgesVnextSchemaCategory success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategory\");\n    console.error(err);\n  });"
-  },
-  "getconfigurationschemasedgesvnextschemacategoryschematype": {
-    "operationId": "getconfigurationschemasedgesvnextschemacategoryschematype",
-    "functionName": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaType",
-    "signature": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, pageSize, pageNumber)",
-    "parameters": [
-      {
-        "name": "schemaCategory",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaType",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "pageSize",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "pageNumber",
-        "type": "Number",
-        "required": "false"
-      }
-    ],
-    "return": "SchemaReferenceEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet schemaCategory = \"schemaCategory_example\"; // String | Schema category\nlet schemaType = \"schemaType_example\"; // String | Schema type\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1 // Number | Page number\n};\n\n// List schemas of a specific category (Deprecated)\napiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, opts)\n  .then((data) => {\n    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaType success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType\");\n    console.error(err);\n  });"
-  },
-  "getconfigurationschemasedgesvnextschemacategoryschematypeschemaid": {
-    "operationId": "getconfigurationschemasedgesvnextschemacategoryschematypeschemaid",
-    "functionName": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId",
-    "signature": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId)",
-    "parameters": [
-      {
-        "name": "schemaCategory",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaType",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "return": "Organization",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet schemaCategory = \"schemaCategory_example\"; // String | Schema category\nlet schemaType = \"schemaType_example\"; // String | Schema type\nlet schemaId = \"schemaId_example\"; // String | Schema ID\n\n// Get a json schema (Deprecated)\napiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId)\n  .then((data) => {\n    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId\");\n    console.error(err);\n  });"
-  },
-  "getconfigurationschemasedgesvnextschemacategoryschematypeschemaidextensiontypemetadataid": {
-    "operationId": "getconfigurationschemasedgesvnextschemacategoryschematypeschemaidextensiontypemetadataid",
-    "functionName": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId",
-    "signature": "getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, type)",
-    "parameters": [
-      {
-        "name": "schemaCategory",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaType",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "schemaId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "extensionType",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "metadataId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "type",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "Organization",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet schemaCategory = \"schemaCategory_example\"; // String | Schema category\nlet schemaType = \"schemaType_example\"; // String | Schema type\nlet schemaId = \"schemaId_example\"; // String | Schema ID\nlet extensionType = \"extensionType_example\"; // String | extension\nlet metadataId = \"metadataId_example\"; // String | Metadata ID\nlet opts = { \n  \"type\": \"type_example\" // String | Type\n};\n\n// Get metadata for a schema (Deprecated)\napiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, opts)\n  .then((data) => {\n    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId\");\n    console.error(err);\n  });"
-  },
   "gettelephonyprovidersedge": {
     "operationId": "gettelephonyprovidersedge",
     "functionName": "getTelephonyProvidersEdge",
@@ -33125,25 +32995,6 @@
     "return": "DomainCertificateAuthority",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet certificateId = \"certificateId_example\"; // String | Certificate ID\nlet body = {}; // Object | Certificate authority\n\n// Update a certificate authority.\napiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)\n  .then((data) => {\n    console.log(`putTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putTelephonyProvidersEdgesCertificateauthority\");\n    console.error(err);\n  });"
   },
-  "puttelephonyprovidersedgesdid": {
-    "operationId": "puttelephonyprovidersedgesdid",
-    "functionName": "putTelephonyProvidersEdgesDid",
-    "signature": "putTelephonyProvidersEdgesDid(didId, body)",
-    "parameters": [
-      {
-        "name": "didId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      }
-    ],
-    "return": "DID",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet didId = \"didId_example\"; // String | DID ID\nlet body = {}; // Object | DID\n\n// Update a DID by ID.\napiInstance.putTelephonyProvidersEdgesDid(didId, body)\n  .then((data) => {\n    console.log(`putTelephonyProvidersEdgesDid success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putTelephonyProvidersEdgesDid\");\n    console.error(err);\n  });"
-  },
   "puttelephonyprovidersedgesdidpool": {
     "operationId": "puttelephonyprovidersedgesdidpool",
     "functionName": "putTelephonyProvidersEdgesDidpool",
@@ -33205,25 +33056,6 @@
     ],
     "return": "EdgeTrunkBase",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet edgegroupId = \"edgegroupId_example\"; // String | Edge Group ID\nlet edgetrunkbaseId = \"edgetrunkbaseId_example\"; // String | Edge Trunk Base ID\nlet body = {}; // Object | EdgeTrunkBase\n\n// Update the edge trunk base associated with the edge group\napiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)\n  .then((data) => {\n    console.log(`putTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase\");\n    console.error(err);\n  });"
-  },
-  "puttelephonyprovidersedgesextension": {
-    "operationId": "puttelephonyprovidersedgesextension",
-    "functionName": "putTelephonyProvidersEdgesExtension",
-    "signature": "putTelephonyProvidersEdgesExtension(extensionId, body)",
-    "parameters": [
-      {
-        "name": "extensionId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      }
-    ],
-    "return": "Extension",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet extensionId = \"extensionId_example\"; // String | Extension ID\nlet body = {}; // Object | Extension\n\n// Update an extension by ID.\napiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)\n  .then((data) => {\n    console.log(`putTelephonyProvidersEdgesExtension success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putTelephonyProvidersEdgesExtension\");\n    console.error(err);\n  });"
   },
   "puttelephonyprovidersedgesextensionpool": {
     "operationId": "puttelephonyprovidersedgesextensionpool",

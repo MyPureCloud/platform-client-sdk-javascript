@@ -466,11 +466,6 @@ docs/getCoachingAppointments-example.txt
 docs/getCoachingAppointmentsMe-example.txt
 docs/getCoachingNotification-example.txt
 docs/getCoachingNotifications-example.txt
-docs/getConfigurationSchemasEdgesVnext-example.txt
-docs/getConfigurationSchemasEdgesVnextSchemaCategory-example.txt
-docs/getConfigurationSchemasEdgesVnextSchemaCategorySchemaType-example.txt
-docs/getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId-example.txt
-docs/getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId-example.txt
 docs/getContentmanagementDocument-example.txt
 docs/getContentmanagementDocumentAudits-example.txt
 docs/getContentmanagementDocumentContent-example.txt
@@ -2135,11 +2130,9 @@ docs/putSpeechandtextanalyticsTopic-example.txt
 docs/putTelephonyProvidersEdge-example.txt
 docs/putTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/putTelephonyProvidersEdgesCertificateauthority-example.txt
-docs/putTelephonyProvidersEdgesDid-example.txt
 docs/putTelephonyProvidersEdgesDidpool-example.txt
 docs/putTelephonyProvidersEdgesEdgegroup-example.txt
 docs/putTelephonyProvidersEdgesEdgegroupEdgetrunkbase-example.txt
-docs/putTelephonyProvidersEdgesExtension-example.txt
 docs/putTelephonyProvidersEdgesExtensionpool-example.txt
 docs/putTelephonyProvidersEdgesOutboundroute-example.txt
 docs/putTelephonyProvidersEdgesPhone-example.txt

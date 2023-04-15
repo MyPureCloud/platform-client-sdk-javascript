@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 165.0.0
+	 * @version 166.0.0
 	 */
 
 	/**
@@ -346,180 +346,6 @@ class TelephonyProvidersEdgeApi {
 			'DELETE', 
 			{ 'trunkBaseSettingsId': trunkBaseSettingsId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Lists available schema categories (Deprecated)
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getConfigurationSchemasEdgesVnext(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/configuration/schemas/edges/vnext', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * List schemas of a specific category (Deprecated)
-	 * 
-	 * @param {String} schemaCategory Schema category
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'schemaCategory' is set
-		if (schemaCategory === undefined || schemaCategory === null) {
-			throw 'Missing the required parameter "schemaCategory" when calling getConfigurationSchemasEdgesVnextSchemaCategory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/configuration/schemas/edges/vnext/{schemaCategory}', 
-			'GET', 
-			{ 'schemaCategory': schemaCategory },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * List schemas of a specific category (Deprecated)
-	 * 
-	 * @param {String} schemaCategory Schema category
-	 * @param {String} schemaType Schema type
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'schemaCategory' is set
-		if (schemaCategory === undefined || schemaCategory === null) {
-			throw 'Missing the required parameter "schemaCategory" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType';
-		}
-		// verify the required parameter 'schemaType' is set
-		if (schemaType === undefined || schemaType === null) {
-			throw 'Missing the required parameter "schemaType" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}', 
-			'GET', 
-			{ 'schemaCategory': schemaCategory,'schemaType': schemaType },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a json schema (Deprecated)
-	 * 
-	 * @param {String} schemaCategory Schema category
-	 * @param {String} schemaType Schema type
-	 * @param {String} schemaId Schema ID
-	 */
-	getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId) { 
-		// verify the required parameter 'schemaCategory' is set
-		if (schemaCategory === undefined || schemaCategory === null) {
-			throw 'Missing the required parameter "schemaCategory" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId';
-		}
-		// verify the required parameter 'schemaType' is set
-		if (schemaType === undefined || schemaType === null) {
-			throw 'Missing the required parameter "schemaType" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId';
-		}
-		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}', 
-			'GET', 
-			{ 'schemaCategory': schemaCategory,'schemaType': schemaType,'schemaId': schemaId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get metadata for a schema (Deprecated)
-	 * 
-	 * @param {String} schemaCategory Schema category
-	 * @param {String} schemaType Schema type
-	 * @param {String} schemaId Schema ID
-	 * @param {String} extensionType extension
-	 * @param {String} metadataId Metadata ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.type Type
-	 */
-	getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'schemaCategory' is set
-		if (schemaCategory === undefined || schemaCategory === null) {
-			throw 'Missing the required parameter "schemaCategory" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId';
-		}
-		// verify the required parameter 'schemaType' is set
-		if (schemaType === undefined || schemaType === null) {
-			throw 'Missing the required parameter "schemaType" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId';
-		}
-		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId';
-		}
-		// verify the required parameter 'extensionType' is set
-		if (extensionType === undefined || extensionType === null) {
-			throw 'Missing the required parameter "extensionType" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId';
-		}
-		// verify the required parameter 'metadataId' is set
-		if (metadataId === undefined || metadataId === null) {
-			throw 'Missing the required parameter "metadataId" when calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}', 
-			'GET', 
-			{ 'schemaCategory': schemaCategory,'schemaType': schemaType,'schemaId': schemaId,'extensionType': extensionType,'metadataId': metadataId },
-			{ 'type': opts['type'] },
 			{  },
 			{  },
 			null, 
@@ -3114,36 +2940,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Update a DID by ID.
-	 * 
-	 * @param {String} didId DID ID
-	 * @param {Object} body DID
-	 */
-	putTelephonyProvidersEdgesDid(didId, body) { 
-		// verify the required parameter 'didId' is set
-		if (didId === undefined || didId === null) {
-			throw 'Missing the required parameter "didId" when calling putTelephonyProvidersEdgesDid';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesDid';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/dids/{didId}', 
-			'PUT', 
-			{ 'didId': didId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a DID Pool by ID.
 	 * 
 	 * @param {String} didPoolId DID pool ID
@@ -3228,36 +3024,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}', 
 			'PUT', 
 			{ 'edgegroupId': edgegroupId,'edgetrunkbaseId': edgetrunkbaseId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an extension by ID.
-	 * 
-	 * @param {String} extensionId Extension ID
-	 * @param {Object} body Extension
-	 */
-	putTelephonyProvidersEdgesExtension(extensionId, body) { 
-		// verify the required parameter 'extensionId' is set
-		if (extensionId === undefined || extensionId === null) {
-			throw 'Missing the required parameter "extensionId" when calling putTelephonyProvidersEdgesExtension';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesExtension';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/extensions/{extensionId}', 
-			'PUT', 
-			{ 'extensionId': extensionId },
 			{  },
 			{  },
 			{  },

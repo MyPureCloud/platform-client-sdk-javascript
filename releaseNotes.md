@@ -1,59 +1,91 @@
-Platform API version: 6826
+Platform API version: 6843
 
 
-# Major Changes (6 changes)
+# Major Changes (12 changes)
 
-**/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}** (1 change)
+**/api/v2/configuration/schemas/edges/vnext** (1 change)
 
-* Path /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId} was removed
+* Path /api/v2/configuration/schemas/edges/vnext was removed
 
-**/api/v2/telephony/providers/edges/{edgeId}/lines** (1 change)
+**/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}** (1 change)
 
-* Path /api/v2/telephony/providers/edges/{edgeId}/lines was removed
+* Path /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId} was removed
 
-**GET /api/v2/users/development/activities/me** (1 change)
+**/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}** (1 change)
 
-* Parameter pass was added
+* Path /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId} was removed
 
-**GET /api/v2/users/development/activities** (1 change)
+**/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}** (1 change)
 
-* Parameter pass was added
+* Path /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType} was removed
 
-**EdgeLine** (1 change)
+**/api/v2/configuration/schemas/edges/vnext/{schemaCategory}** (1 change)
 
-* Model EdgeLine was removed
+* Path /api/v2/configuration/schemas/edges/vnext/{schemaCategory} was removed
 
-**EdgeLineEntityListing** (1 change)
+**GET /api/v2/routing/sms/phonenumbers** (1 change)
 
-* Model EdgeLineEntityListing was removed
+* Parameter integration.id was added
+
+**/api/v2/telephony/providers/edges/dids/{didId}** (1 change)
+
+* Operation PUT was removed
+
+**/api/v2/telephony/providers/edges/extensions/{extensionId}** (1 change)
+
+* Operation PUT was removed
+
+**SchemaCategory** (1 change)
+
+* Model SchemaCategory was removed
+
+**SchemaCategoryEntityListing** (1 change)
+
+* Model SchemaCategoryEntityListing was removed
+
+**DomainSchemaReference** (1 change)
+
+* Model DomainSchemaReference was removed
+
+**SchemaReferenceEntityListing** (1 change)
+
+* Model SchemaReferenceEntityListing was removed
 
 
-# Minor Changes (6 changes)
+# Minor Changes (12 changes)
 
-**EventMessage** (1 change)
+**AnalyticsSession** (3 changes)
 
-* Enum value CAMPAIGN_INVALIDATED was added to property code
+* Optional property cleared was added
+* Enum value Direct was added to property requestedRoutings
+* Enum value Direct was added to property usedRouting
 
-**DevelopmentActivity** (2 changes)
+**ConversationAggregateQueryPredicate** (1 change)
 
-* Optional property isModuleArchived was added
-* Optional property archivalMode was added
+* Enum value canonicalExternalContactId was added to property dimension
 
-**LearningAssignment** (1 change)
+**SegmentDetailQueryPredicate** (2 changes)
 
-* Optional property isLatest was added
+* Enum value canonicalExternalContactId was added to property dimension
+* Enum value cleared was added to property dimension
 
-**LearningModule** (1 change)
+**FlowAggregateQueryPredicate** (1 change)
 
-* Optional property reassignSummaryData was added
+* Enum value canonicalExternalContactId was added to property dimension
 
-**AssignedLearningModule** (1 change)
+**ObservationValue** (2 changes)
 
-* Optional property reassignSummaryData was added
+* Enum value Direct was added to property requestedRoutings
+* Enum value Direct was added to property usedRouting
+
+**ViewFilter** (2 changes)
+
+* Enum value Direct was added to property usedRoutingTypes
+* Enum value Direct was added to property requestedRoutingTypes
+
+**ReviewAssessmentResults** (1 change)
+
+* Model was added
 
 
-# Point Changes (1 change)
-
-**GET /api/v2/telephony/providers/edges/lines** (1 change)
-
-* Description was changed for parameter expand
+# Point Changes (0 changes)

@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 165.0.0
+	 * @version 166.0.0
 	 */
 
 	/**
@@ -408,7 +408,7 @@ class KnowledgeApi {
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.categoryId If specified, retrieves documents associated with category ids, comma separated values expected.
-	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 10)
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200.
 	 */
 	getKnowledgeGuestSessionDocuments(sessionId, opts) { 
 		opts = opts || {};

@@ -100,7 +100,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 165.0.0
+ * @version 166.0.0
  */
 class platformClient {
 	constructor() {
