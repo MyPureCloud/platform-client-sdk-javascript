@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 166.0.0
+	 * @version 167.0.0
 	 */
 
 	/**
@@ -86,6 +86,420 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get insights summary
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortKey Sort key
+	 * @param {String} opts.sortMetricId Sort Metric Id
+	 * @param {Object} opts.sortOrder Sort order (default to asc)
+	 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
+	 */
+	getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsights';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsights';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsights';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsights';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsights';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortKey': opts['sortKey'],'sortMetricId': opts['sortMetricId'],'sortOrder': opts['sortOrder'],'userIds': opts['userIds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get insights details for the current user
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday) { 
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsDetails';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsDetails';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsDetails';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsDetails';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsDetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/details', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get insights overall trend for the current user
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsGroupsTrends';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsGroupsTrends';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsGroupsTrends';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsGroupsTrends';
+		}
+		// verify the required parameter 'comparativePeriodEndWorkday' is set
+		if (comparativePeriodEndWorkday === undefined || comparativePeriodEndWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodEndWorkday" when calling getGamificationInsightsGroupsTrends';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsGroupsTrends';
+		}
+		// verify the required parameter 'primaryPeriodEndWorkday' is set
+		if (primaryPeriodEndWorkday === undefined || primaryPeriodEndWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodEndWorkday" when calling getGamificationInsightsGroupsTrends';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/groups/trends', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get insights overall trend
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsGroupsTrendsAll';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsGroupsTrendsAll';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsGroupsTrendsAll';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsGroupsTrendsAll';
+		}
+		// verify the required parameter 'comparativePeriodEndWorkday' is set
+		if (comparativePeriodEndWorkday === undefined || comparativePeriodEndWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodEndWorkday" when calling getGamificationInsightsGroupsTrendsAll';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsGroupsTrendsAll';
+		}
+		// verify the required parameter 'primaryPeriodEndWorkday' is set
+		if (primaryPeriodEndWorkday === undefined || primaryPeriodEndWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodEndWorkday" when calling getGamificationInsightsGroupsTrendsAll';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/groups/trends/all', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query users in a profile during a period of time
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday) { 
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsMembers';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsMembers';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsMembers';
+		}
+		// verify the required parameter 'startWorkday' is set
+		if (startWorkday === undefined || startWorkday === null) {
+			throw 'Missing the required parameter "startWorkday" when calling getGamificationInsightsMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/members', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'startWorkday': startWorkday },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get insights user trend for the current user
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsTrends';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsTrends';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsTrends';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsTrends';
+		}
+		// verify the required parameter 'comparativePeriodEndWorkday' is set
+		if (comparativePeriodEndWorkday === undefined || comparativePeriodEndWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodEndWorkday" when calling getGamificationInsightsTrends';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsTrends';
+		}
+		// verify the required parameter 'primaryPeriodEndWorkday' is set
+		if (primaryPeriodEndWorkday === undefined || primaryPeriodEndWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodEndWorkday" when calling getGamificationInsightsTrends';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/trends', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get insights details for the user
+	 * 
+	 * @param {String} userId The ID of a user.
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getGamificationInsightsUserDetails';
+		}
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsUserDetails';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsUserDetails';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsUserDetails';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsUserDetails';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsUserDetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/users/{userId}/details', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get insights user trend for the user
+	 * 
+	 * @param {String} userId The ID of a user.
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getGamificationInsightsUserTrends';
+		}
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsUserTrends';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsUserTrends';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsUserTrends';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsUserTrends';
+		}
+		// verify the required parameter 'comparativePeriodEndWorkday' is set
+		if (comparativePeriodEndWorkday === undefined || comparativePeriodEndWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodEndWorkday" when calling getGamificationInsightsUserTrends';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsUserTrends';
+		}
+		// verify the required parameter 'primaryPeriodEndWorkday' is set
+		if (primaryPeriodEndWorkday === undefined || primaryPeriodEndWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodEndWorkday" when calling getGamificationInsightsUserTrends';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/users/{userId}/trends', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
 			{  },
 			{  },
 			null, 
@@ -1518,6 +1932,61 @@ class GamificationApi {
 			'POST', 
 			{  },
 			{ 'copyMetrics': opts['copyMetrics'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query performance profiles in date range for a user
+	 * 
+	 * @param {String} userId The ID of a user.
+	 * @param {Object} body The date range of work day.
+	 */
+	postGamificationProfilesUserQuery(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postGamificationProfilesUserQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationProfilesUserQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/users/{userId}/query', 
+			'POST', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query performance profiles in date range for the current user
+	 * 
+	 * @param {Object} body The date range of work day.
+	 */
+	postGamificationProfilesUsersMeQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationProfilesUsersMeQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/users/me/query', 
+			'POST', 
+			{  },
+			{  },
 			{  },
 			{  },
 			body, 

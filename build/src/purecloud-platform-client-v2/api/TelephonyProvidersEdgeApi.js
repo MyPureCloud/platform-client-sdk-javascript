@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 166.0.0
+	 * @version 167.0.0
 	 */
 
 	/**
@@ -190,31 +190,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}', 
 			'DELETE', 
 			{ 'extensionPoolId': extensionPoolId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete Outbound Route
-	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-	 * @param {String} outboundRouteId Outbound route ID
-	 */
-	deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
-		// verify the required parameter 'outboundRouteId' is set
-		if (outboundRouteId === undefined || outboundRouteId === null) {
-			throw 'Missing the required parameter "outboundRouteId" when calling deleteTelephonyProvidersEdgesOutboundroute';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}', 
-			'DELETE', 
-			{ 'outboundRouteId': outboundRouteId },
 			{  },
 			{  },
 			{  },
@@ -2640,31 +2615,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Create outbound rule
-	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
-	 * @param {Object} body OutboundRoute
-	 */
-	postTelephonyProvidersEdgesOutboundroutes(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesOutboundroutes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/outboundroutes', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Reboot a Phone
 	 * 
 	 * @param {String} phoneId Phone Id
@@ -3054,36 +3004,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}', 
 			'PUT', 
 			{ 'extensionPoolId': extensionPoolId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update outbound route
-	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-	 * @param {String} outboundRouteId Outbound route ID
-	 * @param {Object} body OutboundRoute
-	 */
-	putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body) { 
-		// verify the required parameter 'outboundRouteId' is set
-		if (outboundRouteId === undefined || outboundRouteId === null) {
-			throw 'Missing the required parameter "outboundRouteId" when calling putTelephonyProvidersEdgesOutboundroute';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesOutboundroute';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}', 
-			'PUT', 
-			{ 'outboundRouteId': outboundRouteId },
 			{  },
 			{  },
 			{  },

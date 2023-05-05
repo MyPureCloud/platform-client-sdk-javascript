@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesDidpool) | **DELETE** /api/v2/telephony/providers/edges/didpools/{didPoolId} | Delete a DID Pool by ID.
 [**deleteTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesEdgegroup) | **DELETE** /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} | Delete an edge group.
 [**deleteTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesExtensionpool) | **DELETE** /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} | Delete an extension pool by ID
-[**deleteTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesOutboundroute) | **DELETE** /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} | Delete Outbound Route
 [**deleteTelephonyProvidersEdgesPhone**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesPhone) | **DELETE** /api/v2/telephony/providers/edges/phones/{phoneId} | Delete a Phone by ID
 [**deleteTelephonyProvidersEdgesPhonebasesetting**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesPhonebasesetting) | **DELETE** /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} | Delete a Phone Base Settings by ID
 [**deleteTelephonyProvidersEdgesSite**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesSite) | **DELETE** /api/v2/telephony/providers/edges/sites/{siteId} | Delete a Site by ID
@@ -104,7 +103,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTelephonyProvidersEdgesDidpools**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesDidpools) | **POST** /api/v2/telephony/providers/edges/didpools | Create a new DID pool
 [**postTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesEdgegroups) | **POST** /api/v2/telephony/providers/edges/edgegroups | Create an edge group.
 [**postTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesExtensionpools) | **POST** /api/v2/telephony/providers/edges/extensionpools | Create a new extension pool
-[**postTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesOutboundroutes) | **POST** /api/v2/telephony/providers/edges/outboundroutes | Create outbound rule
 [**postTelephonyProvidersEdgesPhoneReboot**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhoneReboot) | **POST** /api/v2/telephony/providers/edges/phones/{phoneId}/reboot | Reboot a Phone
 [**postTelephonyProvidersEdgesPhonebasesettings**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonebasesettings) | **POST** /api/v2/telephony/providers/edges/phonebasesettings | Create a new Phone Base Settings object
 [**postTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhones) | **POST** /api/v2/telephony/providers/edges/phones | Create a new Phone
@@ -119,7 +117,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroup) | **PUT** /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} | Update an edge group.
 [**putTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | **PUT** /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} | Update the edge trunk base associated with the edge group
 [**putTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtensionpool) | **PUT** /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} | Update an extension pool by ID
-[**putTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesOutboundroute) | **PUT** /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} | Update outbound route
 [**putTelephonyProvidersEdgesPhone**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesPhone) | **PUT** /api/v2/telephony/providers/edges/phones/{phoneId} | Update a Phone by ID
 [**putTelephonyProvidersEdgesPhonebasesetting**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesPhonebasesetting) | **PUT** /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} | Update a Phone Base Settings by ID
 [**putTelephonyProvidersEdgesSite**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSite) | **PUT** /api/v2/telephony/providers/edges/sites/{siteId} | Update a Site by ID.
@@ -472,59 +469,6 @@ apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **extensionPoolId** | **String** | Extension pool ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteTelephonyProvidersEdgesOutboundroute"></a>
-
-# void deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}
-
-Delete Outbound Route
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-
-Requires ANY permissions:
-
-* telephony:plugin:all
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
-
-apiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
-  .then(() => {
-    console.log('deleteTelephonyProvidersEdgesOutboundroute returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteTelephonyProvidersEdgesOutboundroute');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **outboundRouteId** | **String** | Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5285,59 +5229,6 @@ apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
 
 **ExtensionPool**
 
-<a name="postTelephonyProvidersEdgesOutboundroutes"></a>
-
-# OutboundRoute postTelephonyProvidersEdgesOutboundroutes(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-POST /api/v2/telephony/providers/edges/outboundroutes
-
-Create outbound rule
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
-
-Requires ANY permissions:
-
-* telephony:plugin:all
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let body = {}; // Object | OutboundRoute
-
-apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
-  .then((data) => {
-    console.log(`postTelephonyProvidersEdgesOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postTelephonyProvidersEdgesOutboundroutes');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | OutboundRoute |  |
-{: class="table table-striped"}
-
-### Return type
-
-**OutboundRoute**
-
 <a name="postTelephonyProvidersEdgesPhoneReboot"></a>
 
 # void postTelephonyProvidersEdgesPhoneReboot(phoneId)
@@ -6057,61 +5948,6 @@ apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 ### Return type
 
 **ExtensionPool**
-
-<a name="putTelephonyProvidersEdgesOutboundroute"></a>
-
-# OutboundRoute putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}
-
-Update outbound route
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-
-Requires ANY permissions:
-
-* telephony:plugin:all
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
-let body = {}; // Object | OutboundRoute
-
-apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
-  .then((data) => {
-    console.log(`putTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putTelephonyProvidersEdgesOutboundroute');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **outboundRouteId** | **String** | Outbound route ID |  |
- **body** | **Object** | OutboundRoute |  |
-{: class="table table-striped"}
-
-### Return type
-
-**OutboundRoute**
 
 <a name="putTelephonyProvidersEdgesPhone"></a>
 

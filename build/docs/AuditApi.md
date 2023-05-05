@@ -222,6 +222,8 @@ POST /api/v2/audits/query
 
 Create audit query execution
 
+Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
+
 Requires ALL permissions:
 
 * audits:audit:view
@@ -271,6 +273,8 @@ apiInstance.postAuditsQuery(body)
 POST /api/v2/audits/query/realtime
 
 This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
+
+Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
 
 Requires ALL permissions:
 

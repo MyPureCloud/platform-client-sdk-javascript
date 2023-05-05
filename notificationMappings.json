@@ -565,6 +565,10 @@
       "class": "WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate"
     },
     {
+      "topic": "v2.video.conferences.{id}",
+      "class": "VideoConferenceUpdateTopicVideoConference"
+    },
+    {
       "topic": "v2.webdeployments.configurations.{id}",
       "class": "WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody"
     },

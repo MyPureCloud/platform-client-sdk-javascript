@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 166.0.0
+	 * @version 167.0.0
 	 */
 
 	/**
@@ -2928,7 +2928,7 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Request a historical adherence report for users across management units
+	 * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body

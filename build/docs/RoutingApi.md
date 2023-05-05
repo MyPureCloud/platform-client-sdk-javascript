@@ -2319,7 +2319,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
-  'kpiGroup': "kpiGroup_example" // String | The Group of Key Performance Indicators to return
+  'kpiGroup': "kpiGroup_example", // String | The Group of Key Performance Indicators to return
+  'expand': ["expand_example"] // [String] | Parameter to request additional data to return in KPI payload
 };
 
 apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
@@ -2338,6 +2339,7 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **kpiGroup** | **String** | The Group of Key Performance Indicators to return | [optional] <br />**Values**: Standard, Custom |
+ **expand** | **[String]** | Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
 {: class="table table-striped"}
 
 ### Return type

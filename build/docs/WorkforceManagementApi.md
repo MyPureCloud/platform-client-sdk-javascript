@@ -105,7 +105,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Update a time off request for the current user
 [**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanations) | **POST** /api/v2/workforcemanagement/adherence/explanations | Submit an adherence explanation for the current user
 [**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/adherence/explanations/query | Query adherence explanations for the current user
-[**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | **POST** /api/v2/workforcemanagement/adherence/historical | Request a historical adherence report for users across management units
+[**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | **POST** /api/v2/workforcemanagement/adherence/historical | Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistoricalBulk) | **POST** /api/v2/workforcemanagement/adherence/historical/bulk | Request a historical adherence report in bulk
 [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanations) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations | Add an adherence explanation for the requested user
 [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query | Query adherence explanations for the given agent across a specified range
@@ -5682,7 +5682,7 @@ apiInstance.postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
 
 POST /api/v2/workforcemanagement/adherence/historical
 
-Request a historical adherence report for users across management units
+Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 
 Requires ANY permissions:
 

@@ -11108,6 +11108,353 @@
     "return": "ExternalMetricDefinitionListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1 // Number | Page number\n};\n\n// Get a list of External Metric Definitions of an organization, sorted by name in ascending order\napiInstance.getEmployeeperformanceExternalmetricsDefinitions(opts)\n  .then((data) => {\n    console.log(`getEmployeeperformanceExternalmetricsDefinitions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getEmployeeperformanceExternalmetricsDefinitions\");\n    console.error(err);\n  });"
   },
+  "getgamificationinsights": {
+    "operationId": "getgamificationinsights",
+    "functionName": "getGamificationInsights",
+    "signature": "getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "sortKey",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sortMetricId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sortOrder",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "userIds",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "InsightsSummary",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet comparativePeriodStartWorkday = \"comparativePeriodStartWorkday_example\"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodStartWorkday = \"primaryPeriodStartWorkday_example\"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortKey\": \"sortKey_example\", // String | Sort key\n  \"sortMetricId\": \"sortMetricId_example\", // String | Sort Metric Id\n  \"sortOrder\": \"asc\", // String | Sort order\n  \"userIds\": \"userIds_example\" // String | A list of up to 100 comma-separated user Ids\n};\n\n// Get insights summary\napiInstance.getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)\n  .then((data) => {\n    console.log(`getGamificationInsights success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsights\");\n    console.error(err);\n  });"
+  },
+  "getgamificationinsightsdetails": {
+    "operationId": "getgamificationinsightsdetails",
+    "functionName": "getGamificationInsightsDetails",
+    "signature": "getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsDetails",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet comparativePeriodStartWorkday = \"comparativePeriodStartWorkday_example\"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodStartWorkday = \"primaryPeriodStartWorkday_example\"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Get insights details for the current user\napiInstance.getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)\n  .then((data) => {\n    console.log(`getGamificationInsightsDetails success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsDetails\");\n    console.error(err);\n  });"
+  },
+  "getgamificationinsightsgroupstrends": {
+    "operationId": "getgamificationinsightsgroupstrends",
+    "functionName": "getGamificationInsightsGroupsTrends",
+    "signature": "getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodEndWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodEndWorkday",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsTrend",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet comparativePeriodStartWorkday = \"comparativePeriodStartWorkday_example\"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet comparativePeriodEndWorkday = \"comparativePeriodEndWorkday_example\"; // String | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodStartWorkday = \"primaryPeriodStartWorkday_example\"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodEndWorkday = \"primaryPeriodEndWorkday_example\"; // String | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Get insights overall trend for the current user\napiInstance.getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)\n  .then((data) => {\n    console.log(`getGamificationInsightsGroupsTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsGroupsTrends\");\n    console.error(err);\n  });"
+  },
+  "getgamificationinsightsgroupstrendsall": {
+    "operationId": "getgamificationinsightsgroupstrendsall",
+    "functionName": "getGamificationInsightsGroupsTrendsAll",
+    "signature": "getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodEndWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodEndWorkday",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsTrend",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet comparativePeriodStartWorkday = \"comparativePeriodStartWorkday_example\"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet comparativePeriodEndWorkday = \"comparativePeriodEndWorkday_example\"; // String | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodStartWorkday = \"primaryPeriodStartWorkday_example\"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodEndWorkday = \"primaryPeriodEndWorkday_example\"; // String | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Get insights overall trend\napiInstance.getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)\n  .then((data) => {\n    console.log(`getGamificationInsightsGroupsTrendsAll success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsGroupsTrendsAll\");\n    console.error(err);\n  });"
+  },
+  "getgamificationinsightsmembers": {
+    "operationId": "getgamificationinsightsmembers",
+    "functionName": "getGamificationInsightsMembers",
+    "signature": "getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startWorkday",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsAgents",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet startWorkday = \"startWorkday_example\"; // String | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Query users in a profile during a period of time\napiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)\n  .then((data) => {\n    console.log(`getGamificationInsightsMembers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsMembers\");\n    console.error(err);\n  });"
+  },
+  "getgamificationinsightstrends": {
+    "operationId": "getgamificationinsightstrends",
+    "functionName": "getGamificationInsightsTrends",
+    "signature": "getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodEndWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodEndWorkday",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "UserInsightsTrend",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet comparativePeriodStartWorkday = \"comparativePeriodStartWorkday_example\"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet comparativePeriodEndWorkday = \"comparativePeriodEndWorkday_example\"; // String | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodStartWorkday = \"primaryPeriodStartWorkday_example\"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodEndWorkday = \"primaryPeriodEndWorkday_example\"; // String | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Get insights user trend for the current user\napiInstance.getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)\n  .then((data) => {\n    console.log(`getGamificationInsightsTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsTrends\");\n    console.error(err);\n  });"
+  },
+  "getgamificationinsightsuserdetails": {
+    "operationId": "getgamificationinsightsuserdetails",
+    "functionName": "getGamificationInsightsUserDetails",
+    "signature": "getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsDetails",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user.\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet comparativePeriodStartWorkday = \"comparativePeriodStartWorkday_example\"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodStartWorkday = \"primaryPeriodStartWorkday_example\"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Get insights details for the user\napiInstance.getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)\n  .then((data) => {\n    console.log(`getGamificationInsightsUserDetails success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsUserDetails\");\n    console.error(err);\n  });"
+  },
+  "getgamificationinsightsusertrends": {
+    "operationId": "getgamificationinsightsusertrends",
+    "functionName": "getGamificationInsightsUserTrends",
+    "signature": "getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodEndWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodEndWorkday",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "UserInsightsTrend",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user.\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet comparativePeriodStartWorkday = \"comparativePeriodStartWorkday_example\"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet comparativePeriodEndWorkday = \"comparativePeriodEndWorkday_example\"; // String | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodStartWorkday = \"primaryPeriodStartWorkday_example\"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodEndWorkday = \"primaryPeriodEndWorkday_example\"; // String | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Get insights user trend for the user\napiInstance.getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)\n  .then((data) => {\n    console.log(`getGamificationInsightsUserTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsUserTrends\");\n    console.error(err);\n  });"
+  },
   "getgamificationleaderboard": {
     "operationId": "getgamificationleaderboard",
     "functionName": "getGamificationLeaderboard",
@@ -12068,6 +12415,39 @@
     ],
     "return": "PerformanceProfile",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet body = {}; // Object | performanceProfile\nlet opts = { \n  \"copyMetrics\": true // Boolean | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile.\n};\n\n// Create a new custom performance profile\napiInstance.postGamificationProfiles(body, opts)\n  .then((data) => {\n    console.log(`postGamificationProfiles success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postGamificationProfiles\");\n    console.error(err);\n  });"
+  },
+  "postgamificationprofilesuserquery": {
+    "operationId": "postgamificationprofilesuserquery",
+    "functionName": "postGamificationProfilesUserQuery",
+    "signature": "postGamificationProfilesUserQuery(userId, body)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "UserProfilesInDateRange",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user.\nlet body = {}; // Object | The date range of work day.\n\n// Query performance profiles in date range for a user\napiInstance.postGamificationProfilesUserQuery(userId, body)\n  .then((data) => {\n    console.log(`postGamificationProfilesUserQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postGamificationProfilesUserQuery\");\n    console.error(err);\n  });"
+  },
+  "postgamificationprofilesusersmequery": {
+    "operationId": "postgamificationprofilesusersmequery",
+    "functionName": "postGamificationProfilesUsersMeQuery",
+    "signature": "postGamificationProfilesUsersMeQuery(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "UserProfilesInDateRange",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet body = {}; // Object | The date range of work day.\n\n// Query performance profiles in date range for the current user\napiInstance.postGamificationProfilesUsersMeQuery(body)\n  .then((data) => {\n    console.log(`postGamificationProfilesUsersMeQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postGamificationProfilesUsersMeQuery\");\n    console.error(err);\n  });"
   },
   "putgamificationprofile": {
     "operationId": "putgamificationprofile",
@@ -26912,16 +27292,21 @@
   "getroutingpredictorskeyperformanceindicators": {
     "operationId": "getroutingpredictorskeyperformanceindicators",
     "functionName": "getRoutingPredictorsKeyperformanceindicators",
-    "signature": "getRoutingPredictorsKeyperformanceindicators(kpiGroup)",
+    "signature": "getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand)",
     "parameters": [
       {
         "name": "kpiGroup",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
       }
     ],
     "return": "[KeyPerformanceIndicator]",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"kpiGroup\": \"kpiGroup_example\" // String | The Group of Key Performance Indicators to return\n};\n\n// Get a list of Key Performance Indicators\napiInstance.getRoutingPredictorsKeyperformanceindicators(opts)\n  .then((data) => {\n    console.log(`getRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingPredictorsKeyperformanceindicators\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"kpiGroup\": \"kpiGroup_example\", // String | The Group of Key Performance Indicators to return\n  \"expand\": [\"expand_example\"] // [String] | Parameter to request additional data to return in KPI payload\n};\n\n// Get a list of Key Performance Indicators\napiInstance.getRoutingPredictorsKeyperformanceindicators(opts)\n  .then((data) => {\n    console.log(`getRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingPredictorsKeyperformanceindicators\");\n    console.error(err);\n  });"
   },
   "getroutingqueue": {
     "operationId": "getroutingqueue",
@@ -30958,19 +31343,6 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet extensionPoolId = \"extensionPoolId_example\"; // String | Extension pool ID\n\n// Delete an extension pool by ID\napiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)\n  .then(() => {\n    console.log(\"deleteTelephonyProvidersEdgesExtensionpool returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteTelephonyProvidersEdgesExtensionpool\");\n    console.error(err);\n  });"
   },
-  "deletetelephonyprovidersedgesoutboundroute": {
-    "operationId": "deletetelephonyprovidersedgesoutboundroute",
-    "functionName": "deleteTelephonyProvidersEdgesOutboundroute",
-    "signature": "deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)",
-    "parameters": [
-      {
-        "name": "outboundRouteId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet outboundRouteId = \"outboundRouteId_example\"; // String | Outbound route ID\n\n// Delete Outbound Route\napiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)\n  .then(() => {\n    console.log(\"deleteTelephonyProvidersEdgesOutboundroute returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteTelephonyProvidersEdgesOutboundroute\");\n    console.error(err);\n  });"
-  },
   "deletetelephonyprovidersedgesphone": {
     "operationId": "deletetelephonyprovidersedgesphone",
     "functionName": "deleteTelephonyProvidersEdgesPhone",
@@ -32818,20 +33190,6 @@
     "return": "ExtensionPool",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet body = {}; // Object | ExtensionPool\n\n// Create a new extension pool\napiInstance.postTelephonyProvidersEdgesExtensionpools(body)\n  .then((data) => {\n    console.log(`postTelephonyProvidersEdgesExtensionpools success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postTelephonyProvidersEdgesExtensionpools\");\n    console.error(err);\n  });"
   },
-  "posttelephonyprovidersedgesoutboundroutes": {
-    "operationId": "posttelephonyprovidersedgesoutboundroutes",
-    "functionName": "postTelephonyProvidersEdgesOutboundroutes",
-    "signature": "postTelephonyProvidersEdgesOutboundroutes(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      }
-    ],
-    "return": "OutboundRoute",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet body = {}; // Object | OutboundRoute\n\n// Create outbound rule\napiInstance.postTelephonyProvidersEdgesOutboundroutes(body)\n  .then((data) => {\n    console.log(`postTelephonyProvidersEdgesOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postTelephonyProvidersEdgesOutboundroutes\");\n    console.error(err);\n  });"
-  },
   "posttelephonyprovidersedgesphonereboot": {
     "operationId": "posttelephonyprovidersedgesphonereboot",
     "functionName": "postTelephonyProvidersEdgesPhoneReboot",
@@ -33075,25 +33433,6 @@
     ],
     "return": "ExtensionPool",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet extensionPoolId = \"extensionPoolId_example\"; // String | Extension pool ID\nlet body = {}; // Object | ExtensionPool\n\n// Update an extension pool by ID\napiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)\n  .then((data) => {\n    console.log(`putTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putTelephonyProvidersEdgesExtensionpool\");\n    console.error(err);\n  });"
-  },
-  "puttelephonyprovidersedgesoutboundroute": {
-    "operationId": "puttelephonyprovidersedgesoutboundroute",
-    "functionName": "putTelephonyProvidersEdgesOutboundroute",
-    "signature": "putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)",
-    "parameters": [
-      {
-        "name": "outboundRouteId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      }
-    ],
-    "return": "OutboundRoute",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet outboundRouteId = \"outboundRouteId_example\"; // String | Outbound route ID\nlet body = {}; // Object | OutboundRoute\n\n// Update outbound route\napiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)\n  .then((data) => {\n    console.log(`putTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putTelephonyProvidersEdgesOutboundroute\");\n    console.error(err);\n  });"
   },
   "puttelephonyprovidersedgesphone": {
     "operationId": "puttelephonyprovidersedgesphone",
@@ -37381,7 +37720,7 @@
       }
     ],
     "return": "WfmHistoricalAdherenceResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Request a historical adherence report for users across management units\napiInstance.postWorkforcemanagementAdherenceHistorical(opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementAdherenceHistorical\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Deprecated. Use bulk routes instead (/adherence/historical/bulk)\napiInstance.postWorkforcemanagementAdherenceHistorical(opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementAdherenceHistorical\");\n    console.error(err);\n  });"
   },
   "postworkforcemanagementadherencehistoricalbulk": {
     "operationId": "postworkforcemanagementadherencehistoricalbulk",

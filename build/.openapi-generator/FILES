@@ -320,7 +320,6 @@ docs/deleteTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/deleteTelephonyProvidersEdgesDidpool-example.txt
 docs/deleteTelephonyProvidersEdgesEdgegroup-example.txt
 docs/deleteTelephonyProvidersEdgesExtensionpool-example.txt
-docs/deleteTelephonyProvidersEdgesOutboundroute-example.txt
 docs/deleteTelephonyProvidersEdgesPhone-example.txt
 docs/deleteTelephonyProvidersEdgesPhonebasesetting-example.txt
 docs/deleteTelephonyProvidersEdgesSite-example.txt
@@ -631,6 +630,14 @@ docs/getFlowsMilestonesDivisionviews-example.txt
 docs/getFlowsOutcome-example.txt
 docs/getFlowsOutcomes-example.txt
 docs/getFlowsOutcomesDivisionviews-example.txt
+docs/getGamificationInsights-example.txt
+docs/getGamificationInsightsDetails-example.txt
+docs/getGamificationInsightsGroupsTrends-example.txt
+docs/getGamificationInsightsGroupsTrendsAll-example.txt
+docs/getGamificationInsightsMembers-example.txt
+docs/getGamificationInsightsTrends-example.txt
+docs/getGamificationInsightsUserDetails-example.txt
+docs/getGamificationInsightsUserTrends-example.txt
 docs/getGamificationLeaderboard-example.txt
 docs/getGamificationLeaderboardAll-example.txt
 docs/getGamificationLeaderboardAllBestpoints-example.txt
@@ -1661,6 +1668,8 @@ docs/postGamificationProfileMembersValidate-example.txt
 docs/postGamificationProfileMetricLink-example.txt
 docs/postGamificationProfileMetrics-example.txt
 docs/postGamificationProfiles-example.txt
+docs/postGamificationProfilesUserQuery-example.txt
+docs/postGamificationProfilesUsersMeQuery-example.txt
 docs/postGdprRequests-example.txt
 docs/postGreetings-example.txt
 docs/postGroupGreetings-example.txt
@@ -1866,7 +1875,6 @@ docs/postTelephonyProvidersEdgesCertificateauthorities-example.txt
 docs/postTelephonyProvidersEdgesDidpools-example.txt
 docs/postTelephonyProvidersEdgesEdgegroups-example.txt
 docs/postTelephonyProvidersEdgesExtensionpools-example.txt
-docs/postTelephonyProvidersEdgesOutboundroutes-example.txt
 docs/postTelephonyProvidersEdgesPhoneReboot-example.txt
 docs/postTelephonyProvidersEdgesPhonebasesettings-example.txt
 docs/postTelephonyProvidersEdgesPhones-example.txt
@@ -2134,7 +2142,6 @@ docs/putTelephonyProvidersEdgesDidpool-example.txt
 docs/putTelephonyProvidersEdgesEdgegroup-example.txt
 docs/putTelephonyProvidersEdgesEdgegroupEdgetrunkbase-example.txt
 docs/putTelephonyProvidersEdgesExtensionpool-example.txt
-docs/putTelephonyProvidersEdgesOutboundroute-example.txt
 docs/putTelephonyProvidersEdgesPhone-example.txt
 docs/putTelephonyProvidersEdgesPhonebasesetting-example.txt
 docs/putTelephonyProvidersEdgesSite-example.txt

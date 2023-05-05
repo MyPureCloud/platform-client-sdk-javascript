@@ -399,7 +399,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 166.0.0
+	 * @version 167.0.0
 	 */
 	class ApiClient {
 		/**
@@ -1485,7 +1485,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -1799,7 +1799,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -3053,7 +3053,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -6101,7 +6101,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -6214,7 +6214,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * Create audit query execution
-		 * 
+		 * Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
 		 * @param {Object} body query
 		 */
 		postAuditsQuery(body) { 
@@ -6239,7 +6239,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
-		 * 
+		 * Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
 		 * @param {Object} body query
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
@@ -6272,7 +6272,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -7501,7 +7501,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -7581,7 +7581,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -7742,7 +7742,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -8319,7 +8319,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -9459,7 +9459,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -15519,7 +15519,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -15605,7 +15605,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -15657,7 +15657,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -15753,7 +15753,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -17711,7 +17711,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -17882,7 +17882,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -17953,7 +17953,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -18034,6 +18034,420 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get insights summary
+		 * 
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type.
+		 * @param {Object} granularity Granularity
+		 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Object} opts.sortKey Sort key
+		 * @param {String} opts.sortMetricId Sort Metric Id
+		 * @param {Object} opts.sortOrder Sort order (default to asc)
+		 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
+		 */
+		getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationInsights';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationInsights';
+			}
+			// verify the required parameter 'granularity' is set
+			if (granularity === undefined || granularity === null) {
+				throw 'Missing the required parameter "granularity" when calling getGamificationInsights';
+			}
+			// verify the required parameter 'comparativePeriodStartWorkday' is set
+			if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsights';
+			}
+			// verify the required parameter 'primaryPeriodStartWorkday' is set
+			if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsights';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/insights', 
+				'GET', 
+				{  },
+				{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortKey': opts['sortKey'],'sortMetricId': opts['sortMetricId'],'sortOrder': opts['sortOrder'],'userIds': opts['userIds'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get insights details for the current user
+		 * 
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type.
+		 * @param {Object} granularity Granularity
+		 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 */
+		getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday) { 
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationInsightsDetails';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationInsightsDetails';
+			}
+			// verify the required parameter 'granularity' is set
+			if (granularity === undefined || granularity === null) {
+				throw 'Missing the required parameter "granularity" when calling getGamificationInsightsDetails';
+			}
+			// verify the required parameter 'comparativePeriodStartWorkday' is set
+			if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsDetails';
+			}
+			// verify the required parameter 'primaryPeriodStartWorkday' is set
+			if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsDetails';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/insights/details', 
+				'GET', 
+				{  },
+				{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get insights overall trend for the current user
+		 * 
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type.
+		 * @param {Object} granularity Granularity
+		 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 */
+		getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationInsightsGroupsTrends';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationInsightsGroupsTrends';
+			}
+			// verify the required parameter 'granularity' is set
+			if (granularity === undefined || granularity === null) {
+				throw 'Missing the required parameter "granularity" when calling getGamificationInsightsGroupsTrends';
+			}
+			// verify the required parameter 'comparativePeriodStartWorkday' is set
+			if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsGroupsTrends';
+			}
+			// verify the required parameter 'comparativePeriodEndWorkday' is set
+			if (comparativePeriodEndWorkday === undefined || comparativePeriodEndWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodEndWorkday" when calling getGamificationInsightsGroupsTrends';
+			}
+			// verify the required parameter 'primaryPeriodStartWorkday' is set
+			if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsGroupsTrends';
+			}
+			// verify the required parameter 'primaryPeriodEndWorkday' is set
+			if (primaryPeriodEndWorkday === undefined || primaryPeriodEndWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodEndWorkday" when calling getGamificationInsightsGroupsTrends';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/insights/groups/trends', 
+				'GET', 
+				{  },
+				{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get insights overall trend
+		 * 
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type.
+		 * @param {Object} granularity Granularity
+		 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 */
+		getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationInsightsGroupsTrendsAll';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationInsightsGroupsTrendsAll';
+			}
+			// verify the required parameter 'granularity' is set
+			if (granularity === undefined || granularity === null) {
+				throw 'Missing the required parameter "granularity" when calling getGamificationInsightsGroupsTrendsAll';
+			}
+			// verify the required parameter 'comparativePeriodStartWorkday' is set
+			if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsGroupsTrendsAll';
+			}
+			// verify the required parameter 'comparativePeriodEndWorkday' is set
+			if (comparativePeriodEndWorkday === undefined || comparativePeriodEndWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodEndWorkday" when calling getGamificationInsightsGroupsTrendsAll';
+			}
+			// verify the required parameter 'primaryPeriodStartWorkday' is set
+			if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsGroupsTrendsAll';
+			}
+			// verify the required parameter 'primaryPeriodEndWorkday' is set
+			if (primaryPeriodEndWorkday === undefined || primaryPeriodEndWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodEndWorkday" when calling getGamificationInsightsGroupsTrendsAll';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/insights/groups/trends/all', 
+				'GET', 
+				{  },
+				{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query users in a profile during a period of time
+		 * 
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type.
+		 * @param {Object} granularity Granularity
+		 * @param {String} startWorkday The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 */
+		getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday) { 
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationInsightsMembers';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationInsightsMembers';
+			}
+			// verify the required parameter 'granularity' is set
+			if (granularity === undefined || granularity === null) {
+				throw 'Missing the required parameter "granularity" when calling getGamificationInsightsMembers';
+			}
+			// verify the required parameter 'startWorkday' is set
+			if (startWorkday === undefined || startWorkday === null) {
+				throw 'Missing the required parameter "startWorkday" when calling getGamificationInsightsMembers';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/insights/members', 
+				'GET', 
+				{  },
+				{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'startWorkday': startWorkday },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get insights user trend for the current user
+		 * 
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type.
+		 * @param {Object} granularity Granularity
+		 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 */
+		getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationInsightsTrends';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationInsightsTrends';
+			}
+			// verify the required parameter 'granularity' is set
+			if (granularity === undefined || granularity === null) {
+				throw 'Missing the required parameter "granularity" when calling getGamificationInsightsTrends';
+			}
+			// verify the required parameter 'comparativePeriodStartWorkday' is set
+			if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsTrends';
+			}
+			// verify the required parameter 'comparativePeriodEndWorkday' is set
+			if (comparativePeriodEndWorkday === undefined || comparativePeriodEndWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodEndWorkday" when calling getGamificationInsightsTrends';
+			}
+			// verify the required parameter 'primaryPeriodStartWorkday' is set
+			if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsTrends';
+			}
+			// verify the required parameter 'primaryPeriodEndWorkday' is set
+			if (primaryPeriodEndWorkday === undefined || primaryPeriodEndWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodEndWorkday" when calling getGamificationInsightsTrends';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/insights/trends', 
+				'GET', 
+				{  },
+				{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get insights details for the user
+		 * 
+		 * @param {String} userId The ID of a user.
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type.
+		 * @param {Object} granularity Granularity
+		 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 */
+		getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling getGamificationInsightsUserDetails';
+			}
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationInsightsUserDetails';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationInsightsUserDetails';
+			}
+			// verify the required parameter 'granularity' is set
+			if (granularity === undefined || granularity === null) {
+				throw 'Missing the required parameter "granularity" when calling getGamificationInsightsUserDetails';
+			}
+			// verify the required parameter 'comparativePeriodStartWorkday' is set
+			if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsUserDetails';
+			}
+			// verify the required parameter 'primaryPeriodStartWorkday' is set
+			if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsUserDetails';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/insights/users/{userId}/details', 
+				'GET', 
+				{ 'userId': userId },
+				{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get insights user trend for the user
+		 * 
+		 * @param {String} userId The ID of a user.
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type.
+		 * @param {Object} granularity Granularity
+		 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} comparativePeriodEndWorkday The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} primaryPeriodEndWorkday The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 */
+		getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling getGamificationInsightsUserTrends';
+			}
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationInsightsUserTrends';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationInsightsUserTrends';
+			}
+			// verify the required parameter 'granularity' is set
+			if (granularity === undefined || granularity === null) {
+				throw 'Missing the required parameter "granularity" when calling getGamificationInsightsUserTrends';
+			}
+			// verify the required parameter 'comparativePeriodStartWorkday' is set
+			if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsUserTrends';
+			}
+			// verify the required parameter 'comparativePeriodEndWorkday' is set
+			if (comparativePeriodEndWorkday === undefined || comparativePeriodEndWorkday === null) {
+				throw 'Missing the required parameter "comparativePeriodEndWorkday" when calling getGamificationInsightsUserTrends';
+			}
+			// verify the required parameter 'primaryPeriodStartWorkday' is set
+			if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsUserTrends';
+			}
+			// verify the required parameter 'primaryPeriodEndWorkday' is set
+			if (primaryPeriodEndWorkday === undefined || primaryPeriodEndWorkday === null) {
+				throw 'Missing the required parameter "primaryPeriodEndWorkday" when calling getGamificationInsightsUserTrends';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/insights/users/{userId}/trends', 
+				'GET', 
+				{ 'userId': userId },
+				{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'comparativePeriodEndWorkday': comparativePeriodEndWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'primaryPeriodEndWorkday': primaryPeriodEndWorkday },
 				{  },
 				{  },
 				null, 
@@ -19476,6 +19890,61 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query performance profiles in date range for a user
+		 * 
+		 * @param {String} userId The ID of a user.
+		 * @param {Object} body The date range of work day.
+		 */
+		postGamificationProfilesUserQuery(userId, body) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling postGamificationProfilesUserQuery';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postGamificationProfilesUserQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/profiles/users/{userId}/query', 
+				'POST', 
+				{ 'userId': userId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query performance profiles in date range for the current user
+		 * 
+		 * @param {Object} body The date range of work day.
+		 */
+		postGamificationProfilesUsersMeQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postGamificationProfilesUsersMeQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/profiles/users/me/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Updates a performance profile
 		 * 
 		 * @param {String} profileId performanceProfileId
@@ -19570,7 +20039,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -19700,7 +20169,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -19831,7 +20300,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -20286,7 +20755,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -20692,7 +21161,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -21448,7 +21917,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -21550,7 +22019,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -23150,7 +23619,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -24030,7 +24499,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -26462,7 +26931,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -27475,7 +27944,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -27693,7 +28162,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -28508,7 +28977,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -28746,7 +29215,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -28982,7 +29451,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -29133,7 +29602,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -29284,7 +29753,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -29517,7 +29986,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -29883,7 +30352,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -30154,7 +30623,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -30557,7 +31026,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -31852,7 +32321,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -35448,7 +35917,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -35999,7 +36468,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -36238,7 +36707,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -37817,7 +38286,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -39454,7 +39923,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -39938,7 +40407,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -41048,6 +41517,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.kpiGroup The Group of Key Performance Indicators to return
+		 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
 		 */
 		getRoutingPredictorsKeyperformanceindicators(opts) { 
 			opts = opts || {};
@@ -41057,7 +41527,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/routing/predictors/keyperformanceindicators', 
 				'GET', 
 				{  },
-				{ 'kpiGroup': opts['kpiGroup'] },
+				{ 'kpiGroup': opts['kpiGroup'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -43446,7 +43916,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -44323,7 +44793,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -44742,7 +45212,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -45352,7 +45822,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -46281,7 +46751,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -46428,7 +46898,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -46567,7 +47037,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -46838,7 +47308,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -46966,7 +47436,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -47151,31 +47621,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}', 
 				'DELETE', 
 				{ 'extensionPoolId': extensionPoolId },
-				{  },
-				{  },
-				{  },
-				null, 
-				['PureCloud OAuth'], 
-				['application/json'],
-				['application/json']
-			);
-		}
-
-		/**
-		 * Delete Outbound Route
-		 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-		 * @param {String} outboundRouteId Outbound route ID
-		 */
-		deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
-			// verify the required parameter 'outboundRouteId' is set
-			if (outboundRouteId === undefined || outboundRouteId === null) {
-				throw 'Missing the required parameter "outboundRouteId" when calling deleteTelephonyProvidersEdgesOutboundroute';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}', 
-				'DELETE', 
-				{ 'outboundRouteId': outboundRouteId },
 				{  },
 				{  },
 				{  },
@@ -49601,31 +50046,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
-		 * Create outbound rule
-		 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
-		 * @param {Object} body OutboundRoute
-		 */
-		postTelephonyProvidersEdgesOutboundroutes(body) { 
-			// verify the required parameter 'body' is set
-			if (body === undefined || body === null) {
-				throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesOutboundroutes';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/telephony/providers/edges/outboundroutes', 
-				'POST', 
-				{  },
-				{  },
-				{  },
-				{  },
-				body, 
-				['PureCloud OAuth'], 
-				['application/json'],
-				['application/json']
-			);
-		}
-
-		/**
 		 * Reboot a Phone
 		 * 
 		 * @param {String} phoneId Phone Id
@@ -50026,36 +50446,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
-		 * Update outbound route
-		 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-		 * @param {String} outboundRouteId Outbound route ID
-		 * @param {Object} body OutboundRoute
-		 */
-		putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body) { 
-			// verify the required parameter 'outboundRouteId' is set
-			if (outboundRouteId === undefined || outboundRouteId === null) {
-				throw 'Missing the required parameter "outboundRouteId" when calling putTelephonyProvidersEdgesOutboundroute';
-			}
-			// verify the required parameter 'body' is set
-			if (body === undefined || body === null) {
-				throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesOutboundroute';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}', 
-				'PUT', 
-				{ 'outboundRouteId': outboundRouteId },
-				{  },
-				{  },
-				{  },
-				body, 
-				['PureCloud OAuth'], 
-				['application/json'],
-				['application/json']
-			);
-		}
-
-		/**
 		 * Update a Phone by ID
 		 * 
 		 * @param {String} phoneId Phone ID
@@ -50246,7 +50636,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -50374,7 +50764,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -50480,7 +50870,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -50656,7 +51046,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -50816,7 +51206,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -51001,7 +51391,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -53391,7 +53781,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -53502,7 +53892,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -54169,7 +54559,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -54713,7 +55103,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -55235,7 +55625,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -55281,7 +55671,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -55427,7 +55817,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 166.0.0
+		 * @version 167.0.0
 		 */
 
 		/**
@@ -58350,7 +58740,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
-		 * Request a historical adherence report for users across management units
+		 * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 		 * 
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body body
@@ -60171,7 +60561,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 166.0.0
+	 * @version 167.0.0
 	 */
 	class platformClient {
 		constructor() {

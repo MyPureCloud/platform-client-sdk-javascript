@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 166.0.0
+	 * @version 167.0.0
 	 */
 
 	/**
@@ -1115,6 +1115,7 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.kpiGroup The Group of Key Performance Indicators to return
+	 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
 	 */
 	getRoutingPredictorsKeyperformanceindicators(opts) { 
 		opts = opts || {};
@@ -1124,7 +1125,7 @@ class RoutingApi {
 			'/api/v2/routing/predictors/keyperformanceindicators', 
 			'GET', 
 			{  },
-			{ 'kpiGroup': opts['kpiGroup'] },
+			{ 'kpiGroup': opts['kpiGroup'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

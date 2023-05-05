@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 166.0.0
+	 * @version 167.0.0
 	 */
 
 	/**
@@ -118,7 +118,7 @@ class AuditApi {
 
 	/**
 	 * Create audit query execution
-	 * 
+	 * Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
 	 * @param {Object} body query
 	 */
 	postAuditsQuery(body) { 
@@ -143,7 +143,7 @@ class AuditApi {
 
 	/**
 	 * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
-	 * 
+	 * Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
