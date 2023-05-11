@@ -5,7 +5,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 167.0.0
+	 * @version 168.0.0
 	 */
 
 	/**
@@ -95,51 +95,6 @@ class StationsApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an organization's StationSettings
-	 * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
-	 */
-	getStationsSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/stations/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Patch an organization's StationSettings
-	 * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
-	 * @param {Object} body Station settings
-	 */
-	patchStationsSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchStationsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/stations/settings', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 167.0.0
+	 * @version 168.0.0
 	 */
 
 	/**
@@ -1757,6 +1757,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+			'GET', 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get messaging campaign diagnostics
+	 * 
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	getOutboundMessagingcampaignDiagnostics(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignDiagnostics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics', 
 			'GET', 
 			{ 'messagingCampaignId': messagingCampaignId },
 			{  },

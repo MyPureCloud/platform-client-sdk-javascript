@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 167.0.0
+	 * @version 168.0.0
 	 */
 
 	/**
@@ -1549,7 +1549,7 @@ class ExternalContactsApi {
 
 	/**
 	 * Merge two contacts into a new contact record
-	 * 
+	 * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
 	 * @param {Object} body MergeRequest
 	 */
 	postExternalcontactsMergeContacts(body) { 

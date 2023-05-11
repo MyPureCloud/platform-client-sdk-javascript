@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 167.0.0
+	 * @version 168.0.0
 	 */
 
 	/**
@@ -312,7 +312,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
+	 * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 */

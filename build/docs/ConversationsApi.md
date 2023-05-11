@@ -117,6 +117,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsCobrowsesessionParticipantAttributes**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantAttributes) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCobrowsesessionParticipantCommunication**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantCommunication) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsEmail**](ConversationsApi.html#patchConversationsEmail) | **PATCH** /api/v2/conversations/emails/{conversationId} | Update a conversation by disconnecting all of the participants
+[**patchConversationsEmailMessagesDraft**](ConversationsApi.html#patchConversationsEmailMessagesDraft) | **PATCH** /api/v2/conversations/emails/{conversationId}/messages/draft | Reset conversation draft to its initial state and/or auto-fill draft content
 [**patchConversationsEmailParticipant**](ConversationsApi.html#patchConversationsEmailParticipant) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsEmailParticipantAttributes**](ConversationsApi.html#patchConversationsEmailParticipantAttributes) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsEmailParticipantCommunication**](ConversationsApi.html#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
@@ -5920,6 +5921,62 @@ apiInstance.patchConversationsEmail(conversationId, body)
 ### Return type
 
 **Conversation**
+
+<a name="patchConversationsEmailMessagesDraft"></a>
+
+# EmailMessage patchConversationsEmailMessagesDraft(conversationId, opts)
+
+
+PATCH /api/v2/conversations/emails/{conversationId}/messages/draft
+
+Reset conversation draft to its initial state and/or auto-fill draft content
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'autoFill': true, // Boolean | autoFill
+  'discard': true, // Boolean | discard
+  'body': {} // Object | Draft Manipulation Request
+};
+
+apiInstance.patchConversationsEmailMessagesDraft(conversationId, opts)
+  .then((data) => {
+    console.log(`patchConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsEmailMessagesDraft');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **autoFill** | **Boolean** | autoFill | [optional]  |
+ **discard** | **Boolean** | discard | [optional]  |
+ **body** | **Object** | Draft Manipulation Request | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailMessage**
 
 <a name="patchConversationsEmailParticipant"></a>
 

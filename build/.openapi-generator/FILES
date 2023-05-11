@@ -12,6 +12,8 @@ docs/AuthorizationApi.json
 docs/AuthorizationApi.md
 docs/BillingApi.json
 docs/BillingApi.md
+docs/CarrierServicesApi.json
+docs/CarrierServicesApi.md
 docs/ChatApi.json
 docs/ChatApi.md
 docs/CoachingApi.json
@@ -455,6 +457,7 @@ docs/getAuthorizationSubjectsMe-example.txt
 docs/getAuthorizationSubjectsRolecounts-example.txt
 docs/getBillingReportsBillableusage-example.txt
 docs/getBillingTrusteebillingoverviewTrustorOrgId-example.txt
+docs/getCarrierservicesIntegrationsEmergencylocationsMe-example.txt
 docs/getChatSettings-example.txt
 docs/getChatsSettings-example.txt
 docs/getCoachingAppointment-example.txt
@@ -704,6 +707,8 @@ docs/getIdentityprovidersPing-example.txt
 docs/getIdentityprovidersPurecloud-example.txt
 docs/getIdentityprovidersPureengage-example.txt
 docs/getIdentityprovidersSalesforce-example.txt
+docs/getInfrastructureascodeAccelerator-example.txt
+docs/getInfrastructureascodeAccelerators-example.txt
 docs/getInfrastructureascodeJob-example.txt
 docs/getInfrastructureascodeJobs-example.txt
 docs/getIntegration-example.txt
@@ -919,6 +924,7 @@ docs/getOutboundDnclistsDivisionviews-example.txt
 docs/getOutboundEvent-example.txt
 docs/getOutboundEvents-example.txt
 docs/getOutboundMessagingcampaign-example.txt
+docs/getOutboundMessagingcampaignDiagnostics-example.txt
 docs/getOutboundMessagingcampaignProgress-example.txt
 docs/getOutboundMessagingcampaigns-example.txt
 docs/getOutboundMessagingcampaignsDivisionview-example.txt
@@ -1108,7 +1114,6 @@ docs/getSpeechandtextanalyticsTopicsGeneral-example.txt
 docs/getSpeechandtextanalyticsTopicsPublishjob-example.txt
 docs/getStation-example.txt
 docs/getStations-example.txt
-docs/getStationsSettings-example.txt
 docs/getSystempresences-example.txt
 docs/getTeam-example.txt
 docs/getTeamMembers-example.txt
@@ -1365,6 +1370,7 @@ docs/patchConversationsCobrowsesessionParticipant-example.txt
 docs/patchConversationsCobrowsesessionParticipantAttributes-example.txt
 docs/patchConversationsCobrowsesessionParticipantCommunication-example.txt
 docs/patchConversationsEmail-example.txt
+docs/patchConversationsEmailMessagesDraft-example.txt
 docs/patchConversationsEmailParticipant-example.txt
 docs/patchConversationsEmailParticipantAttributes-example.txt
 docs/patchConversationsEmailParticipantCommunication-example.txt
@@ -1432,7 +1438,6 @@ docs/patchScimUser-example.txt
 docs/patchScimV2Group-example.txt
 docs/patchScimV2User-example.txt
 docs/patchSpeechandtextanalyticsSettings-example.txt
-docs/patchStationsSettings-example.txt
 docs/patchTeam-example.txt
 docs/patchUser-example.txt
 docs/patchUserCallforwarding-example.txt
@@ -1537,6 +1542,7 @@ docs/postAuthorizationSubjectBulkreplace-example.txt
 docs/postAuthorizationSubjectBulkreplace-example.txt
 docs/postAuthorizationSubjectDivisionRole-example.txt
 docs/postAuthorizationSubjectDivisionRole-example.txt
+docs/postCarrierservicesIntegrationsEmergencylocationsMe-example.txt
 docs/postCertificateDetails-example.txt
 docs/postCoachingAppointmentAnnotations-example.txt
 docs/postCoachingAppointmentConversations-example.txt
@@ -2185,6 +2191,7 @@ src/purecloud-platform-client-v2/api/ArchitectApi.js
 src/purecloud-platform-client-v2/api/AuditApi.js
 src/purecloud-platform-client-v2/api/AuthorizationApi.js
 src/purecloud-platform-client-v2/api/BillingApi.js
+src/purecloud-platform-client-v2/api/CarrierServicesApi.js
 src/purecloud-platform-client-v2/api/ChatApi.js
 src/purecloud-platform-client-v2/api/CoachingApi.js
 src/purecloud-platform-client-v2/api/ContentManagementApi.js

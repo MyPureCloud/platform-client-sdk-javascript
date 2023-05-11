@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 167.0.0
+	 * @version 168.0.0
 	 */
 
 	/**
@@ -1426,7 +1426,7 @@ class QualityApi {
 	 * @param {String} evaluationId evaluationId
 	 * @param {Object} body evaluation
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand evaluatorId, evaluationForm
+	 * @param {String} opts.expand evaluatorId, evaluationForm, assignee
 	 */
 	putQualityConversationEvaluation(conversationId, evaluationId, body, opts) { 
 		opts = opts || {};

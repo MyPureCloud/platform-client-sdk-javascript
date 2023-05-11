@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 167.0.0
+	 * @version 168.0.0
 	 */
 
 	/**
@@ -102,6 +102,7 @@ class ResponseManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.messagingTemplateFilter Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
+	 * @param {String} opts.libraryPrefix Returns a list of libraries that contain the prefix provided
 	 */
 	getResponsemanagementLibraries(opts) { 
 		opts = opts || {};
@@ -111,7 +112,7 @@ class ResponseManagementApi {
 			'/api/v2/responsemanagement/libraries', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'messagingTemplateFilter': opts['messagingTemplateFilter'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'messagingTemplateFilter': opts['messagingTemplateFilter'],'libraryPrefix': opts['libraryPrefix'] },
 			{  },
 			{  },
 			null, 

@@ -1,304 +1,255 @@
-Platform API version: 6877
+Platform API version: 6926
 
 
-# Major Changes (8 changes)
+# Major Changes (7 changes)
 
-**GET /api/v2/routing/predictors/keyperformanceindicators** (1 change)
+**/api/v2/stations/settings** (1 change)
 
-* Parameter expand was added
+* Path /api/v2/stations/settings was removed
 
-**/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}** (2 changes)
+**GET /api/v2/responsemanagement/libraries** (1 change)
 
-* Operation PUT was removed
-* Operation DELETE was removed
+* Parameter libraryPrefix was added
 
-**/api/v2/telephony/providers/edges/outboundroutes** (1 change)
+**GET /api/v2/infrastructureascode/jobs** (3 changes)
 
-* Operation POST was removed
+* Parameter acceleratorId was added
+* Parameter submittedBy was added
+* Parameter status was added
 
-**DialerContact** (1 change)
+**FreeSeatingConfiguration** (1 change)
 
-* Property data was changed from Map<object, object> to Map<object, string>
+* Model FreeSeatingConfiguration was removed
 
-**WritableDialerContact** (1 change)
+**StationSettings** (1 change)
 
-* Property data was changed from Map<object, object> to Map<object, string>
-
-**KnowledgeDocumentGuestSearchRequest** (1 change)
-
-* Property app was removed
-
-**SkillGroupEntityListing** (1 change)
-
-* Property entities was changed from SkillGroup[] to SkillGroupDefinition[]
+* Model StationSettings was removed
 
 
-# Minor Changes (76 changes)
+# Minor Changes (64 changes)
 
-**/api/v2/gamification/profiles/users/me/query** (2 changes)
+**/api/v2/carrierservices/integrations/emergencylocations/me** (3 changes)
 
 * Path was added
+* Operation GET was added
 * Operation POST was added
 
-**/api/v2/gamification/profiles/users/{userId}/query** (2 changes)
+**/api/v2/conversations/emails/{conversationId}/messages/draft** (1 change)
 
-* Path was added
-* Operation POST was added
+* Operation patch was added. Summary: Reset conversation draft to its initial state and/or auto-fill draft content
 
-**/api/v2/gamification/insights/details** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/gamification/insights/users/{userId}/details** (2 changes)
+**/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/gamification/insights/members** (2 changes)
+**/api/v2/infrastructureascode/accelerators/{acceleratorId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/gamification/insights/groups/trends** (2 changes)
+**/api/v2/infrastructureascode/accelerators** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/gamification/insights/groups/trends/all** (2 changes)
+**BotAggregateQueryPredicate** (1 change)
 
-* Path was added
-* Operation GET was added
+* Enum value languageCode was added to property dimension
 
-**/api/v2/gamification/insights** (2 changes)
+**BotAggregationQuery** (1 change)
 
-* Path was added
-* Operation GET was added
+* Enum value languageCode was added to property groupBy
 
-**/api/v2/gamification/insights/trends** (2 changes)
+**AnalyticsConversationWithoutAttributes** (1 change)
 
-* Path was added
-* Operation GET was added
+* Optional property conferenceStart was added
 
-**/api/v2/gamification/insights/users/{userId}/trends** (2 changes)
+**EvaluationDetailQueryPredicate** (1 change)
 
-* Path was added
-* Operation GET was added
+* Enum value evaluationStatus was added to property dimension
 
-**ViewFilter** (5 changes)
+**AnalyticsConversation** (1 change)
 
-* Optional property workbinIds was added
-* Optional property worktypeIds was added
-* Optional property workitemIds was added
-* Optional property workitemAssigneeIds was added
-* Optional property workitemStatuses was added
+* Optional property conferenceStart was added
 
-**AuditQueryExecutionStatusResponse** (1 change)
+**EvaluationAggregateQueryPredicate** (2 changes)
 
-* Values are no longer constrained by enum members
+* Enum value assigneeId was added to property dimension
+* Enum value evaluationContextId was added to property dimension
 
-**AuditQueryRequest** (1 change)
+**EvaluationAggregationQuery** (2 changes)
 
-* Values are no longer constrained by enum members
+* Enum value assigneeId was added to property groupBy
+* Enum value evaluationContextId was added to property groupBy
 
-**AuditLogMessage** (3 changes)
+**JourneyAggregateQueryPredicate** (2 changes)
 
-* Values are no longer constrained by enum members
-* Values are no longer constrained by enum members
-* Values are no longer constrained by enum members
+* Enum value touchpointRequestedRouting was added to property dimension
+* Enum value touchpointUsedRouting was added to property dimension
 
-**EntityChange** (1 change)
+**JourneyAggregationQuery** (2 changes)
 
-* Values are no longer constrained by enum members
+* Enum value touchpointRequestedRouting was added to property groupBy
+* Enum value touchpointUsedRouting was added to property groupBy
 
-**InitiatingAction** (1 change)
+**ViewFilter** (2 changes)
 
-* Values are no longer constrained by enum members
+* Enum value TransferToACD was added to property botResultList
+* Optional property isClearedByCustomer was added
 
-**AuditRealtimeQueryRequest** (1 change)
+**ReportingExportJobResponse** (2 changes)
 
-* Values are no longer constrained by enum members
+* Enum value DASHBOARD_USERS was added to property viewType
+* Optional property includeDurationFormatInHeader was added
 
-**AuditQueryEntity** (2 changes)
+**ReportingExportMetadataJobResponse** (1 change)
 
-* Values are no longer constrained by enum members
-* Values are no longer constrained by enum members
+* Enum value DASHBOARD_USERS was added to property viewType
 
-**AuditQueryService** (1 change)
+**ReportingExportJobRequest** (2 changes)
 
-* Values are no longer constrained by enum members
+* Enum value DASHBOARD_USERS was added to property viewType
+* Optional property includeDurationFormatInHeader was added
 
-**PredictiveRouting** (1 change)
+**EmergencyLocation** (1 change)
 
-* Optional property enableConversationScoreBiasing was added
+* Model was added
 
-**Call** (1 change)
+**ConversationMessageMetadataEvent** (1 change)
 
-* Optional property securePause was added
+* Enum value Clear was added to property subType
 
-**Conversation** (1 change)
+**TransferResponse** (1 change)
 
-* Optional property securePause was added
+* Optional property modifiedBy was added
 
-**Evaluation** (1 change)
+**TransferResponseModifiedBy** (1 change)
 
-* Optional property dateAssigneeChanged was added
+* Model was added
 
-**CallConversation** (1 change)
+**Settings** (1 change)
 
-* Optional property securePause was added
+* Optional property allowCallbackQueueSelection was added
 
-**CallMediaParticipant** (1 change)
+**DraftManipulationRequest** (1 change)
 
-* Optional property securePause was added
+* Model was added
 
-**CallBasic** (1 change)
+**HistoryHeadersTranslation** (1 change)
 
-* Optional property securePause was added
+* Model was added
 
-**ConversationBasic** (1 change)
+**ConversationEventPresence** (1 change)
 
-* Optional property securePause was added
+* Enum value Clear was added to property type
+
+**CampaignDiagnostics** (1 change)
+
+* Optional property timeZoneRescheduledCallsCount was added
+
+**CampaignStats** (1 change)
+
+* Optional property timeZoneRescheduledCalls was added
 
 **EventMessage** (1 change)
 
-* Enum value DIGITAL_RULE_SMS_PHONE_NUMBER_TYPE_MISMATCH was added to property code
+* Enum value DIGITAL_RULE_ERROR_SKIPPED was added to property code
 
-**ProfileWithDateRange** (1 change)
+**OutboundSettings** (1 change)
 
-* Model was added
+* Optional property rescheduleTimeZoneSkippedContacts was added
 
-**UserProfilesInDateRange** (1 change)
-
-* Model was added
-
-**UserProfilesInDateRangeRequest** (1 change)
+**MessagingCampaignDiagnostics** (1 change)
 
 * Model was added
 
-**InsightsDetails** (1 change)
+**ActionMap** (1 change)
+
+* Optional property triggerWithOutcomePercentileConditions was added
+
+**OutcomePercentileCondition** (1 change)
 
 * Model was added
 
-**InsightsDetailsMetricItem** (1 change)
+**PatchActionMap** (1 change)
+
+* Optional property triggerWithOutcomePercentileConditions was added
+
+**EvaluationAggregationQueryMe** (2 changes)
+
+* Enum value assigneeId was added to property groupBy
+* Enum value evaluationContextId was added to property groupBy
+
+**AcceleratorSpecification** (1 change)
 
 * Model was added
 
-**InsightsDetailsMetricPeriodPoints** (1 change)
+**MetadataDocumentation** (1 change)
 
 * Model was added
 
-**InsightsDetailsOverallItem** (1 change)
+**MetadataPresentation** (1 change)
 
 * Model was added
 
-**InsightsDetailsOverallPeriodPoints** (1 change)
+**MetadataProperty** (1 change)
 
 * Model was added
 
-**WorkdayPeriod** (1 change)
+**MetadataResultEntity** (1 change)
 
 * Model was added
 
-**InsightsAgentItem** (1 change)
+**MetadataResults** (1 change)
 
 * Model was added
 
-**InsightsAgents** (1 change)
+**MetadataSchema** (1 change)
 
 * Model was added
 
-**InsightsTrend** (1 change)
+**AcceleratorList** (1 change)
 
 * Model was added
 
-**InsightsTrendMetricItem** (1 change)
+**AcceleratorMetadata** (1 change)
 
 * Model was added
 
-**InsightsTrendTotalItem** (1 change)
+**InfrastructureascodeJob** (1 change)
+
+* Optional property acceleratorId was added
+
+**ConversationAppSettings** (1 change)
+
+* Optional property conversationClear was added
+
+**ConversationClearSettings** (1 change)
 
 * Model was added
 
-**InsightsTrends** (1 change)
+**LearningModuleInformStep** (2 changes)
 
-* Model was added
+* Optional property displayName was added
+* Optional property description was added
 
-**TrendData** (1 change)
+**LearningModuleInformStepRequest** (2 changes)
 
-* Model was added
-
-**InsightsSummary** (1 change)
-
-* Model was added
-
-**InsightsSummaryMetricItem** (1 change)
-
-* Model was added
-
-**InsightsSummaryMetricPeriodPoints** (1 change)
-
-* Model was added
-
-**InsightsSummaryOverallItem** (1 change)
-
-* Model was added
-
-**InsightsSummaryOverallPeriodPoints** (1 change)
-
-* Model was added
-
-**InsightsSummaryUserItem** (1 change)
-
-* Model was added
-
-**UserInsightsTrend** (1 change)
-
-* Model was added
-
-**QualityEvaluationScoreItem** (1 change)
-
-* Model was added
-
-**KnowledgeDocumentResponse** (1 change)
-
-* Optional property dateImported was added
-
-**KnowledgeGuestDocument** (1 change)
-
-* Optional property dateImported was added
-
-**EvaluationResponse** (1 change)
-
-* Optional property dateAssigneeChanged was added
-
-**RecordingSettings** (1 change)
-
-* Optional property regionalRecordingStorageEnabled was added
-
-**KeyPerformanceIndicator** (1 change)
-
-* Optional property queues was added
-
-**SkillGroupDefinition** (1 change)
-
-* Model was added
-
-**SupportCenterModuleSetting** (1 change)
-
-* Enum value TopViewedArticles was added to property type
+* Optional property displayName was added
+* Optional property description was added
 
 
 # Point Changes (3 changes)
 
-**POST /api/v2/audits/query** (1 change)
+**POST /api/v2/externalcontacts/merge/contacts** (1 change)
 
 * Description was changed
 
-**POST /api/v2/audits/query/realtime** (1 change)
+**PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
 
-* Description was changed
+* Description was changed for parameter expand
 
-**POST /api/v2/workforcemanagement/adherence/historical** (1 change)
+**GET /api/v2/conversations/{conversationId}/recordingmetadata** (1 change)
 
 * Summary was changed

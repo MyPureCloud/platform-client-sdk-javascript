@@ -2843,7 +2843,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let evaluationId = "evaluationId_example"; // String | evaluationId
 let body = {}; // Object | evaluation
 let opts = { 
-  'expand': "expand_example" // String | evaluatorId, evaluationForm
+  'expand': "expand_example" // String | evaluatorId, evaluationForm, assignee
 };
 
 apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
@@ -2864,7 +2864,7 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
  **conversationId** | **String** | conversationId |  |
  **evaluationId** | **String** | evaluationId |  |
  **body** | **Object** | evaluation |  |
- **expand** | **String** | evaluatorId, evaluationForm | [optional]  |
+ **expand** | **String** | evaluatorId, evaluationForm, assignee | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

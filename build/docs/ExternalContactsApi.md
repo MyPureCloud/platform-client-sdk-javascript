@@ -3081,6 +3081,8 @@ POST /api/v2/externalcontacts/merge/contacts
 
 Merge two contacts into a new contact record
 
+Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+
 Requires ANY permissions:
 
 * externalContacts:identity:merge

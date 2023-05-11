@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 167.0.0
+	 * @version 168.0.0
 	 */
 
 	/**
@@ -3264,6 +3264,37 @@ class ConversationsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Reset conversation draft to its initial state and/or auto-fill draft content
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.autoFill autoFill
+	 * @param {Boolean} opts.discard discard
+	 * @param {Object} opts.body Draft Manipulation Request
+	 */
+	patchConversationsEmailMessagesDraft(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailMessagesDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/messages/draft', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{ 'autoFill': opts['autoFill'],'discard': opts['discard'] },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

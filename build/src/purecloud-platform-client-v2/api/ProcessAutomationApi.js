@@ -5,7 +5,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 167.0.0
+	 * @version 168.0.0
 	 */
 
 	/**

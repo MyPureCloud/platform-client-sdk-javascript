@@ -71,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | **GET** /api/v2/outbound/events/{eventId} | Get Dialer Event
 [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | **GET** /api/v2/outbound/events | Query Event Logs
 [**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Get an Outbound Messaging Campaign
+[**getOutboundMessagingcampaignDiagnostics**](OutboundApi.html#getOutboundMessagingcampaignDiagnostics) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics | Get messaging campaign diagnostics
 [**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Get messaging campaign's progress
 [**getOutboundMessagingcampaigns**](OutboundApi.html#getOutboundMessagingcampaigns) | **GET** /api/v2/outbound/messagingcampaigns | Query a list of Messaging Campaigns
 [**getOutboundMessagingcampaignsDivisionview**](OutboundApi.html#getOutboundMessagingcampaignsDivisionview) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} | Get a basic Messaging Campaign information object
@@ -3666,6 +3667,57 @@ apiInstance.getOutboundMessagingcampaign(messagingCampaignId)
 ### Return type
 
 **MessagingCampaign**
+
+<a name="getOutboundMessagingcampaignDiagnostics"></a>
+
+# MessagingCampaignDiagnostics getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+
+
+GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics
+
+Get messaging campaign diagnostics
+
+Requires ANY permissions:
+
+* outbound:messagingCampaign:view
+* outbound:emailCampaign:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+  .then((data) => {
+    console.log(`getOutboundMessagingcampaignDiagnostics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundMessagingcampaignDiagnostics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignDiagnostics**
 
 <a name="getOutboundMessagingcampaignProgress"></a>
 
