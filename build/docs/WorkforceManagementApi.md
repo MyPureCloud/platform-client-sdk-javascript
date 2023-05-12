@@ -159,6 +159,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunits) | **POST** /api/v2/workforcemanagement/managementunits | Add a management unit
 [**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi.html#postWorkforcemanagementNotificationsUpdate) | **POST** /api/v2/workforcemanagement/notifications/update | Mark a list of notifications as read or unread
 [**postWorkforcemanagementSchedules**](WorkforceManagementApi.html#postWorkforcemanagementSchedules) | **POST** /api/v2/workforcemanagement/schedules | Get published schedule for the current user
+[**postWorkforcemanagementTeamAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementTeamAdherenceHistorical) | **POST** /api/v2/workforcemanagement/teams/{teamId}/adherence/historical | Request a teams historical adherence report
+[**postWorkforcemanagementTeamShrinkageJobs**](WorkforceManagementApi.html#postWorkforcemanagementTeamShrinkageJobs) | **POST** /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs | Request a historical shrinkage report
 [**postWorkforcemanagementTimeofflimitsAvailableQuery**](WorkforceManagementApi.html#postWorkforcemanagementTimeofflimitsAvailableQuery) | **POST** /api/v2/workforcemanagement/timeofflimits/available/query | Queries available time off for the current user
 [**postWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequests) | **POST** /api/v2/workforcemanagement/timeoffrequests | Create a time off request for the current user
 [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi.html#putWorkforcemanagementManagementunitTimeofflimitValues) | **PUT** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values | Sets daily values for a date range of time off limit object
@@ -1441,7 +1443,7 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let opts = { 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["expand_example"] // [String] | Include to access additional data on the business unit
 };
 
 apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
@@ -1460,7 +1462,7 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **expand** | **[String]** |  | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling |
+ **expand** | **[String]** | Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling |
 {: class="table table-striped"}
 
 ### Return type
@@ -2426,7 +2428,7 @@ let businessUnitId = "businessUnitId_example"; // String | The ID of the busines
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["expand_example"] // [String] | Include to access additional data on the forecast
 };
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)
@@ -2447,7 +2449,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnit
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
- **expand** | **[String]** |  | [optional] <br />**Values**: planningGroups, generationResults |
+ **expand** | **[String]** | Include to access additional data on the forecast | [optional] <br />**Values**: planningGroups, generationResults |
 {: class="table table-striped"}
 
 ### Return type
@@ -4307,7 +4309,7 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["expand_example"] // [String] | Include to access additional data on the work plans
 };
 
 apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
@@ -4326,7 +4328,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **expand** | **[String]** |  | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
+ **expand** | **[String]** | Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
 {: class="table table-striped"}
 
 ### Return type
@@ -6925,7 +6927,7 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let body = {}; // Object | 
+let body = {}; // Object | body
 let opts = { 
   'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 };
@@ -6947,7 +6949,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(bu
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **body** | **Object** |  |  |
+ **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
@@ -6985,7 +6987,7 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let body = {}; // Object | 
+let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
   .then((data) => {
@@ -7004,7 +7006,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(busi
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **body** | **Object** |  |  |
+ **body** | **Object** | body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -8652,6 +8654,118 @@ apiInstance.postWorkforcemanagementSchedules(opts)
 ### Return type
 
 **UserScheduleContainer**
+
+<a name="postWorkforcemanagementTeamAdherenceHistorical"></a>
+
+# WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
+
+
+POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical
+
+Request a teams historical adherence report
+
+The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+
+Requires ANY permissions:
+
+* wfm:historicalAdherence:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let teamId = "teamId_example"; // String | The ID of the team
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementTeamAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementTeamAdherenceHistorical');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **teamId** | **String** | The ID of the team |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**WfmHistoricalAdherenceResponse**
+
+<a name="postWorkforcemanagementTeamShrinkageJobs"></a>
+
+# WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(teamId, opts)
+
+
+POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs
+
+Request a historical shrinkage report
+
+The maximum supported range for historical shrinkage queries is up to 32 days
+
+Requires ANY permissions:
+
+* wfm:shrinkage:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let teamId = "teamId_example"; // String | The ID of the team
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementTeamShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementTeamShrinkageJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **teamId** | **String** | The ID of the team |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**WfmHistoricalShrinkageResponse**
 
 <a name="postWorkforcemanagementTimeofflimitsAvailableQuery"></a>
 

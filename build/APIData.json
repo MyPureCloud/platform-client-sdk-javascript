@@ -36330,7 +36330,7 @@
       }
     ],
     "return": "BusinessUnitResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | \n};\n\n// Get business unit\napiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunit success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunit\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | Include to access additional data on the business unit\n};\n\n// Get business unit\napiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunit success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunit\");\n    console.error(err);\n  });"
   },
   "getworkforcemanagementbusinessunitactivitycode": {
     "operationId": "getworkforcemanagementbusinessunitactivitycode",
@@ -36703,7 +36703,7 @@
       }
     ],
     "return": "BuShortTermForecast",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit to which the forecast belongs\nlet weekDateId = \"weekDateId_example\"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet forecastId = \"forecastId_example\"; // String | The ID of the forecast\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | \n};\n\n// Get a short term forecast\napiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitWeekShorttermforecast success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitWeekShorttermforecast\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit to which the forecast belongs\nlet weekDateId = \"weekDateId_example\"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet forecastId = \"forecastId_example\"; // String | The ID of the forecast\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | Include to access additional data on the forecast\n};\n\n// Get a short term forecast\napiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitWeekShorttermforecast success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitWeekShorttermforecast\");\n    console.error(err);\n  });"
   },
   "getworkforcemanagementbusinessunitweekshorttermforecastdata": {
     "operationId": "getworkforcemanagementbusinessunitweekshorttermforecastdata",
@@ -37349,7 +37349,7 @@
       }
     ],
     "return": "WorkPlanListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet managementUnitId = \"managementUnitId_example\"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | \n};\n\n// Get work plans\napiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementManagementunitWorkplans success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementManagementunitWorkplans\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet managementUnitId = \"managementUnitId_example\"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | Include to access additional data on the work plans\n};\n\n// Get work plans\napiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)\n  .then((data) => {\n    console.log(`getWorkforcemanagementManagementunitWorkplans success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementManagementunitWorkplans\");\n    console.error(err);\n  });"
   },
   "getworkforcemanagementmanagementunits": {
     "operationId": "getworkforcemanagementmanagementunits",
@@ -38411,7 +38411,7 @@
       }
     ],
     "return": "AsyncForecastOperationResult",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit to which the forecast belongs\nlet weekDateId = \"weekDateId_example\"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | \nlet opts = { \n  \"forceAsync\": true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes\n};\n\n// Generate a short term forecast\napiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit to which the forecast belongs\nlet weekDateId = \"weekDateId_example\"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | body\nlet opts = { \n  \"forceAsync\": true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes\n};\n\n// Generate a short term forecast\napiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate\");\n    console.error(err);\n  });"
   },
   "postworkforcemanagementbusinessunitweekshorttermforecastsimport": {
     "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsimport",
@@ -38435,7 +38435,7 @@
       }
     ],
     "return": "ImportForecastResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit to which the forecast belongs\nlet weekDateId = \"weekDateId_example\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | \n\n// Starts importing the uploaded short term forecast\napiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitWeekShorttermforecastsImport success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit to which the forecast belongs\nlet weekDateId = \"weekDateId_example\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | body\n\n// Starts importing the uploaded short term forecast\napiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)\n  .then((data) => {\n    console.log(`postWorkforcemanagementBusinessunitWeekShorttermforecastsImport success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport\");\n    console.error(err);\n  });"
   },
   "postworkforcemanagementbusinessunitweekshorttermforecastsimportuploadurl": {
     "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsimportuploadurl",
@@ -39043,6 +39043,44 @@
     ],
     "return": "UserScheduleContainer",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Get published schedule for the current user\napiInstance.postWorkforcemanagementSchedules(opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementSchedules success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementSchedules\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementteamadherencehistorical": {
+    "operationId": "postworkforcemanagementteamadherencehistorical",
+    "functionName": "postWorkforcemanagementTeamAdherenceHistorical",
+    "signature": "postWorkforcemanagementTeamAdherenceHistorical(teamId, body)",
+    "parameters": [
+      {
+        "name": "teamId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet teamId = \"teamId_example\"; // String | The ID of the team\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Request a teams historical adherence report\napiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementTeamAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementTeamAdherenceHistorical\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementteamshrinkagejobs": {
+    "operationId": "postworkforcemanagementteamshrinkagejobs",
+    "functionName": "postWorkforcemanagementTeamShrinkageJobs",
+    "signature": "postWorkforcemanagementTeamShrinkageJobs(teamId, body)",
+    "parameters": [
+      {
+        "name": "teamId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "WfmHistoricalShrinkageResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet teamId = \"teamId_example\"; // String | The ID of the team\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Request a historical shrinkage report\napiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementTeamShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementTeamShrinkageJobs\");\n    console.error(err);\n  });"
   },
   "postworkforcemanagementtimeofflimitsavailablequery": {
     "operationId": "postworkforcemanagementtimeofflimitsavailablequery",

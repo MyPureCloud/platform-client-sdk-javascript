@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 168.0.0
+	 * @version 168.1.0
 	 */
 
 	/**
@@ -630,7 +630,7 @@ class WorkforceManagementApi {
 	 * Expanding "settings" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand 
+	 * @param {Array.<String>} opts.expand Include to access additional data on the business unit
 	 */
 	getWorkforcemanagementBusinessunit(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1169,7 +1169,7 @@ class WorkforceManagementApi {
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand 
+	 * @param {Array.<String>} opts.expand Include to access additional data on the forecast
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts) { 
 		opts = opts || {};
@@ -2158,7 +2158,7 @@ class WorkforceManagementApi {
 	 * "expand=details" is deprecated
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand 
+	 * @param {Array.<String>} opts.expand Include to access additional data on the work plans
 	 */
 	getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts) { 
 		opts = opts || {};
@@ -3666,7 +3666,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body 
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 	 */
@@ -3705,7 +3705,7 @@ class WorkforceManagementApi {
 	 * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body 
+	 * @param {Object} body body
 	 */
 	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -4626,6 +4626,64 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/schedules', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request a teams historical adherence report
+	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+	 * @param {String} teamId The ID of the team
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementTeamAdherenceHistorical(teamId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'teamId' is set
+		if (teamId === undefined || teamId === null) {
+			throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamAdherenceHistorical';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/teams/{teamId}/adherence/historical', 
+			'POST', 
+			{ 'teamId': teamId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request a historical shrinkage report
+	 * The maximum supported range for historical shrinkage queries is up to 32 days
+	 * @param {String} teamId The ID of the team
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementTeamShrinkageJobs(teamId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'teamId' is set
+		if (teamId === undefined || teamId === null) {
+			throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamShrinkageJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs', 
+			'POST', 
+			{ 'teamId': teamId },
 			{  },
 			{  },
 			{  },

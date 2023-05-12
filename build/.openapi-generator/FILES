@@ -1981,6 +1981,8 @@ docs/postWorkforcemanagementManagementunitWorkplans-example.txt
 docs/postWorkforcemanagementManagementunits-example.txt
 docs/postWorkforcemanagementNotificationsUpdate-example.txt
 docs/postWorkforcemanagementSchedules-example.txt
+docs/postWorkforcemanagementTeamAdherenceHistorical-example.txt
+docs/postWorkforcemanagementTeamShrinkageJobs-example.txt
 docs/postWorkforcemanagementTimeofflimitsAvailableQuery-example.txt
 docs/postWorkforcemanagementTimeoffrequests-example.txt
 docs/putAlertingInteractionstatsAlert-example.txt
