@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -321,6 +321,7 @@ class UsersApi {
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
+     	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedMe(permission, opts) { 
 		opts = opts || {};
@@ -382,6 +383,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+     	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
 		opts = opts || {};
@@ -458,6 +460,7 @@ class UsersApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+     	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -490,6 +493,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
+     	 * @deprecated
 	 */
 	getProfilesUsers(opts) { 
 		opts = opts || {};
@@ -657,6 +661,7 @@ class UsersApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+     	 * @deprecated
 	 */
 	getUserFavorites(userId, opts) { 
 		opts = opts || {};
@@ -742,6 +747,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
+     	 * @deprecated
 	 */
 	getUserProfile(userId, opts) { 
 		opts = opts || {};

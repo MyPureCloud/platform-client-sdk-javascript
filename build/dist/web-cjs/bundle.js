@@ -2279,7 +2279,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 168.1.0
+ * @version 168.2.0
  */
 class ApiClient {
 	/**
@@ -3358,7 +3358,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -3672,7 +3672,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -4926,7 +4926,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -7974,7 +7974,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -8145,7 +8145,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -8386,6 +8386,7 @@ class AuthorizationApi {
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
+     	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedMe(permission, opts) { 
 		opts = opts || {};
@@ -8447,6 +8448,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+     	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
 		opts = opts || {};
@@ -9374,7 +9376,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -9454,7 +9456,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -9524,7 +9526,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -9542,6 +9544,7 @@ class ChatApi {
 	/**
 	 * Get Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
+     	 * @deprecated
 	 */
 	getChatSettings() { 
 
@@ -9583,6 +9586,7 @@ class ChatApi {
 	 * Patch Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
 	 * @param {Object} body Chat
+     	 * @deprecated
 	 */
 	patchChatSettings(body) { 
 		// verify the required parameter 'body' is set
@@ -9633,6 +9637,7 @@ class ChatApi {
 	 * Update Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
 	 * @param {Object} body Chat
+     	 * @deprecated
 	 */
 	putChatSettings(body) { 
 		// verify the required parameter 'body' is set
@@ -9685,7 +9690,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -10262,7 +10267,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -10549,6 +10554,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy name or dateCreated
 	 * @param {String} opts.sortOrder ascending or descending (default to ascending)
+     	 * @deprecated
 	 */
 	getContentmanagementDocuments(workspaceId, opts) { 
 		opts = opts || {};
@@ -11402,7 +11408,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -17493,7 +17499,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -17579,7 +17585,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -17631,7 +17637,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -17727,7 +17733,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -19685,7 +19691,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -19856,7 +19862,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -19927,7 +19933,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -22013,7 +22019,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -22143,7 +22149,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -22274,7 +22280,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -22729,7 +22735,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -22803,6 +22809,7 @@ class GroupsApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+     	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -22912,6 +22919,7 @@ class GroupsApi {
 	 * @param {String} groupId groupId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
+     	 * @deprecated
 	 */
 	getGroupProfile(groupId, opts) { 
 		opts = opts || {};
@@ -23001,6 +23009,7 @@ class GroupsApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+     	 * @deprecated
 	 */
 	getProfilesGroups(opts) { 
 		opts = opts || {};
@@ -23135,7 +23144,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -23891,7 +23900,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -24058,7 +24067,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -25658,7 +25667,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -26538,7 +26547,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -28970,7 +28979,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -29983,7 +29992,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -30002,6 +30011,7 @@ class LanguagesApi {
 	 * Delete Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
+     	 * @deprecated
 	 */
 	deleteLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
@@ -30027,6 +30037,7 @@ class LanguagesApi {
 	 * Get Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
+     	 * @deprecated
 	 */
 	getLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
@@ -30056,6 +30067,7 @@ class LanguagesApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {String} opts.name Name
+     	 * @deprecated
 	 */
 	getLanguages(opts) { 
 		opts = opts || {};
@@ -30174,6 +30186,7 @@ class LanguagesApi {
 	 * Create Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 	 * @param {Object} body Language
+     	 * @deprecated
 	 */
 	postLanguages(body) { 
 		// verify the required parameter 'body' is set
@@ -30201,7 +30214,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -31016,7 +31029,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -31254,7 +31267,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -31490,7 +31503,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -31641,7 +31654,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -31792,7 +31805,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -32025,7 +32038,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -32391,7 +32404,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -32662,7 +32675,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -32681,6 +32694,7 @@ class OrganizationApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+     	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -32913,6 +32927,7 @@ class OrganizationApi {
 	/**
 	 * Use PUT /api/v2/organizations/embeddedintegration instead
 	 * 
+     	 * @deprecated
 	 */
 	getOrganizationsWhitelist() { 
 
@@ -33038,6 +33053,7 @@ class OrganizationApi {
 	 * Use PUT /api/v2/organizations/embeddedintegration instead
 	 * 
 	 * @param {Object} body Whitelist settings
+     	 * @deprecated
 	 */
 	putOrganizationsWhitelist(body) { 
 		// verify the required parameter 'body' is set
@@ -33065,7 +33081,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -34360,7 +34376,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -36845,6 +36861,7 @@ class OutboundApi {
 	 * This endpoint is deprecated and may have unexpected results. Please use "/conversations/{conversationId}/participants/{participantId}/callbacks instead."
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body ContactCallbackRequest
+     	 * @deprecated
 	 */
 	postOutboundCampaignCallbackSchedule(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
@@ -37981,7 +37998,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -38532,7 +38549,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -38771,7 +38788,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -38854,6 +38871,7 @@ class QualityApi {
 	 * Delete an evaluation form.
 	 * 
 	 * @param {String} formId Form ID
+     	 * @deprecated
 	 */
 	deleteQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
@@ -39222,6 +39240,7 @@ class QualityApi {
 	 * Get an evaluation form
 	 * 
 	 * @param {String} formId Form ID
+     	 * @deprecated
 	 */
 	getQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
@@ -39250,6 +39269,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+     	 * @deprecated
 	 */
 	getQualityFormVersions(formId, opts) { 
 		opts = opts || {};
@@ -39285,6 +39305,7 @@ class QualityApi {
 	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
+     	 * @deprecated
 	 */
 	getQualityForms(opts) { 
 		opts = opts || {};
@@ -39560,6 +39581,7 @@ class QualityApi {
 	 * Get the published evaluation forms.
 	 * 
 	 * @param {String} formId Form ID
+     	 * @deprecated
 	 */
 	getQualityPublishedform(formId) { 
 		// verify the required parameter 'formId' is set
@@ -39589,6 +39611,7 @@ class QualityApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
+     	 * @deprecated
 	 */
 	getQualityPublishedforms(opts) { 
 		opts = opts || {};
@@ -39984,6 +40007,7 @@ class QualityApi {
 	 * Create an evaluation form.
 	 * 
 	 * @param {Object} body Evaluation form
+     	 * @deprecated
 	 */
 	postQualityForms(body) { 
 		// verify the required parameter 'body' is set
@@ -40059,6 +40083,7 @@ class QualityApi {
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
+     	 * @deprecated
 	 */
 	postQualityPublishedforms(body) { 
 		// verify the required parameter 'body' is set
@@ -40229,6 +40254,7 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body Evaluation form
+     	 * @deprecated
 	 */
 	putQualityForm(formId, body) { 
 		// verify the required parameter 'formId' is set
@@ -40350,7 +40376,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -41987,7 +42013,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -42472,7 +42498,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -42706,6 +42732,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
+     	 * @deprecated
 	 */
 	deleteRoutingQueueUser(queueId, memberId) { 
 		// verify the required parameter 'queueId' is set
@@ -43797,6 +43824,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.languages Filter by language
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
+     	 * @deprecated
 	 */
 	getRoutingQueueUsers(queueId, opts) { 
 		opts = opts || {};
@@ -44754,6 +44782,7 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
 	 * @param {Object} body Queue Member
+     	 * @deprecated
 	 */
 	patchRoutingQueueUser(queueId, memberId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -44788,6 +44817,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
+     	 * @deprecated
 	 */
 	patchRoutingQueueUsers(queueId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -45329,6 +45359,7 @@ class RoutingApi {
 	 * @param {Array.<Object>} body Queue Members
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts._delete True to delete queue members (default to false)
+     	 * @deprecated
 	 */
 	postRoutingQueueUsers(queueId, body, opts) { 
 		opts = opts || {};
@@ -45981,7 +46012,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -46858,7 +46889,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -47277,7 +47308,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -47887,7 +47918,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -48816,7 +48847,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -48918,7 +48949,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -49057,7 +49088,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -49328,7 +49359,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -49456,7 +49487,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -50850,6 +50881,7 @@ class TelephonyProvidersEdgeApi {
 	 * Get outbound route
 	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 	 * @param {String} outboundRouteId Outbound route ID
+     	 * @deprecated
 	 */
 	getTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
 		// verify the required parameter 'outboundRouteId' is set
@@ -52656,7 +52688,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -52784,7 +52816,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -52890,7 +52922,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -53066,7 +53098,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -53226,7 +53258,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -53411,7 +53443,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -53727,6 +53759,7 @@ class UsersApi {
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
+     	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedMe(permission, opts) { 
 		opts = opts || {};
@@ -53788,6 +53821,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+     	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
 		opts = opts || {};
@@ -53864,6 +53898,7 @@ class UsersApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+     	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -53896,6 +53931,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
+     	 * @deprecated
 	 */
 	getProfilesUsers(opts) { 
 		opts = opts || {};
@@ -54063,6 +54099,7 @@ class UsersApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+     	 * @deprecated
 	 */
 	getUserFavorites(userId, opts) { 
 		opts = opts || {};
@@ -54148,6 +54185,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
+     	 * @deprecated
 	 */
 	getUserProfile(userId, opts) { 
 		opts = opts || {};
@@ -55801,7 +55839,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -55912,7 +55950,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -56579,7 +56617,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -56598,6 +56636,7 @@ class WebChatApi {
 	 * Delete a WebChat deployment
 	 * 
 	 * @param {String} deploymentId Deployment Id
+     	 * @deprecated
 	 */
 	deleteWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
@@ -56673,6 +56712,7 @@ class WebChatApi {
 	 * Get a WebChat deployment
 	 * 
 	 * @param {String} deploymentId Deployment Id
+     	 * @deprecated
 	 */
 	getWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
@@ -56697,6 +56737,7 @@ class WebChatApi {
 	/**
 	 * List WebChat deployments
 	 * 
+     	 * @deprecated
 	 */
 	getWebchatDeployments() { 
 
@@ -56951,6 +56992,7 @@ class WebChatApi {
 	 * Create WebChat deployment
 	 * 
 	 * @param {Object} body Deployment
+     	 * @deprecated
 	 */
 	postWebchatDeployments(body) { 
 		// verify the required parameter 'body' is set
@@ -57067,6 +57109,7 @@ class WebChatApi {
 	 * 
 	 * @param {String} deploymentId Deployment Id
 	 * @param {Object} body Deployment
+     	 * @deprecated
 	 */
 	putWebchatDeployment(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
@@ -57123,7 +57166,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -57645,7 +57688,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -57691,7 +57734,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -57837,7 +57880,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -59379,6 +59422,7 @@ class WorkforceManagementApi {
 	 * Get activity codes
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+     	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -59791,6 +59835,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+     	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts) { 
 		opts = opts || {};
@@ -59831,6 +59876,7 @@ class WorkforceManagementApi {
 	 * @param {Boolean} opts.includeOnlyPublished Return only published schedules
 	 * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
 	 * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
+     	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
 		opts = opts || {};
@@ -61789,6 +61835,7 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+     	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
@@ -62449,6 +62496,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+     	 * @deprecated
 	 */
 	postWorkforcemanagementSchedules(opts) { 
 		opts = opts || {};
@@ -62639,7 +62687,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 168.1.0
+ * @version 168.2.0
  */
 class platformClient {
 	constructor() {

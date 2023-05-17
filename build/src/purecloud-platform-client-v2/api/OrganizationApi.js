@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -24,6 +24,7 @@ class OrganizationApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+     	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -256,6 +257,7 @@ class OrganizationApi {
 	/**
 	 * Use PUT /api/v2/organizations/embeddedintegration instead
 	 * 
+     	 * @deprecated
 	 */
 	getOrganizationsWhitelist() { 
 
@@ -381,6 +383,7 @@ class OrganizationApi {
 	 * Use PUT /api/v2/organizations/embeddedintegration instead
 	 * 
 	 * @param {Object} body Whitelist settings
+     	 * @deprecated
 	 */
 	putOrganizationsWhitelist(body) { 
 		// verify the required parameter 'body' is set

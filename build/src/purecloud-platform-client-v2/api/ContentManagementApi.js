@@ -5,7 +5,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -292,6 +292,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy name or dateCreated
 	 * @param {String} opts.sortOrder ascending or descending (default to ascending)
+     	 * @deprecated
 	 */
 	getContentmanagementDocuments(workspaceId, opts) { 
 		opts = opts || {};

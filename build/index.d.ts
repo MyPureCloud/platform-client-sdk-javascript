@@ -10433,6 +10433,8 @@ declare namespace Models {
 		"enabled"?: boolean;
 		"allowAgentControl"?: boolean;
 		"maskSelectors"?: Array<string>;
+		"channels"?: Array<string>;
+		"readonlySelectors"?: Array<string>;
 	}
 	
 	export interface CobrowseWebMessagingSession { 
@@ -11293,6 +11295,7 @@ declare namespace Models {
 	}
 	
 	export interface ConversationAppSettings { 
+		"enabled"?: boolean;
 		"showAgentTypingIndicator"?: boolean;
 		"showUserTypingIndicator"?: boolean;
 		"autoStartType"?: string;
@@ -11328,6 +11331,7 @@ declare namespace Models {
 		"participants"?: Array<Models.ConversationCallEventTopicCallMediaParticipant>;
 		"otherMediaUris"?: Array<string>;
 		"recordingState"?: string;
+		"securePause"?: boolean;
 		"maxParticipants"?: number;
 	}
 	
@@ -11372,6 +11376,7 @@ declare namespace Models {
 		"confined"?: boolean;
 		"recording"?: boolean;
 		"recordingState"?: string;
+		"securePause"?: boolean;
 		"group"?: Models.ConversationCallEventTopicUriReference;
 		"ani"?: string;
 		"dnis"?: string;
@@ -12206,6 +12211,7 @@ declare namespace Models {
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"held"?: boolean;
+		"securePause"?: boolean;
 		"errorInfo"?: Models.ConversationEventTopicErrorDetails;
 		"disconnectType"?: string;
 		"startHoldTime"?: string;
@@ -12307,6 +12313,7 @@ declare namespace Models {
 		"recordingState"?: string;
 		"address"?: string;
 		"externalTag"?: string;
+		"securePause"?: boolean;
 	}
 	
 	export interface ConversationEventTopicConversationRoutingData { 
@@ -12481,6 +12488,11 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface ConversationEventTopicModifiedBy { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface ConversationEventTopicObject { 
 	}
 	
@@ -12536,6 +12548,7 @@ declare namespace Models {
 		"state"?: string;
 		"dateIssued"?: string;
 		"initiator"?: Models.ConversationEventTopicInitiator;
+		"modifiedBy"?: Models.ConversationEventTopicModifiedBy;
 		"destination"?: Models.ConversationEventTopicDestination;
 		"transferType"?: string;
 	}
@@ -17668,6 +17681,7 @@ declare namespace Models {
 	
 	export interface ExternalContactsContactChangedTopicContact { 
 		"id"?: string;
+		"externalOrganization"?: Models.ExternalContactsContactChangedTopicExternalOrganization;
 		"type"?: string;
 		"firstName"?: string;
 		"middleName"?: string;
@@ -17689,6 +17703,8 @@ declare namespace Models {
 		"whatsAppId"?: Models.ExternalContactsContactChangedTopicWhatsAppId;
 		"facebookId"?: Models.ExternalContactsContactChangedTopicFacebookId;
 		"instagramId"?: Models.ExternalContactsContactChangedTopicInstagramId;
+		"schema"?: Models.ExternalContactsContactChangedTopicDataSchema;
+		"customFields"?: { [key: string]: object; };
 	}
 	
 	export interface ExternalContactsContactChangedTopicContactAddress { 
@@ -17698,6 +17714,15 @@ declare namespace Models {
 		"state"?: string;
 		"postalCode"?: string;
 		"countryCode"?: string;
+	}
+	
+	export interface ExternalContactsContactChangedTopicDataSchema { 
+		"id"?: string;
+		"version"?: number;
+	}
+	
+	export interface ExternalContactsContactChangedTopicExternalOrganization { 
+		"id"?: string;
 	}
 	
 	export interface ExternalContactsContactChangedTopicFacebookId { 
@@ -17727,6 +17752,9 @@ declare namespace Models {
 		"userId"?: string;
 	}
 	
+	export interface ExternalContactsContactChangedTopicObject { 
+	}
+	
 	export interface ExternalContactsContactChangedTopicPhoneNumber { 
 		"display"?: string;
 		"extension"?: number;
@@ -17751,6 +17779,7 @@ declare namespace Models {
 	
 	export interface ExternalContactsUnresolvedContactChangedTopicContact { 
 		"id"?: string;
+		"externalOrganization"?: Models.ExternalContactsUnresolvedContactChangedTopicExternalOrganization;
 		"type"?: string;
 		"firstName"?: string;
 		"middleName"?: string;
@@ -17772,6 +17801,8 @@ declare namespace Models {
 		"whatsAppId"?: Models.ExternalContactsUnresolvedContactChangedTopicWhatsAppId;
 		"facebookId"?: Models.ExternalContactsUnresolvedContactChangedTopicFacebookId;
 		"instagramId"?: Models.ExternalContactsUnresolvedContactChangedTopicInstagramId;
+		"schema"?: Models.ExternalContactsUnresolvedContactChangedTopicDataSchema;
+		"customFields"?: { [key: string]: object; };
 	}
 	
 	export interface ExternalContactsUnresolvedContactChangedTopicContactAddress { 
@@ -17781,6 +17812,15 @@ declare namespace Models {
 		"state"?: string;
 		"postalCode"?: string;
 		"countryCode"?: string;
+	}
+	
+	export interface ExternalContactsUnresolvedContactChangedTopicDataSchema { 
+		"id"?: string;
+		"version"?: number;
+	}
+	
+	export interface ExternalContactsUnresolvedContactChangedTopicExternalOrganization { 
+		"id"?: string;
 	}
 	
 	export interface ExternalContactsUnresolvedContactChangedTopicFacebookId { 
@@ -17808,6 +17848,9 @@ declare namespace Models {
 	
 	export interface ExternalContactsUnresolvedContactChangedTopicLineUserId { 
 		"userId"?: string;
+	}
+	
+	export interface ExternalContactsUnresolvedContactChangedTopicObject { 
 	}
 	
 	export interface ExternalContactsUnresolvedContactChangedTopicPhoneNumber { 
@@ -19473,6 +19516,7 @@ declare namespace Models {
 		"forwardPrefix": string;
 		"sent": string;
 		"language": string;
+		"timeZone"?: string;
 	}
 	
 	export interface HistoryListing { 
@@ -20798,6 +20842,7 @@ declare namespace Models {
 		"geolocation"?: Models.JourneyWebActionEventsNotificationGeoLocation;
 		"mktCampaign"?: Models.JourneyWebActionEventsNotificationMktCampaign;
 		"visitReferrer"?: Models.JourneyWebActionEventsNotificationReferrer;
+		"timeToDisposition"?: number;
 	}
 	
 	export interface JourneyWebEventsNotificationActionMap { 
@@ -20957,6 +21002,7 @@ declare namespace Models {
 		"geolocation"?: Models.JourneyWebEventsNotificationGeoLocation;
 		"mktCampaign"?: Models.JourneyWebEventsNotificationMktCampaign;
 		"visitReferrer"?: Models.JourneyWebEventsNotificationReferrer;
+		"timeToDisposition"?: number;
 	}
 	
 	export interface JourneyWebEventsNotificationWebEventsNotification { 
@@ -23513,6 +23559,7 @@ declare namespace Models {
 		"sourcePerformanceProfile"?: Models.PerformanceProfile;
 		"unitDefinition"?: string;
 		"precision"?: number;
+		"timeDisplayUnit"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -26215,6 +26262,7 @@ declare namespace Models {
 		"participants"?: Array<Models.QueueConversationCallEventTopicCallMediaParticipant>;
 		"otherMediaUris"?: Array<string>;
 		"recordingState"?: string;
+		"securePause"?: boolean;
 		"maxParticipants"?: number;
 	}
 	
@@ -26259,6 +26307,7 @@ declare namespace Models {
 		"confined"?: boolean;
 		"recording"?: boolean;
 		"recordingState"?: string;
+		"securePause"?: boolean;
 		"group"?: Models.QueueConversationCallEventTopicUriReference;
 		"ani"?: string;
 		"dnis"?: string;
@@ -26905,6 +26954,7 @@ declare namespace Models {
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"held"?: boolean;
+		"securePause"?: boolean;
 		"errorInfo"?: Models.QueueConversationEventTopicErrorDetails;
 		"disconnectType"?: string;
 		"startHoldTime"?: string;
@@ -27006,6 +27056,7 @@ declare namespace Models {
 		"recordingState"?: string;
 		"address"?: string;
 		"externalTag"?: string;
+		"securePause"?: boolean;
 	}
 	
 	export interface QueueConversationEventTopicConversationRoutingData { 
@@ -27180,6 +27231,11 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface QueueConversationEventTopicModifiedBy { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface QueueConversationEventTopicObject { 
 	}
 	
@@ -27235,6 +27291,7 @@ declare namespace Models {
 		"state"?: string;
 		"dateIssued"?: string;
 		"initiator"?: Models.QueueConversationEventTopicInitiator;
+		"modifiedBy"?: Models.QueueConversationEventTopicModifiedBy;
 		"destination"?: Models.QueueConversationEventTopicDestination;
 		"transferType"?: string;
 	}
@@ -27655,6 +27712,7 @@ declare namespace Models {
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"held"?: boolean;
+		"securePause"?: boolean;
 		"errorInfo"?: Models.QueueConversationSocialExpressionEventTopicErrorDetails;
 		"disconnectType"?: string;
 		"startHoldTime"?: string;
@@ -27756,6 +27814,7 @@ declare namespace Models {
 		"recordingState"?: string;
 		"address"?: string;
 		"externalTag"?: string;
+		"securePause"?: boolean;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicConversationRoutingData { 
@@ -27930,6 +27989,11 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface QueueConversationSocialExpressionEventTopicModifiedBy { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface QueueConversationSocialExpressionEventTopicObject { 
 	}
 	
@@ -27985,6 +28049,7 @@ declare namespace Models {
 		"state"?: string;
 		"dateIssued"?: string;
 		"initiator"?: Models.QueueConversationSocialExpressionEventTopicInitiator;
+		"modifiedBy"?: Models.QueueConversationSocialExpressionEventTopicModifiedBy;
 		"destination"?: Models.QueueConversationSocialExpressionEventTopicDestination;
 		"transferType"?: string;
 	}
@@ -28110,6 +28175,7 @@ declare namespace Models {
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"held"?: boolean;
+		"securePause"?: boolean;
 		"errorInfo"?: Models.QueueConversationVideoEventTopicErrorDetails;
 		"disconnectType"?: string;
 		"startHoldTime"?: string;
@@ -28211,6 +28277,7 @@ declare namespace Models {
 		"recordingState"?: string;
 		"address"?: string;
 		"externalTag"?: string;
+		"securePause"?: boolean;
 	}
 	
 	export interface QueueConversationVideoEventTopicConversationRoutingData { 
@@ -28385,6 +28452,11 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface QueueConversationVideoEventTopicModifiedBy { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface QueueConversationVideoEventTopicObject { 
 	}
 	
@@ -28440,6 +28512,7 @@ declare namespace Models {
 		"state"?: string;
 		"dateIssued"?: string;
 		"initiator"?: Models.QueueConversationVideoEventTopicInitiator;
+		"modifiedBy"?: Models.QueueConversationVideoEventTopicModifiedBy;
 		"destination"?: Models.QueueConversationVideoEventTopicDestination;
 		"transferType"?: string;
 	}
@@ -35935,42 +36008,20 @@ declare namespace Models {
 		"matchReview"?: Models.ShiftTradeMatchReviewResponse;
 	}
 	
-	export interface WemCoachingAppointmentTopicCoachingAppointmentConversation { 
+	export interface WemCoachingUserNotificationTopicCoachingAppointmentReference { 
 		"id"?: string;
-		"action"?: string;
 	}
 	
-	export interface WemCoachingAppointmentTopicCoachingAppointmentDocument { 
-		"id"?: string;
-		"action"?: string;
-	}
-	
-	export interface WemCoachingAppointmentTopicCoachingAppointmentExternalLink { 
-		"externalLink"?: string;
-		"action"?: string;
-	}
-	
-	export interface WemCoachingAppointmentTopicCoachingAppointmentNotification { 
+	export interface WemCoachingUserNotificationTopicCoachingUserNotification { 
 		"id"?: string;
 		"name"?: string;
+		"markedAsRead"?: boolean;
+		"actionType"?: string;
+		"relationship"?: string;
+		"appointment"?: Models.WemCoachingUserNotificationTopicCoachingAppointmentReference;
 		"dateStart"?: string;
 		"lengthInMinutes"?: number;
 		"status"?: string;
-		"facilitator"?: Models.WemCoachingAppointmentTopicUserReference;
-		"attendees"?: Array<Models.WemCoachingAppointmentTopicUserReference>;
-		"createdBy"?: Models.WemCoachingAppointmentTopicUserReference;
-		"dateCreated"?: string;
-		"modifiedBy"?: Models.WemCoachingAppointmentTopicUserReference;
-		"dateModified"?: string;
-		"conversations"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentConversation>;
-		"documents"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentDocument>;
-		"changeType"?: string;
-		"dateCompleted"?: string;
-		"externalLinks"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentExternalLink>;
-	}
-	
-	export interface WemCoachingAppointmentTopicUserReference { 
-		"id"?: string;
 	}
 	
 	export interface WfmAgent { 
@@ -35987,50 +36038,20 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface WfmAgentScheduleUpdateTopicUserReference { 
-		"id"?: string;
-	}
-	
-	export interface WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate { 
-		"updateType"?: string;
+	export interface WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate { 
+		"type"?: string;
 		"shiftStartDates"?: Array<string>;
 	}
 	
-	export interface WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification { 
+	export interface WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification { 
 		"user"?: Models.WfmAgentScheduleUpdateTopicUserReference;
 		"startDate"?: string;
 		"endDate"?: string;
-		"shifts"?: Array<Models.WfmAgentScheduleUpdateTopicWfmScheduleShift>;
-		"fullDayTimeOffMarkers"?: Array<Models.WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker>;
-		"updates"?: Array<Models.WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate>;
+		"updates"?: Array<Models.WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate>;
 	}
 	
-	export interface WfmAgentScheduleUpdateTopicWfmFullDayTimeOffMarker { 
-		"timeOffRequestId"?: string;
-		"managementUnitDate"?: string;
-		"activityCodeId"?: string;
-		"isPaid"?: boolean;
-		"lengthInMinutes"?: number;
-		"description"?: string;
-		"paid"?: boolean;
-	}
-	
-	export interface WfmAgentScheduleUpdateTopicWfmScheduleActivity { 
-		"activityCodeId"?: string;
-		"startDate"?: string;
-		"countsAsPaidTime"?: boolean;
-		"lengthInMinutes"?: number;
-		"timeOffRequestId"?: string;
-		"description"?: string;
-	}
-	
-	export interface WfmAgentScheduleUpdateTopicWfmScheduleShift { 
-		"weekDate"?: string;
-		"weekScheduleId"?: string;
+	export interface WfmAgentScheduleUpdateTopicUserReference { 
 		"id"?: string;
-		"startDate"?: string;
-		"lengthInMinutes"?: number;
-		"activities"?: Array<Models.WfmAgentScheduleUpdateTopicWfmScheduleActivity>;
 	}
 	
 	export interface WfmBuIntradayDataUpdateTopicBuIntradayDataGroup { 
@@ -37474,6 +37495,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"dateDue"?: string;
 		"dateExpires"?: string;
+		"dateAssignmentStateChanged"?: string;
 		"durationSeconds"?: number;
 		"ttl"?: number;
 		"statusId"?: string;
@@ -37526,6 +37548,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"dateDue"?: string;
 		"dateExpires"?: string;
+		"dateAssignmentStateChanged"?: string;
 		"durationSeconds"?: number;
 		"ttl"?: number;
 		"statusId"?: string;
@@ -37578,6 +37601,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"dateDue"?: string;
 		"dateExpires"?: string;
+		"dateAssignmentStateChanged"?: string;
 		"durationSeconds"?: number;
 		"ttl"?: number;
 		"statusId"?: string;

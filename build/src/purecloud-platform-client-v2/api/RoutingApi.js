@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -239,6 +239,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
+     	 * @deprecated
 	 */
 	deleteRoutingQueueUser(queueId, memberId) { 
 		// verify the required parameter 'queueId' is set
@@ -1330,6 +1331,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.languages Filter by language
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
+     	 * @deprecated
 	 */
 	getRoutingQueueUsers(queueId, opts) { 
 		opts = opts || {};
@@ -2287,6 +2289,7 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
 	 * @param {Object} body Queue Member
+     	 * @deprecated
 	 */
 	patchRoutingQueueUser(queueId, memberId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -2321,6 +2324,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
+     	 * @deprecated
 	 */
 	patchRoutingQueueUsers(queueId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -2862,6 +2866,7 @@ class RoutingApi {
 	 * @param {Array.<Object>} body Queue Members
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts._delete True to delete queue members (default to false)
+     	 * @deprecated
 	 */
 	postRoutingQueueUsers(queueId, body, opts) { 
 		opts = opts || {};

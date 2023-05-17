@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -79,6 +79,7 @@ class GroupsApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+     	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -188,6 +189,7 @@ class GroupsApi {
 	 * @param {String} groupId groupId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
+     	 * @deprecated
 	 */
 	getGroupProfile(groupId, opts) { 
 		opts = opts || {};
@@ -277,6 +279,7 @@ class GroupsApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+     	 * @deprecated
 	 */
 	getProfilesGroups(opts) { 
 		opts = opts || {};

@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -1399,6 +1399,7 @@ class TelephonyProvidersEdgeApi {
 	 * Get outbound route
 	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 	 * @param {String} outboundRouteId Outbound route ID
+     	 * @deprecated
 	 */
 	getTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
 		// verify the required parameter 'outboundRouteId' is set

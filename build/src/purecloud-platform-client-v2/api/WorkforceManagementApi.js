@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 168.1.0
+	 * @version 168.2.0
 	 */
 
 	/**
@@ -1547,6 +1547,7 @@ class WorkforceManagementApi {
 	 * Get activity codes
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+     	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1959,6 +1960,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+     	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts) { 
 		opts = opts || {};
@@ -1999,6 +2001,7 @@ class WorkforceManagementApi {
 	 * @param {Boolean} opts.includeOnlyPublished Return only published schedules
 	 * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
 	 * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
+     	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
 		opts = opts || {};
@@ -3957,6 +3960,7 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+     	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
@@ -4617,6 +4621,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+     	 * @deprecated
 	 */
 	postWorkforcemanagementSchedules(opts) { 
 		opts = opts || {};

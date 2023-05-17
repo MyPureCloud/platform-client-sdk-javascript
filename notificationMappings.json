@@ -521,8 +521,8 @@
       "class": "VoicemailMessagesTopicVoicemailMessage"
     },
     {
-      "topic": "v2.users.{id}.wem.coaching.appointment",
-      "class": "WemCoachingAppointmentTopicCoachingAppointmentNotification"
+      "topic": "v2.users.{id}.wem.coaching.notification",
+      "class": "WemCoachingUserNotificationTopicCoachingUserNotification"
     },
     {
       "topic": "v2.users.{id}.wem.learning.assignment",
@@ -550,7 +550,7 @@
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.schedules",
-      "class": "WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification"
+      "class": "WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.shrinkage.jobs",
