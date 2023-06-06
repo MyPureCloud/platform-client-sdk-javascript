@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 168.2.0
+	 * @version 169.0.0
 	 */
 
 	/**
@@ -47,8 +47,29 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Get the list of domains that will be allowed to embed PureCloud applications
+	 * Gets the organization's settings
 	 * 
+	 */
+	getOrganizationsAuthenticationSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/authentication/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of domains that will be allowed to embed PureCloud applications
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+     	 * @deprecated
 	 */
 	getOrganizationsEmbeddedintegration() { 
 
@@ -68,7 +89,8 @@ class OrganizationApi {
 
 	/**
 	 * Get organization IP address whitelist settings
-	 * 
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+     	 * @deprecated
 	 */
 	getOrganizationsIpaddressauthentication() { 
 
@@ -255,7 +277,7 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Use PUT /api/v2/organizations/embeddedintegration instead
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
      	 * @deprecated
 	 */
@@ -269,6 +291,31 @@ class OrganizationApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the organization's settings
+	 * 
+	 * @param {Object} body Org settings
+	 */
+	patchOrganizationsAuthenticationSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOrganizationsAuthenticationSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/authentication/settings', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -307,8 +354,9 @@ class OrganizationApi {
 
 	/**
 	 * Update the list of domains that will be allowed to embed PureCloud applications
-	 * 
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body Whitelist settings
+     	 * @deprecated
 	 */
 	putOrganizationsEmbeddedintegration(body) { 
 		// verify the required parameter 'body' is set
@@ -332,8 +380,9 @@ class OrganizationApi {
 
 	/**
 	 * Update organization IP address whitelist settings
-	 * 
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body IP address Whitelist settings
+     	 * @deprecated
 	 */
 	putOrganizationsIpaddressauthentication(body) { 
 		// verify the required parameter 'body' is set
@@ -380,7 +429,7 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Use PUT /api/v2/organizations/embeddedintegration instead
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
 	 * @param {Object} body Whitelist settings
      	 * @deprecated

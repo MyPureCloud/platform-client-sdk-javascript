@@ -27,7 +27,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/168.2.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/169.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -44,7 +44,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/168.2.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/169.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -391,39 +391,6 @@ agent = new HttpsProxyAgent({
   proxy: proxyUrl,
 });
 client.setProxyAgent(agent)
-```
-
-
-### Error Responses
-
-Error responses will always be thrown as an extended response object. Note that the `error` property will contain a JavaScript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) object.
-
-Example error response object:
-
-```json
-{
-  "status": 404,
-  "statusText": "",
-  "headers": {
-    "pragma": "no-cache",
-    "inin-correlation-id": "d11bd3b3-ab7e-4fd4-9687-d04af9f30a63",
-    "content-type": "application/json",
-    "cache-control": "no-cache, no-store, must-revalidate",
-    "expires": "0"
-  },
-  "body": {
-    "status": 404,
-    "code": "not.found",
-    "message": "The requested operation failed with status 404",
-    "contextId": "d11bd3b3-ab7e-4fd4-9687-d04af9f30a63",
-    "details": [],
-    "errors": []
-  },
-  "text": "{\"status\":404,\"code\":\"not.found\",\"message\":\"The requested operation failed with status 404\",\"contextId\":\"d11bd3b3-ab7e-4fd4-9687-d04af9f30a63\",\"details\":[],\"errors\":[]}",
-  "error": {
-    "original": null
-  }
-}
 ```
 
 

@@ -2882,7 +2882,7 @@ declare class OAuthApi {
   	getOauthScope(scopeId: string, opts?: OAuthApi.getOauthScopeOptions): Promise<Models.OAuthScope>; 
   	getOauthScopes(opts?: OAuthApi.getOauthScopesOptions): Promise<Models.OAuthScopeListing>; 
   	postOauthClientSecret(clientId: string): Promise<Models.OAuthClient>; 
-  	postOauthClientUsageQuery(clientId: string, body: Models.ApiUsageQuery): Promise<Models.UsageExecutionResult>; 
+  	postOauthClientUsageQuery(clientId: string, body: Models.ApiUsageClientQuery): Promise<Models.UsageExecutionResult>; 
   	postOauthClients(body: Models.OAuthClientRequest): Promise<Models.OAuthClient>; 
   	putOauthClient(clientId: string, body: Models.OAuthClientRequest): Promise<Models.OAuthClient>;
 }
@@ -2939,6 +2939,7 @@ declare namespace ObjectsApi {
 
 declare class OrganizationApi {  
   	getFieldconfig(type: string): Promise<Models.FieldConfig>; 
+  	getOrganizationsAuthenticationSettings(): Promise<Models.OrgAuthSettings>; 
   	getOrganizationsEmbeddedintegration(): Promise<Models.EmbeddedIntegration>; 
   	getOrganizationsIpaddressauthentication(): Promise<Models.IpAddressAuthentication>; 
   	getOrganizationsLimitsChangerequest(requestId: string): Promise<Models.LimitChangeRequestDetails>; 
@@ -2949,6 +2950,7 @@ declare class OrganizationApi {
   	getOrganizationsLimitsNamespaces(opts?: OrganizationApi.getOrganizationsLimitsNamespacesOptions): Promise<object>; 
   	getOrganizationsMe(): Promise<Models.Organization>; 
   	getOrganizationsWhitelist(): Promise<Models.OrgWhitelistSettings>; 
+  	patchOrganizationsAuthenticationSettings(body: Models.OrgAuthSettings): Promise<Models.OrgAuthSettings>; 
   	patchOrganizationsFeature(featureName: string, enabled: Models.FeatureState): Promise<Models.OrganizationFeatures>; 
   	putOrganizationsEmbeddedintegration(body: Models.EmbeddedIntegration): Promise<Models.EmbeddedIntegration>; 
   	putOrganizationsIpaddressauthentication(body: Models.IpAddressAuthentication): Promise<Models.IpAddressAuthentication>; 
@@ -4580,6 +4582,7 @@ declare class SpeechTextAnalyticsApi {
   	getSpeechandtextanalyticsTopics(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsOptions): Promise<Models.TopicsEntityListing>; 
   	getSpeechandtextanalyticsTopicsDialects(): Promise<Models.EntityListing>; 
   	getSpeechandtextanalyticsTopicsGeneral(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralOptions): Promise<Models.GeneralTopicsEntityListing>; 
+  	getSpeechandtextanalyticsTopicsGeneralStatus(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralStatusOptions): Promise<Models.UnifiedGeneralTopicEntityListing>; 
   	getSpeechandtextanalyticsTopicsPublishjob(jobId: string): Promise<Models.TopicJob>; 
   	patchSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
   	postSpeechandtextanalyticsPrograms(body: Models.ProgramRequest): Promise<Models.Program>; 
@@ -4626,6 +4629,9 @@ declare namespace SpeechTextAnalyticsApi {
 		"sortOrder"?: string;
 	}
 	export interface getSpeechandtextanalyticsTopicsGeneralOptions { 
+		"dialect"?: string;
+	}
+	export interface getSpeechandtextanalyticsTopicsGeneralStatusOptions { 
 		"dialect"?: string;
 	}
 }
@@ -5070,8 +5076,10 @@ declare class UsageApi {
   	getOauthClientUsageQueryResult(executionId: string, clientId: string): Promise<Models.ApiUsageQueryResult>; 
   	getOauthClientUsageSummary(clientId: string, opts?: UsageApi.getOauthClientUsageSummaryOptions): Promise<Models.UsageExecutionResult>; 
   	getUsageQueryExecutionIdResults(executionId: string): Promise<Models.ApiUsageQueryResult>; 
-  	postOauthClientUsageQuery(clientId: string, body: Models.ApiUsageQuery): Promise<Models.UsageExecutionResult>; 
-  	postUsageQuery(body: Models.ApiUsageQuery): Promise<Models.UsageExecutionResult>;
+  	getUsageSimplesearchExecutionIdResults(executionId: string): Promise<Models.ApiUsageQueryResult>; 
+  	postOauthClientUsageQuery(clientId: string, body: Models.ApiUsageClientQuery): Promise<Models.UsageExecutionResult>; 
+  	postUsageQuery(body: Models.ApiUsageOrganizationQuery): Promise<Models.UsageExecutionResult>; 
+  	postUsageSimplesearch(body: Models.ApiUsageSimpleSearch): Promise<Models.UsageExecutionResult>;
 }
 
 declare namespace UsageApi { 
@@ -6562,6 +6570,15 @@ declare namespace Models {
 		"directReports"?: Array<Models.User>;
 	}
 	
+	export interface AdjustableLiveSpeakerDetection { 
+		"mode"?: string;
+		"preconnectDuration"?: string;
+		"eventName"?: string;
+		"isPersonLikely"?: boolean;
+		"totalRingbacks"?: number;
+		"lineConnected"?: boolean;
+	}
+	
 	export interface AdminTimeOffRequestPatch { 
 		"status"?: string;
 		"activityCodeId"?: string;
@@ -7152,11 +7169,18 @@ declare namespace Models {
 		"assistanceConditions"?: Array<Models.AssistanceCondition>;
 	}
 	
-	export interface ApiUsageQuery { 
+	export interface ApiUsageClientQuery { 
 		"interval": string;
 		"granularity"?: string;
-		"groupBy"?: Array<string>;
 		"metrics"?: Array<string>;
+		"groupBy"?: Array<string>;
+	}
+	
+	export interface ApiUsageOrganizationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"metrics"?: Array<string>;
+		"groupBy"?: Array<string>;
 	}
 	
 	export interface ApiUsageQueryResult { 
@@ -7178,6 +7202,14 @@ declare namespace Models {
 		"status429"?: number;
 		"requests"?: number;
 		"date"?: string;
+	}
+	
+	export interface ApiUsageSimpleSearch { 
+		"interval": string;
+		"metrics"?: Array<string>;
+		"oauthClientNames"?: Array<string>;
+		"httpMethods"?: Array<string>;
+		"templateUris"?: Array<string>;
 	}
 	
 	export interface AppendToDncActionSettings { 
@@ -9252,6 +9284,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.AfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
+		"disposition"?: Models.Disposition;
 	}
 	
 	export interface CallBasic { 
@@ -9286,6 +9319,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.AfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
+		"disposition"?: Models.Disposition;
 	}
 	
 	export interface CallCommand { 
@@ -10578,6 +10612,7 @@ declare namespace Models {
 		"kpi"?: string;
 		"dateStarted"?: string;
 		"dateEnded"?: string;
+		"percentageBenefit"?: number;
 		"kpiResults"?: Array<Models.KpiResult>;
 		"selfUri"?: string;
 	}
@@ -15487,6 +15522,16 @@ declare namespace Models {
 		"phrase"?: string;
 	}
 	
+	export interface Disposition { 
+		"name": string;
+		"analyzer"?: string;
+		"dispositionParameters"?: Models.DispositionParameters;
+	}
+	
+	export interface DispositionParameters { 
+		"adjustableLiveSpeakerDetection"?: Models.AdjustableLiveSpeakerDetection;
+	}
+	
 	export interface Division { 
 		"id"?: string;
 		"name"?: string;
@@ -15727,23 +15772,63 @@ declare namespace Models {
 	export interface DocumentBodyImage { 
 		"url": string;
 		"hyperlink"?: string;
+		"properties"?: Models.DocumentBodyImageProperties;
+	}
+	
+	export interface DocumentBodyImageProperties { 
+		"backgroundColor"?: string;
+		"align"?: string;
+		"indentation"?: number;
 	}
 	
 	export interface DocumentBodyList { 
 		"blocks": Array<Models.DocumentBodyListBlock>;
+		"properties"?: Models.DocumentBodyListBlockProperties;
 	}
 	
 	export interface DocumentBodyListBlock { 
 		"type": string;
-		"blocks": Array<Models.DocumentContentBlock>;
+		"blocks": Array<Models.DocumentListContentBlock>;
+		"properties"?: Models.DocumentBodyListItemProperties;
+	}
+	
+	export interface DocumentBodyListBlockProperties { 
+		"unorderedType"?: string;
+		"orderedType"?: string;
+	}
+	
+	export interface DocumentBodyListItemProperties { 
+		"backgroundColor"?: string;
+		"align"?: string;
+		"indentation"?: number;
+		"fontSize"?: string;
+		"fontType"?: string;
+		"textColor"?: string;
 	}
 	
 	export interface DocumentBodyParagraph { 
 		"blocks": Array<Models.DocumentContentBlock>;
+		"properties"?: Models.DocumentBodyParagraphProperties;
+	}
+	
+	export interface DocumentBodyParagraphProperties { 
+		"fontSize"?: string;
+		"fontType"?: string;
+		"textColor"?: string;
+		"backgroundColor"?: string;
+		"align"?: string;
+		"indentation"?: number;
 	}
 	
 	export interface DocumentBodyVideo { 
 		"url": string;
+		"properties"?: Models.DocumentBodyVideoProperties;
+	}
+	
+	export interface DocumentBodyVideoProperties { 
+		"backgroundColor"?: string;
+		"align"?: string;
+		"indentation"?: number;
 	}
 	
 	export interface DocumentCategoryInput { 
@@ -15773,6 +15858,13 @@ declare namespace Models {
 		"question": string;
 		"answer": string;
 		"alternatives"?: Array<string>;
+	}
+	
+	export interface DocumentListContentBlock { 
+		"type": string;
+		"text": Models.DocumentText;
+		"image": Models.DocumentBodyImage;
+		"list": Models.DocumentBodyList;
 	}
 	
 	export interface DocumentListing { 
@@ -15812,6 +15904,13 @@ declare namespace Models {
 		"text": string;
 		"marks"?: Array<string>;
 		"hyperlink"?: string;
+		"properties"?: Models.DocumentTextProperties;
+	}
+	
+	export interface DocumentTextProperties { 
+		"fontSize"?: string;
+		"textColor"?: string;
+		"backgroundColor"?: string;
 	}
 	
 	export interface DocumentThumbnail { 
@@ -17318,6 +17417,9 @@ declare namespace Models {
 		"previousStatus"?: string;
 		"declinedReview"?: boolean;
 		"retractedEvaluation"?: Models.EvaluationQualityV2TopicEvaluationReference;
+		"rescoreCount"?: number;
+		"evaluatorCommentHasUpdated"?: boolean;
+		"agentCommentHasUpdated"?: boolean;
 	}
 	
 	export interface EvaluationQualityV2TopicUser { 
@@ -18772,6 +18874,8 @@ declare namespace Models {
 		"publishResultUri"?: string;
 		"inputSchema"?: Models.JsonSchemaDocument;
 		"outputSchema"?: Models.JsonSchemaDocument;
+		"datePublished"?: string;
+		"datePublishedEnd"?: string;
 		"nluInfo"?: Models.NluInfo;
 		"supportedLanguages"?: Array<Models.SupportedLanguage>;
 		"compatibleFlowTypes"?: Array<string>;
@@ -21745,6 +21849,7 @@ declare namespace Models {
 		"interactionCountOn"?: number;
 		"interactionCountOff"?: number;
 		"mediaType"?: string;
+		"percentageBenefit"?: number;
 	}
 	
 	export interface LabelCreateRequest { 
@@ -24312,6 +24417,14 @@ declare namespace Models {
 		"response": Models.ComplianceResponse;
 	}
 	
+	export interface OrgAuthSettings { 
+		"multifactorAuthenticationRequired"?: boolean;
+		"domainAllowlistEnabled"?: boolean;
+		"domainAllowlist"?: Array<string>;
+		"ipAddressAllowlist"?: Array<string>;
+		"passwordRequirements"?: Models.PasswordRequirements;
+	}
+	
 	export interface OrgOAuthClient { 
 		"id"?: string;
 		"name": string;
@@ -25004,6 +25117,17 @@ declare namespace Models {
 		"overtalkDurationPercentage"?: number;
 		"otherDurationPercentage"?: number;
 		"overtalkCount"?: number;
+	}
+	
+	export interface PasswordRequirements { 
+		"minimumLength"?: number;
+		"minimumDigits"?: number;
+		"minimumLetters"?: number;
+		"minimumUpper"?: number;
+		"minimumLower"?: number;
+		"minimumSpecials"?: number;
+		"minimumAgeSeconds"?: number;
+		"expirationDays"?: number;
 	}
 	
 	export interface PatchAction { 
@@ -28669,6 +28793,7 @@ declare namespace Models {
 	
 	export interface QueueMessagingAddresses { 
 		"smsAddress"?: Models.DomainEntityRef;
+		"openMessagingRecipient"?: Models.DomainEntityRef;
 	}
 	
 	export interface QueueObservationDataContainer { 
@@ -29313,6 +29438,7 @@ declare namespace Models {
 		"hasCustomParticipantAttributes"?: boolean;
 		"recipientEmails"?: Array<string>;
 		"includeDurationFormatInHeader"?: boolean;
+		"durationFormat"?: string;
 	}
 	
 	export interface ReportingExportJobResponse { 
@@ -29345,6 +29471,7 @@ declare namespace Models {
 		"emailStatuses"?: { [key: string]: string; };
 		"emailErrorDescription"?: string;
 		"includeDurationFormatInHeader"?: boolean;
+		"durationFormat"?: string;
 		"enabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -30840,6 +30967,8 @@ declare namespace Models {
 		"communicationBasedACW"?: boolean;
 		"includeNonAgentConversationSummary"?: boolean;
 		"allowCallbackQueueSelection"?: boolean;
+		"completeAcwWhenAgentTransitionsOffline"?: boolean;
+		"totalActiveCallback"?: boolean;
 	}
 	
 	export interface Share { 
@@ -32305,15 +32434,6 @@ declare namespace Models {
 	
 	export interface TextMessageListing { 
 		"entities"?: Array<Models.MessageData>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"pageCount"?: number;
-		"lastUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
 	}
 	
 	export interface TextStyleProperties { 
@@ -33490,6 +33610,15 @@ declare namespace Models {
 	export interface UnansweredPhraseGroupUpdateResponse { 
 		"phraseAssociations"?: Array<Models.PhraseAssociations>;
 		"group"?: Models.UnansweredGroup;
+	}
+	
+	export interface UnifiedGeneralTopic { 
+		"name"?: string;
+		"status"?: string;
+	}
+	
+	export interface UnifiedGeneralTopicEntityListing { 
+		"entities"?: Array<Models.UnifiedGeneralTopic>;
 	}
 	
 	export interface UnpublishedProgramsEntityListing { 

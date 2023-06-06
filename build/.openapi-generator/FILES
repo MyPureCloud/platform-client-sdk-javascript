@@ -852,6 +852,7 @@ docs/getOauthClientUsageSummary-example.txt
 docs/getOauthClients-example.txt
 docs/getOauthScope-example.txt
 docs/getOauthScopes-example.txt
+docs/getOrganizationsAuthenticationSettings-example.txt
 docs/getOrganizationsEmbeddedintegration-example.txt
 docs/getOrganizationsIpaddressauthentication-example.txt
 docs/getOrganizationsLimitsChangerequest-example.txt
@@ -1111,6 +1112,7 @@ docs/getSpeechandtextanalyticsTopic-example.txt
 docs/getSpeechandtextanalyticsTopics-example.txt
 docs/getSpeechandtextanalyticsTopicsDialects-example.txt
 docs/getSpeechandtextanalyticsTopicsGeneral-example.txt
+docs/getSpeechandtextanalyticsTopicsGeneralStatus-example.txt
 docs/getSpeechandtextanalyticsTopicsPublishjob-example.txt
 docs/getStation-example.txt
 docs/getStations-example.txt
@@ -1192,6 +1194,7 @@ docs/getTextbotsBotsSearch-example.txt
 docs/getTimezones-example.txt
 docs/getTokensMe-example.txt
 docs/getUsageQueryExecutionIdResults-example.txt
+docs/getUsageSimplesearchExecutionIdResults-example.txt
 docs/getUser-example.txt
 docs/getUserAdjacents-example.txt
 docs/getUserCallforwarding-example.txt
@@ -1414,6 +1417,7 @@ docs/patchLearningAssignment-example.txt
 docs/patchLearningAssignmentReschedule-example.txt
 docs/patchLocation-example.txt
 docs/patchMessagingSupportedcontentSupportedContentId-example.txt
+docs/patchOrganizationsAuthenticationSettings-example.txt
 docs/patchOrganizationsFeature-example.txt
 docs/patchOutboundDnclistCustomexclusioncolumns-example.txt
 docs/patchOutboundDnclistEmailaddresses-example.txt
@@ -1897,6 +1901,7 @@ docs/postUploadsPublicassetsImages-example.txt
 docs/postUploadsRecordings-example.txt
 docs/postUploadsWorkforcemanagementHistoricaldataCsv-example.txt
 docs/postUsageQuery-example.txt
+docs/postUsageSimplesearch-example.txt
 docs/postUserExternalid-example.txt
 docs/postUserGreetings-example.txt
 docs/postUserInvite-example.txt

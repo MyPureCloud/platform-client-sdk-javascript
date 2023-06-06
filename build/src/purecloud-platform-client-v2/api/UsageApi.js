@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 168.2.0
+	 * @version 169.0.0
 	 */
 
 	/**
@@ -105,6 +105,31 @@ class UsageApi {
 	}
 
 	/**
+	 * Get the results of a usage search
+	 * 
+	 * @param {String} executionId ID of the search execution
+	 */
+	getUsageSimplesearchExecutionIdResults(executionId) { 
+		// verify the required parameter 'executionId' is set
+		if (executionId === undefined || executionId === null) {
+			throw 'Missing the required parameter "executionId" when calling getUsageSimplesearchExecutionIdResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/usage/simplesearch/{executionId}/results', 
+			'GET', 
+			{ 'executionId': executionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for OAuth client API usage
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
@@ -147,6 +172,31 @@ class UsageApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/usage/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search organization API Usage - 
+	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * @param {Object} body SimpleSearch
+	 */
+	postUsageSimplesearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsageSimplesearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/usage/simplesearch', 
 			'POST', 
 			{  },
 			{  },

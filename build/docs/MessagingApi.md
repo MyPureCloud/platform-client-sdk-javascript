@@ -18,10 +18,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteMessagingSupportedcontentSupportedContentId(supportedContentId)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DELETE /api/v2/messaging/supportedcontent/{supportedContentId}
 
 Delete a supported content profile
+
+Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
 Requires ALL permissions:
 
@@ -68,10 +71,13 @@ void (no response body)
 
 # SupportedContentListing getMessagingSupportedcontent(opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/messaging/supportedcontent
 
 Get a list of Supported Content profiles
+
+Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
 
 Requires ALL permissions:
 
@@ -122,10 +128,13 @@ apiInstance.getMessagingSupportedcontent(opts)
 
 # SupportedContent getMessagingSupportedcontentSupportedContentId(supportedContentId)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/messaging/supportedcontent/{supportedContentId}
 
 Get a supported content profile
+
+Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
 Requires ALL permissions:
 
@@ -172,10 +181,13 @@ apiInstance.getMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 # SupportedContent patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/messaging/supportedcontent/{supportedContentId}
 
 Update a supported content profile
+
+Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
 Requires ALL permissions:
 
@@ -224,10 +236,13 @@ apiInstance.patchMessagingSupportedcontentSupportedContentId(supportedContentId,
 
 # SupportedContent postMessagingSupportedcontent(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/messaging/supportedcontent
 
 Create a Supported Content profile
+
+Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
 
 Requires ANY permissions:
 

@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 168.2.0
+	 * @version 169.0.0
 	 */
 
 	/**
@@ -378,6 +378,7 @@ class SearchApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+     	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};

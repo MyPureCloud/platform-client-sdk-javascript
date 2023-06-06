@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 168.2.0
+	 * @version 169.0.0
 	 */
 
 	/**
@@ -546,6 +546,30 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/general', 
+			'GET', 
+			{  },
+			{ 'dialect': opts['dialect'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of general topics from the org and the system with their current status
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 */
+	getSpeechandtextanalyticsTopicsGeneralStatus(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/general/status', 
 			'GET', 
 			{  },
 			{ 'dialect': opts['dialect'] },

@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 168.2.0
+	 * @version 169.0.0
 	 */
 
 	/**
@@ -236,6 +236,7 @@ class KnowledgeApi {
 	 * @param {String} categoryId Category ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+     	 * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
@@ -271,6 +272,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+     	 * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
@@ -306,6 +308,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
+     	 * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -964,6 +967,7 @@ class KnowledgeApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter to return the categories that starts with the given category name.
+     	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -997,6 +1001,7 @@ class KnowledgeApi {
 	 * @param {String} categoryId Category ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+     	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
@@ -1032,6 +1037,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+     	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
@@ -1076,6 +1082,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.sortBy Sort by.
 	 * @param {Object} opts.sortOrder Sort Order.
 	 * @param {Array.<String>} opts.documentIds Comma-separated list of document identifiers to fetch by.
+     	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -1109,6 +1116,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
+     	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -1144,6 +1152,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} trainingId Training ID
+     	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -1184,6 +1193,7 @@ class KnowledgeApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
+     	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -1319,8 +1329,8 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 100. Deprecated in favour of pageSize
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100.
 	 * @param {String} opts.name Filter by Name.
 	 * @param {Object} opts.coreLanguage Filter by core language.
 	 * @param {Boolean} opts.published Filter by published status.
@@ -1631,6 +1641,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
+     	 * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'categoryId' is set
@@ -1671,6 +1682,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
+     	 * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
@@ -1710,6 +1722,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Array.<Object>} body 
+     	 * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -1746,6 +1759,7 @@ class KnowledgeApi {
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
 	 * @param {Object} body 
+     	 * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2213,6 +2227,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
+     	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2248,6 +2263,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
+     	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2283,6 +2299,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
+     	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2318,6 +2335,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} trainingId Training ID
+     	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2352,6 +2370,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+     	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2383,6 +2402,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+     	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};
