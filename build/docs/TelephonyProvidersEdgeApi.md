@@ -51,6 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesExtension**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtension) | **GET** /api/v2/telephony/providers/edges/extensions/{extensionId} | Get an extension by ID.
 [**getTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpool) | **GET** /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} | Get an extension pool by ID
 [**getTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpools) | **GET** /api/v2/telephony/providers/edges/extensionpools | Get a listing of extension pools
+[**getTelephonyProvidersEdgesExtensionpoolsDivisionviews**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpoolsDivisionviews) | **GET** /api/v2/telephony/providers/edges/extensionpools/divisionviews | Get a pageable list of basic extension pool objects filterable by query parameters.
 [**getTelephonyProvidersEdgesExtensions**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensions) | **GET** /api/v2/telephony/providers/edges/extensions | Get a listing of extensions
 [**getTelephonyProvidersEdgesLine**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLine) | **GET** /api/v2/telephony/providers/edges/lines/{lineId} | Get a Line by ID
 [**getTelephonyProvidersEdgesLinebasesetting**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLinebasesetting) | **GET** /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId} | Get a line base settings object by ID
@@ -2415,6 +2416,72 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
 ### Return type
 
 **ExtensionPoolEntityListing**
+
+<a name="getTelephonyProvidersEdgesExtensionpoolsDivisionviews"></a>
+
+# ExtensionPoolDivisionViewEntityListing getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts)
+
+
+GET /api/v2/telephony/providers/edges/extensionpools/divisionviews
+
+Get a pageable list of basic extension pool objects filterable by query parameters.
+
+This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Requires ALL permissions:
+
+* telephony:extensionPool:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC", // String | Sort order
+  'id': ["id_example"], // [String] | ID of the Extension Pools to filter by.
+  'name': "name_example", // String | Name of the Extension Pools to filter by.
+  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+};
+
+apiInstance.getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesExtensionpoolsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpoolsDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **id** | **[String]** | ID of the Extension Pools to filter by. | [optional]  |
+ **name** | **String** | Name of the Extension Pools to filter by. | [optional]  |
+ **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExtensionPoolDivisionViewEntityListing**
 
 <a name="getTelephonyProvidersEdgesExtensions"></a>
 

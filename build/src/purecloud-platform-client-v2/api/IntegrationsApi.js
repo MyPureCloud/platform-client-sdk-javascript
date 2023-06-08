@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -898,6 +898,208 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get a Nuance bot in the specified Integration
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {String} botId The Nuance bot ID to get
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object} opts.targetChannel targetChannel
+	 * Preview Endpoint
+	 */
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBot';
+		}
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBot';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}', 
+			'GET', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId,'botId': botId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'targetChannel': opts['targetChannel'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the status of an asynchronous Nuance bot GET job
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {String} botId The Nuance bot ID
+	 * @param {String} jobId The asynchronous job ID
+	 * Preview Endpoint
+	 */
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId) { 
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
+		}
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}', 
+			'GET', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId,'botId': botId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the result of an asynchronous Nuance bot GET job
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {String} botId The Nuance bot ID
+	 * @param {String} jobId The asynchronous job ID
+	 * Preview Endpoint
+	 */
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId) { 
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
+		}
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results', 
+			'GET', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId,'botId': botId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Nuance bots available in the specified Integration
+	 * If the onlyRegisteredBots param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integrations configured discovery credentials are returned.
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
+	 * Preview Endpoint
+	 */
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBots';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots', 
+			'GET', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'onlyRegisteredBots': opts['onlyRegisteredBots'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the status of an asynchronous Nuance bots GET job
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {String} jobId The asynchronous job ID
+	 * Preview Endpoint
+	 */
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId) { 
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}', 
+			'GET', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the result of an asynchronous Nuance bots GET job
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {String} jobId The asynchronous job ID
+	 * Preview Endpoint
+	 */
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId) { 
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results', 
+			'GET', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about a TTS engine
 	 * 
 	 * @param {String} engineId The engine ID
@@ -1487,6 +1689,105 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get a Nuance bot in the specified Integration asynchronously
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {String} botId The Nuance bot ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand expand
+	 * @param {String} opts.body targetChannel
+	 * Preview Endpoint
+	 */
+	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs';
+		}
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs', 
+			'POST', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId,'botId': botId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Nuance bots in the specified Integration asynchronously
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
+	 * Preview Endpoint
+	 */
+	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs', 
+			'POST', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'onlyRegisteredBots': opts['onlyRegisteredBots'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Try out a single credential for a Nuance bot to know if the secret is correct
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {Object} settings 
+	 * Preview Endpoint
+	 */
+	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings) { 
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate';
+		}
+		// verify the required parameter 'settings' is set
+		if (settings === undefined || settings === null) {
+			throw 'Missing the required parameter "settings" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate', 
+			'POST', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId },
+			{  },
+			{  },
+			{  },
+			settings, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update integration configuration.
 	 * 
 	 * @param {String} integrationId Integration Id
@@ -1568,6 +1869,37 @@ class IntegrationsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+	 * 
+	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+	 * @param {Object} settings 
+	 * Preview Endpoint
+	 */
+	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings) { 
+		// verify the required parameter 'nuanceIntegrationId' is set
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+			throw 'Missing the required parameter "nuanceIntegrationId" when calling putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings';
+		}
+		// verify the required parameter 'settings' is set
+		if (settings === undefined || settings === null) {
+			throw 'Missing the required parameter "settings" when calling putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings', 
+			'PUT', 
+			{ 'nuanceIntegrationId': nuanceIntegrationId },
+			{  },
+			{  },
+			{  },
+			settings, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

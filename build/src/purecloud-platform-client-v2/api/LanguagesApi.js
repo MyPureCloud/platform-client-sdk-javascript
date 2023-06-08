@@ -5,7 +5,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -24,7 +24,7 @@ class LanguagesApi {
 	 * Delete Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	deleteLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
@@ -50,7 +50,7 @@ class LanguagesApi {
 	 * Get Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	getLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
@@ -80,7 +80,7 @@ class LanguagesApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {String} opts.name Name
-     	 * @deprecated
+     * @deprecated
 	 */
 	getLanguages(opts) { 
 		opts = opts || {};
@@ -199,7 +199,7 @@ class LanguagesApi {
 	 * Create Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 	 * @param {Object} body Language
-     	 * @deprecated
+     * @deprecated
 	 */
 	postLanguages(body) { 
 		// verify the required parameter 'body' is set

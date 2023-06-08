@@ -110,13 +110,27 @@ declare class AnalyticsApi {
   	deleteAnalyticsConversationsDetailsJob(jobId: string): Promise<void>; 
   	deleteAnalyticsReportingSchedule(scheduleId: string): Promise<void>; 
   	deleteAnalyticsUsersDetailsJob(jobId: string): Promise<void>; 
+  	getAnalyticsActionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsActionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsActionsAggregatesJobResultsOptions): Promise<Models.ActionAsyncAggregateQueryResponse>; 
   	getAnalyticsBotflowReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowReportingturnsOptions): Promise<Models.ReportingTurnsResponse>; 
+  	getAnalyticsBotsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsBotsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsBotsAggregatesJobResultsOptions): Promise<Models.BotAsyncAggregateQueryResponse>; 
   	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversationWithoutAttributes>; 
+  	getAnalyticsConversationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsConversationsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsConversationsAggregatesJobResultsOptions): Promise<Models.ConversationAsyncAggregateQueryResponse>; 
   	getAnalyticsConversationsDetails(opts?: AnalyticsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
   	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>; 
   	getAnalyticsConversationsDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
   	getAnalyticsDataretentionSettings(): Promise<Models.AnalyticsDataRetentionResponse>; 
+  	getAnalyticsEvaluationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsEvaluationsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsEvaluationsAggregatesJobResultsOptions): Promise<Models.EvaluationAsyncAggregateQueryResponse>; 
+  	getAnalyticsFlowsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsFlowsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsFlowsAggregatesJobResultsOptions): Promise<Models.FlowAsyncAggregateQueryResponse>; 
+  	getAnalyticsJourneysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsJourneysAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsJourneysAggregatesJobResultsOptions): Promise<Models.JourneyAsyncAggregateQueryResponse>; 
+  	getAnalyticsKnowledgeAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsKnowledgeAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsKnowledgeAggregatesJobResultsOptions): Promise<Models.KnowledgeAsyncAggregateQueryResponse>; 
   	getAnalyticsReportingExports(opts?: AnalyticsApi.getAnalyticsReportingExportsOptions): Promise<Models.ReportingExportJobListing>; 
   	getAnalyticsReportingExportsMetadata(): Promise<Models.ReportingExportMetadataJobListing>; 
   	getAnalyticsReportingMetadata(opts?: AnalyticsApi.getAnalyticsReportingMetadataOptions): Promise<Models.ReportMetaDataEntityListing>; 
@@ -129,27 +143,56 @@ declare class AnalyticsApi {
   	getAnalyticsReportingSchedules(opts?: AnalyticsApi.getAnalyticsReportingSchedulesOptions): Promise<Models.ReportScheduleEntityListing>; 
   	getAnalyticsReportingSettings(): Promise<Models.AnalyticsReportingSettings>; 
   	getAnalyticsReportingTimeperiods(): Promise<Array<string>>; 
+  	getAnalyticsResolutionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsResolutionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsResolutionsAggregatesJobResultsOptions): Promise<Models.ResolutionAsyncAggregateQueryResponse>; 
+  	getAnalyticsSurveysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsSurveysAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsSurveysAggregatesJobResultsOptions): Promise<Models.SurveyAsyncAggregateQueryResponse>; 
+  	getAnalyticsTaskmanagementAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsTaskmanagementAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsTaskmanagementAggregatesJobResultsOptions): Promise<Models.TaskManagementAsyncAggregateQueryResponse>; 
+  	getAnalyticsTranscriptsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsTranscriptsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsTranscriptsAggregatesJobResultsOptions): Promise<Models.TranscriptAsyncAggregateQueryResponse>; 
+  	getAnalyticsUsersAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsUsersAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsUsersAggregatesJobResultsOptions): Promise<Models.UserAsyncAggregateQueryResponse>; 
   	getAnalyticsUsersDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsUsersDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsUsersDetailsJobResultsOptions): Promise<Models.AnalyticsUserDetailsAsyncQueryResponse>; 
   	getAnalyticsUsersDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
   	patchAnalyticsReportingSettings(body: Models.AnalyticsReportingSettings): Promise<Models.AnalyticsReportingSettings>; 
+  	postAnalyticsActionsAggregatesJobs(body: Models.ActionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsActionsAggregatesQuery(body: Models.ActionAggregationQuery): Promise<Models.ActionAggregateQueryResponse>; 
+  	postAnalyticsBotsAggregatesJobs(body: Models.BotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsBotsAggregatesQuery(body: Models.BotAggregationQuery): Promise<Models.BotAggregateQueryResponse>; 
   	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
+  	postAnalyticsConversationsActivityQuery(body: Models.ConversationActivityQuery, opts?: AnalyticsApi.postAnalyticsConversationsActivityQueryOptions): Promise<Models.ConversationActivityResponse>; 
+  	postAnalyticsConversationsAggregatesJobs(body: Models.ConversationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
   	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>; 
   	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
+  	postAnalyticsEvaluationsAggregatesJobs(body: Models.EvaluationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>; 
+  	postAnalyticsFlowsActivityQuery(body: Models.FlowActivityQuery, opts?: AnalyticsApi.postAnalyticsFlowsActivityQueryOptions): Promise<Models.FlowActivityResponse>; 
+  	postAnalyticsFlowsAggregatesJobs(body: Models.FlowAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsFlowsAggregatesQuery(body: Models.FlowAggregationQuery): Promise<Models.FlowAggregateQueryResponse>; 
   	postAnalyticsFlowsObservationsQuery(body: Models.FlowObservationQuery): Promise<Models.FlowObservationQueryResponse>; 
+  	postAnalyticsJourneysAggregatesJobs(body: Models.JourneyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>; 
+  	postAnalyticsKnowledgeAggregatesJobs(body: Models.KnowledgeAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
+  	postAnalyticsKnowledgeAggregatesQuery(body: Models.KnowledgeAggregationQuery): Promise<Models.KnowledgeAggregateQueryResponse>; 
   	postAnalyticsQueuesObservationsQuery(body: Models.QueueObservationQuery): Promise<Models.QueueObservationQueryResponse>; 
   	postAnalyticsReportingExports(body: Models.ReportingExportJobRequest): Promise<Models.ReportingExportJobResponse>; 
   	postAnalyticsReportingScheduleRunreport(scheduleId: string): Promise<Models.RunNowResponse>; 
   	postAnalyticsReportingSchedules(body: Models.ReportSchedule): Promise<Models.ReportSchedule>; 
+  	postAnalyticsResolutionsAggregatesJobs(body: Models.ResolutionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
+  	postAnalyticsRoutingActivityQuery(body: Models.RoutingActivityQuery, opts?: AnalyticsApi.postAnalyticsRoutingActivityQueryOptions): Promise<Models.RoutingActivityResponse>; 
+  	postAnalyticsSurveysAggregatesJobs(body: Models.SurveyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsSurveysAggregatesQuery(body: Models.SurveyAggregationQuery): Promise<Models.SurveyAggregateQueryResponse>; 
+  	postAnalyticsTaskmanagementAggregatesJobs(body: Models.TaskManagementAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
+  	postAnalyticsTaskmanagementAggregatesQuery(body: Models.TaskManagementAggregationQuery): Promise<Models.TaskManagementAggregateQueryResponse>; 
+  	postAnalyticsTeamsActivityQuery(body: Models.TeamActivityQuery, opts?: AnalyticsApi.postAnalyticsTeamsActivityQueryOptions): Promise<Models.TeamActivityResponse>; 
+  	postAnalyticsTranscriptsAggregatesJobs(body: Models.TranscriptAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsTranscriptsAggregatesQuery(body: Models.TranscriptAggregationQuery): Promise<Models.TranscriptAggregateQueryResponse>; 
+  	postAnalyticsUsersActivityQuery(body: Models.UserActivityQuery, opts?: AnalyticsApi.postAnalyticsUsersActivityQueryOptions): Promise<Models.UserActivityResponse>; 
+  	postAnalyticsUsersAggregatesJobs(body: Models.UserAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsUsersAggregatesQuery(body: Models.UserAggregationQuery): Promise<Models.UserAggregateQueryResponse>; 
   	postAnalyticsUsersDetailsJobs(body: Models.AsyncUserDetailsQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsUsersDetailsQuery(body: Models.UserDetailsQuery): Promise<Models.AnalyticsUserDetailsQueryResponse>; 
@@ -159,6 +202,9 @@ declare class AnalyticsApi {
 }
 
 declare namespace AnalyticsApi { 
+	export interface getAnalyticsActionsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
 	export interface getAnalyticsBotflowReportingturnsOptions { 
 		"after"?: string;
 		"pageSize"?: string;
@@ -167,12 +213,30 @@ declare namespace AnalyticsApi {
 		"language"?: string;
 		"askActionResults"?: string;
 	}
+	export interface getAnalyticsBotsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsConversationsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
 	export interface getAnalyticsConversationsDetailsOptions { 
 		"id"?: Array<string>;
 	}
 	export interface getAnalyticsConversationsDetailsJobResultsOptions { 
 		"cursor"?: string;
 		"pageSize"?: number;
+	}
+	export interface getAnalyticsEvaluationsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsFlowsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsJourneysAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsKnowledgeAggregatesJobResultsOptions { 
+		"cursor"?: string;
 	}
 	export interface getAnalyticsReportingExportsOptions { 
 		"pageNumber"?: number;
@@ -194,9 +258,44 @@ declare namespace AnalyticsApi {
 		"pageNumber"?: number;
 		"pageSize"?: number;
 	}
+	export interface getAnalyticsResolutionsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsSurveysAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsTaskmanagementAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsTranscriptsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsUsersAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
 	export interface getAnalyticsUsersDetailsJobResultsOptions { 
 		"cursor"?: string;
 		"pageSize"?: number;
+	}
+	export interface postAnalyticsConversationsActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
+	export interface postAnalyticsFlowsActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
+	export interface postAnalyticsRoutingActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
+	export interface postAnalyticsTeamsActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
+	export interface postAnalyticsUsersActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 }
 
@@ -260,6 +359,9 @@ declare class ArchitectApi {
   	getFlowsDatatablesDivisionviews(opts?: ArchitectApi.getFlowsDatatablesDivisionviewsOptions): Promise<Models.DataTablesDomainEntityListing>; 
   	getFlowsDivisionviews(opts?: ArchitectApi.getFlowsDivisionviewsOptions): Promise<Models.FlowDivisionViewEntityListing>; 
   	getFlowsExecution(flowExecutionId: string): Promise<Models.FlowRuntimeExecution>; 
+  	getFlowsInstance(instanceId: string, opts?: ArchitectApi.getFlowsInstanceOptions): Promise<Models.GetFlowExecutionDataJobResult>; 
+  	getFlowsInstancesJob(jobId: string): Promise<Models.GetFlowExecutionDataJobResult>; 
+  	getFlowsInstancesQuerycapabilities(opts?: ArchitectApi.getFlowsInstancesQuerycapabilitiesOptions): Promise<Models.FlowsQueryCriteriaResponse>; 
   	getFlowsJob(jobId: string, opts?: ArchitectApi.getFlowsJobOptions): Promise<Models.ArchitectJobStateResponse>; 
   	getFlowsMilestone(milestoneId: string): Promise<Models.FlowMilestone>; 
   	getFlowsMilestones(opts?: ArchitectApi.getFlowsMilestonesOptions): Promise<Models.FlowMilestoneListing>; 
@@ -291,6 +393,8 @@ declare class ArchitectApi {
   	postFlowsDatatableRows(datatableId: string, dataTableRow: object): Promise<{ [key: string]: object; }>; 
   	postFlowsDatatables(body: Models.DataTable): Promise<Models.DataTable>; 
   	postFlowsExecutions(flowLaunchRequest: Models.FlowExecutionLaunchRequest): Promise<Models.FlowExecutionLaunchResponse>; 
+  	postFlowsInstancesJobs(body: Models.ExecutionDataRequest, opts?: ArchitectApi.postFlowsInstancesJobsOptions): Promise<Models.GetFlowExecutionDataJobResult>; 
+  	postFlowsInstancesQuery(body: Models.CriteriaQuery, opts?: ArchitectApi.postFlowsInstancesQueryOptions): Promise<Models.FlowResultEntityListing>; 
   	postFlowsJobs(): Promise<Models.RegisterArchitectJobResponse>; 
   	postFlowsMilestones(opts?: ArchitectApi.postFlowsMilestonesOptions): Promise<Models.FlowMilestone>; 
   	postFlowsOutcomes(opts?: ArchitectApi.postFlowsOutcomesOptions): Promise<Models.FlowOutcome>; 
@@ -537,6 +641,12 @@ declare namespace ArchitectApi {
 		"divisionId"?: Array<string>;
 		"includeSchemas"?: boolean;
 	}
+	export interface getFlowsInstanceOptions { 
+		"expand"?: string;
+	}
+	export interface getFlowsInstancesQuerycapabilitiesOptions { 
+		"expand"?: string;
+	}
 	export interface getFlowsJobOptions { 
 		"expand"?: Array<string>;
 	}
@@ -585,6 +695,12 @@ declare namespace ArchitectApi {
 	}
 	export interface postFlowsActionsPublishOptions { 
 		"version"?: string;
+	}
+	export interface postFlowsInstancesJobsOptions { 
+		"expand"?: string;
+	}
+	export interface postFlowsInstancesQueryOptions { 
+		"indexOnly"?: boolean;
 	}
 	export interface postFlowsMilestonesOptions { 
 		"body"?: Models.FlowMilestone;
@@ -1021,6 +1137,8 @@ declare class ConversationsApi {
   	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string): Promise<Models.WhatsAppIntegration>; 
   	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<void>; 
   	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversationWithoutAttributes>; 
+  	getAnalyticsConversationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsConversationsAggregatesJobResults(jobId: string, opts?: ConversationsApi.getAnalyticsConversationsAggregatesJobResultsOptions): Promise<Models.ConversationAsyncAggregateQueryResponse>; 
   	getAnalyticsConversationsDetails(opts?: ConversationsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
   	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: ConversationsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>; 
@@ -1095,6 +1213,7 @@ declare class ConversationsApi {
   	getConversationsScreenshareParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsScreenshareParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsSettings(): Promise<Models.Settings>; 
   	getConversationsSocialParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsSocialParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
+  	getConversationsVideoDetails(conferenceId: string): Promise<Models.VideoConferenceDetails>; 
   	getConversationsVideoParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsVideoParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	patchConversationParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
   	patchConversationParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<void>; 
@@ -1134,6 +1253,8 @@ declare class ConversationsApi {
   	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string, body: Models.SupportedContent): Promise<Models.SupportedContent>; 
   	patchConversationsSettings(body: Models.Settings): Promise<void>; 
   	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
+  	postAnalyticsConversationsActivityQuery(body: Models.ConversationActivityQuery, opts?: ConversationsApi.postAnalyticsConversationsActivityQueryOptions): Promise<Models.ConversationActivityResponse>; 
+  	postAnalyticsConversationsAggregatesJobs(body: Models.ConversationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
   	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>; 
@@ -1179,6 +1300,7 @@ declare class ConversationsApi {
   	postConversationsMessageCommunicationTyping(conversationId: string, communicationId: string, body: Models.MessageTypingEventRequest): Promise<void>; 
   	postConversationsMessageMessagesBulk(conversationId: string, opts?: ConversationsApi.postConversationsMessageMessagesBulkOptions): Promise<Models.TextMessageListing>; 
   	postConversationsMessageParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsMessageParticipantCommunicationWrapupOptions): Promise<void>; 
+  	postConversationsMessageParticipantMonitor(conversationId: string, participantId: string): Promise<void>; 
   	postConversationsMessageParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.MessageConversation>; 
   	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest): Promise<Models.SendAgentlessOutboundMessageResponse>; 
@@ -1214,6 +1336,9 @@ declare class ConversationsApi {
 }
 
 declare namespace ConversationsApi { 
+	export interface getAnalyticsConversationsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
 	export interface getAnalyticsConversationsDetailsOptions { 
 		"id"?: Array<string>;
 	}
@@ -1371,6 +1496,10 @@ declare namespace ConversationsApi {
 	}
 	export interface patchConversationsMessageParticipantAttributesOptions { 
 		"body"?: Models.ParticipantAttributes;
+	}
+	export interface postAnalyticsConversationsActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 	export interface postConversationParticipantCallbacksOptions { 
 		"body"?: Models.CreateCallbackOnConversationCommand;
@@ -1628,11 +1757,22 @@ declare namespace FaxApi {
 }
 
 declare class FlowsApi {  
+  	getAnalyticsFlowsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsFlowsAggregatesJobResults(jobId: string, opts?: FlowsApi.getAnalyticsFlowsAggregatesJobResultsOptions): Promise<Models.FlowAsyncAggregateQueryResponse>; 
+  	postAnalyticsFlowsActivityQuery(body: Models.FlowActivityQuery, opts?: FlowsApi.postAnalyticsFlowsActivityQueryOptions): Promise<Models.FlowActivityResponse>; 
+  	postAnalyticsFlowsAggregatesJobs(body: Models.FlowAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsFlowsAggregatesQuery(body: Models.FlowAggregationQuery): Promise<Models.FlowAggregateQueryResponse>; 
   	postAnalyticsFlowsObservationsQuery(body: Models.FlowObservationQuery): Promise<Models.FlowObservationQueryResponse>;
 }
 
 declare namespace FlowsApi { 
+	export interface getAnalyticsFlowsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface postAnalyticsFlowsActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
 }
 
 declare class GamificationApi {  
@@ -1860,9 +2000,11 @@ declare namespace GreetingsApi {
 
 declare class GroupsApi {  
   	deleteGroup(groupId: string): Promise<void>; 
+  	deleteGroupDynamicsettings(groupId: string): Promise<void>; 
   	deleteGroupMembers(groupId: string, ids: string): Promise<object>; 
   	getFieldconfig(type: string): Promise<Models.FieldConfig>; 
   	getGroup(groupId: string): Promise<Models.Group>; 
+  	getGroupDynamicsettings(groupId: string): Promise<Models.DynamicGroupDefinition>; 
   	getGroupIndividuals(groupId: string): Promise<Models.UserEntityListing>; 
   	getGroupMembers(groupId: string, opts?: GroupsApi.getGroupMembersOptions): Promise<Models.UserEntityListing>; 
   	getGroupProfile(groupId: string, opts?: GroupsApi.getGroupProfileOptions): Promise<Models.GroupProfile>; 
@@ -1871,8 +2013,10 @@ declare class GroupsApi {
   	getProfilesGroups(opts?: GroupsApi.getProfilesGroupsOptions): Promise<Models.GroupProfileEntityListing>; 
   	postGroupMembers(groupId: string, body: Models.GroupMembersUpdate): Promise<object>; 
   	postGroups(body: Models.GroupCreate): Promise<Models.Group>; 
+  	postGroupsDynamicsettingsPreview(body: Models.DynamicGroupQuery): Promise<Models.DynamicGroupQueryPreview>; 
   	postGroupsSearch(body: Models.GroupSearchRequest): Promise<Models.GroupsSearchResponse>; 
-  	putGroup(groupId: string, opts?: GroupsApi.putGroupOptions): Promise<Models.Group>;
+  	putGroup(groupId: string, opts?: GroupsApi.putGroupOptions): Promise<Models.Group>; 
+  	putGroupDynamicsettings(groupId: string, body: Models.DynamicGroupQuery): Promise<void>;
 }
 
 declare namespace GroupsApi { 
@@ -2017,6 +2161,12 @@ declare class IntegrationsApi {
   	getIntegrationsSpeechLexBotAlias(aliasId: string): Promise<Models.LexBotAlias>; 
   	getIntegrationsSpeechLexBotBotIdAliases(botId: string, opts?: IntegrationsApi.getIntegrationsSpeechLexBotBotIdAliasesOptions): Promise<Models.LexBotAliasEntityListing>; 
   	getIntegrationsSpeechLexBots(opts?: IntegrationsApi.getIntegrationsSpeechLexBotsOptions): Promise<Models.LexBotEntityListing>; 
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId: string, botId: string, opts?: IntegrationsApi.getIntegrationsSpeechNuanceNuanceIntegrationIdBotOptions): Promise<Models.NuanceBot>; 
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId: string, botId: string, jobId: string): Promise<Models.AsyncJob>; 
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId: string, botId: string, jobId: string): Promise<Models.NuanceBot>; 
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId: string, opts?: IntegrationsApi.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsOptions): Promise<Models.NuanceBotEntityListing>; 
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId: string, jobId: string): Promise<Models.AsyncJob>; 
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId: string, jobId: string): Promise<Models.NuanceBotEntityListing>; 
   	getIntegrationsSpeechTtsEngine(engineId: string, opts?: IntegrationsApi.getIntegrationsSpeechTtsEngineOptions): Promise<Models.TtsEngineEntity>; 
   	getIntegrationsSpeechTtsEngineVoice(engineId: string, voiceId: string): Promise<Models.TtsVoiceEntity>; 
   	getIntegrationsSpeechTtsEngineVoices(engineId: string, opts?: IntegrationsApi.getIntegrationsSpeechTtsEngineVoicesOptions): Promise<Models.TtsVoiceEntityListing>; 
@@ -2038,9 +2188,13 @@ declare class IntegrationsApi {
   	postIntegrationsActions(body: Models.PostActionInput): Promise<Models.Action>; 
   	postIntegrationsActionsDrafts(body: Models.PostActionInput): Promise<Models.Action>; 
   	postIntegrationsCredentials(opts?: IntegrationsApi.postIntegrationsCredentialsOptions): Promise<Models.CredentialInfo>; 
+  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId: string, botId: string, opts?: IntegrationsApi.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsOptions): Promise<Models.AsyncJob>; 
+  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId: string, opts?: IntegrationsApi.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsOptions): Promise<Models.AsyncJob>; 
+  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId: string, settings: Models.BotExecutionConfiguration): Promise<void>; 
   	putIntegrationConfigCurrent(integrationId: string, opts?: IntegrationsApi.putIntegrationConfigCurrentOptions): Promise<Models.IntegrationConfiguration>; 
   	putIntegrationsBotconnectorIntegrationIdBots(integrationId: string, botList: Models.BotList): Promise<void>; 
   	putIntegrationsCredential(credentialId: string, opts?: IntegrationsApi.putIntegrationsCredentialOptions): Promise<Models.CredentialInfo>; 
+  	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId: string, settings: Models.NuanceBotLaunchSettings): Promise<void>; 
   	putIntegrationsSpeechTtsSettings(body: Models.TtsSettings): Promise<Models.TtsSettings>;
 }
 
@@ -2151,6 +2305,15 @@ declare namespace IntegrationsApi {
 		"pageSize"?: number;
 		"name"?: string;
 	}
+	export interface getIntegrationsSpeechNuanceNuanceIntegrationIdBotOptions { 
+		"expand"?: Array<string>;
+		"targetChannel"?: string;
+	}
+	export interface getIntegrationsSpeechNuanceNuanceIntegrationIdBotsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"onlyRegisteredBots"?: boolean;
+	}
 	export interface getIntegrationsSpeechTtsEngineOptions { 
 		"includeVoices"?: boolean;
 	}
@@ -2197,6 +2360,15 @@ declare namespace IntegrationsApi {
 	export interface postIntegrationsCredentialsOptions { 
 		"body"?: Models.Credential;
 	}
+	export interface postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsOptions { 
+		"expand"?: Array<string>;
+		"body"?: string;
+	}
+	export interface postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"onlyRegisteredBots"?: boolean;
+	}
 	export interface putIntegrationConfigCurrentOptions { 
 		"body"?: Models.IntegrationConfiguration;
 	}
@@ -2211,6 +2383,8 @@ declare class JourneyApi {
   	deleteJourneyOutcome(outcomeId: string): Promise<void>; 
   	deleteJourneyOutcomesPredictor(predictorId: string): Promise<void>; 
   	deleteJourneySegment(segmentId: string): Promise<void>; 
+  	getAnalyticsJourneysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsJourneysAggregatesJobResults(jobId: string, opts?: JourneyApi.getAnalyticsJourneysAggregatesJobResultsOptions): Promise<Models.JourneyAsyncAggregateQueryResponse>; 
   	getJourneyActionmap(actionMapId: string): Promise<Models.ActionMap>; 
   	getJourneyActionmaps(opts?: JourneyApi.getJourneyActionmapsOptions): Promise<Models.ActionMapListing>; 
   	getJourneyActionmapsEstimatesJob(jobId: string): Promise<string>; 
@@ -2219,24 +2393,31 @@ declare class JourneyApi {
   	getJourneyActiontargets(opts?: JourneyApi.getJourneyActiontargetsOptions): Promise<Models.ActionTargetListing>; 
   	getJourneyActiontemplate(actionTemplateId: string): Promise<Models.ActionTemplate>; 
   	getJourneyActiontemplates(opts?: JourneyApi.getJourneyActiontemplatesOptions): Promise<Models.ActionTemplateListing>; 
+  	getJourneyCustomerCustomerIdSessions(customerIdType: string, customerId: string, opts?: JourneyApi.getJourneyCustomerCustomerIdSessionsOptions): Promise<Models.SessionListing>; 
   	getJourneyOutcome(outcomeId: string): Promise<Models.Outcome>; 
   	getJourneyOutcomes(opts?: JourneyApi.getJourneyOutcomesOptions): Promise<Models.OutcomeListing>; 
+  	getJourneyOutcomesAttributionsJob(jobId: string): Promise<Models.OutcomeAttributionJobStateResponse>; 
+  	getJourneyOutcomesAttributionsJobResults(jobId: string): Promise<Models.OutcomeAttributionResponseListing>; 
   	getJourneyOutcomesPredictor(predictorId: string): Promise<Models.OutcomePredictor>; 
   	getJourneyOutcomesPredictors(): Promise<Models.OutcomePredictorListing>; 
   	getJourneySegment(segmentId: string): Promise<Models.JourneySegment>; 
   	getJourneySegments(opts?: JourneyApi.getJourneySegmentsOptions): Promise<Models.SegmentListing>; 
   	getJourneySession(sessionId: string): Promise<Models.Session>; 
+  	getJourneySessionEvents(sessionId: string, opts?: JourneyApi.getJourneySessionEventsOptions): Promise<Models.EventListing>; 
   	getJourneySessionOutcomescores(sessionId: string): Promise<Models.OutcomeScoresResult>; 
+  	getJourneySessionSegments(sessionId: string, opts?: JourneyApi.getJourneySessionSegmentsOptions): Promise<Models.SegmentAssignmentListing>; 
   	patchJourneyActionmap(actionMapId: string, opts?: JourneyApi.patchJourneyActionmapOptions): Promise<Models.ActionMap>; 
   	patchJourneyActiontarget(actionTargetId: string, opts?: JourneyApi.patchJourneyActiontargetOptions): Promise<Models.ActionTarget>; 
   	patchJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.patchJourneyActiontemplateOptions): Promise<Models.ActionTemplate>; 
   	patchJourneyOutcome(outcomeId: string, opts?: JourneyApi.patchJourneyOutcomeOptions): Promise<Models.Outcome>; 
   	patchJourneySegment(segmentId: string, opts?: JourneyApi.patchJourneySegmentOptions): Promise<Models.JourneySegment>; 
+  	postAnalyticsJourneysAggregatesJobs(body: Models.JourneyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>; 
   	postJourneyActionmaps(opts?: JourneyApi.postJourneyActionmapsOptions): Promise<Models.ActionMap>; 
   	postJourneyActionmapsEstimatesJobs(body: Models.ActionMapEstimateRequest): Promise<Models.EstimateJobAsyncResponse>; 
   	postJourneyActiontemplates(opts?: JourneyApi.postJourneyActiontemplatesOptions): Promise<Models.ActionTemplate>; 
   	postJourneyOutcomes(opts?: JourneyApi.postJourneyOutcomesOptions): Promise<Models.Outcome>; 
+  	postJourneyOutcomesAttributionsJobs(opts?: JourneyApi.postJourneyOutcomesAttributionsJobsOptions): Promise<Models.OutcomeAttributionAsyncResponse>; 
   	postJourneyOutcomesPredictors(opts?: JourneyApi.postJourneyOutcomesPredictorsOptions): Promise<Models.OutcomePredictor>; 
   	postJourneySegments(opts?: JourneyApi.postJourneySegmentsOptions): Promise<Models.JourneySegment>;
 }
@@ -2244,6 +2425,9 @@ declare class JourneyApi {
 declare namespace JourneyApi { 
 	export interface deleteJourneyActiontemplateOptions { 
 		"hardDelete"?: boolean;
+	}
+	export interface getAnalyticsJourneysAggregatesJobResultsOptions { 
+		"cursor"?: string;
 	}
 	export interface getJourneyActionmapsOptions { 
 		"pageNumber"?: number;
@@ -2268,6 +2452,10 @@ declare namespace JourneyApi {
 		"queryFields"?: Array<string>;
 		"queryValue"?: string;
 	}
+	export interface getJourneyCustomerCustomerIdSessionsOptions { 
+		"pageSize"?: string;
+		"after"?: string;
+	}
 	export interface getJourneyOutcomesOptions { 
 		"pageNumber"?: number;
 		"pageSize"?: number;
@@ -2284,6 +2472,16 @@ declare namespace JourneyApi {
 		"segmentIds"?: Array<string>;
 		"queryFields"?: Array<string>;
 		"queryValue"?: string;
+	}
+	export interface getJourneySessionEventsOptions { 
+		"pageSize"?: string;
+		"after"?: string;
+	}
+	export interface getJourneySessionSegmentsOptions { 
+		"pageSize"?: string;
+		"after"?: string;
+		"segmentScope"?: string;
+		"assignmentState"?: string;
 	}
 	export interface patchJourneyActionmapOptions { 
 		"body"?: Models.PatchActionMap;
@@ -2308,6 +2506,9 @@ declare namespace JourneyApi {
 	}
 	export interface postJourneyOutcomesOptions { 
 		"body"?: Models.Outcome;
+	}
+	export interface postJourneyOutcomesAttributionsJobsOptions { 
+		"body"?: Models.OutcomeAttributionListing;
 	}
 	export interface postJourneyOutcomesPredictorsOptions { 
 		"body"?: Models.OutcomePredictorRequest;
@@ -2349,6 +2550,7 @@ declare class KnowledgeApi {
   	getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageCategoriesOptions): Promise<Models.CategoryListing>; 
   	getKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeExtendedCategory>; 
   	getKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeDocument>; 
+  	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId: string, knowledgeBaseId: string, languageCode: string, uploadId: string): Promise<Models.KnowledgeDocumentContentUpload>; 
   	getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageDocumentsOptions): Promise<Models.DocumentListing>; 
   	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string): Promise<Models.KnowledgeImport>; 
   	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId: string, languageCode: string, trainingId: string): Promise<Models.KnowledgeTraining>; 
@@ -2378,12 +2580,16 @@ declare class KnowledgeApi {
   	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId: string, documentId: string, body: Models.DocumentVariation): Promise<Models.DocumentVariation>; 
   	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentVersion): Promise<Models.KnowledgeDocumentVersion>; 
   	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId: string, body: Models.KnowledgeDocumentReq): Promise<Models.KnowledgeDocumentResponse>; 
+  	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkRemoveRequest): Promise<Models.BulkResponse>; 
+  	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkUpdateRequest): Promise<Models.BulkResponse>; 
   	postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchOptions): Promise<Models.KnowledgeDocumentSearch>; 
   	postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeDocumentSuggestion>; 
+  	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkVersionAddRequest): Promise<Models.BulkResponse>; 
   	postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId: string, body: Models.KnowledgeExportJobRequest): Promise<Models.KnowledgeExportJobResponse>; 
   	postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId: string, body: Models.KnowledgeImportJobRequest): Promise<Models.KnowledgeImportJobResponse>; 
   	postKnowledgeKnowledgebaseLabels(knowledgeBaseId: string, body: Models.LabelCreateRequest): Promise<Models.LabelResponse>; 
   	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>; 
+  	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentContentUpload): Promise<Models.KnowledgeDocumentContentUpload>; 
   	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>; 
   	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeImport): Promise<Models.KnowledgeImport>; 
   	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId: string, languageCode: string, trainingId: string): Promise<Models.KnowledgeTraining>; 
@@ -2982,10 +3188,12 @@ declare class OrganizationAuthorizationApi {
   	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string): Promise<void>; 
   	deleteOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
   	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
+  	deleteOrgauthorizationTrustees(id: Array<string>): Promise<void>; 
   	deleteOrgauthorizationTrustor(trustorOrgId: string): Promise<void>; 
   	deleteOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<void>; 
   	deleteOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<void>; 
   	deleteOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<void>; 
+  	deleteOrgauthorizationTrustors(id: Array<string>): Promise<void>; 
   	getOrgauthorizationPairing(pairingId: string): Promise<Models.TrustRequest>; 
   	getOrgauthorizationTrustee(trusteeOrgId: string): Promise<Models.Trustee>; 
   	getOrgauthorizationTrusteeClonedusers(trusteeOrgId: string): Promise<Models.ClonedUserEntityListing>; 
@@ -3443,8 +3651,11 @@ declare namespace OutboundApi {
 }
 
 declare class PresenceApi {  
+  	deletePresenceDefinition0(definitionId: string): Promise<void>; 
   	deletePresenceSource(sourceId: string): Promise<void>; 
   	deletePresencedefinition(presenceId: string): Promise<void>; 
+  	getPresenceDefinition0(definitionId: string): Promise<Models.OrganizationPresenceDefinition>; 
+  	getPresenceDefinitions0(opts?: PresenceApi.getPresenceDefinitions0Options): Promise<Models.OrganizationPresenceDefinitionEntityListing>; 
   	getPresenceSettings(): Promise<Models.PresenceSettings>; 
   	getPresenceSource(sourceId: string): Promise<Models.Source>; 
   	getPresenceSources(opts?: PresenceApi.getPresenceSourcesOptions): Promise<Models.SourceEntityListing>; 
@@ -3456,8 +3667,10 @@ declare class PresenceApi {
   	getUserPresencesPurecloud(userId: string): Promise<Models.UserPresence>; 
   	patchUserPresence(userId: string, sourceId: string, body: Models.UserPresence): Promise<Models.UserPresence>; 
   	patchUserPresencesPurecloud(userId: string, body: Models.UserPresence): Promise<Models.UserPresence>; 
+  	postPresenceDefinitions0(body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>; 
   	postPresenceSources(body: Models.Source): Promise<Models.Source>; 
   	postPresencedefinitions(body: Models.OrganizationPresence): Promise<Models.OrganizationPresence>; 
+  	putPresenceDefinition0(definitionId: string, body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>; 
   	putPresenceSettings(body: Models.PresenceSettings): Promise<Models.PresenceSettings>; 
   	putPresenceSource(sourceId: string, body: Models.Source): Promise<Models.Source>; 
   	putPresenceUserPrimarysource(userId: string, body: Models.UserPrimarySource): Promise<Models.UserPrimarySource>; 
@@ -3466,6 +3679,10 @@ declare class PresenceApi {
 }
 
 declare namespace PresenceApi { 
+	export interface getPresenceDefinitions0Options { 
+		"deactivated"?: string;
+		"divisionId"?: Array<string>;
+	}
 	export interface getPresenceSourcesOptions { 
 		"deactivated"?: string;
 	}
@@ -3519,6 +3736,10 @@ declare class QualityApi {
   	deleteQualityForm(formId: string): Promise<void>; 
   	deleteQualityFormsEvaluation(formId: string): Promise<void>; 
   	deleteQualityFormsSurvey(formId: string): Promise<void>; 
+  	getAnalyticsEvaluationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsEvaluationsAggregatesJobResults(jobId: string, opts?: QualityApi.getAnalyticsEvaluationsAggregatesJobResultsOptions): Promise<Models.EvaluationAsyncAggregateQueryResponse>; 
+  	getAnalyticsSurveysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsSurveysAggregatesJobResults(jobId: string, opts?: QualityApi.getAnalyticsSurveysAggregatesJobResultsOptions): Promise<Models.SurveyAsyncAggregateQueryResponse>; 
   	getQualityAgentsActivity(opts?: QualityApi.getQualityAgentsActivityOptions): Promise<Models.AgentActivityEntityListing>; 
   	getQualityCalibration(calibrationId: string, opts?: QualityApi.getQualityCalibrationOptions): Promise<Models.Calibration>; 
   	getQualityCalibrations(calibratorId: string, opts?: QualityApi.getQualityCalibrationsOptions): Promise<Models.CalibrationEntityListing>; 
@@ -3549,7 +3770,9 @@ declare class QualityApi {
   	getQualitySurvey(surveyId: string): Promise<Models.Survey>; 
   	getQualitySurveysScorable(customerSurveyUrl: string): Promise<Models.ScorableSurvey>; 
   	patchQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>; 
+  	postAnalyticsEvaluationsAggregatesJobs(body: Models.EvaluationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>; 
+  	postAnalyticsSurveysAggregatesJobs(body: Models.SurveyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsSurveysAggregatesQuery(body: Models.SurveyAggregationQuery): Promise<Models.SurveyAggregateQueryResponse>; 
   	postQualityCalibrations(body: Models.CalibrationCreate, opts?: QualityApi.postQualityCalibrationsOptions): Promise<Models.Calibration>; 
   	postQualityConversationEvaluations(conversationId: string, body: Models.Evaluation, opts?: QualityApi.postQualityConversationEvaluationsOptions): Promise<Models.Evaluation>; 
@@ -3574,6 +3797,12 @@ declare class QualityApi {
 declare namespace QualityApi { 
 	export interface deleteQualityConversationEvaluationOptions { 
 		"expand"?: string;
+	}
+	export interface getAnalyticsEvaluationsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsSurveysAggregatesJobResultsOptions { 
+		"cursor"?: string;
 	}
 	export interface getQualityAgentsActivityOptions { 
 		"pageSize"?: number;
@@ -3954,6 +4183,7 @@ declare class RoutingApi {
   	deleteRoutingSmsPhonenumber(addressId: string): Promise<void>; 
   	deleteRoutingUserUtilization(userId: string): Promise<void>; 
   	deleteRoutingUtilization(): Promise<void>; 
+  	deleteRoutingUtilizationTag(tagId: string, opts?: RoutingApi.deleteRoutingUtilizationTagOptions): Promise<void>; 
   	deleteRoutingWrapupcode(codeId: string): Promise<void>; 
   	deleteUserRoutinglanguage(userId: string, languageId: string): Promise<void>; 
   	deleteUserRoutingskill(userId: string, skillId: string): Promise<void>; 
@@ -4008,6 +4238,9 @@ declare class RoutingApi {
   	getRoutingSmsPhonenumbers(opts?: RoutingApi.getRoutingSmsPhonenumbersOptions): Promise<Models.SmsPhoneNumberEntityListing>; 
   	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilization>; 
   	getRoutingUtilization(): Promise<Models.Utilization>; 
+  	getRoutingUtilizationTag(tagId: string): Promise<Models.UtilizationTag>; 
+  	getRoutingUtilizationTagAgents(tagId: string): Promise<Array<object>>; 
+  	getRoutingUtilizationTags(opts?: RoutingApi.getRoutingUtilizationTagsOptions): Promise<Models.UtilizationTagEntityListing>; 
   	getRoutingWrapupcode(codeId: string): Promise<Models.WrapupCode>; 
   	getRoutingWrapupcodes(opts?: RoutingApi.getRoutingWrapupcodesOptions): Promise<Models.WrapupCodeEntityListing>; 
   	getUserQueues(userId: string, opts?: RoutingApi.getUserQueuesOptions): Promise<Models.UserQueueEntityListing>; 
@@ -4030,6 +4263,7 @@ declare class RoutingApi {
   	patchUserRoutinglanguagesBulk(userId: string, body: Array<Models.UserRoutingLanguagePost>): Promise<Models.UserLanguageEntityListing>; 
   	patchUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>; 
   	postAnalyticsQueuesObservationsQuery(body: Models.QueueObservationQuery): Promise<Models.QueueObservationQueryResponse>; 
+  	postAnalyticsRoutingActivityQuery(body: Models.RoutingActivityQuery, opts?: RoutingApi.postAnalyticsRoutingActivityQueryOptions): Promise<Models.RoutingActivityResponse>; 
   	postRoutingAssessments(opts?: RoutingApi.postRoutingAssessmentsOptions): Promise<Models.BenefitAssessment>; 
   	postRoutingAssessmentsJobs(opts?: RoutingApi.postRoutingAssessmentsJobsOptions): Promise<Models.BenefitAssessmentJob>; 
   	postRoutingEmailDomainRoutes(domainName: string, body: Models.InboundRoute): Promise<Models.InboundRoute>; 
@@ -4048,6 +4282,8 @@ declare class RoutingApi {
   	postRoutingSkills(body: Models.RoutingSkill): Promise<Models.RoutingSkill>; 
   	postRoutingSmsAddresses(body: Models.SmsAddressProvision): Promise<Models.SmsAddress>; 
   	postRoutingSmsPhonenumbers(body: Models.SmsPhoneNumberProvision): Promise<Models.SmsPhoneNumber>; 
+  	postRoutingSmsPhonenumbersImport(body: Models.SmsPhoneNumberImport): Promise<Models.SmsPhoneNumber>; 
+  	postRoutingUtilizationTags(body: Models.CreateUtilizationTagRequest): Promise<Models.UtilizationTag>; 
   	postRoutingWrapupcodes(body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>; 
   	postUserRoutinglanguages(userId: string, body: Models.UserRoutingLanguagePost): Promise<Models.UserRoutingLanguage>; 
   	postUserRoutingskills(userId: string, body: Models.UserRoutingSkillPost): Promise<Models.UserRoutingSkill>; 
@@ -4067,6 +4303,9 @@ declare class RoutingApi {
 
 declare namespace RoutingApi { 
 	export interface deleteRoutingQueueOptions { 
+		"forceDelete"?: boolean;
+	}
+	export interface deleteRoutingUtilizationTagOptions { 
 		"forceDelete"?: boolean;
 	}
 	export interface getRoutingAssessmentsOptions { 
@@ -4227,6 +4466,12 @@ declare namespace RoutingApi {
 		"language"?: string;
 		"integrationId"?: string;
 	}
+	export interface getRoutingUtilizationTagsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortOrder"?: string;
+		"name"?: string;
+	}
 	export interface getRoutingWrapupcodesOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
@@ -4262,6 +4507,10 @@ declare namespace RoutingApi {
 	}
 	export interface patchUserQueuesOptions { 
 		"divisionId"?: Array<string>;
+	}
+	export interface postAnalyticsRoutingActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 	export interface postRoutingAssessmentsOptions { 
 		"body"?: Models.CreateBenefitAssessmentRequest;
@@ -4512,6 +4761,7 @@ declare class SearchApi {
   	getVoicemailSearch(q64: string, opts?: SearchApi.getVoicemailSearchOptions): Promise<Models.VoicemailsSearchResponse>; 
   	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
   	postConversationsParticipantsAttributesSearch(body: Models.ConversationParticipantSearchRequest): Promise<Models.JsonCursorSearchResponse>; 
+  	postDocumentationAllSearch(body: Models.DocumentationV2SearchRequest): Promise<Models.JsonNodeSearchResponse>; 
   	postDocumentationGknSearch(body: Models.GKNDocumentationSearchRequest): Promise<Models.GKNDocumentationSearchResponse>; 
   	postDocumentationSearch(body: Models.DocumentationSearchRequest): Promise<Models.DocumentationSearchResponse>; 
   	postGroupsSearch(body: Models.GroupSearchRequest): Promise<Models.GroupsSearchResponse>; 
@@ -4522,6 +4772,8 @@ declare class SearchApi {
   	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>; 
   	postTeamsSearch(body: Models.TeamSearchRequest): Promise<Models.TeamsSearchResponse>; 
   	postUsersSearch(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
+  	postUsersSearchConversationTarget(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
+  	postUsersSearchQueuemembersManage(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
   	postUsersSearchTeamsAssign(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
   	postVoicemailSearch(body: Models.VoicemailSearchRequest): Promise<Models.VoicemailsSearchResponse>;
 }
@@ -4679,6 +4931,118 @@ declare namespace SuggestApi {
 	}
 }
 
+declare class TaskManagementApi {  
+  	deleteTaskmanagementWorkbin(workbinId: string): Promise<void>; 
+  	deleteTaskmanagementWorkitem(workitemId: string): Promise<void>; 
+  	deleteTaskmanagementWorkitemsSchema(schemaId: string): Promise<void>; 
+  	deleteTaskmanagementWorktype(worktypeId: string): Promise<void>; 
+  	deleteTaskmanagementWorktypeStatus(worktypeId: string, statusId: string): Promise<void>; 
+  	getTaskmanagementWorkbin(workbinId: string): Promise<Models.Workbin>; 
+  	getTaskmanagementWorkbinHistory(workbinId: string, opts?: TaskManagementApi.getTaskmanagementWorkbinHistoryOptions): Promise<Models.WorkbinChangeListing>; 
+  	getTaskmanagementWorkbinVersion(workbinId: string, entityVersion: number): Promise<Models.WorkbinVersion>; 
+  	getTaskmanagementWorkbinVersions(workbinId: string, opts?: TaskManagementApi.getTaskmanagementWorkbinVersionsOptions): Promise<Models.WorkbinVersionListing>; 
+  	getTaskmanagementWorkitem(workitemId: string): Promise<Models.Workitem>; 
+  	getTaskmanagementWorkitemHistory(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemHistoryOptions): Promise<Models.WorkitemChangeListing>; 
+  	getTaskmanagementWorkitemUserWrapups(workitemId: string, userId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemUserWrapupsOptions): Promise<Models.WorkitemWrapup>; 
+  	getTaskmanagementWorkitemVersion(workitemId: string, entityVersion: number): Promise<Models.WorkitemVersion>; 
+  	getTaskmanagementWorkitemVersions(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemVersionsOptions): Promise<Models.WorkitemVersionListing>; 
+  	getTaskmanagementWorkitemWrapups(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemWrapupsOptions): Promise<Models.WorkitemWrapupEntityListing>; 
+  	getTaskmanagementWorkitemsSchema(schemaId: string): Promise<Models.DataSchema>; 
+  	getTaskmanagementWorkitemsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>; 
+  	getTaskmanagementWorkitemsSchemaVersions(schemaId: string): Promise<Models.DataSchema>; 
+  	getTaskmanagementWorkitemsSchemas(): Promise<Models.DataSchemaListing>; 
+  	getTaskmanagementWorktype(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeOptions): Promise<Models.Worktype>; 
+  	getTaskmanagementWorktypeHistory(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeHistoryOptions): Promise<Models.WorktypeChangeListing>; 
+  	getTaskmanagementWorktypeStatus(worktypeId: string, statusId: string): Promise<Models.WorkitemStatus>; 
+  	getTaskmanagementWorktypeVersion(worktypeId: string, entityVersion: number): Promise<Models.WorktypeVersion>; 
+  	getTaskmanagementWorktypeVersions(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeVersionsOptions): Promise<Models.WorktypeVersionListing>; 
+  	patchTaskmanagementWorkbin(workbinId: string, body: Models.WorkbinUpdate): Promise<Models.Workbin>; 
+  	patchTaskmanagementWorkitem(workitemId: string, body: Models.WorkitemUpdate): Promise<Models.Workitem>; 
+  	patchTaskmanagementWorkitemAssignment(workitemId: string, body: Models.WorkitemManualAssign): Promise<void>; 
+  	patchTaskmanagementWorkitemUserWrapups(workitemId: string, userId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>; 
+  	patchTaskmanagementWorkitemUsersMeWrapups(workitemId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>; 
+  	patchTaskmanagementWorktype(worktypeId: string, opts?: TaskManagementApi.patchTaskmanagementWorktypeOptions): Promise<Models.Worktype>; 
+  	patchTaskmanagementWorktypeStatus(worktypeId: string, statusId: string, opts?: TaskManagementApi.patchTaskmanagementWorktypeStatusOptions): Promise<Models.WorkitemStatus>; 
+  	postTaskmanagementWorkbins(opts?: TaskManagementApi.postTaskmanagementWorkbinsOptions): Promise<Models.Workbin>; 
+  	postTaskmanagementWorkbinsQuery(body: Models.WorkbinQueryRequest): Promise<Models.WorkbinQueryEntityListing>; 
+  	postTaskmanagementWorkitemAcdCancel(workitemId: string): Promise<Models.Workitem>; 
+  	postTaskmanagementWorkitemDisconnect(workitemId: string): Promise<Models.Workitem>; 
+  	postTaskmanagementWorkitemTerminate(workitemId: string, opts?: TaskManagementApi.postTaskmanagementWorkitemTerminateOptions): Promise<Models.Workitem>; 
+  	postTaskmanagementWorkitems(body: Models.WorkitemCreate): Promise<Models.Workitem>; 
+  	postTaskmanagementWorkitemsQuery(body: Models.WorkitemQueryPostRequest): Promise<Models.WorkitemPostQueryEntityListing>; 
+  	postTaskmanagementWorkitemsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>; 
+  	postTaskmanagementWorktypeStatuses(worktypeId: string, opts?: TaskManagementApi.postTaskmanagementWorktypeStatusesOptions): Promise<Models.WorkitemStatus>; 
+  	postTaskmanagementWorktypes(opts?: TaskManagementApi.postTaskmanagementWorktypesOptions): Promise<Models.Worktype>; 
+  	postTaskmanagementWorktypesQuery(body: Models.WorktypeQueryRequest): Promise<Models.WorktypeQueryEntityListing>; 
+  	putTaskmanagementWorkitemsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>;
+}
+
+declare namespace TaskManagementApi { 
+	export interface getTaskmanagementWorkbinHistoryOptions { 
+		"after"?: string;
+		"pageSize"?: number;
+		"sortOrder"?: string;
+	}
+	export interface getTaskmanagementWorkbinVersionsOptions { 
+		"after"?: string;
+		"pageSize"?: number;
+		"sortOrder"?: string;
+	}
+	export interface getTaskmanagementWorkitemHistoryOptions { 
+		"after"?: string;
+		"pageSize"?: number;
+		"sortOrder"?: string;
+	}
+	export interface getTaskmanagementWorkitemUserWrapupsOptions { 
+		"expands"?: string;
+		"after"?: string;
+		"pageSize"?: number;
+		"sortOrder"?: string;
+	}
+	export interface getTaskmanagementWorkitemVersionsOptions { 
+		"after"?: string;
+		"pageSize"?: number;
+		"sortOrder"?: string;
+	}
+	export interface getTaskmanagementWorkitemWrapupsOptions { 
+		"expands"?: string;
+		"after"?: string;
+		"pageSize"?: number;
+		"sortOrder"?: string;
+	}
+	export interface getTaskmanagementWorktypeOptions { 
+		"expands"?: Array<string>;
+	}
+	export interface getTaskmanagementWorktypeHistoryOptions { 
+		"after"?: string;
+		"pageSize"?: number;
+		"sortOrder"?: string;
+	}
+	export interface getTaskmanagementWorktypeVersionsOptions { 
+		"after"?: string;
+		"pageSize"?: number;
+		"sortOrder"?: string;
+	}
+	export interface patchTaskmanagementWorktypeOptions { 
+		"body"?: Models.WorktypeUpdate;
+	}
+	export interface patchTaskmanagementWorktypeStatusOptions { 
+		"body"?: Models.WorkitemStatusUpdate;
+	}
+	export interface postTaskmanagementWorkbinsOptions { 
+		"body"?: Models.WorkbinCreate;
+	}
+	export interface postTaskmanagementWorkitemTerminateOptions { 
+		"body"?: Models.WorkitemTerminate;
+	}
+	export interface postTaskmanagementWorktypeStatusesOptions { 
+		"body"?: Models.WorkitemStatusCreate;
+	}
+	export interface postTaskmanagementWorktypesOptions { 
+		"body"?: Models.WorktypeCreate;
+	}
+}
+
 declare class TeamsApi {  
   	deleteTeam(teamId: string): Promise<void>; 
   	deleteTeamMembers(teamId: string, id: string): Promise<void>; 
@@ -4686,6 +5050,7 @@ declare class TeamsApi {
   	getTeamMembers(teamId: string, opts?: TeamsApi.getTeamMembersOptions): Promise<Models.TeamMemberEntityListing>; 
   	getTeams(opts?: TeamsApi.getTeamsOptions): Promise<Models.TeamEntityListing>; 
   	patchTeam(teamId: string, body: Models.Team): Promise<Models.Team>; 
+  	postAnalyticsTeamsActivityQuery(body: Models.TeamActivityQuery, opts?: TeamsApi.postAnalyticsTeamsActivityQueryOptions): Promise<Models.TeamActivityResponse>; 
   	postTeamMembers(teamId: string, body: Models.TeamMembers): Promise<Models.TeamMemberAddListingResponse>; 
   	postTeams(body: Models.Team): Promise<Models.Team>; 
   	postTeamsSearch(body: Models.TeamSearchRequest): Promise<Models.TeamsSearchResponse>;
@@ -4704,6 +5069,10 @@ declare namespace TeamsApi {
 		"after"?: string;
 		"before"?: string;
 		"expand"?: string;
+	}
+	export interface postAnalyticsTeamsActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 }
 
@@ -4768,6 +5137,7 @@ declare class TelephonyProvidersEdgeApi {
   	getTelephonyProvidersEdgesExtension(extensionId: string): Promise<Models.Extension>; 
   	getTelephonyProvidersEdgesExtensionpool(extensionPoolId: string): Promise<Models.ExtensionPool>; 
   	getTelephonyProvidersEdgesExtensionpools(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionpoolsOptions): Promise<Models.ExtensionPoolEntityListing>; 
+  	getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionpoolsDivisionviewsOptions): Promise<Models.ExtensionPoolDivisionViewEntityListing>; 
   	getTelephonyProvidersEdgesExtensions(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionsOptions): Promise<Models.ExtensionEntityListing>; 
   	getTelephonyProvidersEdgesLine(lineId: string): Promise<Models.Line>; 
   	getTelephonyProvidersEdgesLinebasesetting(lineBaseId: string): Promise<Models.LineBase>; 
@@ -4908,6 +5278,15 @@ declare namespace TelephonyProvidersEdgeApi {
 		"pageNumber"?: number;
 		"sortBy"?: string;
 		"_number"?: string;
+	}
+	export interface getTelephonyProvidersEdgesExtensionpoolsDivisionviewsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+		"id"?: Array<string>;
+		"name"?: string;
+		"divisionId"?: Array<string>;
 	}
 	export interface getTelephonyProvidersEdgesExtensionsOptions { 
 		"pageSize"?: number;
@@ -5054,10 +5433,15 @@ declare class TokensApi {
   	deleteToken(userId: string): Promise<void>; 
   	deleteTokensMe(): Promise<void>; 
   	getTokensMe(): Promise<Models.TokenInfo>; 
-  	headTokensMe(): Promise<void>;
+  	getTokensTimeout(): Promise<Models.IdleTokenTimeout>; 
+  	headTokensMe(): Promise<void>; 
+  	putTokensTimeout(opts?: TokensApi.putTokensTimeoutOptions): Promise<Models.IdleTokenTimeout>;
 }
 
 declare namespace TokensApi { 
+	export interface putTokensTimeoutOptions { 
+		"body"?: Models.IdleTokenTimeout;
+	}
 }
 
 declare class UploadsApi {  
@@ -5124,6 +5508,8 @@ declare class UsersApi {
   	deleteUserRoutingskill(userId: string, skillId: string): Promise<void>; 
   	deleteUserStationAssociatedstation(userId: string): Promise<void>; 
   	deleteUserStationDefaultstation(userId: string): Promise<void>; 
+  	getAnalyticsUsersAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsUsersAggregatesJobResults(jobId: string, opts?: UsersApi.getAnalyticsUsersAggregatesJobResultsOptions): Promise<Models.UserAsyncAggregateQueryResponse>; 
   	getAnalyticsUsersDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsUsersDetailsJobResults(jobId: string, opts?: UsersApi.getAnalyticsUsersDetailsJobResultsOptions): Promise<Models.AnalyticsUserDetailsAsyncQueryResponse>; 
   	getAnalyticsUsersDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
@@ -5169,6 +5555,8 @@ declare class UsersApi {
   	patchUserRoutinglanguagesBulk(userId: string, body: Array<Models.UserRoutingLanguagePost>): Promise<Models.UserLanguageEntityListing>; 
   	patchUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>; 
   	patchUsersBulk(body: Array<Models.PatchUser>): Promise<Models.UserEntityListing>; 
+  	postAnalyticsUsersActivityQuery(body: Models.UserActivityQuery, opts?: UsersApi.postAnalyticsUsersActivityQueryOptions): Promise<Models.UserActivityResponse>; 
+  	postAnalyticsUsersAggregatesJobs(body: Models.UserAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsUsersAggregatesQuery(body: Models.UserAggregationQuery): Promise<Models.UserAggregateQueryResponse>; 
   	postAnalyticsUsersDetailsJobs(body: Models.AsyncUserDetailsQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsUsersDetailsQuery(body: Models.UserDetailsQuery): Promise<Models.AnalyticsUserDetailsQueryResponse>; 
@@ -5186,6 +5574,8 @@ declare class UsersApi {
   	postUsersDevelopmentActivitiesAggregatesQuery(body: Models.DevelopmentActivityAggregateParam): Promise<Models.DevelopmentActivityAggregateResponse>; 
   	postUsersMePassword(body: Models.ChangeMyPasswordRequest): Promise<void>; 
   	postUsersSearch(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
+  	postUsersSearchConversationTarget(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
+  	postUsersSearchQueuemembersManage(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
   	postUsersSearchTeamsAssign(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
   	putRoutingUserUtilization(userId: string, body: Models.Utilization): Promise<Models.AgentMaxUtilization>; 
   	putUserCallforwarding(userId: string, body: Models.CallForwarding): Promise<Models.CallForwarding>; 
@@ -5201,6 +5591,9 @@ declare class UsersApi {
 }
 
 declare namespace UsersApi { 
+	export interface getAnalyticsUsersAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
 	export interface getAnalyticsUsersDetailsJobResultsOptions { 
 		"cursor"?: string;
 		"pageSize"?: number;
@@ -5321,6 +5714,10 @@ declare namespace UsersApi {
 	}
 	export interface patchUserQueuesOptions { 
 		"divisionId"?: Array<string>;
+	}
+	export interface postAnalyticsUsersActivityQueryOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 	export interface postAuthorizationSubjectBulkaddOptions { 
 		"subjectType"?: string;
@@ -6117,6 +6514,24 @@ declare namespace Models {
 		"range"?: Models.AggregationRange;
 	}
 	
+	export interface ActionAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.ActionAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface ActionAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.ActionAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.ActionAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
+	}
+	
 	export interface ActionConfig { 
 		"timeoutSeconds"?: number;
 		"request"?: Models.RequestConfig;
@@ -6144,6 +6559,13 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface ActionEventActionMap { 
+		"id"?: string;
+		"selfUri"?: string;
+		"version"?: number;
+		"displayName": string;
 	}
 	
 	export interface ActionInput { 
@@ -7212,6 +7634,22 @@ declare namespace Models {
 		"templateUris"?: Array<string>;
 	}
 	
+	export interface AppEvent { 
+		"eventName"?: string;
+		"screenName"?: string;
+		"app"?: Models.JourneyApp;
+		"device"?: Models.Device;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"geolocation"?: Models.JourneyGeolocation;
+		"sdkLibrary"?: Models.SdkLibrary;
+		"networkConnectivity"?: Models.NetworkConnectivity;
+		"mktCampaign"?: Models.JourneyCampaign;
+		"searchQuery"?: string;
+		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
+		"traits"?: { [key: string]: Models.CustomEventAttribute; };
+	}
+	
 	export interface AppendToDncActionSettings { 
 		"expire": boolean;
 		"expirationDuration"?: string;
@@ -7655,6 +8093,12 @@ declare namespace Models {
 		"result"?: Models.BuIntradayResponse;
 	}
 	
+	export interface AsyncJob { 
+		"id"?: string;
+		"selfUri"?: string;
+		"state"?: string;
+	}
+	
 	export interface AsyncQueryResponse { 
 		"jobId"?: string;
 	}
@@ -8052,6 +8496,11 @@ declare namespace Models {
 		"enabled"?: boolean;
 	}
 	
+	export interface AutoStatusTransitionDetail { 
+		"nextStatus"?: Models.WorkitemStatusReference;
+		"dateOfTransition"?: string;
+	}
+	
 	export interface AutomaticTimeZoneMappingSettings { 
 		"callableWindows"?: Array<Models.CallableWindow>;
 		"supportedCountries"?: Array<string>;
@@ -8300,6 +8749,24 @@ declare namespace Models {
 		"range"?: Models.AggregationRange;
 	}
 	
+	export interface BotAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.BotAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface BotAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.BotAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.BotAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
+	}
+	
 	export interface BotConnectorBot { 
 		"id": string;
 		"name"?: string;
@@ -8339,6 +8806,12 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface BotExecutionConfiguration { 
+		"botId": string;
+		"executionHost": string;
+		"botCredentials": Models.NuanceBotCredentials;
 	}
 	
 	export interface BotIntent { 
@@ -9017,6 +9490,12 @@ declare namespace Models {
 	
 	export interface BulkRelationshipsResponse { 
 		"results"?: Array<Models.BulkResponseResultRelationshipRelationship>;
+		"errorCount"?: number;
+		"errorIndexes"?: Array<number>;
+	}
+	
+	export interface BulkResponse { 
+		"results"?: Array<Models.BulkResult>;
 		"errorCount"?: number;
 		"errorIndexes"?: Array<number>;
 	}
@@ -10623,6 +11102,11 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ComplexVariableInfo { 
+		"id": string;
+		"name": string;
+	}
+	
 	export interface Compliance { 
 		"stopSettings": Array<Models.StopSettings>;
 		"optInSettings": Array<Models.OptInSettings>;
@@ -11282,6 +11766,83 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ConversationActivityData { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.ConversationActivityMetricValue>;
+		"truncated"?: boolean;
+		"entities"?: Array<Models.ConversationActivityEntityData>;
+	}
+	
+	export interface ConversationActivityEntityData { 
+		"activityDate": string;
+		"metric"?: string;
+		"addressFrom"?: string;
+		"addressTo"?: string;
+		"ani"?: string;
+		"conversationId"?: string;
+		"convertedFrom"?: string;
+		"convertedTo"?: string;
+		"direction"?: string;
+		"dnis"?: string;
+		"mediaType"?: string;
+		"participantName"?: string;
+		"queueId"?: string;
+		"requestedLanguageId"?: string;
+		"requestedRoutingSkillIds"?: Array<string>;
+		"requestedRoutings"?: Array<string>;
+		"routingPriority"?: number;
+		"sessionId"?: string;
+		"teamId"?: string;
+		"usedRouting"?: string;
+		"userId"?: string;
+		"scoredAgents"?: Array<Models.ConversationActivityScoredAgent>;
+	}
+	
+	export interface ConversationActivityMetricValue { 
+		"metric"?: string;
+		"count"?: number;
+	}
+	
+	export interface ConversationActivityQuery { 
+		"metrics": Array<Models.ConversationActivityQueryMetric>;
+		"groupBy": Array<string>;
+		"filter"?: Models.ConversationActivityQueryFilter;
+		"order"?: string;
+	}
+	
+	export interface ConversationActivityQueryClause { 
+		"type": string;
+		"predicates": Array<Models.ConversationActivityQueryPredicate>;
+	}
+	
+	export interface ConversationActivityQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.ConversationActivityQueryClause>;
+		"predicates"?: Array<Models.ConversationActivityQueryPredicate>;
+	}
+	
+	export interface ConversationActivityQueryMetric { 
+		"metric": string;
+		"details"?: boolean;
+	}
+	
+	export interface ConversationActivityQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+	}
+	
+	export interface ConversationActivityResponse { 
+		"results"?: Array<Models.ConversationActivityData>;
+		"entityIdDimension"?: string;
+	}
+	
+	export interface ConversationActivityScoredAgent { 
+		"agentScore"?: number;
+		"scoredAgentId"?: string;
+	}
+	
 	export interface ConversationAggregateDataContainer { 
 		"group"?: { [key: string]: string; };
 		"data"?: Array<Models.StatisticalResponse>;
@@ -11346,6 +11907,24 @@ declare namespace Models {
 		"conversationId": string;
 		"communicationId": string;
 		"mediaType": string;
+	}
+	
+	export interface ConversationAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.ConversationAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface ConversationAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.ConversationAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.ConversationAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
 	}
 	
 	export interface ConversationBasic { 
@@ -13936,6 +14515,10 @@ declare namespace Models {
 		"state"?: string;
 	}
 	
+	export interface CreateUtilizationTagRequest { 
+		"name": string;
+	}
+	
 	export interface CreateWebChatConversationRequest { 
 		"organizationId": string;
 		"deploymentId": string;
@@ -14101,6 +14684,28 @@ declare namespace Models {
 		"values": Array<string>;
 		"shouldIgnoreCase": boolean;
 		"operator"?: string;
+	}
+	
+	export interface CriteriaCategoryInfo { 
+		"categoryId"?: string;
+		"displayOrder"?: number;
+	}
+	
+	export interface CriteriaGroup { 
+		"and"?: Array<Models.CriteriaItem>;
+		"or"?: Array<Models.CriteriaItem>;
+		"not"?: Array<Models.CriteriaItem>;
+		"criteria"?: Models.CriteriaItem;
+	}
+	
+	export interface CriteriaItem { 
+		"key"?: string;
+		"operator"?: string;
+		"value"?: string;
+	}
+	
+	export interface CriteriaQuery { 
+		"query": Array<Models.CriteriaGroup>;
 	}
 	
 	export interface CrossPlatformCallMediaPolicy { 
@@ -16018,6 +16623,38 @@ declare namespace Models {
 		"results": Array<Models.DocumentationResult>;
 	}
 	
+	export interface DocumentationV2SearchAggregation { 
+		"field"?: string;
+		"name"?: string;
+		"type"?: string;
+		"value"?: string;
+		"size"?: number;
+		"order"?: Array<string>;
+	}
+	
+	export interface DocumentationV2SearchCriteria { 
+		"endValue"?: string;
+		"values"?: Array<string>;
+		"startValue"?: string;
+		"value"?: string;
+		"operator"?: string;
+		"group"?: Array<Models.DocumentationV2SearchCriteria>;
+		"dateFormat"?: string;
+		"type"?: string;
+		"fields"?: Array<string>;
+	}
+	
+	export interface DocumentationV2SearchRequest { 
+		"sortOrder"?: string;
+		"sortBy"?: string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sort"?: Array<Models.SearchSort>;
+		"types": Array<string>;
+		"query"?: Array<Models.DocumentationV2SearchCriteria>;
+		"aggregations"?: Array<Models.DocumentationV2SearchAggregation>;
+	}
+	
 	export interface DomainCapabilities { 
 		"enabled"?: boolean;
 		"dhcp"?: boolean;
@@ -16420,6 +17057,41 @@ declare namespace Models {
 	
 	export interface DynamicContactQueueingSettings { 
 		"sort"?: boolean;
+	}
+	
+	export interface DynamicGroupDefinition { 
+		"group": Models.AddressableEntityRef;
+		"dateModified": string;
+		"query": Models.DynamicGroupQuery;
+		"selfUri"?: string;
+	}
+	
+	export interface DynamicGroupLanguageSkillCondition { 
+		"languageSkill": string;
+		"comparator": string;
+		"proficiency": number;
+		"childConditions"?: Array<Models.DynamicGroupSkillCondition>;
+	}
+	
+	export interface DynamicGroupQuery { 
+		"skillConditions": Array<Models.DynamicGroupSkillCondition>;
+	}
+	
+	export interface DynamicGroupQueryPreview { 
+		"userCount"?: number;
+	}
+	
+	export interface DynamicGroupRoutingSkillCondition { 
+		"routingSkill": string;
+		"comparator": string;
+		"proficiency": number;
+		"childConditions"?: Array<Models.DynamicGroupSkillCondition>;
+	}
+	
+	export interface DynamicGroupSkillCondition { 
+		"routingSkillConditions": Array<Models.DynamicGroupRoutingSkillCondition>;
+		"languageSkillConditions": Array<Models.DynamicGroupLanguageSkillCondition>;
+		"operation": string;
 	}
 	
 	export interface Edge { 
@@ -17293,6 +17965,24 @@ declare namespace Models {
 		"user"?: Models.User;
 	}
 	
+	export interface EvaluationAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.EvaluationAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface EvaluationAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.EvaluationAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.EvaluationAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
+	}
+	
 	export interface EvaluationDetailQueryClause { 
 		"type": string;
 		"predicates": Array<Models.EvaluationDetailQueryPredicate>;
@@ -17577,6 +18267,30 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface Event { 
+		"id"?: string;
+		"correlationId"?: string;
+		"customerId"?: string;
+		"customerIdType"?: string;
+		"session"?: Models.EventSession;
+		"eventType": string;
+		"genericActionEvent"?: Models.GenericActionEvent;
+		"outcomeAchievedEvent"?: Models.OutcomeAchievedEvent;
+		"segmentAssignedEvent"?: Models.SegmentAssignedEvent;
+		"segmentAssignmentEvent"?: Models.SegmentAssignmentEvent;
+		"webActionEvent"?: Models.WebActionEvent;
+		"webEvent"?: Models.WebEvent;
+		"createdDate"?: string;
+	}
+	
+	export interface EventAction { 
+		"id": string;
+		"state"?: string;
+		"mediaType"?: string;
+		"prompt"?: string;
+		"createdDate"?: string;
+	}
+	
 	export interface EventCoBrowse { 
 		"type": string;
 		"sessionId"?: string;
@@ -17596,6 +18310,13 @@ declare namespace Models {
 		"eventId"?: string;
 		"message"?: string;
 		"retryable"?: boolean;
+	}
+	
+	export interface EventListing { 
+		"entities"?: Array<Models.Event>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface EventLog { 
@@ -17624,6 +18345,12 @@ declare namespace Models {
 		"type": string;
 	}
 	
+	export interface EventSession { 
+		"id"?: string;
+		"selfUri"?: string;
+		"type"?: string;
+	}
+	
 	export interface EventSetting { 
 		"typing"?: Models.TypingSetting;
 	}
@@ -17635,6 +18362,16 @@ declare namespace Models {
 	
 	export interface ExecuteRecordingJobsQuery { 
 		"state": string;
+	}
+	
+	export interface ExecutionDataEntity { 
+		"id"?: string;
+		"downloadUri"?: string;
+		"failed"?: boolean;
+	}
+	
+	export interface ExecutionDataRequest { 
+		"ids": Array<string>;
 	}
 	
 	export interface ExpandableWebDeployment { 
@@ -17734,6 +18471,26 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ExtensionPoolDivisionView { 
+		"id"?: string;
+		"name": string;
+		"division"?: Models.Division;
+		"selfUri"?: string;
+	}
+	
+	export interface ExtensionPoolDivisionViewEntityListing { 
+		"entities"?: Array<Models.ExtensionPoolDivisionView>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface ExtensionPoolEntityListing { 
 		"entities"?: Array<Models.ExtensionPool>;
 		"pageSize"?: number;
@@ -17778,6 +18535,11 @@ declare namespace Models {
 		"canonicalContact"?: Models.ContactAddressableEntityRef;
 		"mergeSet"?: Array<Models.ContactAddressableEntityRef>;
 		"mergeOperation"?: Models.MergeOperation;
+		"selfUri"?: string;
+	}
+	
+	export interface ExternalContactReference { 
+		"id"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -18460,6 +19222,85 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface FlowActivityData { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.FlowActivityMetricValue>;
+		"truncated"?: boolean;
+		"entities"?: Array<Models.FlowActivityEntityData>;
+	}
+	
+	export interface FlowActivityEntityData { 
+		"activityDate": string;
+		"metric"?: string;
+		"addressFrom"?: string;
+		"addressTo"?: string;
+		"ani"?: string;
+		"conversationId"?: string;
+		"convertedFrom"?: string;
+		"convertedTo"?: string;
+		"direction"?: string;
+		"dnis"?: string;
+		"flowId"?: string;
+		"flowType"?: string;
+		"mediaType"?: string;
+		"participantName"?: string;
+		"queueId"?: string;
+		"requestedLanguageId"?: string;
+		"requestedRoutingSkillIds"?: Array<string>;
+		"requestedRoutings"?: Array<string>;
+		"routingPriority"?: number;
+		"sessionId"?: string;
+		"teamId"?: string;
+		"usedRouting"?: string;
+		"userId"?: string;
+		"scoredAgents"?: Array<Models.FlowActivityScoredAgent>;
+	}
+	
+	export interface FlowActivityMetricValue { 
+		"metric"?: string;
+		"count"?: number;
+	}
+	
+	export interface FlowActivityQuery { 
+		"metrics": Array<Models.FlowActivityQueryMetric>;
+		"groupBy": Array<string>;
+		"filter"?: Models.FlowActivityQueryFilter;
+		"order"?: string;
+	}
+	
+	export interface FlowActivityQueryClause { 
+		"type": string;
+		"predicates": Array<Models.FlowActivityQueryPredicate>;
+	}
+	
+	export interface FlowActivityQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.FlowActivityQueryClause>;
+		"predicates"?: Array<Models.FlowActivityQueryPredicate>;
+	}
+	
+	export interface FlowActivityQueryMetric { 
+		"metric": string;
+		"details"?: boolean;
+	}
+	
+	export interface FlowActivityQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+	}
+	
+	export interface FlowActivityResponse { 
+		"results"?: Array<Models.FlowActivityData>;
+		"entityIdDimension"?: string;
+	}
+	
+	export interface FlowActivityScoredAgent { 
+		"agentScore"?: number;
+		"scoredAgentId"?: string;
+	}
+	
 	export interface FlowAggregateDataContainer { 
 		"group"?: { [key: string]: string; };
 		"data"?: Array<Models.StatisticalResponse>;
@@ -18505,6 +19346,24 @@ declare namespace Models {
 		"name": string;
 		"function": string;
 		"range"?: Models.AggregationRange;
+	}
+	
+	export interface FlowAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.FlowAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface FlowAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.FlowAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.FlowAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
 	}
 	
 	export interface FlowDiagnosticInfo { 
@@ -18573,6 +19432,20 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface FlowExecutionDataQueryResult { 
+		"id"?: string;
+		"name"?: string;
+		"startDateTime"?: string;
+		"endDateTime"?: string;
+		"flowId"?: string;
+		"flowVersion"?: string;
+		"conversationId"?: string;
+		"flowType"?: string;
+		"flowErrorReason"?: string;
+		"flowName"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface FlowExecutionLaunchRequest { 
@@ -18820,6 +19693,19 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface FlowResultEntityListing { 
+		"entities"?: Array<Models.FlowExecutionDataQueryResult>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface FlowRuntimeExecution { 
 		"id"?: string;
 		"name"?: string;
@@ -18893,6 +19779,14 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface FlowsQueryCriteriaResponse { 
+		"criteria"?: Array<Models.QueryCriteria>;
+		"flowTypes"?: Array<string>;
+		"actionTypes"?: Array<string>;
+		"errorCodes"?: Array<string>;
+		"warningCodes"?: Array<string>;
 	}
 	
 	export interface FooterTemplate { 
@@ -19149,6 +20043,22 @@ declare namespace Models {
 		"canUseForScheduling"?: boolean;
 	}
 	
+	export interface GenericActionEvent { 
+		"action": Models.GenericEventAction;
+		"actionMap"?: Models.ActionEventActionMap;
+		"errorCode"?: string;
+		"errorMessage"?: string;
+	}
+	
+	export interface GenericEventAction { 
+		"id": string;
+		"state"?: string;
+		"mediaType"?: string;
+		"prompt"?: string;
+		"mediaAddress"?: string;
+		"createdDate"?: string;
+	}
+	
 	export interface GenericSAML { 
 		"id"?: string;
 		"name"?: string;
@@ -19205,6 +20115,14 @@ declare namespace Models {
 		"name"?: string;
 		"enabled"?: boolean;
 		"mapboxKey"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface GetFlowExecutionDataJobResult { 
+		"id"?: string;
+		"name"?: string;
+		"entities"?: Array<Models.ExecutionDataEntity>;
+		"jobState"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -19776,6 +20694,11 @@ declare namespace Models {
 	export interface IdleEventTrigger { 
 		"eventName": string;
 		"idleAfterSeconds"?: number;
+	}
+	
+	export interface IdleTokenTimeout { 
+		"idleTokenTimeoutSeconds"?: number;
+		"enableIdleTokenTimeout"?: boolean;
 	}
 	
 	export interface IgnoredActivityCategories { 
@@ -20399,6 +21322,24 @@ declare namespace Models {
 		"namespace": string;
 		"version": string;
 		"buildNumber": string;
+	}
+	
+	export interface JourneyAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.JourneyAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface JourneyAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.JourneyAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.JourneyAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
 	}
 	
 	export interface JourneyCampaign { 
@@ -21309,6 +22250,75 @@ declare namespace Models {
 		"knowledgeBase"?: Models.AddressableEntityRef;
 	}
 	
+	export interface KnowledgeAggregateDataContainer { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatisticalResponse>;
+	}
+	
+	export interface KnowledgeAggregateQueryClause { 
+		"type": string;
+		"predicates": Array<Models.KnowledgeAggregateQueryPredicate>;
+	}
+	
+	export interface KnowledgeAggregateQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.KnowledgeAggregateQueryClause>;
+		"predicates"?: Array<Models.KnowledgeAggregateQueryPredicate>;
+	}
+	
+	export interface KnowledgeAggregateQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+		"range"?: Models.NumericRange;
+	}
+	
+	export interface KnowledgeAggregateQueryResponse { 
+		"results"?: Array<Models.KnowledgeAggregateDataContainer>;
+	}
+	
+	export interface KnowledgeAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.KnowledgeAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.KnowledgeAggregationView>;
+		"alternateTimeDimension"?: string;
+		"queryType"?: string;
+		"limit"?: number;
+	}
+	
+	export interface KnowledgeAggregationView { 
+		"target": string;
+		"name": string;
+		"function": string;
+		"range"?: Models.AggregationRange;
+	}
+	
+	export interface KnowledgeAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.KnowledgeAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface KnowledgeAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.KnowledgeAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.KnowledgeAggregationView>;
+		"alternateTimeDimension"?: string;
+		"queryType"?: string;
+		"limit"?: number;
+		"pageSize"?: number;
+	}
+	
 	export interface KnowledgeBase { 
 		"id"?: string;
 		"name"?: string;
@@ -21398,6 +22408,10 @@ declare namespace Models {
 		"autocomplete": boolean;
 	}
 	
+	export interface KnowledgeDocumentBulkRemoveRequest { 
+		"entities": Array<Models.WritableEntity>;
+	}
+	
 	export interface KnowledgeDocumentBulkRequest { 
 		"type": string;
 		"externalUrl"?: string;
@@ -21405,6 +22419,39 @@ declare namespace Models {
 		"categories"?: Array<Models.DocumentCategoryInput>;
 		"article"?: Models.DocumentArticle;
 		"id"?: string;
+	}
+	
+	export interface KnowledgeDocumentBulkUpdateEntity { 
+		"id"?: string;
+		"categoryId"?: string;
+		"labelIds"?: Array<string>;
+	}
+	
+	export interface KnowledgeDocumentBulkUpdateRequest { 
+		"entities": Array<Models.KnowledgeDocumentBulkUpdateEntity>;
+	}
+	
+	export interface KnowledgeDocumentBulkVersionAddEntity { 
+		"id"?: string;
+		"restoreFromVersionId"?: string;
+		"restorePrevious"?: boolean;
+	}
+	
+	export interface KnowledgeDocumentBulkVersionAddRequest { 
+		"entities": Array<Models.KnowledgeDocumentBulkVersionAddEntity>;
+	}
+	
+	export interface KnowledgeDocumentContentUpload { 
+		"id"?: string;
+		"contentType": string;
+		"fileName": string;
+		"status"?: string;
+		"uploadKey"?: string;
+		"url"?: string;
+		"headers"?: { [key: string]: string; };
+		"document"?: Models.AddressableEntityRef;
+		"errorMessage"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface KnowledgeDocumentGuestSearch { 
@@ -22705,6 +23752,13 @@ declare namespace Models {
 		"configId": string;
 		"publicKey": string;
 		"keypairId": string;
+	}
+	
+	export interface LocalTime { 
+		"hour"?: number;
+		"minute"?: number;
+		"second"?: number;
+		"nano"?: number;
 	}
 	
 	export interface LocalizedLabels { 
@@ -24043,9 +25097,96 @@ declare namespace Models {
 		"entities"?: Array<Models.WfmUserNotification>;
 	}
 	
+	export interface NuanceApplication { 
+		"id": string;
+		"tag": string;
+		"name": string;
+	}
+	
+	export interface NuanceBot { 
+		"id": string;
+		"name": string;
+		"integrationId": string;
+		"nuanceOrganization": Models.NuanceOrganization;
+		"application": Models.NuanceApplication;
+		"nuanceEnvironment": Models.NuanceEnvironment;
+		"geography": Models.NuanceGeography;
+		"credentials"?: Array<Models.NuanceBotCredentials>;
+		"variables"?: Array<Models.NuanceBotVariable>;
+		"transferNodes"?: Array<Models.NuanceBotTransferNode>;
+		"locales"?: Array<string>;
+		"channels"?: Array<Models.NuanceChannel>;
+		"selfUri"?: string;
+	}
+	
+	export interface NuanceBotCredentials { 
+		"appId": string;
+		"clientId": string;
+		"clientSecret"?: string;
+		"clientSecretProvided"?: boolean;
+	}
+	
+	export interface NuanceBotEntityListing { 
+		"entities"?: Array<Models.NuanceBot>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface NuanceBotLaunchSettings { 
+		"botExecutionConfigurations": Array<Models.BotExecutionConfiguration>;
+	}
+	
+	export interface NuanceBotTransferNode { 
+		"id": string;
+		"name": string;
+		"type": string;
+		"description"?: string;
+		"requestVariables"?: Array<Models.NuanceBotVariable>;
+	}
+	
+	export interface NuanceBotVariable { 
+		"id": string;
+		"name": string;
+		"description"?: string;
+		"reserved"?: boolean;
+		"simpleVariableInfo"?: string;
+		"complexGenericVariableInfo"?: Models.ComplexVariableInfo;
+	}
+	
+	export interface NuanceChannel { 
+		"id": string;
+		"name": string;
+		"modes"?: Array<string>;
+		"color"?: string;
+	}
+	
+	export interface NuanceEnvironment { 
+		"id": string;
+		"name": string;
+		"environmentDesignation": string;
+		"executionHost"?: string;
+	}
+	
+	export interface NuanceGeography { 
+		"id": string;
+		"name": string;
+	}
+	
 	export interface NuanceMixDlgSettings { 
 		"channelId"?: string;
 		"inputParameters"?: { [key: string]: object; };
+	}
+	
+	export interface NuanceOrganization { 
+		"id": string;
+		"name": string;
 	}
 	
 	export interface Number { 
@@ -24543,6 +25684,12 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface OrganizationPresenceDefinitionEntityListing { 
+		"total"?: number;
+		"entities"?: Array<Models.OrganizationPresenceDefinition>;
+		"selfUri"?: string;
+	}
+	
 	export interface OrganizationPresenceEntityListing { 
 		"entities"?: Array<Models.OrganizationPresence>;
 		"pageSize"?: number;
@@ -24878,9 +26025,72 @@ declare namespace Models {
 		"modifiedDate"?: string;
 	}
 	
+	export interface OutcomeAchievedEvent { 
+		"outcome": Models.OutcomeAchievedEventOutcome;
+		"userAgentString"?: string;
+		"browser"?: Models.Browser;
+		"device"?: Models.Device;
+		"geolocation"?: Models.JourneyGeolocation;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"mktCampaign"?: Models.JourneyCampaign;
+		"visitReferrer"?: Models.Referrer;
+		"visitCreatedDate"?: string;
+	}
+	
+	export interface OutcomeAchievedEventOutcome { 
+		"id"?: string;
+		"selfUri"?: string;
+		"displayName": string;
+		"version"?: number;
+	}
+	
 	export interface OutcomeAchievement { 
 		"outcome"?: Models.AchievedOutcome;
 		"achievedDate"?: string;
+	}
+	
+	export interface OutcomeAttributionAsyncResponse { 
+		"id"?: string;
+		"percentFailedThreshold"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface OutcomeAttributionJobStateResponse { 
+		"id"?: string;
+		"state"?: string;
+		"resultsUri"?: string;
+		"percentFailedThreshold"?: number;
+		"selfUri"?: string;
+		"createdDate"?: string;
+	}
+	
+	export interface OutcomeAttributionListing { 
+		"entities": Array<Models.OutcomeAttributionRequest>;
+		"percentFailedThreshold"?: number;
+	}
+	
+	export interface OutcomeAttributionRequest { 
+		"outcomeId": string;
+		"externalContactId"?: string;
+		"associatedValue": number;
+		"touchpoints": Array<Models.Touchpoint>;
+		"createdDate": string;
+	}
+	
+	export interface OutcomeAttributionResponseListing { 
+		"entities"?: Array<Models.OutcomeAttributionResultsResponse>;
+	}
+	
+	export interface OutcomeAttributionResultsResponse { 
+		"outcomeId"?: string;
+		"index"?: number;
+		"externalContactId"?: string;
+		"associatedValue"?: number;
+		"state": string;
+		"message": string;
+		"touchpoints"?: Array<Models.TouchpointResponse>;
+		"createdDate"?: string;
 	}
 	
 	export interface OutcomeConfig { 
@@ -25106,6 +26316,11 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"bargedParticipantId"?: string;
+	}
+	
+	export interface ParticipantInfo { 
+		"activeParticipantCount"?: number;
+		"version"?: number;
 	}
 	
 	export interface ParticipantMetrics { 
@@ -26262,6 +27477,15 @@ declare namespace Models {
 		"job"?: Models.AdherenceExplanationJobReference;
 		"result"?: Models.AdherenceExplanationListing;
 		"downloadUrl"?: string;
+	}
+	
+	export interface QueryCriteria { 
+		"criteriaKey"?: string;
+		"criteriaGroups"?: Array<string>;
+		"description"?: string;
+		"operators"?: Array<string>;
+		"dataType"?: string;
+		"categoryInfo"?: Models.CriteriaCategoryInfo;
 	}
 	
 	export interface QueryDivision { 
@@ -29610,6 +30834,55 @@ declare namespace Models {
 		"doNotChangeManuallyEditedShifts"?: boolean;
 	}
 	
+	export interface ResolutionAggregateDataContainer { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatisticalResponse>;
+	}
+	
+	export interface ResolutionAggregateQueryClause { 
+		"type": string;
+		"predicates": Array<Models.ResolutionAggregateQueryPredicate>;
+	}
+	
+	export interface ResolutionAggregateQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.ResolutionAggregateQueryClause>;
+		"predicates"?: Array<Models.ResolutionAggregateQueryPredicate>;
+	}
+	
+	export interface ResolutionAggregateQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+		"range"?: Models.NumericRange;
+	}
+	
+	export interface ResolutionAggregationView { 
+		"target": string;
+		"name": string;
+		"function": string;
+		"range"?: Models.AggregationRange;
+	}
+	
+	export interface ResolutionAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.ResolutionAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface ResolutionAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.ResolutionAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.ResolutionAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
+	}
+	
 	export interface ResolutionDetailQueryClause { 
 		"type": string;
 		"predicates": Array<Models.ResolutionDetailQueryPredicate>;
@@ -29873,6 +31146,66 @@ declare namespace Models {
 		"mediaType"?: string;
 		"language"?: Models.LanguageReference;
 		"skills"?: Array<Models.RoutingSkillReference>;
+	}
+	
+	export interface RoutingActivityData { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.RoutingActivityMetricValue>;
+		"truncated"?: boolean;
+		"entities"?: Array<Models.RoutingActivityEntityData>;
+	}
+	
+	export interface RoutingActivityEntityData { 
+		"activityDate": string;
+		"organizationPresenceId"?: string;
+		"presenceDate"?: string;
+		"queueId"?: string;
+		"queueMembershipStatus"?: string;
+		"routingStatus"?: string;
+		"routingStatusDate"?: string;
+		"systemPresence"?: string;
+		"teamId"?: string;
+		"userId"?: string;
+	}
+	
+	export interface RoutingActivityMetricValue { 
+		"metric"?: string;
+		"count"?: number;
+	}
+	
+	export interface RoutingActivityQuery { 
+		"metrics": Array<Models.RoutingActivityQueryMetric>;
+		"groupBy": Array<string>;
+		"filter"?: Models.RoutingActivityQueryFilter;
+		"order"?: string;
+	}
+	
+	export interface RoutingActivityQueryClause { 
+		"type": string;
+		"predicates": Array<Models.RoutingActivityQueryPredicate>;
+	}
+	
+	export interface RoutingActivityQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.RoutingActivityQueryClause>;
+		"predicates"?: Array<Models.RoutingActivityQueryPredicate>;
+	}
+	
+	export interface RoutingActivityQueryMetric { 
+		"metric": string;
+		"details"?: boolean;
+	}
+	
+	export interface RoutingActivityQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+	}
+	
+	export interface RoutingActivityResponse { 
+		"results"?: Array<Models.RoutingActivityData>;
+		"entityIdDimension"?: string;
 	}
 	
 	export interface RoutingConversationAttributesRequest { 
@@ -30713,6 +32046,64 @@ declare namespace Models {
 		"disconnectType"?: string;
 	}
 	
+	export interface SegmentAssignedEvent { 
+		"segment": Models.SegmentAssignedEventSegment;
+		"userAgentString"?: string;
+		"browser"?: Models.Browser;
+		"device"?: Models.Device;
+		"geolocation"?: Models.JourneyGeolocation;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"mktCampaign"?: Models.JourneyCampaign;
+		"visitReferrer"?: Models.Referrer;
+		"visitCreatedDate"?: string;
+	}
+	
+	export interface SegmentAssignedEventSegment { 
+		"id"?: string;
+		"selfUri"?: string;
+		"displayName": string;
+		"version"?: number;
+		"scope"?: string;
+	}
+	
+	export interface SegmentAssignment { 
+		"id"?: string;
+		"state"?: string;
+		"dateAssigned"?: string;
+		"dateUnassigned"?: string;
+		"dateModified"?: string;
+		"segment"?: Models.SegmentAssignmentSegment;
+		"customerId"?: string;
+		"customerIdType"?: string;
+		"session"?: Models.SegmentAssignmentSession;
+		"externalContact"?: Models.AddressableEntityRef;
+	}
+	
+	export interface SegmentAssignmentEvent { 
+		"segment"?: Models.AddressableEntityRef;
+	}
+	
+	export interface SegmentAssignmentListing { 
+		"entities"?: Array<Models.SegmentAssignment>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface SegmentAssignmentSegment { 
+		"id"?: string;
+		"scope"?: string;
+		"version"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface SegmentAssignmentSession { 
+		"id"?: string;
+		"type"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface SegmentDetailQueryClause { 
 		"type": string;
 		"predicates": Array<Models.SegmentDetailQueryPredicate>;
@@ -31425,6 +32816,16 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface SmsPhoneNumberImport { 
+		"id"?: string;
+		"phoneNumber": string;
+		"phoneNumberType": string;
+		"countryCode": string;
+		"integrationId": string;
+		"compliance"?: Models.Compliance;
+		"selfUri"?: string;
+	}
+	
 	export interface SmsPhoneNumberProvision { 
 		"id"?: string;
 		"phoneNumber": string;
@@ -31733,6 +33134,11 @@ declare namespace Models {
 		"status": string;
 	}
 	
+	export interface Subscription { 
+		"id"?: string;
+		"topic"?: string;
+	}
+	
 	export interface SubscriptionOverviewUsage { 
 		"name": string;
 		"partNumber": string;
@@ -31926,6 +33332,24 @@ declare namespace Models {
 		"inviteTimeInterval"?: string;
 		"sendingUser"?: string;
 		"sendingDomain": string;
+	}
+	
+	export interface SurveyAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.SurveyAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface SurveyAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.SurveyAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.SurveyAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
 	}
 	
 	export interface SurveyDetailQueryClause { 
@@ -32135,6 +33559,71 @@ declare namespace Models {
 		"targetPerformanceProfileId": string;
 	}
 	
+	export interface TaskManagementAggregateDataContainer { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatisticalResponse>;
+	}
+	
+	export interface TaskManagementAggregateQueryClause { 
+		"type": string;
+		"predicates": Array<Models.TaskManagementAggregateQueryPredicate>;
+	}
+	
+	export interface TaskManagementAggregateQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.TaskManagementAggregateQueryClause>;
+		"predicates"?: Array<Models.TaskManagementAggregateQueryPredicate>;
+	}
+	
+	export interface TaskManagementAggregateQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+		"range"?: Models.NumericRange;
+	}
+	
+	export interface TaskManagementAggregateQueryResponse { 
+		"results"?: Array<Models.TaskManagementAggregateDataContainer>;
+	}
+	
+	export interface TaskManagementAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.TaskManagementAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.TaskManagementAggregationView>;
+		"alternateTimeDimension"?: string;
+	}
+	
+	export interface TaskManagementAggregationView { 
+		"target": string;
+		"name": string;
+		"function": string;
+		"range"?: Models.AggregationRange;
+	}
+	
+	export interface TaskManagementAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.TaskManagementAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface TaskManagementAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.TaskManagementAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.TaskManagementAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
+	}
+	
 	export interface Team { 
 		"id"?: string;
 		"name": string;
@@ -32144,6 +33633,66 @@ declare namespace Models {
 		"dateModified"?: string;
 		"memberCount"?: number;
 		"selfUri"?: string;
+	}
+	
+	export interface TeamActivityData { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.TeamActivityMetricValue>;
+		"truncated"?: boolean;
+		"entities"?: Array<Models.TeamActivityEntityData>;
+	}
+	
+	export interface TeamActivityEntityData { 
+		"activityDate": string;
+		"organizationPresenceId"?: string;
+		"presenceDate"?: string;
+		"queueId"?: string;
+		"queueMembershipStatus"?: string;
+		"routingStatus"?: string;
+		"routingStatusDate"?: string;
+		"systemPresence"?: string;
+		"teamId"?: string;
+		"userId"?: string;
+	}
+	
+	export interface TeamActivityMetricValue { 
+		"metric"?: string;
+		"count"?: number;
+	}
+	
+	export interface TeamActivityQuery { 
+		"metrics": Array<Models.TeamActivityQueryMetric>;
+		"groupBy": Array<string>;
+		"filter"?: Models.TeamActivityQueryFilter;
+		"order"?: string;
+	}
+	
+	export interface TeamActivityQueryClause { 
+		"type": string;
+		"predicates": Array<Models.TeamActivityQueryPredicate>;
+	}
+	
+	export interface TeamActivityQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.TeamActivityQueryClause>;
+		"predicates"?: Array<Models.TeamActivityQueryPredicate>;
+	}
+	
+	export interface TeamActivityQueryMetric { 
+		"metric": string;
+		"details"?: boolean;
+	}
+	
+	export interface TeamActivityQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+	}
+	
+	export interface TeamActivityResponse { 
+		"results"?: Array<Models.TeamActivityData>;
+		"entityIdDimension"?: string;
 	}
 	
 	export interface TeamAddMemberFailure { 
@@ -32736,6 +34285,24 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface Touchpoint { 
+		"conversationId"?: string;
+		"agentId": string;
+		"associatedValue": number;
+		"mediaType"?: string;
+		"createdDate"?: string;
+	}
+	
+	export interface TouchpointResponse { 
+		"conversationId"?: string;
+		"agentId": string;
+		"associatedValue": number;
+		"mediaType"?: string;
+		"state": string;
+		"message"?: string;
+		"createdDate"?: string;
+	}
+	
 	export interface TrainingListing { 
 		"entities"?: Array<Models.KnowledgeTraining>;
 		"nextUri"?: string;
@@ -32788,6 +34355,24 @@ declare namespace Models {
 		"name": string;
 		"function": string;
 		"range"?: Models.AggregationRange;
+	}
+	
+	export interface TranscriptAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.TranscriptAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface TranscriptAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.TranscriptAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.TranscriptAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
 	}
 	
 	export interface TranscriptConversationDetailSearchCriteria { 
@@ -33904,6 +35489,66 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface UserActivityData { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.UserActivityMetricValue>;
+		"truncated"?: boolean;
+		"entities"?: Array<Models.UserActivityEntityData>;
+	}
+	
+	export interface UserActivityEntityData { 
+		"activityDate": string;
+		"organizationPresenceId"?: string;
+		"presenceDate"?: string;
+		"queueId"?: string;
+		"queueMembershipStatus"?: string;
+		"routingStatus"?: string;
+		"routingStatusDate"?: string;
+		"systemPresence"?: string;
+		"teamId"?: string;
+		"userId"?: string;
+	}
+	
+	export interface UserActivityMetricValue { 
+		"metric"?: string;
+		"count"?: number;
+	}
+	
+	export interface UserActivityQuery { 
+		"metrics": Array<Models.UserActivityQueryMetric>;
+		"groupBy": Array<string>;
+		"filter"?: Models.UserActivityQueryFilter;
+		"order"?: string;
+	}
+	
+	export interface UserActivityQueryClause { 
+		"type": string;
+		"predicates": Array<Models.UserActivityQueryPredicate>;
+	}
+	
+	export interface UserActivityQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.UserActivityQueryClause>;
+		"predicates"?: Array<Models.UserActivityQueryPredicate>;
+	}
+	
+	export interface UserActivityQueryMetric { 
+		"metric": string;
+		"details"?: boolean;
+	}
+	
+	export interface UserActivityQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+	}
+	
+	export interface UserActivityResponse { 
+		"results"?: Array<Models.UserActivityData>;
+		"entityIdDimension"?: string;
+	}
+	
 	export interface UserAgentInfo { 
 		"firmwareVersion"?: string;
 		"manufacturer"?: string;
@@ -33982,6 +35627,25 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface UserAsyncAggregateQueryResponse { 
+		"systemToOrganizationMappings"?: { [key: string]: Array<string>; };
+		"results"?: Array<Models.UserAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface UserAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.UserAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.UserAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
 	}
 	
 	export interface UserAuthorization { 
@@ -34778,6 +36442,25 @@ declare namespace Models {
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
 	}
 	
+	export interface UtilizationTag { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface UtilizationTagEntityListing { 
+		"entities"?: Array<Models.UtilizationTag>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface Utterance { 
 		"utteranceText"?: string;
 	}
@@ -35317,6 +37000,12 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 	}
 	
+	export interface VideoConferenceDetails { 
+		"conferenceId"?: string;
+		"conversationId"?: string;
+		"participantInfo"?: Models.ParticipantInfo;
+	}
+	
 	export interface VideoConferenceUpdateTopicParticipantInfo { 
 		"activeParticipantCount"?: number;
 		"version"?: number;
@@ -35729,6 +37418,23 @@ declare namespace Models {
 		"entities"?: Array<Models.WaitlistPosition>;
 	}
 	
+	export interface WebActionEvent { 
+		"action": Models.EventAction;
+		"actionMap"?: Models.ActionEventActionMap;
+		"actionTarget"?: Models.AddressableEntityRef;
+		"timeToDisposition"?: number;
+		"errorCode"?: string;
+		"errorMessage"?: string;
+		"userAgentString"?: string;
+		"browser"?: Models.Browser;
+		"device"?: Models.Device;
+		"geolocation"?: Models.JourneyGeolocation;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"mktCampaign"?: Models.JourneyCampaign;
+		"visitReferrer"?: Models.Referrer;
+	}
+	
 	export interface WebChatConfig { 
 		"webChatSkin"?: string;
 	}
@@ -35975,6 +37681,25 @@ declare namespace Models {
 	export interface WebDeploymentsRefreshJWTRequest { 
 		"refreshToken": string;
 		"deploymentId": string;
+	}
+	
+	export interface WebEvent { 
+		"eventName": string;
+		"totalEventCount"?: number;
+		"totalPageviewCount"?: number;
+		"page"?: Models.JourneyPage;
+		"userAgentString"?: string;
+		"browser"?: Models.Browser;
+		"device"?: Models.Device;
+		"geolocation"?: Models.JourneyGeolocation;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"mktCampaign"?: Models.JourneyCampaign;
+		"referrer"?: Models.Referrer;
+		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
+		"traits"?: { [key: string]: Models.CustomEventAttribute; };
+		"searchQuery"?: string;
+		"authenticated"?: boolean;
 	}
 	
 	export interface WebMessagingAttachment { 
@@ -37540,6 +39265,92 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface Workbin { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"modifiedBy"?: Models.UserReference;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkbinChangeListing { 
+		"entities"?: Array<Models.WorkitemsChangeWorkbinDelta>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+	}
+	
+	export interface WorkbinCreate { 
+		"name": string;
+		"description"?: string;
+		"divisionId"?: string;
+	}
+	
+	export interface WorkbinDelta { 
+		"name"?: Models.WorkitemsAttributeChangeString;
+		"description"?: Models.WorkitemsAttributeChangeString;
+		"dateModified"?: Models.WorkitemsAttributeChangeInstant;
+		"modifiedBy"?: Models.WorkitemsAttributeChangeString;
+	}
+	
+	export interface WorkbinQueryEntityListing { 
+		"entities"?: Array<Models.Workbin>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+		"count"?: number;
+	}
+	
+	export interface WorkbinQueryRequest { 
+		"pageSize"?: number;
+		"select"?: string;
+		"filters": Array<Models.WorkitemFilter>;
+		"attributes"?: Array<string>;
+		"after"?: string;
+		"sort"?: Models.WorkbinQuerySort;
+	}
+	
+	export interface WorkbinQuerySort { 
+		"name"?: string;
+		"ascending"?: boolean;
+	}
+	
+	export interface WorkbinReference { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkbinUpdate { 
+		"name"?: string;
+		"description"?: string;
+	}
+	
+	export interface WorkbinVersion { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"modifiedBy"?: Models.UserReference;
+		"version"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkbinVersionListing { 
+		"entities"?: Array<Models.WorkbinVersion>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+	}
+	
 	export interface WorkdayMetric { 
 		"metric"?: Models.Metric;
 		"objective"?: Models.Objective;
@@ -37599,6 +39410,349 @@ declare namespace Models {
 	
 	export interface WorkflowTargetSettings { 
 		"dataFormat"?: string;
+	}
+	
+	export interface Workitem { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"type"?: Models.WorktypeReference;
+		"description"?: string;
+		"language"?: Models.LanguageReference;
+		"priority"?: number;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"dateDue"?: string;
+		"dateExpires"?: string;
+		"durationSeconds"?: number;
+		"ttl"?: number;
+		"status"?: Models.WorkitemStatusReference;
+		"statusCategory"?: string;
+		"dateStatusChanged"?: string;
+		"dateClosed"?: string;
+		"workbin"?: Models.WorkbinReference;
+		"reporter"?: Models.UserReferenceWithName;
+		"assignee"?: Models.UserReferenceWithName;
+		"externalContact"?: Models.ExternalContactReference;
+		"externalTag"?: string;
+		"modifiedBy"?: Models.UserReference;
+		"queue"?: Models.QueueReference;
+		"assignmentState"?: string;
+		"dateAssignmentStateChanged"?: string;
+		"alertTimeoutSeconds"?: number;
+		"skills"?: Array<Models.RoutingSkillReference>;
+		"preferredAgents"?: Array<Models.UserReference>;
+		"autoStatusTransition"?: boolean;
+		"schema"?: Models.WorkitemSchema;
+		"customFields"?: { [key: string]: object; };
+		"autoStatusTransitionDetail"?: Models.AutoStatusTransitionDetail;
+		"scoredAgents"?: Array<Models.WorkitemScoredAgent>;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkitemChangeListing { 
+		"entities"?: Array<Models.WorkitemsChangeWorkitemDelta>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+	}
+	
+	export interface WorkitemCreate { 
+		"name": string;
+		"priority"?: number;
+		"dateDue"?: string;
+		"dateExpires"?: string;
+		"durationSeconds"?: number;
+		"ttl"?: number;
+		"statusId"?: string;
+		"workbinId"?: string;
+		"autoStatusTransition"?: boolean;
+		"description"?: string;
+		"typeId": string;
+		"customFields"?: { [key: string]: object; };
+		"queueId"?: string;
+		"assigneeId"?: string;
+		"wrapupCode"?: string;
+		"scoredAgents"?: Array<Models.WorkitemScoredAgentRequest>;
+		"languageId"?: string;
+		"externalContactId"?: string;
+		"externalTag"?: string;
+		"skillIds"?: Array<string>;
+		"preferredAgentIds"?: Array<string>;
+	}
+	
+	export interface WorkitemDelta { 
+		"name"?: Models.WorkitemsAttributeChangeString;
+		"description"?: Models.WorkitemsAttributeChangeString;
+		"languageId"?: Models.WorkitemsAttributeChangeString;
+		"priority"?: Models.WorkitemsAttributeChangeInteger;
+		"skillIds"?: Models.WorkitemsAttributeChangeList;
+		"preferredAgentIds"?: Models.WorkitemsAttributeChangeList;
+		"dateDue"?: Models.WorkitemsAttributeChangeInstant;
+		"dateExpires"?: Models.WorkitemsAttributeChangeInstant;
+		"durationSeconds"?: Models.WorkitemsAttributeChangeInteger;
+		"statusId"?: Models.WorkitemsAttributeChangeString;
+		"reporterId"?: Models.WorkitemsAttributeChangeString;
+		"externalContactId"?: Models.WorkitemsAttributeChangeString;
+		"assigneeId"?: Models.WorkitemsAttributeChangeString;
+		"workbinId"?: Models.WorkitemsAttributeChangeString;
+		"queueId"?: Models.WorkitemsAttributeChangeString;
+		"externalTag"?: Models.WorkitemsAttributeChangeString;
+		"wrapupId"?: Models.WorkitemsAttributeChangeString;
+		"ttl"?: Models.WorkitemsAttributeChangeInteger;
+		"dateClosed"?: Models.WorkitemsAttributeChangeInstant;
+		"assignmentState"?: Models.WorkitemsAttributeChangeString;
+		"autoStatusTransition"?: Models.WorkitemsAttributeChangeBoolean;
+		"customFields"?: Models.WorkitemsAttributeChangeMap;
+		"dateModified"?: Models.WorkitemsAttributeChangeInstant;
+		"modifiedBy"?: Models.WorkitemsAttributeChangeString;
+		"statusCategory"?: Models.WorkitemsAttributeChangeWorkitemStatusCategory;
+	}
+	
+	export interface WorkitemFilter { 
+		"name": string;
+		"type": string;
+		"operator": string;
+		"values": Array<string>;
+	}
+	
+	export interface WorkitemManualAssign { 
+		"id": string;
+	}
+	
+	export interface WorkitemPostQueryEntityListing { 
+		"entities"?: Array<Models.Workitem>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+		"count"?: number;
+	}
+	
+	export interface WorkitemQueryPostRequest { 
+		"pageSize"?: number;
+		"select"?: string;
+		"filters": Array<Models.WorkitemFilter>;
+		"attributes"?: Array<string>;
+		"after"?: string;
+		"sort"?: Models.WorkitemQuerySort;
+		"expands"?: Array<string>;
+	}
+	
+	export interface WorkitemQuerySort { 
+		"name"?: string;
+		"ascending"?: boolean;
+	}
+	
+	export interface WorkitemReference { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkitemSchema { 
+		"id"?: string;
+		"name"?: string;
+		"version": number;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkitemScoredAgent { 
+		"agent"?: Models.UserReference;
+		"score"?: number;
+	}
+	
+	export interface WorkitemScoredAgentRequest { 
+		"id"?: string;
+		"score"?: number;
+	}
+	
+	export interface WorkitemStatus { 
+		"id"?: string;
+		"name"?: string;
+		"category"?: string;
+		"destinationStatuses"?: Array<Models.WorkitemStatusReference>;
+		"description"?: string;
+		"defaultDestinationStatus"?: Models.WorkitemStatusReference;
+		"statusTransitionDelaySeconds"?: number;
+		"statusTransitionTime"?: Models.LocalTime;
+		"worktype"?: Models.WorktypeReference;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkitemStatusCreate { 
+		"name": string;
+		"category": string;
+		"destinationStatusIds"?: Array<string>;
+		"description"?: string;
+		"defaultDestinationStatusId"?: string;
+		"statusTransitionDelaySeconds"?: number;
+		"statusTransitionTime"?: Models.LocalTime;
+	}
+	
+	export interface WorkitemStatusReference { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkitemStatusUpdate { 
+		"name"?: string;
+		"destinationStatusIds"?: Array<string>;
+		"description"?: string;
+		"defaultDestinationStatusId"?: string;
+		"statusTransitionDelaySeconds"?: number;
+		"statusTransitionTime"?: Models.LocalTime;
+	}
+	
+	export interface WorkitemTerminate { 
+		"statusId"?: string;
+	}
+	
+	export interface WorkitemUpdate { 
+		"name"?: string;
+		"priority"?: number;
+		"dateDue"?: string;
+		"dateExpires"?: string;
+		"durationSeconds"?: number;
+		"ttl"?: number;
+		"statusId"?: string;
+		"workbinId"?: string;
+		"autoStatusTransition"?: boolean;
+		"description"?: string;
+		"dateClosed"?: string;
+		"assignmentState"?: string;
+		"assignmentOperation"?: string;
+		"customFields"?: { [key: string]: object; };
+		"queueId"?: string;
+		"assigneeId"?: string;
+		"scoredAgents"?: Array<Models.WorkitemScoredAgentRequest>;
+		"externalContactId"?: string;
+		"externalTag"?: string;
+		"skillIds"?: Array<string>;
+		"languageId"?: string;
+		"preferredAgentIds"?: Array<string>;
+	}
+	
+	export interface WorkitemVersion { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"type"?: Models.WorktypeReference;
+		"description"?: string;
+		"language"?: Models.LanguageReference;
+		"priority"?: number;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"dateDue"?: string;
+		"dateExpires"?: string;
+		"durationSeconds"?: number;
+		"ttl"?: number;
+		"status"?: Models.WorkitemStatusReference;
+		"statusCategory"?: string;
+		"dateStatusChanged"?: string;
+		"dateClosed"?: string;
+		"workbin"?: Models.WorkbinReference;
+		"reporter"?: Models.UserReferenceWithName;
+		"assignee"?: Models.UserReferenceWithName;
+		"externalContact"?: Models.ExternalContactReference;
+		"externalTag"?: string;
+		"modifiedBy"?: Models.UserReference;
+		"queue"?: Models.QueueReference;
+		"assignmentState"?: string;
+		"dateAssignmentStateChanged"?: string;
+		"alertTimeoutSeconds"?: number;
+		"skills"?: Array<Models.RoutingSkillReference>;
+		"preferredAgents"?: Array<Models.UserReference>;
+		"autoStatusTransition"?: boolean;
+		"schema"?: Models.WorkitemSchema;
+		"customFields"?: { [key: string]: object; };
+		"autoStatusTransitionDetail"?: Models.AutoStatusTransitionDetail;
+		"scoredAgents"?: Array<Models.WorkitemScoredAgent>;
+		"version"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkitemVersionListing { 
+		"entities"?: Array<Models.WorkitemVersion>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+	}
+	
+	export interface WorkitemWrapup { 
+		"workitem"?: Models.WorkitemReference;
+		"wrapupCode"?: Models.WrapupIdReference;
+		"modifiedBy"?: Models.UserReference;
+		"user"?: Models.UserReference;
+		"dateModified"?: string;
+	}
+	
+	export interface WorkitemWrapupEntityListing { 
+		"entities"?: Array<Models.WorkitemWrapup>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface WorkitemWrapupUpdate { 
+		"action": string;
+		"wrapupCode": string;
+	}
+	
+	export interface WorkitemsAttributeChangeBoolean { 
+		"newValue"?: boolean;
+		"oldValue"?: boolean;
+	}
+	
+	export interface WorkitemsAttributeChangeInstant { 
+		"newValue"?: string;
+		"oldValue"?: string;
+	}
+	
+	export interface WorkitemsAttributeChangeInteger { 
+		"newValue"?: number;
+		"oldValue"?: number;
+	}
+	
+	export interface WorkitemsAttributeChangeList { 
+		"newValue"?: Array<object>;
+		"oldValue"?: Array<object>;
+	}
+	
+	export interface WorkitemsAttributeChangeMap { 
+		"newValue"?: { [key: string]: object; };
+		"oldValue"?: { [key: string]: object; };
+	}
+	
+	export interface WorkitemsAttributeChangeString { 
+		"newValue"?: string;
+		"oldValue"?: string;
+	}
+	
+	export interface WorkitemsAttributeChangeWorkitemStatusCategory { 
+		"newValue"?: string;
+		"oldValue"?: string;
+	}
+	
+	export interface WorkitemsChangeWorkbinDelta { 
+		"version"?: number;
+		"modifiedBy"?: Models.UserReference;
+		"delta"?: Models.WorkbinDelta;
+	}
+	
+	export interface WorkitemsChangeWorkitemDelta { 
+		"version"?: number;
+		"modifiedBy"?: Models.UserReference;
+		"delta"?: Models.WorkitemDelta;
+	}
+	
+	export interface WorkitemsChangeWorktypeDelta { 
+		"version"?: number;
+		"modifiedBy"?: Models.UserReference;
+		"delta"?: Models.WorktypeDelta;
 	}
 	
 	export interface WorkitemsEventsNotificationCustomAttribute { 
@@ -37824,6 +39978,158 @@ declare namespace Models {
 		"totalDocumentByteCount"?: number;
 	}
 	
+	export interface Worktype { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"defaultWorkbin"?: Models.WorkbinReference;
+		"defaultStatus"?: Models.WorkitemStatusReference;
+		"statuses"?: Array<Models.WorkitemStatus>;
+		"defaultDurationSeconds"?: number;
+		"defaultExpirationSeconds"?: number;
+		"defaultDueDurationSeconds"?: number;
+		"defaultPriority"?: number;
+		"defaultLanguage"?: Models.LanguageReference;
+		"defaultTtlSeconds"?: number;
+		"modifiedBy"?: Models.UserReference;
+		"defaultQueue"?: Models.QueueReference;
+		"defaultSkills"?: Array<Models.RoutingSkillReference>;
+		"assignmentEnabled"?: boolean;
+		"schema"?: Models.WorkitemSchema;
+		"selfUri"?: string;
+	}
+	
+	export interface WorktypeChangeListing { 
+		"entities"?: Array<Models.WorkitemsChangeWorktypeDelta>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+	}
+	
+	export interface WorktypeCreate { 
+		"name": string;
+		"defaultWorkbinId": string;
+		"defaultDurationSeconds"?: number;
+		"defaultExpirationSeconds"?: number;
+		"defaultDueDurationSeconds"?: number;
+		"defaultPriority"?: number;
+		"defaultTtlSeconds"?: number;
+		"assignmentEnabled"?: boolean;
+		"schemaId"?: string;
+		"description"?: string;
+		"divisionId"?: string;
+		"disableDefaultStatusCreation"?: boolean;
+		"schemaVersion"?: number;
+		"defaultQueueId"?: string;
+		"defaultLanguageId"?: string;
+		"defaultSkillIds"?: Array<string>;
+	}
+	
+	export interface WorktypeDelta { 
+		"name"?: Models.WorkitemsAttributeChangeString;
+		"description"?: Models.WorkitemsAttributeChangeString;
+		"statuses"?: Models.WorkitemsAttributeChangeList;
+		"defaultWorkbinId"?: Models.WorkitemsAttributeChangeString;
+		"defaultDurationSeconds"?: Models.WorkitemsAttributeChangeInteger;
+		"defaultExpirationSeconds"?: Models.WorkitemsAttributeChangeInteger;
+		"defaultDueDurationSeconds"?: Models.WorkitemsAttributeChangeInteger;
+		"defaultPriority"?: Models.WorkitemsAttributeChangeInteger;
+		"defaultSkillIds"?: Models.WorkitemsAttributeChangeList;
+		"defaultStatusId"?: Models.WorkitemsAttributeChangeString;
+		"defaultLanguageId"?: Models.WorkitemsAttributeChangeString;
+		"defaultTtlSeconds"?: Models.WorkitemsAttributeChangeInteger;
+		"assignmentEnabled"?: Models.WorkitemsAttributeChangeBoolean;
+		"defaultQueueId"?: Models.WorkitemsAttributeChangeString;
+		"schemaId"?: Models.WorkitemsAttributeChangeString;
+		"schemaVersion"?: Models.WorkitemsAttributeChangeString;
+		"dateModified"?: Models.WorkitemsAttributeChangeInstant;
+		"modifiedBy"?: Models.WorkitemsAttributeChangeString;
+	}
+	
+	export interface WorktypeQueryEntityListing { 
+		"entities"?: Array<Models.Worktype>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+		"count"?: number;
+	}
+	
+	export interface WorktypeQueryRequest { 
+		"pageSize"?: number;
+		"select"?: string;
+		"filters": Array<Models.WorkitemFilter>;
+		"attributes"?: Array<string>;
+		"after"?: string;
+		"sort"?: Models.WorktypeQuerySort;
+	}
+	
+	export interface WorktypeQuerySort { 
+		"name"?: string;
+		"ascending"?: boolean;
+	}
+	
+	export interface WorktypeReference { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface WorktypeUpdate { 
+		"name"?: string;
+		"defaultWorkbinId"?: string;
+		"defaultDurationSeconds"?: number;
+		"defaultExpirationSeconds"?: number;
+		"defaultDueDurationSeconds"?: number;
+		"defaultPriority"?: number;
+		"defaultTtlSeconds"?: number;
+		"assignmentEnabled"?: boolean;
+		"schemaId"?: string;
+		"description"?: string;
+		"defaultStatusId"?: string;
+		"schemaVersion"?: number;
+		"defaultLanguageId"?: string;
+		"defaultSkillIds"?: Array<string>;
+		"defaultQueueId"?: string;
+	}
+	
+	export interface WorktypeVersion { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"defaultWorkbin"?: Models.WorkbinReference;
+		"defaultStatus"?: Models.WorkitemStatusReference;
+		"statuses"?: Array<Models.WorkitemStatus>;
+		"defaultDurationSeconds"?: number;
+		"defaultExpirationSeconds"?: number;
+		"defaultDueDurationSeconds"?: number;
+		"defaultPriority"?: number;
+		"defaultLanguage"?: Models.LanguageReference;
+		"defaultTtlSeconds"?: number;
+		"modifiedBy"?: Models.UserReference;
+		"defaultQueue"?: Models.QueueReference;
+		"defaultSkills"?: Array<Models.RoutingSkillReference>;
+		"assignmentEnabled"?: boolean;
+		"schema"?: Models.WorkitemSchema;
+		"version"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface WorktypeVersionListing { 
+		"entities"?: Array<Models.WorktypeVersion>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+	}
+	
 	export interface WrapUpCodeConfig { 
 		"values": Array<string>;
 	}
@@ -37910,6 +40216,12 @@ declare namespace Models {
 		"wrapupDurationMs"?: number;
 		"conversationExternalContactIds"?: Array<string>;
 		"conversationExternalOrganizationIds"?: Array<string>;
+	}
+	
+	export interface WrapupIdReference { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface WrapupInput { 

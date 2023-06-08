@@ -13,10 +13,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOrgauthorizationTrusteeGroupRoles**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeGroupRoles) | **DELETE** /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles | Delete Trustee Group Roles
 [**deleteOrgauthorizationTrusteeUser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeUser) | **DELETE** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId} | Delete Trustee User
 [**deleteOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeUserRoles) | **DELETE** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles | Delete Trustee User Roles
+[**deleteOrgauthorizationTrustees**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustees) | **DELETE** /api/v2/orgauthorization/trustees | Delete Bulk Org Trustees
 [**deleteOrgauthorizationTrustor**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustor) | **DELETE** /api/v2/orgauthorization/trustors/{trustorOrgId} | Delete Org Trust
 [**deleteOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorCloneduser) | **DELETE** /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} | Delete Cloned User
 [**deleteOrgauthorizationTrustorGroup**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorGroup) | **DELETE** /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId} | Delete Trustee Group
 [**deleteOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorUser) | **DELETE** /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} | Delete Trustee User
+[**deleteOrgauthorizationTrustors**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustors) | **DELETE** /api/v2/orgauthorization/trustors | Delete Bulk Org Trustors
 [**getOrgauthorizationPairing**](OrganizationAuthorizationApi.html#getOrgauthorizationPairing) | **GET** /api/v2/orgauthorization/pairings/{pairingId} | Get Pairing Info
 [**getOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustee) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId} | Get Org Trust
 [**getOrgauthorizationTrusteeClonedusers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeClonedusers) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers | The list of cloned users from the trustee organization (i.e. users with a native user record).
@@ -363,6 +365,56 @@ apiInstance.deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 
 void (no response body)
 
+<a name="deleteOrgauthorizationTrustees"></a>
+
+# void deleteOrgauthorizationTrustees(id)
+
+
+DELETE /api/v2/orgauthorization/trustees
+
+Delete Bulk Org Trustees
+
+Requires ANY permissions:
+
+* authorization:orgTrustee:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let id = ["id_example"]; // [String] | Comma separated list of trustee ids to remove
+
+apiInstance.deleteOrgauthorizationTrustees(id)
+  .then(() => {
+    console.log('deleteOrgauthorizationTrustees returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrustees');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | Comma separated list of trustee ids to remove |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteOrgauthorizationTrustor"></a>
 
 # void deleteOrgauthorizationTrustor(trustorOrgId)
@@ -563,6 +615,56 @@ apiInstance.deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | Trustor Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOrgauthorizationTrustors"></a>
+
+# void deleteOrgauthorizationTrustors(id)
+
+
+DELETE /api/v2/orgauthorization/trustors
+
+Delete Bulk Org Trustors
+
+Requires ANY permissions:
+
+* authorization:orgTrustor:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let id = ["id_example"]; // [String] | Comma separated list of trustor ids to remove
+
+apiInstance.deleteOrgauthorizationTrustors(id)
+  .then(() => {
+    console.log('deleteOrgauthorizationTrustors returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrustors');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | Comma separated list of trustor ids to remove |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -1183,6 +1183,37 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Get a pageable list of basic extension pool objects filterable by query parameters.
+	 * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the Extension Pools to filter by.
+	 * @param {String} opts.name Name of the Extension Pools to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 * Preview Endpoint
+	 */
+	getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/extensionpools/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a listing of extensions
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1399,7 +1430,7 @@ class TelephonyProvidersEdgeApi {
 	 * Get outbound route
 	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 	 * @param {String} outboundRouteId Outbound route ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	getTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
 		// verify the required parameter 'outboundRouteId' is set

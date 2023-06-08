@@ -5,7 +5,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -181,6 +181,37 @@ class TeamsApi {
 			'PATCH', 
 			{ 'teamId': teamId },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for team activity observations
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The desired page size
+	 * @param {Number} opts.pageNumber The desired page number
+	 * Preview Endpoint
+	 */
+	postAnalyticsTeamsActivityQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsTeamsActivityQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/teams/activity/query', 
+			'POST', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			body, 

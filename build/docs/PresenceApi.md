@@ -7,8 +7,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deletePresenceDefinition0**](PresenceApi.html#deletePresenceDefinition0) | **DELETE** /api/v2/presence/definitions/{definitionId} | Delete a Presence Definition
 [**deletePresenceSource**](PresenceApi.html#deletePresenceSource) | **DELETE** /api/v2/presence/sources/{sourceId} | Delete a Presence Source
 [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | **DELETE** /api/v2/presencedefinitions/{presenceId} | Delete a Presence Definition
+[**getPresenceDefinition0**](PresenceApi.html#getPresenceDefinition0) | **GET** /api/v2/presence/definitions/{definitionId} | Get a Presence Definition
+[**getPresenceDefinitions0**](PresenceApi.html#getPresenceDefinitions0) | **GET** /api/v2/presence/definitions | Get a list of Presence Definitions
 [**getPresenceSettings**](PresenceApi.html#getPresenceSettings) | **GET** /api/v2/presence/settings | Get the presence settings
 [**getPresenceSource**](PresenceApi.html#getPresenceSource) | **GET** /api/v2/presence/sources/{sourceId} | Get a Presence Source
 [**getPresenceSources**](PresenceApi.html#getPresenceSources) | **GET** /api/v2/presence/sources | Get a list of Presence Sources
@@ -20,14 +23,67 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | **GET** /api/v2/users/{userId}/presences/purecloud | Get a user's Genesys Cloud presence.
 [**patchUserPresence**](PresenceApi.html#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user's Presence
 [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user's presence
+[**postPresenceDefinitions0**](PresenceApi.html#postPresenceDefinitions0) | **POST** /api/v2/presence/definitions | Create a Presence Definition
 [**postPresenceSources**](PresenceApi.html#postPresenceSources) | **POST** /api/v2/presence/sources | Create a Presence Source
 [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition
+[**putPresenceDefinition0**](PresenceApi.html#putPresenceDefinition0) | **PUT** /api/v2/presence/definitions/{definitionId} | Update a Presence Definition
 [**putPresenceSettings**](PresenceApi.html#putPresenceSettings) | **PUT** /api/v2/presence/settings | Update the presence settings
 [**putPresenceSource**](PresenceApi.html#putPresenceSource) | **PUT** /api/v2/presence/sources/{sourceId} | Update a Presence Source
 [**putPresenceUserPrimarysource**](PresenceApi.html#putPresenceUserPrimarysource) | **PUT** /api/v2/presence/users/{userId}/primarysource | Update a user's Primary Presence Source
 [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | **PUT** /api/v2/presencedefinitions/{presenceId} | Update a Presence Definition
 [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | **PUT** /api/v2/users/presences/bulk | Update bulk user Presences
 {: class="table table-striped"}
+
+<a name="deletePresenceDefinition0"></a>
+
+# void deletePresenceDefinition0(definitionId)
+
+
+DELETE /api/v2/presence/definitions/{definitionId}
+
+Delete a Presence Definition
+
+Requires ANY permissions:
+
+* presence:presenceDefinition:delete
+* presence:presenceDefinition:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let definitionId = "definitionId_example"; // String | Presence Definition ID
+
+apiInstance.deletePresenceDefinition0(definitionId)
+  .then(() => {
+    console.log('deletePresenceDefinition0 returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deletePresenceDefinition0');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **definitionId** | **String** | Presence Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deletePresenceSource"></a>
 
@@ -129,6 +185,110 @@ apiInstance.deletePresencedefinition(presenceId)
 ### Return type
 
 void (no response body)
+
+<a name="getPresenceDefinition0"></a>
+
+# OrganizationPresenceDefinition getPresenceDefinition0(definitionId)
+
+
+GET /api/v2/presence/definitions/{definitionId}
+
+Get a Presence Definition
+
+Requires ALL permissions:
+
+* presence:presenceDefinition:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let definitionId = "definitionId_example"; // String | Presence Definition ID
+
+apiInstance.getPresenceDefinition0(definitionId)
+  .then((data) => {
+    console.log(`getPresenceDefinition0 success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getPresenceDefinition0');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **definitionId** | **String** | Presence Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OrganizationPresenceDefinition**
+
+<a name="getPresenceDefinitions0"></a>
+
+# OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(opts)
+
+
+GET /api/v2/presence/definitions
+
+Get a list of Presence Definitions
+
+Requires ALL permissions:
+
+* presence:presenceDefinition:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let opts = { 
+  'deactivated': "false", // String | Deactivated query can be TRUE or FALSE
+  'divisionId': ["divisionId_example"] // [String] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+};
+
+apiInstance.getPresenceDefinitions0(opts)
+  .then((data) => {
+    console.log(`getPresenceDefinitions0 success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getPresenceDefinitions0');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deactivated** | **String** | Deactivated query can be TRUE or FALSE | [optional] [default to false] |
+ **divisionId** | **[String]** | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**OrganizationPresenceDefinitionEntityListing**
 
 <a name="getPresenceSettings"></a>
 
@@ -688,6 +848,56 @@ apiInstance.patchUserPresencesPurecloud(userId, body)
 
 **UserPresence**
 
+<a name="postPresenceDefinitions0"></a>
+
+# OrganizationPresenceDefinition postPresenceDefinitions0(body)
+
+
+POST /api/v2/presence/definitions
+
+Create a Presence Definition
+
+Requires ALL permissions:
+
+* presence:presenceDefinition:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let body = {}; // Object | The Presence Definition to create
+
+apiInstance.postPresenceDefinitions0(body)
+  .then((data) => {
+    console.log(`postPresenceDefinitions0 success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postPresenceDefinitions0');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The Presence Definition to create |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OrganizationPresenceDefinition**
+
 <a name="postPresenceSources"></a>
 
 # Source postPresenceSources(body)
@@ -787,6 +997,58 @@ apiInstance.postPresencedefinitions(body)
 ### Return type
 
 **OrganizationPresence**
+
+<a name="putPresenceDefinition0"></a>
+
+# OrganizationPresenceDefinition putPresenceDefinition0(definitionId, body)
+
+
+PUT /api/v2/presence/definitions/{definitionId}
+
+Update a Presence Definition
+
+Requires ALL permissions:
+
+* presence:presenceDefinition:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let definitionId = "definitionId_example"; // String | Presence Definition ID
+let body = {}; // Object | The updated Presence Definition
+
+apiInstance.putPresenceDefinition0(definitionId, body)
+  .then((data) => {
+    console.log(`putPresenceDefinition0 success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putPresenceDefinition0');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **definitionId** | **String** | Presence Definition ID |  |
+ **body** | **Object** | The updated Presence Definition |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OrganizationPresenceDefinition**
 
 <a name="putPresenceSettings"></a>
 

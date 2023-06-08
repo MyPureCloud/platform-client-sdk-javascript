@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -239,7 +239,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	deleteRoutingQueueUser(queueId, memberId) { 
 		// verify the required parameter 'queueId' is set
@@ -451,6 +451,36 @@ class RoutingApi {
 			'DELETE', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an utilization tag
+	 * 
+	 * @param {String} tagId Utilization Tag ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDelete Remove all tag usages (if found) without warning (default to false)
+	 * Preview Endpoint
+	 */
+	deleteRoutingUtilizationTag(tagId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tagId' is set
+		if (tagId === undefined || tagId === null) {
+			throw 'Missing the required parameter "tagId" when calling deleteRoutingUtilizationTag';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/tags/{tagId}', 
+			'DELETE', 
+			{ 'tagId': tagId },
+			{ 'forceDelete': opts['forceDelete'] },
 			{  },
 			{  },
 			null, 
@@ -1331,7 +1361,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.languages Filter by language
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
-     	 * @deprecated
+     * @deprecated
 	 */
 	getRoutingQueueUsers(queueId, opts) { 
 		opts = opts || {};
@@ -1920,6 +1950,86 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get details about this utilization tag
+	 * 
+	 * @param {String} tagId Utilization Tag ID
+	 * Preview Endpoint
+	 */
+	getRoutingUtilizationTag(tagId) { 
+		// verify the required parameter 'tagId' is set
+		if (tagId === undefined || tagId === null) {
+			throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTag';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/tags/{tagId}', 
+			'GET', 
+			{ 'tagId': tagId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of agent ids associated with a utilization tag
+	 * 
+	 * @param {String} tagId Utilization Tag ID
+	 * Preview Endpoint
+	 */
+	getRoutingUtilizationTagAgents(tagId) { 
+		// verify the required parameter 'tagId' is set
+		if (tagId === undefined || tagId === null) {
+			throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTagAgents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/tags/{tagId}/agents', 
+			'GET', 
+			{ 'tagId': tagId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of utilization tags
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
+	 * @param {String} opts.name Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
+	 * Preview Endpoint
+	 */
+	getRoutingUtilizationTags(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/tags', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about this wrap-up code.
 	 * 
 	 * @param {String} codeId Wrapup Code ID
@@ -2289,7 +2399,7 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
 	 * @param {Object} body Queue Member
-     	 * @deprecated
+     * @deprecated
 	 */
 	patchRoutingQueueUser(queueId, memberId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -2324,7 +2434,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
-     	 * @deprecated
+     * @deprecated
 	 */
 	patchRoutingQueueUsers(queueId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -2585,6 +2695,37 @@ class RoutingApi {
 			'POST', 
 			{  },
 			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for user activity observations
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The desired page size
+	 * @param {Number} opts.pageNumber The desired page number
+	 * Preview Endpoint
+	 */
+	postAnalyticsRoutingActivityQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsRoutingActivityQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/routing/activity/query', 
+			'POST', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			body, 
@@ -2866,7 +3007,7 @@ class RoutingApi {
 	 * @param {Array.<Object>} body Queue Members
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts._delete True to delete queue members (default to false)
-     	 * @deprecated
+     * @deprecated
 	 */
 	postRoutingQueueUsers(queueId, body, opts) { 
 		opts = opts || {};
@@ -3066,6 +3207,58 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/phonenumbers', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Imports a phone number for SMS
+	 * 
+	 * @param {Object} body SmsPhoneNumber
+	 * Preview Endpoint
+	 */
+	postRoutingSmsPhonenumbersImport(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbersImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/phonenumbers/import', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an utilization tag
+	 * 
+	 * @param {Object} body UtilizationTag
+	 * Preview Endpoint
+	 */
+	postRoutingUtilizationTags(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingUtilizationTags';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/tags', 
 			'POST', 
 			{  },
 			{  },

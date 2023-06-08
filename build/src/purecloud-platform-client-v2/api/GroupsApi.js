@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -33,6 +33,32 @@ class GroupsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}', 
+			'DELETE', 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove dynamic group definition
+	 * 
+	 * @param {String} groupId Group ID
+	 * Preview Endpoint
+	 */
+	deleteGroupDynamicsettings(groupId) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling deleteGroupDynamicsettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/dynamicsettings', 
 			'DELETE', 
 			{ 'groupId': groupId },
 			{  },
@@ -79,7 +105,7 @@ class GroupsApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
-     	 * @deprecated
+     * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -114,6 +140,32 @@ class GroupsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}', 
+			'GET', 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get dynamic group definition
+	 * 
+	 * @param {String} groupId Group ID
+	 * Preview Endpoint
+	 */
+	getGroupDynamicsettings(groupId) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling getGroupDynamicsettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/dynamicsettings', 
 			'GET', 
 			{ 'groupId': groupId },
 			{  },
@@ -189,7 +241,7 @@ class GroupsApi {
 	 * @param {String} groupId groupId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
-     	 * @deprecated
+     * @deprecated
 	 */
 	getGroupProfile(groupId, opts) { 
 		opts = opts || {};
@@ -279,7 +331,7 @@ class GroupsApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
-     	 * @deprecated
+     * @deprecated
 	 */
 	getProfilesGroups(opts) { 
 		opts = opts || {};
@@ -355,6 +407,33 @@ class GroupsApi {
 	}
 
 	/**
+	 * Preview the number of users selected for a dynamic group definition query
+	 * 
+	 * @param {Object} body Group query to preview
+     * @deprecated
+	 * Preview Endpoint
+	 */
+	postGroupsDynamicsettingsPreview(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGroupsDynamicsettingsPreview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/dynamicsettings/preview', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search groups
 	 * 
 	 * @param {Object} body Search request options
@@ -402,6 +481,37 @@ class GroupsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create / Update dynamic group definition
+	 * 
+	 * @param {String} groupId Group ID
+	 * @param {Object} body Create/Update dynamic groups
+	 * Preview Endpoint
+	 */
+	putGroupDynamicsettings(groupId, body) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling putGroupDynamicsettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putGroupDynamicsettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/dynamicsettings', 
+			'PUT', 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

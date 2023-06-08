@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -1773,6 +1773,87 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+	 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+	 * @param {String} instanceId Instance ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand various details.
+	 * Preview Endpoint
+	 */
+	getFlowsInstance(instanceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'instanceId' is set
+		if (instanceId === undefined || instanceId === null) {
+			throw 'Missing the required parameter "instanceId" when calling getFlowsInstance';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/{instanceId}', 
+			'GET', 
+			{ 'instanceId': instanceId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the status and/or results of an asynchronous flow execution data retrieval job
+	 * 
+	 * @param {String} jobId The asynchronous job ID
+	 * Preview Endpoint
+	 */
+	getFlowsInstancesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getFlowsInstancesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of capabilities that the org can use to query for execution data
+	 * Returns the queryable parameters that can be used to build a query for execution data.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand various query types.
+	 * Preview Endpoint
+	 */
+	getFlowsInstancesQuerycapabilities(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/querycapabilities', 
+			'GET', 
+			{  },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch Architect Job Status
 	 * 
 	 * @param {String} jobId Job ID
@@ -2597,6 +2678,66 @@ class ArchitectApi {
 			{  },
 			{  },
 			flowLaunchRequest, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start a process (job) that will prepare a list of execution data IDs for download.
+	 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+	 * @param {Object} body Requested Flow Ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand various query types.
+	 * Preview Endpoint
+	 */
+	postFlowsInstancesJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsInstancesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/jobs', 
+			'POST', 
+			{  },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the database of existing flow histories to look for particular flow criteria
+	 * Returns a list of matching flow histories up to 200 max.
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.indexOnly indexes only
+	 * Preview Endpoint
+	 */
+	postFlowsInstancesQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsInstancesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/query', 
+			'POST', 
+			{  },
+			{ 'indexOnly': opts['indexOnly'] },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -2490,7 +2490,7 @@ class OutboundApi {
 	 * This endpoint is deprecated and may have unexpected results. Please use "/conversations/{conversationId}/participants/{participantId}/callbacks instead."
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body ContactCallbackRequest
-     	 * @deprecated
+     * @deprecated
 	 */
 	postOutboundCampaignCallbackSchedule(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set

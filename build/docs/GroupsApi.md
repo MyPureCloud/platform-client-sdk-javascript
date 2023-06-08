@@ -8,9 +8,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteGroup**](GroupsApi.html#deleteGroup) | **DELETE** /api/v2/groups/{groupId} | Delete group
+[**deleteGroupDynamicsettings**](GroupsApi.html#deleteGroupDynamicsettings) | **DELETE** /api/v2/groups/{groupId}/dynamicsettings | Remove dynamic group definition
 [**deleteGroupMembers**](GroupsApi.html#deleteGroupMembers) | **DELETE** /api/v2/groups/{groupId}/members | Remove members
 [**getFieldconfig**](GroupsApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getGroup**](GroupsApi.html#getGroup) | **GET** /api/v2/groups/{groupId} | Get group
+[**getGroupDynamicsettings**](GroupsApi.html#getGroupDynamicsettings) | **GET** /api/v2/groups/{groupId}/dynamicsettings | Get dynamic group definition
 [**getGroupIndividuals**](GroupsApi.html#getGroupIndividuals) | **GET** /api/v2/groups/{groupId}/individuals | Get all individuals associated with the group
 [**getGroupMembers**](GroupsApi.html#getGroupMembers) | **GET** /api/v2/groups/{groupId}/members | Get group members, includes individuals, owners, and dynamically included people
 [**getGroupProfile**](GroupsApi.html#getGroupProfile) | **GET** /api/v2/groups/{groupId}/profile | Get group profile
@@ -19,8 +21,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getProfilesGroups**](GroupsApi.html#getProfilesGroups) | **GET** /api/v2/profiles/groups | Get group profile listing
 [**postGroupMembers**](GroupsApi.html#postGroupMembers) | **POST** /api/v2/groups/{groupId}/members | Add members
 [**postGroups**](GroupsApi.html#postGroups) | **POST** /api/v2/groups | Create a group
+[**postGroupsDynamicsettingsPreview**](GroupsApi.html#postGroupsDynamicsettingsPreview) | **POST** /api/v2/groups/dynamicsettings/preview | Preview the number of users selected for a dynamic group definition query
 [**postGroupsSearch**](GroupsApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
 [**putGroup**](GroupsApi.html#putGroup) | **PUT** /api/v2/groups/{groupId} | Update group
+[**putGroupDynamicsettings**](GroupsApi.html#putGroupDynamicsettings) | **PUT** /api/v2/groups/{groupId}/dynamicsettings | Create / Update dynamic group definition
 {: class="table table-striped"}
 
 <a name="deleteGroup"></a>
@@ -57,6 +61,56 @@ apiInstance.deleteGroup(groupId)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteGroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteGroupDynamicsettings"></a>
+
+# void deleteGroupDynamicsettings(groupId)
+
+
+DELETE /api/v2/groups/{groupId}/dynamicsettings
+
+Remove dynamic group definition
+
+Requires ANY permissions:
+
+* directory:group:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let groupId = "groupId_example"; // String | Group ID
+
+apiInstance.deleteGroupDynamicsettings(groupId)
+  .then(() => {
+    console.log('deleteGroupDynamicsettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteGroupDynamicsettings');
     console.error(err);
   });
 ```
@@ -219,6 +273,56 @@ apiInstance.getGroup(groupId)
 ### Return type
 
 **Group**
+
+<a name="getGroupDynamicsettings"></a>
+
+# DynamicGroupDefinition getGroupDynamicsettings(groupId)
+
+
+GET /api/v2/groups/{groupId}/dynamicsettings
+
+Get dynamic group definition
+
+Requires ANY permissions:
+
+* directory:group:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let groupId = "groupId_example"; // String | Group ID
+
+apiInstance.getGroupDynamicsettings(groupId)
+  .then((data) => {
+    console.log(`getGroupDynamicsettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGroupDynamicsettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DynamicGroupDefinition**
 
 <a name="getGroupIndividuals"></a>
 
@@ -652,6 +756,57 @@ apiInstance.postGroups(body)
 
 **Group**
 
+<a name="postGroupsDynamicsettingsPreview"></a>
+
+# DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(body)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+POST /api/v2/groups/dynamicsettings/preview
+
+Preview the number of users selected for a dynamic group definition query
+
+Requires ANY permissions:
+
+* directory:group:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let body = {}; // Object | Group query to preview
+
+apiInstance.postGroupsDynamicsettingsPreview(body)
+  .then((data) => {
+    console.log(`postGroupsDynamicsettingsPreview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGroupsDynamicsettingsPreview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Group query to preview |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DynamicGroupQueryPreview**
+
 <a name="postGroupsSearch"></a>
 
 # GroupsSearchResponse postGroupsSearch(body)
@@ -753,4 +908,56 @@ apiInstance.putGroup(groupId, opts)
 ### Return type
 
 **Group**
+
+<a name="putGroupDynamicsettings"></a>
+
+# void putGroupDynamicsettings(groupId, body)
+
+
+PUT /api/v2/groups/{groupId}/dynamicsettings
+
+Create / Update dynamic group definition
+
+Requires ANY permissions:
+
+* directory:group:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let groupId = "groupId_example"; // String | Group ID
+let body = {}; // Object | Create/Update dynamic groups
+
+apiInstance.putGroupDynamicsettings(groupId, body)
+  .then(() => {
+    console.log('putGroupDynamicsettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putGroupDynamicsettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | Group ID |  |
+ **body** | **Object** | Create/Update dynamic groups |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 

@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -140,6 +140,62 @@ class JourneyApi {
 			'DELETE', 
 			{ 'segmentId': segmentId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for journey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * Preview Endpoint
+	 */
+	getAnalyticsJourneysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * Preview Endpoint
+	 */
+	getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
 			{  },
 			{  },
 			null, 
@@ -361,6 +417,42 @@ class JourneyApi {
 	}
 
 	/**
+	 * Retrieve all sessions for a given customer.
+	 * 
+	 * @param {String} customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone).
+	 * @param {String} customerId Primary identifier of the customer in the source of the session.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * Preview Endpoint
+	 */
+	getJourneyCustomerCustomerIdSessions(customerIdType, customerId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'customerIdType' is set
+		if (customerIdType === undefined || customerIdType === null) {
+			throw 'Missing the required parameter "customerIdType" when calling getJourneyCustomerCustomerIdSessions';
+		}
+		// verify the required parameter 'customerId' is set
+		if (customerId === undefined || customerId === null) {
+			throw 'Missing the required parameter "customerId" when calling getJourneyCustomerCustomerIdSessions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/customers/{customerIdType}/{customerId}/sessions', 
+			'GET', 
+			{ 'customerIdType': customerIdType,'customerId': customerId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve a single outcome.
 	 * 
 	 * @param {String} outcomeId ID of the outcome.
@@ -405,6 +497,58 @@ class JourneyApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get job status.
+	 * 
+	 * @param {String} jobId ID of the job.
+	 * Preview Endpoint
+	 */
+	getJourneyOutcomesAttributionsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/attributions/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get outcome attribution entities from completed job.
+	 * 
+	 * @param {String} jobId ID of the job.
+	 * Preview Endpoint
+	 */
+	getJourneyOutcomesAttributionsJobResults(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/attributions/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -540,6 +684,37 @@ class JourneyApi {
 	}
 
 	/**
+	 * Retrieve all events for a given session.
+	 * 
+	 * @param {String} sessionId System-generated UUID that represents the session the event is a part of.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * Preview Endpoint
+	 */
+	getJourneySessionEvents(sessionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getJourneySessionEvents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/sessions/{sessionId}/events', 
+			'GET', 
+			{ 'sessionId': sessionId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve latest outcome score associated with a session for all outcomes.
 	 * 
 	 * @param {String} sessionId ID of the session.
@@ -555,6 +730,39 @@ class JourneyApi {
 			'GET', 
 			{ 'sessionId': sessionId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve segment assignments by session ID.
+	 * 
+	 * @param {String} sessionId ID of the session to query for segment assignments.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
+	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
+	 * Preview Endpoint
+	 */
+	getJourneySessionSegments(sessionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getJourneySessionSegments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/sessions/{sessionId}/segments', 
+			'GET', 
+			{ 'sessionId': sessionId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] },
 			{  },
 			{  },
 			null, 
@@ -710,6 +918,32 @@ class JourneyApi {
 	}
 
 	/**
+	 * Query for journey aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * Preview Endpoint
+	 */
+	postAnalyticsJourneysAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for journey aggregates
 	 * 
 	 * @param {Object} body query
@@ -819,6 +1053,31 @@ class JourneyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/journey/outcomes', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Outcome Attributions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body outcome attribution request
+	 * Preview Endpoint
+	 */
+	postJourneyOutcomesAttributionsJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/attributions/jobs', 
 			'POST', 
 			{  },
 			{  },

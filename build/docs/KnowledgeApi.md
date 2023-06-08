@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageCategories) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories | Get categories
 [**getKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageCategory) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId} | Get category
 [**getKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocument) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} | Get document
+[**getKnowledgeKnowledgebaseLanguageDocumentUpload**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentUpload) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId} | Get document content upload status
 [**getKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocuments) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents | Get documents
 [**getKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentsImport) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} | Get import operation report
 [**getKnowledgeKnowledgebaseLanguageTraining**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTraining) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId} | Get training detail
@@ -67,12 +68,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVariations) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations | Create a variation for a document.
 [**postKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVersions) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions | Creates or restores a document version.
 [**postKnowledgeKnowledgebaseDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocuments) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents | Create document.
+[**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkRemove) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove | Bulk remove documents.
+[**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update | Bulk update documents.
 [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search | Search the documents in a knowledge base.
 [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions | Query the knowledge documents to provide suggestions for auto completion.
+[**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add | Bulk add document versions.
 [**postKnowledgeKnowledgebaseExportJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseExportJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs | Create export job
 [**postKnowledgeKnowledgebaseImportJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseImportJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs | Create import job
 [**postKnowledgeKnowledgebaseLabels**](KnowledgeApi.html#postKnowledgeKnowledgebaseLabels) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels | Create new label
 [**postKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageCategories) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories | Create new category
+[**postKnowledgeKnowledgebaseLanguageDocumentUploads**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentUploads) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads | Upload Article Content
 [**postKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocuments) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents | Create document
 [**postKnowledgeKnowledgebaseLanguageDocumentsImports**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentsImports) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports | Create import operation
 [**postKnowledgeKnowledgebaseLanguageTrainingPromote**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainingPromote) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote | Promote trained documents from draft state to active.
@@ -1827,6 +1832,63 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseI
 
 **KnowledgeDocument**
 
+<a name="getKnowledgeKnowledgebaseLanguageDocumentUpload"></a>
+
+# KnowledgeDocumentContentUpload getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}
+
+Get document content upload status
+
+Requires ALL permissions:
+
+* knowledge:document:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let documentId = "documentId_example"; // String | Document ID
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
+let uploadId = "uploadId_example"; // String | UploadId
+
+apiInstance.getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseLanguageDocumentUpload success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseLanguageDocumentUpload');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **documentId** | **String** | Document ID |  |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT |
+ **uploadId** | **String** | UploadId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeDocumentContentUpload**
+
 <a name="getKnowledgeKnowledgebaseLanguageDocuments"></a>
 
 # DocumentListing getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts)
@@ -3432,6 +3494,110 @@ apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)
 
 **KnowledgeDocumentResponse**
 
+<a name="postKnowledgeKnowledgebaseDocumentsBulkRemove"></a>
+
+# BulkResponse postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove
+
+Bulk remove documents.
+
+Requires ALL permissions:
+
+* knowledge:document:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseDocumentsBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentsBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkResponse**
+
+<a name="postKnowledgeKnowledgebaseDocumentsBulkUpdate"></a>
+
+# BulkResponse postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update
+
+Bulk update documents.
+
+Requires ALL permissions:
+
+* knowledge:document:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseDocumentsBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentsBulkUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkResponse**
+
 <a name="postKnowledgeKnowledgebaseDocumentsSearch"></a>
 
 # KnowledgeDocumentSearch postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, opts)
@@ -3541,6 +3707,58 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId
 ### Return type
 
 **KnowledgeDocumentSuggestion**
+
+<a name="postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd"></a>
+
+# BulkResponse postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add
+
+Bulk add document versions.
+
+Requires ALL permissions:
+
+* knowledge:documentVersion:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkResponse**
 
 <a name="postKnowledgeKnowledgebaseExportJobs"></a>
 
@@ -3752,6 +3970,63 @@ apiInstance.postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, langua
 ### Return type
 
 **KnowledgeExtendedCategory**
+
+<a name="postKnowledgeKnowledgebaseLanguageDocumentUploads"></a>
+
+# KnowledgeDocumentContentUpload postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads
+
+Upload Article Content
+
+Requires ALL permissions:
+
+* knowledge:document:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let documentId = "documentId_example"; // String | Document ID
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseLanguageDocumentUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseLanguageDocumentUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **documentId** | **String** | Document ID |  |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeDocumentContentUpload**
 
 <a name="postKnowledgeKnowledgebaseLanguageDocuments"></a>
 

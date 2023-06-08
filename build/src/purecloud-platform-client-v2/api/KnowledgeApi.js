@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -236,7 +236,7 @@ class KnowledgeApi {
 	 * @param {String} categoryId Category ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     	 * @deprecated
+     * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
@@ -272,7 +272,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     	 * @deprecated
+     * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
@@ -308,7 +308,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -967,7 +967,7 @@ class KnowledgeApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter to return the categories that starts with the given category name.
-     	 * @deprecated
+     * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -1001,7 +1001,7 @@ class KnowledgeApi {
 	 * @param {String} categoryId Category ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     	 * @deprecated
+     * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
@@ -1037,7 +1037,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     	 * @deprecated
+     * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
@@ -1068,6 +1068,48 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Get document content upload status
+	 * 
+	 * @param {String} documentId Document ID
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+	 * @param {String} uploadId UploadId
+     * @deprecated
+	 * Preview Endpoint
+	 */
+	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId) { 
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
+		}
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
+		}
+		// verify the required parameter 'uploadId' is set
+		if (uploadId === undefined || uploadId === null) {
+			throw 'Missing the required parameter "uploadId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}', 
+			'GET', 
+			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'uploadId': uploadId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get documents
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -1082,7 +1124,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.sortBy Sort by.
 	 * @param {Object} opts.sortOrder Sort Order.
 	 * @param {Array.<String>} opts.documentIds Comma-separated list of document identifiers to fetch by.
-     	 * @deprecated
+     * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -1116,7 +1158,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -1152,7 +1194,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} trainingId Training ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -1193,7 +1235,7 @@ class KnowledgeApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
-     	 * @deprecated
+     * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -1641,7 +1683,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'categoryId' is set
@@ -1682,7 +1724,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
@@ -1722,7 +1764,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Array.<Object>} body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -1759,7 +1801,7 @@ class KnowledgeApi {
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
 	 * @param {Object} body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2073,6 +2115,68 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Bulk remove documents.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 * Preview Endpoint
+	 */
+	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseDocumentsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk update documents.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 * Preview Endpoint
+	 */
+	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseDocumentsBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search the documents in a knowledge base.
 	 * 
 	 * @param {String} knowledgeBaseId The ID of knowledge base containing the documents to query.
@@ -2125,6 +2229,37 @@ class KnowledgeApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk add document versions.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 * Preview Endpoint
+	 */
+	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2227,7 +2362,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2258,12 +2393,54 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Upload Article Content
+	 * 
+	 * @param {String} documentId Document ID
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+	 * @param {Object} body 
+     * @deprecated
+	 * Preview Endpoint
+	 */
+	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body) { 
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
+		}
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads', 
+			'POST', 
+			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create document
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2299,7 +2476,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2335,7 +2512,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} trainingId Training ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2370,7 +2547,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     	 * @deprecated
+     * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2402,7 +2579,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};

@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -336,6 +336,62 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for conversation aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * Preview Endpoint
+	 */
+	getAnalyticsConversationsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * Preview Endpoint
+	 */
+	getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
 			{  },
 			{  },
 			null, 
@@ -2444,6 +2500,32 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get video conference details (e.g. the current number of active participants).
+	 * 
+	 * @param {String} conferenceId conferenceId
+	 * Preview Endpoint
+	 */
+	getConversationsVideoDetails(conferenceId) { 
+		// verify the required parameter 'conferenceId' is set
+		if (conferenceId === undefined || conferenceId === null) {
+			throw 'Missing the required parameter "conferenceId" when calling getConversationsVideoDetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/{conferenceId}/details', 
+			'GET', 
+			{ 'conferenceId': conferenceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the wrap-up for this conversation communication. 
 	 * 
 	 * @param {String} conversationId conversationId
@@ -3744,6 +3826,63 @@ class ConversationsApi {
 			'/api/v2/analytics/conversations/{conversationId}/details/properties', 
 			'POST', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for conversation activity observations
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The desired page size
+	 * @param {Number} opts.pageNumber The desired page number
+	 * Preview Endpoint
+	 */
+	postAnalyticsConversationsActivityQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsActivityQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/activity/query', 
+			'POST', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for conversation aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * Preview Endpoint
+	 */
+	postAnalyticsConversationsAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/aggregates/jobs', 
+			'POST', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -5142,6 +5281,37 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Listen in on the conversation from the point of view of a given participant.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * Preview Endpoint
+	 */
+	postConversationsMessageParticipantMonitor(conversationId, participantId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantMonitor';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantMonitor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

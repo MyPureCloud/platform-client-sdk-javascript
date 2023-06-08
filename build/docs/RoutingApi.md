@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
 [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
+[**deleteRoutingUtilizationTag**](RoutingApi.html#deleteRoutingUtilizationTag) | **DELETE** /api/v2/routing/utilization/tags/{tagId} | Delete an utilization tag
 [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | **DELETE** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code
 [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
 [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
@@ -78,6 +79,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
 [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | **GET** /api/v2/routing/utilization | Get the organization-wide max utilization settings.
+[**getRoutingUtilizationTag**](RoutingApi.html#getRoutingUtilizationTag) | **GET** /api/v2/routing/utilization/tags/{tagId} | Get details about this utilization tag
+[**getRoutingUtilizationTagAgents**](RoutingApi.html#getRoutingUtilizationTagAgents) | **GET** /api/v2/routing/utilization/tags/{tagId}/agents | Get list of agent ids associated with a utilization tag
+[**getRoutingUtilizationTags**](RoutingApi.html#getRoutingUtilizationTags) | **GET** /api/v2/routing/utilization/tags | Get list of utilization tags
 [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | **GET** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code.
 [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | **GET** /api/v2/routing/wrapupcodes | Get list of wrapup codes.
 [**getUserQueues**](RoutingApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
@@ -100,6 +104,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
 [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
 [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
+[**postAnalyticsRoutingActivityQuery**](RoutingApi.html#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
 [**postRoutingAssessments**](RoutingApi.html#postRoutingAssessments) | **POST** /api/v2/routing/assessments | Create a benefit assessment.
 [**postRoutingAssessmentsJobs**](RoutingApi.html#postRoutingAssessmentsJobs) | **POST** /api/v2/routing/assessments/jobs | Create a benefit assessment job.
 [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
@@ -118,6 +123,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | **POST** /api/v2/routing/skills | Create Skill
 [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | **POST** /api/v2/routing/sms/addresses | Provision an Address for SMS
 [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | **POST** /api/v2/routing/sms/phonenumbers | Provision a phone number for SMS
+[**postRoutingSmsPhonenumbersImport**](RoutingApi.html#postRoutingSmsPhonenumbersImport) | **POST** /api/v2/routing/sms/phonenumbers/import | Imports a phone number for SMS
+[**postRoutingUtilizationTags**](RoutingApi.html#postRoutingUtilizationTags) | **POST** /api/v2/routing/utilization/tags | Create an utilization tag
 [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | **POST** /api/v2/routing/wrapupcodes | Create a wrap-up code
 [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
 [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
@@ -986,6 +993,60 @@ apiInstance.deleteRoutingUtilization()
 
 This endpoint does not need any parameter.
 
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingUtilizationTag"></a>
+
+# void deleteRoutingUtilizationTag(tagId, opts)
+
+
+DELETE /api/v2/routing/utilization/tags/{tagId}
+
+Delete an utilization tag
+
+Requires ALL permissions:
+
+* routing:utilization:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let tagId = "tagId_example"; // String | Utilization Tag ID
+let opts = { 
+  'forceDelete': false // Boolean | Remove all tag usages (if found) without warning
+};
+
+apiInstance.deleteRoutingUtilizationTag(tagId, opts)
+  .then(() => {
+    console.log('deleteRoutingUtilizationTag returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingUtilizationTag');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tagId** | **String** | Utilization Tag ID |  |
+ **forceDelete** | **Boolean** | Remove all tag usages (if found) without warning | [optional] [default to false] |
+{: class="table table-striped"}
 
 ### Return type
 
@@ -3907,6 +3968,164 @@ This endpoint does not need any parameter.
 
 **Utilization**
 
+<a name="getRoutingUtilizationTag"></a>
+
+# UtilizationTag getRoutingUtilizationTag(tagId)
+
+
+GET /api/v2/routing/utilization/tags/{tagId}
+
+Get details about this utilization tag
+
+Requires ALL permissions:
+
+* routing:utilization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let tagId = "tagId_example"; // String | Utilization Tag ID
+
+apiInstance.getRoutingUtilizationTag(tagId)
+  .then((data) => {
+    console.log(`getRoutingUtilizationTag success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUtilizationTag');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tagId** | **String** | Utilization Tag ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UtilizationTag**
+
+<a name="getRoutingUtilizationTagAgents"></a>
+
+# **[Object]** getRoutingUtilizationTagAgents(tagId)
+
+
+GET /api/v2/routing/utilization/tags/{tagId}/agents
+
+Get list of agent ids associated with a utilization tag
+
+Requires ALL permissions:
+
+* routing:utilization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let tagId = "tagId_example"; // String | Utilization Tag ID
+
+apiInstance.getRoutingUtilizationTagAgents(tagId)
+  .then((data) => {
+    console.log(`getRoutingUtilizationTagAgents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUtilizationTagAgents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tagId** | **String** | Utilization Tag ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[Object]**
+
+<a name="getRoutingUtilizationTags"></a>
+
+# UtilizationTagEntityListing getRoutingUtilizationTags(opts)
+
+
+GET /api/v2/routing/utilization/tags
+
+Get list of utilization tags
+
+Requires ALL permissions:
+
+* routing:utilization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'sortOrder': "ascending", // String | Sort order by name
+  'name': "name_example" // String | Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
+};
+
+apiInstance.getRoutingUtilizationTags(opts)
+  .then((data) => {
+    console.log(`getRoutingUtilizationTags success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUtilizationTags');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Sort order by name | [optional] [default to ascending]<br />**Values**: ascending, descending |
+ **name** | **String** | Utilization tag's name (Wildcard is supported, e.g., 'tag1*') | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UtilizationTagEntityListing**
+
 <a name="getRoutingWrapupcode"></a>
 
 # WrapupCode getRoutingWrapupcode(codeId)
@@ -5108,6 +5327,62 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 **QueueObservationQueryResponse**
 
+<a name="postAnalyticsRoutingActivityQuery"></a>
+
+# RoutingActivityResponse postAnalyticsRoutingActivityQuery(body, opts)
+
+
+POST /api/v2/analytics/routing/activity/query
+
+Query for user activity observations
+
+Requires ANY permissions:
+
+* analytics:queueObservation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'pageSize': 3.4, // Number | The desired page size
+  'pageNumber': 3.4 // Number | The desired page number
+};
+
+apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsRoutingActivityQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsRoutingActivityQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **pageSize** | **Number** | The desired page size | [optional]  |
+ **pageNumber** | **Number** | The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**RoutingActivityResponse**
+
 <a name="postRoutingAssessments"></a>
 
 # BenefitAssessment postRoutingAssessments(opts)
@@ -6044,6 +6319,106 @@ apiInstance.postRoutingSmsPhonenumbers(body)
 ### Return type
 
 **SmsPhoneNumber**
+
+<a name="postRoutingSmsPhonenumbersImport"></a>
+
+# SmsPhoneNumber postRoutingSmsPhonenumbersImport(body)
+
+
+POST /api/v2/routing/sms/phonenumbers/import
+
+Imports a phone number for SMS
+
+Requires ALL permissions:
+
+* sms:phoneNumber:byoImport
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | SmsPhoneNumber
+
+apiInstance.postRoutingSmsPhonenumbersImport(body)
+  .then((data) => {
+    console.log(`postRoutingSmsPhonenumbersImport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingSmsPhonenumbersImport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | SmsPhoneNumber |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsPhoneNumber**
+
+<a name="postRoutingUtilizationTags"></a>
+
+# UtilizationTag postRoutingUtilizationTags(body)
+
+
+POST /api/v2/routing/utilization/tags
+
+Create an utilization tag
+
+Requires ALL permissions:
+
+* routing:utilization:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | UtilizationTag
+
+apiInstance.postRoutingUtilizationTags(body)
+  .then((data) => {
+    console.log(`postRoutingUtilizationTags success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingUtilizationTags');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | UtilizationTag |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UtilizationTag**
 
 <a name="postRoutingWrapupcodes"></a>
 

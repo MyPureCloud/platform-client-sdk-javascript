@@ -15,6 +15,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
 [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
 [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
+[**getAnalyticsUsersAggregatesJob**](UsersApi.html#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
+[**getAnalyticsUsersAggregatesJobResults**](UsersApi.html#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
 [**getAnalyticsUsersDetailsJobResults**](UsersApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
 [**getAnalyticsUsersDetailsJobsAvailability**](UsersApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
@@ -60,6 +62,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
 [**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
 [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users
+[**postAnalyticsUsersActivityQuery**](UsersApi.html#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
+[**postAnalyticsUsersAggregatesJobs**](UsersApi.html#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
 [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
 [**postAnalyticsUsersDetailsJobs**](UsersApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
 [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
@@ -77,6 +81,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi.html#postUsersDevelopmentActivitiesAggregatesQuery) | **POST** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data
 [**postUsersMePassword**](UsersApi.html#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
 [**postUsersSearch**](UsersApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
+[**postUsersSearchConversationTarget**](UsersApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
+[**postUsersSearchQueuemembersManage**](UsersApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
 [**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
 [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
@@ -499,6 +505,110 @@ apiInstance.deleteUserStationDefaultstation(userId)
 ### Return type
 
 void (no response body)
+
+<a name="getAnalyticsUsersAggregatesJob"></a>
+
+# AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/users/aggregates/jobs/{jobId}
+
+Get status for async query for user aggregates
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsUsersAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsUsersAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsUsersAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsUsersAggregatesJobResults"></a>
+
+# UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsUsersAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsUsersAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserAsyncAggregateQueryResponse**
 
 <a name="getAnalyticsUsersDetailsJob"></a>
 
@@ -2944,6 +3054,112 @@ apiInstance.patchUsersBulk(body)
 
 **UserEntityListing**
 
+<a name="postAnalyticsUsersActivityQuery"></a>
+
+# UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
+
+
+POST /api/v2/analytics/users/activity/query
+
+Query for user activity observations
+
+Requires ANY permissions:
+
+* analytics:userObservation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'pageSize': 3.4, // Number | The desired page size
+  'pageNumber': 3.4 // Number | The desired page number
+};
+
+apiInstance.postAnalyticsUsersActivityQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsUsersActivityQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsUsersActivityQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **pageSize** | **Number** | The desired page size | [optional]  |
+ **pageNumber** | **Number** | The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserActivityResponse**
+
+<a name="postAnalyticsUsersAggregatesJobs"></a>
+
+# AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
+
+
+POST /api/v2/analytics/users/aggregates/jobs
+
+Query for user aggregates asynchronously
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsUsersAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsUsersAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsUsersAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
+
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
 # UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
@@ -3821,6 +4037,107 @@ apiInstance.postUsersSearch(body)
   })
   .catch((err) => {
     console.log('There was a failure calling postUsersSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
+<a name="postUsersSearchConversationTarget"></a>
+
+# UsersSearchResponse postUsersSearchConversationTarget(body)
+
+
+POST /api/v2/users/search/conversation/target
+
+Search users as conversation targets
+
+Requires ANY permissions:
+
+* conversation:communication:target
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchConversationTarget(body)
+  .then((data) => {
+    console.log(`postUsersSearchConversationTarget success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchConversationTarget');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
+<a name="postUsersSearchQueuemembersManage"></a>
+
+# UsersSearchResponse postUsersSearchQueuemembersManage(body)
+
+
+POST /api/v2/users/search/queuemembers/manage
+
+Search manage queue member
+
+Requires ANY permissions:
+
+* routing:queueMember:manage
+* routing:queue:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchQueuemembersManage(body)
+  .then((data) => {
+    console.log(`postUsersSearchQueuemembersManage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchQueuemembersManage');
     console.error(err);
   });
 ```

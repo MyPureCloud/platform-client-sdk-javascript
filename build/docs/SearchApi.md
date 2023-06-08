@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
 [**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
 [**postConversationsParticipantsAttributesSearch**](SearchApi.html#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
+[**postDocumentationAllSearch**](SearchApi.html#postDocumentationAllSearch) | **POST** /api/v2/documentation/all/search | Search all documents
 [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
 [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
 [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
@@ -27,6 +28,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
 [**postTeamsSearch**](SearchApi.html#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
 [**postUsersSearch**](SearchApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
+[**postUsersSearchConversationTarget**](SearchApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
+[**postUsersSearchQueuemembersManage**](SearchApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
 [**postUsersSearchTeamsAssign**](SearchApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
 [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 {: class="table table-striped"}
@@ -545,6 +548,51 @@ apiInstance.postConversationsParticipantsAttributesSearch(body)
 
 **JsonCursorSearchResponse**
 
+<a name="postDocumentationAllSearch"></a>
+
+# JsonNodeSearchResponse postDocumentationAllSearch(body)
+
+
+POST /api/v2/documentation/all/search
+
+Search all documents
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postDocumentationAllSearch(body)
+  .then((data) => {
+    console.log(`postDocumentationAllSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postDocumentationAllSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonNodeSearchResponse**
+
 <a name="postDocumentationGknSearch"></a>
 
 # GKNDocumentationSearchResponse postDocumentationGknSearch(body)
@@ -1029,6 +1077,107 @@ apiInstance.postUsersSearch(body)
   })
   .catch((err) => {
     console.log('There was a failure calling postUsersSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
+<a name="postUsersSearchConversationTarget"></a>
+
+# UsersSearchResponse postUsersSearchConversationTarget(body)
+
+
+POST /api/v2/users/search/conversation/target
+
+Search users as conversation targets
+
+Requires ANY permissions:
+
+* conversation:communication:target
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchConversationTarget(body)
+  .then((data) => {
+    console.log(`postUsersSearchConversationTarget success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchConversationTarget');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
+<a name="postUsersSearchQueuemembersManage"></a>
+
+# UsersSearchResponse postUsersSearchQueuemembersManage(body)
+
+
+POST /api/v2/users/search/queuemembers/manage
+
+Search manage queue member
+
+Requires ANY permissions:
+
+* routing:queueMember:manage
+* routing:queue:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchQueuemembersManage(body)
+  .then((data) => {
+    console.log(`postUsersSearchQueuemembersManage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchQueuemembersManage');
     console.error(err);
   });
 ```

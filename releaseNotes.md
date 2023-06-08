@@ -1,426 +1,1529 @@
 Platform API version: 7019
 
 
-# Major Changes (40 changes)
+# Major Changes (0 changes)
 
-**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search** (1 change)
 
-* Has been deprecated
+# Minor Changes (481 changes)
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories** (1 change)
+**/api/v2/orgauthorization/trustors** (1 change)
 
-* Has been deprecated
+* Operation delete was added. Summary: Delete Bulk Org Trustors
 
-**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories** (1 change)
+**/api/v2/orgauthorization/trustees** (1 change)
 
-* Has been deprecated
+* Operation delete was added. Summary: Delete Bulk Org Trustees
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}** (1 change)
+**/api/v2/analytics/actions/aggregates/jobs** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}** (1 change)
+**/api/v2/analytics/actions/aggregates/jobs/{jobId}** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}** (1 change)
+**/api/v2/analytics/actions/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}** (1 change)
+**/api/v2/analytics/bots/aggregates/jobs** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}** (1 change)
+**/api/v2/analytics/bots/aggregates/jobs/{jobId}** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}** (1 change)
+**/api/v2/analytics/bots/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports** (1 change)
+**/api/v2/analytics/conversations/aggregates/jobs** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}** (1 change)
+**/api/v2/analytics/conversations/aggregates/jobs/{jobId}** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}** (1 change)
+**/api/v2/analytics/conversations/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}** (1 change)
+**/api/v2/analytics/conversations/activity/query** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents** (1 change)
+**/api/v2/analytics/evaluations/aggregates/jobs** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents** (1 change)
+**/api/v2/analytics/evaluations/aggregates/jobs/{jobId}** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents** (1 change)
+**/api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}** (1 change)
+**/api/v2/analytics/flows/activity/query** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote** (1 change)
+**/api/v2/analytics/flows/aggregates/jobs** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings** (1 change)
+**/api/v2/analytics/flows/aggregates/jobs/{jobId}** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings** (1 change)
+**/api/v2/analytics/flows/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**GET /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
+**/api/v2/analytics/journeys/aggregates/jobs** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**DELETE /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
+**/api/v2/analytics/journeys/aggregates/jobs/{jobId}** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**PATCH /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
+**/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**GET /api/v2/messaging/supportedcontent** (1 change)
+**/api/v2/analytics/knowledge/aggregates/query** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**POST /api/v2/messaging/supportedcontent** (1 change)
+**/api/v2/analytics/knowledge/aggregates/jobs** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**GET /api/v2/organizations/embeddedintegration** (1 change)
+**/api/v2/analytics/knowledge/aggregates/jobs/{jobId}** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**PUT /api/v2/organizations/embeddedintegration** (1 change)
+**/api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**GET /api/v2/organizations/ipaddressauthentication** (1 change)
+**/api/v2/analytics/resolutions/aggregates/jobs** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation POST was added
 
-**PUT /api/v2/organizations/ipaddressauthentication** (1 change)
+**/api/v2/analytics/resolutions/aggregates/jobs/{jobId}** (2 changes)
 
-* Has been deprecated
+* Path was added
+* Operation GET was added
 
-**ApiUsageQuery** (1 change)
+**/api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Model ApiUsageQuery was removed
+* Path was added
+* Operation GET was added
 
-**TextMessageListing** (9 changes)
+**/api/v2/analytics/routing/activity/query** (2 changes)
 
-* Property pageSize was removed
-* Property pageNumber was removed
-* Property total was removed
-* Property firstUri was removed
-* Property pageCount was removed
-* Property lastUri was removed
-* Property selfUri was removed
-* Property nextUri was removed
-* Property previousUri was removed
+* Path was added
+* Operation POST was added
 
-**DocumentBodyListBlock** (1 change)
+**/api/v2/analytics/surveys/aggregates/jobs** (2 changes)
 
-* Property blocks was changed from DocumentContentBlock[] to DocumentListContentBlock[]
+* Path was added
+* Operation POST was added
 
+**/api/v2/analytics/surveys/aggregates/jobs/{jobId}** (2 changes)
 
-# Minor Changes (77 changes)
+* Path was added
+* Operation GET was added
 
-**/api/v2/organizations/authentication/settings** (3 changes)
+**/api/v2/analytics/surveys/aggregates/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/taskmanagement/aggregates/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/analytics/taskmanagement/aggregates/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/analytics/teams/activity/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/analytics/transcripts/aggregates/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/analytics/transcripts/aggregates/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/users/aggregates/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/analytics/users/aggregates/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/users/aggregates/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/users/activity/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/conversations/videos/{conferenceId}/details** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/flows/instances/{instanceId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/flows/instances/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/flows/instances/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/flows/instances/querycapabilities** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/flows/instances/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings** (2 changes)
+
+* Path was added
+* Operation PUT was added
+
+**/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/journey/sessions/{sessionId}/events** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/journey/outcomes/attributions/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/journey/outcomes/attributions/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/journey/outcomes/attributions/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/journey/sessions/{sessionId}/segments** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/journey/customers/{customerIdType}/{customerId}/sessions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/documentation/all/search** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/presence/definitions/{definitionId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/presence/definitions** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/routing/utilization/tags/{tagId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+
+**/api/v2/routing/utilization/tags/{tagId}/agents** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/routing/utilization/tags** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/routing/sms/phonenumbers/import** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/groups/dynamicsettings/preview** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/groups/{groupId}/dynamicsettings** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/telephony/providers/edges/extensionpools/divisionviews** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/tokens/timeout** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+
+**/api/v2/users/search/conversation/target** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/users/search/queuemembers/manage** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workbins/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workbins/{workbinId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/taskmanagement/workbins/{workbinId}/versions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/taskmanagement/workbins/{workbinId}/history** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/taskmanagement/workbins** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workitems** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workitems/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/disconnect** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/terminate** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/assignment** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/versions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/history** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workitems/schemas/{schemaId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/taskmanagement/workitems/schemas/{schemaId}/versions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/taskmanagement/workitems/schemas** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation PATCH was added
 
-**/api/v2/speechandtextanalytics/topics/general/status** (2 changes)
+**/api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/taskmanagement/workitems/{workitemId}/wrapups** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/usage/simplesearch** (2 changes)
+**/api/v2/taskmanagement/worktypes/{worktypeId}/statuses** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/usage/simplesearch/{executionId}/results** (2 changes)
+**/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/taskmanagement/worktypes/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/taskmanagement/worktypes/{worktypeId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/taskmanagement/worktypes/{worktypeId}/versions** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**ConversationAggregationQuery** (2 changes)
+**/api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}** (2 changes)
 
-* Enum value tActiveCallback was added to property metrics
-* Enum value tActiveCallbackComplete was added to property metrics
+* Path was added
+* Operation GET was added
 
-**ConversationAggregationView** (2 changes)
+**/api/v2/taskmanagement/worktypes/{worktypeId}/history** (2 changes)
 
-* Enum value tActiveCallback was added to property target
-* Enum value tActiveCallbackComplete was added to property target
+* Path was added
+* Operation GET was added
 
-**ConversationDetailQueryPredicate** (2 changes)
+**/api/v2/taskmanagement/worktypes** (2 changes)
 
-* Enum value tActiveCallback was added to property metric
-* Enum value tActiveCallbackComplete was added to property metric
+* Path was added
+* Operation POST was added
 
-**ViewFilter** (2 changes)
-
-* Enum value NoInputDisambiguation was added to property botRecognitionFailureReasonList
-* Enum value NoMatchDisambiguation was added to property botRecognitionFailureReasonList
-
-**ReportingExportJobResponse** (3 changes)
-
-* Enum value AGENT_ASSIST_PERFORMANCE_VIEW was added to property viewType
-* Enum value CONTACT_CENTER_PERFORMANCE_VIEW was added to property viewType
-* Optional property durationFormat was added
-
-**ReportingExportMetadataJobResponse** (2 changes)
-
-* Enum value AGENT_ASSIST_PERFORMANCE_VIEW was added to property viewType
-* Enum value CONTACT_CENTER_PERFORMANCE_VIEW was added to property viewType
-
-**ReportingExportJobRequest** (3 changes)
-
-* Enum value AGENT_ASSIST_PERFORMANCE_VIEW was added to property viewType
-* Enum value CONTACT_CENTER_PERFORMANCE_VIEW was added to property viewType
-* Optional property durationFormat was added
-
-**AuthorizationSettings** (2 changes)
-
-* analysisEnabled is no longer readonly
-* analysisDays is no longer readonly
-
-**QueueMessagingAddresses** (1 change)
-
-* Optional property openMessagingRecipient was added
-
-**AdjustableLiveSpeakerDetection** (1 change)
+**ActionAsyncAggregationQuery** (1 change)
 
 * Model was added
 
-**Call** (1 change)
-
-* Optional property disposition was added
-
-**Disposition** (1 change)
+**ActionAsyncAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**DispositionParameters** (1 change)
+**BotAsyncAggregationQuery** (1 change)
 
 * Model was added
 
-**Settings** (2 changes)
-
-* Optional property completeAcwWhenAgentTransitionsOffline was added
-* Optional property totalActiveCallback was added
-
-**CreateOutboundMessagingConversationRequest** (1 change)
-
-* Enum value open was added to property toAddressMessengerType
-
-**CallBasic** (1 change)
-
-* Optional property disposition was added
-
-**DocumentBodyImage** (1 change)
-
-* Optional property properties was added
-
-**DocumentBodyImageProperties** (1 change)
+**BotAsyncAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**DocumentBodyList** (1 change)
-
-* Optional property properties was added
-
-**DocumentBodyListBlock** (1 change)
-
-* Optional property properties was added
-
-**DocumentBodyListBlockProperties** (1 change)
+**ConversationAsyncAggregationQuery** (1 change)
 
 * Model was added
 
-**DocumentBodyListItemProperties** (1 change)
+**ConversationAsyncAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**DocumentBodyParagraph** (1 change)
-
-* Optional property properties was added
-
-**DocumentBodyParagraphProperties** (1 change)
+**ConversationActivityData** (1 change)
 
 * Model was added
 
-**DocumentBodyVideo** (1 change)
-
-* Optional property properties was added
-
-**DocumentBodyVideoProperties** (1 change)
+**ConversationActivityEntityData** (1 change)
 
 * Model was added
 
-**DocumentListContentBlock** (1 change)
+**ConversationActivityMetricValue** (1 change)
 
 * Model was added
 
-**DocumentText** (4 changes)
-
-* Enum value Strikethrough was added to property marks
-* Enum value Subscript was added to property marks
-* Enum value Superscript was added to property marks
-* Optional property properties was added
-
-**DocumentTextProperties** (1 change)
+**ConversationActivityResponse** (1 change)
 
 * Model was added
 
-**Miner** (2 changes)
-
-* Enum value pt-pt was added to property language
-* Enum value pt-br was added to property language
-
-**ApprovalNamespace** (1 change)
-
-* Enum value usage was added to property namespace
-
-**LimitChangeRequestDetails** (1 change)
-
-* Enum value usage was added to property namespace
-
-**StatusChange** (1 change)
-
-* Enum value usage was added to property namespace
-
-**ApiUsageClientQuery** (1 change)
+**ConversationActivityScoredAgent** (1 change)
 
 * Model was added
 
-**OrgAuthSettings** (1 change)
+**Subscription** (1 change)
 
 * Model was added
 
-**PasswordRequirements** (1 change)
+**ConversationActivityQuery** (1 change)
 
 * Model was added
 
-**EventPresence** (1 change)
-
-* Enum value Clear was added to property type
-
-**ComparisonPeriod** (1 change)
-
-* Optional property percentageBenefit was added
-
-**KpiResult** (1 change)
-
-* Optional property percentageBenefit was added
-
-**FlowVersion** (2 changes)
-
-* Optional property datePublished was added
-* Optional property datePublishedEnd was added
-
-**GeneralProgramJobRequest** (7 changes)
-
-* Enum value ar-001 was added to property dialect
-* Enum value ar-AE was added to property dialect
-* Enum value ar-BH was added to property dialect
-* Enum value ar-EG was added to property dialect
-* Enum value ar-IL was added to property dialect
-* Enum value ar-SA was added to property dialect
-* Enum value ar-TN was added to property dialect
-
-**UnifiedGeneralTopic** (1 change)
+**ConversationActivityQueryClause** (1 change)
 
 * Model was added
 
-**UnifiedGeneralTopicEntityListing** (1 change)
+**ConversationActivityQueryFilter** (1 change)
 
 * Model was added
 
-**ApiUsageOrganizationQuery** (1 change)
+**ConversationActivityQueryMetric** (1 change)
 
 * Model was added
 
-**ApiUsageSimpleSearch** (1 change)
+**ConversationActivityQueryPredicate** (1 change)
 
 * Model was added
 
-**LearningModuleInformStepRequest** (1 change)
+**EvaluationAsyncAggregationQuery** (1 change)
 
-* Enum value GenesysBuiltInCourse was added to property type
+* Model was added
+
+**EvaluationAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**FlowActivityData** (1 change)
+
+* Model was added
+
+**FlowActivityEntityData** (1 change)
+
+* Model was added
+
+**FlowActivityMetricValue** (1 change)
+
+* Model was added
+
+**FlowActivityResponse** (1 change)
+
+* Model was added
+
+**FlowActivityScoredAgent** (1 change)
+
+* Model was added
+
+**FlowActivityQuery** (1 change)
+
+* Model was added
+
+**FlowActivityQueryClause** (1 change)
+
+* Model was added
+
+**FlowActivityQueryFilter** (1 change)
+
+* Model was added
+
+**FlowActivityQueryMetric** (1 change)
+
+* Model was added
+
+**FlowActivityQueryPredicate** (1 change)
+
+* Model was added
+
+**FlowAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**FlowAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**JourneyAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**JourneyAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**KnowledgeAggregateDataContainer** (1 change)
+
+* Model was added
+
+**KnowledgeAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**KnowledgeAggregateQueryClause** (1 change)
+
+* Model was added
+
+**KnowledgeAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**KnowledgeAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**KnowledgeAggregationQuery** (1 change)
+
+* Model was added
+
+**KnowledgeAggregationView** (1 change)
+
+* Model was added
+
+**KnowledgeAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**KnowledgeAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**ResolutionAggregateDataContainer** (1 change)
+
+* Model was added
+
+**ResolutionAggregateQueryClause** (1 change)
+
+* Model was added
+
+**ResolutionAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**ResolutionAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**ResolutionAggregationView** (1 change)
+
+* Model was added
+
+**ResolutionAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**ResolutionAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**RoutingActivityData** (1 change)
+
+* Model was added
+
+**RoutingActivityEntityData** (1 change)
+
+* Model was added
+
+**RoutingActivityMetricValue** (1 change)
+
+* Model was added
+
+**RoutingActivityResponse** (1 change)
+
+* Model was added
+
+**RoutingActivityQuery** (1 change)
+
+* Model was added
+
+**RoutingActivityQueryClause** (1 change)
+
+* Model was added
+
+**RoutingActivityQueryFilter** (1 change)
+
+* Model was added
+
+**RoutingActivityQueryMetric** (1 change)
+
+* Model was added
+
+**RoutingActivityQueryPredicate** (1 change)
+
+* Model was added
+
+**SurveyAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**SurveyAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**TaskManagementAggregateDataContainer** (1 change)
+
+* Model was added
+
+**TaskManagementAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**TaskManagementAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**TaskManagementAggregateQueryClause** (1 change)
+
+* Model was added
+
+**TaskManagementAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**TaskManagementAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**TaskManagementAggregationQuery** (1 change)
+
+* Model was added
+
+**TaskManagementAggregationView** (1 change)
+
+* Model was added
+
+**TaskManagementAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**TeamActivityData** (1 change)
+
+* Model was added
+
+**TeamActivityEntityData** (1 change)
+
+* Model was added
+
+**TeamActivityMetricValue** (1 change)
+
+* Model was added
+
+**TeamActivityResponse** (1 change)
+
+* Model was added
+
+**TeamActivityQuery** (1 change)
+
+* Model was added
+
+**TeamActivityQueryClause** (1 change)
+
+* Model was added
+
+**TeamActivityQueryFilter** (1 change)
+
+* Model was added
+
+**TeamActivityQueryMetric** (1 change)
+
+* Model was added
+
+**TeamActivityQueryPredicate** (1 change)
+
+* Model was added
+
+**TranscriptAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**TranscriptAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**UserAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**UserAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**UserActivityData** (1 change)
+
+* Model was added
+
+**UserActivityEntityData** (1 change)
+
+* Model was added
+
+**UserActivityMetricValue** (1 change)
+
+* Model was added
+
+**UserActivityResponse** (1 change)
+
+* Model was added
+
+**UserActivityQuery** (1 change)
+
+* Model was added
+
+**UserActivityQueryClause** (1 change)
+
+* Model was added
+
+**UserActivityQueryFilter** (1 change)
+
+* Model was added
+
+**UserActivityQueryMetric** (1 change)
+
+* Model was added
+
+**UserActivityQueryPredicate** (1 change)
+
+* Model was added
+
+**SegmentAssignment** (1 change)
+
+* Model was added
+
+**SegmentAssignmentListing** (1 change)
+
+* Model was added
+
+**SegmentAssignmentSegment** (1 change)
+
+* Model was added
+
+**SegmentAssignmentSession** (1 change)
+
+* Model was added
+
+**ParticipantInfo** (1 change)
+
+* Model was added
+
+**VideoConferenceDetails** (1 change)
+
+* Model was added
+
+**ExecutionDataEntity** (1 change)
+
+* Model was added
+
+**ExecutionDataRequest** (1 change)
+
+* Model was added
+
+**CriteriaCategoryInfo** (1 change)
+
+* Model was added
+
+**QueryCriteria** (1 change)
+
+* Model was added
+
+**CriteriaGroup** (1 change)
+
+* Model was added
+
+**CriteriaItem** (1 change)
+
+* Model was added
+
+**CriteriaQuery** (1 change)
+
+* Model was added
+
+**GetFlowExecutionDataJobResult** (1 change)
+
+* Model was added
+
+**FlowsQueryCriteriaResponse** (1 change)
+
+* Model was added
+
+**FlowExecutionDataQueryResult** (1 change)
+
+* Model was added
+
+**FlowResultEntityListing** (1 change)
+
+* Model was added
+
+**AsyncJob** (1 change)
+
+* Model was added
+
+**ComplexVariableInfo** (1 change)
+
+* Model was added
+
+**NuanceApplication** (1 change)
+
+* Model was added
+
+**NuanceBot** (1 change)
+
+* Model was added
+
+**NuanceBotCredentials** (1 change)
+
+* Model was added
+
+**NuanceBotTransferNode** (1 change)
+
+* Model was added
+
+**NuanceBotVariable** (1 change)
+
+* Model was added
+
+**NuanceChannel** (1 change)
+
+* Model was added
+
+**NuanceEnvironment** (1 change)
+
+* Model was added
+
+**NuanceGeography** (1 change)
+
+* Model was added
+
+**NuanceOrganization** (1 change)
+
+* Model was added
+
+**NuanceBotEntityListing** (1 change)
+
+* Model was added
+
+**BotExecutionConfiguration** (1 change)
+
+* Model was added
+
+**NuanceBotLaunchSettings** (1 change)
+
+* Model was added
+
+**ActionEventActionMap** (1 change)
+
+* Model was added
+
+**AppEvent** (1 change)
+
+* Model was added
+
+**Event** (1 change)
+
+* Model was added
+
+**EventAction** (1 change)
+
+* Model was added
+
+**EventListing** (1 change)
+
+* Model was added
+
+**EventSession** (1 change)
+
+* Model was added
+
+**GenericActionEvent** (1 change)
+
+* Model was added
+
+**GenericEventAction** (1 change)
+
+* Model was added
+
+**OutcomeAchievedEvent** (1 change)
+
+* Model was added
+
+**OutcomeAchievedEventOutcome** (1 change)
+
+* Model was added
+
+**SegmentAssignedEvent** (1 change)
+
+* Model was added
+
+**SegmentAssignedEventSegment** (1 change)
+
+* Model was added
+
+**SegmentAssignmentEvent** (1 change)
+
+* Model was added
+
+**WebActionEvent** (1 change)
+
+* Model was added
+
+**WebEvent** (1 change)
+
+* Model was added
+
+**OutcomeAttributionAsyncResponse** (1 change)
+
+* Model was added
+
+**OutcomeAttributionListing** (1 change)
+
+* Model was added
+
+**OutcomeAttributionRequest** (1 change)
+
+* Model was added
+
+**Touchpoint** (1 change)
+
+* Model was added
+
+**OutcomeAttributionJobStateResponse** (1 change)
+
+* Model was added
+
+**OutcomeAttributionResponseListing** (1 change)
+
+* Model was added
+
+**OutcomeAttributionResultsResponse** (1 change)
+
+* Model was added
+
+**TouchpointResponse** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentContentUpload** (1 change)
+
+* Model was added
+
+**BulkResponse** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentBulkRemoveRequest** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentBulkUpdateEntity** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentBulkUpdateRequest** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentBulkVersionAddEntity** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentBulkVersionAddRequest** (1 change)
+
+* Model was added
+
+**LocalTime** (1 change)
+
+* Model was added
+
+**DocumentationV2SearchAggregation** (1 change)
+
+* Model was added
+
+**DocumentationV2SearchCriteria** (1 change)
+
+* Model was added
+
+**DocumentationV2SearchRequest** (1 change)
+
+* Model was added
+
+**OrganizationPresenceDefinitionEntityListing** (1 change)
+
+* Model was added
+
+**UtilizationTag** (1 change)
+
+* Model was added
+
+**UtilizationTagEntityListing** (1 change)
+
+* Model was added
+
+**CreateUtilizationTagRequest** (1 change)
+
+* Model was added
+
+**SmsPhoneNumberImport** (1 change)
+
+* Model was added
+
+**DynamicGroupQueryPreview** (1 change)
+
+* Model was added
+
+**DynamicGroupLanguageSkillCondition** (1 change)
+
+* Model was added
+
+**DynamicGroupQuery** (1 change)
+
+* Model was added
+
+**DynamicGroupRoutingSkillCondition** (1 change)
+
+* Model was added
+
+**DynamicGroupSkillCondition** (1 change)
+
+* Model was added
+
+**DynamicGroupDefinition** (1 change)
+
+* Model was added
+
+**ExtensionPoolDivisionView** (1 change)
+
+* Model was added
+
+**ExtensionPoolDivisionViewEntityListing** (1 change)
+
+* Model was added
+
+**IdleTokenTimeout** (1 change)
+
+* Model was added
+
+**Workbin** (1 change)
+
+* Model was added
+
+**WorkbinQueryEntityListing** (1 change)
+
+* Model was added
+
+**WorkbinQueryRequest** (1 change)
+
+* Model was added
+
+**WorkbinQuerySort** (1 change)
+
+* Model was added
+
+**WorkitemFilter** (1 change)
+
+* Model was added
+
+**WorkbinUpdate** (1 change)
+
+* Model was added
+
+**WorkbinVersion** (1 change)
+
+* Model was added
+
+**WorkbinVersionListing** (1 change)
+
+* Model was added
+
+**WorkbinChangeListing** (1 change)
+
+* Model was added
+
+**WorkbinDelta** (1 change)
+
+* Model was added
+
+**WorkitemsAttributeChangeInstant** (1 change)
+
+* Model was added
+
+**WorkitemsAttributeChangeString** (1 change)
+
+* Model was added
+
+**WorkitemsChangeWorkbinDelta** (1 change)
+
+* Model was added
+
+**WorkbinCreate** (1 change)
+
+* Model was added
+
+**AutoStatusTransitionDetail** (1 change)
+
+* Model was added
+
+**ExternalContactReference** (1 change)
+
+* Model was added
+
+**WorkbinReference** (1 change)
+
+* Model was added
+
+**Workitem** (1 change)
+
+* Model was added
+
+**WorkitemSchema** (1 change)
+
+* Model was added
+
+**WorkitemScoredAgent** (1 change)
+
+* Model was added
+
+**WorkitemStatusReference** (1 change)
+
+* Model was added
+
+**WorktypeReference** (1 change)
+
+* Model was added
+
+**WorkitemCreate** (1 change)
+
+* Model was added
+
+**WorkitemScoredAgentRequest** (1 change)
+
+* Model was added
+
+**WorkitemPostQueryEntityListing** (1 change)
+
+* Model was added
+
+**WorkitemQueryPostRequest** (1 change)
+
+* Model was added
+
+**WorkitemQuerySort** (1 change)
+
+* Model was added
+
+**WorkitemTerminate** (1 change)
+
+* Model was added
+
+**WorkitemUpdate** (1 change)
+
+* Model was added
+
+**WorkitemManualAssign** (1 change)
+
+* Model was added
+
+**WorkitemVersion** (1 change)
+
+* Model was added
+
+**WorkitemVersionListing** (1 change)
+
+* Model was added
+
+**WorkitemChangeListing** (1 change)
+
+* Model was added
+
+**WorkitemDelta** (1 change)
+
+* Model was added
+
+**WorkitemsAttributeChangeBoolean** (1 change)
+
+* Model was added
+
+**WorkitemsAttributeChangeInteger** (1 change)
+
+* Model was added
+
+**WorkitemsAttributeChangeList** (1 change)
+
+* Model was added
+
+**WorkitemsAttributeChangeMap** (1 change)
+
+* Model was added
+
+**WorkitemsAttributeChangeWorkitemStatusCategory** (1 change)
+
+* Model was added
+
+**WorkitemsChangeWorkitemDelta** (1 change)
+
+* Model was added
+
+**WorkitemReference** (1 change)
+
+* Model was added
+
+**WorkitemWrapup** (1 change)
+
+* Model was added
+
+**WrapupIdReference** (1 change)
+
+* Model was added
+
+**WorkitemWrapupUpdate** (1 change)
+
+* Model was added
+
+**WorkitemWrapupEntityListing** (1 change)
+
+* Model was added
+
+**WorkitemStatus** (1 change)
+
+* Model was added
+
+**Worktype** (1 change)
+
+* Model was added
+
+**WorkitemStatusCreate** (1 change)
+
+* Model was added
+
+**WorkitemStatusUpdate** (1 change)
+
+* Model was added
+
+**WorktypeQueryEntityListing** (1 change)
+
+* Model was added
+
+**WorktypeQueryRequest** (1 change)
+
+* Model was added
+
+**WorktypeQuerySort** (1 change)
+
+* Model was added
+
+**WorktypeUpdate** (1 change)
+
+* Model was added
+
+**WorktypeVersion** (1 change)
+
+* Model was added
+
+**WorktypeVersionListing** (1 change)
+
+* Model was added
+
+**WorkitemsChangeWorktypeDelta** (1 change)
+
+* Model was added
+
+**WorktypeChangeListing** (1 change)
+
+* Model was added
+
+**WorktypeDelta** (1 change)
+
+* Model was added
+
+**WorktypeCreate** (1 change)
+
+* Model was added
 
 
-# Point Changes (14 changes)
-
-**POST /api/v2/conversations/messages/agentless** (1 change)
-
-* Description was changed
-
-**GET /api/v2/knowledge/knowledgebases** (2 changes)
-
-* Description was changed for parameter limit
-* Description was changed for parameter pageSize
-
-**GET /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
-
-* Description was changed
-
-**DELETE /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
-
-* Description was changed
-
-**PATCH /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
-
-* Description was changed
-
-**GET /api/v2/messaging/supportedcontent** (1 change)
-
-* Description was changed
-
-**POST /api/v2/messaging/supportedcontent** (1 change)
-
-* Description was changed
-
-**GET /api/v2/organizations/embeddedintegration** (1 change)
-
-* Description was changed
-
-**PUT /api/v2/organizations/embeddedintegration** (1 change)
-
-* Description was changed
-
-**GET /api/v2/organizations/ipaddressauthentication** (1 change)
-
-* Description was changed
-
-**PUT /api/v2/organizations/ipaddressauthentication** (1 change)
-
-* Description was changed
-
-**GET /api/v2/organizations/whitelist** (1 change)
-
-* Summary was changed
-
-**PUT /api/v2/organizations/whitelist** (1 change)
-
-* Summary was changed
+# Point Changes (0 changes)

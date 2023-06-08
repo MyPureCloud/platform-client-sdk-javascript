@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -88,7 +88,7 @@ class QualityApi {
 	 * Delete an evaluation form.
 	 * 
 	 * @param {String} formId Form ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	deleteQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
@@ -151,6 +151,118 @@ class QualityApi {
 			'DELETE', 
 			{ 'formId': formId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for evaluation aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * Preview Endpoint
+	 */
+	getAnalyticsEvaluationsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * Preview Endpoint
+	 */
+	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for survey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * Preview Endpoint
+	 */
+	getAnalyticsSurveysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/surveys/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * Preview Endpoint
+	 */
+	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/surveys/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
 			{  },
 			{  },
 			null, 
@@ -457,7 +569,7 @@ class QualityApi {
 	 * Get an evaluation form
 	 * 
 	 * @param {String} formId Form ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	getQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
@@ -486,7 +598,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-     	 * @deprecated
+     * @deprecated
 	 */
 	getQualityFormVersions(formId, opts) { 
 		opts = opts || {};
@@ -522,7 +634,7 @@ class QualityApi {
 	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
-     	 * @deprecated
+     * @deprecated
 	 */
 	getQualityForms(opts) { 
 		opts = opts || {};
@@ -798,7 +910,7 @@ class QualityApi {
 	 * Get the published evaluation forms.
 	 * 
 	 * @param {String} formId Form ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	getQualityPublishedform(formId) { 
 		// verify the required parameter 'formId' is set
@@ -828,7 +940,7 @@ class QualityApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
-     	 * @deprecated
+     * @deprecated
 	 */
 	getQualityPublishedforms(opts) { 
 		opts = opts || {};
@@ -1033,6 +1145,32 @@ class QualityApi {
 	}
 
 	/**
+	 * Query for evaluation aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * Preview Endpoint
+	 */
+	postAnalyticsEvaluationsAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/evaluations/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for evaluation aggregates
 	 * 
 	 * @param {Object} body query
@@ -1045,6 +1183,32 @@ class QualityApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/evaluations/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for survey aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * Preview Endpoint
+	 */
+	postAnalyticsSurveysAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/surveys/aggregates/jobs', 
 			'POST', 
 			{  },
 			{  },
@@ -1224,7 +1388,7 @@ class QualityApi {
 	 * Create an evaluation form.
 	 * 
 	 * @param {Object} body Evaluation form
-     	 * @deprecated
+     * @deprecated
 	 */
 	postQualityForms(body) { 
 		// verify the required parameter 'body' is set
@@ -1300,7 +1464,7 @@ class QualityApi {
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
-     	 * @deprecated
+     * @deprecated
 	 */
 	postQualityPublishedforms(body) { 
 		// verify the required parameter 'body' is set
@@ -1471,7 +1635,7 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body Evaluation form
-     	 * @deprecated
+     * @deprecated
 	 */
 	putQualityForm(formId, body) { 
 		// verify the required parameter 'formId' is set

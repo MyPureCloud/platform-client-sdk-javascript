@@ -12,6 +12,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteJourneyOutcome**](JourneyApi.html#deleteJourneyOutcome) | **DELETE** /api/v2/journey/outcomes/{outcomeId} | Delete an outcome.
 [**deleteJourneyOutcomesPredictor**](JourneyApi.html#deleteJourneyOutcomesPredictor) | **DELETE** /api/v2/journey/outcomes/predictors/{predictorId} | Delete an outcome predictor.
 [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | **DELETE** /api/v2/journey/segments/{segmentId} | Delete a segment.
+[**getAnalyticsJourneysAggregatesJob**](JourneyApi.html#getAnalyticsJourneysAggregatesJob) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Get status for async query for journey aggregates
+[**getAnalyticsJourneysAggregatesJobResults**](JourneyApi.html#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | **GET** /api/v2/journey/actionmaps/{actionMapId} | Retrieve a single action map.
 [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | **GET** /api/v2/journey/actionmaps | Retrieve all action maps.
 [**getJourneyActionmapsEstimatesJob**](JourneyApi.html#getJourneyActionmapsEstimatesJob) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId} | Get status of job.
@@ -20,24 +22,31 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | **GET** /api/v2/journey/actiontargets | Retrieve all action targets.
 [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | **GET** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template.
 [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | **GET** /api/v2/journey/actiontemplates | Retrieve all action templates.
+[**getJourneyCustomerCustomerIdSessions**](JourneyApi.html#getJourneyCustomerCustomerIdSessions) | **GET** /api/v2/journey/customers/{customerIdType}/{customerId}/sessions | Retrieve all sessions for a given customer.
 [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | **GET** /api/v2/journey/outcomes/{outcomeId} | Retrieve a single outcome.
 [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | **GET** /api/v2/journey/outcomes | Retrieve all outcomes.
+[**getJourneyOutcomesAttributionsJob**](JourneyApi.html#getJourneyOutcomesAttributionsJob) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId} | Get job status.
+[**getJourneyOutcomesAttributionsJobResults**](JourneyApi.html#getJourneyOutcomesAttributionsJobResults) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId}/results | Get outcome attribution entities from completed job.
 [**getJourneyOutcomesPredictor**](JourneyApi.html#getJourneyOutcomesPredictor) | **GET** /api/v2/journey/outcomes/predictors/{predictorId} | Retrieve a single outcome predictor.
 [**getJourneyOutcomesPredictors**](JourneyApi.html#getJourneyOutcomesPredictors) | **GET** /api/v2/journey/outcomes/predictors | Retrieve all outcome predictors.
 [**getJourneySegment**](JourneyApi.html#getJourneySegment) | **GET** /api/v2/journey/segments/{segmentId} | Retrieve a single segment.
 [**getJourneySegments**](JourneyApi.html#getJourneySegments) | **GET** /api/v2/journey/segments | Retrieve all segments.
 [**getJourneySession**](JourneyApi.html#getJourneySession) | **GET** /api/v2/journey/sessions/{sessionId} | Retrieve a single session.
+[**getJourneySessionEvents**](JourneyApi.html#getJourneySessionEvents) | **GET** /api/v2/journey/sessions/{sessionId}/events | Retrieve all events for a given session.
 [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | **GET** /api/v2/journey/sessions/{sessionId}/outcomescores | Retrieve latest outcome score associated with a session for all outcomes.
+[**getJourneySessionSegments**](JourneyApi.html#getJourneySessionSegments) | **GET** /api/v2/journey/sessions/{sessionId}/segments | Retrieve segment assignments by session ID.
 [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
 [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
 [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
 [**patchJourneyOutcome**](JourneyApi.html#patchJourneyOutcome) | **PATCH** /api/v2/journey/outcomes/{outcomeId} | Update an outcome.
 [**patchJourneySegment**](JourneyApi.html#patchJourneySegment) | **PATCH** /api/v2/journey/segments/{segmentId} | Update a segment.
+[**postAnalyticsJourneysAggregatesJobs**](JourneyApi.html#postAnalyticsJourneysAggregatesJobs) | **POST** /api/v2/analytics/journeys/aggregates/jobs | Query for journey aggregates asynchronously
 [**postAnalyticsJourneysAggregatesQuery**](JourneyApi.html#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
 [**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | **POST** /api/v2/journey/actionmaps | Create an action map.
 [**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | **POST** /api/v2/journey/actionmaps/estimates/jobs | Query for estimates
 [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | **POST** /api/v2/journey/actiontemplates | Create a single action template.
 [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | **POST** /api/v2/journey/outcomes | Create an outcome.
+[**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | **POST** /api/v2/journey/outcomes/attributions/jobs | Create Outcome Attributions
 [**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | **POST** /api/v2/journey/outcomes/predictors | Create an outcome predictor.
 [**postJourneySegments**](JourneyApi.html#postJourneySegments) | **POST** /api/v2/journey/segments | Create a segment.
 {: class="table table-striped"}
@@ -295,6 +304,110 @@ apiInstance.deleteJourneySegment(segmentId)
 ### Return type
 
 void (no response body)
+
+<a name="getAnalyticsJourneysAggregatesJob"></a>
+
+# AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
+
+Get status for async query for journey aggregates
+
+Requires ANY permissions:
+
+* analytics:journeyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsJourneysAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsJourneysAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsJourneysAggregatesJobResults"></a>
+
+# JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+Requires ANY permissions:
+
+* analytics:journeyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsJourneysAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsJourneysAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**JourneyAsyncAggregateQueryResponse**
 
 <a name="getJourneyActionmap"></a>
 
@@ -730,6 +843,64 @@ apiInstance.getJourneyActiontemplates(opts)
 
 **ActionTemplateListing**
 
+<a name="getJourneyCustomerCustomerIdSessions"></a>
+
+# SessionListing getJourneyCustomerCustomerIdSessions(customerIdType, customerId, opts)
+
+
+GET /api/v2/journey/customers/{customerIdType}/{customerId}/sessions
+
+Retrieve all sessions for a given customer.
+
+Requires ANY permissions:
+
+* journey:session:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let customerIdType = "customerIdType_example"; // String | Type of ID used to identify customer (e.g. email, cookie, and phone).
+let customerId = "customerId_example"; // String | Primary identifier of the customer in the source of the session.
+let opts = { 
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example" // String | The cursor that points to the end of the set of entities that has been returned.
+};
+
+apiInstance.getJourneyCustomerCustomerIdSessions(customerIdType, customerId, opts)
+  .then((data) => {
+    console.log(`getJourneyCustomerCustomerIdSessions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyCustomerCustomerIdSessions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customerIdType** | **String** | Type of ID used to identify customer (e.g. email, cookie, and phone). |  |
+ **customerId** | **String** | Primary identifier of the customer in the source of the session. |  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SessionListing**
+
 <a name="getJourneyOutcome"></a>
 
 # Outcome getJourneyOutcome(outcomeId)
@@ -841,6 +1012,106 @@ apiInstance.getJourneyOutcomes(opts)
 ### Return type
 
 **OutcomeListing**
+
+<a name="getJourneyOutcomesAttributionsJob"></a>
+
+# OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(jobId)
+
+
+GET /api/v2/journey/outcomes/attributions/jobs/{jobId}
+
+Get job status.
+
+Requires ALL permissions:
+
+* journey:outcomeAttributionJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let jobId = "jobId_example"; // String | ID of the job.
+
+apiInstance.getJourneyOutcomesAttributionsJob(jobId)
+  .then((data) => {
+    console.log(`getJourneyOutcomesAttributionsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyOutcomesAttributionsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OutcomeAttributionJobStateResponse**
+
+<a name="getJourneyOutcomesAttributionsJobResults"></a>
+
+# OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(jobId)
+
+
+GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results
+
+Get outcome attribution entities from completed job.
+
+Requires ALL permissions:
+
+* journey:outcomeAttribution:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let jobId = "jobId_example"; // String | ID of the job.
+
+apiInstance.getJourneyOutcomesAttributionsJobResults(jobId)
+  .then((data) => {
+    console.log(`getJourneyOutcomesAttributionsJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyOutcomesAttributionsJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OutcomeAttributionResponseListing**
 
 <a name="getJourneyOutcomesPredictor"></a>
 
@@ -1102,6 +1373,62 @@ apiInstance.getJourneySession(sessionId)
 
 **Session**
 
+<a name="getJourneySessionEvents"></a>
+
+# EventListing getJourneySessionEvents(sessionId, opts)
+
+
+GET /api/v2/journey/sessions/{sessionId}/events
+
+Retrieve all events for a given session.
+
+Requires ANY permissions:
+
+* journey:event:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let sessionId = "sessionId_example"; // String | System-generated UUID that represents the session the event is a part of.
+let opts = { 
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example" // String | The cursor that points to the end of the set of entities that has been returned.
+};
+
+apiInstance.getJourneySessionEvents(sessionId, opts)
+  .then((data) => {
+    console.log(`getJourneySessionEvents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneySessionEvents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | System-generated UUID that represents the session the event is a part of. |  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EventListing**
+
 <a name="getJourneySessionOutcomescores"></a>
 
 # OutcomeScoresResult getJourneySessionOutcomescores(sessionId)
@@ -1151,6 +1478,66 @@ apiInstance.getJourneySessionOutcomescores(sessionId)
 ### Return type
 
 **OutcomeScoresResult**
+
+<a name="getJourneySessionSegments"></a>
+
+# SegmentAssignmentListing getJourneySessionSegments(sessionId, opts)
+
+
+GET /api/v2/journey/sessions/{sessionId}/segments
+
+Retrieve segment assignments by session ID.
+
+Requires ANY permissions:
+
+* journey:segmentassignment:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let sessionId = "sessionId_example"; // String | ID of the session to query for segment assignments.
+let opts = { 
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'segmentScope': "segmentScope_example", // String | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
+  'assignmentState': "assignmentState_example" // String | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
+};
+
+apiInstance.getJourneySessionSegments(sessionId, opts)
+  .then((data) => {
+    console.log(`getJourneySessionSegments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneySessionSegments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | ID of the session to query for segment assignments. |  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **segmentScope** | **String** | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. | [optional] <br />**Values**: Session, Customer |
+ **assignmentState** | **String** | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. | [optional] <br />**Values**: Assigned, Unassigned |
+{: class="table table-striped"}
+
+### Return type
+
+**SegmentAssignmentListing**
 
 <a name="patchJourneyActionmap"></a>
 
@@ -1422,6 +1809,56 @@ apiInstance.patchJourneySegment(segmentId, opts)
 
 **JourneySegment**
 
+<a name="postAnalyticsJourneysAggregatesJobs"></a>
+
+# AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
+
+
+POST /api/v2/analytics/journeys/aggregates/jobs
+
+Query for journey aggregates asynchronously
+
+Requires ANY permissions:
+
+* analytics:journeyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsJourneysAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsJourneysAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsJourneysAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
+
 <a name="postAnalyticsJourneysAggregatesQuery"></a>
 
 # JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
@@ -1677,6 +2114,58 @@ apiInstance.postJourneyOutcomes(opts)
 ### Return type
 
 **Outcome**
+
+<a name="postJourneyOutcomesAttributionsJobs"></a>
+
+# OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(opts)
+
+
+POST /api/v2/journey/outcomes/attributions/jobs
+
+Create Outcome Attributions
+
+Requires ANY permissions:
+
+* journey:outcomeAttributionJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  'body': {} // Object | outcome attribution request
+};
+
+apiInstance.postJourneyOutcomesAttributionsJobs(opts)
+  .then((data) => {
+    console.log(`postJourneyOutcomesAttributionsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyOutcomesAttributionsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | outcome attribution request | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**OutcomeAttributionAsyncResponse**
 
 <a name="postJourneyOutcomesPredictors"></a>
 

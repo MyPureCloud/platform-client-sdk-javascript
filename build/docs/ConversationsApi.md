@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
 [**deleteConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#deleteConversationsMessagingSupportedcontentSupportedContentId) | **DELETE** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Delete a supported content profile
 [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
+[**getAnalyticsConversationsAggregatesJob**](ConversationsApi.html#getAnalyticsConversationsAggregatesJob) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Get status for async query for conversation aggregates
+[**getAnalyticsConversationsAggregatesJobResults**](ConversationsApi.html#getAnalyticsConversationsAggregatesJobResults) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
 [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
@@ -93,6 +95,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsScreenshareParticipantCommunicationWrapup) | **GET** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsSettings**](ConversationsApi.html#getConversationsSettings) | **GET** /api/v2/conversations/settings | Get Settings
 [**getConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsSocialParticipantCommunicationWrapup) | **GET** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsVideoDetails**](ConversationsApi.html#getConversationsVideoDetails) | **GET** /api/v2/conversations/videos/{conferenceId}/details | Get video conference details (e.g. the current number of active participants).
 [**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsVideoParticipantCommunicationWrapup) | **GET** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -132,6 +135,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#patchConversationsMessagingSupportedcontentSupportedContentId) | **PATCH** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Update a supported content profile
 [**patchConversationsSettings**](ConversationsApi.html#patchConversationsSettings) | **PATCH** /api/v2/conversations/settings | Update Settings
 [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
+[**postAnalyticsConversationsActivityQuery**](ConversationsApi.html#postAnalyticsConversationsActivityQuery) | **POST** /api/v2/analytics/conversations/activity/query | Query for conversation activity observations
+[**postAnalyticsConversationsAggregatesJobs**](ConversationsApi.html#postAnalyticsConversationsAggregatesJobs) | **POST** /api/v2/analytics/conversations/aggregates/jobs | Query for conversation aggregates asynchronously
 [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
 [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
@@ -177,6 +182,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageCommunicationTyping**](ConversationsApi.html#postConversationsMessageCommunicationTyping) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event
 [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
 [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsMessageParticipantCommunicationWrapup) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsMessageParticipantMonitor**](ConversationsApi.html#postConversationsMessageParticipantMonitor) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
 [**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | **POST** /api/v2/conversations/messages/agentless | Send an agentless outbound message
@@ -816,6 +822,110 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 ### Return type
 
 **AnalyticsConversationWithoutAttributes**
+
+<a name="getAnalyticsConversationsAggregatesJob"></a>
+
+# AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
+
+Get status for async query for conversation aggregates
+
+Requires ANY permissions:
+
+* analytics:conversationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsConversationsAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsConversationsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsConversationsAggregatesJobResults"></a>
+
+# ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+Requires ANY permissions:
+
+* analytics:conversationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsConversationsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsConversationsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ConversationAsyncAggregateQueryResponse**
 
 <a name="getAnalyticsConversationsDetails"></a>
 
@@ -4644,6 +4754,56 @@ apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId,
 
 **AssignedWrapupCode**
 
+<a name="getConversationsVideoDetails"></a>
+
+# VideoConferenceDetails getConversationsVideoDetails(conferenceId)
+
+
+GET /api/v2/conversations/videos/{conferenceId}/details
+
+Get video conference details (e.g. the current number of active participants).
+
+Requires ANY permissions:
+
+* video:video:access
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conferenceId = "conferenceId_example"; // String | conferenceId
+
+apiInstance.getConversationsVideoDetails(conferenceId)
+  .then((data) => {
+    console.log(`getConversationsVideoDetails success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsVideoDetails');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conferenceId** | **String** | conferenceId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**VideoConferenceDetails**
+
 <a name="getConversationsVideoParticipantCommunicationWrapup"></a>
 
 # AssignedWrapupCode getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -6719,6 +6879,112 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 ### Return type
 
 **PropertyIndexRequest**
+
+<a name="postAnalyticsConversationsActivityQuery"></a>
+
+# ConversationActivityResponse postAnalyticsConversationsActivityQuery(body, opts)
+
+
+POST /api/v2/analytics/conversations/activity/query
+
+Query for conversation activity observations
+
+Requires ANY permissions:
+
+* analytics:queueObservation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'pageSize': 3.4, // Number | The desired page size
+  'pageNumber': 3.4 // Number | The desired page number
+};
+
+apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsConversationsActivityQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationsActivityQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **pageSize** | **Number** | The desired page size | [optional]  |
+ **pageNumber** | **Number** | The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ConversationActivityResponse**
+
+<a name="postAnalyticsConversationsAggregatesJobs"></a>
+
+# AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
+
+
+POST /api/v2/analytics/conversations/aggregates/jobs
+
+Query for conversation aggregates asynchronously
+
+Requires ANY permissions:
+
+* analytics:conversationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsConversationsAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsConversationsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
 
 <a name="postAnalyticsConversationsAggregatesQuery"></a>
 
@@ -9095,6 +9361,58 @@ apiInstance.postConversationsMessageParticipantCommunicationWrapup(conversationI
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postConversationsMessageParticipantMonitor"></a>
+
+# void postConversationsMessageParticipantMonitor(conversationId, participantId)
+
+
+POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor
+
+Listen in on the conversation from the point of view of a given participant.
+
+Requires ANY permissions:
+
+* conversation:message:monitor
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+
+apiInstance.postConversationsMessageParticipantMonitor(conversationId, participantId)
+  .then(() => {
+    console.log('postConversationsMessageParticipantMonitor returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageParticipantMonitor');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
 ### Return type

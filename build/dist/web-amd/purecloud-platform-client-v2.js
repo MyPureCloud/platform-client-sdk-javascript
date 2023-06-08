@@ -399,7 +399,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 	class ApiClient {
 		/**
@@ -1485,7 +1485,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -1799,7 +1799,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -1890,6 +1890,62 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get status for async query for action aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsActionsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsActionsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/actions/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsActionsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsActionsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/actions/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get Reporting Turns.
 		 * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
 		 * @param {String} botFlowId ID of the bot flow.
@@ -1924,6 +1980,62 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get status for async query for bot aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsBotsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsBotsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/bots/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsBotsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsBotsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/bots/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get a conversation by id
 		 * 
 		 * @param {String} conversationId conversationId
@@ -1939,6 +2051,62 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for conversation aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsConversationsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/conversations/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/conversations/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
 				{  },
 				{  },
 				null, 
@@ -2058,6 +2226,230 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for evaluation aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsEvaluationsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for Flow aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsFlowsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsFlowsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for journey aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsJourneysAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/journeys/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for knowledge aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsKnowledgeAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsKnowledgeAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/knowledge/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsKnowledgeAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsKnowledgeAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
 				{  },
 				{  },
 				null, 
@@ -2363,6 +2755,286 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get status for async query for resolution aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsResolutionsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsResolutionsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/resolutions/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsResolutionsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsResolutionsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for survey aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsSurveysAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/surveys/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/surveys/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for task management aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsTaskmanagementAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsTaskmanagementAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async task management query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsTaskmanagementAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for transcript aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsTranscriptsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsTranscriptsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/transcripts/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsTranscriptsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsTranscriptsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for user aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsUsersAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/users/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/users/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get status for async query for user details
 		 * 
 		 * @param {String} jobId jobId
@@ -2463,6 +3135,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for action aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsActionsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsActionsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/actions/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for action aggregates
 		 * 
 		 * @param {Object} body query
@@ -2475,6 +3173,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/analytics/actions/aggregates/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for bot aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsBotsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsBotsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/bots/aggregates/jobs', 
 				'POST', 
 				{  },
 				{  },
@@ -2532,6 +3256,63 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/analytics/conversations/{conversationId}/details/properties', 
 				'POST', 
 				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for conversation activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsConversationsActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsConversationsActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/conversations/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for conversation aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsConversationsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/conversations/aggregates/jobs', 
+				'POST', 
+				{  },
 				{  },
 				{  },
 				{  },
@@ -2643,6 +3424,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for evaluation aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsEvaluationsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/evaluations/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for evaluation aggregates
 		 * 
 		 * @param {Object} body query
@@ -2655,6 +3462,63 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/analytics/evaluations/aggregates/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for flow activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsFlowsActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsFlowsActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for flow aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsFlowsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsFlowsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/aggregates/jobs', 
 				'POST', 
 				{  },
 				{  },
@@ -2718,6 +3582,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for journey aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsJourneysAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/journeys/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for journey aggregates
 		 * 
 		 * @param {Object} body query
@@ -2730,6 +3620,58 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/analytics/journeys/aggregates/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for knowledge aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsKnowledgeAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsKnowledgeAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/knowledge/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for knowledge aggregates
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsKnowledgeAggregatesQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsKnowledgeAggregatesQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/knowledge/aggregates/query', 
 				'POST', 
 				{  },
 				{  },
@@ -2843,6 +3785,89 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for resolution aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsResolutionsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsResolutionsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/resolutions/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for user activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsRoutingActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsRoutingActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/routing/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for survey aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsSurveysAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/surveys/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for survey aggregates
 		 * 
 		 * @param {Object} body query
@@ -2868,6 +3893,115 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for task management aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsTaskmanagementAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsTaskmanagementAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/taskmanagement/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for task management aggregates
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsTaskmanagementAggregatesQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsTaskmanagementAggregatesQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/taskmanagement/aggregates/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for team activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsTeamsActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsTeamsActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/teams/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for transcript aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsTranscriptsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsTranscriptsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/transcripts/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for transcript aggregates
 		 * 
 		 * @param {Object} body query
@@ -2880,6 +4014,63 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/analytics/transcripts/aggregates/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for user activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsUsersActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsUsersActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/users/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for user aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsUsersAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsUsersAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/users/aggregates/jobs', 
 				'POST', 
 				{  },
 				{  },
@@ -3053,7 +4244,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -4821,6 +6012,87 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+		 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+		 * @param {String} instanceId Instance ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.expand Expand various details.
+		 * Preview Endpoint
+		 */
+		getFlowsInstance(instanceId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'instanceId' is set
+			if (instanceId === undefined || instanceId === null) {
+				throw 'Missing the required parameter "instanceId" when calling getFlowsInstance';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/flows/instances/{instanceId}', 
+				'GET', 
+				{ 'instanceId': instanceId },
+				{ 'expand': opts['expand'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the status and/or results of an asynchronous flow execution data retrieval job
+		 * 
+		 * @param {String} jobId The asynchronous job ID
+		 * Preview Endpoint
+		 */
+		getFlowsInstancesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getFlowsInstancesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/flows/instances/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Retrieve a list of capabilities that the org can use to query for execution data
+		 * Returns the queryable parameters that can be used to build a query for execution data.
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.expand Expand various query types.
+		 * Preview Endpoint
+		 */
+		getFlowsInstancesQuerycapabilities(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/flows/instances/querycapabilities', 
+				'GET', 
+				{  },
+				{ 'expand': opts['expand'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Fetch Architect Job Status
 		 * 
 		 * @param {String} jobId Job ID
@@ -5652,6 +6924,66 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Start a process (job) that will prepare a list of execution data IDs for download.
+		 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+		 * @param {Object} body Requested Flow Ids
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.expand Expand various query types.
+		 * Preview Endpoint
+		 */
+		postFlowsInstancesJobs(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postFlowsInstancesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/flows/instances/jobs', 
+				'POST', 
+				{  },
+				{ 'expand': opts['expand'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query the database of existing flow histories to look for particular flow criteria
+		 * Returns a list of matching flow histories up to 200 max.
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.indexOnly indexes only
+		 * Preview Endpoint
+		 */
+		postFlowsInstancesQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postFlowsInstancesQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/flows/instances/query', 
+				'POST', 
+				{  },
+				{ 'indexOnly': opts['indexOnly'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 		 * 
 		 */
@@ -6101,7 +7433,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -6272,7 +7604,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -6513,7 +7845,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.name Search term to filter by division name
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getAuthorizationDivisionspermittedMe(permission, opts) { 
 			opts = opts || {};
@@ -6575,7 +7907,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {Number} opts.pageSize Page size (default to 25)
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
 			opts = opts || {};
@@ -7503,7 +8835,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -7583,7 +8915,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -7653,7 +8985,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -7671,7 +9003,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Get Chat Settings.
 		 * This route is deprecated, please use /chats/settings instead
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getChatSettings() { 
 
@@ -7713,7 +9045,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Patch Chat Settings.
 		 * This route is deprecated, please use /chats/settings instead
 		 * @param {Object} body Chat
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		patchChatSettings(body) { 
 			// verify the required parameter 'body' is set
@@ -7764,7 +9096,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update Chat Settings.
 		 * This route is deprecated, please use /chats/settings instead
 		 * @param {Object} body Chat
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		putChatSettings(body) { 
 			// verify the required parameter 'body' is set
@@ -7817,7 +9149,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -8394,7 +9726,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -8681,7 +10013,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {String} opts.sortBy name or dateCreated
 		 * @param {String} opts.sortOrder ascending or descending (default to ascending)
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getContentmanagementDocuments(workspaceId, opts) { 
 			opts = opts || {};
@@ -9535,7 +10867,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -9866,6 +11198,62 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for conversation aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsConversationsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/conversations/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/conversations/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
 				{  },
 				{  },
 				null, 
@@ -11974,6 +13362,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get video conference details (e.g. the current number of active participants).
+		 * 
+		 * @param {String} conferenceId conferenceId
+		 * Preview Endpoint
+		 */
+		getConversationsVideoDetails(conferenceId) { 
+			// verify the required parameter 'conferenceId' is set
+			if (conferenceId === undefined || conferenceId === null) {
+				throw 'Missing the required parameter "conferenceId" when calling getConversationsVideoDetails';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/videos/{conferenceId}/details', 
+				'GET', 
+				{ 'conferenceId': conferenceId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get the wrap-up for this conversation communication. 
 		 * 
 		 * @param {String} conversationId conversationId
@@ -13274,6 +14688,63 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/analytics/conversations/{conversationId}/details/properties', 
 				'POST', 
 				{ 'conversationId': conversationId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for conversation activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsConversationsActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsConversationsActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/conversations/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for conversation aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsConversationsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/conversations/aggregates/jobs', 
+				'POST', 
+				{  },
 				{  },
 				{  },
 				{  },
@@ -14679,6 +16150,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Listen in on the conversation from the point of view of a given participant.
+		 * 
+		 * @param {String} conversationId conversationId
+		 * @param {String} participantId participantId
+		 * Preview Endpoint
+		 */
+		postConversationsMessageParticipantMonitor(conversationId, participantId) { 
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantMonitor';
+			}
+			// verify the required parameter 'participantId' is set
+			if (participantId === undefined || participantId === null) {
+				throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantMonitor';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor', 
+				'POST', 
+				{ 'conversationId': conversationId,'participantId': participantId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Replace this participant with the specified user and/or address
 		 * 
 		 * @param {String} conversationId conversationId
@@ -15626,7 +17128,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -15712,7 +17214,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -15764,7 +17266,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -15860,7 +17362,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -17818,7 +19320,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -17989,7 +19491,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -18003,6 +19505,119 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			this.apiClient = apiClient || ApiClient.instance;
 		}
 
+
+		/**
+		 * Get status for async query for Flow aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsFlowsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsFlowsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for flow activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsFlowsActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsFlowsActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for flow aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsFlowsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsFlowsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
 
 		/**
 		 * Query for flow aggregates
@@ -18060,7 +19675,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -20146,7 +21761,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -20276,7 +21891,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -20407,7 +22022,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -20862,7 +22477,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -20890,6 +22505,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/groups/{groupId}', 
+				'DELETE', 
+				{ 'groupId': groupId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Remove dynamic group definition
+		 * 
+		 * @param {String} groupId Group ID
+		 * Preview Endpoint
+		 */
+		deleteGroupDynamicsettings(groupId) { 
+			// verify the required parameter 'groupId' is set
+			if (groupId === undefined || groupId === null) {
+				throw 'Missing the required parameter "groupId" when calling deleteGroupDynamicsettings';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/groups/{groupId}/dynamicsettings', 
 				'DELETE', 
 				{ 'groupId': groupId },
 				{  },
@@ -20936,7 +22577,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Fetch field config for an entity type
 		 * 
 		 * @param {Object} type Field type
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getFieldconfig(type) { 
 			// verify the required parameter 'type' is set
@@ -20971,6 +22612,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/groups/{groupId}', 
+				'GET', 
+				{ 'groupId': groupId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get dynamic group definition
+		 * 
+		 * @param {String} groupId Group ID
+		 * Preview Endpoint
+		 */
+		getGroupDynamicsettings(groupId) { 
+			// verify the required parameter 'groupId' is set
+			if (groupId === undefined || groupId === null) {
+				throw 'Missing the required parameter "groupId" when calling getGroupDynamicsettings';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/groups/{groupId}/dynamicsettings', 
 				'GET', 
 				{ 'groupId': groupId },
 				{  },
@@ -21046,7 +22713,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} groupId groupId
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getGroupProfile(groupId, opts) { 
 			opts = opts || {};
@@ -21136,7 +22803,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Array.<String>} opts.id id
 		 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getProfilesGroups(opts) { 
 			opts = opts || {};
@@ -21212,6 +22879,33 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Preview the number of users selected for a dynamic group definition query
+		 * 
+		 * @param {Object} body Group query to preview
+	     * @deprecated
+		 * Preview Endpoint
+		 */
+		postGroupsDynamicsettingsPreview(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postGroupsDynamicsettingsPreview';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/groups/dynamicsettings/preview', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Search groups
 		 * 
 		 * @param {Object} body Search request options
@@ -21265,13 +22959,44 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			);
 		}
 
+		/**
+		 * Create / Update dynamic group definition
+		 * 
+		 * @param {String} groupId Group ID
+		 * @param {Object} body Create/Update dynamic groups
+		 * Preview Endpoint
+		 */
+		putGroupDynamicsettings(groupId, body) { 
+			// verify the required parameter 'groupId' is set
+			if (groupId === undefined || groupId === null) {
+				throw 'Missing the required parameter "groupId" when calling putGroupDynamicsettings';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putGroupDynamicsettings';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/groups/{groupId}/dynamicsettings', 
+				'PUT', 
+				{ 'groupId': groupId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
 	}
 
 	class IdentityProviderApi {
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -22027,7 +23752,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -22194,7 +23919,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -23087,6 +24812,208 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a Nuance bot in the specified Integration
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {String} botId The Nuance bot ID to get
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.expand expand
+		 * @param {Object} opts.targetChannel targetChannel
+		 * Preview Endpoint
+		 */
+		getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBot';
+			}
+			// verify the required parameter 'botId' is set
+			if (botId === undefined || botId === null) {
+				throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBot';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}', 
+				'GET', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId,'botId': botId },
+				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'targetChannel': opts['targetChannel'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the status of an asynchronous Nuance bot GET job
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {String} botId The Nuance bot ID
+		 * @param {String} jobId The asynchronous job ID
+		 * Preview Endpoint
+		 */
+		getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId) { 
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
+			}
+			// verify the required parameter 'botId' is set
+			if (botId === undefined || botId === null) {
+				throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
+			}
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}', 
+				'GET', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId,'botId': botId,'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the result of an asynchronous Nuance bot GET job
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {String} botId The Nuance bot ID
+		 * @param {String} jobId The asynchronous job ID
+		 * Preview Endpoint
+		 */
+		getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId) { 
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
+			}
+			// verify the required parameter 'botId' is set
+			if (botId === undefined || botId === null) {
+				throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
+			}
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results', 
+				'GET', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId,'botId': botId,'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of Nuance bots available in the specified Integration
+		 * If the onlyRegisteredBots param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integrations configured discovery credentials are returned.
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
+		 * Preview Endpoint
+		 */
+		getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBots';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots', 
+				'GET', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'onlyRegisteredBots': opts['onlyRegisteredBots'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the status of an asynchronous Nuance bots GET job
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {String} jobId The asynchronous job ID
+		 * Preview Endpoint
+		 */
+		getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId) { 
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob';
+			}
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}', 
+				'GET', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the result of an asynchronous Nuance bots GET job
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {String} jobId The asynchronous job ID
+		 * Preview Endpoint
+		 */
+		getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId) { 
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults';
+			}
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results', 
+				'GET', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get details about a TTS engine
 		 * 
 		 * @param {String} engineId The engine ID
@@ -23676,6 +25603,105 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a Nuance bot in the specified Integration asynchronously
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {String} botId The Nuance bot ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.expand expand
+		 * @param {String} opts.body targetChannel
+		 * Preview Endpoint
+		 */
+		postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs';
+			}
+			// verify the required parameter 'botId' is set
+			if (botId === undefined || botId === null) {
+				throw 'Missing the required parameter "botId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs', 
+				'POST', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId,'botId': botId },
+				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of Nuance bots in the specified Integration asynchronously
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
+		 * Preview Endpoint
+		 */
+		postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs', 
+				'POST', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'onlyRegisteredBots': opts['onlyRegisteredBots'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Try out a single credential for a Nuance bot to know if the secret is correct
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {Object} settings 
+		 * Preview Endpoint
+		 */
+		postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings) { 
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate';
+			}
+			// verify the required parameter 'settings' is set
+			if (settings === undefined || settings === null) {
+				throw 'Missing the required parameter "settings" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate', 
+				'POST', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId },
+				{  },
+				{  },
+				{  },
+				settings, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update integration configuration.
 		 * 
 		 * @param {String} integrationId Integration Id
@@ -23764,6 +25790,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+		 * 
+		 * @param {String} nuanceIntegrationId The integration ID for this group of bots
+		 * @param {Object} settings 
+		 * Preview Endpoint
+		 */
+		putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings) { 
+			// verify the required parameter 'nuanceIntegrationId' is set
+			if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+				throw 'Missing the required parameter "nuanceIntegrationId" when calling putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings';
+			}
+			// verify the required parameter 'settings' is set
+			if (settings === undefined || settings === null) {
+				throw 'Missing the required parameter "settings" when calling putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings', 
+				'PUT', 
+				{ 'nuanceIntegrationId': nuanceIntegrationId },
+				{  },
+				{  },
+				{  },
+				settings, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update TTS settings for an org
 		 * 
 		 * @param {Object} body Updated TtsSettings
@@ -23794,7 +25851,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -23929,6 +25986,62 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'DELETE', 
 				{ 'segmentId': segmentId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for journey aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsJourneysAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/journeys/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
 				{  },
 				{  },
 				null, 
@@ -24150,6 +26263,42 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Retrieve all sessions for a given customer.
+		 * 
+		 * @param {String} customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone).
+		 * @param {String} customerId Primary identifier of the customer in the source of the session.
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * Preview Endpoint
+		 */
+		getJourneyCustomerCustomerIdSessions(customerIdType, customerId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'customerIdType' is set
+			if (customerIdType === undefined || customerIdType === null) {
+				throw 'Missing the required parameter "customerIdType" when calling getJourneyCustomerCustomerIdSessions';
+			}
+			// verify the required parameter 'customerId' is set
+			if (customerId === undefined || customerId === null) {
+				throw 'Missing the required parameter "customerId" when calling getJourneyCustomerCustomerIdSessions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/journey/customers/{customerIdType}/{customerId}/sessions', 
+				'GET', 
+				{ 'customerIdType': customerIdType,'customerId': customerId },
+				{ 'pageSize': opts['pageSize'],'after': opts['after'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Retrieve a single outcome.
 		 * 
 		 * @param {String} outcomeId ID of the outcome.
@@ -24194,6 +26343,58 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get job status.
+		 * 
+		 * @param {String} jobId ID of the job.
+		 * Preview Endpoint
+		 */
+		getJourneyOutcomesAttributionsJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/journey/outcomes/attributions/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get outcome attribution entities from completed job.
+		 * 
+		 * @param {String} jobId ID of the job.
+		 * Preview Endpoint
+		 */
+		getJourneyOutcomesAttributionsJobResults(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/journey/outcomes/attributions/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
 				{  },
 				{  },
 				null, 
@@ -24329,6 +26530,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Retrieve all events for a given session.
+		 * 
+		 * @param {String} sessionId System-generated UUID that represents the session the event is a part of.
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * Preview Endpoint
+		 */
+		getJourneySessionEvents(sessionId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'sessionId' is set
+			if (sessionId === undefined || sessionId === null) {
+				throw 'Missing the required parameter "sessionId" when calling getJourneySessionEvents';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/journey/sessions/{sessionId}/events', 
+				'GET', 
+				{ 'sessionId': sessionId },
+				{ 'pageSize': opts['pageSize'],'after': opts['after'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Retrieve latest outcome score associated with a session for all outcomes.
 		 * 
 		 * @param {String} sessionId ID of the session.
@@ -24344,6 +26576,39 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'sessionId': sessionId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Retrieve segment assignments by session ID.
+		 * 
+		 * @param {String} sessionId ID of the session to query for segment assignments.
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
+		 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
+		 * Preview Endpoint
+		 */
+		getJourneySessionSegments(sessionId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'sessionId' is set
+			if (sessionId === undefined || sessionId === null) {
+				throw 'Missing the required parameter "sessionId" when calling getJourneySessionSegments';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/journey/sessions/{sessionId}/segments', 
+				'GET', 
+				{ 'sessionId': sessionId },
+				{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] },
 				{  },
 				{  },
 				null, 
@@ -24499,6 +26764,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for journey aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsJourneysAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/journeys/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for journey aggregates
 		 * 
 		 * @param {Object} body query
@@ -24621,6 +26912,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Create Outcome Attributions
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body outcome attribution request
+		 * Preview Endpoint
+		 */
+		postJourneyOutcomesAttributionsJobs(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/journey/outcomes/attributions/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Create an outcome predictor.
 		 * 
 		 * @param {Object} opts Optional parameters
@@ -24674,7 +26990,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -24905,7 +27221,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} categoryId Category ID
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 			// verify the required parameter 'categoryId' is set
@@ -24941,7 +27257,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} documentId Document ID
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 			// verify the required parameter 'documentId' is set
@@ -24977,7 +27293,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {String} importId Import ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -25636,7 +27952,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 		 * @param {String} opts.name Filter to return the categories that starts with the given category name.
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, opts) { 
 			opts = opts || {};
@@ -25670,7 +27986,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} categoryId Category ID
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 			// verify the required parameter 'categoryId' is set
@@ -25706,7 +28022,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} documentId Document ID
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 			// verify the required parameter 'documentId' is set
@@ -25737,6 +28053,48 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get document content upload status
+		 * 
+		 * @param {String} documentId Document ID
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} languageCode Language code, format: iso2-LOCALE
+		 * @param {String} uploadId UploadId
+	     * @deprecated
+		 * Preview Endpoint
+		 */
+		getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId) { 
+			// verify the required parameter 'documentId' is set
+			if (documentId === undefined || documentId === null) {
+				throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
+			}
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
+			}
+			// verify the required parameter 'languageCode' is set
+			if (languageCode === undefined || languageCode === null) {
+				throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
+			}
+			// verify the required parameter 'uploadId' is set
+			if (uploadId === undefined || uploadId === null) {
+				throw 'Missing the required parameter "uploadId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}', 
+				'GET', 
+				{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'uploadId': uploadId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get documents
 		 * 
 		 * @param {String} knowledgeBaseId Knowledge base ID
@@ -25751,7 +28109,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts.sortBy Sort by.
 		 * @param {Object} opts.sortOrder Sort Order.
 		 * @param {Array.<String>} opts.documentIds Comma-separated list of document identifiers to fetch by.
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts) { 
 			opts = opts || {};
@@ -25785,7 +28143,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {String} importId Import ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -25821,7 +28179,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {String} trainingId Training ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -25862,7 +28220,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 		 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts) { 
 			opts = opts || {};
@@ -26310,7 +28668,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {Object} body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body) { 
 			// verify the required parameter 'categoryId' is set
@@ -26351,7 +28709,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {Object} body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body) { 
 			// verify the required parameter 'documentId' is set
@@ -26391,7 +28749,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {Array.<Object>} body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -26428,7 +28786,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {String} importId Import ID
 		 * @param {Object} body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -26742,6 +29100,68 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Bulk remove documents.
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} body 
+		 * Preview Endpoint
+		 */
+		postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkRemove';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseDocumentsBulkRemove';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove', 
+				'POST', 
+				{ 'knowledgeBaseId': knowledgeBaseId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Bulk update documents.
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} body 
+		 * Preview Endpoint
+		 */
+		postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkUpdate';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseDocumentsBulkUpdate';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update', 
+				'POST', 
+				{ 'knowledgeBaseId': knowledgeBaseId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Search the documents in a knowledge base.
 		 * 
 		 * @param {String} knowledgeBaseId The ID of knowledge base containing the documents to query.
@@ -26794,6 +29214,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				{  },
 				{  },
 				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Bulk add document versions.
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} body 
+		 * Preview Endpoint
+		 */
+		postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add', 
+				'POST', 
+				{ 'knowledgeBaseId': knowledgeBaseId },
+				{  },
+				{  },
+				{  },
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'],
 				['application/json']
@@ -26896,7 +29347,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {Object} body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -26927,12 +29378,54 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Upload Article Content
+		 * 
+		 * @param {String} documentId Document ID
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} languageCode Language code, format: iso2-LOCALE
+		 * @param {Object} body 
+	     * @deprecated
+		 * Preview Endpoint
+		 */
+		postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body) { 
+			// verify the required parameter 'documentId' is set
+			if (documentId === undefined || documentId === null) {
+				throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
+			}
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
+			}
+			// verify the required parameter 'languageCode' is set
+			if (languageCode === undefined || languageCode === null) {
+				throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads', 
+				'POST', 
+				{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Create document
 		 * 
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {Object} body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -26968,7 +29461,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {Object} body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -27004,7 +29497,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
 		 * @param {String} trainingId Training ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -27039,7 +29532,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} languageCode Language code, format: iso2-LOCALE
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode) { 
 			// verify the required parameter 'knowledgeBaseId' is set
@@ -27071,7 +29564,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 			opts = opts || {};
@@ -27126,7 +29619,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -28139,7 +30632,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -28158,7 +30651,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Delete Language (Deprecated)
 		 * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 		 * @param {String} languageId Language ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		deleteLanguage(languageId) { 
 			// verify the required parameter 'languageId' is set
@@ -28184,7 +30677,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get Language (Deprecated)
 		 * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 		 * @param {String} languageId Language ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getLanguage(languageId) { 
 			// verify the required parameter 'languageId' is set
@@ -28214,7 +30707,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 		 * @param {String} opts.name Name
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getLanguages(opts) { 
 			opts = opts || {};
@@ -28333,7 +30826,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create Language (Deprecated)
 		 * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 		 * @param {Object} body Language
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postLanguages(body) { 
 			// verify the required parameter 'body' is set
@@ -28361,7 +30854,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -29176,7 +31669,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -29414,7 +31907,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -29650,7 +32143,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -29669,7 +32162,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Delete a supported content profile
 		 * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 		 * @param {String} supportedContentId Supported Content ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		deleteMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 			// verify the required parameter 'supportedContentId' is set
@@ -29697,7 +32190,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageSize Page size (default to 25)
 		 * @param {Number} opts.pageNumber Page number (default to 1)
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getMessagingSupportedcontent(opts) { 
 			opts = opts || {};
@@ -29721,7 +32214,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get a supported content profile
 		 * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 		 * @param {String} supportedContentId Supported Content ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 			// verify the required parameter 'supportedContentId' is set
@@ -29748,7 +32241,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 		 * @param {String} supportedContentId Supported Content ID
 		 * @param {Object} body SupportedContent
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		patchMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
 			// verify the required parameter 'supportedContentId' is set
@@ -29778,7 +32271,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create a Supported Content profile
 		 * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
 		 * @param {Object} body SupportedContent
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postMessagingSupportedcontent(body) { 
 			// verify the required parameter 'body' is set
@@ -29806,7 +32299,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -29957,7 +32450,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -30190,7 +32683,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -30556,7 +33049,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -30827,7 +33320,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -30846,7 +33339,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Fetch field config for an entity type
 		 * 
 		 * @param {Object} type Field type
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getFieldconfig(type) { 
 			// verify the required parameter 'type' is set
@@ -30891,7 +33384,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Get the list of domains that will be allowed to embed PureCloud applications
 		 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getOrganizationsEmbeddedintegration() { 
 
@@ -30912,7 +33405,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Get organization IP address whitelist settings
 		 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getOrganizationsIpaddressauthentication() { 
 
@@ -31101,7 +33594,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 		 * 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getOrganizationsWhitelist() { 
 
@@ -31178,7 +33671,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update the list of domains that will be allowed to embed PureCloud applications
 		 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 		 * @param {Object} body Whitelist settings
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		putOrganizationsEmbeddedintegration(body) { 
 			// verify the required parameter 'body' is set
@@ -31204,7 +33697,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Update organization IP address whitelist settings
 		 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 		 * @param {Object} body IP address Whitelist settings
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		putOrganizationsIpaddressauthentication(body) { 
 			// verify the required parameter 'body' is set
@@ -31254,7 +33747,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 		 * 
 		 * @param {Object} body Whitelist settings
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		putOrganizationsWhitelist(body) { 
 			// verify the required parameter 'body' is set
@@ -31282,7 +33775,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -31473,6 +33966,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Delete Bulk Org Trustees
+		 * 
+		 * @param {Array.<String>} id Comma separated list of trustee ids to remove
+		 * Preview Endpoint
+		 */
+		deleteOrgauthorizationTrustees(id) { 
+			// verify the required parameter 'id' is set
+			if (id === undefined || id === null) {
+				throw 'Missing the required parameter "id" when calling deleteOrgauthorizationTrustees';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/orgauthorization/trustees', 
+				'DELETE', 
+				{  },
+				{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Delete Org Trust
 		 * 
 		 * @param {String} trustorOrgId Trustor Organization Id
@@ -31578,6 +34097,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'DELETE', 
 				{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete Bulk Org Trustors
+		 * 
+		 * @param {Array.<String>} id Comma separated list of trustor ids to remove
+		 * Preview Endpoint
+		 */
+		deleteOrgauthorizationTrustors(id) { 
+			// verify the required parameter 'id' is set
+			if (id === undefined || id === null) {
+				throw 'Missing the required parameter "id" when calling deleteOrgauthorizationTrustors';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/orgauthorization/trustors', 
+				'DELETE', 
+				{  },
+				{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
 				{  },
 				{  },
 				null, 
@@ -32577,7 +35122,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -35062,7 +37607,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * This endpoint is deprecated and may have unexpected results. Please use "/conversations/{conversationId}/participants/{participantId}/callbacks instead."
 		 * @param {String} campaignId Campaign ID
 		 * @param {Object} body ContactCallbackRequest
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postOutboundCampaignCallbackSchedule(campaignId, body) { 
 			// verify the required parameter 'campaignId' is set
@@ -36199,7 +38744,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -36213,6 +38758,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			this.apiClient = apiClient || ApiClient.instance;
 		}
 
+
+		/**
+		 * Delete a Presence Definition
+		 * 
+		 * @param {String} definitionId Presence Definition ID
+		 * Preview Endpoint
+		 */
+		deletePresenceDefinition(definitionId) { 
+			// verify the required parameter 'definitionId' is set
+			if (definitionId === undefined || definitionId === null) {
+				throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/presence/definitions/{definitionId}', 
+				'DELETE', 
+				{ 'definitionId': definitionId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
 
 		/**
 		 * Delete a Presence Source
@@ -36255,6 +38826,58 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'DELETE', 
 				{ 'presenceId': presenceId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a Presence Definition
+		 * 
+		 * @param {String} definitionId Presence Definition ID
+		 * Preview Endpoint
+		 */
+		getPresenceDefinition(definitionId) { 
+			// verify the required parameter 'definitionId' is set
+			if (definitionId === undefined || definitionId === null) {
+				throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/presence/definitions/{definitionId}', 
+				'GET', 
+				{ 'definitionId': definitionId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of Presence Definitions
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
+		 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+		 * Preview Endpoint
+		 */
+		getPresenceDefinitions(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/presence/definitions', 
+				'GET', 
+				{  },
+				{ 'deactivated': opts['deactivated'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -36555,6 +39178,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Create a Presence Definition
+		 * 
+		 * @param {Object} body The Presence Definition to create
+		 * Preview Endpoint
+		 */
+		postPresenceDefinitions(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postPresenceDefinitions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/presence/definitions', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Create a Presence Source
 		 * 
 		 * @param {Object} body The Presence Source to create
@@ -36594,6 +39243,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/presencedefinitions', 
 				'POST', 
 				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a Presence Definition
+		 * 
+		 * @param {String} definitionId Presence Definition ID
+		 * @param {Object} body The updated Presence Definition
+		 * Preview Endpoint
+		 */
+		putPresenceDefinition(definitionId, body) { 
+			// verify the required parameter 'definitionId' is set
+			if (definitionId === undefined || definitionId === null) {
+				throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putPresenceDefinition';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/presence/definitions/{definitionId}', 
+				'PUT', 
+				{ 'definitionId': definitionId },
 				{  },
 				{  },
 				{  },
@@ -36750,7 +39430,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -36989,7 +39669,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -37072,7 +39752,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Delete an evaluation form.
 		 * 
 		 * @param {String} formId Form ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		deleteQualityForm(formId) { 
 			// verify the required parameter 'formId' is set
@@ -37135,6 +39815,118 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'DELETE', 
 				{ 'formId': formId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for evaluation aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsEvaluationsAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status for async query for survey aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsSurveysAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/surveys/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/surveys/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
 				{  },
 				{  },
 				null, 
@@ -37441,7 +40233,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get an evaluation form
 		 * 
 		 * @param {String} formId Form ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getQualityForm(formId) { 
 			// verify the required parameter 'formId' is set
@@ -37470,7 +40262,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageSize Page size (default to 25)
 		 * @param {Number} opts.pageNumber Page number (default to 1)
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getQualityFormVersions(formId, opts) { 
 			opts = opts || {};
@@ -37506,7 +40298,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 		 * @param {String} opts.name Name
 		 * @param {String} opts.sortOrder Order to sort results, either asc or desc
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getQualityForms(opts) { 
 			opts = opts || {};
@@ -37782,7 +40574,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get the published evaluation forms.
 		 * 
 		 * @param {String} formId Form ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getQualityPublishedform(formId) { 
 			// verify the required parameter 'formId' is set
@@ -37812,7 +40604,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {String} opts.name Name
 		 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getQualityPublishedforms(opts) { 
 			opts = opts || {};
@@ -38017,6 +40809,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for evaluation aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsEvaluationsAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/evaluations/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for evaluation aggregates
 		 * 
 		 * @param {Object} body query
@@ -38029,6 +40847,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/analytics/evaluations/aggregates/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for survey aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsSurveysAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/surveys/aggregates/jobs', 
 				'POST', 
 				{  },
 				{  },
@@ -38208,7 +41052,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create an evaluation form.
 		 * 
 		 * @param {Object} body Evaluation form
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postQualityForms(body) { 
 			// verify the required parameter 'body' is set
@@ -38284,7 +41128,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Publish an evaluation form.
 		 * 
 		 * @param {Object} body Publish request containing id of form to publish
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postQualityPublishedforms(body) { 
 			// verify the required parameter 'body' is set
@@ -38455,7 +41299,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} formId Form ID
 		 * @param {Object} body Evaluation form
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		putQualityForm(formId, body) { 
 			// verify the required parameter 'formId' is set
@@ -38577,7 +41421,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -40214,7 +43058,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -40699,7 +43543,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -40933,7 +43777,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} queueId Queue ID
 		 * @param {String} memberId Member ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		deleteRoutingQueueUser(queueId, memberId) { 
 			// verify the required parameter 'queueId' is set
@@ -41145,6 +43989,36 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'DELETE', 
 				{  },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete an utilization tag
+		 * 
+		 * @param {String} tagId Utilization Tag ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.forceDelete Remove all tag usages (if found) without warning (default to false)
+		 * Preview Endpoint
+		 */
+		deleteRoutingUtilizationTag(tagId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'tagId' is set
+			if (tagId === undefined || tagId === null) {
+				throw 'Missing the required parameter "tagId" when calling deleteRoutingUtilizationTag';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/utilization/tags/{tagId}', 
+				'DELETE', 
+				{ 'tagId': tagId },
+				{ 'forceDelete': opts['forceDelete'] },
 				{  },
 				{  },
 				null, 
@@ -42025,7 +44899,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Array.<String>} opts.languages Filter by language
 		 * @param {Array.<String>} opts.routingStatus Filter by routing status
 		 * @param {Array.<String>} opts.presence Filter by presence
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getRoutingQueueUsers(queueId, opts) { 
 			opts = opts || {};
@@ -42614,6 +45488,86 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get details about this utilization tag
+		 * 
+		 * @param {String} tagId Utilization Tag ID
+		 * Preview Endpoint
+		 */
+		getRoutingUtilizationTag(tagId) { 
+			// verify the required parameter 'tagId' is set
+			if (tagId === undefined || tagId === null) {
+				throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTag';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/utilization/tags/{tagId}', 
+				'GET', 
+				{ 'tagId': tagId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get list of agent ids associated with a utilization tag
+		 * 
+		 * @param {String} tagId Utilization Tag ID
+		 * Preview Endpoint
+		 */
+		getRoutingUtilizationTagAgents(tagId) { 
+			// verify the required parameter 'tagId' is set
+			if (tagId === undefined || tagId === null) {
+				throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTagAgents';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/utilization/tags/{tagId}/agents', 
+				'GET', 
+				{ 'tagId': tagId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get list of utilization tags
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
+		 * @param {String} opts.name Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
+		 * Preview Endpoint
+		 */
+		getRoutingUtilizationTags(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/utilization/tags', 
+				'GET', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get details about this wrap-up code.
 		 * 
 		 * @param {String} codeId Wrapup Code ID
@@ -42983,7 +45937,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} queueId Queue ID
 		 * @param {String} memberId Member ID
 		 * @param {Object} body Queue Member
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		patchRoutingQueueUser(queueId, memberId, body) { 
 			// verify the required parameter 'queueId' is set
@@ -43018,7 +45972,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} queueId Queue ID
 		 * @param {Array.<Object>} body Queue Members
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		patchRoutingQueueUsers(queueId, body) { 
 			// verify the required parameter 'queueId' is set
@@ -43279,6 +46233,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'POST', 
 				{  },
 				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for user activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsRoutingActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsRoutingActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/routing/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 				{  },
 				{  },
 				body, 
@@ -43560,7 +46545,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Array.<Object>} body Queue Members
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts._delete True to delete queue members (default to false)
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postRoutingQueueUsers(queueId, body, opts) { 
 			opts = opts || {};
@@ -43760,6 +46745,58 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/routing/sms/phonenumbers', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Imports a phone number for SMS
+		 * 
+		 * @param {Object} body SmsPhoneNumber
+		 * Preview Endpoint
+		 */
+		postRoutingSmsPhonenumbersImport(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbersImport';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/sms/phonenumbers/import', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create an utilization tag
+		 * 
+		 * @param {Object} body UtilizationTag
+		 * Preview Endpoint
+		 */
+		postRoutingUtilizationTags(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postRoutingUtilizationTags';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/utilization/tags', 
 				'POST', 
 				{  },
 				{  },
@@ -44213,7 +47250,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -45090,7 +48127,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -45509,7 +48546,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -45802,6 +48839,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Search all documents
+		 * 
+		 * @param {Object} body Search request options
+		 * Preview Endpoint
+		 */
+		postDocumentationAllSearch(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postDocumentationAllSearch';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/documentation/all/search', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Search gkn documentation
 		 * 
 		 * @param {Object} body Search request options
@@ -45882,7 +48945,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} knowledgeBaseId Knowledge base ID
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 			opts = opts || {};
@@ -46065,6 +49128,58 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Search users as conversation targets
+		 * 
+		 * @param {Object} body Search request options
+		 * Preview Endpoint
+		 */
+		postUsersSearchConversationTarget(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postUsersSearchConversationTarget';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/search/conversation/target', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Search manage queue member
+		 * 
+		 * @param {Object} body Search request options
+		 * Preview Endpoint
+		 */
+		postUsersSearchQueuemembersManage(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postUsersSearchQueuemembersManage';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/search/queuemembers/manage', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Search users assigned to teams
 		 * 
 		 * @param {Object} body Search request options
@@ -46120,7 +49235,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -47073,7 +50188,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -47175,7 +50290,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -47310,11 +50425,1288 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	}
 
+	class TaskManagementApi {
+		/**
+		 * TaskManagement service.
+		 * @module purecloud-platform-client-v2/api/TaskManagementApi
+		 * @version 169.1.0
+		 */
+
+		/**
+		 * Constructs a new TaskManagementApi. 
+		 * @alias module:purecloud-platform-client-v2/api/TaskManagementApi
+		 * @class
+		 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+		 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+		 */
+		constructor(apiClient) {
+			this.apiClient = apiClient || ApiClient.instance;
+		}
+
+
+		/**
+		 * Delete a workbin
+		 * 
+		 * @param {String} workbinId Workbin ID
+		 * Preview Endpoint
+		 */
+		deleteTaskmanagementWorkbin(workbinId) { 
+			// verify the required parameter 'workbinId' is set
+			if (workbinId === undefined || workbinId === null) {
+				throw 'Missing the required parameter "workbinId" when calling deleteTaskmanagementWorkbin';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workbins/{workbinId}', 
+				'DELETE', 
+				{ 'workbinId': workbinId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a workitem
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * Preview Endpoint
+		 */
+		deleteTaskmanagementWorkitem(workitemId) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling deleteTaskmanagementWorkitem';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}', 
+				'DELETE', 
+				{ 'workitemId': workitemId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * Preview Endpoint
+		 */
+		deleteTaskmanagementWorkitemsSchema(schemaId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null) {
+				throw 'Missing the required parameter "schemaId" when calling deleteTaskmanagementWorkitemsSchema';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/schemas/{schemaId}', 
+				'DELETE', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a worktype
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * Preview Endpoint
+		 */
+		deleteTaskmanagementWorktype(worktypeId) { 
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktype';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}', 
+				'DELETE', 
+				{ 'worktypeId': worktypeId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a status
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {String} statusId Status id
+		 * Preview Endpoint
+		 */
+		deleteTaskmanagementWorktypeStatus(worktypeId, statusId) { 
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeStatus';
+			}
+			// verify the required parameter 'statusId' is set
+			if (statusId === undefined || statusId === null) {
+				throw 'Missing the required parameter "statusId" when calling deleteTaskmanagementWorktypeStatus';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}', 
+				'DELETE', 
+				{ 'worktypeId': worktypeId,'statusId': statusId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a workbin
+		 * 
+		 * @param {String} workbinId Workbin ID
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkbin(workbinId) { 
+			// verify the required parameter 'workbinId' is set
+			if (workbinId === undefined || workbinId === null) {
+				throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbin';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workbins/{workbinId}', 
+				'GET', 
+				{ 'workbinId': workbinId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a listing of a workbin's attribute change history
+		 * 
+		 * @param {String} workbinId Workbin ID
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkbinHistory(workbinId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'workbinId' is set
+			if (workbinId === undefined || workbinId === null) {
+				throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinHistory';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workbins/{workbinId}/history', 
+				'GET', 
+				{ 'workbinId': workbinId },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a version of a workbin
+		 * 
+		 * @param {String} workbinId Workbin ID
+		 * @param {Number} entityVersion Workbin version
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkbinVersion(workbinId, entityVersion) { 
+			// verify the required parameter 'workbinId' is set
+			if (workbinId === undefined || workbinId === null) {
+				throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinVersion';
+			}
+			// verify the required parameter 'entityVersion' is set
+			if (entityVersion === undefined || entityVersion === null) {
+				throw 'Missing the required parameter "entityVersion" when calling getTaskmanagementWorkbinVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}', 
+				'GET', 
+				{ 'workbinId': workbinId,'entityVersion': entityVersion },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all versions of a workbin
+		 * 
+		 * @param {String} workbinId Workbin ID
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkbinVersions(workbinId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'workbinId' is set
+			if (workbinId === undefined || workbinId === null) {
+				throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workbins/{workbinId}/versions', 
+				'GET', 
+				{ 'workbinId': workbinId },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a workitem
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitem(workitemId) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitem';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}', 
+				'GET', 
+				{ 'workitemId': workitemId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a listing of a workitem's attribute change history
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemHistory(workitemId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemHistory';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/history', 
+				'GET', 
+				{ 'workitemId': workitemId },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all wrapup codes added for the given user for a workitem.
+		 * 
+		 * @param {String} workitemId The ID of the Workitem.
+		 * @param {String} userId The ID of the user
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.expands Which fields, if any, to expand.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
+		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemUserWrapups';
+			}
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling getTaskmanagementWorkitemUserWrapups';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups', 
+				'GET', 
+				{ 'workitemId': workitemId,'userId': userId },
+				{ 'expands': opts['expands'],'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a version of a workitem
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * @param {Number} entityVersion Workitem version
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemVersion(workitemId, entityVersion) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemVersion';
+			}
+			// verify the required parameter 'entityVersion' is set
+			if (entityVersion === undefined || entityVersion === null) {
+				throw 'Missing the required parameter "entityVersion" when calling getTaskmanagementWorkitemVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}', 
+				'GET', 
+				{ 'workitemId': workitemId,'entityVersion': entityVersion },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all versions of a workitem
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemVersions(workitemId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/versions', 
+				'GET', 
+				{ 'workitemId': workitemId },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all wrapup codes added for all users for a workitem.
+		 * 
+		 * @param {String} workitemId The ID of the Workitem.
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.expands Which fields, if any, to expand.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
+		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemWrapups(workitemId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemWrapups';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/wrapups', 
+				'GET', 
+				{ 'workitemId': workitemId },
+				{ 'expands': opts['expands'],'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemsSchema(schemaId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null) {
+				throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchema';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/schemas/{schemaId}', 
+				'GET', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a specific version of a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * @param {String} versionId Schema version
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null) {
+				throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchemaVersion';
+			}
+			// verify the required parameter 'versionId' is set
+			if (versionId === undefined || versionId === null) {
+				throw 'Missing the required parameter "versionId" when calling getTaskmanagementWorkitemsSchemaVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId}', 
+				'GET', 
+				{ 'schemaId': schemaId,'versionId': versionId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all versions of a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemsSchemaVersions(schemaId) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null) {
+				throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchemaVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/schemas/{schemaId}/versions', 
+				'GET', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of schemas.
+		 * 
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorkitemsSchemas() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/schemas', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a worktype
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.expands Which fields, if any, to expand.
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorktype(worktypeId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktype';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}', 
+				'GET', 
+				{ 'worktypeId': worktypeId },
+				{ 'expands': this.apiClient.buildCollectionParam(opts['expands'], 'multi') },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a listing of a worktype's attribute change history
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorktypeHistory(worktypeId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeHistory';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}/history', 
+				'GET', 
+				{ 'worktypeId': worktypeId },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a status
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {String} statusId Status id
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorktypeStatus(worktypeId, statusId) { 
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatus';
+			}
+			// verify the required parameter 'statusId' is set
+			if (statusId === undefined || statusId === null) {
+				throw 'Missing the required parameter "statusId" when calling getTaskmanagementWorktypeStatus';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}', 
+				'GET', 
+				{ 'worktypeId': worktypeId,'statusId': statusId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a version of a worktype
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {Number} entityVersion Worktype version
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorktypeVersion(worktypeId, entityVersion) { 
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeVersion';
+			}
+			// verify the required parameter 'entityVersion' is set
+			if (entityVersion === undefined || entityVersion === null) {
+				throw 'Missing the required parameter "entityVersion" when calling getTaskmanagementWorktypeVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}', 
+				'GET', 
+				{ 'worktypeId': worktypeId,'entityVersion': entityVersion },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all versions of a worktype
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+		 * Preview Endpoint
+		 */
+		getTaskmanagementWorktypeVersions(worktypeId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}/versions', 
+				'GET', 
+				{ 'worktypeId': worktypeId },
+				{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the attributes of a workbin
+		 * 
+		 * @param {String} workbinId Workbin ID
+		 * @param {Object} body Json with attributes and their new values: {description:new description, name:new name}.
+		 * Preview Endpoint
+		 */
+		patchTaskmanagementWorkbin(workbinId, body) { 
+			// verify the required parameter 'workbinId' is set
+			if (workbinId === undefined || workbinId === null) {
+				throw 'Missing the required parameter "workbinId" when calling patchTaskmanagementWorkbin';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkbin';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workbins/{workbinId}', 
+				'PATCH', 
+				{ 'workbinId': workbinId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the attributes of a workitem
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * @param {Object} body Workitem
+		 * Preview Endpoint
+		 */
+		patchTaskmanagementWorkitem(workitemId, body) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitem';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkitem';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}', 
+				'PATCH', 
+				{ 'workitemId': workitemId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * @param {Object} body Targeted user
+		 * Preview Endpoint
+		 */
+		patchTaskmanagementWorkitemAssignment(workitemId, body) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemAssignment';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkitemAssignment';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/assignment', 
+				'PATCH', 
+				{ 'workitemId': workitemId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Add/Remove a wrapup code for a given user in a workitem.
+		 * 
+		 * @param {String} workitemId The ID of the Workitem.
+		 * @param {String} userId The ID of the user
+		 * @param {Object} body Request body to add/remove a wrapup code for a workitem
+		 * Preview Endpoint
+		 */
+		patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemUserWrapups';
+			}
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling patchTaskmanagementWorkitemUserWrapups';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkitemUserWrapups';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups', 
+				'PATCH', 
+				{ 'workitemId': workitemId,'userId': userId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Add/Remove a wrapup code for the current user in a workitem.
+		 * 
+		 * @param {String} workitemId The ID of the Workitem.
+		 * @param {Object} body Request body to add/remove the wrapup code for workitem
+		 * Preview Endpoint
+		 */
+		patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemUsersMeWrapups';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkitemUsersMeWrapups';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups', 
+				'PATCH', 
+				{ 'workitemId': workitemId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the attributes of a worktype
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body body
+		 * Preview Endpoint
+		 */
+		patchTaskmanagementWorktype(worktypeId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktype';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}', 
+				'PATCH', 
+				{ 'worktypeId': worktypeId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the attributes of a status
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {String} statusId Status id
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body body
+		 * Preview Endpoint
+		 */
+		patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeStatus';
+			}
+			// verify the required parameter 'statusId' is set
+			if (statusId === undefined || statusId === null) {
+				throw 'Missing the required parameter "statusId" when calling patchTaskmanagementWorktypeStatus';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}', 
+				'PATCH', 
+				{ 'worktypeId': worktypeId,'statusId': statusId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a workbin
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body body
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorkbins(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workbins', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for workbins
+		 * 
+		 * @param {Object} body QueryPostRequest
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorkbinsQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postTaskmanagementWorkbinsQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workbins/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorkitemAcdCancel(workitemId) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemAcdCancel';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel', 
+				'POST', 
+				{ 'workitemId': workitemId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Disconnect the assignee of the workitem
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorkitemDisconnect(workitemId) { 
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemDisconnect';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/disconnect', 
+				'POST', 
+				{ 'workitemId': workitemId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Terminate a workitem
+		 * 
+		 * @param {String} workitemId Workitem ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body Terminated request
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorkitemTerminate(workitemId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'workitemId' is set
+			if (workitemId === undefined || workitemId === null) {
+				throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemTerminate';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/{workitemId}/terminate', 
+				'POST', 
+				{ 'workitemId': workitemId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a workitem
+		 * 
+		 * @param {Object} body Workitem
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorkitems(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitems';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for workitems
+		 * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+		 * @param {Object} body WorkitemQueryPostRequest
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorkitemsQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a schema
+		 * 
+		 * @param {Object} body Schema
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorkitemsSchemas(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsSchemas';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/schemas', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Add a status to a worktype
+		 * 
+		 * @param {String} worktypeId Worktype id
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body body
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorktypeStatuses(worktypeId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'worktypeId' is set
+			if (worktypeId === undefined || worktypeId === null) {
+				throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeStatuses';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/{worktypeId}/statuses', 
+				'POST', 
+				{ 'worktypeId': worktypeId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a worktype
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body body
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorktypes(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for worktypes
+		 * 
+		 * @param {Object} body QueryPostRequest
+		 * Preview Endpoint
+		 */
+		postTaskmanagementWorktypesQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypesQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/worktypes/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a schema
+		 * 
+		 * @param {String} schemaId Schema ID
+		 * @param {Object} body Data Schema
+		 * Preview Endpoint
+		 */
+		putTaskmanagementWorkitemsSchema(schemaId, body) { 
+			// verify the required parameter 'schemaId' is set
+			if (schemaId === undefined || schemaId === null) {
+				throw 'Missing the required parameter "schemaId" when calling putTaskmanagementWorkitemsSchema';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putTaskmanagementWorkitemsSchema';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/taskmanagement/workitems/schemas/{schemaId}', 
+				'PUT', 
+				{ 'schemaId': schemaId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+	}
+
 	class TeamsApi {
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -47500,6 +51892,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for team activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsTeamsActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsTeamsActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/teams/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Add team members
 		 * 
 		 * @param {String} teamId Team ID
@@ -47585,7 +52008,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -47713,7 +52136,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -48891,6 +53314,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a pageable list of basic extension pool objects filterable by query parameters.
+		 * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {String} opts.sortBy Sort by (default to name)
+		 * @param {String} opts.sortOrder Sort order (default to ASC)
+		 * @param {Array.<String>} opts.id ID of the Extension Pools to filter by.
+		 * @param {String} opts.name Name of the Extension Pools to filter by.
+		 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+		 * Preview Endpoint
+		 */
+		getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/telephony/providers/edges/extensionpools/divisionviews', 
+				'GET', 
+				{  },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get a listing of extensions
 		 * 
 		 * @param {Object} opts Optional parameters
@@ -49107,7 +53561,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get outbound route
 		 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 		 * @param {String} outboundRouteId Outbound route ID
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
 			// verify the required parameter 'outboundRouteId' is set
@@ -50914,7 +55368,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -51042,7 +55496,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -51123,6 +55577,27 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get the current Idle Token Timeout Value
+		 * 
+		 * Preview Endpoint
+		 */
+		getTokensTimeout() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/tokens/timeout', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Verify user token
 		 * 
 		 */
@@ -51142,13 +55617,38 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			);
 		}
 
+		/**
+		 * Update or Enable/Disable the Idle Token Timeout
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * Preview Endpoint
+		 */
+		putTokensTimeout(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/tokens/timeout', 
+				'PUT', 
+				{  },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
 	}
 
 	class UploadsApi {
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -51324,7 +55824,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -51534,7 +56034,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -51719,7 +56219,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -51955,6 +56455,62 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get status for async query for user aggregates
+		 * 
+		 * @param {String} jobId jobId
+		 * Preview Endpoint
+		 */
+		getAnalyticsUsersAggregatesJob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/users/aggregates/jobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Fetch a page of results for an async aggregates query
+		 * 
+		 * @param {String} jobId jobId
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.cursor Cursor token to retrieve next page
+		 * Preview Endpoint
+		 */
+		getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJobResults';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/users/aggregates/jobs/{jobId}/results', 
+				'GET', 
+				{ 'jobId': jobId },
+				{ 'cursor': opts['cursor'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get status for async query for user details
 		 * 
 		 * @param {String} jobId jobId
@@ -52035,7 +56591,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.name Search term to filter by division name
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getAuthorizationDivisionspermittedMe(permission, opts) { 
 			opts = opts || {};
@@ -52097,7 +56653,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {Number} opts.pageSize Page size (default to 25)
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
 			opts = opts || {};
@@ -52174,7 +56730,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Fetch field config for an entity type
 		 * 
 		 * @param {Object} type Field type
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getFieldconfig(type) { 
 			// verify the required parameter 'type' is set
@@ -52207,7 +56763,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getProfilesUsers(opts) { 
 			opts = opts || {};
@@ -52375,7 +56931,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {String} opts.sortOrder Sort order (default to ASC)
 		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getUserFavorites(userId, opts) { 
 			opts = opts || {};
@@ -52461,7 +57017,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getUserProfile(userId, opts) { 
 			opts = opts || {};
@@ -53264,6 +57820,63 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Query for user activity observations
+		 * 
+		 * @param {Object} body query
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The desired page size
+		 * @param {Number} opts.pageNumber The desired page number
+		 * Preview Endpoint
+		 */
+		postAnalyticsUsersActivityQuery(body, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsUsersActivityQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/users/activity/query', 
+				'POST', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query for user aggregates asynchronously
+		 * 
+		 * @param {Object} body query
+		 * Preview Endpoint
+		 */
+		postAnalyticsUsersAggregatesJobs(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsUsersAggregatesJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/users/aggregates/jobs', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for user aggregates
 		 * 
 		 * @param {Object} body query
@@ -53750,6 +58363,58 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Search users as conversation targets
+		 * 
+		 * @param {Object} body Search request options
+		 * Preview Endpoint
+		 */
+		postUsersSearchConversationTarget(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postUsersSearchConversationTarget';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/search/conversation/target', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Search manage queue member
+		 * 
+		 * @param {Object} body Search request options
+		 * Preview Endpoint
+		 */
+		postUsersSearchQueuemembersManage(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postUsersSearchQueuemembersManage';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/search/queuemembers/manage', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Search users assigned to teams
 		 * 
 		 * @param {Object} body Search request options
@@ -54115,7 +58780,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -54226,7 +58891,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -54893,7 +59558,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -54912,7 +59577,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Delete a WebChat deployment
 		 * 
 		 * @param {String} deploymentId Deployment Id
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		deleteWebchatDeployment(deploymentId) { 
 			// verify the required parameter 'deploymentId' is set
@@ -54988,7 +59653,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get a WebChat deployment
 		 * 
 		 * @param {String} deploymentId Deployment Id
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getWebchatDeployment(deploymentId) { 
 			// verify the required parameter 'deploymentId' is set
@@ -55013,7 +59678,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * List WebChat deployments
 		 * 
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getWebchatDeployments() { 
 
@@ -55268,7 +59933,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Create WebChat deployment
 		 * 
 		 * @param {Object} body Deployment
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postWebchatDeployments(body) { 
 			// verify the required parameter 'body' is set
@@ -55385,7 +60050,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {String} deploymentId Deployment Id
 		 * @param {Object} body Deployment
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		putWebchatDeployment(deploymentId, body) { 
 			// verify the required parameter 'deploymentId' is set
@@ -55442,7 +60107,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -55964,7 +60629,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -56010,7 +60675,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -56156,7 +60821,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 169.0.0
+		 * @version 169.1.0
 		 */
 
 		/**
@@ -57698,7 +62363,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get activity codes
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
 			// verify the required parameter 'managementUnitId' is set
@@ -58111,7 +62776,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.expand Which fields, if any, to expand
 		 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts) { 
 			opts = opts || {};
@@ -58152,7 +62817,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Boolean} opts.includeOnlyPublished Return only published schedules
 		 * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
 		 * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
 			opts = opts || {};
@@ -60111,7 +64776,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body body
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts) { 
 			opts = opts || {};
@@ -60772,7 +65437,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * 
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.body body
-	     	 * @deprecated
+	     * @deprecated
 		 */
 		postWorkforcemanagementSchedules(opts) { 
 			opts = opts || {};
@@ -60963,7 +65628,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 	class platformClient {
 		constructor() {
@@ -61237,6 +65902,11 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			 * @property {module:purecloud-platform-client-v2/api/SuggestApi}
 			 */
 			this.SuggestApi = SuggestApi;
+			/**
+			 * The TaskManagementApi service constructor.
+			 * @property {module:purecloud-platform-client-v2/api/TaskManagementApi}
+			 */
+			this.TaskManagementApi = TaskManagementApi;
 			/**
 			 * The TeamsApi service constructor.
 			 * @property {module:purecloud-platform-client-v2/api/TeamsApi}

@@ -12,6 +12,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteQualityForm**](QualityApi.html#deleteQualityForm) | **DELETE** /api/v2/quality/forms/{formId} | Delete an evaluation form.
 [**deleteQualityFormsEvaluation**](QualityApi.html#deleteQualityFormsEvaluation) | **DELETE** /api/v2/quality/forms/evaluations/{formId} | Delete an evaluation form.
 [**deleteQualityFormsSurvey**](QualityApi.html#deleteQualityFormsSurvey) | **DELETE** /api/v2/quality/forms/surveys/{formId} | Delete a survey form.
+[**getAnalyticsEvaluationsAggregatesJob**](QualityApi.html#getAnalyticsEvaluationsAggregatesJob) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Get status for async query for evaluation aggregates
+[**getAnalyticsEvaluationsAggregatesJobResults**](QualityApi.html#getAnalyticsEvaluationsAggregatesJobResults) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsSurveysAggregatesJob**](QualityApi.html#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
+[**getAnalyticsSurveysAggregatesJobResults**](QualityApi.html#getAnalyticsSurveysAggregatesJobResults) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | **GET** /api/v2/quality/agents/activity | Gets a list of Agent Activities
 [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | **GET** /api/v2/quality/calibrations/{calibrationId} | Get a calibration by id.  Requires either calibrator id or conversation id
 [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | **GET** /api/v2/quality/calibrations | Get the list of calibrations
@@ -42,7 +46,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualitySurvey**](QualityApi.html#getQualitySurvey) | **GET** /api/v2/quality/surveys/{surveyId} | Get a survey for a conversation
 [**getQualitySurveysScorable**](QualityApi.html#getQualitySurveysScorable) | **GET** /api/v2/quality/surveys/scorable | Get a survey as an end-customer, for the purposes of scoring it.
 [**patchQualityFormsSurvey**](QualityApi.html#patchQualityFormsSurvey) | **PATCH** /api/v2/quality/forms/surveys/{formId} | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+[**postAnalyticsEvaluationsAggregatesJobs**](QualityApi.html#postAnalyticsEvaluationsAggregatesJobs) | **POST** /api/v2/analytics/evaluations/aggregates/jobs | Query for evaluation aggregates asynchronously
 [**postAnalyticsEvaluationsAggregatesQuery**](QualityApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
+[**postAnalyticsSurveysAggregatesJobs**](QualityApi.html#postAnalyticsSurveysAggregatesJobs) | **POST** /api/v2/analytics/surveys/aggregates/jobs | Query for survey aggregates asynchronously
 [**postAnalyticsSurveysAggregatesQuery**](QualityApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
 [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | **POST** /api/v2/quality/calibrations | Create a calibration
 [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | **POST** /api/v2/quality/conversations/{conversationId}/evaluations | Create an evaluation
@@ -322,6 +328,214 @@ apiInstance.deleteQualityFormsSurvey(formId)
 ### Return type
 
 void (no response body)
+
+<a name="getAnalyticsEvaluationsAggregatesJob"></a>
+
+# AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
+
+Get status for async query for evaluation aggregates
+
+Requires ANY permissions:
+
+* analytics:evaluationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsEvaluationsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsEvaluationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsEvaluationsAggregatesJobResults"></a>
+
+# EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+Requires ANY permissions:
+
+* analytics:evaluationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsEvaluationsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsEvaluationsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationAsyncAggregateQueryResponse**
+
+<a name="getAnalyticsSurveysAggregatesJob"></a>
+
+# AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}
+
+Get status for async query for survey aggregates
+
+Requires ANY permissions:
+
+* analytics:surveyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsSurveysAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsSurveysAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsSurveysAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsSurveysAggregatesJobResults"></a>
+
+# SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+Requires ANY permissions:
+
+* analytics:surveyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsSurveysAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsSurveysAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyAsyncAggregateQueryResponse**
 
 <a name="getQualityAgentsActivity"></a>
 
@@ -2051,6 +2265,56 @@ apiInstance.patchQualityFormsSurvey(formId, body)
 
 **SurveyForm**
 
+<a name="postAnalyticsEvaluationsAggregatesJobs"></a>
+
+# AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
+
+
+POST /api/v2/analytics/evaluations/aggregates/jobs
+
+Query for evaluation aggregates asynchronously
+
+Requires ANY permissions:
+
+* analytics:evaluationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsEvaluationsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsEvaluationsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
+
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
 # EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
@@ -2100,6 +2364,56 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 ### Return type
 
 **EvaluationAggregateQueryResponse**
+
+<a name="postAnalyticsSurveysAggregatesJobs"></a>
+
+# AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body)
+
+
+POST /api/v2/analytics/surveys/aggregates/jobs
+
+Query for survey aggregates asynchronously
+
+Requires ANY permissions:
+
+* analytics:surveyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsSurveysAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsSurveysAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsSurveysAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
 
 <a name="postAnalyticsSurveysAggregatesQuery"></a>
 

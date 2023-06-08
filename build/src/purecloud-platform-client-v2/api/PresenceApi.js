@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -19,6 +19,32 @@ class PresenceApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a Presence Definition
+	 * 
+	 * @param {String} definitionId Presence Definition ID
+	 * Preview Endpoint
+	 */
+	deletePresenceDefinition(definitionId) { 
+		// verify the required parameter 'definitionId' is set
+		if (definitionId === undefined || definitionId === null) {
+			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/definitions/{definitionId}', 
+			'DELETE', 
+			{ 'definitionId': definitionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a Presence Source
@@ -61,6 +87,58 @@ class PresenceApi {
 			'DELETE', 
 			{ 'presenceId': presenceId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Presence Definition
+	 * 
+	 * @param {String} definitionId Presence Definition ID
+	 * Preview Endpoint
+	 */
+	getPresenceDefinition(definitionId) { 
+		// verify the required parameter 'definitionId' is set
+		if (definitionId === undefined || definitionId === null) {
+			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/definitions/{definitionId}', 
+			'GET', 
+			{ 'definitionId': definitionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Presence Definitions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
+	 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+	 * Preview Endpoint
+	 */
+	getPresenceDefinitions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/definitions', 
+			'GET', 
+			{  },
+			{ 'deactivated': opts['deactivated'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -361,6 +439,32 @@ class PresenceApi {
 	}
 
 	/**
+	 * Create a Presence Definition
+	 * 
+	 * @param {Object} body The Presence Definition to create
+	 * Preview Endpoint
+	 */
+	postPresenceDefinitions(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postPresenceDefinitions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/definitions', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a Presence Source
 	 * 
 	 * @param {Object} body The Presence Source to create
@@ -400,6 +504,37 @@ class PresenceApi {
 			'/api/v2/presencedefinitions', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Presence Definition
+	 * 
+	 * @param {String} definitionId Presence Definition ID
+	 * @param {Object} body The updated Presence Definition
+	 * Preview Endpoint
+	 */
+	putPresenceDefinition(definitionId, body) { 
+		// verify the required parameter 'definitionId' is set
+		if (definitionId === undefined || definitionId === null) {
+			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putPresenceDefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/definitions/{definitionId}', 
+			'PUT', 
+			{ 'definitionId': definitionId },
 			{  },
 			{  },
 			{  },

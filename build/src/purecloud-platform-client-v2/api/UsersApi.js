@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -241,6 +241,62 @@ class UsersApi {
 	}
 
 	/**
+	 * Get status for async query for user aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * Preview Endpoint
+	 */
+	getAnalyticsUsersAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * Preview Endpoint
+	 */
+	getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get status for async query for user details
 	 * 
 	 * @param {String} jobId jobId
@@ -321,7 +377,7 @@ class UsersApi {
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
-     	 * @deprecated
+     * @deprecated
 	 */
 	getAuthorizationDivisionspermittedMe(permission, opts) { 
 		opts = opts || {};
@@ -383,7 +439,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-     	 * @deprecated
+     * @deprecated
 	 */
 	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
 		opts = opts || {};
@@ -460,7 +516,7 @@ class UsersApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
-     	 * @deprecated
+     * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -493,7 +549,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
-     	 * @deprecated
+     * @deprecated
 	 */
 	getProfilesUsers(opts) { 
 		opts = opts || {};
@@ -661,7 +717,7 @@ class UsersApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     	 * @deprecated
+     * @deprecated
 	 */
 	getUserFavorites(userId, opts) { 
 		opts = opts || {};
@@ -747,7 +803,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
-     	 * @deprecated
+     * @deprecated
 	 */
 	getUserProfile(userId, opts) { 
 		opts = opts || {};
@@ -1550,6 +1606,63 @@ class UsersApi {
 	}
 
 	/**
+	 * Query for user activity observations
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The desired page size
+	 * @param {Number} opts.pageNumber The desired page number
+	 * Preview Endpoint
+	 */
+	postAnalyticsUsersActivityQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsUsersActivityQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/activity/query', 
+			'POST', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for user aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * Preview Endpoint
+	 */
+	postAnalyticsUsersAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsUsersAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for user aggregates
 	 * 
 	 * @param {Object} body query
@@ -2023,6 +2136,58 @@ class UsersApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search users as conversation targets
+	 * 
+	 * @param {Object} body Search request options
+	 * Preview Endpoint
+	 */
+	postUsersSearchConversationTarget(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersSearchConversationTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/search/conversation/target', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search manage queue member
+	 * 
+	 * @param {Object} body Search request options
+	 * Preview Endpoint
+	 */
+	postUsersSearchQueuemembersManage(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersSearchQueuemembersManage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/search/queuemembers/manage', 
 			'POST', 
 			{  },
 			{  },

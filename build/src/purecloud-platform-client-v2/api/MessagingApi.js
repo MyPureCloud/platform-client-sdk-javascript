@@ -5,7 +5,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -24,7 +24,7 @@ class MessagingApi {
 	 * Delete a supported content profile
 	 * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	deleteMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 		// verify the required parameter 'supportedContentId' is set
@@ -52,7 +52,7 @@ class MessagingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-     	 * @deprecated
+     * @deprecated
 	 */
 	getMessagingSupportedcontent(opts) { 
 		opts = opts || {};
@@ -76,7 +76,7 @@ class MessagingApi {
 	 * Get a supported content profile
 	 * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
-     	 * @deprecated
+     * @deprecated
 	 */
 	getMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 		// verify the required parameter 'supportedContentId' is set
@@ -103,7 +103,7 @@ class MessagingApi {
 	 * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
 	 * @param {Object} body SupportedContent
-     	 * @deprecated
+     * @deprecated
 	 */
 	patchMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
 		// verify the required parameter 'supportedContentId' is set
@@ -133,7 +133,7 @@ class MessagingApi {
 	 * Create a Supported Content profile
 	 * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
 	 * @param {Object} body SupportedContent
-     	 * @deprecated
+     * @deprecated
 	 */
 	postMessagingSupportedcontent(body) { 
 		// verify the required parameter 'body' is set

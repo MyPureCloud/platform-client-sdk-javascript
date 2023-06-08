@@ -66,6 +66,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsDatatablesDivisionviews**](ArchitectApi.html#getFlowsDatatablesDivisionviews) | **GET** /api/v2/flows/datatables/divisionviews | Retrieve a list of datatables for the org
 [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | **GET** /api/v2/flows/divisionviews | Get a pageable list of basic flow information objects filterable by query parameters.
 [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | **GET** /api/v2/flows/executions/{flowExecutionId} | Get a flow execution's details. Flow execution details are available for several days after the flow is started.
+[**getFlowsInstance**](ArchitectApi.html#getFlowsInstance) | **GET** /api/v2/flows/instances/{instanceId} | Start a process (job) to prepare a download of a singular flow execution data instance by Id
+[**getFlowsInstancesJob**](ArchitectApi.html#getFlowsInstancesJob) | **GET** /api/v2/flows/instances/jobs/{jobId} | Get the status and/or results of an asynchronous flow execution data retrieval job
+[**getFlowsInstancesQuerycapabilities**](ArchitectApi.html#getFlowsInstancesQuerycapabilities) | **GET** /api/v2/flows/instances/querycapabilities | Retrieve a list of capabilities that the org can use to query for execution data
 [**getFlowsJob**](ArchitectApi.html#getFlowsJob) | **GET** /api/v2/flows/jobs/{jobId} | Fetch Architect Job Status
 [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | **GET** /api/v2/flows/milestones/{milestoneId} | Get a flow milestone
 [**getFlowsMilestones**](ArchitectApi.html#getFlowsMilestones) | **GET** /api/v2/flows/milestones | Get a pageable list of flow milestones, filtered by query parameters
@@ -97,6 +100,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
 [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
 [**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | **POST** /api/v2/flows/executions | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
+[**postFlowsInstancesJobs**](ArchitectApi.html#postFlowsInstancesJobs) | **POST** /api/v2/flows/instances/jobs | Start a process (job) that will prepare a list of execution data IDs for download.
+[**postFlowsInstancesQuery**](ArchitectApi.html#postFlowsInstancesQuery) | **POST** /api/v2/flows/instances/query | Query the database of existing flow histories to look for particular flow criteria
 [**postFlowsJobs**](ArchitectApi.html#postFlowsJobs) | **POST** /api/v2/flows/jobs | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 [**postFlowsMilestones**](ArchitectApi.html#postFlowsMilestones) | **POST** /api/v2/flows/milestones | Create a flow milestone
 [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | **POST** /api/v2/flows/outcomes | Create a flow outcome
@@ -3495,6 +3500,166 @@ apiInstance.getFlowsExecution(flowExecutionId)
 
 **FlowRuntimeExecution**
 
+<a name="getFlowsInstance"></a>
+
+# GetFlowExecutionDataJobResult getFlowsInstance(instanceId, opts)
+
+
+GET /api/v2/flows/instances/{instanceId}
+
+Start a process (job) to prepare a download of a singular flow execution data instance by Id
+
+Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+
+Requires ANY permissions:
+
+* architect:flowInstance:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let instanceId = "instanceId_example"; // String | Instance ID
+let opts = { 
+  'expand': "expand_example" // String | Expand various details.
+};
+
+apiInstance.getFlowsInstance(instanceId, opts)
+  .then((data) => {
+    console.log(`getFlowsInstance success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsInstance');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **instanceId** | **String** | Instance ID |  |
+ **expand** | **String** | Expand various details. | [optional] <br />**Values**: bots, data |
+{: class="table table-striped"}
+
+### Return type
+
+**GetFlowExecutionDataJobResult**
+
+<a name="getFlowsInstancesJob"></a>
+
+# GetFlowExecutionDataJobResult getFlowsInstancesJob(jobId)
+
+
+GET /api/v2/flows/instances/jobs/{jobId}
+
+Get the status and/or results of an asynchronous flow execution data retrieval job
+
+Requires ANY permissions:
+
+* architect:flowInstance:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getFlowsInstancesJob(jobId)
+  .then((data) => {
+    console.log(`getFlowsInstancesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsInstancesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GetFlowExecutionDataJobResult**
+
+<a name="getFlowsInstancesQuerycapabilities"></a>
+
+# FlowsQueryCriteriaResponse getFlowsInstancesQuerycapabilities(opts)
+
+
+GET /api/v2/flows/instances/querycapabilities
+
+Retrieve a list of capabilities that the org can use to query for execution data
+
+Returns the queryable parameters that can be used to build a query for execution data.
+
+Requires ANY permissions:
+
+* architect:flowInstance:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'expand': "expand_example" // String | Expand various query types.
+};
+
+apiInstance.getFlowsInstancesQuerycapabilities(opts)
+  .then((data) => {
+    console.log(`getFlowsInstancesQuerycapabilities success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsInstancesQuerycapabilities');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **expand** | **String** | Expand various query types. | [optional] <br />**Values**: flow, action |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowsQueryCriteriaResponse**
+
 <a name="getFlowsJob"></a>
 
 # ArchitectJobStateResponse getFlowsJob(jobId, opts)
@@ -5166,6 +5331,118 @@ apiInstance.postFlowsExecutions(flowLaunchRequest)
 ### Return type
 
 **FlowExecutionLaunchResponse**
+
+<a name="postFlowsInstancesJobs"></a>
+
+# GetFlowExecutionDataJobResult postFlowsInstancesJobs(body, opts)
+
+
+POST /api/v2/flows/instances/jobs
+
+Start a process (job) that will prepare a list of execution data IDs for download.
+
+Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+
+Requires ANY permissions:
+
+* architect:flowInstance:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let body = {}; // Object | Requested Flow Ids
+let opts = { 
+  'expand': "expand_example" // String | Expand various query types.
+};
+
+apiInstance.postFlowsInstancesJobs(body, opts)
+  .then((data) => {
+    console.log(`postFlowsInstancesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsInstancesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Requested Flow Ids |  |
+ **expand** | **String** | Expand various query types. | [optional] <br />**Values**: bots, data |
+{: class="table table-striped"}
+
+### Return type
+
+**GetFlowExecutionDataJobResult**
+
+<a name="postFlowsInstancesQuery"></a>
+
+# FlowResultEntityListing postFlowsInstancesQuery(body, opts)
+
+
+POST /api/v2/flows/instances/query
+
+Query the database of existing flow histories to look for particular flow criteria
+
+Returns a list of matching flow histories up to 200 max.
+
+Requires ANY permissions:
+
+* architect:flowInstance:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'indexOnly': true // Boolean | indexes only
+};
+
+apiInstance.postFlowsInstancesQuery(body, opts)
+  .then((data) => {
+    console.log(`postFlowsInstancesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsInstancesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **indexOnly** | **Boolean** | indexes only | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowResultEntityListing**
 
 <a name="postFlowsJobs"></a>
 

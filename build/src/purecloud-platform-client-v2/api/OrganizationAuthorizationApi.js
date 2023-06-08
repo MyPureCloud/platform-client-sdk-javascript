@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -196,6 +196,32 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Delete Bulk Org Trustees
+	 * 
+	 * @param {Array.<String>} id Comma separated list of trustee ids to remove
+	 * Preview Endpoint
+	 */
+	deleteOrgauthorizationTrustees(id) { 
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling deleteOrgauthorizationTrustees';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees', 
+			'DELETE', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete Org Trust
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
@@ -301,6 +327,32 @@ class OrganizationAuthorizationApi {
 			'DELETE', 
 			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Bulk Org Trustors
+	 * 
+	 * @param {Array.<String>} id Comma separated list of trustor ids to remove
+	 * Preview Endpoint
+	 */
+	deleteOrgauthorizationTrustors(id) { 
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling deleteOrgauthorizationTrustors';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors', 
+			'DELETE', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
 			{  },
 			{  },
 			null, 

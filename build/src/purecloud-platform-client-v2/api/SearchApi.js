@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -298,6 +298,32 @@ class SearchApi {
 	}
 
 	/**
+	 * Search all documents
+	 * 
+	 * @param {Object} body Search request options
+	 * Preview Endpoint
+	 */
+	postDocumentationAllSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postDocumentationAllSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/documentation/all/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search gkn documentation
 	 * 
 	 * @param {Object} body Search request options
@@ -378,7 +404,7 @@ class SearchApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-     	 * @deprecated
+     * @deprecated
 	 */
 	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -548,6 +574,58 @@ class SearchApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search users as conversation targets
+	 * 
+	 * @param {Object} body Search request options
+	 * Preview Endpoint
+	 */
+	postUsersSearchConversationTarget(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersSearchConversationTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/search/conversation/target', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search manage queue member
+	 * 
+	 * @param {Object} body Search request options
+	 * Preview Endpoint
+	 */
+	postUsersSearchQueuemembersManage(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersSearchQueuemembersManage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/search/queuemembers/manage', 
 			'POST', 
 			{  },
 			{  },

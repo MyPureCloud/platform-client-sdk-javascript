@@ -38,6 +38,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | **GET** /api/v2/integrations/speech/lex/bot/alias/{aliasId} | Get details about a Lex bot alias
 [**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | **GET** /api/v2/integrations/speech/lex/bot/{botId}/aliases | Get a list of aliases for a bot in the customer's AWS accounts
 [**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | **GET** /api/v2/integrations/speech/lex/bots | Get a list of Lex bots in the customers' AWS accounts
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBot**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBot) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId} | Get a Nuance bot in the specified Integration
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId} | Get the status of an asynchronous Nuance bot GET job
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results | Get the result of an asynchronous Nuance bot GET job
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBots**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBots) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots | Get a list of Nuance bots available in the specified Integration
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId} | Get the status of an asynchronous Nuance bots GET job
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results | Get the result of an asynchronous Nuance bots GET job
 [**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | **GET** /api/v2/integrations/speech/tts/engines/{engineId} | Get details about a TTS engine
 [**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId} | Get details about a specific voice for a TTS engine
 [**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices | Get a list of voices for a TTS engine
@@ -59,9 +65,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntegrationsActions**](IntegrationsApi.html#postIntegrationsActions) | **POST** /api/v2/integrations/actions | Create a new Action
 [**postIntegrationsActionsDrafts**](IntegrationsApi.html#postIntegrationsActionsDrafts) | **POST** /api/v2/integrations/actions/drafts | Create a new Draft
 [**postIntegrationsCredentials**](IntegrationsApi.html#postIntegrationsCredentials) | **POST** /api/v2/integrations/credentials | Create a set of credentials
+[**postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs | Get a Nuance bot in the specified Integration asynchronously
+[**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs | Get a list of Nuance bots in the specified Integration asynchronously
+[**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate | Try out a single credential for a Nuance bot to know if the secret is correct
 [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | **PUT** /api/v2/integrations/{integrationId}/config/current | Update integration configuration.
 [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | **PUT** /api/v2/integrations/botconnector/{integrationId}/bots | Set a list of botConnector bots plus versions for this integration
 [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | **PUT** /api/v2/integrations/credentials/{credentialId} | Update a set of credentials
+[**putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings**](IntegrationsApi.html#putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings) | **PUT** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
 [**putIntegrationsSpeechTtsSettings**](IntegrationsApi.html#putIntegrationsSpeechTtsSettings) | **PUT** /api/v2/integrations/speech/tts/settings | Update TTS settings for an org
 {: class="table table-striped"}
 
@@ -1785,6 +1795,336 @@ apiInstance.getIntegrationsSpeechLexBots(opts)
 
 **LexBotEntityListing**
 
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBot"></a>
+
+# NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}
+
+Get a Nuance bot in the specified Integration
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID to get
+let opts = { 
+  'expand': ["expand_example"], // [String] | expand
+  'targetChannel': "targetChannel_example" // String | targetChannel
+};
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBot success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBot');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The Nuance bot ID to get |  |
+ **expand** | **[String]** | expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
+ **targetChannel** | **String** | targetChannel | [optional] <br />**Values**: digital, voice |
+{: class="table table-striped"}
+
+### Return type
+
+**NuanceBot**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob"></a>
+
+# AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}
+
+Get the status of an asynchronous Nuance bot GET job
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The Nuance bot ID |  |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncJob**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults"></a>
+
+# NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results
+
+Get the result of an asynchronous Nuance bot GET job
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The Nuance bot ID |  |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**NuanceBot**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBots"></a>
+
+# NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots
+
+Get a list of Nuance bots available in the specified Integration
+
+If the onlyRegisteredBots param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integrations configured discovery credentials are returned.
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'onlyRegisteredBots': true // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+};
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBots success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBots');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **onlyRegisteredBots** | **Boolean** | Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**NuanceBotEntityListing**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob"></a>
+
+# AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}
+
+Get the status of an asynchronous Nuance bots GET job
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncJob**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults"></a>
+
+# NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results
+
+Get the result of an asynchronous Nuance bots GET job
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**NuanceBotEntityListing**
+
 <a name="getIntegrationsSpeechTtsEngine"></a>
 
 # TtsEngineEntity getIntegrationsSpeechTtsEngine(engineId, opts)
@@ -2910,6 +3250,174 @@ apiInstance.postIntegrationsCredentials(opts)
 
 **CredentialInfo**
 
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs"></a>
+
+# AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts)
+
+
+POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs
+
+Get a Nuance bot in the specified Integration asynchronously
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID
+let opts = { 
+  'expand': ["expand_example"], // [String] | expand
+  'body': "body_example" // String | targetChannel
+};
+
+apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts)
+  .then((data) => {
+    console.log(`postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The Nuance bot ID |  |
+ **expand** | **[String]** | expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
+ **body** | **String** | targetChannel | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncJob**
+
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs"></a>
+
+# AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts)
+
+
+POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs
+
+Get a list of Nuance bots in the specified Integration asynchronously
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'onlyRegisteredBots': true // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+};
+
+apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts)
+  .then((data) => {
+    console.log(`postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **onlyRegisteredBots** | **Boolean** | Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncJob**
+
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate"></a>
+
+# void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
+
+
+POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate
+
+Try out a single credential for a Nuance bot to know if the secret is correct
+
+Requires ANY permissions:
+
+* integrations:integration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let settings = {}; // Object | 
+
+apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
+  .then(() => {
+    console.log('postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **settings** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="putIntegrationConfigCurrent"></a>
 
 # IntegrationConfiguration putIntegrationConfigCurrent(integrationId, opts)
@@ -3067,6 +3575,58 @@ apiInstance.putIntegrationsCredential(credentialId, opts)
 ### Return type
 
 **CredentialInfo**
+
+<a name="putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings"></a>
+
+# void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
+
+
+PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings
+
+Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+
+Requires ANY permissions:
+
+* integrations:integration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let settings = {}; // Object | 
+
+apiInstance.putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
+  .then(() => {
+    console.log('putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **settings** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="putIntegrationsSpeechTtsSettings"></a>
 

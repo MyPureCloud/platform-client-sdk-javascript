@@ -5,7 +5,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 169.0.0
+	 * @version 169.1.0
 	 */
 
 	/**
@@ -86,6 +86,27 @@ class TokensApi {
 	}
 
 	/**
+	 * Get the current Idle Token Timeout Value
+	 * 
+	 * Preview Endpoint
+	 */
+	getTokensTimeout() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/tokens/timeout', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Verify user token
 	 * 
 	 */
@@ -99,6 +120,31 @@ class TokensApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update or Enable/Disable the Idle Token Timeout
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * Preview Endpoint
+	 */
+	putTokensTimeout(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/tokens/timeout', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
