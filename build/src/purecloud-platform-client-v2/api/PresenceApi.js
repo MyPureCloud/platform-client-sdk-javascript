@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -24,12 +24,12 @@ class PresenceApi {
 	 * Delete a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
-	 * Preview Endpoint
+	 * deletePresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deletePresenceDefinition(definitionId) { 
+	deletePresenceDefinition0(definitionId) { 
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition';
+			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition0';
 		}
 
 		return this.apiClient.callApi(
@@ -100,12 +100,12 @@ class PresenceApi {
 	 * Get a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
-	 * Preview Endpoint
+	 * getPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getPresenceDefinition(definitionId) { 
+	getPresenceDefinition0(definitionId) { 
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition';
+			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition0';
 		}
 
 		return this.apiClient.callApi(
@@ -128,9 +128,9 @@ class PresenceApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
 	 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
-	 * Preview Endpoint
+	 * getPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getPresenceDefinitions(opts) { 
+	getPresenceDefinitions0(opts) { 
 		opts = opts || {};
 		
 
@@ -374,6 +374,59 @@ class PresenceApi {
 	}
 
 	/**
+	 * Get bulk user presences for a single presence source
+	 * 
+	 * @param {String} sourceId The requested presence source ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+	 */
+	getUsersPresenceBulk(sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling getUsersPresenceBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/presences/{sourceId}/bulk', 
+			'GET', 
+			{ 'sourceId': sourceId },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+	 */
+	getUsersPresencesPurecloudBulk(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/presences/purecloud/bulk', 
+			'GET', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Patch a user's Presence
 	 * Patch a users presence for the specified source that is not specifically listed. This endpoint does not support registered presence sources. The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the source defined in the path as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 	 * @param {String} userId user Id
@@ -442,12 +495,12 @@ class PresenceApi {
 	 * Create a Presence Definition
 	 * 
 	 * @param {Object} body The Presence Definition to create
-	 * Preview Endpoint
+	 * postPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postPresenceDefinitions(body) { 
+	postPresenceDefinitions0(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postPresenceDefinitions';
+			throw 'Missing the required parameter "body" when calling postPresenceDefinitions0';
 		}
 
 		return this.apiClient.callApi(
@@ -519,16 +572,16 @@ class PresenceApi {
 	 * 
 	 * @param {String} definitionId Presence Definition ID
 	 * @param {Object} body The updated Presence Definition
-	 * Preview Endpoint
+	 * putPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	putPresenceDefinition(definitionId, body) { 
+	putPresenceDefinition0(definitionId, body) { 
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition';
+			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition0';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putPresenceDefinition';
+			throw 'Missing the required parameter "body" when calling putPresenceDefinition0';
 		}
 
 		return this.apiClient.callApi(

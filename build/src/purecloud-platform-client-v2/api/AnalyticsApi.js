@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -99,7 +99,7 @@ class AnalyticsApi {
 	 * Get status for async query for action aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsActionsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -127,7 +127,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsActionsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -189,7 +189,7 @@ class AnalyticsApi {
 	 * Get status for async query for bot aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsBotsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -217,7 +217,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsBotsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -270,7 +270,7 @@ class AnalyticsApi {
 	 * Get status for async query for conversation aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -298,7 +298,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -445,7 +445,7 @@ class AnalyticsApi {
 	 * Get status for async query for evaluation aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -473,7 +473,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -501,7 +501,7 @@ class AnalyticsApi {
 	 * Get status for async query for Flow aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -529,7 +529,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -557,7 +557,7 @@ class AnalyticsApi {
 	 * Get status for async query for journey aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -585,7 +585,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -613,7 +613,7 @@ class AnalyticsApi {
 	 * Get status for async query for knowledge aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsKnowledgeAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -641,7 +641,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsKnowledgeAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -964,7 +964,7 @@ class AnalyticsApi {
 	 * Get status for async query for resolution aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsResolutionsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -992,7 +992,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsResolutionsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -1020,7 +1020,7 @@ class AnalyticsApi {
 	 * Get status for async query for survey aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -1048,7 +1048,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -1076,7 +1076,7 @@ class AnalyticsApi {
 	 * Get status for async query for task management aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTaskmanagementAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -1104,7 +1104,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -1132,7 +1132,7 @@ class AnalyticsApi {
 	 * Get status for async query for transcript aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTranscriptsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -1160,7 +1160,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTranscriptsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -1188,7 +1188,7 @@ class AnalyticsApi {
 	 * Get status for async query for user aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -1216,7 +1216,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -1344,7 +1344,7 @@ class AnalyticsApi {
 	 * Query for action aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsActionsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1395,7 +1395,7 @@ class AnalyticsApi {
 	 * Query for bot aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsBotsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1479,7 +1479,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -1507,7 +1507,7 @@ class AnalyticsApi {
 	 * Query for conversation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1633,7 +1633,7 @@ class AnalyticsApi {
 	 * Query for evaluation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsEvaluationsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1687,7 +1687,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -1715,7 +1715,7 @@ class AnalyticsApi {
 	 * Query for flow aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1791,7 +1791,7 @@ class AnalyticsApi {
 	 * Query for journey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsJourneysAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1842,7 +1842,7 @@ class AnalyticsApi {
 	 * Query for knowledge aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsKnowledgeAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1868,7 +1868,7 @@ class AnalyticsApi {
 	 * Query for knowledge aggregates
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsKnowledgeAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -1994,7 +1994,7 @@ class AnalyticsApi {
 	 * Query for resolution aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsResolutionsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -2023,7 +2023,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsRoutingActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2051,7 +2051,7 @@ class AnalyticsApi {
 	 * Query for survey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSurveysAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -2102,7 +2102,7 @@ class AnalyticsApi {
 	 * Query for task management aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTaskmanagementAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -2128,7 +2128,7 @@ class AnalyticsApi {
 	 * Query for task management aggregates
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTaskmanagementAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -2157,7 +2157,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTeamsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2185,7 +2185,7 @@ class AnalyticsApi {
 	 * Query for transcript aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTranscriptsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -2239,7 +2239,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2267,7 +2267,7 @@ class AnalyticsApi {
 	 * Query for user aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set

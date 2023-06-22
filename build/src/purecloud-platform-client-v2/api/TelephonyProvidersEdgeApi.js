@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -1193,7 +1193,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Array.<String>} opts.id ID of the Extension Pools to filter by.
 	 * @param {String} opts.name Name of the Extension Pools to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
-	 * Preview Endpoint
+	 * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1430,7 +1430,7 @@ class TelephonyProvidersEdgeApi {
 	 * Get outbound route
 	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 	 * @param {String} outboundRouteId Outbound route ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
 		// verify the required parameter 'outboundRouteId' is set
@@ -1626,7 +1626,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.phoneHardwareId Filter by phone_hardwareId
 	 * @param {String} opts.linesId Filter by lines.id
 	 * @param {String} opts.linesName Filter by lines.name
-	 * @param {String} opts.name Name of the Phone to filter by
+	 * @param {String} opts.name Name of the Phone to filter by, comma-separated
 	 * @param {String} opts.statusOperationalStatus The primary status to filter by
 	 * @param {String} opts.secondaryStatusOperationalStatus The secondary status to filter by
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated

@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -88,7 +88,7 @@ class QualityApi {
 	 * Delete an evaluation form.
 	 * 
 	 * @param {String} formId Form ID
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
@@ -164,7 +164,7 @@ class QualityApi {
 	 * Get status for async query for evaluation aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -192,7 +192,7 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -220,7 +220,7 @@ class QualityApi {
 	 * Get status for async query for survey aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -248,7 +248,7 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -569,7 +569,7 @@ class QualityApi {
 	 * Get an evaluation form
 	 * 
 	 * @param {String} formId Form ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
@@ -598,7 +598,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityFormVersions(formId, opts) { 
 		opts = opts || {};
@@ -634,7 +634,7 @@ class QualityApi {
 	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityForms(opts) { 
 		opts = opts || {};
@@ -910,7 +910,7 @@ class QualityApi {
 	 * Get the published evaluation forms.
 	 * 
 	 * @param {String} formId Form ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityPublishedform(formId) { 
 		// verify the required parameter 'formId' is set
@@ -940,7 +940,7 @@ class QualityApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityPublishedforms(opts) { 
 		opts = opts || {};
@@ -1148,7 +1148,7 @@ class QualityApi {
 	 * Query for evaluation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsEvaluationsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1199,7 +1199,7 @@ class QualityApi {
 	 * Query for survey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSurveysAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1388,7 +1388,7 @@ class QualityApi {
 	 * Create an evaluation form.
 	 * 
 	 * @param {Object} body Evaluation form
-     * @deprecated
+	 * @deprecated
 	 */
 	postQualityForms(body) { 
 		// verify the required parameter 'body' is set
@@ -1464,7 +1464,7 @@ class QualityApi {
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
-     * @deprecated
+	 * @deprecated
 	 */
 	postQualityPublishedforms(body) { 
 		// verify the required parameter 'body' is set
@@ -1635,7 +1635,7 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body Evaluation form
-     * @deprecated
+	 * @deprecated
 	 */
 	putQualityForm(formId, body) { 
 		// verify the required parameter 'formId' is set

@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -905,7 +905,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {Object} opts.targetChannel targetChannel
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -939,7 +939,7 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -975,7 +975,7 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1013,7 +1013,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -1042,7 +1042,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1073,7 +1073,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1696,7 +1696,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {String} opts.body targetChannel
-	 * Preview Endpoint
+	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -1732,7 +1732,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * Preview Endpoint
+	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -1761,7 +1761,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * Preview Endpoint
+	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1880,7 +1880,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * Preview Endpoint
+	 * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1921,6 +1921,36 @@ class IntegrationsApi {
 			'/api/v2/integrations/speech/tts/settings', 
 			'PUT', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk integration presence ingestion
+	 * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+	 * @param {String} ucIntegrationId UC Integration ID
+	 * @param {Array.<Object>} body List of User presences
+	 */
+	putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences', 
+			'PUT', 
+			{ 'ucIntegrationId': ucIntegrationId },
 			{  },
 			{  },
 			{  },

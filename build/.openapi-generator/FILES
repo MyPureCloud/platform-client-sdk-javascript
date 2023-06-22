@@ -173,6 +173,7 @@ docs/deleteConversationRecordingAnnotation-example.txt
 docs/deleteConversationsCallParticipantConsult-example.txt
 docs/deleteConversationsEmailMessagesDraftAttachment-example.txt
 docs/deleteConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
+docs/deleteConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsLineIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
@@ -596,6 +597,8 @@ docs/getConversationsMessagingFacebookApp-example.txt
 docs/getConversationsMessagingIntegrations-example.txt
 docs/getConversationsMessagingIntegrationsFacebook-example.txt
 docs/getConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
+docs/getConversationsMessagingIntegrationsInstagram-example.txt
+docs/getConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsLine-example.txt
 docs/getConversationsMessagingIntegrationsLineIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsOpen-example.txt
@@ -815,7 +818,6 @@ docs/getJourneyActiontarget-example.txt
 docs/getJourneyActiontargets-example.txt
 docs/getJourneyActiontemplate-example.txt
 docs/getJourneyActiontemplates-example.txt
-docs/getJourneyCustomerCustomerIdSessions-example.txt
 docs/getJourneyOutcome-example.txt
 docs/getJourneyOutcomes-example.txt
 docs/getJourneyOutcomesAttributionsJob-example.txt
@@ -1324,6 +1326,8 @@ docs/getUsersDevelopmentActivities-example.txt
 docs/getUsersDevelopmentActivitiesMe-example.txt
 docs/getUsersDevelopmentActivity-example.txt
 docs/getUsersMe-example.txt
+docs/getUsersPresenceBulk-example.txt
+docs/getUsersPresencesPurecloudBulk-example.txt
 docs/getUsersSearch-example.txt
 docs/getUsersSearch-example.txt
 docs/getVoicemailGroupMailbox-example.txt
@@ -1473,6 +1477,7 @@ docs/patchConversationsMessageParticipant-example.txt
 docs/patchConversationsMessageParticipantAttributes-example.txt
 docs/patchConversationsMessageParticipantCommunication-example.txt
 docs/patchConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
+docs/patchConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
@@ -1696,12 +1701,18 @@ docs/postConversationDisconnect-example.txt
 docs/postConversationParticipantCallbacks-example.txt
 docs/postConversationParticipantDigits-example.txt
 docs/postConversationParticipantReplace-example.txt
+docs/postConversationParticipantReplaceAgent-example.txt
+docs/postConversationParticipantReplaceExternal-example.txt
+docs/postConversationParticipantReplaceQueue-example.txt
 docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationRecordingAnnotations-example.txt
 docs/postConversationsCall-example.txt
 docs/postConversationsCallParticipantCoach-example.txt
 docs/postConversationsCallParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallParticipantConsult-example.txt
+docs/postConversationsCallParticipantConsultAgent-example.txt
+docs/postConversationsCallParticipantConsultExternal-example.txt
+docs/postConversationsCallParticipantConsultQueue-example.txt
 docs/postConversationsCallParticipantMonitor-example.txt
 docs/postConversationsCallParticipantReplace-example.txt
 docs/postConversationsCallParticipants-example.txt
@@ -1739,6 +1750,7 @@ docs/postConversationsMessages-example.txt
 docs/postConversationsMessagesAgentless-example.txt
 docs/postConversationsMessagesInboundOpen-example.txt
 docs/postConversationsMessagingIntegrationsFacebook-example.txt
+docs/postConversationsMessagingIntegrationsInstagram-example.txt
 docs/postConversationsMessagingIntegrationsLine-example.txt
 docs/postConversationsMessagingIntegrationsOpen-example.txt
 docs/postConversationsMessagingIntegrationsTwitter-example.txt
@@ -2230,6 +2242,7 @@ docs/putIntegrationsBotconnectorIntegrationIdBots-example.txt
 docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
 docs/putIntegrationsSpeechTtsSettings-example.txt
+docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt
 docs/putLearningModule-example.txt
 docs/putLearningModuleRule-example.txt

@@ -2428,6 +2428,8 @@ Get a pageable list of basic extension pool objects filterable by query paramete
 
 This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
 
+getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * telephony:extensionPool:search
@@ -3339,7 +3341,7 @@ let opts = {
   'phoneHardwareId': "phoneHardwareId_example", // String | Filter by phone_hardwareId
   'linesId': "linesId_example", // String | Filter by lines.id
   'linesName': "linesName_example", // String | Filter by lines.name
-  'name': "name_example", // String | Name of the Phone to filter by
+  'name': "name_example", // String | Name of the Phone to filter by, comma-separated
   'statusOperationalStatus': "statusOperationalStatus_example", // String | The primary status to filter by
   'secondaryStatusOperationalStatus': "secondaryStatusOperationalStatus_example", // String | The secondary status to filter by
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
@@ -3373,7 +3375,7 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
  **phoneHardwareId** | **String** | Filter by phone_hardwareId | [optional]  |
  **linesId** | **String** | Filter by lines.id | [optional]  |
  **linesName** | **String** | Filter by lines.name | [optional]  |
- **name** | **String** | Name of the Phone to filter by | [optional]  |
+ **name** | **String** | Name of the Phone to filter by, comma-separated | [optional]  |
  **statusOperationalStatus** | **String** | The primary status to filter by | [optional]  |
  **secondaryStatusOperationalStatus** | **String** | The secondary status to filter by | [optional]  |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |

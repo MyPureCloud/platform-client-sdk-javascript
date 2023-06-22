@@ -338,6 +338,8 @@ GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
 
 Get status for async query for evaluation aggregates
 
+getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
@@ -387,6 +389,8 @@ apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId)
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -442,6 +446,8 @@ GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}
 
 Get status for async query for survey aggregates
 
+getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:surveyAggregate:view
@@ -491,6 +497,8 @@ apiInstance.getAnalyticsSurveysAggregatesJob(jobId)
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2274,6 +2282,8 @@ POST /api/v2/analytics/evaluations/aggregates/jobs
 
 Query for evaluation aggregates asynchronously
 
+postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
@@ -2373,6 +2383,8 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 POST /api/v2/analytics/surveys/aggregates/jobs
 
 Query for survey aggregates asynchronously
+
+postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

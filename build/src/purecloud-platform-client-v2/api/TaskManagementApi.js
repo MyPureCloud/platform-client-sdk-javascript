@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -24,7 +24,7 @@ class TaskManagementApi {
 	 * Delete a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
@@ -50,7 +50,7 @@ class TaskManagementApi {
 	 * Delete a workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkitem(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -76,7 +76,7 @@ class TaskManagementApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -102,7 +102,7 @@ class TaskManagementApi {
 	 * Delete a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorktype(worktypeId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -129,7 +129,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -159,7 +159,7 @@ class TaskManagementApi {
 	 * Get a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
-	 * Preview Endpoint
+	 * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
@@ -189,7 +189,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinHistory(workbinId, opts) { 
 		opts = opts || {};
@@ -218,7 +218,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Number} entityVersion Workbin version
-	 * Preview Endpoint
+	 * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersion(workbinId, entityVersion) { 
 		// verify the required parameter 'workbinId' is set
@@ -252,7 +252,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersions(workbinId, opts) { 
 		opts = opts || {};
@@ -280,9 +280,13 @@ class TaskManagementApi {
 	 * Get a workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * Preview Endpoint
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expands Which fields to expand. Comma separated if more than one.
+	 * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getTaskmanagementWorkitem(workitemId) { 
+	getTaskmanagementWorkitem(workitemId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null) {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitem';
@@ -292,7 +296,7 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/workitems/{workitemId}', 
 			'GET', 
 			{ 'workitemId': workitemId },
-			{  },
+			{ 'expands': opts['expands'] },
 			{  },
 			{  },
 			null, 
@@ -310,7 +314,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemHistory(workitemId, opts) { 
 		opts = opts || {};
@@ -344,7 +348,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts) { 
 		opts = opts || {};
@@ -377,7 +381,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Number} entityVersion Workitem version
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersion(workitemId, entityVersion) { 
 		// verify the required parameter 'workitemId' is set
@@ -411,7 +415,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersions(workitemId, opts) { 
 		opts = opts || {};
@@ -444,7 +448,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemWrapups(workitemId, opts) { 
 		opts = opts || {};
@@ -472,7 +476,7 @@ class TaskManagementApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -499,7 +503,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {String} versionId Schema version
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
@@ -529,7 +533,7 @@ class TaskManagementApi {
 	 * Get all versions of a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -554,7 +558,7 @@ class TaskManagementApi {
 	/**
 	 * Get a list of schemas.
 	 * 
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemas() { 
 
@@ -578,7 +582,7 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expands Which fields, if any, to expand.
-	 * Preview Endpoint
+	 * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktype(worktypeId, opts) { 
 		opts = opts || {};
@@ -610,7 +614,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeHistory(worktypeId, opts) { 
 		opts = opts || {};
@@ -639,7 +643,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * Preview Endpoint
+	 * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -670,7 +674,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Number} entityVersion Worktype version
-	 * Preview Endpoint
+	 * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersion(worktypeId, entityVersion) { 
 		// verify the required parameter 'worktypeId' is set
@@ -704,7 +708,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersions(worktypeId, opts) { 
 		opts = opts || {};
@@ -733,7 +737,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Object} body Json with attributes and their new values: {description:new description, name:new name}.
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkbin(workbinId, body) { 
 		// verify the required parameter 'workbinId' is set
@@ -764,7 +768,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Workitem
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitem(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -795,7 +799,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Targeted user
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemAssignment(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -827,7 +831,7 @@ class TaskManagementApi {
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {String} userId The ID of the user
 	 * @param {Object} body Request body to add/remove a wrapup code for a workitem
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -862,7 +866,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {Object} body Request body to add/remove the wrapup code for workitem
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -894,7 +898,7 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorktype(worktypeId, opts) { 
 		opts = opts || {};
@@ -925,7 +929,7 @@ class TaskManagementApi {
 	 * @param {String} statusId Status id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts) { 
 		opts = opts || {};
@@ -958,7 +962,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkbins(opts) { 
 		opts = opts || {};
@@ -982,7 +986,7 @@ class TaskManagementApi {
 	 * Query for workbins
 	 * 
 	 * @param {Object} body QueryPostRequest
-	 * Preview Endpoint
+	 * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkbinsQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -1008,7 +1012,7 @@ class TaskManagementApi {
 	 * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemAcdCancel(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -1034,7 +1038,7 @@ class TaskManagementApi {
 	 * Disconnect the assignee of the workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemDisconnect(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -1062,7 +1066,7 @@ class TaskManagementApi {
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Terminated request
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemTerminate(workitemId, opts) { 
 		opts = opts || {};
@@ -1090,7 +1094,7 @@ class TaskManagementApi {
 	 * Create a workitem
 	 * 
 	 * @param {Object} body Workitem
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitems(body) { 
 		// verify the required parameter 'body' is set
@@ -1116,7 +1120,7 @@ class TaskManagementApi {
 	 * Query for workitems
 	 * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
 	 * @param {Object} body WorkitemQueryPostRequest
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemsQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -1142,7 +1146,7 @@ class TaskManagementApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Schema
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemsSchemas(body) { 
 		// verify the required parameter 'body' is set
@@ -1170,7 +1174,7 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypeStatuses(worktypeId, opts) { 
 		opts = opts || {};
@@ -1199,7 +1203,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypes(opts) { 
 		opts = opts || {};
@@ -1223,7 +1227,7 @@ class TaskManagementApi {
 	 * Query for worktypes
 	 * 
 	 * @param {Object} body QueryPostRequest
-	 * Preview Endpoint
+	 * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -1250,7 +1254,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Data Schema
-	 * Preview Endpoint
+	 * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putTaskmanagementWorkitemsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set

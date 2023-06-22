@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -153,7 +153,7 @@ class JourneyApi {
 	 * Get status for async query for journey aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -181,7 +181,7 @@ class JourneyApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -417,42 +417,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve all sessions for a given customer.
-	 * 
-	 * @param {String} customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone).
-	 * @param {String} customerId Primary identifier of the customer in the source of the session.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * Preview Endpoint
-	 */
-	getJourneyCustomerCustomerIdSessions(customerIdType, customerId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'customerIdType' is set
-		if (customerIdType === undefined || customerIdType === null) {
-			throw 'Missing the required parameter "customerIdType" when calling getJourneyCustomerCustomerIdSessions';
-		}
-		// verify the required parameter 'customerId' is set
-		if (customerId === undefined || customerId === null) {
-			throw 'Missing the required parameter "customerId" when calling getJourneyCustomerCustomerIdSessions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/customers/{customerIdType}/{customerId}/sessions', 
-			'GET', 
-			{ 'customerIdType': customerIdType,'customerId': customerId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Retrieve a single outcome.
 	 * 
 	 * @param {String} outcomeId ID of the outcome.
@@ -510,7 +474,7 @@ class JourneyApi {
 	 * Get job status.
 	 * 
 	 * @param {String} jobId ID of the job.
-	 * Preview Endpoint
+	 * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyOutcomesAttributionsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -536,7 +500,7 @@ class JourneyApi {
 	 * Get outcome attribution entities from completed job.
 	 * 
 	 * @param {String} jobId ID of the job.
-	 * Preview Endpoint
+	 * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyOutcomesAttributionsJobResults(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -690,7 +654,7 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * Preview Endpoint
+	 * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneySessionEvents(sessionId, opts) { 
 		opts = opts || {};
@@ -748,7 +712,7 @@ class JourneyApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
 	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 * Preview Endpoint
+	 * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneySessionSegments(sessionId, opts) { 
 		opts = opts || {};
@@ -921,7 +885,7 @@ class JourneyApi {
 	 * Query for journey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsJourneysAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1070,7 +1034,7 @@ class JourneyApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body outcome attribution request
-	 * Preview Endpoint
+	 * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyOutcomesAttributionsJobs(opts) { 
 		opts = opts || {};

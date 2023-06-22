@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -239,7 +239,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteRoutingQueueUser(queueId, memberId) { 
 		// verify the required parameter 'queueId' is set
@@ -466,7 +466,7 @@ class RoutingApi {
 	 * @param {String} tagId Utilization Tag ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDelete Remove all tag usages (if found) without warning (default to false)
-	 * Preview Endpoint
+	 * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteRoutingUtilizationTag(tagId, opts) { 
 		opts = opts || {};
@@ -1361,7 +1361,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.languages Filter by language
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
-     * @deprecated
+	 * @deprecated
 	 */
 	getRoutingQueueUsers(queueId, opts) { 
 		opts = opts || {};
@@ -1953,7 +1953,7 @@ class RoutingApi {
 	 * Get details about this utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
-	 * Preview Endpoint
+	 * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationTag(tagId) { 
 		// verify the required parameter 'tagId' is set
@@ -1979,7 +1979,7 @@ class RoutingApi {
 	 * Get list of agent ids associated with a utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
-	 * Preview Endpoint
+	 * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationTagAgents(tagId) { 
 		// verify the required parameter 'tagId' is set
@@ -2009,7 +2009,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
 	 * @param {String} opts.name Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
-	 * Preview Endpoint
+	 * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationTags(opts) { 
 		opts = opts || {};
@@ -2399,7 +2399,7 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
 	 * @param {Object} body Queue Member
-     * @deprecated
+	 * @deprecated
 	 */
 	patchRoutingQueueUser(queueId, memberId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -2434,7 +2434,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
-     * @deprecated
+	 * @deprecated
 	 */
 	patchRoutingQueueUsers(queueId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -2711,7 +2711,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsRoutingActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -3007,7 +3007,7 @@ class RoutingApi {
 	 * @param {Array.<Object>} body Queue Members
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts._delete True to delete queue members (default to false)
-     * @deprecated
+	 * @deprecated
 	 */
 	postRoutingQueueUsers(queueId, body, opts) { 
 		opts = opts || {};
@@ -3223,7 +3223,7 @@ class RoutingApi {
 	 * Imports a phone number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
-	 * Preview Endpoint
+	 * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingSmsPhonenumbersImport(body) { 
 		// verify the required parameter 'body' is set
@@ -3249,7 +3249,7 @@ class RoutingApi {
 	 * Create an utilization tag
 	 * 
 	 * @param {Object} body UtilizationTag
-	 * Preview Endpoint
+	 * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingUtilizationTags(body) { 
 		// verify the required parameter 'body' is set

@@ -24,6 +24,8 @@ GET /api/v2/analytics/flows/aggregates/jobs/{jobId}
 
 Get status for async query for Flow aggregates
 
+getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:flowAggregate:view
@@ -73,6 +75,8 @@ apiInstance.getAnalyticsFlowsAggregatesJob(jobId)
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -127,6 +131,8 @@ apiInstance.getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 POST /api/v2/analytics/flows/activity/query
 
 Query for flow activity observations
+
+postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -183,6 +189,8 @@ apiInstance.postAnalyticsFlowsActivityQuery(body, opts)
 POST /api/v2/analytics/flows/aggregates/jobs
 
 Query for flow aggregates asynchronously
+
+postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

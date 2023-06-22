@@ -22,7 +22,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | **GET** /api/v2/journey/actiontargets | Retrieve all action targets.
 [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | **GET** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template.
 [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | **GET** /api/v2/journey/actiontemplates | Retrieve all action templates.
-[**getJourneyCustomerCustomerIdSessions**](JourneyApi.html#getJourneyCustomerCustomerIdSessions) | **GET** /api/v2/journey/customers/{customerIdType}/{customerId}/sessions | Retrieve all sessions for a given customer.
 [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | **GET** /api/v2/journey/outcomes/{outcomeId} | Retrieve a single outcome.
 [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | **GET** /api/v2/journey/outcomes | Retrieve all outcomes.
 [**getJourneyOutcomesAttributionsJob**](JourneyApi.html#getJourneyOutcomesAttributionsJob) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId} | Get job status.
@@ -314,6 +313,8 @@ GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
 
 Get status for async query for journey aggregates
 
+getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:journeyAggregate:view
@@ -363,6 +364,8 @@ apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -843,64 +846,6 @@ apiInstance.getJourneyActiontemplates(opts)
 
 **ActionTemplateListing**
 
-<a name="getJourneyCustomerCustomerIdSessions"></a>
-
-# SessionListing getJourneyCustomerCustomerIdSessions(customerIdType, customerId, opts)
-
-
-GET /api/v2/journey/customers/{customerIdType}/{customerId}/sessions
-
-Retrieve all sessions for a given customer.
-
-Requires ANY permissions:
-
-* journey:session:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.JourneyApi();
-
-let customerIdType = "customerIdType_example"; // String | Type of ID used to identify customer (e.g. email, cookie, and phone).
-let customerId = "customerId_example"; // String | Primary identifier of the customer in the source of the session.
-let opts = { 
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'after': "after_example" // String | The cursor that points to the end of the set of entities that has been returned.
-};
-
-apiInstance.getJourneyCustomerCustomerIdSessions(customerIdType, customerId, opts)
-  .then((data) => {
-    console.log(`getJourneyCustomerCustomerIdSessions success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getJourneyCustomerCustomerIdSessions');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **customerIdType** | **String** | Type of ID used to identify customer (e.g. email, cookie, and phone). |  |
- **customerId** | **String** | Primary identifier of the customer in the source of the session. |  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**SessionListing**
-
 <a name="getJourneyOutcome"></a>
 
 # Outcome getJourneyOutcome(outcomeId)
@@ -1022,6 +967,8 @@ GET /api/v2/journey/outcomes/attributions/jobs/{jobId}
 
 Get job status.
 
+getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * journey:outcomeAttributionJob:view
@@ -1071,6 +1018,8 @@ apiInstance.getJourneyOutcomesAttributionsJob(jobId)
 GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results
 
 Get outcome attribution entities from completed job.
+
+getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1382,6 +1331,8 @@ GET /api/v2/journey/sessions/{sessionId}/events
 
 Retrieve all events for a given session.
 
+getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * journey:event:view
@@ -1487,6 +1438,8 @@ apiInstance.getJourneySessionOutcomescores(sessionId)
 GET /api/v2/journey/sessions/{sessionId}/segments
 
 Retrieve segment assignments by session ID.
+
+getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1818,6 +1771,8 @@ POST /api/v2/analytics/journeys/aggregates/jobs
 
 Query for journey aggregates asynchronously
 
+postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:journeyAggregate:view
@@ -2123,6 +2078,8 @@ apiInstance.postJourneyOutcomes(opts)
 POST /api/v2/journey/outcomes/attributions/jobs
 
 Create Outcome Attributions
+
+postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

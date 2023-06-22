@@ -1007,6 +1007,8 @@ DELETE /api/v2/routing/utilization/tags/{tagId}
 
 Delete an utilization tag
 
+deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * routing:utilization:manage
@@ -3977,6 +3979,8 @@ GET /api/v2/routing/utilization/tags/{tagId}
 
 Get details about this utilization tag
 
+getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * routing:utilization:view
@@ -4027,6 +4031,8 @@ GET /api/v2/routing/utilization/tags/{tagId}/agents
 
 Get list of agent ids associated with a utilization tag
 
+getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * routing:utilization:view
@@ -4076,6 +4082,8 @@ apiInstance.getRoutingUtilizationTagAgents(tagId)
 GET /api/v2/routing/utilization/tags
 
 Get list of utilization tags
+
+getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -5336,6 +5344,8 @@ POST /api/v2/analytics/routing/activity/query
 
 Query for user activity observations
 
+postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:queueObservation:view
@@ -6329,6 +6339,8 @@ POST /api/v2/routing/sms/phonenumbers/import
 
 Imports a phone number for SMS
 
+postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * sms:phoneNumber:byoImport
@@ -6378,6 +6390,8 @@ apiInstance.postRoutingSmsPhonenumbersImport(body)
 POST /api/v2/routing/utilization/tags
 
 Create an utilization tag
+
+postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 

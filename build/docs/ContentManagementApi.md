@@ -407,10 +407,13 @@ apiInstance.getContentmanagementDocument(documentId, opts)
 
 # DocumentAuditEntityListing getContentmanagementDocumentAudits(documentId, opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/contentmanagement/documents/{documentId}/audits
 
 Get a list of audits for a document.
+
+This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 
 Requires NO permissions:
 
@@ -1442,10 +1445,13 @@ apiInstance.getContentmanagementWorkspaces(opts)
 
 # QueryResults postContentmanagementAuditquery(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/contentmanagement/auditquery
 
 Query audits
+
+This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 
 Requires NO permissions:
 

@@ -21,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSystempresences**](PresenceApi.html#getSystempresences) | **GET** /api/v2/systempresences | Get the list of SystemPresences
 [**getUserPresence**](PresenceApi.html#getUserPresence) | **GET** /api/v2/users/{userId}/presences/{sourceId} | Get a user's Presence
 [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | **GET** /api/v2/users/{userId}/presences/purecloud | Get a user's Genesys Cloud presence.
+[**getUsersPresenceBulk**](PresenceApi.html#getUsersPresenceBulk) | **GET** /api/v2/users/presences/{sourceId}/bulk | Get bulk user presences for a single presence source
+[**getUsersPresencesPurecloudBulk**](PresenceApi.html#getUsersPresencesPurecloudBulk) | **GET** /api/v2/users/presences/purecloud/bulk | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
 [**patchUserPresence**](PresenceApi.html#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user's Presence
 [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user's presence
 [**postPresenceDefinitions0**](PresenceApi.html#postPresenceDefinitions0) | **POST** /api/v2/presence/definitions | Create a Presence Definition
@@ -42,6 +44,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 DELETE /api/v2/presence/definitions/{definitionId}
 
 Delete a Presence Definition
+
+deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -195,6 +199,8 @@ GET /api/v2/presence/definitions/{definitionId}
 
 Get a Presence Definition
 
+getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * presence:presenceDefinition:view
@@ -244,6 +250,8 @@ apiInstance.getPresenceDefinition0(definitionId)
 GET /api/v2/presence/definitions
 
 Get a list of Presence Definitions
+
+getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -742,6 +750,108 @@ apiInstance.getUserPresencesPurecloud(userId)
 
 **UserPresence**
 
+<a name="getUsersPresenceBulk"></a>
+
+# [UcUserPresence] getUsersPresenceBulk(sourceId, opts)
+
+
+GET /api/v2/users/presences/{sourceId}/bulk
+
+Get bulk user presences for a single presence source
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let sourceId = "sourceId_example"; // String | The requested presence source ID.
+let opts = { 
+  'id': ["id_example"] // [String] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+};
+
+apiInstance.getUsersPresenceBulk(sourceId, opts)
+  .then((data) => {
+    console.log(`getUsersPresenceBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersPresenceBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceId** | **String** | The requested presence source ID. |  |
+ **id** | **[String]** | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[UcUserPresence]**
+
+<a name="getUsersPresencesPurecloudBulk"></a>
+
+# [UcUserPresence] getUsersPresencesPurecloudBulk(opts)
+
+
+GET /api/v2/users/presences/purecloud/bulk
+
+Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let opts = { 
+  'id': ["id_example"] // [String] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+};
+
+apiInstance.getUsersPresencesPurecloudBulk(opts)
+  .then((data) => {
+    console.log(`getUsersPresencesPurecloudBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersPresencesPurecloudBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[UcUserPresence]**
+
 <a name="patchUserPresence"></a>
 
 # UserPresence patchUserPresence(userId, sourceId, body)
@@ -856,6 +966,8 @@ apiInstance.patchUserPresencesPurecloud(userId, body)
 POST /api/v2/presence/definitions
 
 Create a Presence Definition
+
+postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1006,6 +1118,8 @@ apiInstance.postPresencedefinitions(body)
 PUT /api/v2/presence/definitions/{definitionId}
 
 Update a Presence Definition
+
+putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 

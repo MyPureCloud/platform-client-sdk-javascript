@@ -1404,7 +1404,8 @@ let opts = {
   'includeSubcategories': true, // Boolean | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
   'includeDrafts': true, // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.
   'labelIds': ["labelIds_example"], // [String] | If specified, retrieves documents associated with label ids, comma separated values expected.
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'externalIds': ["externalIds_example"] // [String] | If specified, retrieves documents associated with external ids, comma separated values expected.
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
@@ -1433,6 +1434,7 @@ apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
  **includeDrafts** | **Boolean** | If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional]  |
  **labelIds** | **[String]** | If specified, retrieves documents associated with label ids, comma separated values expected. | [optional]  |
  **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels, variations |
+ **externalIds** | **[String]** | If specified, retrieves documents associated with external ids, comma separated values expected. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1841,6 +1843,8 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseI
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}
 
 Get document content upload status
+
+getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -3503,6 +3507,8 @@ POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove
 
 Bulk remove documents.
 
+postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ALL permissions:
 
 * knowledge:document:delete
@@ -3554,6 +3560,8 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update
 
 Bulk update documents.
+
+postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -3716,6 +3724,8 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add
 
 Bulk add document versions.
+
+postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -3980,6 +3990,8 @@ apiInstance.postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, langua
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads
 
 Upload Article Content
+
+postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 

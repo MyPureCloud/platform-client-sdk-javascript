@@ -557,6 +557,8 @@ POST /api/v2/documentation/all/search
 
 Search all documents
 
+postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires NO permissions:
 
 ### Example Usage
@@ -1102,6 +1104,8 @@ POST /api/v2/users/search/conversation/target
 
 Search users as conversation targets
 
+postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * conversation:communication:target
@@ -1151,6 +1155,8 @@ apiInstance.postUsersSearchConversationTarget(body)
 POST /api/v2/users/search/queuemembers/manage
 
 Search manage queue member
+
+postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

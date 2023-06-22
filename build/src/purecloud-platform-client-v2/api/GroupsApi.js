@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -49,7 +49,7 @@ class GroupsApi {
 	 * Remove dynamic group definition
 	 * 
 	 * @param {String} groupId Group ID
-	 * Preview Endpoint
+	 * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteGroupDynamicsettings(groupId) { 
 		// verify the required parameter 'groupId' is set
@@ -105,7 +105,7 @@ class GroupsApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
-     * @deprecated
+	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -156,7 +156,7 @@ class GroupsApi {
 	 * Get dynamic group definition
 	 * 
 	 * @param {String} groupId Group ID
-	 * Preview Endpoint
+	 * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getGroupDynamicsettings(groupId) { 
 		// verify the required parameter 'groupId' is set
@@ -241,7 +241,7 @@ class GroupsApi {
 	 * @param {String} groupId groupId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
-     * @deprecated
+	 * @deprecated
 	 */
 	getGroupProfile(groupId, opts) { 
 		opts = opts || {};
@@ -331,7 +331,7 @@ class GroupsApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
-     * @deprecated
+	 * @deprecated
 	 */
 	getProfilesGroups(opts) { 
 		opts = opts || {};
@@ -410,8 +410,8 @@ class GroupsApi {
 	 * Preview the number of users selected for a dynamic group definition query
 	 * 
 	 * @param {Object} body Group query to preview
-     * @deprecated
-	 * Preview Endpoint
+	 * @deprecated
+	 * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postGroupsDynamicsettingsPreview(body) { 
 		// verify the required parameter 'body' is set
@@ -492,7 +492,7 @@ class GroupsApi {
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {Object} body Create/Update dynamic groups
-	 * Preview Endpoint
+	 * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putGroupDynamicsettings(groupId, body) { 
 		// verify the required parameter 'groupId' is set

@@ -86,6 +86,8 @@ DELETE /api/v2/groups/{groupId}/dynamicsettings
 
 Remove dynamic group definition
 
+deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * directory:group:delete
@@ -282,6 +284,8 @@ apiInstance.getGroup(groupId)
 GET /api/v2/groups/{groupId}/dynamicsettings
 
 Get dynamic group definition
+
+getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -766,6 +770,8 @@ POST /api/v2/groups/dynamicsettings/preview
 
 Preview the number of users selected for a dynamic group definition query
 
+postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * directory:group:view
@@ -917,6 +923,8 @@ apiInstance.putGroup(groupId, opts)
 PUT /api/v2/groups/{groupId}/dynamicsettings
 
 Create / Update dynamic group definition
+
+putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

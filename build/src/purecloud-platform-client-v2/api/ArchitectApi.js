@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -1778,7 +1778,7 @@ class ArchitectApi {
 	 * @param {String} instanceId Instance ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various details.
-	 * Preview Endpoint
+	 * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstance(instanceId, opts) { 
 		opts = opts || {};
@@ -1806,7 +1806,7 @@ class ArchitectApi {
 	 * Get the status and/or results of an asynchronous flow execution data retrieval job
 	 * 
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -1833,7 +1833,7 @@ class ArchitectApi {
 	 * Returns the queryable parameters that can be used to build a query for execution data.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
-	 * Preview Endpoint
+	 * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesQuerycapabilities(opts) { 
 		opts = opts || {};
@@ -2690,7 +2690,7 @@ class ArchitectApi {
 	 * @param {Object} body Requested Flow Ids
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
-	 * Preview Endpoint
+	 * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesJobs(body, opts) { 
 		opts = opts || {};
@@ -2720,7 +2720,7 @@ class ArchitectApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.indexOnly indexes only
-	 * Preview Endpoint
+	 * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesQuery(body, opts) { 
 		opts = opts || {};

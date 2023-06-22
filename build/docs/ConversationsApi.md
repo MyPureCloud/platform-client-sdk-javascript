@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
 [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
 [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
+[**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Delete Instagram messaging integration
 [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/line/{integrationId} | Delete a LINE messenger integration
 [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
 [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete a Twitter messaging integration
@@ -79,6 +80,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
 [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
 [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
+[**getConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagram) | **GET** /api/v2/conversations/messaging/integrations/instagram | Get a list of Instagram Integrations
+[**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Get Instagram messaging integration
 [**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | **GET** /api/v2/conversations/messaging/integrations/line | Get a list of LINE messenger Integrations
 [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/line/{integrationId} | Get a LINE messenger integration
 [**getConversationsMessagingIntegrationsOpen**](ConversationsApi.html#getConversationsMessagingIntegrationsOpen) | **GET** /api/v2/conversations/messaging/integrations/open | Get a list of Open messaging integrations
@@ -129,6 +132,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
+[**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsInstagramIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
 [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update Twitter messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update or activate a WhatsApp messaging integration
@@ -146,11 +150,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
 [**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
 [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationParticipantReplaceAgent**](ConversationsApi.html#postConversationParticipantReplaceAgent) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent | Replace this participant with the specified agent
+[**postConversationParticipantReplaceExternal**](ConversationsApi.html#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact
+[**postConversationParticipantReplaceQueue**](ConversationsApi.html#postConversationParticipantReplaceQueue) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue
 [**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
 [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
 [**postConversationsCallParticipantCoach**](ConversationsApi.html#postConversationsCallParticipantCoach) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
 [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCallParticipantCommunicationWrapup) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
+[**postConversationsCallParticipantConsultAgent**](ConversationsApi.html#postConversationsCallParticipantConsultAgent) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent | Initiate a consult transfer to an agent
+[**postConversationsCallParticipantConsultExternal**](ConversationsApi.html#postConversationsCallParticipantConsultExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact
+[**postConversationsCallParticipantConsultQueue**](ConversationsApi.html#postConversationsCallParticipantConsultQueue) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue
 [**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsCallParticipantReplace**](ConversationsApi.html#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsCallParticipants**](ConversationsApi.html#postConversationsCallParticipants) | **POST** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation
@@ -188,6 +198,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | **POST** /api/v2/conversations/messages/agentless | Send an agentless outbound message
 [**postConversationsMessagesInboundOpen**](ConversationsApi.html#postConversationsMessagesInboundOpen) | **POST** /api/v2/conversations/messages/inbound/open | Send an inbound Open Message
 [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
+[**postConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#postConversationsMessagingIntegrationsInstagram) | **POST** /api/v2/conversations/messaging/integrations/instagram | Create Instagram Integration
 [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | **POST** /api/v2/conversations/messaging/integrations/line | Create a LINE messenger Integration
 [**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
@@ -520,6 +531,56 @@ apiInstance.deleteConversationsMessagingIntegrationsFacebookIntegrationId(integr
 
 void (no response body)
 
+<a name="deleteConversationsMessagingIntegrationsInstagramIntegrationId"></a>
+
+# void deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)
+
+
+DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId}
+
+Delete Instagram messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsInstagramIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsInstagramIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteConversationsMessagingIntegrationsLineIntegrationId"></a>
 
 # void deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
@@ -832,6 +893,8 @@ GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
 
 Get status for async query for conversation aggregates
 
+getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:conversationAggregate:view
@@ -881,6 +944,8 @@ apiInstance.getAnalyticsConversationsAggregatesJob(jobId)
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3883,6 +3948,120 @@ apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrati
 
 **FacebookIntegration**
 
+<a name="getConversationsMessagingIntegrationsInstagram"></a>
+
+# InstagramIntegrationEntityListing getConversationsMessagingIntegrationsInstagram(opts)
+
+
+GET /api/v2/conversations/messaging/integrations/instagram
+
+Get a list of Instagram Integrations
+
+Requires ALL permissions:
+
+* messaging:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+};
+
+apiInstance.getConversationsMessagingIntegrationsInstagram(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsInstagram success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsInstagram');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**InstagramIntegrationEntityListing**
+
+<a name="getConversationsMessagingIntegrationsInstagramIntegrationId"></a>
+
+# InstagramIntegration getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts)
+
+
+GET /api/v2/conversations/messaging/integrations/instagram/{integrationId}
+
+Get Instagram messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'expand': "expand_example" // String | Expand instructions for the return value.
+};
+
+apiInstance.getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsInstagramIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+{: class="table table-striped"}
+
+### Return type
+
+**InstagramIntegration**
+
 <a name="getConversationsMessagingIntegrationsLine"></a>
 
 # LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(opts)
@@ -4762,6 +4941,8 @@ apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId,
 GET /api/v2/conversations/videos/{conferenceId}/details
 
 Get video conference details (e.g. the current number of active participants).
+
+getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -6566,6 +6747,58 @@ apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integra
 
 **FacebookIntegration**
 
+<a name="patchConversationsMessagingIntegrationsInstagramIntegrationId"></a>
+
+# InstagramIntegration patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)
+
+
+PATCH /api/v2/conversations/messaging/integrations/instagram/{integrationId}
+
+Update Instagram messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | InstagramIntegrationUpdateRequest
+
+apiInstance.patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsInstagramIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | InstagramIntegrationUpdateRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**InstagramIntegration**
+
 <a name="patchConversationsMessagingIntegrationsOpenIntegrationId"></a>
 
 # OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
@@ -6889,6 +7122,8 @@ POST /api/v2/analytics/conversations/activity/query
 
 Query for conversation activity observations
 
+postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:queueObservation:view
@@ -6944,6 +7179,8 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
 POST /api/v2/analytics/conversations/aggregates/jobs
 
 Query for conversation aggregates asynchronously
+
+postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -7414,12 +7651,15 @@ void (no response body)
 
 # void postConversationParticipantReplace(conversationId, participantId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
 
 ### Example Usage
 
@@ -7444,6 +7684,171 @@ apiInstance.postConversationParticipantReplace(conversationId, participantId, bo
   })
   .catch((err) => {
     console.log('There was a failure calling postConversationParticipantReplace');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postConversationParticipantReplaceAgent"></a>
+
+# void postConversationParticipantReplaceAgent(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent
+
+Replace this participant with the specified agent
+
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferAgent
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Transfer request
+
+apiInstance.postConversationParticipantReplaceAgent(conversationId, participantId, body)
+  .then(() => {
+    console.log('postConversationParticipantReplaceAgent returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantReplaceAgent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postConversationParticipantReplaceExternal"></a>
+
+# void postConversationParticipantReplaceExternal(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external
+
+Replace this participant with the an external contact
+
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferExternal
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Transfer request
+
+apiInstance.postConversationParticipantReplaceExternal(conversationId, participantId, body)
+  .then(() => {
+    console.log('postConversationParticipantReplaceExternal returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantReplaceExternal');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postConversationParticipantReplaceQueue"></a>
+
+# void postConversationParticipantReplaceQueue(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue
+
+Replace this participant with the specified queue
+
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferQueue
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Transfer request
+
+apiInstance.postConversationParticipantReplaceQueue(conversationId, participantId, body)
+  .then(() => {
+    console.log('postConversationParticipantReplaceQueue returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantReplaceQueue');
     console.error(err);
   });
 ```
@@ -7680,12 +8085,15 @@ void (no response body)
 
 # ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
 Initiate and update consult transfer
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:communication:consultTransfer
 
 ### Example Usage
 
@@ -7722,6 +8130,171 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination address and initial speak to |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ConsultTransferResponse**
+
+<a name="postConversationsCallParticipantConsultAgent"></a>
+
+# ConsultTransferResponse postConversationsCallParticipantConsultAgent(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent
+
+Initiate a consult transfer to an agent
+
+Requires ANY permissions:
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferAgent
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Destination agent and initial speak to
+
+apiInstance.postConversationsCallParticipantConsultAgent(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantConsultAgent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantConsultAgent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Destination agent and initial speak to |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ConsultTransferResponse**
+
+<a name="postConversationsCallParticipantConsultExternal"></a>
+
+# ConsultTransferResponse postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external
+
+Initiate a consult transfer to an external contact
+
+Requires ANY permissions:
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferExternal
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Destination address and initial speak to
+
+apiInstance.postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantConsultExternal success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantConsultExternal');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Destination address and initial speak to |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ConsultTransferResponse**
+
+<a name="postConversationsCallParticipantConsultQueue"></a>
+
+# ConsultTransferResponse postConversationsCallParticipantConsultQueue(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue
+
+Initiate a consult transfer to a queue
+
+Requires ANY permissions:
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferQueue
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Destination queue and initial speak to
+
+apiInstance.postConversationsCallParticipantConsultQueue(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantConsultQueue success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantConsultQueue');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Destination queue and initial speak to |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7784,12 +8357,15 @@ void (no response body)
 
 # void postConversationsCallParticipantReplace(conversationId, participantId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
 
 ### Example Usage
 
@@ -7944,12 +8520,15 @@ void (no response body)
 
 # void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
 
 ### Example Usage
 
@@ -8356,12 +8935,15 @@ void (no response body)
 
 # void postConversationsChatParticipantReplace(conversationId, participantId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
 
 ### Example Usage
 
@@ -8516,12 +9098,15 @@ void (no response body)
 
 # void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
 
 ### Example Usage
 
@@ -8778,12 +9363,15 @@ void (no response body)
 
 # void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
 
 ### Example Usage
 
@@ -9376,6 +9964,8 @@ POST /api/v2/conversations/messages/{conversationId}/participants/{participantId
 
 Listen in on the conversation from the point of view of a given participant.
 
+postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * conversation:message:monitor
@@ -9423,12 +10013,15 @@ void (no response body)
 
 # void postConversationsMessageParticipantReplace(conversationId, participantId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
 
 ### Example Usage
 
@@ -9676,6 +10269,56 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body)
 ### Return type
 
 **FacebookIntegration**
+
+<a name="postConversationsMessagingIntegrationsInstagram"></a>
+
+# InstagramIntegration postConversationsMessagingIntegrationsInstagram(body)
+
+
+POST /api/v2/conversations/messaging/integrations/instagram
+
+Create Instagram Integration
+
+Requires ALL permissions:
+
+* messaging:conversationInstagramIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | InstagramIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsInstagram(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsInstagram success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsInstagram');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | InstagramIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**InstagramIntegration**
 
 <a name="postConversationsMessagingIntegrationsLine"></a>
 

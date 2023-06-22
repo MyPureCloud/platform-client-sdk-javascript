@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -24,7 +24,7 @@ class OrganizationApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
-     * @deprecated
+	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -69,7 +69,7 @@ class OrganizationApi {
 	/**
 	 * Get the list of domains that will be allowed to embed PureCloud applications
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-     * @deprecated
+	 * @deprecated
 	 */
 	getOrganizationsEmbeddedintegration() { 
 
@@ -90,7 +90,7 @@ class OrganizationApi {
 	/**
 	 * Get organization IP address whitelist settings
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-     * @deprecated
+	 * @deprecated
 	 */
 	getOrganizationsIpaddressauthentication() { 
 
@@ -279,7 +279,7 @@ class OrganizationApi {
 	/**
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
-     * @deprecated
+	 * @deprecated
 	 */
 	getOrganizationsWhitelist() { 
 
@@ -356,7 +356,7 @@ class OrganizationApi {
 	 * Update the list of domains that will be allowed to embed PureCloud applications
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body Whitelist settings
-     * @deprecated
+	 * @deprecated
 	 */
 	putOrganizationsEmbeddedintegration(body) { 
 		// verify the required parameter 'body' is set
@@ -382,7 +382,7 @@ class OrganizationApi {
 	 * Update organization IP address whitelist settings
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body IP address Whitelist settings
-     * @deprecated
+	 * @deprecated
 	 */
 	putOrganizationsIpaddressauthentication(body) { 
 		// verify the required parameter 'body' is set
@@ -432,7 +432,7 @@ class OrganizationApi {
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
 	 * @param {Object} body Whitelist settings
-     * @deprecated
+	 * @deprecated
 	 */
 	putOrganizationsWhitelist(body) { 
 		// verify the required parameter 'body' is set

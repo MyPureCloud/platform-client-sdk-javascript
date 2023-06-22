@@ -374,6 +374,8 @@ DELETE /api/v2/orgauthorization/trustees
 
 Delete Bulk Org Trustees
 
+deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * authorization:orgTrustee:delete
@@ -629,6 +631,8 @@ void (no response body)
 DELETE /api/v2/orgauthorization/trustors
 
 Delete Bulk Org Trustors
+
+deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

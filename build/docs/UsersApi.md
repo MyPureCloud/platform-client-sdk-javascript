@@ -515,6 +515,8 @@ GET /api/v2/analytics/users/aggregates/jobs/{jobId}
 
 Get status for async query for user aggregates
 
+getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:userAggregate:view
@@ -564,6 +566,8 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId)
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
 
 Fetch a page of results for an async aggregates query
+
+getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3063,6 +3067,8 @@ POST /api/v2/analytics/users/activity/query
 
 Query for user activity observations
 
+postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * analytics:userObservation:view
@@ -3118,6 +3124,8 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
 POST /api/v2/analytics/users/aggregates/jobs
 
 Query for user aggregates asynchronously
+
+postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4062,6 +4070,8 @@ POST /api/v2/users/search/conversation/target
 
 Search users as conversation targets
 
+postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * conversation:communication:target
@@ -4111,6 +4121,8 @@ apiInstance.postUsersSearchConversationTarget(body)
 POST /api/v2/users/search/queuemembers/manage
 
 Search manage queue member
+
+postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

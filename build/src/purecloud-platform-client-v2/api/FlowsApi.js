@@ -5,7 +5,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -24,7 +24,7 @@ class FlowsApi {
 	 * Get status for async query for Flow aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -52,7 +52,7 @@ class FlowsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -83,7 +83,7 @@ class FlowsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -111,7 +111,7 @@ class FlowsApi {
 	 * Query for flow aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set

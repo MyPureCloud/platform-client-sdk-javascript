@@ -5,7 +5,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -24,7 +24,7 @@ class WebChatApi {
 	 * Delete a WebChat deployment
 	 * 
 	 * @param {String} deploymentId Deployment Id
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
@@ -100,7 +100,7 @@ class WebChatApi {
 	 * Get a WebChat deployment
 	 * 
 	 * @param {String} deploymentId Deployment Id
-     * @deprecated
+	 * @deprecated
 	 */
 	getWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
@@ -125,7 +125,7 @@ class WebChatApi {
 	/**
 	 * List WebChat deployments
 	 * 
-     * @deprecated
+	 * @deprecated
 	 */
 	getWebchatDeployments() { 
 
@@ -380,7 +380,7 @@ class WebChatApi {
 	 * Create WebChat deployment
 	 * 
 	 * @param {Object} body Deployment
-     * @deprecated
+	 * @deprecated
 	 */
 	postWebchatDeployments(body) { 
 		// verify the required parameter 'body' is set
@@ -497,7 +497,7 @@ class WebChatApi {
 	 * 
 	 * @param {String} deploymentId Deployment Id
 	 * @param {Object} body Deployment
-     * @deprecated
+	 * @deprecated
 	 */
 	putWebchatDeployment(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set

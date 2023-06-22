@@ -2279,7 +2279,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 169.1.0
+ * @version 170.0.0
  */
 class ApiClient {
 	/**
@@ -3358,7 +3358,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -3672,7 +3672,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -3766,7 +3766,7 @@ class AnalyticsApi {
 	 * Get status for async query for action aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsActionsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -3794,7 +3794,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsActionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsActionsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -3856,7 +3856,7 @@ class AnalyticsApi {
 	 * Get status for async query for bot aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsBotsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -3884,7 +3884,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsBotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsBotsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -3937,7 +3937,7 @@ class AnalyticsApi {
 	 * Get status for async query for conversation aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -3965,7 +3965,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4112,7 +4112,7 @@ class AnalyticsApi {
 	 * Get status for async query for evaluation aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4140,7 +4140,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4168,7 +4168,7 @@ class AnalyticsApi {
 	 * Get status for async query for Flow aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4196,7 +4196,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4224,7 +4224,7 @@ class AnalyticsApi {
 	 * Get status for async query for journey aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4252,7 +4252,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4280,7 +4280,7 @@ class AnalyticsApi {
 	 * Get status for async query for knowledge aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsKnowledgeAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4308,7 +4308,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsKnowledgeAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsKnowledgeAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4631,7 +4631,7 @@ class AnalyticsApi {
 	 * Get status for async query for resolution aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsResolutionsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4659,7 +4659,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsResolutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsResolutionsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4687,7 +4687,7 @@ class AnalyticsApi {
 	 * Get status for async query for survey aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4715,7 +4715,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4743,7 +4743,7 @@ class AnalyticsApi {
 	 * Get status for async query for task management aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTaskmanagementAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4771,7 +4771,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsTaskmanagementAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4799,7 +4799,7 @@ class AnalyticsApi {
 	 * Get status for async query for transcript aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTranscriptsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4827,7 +4827,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsTranscriptsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsTranscriptsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -4855,7 +4855,7 @@ class AnalyticsApi {
 	 * Get status for async query for user aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -4883,7 +4883,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -5011,7 +5011,7 @@ class AnalyticsApi {
 	 * Query for action aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsActionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsActionsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5062,7 +5062,7 @@ class AnalyticsApi {
 	 * Query for bot aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsBotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsBotsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5146,7 +5146,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -5174,7 +5174,7 @@ class AnalyticsApi {
 	 * Query for conversation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5300,7 +5300,7 @@ class AnalyticsApi {
 	 * Query for evaluation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsEvaluationsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5354,7 +5354,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -5382,7 +5382,7 @@ class AnalyticsApi {
 	 * Query for flow aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5458,7 +5458,7 @@ class AnalyticsApi {
 	 * Query for journey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsJourneysAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5509,7 +5509,7 @@ class AnalyticsApi {
 	 * Query for knowledge aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsKnowledgeAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsKnowledgeAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5535,7 +5535,7 @@ class AnalyticsApi {
 	 * Query for knowledge aggregates
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsKnowledgeAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -5661,7 +5661,7 @@ class AnalyticsApi {
 	 * Query for resolution aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsResolutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsResolutionsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5690,7 +5690,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsRoutingActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -5718,7 +5718,7 @@ class AnalyticsApi {
 	 * Query for survey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSurveysAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5769,7 +5769,7 @@ class AnalyticsApi {
 	 * Query for task management aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsTaskmanagementAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTaskmanagementAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5795,7 +5795,7 @@ class AnalyticsApi {
 	 * Query for task management aggregates
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTaskmanagementAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -5824,7 +5824,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTeamsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -5852,7 +5852,7 @@ class AnalyticsApi {
 	 * Query for transcript aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsTranscriptsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTranscriptsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -5906,7 +5906,7 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -5934,7 +5934,7 @@ class AnalyticsApi {
 	 * Query for user aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -6117,7 +6117,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -7890,7 +7890,7 @@ class ArchitectApi {
 	 * @param {String} instanceId Instance ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various details.
-	 * Preview Endpoint
+	 * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstance(instanceId, opts) { 
 		opts = opts || {};
@@ -7918,7 +7918,7 @@ class ArchitectApi {
 	 * Get the status and/or results of an asynchronous flow execution data retrieval job
 	 * 
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -7945,7 +7945,7 @@ class ArchitectApi {
 	 * Returns the queryable parameters that can be used to build a query for execution data.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
-	 * Preview Endpoint
+	 * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesQuerycapabilities(opts) { 
 		opts = opts || {};
@@ -8802,7 +8802,7 @@ class ArchitectApi {
 	 * @param {Object} body Requested Flow Ids
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
-	 * Preview Endpoint
+	 * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesJobs(body, opts) { 
 		opts = opts || {};
@@ -8832,7 +8832,7 @@ class ArchitectApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.indexOnly indexes only
-	 * Preview Endpoint
+	 * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesQuery(body, opts) { 
 		opts = opts || {};
@@ -9306,7 +9306,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -9477,7 +9477,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -9718,7 +9718,7 @@ class AuthorizationApi {
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
-     * @deprecated
+	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedMe(permission, opts) { 
 		opts = opts || {};
@@ -9780,7 +9780,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-     * @deprecated
+	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
 		opts = opts || {};
@@ -10708,7 +10708,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -10788,7 +10788,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -10858,7 +10858,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -10876,7 +10876,7 @@ class ChatApi {
 	/**
 	 * Get Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
-     * @deprecated
+	 * @deprecated
 	 */
 	getChatSettings() { 
 
@@ -10918,7 +10918,7 @@ class ChatApi {
 	 * Patch Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
 	 * @param {Object} body Chat
-     * @deprecated
+	 * @deprecated
 	 */
 	patchChatSettings(body) { 
 		// verify the required parameter 'body' is set
@@ -10969,7 +10969,7 @@ class ChatApi {
 	 * Update Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
 	 * @param {Object} body Chat
-     * @deprecated
+	 * @deprecated
 	 */
 	putChatSettings(body) { 
 		// verify the required parameter 'body' is set
@@ -11022,7 +11022,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -11599,7 +11599,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -11813,7 +11813,7 @@ class ContentManagementApi {
 
 	/**
 	 * Get a list of audits for a document.
-	 * 
+	 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 	 * @param {String} documentId Document ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -11822,6 +11822,7 @@ class ContentManagementApi {
 	 * @param {String} opts.level level (default to USER)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
+	 * @deprecated
 	 */
 	getContentmanagementDocumentAudits(documentId, opts) { 
 		opts = opts || {};
@@ -11886,7 +11887,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy name or dateCreated
 	 * @param {String} opts.sortOrder ascending or descending (default to ascending)
-     * @deprecated
+	 * @deprecated
 	 */
 	getContentmanagementDocuments(workspaceId, opts) { 
 		opts = opts || {};
@@ -12368,8 +12369,9 @@ class ContentManagementApi {
 
 	/**
 	 * Query audits
-	 * 
+	 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 	 * @param {Object} body Allows for a filtered query returning facet information
+	 * @deprecated
 	 */
 	postContentmanagementAuditquery(body) { 
 		// verify the required parameter 'body' is set
@@ -12740,7 +12742,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -12931,6 +12933,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Delete Instagram messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsInstagramIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a LINE messenger integration
 	 * 
 	 * @param {String} integrationId Integration ID
@@ -13084,7 +13111,7 @@ class ConversationsApi {
 	 * Get status for async query for conversation aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -13112,7 +13139,7 @@ class ConversationsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -14789,6 +14816,63 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get a list of Instagram Integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 */
+	getConversationsMessagingIntegrationsInstagram(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Instagram messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 */
+	getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsInstagramIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of LINE messenger Integrations
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -15238,7 +15322,7 @@ class ConversationsApi {
 	 * Get video conference details (e.g. the current number of active participants).
 	 * 
 	 * @param {String} conferenceId conferenceId
-	 * Preview Endpoint
+	 * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationsVideoDetails(conferenceId) { 
 		// verify the required parameter 'conferenceId' is set
@@ -16397,6 +16481,36 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update Instagram messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body InstagramIntegrationUpdateRequest
+	 */
+	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsInstagramIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsInstagramIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
@@ -16578,7 +16692,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -16606,7 +16720,7 @@ class ConversationsApi {
 	 * Query for conversation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -16857,6 +16971,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -16874,6 +16989,111 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace this participant with the specified agent
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 * @param {Object} body Transfer request
+	 */
+	postConversationParticipantReplaceAgent(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceAgent';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceAgent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationParticipantReplaceAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace this participant with the an external contact
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 * @param {Object} body Transfer request
+	 */
+	postConversationParticipantReplaceExternal(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceExternal';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceExternal';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationParticipantReplaceExternal';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace/external', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace this participant with the specified queue
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 * @param {Object} body Transfer request
+	 */
+	postConversationParticipantReplaceQueue(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceQueue';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceQueue';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationParticipantReplaceQueue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
@@ -17025,6 +17245,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * @deprecated
 	 */
 	postConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -17042,6 +17263,111 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate a consult transfer to an agent
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Destination agent and initial speak to
+	 */
+	postConversationsCallParticipantConsultAgent(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultAgent';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultAgent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantConsultAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate a consult transfer to an external contact
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Destination address and initial speak to
+	 */
+	postConversationsCallParticipantConsultExternal(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultExternal';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultExternal';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantConsultExternal';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate a consult transfer to a queue
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Destination queue and initial speak to
+	 */
+	postConversationsCallParticipantConsultQueue(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultQueue';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultQueue';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantConsultQueue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
@@ -17090,6 +17416,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationsCallParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -17194,6 +17521,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationsCallbackParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -17433,6 +17761,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationsChatParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -17533,6 +17862,7 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @deprecated
 	 */
 	postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -17695,6 +18025,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationsEmailParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -18027,7 +18358,7 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
-	 * Preview Endpoint
+	 * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsMessageParticipantMonitor(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
@@ -18059,6 +18390,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationsMessageParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -18176,6 +18508,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Instagram Integration
+	 * 
+	 * @param {Object} body InstagramIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsInstagram(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsInstagram';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram', 
 			'POST', 
 			{  },
 			{  },
@@ -19001,7 +19358,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -19087,7 +19444,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -19139,7 +19496,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -19235,7 +19592,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -21193,7 +21550,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -21364,7 +21721,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -21383,7 +21740,7 @@ class FlowsApi {
 	 * Get status for async query for Flow aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -21411,7 +21768,7 @@ class FlowsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsFlowsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsFlowsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -21442,7 +21799,7 @@ class FlowsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -21470,7 +21827,7 @@ class FlowsApi {
 	 * Query for flow aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsFlowsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -21548,7 +21905,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -23634,7 +23991,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -23764,7 +24121,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -23895,7 +24252,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -24350,7 +24707,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -24394,7 +24751,7 @@ class GroupsApi {
 	 * Remove dynamic group definition
 	 * 
 	 * @param {String} groupId Group ID
-	 * Preview Endpoint
+	 * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteGroupDynamicsettings(groupId) { 
 		// verify the required parameter 'groupId' is set
@@ -24450,7 +24807,7 @@ class GroupsApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
-     * @deprecated
+	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -24501,7 +24858,7 @@ class GroupsApi {
 	 * Get dynamic group definition
 	 * 
 	 * @param {String} groupId Group ID
-	 * Preview Endpoint
+	 * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getGroupDynamicsettings(groupId) { 
 		// verify the required parameter 'groupId' is set
@@ -24586,7 +24943,7 @@ class GroupsApi {
 	 * @param {String} groupId groupId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
-     * @deprecated
+	 * @deprecated
 	 */
 	getGroupProfile(groupId, opts) { 
 		opts = opts || {};
@@ -24676,7 +25033,7 @@ class GroupsApi {
 	 * @param {Array.<String>} opts.id id
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
-     * @deprecated
+	 * @deprecated
 	 */
 	getProfilesGroups(opts) { 
 		opts = opts || {};
@@ -24755,8 +25112,8 @@ class GroupsApi {
 	 * Preview the number of users selected for a dynamic group definition query
 	 * 
 	 * @param {Object} body Group query to preview
-     * @deprecated
-	 * Preview Endpoint
+	 * @deprecated
+	 * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postGroupsDynamicsettingsPreview(body) { 
 		// verify the required parameter 'body' is set
@@ -24837,7 +25194,7 @@ class GroupsApi {
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {Object} body Create/Update dynamic groups
-	 * Preview Endpoint
+	 * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putGroupDynamicsettings(groupId, body) { 
 		// verify the required parameter 'groupId' is set
@@ -24869,7 +25226,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -25625,7 +25982,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -25792,7 +26149,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -26692,7 +27049,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {Object} opts.targetChannel targetChannel
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -26726,7 +27083,7 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -26762,7 +27119,7 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -26800,7 +27157,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -26829,7 +27186,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -26860,7 +27217,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * Preview Endpoint
+	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -27483,7 +27840,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {String} opts.body targetChannel
-	 * Preview Endpoint
+	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -27519,7 +27876,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * Preview Endpoint
+	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -27548,7 +27905,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * Preview Endpoint
+	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -27667,7 +28024,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * Preview Endpoint
+	 * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -27718,13 +28075,43 @@ class IntegrationsApi {
 		);
 	}
 
+	/**
+	 * Bulk integration presence ingestion
+	 * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+	 * @param {String} ucIntegrationId UC Integration ID
+	 * @param {Array.<Object>} body List of User presences
+	 */
+	putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences', 
+			'PUT', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
 }
 
 class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -27872,7 +28259,7 @@ class JourneyApi {
 	 * Get status for async query for journey aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -27900,7 +28287,7 @@ class JourneyApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -28136,42 +28523,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve all sessions for a given customer.
-	 * 
-	 * @param {String} customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone).
-	 * @param {String} customerId Primary identifier of the customer in the source of the session.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * Preview Endpoint
-	 */
-	getJourneyCustomerCustomerIdSessions(customerIdType, customerId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'customerIdType' is set
-		if (customerIdType === undefined || customerIdType === null) {
-			throw 'Missing the required parameter "customerIdType" when calling getJourneyCustomerCustomerIdSessions';
-		}
-		// verify the required parameter 'customerId' is set
-		if (customerId === undefined || customerId === null) {
-			throw 'Missing the required parameter "customerId" when calling getJourneyCustomerCustomerIdSessions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/customers/{customerIdType}/{customerId}/sessions', 
-			'GET', 
-			{ 'customerIdType': customerIdType,'customerId': customerId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Retrieve a single outcome.
 	 * 
 	 * @param {String} outcomeId ID of the outcome.
@@ -28229,7 +28580,7 @@ class JourneyApi {
 	 * Get job status.
 	 * 
 	 * @param {String} jobId ID of the job.
-	 * Preview Endpoint
+	 * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyOutcomesAttributionsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -28255,7 +28606,7 @@ class JourneyApi {
 	 * Get outcome attribution entities from completed job.
 	 * 
 	 * @param {String} jobId ID of the job.
-	 * Preview Endpoint
+	 * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyOutcomesAttributionsJobResults(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -28409,7 +28760,7 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * Preview Endpoint
+	 * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneySessionEvents(sessionId, opts) { 
 		opts = opts || {};
@@ -28467,7 +28818,7 @@ class JourneyApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
 	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 * Preview Endpoint
+	 * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneySessionSegments(sessionId, opts) { 
 		opts = opts || {};
@@ -28640,7 +28991,7 @@ class JourneyApi {
 	 * Query for journey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsJourneysAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -28789,7 +29140,7 @@ class JourneyApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body outcome attribution request
-	 * Preview Endpoint
+	 * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyOutcomesAttributionsJobs(opts) { 
 		opts = opts || {};
@@ -28863,7 +29214,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -29094,7 +29445,7 @@ class KnowledgeApi {
 	 * @param {String} categoryId Category ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
@@ -29130,7 +29481,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
@@ -29166,7 +29517,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -29668,6 +30019,7 @@ class KnowledgeApi {
 	 * @param {Boolean} opts.includeDrafts If includeDrafts is true, Documents in the draft state are also returned in the response.
 	 * @param {Array.<String>} opts.labelIds If specified, retrieves documents associated with label ids, comma separated values expected.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Array.<String>} opts.externalIds If specified, retrieves documents associated with external ids, comma separated values expected.
 	 */
 	getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -29681,7 +30033,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'documentId': this.apiClient.buildCollectionParam(opts['documentId'], 'multi'),'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'includeSubcategories': opts['includeSubcategories'],'includeDrafts': opts['includeDrafts'],'labelIds': this.apiClient.buildCollectionParam(opts['labelIds'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'documentId': this.apiClient.buildCollectionParam(opts['documentId'], 'multi'),'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'includeSubcategories': opts['includeSubcategories'],'includeDrafts': opts['includeDrafts'],'labelIds': this.apiClient.buildCollectionParam(opts['labelIds'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'externalIds': this.apiClient.buildCollectionParam(opts['externalIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -29825,7 +30177,7 @@ class KnowledgeApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter to return the categories that starts with the given category name.
-     * @deprecated
+	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -29859,7 +30211,7 @@ class KnowledgeApi {
 	 * @param {String} categoryId Category ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     * @deprecated
+	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
@@ -29895,7 +30247,7 @@ class KnowledgeApi {
 	 * @param {String} documentId Document ID
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     * @deprecated
+	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
@@ -29932,8 +30284,8 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} uploadId UploadId
-     * @deprecated
-	 * Preview Endpoint
+	 * @deprecated
+	 * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId) { 
 		// verify the required parameter 'documentId' is set
@@ -29982,7 +30334,7 @@ class KnowledgeApi {
 	 * @param {Object} opts.sortBy Sort by.
 	 * @param {Object} opts.sortOrder Sort Order.
 	 * @param {Array.<String>} opts.documentIds Comma-separated list of document identifiers to fetch by.
-     * @deprecated
+	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -30016,7 +30368,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -30052,7 +30404,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} trainingId Training ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -30093,7 +30445,7 @@ class KnowledgeApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
-     * @deprecated
+	 * @deprecated
 	 */
 	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -30541,7 +30893,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     * @deprecated
+	 * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'categoryId' is set
@@ -30582,7 +30934,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     * @deprecated
+	 * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
@@ -30622,7 +30974,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Array.<Object>} body 
-     * @deprecated
+	 * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -30659,7 +31011,7 @@ class KnowledgeApi {
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} importId Import ID
 	 * @param {Object} body 
-     * @deprecated
+	 * @deprecated
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -30977,7 +31329,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * Preview Endpoint
+	 * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -31008,7 +31360,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * Preview Endpoint
+	 * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -31098,7 +31450,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * Preview Endpoint
+	 * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -31220,7 +31572,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     * @deprecated
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -31257,8 +31609,8 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     * @deprecated
-	 * Preview Endpoint
+	 * @deprecated
+	 * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
@@ -31298,7 +31650,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     * @deprecated
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -31334,7 +31686,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
-     * @deprecated
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -31370,7 +31722,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} trainingId Training ID
-     * @deprecated
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -31405,7 +31757,7 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
-     * @deprecated
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -31437,7 +31789,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-     * @deprecated
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -31492,7 +31844,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -32505,7 +32857,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -32524,7 +32876,7 @@ class LanguagesApi {
 	 * Delete Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
@@ -32550,7 +32902,7 @@ class LanguagesApi {
 	 * Get Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
@@ -32580,7 +32932,7 @@ class LanguagesApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {String} opts.name Name
-     * @deprecated
+	 * @deprecated
 	 */
 	getLanguages(opts) { 
 		opts = opts || {};
@@ -32699,7 +33051,7 @@ class LanguagesApi {
 	 * Create Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 	 * @param {Object} body Language
-     * @deprecated
+	 * @deprecated
 	 */
 	postLanguages(body) { 
 		// verify the required parameter 'body' is set
@@ -32727,7 +33079,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -33542,7 +33894,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -33780,7 +34132,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -34016,7 +34368,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -34035,7 +34387,7 @@ class MessagingApi {
 	 * Delete a supported content profile
 	 * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 		// verify the required parameter 'supportedContentId' is set
@@ -34063,7 +34415,7 @@ class MessagingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-     * @deprecated
+	 * @deprecated
 	 */
 	getMessagingSupportedcontent(opts) { 
 		opts = opts || {};
@@ -34087,7 +34439,7 @@ class MessagingApi {
 	 * Get a supported content profile
 	 * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getMessagingSupportedcontentSupportedContentId(supportedContentId) { 
 		// verify the required parameter 'supportedContentId' is set
@@ -34114,7 +34466,7 @@ class MessagingApi {
 	 * Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
 	 * @param {Object} body SupportedContent
-     * @deprecated
+	 * @deprecated
 	 */
 	patchMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
 		// verify the required parameter 'supportedContentId' is set
@@ -34144,7 +34496,7 @@ class MessagingApi {
 	 * Create a Supported Content profile
 	 * Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
 	 * @param {Object} body SupportedContent
-     * @deprecated
+	 * @deprecated
 	 */
 	postMessagingSupportedcontent(body) { 
 		// verify the required parameter 'body' is set
@@ -34172,7 +34524,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -34323,7 +34675,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -34556,7 +34908,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -34922,7 +35274,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -35193,7 +35545,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -35212,7 +35564,7 @@ class OrganizationApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
-     * @deprecated
+	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -35257,7 +35609,7 @@ class OrganizationApi {
 	/**
 	 * Get the list of domains that will be allowed to embed PureCloud applications
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-     * @deprecated
+	 * @deprecated
 	 */
 	getOrganizationsEmbeddedintegration() { 
 
@@ -35278,7 +35630,7 @@ class OrganizationApi {
 	/**
 	 * Get organization IP address whitelist settings
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-     * @deprecated
+	 * @deprecated
 	 */
 	getOrganizationsIpaddressauthentication() { 
 
@@ -35467,7 +35819,7 @@ class OrganizationApi {
 	/**
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
-     * @deprecated
+	 * @deprecated
 	 */
 	getOrganizationsWhitelist() { 
 
@@ -35544,7 +35896,7 @@ class OrganizationApi {
 	 * Update the list of domains that will be allowed to embed PureCloud applications
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body Whitelist settings
-     * @deprecated
+	 * @deprecated
 	 */
 	putOrganizationsEmbeddedintegration(body) { 
 		// verify the required parameter 'body' is set
@@ -35570,7 +35922,7 @@ class OrganizationApi {
 	 * Update organization IP address whitelist settings
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body IP address Whitelist settings
-     * @deprecated
+	 * @deprecated
 	 */
 	putOrganizationsIpaddressauthentication(body) { 
 		// verify the required parameter 'body' is set
@@ -35620,7 +35972,7 @@ class OrganizationApi {
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
 	 * @param {Object} body Whitelist settings
-     * @deprecated
+	 * @deprecated
 	 */
 	putOrganizationsWhitelist(body) { 
 		// verify the required parameter 'body' is set
@@ -35648,7 +36000,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -35842,7 +36194,7 @@ class OrganizationAuthorizationApi {
 	 * Delete Bulk Org Trustees
 	 * 
 	 * @param {Array.<String>} id Comma separated list of trustee ids to remove
-	 * Preview Endpoint
+	 * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteOrgauthorizationTrustees(id) { 
 		// verify the required parameter 'id' is set
@@ -35983,7 +36335,7 @@ class OrganizationAuthorizationApi {
 	 * Delete Bulk Org Trustors
 	 * 
 	 * @param {Array.<String>} id Comma separated list of trustor ids to remove
-	 * Preview Endpoint
+	 * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteOrgauthorizationTrustors(id) { 
 		// verify the required parameter 'id' is set
@@ -36995,7 +37347,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -39480,7 +39832,7 @@ class OutboundApi {
 	 * This endpoint is deprecated and may have unexpected results. Please use "/conversations/{conversationId}/participants/{participantId}/callbacks instead."
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body ContactCallbackRequest
-     * @deprecated
+	 * @deprecated
 	 */
 	postOutboundCampaignCallbackSchedule(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
@@ -40617,7 +40969,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -40636,12 +40988,12 @@ class PresenceApi {
 	 * Delete a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
-	 * Preview Endpoint
+	 * deletePresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	deletePresenceDefinition(definitionId) { 
+	deletePresenceDefinition0(definitionId) { 
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition';
+			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition0';
 		}
 
 		return this.apiClient.callApi(
@@ -40712,12 +41064,12 @@ class PresenceApi {
 	 * Get a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
-	 * Preview Endpoint
+	 * getPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getPresenceDefinition(definitionId) { 
+	getPresenceDefinition0(definitionId) { 
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition';
+			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition0';
 		}
 
 		return this.apiClient.callApi(
@@ -40740,9 +41092,9 @@ class PresenceApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
 	 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
-	 * Preview Endpoint
+	 * getPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getPresenceDefinitions(opts) { 
+	getPresenceDefinitions0(opts) { 
 		opts = opts || {};
 		
 
@@ -40986,6 +41338,59 @@ class PresenceApi {
 	}
 
 	/**
+	 * Get bulk user presences for a single presence source
+	 * 
+	 * @param {String} sourceId The requested presence source ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+	 */
+	getUsersPresenceBulk(sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling getUsersPresenceBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/presences/{sourceId}/bulk', 
+			'GET', 
+			{ 'sourceId': sourceId },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+	 */
+	getUsersPresencesPurecloudBulk(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/presences/purecloud/bulk', 
+			'GET', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Patch a user's Presence
 	 * Patch a users presence for the specified source that is not specifically listed. This endpoint does not support registered presence sources. The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the source defined in the path as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 	 * @param {String} userId user Id
@@ -41054,12 +41459,12 @@ class PresenceApi {
 	 * Create a Presence Definition
 	 * 
 	 * @param {Object} body The Presence Definition to create
-	 * Preview Endpoint
+	 * postPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postPresenceDefinitions(body) { 
+	postPresenceDefinitions0(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postPresenceDefinitions';
+			throw 'Missing the required parameter "body" when calling postPresenceDefinitions0';
 		}
 
 		return this.apiClient.callApi(
@@ -41131,16 +41536,16 @@ class PresenceApi {
 	 * 
 	 * @param {String} definitionId Presence Definition ID
 	 * @param {Object} body The updated Presence Definition
-	 * Preview Endpoint
+	 * putPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	putPresenceDefinition(definitionId, body) { 
+	putPresenceDefinition0(definitionId, body) { 
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
-			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition';
+			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition0';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putPresenceDefinition';
+			throw 'Missing the required parameter "body" when calling putPresenceDefinition0';
 		}
 
 		return this.apiClient.callApi(
@@ -41303,7 +41708,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -41542,7 +41947,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -41625,7 +42030,7 @@ class QualityApi {
 	 * Delete an evaluation form.
 	 * 
 	 * @param {String} formId Form ID
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
@@ -41701,7 +42106,7 @@ class QualityApi {
 	 * Get status for async query for evaluation aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -41729,7 +42134,7 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsEvaluationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsEvaluationsAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -41757,7 +42162,7 @@ class QualityApi {
 	 * Get status for async query for survey aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -41785,7 +42190,7 @@ class QualityApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsSurveysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsSurveysAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -42106,7 +42511,7 @@ class QualityApi {
 	 * Get an evaluation form
 	 * 
 	 * @param {String} formId Form ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
@@ -42135,7 +42540,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityFormVersions(formId, opts) { 
 		opts = opts || {};
@@ -42171,7 +42576,7 @@ class QualityApi {
 	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityForms(opts) { 
 		opts = opts || {};
@@ -42447,7 +42852,7 @@ class QualityApi {
 	 * Get the published evaluation forms.
 	 * 
 	 * @param {String} formId Form ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityPublishedform(formId) { 
 		// verify the required parameter 'formId' is set
@@ -42477,7 +42882,7 @@ class QualityApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
-     * @deprecated
+	 * @deprecated
 	 */
 	getQualityPublishedforms(opts) { 
 		opts = opts || {};
@@ -42685,7 +43090,7 @@ class QualityApi {
 	 * Query for evaluation aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsEvaluationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsEvaluationsAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -42736,7 +43141,7 @@ class QualityApi {
 	 * Query for survey aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsSurveysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSurveysAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -42925,7 +43330,7 @@ class QualityApi {
 	 * Create an evaluation form.
 	 * 
 	 * @param {Object} body Evaluation form
-     * @deprecated
+	 * @deprecated
 	 */
 	postQualityForms(body) { 
 		// verify the required parameter 'body' is set
@@ -43001,7 +43406,7 @@ class QualityApi {
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
-     * @deprecated
+	 * @deprecated
 	 */
 	postQualityPublishedforms(body) { 
 		// verify the required parameter 'body' is set
@@ -43172,7 +43577,7 @@ class QualityApi {
 	 * 
 	 * @param {String} formId Form ID
 	 * @param {Object} body Evaluation form
-     * @deprecated
+	 * @deprecated
 	 */
 	putQualityForm(formId, body) { 
 		// verify the required parameter 'formId' is set
@@ -43294,7 +43699,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -44931,7 +45336,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -45416,7 +45821,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -45650,7 +46055,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteRoutingQueueUser(queueId, memberId) { 
 		// verify the required parameter 'queueId' is set
@@ -45877,7 +46282,7 @@ class RoutingApi {
 	 * @param {String} tagId Utilization Tag ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDelete Remove all tag usages (if found) without warning (default to false)
-	 * Preview Endpoint
+	 * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteRoutingUtilizationTag(tagId, opts) { 
 		opts = opts || {};
@@ -46772,7 +47177,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.languages Filter by language
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
-     * @deprecated
+	 * @deprecated
 	 */
 	getRoutingQueueUsers(queueId, opts) { 
 		opts = opts || {};
@@ -47364,7 +47769,7 @@ class RoutingApi {
 	 * Get details about this utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
-	 * Preview Endpoint
+	 * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationTag(tagId) { 
 		// verify the required parameter 'tagId' is set
@@ -47390,7 +47795,7 @@ class RoutingApi {
 	 * Get list of agent ids associated with a utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
-	 * Preview Endpoint
+	 * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationTagAgents(tagId) { 
 		// verify the required parameter 'tagId' is set
@@ -47420,7 +47825,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
 	 * @param {String} opts.name Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
-	 * Preview Endpoint
+	 * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationTags(opts) { 
 		opts = opts || {};
@@ -47810,7 +48215,7 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
 	 * @param {Object} body Queue Member
-     * @deprecated
+	 * @deprecated
 	 */
 	patchRoutingQueueUser(queueId, memberId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -47845,7 +48250,7 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
-     * @deprecated
+	 * @deprecated
 	 */
 	patchRoutingQueueUsers(queueId, body) { 
 		// verify the required parameter 'queueId' is set
@@ -48122,7 +48527,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsRoutingActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -48418,7 +48823,7 @@ class RoutingApi {
 	 * @param {Array.<Object>} body Queue Members
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts._delete True to delete queue members (default to false)
-     * @deprecated
+	 * @deprecated
 	 */
 	postRoutingQueueUsers(queueId, body, opts) { 
 		opts = opts || {};
@@ -48634,7 +49039,7 @@ class RoutingApi {
 	 * Imports a phone number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
-	 * Preview Endpoint
+	 * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingSmsPhonenumbersImport(body) { 
 		// verify the required parameter 'body' is set
@@ -48660,7 +49065,7 @@ class RoutingApi {
 	 * Create an utilization tag
 	 * 
 	 * @param {Object} body UtilizationTag
-	 * Preview Endpoint
+	 * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingUtilizationTags(body) { 
 		// verify the required parameter 'body' is set
@@ -49123,7 +49528,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -50000,7 +50405,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -50419,7 +50824,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -50715,7 +51120,7 @@ class SearchApi {
 	 * Search all documents
 	 * 
 	 * @param {Object} body Search request options
-	 * Preview Endpoint
+	 * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postDocumentationAllSearch(body) { 
 		// verify the required parameter 'body' is set
@@ -50818,7 +51223,7 @@ class SearchApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-     * @deprecated
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -51004,7 +51409,7 @@ class SearchApi {
 	 * Search users as conversation targets
 	 * 
 	 * @param {Object} body Search request options
-	 * Preview Endpoint
+	 * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersSearchConversationTarget(body) { 
 		// verify the required parameter 'body' is set
@@ -51030,7 +51435,7 @@ class SearchApi {
 	 * Search manage queue member
 	 * 
 	 * @param {Object} body Search request options
-	 * Preview Endpoint
+	 * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersSearchQueuemembersManage(body) { 
 		// verify the required parameter 'body' is set
@@ -51108,7 +51513,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -52061,7 +52466,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -52163,7 +52568,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -52302,7 +52707,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -52321,7 +52726,7 @@ class TaskManagementApi {
 	 * Delete a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
@@ -52347,7 +52752,7 @@ class TaskManagementApi {
 	 * Delete a workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkitem(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -52373,7 +52778,7 @@ class TaskManagementApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -52399,7 +52804,7 @@ class TaskManagementApi {
 	 * Delete a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorktype(worktypeId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -52426,7 +52831,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * Preview Endpoint
+	 * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -52456,7 +52861,7 @@ class TaskManagementApi {
 	 * Get a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
-	 * Preview Endpoint
+	 * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
@@ -52486,7 +52891,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinHistory(workbinId, opts) { 
 		opts = opts || {};
@@ -52515,7 +52920,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Number} entityVersion Workbin version
-	 * Preview Endpoint
+	 * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersion(workbinId, entityVersion) { 
 		// verify the required parameter 'workbinId' is set
@@ -52549,7 +52954,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersions(workbinId, opts) { 
 		opts = opts || {};
@@ -52577,9 +52982,13 @@ class TaskManagementApi {
 	 * Get a workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * Preview Endpoint
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expands Which fields to expand. Comma separated if more than one.
+	 * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getTaskmanagementWorkitem(workitemId) { 
+	getTaskmanagementWorkitem(workitemId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'workitemId' is set
 		if (workitemId === undefined || workitemId === null) {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitem';
@@ -52589,7 +52998,7 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/workitems/{workitemId}', 
 			'GET', 
 			{ 'workitemId': workitemId },
-			{  },
+			{ 'expands': opts['expands'] },
 			{  },
 			{  },
 			null, 
@@ -52607,7 +53016,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemHistory(workitemId, opts) { 
 		opts = opts || {};
@@ -52641,7 +53050,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts) { 
 		opts = opts || {};
@@ -52674,7 +53083,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Number} entityVersion Workitem version
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersion(workitemId, entityVersion) { 
 		// verify the required parameter 'workitemId' is set
@@ -52708,7 +53117,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersions(workitemId, opts) { 
 		opts = opts || {};
@@ -52741,7 +53150,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemWrapups(workitemId, opts) { 
 		opts = opts || {};
@@ -52769,7 +53178,7 @@ class TaskManagementApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -52796,7 +53205,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {String} versionId Schema version
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
@@ -52826,7 +53235,7 @@ class TaskManagementApi {
 	 * Get all versions of a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -52851,7 +53260,7 @@ class TaskManagementApi {
 	/**
 	 * Get a list of schemas.
 	 * 
-	 * Preview Endpoint
+	 * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemas() { 
 
@@ -52875,7 +53284,7 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expands Which fields, if any, to expand.
-	 * Preview Endpoint
+	 * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktype(worktypeId, opts) { 
 		opts = opts || {};
@@ -52907,7 +53316,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeHistory(worktypeId, opts) { 
 		opts = opts || {};
@@ -52936,7 +53345,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * Preview Endpoint
+	 * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -52967,7 +53376,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Number} entityVersion Worktype version
-	 * Preview Endpoint
+	 * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersion(worktypeId, entityVersion) { 
 		// verify the required parameter 'worktypeId' is set
@@ -53001,7 +53410,7 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * Preview Endpoint
+	 * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersions(worktypeId, opts) { 
 		opts = opts || {};
@@ -53030,7 +53439,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Object} body Json with attributes and their new values: {description:new description, name:new name}.
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkbin(workbinId, body) { 
 		// verify the required parameter 'workbinId' is set
@@ -53061,7 +53470,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Workitem
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitem(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -53092,7 +53501,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Targeted user
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemAssignment(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -53124,7 +53533,7 @@ class TaskManagementApi {
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {String} userId The ID of the user
 	 * @param {Object} body Request body to add/remove a wrapup code for a workitem
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -53159,7 +53568,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {Object} body Request body to add/remove the wrapup code for workitem
-	 * Preview Endpoint
+	 * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -53191,7 +53600,7 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorktype(worktypeId, opts) { 
 		opts = opts || {};
@@ -53222,7 +53631,7 @@ class TaskManagementApi {
 	 * @param {String} statusId Status id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts) { 
 		opts = opts || {};
@@ -53255,7 +53664,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkbins(opts) { 
 		opts = opts || {};
@@ -53279,7 +53688,7 @@ class TaskManagementApi {
 	 * Query for workbins
 	 * 
 	 * @param {Object} body QueryPostRequest
-	 * Preview Endpoint
+	 * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkbinsQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -53305,7 +53714,7 @@ class TaskManagementApi {
 	 * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemAcdCancel(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -53331,7 +53740,7 @@ class TaskManagementApi {
 	 * Disconnect the assignee of the workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemDisconnect(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -53359,7 +53768,7 @@ class TaskManagementApi {
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Terminated request
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemTerminate(workitemId, opts) { 
 		opts = opts || {};
@@ -53387,7 +53796,7 @@ class TaskManagementApi {
 	 * Create a workitem
 	 * 
 	 * @param {Object} body Workitem
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitems(body) { 
 		// verify the required parameter 'body' is set
@@ -53413,7 +53822,7 @@ class TaskManagementApi {
 	 * Query for workitems
 	 * This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
 	 * @param {Object} body WorkitemQueryPostRequest
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemsQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -53439,7 +53848,7 @@ class TaskManagementApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Schema
-	 * Preview Endpoint
+	 * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemsSchemas(body) { 
 		// verify the required parameter 'body' is set
@@ -53467,7 +53876,7 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypeStatuses(worktypeId, opts) { 
 		opts = opts || {};
@@ -53496,7 +53905,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * Preview Endpoint
+	 * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypes(opts) { 
 		opts = opts || {};
@@ -53520,7 +53929,7 @@ class TaskManagementApi {
 	 * Query for worktypes
 	 * 
 	 * @param {Object} body QueryPostRequest
-	 * Preview Endpoint
+	 * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -53547,7 +53956,7 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Data Schema
-	 * Preview Endpoint
+	 * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putTaskmanagementWorkitemsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
@@ -53579,7 +53988,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -53771,7 +54180,7 @@ class TeamsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTeamsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -53881,7 +54290,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -54009,7 +54418,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -55197,7 +55606,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Array.<String>} opts.id ID of the Extension Pools to filter by.
 	 * @param {String} opts.name Name of the Extension Pools to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
-	 * Preview Endpoint
+	 * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts) { 
 		opts = opts || {};
@@ -55434,7 +55843,7 @@ class TelephonyProvidersEdgeApi {
 	 * Get outbound route
 	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 	 * @param {String} outboundRouteId Outbound route ID
-     * @deprecated
+	 * @deprecated
 	 */
 	getTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
 		// verify the required parameter 'outboundRouteId' is set
@@ -55630,7 +56039,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.phoneHardwareId Filter by phone_hardwareId
 	 * @param {String} opts.linesId Filter by lines.id
 	 * @param {String} opts.linesName Filter by lines.name
-	 * @param {String} opts.name Name of the Phone to filter by
+	 * @param {String} opts.name Name of the Phone to filter by, comma-separated
 	 * @param {String} opts.statusOperationalStatus The primary status to filter by
 	 * @param {String} opts.secondaryStatusOperationalStatus The secondary status to filter by
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
@@ -57241,7 +57650,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -57369,7 +57778,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -57452,7 +57861,7 @@ class TokensApi {
 	/**
 	 * Get the current Idle Token Timeout Value
 	 * 
-	 * Preview Endpoint
+	 * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTokensTimeout() { 
 
@@ -57495,7 +57904,7 @@ class TokensApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * Preview Endpoint
+	 * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putTokensTimeout(opts) { 
 		opts = opts || {};
@@ -57521,7 +57930,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -57697,7 +58106,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -57907,7 +58316,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -58092,7 +58501,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -58331,7 +58740,7 @@ class UsersApi {
 	 * Get status for async query for user aggregates
 	 * 
 	 * @param {String} jobId jobId
-	 * Preview Endpoint
+	 * getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -58359,7 +58768,7 @@ class UsersApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 * Preview Endpoint
+	 * getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getAnalyticsUsersAggregatesJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -58464,7 +58873,7 @@ class UsersApi {
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
-     * @deprecated
+	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedMe(permission, opts) { 
 		opts = opts || {};
@@ -58526,7 +58935,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-     * @deprecated
+	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
 		opts = opts || {};
@@ -58603,7 +59012,7 @@ class UsersApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
-     * @deprecated
+	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -58636,7 +59045,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
-     * @deprecated
+	 * @deprecated
 	 */
 	getProfilesUsers(opts) { 
 		opts = opts || {};
@@ -58804,7 +59213,7 @@ class UsersApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     * @deprecated
+	 * @deprecated
 	 */
 	getUserFavorites(userId, opts) { 
 		opts = opts || {};
@@ -58890,7 +59299,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
-     * @deprecated
+	 * @deprecated
 	 */
 	getUserProfile(userId, opts) { 
 		opts = opts || {};
@@ -59699,7 +60108,7 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * Preview Endpoint
+	 * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -59727,7 +60136,7 @@ class UsersApi {
 	 * Query for user aggregates asynchronously
 	 * 
 	 * @param {Object} body query
-	 * Preview Endpoint
+	 * postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersAggregatesJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -60239,7 +60648,7 @@ class UsersApi {
 	 * Search users as conversation targets
 	 * 
 	 * @param {Object} body Search request options
-	 * Preview Endpoint
+	 * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersSearchConversationTarget(body) { 
 		// verify the required parameter 'body' is set
@@ -60265,7 +60674,7 @@ class UsersApi {
 	 * Search manage queue member
 	 * 
 	 * @param {Object} body Search request options
-	 * Preview Endpoint
+	 * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersSearchQueuemembersManage(body) { 
 		// verify the required parameter 'body' is set
@@ -60653,7 +61062,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -60764,7 +61173,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -61431,7 +61840,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -61450,7 +61859,7 @@ class WebChatApi {
 	 * Delete a WebChat deployment
 	 * 
 	 * @param {String} deploymentId Deployment Id
-     * @deprecated
+	 * @deprecated
 	 */
 	deleteWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
@@ -61526,7 +61935,7 @@ class WebChatApi {
 	 * Get a WebChat deployment
 	 * 
 	 * @param {String} deploymentId Deployment Id
-     * @deprecated
+	 * @deprecated
 	 */
 	getWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
@@ -61551,7 +61960,7 @@ class WebChatApi {
 	/**
 	 * List WebChat deployments
 	 * 
-     * @deprecated
+	 * @deprecated
 	 */
 	getWebchatDeployments() { 
 
@@ -61806,7 +62215,7 @@ class WebChatApi {
 	 * Create WebChat deployment
 	 * 
 	 * @param {Object} body Deployment
-     * @deprecated
+	 * @deprecated
 	 */
 	postWebchatDeployments(body) { 
 		// verify the required parameter 'body' is set
@@ -61923,7 +62332,7 @@ class WebChatApi {
 	 * 
 	 * @param {String} deploymentId Deployment Id
 	 * @param {Object} body Deployment
-     * @deprecated
+	 * @deprecated
 	 */
 	putWebchatDeployment(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
@@ -61980,7 +62389,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -62502,7 +62911,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -62548,7 +62957,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -62694,7 +63103,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -64236,7 +64645,7 @@ class WorkforceManagementApi {
 	 * Get activity codes
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-     * @deprecated
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -64649,7 +65058,7 @@ class WorkforceManagementApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-     * @deprecated
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts) { 
 		opts = opts || {};
@@ -64690,7 +65099,7 @@ class WorkforceManagementApi {
 	 * @param {Boolean} opts.includeOnlyPublished Return only published schedules
 	 * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
 	 * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
-     * @deprecated
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
 		opts = opts || {};
@@ -66649,7 +67058,7 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-     * @deprecated
+	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
@@ -67310,7 +67719,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-     * @deprecated
+	 * @deprecated
 	 */
 	postWorkforcemanagementSchedules(opts) { 
 		opts = opts || {};
@@ -67501,7 +67910,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 169.1.0
+ * @version 170.0.0
  */
 class platformClient {
 	constructor() {

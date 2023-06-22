@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -301,7 +301,7 @@ class SearchApi {
 	 * Search all documents
 	 * 
 	 * @param {Object} body Search request options
-	 * Preview Endpoint
+	 * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postDocumentationAllSearch(body) { 
 		// verify the required parameter 'body' is set
@@ -404,7 +404,7 @@ class SearchApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-     * @deprecated
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -590,7 +590,7 @@ class SearchApi {
 	 * Search users as conversation targets
 	 * 
 	 * @param {Object} body Search request options
-	 * Preview Endpoint
+	 * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersSearchConversationTarget(body) { 
 		// verify the required parameter 'body' is set
@@ -616,7 +616,7 @@ class SearchApi {
 	 * Search manage queue member
 	 * 
 	 * @param {Object} body Search request options
-	 * Preview Endpoint
+	 * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postUsersSearchQueuemembersManage(body) { 
 		// verify the required parameter 'body' is set

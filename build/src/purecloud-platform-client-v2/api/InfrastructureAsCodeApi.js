@@ -5,7 +5,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**

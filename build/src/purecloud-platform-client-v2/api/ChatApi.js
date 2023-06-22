@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -23,7 +23,7 @@ class ChatApi {
 	/**
 	 * Get Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
-     * @deprecated
+	 * @deprecated
 	 */
 	getChatSettings() { 
 
@@ -65,7 +65,7 @@ class ChatApi {
 	 * Patch Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
 	 * @param {Object} body Chat
-     * @deprecated
+	 * @deprecated
 	 */
 	patchChatSettings(body) { 
 		// verify the required parameter 'body' is set
@@ -116,7 +116,7 @@ class ChatApi {
 	 * Update Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
 	 * @param {Object} body Chat
-     * @deprecated
+	 * @deprecated
 	 */
 	putChatSettings(body) { 
 		// verify the required parameter 'body' is set

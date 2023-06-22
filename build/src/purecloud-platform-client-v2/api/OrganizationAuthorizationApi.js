@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 169.1.0
+	 * @version 170.0.0
 	 */
 
 	/**
@@ -199,7 +199,7 @@ class OrganizationAuthorizationApi {
 	 * Delete Bulk Org Trustees
 	 * 
 	 * @param {Array.<String>} id Comma separated list of trustee ids to remove
-	 * Preview Endpoint
+	 * deleteOrgauthorizationTrustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteOrgauthorizationTrustees(id) { 
 		// verify the required parameter 'id' is set
@@ -340,7 +340,7 @@ class OrganizationAuthorizationApi {
 	 * Delete Bulk Org Trustors
 	 * 
 	 * @param {Array.<String>} id Comma separated list of trustor ids to remove
-	 * Preview Endpoint
+	 * deleteOrgauthorizationTrustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteOrgauthorizationTrustors(id) { 
 		// verify the required parameter 'id' is set
