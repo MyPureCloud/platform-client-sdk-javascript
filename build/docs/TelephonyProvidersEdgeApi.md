@@ -59,6 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesLines**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLines) | **GET** /api/v2/telephony/providers/edges/lines | Get a list of Lines
 [**getTelephonyProvidersEdgesLinesTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLinesTemplate) | **GET** /api/v2/telephony/providers/edges/lines/template | Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
 [**getTelephonyProvidersEdgesLogicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLogicalinterfaces) | **GET** /api/v2/telephony/providers/edges/logicalinterfaces | Get edge logical interfaces.
+[**getTelephonyProvidersEdgesMediastatisticsConversation**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMediastatisticsConversation) | **GET** /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId} | Get media endpoint statistics events.
+[**getTelephonyProvidersEdgesMediastatisticsConversationCommunication**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMediastatisticsConversationCommunication) | **GET** /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId} | Get media endpoint statistics event.
 [**getTelephonyProvidersEdgesMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMetrics) | **GET** /api/v2/telephony/providers/edges/metrics | Get the metrics for a list of edges.
 [**getTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroute) | **GET** /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} | Get outbound route
 [**getTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroutes) | **GET** /api/v2/telephony/providers/edges/outboundroutes | Get outbound routes
@@ -2870,6 +2872,112 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 ### Return type
 
 **LogicalInterfaceEntityListing**
+
+<a name="getTelephonyProvidersEdgesMediastatisticsConversation"></a>
+
+# MediaStatisticsListing getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)
+
+
+GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}
+
+Get media endpoint statistics events.
+
+getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:conversationDetail:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let conversationId = "conversationId_example"; // String | Identifier of the conversation
+
+apiInstance.getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesMediastatisticsConversation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesMediastatisticsConversation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Identifier of the conversation |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MediaStatisticsListing**
+
+<a name="getTelephonyProvidersEdgesMediastatisticsConversationCommunication"></a>
+
+# MediaStatistics getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)
+
+
+GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}
+
+Get media endpoint statistics event.
+
+getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:conversationDetail:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let conversationId = "conversationId_example"; // String | Identifier of the conversation
+let communicationId = "communicationId_example"; // String | Identifier of the media session
+
+apiInstance.getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesMediastatisticsConversationCommunication success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesMediastatisticsConversationCommunication');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Identifier of the conversation |  |
+ **communicationId** | **String** | Identifier of the media session |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MediaStatistics**
 
 <a name="getTelephonyProvidersEdgesMetrics"></a>
 

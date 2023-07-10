@@ -2869,7 +2869,7 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
 
 <a name="getConversationsEmailMessages"></a>
 
-# EmailMessageListing getConversationsEmailMessages(conversationId)
+# EmailMessagePreviewListing getConversationsEmailMessages(conversationId)
 
 
 GET /api/v2/conversations/emails/{conversationId}/messages
@@ -2913,7 +2913,7 @@ apiInstance.getConversationsEmailMessages(conversationId)
 
 ### Return type
 
-**EmailMessageListing**
+**EmailMessagePreviewListing**
 
 <a name="getConversationsEmailMessagesDraft"></a>
 

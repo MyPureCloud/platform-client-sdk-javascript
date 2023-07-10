@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getScriptsPublishedScriptIdVariables**](ScriptsApi.html#getScriptsPublishedScriptIdVariables) | **GET** /api/v2/scripts/published/{scriptId}/variables | Get the published variables
 [**getScriptsUploadStatus**](ScriptsApi.html#getScriptsUploadStatus) | **GET** /api/v2/scripts/uploads/{uploadId}/status | Get the upload status of an imported script
 [**postScriptExport**](ScriptsApi.html#postScriptExport) | **POST** /api/v2/scripts/{scriptId}/export | Export a script via download service.
+[**postScriptsPublished**](ScriptsApi.html#postScriptsPublished) | **POST** /api/v2/scripts/published | Publish a script.
 {: class="table table-striped"}
 
 <a name="getScript"></a>
@@ -785,4 +786,58 @@ apiInstance.postScriptExport(scriptId, opts)
 ### Return type
 
 **ExportScriptResponse**
+
+<a name="postScriptsPublished"></a>
+
+# Script postScriptsPublished(opts)
+
+
+POST /api/v2/scripts/published
+
+Publish a script.
+
+Requires ANY permissions:
+
+* scripter:publishedScript:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ScriptsApi();
+
+let opts = { 
+  'scriptDataVersion': "scriptDataVersion_example", // String | Advanced usage - controls the data version of the script
+  'body': {} // Object | body
+};
+
+apiInstance.postScriptsPublished(opts)
+  .then((data) => {
+    console.log(`postScriptsPublished success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postScriptsPublished');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Script**
 

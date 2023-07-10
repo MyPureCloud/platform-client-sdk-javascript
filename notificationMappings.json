@@ -177,6 +177,10 @@
       "class": "WfmIntradayDataUpdateTopicIntradayDataUpdate"
     },
     {
+      "topic": "v2.operations.events.{id}",
+      "class": "OperationalEventNotificationTopicOperationalEventNotification"
+    },
+    {
       "topic": "v2.outbound.attemptlimits.{id}",
       "class": "DialerAttemptLimitsConfigChangeAttemptLimits"
     },

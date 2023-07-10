@@ -1252,6 +1252,8 @@ docs/getTelephonyProvidersEdgesLinebasesettings-example.txt
 docs/getTelephonyProvidersEdgesLines-example.txt
 docs/getTelephonyProvidersEdgesLinesTemplate-example.txt
 docs/getTelephonyProvidersEdgesLogicalinterfaces-example.txt
+docs/getTelephonyProvidersEdgesMediastatisticsConversation-example.txt
+docs/getTelephonyProvidersEdgesMediastatisticsConversationCommunication-example.txt
 docs/getTelephonyProvidersEdgesMetrics-example.txt
 docs/getTelephonyProvidersEdgesOutboundroute-example.txt
 docs/getTelephonyProvidersEdgesOutboundroutes-example.txt
@@ -2008,6 +2010,7 @@ docs/postRoutingWrapupcodes-example.txt
 docs/postScimUsers-example.txt
 docs/postScimV2Users-example.txt
 docs/postScriptExport-example.txt
+docs/postScriptsPublished-example.txt
 docs/postSearch-example.txt
 docs/postSearch-example.txt
 docs/postSearchSuggest-example.txt

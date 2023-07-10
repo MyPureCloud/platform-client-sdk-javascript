@@ -1177,7 +1177,7 @@ declare class ConversationsApi {
   	getConversationsCobrowsesessions(): Promise<Models.CobrowseConversationEntityListing>; 
   	getConversationsEmail(conversationId: string): Promise<Models.EmailConversation>; 
   	getConversationsEmailMessage(conversationId: string, messageId: string): Promise<Models.EmailMessage>; 
-  	getConversationsEmailMessages(conversationId: string): Promise<Models.EmailMessageListing>; 
+  	getConversationsEmailMessages(conversationId: string): Promise<Models.EmailMessagePreviewListing>; 
   	getConversationsEmailMessagesDraft(conversationId: string): Promise<Models.EmailMessage>; 
   	getConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsEmailParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsEmailParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsEmailParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
@@ -4699,7 +4699,8 @@ declare class ScriptsApi {
   	getScriptsPublishedScriptIdPages(scriptId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdPagesOptions): Promise<Array<Models.Page>>; 
   	getScriptsPublishedScriptIdVariables(scriptId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdVariablesOptions): Promise<object>; 
   	getScriptsUploadStatus(uploadId: string, opts?: ScriptsApi.getScriptsUploadStatusOptions): Promise<Models.ImportScriptStatusResponse>; 
-  	postScriptExport(scriptId: string, opts?: ScriptsApi.postScriptExportOptions): Promise<Models.ExportScriptResponse>;
+  	postScriptExport(scriptId: string, opts?: ScriptsApi.postScriptExportOptions): Promise<Models.ExportScriptResponse>; 
+  	postScriptsPublished(opts?: ScriptsApi.postScriptsPublishedOptions): Promise<Models.Script>;
 }
 
 declare namespace ScriptsApi { 
@@ -4773,6 +4774,10 @@ declare namespace ScriptsApi {
 	}
 	export interface postScriptExportOptions { 
 		"body"?: Models.ExportScriptRequest;
+	}
+	export interface postScriptsPublishedOptions { 
+		"scriptDataVersion"?: string;
+		"body"?: Models.PublishScriptRequestData;
 	}
 }
 
@@ -5174,6 +5179,8 @@ declare class TelephonyProvidersEdgeApi {
   	getTelephonyProvidersEdgesLines(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesLinesOptions): Promise<Models.LineEntityListing>; 
   	getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId: string): Promise<Models.Line>; 
   	getTelephonyProvidersEdgesLogicalinterfaces(edgeIds: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesLogicalinterfacesOptions): Promise<Models.LogicalInterfaceEntityListing>; 
+  	getTelephonyProvidersEdgesMediastatisticsConversation(conversationId: string): Promise<Models.MediaStatisticsListing>; 
+  	getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId: string, communicationId: string): Promise<Models.MediaStatistics>; 
   	getTelephonyProvidersEdgesMetrics(edgeIds: string): Promise<Array<Models.EdgeMetrics>>; 
   	getTelephonyProvidersEdgesOutboundroute(outboundRouteId: string): Promise<Models.OutboundRoute>; 
   	getTelephonyProvidersEdgesOutboundroutes(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesOutboundroutesOptions): Promise<Models.OutboundRouteEntityListing>; 
@@ -7610,6 +7617,9 @@ declare namespace Models {
 		"recordingDurationMs"?: number;
 		"user"?: Models.User;
 		"description"?: string;
+		"reason"?: string;
+		"annotations"?: Array<Models.Annotation>;
+		"realtimeLocation"?: number;
 		"selfUri"?: string;
 	}
 	
@@ -15570,6 +15580,7 @@ declare namespace Models {
 		"numberOfContactsMessaged"?: number;
 		"totalNumberOfContacts"?: number;
 		"percentage"?: number;
+		"numberOfContactsSkipped"?: { [key: string]: number; };
 		"additionalProperties"?: { [key: string]: object; };
 	}
 	
@@ -16432,10 +16443,11 @@ declare namespace Models {
 	
 	export interface DocumentBodyBlock { 
 		"type": string;
-		"paragraph": Models.DocumentBodyParagraph;
-		"image": Models.DocumentBodyImage;
-		"video": Models.DocumentBodyVideo;
-		"list": Models.DocumentBodyList;
+		"paragraph"?: Models.DocumentBodyParagraph;
+		"image"?: Models.DocumentBodyImage;
+		"video"?: Models.DocumentBodyVideo;
+		"list"?: Models.DocumentBodyList;
+		"table"?: Models.DocumentBodyTable;
 	}
 	
 	export interface DocumentBodyImage { 
@@ -16487,6 +16499,70 @@ declare namespace Models {
 		"backgroundColor"?: string;
 		"align"?: string;
 		"indentation"?: number;
+	}
+	
+	export interface DocumentBodyTable { 
+		"rows": Array<Models.DocumentBodyTableRowBlock>;
+		"properties"?: Models.DocumentBodyTableProperties;
+	}
+	
+	export interface DocumentBodyTableCaptionBlock { 
+		"blocks": Array<Models.DocumentBodyTableCaptionItem>;
+	}
+	
+	export interface DocumentBodyTableCaptionItem { 
+		"type": string;
+		"text": Models.DocumentText;
+		"image": Models.DocumentBodyImage;
+		"video": Models.DocumentBodyVideo;
+		"list": Models.DocumentBodyList;
+	}
+	
+	export interface DocumentBodyTableCellBlock { 
+		"blocks": Array<Models.DocumentTableContentBlock>;
+		"properties"?: Models.DocumentBodyTableCellBlockProperties;
+	}
+	
+	export interface DocumentBodyTableCellBlockProperties { 
+		"cellType"?: string;
+		"width"?: number;
+		"height"?: number;
+		"horizontalAlign"?: string;
+		"verticalAlign"?: string;
+		"borderWidth"?: number;
+		"borderStyle"?: string;
+		"borderColor"?: string;
+		"backgroundColor"?: string;
+		"scope"?: string;
+		"colSpan"?: number;
+		"rowSpan"?: number;
+	}
+	
+	export interface DocumentBodyTableProperties { 
+		"width"?: number;
+		"height"?: number;
+		"cellSpacing"?: number;
+		"cellPadding"?: number;
+		"borderWidth"?: number;
+		"alignment"?: string;
+		"borderStyle"?: string;
+		"borderColor"?: string;
+		"backgroundColor"?: string;
+		"caption"?: Models.DocumentBodyTableCaptionBlock;
+	}
+	
+	export interface DocumentBodyTableRowBlock { 
+		"cells": Array<Models.DocumentBodyTableCellBlock>;
+		"properties"?: Models.DocumentBodyTableRowBlockProperties;
+	}
+	
+	export interface DocumentBodyTableRowBlockProperties { 
+		"rowType"?: string;
+		"alignment"?: string;
+		"height"?: number;
+		"borderStyle"?: string;
+		"borderColor"?: string;
+		"backgroundColor"?: string;
 	}
 	
 	export interface DocumentBodyVideo { 
@@ -16567,6 +16643,16 @@ declare namespace Models {
 	export interface DocumentReference { 
 		"id"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface DocumentTableContentBlock { 
+		"type": string;
+		"paragraph"?: Models.DocumentBodyParagraph;
+		"text"?: Models.DocumentText;
+		"image"?: Models.DocumentBodyImage;
+		"video"?: Models.DocumentBodyVideo;
+		"list"?: Models.DocumentBodyList;
+		"table"?: Models.DocumentBodyTable;
 	}
 	
 	export interface DocumentText { 
@@ -17701,8 +17787,28 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface EmailMessageListing { 
-		"entities"?: Array<Models.EmailMessage>;
+	export interface EmailMessagePreview { 
+		"id"?: string;
+		"name"?: string;
+		"to": Array<Models.EmailAddress>;
+		"cc"?: Array<Models.EmailAddress>;
+		"bcc"?: Array<Models.EmailAddress>;
+		"from": Models.EmailAddress;
+		"replyTo"?: Models.EmailAddress;
+		"subject"?: string;
+		"attachments"?: Array<Models.Attachment>;
+		"textBodyPreview"?: string;
+		"time"?: string;
+		"historyIncluded"?: boolean;
+		"state"?: string;
+		"draftType"?: string;
+		"emailSizeBytes"?: number;
+		"maxEmailSizeBytes"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface EmailMessagePreviewListing { 
+		"entities"?: Array<Models.EmailMessagePreview>;
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
@@ -18175,6 +18281,7 @@ declare namespace Models {
 		"rescoreCount"?: number;
 		"evaluatorCommentHasUpdated"?: boolean;
 		"agentCommentHasUpdated"?: boolean;
+		"previousRescoreCount"?: number;
 	}
 	
 	export interface EvaluationQualityV2TopicUser { 
@@ -18356,12 +18463,6 @@ declare namespace Models {
 		"createdDate"?: string;
 	}
 	
-	export interface EventCoBrowse { 
-		"type": string;
-		"sessionId"?: string;
-		"sessionJoinToken"?: string;
-	}
-	
 	export interface EventCondition { 
 		"key": string;
 		"values": Array<string>;
@@ -18406,10 +18507,6 @@ declare namespace Models {
 		"resourceURIs"?: Array<string>;
 	}
 	
-	export interface EventPresence { 
-		"type": string;
-	}
-	
 	export interface EventSession { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -18418,11 +18515,6 @@ declare namespace Models {
 	
 	export interface EventSetting { 
 		"typing"?: Models.TypingSetting;
-	}
-	
-	export interface EventTyping { 
-		"type": string;
-		"duration"?: number;
 	}
 	
 	export interface ExecuteRecordingJobsQuery { 
@@ -24181,6 +24273,29 @@ declare namespace Models {
 		"maxParticipants"?: number;
 	}
 	
+	export interface MediaEndpointStatistics { 
+		"trunk"?: Models.NamedEntity;
+		"station"?: Models.NamedEntity;
+		"user"?: Models.NamedEntity;
+		"ice"?: Models.MediaIceStatistics;
+		"rtp"?: Models.MediaRtpStatistics;
+	}
+	
+	export interface MediaIceSelectedCandidate { 
+		"address"?: string;
+		"type"?: string;
+	}
+	
+	export interface MediaIceSelectedPair { 
+		"client"?: Models.MediaIceSelectedCandidate;
+		"server"?: Models.MediaIceSelectedCandidate;
+		"candidatePairSelectedMilliseconds"?: number;
+	}
+	
+	export interface MediaIceStatistics { 
+		"selectedPairs"?: Array<Models.MediaIceSelectedPair>;
+	}
+	
 	export interface MediaParticipantRequest { 
 		"wrapup"?: Models.WrapupInput;
 		"state"?: string;
@@ -24209,11 +24324,32 @@ declare namespace Models {
 		"waveformData"?: Array<number>;
 	}
 	
+	export interface MediaRtpStatistics { 
+		"packetsReceived"?: number;
+		"packetsSent"?: number;
+		"rtpEventsReceived"?: number;
+		"rtpEventsSent"?: number;
+		"estimatedAverageMos"?: number;
+	}
+	
 	export interface MediaSettings { 
 		"enableAutoAnswer"?: boolean;
 		"alertingTimeoutSeconds"?: number;
 		"serviceLevel"?: Models.ServiceLevel;
 		"subTypeSettings"?: { [key: string]: Models.BaseMediaSettings; };
+	}
+	
+	export interface MediaStatistics { 
+		"communicationId"?: string;
+		"dateStart"?: string;
+		"creationMilliseconds"?: number;
+		"preferredRegion"?: string;
+		"effectiveRegion"?: string;
+		"mediaStatistics"?: Array<Models.MediaEndpointStatistics>;
+	}
+	
+	export interface MediaStatisticsListing { 
+		"entities"?: Array<Models.MediaStatistics>;
 	}
 	
 	export interface MediaSummary { 
@@ -24395,13 +24531,6 @@ declare namespace Models {
 		"messageType"?: string;
 		"wrapupCodeId"?: string;
 		"timestamp"?: string;
-	}
-	
-	export interface MessageEvent { 
-		"eventType": string;
-		"coBrowse"?: Models.EventCoBrowse;
-		"typing"?: Models.EventTyping;
-		"presence"?: Models.EventPresence;
 	}
 	
 	export interface MessageInfo { 
@@ -25685,6 +25814,18 @@ declare namespace Models {
 		"actionStatus"?: string;
 	}
 	
+	export interface OperationalEventNotificationTopicEventEntity { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+	}
+	
+	export interface OperationalEventNotificationTopicOperationalEventNotification { 
+		"eventEntity"?: Models.OperationalEventNotificationTopicEventEntity;
+		"entityId"?: string;
+		"entityName"?: string;
+	}
+	
 	export interface OptInSettings { 
 		"keyword": Array<string>;
 		"response": Models.ComplianceResponse;
@@ -26047,6 +26188,7 @@ declare namespace Models {
 		"numberOfContactsMessaged"?: number;
 		"totalNumberOfContacts"?: number;
 		"percentage"?: number;
+		"numberOfContactsSkipped"?: { [key: string]: number; };
 		"additionalProperties"?: { [key: string]: object; };
 	}
 	
@@ -27497,6 +27639,11 @@ declare namespace Models {
 	export interface PublishProgramTopicsDefinitionsJob { 
 		"id"?: string;
 		"state"?: string;
+	}
+	
+	export interface PublishScriptRequestData { 
+		"scriptId": string;
+		"versionId"?: string;
 	}
 	
 	export interface PublishTopicTopicsDefinitionsJob { 
@@ -30831,6 +30978,7 @@ declare namespace Models {
 		"emailErrorDescription"?: string;
 		"includeDurationFormatInHeader"?: boolean;
 		"durationFormat"?: string;
+		"exportAllowedToRerun"?: boolean;
 		"enabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -33307,6 +33455,12 @@ declare namespace Models {
 		"query": Array<Models.SuggestSearchCriteria>;
 	}
 	
+	export interface SupportCenterCategory { 
+		"id"?: string;
+		"selfUri"?: string;
+		"image"?: Models.SupportCenterImage;
+	}
+	
 	export interface SupportCenterCustomMessage { 
 		"defaultValue"?: string;
 		"type"?: string;
@@ -33328,6 +33482,15 @@ declare namespace Models {
 	export interface SupportCenterHeroStyle { 
 		"backgroundColor"?: string;
 		"textColor"?: string;
+		"image"?: Models.SupportCenterImage;
+	}
+	
+	export interface SupportCenterImage { 
+		"source"?: Models.SupportCenterImageSource;
+	}
+	
+	export interface SupportCenterImageSource { 
+		"defaultUrl"?: string;
 	}
 	
 	export interface SupportCenterModuleSetting { 
@@ -33346,7 +33509,7 @@ declare namespace Models {
 		"customMessages"?: Array<Models.SupportCenterCustomMessage>;
 		"routerType"?: string;
 		"screens"?: Array<Models.SupportCenterScreen>;
-		"enabledCategories"?: Array<Models.AddressableEntityRef>;
+		"enabledCategories"?: Array<Models.SupportCenterCategory>;
 		"styleSetting"?: Models.SupportCenterStyleSetting;
 		"feedback"?: Models.SupportCenterFeedbackSettings;
 	}
@@ -38248,8 +38411,10 @@ declare namespace Models {
 		"legacyMetric"?: string;
 		"value"?: number;
 		"values"?: Array<Models.WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue>;
+		"secondaryValues"?: Array<Models.WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue>;
 		"enabled"?: boolean;
 		"granularity"?: string;
+		"secondaryGranularity"?: string;
 		"displayGranularity"?: string;
 		"planningGroupIds"?: Array<string>;
 	}
@@ -38307,8 +38472,10 @@ declare namespace Models {
 		"legacyMetric"?: string;
 		"value"?: number;
 		"values"?: Array<Models.WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue>;
+		"secondaryValues"?: Array<Models.WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue>;
 		"enabled"?: boolean;
 		"granularity"?: string;
+		"secondaryGranularity"?: string;
 		"displayGranularity"?: string;
 		"planningGroupIds"?: Array<string>;
 	}
@@ -38367,8 +38534,10 @@ declare namespace Models {
 		"legacyMetric"?: string;
 		"value"?: number;
 		"values"?: Array<Models.WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue>;
+		"secondaryValues"?: Array<Models.WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue>;
 		"enabled"?: boolean;
 		"granularity"?: string;
+		"secondaryGranularity"?: string;
 		"displayGranularity"?: string;
 		"planningGroupIds"?: Array<string>;
 	}
@@ -38426,8 +38595,10 @@ declare namespace Models {
 		"legacyMetric"?: string;
 		"value"?: number;
 		"values"?: Array<Models.WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue>;
+		"secondaryValues"?: Array<Models.WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue>;
 		"enabled"?: boolean;
 		"granularity"?: string;
+		"secondaryGranularity"?: string;
 		"displayGranularity"?: string;
 		"planningGroupIds"?: Array<string>;
 	}

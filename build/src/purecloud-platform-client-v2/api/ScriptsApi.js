@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 170.0.0
+	 * @version 171.0.0
 	 */
 
 	/**
@@ -409,6 +409,31 @@ class ScriptsApi {
 			'POST', 
 			{ 'scriptId': scriptId },
 			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Publish a script.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object} opts.body body
+	 */
+	postScriptsPublished(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published', 
+			'POST', 
+			{  },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
 			{  },
 			{  },
 			opts['body'], 

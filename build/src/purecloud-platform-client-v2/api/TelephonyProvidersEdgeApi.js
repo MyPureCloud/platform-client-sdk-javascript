@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 170.0.0
+	 * @version 171.0.0
 	 */
 
 	/**
@@ -1392,6 +1392,63 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  },
 			{ 'edgeIds': edgeIds,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get media endpoint statistics events.
+	 * 
+	 * @param {String} conversationId Identifier of the conversation
+	 * getTelephonyProvidersEdgesMediastatisticsConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTelephonyProvidersEdgesMediastatisticsConversation(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getTelephonyProvidersEdgesMediastatisticsConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get media endpoint statistics event.
+	 * 
+	 * @param {String} conversationId Identifier of the conversation
+	 * @param {String} communicationId Identifier of the media session
+	 * getTelephonyProvidersEdgesMediastatisticsConversationCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getTelephonyProvidersEdgesMediastatisticsConversationCommunication';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getTelephonyProvidersEdgesMediastatisticsConversationCommunication';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}', 
+			'GET', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
 			{  },
 			{  },
 			null, 

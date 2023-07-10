@@ -7419,7 +7419,7 @@
         "required": "true"
       }
     ],
-    "return": "EmailMessageListing",
+    "return": "EmailMessagePreviewListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\n\n// Get conversation messages\napiInstance.getConversationsEmailMessages(conversationId)\n  .then((data) => {\n    console.log(`getConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getConversationsEmailMessages\");\n    console.error(err);\n  });"
   },
   "getconversationsemailmessagesdraft": {
@@ -32161,6 +32161,25 @@
     "return": "ExportScriptResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScriptsApi();\n\nlet scriptId = \"scriptId_example\"; // String | Script ID\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Export a script via download service.\napiInstance.postScriptExport(scriptId, opts)\n  .then((data) => {\n    console.log(`postScriptExport success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postScriptExport\");\n    console.error(err);\n  });"
   },
+  "postscriptspublished": {
+    "operationId": "postscriptspublished",
+    "functionName": "postScriptsPublished",
+    "signature": "postScriptsPublished(scriptDataVersion, body)",
+    "parameters": [
+      {
+        "name": "scriptDataVersion",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "Script",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ScriptsApi();\n\nlet opts = { \n  \"scriptDataVersion\": \"scriptDataVersion_example\", // String | Advanced usage - controls the data version of the script\n  \"body\": {} // Object | body\n};\n\n// Publish a script.\napiInstance.postScriptsPublished(opts)\n  .then((data) => {\n    console.log(`postScriptsPublished success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postScriptsPublished\");\n    console.error(err);\n  });"
+  },
   "getdocumentationgknsearch": {
     "operationId": "getdocumentationgknsearch",
     "functionName": "getDocumentationGknSearch",
@@ -35149,6 +35168,39 @@
     ],
     "return": "LogicalInterfaceEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet edgeIds = \"edgeIds_example\"; // String | Comma separated list of Edge Id's\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | Field to expand in the response\n};\n\n// Get edge logical interfaces.\napiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdgesLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdgesLogicalinterfaces\");\n    console.error(err);\n  });"
+  },
+  "gettelephonyprovidersedgesmediastatisticsconversation": {
+    "operationId": "gettelephonyprovidersedgesmediastatisticsconversation",
+    "functionName": "getTelephonyProvidersEdgesMediastatisticsConversation",
+    "signature": "getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "MediaStatisticsListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet conversationId = \"conversationId_example\"; // String | Identifier of the conversation\n\n// Get media endpoint statistics events.\napiInstance.getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdgesMediastatisticsConversation success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdgesMediastatisticsConversation\");\n    console.error(err);\n  });"
+  },
+  "gettelephonyprovidersedgesmediastatisticsconversationcommunication": {
+    "operationId": "gettelephonyprovidersedgesmediastatisticsconversationcommunication",
+    "functionName": "getTelephonyProvidersEdgesMediastatisticsConversationCommunication",
+    "signature": "getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "MediaStatistics",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet conversationId = \"conversationId_example\"; // String | Identifier of the conversation\nlet communicationId = \"communicationId_example\"; // String | Identifier of the media session\n\n// Get media endpoint statistics event.\napiInstance.getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdgesMediastatisticsConversationCommunication success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdgesMediastatisticsConversationCommunication\");\n    console.error(err);\n  });"
   },
   "gettelephonyprovidersedgesmetrics": {
     "operationId": "gettelephonyprovidersedgesmetrics",
