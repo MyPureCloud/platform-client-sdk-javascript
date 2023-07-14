@@ -14982,6 +14982,14 @@ declare namespace Models {
 		"messageType"?: string;
 		"conversationExternalContactIds"?: Array<string>;
 		"conversationExternalOrganizationIds"?: Array<string>;
+		"journeyContext"?: Models.CustomerStartDetailEventTopicJourneyContext;
+	}
+	
+	export interface CustomerStartDetailEventTopicJourneyContext { 
+		"sessionId"?: string;
+		"sessionIdType"?: string;
+		"actionId"?: string;
+		"actionMapId"?: string;
 	}
 	
 	export interface DID { 
