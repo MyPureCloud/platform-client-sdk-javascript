@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 172.0.0
+	 * @version 173.0.0
 	 */
 
 	/**
@@ -66,7 +66,7 @@ class LicenseApi {
 	}
 
 	/**
-	 * Get PureCloud license feature toggle value.
+	 * Deprecated - no alternative required. This operation will always return 'true' for requested toggles
 	 * 
 	 * @param {String} featureName featureName
 	 */
@@ -189,7 +189,7 @@ class LicenseApi {
 	}
 
 	/**
-	 * Switch PureCloud license feature toggle value.
+	 * Deprecated. No alternative required - this endpoint has no effect
 	 * 
 	 * @param {String} featureName featureName
 	 */

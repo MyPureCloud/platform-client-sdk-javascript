@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 172.0.0
+	 * @version 173.0.0
 	 */
 
 	/**
@@ -1461,7 +1461,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * Get the metrics for a list of edges.
 	 * 
-	 * @param {String} edgeIds Comma separated list of Edge Id's
+	 * @param {String} edgeIds Comma separated list of Edge Id's. Maximum of 100 edge ids allowed.
 	 */
 	getTelephonyProvidersEdgesMetrics(edgeIds) { 
 		// verify the required parameter 'edgeIds' is set

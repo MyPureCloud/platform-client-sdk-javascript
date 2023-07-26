@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 172.0.0
+	 * @version 173.0.0
 	 */
 
 	/**
@@ -310,6 +310,51 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a messaging setting
+	 * 
+	 * @param {String} messageSettingId Message Setting ID
+	 */
+	deleteConversationsMessagingSetting(messageSettingId) { 
+		// verify the required parameter 'messageSettingId' is set
+		if (messageSettingId === undefined || messageSettingId === null) {
+			throw 'Missing the required parameter "messageSettingId" when calling deleteConversationsMessagingSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/{messageSettingId}', 
+			'DELETE', 
+			{ 'messageSettingId': messageSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the organization's default setting, a global default will be applied to integrations without settings
+	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+	 */
+	deleteConversationsMessagingSettingsDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/default', 
+			'DELETE', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -2364,6 +2409,76 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get a messaging setting
+	 * 
+	 * @param {String} messageSettingId Message Setting ID
+	 */
+	getConversationsMessagingSetting(messageSettingId) { 
+		// verify the required parameter 'messageSettingId' is set
+		if (messageSettingId === undefined || messageSettingId === null) {
+			throw 'Missing the required parameter "messageSettingId" when calling getConversationsMessagingSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/{messageSettingId}', 
+			'GET', 
+			{ 'messageSettingId': messageSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of messaging settings
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the organization's default settings that will be used as the default when creating an integration.
+	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+	 */
+	getConversationsMessagingSettingsDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/default', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of Messaging Stickers
 	 * 
 	 * @param {Object} messengerType Messenger Type
@@ -3864,6 +3979,36 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update a messaging setting
+	 * 
+	 * @param {String} messageSettingId Message Setting ID
+	 * @param {Object} body MessagingSetting
+	 */
+	patchConversationsMessagingSetting(messageSettingId, body) { 
+		// verify the required parameter 'messageSettingId' is set
+		if (messageSettingId === undefined || messageSettingId === null) {
+			throw 'Missing the required parameter "messageSettingId" when calling patchConversationsMessagingSetting';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/{messageSettingId}', 
+			'PATCH', 
+			{ 'messageSettingId': messageSettingId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a supported content profile
 	 * 
 	 * @param {String} supportedContentId Supported Content ID
@@ -4111,6 +4256,32 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Barge a conversation creating a barged in conference of connected participants.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationBarge(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationBarge';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/barge', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
 	 * 
 	 * @param {String} conversationId Conversation ID
@@ -4234,7 +4405,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
-	 * @deprecated
 	 */
 	postConversationParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4270,6 +4440,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantReplaceAgent(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4305,6 +4476,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantReplaceExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4340,6 +4512,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
+	 * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantReplaceQueue(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4434,6 +4607,37 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Barge a given participant's call creating a barged in conference of connected participants.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsCallParticipantBarge(conversationId, participantId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantBarge';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantBarge';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
 	 * 
 	 * @param {String} conversationId conversationId
@@ -4508,7 +4712,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
-	 * @deprecated
 	 */
 	postConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4544,6 +4747,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination agent and initial speak to
+	 * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantConsultAgent(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4579,6 +4783,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
+	 * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantConsultExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4614,6 +4819,7 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination queue and initial speak to
+	 * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantConsultQueue(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4679,7 +4885,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
-	 * @deprecated
 	 */
 	postConversationsCallParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4784,7 +4989,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
-	 * @deprecated
 	 */
 	postConversationsCallbackParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5024,7 +5228,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
-	 * @deprecated
 	 */
 	postConversationsChatParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5125,7 +5328,6 @@ class ConversationsApi {
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * @deprecated
 	 */
 	postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -5288,7 +5490,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
-	 * @deprecated
 	 */
 	postConversationsEmailParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5653,7 +5854,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
-	 * @deprecated
 	 */
 	postConversationsMessageParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5896,6 +6096,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a messaging setting
+	 * 
+	 * @param {Object} body MessagingSetting
+	 */
+	postConversationsMessagingSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings', 
 			'POST', 
 			{  },
 			{  },
@@ -6465,6 +6690,31 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'PUT', 
 			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set the organization's default setting that may be applied to to integrations without settings
+	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+	 * @param {Object} body MessagingSetting
+	 */
+	putConversationsMessagingSettingsDefault(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessagingSettingsDefault';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/default', 
+			'PUT', 
+			{  },
 			{  },
 			{  },
 			{  },

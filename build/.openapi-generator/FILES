@@ -26,6 +26,8 @@ docs/DataExtensionsApi.json
 docs/DataExtensionsApi.md
 docs/DownloadsApi.json
 docs/DownloadsApi.md
+docs/EmailsApi.json
+docs/EmailsApi.md
 docs/EventsApi.json
 docs/EventsApi.md
 docs/ExternalContactsApi.json
@@ -98,6 +100,8 @@ docs/ScriptsApi.json
 docs/ScriptsApi.md
 docs/SearchApi.json
 docs/SearchApi.md
+docs/SettingsApi.json
+docs/SettingsApi.md
 docs/SpeechTextAnalyticsApi.json
 docs/SpeechTextAnalyticsApi.md
 docs/StationsApi.json
@@ -138,8 +142,10 @@ docs/WidgetsApi.json
 docs/WidgetsApi.md
 docs/WorkforceManagementApi.json
 docs/WorkforceManagementApi.md
+docs/deleteAlertingAlert-example.txt
 docs/deleteAlertingInteractionstatsAlert-example.txt
 docs/deleteAlertingInteractionstatsRule-example.txt
+docs/deleteAlertingRule-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
 docs/deleteAnalyticsReportingSchedule-example.txt
@@ -178,6 +184,8 @@ docs/deleteConversationsMessagingIntegrationsLineIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
+docs/deleteConversationsMessagingSetting-example.txt
+docs/deleteConversationsMessagingSettingsDefault-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/deleteExternalcontactsContact-example.txt
@@ -236,6 +244,8 @@ docs/deleteLanguageunderstandingMinerDraft-example.txt
 docs/deleteLearningAssignment-example.txt
 docs/deleteLearningModule-example.txt
 docs/deleteLocation-example.txt
+docs/deleteMessagingSetting-example.txt
+docs/deleteMessagingSettingsDefault-example.txt
 docs/deleteMessagingSupportedcontentSupportedContentId-example.txt
 docs/deleteMobiledevice-example.txt
 docs/deleteNotificationsChannelSubscriptions-example.txt
@@ -373,12 +383,14 @@ docs/deleteWorkforcemanagementManagementunitTimeofflimit-example.txt
 docs/deleteWorkforcemanagementManagementunitTimeoffplan-example.txt
 docs/deleteWorkforcemanagementManagementunitWorkplan-example.txt
 docs/deleteWorkforcemanagementManagementunitWorkplanrotation-example.txt
+docs/getAlertingAlert-example.txt
 docs/getAlertingAlertsActive-example.txt
 docs/getAlertingInteractionstatsAlert-example.txt
 docs/getAlertingInteractionstatsAlerts-example.txt
 docs/getAlertingInteractionstatsAlertsUnread-example.txt
 docs/getAlertingInteractionstatsRule-example.txt
 docs/getAlertingInteractionstatsRules-example.txt
+docs/getAlertingRule-example.txt
 docs/getAnalyticsActionsAggregatesJob-example.txt
 docs/getAnalyticsActionsAggregatesJobResults-example.txt
 docs/getAnalyticsBotflowReportingturns-example.txt
@@ -607,6 +619,9 @@ docs/getConversationsMessagingIntegrationsTwitter-example.txt
 docs/getConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/getConversationsMessagingIntegrationsWhatsapp-example.txt
 docs/getConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
+docs/getConversationsMessagingSetting-example.txt
+docs/getConversationsMessagingSettings-example.txt
+docs/getConversationsMessagingSettingsDefault-example.txt
 docs/getConversationsMessagingSticker-example.txt
 docs/getConversationsMessagingSupportedcontent-example.txt
 docs/getConversationsMessagingSupportedcontentDefault-example.txt
@@ -624,6 +639,8 @@ docs/getDate-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
 docs/getDownload-example.txt
+docs/getEmailsSettings-example.txt
+docs/getEmailsSettings-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
@@ -902,6 +919,9 @@ docs/getLocationSublocations-example.txt
 docs/getLocations-example.txt
 docs/getLocationsSearch-example.txt
 docs/getLocationsSearch-example.txt
+docs/getMessagingSetting-example.txt
+docs/getMessagingSettings-example.txt
+docs/getMessagingSettingsDefault-example.txt
 docs/getMessagingSupportedcontent-example.txt
 docs/getMessagingSupportedcontentSupportedContentId-example.txt
 docs/getMobiledevice-example.txt
@@ -1168,6 +1188,7 @@ docs/getSearchSuggest-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSpeechandtextanalyticsConversation-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturl-example.txt
+docs/getSpeechandtextanalyticsConversationCommunicationTranscripturls-example.txt
 docs/getSpeechandtextanalyticsProgram-example.txt
 docs/getSpeechandtextanalyticsProgramMappings-example.txt
 docs/getSpeechandtextanalyticsProgramTranscriptionengines-example.txt
@@ -1438,6 +1459,9 @@ docs/getWorkforcemanagementTimeoffrequestWaitlistpositions-example.txt
 docs/getWorkforcemanagementTimeoffrequests-example.txt
 docs/headNotificationsChannel-example.txt
 docs/headTokensMe-example.txt
+docs/patchAlertingAlert-example.txt
+docs/patchAlertingAlertsBulk-example.txt
+docs/patchAlertingRulesBulk-example.txt
 docs/patchAnalyticsReportingSettings-example.txt
 docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
@@ -1483,8 +1507,11 @@ docs/patchConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
+docs/patchConversationsMessagingSetting-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchConversationsSettings-example.txt
+docs/patchEmailsSettings-example.txt
+docs/patchEmailsSettings-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchExternalcontactsContactIdentifiers-example.txt
 docs/patchGeolocationsSettings-example.txt
@@ -1514,6 +1541,7 @@ docs/patchLanguageunderstandingMinerDraft-example.txt
 docs/patchLearningAssignment-example.txt
 docs/patchLearningAssignmentReschedule-example.txt
 docs/patchLocation-example.txt
+docs/patchMessagingSetting-example.txt
 docs/patchMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchOrganizationsAuthenticationSettings-example.txt
 docs/patchOrganizationsFeature-example.txt
@@ -1584,7 +1612,11 @@ docs/patchWorkforcemanagementManagementunitWeekShifttrade-example.txt
 docs/patchWorkforcemanagementManagementunitWorkplan-example.txt
 docs/patchWorkforcemanagementManagementunitWorkplanrotation-example.txt
 docs/patchWorkforcemanagementTimeoffrequest-example.txt
+docs/postAlertingAlertsQuery-example.txt
 docs/postAlertingInteractionstatsRules-example.txt
+docs/postAlertingRules-example.txt
+docs/postAlertingRulesBulkRemove-example.txt
+docs/postAlertingRulesQuery-example.txt
 docs/postAnalyticsActionsAggregatesJobs-example.txt
 docs/postAnalyticsActionsAggregatesQuery-example.txt
 docs/postAnalyticsBotsAggregatesJobs-example.txt
@@ -1698,6 +1730,7 @@ docs/postContentmanagementWorkspaceTagvalues-example.txt
 docs/postContentmanagementWorkspaceTagvaluesQuery-example.txt
 docs/postContentmanagementWorkspaces-example.txt
 docs/postConversationAssign-example.txt
+docs/postConversationBarge-example.txt
 docs/postConversationCobrowse-example.txt
 docs/postConversationDisconnect-example.txt
 docs/postConversationParticipantCallbacks-example.txt
@@ -1709,6 +1742,7 @@ docs/postConversationParticipantReplaceQueue-example.txt
 docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationRecordingAnnotations-example.txt
 docs/postConversationsCall-example.txt
+docs/postConversationsCallParticipantBarge-example.txt
 docs/postConversationsCallParticipantCoach-example.txt
 docs/postConversationsCallParticipantCommunicationWrapup-example.txt
 docs/postConversationsCallParticipantConsult-example.txt
@@ -1757,6 +1791,7 @@ docs/postConversationsMessagingIntegrationsLine-example.txt
 docs/postConversationsMessagingIntegrationsOpen-example.txt
 docs/postConversationsMessagingIntegrationsTwitter-example.txt
 docs/postConversationsMessagingIntegrationsWhatsapp-example.txt
+docs/postConversationsMessagingSettings-example.txt
 docs/postConversationsMessagingSupportedcontent-example.txt
 docs/postConversationsParticipantsAttributesSearch-example.txt
 docs/postConversationsParticipantsAttributesSearch-example.txt
@@ -1910,6 +1945,7 @@ docs/postLicenseUsers-example.txt
 docs/postLocations-example.txt
 docs/postLocationsSearch-example.txt
 docs/postLocationsSearch-example.txt
+docs/postMessagingSettings-example.txt
 docs/postMessagingSupportedcontent-example.txt
 docs/postMobiledevices-example.txt
 docs/postNotificationsChannelSubscriptions-example.txt
@@ -2164,8 +2200,10 @@ docs/postWorkforcemanagementTeamAdherenceHistorical-example.txt
 docs/postWorkforcemanagementTeamShrinkageJobs-example.txt
 docs/postWorkforcemanagementTimeofflimitsAvailableQuery-example.txt
 docs/postWorkforcemanagementTimeoffrequests-example.txt
+docs/putAlertingAlert-example.txt
 docs/putAlertingInteractionstatsAlert-example.txt
 docs/putAlertingInteractionstatsRule-example.txt
+docs/putAlertingRule-example.txt
 docs/putAnalyticsDataretentionSettings-example.txt
 docs/putAnalyticsReportingSchedule-example.txt
 docs/putArchitectEmergencygroup-example.txt
@@ -2201,6 +2239,7 @@ docs/putConversationsEmailRecordingstate-example.txt
 docs/putConversationsKeyconfiguration-example.txt
 docs/putConversationsMessageRecordingstate-example.txt
 docs/putConversationsMessagingIntegrationsLineIntegrationId-example.txt
+docs/putConversationsMessagingSettingsDefault-example.txt
 docs/putConversationsMessagingSupportedcontentDefault-example.txt
 docs/putConversationsMessagingThreadingtimeline-example.txt
 docs/putConversationsScreenshareRecordingstate-example.txt
@@ -2249,6 +2288,7 @@ docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt
 docs/putLearningModule-example.txt
 docs/putLearningModuleRule-example.txt
+docs/putMessagingSettingsDefault-example.txt
 docs/putMobiledevice-example.txt
 docs/putNotificationsChannelSubscriptions-example.txt
 docs/putOauthClient-example.txt
@@ -2385,6 +2425,7 @@ src/purecloud-platform-client-v2/api/ContentManagementApi.js
 src/purecloud-platform-client-v2/api/ConversationsApi.js
 src/purecloud-platform-client-v2/api/DataExtensionsApi.js
 src/purecloud-platform-client-v2/api/DownloadsApi.js
+src/purecloud-platform-client-v2/api/EmailsApi.js
 src/purecloud-platform-client-v2/api/EventsApi.js
 src/purecloud-platform-client-v2/api/ExternalContactsApi.js
 src/purecloud-platform-client-v2/api/FaxApi.js
@@ -2421,6 +2462,7 @@ src/purecloud-platform-client-v2/api/RoutingApi.js
 src/purecloud-platform-client-v2/api/SCIMApi.js
 src/purecloud-platform-client-v2/api/ScriptsApi.js
 src/purecloud-platform-client-v2/api/SearchApi.js
+src/purecloud-platform-client-v2/api/SettingsApi.js
 src/purecloud-platform-client-v2/api/SpeechTextAnalyticsApi.js
 src/purecloud-platform-client-v2/api/StationsApi.js
 src/purecloud-platform-client-v2/api/SuggestApi.js

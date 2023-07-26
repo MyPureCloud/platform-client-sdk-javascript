@@ -3005,7 +3005,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-let edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+let edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's. Maximum of 100 edge ids allowed.
 
 apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
   .then((data) => {
@@ -3022,7 +3022,7 @@ apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeIds** | **String** | Comma separated list of Edge Id's |  |
+ **edgeIds** | **String** | Comma separated list of Edge Id's. Maximum of 100 edge ids allowed. |  |
 {: class="table table-striped"}
 
 ### Return type

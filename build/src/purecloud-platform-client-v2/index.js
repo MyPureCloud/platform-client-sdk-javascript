@@ -14,6 +14,7 @@ import ContentManagementApi from './api/ContentManagementApi.js';
 import ConversationsApi from './api/ConversationsApi.js';
 import DataExtensionsApi from './api/DataExtensionsApi.js';
 import DownloadsApi from './api/DownloadsApi.js';
+import EmailsApi from './api/EmailsApi.js';
 import EventsApi from './api/EventsApi.js';
 import ExternalContactsApi from './api/ExternalContactsApi.js';
 import FaxApi from './api/FaxApi.js';
@@ -50,6 +51,7 @@ import RoutingApi from './api/RoutingApi.js';
 import SCIMApi from './api/SCIMApi.js';
 import ScriptsApi from './api/ScriptsApi.js';
 import SearchApi from './api/SearchApi.js';
+import SettingsApi from './api/SettingsApi.js';
 import SpeechTextAnalyticsApi from './api/SpeechTextAnalyticsApi.js';
 import StationsApi from './api/StationsApi.js';
 import SuggestApi from './api/SuggestApi.js';
@@ -102,7 +104,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 172.0.0
+ * @version 173.0.0
  */
 class platformClient {
 	constructor() {
@@ -181,6 +183,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/DownloadsApi}
 		 */
 		this.DownloadsApi = DownloadsApi;
+		/**
+		 * The EmailsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/EmailsApi}
+		 */
+		this.EmailsApi = EmailsApi;
 		/**
 		 * The EventsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/EventsApi}
@@ -361,6 +368,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SearchApi}
 		 */
 		this.SearchApi = SearchApi;
+		/**
+		 * The SettingsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/SettingsApi}
+		 */
+		this.SettingsApi = SettingsApi;
 		/**
 		 * The SpeechTextAnalyticsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}

@@ -18,6 +18,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
 [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete a Twitter messaging integration
 [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
+[**deleteConversationsMessagingSetting**](ConversationsApi.html#deleteConversationsMessagingSetting) | **DELETE** /api/v2/conversations/messaging/settings/{messageSettingId} | Delete a messaging setting
+[**deleteConversationsMessagingSettingsDefault**](ConversationsApi.html#deleteConversationsMessagingSettingsDefault) | **DELETE** /api/v2/conversations/messaging/settings/default | Delete the organization's default setting, a global default will be applied to integrations without settings
 [**deleteConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#deleteConversationsMessagingSupportedcontentSupportedContentId) | **DELETE** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Delete a supported content profile
 [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
 [**getAnalyticsConversationsAggregatesJob**](ConversationsApi.html#getAnalyticsConversationsAggregatesJob) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Get status for async query for conversation aggregates
@@ -90,6 +92,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get a Twitter messaging integration
 [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsapp) | **GET** /api/v2/conversations/messaging/integrations/whatsapp | Get a list of WhatsApp Integrations
 [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
+[**getConversationsMessagingSetting**](ConversationsApi.html#getConversationsMessagingSetting) | **GET** /api/v2/conversations/messaging/settings/{messageSettingId} | Get a messaging setting
+[**getConversationsMessagingSettings**](ConversationsApi.html#getConversationsMessagingSettings) | **GET** /api/v2/conversations/messaging/settings | Get a list of messaging settings
+[**getConversationsMessagingSettingsDefault**](ConversationsApi.html#getConversationsMessagingSettingsDefault) | **GET** /api/v2/conversations/messaging/settings/default | Get the organization's default settings that will be used as the default when creating an integration.
 [**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | **GET** /api/v2/conversations/messaging/stickers/{messengerType} | Get a list of Messaging Stickers
 [**getConversationsMessagingSupportedcontent**](ConversationsApi.html#getConversationsMessagingSupportedcontent) | **GET** /api/v2/conversations/messaging/supportedcontent | Get a list of Supported Content profiles
 [**getConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#getConversationsMessagingSupportedcontentDefault) | **GET** /api/v2/conversations/messaging/supportedcontent/default | Get the organization's default supported content profile that will be used as the default when creating an integration.
@@ -136,6 +141,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
 [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update Twitter messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update or activate a WhatsApp messaging integration
+[**patchConversationsMessagingSetting**](ConversationsApi.html#patchConversationsMessagingSetting) | **PATCH** /api/v2/conversations/messaging/settings/{messageSettingId} | Update a messaging setting
 [**patchConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#patchConversationsMessagingSupportedcontentSupportedContentId) | **PATCH** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Update a supported content profile
 [**patchConversationsSettings**](ConversationsApi.html#patchConversationsSettings) | **PATCH** /api/v2/conversations/settings | Update Settings
 [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
@@ -145,6 +151,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
 [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
 [**postConversationAssign**](ConversationsApi.html#postConversationAssign) | **POST** /api/v2/conversations/{conversationId}/assign | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
+[**postConversationBarge**](ConversationsApi.html#postConversationBarge) | **POST** /api/v2/conversations/{conversationId}/barge | Barge a conversation creating a barged in conference of connected participants.
 [**postConversationCobrowse**](ConversationsApi.html#postConversationCobrowse) | **POST** /api/v2/conversations/{conversationId}/cobrowse | Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
 [**postConversationDisconnect**](ConversationsApi.html#postConversationDisconnect) | **POST** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
@@ -155,6 +162,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationParticipantReplaceQueue**](ConversationsApi.html#postConversationParticipantReplaceQueue) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue
 [**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
 [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
+[**postConversationsCallParticipantBarge**](ConversationsApi.html#postConversationsCallParticipantBarge) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge | Barge a given participant's call creating a barged in conference of connected participants.
 [**postConversationsCallParticipantCoach**](ConversationsApi.html#postConversationsCallParticipantCoach) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
 [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCallParticipantCommunicationWrapup) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
@@ -203,6 +211,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
 [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | Create a WhatsApp Integration
+[**postConversationsMessagingSettings**](ConversationsApi.html#postConversationsMessagingSettings) | **POST** /api/v2/conversations/messaging/settings | Create a messaging setting
 [**postConversationsMessagingSupportedcontent**](ConversationsApi.html#postConversationsMessagingSupportedcontent) | **POST** /api/v2/conversations/messaging/supportedcontent | Create a Supported Content profile
 [**postConversationsParticipantsAttributesSearch**](ConversationsApi.html#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
 [**postConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsScreenshareParticipantCommunicationWrapup) | **POST** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
@@ -221,6 +230,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsKeyconfiguration**](ConversationsApi.html#putConversationsKeyconfiguration) | **PUT** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations
 [**putConversationsMessageRecordingstate**](ConversationsApi.html#putConversationsMessageRecordingstate) | **PUT** /api/v2/conversations/messages/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
+[**putConversationsMessagingSettingsDefault**](ConversationsApi.html#putConversationsMessagingSettingsDefault) | **PUT** /api/v2/conversations/messaging/settings/default | Set the organization's default setting that may be applied to to integrations without settings
 [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization's default supported content profile that may be assigned to an integration when it is created.
 [**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | **PUT** /api/v2/conversations/messaging/threadingtimeline | Update conversation threading window timeline for each messaging type
 [**putConversationsScreenshareRecordingstate**](ConversationsApi.html#putConversationsScreenshareRecordingstate) | **PUT** /api/v2/conversations/screenshares/{conversationId}/recordingstate | Update a conversation by setting its recording state
@@ -782,6 +792,103 @@ apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integr
 ### Return type
 
 **WhatsAppIntegration**
+
+<a name="deleteConversationsMessagingSetting"></a>
+
+# void deleteConversationsMessagingSetting(messageSettingId)
+
+
+DELETE /api/v2/conversations/messaging/settings/{messageSettingId}
+
+Delete a messaging setting
+
+Requires ALL permissions:
+
+* messaging:setting:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let messageSettingId = "messageSettingId_example"; // String | Message Setting ID
+
+apiInstance.deleteConversationsMessagingSetting(messageSettingId)
+  .then(() => {
+    console.log('deleteConversationsMessagingSetting returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messageSettingId** | **String** | Message Setting ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteConversationsMessagingSettingsDefault"></a>
+
+# void deleteConversationsMessagingSettingsDefault()
+
+
+DELETE /api/v2/conversations/messaging/settings/default
+
+Delete the organization's default setting, a global default will be applied to integrations without settings
+
+When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+
+Requires ALL permissions:
+
+* messaging:setting:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.deleteConversationsMessagingSettingsDefault()
+  .then(() => {
+    console.log('deleteConversationsMessagingSettingsDefault returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingSettingsDefault');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+void (no response body)
 
 <a name="deleteConversationsMessagingSupportedcontentSupportedContentId"></a>
 
@@ -4522,6 +4629,157 @@ apiInstance.getConversationsMessagingIntegrationsWhatsappIntegrationId(integrati
 
 **WhatsAppIntegration**
 
+<a name="getConversationsMessagingSetting"></a>
+
+# MessagingSetting getConversationsMessagingSetting(messageSettingId)
+
+
+GET /api/v2/conversations/messaging/settings/{messageSettingId}
+
+Get a messaging setting
+
+Requires ALL permissions:
+
+* messaging:setting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let messageSettingId = "messageSettingId_example"; // String | Message Setting ID
+
+apiInstance.getConversationsMessagingSetting(messageSettingId)
+  .then((data) => {
+    console.log(`getConversationsMessagingSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messageSettingId** | **String** | Message Setting ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingSetting**
+
+<a name="getConversationsMessagingSettings"></a>
+
+# MessagingConfigListing getConversationsMessagingSettings(opts)
+
+
+GET /api/v2/conversations/messaging/settings
+
+Get a list of messaging settings
+
+Requires ALL permissions:
+
+* messaging:setting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationsMessagingSettings(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingConfigListing**
+
+<a name="getConversationsMessagingSettingsDefault"></a>
+
+# MessagingSetting getConversationsMessagingSettingsDefault()
+
+
+GET /api/v2/conversations/messaging/settings/default
+
+Get the organization's default settings that will be used as the default when creating an integration.
+
+When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+
+Requires ALL permissions:
+
+* messaging:setting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsMessagingSettingsDefault()
+  .then((data) => {
+    console.log(`getConversationsMessagingSettingsDefault success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingSettingsDefault');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**MessagingSetting**
+
 <a name="getConversationsMessagingSticker"></a>
 
 # MessagingStickerEntityListing getConversationsMessagingSticker(messengerType, opts)
@@ -6959,6 +7217,58 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integra
 
 **WhatsAppIntegration**
 
+<a name="patchConversationsMessagingSetting"></a>
+
+# MessagingSetting patchConversationsMessagingSetting(messageSettingId, body)
+
+
+PATCH /api/v2/conversations/messaging/settings/{messageSettingId}
+
+Update a messaging setting
+
+Requires ALL permissions:
+
+* messaging:setting:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let messageSettingId = "messageSettingId_example"; // String | Message Setting ID
+let body = {}; // Object | MessagingSetting
+
+apiInstance.patchConversationsMessagingSetting(messageSettingId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messageSettingId** | **String** | Message Setting ID |  |
+ **body** | **Object** | MessagingSetting |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingSetting**
+
 <a name="patchConversationsMessagingSupportedcontentSupportedContentId"></a>
 
 # SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
@@ -7436,6 +7746,58 @@ apiInstance.postConversationAssign(conversationId, body)
 
 **&#39;String&#39;**
 
+<a name="postConversationBarge"></a>
+
+# void postConversationBarge(conversationId)
+
+
+POST /api/v2/conversations/{conversationId}/barge
+
+Barge a conversation creating a barged in conference of connected participants.
+
+postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:call:barge
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+
+apiInstance.postConversationBarge(conversationId)
+  .then(() => {
+    console.log('postConversationBarge returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationBarge');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postConversationCobrowse"></a>
 
 # CobrowseWebMessagingSession postConversationCobrowse(conversationId)
@@ -7651,7 +8013,6 @@ void (no response body)
 
 # void postConversationParticipantReplace(conversationId, participantId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
@@ -7711,6 +8072,8 @@ POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified agent
 
+postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * conversation:communication:blindTransfer
@@ -7766,6 +8129,8 @@ POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the an external contact
 
+postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * conversation:communication:blindTransfer
@@ -7820,6 +8185,8 @@ void (no response body)
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue
 
 Replace this participant with the specified queue
+
+postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -7971,6 +8338,60 @@ apiInstance.postConversationsCall(conversationId, body)
 
 **Conversation**
 
+<a name="postConversationsCallParticipantBarge"></a>
+
+# void postConversationsCallParticipantBarge(conversationId, participantId)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge
+
+Barge a given participant's call creating a barged in conference of connected participants.
+
+postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:call:barge
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+
+apiInstance.postConversationsCallParticipantBarge(conversationId, participantId)
+  .then(() => {
+    console.log('postConversationsCallParticipantBarge returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantBarge');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postConversationsCallParticipantCoach"></a>
 
 # void postConversationsCallParticipantCoach(conversationId, participantId)
@@ -8085,7 +8506,6 @@ void (no response body)
 
 # ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
@@ -8145,6 +8565,8 @@ POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/c
 
 Initiate a consult transfer to an agent
 
+postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * conversation:communication:consultTransfer
@@ -8200,6 +8622,8 @@ POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/c
 
 Initiate a consult transfer to an external contact
 
+postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Requires ANY permissions:
 
 * conversation:communication:consultTransfer
@@ -8254,6 +8678,8 @@ apiInstance.postConversationsCallParticipantConsultExternal(conversationId, part
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue
 
 Initiate a consult transfer to a queue
+
+postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8357,7 +8783,6 @@ void (no response body)
 
 # void postConversationsCallParticipantReplace(conversationId, participantId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace
 
@@ -8520,7 +8945,6 @@ void (no response body)
 
 # void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace
 
@@ -8935,7 +9359,6 @@ void (no response body)
 
 # void postConversationsChatParticipantReplace(conversationId, participantId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace
 
@@ -9098,7 +9521,6 @@ void (no response body)
 
 # void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace
 
@@ -9363,7 +9785,6 @@ void (no response body)
 
 # void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace
 
@@ -10013,7 +10434,6 @@ void (no response body)
 
 # void postConversationsMessageParticipantReplace(conversationId, participantId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace
 
@@ -10523,6 +10943,56 @@ apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
 ### Return type
 
 **WhatsAppIntegration**
+
+<a name="postConversationsMessagingSettings"></a>
+
+# MessagingSetting postConversationsMessagingSettings(body)
+
+
+POST /api/v2/conversations/messaging/settings
+
+Create a messaging setting
+
+Requires ALL permissions:
+
+* messaging:setting:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | MessagingSetting
+
+apiInstance.postConversationsMessagingSettings(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | MessagingSetting |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingSetting**
 
 <a name="postConversationsMessagingSupportedcontent"></a>
 
@@ -11471,6 +11941,58 @@ apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId
 ### Return type
 
 **LineIntegration**
+
+<a name="putConversationsMessagingSettingsDefault"></a>
+
+# MessagingSetting putConversationsMessagingSettingsDefault(body)
+
+
+PUT /api/v2/conversations/messaging/settings/default
+
+Set the organization's default setting that may be applied to to integrations without settings
+
+When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+
+Requires ALL permissions:
+
+* messaging:setting:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | MessagingSetting
+
+apiInstance.putConversationsMessagingSettingsDefault(body)
+  .then((data) => {
+    console.log(`putConversationsMessagingSettingsDefault success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingSettingsDefault');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | MessagingSetting |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingSetting**
 
 <a name="putConversationsMessagingSupportedcontentDefault"></a>
 

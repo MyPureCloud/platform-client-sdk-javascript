@@ -7,18 +7,81 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAlertingAlert**](AlertingApi.html#deleteAlertingAlert) | **DELETE** /api/v2/alerting/alerts/{alertId} | Delete an alert
 [**deleteAlertingInteractionstatsAlert**](AlertingApi.html#deleteAlertingInteractionstatsAlert) | **DELETE** /api/v2/alerting/interactionstats/alerts/{alertId} | Delete an interaction stats alert
 [**deleteAlertingInteractionstatsRule**](AlertingApi.html#deleteAlertingInteractionstatsRule) | **DELETE** /api/v2/alerting/interactionstats/rules/{ruleId} | Delete an interaction stats rule.
+[**deleteAlertingRule**](AlertingApi.html#deleteAlertingRule) | **DELETE** /api/v2/alerting/rules/{ruleId} | Delete a rule.
+[**getAlertingAlert**](AlertingApi.html#getAlertingAlert) | **GET** /api/v2/alerting/alerts/{alertId} | Get an alert
 [**getAlertingAlertsActive**](AlertingApi.html#getAlertingAlertsActive) | **GET** /api/v2/alerting/alerts/active | Gets active alert count for a user.
 [**getAlertingInteractionstatsAlert**](AlertingApi.html#getAlertingInteractionstatsAlert) | **GET** /api/v2/alerting/interactionstats/alerts/{alertId} | Get an interaction stats alert
 [**getAlertingInteractionstatsAlerts**](AlertingApi.html#getAlertingInteractionstatsAlerts) | **GET** /api/v2/alerting/interactionstats/alerts | Get interaction stats alert list.
 [**getAlertingInteractionstatsAlertsUnread**](AlertingApi.html#getAlertingInteractionstatsAlertsUnread) | **GET** /api/v2/alerting/interactionstats/alerts/unread | Gets user unread count of interaction stats alerts.
 [**getAlertingInteractionstatsRule**](AlertingApi.html#getAlertingInteractionstatsRule) | **GET** /api/v2/alerting/interactionstats/rules/{ruleId} | Get an interaction stats rule.
 [**getAlertingInteractionstatsRules**](AlertingApi.html#getAlertingInteractionstatsRules) | **GET** /api/v2/alerting/interactionstats/rules | Get an interaction stats rule list.
+[**getAlertingRule**](AlertingApi.html#getAlertingRule) | **GET** /api/v2/alerting/rules/{ruleId} | Get a rule.
+[**patchAlertingAlert**](AlertingApi.html#patchAlertingAlert) | **PATCH** /api/v2/alerting/alerts/{alertId} | Allows an entity to mute/snooze an alert or update the unread status of the alert.
+[**patchAlertingAlertsBulk**](AlertingApi.html#patchAlertingAlertsBulk) | **PATCH** /api/v2/alerting/alerts/bulk | Bulk alert updates
+[**patchAlertingRulesBulk**](AlertingApi.html#patchAlertingRulesBulk) | **PATCH** /api/v2/alerting/rules/bulk | Bulk update of notification lists
+[**postAlertingAlertsQuery**](AlertingApi.html#postAlertingAlertsQuery) | **POST** /api/v2/alerting/alerts/query | Gets a paged list of alerts. The max page size is 50
 [**postAlertingInteractionstatsRules**](AlertingApi.html#postAlertingInteractionstatsRules) | **POST** /api/v2/alerting/interactionstats/rules | Create an interaction stats rule.
+[**postAlertingRules**](AlertingApi.html#postAlertingRules) | **POST** /api/v2/alerting/rules | Create a Rule.
+[**postAlertingRulesBulkRemove**](AlertingApi.html#postAlertingRulesBulkRemove) | **POST** /api/v2/alerting/rules/bulk/remove | Bulk remove rules
+[**postAlertingRulesQuery**](AlertingApi.html#postAlertingRulesQuery) | **POST** /api/v2/alerting/rules/query | Get a paged list of rules.  The max size of the page is 50 items.
+[**putAlertingAlert**](AlertingApi.html#putAlertingAlert) | **PUT** /api/v2/alerting/alerts/{alertId} | Update an alert read status
 [**putAlertingInteractionstatsAlert**](AlertingApi.html#putAlertingInteractionstatsAlert) | **PUT** /api/v2/alerting/interactionstats/alerts/{alertId} | Update an interaction stats alert read status
 [**putAlertingInteractionstatsRule**](AlertingApi.html#putAlertingInteractionstatsRule) | **PUT** /api/v2/alerting/interactionstats/rules/{ruleId} | Update an interaction stats rule
+[**putAlertingRule**](AlertingApi.html#putAlertingRule) | **PUT** /api/v2/alerting/rules/{ruleId} | Update a rule
 {: class="table table-striped"}
+
+<a name="deleteAlertingAlert"></a>
+
+# void deleteAlertingAlert(alertId)
+
+
+DELETE /api/v2/alerting/alerts/{alertId}
+
+Delete an alert
+
+Requires ALL permissions:
+
+* alerting:alert:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let alertId = "alertId_example"; // String | Alert ID
+
+apiInstance.deleteAlertingAlert(alertId)
+  .then(() => {
+    console.log('deleteAlertingAlert returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAlertingAlert');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **alertId** | **String** | Alert ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteAlertingInteractionstatsAlert"></a>
 
@@ -119,6 +182,106 @@ apiInstance.deleteAlertingInteractionstatsRule(ruleId)
 ### Return type
 
 void (no response body)
+
+<a name="deleteAlertingRule"></a>
+
+# void deleteAlertingRule(ruleId)
+
+
+DELETE /api/v2/alerting/rules/{ruleId}
+
+Delete a rule.
+
+Requires ALL permissions:
+
+* alerting:rule:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let ruleId = "ruleId_example"; // String | Rule Id
+
+apiInstance.deleteAlertingRule(ruleId)
+  .then(() => {
+    console.log('deleteAlertingRule returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAlertingRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ruleId** | **String** | Rule Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="getAlertingAlert"></a>
+
+# CommonAlert getAlertingAlert(alertId)
+
+
+GET /api/v2/alerting/alerts/{alertId}
+
+Get an alert
+
+Requires ALL permissions:
+
+* alerting:alert:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let alertId = "alertId_example"; // String | Alert ID
+
+apiInstance.getAlertingAlert(alertId)
+  .then((data) => {
+    console.log(`getAlertingAlert success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAlertingAlert');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **alertId** | **String** | Alert ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CommonAlert**
 
 <a name="getAlertingAlertsActive"></a>
 
@@ -418,6 +581,264 @@ apiInstance.getAlertingInteractionstatsRules(opts)
 
 **InteractionStatsRuleContainer**
 
+<a name="getAlertingRule"></a>
+
+# CommonRule getAlertingRule(ruleId)
+
+
+GET /api/v2/alerting/rules/{ruleId}
+
+Get a rule.
+
+Requires ALL permissions:
+
+* alerting:rule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let ruleId = "ruleId_example"; // String | Rule Id
+
+apiInstance.getAlertingRule(ruleId)
+  .then((data) => {
+    console.log(`getAlertingRule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAlertingRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ruleId** | **String** | Rule Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CommonRule**
+
+<a name="patchAlertingAlert"></a>
+
+# CommonAlert patchAlertingAlert(alertId, opts)
+
+
+PATCH /api/v2/alerting/alerts/{alertId}
+
+Allows an entity to mute/snooze an alert or update the unread status of the alert.
+
+Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals.
+
+Requires ALL permissions:
+
+* alerting:alert:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let alertId = "alertId_example"; // String | Alert ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchAlertingAlert(alertId, opts)
+  .then((data) => {
+    console.log(`patchAlertingAlert success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchAlertingAlert');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **alertId** | **String** | Alert ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CommonAlert**
+
+<a name="patchAlertingAlertsBulk"></a>
+
+# BulkResponse patchAlertingAlertsBulk(body)
+
+
+PATCH /api/v2/alerting/alerts/bulk
+
+Bulk alert updates
+
+Requires ALL permissions:
+
+* alerting:alert:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let body = {}; // Object | 
+
+apiInstance.patchAlertingAlertsBulk(body)
+  .then((data) => {
+    console.log(`patchAlertingAlertsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchAlertingAlertsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkResponse**
+
+<a name="patchAlertingRulesBulk"></a>
+
+# BulkResponse patchAlertingRulesBulk(body)
+
+
+PATCH /api/v2/alerting/rules/bulk
+
+Bulk update of notification lists
+
+Requires ALL permissions:
+
+* alerting:rule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let body = {}; // Object | 
+
+apiInstance.patchAlertingRulesBulk(body)
+  .then((data) => {
+    console.log(`patchAlertingRulesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchAlertingRulesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkResponse**
+
+<a name="postAlertingAlertsQuery"></a>
+
+# AlertListing postAlertingAlertsQuery(opts)
+
+
+POST /api/v2/alerting/alerts/query
+
+Gets a paged list of alerts. The max page size is 50
+
+Requires ALL permissions:
+
+* alerting:alert:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postAlertingAlertsQuery(opts)
+  .then((data) => {
+    console.log(`postAlertingAlertsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAlertingAlertsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AlertListing**
+
 <a name="postAlertingInteractionstatsRules"></a>
 
 # InteractionStatsRule postAlertingInteractionstatsRules(body, opts)
@@ -471,6 +892,212 @@ apiInstance.postAlertingInteractionstatsRules(body, opts)
 ### Return type
 
 **InteractionStatsRule**
+
+<a name="postAlertingRules"></a>
+
+# CommonRule postAlertingRules(body)
+
+
+POST /api/v2/alerting/rules
+
+Create a Rule.
+
+Requires ALL permissions:
+
+* alerting:rule:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let body = {}; // Object | rule to be created
+
+apiInstance.postAlertingRules(body)
+  .then((data) => {
+    console.log(`postAlertingRules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAlertingRules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | rule to be created |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CommonRule**
+
+<a name="postAlertingRulesBulkRemove"></a>
+
+# BulkResponse postAlertingRulesBulkRemove(body)
+
+
+POST /api/v2/alerting/rules/bulk/remove
+
+Bulk remove rules
+
+Requires ALL permissions:
+
+* alerting:rule:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let body = {}; // Object | 
+
+apiInstance.postAlertingRulesBulkRemove(body)
+  .then((data) => {
+    console.log(`postAlertingRulesBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAlertingRulesBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkResponse**
+
+<a name="postAlertingRulesQuery"></a>
+
+# CommonRuleContainer postAlertingRulesQuery(opts)
+
+
+POST /api/v2/alerting/rules/query
+
+Get a paged list of rules.  The max size of the page is 50 items.
+
+Requires ALL permissions:
+
+* alerting:rule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postAlertingRulesQuery(opts)
+  .then((data) => {
+    console.log(`postAlertingRulesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAlertingRulesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CommonRuleContainer**
+
+<a name="putAlertingAlert"></a>
+
+# UnreadStatus putAlertingAlert(alertId, opts)
+
+
+PUT /api/v2/alerting/alerts/{alertId}
+
+Update an alert read status
+
+Requires ALL permissions:
+
+* alerting:alert:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let alertId = "alertId_example"; // String | Alert ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.putAlertingAlert(alertId, opts)
+  .then((data) => {
+    console.log(`putAlertingAlert success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putAlertingAlert');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **alertId** | **String** | Alert ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UnreadStatus**
 
 <a name="putAlertingInteractionstatsAlert"></a>
 
@@ -583,4 +1210,56 @@ apiInstance.putAlertingInteractionstatsRule(ruleId, body, opts)
 ### Return type
 
 **InteractionStatsRule**
+
+<a name="putAlertingRule"></a>
+
+# CommonRule putAlertingRule(ruleId, body)
+
+
+PUT /api/v2/alerting/rules/{ruleId}
+
+Update a rule
+
+Requires ALL permissions:
+
+* alerting:rule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let ruleId = "ruleId_example"; // String | Rule Id
+let body = {}; // Object | rule to be updated
+
+apiInstance.putAlertingRule(ruleId, body)
+  .then((data) => {
+    console.log(`putAlertingRule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putAlertingRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ruleId** | **String** | Rule Id |  |
+ **body** | **Object** | rule to be updated |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CommonRule**
 

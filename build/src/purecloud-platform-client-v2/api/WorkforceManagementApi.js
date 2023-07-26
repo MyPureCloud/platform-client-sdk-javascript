@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 172.0.0
+	 * @version 173.0.0
 	 */
 
 	/**
@@ -744,8 +744,8 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.feature 
-	 * @param {String} opts.divisionId 
+	 * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
 	 */
 	getWorkforcemanagementBusinessunitManagementunits(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1384,8 +1384,8 @@ class WorkforceManagementApi {
 	 * Get business units
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.feature 
-	 * @param {String} opts.divisionId 
+	 * @param {Object} opts.feature If specified, the list of business units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of business units belonging to the specified division will be returned
 	 */
 	getWorkforcemanagementBusinessunits(opts) { 
 		opts = opts || {};
@@ -2192,8 +2192,8 @@ class WorkforceManagementApi {
 	 * @param {Number} opts.pageSize Deprecated, paging is not supported
 	 * @param {Number} opts.pageNumber Deprecated, paging is not supported
 	 * @param {Object} opts.expand Deprecated, expand settings on the single MU route
-	 * @param {Object} opts.feature 
-	 * @param {String} opts.divisionId 
+	 * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
 	 */
 	getWorkforcemanagementManagementunits(opts) { 
 		opts = opts || {};

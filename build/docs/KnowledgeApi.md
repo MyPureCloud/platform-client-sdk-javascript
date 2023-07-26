@@ -2170,7 +2170,9 @@ let apiInstance = new platformClient.KnowledgeApi();
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let groupId = "groupId_example"; // String | The ID of the group to be retrieved.
 let opts = { 
-  'app': "app_example" // String | The app value to be used for filtering phrases.
+  'app': "app_example", // String | The app value to be used for filtering phrases.
+  'dateStart': "dateStart_example", // String | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example" // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, opts)
@@ -2191,6 +2193,8 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, o
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **groupId** | **String** | The ID of the group to be retrieved. |  |
  **app** | **String** | The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
+ **dateStart** | **String** | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2227,7 +2231,9 @@ let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let groupId = "groupId_example"; // String | The ID of the group to be retrieved.
 let phraseGroupId = "phraseGroupId_example"; // String | The ID of the phraseGroup to be retrieved.
 let opts = { 
-  'app': "app_example" // String | The app value to be used for filtering phrases.
+  'app': "app_example", // String | The app value to be used for filtering phrases.
+  'dateStart': "dateStart_example", // String | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example" // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, opts)
@@ -2249,6 +2255,8 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId,
  **groupId** | **String** | The ID of the group to be retrieved. |  |
  **phraseGroupId** | **String** | The ID of the phraseGroup to be retrieved. |  |
  **app** | **String** | The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
+ **dateStart** | **String** | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2283,7 +2291,9 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let opts = { 
-  'app': "app_example" // String | The app value to be used for filtering phrases.
+  'app': "app_example", // String | The app value to be used for filtering phrases.
+  'dateStart': "dateStart_example", // String | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example" // String | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
@@ -2303,6 +2313,8 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **app** | **String** | The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
+ **dateStart** | **String** | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

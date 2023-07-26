@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 172.0.0
+	 * @version 173.0.0
 	 */
 
 	/**
@@ -1271,6 +1271,8 @@ class KnowledgeApi {
 	 * @param {String} groupId The ID of the group to be retrieved.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.app The app value to be used for filtering phrases.
+	 * @param {String} opts.dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, opts) { 
 		opts = opts || {};
@@ -1288,7 +1290,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'groupId': groupId },
-			{ 'app': opts['app'] },
+			{ 'app': opts['app'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'] },
 			{  },
 			{  },
 			null, 
@@ -1306,6 +1308,8 @@ class KnowledgeApi {
 	 * @param {String} phraseGroupId The ID of the phraseGroup to be retrieved.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.app The app value to be used for filtering phrases.
+	 * @param {String} opts.dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, opts) { 
 		opts = opts || {};
@@ -1327,7 +1331,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'groupId': groupId,'phraseGroupId': phraseGroupId },
-			{ 'app': opts['app'] },
+			{ 'app': opts['app'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'] },
 			{  },
 			{  },
 			null, 
@@ -1343,6 +1347,8 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.app The app value to be used for filtering phrases.
+	 * @param {String} opts.dateStart The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -1356,7 +1362,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
-			{ 'app': opts['app'] },
+			{ 'app': opts['app'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'] },
 			{  },
 			{  },
 			null, 
