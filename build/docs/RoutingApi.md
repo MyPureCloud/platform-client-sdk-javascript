@@ -2704,10 +2704,10 @@ let opts = {
   'pageSize': 25, // Number | Max value is 100
   'sortOrder': "asc", // String | Note: results are sorted by name.
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
-  'name': "name_example", // String | Filter by queue member name
-  'profileSkills': ["profileSkills_example"], // [String] | Filter by profile skill
-  'skills': ["skills_example"], // [String] | Filter by skill
-  'languages': ["languages_example"], // [String] | Filter by language
+  'name': "name_example", // String | Filter by queue member name (contains-style search)
+  'profileSkills': ["profileSkills_example"], // [String] | Filter by profile skill (contains-style search)
+  'skills': ["skills_example"], // [String] | Filter by skill (contains-style search)
+  'languages': ["languages_example"], // [String] | Filter by language (contains-style search)
   'routingStatus': ["routingStatus_example"], // [String] | Filter by routing status
   'presence': ["presence_example"], // [String] | Filter by presence
   'memberBy': "memberBy_example", // String | Filter by member type
@@ -2734,10 +2734,10 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
- **name** | **String** | Filter by queue member name | [optional]  |
- **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
- **skills** | **[String]** | Filter by skill | [optional]  |
- **languages** | **[String]** | Filter by language | [optional]  |
+ **name** | **String** | Filter by queue member name (contains-style search) | [optional]  |
+ **profileSkills** | **[String]** | Filter by profile skill (contains-style search) | [optional]  |
+ **skills** | **[String]** | Filter by skill (contains-style search) | [optional]  |
+ **languages** | **[String]** | Filter by language (contains-style search) | [optional]  |
  **routingStatus** | **[String]** | Filter by routing status | [optional]  |
  **presence** | **[String]** | Filter by presence | [optional]  |
  **memberBy** | **String** | Filter by member type | [optional] <br />**Values**: user, group |

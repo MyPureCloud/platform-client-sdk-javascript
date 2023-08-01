@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 173.0.0
+	 * @version 173.1.0
 	 */
 
 	/**
@@ -1314,10 +1314,10 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Max value is 100 (default to 25)
 	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
-	 * @param {String} opts.name Filter by queue member name
-	 * @param {Array.<String>} opts.profileSkills Filter by profile skill
-	 * @param {Array.<String>} opts.skills Filter by skill
-	 * @param {Array.<String>} opts.languages Filter by language
+	 * @param {String} opts.name Filter by queue member name (contains-style search)
+	 * @param {Array.<String>} opts.profileSkills Filter by profile skill (contains-style search)
+	 * @param {Array.<String>} opts.skills Filter by skill (contains-style search)
+	 * @param {Array.<String>} opts.languages Filter by language (contains-style search)
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
 	 * @param {Object} opts.memberBy Filter by member type

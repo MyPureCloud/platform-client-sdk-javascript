@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 173.0.0
+	 * @version 173.1.0
 	 */
 
 	/**
@@ -1544,7 +1544,7 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get activity codes
+	 * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @deprecated
