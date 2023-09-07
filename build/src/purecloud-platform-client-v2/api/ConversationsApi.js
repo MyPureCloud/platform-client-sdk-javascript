@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 173.1.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -160,6 +160,31 @@ class ConversationsApi {
 			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}', 
 			'DELETE', 
 			{ 'conversationId': conversationId,'attachmentId': attachmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove a cached media item asychronously
+	 * 
+	 * @param {String} cachedMediaItemId cachedMediaItemId
+	 */
+	deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId) { 
+		// verify the required parameter 'cachedMediaItemId' is set
+		if (cachedMediaItemId === undefined || cachedMediaItemId === null) {
+			throw 'Missing the required parameter "cachedMediaItemId" when calling deleteConversationsMessagesCachedmediaCachedMediaItemId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}', 
+			'DELETE', 
+			{ 'cachedMediaItemId': cachedMediaItemId },
 			{  },
 			{  },
 			{  },
@@ -1971,7 +1996,7 @@ class ConversationsApi {
 	/**
 	 * Get list of wrapup codes for this conversation participant
 	 * 
-	 * @param {String} conversationId  conversationId
+	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 */
 	getConversationsMessageParticipantWrapupcodes(conversationId, participantId) { 
@@ -2008,6 +2033,57 @@ class ConversationsApi {
 			'/api/v2/conversations/messages', 
 			'GET', 
 			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of cached media items
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.url URL to search for
+	 */
+	getConversationsMessagesCachedmedia(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/cachedmedia', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'url': opts['url'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a cached media item
+	 * 
+	 * @param {String} cachedMediaItemId cachedMediaItemId
+	 */
+	getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId) { 
+		// verify the required parameter 'cachedMediaItemId' is set
+		if (cachedMediaItemId === undefined || cachedMediaItemId === null) {
+			throw 'Missing the required parameter "cachedMediaItemId" when calling getConversationsMessagesCachedmediaCachedMediaItemId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}', 
+			'GET', 
+			{ 'cachedMediaItemId': cachedMediaItemId },
 			{  },
 			{  },
 			{  },
@@ -2752,6 +2828,32 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
 			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a record for a given meetingId
+	 * 
+	 * @param {String} meetingId meetingId
+	 * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsVideosMeeting(meetingId) { 
+		// verify the required parameter 'meetingId' is set
+		if (meetingId === undefined || meetingId === null) {
+			throw 'Missing the required parameter "meetingId" when calling getConversationsVideosMeeting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/meetings/{meetingId}', 
+			'GET', 
+			{ 'meetingId': meetingId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -3723,7 +3825,7 @@ class ConversationsApi {
 	/**
 	 * Update conversation participant
 	 * 
-	 * @param {String} conversationId  conversationId
+	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
@@ -3757,7 +3859,7 @@ class ConversationsApi {
 	/**
 	 * Update the attributes on a conversation participant.
 	 * 
-	 * @param {String} conversationId  conversationId
+	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
@@ -3791,7 +3893,7 @@ class ConversationsApi {
 	/**
 	 * Update conversation participant's communication by disconnecting it.
 	 * 
-	 * @param {String} conversationId  conversationId
+	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
@@ -5749,6 +5851,96 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Send an inbound Open Event Message
+	 * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+	 * @param {String} integrationId integrationId
+	 * @param {Object} body NormalizedMessage
+	 */
+	postConversationsMessageInboundOpenEvent(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenEvent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageInboundOpenEvent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{integrationId}/inbound/open/event', 
+			'POST', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send inbound Open Message
+	 * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+	 * @param {String} integrationId integrationId
+	 * @param {Object} body NormalizedMessage
+	 */
+	postConversationsMessageInboundOpenMessage(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenMessage';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageInboundOpenMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{integrationId}/inbound/open/message', 
+			'POST', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send an inbound Open Receipt Message
+	 * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+	 * @param {String} integrationId integrationId
+	 * @param {Object} body NormalizedMessage
+	 */
+	postConversationsMessageInboundOpenReceipt(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenReceipt';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageInboundOpenReceipt';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{integrationId}/inbound/open/receipt', 
+			'POST', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get messages in batch
 	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
 	 * @param {String} conversationId 
@@ -6294,6 +6486,32 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generate a meetingId for a given conferenceId
+	 * 
+	 * @param {Object} body MeetingIdRequest
+	 * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsVideosMeetings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsVideosMeetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/meetings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

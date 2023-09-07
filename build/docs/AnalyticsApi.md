@@ -369,7 +369,7 @@ GET /api/v2/analytics/botflows/{botFlowId}/reportingturns
 
 Get Reporting Turns.
 
-Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
+Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
 
 Requires ANY permissions:
 
@@ -392,8 +392,9 @@ let botFlowId = "botFlowId_example"; // String | ID of the bot flow.
 let opts = { 
   'after': "after_example", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
   'pageSize': "50", // String | Max number of entities to return. Maximum of 250
+  'interval': 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z, // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'actionId': "actionId_example", // String | Optional action ID to get the reporting turns associated to a particular flow action
-  'sessionId': "sessionId_example", // String | Optional session ID to get the reporting turns for a particular session
+  'sessionId': "sessionId_example", // String | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
   'language': en-us, // String | Optional language code to get the reporting turns for a particular language
   'askActionResults': "askActionResults_example" // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
 };
@@ -416,8 +417,9 @@ apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
  **botFlowId** | **String** | ID of the bot flow. |  |
  **after** | **String** | The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
+ **interval** | **String** | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **actionId** | **String** | Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
- **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session | [optional]  |
+ **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
  **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
  **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
 {: class="table table-striped"}

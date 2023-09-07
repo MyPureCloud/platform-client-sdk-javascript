@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 173.1.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -35,6 +35,125 @@ class ArchitectApi {
 			'/api/v2/architect/emergencygroups/{emergencyGroupId}', 
 			'DELETE', 
 			{ 'emergencyGroupId': emergencyGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a grammar.
+	 * 
+	 * @param {String} grammarId grammar ID
+	 * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteArchitectGrammar(grammarId) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammar';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}', 
+			'DELETE', 
+			{ 'grammarId': grammarId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete specified grammar language
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteArchitectGrammarLanguage(grammarId, languageCode) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguage';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}', 
+			'DELETE', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Clear the DTMF mode file for the grammar language if there is one
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguageFilesDtmf';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguageFilesDtmf';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf', 
+			'DELETE', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Clear the voice mode file for the grammar language if there is one
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguageFilesVoice';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguageFilesVoice';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice', 
+			'DELETE', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
 			{  },
 			{  },
 			{  },
@@ -730,6 +849,130 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Get a pageable list of basic emergency group objects filterable by query parameters.
+	 * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the Emergency Groups to filter by.
+	 * @param {String} opts.name Name of the Emergency Group to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 */
+	getArchitectEmergencygroupsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/emergencygroups/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a grammar
+	 * Returns a specified grammar
+	 * @param {String} grammarId grammar ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeFileUrls Include grammar language file URLs
+	 * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getArchitectGrammar(grammarId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling getArchitectGrammar';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}', 
+			'GET', 
+			{ 'grammarId': grammarId },
+			{ 'includeFileUrls': opts['includeFileUrls'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a grammar language.
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getArchitectGrammarLanguage(grammarId, languageCode) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling getArchitectGrammarLanguage';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling getArchitectGrammarLanguage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}', 
+			'GET', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of grammars, filtered by query parameters
+	 * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.sortBy Sort by (default to id)
+	 * @param {Object} opts.sortOrder Sort order (default to asc)
+	 * @param {Array.<String>} opts.id ID
+	 * @param {String} opts.name Name
+	 * @param {String} opts.description Description
+	 * @param {String} opts.nameOrDescription Name or description
+	 * @param {Boolean} opts.includeFileUrls Include grammar language file URLs
+	 * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getArchitectGrammars(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'includeFileUrls': opts['includeFileUrls'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get an IVR config.
 	 * 
 	 * @param {String} ivrId IVR id
@@ -775,6 +1018,36 @@ class ArchitectApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the IVR to filter by.
+	 * @param {String} opts.name Name of the IVR to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 */
+	getArchitectIvrsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/ivrs/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1018,6 +1291,36 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the schedule group to filter by.
+	 * @param {String} opts.name Name of the schedule group to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 */
+	getArchitectSchedulegroupsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/schedulegroups/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of schedules.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1037,6 +1340,36 @@ class ArchitectApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the schedule group to filter by.
+	 * @param {String} opts.name Name of the schedule group to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 */
+	getArchitectSchedulesDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/schedules/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -2057,6 +2390,36 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Updates a grammar
+	 * 
+	 * @param {String} grammarId grammar ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchArchitectGrammar(grammarId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling patchArchitectGrammar';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}', 
+			'PATCH', 
+			{ 'grammarId': grammarId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Rebuild Dependency Tracking data for an organization
 	 * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 	 */
@@ -2089,6 +2452,135 @@ class ArchitectApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/architect/emergencygroups', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a presigned URL for uploading a grammar DTMF mode file
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * @param {Object} body query
+	 * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguageFilesDtmf';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling postArchitectGrammarLanguageFilesDtmf';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postArchitectGrammarLanguageFilesDtmf';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf', 
+			'POST', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a presigned URL for uploading a grammar voice mode file
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * @param {Object} body query
+	 * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguageFilesVoice';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling postArchitectGrammarLanguageFilesVoice';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postArchitectGrammarLanguageFilesVoice';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice', 
+			'POST', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new language for a given grammar
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {Object} body 
+	 * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postArchitectGrammarLanguages(grammarId, body) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguages';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postArchitectGrammarLanguages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages', 
+			'POST', 
+			{ 'grammarId': grammarId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new grammar
+	 * 
+	 * @param {Object} body 
+	 * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postArchitectGrammars(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postArchitectGrammars';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars', 
 			'POST', 
 			{  },
 			{  },

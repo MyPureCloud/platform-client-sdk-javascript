@@ -5,7 +5,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 173.1.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -68,14 +68,18 @@ class TokensApi {
 	/**
 	 * Fetch information about the current token
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.preserveIdleTTL preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset.
 	 */
-	getTokensMe() { 
+	getTokensMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/tokens/me', 
 			'GET', 
 			{  },
-			{  },
+			{ 'preserveIdleTTL': opts['preserveIdleTTL'] },
 			{  },
 			{  },
 			null, 

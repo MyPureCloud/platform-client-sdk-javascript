@@ -585,7 +585,8 @@ let opts = {
   'agentUserId': ["agentUserId_example"], // [String] | user id of agent requested
   'evaluatorUserId': "evaluatorUserId_example", // String | user id of the evaluator
   'name': "name_example", // String | name
-  'group': "group_example" // String | group id
+  'group': "group_example", // String | group id
+  'formContextId': "formContextId_example" // String | shared id between form versions
 };
 
 apiInstance.getQualityAgentsActivity(opts)
@@ -615,6 +616,7 @@ apiInstance.getQualityAgentsActivity(opts)
  **evaluatorUserId** | **String** | user id of the evaluator | [optional]  |
  **name** | **String** | name | [optional]  |
  **group** | **String** | group id | [optional]  |
+ **formContextId** | **String** | shared id between form versions | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -994,9 +996,9 @@ let apiInstance = new platformClient.QualityApi();
 let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'sortBy': "sortBy_example", // String | NOTE: Does not work when querying evaluations
   'expand': ["expand_example"], // [String] | variable name requested by expand list
-  'nextPage': "nextPage_example", // String | next page token
+  'nextPage': "nextPage_example", // String | NOTE: Does not work when querying evaluations
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversationId specified
   'agentUserId': "agentUserId_example", // String | user id of the agent
@@ -1005,12 +1007,13 @@ let opts = {
   'queueId': "queueId_example", // String | queue id
   'startTime': "startTime_example", // String | start time of the evaluation query
   'endTime': "endTime_example", // String | end time of the evaluation query
+  'formContextId': "formContextId_example", // String | shared id between form versions
   'evaluationState': ["evaluationState_example"], // [String] | 
   'isReleased': true, // Boolean | the evaluation has been released
   'agentHasRead': true, // Boolean | agent has the evaluation
   'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations
-  'maximum': 3.4, // Number | maximum
-  'sortOrder': "sortOrder_example" // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId
+  'maximum': 3.4, // Number | the maximum number of results to return
+  'sortOrder': "sortOrder_example" // String | NOTE: Does not work when conversationId is supplied.
 };
 
 apiInstance.getQualityEvaluationsQuery(opts)
@@ -1030,9 +1033,9 @@ apiInstance.getQualityEvaluationsQuery(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **sortBy** | **String** | NOTE: Does not work when querying evaluations | [optional]  |
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
- **nextPage** | **String** | next page token | [optional]  |
+ **nextPage** | **String** | NOTE: Does not work when querying evaluations | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **conversationId** | **String** | conversationId specified | [optional]  |
  **agentUserId** | **String** | user id of the agent | [optional]  |
@@ -1041,12 +1044,13 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **queueId** | **String** | queue id | [optional]  |
  **startTime** | **String** | start time of the evaluation query | [optional]  |
  **endTime** | **String** | end time of the evaluation query | [optional]  |
+ **formContextId** | **String** | shared id between form versions | [optional]  |
  **evaluationState** | **[String]** |  | [optional]  |
  **isReleased** | **Boolean** | the evaluation has been released | [optional]  |
  **agentHasRead** | **Boolean** | agent has the evaluation | [optional]  |
  **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations | [optional]  |
- **maximum** | **Number** | maximum | [optional]  |
- **sortOrder** | **String** | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId | [optional]  |
+ **maximum** | **Number** | the maximum number of results to return | [optional]  |
+ **sortOrder** | **String** | NOTE: Does not work when conversationId is supplied. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3169,7 +3173,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let evaluationId = "evaluationId_example"; // String | evaluationId
 let body = {}; // Object | evaluation
 let opts = { 
-  'expand': "expand_example" // String | evaluatorId, evaluationForm, assignee
+  'expand': "expand_example" // String | evaluatorId, evaluationForm, assignee, evaluator
 };
 
 apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
@@ -3190,7 +3194,7 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
  **conversationId** | **String** | conversationId |  |
  **evaluationId** | **String** | evaluationId |  |
  **body** | **Object** | evaluation |  |
- **expand** | **String** | evaluatorId, evaluationForm, assignee | [optional]  |
+ **expand** | **String** | evaluatorId, evaluationForm, assignee, evaluator | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

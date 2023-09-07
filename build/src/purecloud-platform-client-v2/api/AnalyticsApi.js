@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 173.1.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -153,13 +153,14 @@ class AnalyticsApi {
 
 	/**
 	 * Get Reporting Turns.
-	 * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
+	 * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
 	 * @param {String} botFlowId ID of the bot flow.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
 	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 250 (default to 50)
+	 * @param {String} opts.interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {String} opts.actionId Optional action ID to get the reporting turns associated to a particular flow action
-	 * @param {String} opts.sessionId Optional session ID to get the reporting turns for a particular session
+	 * @param {String} opts.sessionId Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
 	 * @param {String} opts.language Optional language code to get the reporting turns for a particular language
 	 * @param {Object} opts.askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
 	 */
@@ -175,7 +176,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/botflows/{botFlowId}/reportingturns', 
 			'GET', 
 			{ 'botFlowId': botFlowId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'],'askActionResults': opts['askActionResults'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'],'askActionResults': opts['askActionResults'] },
 			{  },
 			{  },
 			null, 

@@ -432,7 +432,7 @@ apiInstance.getWebdeploymentsConfigurations(opts)
 
 <a name="getWebdeploymentsDeployment"></a>
 
-# WebDeployment getWebdeploymentsDeployment(deploymentId)
+# WebDeployment getWebdeploymentsDeployment(deploymentId, opts)
 
 
 GET /api/v2/webdeployments/deployments/{deploymentId}
@@ -457,8 +457,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | The deployment ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected. 
+};
 
-apiInstance.getWebdeploymentsDeployment(deploymentId)
+apiInstance.getWebdeploymentsDeployment(deploymentId, opts)
   .then((data) => {
     console.log(`getWebdeploymentsDeployment success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -474,6 +477,7 @@ apiInstance.getWebdeploymentsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: supportedContent |
 {: class="table table-striped"}
 
 ### Return type
@@ -553,7 +557,8 @@ let apiInstance = new platformClient.WebDeploymentsApi();
 
 let deploymentId = "deploymentId_example"; // String | The deployment ID
 let opts = { 
-  'type': "type_example" // String | Get active configuration on a deployment
+  'type': "type_example", // String | Get active configuration on a deployment
+  'expand': ["expand_example"] // [String] | Expand instructions for the return value
 };
 
 apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
@@ -573,6 +578,7 @@ apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
  **type** | **String** | Get active configuration on a deployment | [optional]  |
+ **expand** | **[String]** | Expand instructions for the return value | [optional] <br />**Values**: supportedContent |
 {: class="table table-striped"}
 
 ### Return type
@@ -606,7 +612,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let opts = { 
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected. Valid values:
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
 };
 
 apiInstance.getWebdeploymentsDeployments(opts)
@@ -624,7 +630,7 @@ apiInstance.getWebdeploymentsDeployments(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. Valid values: | [optional] <br />**Values**: Configuration |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: Configuration, SupportedContent |
 {: class="table table-striped"}
 
 ### Return type

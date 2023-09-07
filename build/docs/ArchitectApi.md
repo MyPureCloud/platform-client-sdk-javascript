@@ -8,6 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteArchitectEmergencygroup**](ArchitectApi.html#deleteArchitectEmergencygroup) | **DELETE** /api/v2/architect/emergencygroups/{emergencyGroupId} | Deletes a emergency group by ID
+[**deleteArchitectGrammar**](ArchitectApi.html#deleteArchitectGrammar) | **DELETE** /api/v2/architect/grammars/{grammarId} | Delete a grammar.
+[**deleteArchitectGrammarLanguage**](ArchitectApi.html#deleteArchitectGrammarLanguage) | **DELETE** /api/v2/architect/grammars/{grammarId}/languages/{languageCode} | Delete specified grammar language
+[**deleteArchitectGrammarLanguageFilesDtmf**](ArchitectApi.html#deleteArchitectGrammarLanguageFilesDtmf) | **DELETE** /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf | Clear the DTMF mode file for the grammar language if there is one
+[**deleteArchitectGrammarLanguageFilesVoice**](ArchitectApi.html#deleteArchitectGrammarLanguageFilesVoice) | **DELETE** /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice | Clear the voice mode file for the grammar language if there is one
 [**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | **DELETE** /api/v2/architect/ivrs/{ivrId} | Delete an IVR Config.
 [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | **DELETE** /api/v2/architect/prompts/{promptId} | Delete specified user prompt
 [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | **DELETE** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Delete specified user prompt resource
@@ -32,8 +36,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | **GET** /api/v2/architect/dependencytracking/updatedresourceconsumers | Get Dependency Tracking objects that depend on updated resources
 [**getArchitectEmergencygroup**](ArchitectApi.html#getArchitectEmergencygroup) | **GET** /api/v2/architect/emergencygroups/{emergencyGroupId} | Gets a emergency group by ID
 [**getArchitectEmergencygroups**](ArchitectApi.html#getArchitectEmergencygroups) | **GET** /api/v2/architect/emergencygroups | Get a list of emergency groups.
+[**getArchitectEmergencygroupsDivisionviews**](ArchitectApi.html#getArchitectEmergencygroupsDivisionviews) | **GET** /api/v2/architect/emergencygroups/divisionviews | Get a pageable list of basic emergency group objects filterable by query parameters.
+[**getArchitectGrammar**](ArchitectApi.html#getArchitectGrammar) | **GET** /api/v2/architect/grammars/{grammarId} | Get a grammar
+[**getArchitectGrammarLanguage**](ArchitectApi.html#getArchitectGrammarLanguage) | **GET** /api/v2/architect/grammars/{grammarId}/languages/{languageCode} | Get a grammar language.
+[**getArchitectGrammars**](ArchitectApi.html#getArchitectGrammars) | **GET** /api/v2/architect/grammars | Get a pageable list of grammars, filtered by query parameters
 [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | **GET** /api/v2/architect/ivrs/{ivrId} | Get an IVR config.
 [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | **GET** /api/v2/architect/ivrs | Get IVR configs.
+[**getArchitectIvrsDivisionviews**](ArchitectApi.html#getArchitectIvrsDivisionviews) | **GET** /api/v2/architect/ivrs/divisionviews | Get a pageable list of basic ivr configuration information objects filterable by query parameters.
 [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | **GET** /api/v2/architect/prompts/{promptId} | Get specified user prompt
 [**getArchitectPromptHistoryHistoryId**](ArchitectApi.html#getArchitectPromptHistoryHistoryId) | **GET** /api/v2/architect/prompts/{promptId}/history/{historyId} | Get generated prompt history
 [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | **GET** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Get specified user prompt resource
@@ -42,7 +51,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getArchitectSchedule**](ArchitectApi.html#getArchitectSchedule) | **GET** /api/v2/architect/schedules/{scheduleId} | Get a schedule by ID
 [**getArchitectSchedulegroup**](ArchitectApi.html#getArchitectSchedulegroup) | **GET** /api/v2/architect/schedulegroups/{scheduleGroupId} | Gets a schedule group by ID
 [**getArchitectSchedulegroups**](ArchitectApi.html#getArchitectSchedulegroups) | **GET** /api/v2/architect/schedulegroups | Get a list of schedule groups.
+[**getArchitectSchedulegroupsDivisionviews**](ArchitectApi.html#getArchitectSchedulegroupsDivisionviews) | **GET** /api/v2/architect/schedulegroups/divisionviews | Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
 [**getArchitectSchedules**](ArchitectApi.html#getArchitectSchedules) | **GET** /api/v2/architect/schedules | Get a list of schedules.
+[**getArchitectSchedulesDivisionviews**](ArchitectApi.html#getArchitectSchedulesDivisionviews) | **GET** /api/v2/architect/schedules/divisionviews | Get a pageable list of basic schedule configuration information objects filterable by query parameters.
 [**getArchitectSystemprompt**](ArchitectApi.html#getArchitectSystemprompt) | **GET** /api/v2/architect/systemprompts/{promptId} | Get a system prompt
 [**getArchitectSystempromptHistoryHistoryId**](ArchitectApi.html#getArchitectSystempromptHistoryHistoryId) | **GET** /api/v2/architect/systemprompts/{promptId}/history/{historyId} | Get generated prompt history
 [**getArchitectSystempromptResource**](ArchitectApi.html#getArchitectSystempromptResource) | **GET** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Get a system prompt resource.
@@ -76,8 +87,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsOutcome**](ArchitectApi.html#getFlowsOutcome) | **GET** /api/v2/flows/outcomes/{flowOutcomeId} | Get a flow outcome
 [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | **GET** /api/v2/flows/outcomes | Get a pageable list of flow outcomes, filtered by query parameters
 [**getFlowsOutcomesDivisionviews**](ArchitectApi.html#getFlowsOutcomesDivisionviews) | **GET** /api/v2/flows/outcomes/divisionviews | Get a pageable list of basic flow outcome information objects filterable by query parameters.
+[**patchArchitectGrammar**](ArchitectApi.html#patchArchitectGrammar) | **PATCH** /api/v2/architect/grammars/{grammarId} | Updates a grammar
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
 [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | **POST** /api/v2/architect/emergencygroups | Creates a new emergency group
+[**postArchitectGrammarLanguageFilesDtmf**](ArchitectApi.html#postArchitectGrammarLanguageFilesDtmf) | **POST** /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf | Creates a presigned URL for uploading a grammar DTMF mode file
+[**postArchitectGrammarLanguageFilesVoice**](ArchitectApi.html#postArchitectGrammarLanguageFilesVoice) | **POST** /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice | Creates a presigned URL for uploading a grammar voice mode file
+[**postArchitectGrammarLanguages**](ArchitectApi.html#postArchitectGrammarLanguages) | **POST** /api/v2/architect/grammars/{grammarId}/languages | Create a new language for a given grammar
+[**postArchitectGrammars**](ArchitectApi.html#postArchitectGrammars) | **POST** /api/v2/architect/grammars | Create a new grammar
 [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | **POST** /api/v2/architect/ivrs | Create IVR config.
 [**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | **POST** /api/v2/architect/prompts/{promptId}/history | Generate prompt history
 [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | **POST** /api/v2/architect/prompts/{promptId}/resources | Create a new user prompt resource
@@ -163,6 +179,220 @@ apiInstance.deleteArchitectEmergencygroup(emergencyGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **emergencyGroupId** | **String** | Emergency group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteArchitectGrammar"></a>
+
+# **Object** deleteArchitectGrammar(grammarId)
+
+
+DELETE /api/v2/architect/grammars/{grammarId}
+
+Delete a grammar.
+
+deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | grammar ID
+
+apiInstance.deleteArchitectGrammar(grammarId)
+  .then((data) => {
+    console.log(`deleteArchitectGrammar success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectGrammar');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | grammar ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Object**
+
+<a name="deleteArchitectGrammarLanguage"></a>
+
+# void deleteArchitectGrammarLanguage(grammarId, languageCode)
+
+
+DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}
+
+Delete specified grammar language
+
+deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let languageCode = "languageCode_example"; // String | Language
+
+apiInstance.deleteArchitectGrammarLanguage(grammarId, languageCode)
+  .then(() => {
+    console.log('deleteArchitectGrammarLanguage returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectGrammarLanguage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | Grammar ID |  |
+ **languageCode** | **String** | Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteArchitectGrammarLanguageFilesDtmf"></a>
+
+# void deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode)
+
+
+DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf
+
+Clear the DTMF mode file for the grammar language if there is one
+
+deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let languageCode = "languageCode_example"; // String | Language
+
+apiInstance.deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode)
+  .then(() => {
+    console.log('deleteArchitectGrammarLanguageFilesDtmf returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectGrammarLanguageFilesDtmf');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | Grammar ID |  |
+ **languageCode** | **String** | Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteArchitectGrammarLanguageFilesVoice"></a>
+
+# void deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
+
+
+DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice
+
+Clear the voice mode file for the grammar language if there is one
+
+deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let languageCode = "languageCode_example"; // String | Language
+
+apiInstance.deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
+  .then(() => {
+    console.log('deleteArchitectGrammarLanguageFilesVoice returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectGrammarLanguageFilesVoice');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | Grammar ID |  |
+ **languageCode** | **String** | Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1487,6 +1717,256 @@ apiInstance.getArchitectEmergencygroups(opts)
 
 **EmergencyGroupListing**
 
+<a name="getArchitectEmergencygroupsDivisionviews"></a>
+
+# EmergencyGroupDivisionViewEntityListing getArchitectEmergencygroupsDivisionviews(opts)
+
+
+GET /api/v2/architect/emergencygroups/divisionviews
+
+Get a pageable list of basic emergency group objects filterable by query parameters.
+
+This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Requires ALL permissions:
+
+* routing:emergencyGroup:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC", // String | Sort order
+  'id': ["id_example"], // [String] | ID of the Emergency Groups to filter by.
+  'name': "name_example", // String | Name of the Emergency Group to filter by.
+  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+};
+
+apiInstance.getArchitectEmergencygroupsDivisionviews(opts)
+  .then((data) => {
+    console.log(`getArchitectEmergencygroupsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectEmergencygroupsDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **id** | **[String]** | ID of the Emergency Groups to filter by. | [optional]  |
+ **name** | **String** | Name of the Emergency Group to filter by. | [optional]  |
+ **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmergencyGroupDivisionViewEntityListing**
+
+<a name="getArchitectGrammar"></a>
+
+# Grammar getArchitectGrammar(grammarId, opts)
+
+
+GET /api/v2/architect/grammars/{grammarId}
+
+Get a grammar
+
+Returns a specified grammar
+
+getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | grammar ID
+let opts = { 
+  'includeFileUrls': true // Boolean | Include grammar language file URLs
+};
+
+apiInstance.getArchitectGrammar(grammarId, opts)
+  .then((data) => {
+    console.log(`getArchitectGrammar success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectGrammar');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | grammar ID |  |
+ **includeFileUrls** | **Boolean** | Include grammar language file URLs | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Grammar**
+
+<a name="getArchitectGrammarLanguage"></a>
+
+# GrammarLanguage getArchitectGrammarLanguage(grammarId, languageCode)
+
+
+GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode}
+
+Get a grammar language.
+
+getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let languageCode = "languageCode_example"; // String | Language
+
+apiInstance.getArchitectGrammarLanguage(grammarId, languageCode)
+  .then((data) => {
+    console.log(`getArchitectGrammarLanguage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectGrammarLanguage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | Grammar ID |  |
+ **languageCode** | **String** | Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GrammarLanguage**
+
+<a name="getArchitectGrammars"></a>
+
+# GrammarListing getArchitectGrammars(opts)
+
+
+GET /api/v2/architect/grammars
+
+Get a pageable list of grammars, filtered by query parameters
+
+Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+
+getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "asc", // String | Sort order
+  'id': ["id_example"], // [String] | ID
+  'name': "name_example", // String | Name
+  'description': "description_example", // String | Description
+  'nameOrDescription': "nameOrDescription_example", // String | Name or description
+  'includeFileUrls': true // Boolean | Include grammar language file URLs
+};
+
+apiInstance.getArchitectGrammars(opts)
+  .then((data) => {
+    console.log(`getArchitectGrammars success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectGrammars');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id]<br />**Values**: description, id, name |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
+ **id** | **[String]** | ID | [optional]  |
+ **name** | **String** | Name | [optional]  |
+ **description** | **String** | Description | [optional]  |
+ **nameOrDescription** | **String** | Name or description | [optional]  |
+ **includeFileUrls** | **Boolean** | Include grammar language file URLs | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**GrammarListing**
+
 <a name="getArchitectIvr"></a>
 
 # IVR getArchitectIvr(ivrId)
@@ -1600,6 +2080,70 @@ apiInstance.getArchitectIvrs(opts)
 ### Return type
 
 **IVREntityListing**
+
+<a name="getArchitectIvrsDivisionviews"></a>
+
+# IVRDivisionViewEntityListing getArchitectIvrsDivisionviews(opts)
+
+
+GET /api/v2/architect/ivrs/divisionviews
+
+Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+
+Requires ALL permissions:
+
+* routing:callRoute:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC", // String | Sort order
+  'id': ["id_example"], // [String] | ID of the IVR to filter by.
+  'name': "name_example", // String | Name of the IVR to filter by.
+  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+};
+
+apiInstance.getArchitectIvrsDivisionviews(opts)
+  .then((data) => {
+    console.log(`getArchitectIvrsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectIvrsDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **id** | **[String]** | ID of the IVR to filter by. | [optional]  |
+ **name** | **String** | Name of the IVR to filter by. | [optional]  |
+ **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**IVRDivisionViewEntityListing**
 
 <a name="getArchitectPrompt"></a>
 
@@ -2055,6 +2599,70 @@ apiInstance.getArchitectSchedulegroups(opts)
 
 **ScheduleGroupEntityListing**
 
+<a name="getArchitectSchedulegroupsDivisionviews"></a>
+
+# ScheduleGroupDivisionViewEntityListing getArchitectSchedulegroupsDivisionviews(opts)
+
+
+GET /api/v2/architect/schedulegroups/divisionviews
+
+Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+
+Requires ALL permissions:
+
+* routing:scheduleGroup:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC", // String | Sort order
+  'id': ["id_example"], // [String] | ID of the schedule group to filter by.
+  'name': "name_example", // String | Name of the schedule group to filter by.
+  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+};
+
+apiInstance.getArchitectSchedulegroupsDivisionviews(opts)
+  .then((data) => {
+    console.log(`getArchitectSchedulegroupsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSchedulegroupsDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **id** | **[String]** | ID of the schedule group to filter by. | [optional]  |
+ **name** | **String** | Name of the schedule group to filter by. | [optional]  |
+ **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScheduleGroupDivisionViewEntityListing**
+
 <a name="getArchitectSchedules"></a>
 
 # ScheduleEntityListing getArchitectSchedules(opts)
@@ -2116,6 +2724,70 @@ apiInstance.getArchitectSchedules(opts)
 ### Return type
 
 **ScheduleEntityListing**
+
+<a name="getArchitectSchedulesDivisionviews"></a>
+
+# ScheduleDivisionViewEntityListing getArchitectSchedulesDivisionviews(opts)
+
+
+GET /api/v2/architect/schedules/divisionviews
+
+Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+
+Requires ALL permissions:
+
+* routing:schedule:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC", // String | Sort order
+  'id': ["id_example"], // [String] | ID of the schedule group to filter by.
+  'name': "name_example", // String | Name of the schedule group to filter by.
+  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+};
+
+apiInstance.getArchitectSchedulesDivisionviews(opts)
+  .then((data) => {
+    console.log(`getArchitectSchedulesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSchedulesDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **id** | **[String]** | ID of the schedule group to filter by. | [optional]  |
+ **name** | **String** | Name of the schedule group to filter by. | [optional]  |
+ **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScheduleDivisionViewEntityListing**
 
 <a name="getArchitectSystemprompt"></a>
 
@@ -4096,6 +4768,62 @@ apiInstance.getFlowsOutcomesDivisionviews(opts)
 
 **FlowOutcomeDivisionViewEntityListing**
 
+<a name="patchArchitectGrammar"></a>
+
+# Grammar patchArchitectGrammar(grammarId, opts)
+
+
+PATCH /api/v2/architect/grammars/{grammarId}
+
+Updates a grammar
+
+patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | grammar ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchArchitectGrammar(grammarId, opts)
+  .then((data) => {
+    console.log(`patchArchitectGrammar success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchArchitectGrammar');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | grammar ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Grammar**
+
 <a name="postArchitectDependencytrackingBuild"></a>
 
 # void postArchitectDependencytrackingBuild()
@@ -4192,6 +4920,224 @@ apiInstance.postArchitectEmergencygroups(body)
 ### Return type
 
 **EmergencyGroup**
+
+<a name="postArchitectGrammarLanguageFilesDtmf"></a>
+
+# UploadUrlResponse postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
+
+
+POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf
+
+Creates a presigned URL for uploading a grammar DTMF mode file
+
+postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let languageCode = "languageCode_example"; // String | Language
+let body = {}; // Object | query
+
+apiInstance.postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
+  .then((data) => {
+    console.log(`postArchitectGrammarLanguageFilesDtmf success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectGrammarLanguageFilesDtmf');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | Grammar ID |  |
+ **languageCode** | **String** | Language |  |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UploadUrlResponse**
+
+<a name="postArchitectGrammarLanguageFilesVoice"></a>
+
+# UploadUrlResponse postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
+
+
+POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice
+
+Creates a presigned URL for uploading a grammar voice mode file
+
+postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let languageCode = "languageCode_example"; // String | Language
+let body = {}; // Object | query
+
+apiInstance.postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
+  .then((data) => {
+    console.log(`postArchitectGrammarLanguageFilesVoice success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectGrammarLanguageFilesVoice');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | Grammar ID |  |
+ **languageCode** | **String** | Language |  |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UploadUrlResponse**
+
+<a name="postArchitectGrammarLanguages"></a>
+
+# GrammarLanguage postArchitectGrammarLanguages(grammarId, body)
+
+
+POST /api/v2/architect/grammars/{grammarId}/languages
+
+Create a new language for a given grammar
+
+postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let body = {}; // Object | 
+
+apiInstance.postArchitectGrammarLanguages(grammarId, body)
+  .then((data) => {
+    console.log(`postArchitectGrammarLanguages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectGrammarLanguages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | Grammar ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GrammarLanguage**
+
+<a name="postArchitectGrammars"></a>
+
+# Grammar postArchitectGrammars(body)
+
+
+POST /api/v2/architect/grammars
+
+Create a new grammar
+
+postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let body = {}; // Object | 
+
+apiInstance.postArchitectGrammars(body)
+  .then((data) => {
+    console.log(`postArchitectGrammars success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectGrammars');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Grammar**
 
 <a name="postArchitectIvrs"></a>
 

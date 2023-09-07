@@ -2114,6 +2114,7 @@ let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
   'messengerType': "messengerType_example", // String | Messenger Type
+  'name': "name_example", // String | Recipient Name
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
@@ -2134,6 +2135,7 @@ apiInstance.getRoutingMessageRecipients(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, open, instagram |
+ **name** | **String** | Recipient Name | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -6132,14 +6134,14 @@ void (no response body)
 
 <a name="postRoutingSkillgroups"></a>
 
-# SkillGroup postRoutingSkillgroups(body)
+# SkillGroupWithMemberDivisions postRoutingSkillgroups(body)
 
 
 POST /api/v2/routing/skillgroups
 
 Create a skill group
 
-Requires ANY permissions:
+Requires ALL permissions:
 
 * routing:skillGroup:add
 
@@ -6178,7 +6180,7 @@ apiInstance.postRoutingSkillgroups(body)
 
 ### Return type
 
-**SkillGroup**
+**SkillGroupWithMemberDivisions**
 
 <a name="postRoutingSkills"></a>
 

@@ -165,6 +165,10 @@
       "class": "JourneyWebActionEventsNotificationWebActionEventsNotification"
     },
     {
+      "topic": "v2.journey.sessions.{id}.app.events",
+      "class": "JourneyAppEventsNotificationAppEventsNotification"
+    },
+    {
       "topic": "v2.journey.sessions.{id}.outcome.events",
       "class": "JourneyOutcomeEventsNotificationOutcomeEventsNotification"
     },

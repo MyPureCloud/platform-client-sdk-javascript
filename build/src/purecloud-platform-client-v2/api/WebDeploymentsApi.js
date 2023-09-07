@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 173.1.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -233,8 +233,12 @@ class WebDeploymentsApi {
 	 * Get a deployment
 	 * 
 	 * @param {String} deploymentId The deployment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
 	 */
-	getWebdeploymentsDeployment(deploymentId) { 
+	getWebdeploymentsDeployment(deploymentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
 			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeployment';
@@ -244,7 +248,7 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'GET', 
 			{ 'deploymentId': deploymentId },
-			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -290,6 +294,7 @@ class WebDeploymentsApi {
 	 * @param {String} deploymentId The deployment ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.type Get active configuration on a deployment
+	 * @param {Array.<String>} opts.expand Expand instructions for the return value
 	 */
 	getWebdeploymentsDeploymentConfigurations(deploymentId, opts) { 
 		opts = opts || {};
@@ -303,7 +308,7 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/deployments/{deploymentId}/configurations', 
 			'GET', 
 			{ 'deploymentId': deploymentId },
-			{ 'type': opts['type'] },
+			{ 'type': opts['type'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -317,7 +322,7 @@ class WebDeploymentsApi {
 	 * Get deployments
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. Valid values:
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 */
 	getWebdeploymentsDeployments(opts) { 
 		opts = opts || {};

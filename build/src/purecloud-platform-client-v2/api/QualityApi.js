@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 173.1.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -288,6 +288,7 @@ class QualityApi {
 	 * @param {String} opts.evaluatorUserId user id of the evaluator
 	 * @param {String} opts.name name
 	 * @param {String} opts.group group id
+	 * @param {String} opts.formContextId shared id between form versions
 	 */
 	getQualityAgentsActivity(opts) { 
 		opts = opts || {};
@@ -297,7 +298,7 @@ class QualityApi {
 			'/api/v2/quality/agents/activity', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'formContextId': opts['formContextId'] },
 			{  },
 			{  },
 			null, 
@@ -495,9 +496,9 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {String} opts.sortBy NOTE: Does not work when querying evaluations
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.nextPage NOTE: Does not work when querying evaluations
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.conversationId conversationId specified
 	 * @param {String} opts.agentUserId user id of the agent
@@ -506,12 +507,13 @@ class QualityApi {
 	 * @param {String} opts.queueId queue id
 	 * @param {String} opts.startTime start time of the evaluation query
 	 * @param {String} opts.endTime end time of the evaluation query
+	 * @param {String} opts.formContextId shared id between form versions
 	 * @param {Array.<String>} opts.evaluationState 
 	 * @param {Boolean} opts.isReleased the evaluation has been released
 	 * @param {Boolean} opts.agentHasRead agent has the evaluation
 	 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations
-	 * @param {Number} opts.maximum maximum
-	 * @param {String} opts.sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId
+	 * @param {Number} opts.maximum the maximum number of results to return
+	 * @param {String} opts.sortOrder NOTE: Does not work when conversationId is supplied.
 	 */
 	getQualityEvaluationsQuery(opts) { 
 		opts = opts || {};
@@ -521,7 +523,7 @@ class QualityApi {
 			'/api/v2/quality/evaluations/query', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -1598,7 +1600,7 @@ class QualityApi {
 	 * @param {String} evaluationId evaluationId
 	 * @param {Object} body evaluation
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand evaluatorId, evaluationForm, assignee
+	 * @param {String} opts.expand evaluatorId, evaluationForm, assignee, evaluator
 	 */
 	putQualityConversationEvaluation(conversationId, evaluationId, body, opts) { 
 		opts = opts || {};

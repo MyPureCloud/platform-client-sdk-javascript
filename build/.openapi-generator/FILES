@@ -152,6 +152,10 @@ docs/deleteAnalyticsReportingSchedule-example.txt
 docs/deleteAnalyticsUsersDetailsJob-example.txt
 docs/deleteAnalyticsUsersDetailsJob-example.txt
 docs/deleteArchitectEmergencygroup-example.txt
+docs/deleteArchitectGrammar-example.txt
+docs/deleteArchitectGrammarLanguage-example.txt
+docs/deleteArchitectGrammarLanguageFilesDtmf-example.txt
+docs/deleteArchitectGrammarLanguageFilesVoice-example.txt
 docs/deleteArchitectIvr-example.txt
 docs/deleteArchitectPrompt-example.txt
 docs/deleteArchitectPromptResource-example.txt
@@ -178,6 +182,7 @@ docs/deleteConversationParticipantFlaggedreason-example.txt
 docs/deleteConversationRecordingAnnotation-example.txt
 docs/deleteConversationsCallParticipantConsult-example.txt
 docs/deleteConversationsEmailMessagesDraftAttachment-example.txt
+docs/deleteConversationsMessagesCachedmediaCachedMediaItemId-example.txt
 docs/deleteConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsLineIntegrationId-example.txt
@@ -468,8 +473,13 @@ docs/getArchitectDependencytrackingTypes-example.txt
 docs/getArchitectDependencytrackingUpdatedresourceconsumers-example.txt
 docs/getArchitectEmergencygroup-example.txt
 docs/getArchitectEmergencygroups-example.txt
+docs/getArchitectEmergencygroupsDivisionviews-example.txt
+docs/getArchitectGrammar-example.txt
+docs/getArchitectGrammarLanguage-example.txt
+docs/getArchitectGrammars-example.txt
 docs/getArchitectIvr-example.txt
 docs/getArchitectIvrs-example.txt
+docs/getArchitectIvrsDivisionviews-example.txt
 docs/getArchitectPrompt-example.txt
 docs/getArchitectPromptHistoryHistoryId-example.txt
 docs/getArchitectPromptResource-example.txt
@@ -478,7 +488,9 @@ docs/getArchitectPrompts-example.txt
 docs/getArchitectSchedule-example.txt
 docs/getArchitectSchedulegroup-example.txt
 docs/getArchitectSchedulegroups-example.txt
+docs/getArchitectSchedulegroupsDivisionviews-example.txt
 docs/getArchitectSchedules-example.txt
+docs/getArchitectSchedulesDivisionviews-example.txt
 docs/getArchitectSystemprompt-example.txt
 docs/getArchitectSystempromptHistoryHistoryId-example.txt
 docs/getArchitectSystempromptResource-example.txt
@@ -605,6 +617,8 @@ docs/getConversationsMessageParticipantCommunicationWrapup-example.txt
 docs/getConversationsMessageParticipantWrapup-example.txt
 docs/getConversationsMessageParticipantWrapupcodes-example.txt
 docs/getConversationsMessages-example.txt
+docs/getConversationsMessagesCachedmedia-example.txt
+docs/getConversationsMessagesCachedmediaCachedMediaItemId-example.txt
 docs/getConversationsMessagingFacebookApp-example.txt
 docs/getConversationsMessagingIntegrations-example.txt
 docs/getConversationsMessagingIntegrationsFacebook-example.txt
@@ -632,6 +646,7 @@ docs/getConversationsSettings-example.txt
 docs/getConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/getConversationsVideoDetails-example.txt
 docs/getConversationsVideoParticipantCommunicationWrapup-example.txt
+docs/getConversationsVideosMeeting-example.txt
 docs/getDataextensionsCoretype-example.txt
 docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
@@ -645,6 +660,7 @@ docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
 docs/getExternalcontactsContactIdentifiers-example.txt
+docs/getExternalcontactsContactJourneySessions-example.txt
 docs/getExternalcontactsContactJourneySessions-example.txt
 docs/getExternalcontactsContactNote-example.txt
 docs/getExternalcontactsContactNotes-example.txt
@@ -854,6 +870,8 @@ docs/getKnowledgeKnowledgebase-example.txt
 docs/getKnowledgeKnowledgebaseCategories-example.txt
 docs/getKnowledgeKnowledgebaseCategory-example.txt
 docs/getKnowledgeKnowledgebaseDocument-example.txt
+docs/getKnowledgeKnowledgebaseDocumentFeedback-example.txt
+docs/getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId-example.txt
 docs/getKnowledgeKnowledgebaseDocumentVariation-example.txt
 docs/getKnowledgeKnowledgebaseDocumentVariations-example.txt
 docs/getKnowledgeKnowledgebaseDocumentVersion-example.txt
@@ -1426,6 +1444,8 @@ docs/getWorkforcemanagementCalendarDataIcs-example.txt
 docs/getWorkforcemanagementCalendarUrlIcs-example.txt
 docs/getWorkforcemanagementHistoricaldataDeletejob-example.txt
 docs/getWorkforcemanagementHistoricaldataImportstatus-example.txt
+docs/getWorkforcemanagementIntegrationsHris-example.txt
+docs/getWorkforcemanagementIntegrationsHrisTimeofftypesJob-example.txt
 docs/getWorkforcemanagementManagementunit-example.txt
 docs/getWorkforcemanagementManagementunitActivitycodes-example.txt
 docs/getWorkforcemanagementManagementunitAdherence-example.txt
@@ -1454,6 +1474,7 @@ docs/getWorkforcemanagementNotifications-example.txt
 docs/getWorkforcemanagementSchedulingjob-example.txt
 docs/getWorkforcemanagementShifttrades-example.txt
 docs/getWorkforcemanagementShrinkageJob-example.txt
+docs/getWorkforcemanagementTimeoffbalanceJob-example.txt
 docs/getWorkforcemanagementTimeoffrequest-example.txt
 docs/getWorkforcemanagementTimeoffrequestWaitlistpositions-example.txt
 docs/getWorkforcemanagementTimeoffrequests-example.txt
@@ -1463,6 +1484,7 @@ docs/patchAlertingAlert-example.txt
 docs/patchAlertingAlertsBulk-example.txt
 docs/patchAlertingRulesBulk-example.txt
 docs/patchAnalyticsReportingSettings-example.txt
+docs/patchArchitectGrammar-example.txt
 docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
 docs/patchChatSettings-example.txt
@@ -1607,6 +1629,7 @@ docs/patchWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
 docs/patchWorkforcemanagementManagementunit-example.txt
 docs/patchWorkforcemanagementManagementunitTimeofflimit-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffplan-example.txt
+docs/patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus-example.txt
 docs/patchWorkforcemanagementManagementunitUserTimeoffrequest-example.txt
 docs/patchWorkforcemanagementManagementunitWeekShifttrade-example.txt
 docs/patchWorkforcemanagementManagementunitWorkplan-example.txt
@@ -1685,6 +1708,10 @@ docs/postAnalyticsUsersObservationsQuery-example.txt
 docs/postAnalyticsUsersObservationsQuery-example.txt
 docs/postArchitectDependencytrackingBuild-example.txt
 docs/postArchitectEmergencygroups-example.txt
+docs/postArchitectGrammarLanguageFilesDtmf-example.txt
+docs/postArchitectGrammarLanguageFilesVoice-example.txt
+docs/postArchitectGrammarLanguages-example.txt
+docs/postArchitectGrammars-example.txt
 docs/postArchitectIvrs-example.txt
 docs/postArchitectPromptHistory-example.txt
 docs/postArchitectPromptResources-example.txt
@@ -1778,6 +1805,9 @@ docs/postConversationsKeyconfigurationsValidate-example.txt
 docs/postConversationsMessageCommunicationMessages-example.txt
 docs/postConversationsMessageCommunicationMessagesMedia-example.txt
 docs/postConversationsMessageCommunicationTyping-example.txt
+docs/postConversationsMessageInboundOpenEvent-example.txt
+docs/postConversationsMessageInboundOpenMessage-example.txt
+docs/postConversationsMessageInboundOpenReceipt-example.txt
 docs/postConversationsMessageMessagesBulk-example.txt
 docs/postConversationsMessageParticipantCommunicationWrapup-example.txt
 docs/postConversationsMessageParticipantMonitor-example.txt
@@ -1798,6 +1828,7 @@ docs/postConversationsParticipantsAttributesSearch-example.txt
 docs/postConversationsScreenshareParticipantCommunicationWrapup-example.txt
 docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
+docs/postConversationsVideosMeetings-example.txt
 docs/postDocumentationAllSearch-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
@@ -1885,18 +1916,22 @@ docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate-example.t
 docs/postJourneyActionmaps-example.txt
 docs/postJourneyActionmapsEstimatesJobs-example.txt
 docs/postJourneyActiontemplates-example.txt
+docs/postJourneyDeploymentAppevents-example.txt
 docs/postJourneyOutcomes-example.txt
 docs/postJourneyOutcomesAttributionsJobs-example.txt
 docs/postJourneyOutcomesPredictors-example.txt
 docs/postJourneySegments-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
+docs/postKnowledgeGuestSessionDocumentFeedback-example.txt
 docs/postKnowledgeGuestSessionDocumentsSearch-example.txt
 docs/postKnowledgeGuestSessionDocumentsSearchSuggestions-example.txt
 docs/postKnowledgeGuestSessions-example.txt
 docs/postKnowledgeKnowledgebaseCategories-example.txt
+docs/postKnowledgeKnowledgebaseDocumentFeedback-example.txt
 docs/postKnowledgeKnowledgebaseDocumentVariations-example.txt
 docs/postKnowledgeKnowledgebaseDocumentVersions-example.txt
+docs/postKnowledgeKnowledgebaseDocumentViews-example.txt
 docs/postKnowledgeKnowledgebaseDocuments-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsBulkRemove-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsBulkUpdate-example.txt
@@ -2146,6 +2181,8 @@ docs/postWorkforcemanagementAdherenceHistorical-example.txt
 docs/postWorkforcemanagementAdherenceHistoricalBulk-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
+docs/postWorkforcemanagementAgents-example.txt
+docs/postWorkforcemanagementAgentsIntegrationsHrisQuery-example.txt
 docs/postWorkforcemanagementAgentsMePossibleworkshifts-example.txt
 docs/postWorkforcemanagementAgentschedulesMine-example.txt
 docs/postWorkforcemanagementBusinessunitActivitycodes-example.txt
@@ -2171,6 +2208,7 @@ docs/postWorkforcemanagementBusinessunits-example.txt
 docs/postWorkforcemanagementCalendarUrlIcs-example.txt
 docs/postWorkforcemanagementHistoricaldataDeletejob-example.txt
 docs/postWorkforcemanagementHistoricaldataValidate-example.txt
+docs/postWorkforcemanagementIntegrationsHriTimeofftypesJobs-example.txt
 docs/postWorkforcemanagementManagementunitAgentschedulesSearch-example.txt
 docs/postWorkforcemanagementManagementunitHistoricaladherencequery-example.txt
 docs/postWorkforcemanagementManagementunitMove-example.txt
@@ -2180,10 +2218,12 @@ docs/postWorkforcemanagementManagementunitTimeofflimits-example.txt
 docs/postWorkforcemanagementManagementunitTimeofflimitsValuesQuery-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffplans-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequests-example.txt
+docs/postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequestsQuery-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery-example.txt
 docs/postWorkforcemanagementManagementunitUserTimeoffbalanceJobs-example.txt
 docs/postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs-example.txt
+docs/postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate-example.txt
 docs/postWorkforcemanagementManagementunitWeekShifttradeMatch-example.txt
 docs/postWorkforcemanagementManagementunitWeekShifttrades-example.txt
 docs/postWorkforcemanagementManagementunitWeekShifttradesSearch-example.txt
@@ -2198,8 +2238,11 @@ docs/postWorkforcemanagementNotificationsUpdate-example.txt
 docs/postWorkforcemanagementSchedules-example.txt
 docs/postWorkforcemanagementTeamAdherenceHistorical-example.txt
 docs/postWorkforcemanagementTeamShrinkageJobs-example.txt
+docs/postWorkforcemanagementTimeoffbalanceJobs-example.txt
 docs/postWorkforcemanagementTimeofflimitsAvailableQuery-example.txt
 docs/postWorkforcemanagementTimeoffrequests-example.txt
+docs/postWorkforcemanagementTimeoffrequestsEstimate-example.txt
+docs/postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery-example.txt
 docs/putAlertingAlert-example.txt
 docs/putAlertingInteractionstatsAlert-example.txt
 docs/putAlertingInteractionstatsRule-example.txt
@@ -2405,6 +2448,7 @@ docs/putWebchatSettings-example.txt
 docs/putWebdeploymentsConfigurationVersionsDraft-example.txt
 docs/putWebdeploymentsDeployment-example.txt
 docs/putWidgetsDeployment-example.txt
+docs/putWorkforcemanagementAgentIntegrationsHris-example.txt
 docs/putWorkforcemanagementManagementunitTimeofflimitValues-example.txt
 index.d.ts
 package.json

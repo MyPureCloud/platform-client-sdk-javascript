@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 173.1.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -1012,6 +1012,7 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.messengerType Messenger Type
+	 * @param {String} opts.name Recipient Name
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 */
@@ -1023,7 +1024,7 @@ class RoutingApi {
 			'/api/v2/routing/message/recipients', 
 			'GET', 
 			{  },
-			{ 'messengerType': opts['messengerType'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{ 'messengerType': opts['messengerType'],'name': opts['name'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 

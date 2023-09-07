@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi.html#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
 [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
 [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
+[**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#deleteConversationsMessagesCachedmediaCachedMediaItemId) | **DELETE** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Remove a cached media item asychronously
 [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
 [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Delete Instagram messaging integration
 [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/line/{integrationId} | Delete a LINE messenger integration
@@ -78,6 +79,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get active message conversations for the logged in user
+[**getConversationsMessagesCachedmedia**](ConversationsApi.html#getConversationsMessagesCachedmedia) | **GET** /api/v2/conversations/messages/cachedmedia | Get a list of cached media items
+[**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#getConversationsMessagesCachedmediaCachedMediaItemId) | **GET** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item
 [**getConversationsMessagingFacebookApp**](ConversationsApi.html#getConversationsMessagingFacebookApp) | **GET** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id
 [**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
 [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
@@ -105,6 +108,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsSocialParticipantCommunicationWrapup) | **GET** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsVideoDetails**](ConversationsApi.html#getConversationsVideoDetails) | **GET** /api/v2/conversations/videos/{conferenceId}/details | Get video conference details (e.g. the current number of active participants).
 [**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsVideoParticipantCommunicationWrapup) | **GET** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsVideosMeeting**](ConversationsApi.html#getConversationsVideosMeeting) | **GET** /api/v2/conversations/videos/meetings/{meetingId} | Gets a record for a given meetingId
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationSecureattributes**](ConversationsApi.html#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
@@ -198,6 +202,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message
 [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media
 [**postConversationsMessageCommunicationTyping**](ConversationsApi.html#postConversationsMessageCommunicationTyping) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event
+[**postConversationsMessageInboundOpenEvent**](ConversationsApi.html#postConversationsMessageInboundOpenEvent) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/event | Send an inbound Open Event Message
+[**postConversationsMessageInboundOpenMessage**](ConversationsApi.html#postConversationsMessageInboundOpenMessage) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/message | Send inbound Open Message
+[**postConversationsMessageInboundOpenReceipt**](ConversationsApi.html#postConversationsMessageInboundOpenReceipt) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/receipt | Send an inbound Open Receipt Message
 [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
 [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsMessageParticipantCommunicationWrapup) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsMessageParticipantMonitor**](ConversationsApi.html#postConversationsMessageParticipantMonitor) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
@@ -217,6 +224,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsScreenshareParticipantCommunicationWrapup) | **POST** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsSocialParticipantCommunicationWrapup) | **POST** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsVideoParticipantCommunicationWrapup) | **POST** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsVideosMeetings**](ConversationsApi.html#postConversationsVideosMeetings) | **POST** /api/v2/conversations/videos/meetings | Generate a meetingId for a given conferenceId
 [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationSecureattributes**](ConversationsApi.html#putConversationSecureattributes) | **PUT** /api/v2/conversations/{conversationId}/secureattributes | Set the secure attributes on a conversation.
 [**putConversationTags**](ConversationsApi.html#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
@@ -485,6 +493,56 @@ apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, atta
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **attachmentId** | **String** | attachmentId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteConversationsMessagesCachedmediaCachedMediaItemId"></a>
+
+# void deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+
+
+DELETE /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}
+
+Remove a cached media item asychronously
+
+Requires ANY permissions:
+
+* conversation:cachedMedia:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let cachedMediaItemId = "cachedMediaItemId_example"; // String | cachedMediaItemId
+
+apiInstance.deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+  .then(() => {
+    console.log('deleteConversationsMessagesCachedmediaCachedMediaItemId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagesCachedmediaCachedMediaItemId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **cachedMediaItemId** | **String** | cachedMediaItemId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3767,7 +3825,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
-let conversationId = "conversationId_example"; // String |  conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
@@ -3785,7 +3843,7 @@ apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, partic
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String** |  conversationId |  |
+ **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
@@ -3835,6 +3893,112 @@ This endpoint does not need any parameter.
 ### Return type
 
 **MessageConversationEntityListing**
+
+<a name="getConversationsMessagesCachedmedia"></a>
+
+# CachedMediaItemEntityListing getConversationsMessagesCachedmedia(opts)
+
+
+GET /api/v2/conversations/messages/cachedmedia
+
+Get a list of cached media items
+
+Requires ANY permissions:
+
+* conversation:cachedMedia:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'url': "url_example" // String | URL to search for
+};
+
+apiInstance.getConversationsMessagesCachedmedia(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagesCachedmedia success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagesCachedmedia');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **url** | **String** | URL to search for | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CachedMediaItemEntityListing**
+
+<a name="getConversationsMessagesCachedmediaCachedMediaItemId"></a>
+
+# CachedMediaItem getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+
+
+GET /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}
+
+Get a cached media item
+
+Requires ANY permissions:
+
+* conversation:cachedMedia:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let cachedMediaItemId = "cachedMediaItemId_example"; // String | cachedMediaItemId
+
+apiInstance.getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+  .then((data) => {
+    console.log(`getConversationsMessagesCachedmediaCachedMediaItemId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagesCachedmediaCachedMediaItemId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **cachedMediaItemId** | **String** | cachedMediaItemId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CachedMediaItem**
 
 <a name="getConversationsMessagingFacebookApp"></a>
 
@@ -5299,6 +5463,58 @@ apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, 
 
 **AssignedWrapupCode**
 
+<a name="getConversationsVideosMeeting"></a>
+
+# MeetingIdRecord getConversationsVideosMeeting(meetingId)
+
+
+GET /api/v2/conversations/videos/meetings/{meetingId}
+
+Gets a record for a given meetingId
+
+getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* video:video:access
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let meetingId = "meetingId_example"; // String | meetingId
+
+apiInstance.getConversationsVideosMeeting(meetingId)
+  .then((data) => {
+    console.log(`getConversationsVideosMeeting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsVideosMeeting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **meetingId** | **String** | meetingId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MeetingIdRecord**
+
 <a name="patchConversationParticipant"></a>
 
 # void patchConversationParticipant(conversationId, participantId, body)
@@ -5623,7 +5839,7 @@ void (no response body)
 
 <a name="patchConversationsCallParticipantAttributes"></a>
 
-# void patchConversationsCallParticipantAttributes(conversationId, participantId, body)
+# ParticipantAttributes patchConversationsCallParticipantAttributes(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes
@@ -5650,8 +5866,8 @@ let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsCallParticipantAttributes(conversationId, participantId, body)
-  .then(() => {
-    console.log('patchConversationsCallParticipantAttributes returned successfully.');
+  .then((data) => {
+    console.log(`patchConversationsCallParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling patchConversationsCallParticipantAttributes');
@@ -5671,7 +5887,7 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
 
 ### Return type
 
-void (no response body)
+**ParticipantAttributes**
 
 <a name="patchConversationsCallParticipantCommunication"></a>
 
@@ -5887,7 +6103,7 @@ void (no response body)
 
 <a name="patchConversationsCallbackParticipantAttributes"></a>
 
-# void patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
+# ParticipantAttributes patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes
@@ -5914,8 +6130,8 @@ let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Attributes
 
 apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
-  .then(() => {
-    console.log('patchConversationsCallbackParticipantAttributes returned successfully.');
+  .then((data) => {
+    console.log(`patchConversationsCallbackParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling patchConversationsCallbackParticipantAttributes');
@@ -5935,7 +6151,7 @@ apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, part
 
 ### Return type
 
-void (no response body)
+**ParticipantAttributes**
 
 <a name="patchConversationsCallbackParticipantCommunication"></a>
 
@@ -6149,7 +6365,7 @@ void (no response body)
 
 <a name="patchConversationsChatParticipantAttributes"></a>
 
-# void patchConversationsChatParticipantAttributes(conversationId, participantId, body)
+# ParticipantAttributes patchConversationsChatParticipantAttributes(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes
@@ -6176,8 +6392,8 @@ let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsChatParticipantAttributes(conversationId, participantId, body)
-  .then(() => {
-    console.log('patchConversationsChatParticipantAttributes returned successfully.');
+  .then((data) => {
+    console.log(`patchConversationsChatParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling patchConversationsChatParticipantAttributes');
@@ -6197,7 +6413,7 @@ apiInstance.patchConversationsChatParticipantAttributes(conversationId, particip
 
 ### Return type
 
-void (no response body)
+**ParticipantAttributes**
 
 <a name="patchConversationsChatParticipantCommunication"></a>
 
@@ -6363,7 +6579,7 @@ void (no response body)
 
 <a name="patchConversationsCobrowsesessionParticipantAttributes"></a>
 
-# void patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
+# ParticipantAttributes patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
 
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes
@@ -6392,8 +6608,8 @@ let opts = {
 };
 
 apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
-  .then(() => {
-    console.log('patchConversationsCobrowsesessionParticipantAttributes returned successfully.');
+  .then((data) => {
+    console.log(`patchConversationsCobrowsesessionParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling patchConversationsCobrowsesessionParticipantAttributes');
@@ -6413,7 +6629,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
 
 ### Return type
 
-void (no response body)
+**ParticipantAttributes**
 
 <a name="patchConversationsCobrowsesessionParticipantCommunication"></a>
 
@@ -6633,7 +6849,7 @@ void (no response body)
 
 <a name="patchConversationsEmailParticipantAttributes"></a>
 
-# void patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
+# ParticipantAttributes patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes
@@ -6660,8 +6876,8 @@ let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
-  .then(() => {
-    console.log('patchConversationsEmailParticipantAttributes returned successfully.');
+  .then((data) => {
+    console.log(`patchConversationsEmailParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling patchConversationsEmailParticipantAttributes');
@@ -6681,7 +6897,7 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
 
 ### Return type
 
-void (no response body)
+**ParticipantAttributes**
 
 <a name="patchConversationsEmailParticipantCommunication"></a>
 
@@ -6815,7 +7031,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
-let conversationId = "conversationId_example"; // String |  conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
   'body': {} // Object | 
@@ -6836,7 +7052,7 @@ apiInstance.patchConversationsMessageParticipant(conversationId, participantId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String** |  conversationId |  |
+ **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
@@ -6847,7 +7063,7 @@ void (no response body)
 
 <a name="patchConversationsMessageParticipantAttributes"></a>
 
-# void patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
+# ParticipantAttributes patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
 
 
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes
@@ -6869,15 +7085,15 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
-let conversationId = "conversationId_example"; // String |  conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
   'body': {} // Object | 
 };
 
 apiInstance.patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
-  .then(() => {
-    console.log('patchConversationsMessageParticipantAttributes returned successfully.');
+  .then((data) => {
+    console.log(`patchConversationsMessageParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling patchConversationsMessageParticipantAttributes');
@@ -6890,14 +7106,14 @@ apiInstance.patchConversationsMessageParticipantAttributes(conversationId, parti
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String** |  conversationId |  |
+ **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-void (no response body)
+**ParticipantAttributes**
 
 <a name="patchConversationsMessageParticipantCommunication"></a>
 
@@ -6923,7 +7139,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
-let conversationId = "conversationId_example"; // String |  conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Participant
@@ -6943,7 +7159,7 @@ apiInstance.patchConversationsMessageParticipantCommunication(conversationId, pa
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String** |  conversationId |  |
+ **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
@@ -10259,6 +10475,168 @@ apiInstance.postConversationsMessageCommunicationTyping(conversationId, communic
 
 void (no response body)
 
+<a name="postConversationsMessageInboundOpenEvent"></a>
+
+# OpenEventNormalizedMessage postConversationsMessageInboundOpenEvent(integrationId, body)
+
+
+POST /api/v2/conversations/messages/{integrationId}/inbound/open/event
+
+Send an inbound Open Event Message
+
+Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Requires ALL permissions:
+
+* conversation:message:receive
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | integrationId
+let body = {}; // Object | NormalizedMessage
+
+apiInstance.postConversationsMessageInboundOpenEvent(integrationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageInboundOpenEvent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageInboundOpenEvent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | integrationId |  |
+ **body** | **Object** | NormalizedMessage |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OpenEventNormalizedMessage**
+
+<a name="postConversationsMessageInboundOpenMessage"></a>
+
+# OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(integrationId, body)
+
+
+POST /api/v2/conversations/messages/{integrationId}/inbound/open/message
+
+Send inbound Open Message
+
+Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Requires ALL permissions:
+
+* conversation:message:receive
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | integrationId
+let body = {}; // Object | NormalizedMessage
+
+apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageInboundOpenMessage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageInboundOpenMessage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | integrationId |  |
+ **body** | **Object** | NormalizedMessage |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OpenMessageNormalizedMessage**
+
+<a name="postConversationsMessageInboundOpenReceipt"></a>
+
+# OpenReceiptNormalizedMessage postConversationsMessageInboundOpenReceipt(integrationId, body)
+
+
+POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt
+
+Send an inbound Open Receipt Message
+
+Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Requires ALL permissions:
+
+* conversation:message:receive
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | integrationId
+let body = {}; // Object | NormalizedMessage
+
+apiInstance.postConversationsMessageInboundOpenReceipt(integrationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageInboundOpenReceipt success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageInboundOpenReceipt');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | integrationId |  |
+ **body** | **Object** | NormalizedMessage |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OpenReceiptNormalizedMessage**
+
 <a name="postConversationsMessageMessagesBulk"></a>
 
 # TextMessageListing postConversationsMessageMessagesBulk(conversationId, opts)
@@ -11267,6 +11645,58 @@ apiInstance.postConversationsVideoParticipantCommunicationWrapup(conversationId,
 ### Return type
 
 void (no response body)
+
+<a name="postConversationsVideosMeetings"></a>
+
+# MeetingIdRecord postConversationsVideosMeetings(body)
+
+
+POST /api/v2/conversations/videos/meetings
+
+Generate a meetingId for a given conferenceId
+
+postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* video:video:access
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | MeetingIdRequest
+
+apiInstance.postConversationsVideosMeetings(body)
+  .then((data) => {
+    console.log(`postConversationsVideosMeetings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsVideosMeetings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | MeetingIdRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MeetingIdRecord**
 
 <a name="putConversationParticipantFlaggedreason"></a>
 

@@ -110,7 +110,7 @@ void (no response body)
 
 <a name="getTokensMe"></a>
 
-# TokenInfo getTokensMe()
+# TokenInfo getTokensMe(opts)
 
 
 GET /api/v2/tokens/me
@@ -132,7 +132,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
 
-apiInstance.getTokensMe()
+let opts = { 
+  'preserveIdleTTL': true // Boolean | preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset.
+};
+
+apiInstance.getTokensMe(opts)
   .then((data) => {
     console.log(`getTokensMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -144,8 +148,11 @@ apiInstance.getTokensMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **preserveIdleTTL** | **Boolean** | preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. | [optional]  |
+{: class="table table-striped"}
 
 ### Return type
 

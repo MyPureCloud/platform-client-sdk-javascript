@@ -2589,6 +2589,7 @@ Update user
 Requires ANY permissions:
 
 * directory:user:edit
+* directory:organization:admin
 
 ### Example Usage
 
@@ -3018,8 +3019,8 @@ Update bulk acd autoanswer on users
 
 Requires ANY permissions:
 
-* directory:user:add
 * directory:user:edit
+* directory:organization:admin
 
 ### Example Usage
 
