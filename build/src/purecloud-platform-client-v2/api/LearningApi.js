@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 174.0.0
+	 * @version 175.0.0
 	 */
 
 	/**
@@ -648,8 +648,12 @@ class LearningApi {
 	 * Publish a Learning module
 	 * 
 	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The request body
 	 */
-	postLearningModulePublish(moduleId) { 
+	postLearningModulePublish(moduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null) {
 			throw 'Missing the required parameter "moduleId" when calling postLearningModulePublish';
@@ -662,7 +666,7 @@ class LearningApi {
 			{  },
 			{  },
 			{  },
-			null, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

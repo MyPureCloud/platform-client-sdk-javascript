@@ -1274,7 +1274,7 @@ apiInstance.postLearningModuleJobs(moduleId, body)
 
 <a name="postLearningModulePublish"></a>
 
-# LearningModulePublishResponse postLearningModulePublish(moduleId)
+# LearningModulePublishResponse postLearningModulePublish(moduleId, opts)
 
 
 POST /api/v2/learning/modules/{moduleId}/publish
@@ -1299,8 +1299,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let moduleId = "moduleId_example"; // String | The ID of the learning module
+let opts = { 
+  'body': {} // Object | The request body
+};
 
-apiInstance.postLearningModulePublish(moduleId)
+apiInstance.postLearningModulePublish(moduleId, opts)
   .then((data) => {
     console.log(`postLearningModulePublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1316,6 +1319,7 @@ apiInstance.postLearningModulePublish(moduleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
+ **body** | **Object** | The request body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

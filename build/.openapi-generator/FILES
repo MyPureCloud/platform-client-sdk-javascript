@@ -698,6 +698,9 @@ docs/getFlowHistoryHistoryId-example.txt
 docs/getFlowLatestconfiguration-example.txt
 docs/getFlowVersion-example.txt
 docs/getFlowVersionConfiguration-example.txt
+docs/getFlowVersionHealth-example.txt
+docs/getFlowVersionIntentHealth-example.txt
+docs/getFlowVersionIntentUtteranceHealth-example.txt
 docs/getFlowVersions-example.txt
 docs/getFlows-example.txt
 docs/getFlowsDatatable-example.txt

@@ -383,6 +383,9 @@ declare class ArchitectApi {
   	getFlowLatestconfiguration(flowId: string, opts?: ArchitectApi.getFlowLatestconfigurationOptions): Promise<object>; 
   	getFlowVersion(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionOptions): Promise<Models.FlowVersion>; 
   	getFlowVersionConfiguration(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionConfigurationOptions): Promise<object>; 
+  	getFlowVersionHealth(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionHealthOptions): Promise<Models.FlowHealth>; 
+  	getFlowVersionIntentHealth(flowId: string, versionId: string, intentId: string, language: string): Promise<Models.FlowHealthIntent>; 
+  	getFlowVersionIntentUtteranceHealth(flowId: string, versionId: string, intentId: string, utteranceId: string, language: string): Promise<Models.FlowHealthUtterance>; 
   	getFlowVersions(flowId: string, opts?: ArchitectApi.getFlowVersionsOptions): Promise<Models.FlowVersionEntityListing>; 
   	getFlows(opts?: ArchitectApi.getFlowsOptions): Promise<Models.FlowEntityListing>; 
   	getFlowsDatatable(datatableId: string, opts?: ArchitectApi.getFlowsDatatableOptions): Promise<Models.DataTable>; 
@@ -655,6 +658,9 @@ declare namespace ArchitectApi {
 	}
 	export interface getFlowVersionConfigurationOptions { 
 		"deleted"?: string;
+	}
+	export interface getFlowVersionHealthOptions { 
+		"language"?: string;
 	}
 	export interface getFlowVersionsOptions { 
 		"pageNumber"?: number;
@@ -3071,7 +3077,7 @@ declare class LearningApi {
   	postLearningAssignmentsBulkadd(opts?: LearningApi.postLearningAssignmentsBulkaddOptions): Promise<Models.LearningAssignmentBulkAddResponse>; 
   	postLearningAssignmentsBulkremove(opts?: LearningApi.postLearningAssignmentsBulkremoveOptions): Promise<Models.LearningAssignmentBulkRemoveResponse>; 
   	postLearningModuleJobs(moduleId: string, body: Models.LearningModuleJobRequest): Promise<Models.LearningModuleJobResponse>; 
-  	postLearningModulePublish(moduleId: string): Promise<Models.LearningModulePublishResponse>; 
+  	postLearningModulePublish(moduleId: string, opts?: LearningApi.postLearningModulePublishOptions): Promise<Models.LearningModulePublishResponse>; 
   	postLearningModules(body: Models.LearningModuleRequest): Promise<Models.LearningModule>; 
   	postLearningRulesQuery(pageSize: number, pageNumber: number, body: Models.LearningAssignmentUserQuery): Promise<Models.LearningAssignmentUserListing>; 
   	postLearningScheduleslotsQuery(body: Models.LearningScheduleSlotsQueryRequest): Promise<Models.LearningScheduleSlotsQueryResponse>; 
@@ -3156,6 +3162,9 @@ declare namespace LearningApi {
 	}
 	export interface postLearningAssignmentsBulkremoveOptions { 
 		"body"?: Array<string>;
+	}
+	export interface postLearningModulePublishOptions { 
+		"body"?: Models.LearningModulePublishRequest;
 	}
 }
 
@@ -7780,6 +7789,7 @@ declare namespace Models {
 	export interface AnalyticsReportingSettings { 
 		"piiMaskingEnabled"?: boolean;
 		"queueAgentAccessObfuscation"?: boolean;
+		"myInteractionsPiiMaskingEnabled"?: boolean;
 	}
 	
 	export interface AnalyticsResolution { 
@@ -9766,11 +9776,21 @@ declare namespace Models {
 		"defaultHistoryWeeks"?: number;
 	}
 	
+	export interface BuUpdateAgentScheduleShift { 
+		"id"?: string;
+		"startDate"?: string;
+		"lengthMinutes"?: number;
+		"activities"?: Array<Models.BuAgentScheduleActivity>;
+		"manuallyEdited"?: boolean;
+		"schedule"?: Models.BuScheduleReference;
+		"delete"?: boolean;
+	}
+	
 	export interface BuUpdateAgentScheduleUploadSchema { 
 		"userId": string;
 		"workPlanId"?: Models.ValueWrapperString;
 		"workPlanIdsPerWeek"?: Models.ListWrapperString;
-		"shifts"?: Array<Models.BuAgentScheduleShift>;
+		"shifts"?: Array<Models.BuUpdateAgentScheduleShift>;
 		"fullDayTimeOffMarkers"?: Array<Models.BuFullDayTimeOffMarker>;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
 		"delete"?: boolean;
@@ -11710,6 +11730,34 @@ declare namespace Models {
 		"priority"?: boolean;
 	}
 	
+	export interface ConfusionDetails { 
+		"intents"?: Array<Models.ConfusionIntentDetails>;
+	}
+	
+	export interface ConfusionInfo { 
+		"intents"?: Array<Models.ConfusionIntentInfo>;
+	}
+	
+	export interface ConfusionIntentDetails { 
+		"id"?: string;
+		"name"?: string;
+		"utteranceCount"?: number;
+		"utterances"?: Array<Models.ConfusionUtterance>;
+		"selfUri"?: string;
+	}
+	
+	export interface ConfusionIntentInfo { 
+		"id"?: string;
+		"name"?: string;
+		"utteranceCount"?: number;
+	}
+	
+	export interface ConfusionUtterance { 
+		"id"?: string;
+		"text"?: string;
+		"similarity"?: number;
+	}
+	
 	export interface ConnectRate { 
 		"attempts"?: number;
 		"connects"?: number;
@@ -11920,6 +11968,7 @@ declare namespace Models {
 		"automaticTimeZoneMapping"?: boolean;
 		"zipCodeColumnName"?: string;
 		"columnDataTypeSpecifications"?: Array<Models.ColumnDataTypeSpecification>;
+		"trimWhitespace"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -20238,6 +20287,67 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface FlowHealth { 
+		"flowVersionInfo"?: Models.FlowHealthVersionInfo;
+		"languageInfo"?: { [key: string]: Models.LocaleInfo; };
+		"intents"?: Array<Models.FlowHealthIntentInfo>;
+		"selfUri"?: string;
+	}
+	
+	export interface FlowHealthErrorInfo { 
+		"message"?: string;
+		"code"?: string;
+		"messageWithParams"?: string;
+		"messageParams"?: { [key: string]: object; };
+	}
+	
+	export interface FlowHealthIntent { 
+		"id"?: string;
+		"name"?: string;
+		"flowVersionInfo"?: Models.FlowHealthIntentVersionInfo;
+		"language"?: string;
+		"health"?: Models.HealthInfo;
+		"selfUri"?: string;
+	}
+	
+	export interface FlowHealthIntentInfo { 
+		"id"?: string;
+		"name"?: string;
+		"languageHealth"?: { [key: string]: Models.LocaleHealth; };
+		"selfUri"?: string;
+	}
+	
+	export interface FlowHealthIntentUtterance { 
+		"id"?: string;
+		"text"?: string;
+		"issueCount"?: number;
+		"staticValidationResults"?: Array<string>;
+		"outlierInfo"?: Models.OutlierInfo;
+		"confusionInfo"?: Models.ConfusionInfo;
+	}
+	
+	export interface FlowHealthIntentVersionInfo { 
+		"nluVersion"?: Models.AddressableEntityRef;
+		"flowVersion"?: Models.AddressableEntityRef;
+		"nluDomain"?: Models.AddressableEntityRef;
+	}
+	
+	export interface FlowHealthUtterance { 
+		"id"?: string;
+		"text"?: string;
+		"issueCount"?: number;
+		"language"?: string;
+		"staticValidationResults"?: Array<string>;
+		"outlierInfo"?: Models.OutlierInfo;
+		"confusionInfo"?: Models.ConfusionDetails;
+		"selfUri"?: string;
+	}
+	
+	export interface FlowHealthVersionInfo { 
+		"flowVersion"?: Models.AddressableEntityRef;
+		"nluDomain"?: Models.AddressableEntityRef;
+	}
+	
 	export interface FlowMetricsTopicFlowMetricRecord { 
 		"metric"?: string;
 		"metricDate"?: string;
@@ -21264,6 +21374,15 @@ declare namespace Models {
 	export interface HeadcountInterval { 
 		"interval": string;
 		"value": number;
+	}
+	
+	export interface HealthInfo { 
+		"status"?: string;
+		"errorInfo"?: Models.FlowHealthErrorInfo;
+		"overallScore"?: number;
+		"issueCount"?: number;
+		"staticValidationResults"?: Array<string>;
+		"utterances"?: Array<Models.FlowHealthIntentUtterance>;
 	}
 	
 	export interface HelpLink { 
@@ -24595,6 +24714,10 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface LearningModulePublishRequest { 
+		"termsAndConditionsAccepted"?: boolean;
+	}
+	
 	export interface LearningModulePublishResponse { 
 		"id"?: string;
 		"version"?: number;
@@ -25078,6 +25201,22 @@ declare namespace Models {
 		"minute"?: number;
 		"second"?: number;
 		"nano"?: number;
+	}
+	
+	export interface LocaleFlowVersionInfo { 
+		"nluVersion"?: Models.AddressableEntityRef;
+	}
+	
+	export interface LocaleHealth { 
+		"overallScore"?: number;
+		"issueCount"?: number;
+		"staticValidationResults"?: Array<string>;
+	}
+	
+	export interface LocaleInfo { 
+		"status"?: string;
+		"errorInfo"?: Models.FlowHealthErrorInfo;
+		"flowVersionInfo"?: Models.LocaleFlowVersionInfo;
 	}
 	
 	export interface LocalizedLabels { 
@@ -25713,6 +25852,7 @@ declare namespace Models {
 		"recipientType"?: string;
 		"authenticated"?: boolean;
 		"monitoredParticipantId"?: string;
+		"monitoredParticipant"?: Models.AddressableEntityRef;
 	}
 	
 	export interface MessageMediaPolicy { 
@@ -27707,6 +27847,11 @@ declare namespace Models {
 	export interface OutcomeScoresResult { 
 		"outcomeScores"?: Array<Models.OutcomeEventScore>;
 		"modifiedDate"?: string;
+	}
+	
+	export interface OutlierInfo { 
+		"outlier"?: boolean;
+		"score"?: number;
 	}
 	
 	export interface OverallBestPoints { 

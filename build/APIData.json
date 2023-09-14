@@ -3320,6 +3320,93 @@
     "return": "Object",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet flowId = \"flowId_example\"; // String | Flow ID\nlet versionId = \"versionId_example\"; // String | Version ID\nlet opts = { \n  \"deleted\": \"deleted_example\" // String | Deleted flows\n};\n\n// Create flow version configuration\napiInstance.getFlowVersionConfiguration(flowId, versionId, opts)\n  .then((data) => {\n    console.log(`getFlowVersionConfiguration success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowVersionConfiguration\");\n    console.error(err);\n  });"
   },
+  "getflowversionhealth": {
+    "operationId": "getflowversionhealth",
+    "functionName": "getFlowVersionHealth",
+    "signature": "getFlowVersionHealth(flowId, versionId, language)",
+    "parameters": [
+      {
+        "name": "flowId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "language",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "FlowHealth",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet flowId = \"flowId_example\"; // String | Flow ID.\nlet versionId = \"versionId_example\"; // String | Version ID.\nlet opts = { \n  \"language\": \"language_example\" // String | Language to filter for\n};\n\n// Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.\napiInstance.getFlowVersionHealth(flowId, versionId, opts)\n  .then((data) => {\n    console.log(`getFlowVersionHealth success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowVersionHealth\");\n    console.error(err);\n  });"
+  },
+  "getflowversionintenthealth": {
+    "operationId": "getflowversionintenthealth",
+    "functionName": "getFlowVersionIntentHealth",
+    "signature": "getFlowVersionIntentHealth(flowId, versionId, intentId, language)",
+    "parameters": [
+      {
+        "name": "flowId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "intentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "language",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "FlowHealthIntent",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet flowId = \"flowId_example\"; // String | Flow ID.\nlet versionId = \"versionId_example\"; // String | Version ID.\nlet intentId = \"intentId_example\"; // String | Intent ID.\nlet language = \"language_example\"; // String | Language to filter for\n\n// Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.\napiInstance.getFlowVersionIntentHealth(flowId, versionId, intentId, language)\n  .then((data) => {\n    console.log(`getFlowVersionIntentHealth success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowVersionIntentHealth\");\n    console.error(err);\n  });"
+  },
+  "getflowversionintentutterancehealth": {
+    "operationId": "getflowversionintentutterancehealth",
+    "functionName": "getFlowVersionIntentUtteranceHealth",
+    "signature": "getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)",
+    "parameters": [
+      {
+        "name": "flowId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "intentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "utteranceId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "language",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "FlowHealthUtterance",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet flowId = \"flowId_example\"; // String | Flow ID.\nlet versionId = \"versionId_example\"; // String | Version ID.\nlet intentId = \"intentId_example\"; // String | Intent ID.\nlet utteranceId = \"utteranceId_example\"; // String | Utterance ID.\nlet language = \"language_example\"; // String | Language to filter for\n\n// Get health metrics associated with a specific utterance of an intent.\napiInstance.getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)\n  .then((data) => {\n    console.log(`getFlowVersionIntentUtteranceHealth success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowVersionIntentUtteranceHealth\");\n    console.error(err);\n  });"
+  },
   "getflowversions": {
     "operationId": "getflowversions",
     "functionName": "getFlowVersions",
@@ -21646,16 +21733,21 @@
   "postlearningmodulepublish": {
     "operationId": "postlearningmodulepublish",
     "functionName": "postLearningModulePublish",
-    "signature": "postLearningModulePublish(moduleId)",
+    "signature": "postLearningModulePublish(moduleId, body)",
     "parameters": [
       {
         "name": "moduleId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
       }
     ],
     "return": "LearningModulePublishResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet moduleId = \"moduleId_example\"; // String | The ID of the learning module\n\n// Publish a Learning module\napiInstance.postLearningModulePublish(moduleId)\n  .then((data) => {\n    console.log(`postLearningModulePublish success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLearningModulePublish\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet moduleId = \"moduleId_example\"; // String | The ID of the learning module\nlet opts = { \n  \"body\": {} // Object | The request body\n};\n\n// Publish a Learning module\napiInstance.postLearningModulePublish(moduleId, opts)\n  .then((data) => {\n    console.log(`postLearningModulePublish success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLearningModulePublish\");\n    console.error(err);\n  });"
   },
   "postlearningmodules": {
     "operationId": "postlearningmodules",

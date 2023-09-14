@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 174.0.0
+	 * @version 175.0.0
 	 */
 
 	/**
@@ -1689,6 +1689,125 @@ class ArchitectApi {
 			'GET', 
 			{ 'flowId': flowId,'versionId': versionId },
 			{ 'deleted': opts['deleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+	 * 
+	 * @param {String} flowId Flow ID.
+	 * @param {String} versionId Version ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.language Language to filter for
+	 */
+	getFlowVersionHealth(flowId, versionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling getFlowVersionHealth';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling getFlowVersionHealth';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/versions/{versionId}/health', 
+			'GET', 
+			{ 'flowId': flowId,'versionId': versionId },
+			{ 'language': opts['language'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+	 * 
+	 * @param {String} flowId Flow ID.
+	 * @param {String} versionId Version ID.
+	 * @param {String} intentId Intent ID.
+	 * @param {Object} language Language to filter for
+	 */
+	getFlowVersionIntentHealth(flowId, versionId, intentId, language) { 
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling getFlowVersionIntentHealth';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling getFlowVersionIntentHealth';
+		}
+		// verify the required parameter 'intentId' is set
+		if (intentId === undefined || intentId === null) {
+			throw 'Missing the required parameter "intentId" when calling getFlowVersionIntentHealth';
+		}
+		// verify the required parameter 'language' is set
+		if (language === undefined || language === null) {
+			throw 'Missing the required parameter "language" when calling getFlowVersionIntentHealth';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health', 
+			'GET', 
+			{ 'flowId': flowId,'versionId': versionId,'intentId': intentId },
+			{ 'language': language },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get health metrics associated with a specific utterance of an intent.
+	 * 
+	 * @param {String} flowId Flow ID.
+	 * @param {String} versionId Version ID.
+	 * @param {String} intentId Intent ID.
+	 * @param {String} utteranceId Utterance ID.
+	 * @param {Object} language Language to filter for
+	 */
+	getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language) { 
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling getFlowVersionIntentUtteranceHealth';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling getFlowVersionIntentUtteranceHealth';
+		}
+		// verify the required parameter 'intentId' is set
+		if (intentId === undefined || intentId === null) {
+			throw 'Missing the required parameter "intentId" when calling getFlowVersionIntentUtteranceHealth';
+		}
+		// verify the required parameter 'utteranceId' is set
+		if (utteranceId === undefined || utteranceId === null) {
+			throw 'Missing the required parameter "utteranceId" when calling getFlowVersionIntentUtteranceHealth';
+		}
+		// verify the required parameter 'language' is set
+		if (language === undefined || language === null) {
+			throw 'Missing the required parameter "language" when calling getFlowVersionIntentUtteranceHealth';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health', 
+			'GET', 
+			{ 'flowId': flowId,'versionId': versionId,'intentId': intentId,'utteranceId': utteranceId },
+			{ 'language': language },
 			{  },
 			{  },
 			null, 

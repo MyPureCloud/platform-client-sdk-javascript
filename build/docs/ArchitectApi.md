@@ -64,6 +64,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowLatestconfiguration**](ArchitectApi.html#getFlowLatestconfiguration) | **GET** /api/v2/flows/{flowId}/latestconfiguration | Get the latest configuration for flow
 [**getFlowVersion**](ArchitectApi.html#getFlowVersion) | **GET** /api/v2/flows/{flowId}/versions/{versionId} | Get flow version
 [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/configuration | Create flow version configuration
+[**getFlowVersionHealth**](ArchitectApi.html#getFlowVersionHealth) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/health | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+[**getFlowVersionIntentHealth**](ArchitectApi.html#getFlowVersionIntentHealth) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health | Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+[**getFlowVersionIntentUtteranceHealth**](ArchitectApi.html#getFlowVersionIntentUtteranceHealth) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health | Get health metrics associated with a specific utterance of an intent.
 [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | **GET** /api/v2/flows/{flowId}/versions | Get flow version list
 [**getFlows**](ArchitectApi.html#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
 [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | **GET** /api/v2/flows/datatables/{datatableId} | Returns a specific datatable by id
@@ -3362,6 +3365,176 @@ apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
 ### Return type
 
 **Object**
+
+<a name="getFlowVersionHealth"></a>
+
+# FlowHealth getFlowVersionHealth(flowId, versionId, opts)
+
+
+GET /api/v2/flows/{flowId}/versions/{versionId}/health
+
+Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+
+Requires ANY permissions:
+
+* architect:flow:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let flowId = "flowId_example"; // String | Flow ID.
+let versionId = "versionId_example"; // String | Version ID.
+let opts = { 
+  'language': "language_example" // String | Language to filter for
+};
+
+apiInstance.getFlowVersionHealth(flowId, versionId, opts)
+  .then((data) => {
+    console.log(`getFlowVersionHealth success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowVersionHealth');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **flowId** | **String** | Flow ID. |  |
+ **versionId** | **String** | Version ID. |  |
+ **language** | **String** | Language to filter for | [optional] <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowHealth**
+
+<a name="getFlowVersionIntentHealth"></a>
+
+# FlowHealthIntent getFlowVersionIntentHealth(flowId, versionId, intentId, language)
+
+
+GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health
+
+Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+
+Requires ANY permissions:
+
+* architect:flow:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let flowId = "flowId_example"; // String | Flow ID.
+let versionId = "versionId_example"; // String | Version ID.
+let intentId = "intentId_example"; // String | Intent ID.
+let language = "language_example"; // String | Language to filter for
+
+apiInstance.getFlowVersionIntentHealth(flowId, versionId, intentId, language)
+  .then((data) => {
+    console.log(`getFlowVersionIntentHealth success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowVersionIntentHealth');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **flowId** | **String** | Flow ID. |  |
+ **versionId** | **String** | Version ID. |  |
+ **intentId** | **String** | Intent ID. |  |
+ **language** | **String** | Language to filter for | <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowHealthIntent**
+
+<a name="getFlowVersionIntentUtteranceHealth"></a>
+
+# FlowHealthUtterance getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)
+
+
+GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health
+
+Get health metrics associated with a specific utterance of an intent.
+
+Requires ANY permissions:
+
+* architect:flow:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let flowId = "flowId_example"; // String | Flow ID.
+let versionId = "versionId_example"; // String | Version ID.
+let intentId = "intentId_example"; // String | Intent ID.
+let utteranceId = "utteranceId_example"; // String | Utterance ID.
+let language = "language_example"; // String | Language to filter for
+
+apiInstance.getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)
+  .then((data) => {
+    console.log(`getFlowVersionIntentUtteranceHealth success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowVersionIntentUtteranceHealth');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **flowId** | **String** | Flow ID. |  |
+ **versionId** | **String** | Version ID. |  |
+ **intentId** | **String** | Intent ID. |  |
+ **utteranceId** | **String** | Utterance ID. |  |
+ **language** | **String** | Language to filter for | <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowHealthUtterance**
 
 <a name="getFlowVersions"></a>
 
