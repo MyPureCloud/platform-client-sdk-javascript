@@ -5968,6 +5968,78 @@
     "return": "EmergencyLocation",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.CarrierServicesApi();\n\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Set current location for the logged in user\napiInstance.postCarrierservicesIntegrationsEmergencylocationsMe(opts)\n  .then((data) => {\n    console.log(`postCarrierservicesIntegrationsEmergencylocationsMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postCarrierservicesIntegrationsEmergencylocationsMe\");\n    console.error(err);\n  });"
   },
+  "deletechatsroommessage": {
+    "operationId": "deletechatsroommessage",
+    "functionName": "deleteChatsRoomMessage",
+    "signature": "deleteChatsRoomMessage(roomJid, messageId)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "messageId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomId\nlet messageId = \"messageId_example\"; // String | messageId\n\n// Delete a message in a room\napiInstance.deleteChatsRoomMessage(roomJid, messageId)\n  .then(() => {\n    console.log(\"deleteChatsRoomMessage returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteChatsRoomMessage\");\n    console.error(err);\n  });"
+  },
+  "deletechatsroomparticipant": {
+    "operationId": "deletechatsroomparticipant",
+    "functionName": "deleteChatsRoomParticipant",
+    "signature": "deleteChatsRoomParticipant(roomJid, userId)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomJid\nlet userId = \"userId_example\"; // String | userId\n\n// Remove a user from a room.\napiInstance.deleteChatsRoomParticipant(roomJid, userId)\n  .then(() => {\n    console.log(\"deleteChatsRoomParticipant returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteChatsRoomParticipant\");\n    console.error(err);\n  });"
+  },
+  "deletechatsroompinnedmessage": {
+    "operationId": "deletechatsroompinnedmessage",
+    "functionName": "deleteChatsRoomPinnedmessage",
+    "signature": "deleteChatsRoomPinnedmessage(roomJid, pinnedMessageId)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pinnedMessageId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomJid\nlet pinnedMessageId = \"pinnedMessageId_example\"; // String | pinnedMessageId\n\n// Remove a pinned message from a room\napiInstance.deleteChatsRoomPinnedmessage(roomJid, pinnedMessageId)\n  .then(() => {\n    console.log(\"deleteChatsRoomPinnedmessage returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteChatsRoomPinnedmessage\");\n    console.error(err);\n  });"
+  },
+  "deletechatsusermessage": {
+    "operationId": "deletechatsusermessage",
+    "functionName": "deleteChatsUserMessage",
+    "signature": "deleteChatsUserMessage(userId, messageId)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "messageId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet userId = \"userId_example\"; // String | userId\nlet messageId = \"messageId_example\"; // String | messageId\n\n// Delete a message to a user\napiInstance.deleteChatsUserMessage(userId, messageId)\n  .then(() => {\n    console.log(\"deleteChatsUserMessage returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteChatsUserMessage\");\n    console.error(err);\n  });"
+  },
   "getchatsettings": {
     "operationId": "getchatsettings",
     "functionName": "getChatSettings",
@@ -5975,12 +6047,255 @@
     "return": "ChatSettings",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\n// Get Chat Settings.\napiInstance.getChatSettings()\n  .then((data) => {\n    console.log(`getChatSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatSettings\");\n    console.error(err);\n  });"
   },
+  "getchatsmessage": {
+    "operationId": "getchatsmessage",
+    "functionName": "getChatsMessage",
+    "signature": "getChatsMessage(messageId)",
+    "parameters": [
+      {
+        "name": "messageId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ChatMessageResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet messageId = \"messageId_example\"; // String | messageId\n\n// Get a message\napiInstance.getChatsMessage(messageId)\n  .then((data) => {\n    console.log(`getChatsMessage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsMessage\");\n    console.error(err);\n  });"
+  },
+  "getchatsroom": {
+    "operationId": "getchatsroom",
+    "functionName": "getChatsRoom",
+    "signature": "getChatsRoom(roomJid)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Room",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomJid\n\n// Get a room\napiInstance.getChatsRoom(roomJid)\n  .then((data) => {\n    console.log(`getChatsRoom success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsRoom\");\n    console.error(err);\n  });"
+  },
+  "getchatsroommessage": {
+    "operationId": "getchatsroommessage",
+    "functionName": "getChatsRoomMessage",
+    "signature": "getChatsRoomMessage(roomJid, messageIds)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "messageIds",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ChatMessageEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomJid\nlet messageIds = \"messageIds_example\"; // String | messageIds, comma separated\n\n// Get messages by id(s) from a room\napiInstance.getChatsRoomMessage(roomJid, messageIds)\n  .then((data) => {\n    console.log(`getChatsRoomMessage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsRoomMessage\");\n    console.error(err);\n  });"
+  },
+  "getchatsroommessages": {
+    "operationId": "getchatsroommessages",
+    "functionName": "getChatsRoomMessages",
+    "signature": "getChatsRoomMessages(roomJid, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "sortBy",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "nextPage",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "previousPage",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "limit",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ChatMessageEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomJid\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"limit\": \"limit_example\", // String | The maximum number of messages to retrieve\n  \"before\": \"before_example\", // String | The cutoff date for messages to retrieve\n  \"after\": \"after_example\" // String | The beginning date for messages to retrieve\n};\n\n// Get a room's message history\napiInstance.getChatsRoomMessages(roomJid, opts)\n  .then((data) => {\n    console.log(`getChatsRoomMessages success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsRoomMessages\");\n    console.error(err);\n  });"
+  },
   "getchatssettings": {
     "operationId": "getchatssettings",
     "functionName": "getChatsSettings",
     "signature": "getChatsSettings()",
     "return": "ChatSettings",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\n// Get Chat Settings.\napiInstance.getChatsSettings()\n  .then((data) => {\n    console.log(`getChatsSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsSettings\");\n    console.error(err);\n  });"
+  },
+  "getchatsthreadmessages": {
+    "operationId": "getchatsthreadmessages",
+    "functionName": "getChatsThreadMessages",
+    "signature": "getChatsThreadMessages(threadId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after)",
+    "parameters": [
+      {
+        "name": "threadId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "sortBy",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "nextPage",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "previousPage",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "limit",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ChatMessageEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet threadId = \"threadId_example\"; // String | threadId\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"limit\": \"limit_example\", // String | The maximum number of messages to retrieve\n  \"before\": \"before_example\", // String | The cutoff date for messages to retrieve\n  \"after\": \"after_example\" // String | The beginning date for messages to retrieve\n};\n\n// Get history by thread\napiInstance.getChatsThreadMessages(threadId, opts)\n  .then((data) => {\n    console.log(`getChatsThreadMessages success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsThreadMessages\");\n    console.error(err);\n  });"
+  },
+  "getchatsusermessage": {
+    "operationId": "getchatsusermessage",
+    "functionName": "getChatsUserMessage",
+    "signature": "getChatsUserMessage(userId, messageIds)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "messageIds",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ChatMessageEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet userId = \"userId_example\"; // String | userId\nlet messageIds = \"messageIds_example\"; // String | messageIds, comma separated\n\n// Get messages by id(s) from a 1on1\napiInstance.getChatsUserMessage(userId, messageIds)\n  .then((data) => {\n    console.log(`getChatsUserMessage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsUserMessage\");\n    console.error(err);\n  });"
+  },
+  "getchatsusermessages": {
+    "operationId": "getchatsusermessages",
+    "functionName": "getChatsUserMessages",
+    "signature": "getChatsUserMessages(userId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "sortBy",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "nextPage",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "previousPage",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "limit",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ChatMessageResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet userId = \"userId_example\"; // String | userId\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"limit\": \"limit_example\", // String | The maximum number of messages to retrieve\n  \"before\": \"before_example\", // String | The cutoff date for messages to retrieve\n  \"after\": \"after_example\" // String | The beginning date for messages to retrieve\n};\n\n// Get 1on1 History between a user\napiInstance.getChatsUserMessages(userId, opts)\n  .then((data) => {\n    console.log(`getChatsUserMessages success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getChatsUserMessages\");\n    console.error(err);\n  });"
   },
   "patchchatsettings": {
     "operationId": "patchchatsettings",
@@ -5996,6 +6311,48 @@
     "return": "ChatSettings",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet body = {}; // Object | Chat\n\n// Patch Chat Settings.\napiInstance.patchChatSettings(body)\n  .then((data) => {\n    console.log(`patchChatSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchChatSettings\");\n    console.error(err);\n  });"
   },
+  "patchchatsroom": {
+    "operationId": "patchchatsroom",
+    "functionName": "patchChatsRoom",
+    "signature": "patchChatsRoom(roomJid, body)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomJid\nlet body = {}; // Object | Room properties\n\n// Set properties for a room\napiInstance.patchChatsRoom(roomJid, body)\n  .then(() => {\n    console.log(\"patchChatsRoom returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchChatsRoom\");\n    console.error(err);\n  });"
+  },
+  "patchchatsroommessage": {
+    "operationId": "patchchatsroommessage",
+    "functionName": "patchChatsRoomMessage",
+    "signature": "patchChatsRoomMessage(roomJid, messageId, body)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "messageId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ChatSendMessageResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomId\nlet messageId = \"messageId_example\"; // String | messageId\nlet body = {}; // Object | messageBody\n\n// Edit a message in a room\napiInstance.patchChatsRoomMessage(roomJid, messageId, body)\n  .then((data) => {\n    console.log(`patchChatsRoomMessage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchChatsRoomMessage\");\n    console.error(err);\n  });"
+  },
   "patchchatssettings": {
     "operationId": "patchchatssettings",
     "functionName": "patchChatsSettings",
@@ -6009,6 +6366,118 @@
     ],
     "return": "ChatSettings",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet body = {}; // Object | Chat\n\n// Patch Chat Settings.\napiInstance.patchChatsSettings(body)\n  .then((data) => {\n    console.log(`patchChatsSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchChatsSettings\");\n    console.error(err);\n  });"
+  },
+  "patchchatsusermessage": {
+    "operationId": "patchchatsusermessage",
+    "functionName": "patchChatsUserMessage",
+    "signature": "patchChatsUserMessage(userId, messageId, body)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "messageId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ChatSendMessageResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet userId = \"userId_example\"; // String | userId\nlet messageId = \"messageId_example\"; // String | messageId\nlet body = {}; // Object | message body\n\n// Edit a message to a user\napiInstance.patchChatsUserMessage(userId, messageId, body)\n  .then((data) => {\n    console.log(`patchChatsUserMessage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchChatsUserMessage\");\n    console.error(err);\n  });"
+  },
+  "postchatsroommessages": {
+    "operationId": "postchatsroommessages",
+    "functionName": "postChatsRoomMessages",
+    "signature": "postChatsRoomMessages(roomJid, body)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ChatSendMessageResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomId\nlet body = {}; // Object | messageBody\n\n// Send a message to a room\napiInstance.postChatsRoomMessages(roomJid, body)\n  .then((data) => {\n    console.log(`postChatsRoomMessages success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postChatsRoomMessages\");\n    console.error(err);\n  });"
+  },
+  "postchatsroomparticipant": {
+    "operationId": "postchatsroomparticipant",
+    "functionName": "postChatsRoomParticipant",
+    "signature": "postChatsRoomParticipant(roomJid, userId)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomJid\nlet userId = \"userId_example\"; // String | userId\n\n// Join a room\napiInstance.postChatsRoomParticipant(roomJid, userId)\n  .then(() => {\n    console.log(\"postChatsRoomParticipant returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postChatsRoomParticipant\");\n    console.error(err);\n  });"
+  },
+  "postchatsroompinnedmessages": {
+    "operationId": "postchatsroompinnedmessages",
+    "functionName": "postChatsRoomPinnedmessages",
+    "signature": "postChatsRoomPinnedmessages(roomJid, body)",
+    "parameters": [
+      {
+        "name": "roomJid",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet roomJid = \"roomJid_example\"; // String | roomJid\nlet body = {}; // Object | Pinned Message Ids\n\n// Add pinned messages for a room, up to a maximum of 5 pinned messages\napiInstance.postChatsRoomPinnedmessages(roomJid, body)\n  .then(() => {\n    console.log(\"postChatsRoomPinnedmessages returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postChatsRoomPinnedmessages\");\n    console.error(err);\n  });"
+  },
+  "postchatsrooms": {
+    "operationId": "postchatsrooms",
+    "functionName": "postChatsRooms",
+    "signature": "postChatsRooms(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "CreateRoomResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet opts = { \n  \"body\": {} // Object | Room properties\n};\n\n// Create an adhoc room\napiInstance.postChatsRooms(opts)\n  .then((data) => {\n    console.log(`postChatsRooms success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postChatsRooms\");\n    console.error(err);\n  });"
+  },
+  "postchatsusermessages": {
+    "operationId": "postchatsusermessages",
+    "functionName": "postChatsUserMessages",
+    "signature": "postChatsUserMessages(userId, body)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ChatSendMessageResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet userId = \"userId_example\"; // String | userId\nlet body = {}; // Object | message body\n\n// Send a message to a user\napiInstance.postChatsUserMessages(userId, body)\n  .then((data) => {\n    console.log(`postChatsUserMessages success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postChatsUserMessages\");\n    console.error(err);\n  });"
   },
   "putchatsettings": {
     "operationId": "putchatsettings",
@@ -31439,7 +31908,7 @@
   "getroutingwrapupcodes": {
     "operationId": "getroutingwrapupcodes",
     "functionName": "getRoutingWrapupcodes",
-    "signature": "getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, id, name, divisionId)",
+    "signature": "getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)",
     "parameters": [
       {
         "name": "pageSize",
@@ -31462,13 +31931,13 @@
         "required": "false"
       },
       {
-        "name": "id",
-        "type": "[String]",
+        "name": "name",
+        "type": "String",
         "required": "false"
       },
       {
-        "name": "name",
-        "type": "String",
+        "name": "id",
+        "type": "[String]",
         "required": "false"
       },
       {
@@ -31478,7 +31947,7 @@
       }
     ],
     "return": "WrapupCodeEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortBy\": \"name\", // String | Sort by\n  \"sortOrder\": \"ascending\", // String | Sort order\n  \"id\": [\"id_example\"], // [String] | Filter by wrapup code ID(s)\n  \"name\": \"name_example\", // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)\n  \"divisionId\": [\"divisionId_example\"] // [String] | Filter by division ID(s)\n};\n\n// Get list of wrapup codes.\napiInstance.getRoutingWrapupcodes(opts)\n  .then((data) => {\n    console.log(`getRoutingWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingWrapupcodes\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortBy\": \"name\", // String | Sort by\n  \"sortOrder\": \"ascending\", // String | Sort order\n  \"name\": \"name_example\", // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)\n  \"id\": [\"id_example\"], // [String] | Filter by wrapup code ID(s)\n  \"divisionId\": [\"divisionId_example\"] // [String] | Filter by division ID(s)\n};\n\n// Get list of wrapup codes.\napiInstance.getRoutingWrapupcodes(opts)\n  .then((data) => {\n    console.log(`getRoutingWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingWrapupcodes\");\n    console.error(err);\n  });"
   },
   "getuserqueues": {
     "operationId": "getuserqueues",

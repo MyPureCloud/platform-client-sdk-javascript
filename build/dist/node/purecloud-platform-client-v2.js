@@ -402,7 +402,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 175.0.0
+ * @version 176.0.0
  */
 class ApiClient {
 	/**
@@ -1488,7 +1488,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -2138,7 +2138,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -4584,7 +4584,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -8384,7 +8384,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -8555,7 +8555,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -9786,7 +9786,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -9866,7 +9866,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -9936,7 +9936,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -9950,6 +9950,130 @@ class ChatApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a message in a room
+	 * 
+	 * @param {String} roomJid roomId
+	 * @param {String} messageId messageId
+	 * deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteChatsRoomMessage(roomJid, messageId) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomMessage';
+		}
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling deleteChatsRoomMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/messages/{messageId}', 
+			'DELETE', 
+			{ 'roomJid': roomJid,'messageId': messageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove a user from a room.
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {String} userId userId
+	 * deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteChatsRoomParticipant(roomJid, userId) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomParticipant';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteChatsRoomParticipant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/participants/{userId}', 
+			'DELETE', 
+			{ 'roomJid': roomJid,'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove a pinned message from a room
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {String} pinnedMessageId pinnedMessageId
+	 * deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteChatsRoomPinnedmessage(roomJid, pinnedMessageId) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomPinnedmessage';
+		}
+		// verify the required parameter 'pinnedMessageId' is set
+		if (pinnedMessageId === undefined || pinnedMessageId === null) {
+			throw 'Missing the required parameter "pinnedMessageId" when calling deleteChatsRoomPinnedmessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}', 
+			'DELETE', 
+			{ 'roomJid': roomJid,'pinnedMessageId': pinnedMessageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a message to a user
+	 * 
+	 * @param {String} userId userId
+	 * @param {String} messageId messageId
+	 * deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteChatsUserMessage(userId, messageId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteChatsUserMessage';
+		}
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling deleteChatsUserMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/messages/{messageId}', 
+			'DELETE', 
+			{ 'userId': userId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Get Chat Settings.
@@ -9973,6 +10097,127 @@ class ChatApi {
 	}
 
 	/**
+	 * Get a message
+	 * 
+	 * @param {String} messageId messageId
+	 * getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsMessage(messageId) { 
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling getChatsMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/messages/{messageId}', 
+			'GET', 
+			{ 'messageId': messageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a room
+	 * 
+	 * @param {String} roomJid roomJid
+	 * getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsRoom(roomJid) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling getChatsRoom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}', 
+			'GET', 
+			{ 'roomJid': roomJid },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get messages by id(s) from a room
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {String} messageIds messageIds, comma separated
+	 * getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsRoomMessage(roomJid, messageIds) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling getChatsRoomMessage';
+		}
+		// verify the required parameter 'messageIds' is set
+		if (messageIds === undefined || messageIds === null) {
+			throw 'Missing the required parameter "messageIds" when calling getChatsRoomMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/messages/{messageIds}', 
+			'GET', 
+			{ 'roomJid': roomJid,'messageIds': messageIds },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a room's message history
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.limit The maximum number of messages to retrieve
+	 * @param {String} opts.before The cutoff date for messages to retrieve
+	 * @param {String} opts.after The beginning date for messages to retrieve
+	 * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsRoomMessages(roomJid, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling getChatsRoomMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/messages', 
+			'GET', 
+			{ 'roomJid': roomJid },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Chat Settings.
 	 * 
 	 */
@@ -9983,6 +10228,113 @@ class ChatApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get history by thread
+	 * 
+	 * @param {String} threadId threadId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.limit The maximum number of messages to retrieve
+	 * @param {String} opts.before The cutoff date for messages to retrieve
+	 * @param {String} opts.after The beginning date for messages to retrieve
+	 * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsThreadMessages(threadId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'threadId' is set
+		if (threadId === undefined || threadId === null) {
+			throw 'Missing the required parameter "threadId" when calling getChatsThreadMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/threads/{threadId}/messages', 
+			'GET', 
+			{ 'threadId': threadId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get messages by id(s) from a 1on1
+	 * 
+	 * @param {String} userId userId
+	 * @param {String} messageIds messageIds, comma separated
+	 * getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsUserMessage(userId, messageIds) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getChatsUserMessage';
+		}
+		// verify the required parameter 'messageIds' is set
+		if (messageIds === undefined || messageIds === null) {
+			throw 'Missing the required parameter "messageIds" when calling getChatsUserMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/messages/{messageIds}', 
+			'GET', 
+			{ 'userId': userId,'messageIds': messageIds },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get 1on1 History between a user
+	 * 
+	 * @param {String} userId userId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.limit The maximum number of messages to retrieve
+	 * @param {String} opts.before The cutoff date for messages to retrieve
+	 * @param {String} opts.after The beginning date for messages to retrieve
+	 * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsUserMessages(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getChatsUserMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/messages', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
 			{  },
 			{  },
 			null, 
@@ -10019,6 +10371,73 @@ class ChatApi {
 	}
 
 	/**
+	 * Set properties for a room
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {Object} body Room properties
+	 * patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchChatsRoom(roomJid, body) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling patchChatsRoom';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchChatsRoom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}', 
+			'PATCH', 
+			{ 'roomJid': roomJid },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Edit a message in a room
+	 * 
+	 * @param {String} roomJid roomId
+	 * @param {String} messageId messageId
+	 * @param {Object} body messageBody
+	 * patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchChatsRoomMessage(roomJid, messageId, body) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling patchChatsRoomMessage';
+		}
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling patchChatsRoomMessage';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchChatsRoomMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/messages/{messageId}', 
+			'PATCH', 
+			{ 'roomJid': roomJid,'messageId': messageId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Patch Chat Settings.
 	 * 
 	 * @param {Object} body Chat
@@ -10033,6 +10452,191 @@ class ChatApi {
 			'/api/v2/chats/settings', 
 			'PATCH', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Edit a message to a user
+	 * 
+	 * @param {String} userId userId
+	 * @param {String} messageId messageId
+	 * @param {Object} body message body
+	 * patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchChatsUserMessage(userId, messageId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchChatsUserMessage';
+		}
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling patchChatsUserMessage';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchChatsUserMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/messages/{messageId}', 
+			'PATCH', 
+			{ 'userId': userId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a message to a room
+	 * 
+	 * @param {String} roomJid roomId
+	 * @param {Object} body messageBody
+	 * postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postChatsRoomMessages(roomJid, body) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling postChatsRoomMessages';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postChatsRoomMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/messages', 
+			'POST', 
+			{ 'roomJid': roomJid },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Join a room
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {String} userId userId
+	 * postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postChatsRoomParticipant(roomJid, userId) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling postChatsRoomParticipant';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postChatsRoomParticipant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/participants/{userId}', 
+			'POST', 
+			{ 'roomJid': roomJid,'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add pinned messages for a room, up to a maximum of 5 pinned messages
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {Object} body Pinned Message Ids
+	 * postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postChatsRoomPinnedmessages(roomJid, body) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling postChatsRoomPinnedmessages';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postChatsRoomPinnedmessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/pinnedmessages', 
+			'POST', 
+			{ 'roomJid': roomJid },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an adhoc room
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Room properties
+	 * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postChatsRooms(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a message to a user
+	 * 
+	 * @param {String} userId userId
+	 * @param {Object} body message body
+	 * postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postChatsUserMessages(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postChatsUserMessages';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postChatsUserMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/messages', 
+			'POST', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },
@@ -10100,7 +10704,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -10677,7 +11281,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -11820,7 +12424,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -18904,7 +19508,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -18990,7 +19594,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -19042,7 +19646,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -19107,7 +19711,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -19203,7 +19807,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -21161,7 +21765,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -21332,7 +21936,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -21516,7 +22120,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -23602,7 +24206,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -23732,7 +24336,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -23863,7 +24467,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -24318,7 +24922,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -24837,7 +25441,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -25593,7 +26197,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -25760,7 +26364,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -27722,7 +28326,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -28886,7 +29490,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -31707,7 +32311,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -32720,7 +33324,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -32942,7 +33546,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -33761,7 +34365,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -33999,7 +34603,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -34235,7 +34839,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -34594,7 +35198,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -34745,7 +35349,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -34978,7 +35582,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -35344,7 +35948,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -35615,7 +36219,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -36070,7 +36674,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -37417,7 +38021,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -41039,7 +41643,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -41778,7 +42382,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -42017,7 +42621,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -43771,7 +44375,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -45408,7 +46012,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -45893,7 +46497,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -47951,8 +48555,8 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
-	 * @param {Array.<String>} opts.id Filter by wrapup code ID(s)
 	 * @param {String} opts.name Wrapup code's name ('Sort by' param is ignored unless this field is provided)
+	 * @param {Array.<String>} opts.id Filter by wrapup code ID(s)
 	 * @param {Array.<String>} opts.divisionId Filter by division ID(s)
 	 */
 	getRoutingWrapupcodes(opts) { 
@@ -47963,7 +48567,7 @@ class RoutingApi {
 			'/api/v2/routing/wrapupcodes', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -49601,7 +50205,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -50478,7 +51082,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -50922,7 +51526,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -51611,7 +52215,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -51676,7 +52280,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -52659,7 +53263,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -52761,7 +53365,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -52900,7 +53504,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -54181,7 +54785,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -54483,7 +55087,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -54611,7 +55215,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -57900,7 +58504,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -58028,7 +58632,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -58184,7 +58788,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -58360,7 +58964,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -58570,7 +59174,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -58755,7 +59359,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -61316,7 +61920,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -61427,7 +62031,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -62094,7 +62698,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -62643,7 +63247,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -63170,7 +63774,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -63216,7 +63820,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -63362,7 +63966,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -68526,7 +69130,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 175.0.0
+ * @version 176.0.0
  */
 class platformClient {
 	constructor() {

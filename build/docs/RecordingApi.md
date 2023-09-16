@@ -1290,7 +1290,7 @@ apiInstance.getRecordingJobs(opts)
  **sortBy** | **String** | Sort by | [optional] [default to userId]<br />**Values**: userId, dateCreated |
  **state** | **String** | Filter by state | [optional] <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
  **showOnlyMyJobs** | **Boolean** | Show only my jobs | [optional]  |
- **jobType** | **String** | Job Type (Can be left empty for both) | [optional] <br />**Values**: DELETE, EXPORT |
+ **jobType** | **String** | Job Type (Can be left empty for both) | [optional] <br />**Values**: ARCHIVE, DELETE, EXPORT |
  **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
 {: class="table table-striped"}

@@ -1,123 +1,165 @@
-Platform API version: 7336
+Platform API version: 7347
 
 
-# Major Changes (2 changes)
+# Major Changes (1 change)
 
-**POST /api/v2/learning/modules/{moduleId}/publish** (1 change)
+**MessagingCampaign** (1 change)
 
-* Parameter body was added
-
-**BuUpdateAgentScheduleUploadSchema** (1 change)
-
-* Property shifts was changed from BuAgentScheduleShift[] to BuUpdateAgentScheduleShift[]
+* Enum value forced_stopping was removed from property campaignStatus
 
 
-# Minor Changes (29 changes)
+# Minor Changes (54 changes)
 
-**/api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health** (2 changes)
+**/api/v2/chats/rooms/{roomJid}/messages/{messageIds}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health** (2 changes)
+**/api/v2/chats/users/{userId}/messages/{messageIds}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/flows/{flowId}/versions/{versionId}/health** (2 changes)
+**/api/v2/chats/messages/{messageId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**AnalyticsReportingSettings** (1 change)
+**/api/v2/chats/users/{userId}/messages** (3 changes)
 
-* Optional property myInteractionsPiiMaskingEnabled was added
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**MessageMediaParticipant** (1 change)
+**/api/v2/chats/rooms/{roomJid}/messages** (3 changes)
 
-* Optional property monitoredParticipant was added
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**ContactList** (1 change)
+**/api/v2/chats/rooms/{roomJid}/messages/{messageId}** (3 changes)
 
-* Optional property trimWhitespace was added
+* Path was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**ConfusionInfo** (1 change)
+**/api/v2/chats/users/{userId}/messages/{messageId}** (3 changes)
 
-* Model was added
+* Path was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**ConfusionIntentInfo** (1 change)
+**/api/v2/chats/rooms/{roomJid}/participants/{userId}** (3 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
+* Operation DELETE was added
 
-**FlowHealthErrorInfo** (1 change)
+**/api/v2/chats/rooms/{roomJid}** (3 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
 
-**FlowHealthIntent** (1 change)
+**/api/v2/chats/rooms** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**FlowHealthIntentUtterance** (1 change)
+**/api/v2/chats/rooms/{roomJid}/pinnedmessages** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**FlowHealthIntentVersionInfo** (1 change)
+**/api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}** (2 changes)
 
-* Model was added
+* Path was added
+* Operation DELETE was added
 
-**HealthInfo** (1 change)
+**/api/v2/chats/threads/{threadId}/messages** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**OutlierInfo** (1 change)
+**CallbackMediaSettings** (2 changes)
 
-* Model was added
+* Optional property autoAnswerAlertToneSeconds was added
+* Optional property manualAnswerAlertToneSeconds was added
 
-**ConfusionDetails** (1 change)
+**MediaSettings** (2 changes)
 
-* Model was added
+* Optional property autoAnswerAlertToneSeconds was added
+* Optional property manualAnswerAlertToneSeconds was added
 
-**ConfusionIntentDetails** (1 change)
+**CampaignDiagnostics** (1 change)
 
-* Model was added
+* Optional property campaignSkillStatistics was added
 
-**ConfusionUtterance** (1 change)
-
-* Model was added
-
-**FlowHealthUtterance** (1 change)
-
-* Model was added
-
-**FlowHealth** (1 change)
-
-* Model was added
-
-**FlowHealthIntentInfo** (1 change)
-
-* Model was added
-
-**FlowHealthVersionInfo** (1 change)
-
-* Model was added
-
-**LocaleFlowVersionInfo** (1 change)
+**CampaignSkillStatistics** (1 change)
 
 * Model was added
 
-**LocaleHealth** (1 change)
+**InsightsSummaryUserItem** (1 change)
+
+* Optional property ranking was added
+
+**DetectedNamedEntityValue** (1 change)
+
+* Optional property unit was added
+
+**RecordingJobsQuery** (1 change)
+
+* Enum value ARCHIVE was added to property action
+
+**AlertSummary** (1 change)
 
 * Model was added
 
-**LocaleInfo** (1 change)
+**AlertSummaryEntity** (1 change)
 
 * Model was added
 
-**LearningModulePublishRequest** (1 change)
+**CommonAlert** (1 change)
+
+* Optional property alertSummary was added
+
+**ChatMessageEntityListing** (1 change)
 
 * Model was added
 
-**BuUpdateAgentScheduleShift** (1 change)
+**ChatMessageResponse** (1 change)
+
+* Model was added
+
+**VideoMetadata** (1 change)
+
+* Model was added
+
+**ChatSendMessageResponse** (1 change)
+
+* Model was added
+
+**SendMessageBody** (1 change)
+
+* Model was added
+
+**Room** (1 change)
+
+* Model was added
+
+**RoomUpdateRequest** (1 change)
+
+* Model was added
+
+**CreateRoomResponse** (1 change)
+
+* Model was added
+
+**CreateRoomRequest** (1 change)
+
+* Model was added
+
+**PinnedMessageRequest** (1 change)
 
 * Model was added
 

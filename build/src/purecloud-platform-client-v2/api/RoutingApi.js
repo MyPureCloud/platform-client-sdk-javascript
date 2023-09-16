@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 175.0.0
+	 * @version 176.0.0
 	 */
 
 	/**
@@ -2063,8 +2063,8 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
-	 * @param {Array.<String>} opts.id Filter by wrapup code ID(s)
 	 * @param {String} opts.name Wrapup code's name ('Sort by' param is ignored unless this field is provided)
+	 * @param {Array.<String>} opts.id Filter by wrapup code ID(s)
 	 * @param {Array.<String>} opts.divisionId Filter by division ID(s)
 	 */
 	getRoutingWrapupcodes(opts) { 
@@ -2075,7 +2075,7 @@ class RoutingApi {
 			'/api/v2/routing/wrapupcodes', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 			{  },
 			{  },
 			null, 

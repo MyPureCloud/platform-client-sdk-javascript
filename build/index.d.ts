@@ -999,15 +999,70 @@ declare namespace CarrierServicesApi {
 }
 
 declare class ChatApi {  
+  	deleteChatsRoomMessage(roomJid: string, messageId: string): Promise<void>; 
+  	deleteChatsRoomParticipant(roomJid: string, userId: string): Promise<void>; 
+  	deleteChatsRoomPinnedmessage(roomJid: string, pinnedMessageId: string): Promise<void>; 
+  	deleteChatsUserMessage(userId: string, messageId: string): Promise<void>; 
   	getChatSettings(): Promise<Models.ChatSettings>; 
+  	getChatsMessage(messageId: string): Promise<Models.ChatMessageResponse>; 
+  	getChatsRoom(roomJid: string): Promise<Models.Room>; 
+  	getChatsRoomMessage(roomJid: string, messageIds: string): Promise<Models.ChatMessageEntityListing>; 
+  	getChatsRoomMessages(roomJid: string, opts?: ChatApi.getChatsRoomMessagesOptions): Promise<Models.ChatMessageEntityListing>; 
   	getChatsSettings(): Promise<Models.ChatSettings>; 
+  	getChatsThreadMessages(threadId: string, opts?: ChatApi.getChatsThreadMessagesOptions): Promise<Models.ChatMessageEntityListing>; 
+  	getChatsUserMessage(userId: string, messageIds: string): Promise<Models.ChatMessageEntityListing>; 
+  	getChatsUserMessages(userId: string, opts?: ChatApi.getChatsUserMessagesOptions): Promise<Models.ChatMessageResponse>; 
   	patchChatSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>; 
+  	patchChatsRoom(roomJid: string, body: Models.RoomUpdateRequest): Promise<void>; 
+  	patchChatsRoomMessage(roomJid: string, messageId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
   	patchChatsSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>; 
+  	patchChatsUserMessage(userId: string, messageId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
+  	postChatsRoomMessages(roomJid: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
+  	postChatsRoomParticipant(roomJid: string, userId: string): Promise<void>; 
+  	postChatsRoomPinnedmessages(roomJid: string, body: Models.PinnedMessageRequest): Promise<void>; 
+  	postChatsRooms(opts?: ChatApi.postChatsRoomsOptions): Promise<Models.CreateRoomResponse>; 
+  	postChatsUserMessages(userId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
   	putChatSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>; 
   	putChatsSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>;
 }
 
 declare namespace ChatApi { 
+	export interface getChatsRoomMessagesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortBy"?: string;
+		"expand"?: Array<string>;
+		"nextPage"?: string;
+		"previousPage"?: string;
+		"limit"?: string;
+		"before"?: string;
+		"after"?: string;
+	}
+	export interface getChatsThreadMessagesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortBy"?: string;
+		"expand"?: Array<string>;
+		"nextPage"?: string;
+		"previousPage"?: string;
+		"limit"?: string;
+		"before"?: string;
+		"after"?: string;
+	}
+	export interface getChatsUserMessagesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortBy"?: string;
+		"expand"?: Array<string>;
+		"nextPage"?: string;
+		"previousPage"?: string;
+		"limit"?: string;
+		"before"?: string;
+		"after"?: string;
+	}
+	export interface postChatsRoomsOptions { 
+		"body"?: Models.CreateRoomRequest;
+	}
 }
 
 declare class CoachingApi {  
@@ -4706,8 +4761,8 @@ declare namespace RoutingApi {
 		"pageNumber"?: number;
 		"sortBy"?: string;
 		"sortOrder"?: string;
-		"id"?: Array<string>;
 		"name"?: string;
+		"id"?: Array<string>;
 		"divisionId"?: Array<string>;
 	}
 	export interface getUserQueuesOptions { 
@@ -7570,6 +7625,22 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"type": string;
+	}
+	
+	export interface AlertSummary { 
+		"entities": Array<Models.AlertSummaryEntity>;
+		"conversation"?: Models.AddressableEntityRef;
+		"metricType": string;
+		"entitiesAreTeamMembers": boolean;
+	}
+	
+	export interface AlertSummaryEntity { 
+		"entityType": string;
+		"user"?: Models.AddressableEntityRef;
+		"group"?: Models.AddressableEntityRef;
+		"queue"?: Models.AddressableEntityRef;
+		"team"?: Models.AddressableEntityRef;
+		"alerting": boolean;
 	}
 	
 	export interface AlertingUnreadStatus { 
@@ -10659,6 +10730,8 @@ declare namespace Models {
 		"enableAutoAnswer"?: boolean;
 		"alertingTimeoutSeconds"?: number;
 		"serviceLevel"?: Models.ServiceLevel;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
 		"subTypeSettings"?: { [key: string]: Models.BaseMediaSettings; };
 	}
 	
@@ -10706,6 +10779,7 @@ declare namespace Models {
 		"outstandingInteractionsCount"?: number;
 		"scheduledInteractionsCount"?: number;
 		"timeZoneRescheduledCallsCount"?: number;
+		"campaignSkillStatistics"?: Models.CampaignSkillStatistics;
 	}
 	
 	export interface CampaignDivisionView { 
@@ -10879,6 +10953,11 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface CampaignSkillStatistics { 
+		"skillCombinations"?: number;
+		"eligibleSkilledAgents"?: number;
 	}
 	
 	export interface CampaignStats { 
@@ -11146,12 +11225,34 @@ declare namespace Models {
 		"user"?: Models.ChatMessageUser;
 	}
 	
+	export interface ChatMessageEntityListing { 
+		"entities"?: Array<Models.ChatMessageResponse>;
+	}
+	
+	export interface ChatMessageResponse { 
+		"id": string;
+		"dateCreated": string;
+		"dateModified"?: string;
+		"toJid": string;
+		"jid": string;
+		"body": string;
+		"mentions"?: { [key: string]: string; };
+		"edited"?: boolean;
+		"attachmentDeleted"?: boolean;
+		"fileUri"?: string;
+		"thread": Models.Entity;
+	}
+	
 	export interface ChatMessageUser { 
 		"id"?: string;
 		"name"?: string;
 		"displayName"?: string;
 		"username"?: string;
 		"images"?: Array<Models.UserImage>;
+	}
+	
+	export interface ChatSendMessageResponse { 
+		"id": string;
 	}
 	
 	export interface ChatSettings { 
@@ -11518,6 +11619,7 @@ declare namespace Models {
 		"dateSnoozedUntil": string;
 		"conditions": Models.CommonRuleConditions;
 		"conversationId"?: string;
+		"alertSummary"?: Models.AlertSummary;
 		"ruleUri"?: string;
 		"selfUri"?: string;
 	}
@@ -12016,7 +12118,7 @@ declare namespace Models {
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"version"?: number;
-		"contactList": Models.DomainEntityRef;
+		"contactList"?: Models.DomainEntityRef;
 		"clauses"?: Array<Models.ContactListFilterClause>;
 		"filterType"?: string;
 		"selfUri"?: string;
@@ -15076,6 +15178,14 @@ declare namespace Models {
 		"headers"?: { [key: string]: string; };
 	}
 	
+	export interface CreateRoomRequest { 
+		"description": string;
+	}
+	
+	export interface CreateRoomResponse { 
+		"jid": string;
+	}
+	
 	export interface CreateSecureSession { 
 		"sourceParticipantId"?: string;
 		"flowId": string;
@@ -15926,6 +16036,7 @@ declare namespace Models {
 	export interface DetectedNamedEntityValue { 
 		"raw"?: string;
 		"resolved"?: string;
+		"unit"?: string;
 	}
 	
 	export interface DevelopmentActivity { 
@@ -17611,8 +17722,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -17626,8 +17737,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -17641,8 +17752,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -22008,6 +22119,7 @@ declare namespace Models {
 		"user"?: Models.UserReference;
 		"metricData"?: Array<Models.InsightsSummaryMetricItem>;
 		"overallData"?: Models.InsightsSummaryOverallItem;
+		"ranking"?: number;
 	}
 	
 	export interface InsightsTrend { 
@@ -25570,6 +25682,8 @@ declare namespace Models {
 		"enableAutoAnswer"?: boolean;
 		"alertingTimeoutSeconds"?: number;
 		"serviceLevel"?: Models.ServiceLevel;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
 		"subTypeSettings"?: { [key: string]: Models.BaseMediaSettings; };
 	}
 	
@@ -28557,6 +28671,10 @@ declare namespace Models {
 		"certificate"?: string;
 		"certificates"?: Array<string>;
 		"selfUri"?: string;
+	}
+	
+	export interface PinnedMessageRequest { 
+		"pinnedMessageIds": Array<string>;
 	}
 	
 	export interface PlanningGroup { 
@@ -32861,6 +32979,22 @@ declare namespace Models {
 		"divisionId": string;
 	}
 	
+	export interface Room { 
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"roomType"?: string;
+		"description"?: string;
+		"participantLimit"?: number;
+		"owners"?: Array<Models.UserReference>;
+		"pinnedMessages"?: Array<Models.AddressableEntityRef>;
+		"selfUri"?: string;
+	}
+	
+	export interface RoomUpdateRequest { 
+		"description": string;
+	}
+	
 	export interface RoutePathRequest { 
 		"queueId": string;
 		"mediaType": string;
@@ -33953,6 +34087,12 @@ declare namespace Models {
 		"timestamp"?: string;
 		"selfUri"?: string;
 		"user"?: Models.AddressableEntityRef;
+	}
+	
+	export interface SendMessageBody { 
+		"message": string;
+		"mentions"?: Array<string>;
+		"threadId"?: string;
 	}
 	
 	export interface SentimentFeedback { 
@@ -38950,6 +39090,10 @@ declare namespace Models {
 		"conversationId"?: string;
 		"conferenceId"?: string;
 		"participantInfo"?: Models.VideoConferenceUpdateTopicParticipantInfo;
+	}
+	
+	export interface VideoMetadata { 
+		"videoNotification"?: string;
 	}
 	
 	export interface ViewFilter { 
