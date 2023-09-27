@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 176.0.0
+	 * @version 177.0.0
 	 */
 
 	/**
@@ -2528,6 +2528,41 @@ class ArchitectApi {
 			'/api/v2/architect/grammars/{grammarId}', 
 			'PATCH', 
 			{ 'grammarId': grammarId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a grammar language
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchArchitectGrammarLanguage(grammarId, languageCode, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling patchArchitectGrammarLanguage';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling patchArchitectGrammarLanguage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}', 
+			'PATCH', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
 			{  },
 			{  },
 			{  },

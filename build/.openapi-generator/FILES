@@ -1499,6 +1499,7 @@ docs/patchAlertingAlertsBulk-example.txt
 docs/patchAlertingRulesBulk-example.txt
 docs/patchAnalyticsReportingSettings-example.txt
 docs/patchArchitectGrammar-example.txt
+docs/patchArchitectGrammarLanguage-example.txt
 docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
 docs/patchChatSettings-example.txt

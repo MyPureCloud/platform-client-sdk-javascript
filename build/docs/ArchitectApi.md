@@ -91,6 +91,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | **GET** /api/v2/flows/outcomes | Get a pageable list of flow outcomes, filtered by query parameters
 [**getFlowsOutcomesDivisionviews**](ArchitectApi.html#getFlowsOutcomesDivisionviews) | **GET** /api/v2/flows/outcomes/divisionviews | Get a pageable list of basic flow outcome information objects filterable by query parameters.
 [**patchArchitectGrammar**](ArchitectApi.html#patchArchitectGrammar) | **PATCH** /api/v2/architect/grammars/{grammarId} | Updates a grammar
+[**patchArchitectGrammarLanguage**](ArchitectApi.html#patchArchitectGrammarLanguage) | **PATCH** /api/v2/architect/grammars/{grammarId}/languages/{languageCode} | Updates a grammar language
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
 [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | **POST** /api/v2/architect/emergencygroups | Creates a new emergency group
 [**postArchitectGrammarLanguageFilesDtmf**](ArchitectApi.html#postArchitectGrammarLanguageFilesDtmf) | **POST** /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf | Creates a presigned URL for uploading a grammar DTMF mode file
@@ -4996,6 +4997,64 @@ apiInstance.patchArchitectGrammar(grammarId, opts)
 ### Return type
 
 **Grammar**
+
+<a name="patchArchitectGrammarLanguage"></a>
+
+# GrammarLanguage patchArchitectGrammarLanguage(grammarId, languageCode, opts)
+
+
+PATCH /api/v2/architect/grammars/{grammarId}/languages/{languageCode}
+
+Updates a grammar language
+
+patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:grammar:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | Grammar ID
+let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchArchitectGrammarLanguage(grammarId, languageCode, opts)
+  .then((data) => {
+    console.log(`patchArchitectGrammarLanguage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchArchitectGrammarLanguage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **grammarId** | **String** | Grammar ID |  |
+ **languageCode** | **String** | Language |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**GrammarLanguage**
 
 <a name="postArchitectDependencytrackingBuild"></a>
 
