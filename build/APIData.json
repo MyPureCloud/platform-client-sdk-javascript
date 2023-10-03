@@ -34342,6 +34342,19 @@
     "return": "VoicemailsSearchResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.VoicemailApi();\n\nlet body = {}; // Object | Search request options\n\n// Search voicemails\napiInstance.postVoicemailSearch(body)\n  .then((data) => {\n    console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postVoicemailSearch\");\n    console.error(err);\n  });"
   },
+  "deletespeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid": {
+    "operationId": "deletespeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid",
+    "functionName": "deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId",
+    "signature": "deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)",
+    "parameters": [
+      {
+        "name": "dictionaryFeedbackId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet dictionaryFeedbackId = \"dictionaryFeedbackId_example\"; // String | The Id of the Dictionary Feedback\n\n// Delete a Speech and Text Analytics DictionaryFeedback by Id\napiInstance.deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)\n  .then(() => {\n    console.log(\"deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId\");\n    console.error(err);\n  });"
+  },
   "deletespeechandtextanalyticsprogram": {
     "operationId": "deletespeechandtextanalyticsprogram",
     "functionName": "deleteSpeechandtextanalyticsProgram",
@@ -34443,6 +34456,44 @@
     ],
     "return": "TranscriptUrls",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\nlet communicationId = \"communicationId_example\"; // String | Communication ID\n\n// Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation\napiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId)\n  .then((data) => {\n    console.log(`getSpeechandtextanalyticsConversationCommunicationTranscripturls success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getSpeechandtextanalyticsConversationCommunicationTranscripturls\");\n    console.error(err);\n  });"
+  },
+  "getspeechandtextanalyticsdictionaryfeedback": {
+    "operationId": "getspeechandtextanalyticsdictionaryfeedback",
+    "functionName": "getSpeechandtextanalyticsDictionaryfeedback",
+    "signature": "getSpeechandtextanalyticsDictionaryfeedback(dialect, nextPage, pageSize)",
+    "parameters": [
+      {
+        "name": "dialect",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "nextPage",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      }
+    ],
+    "return": "DictionaryFeedbackEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet opts = { \n  \"dialect\": en-US, // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard\n  \"nextPage\": \"nextPage_example\", // String | The key for listing the next page\n  \"pageSize\": 500 // Number | The page size for the listing\n};\n\n// Get the list of Speech and Text Analytics dictionary feedbacks\napiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)\n  .then((data) => {\n    console.log(`getSpeechandtextanalyticsDictionaryfeedback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getSpeechandtextanalyticsDictionaryfeedback\");\n    console.error(err);\n  });"
+  },
+  "getspeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid": {
+    "operationId": "getspeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid",
+    "functionName": "getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId",
+    "signature": "getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)",
+    "parameters": [
+      {
+        "name": "dictionaryFeedbackId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "DictionaryFeedback",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet dictionaryFeedbackId = \"dictionaryFeedbackId_example\"; // String | The Id of the Dictionary Feedback\n\n// Get a Speech and Text Analytics dictionary feedback by id\napiInstance.getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)\n  .then((data) => {\n    console.log(`getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId\");\n    console.error(err);\n  });"
   },
   "getspeechandtextanalyticsprogram": {
     "operationId": "getspeechandtextanalyticsprogram",
@@ -34732,6 +34783,20 @@
     "return": "SpeechTextAnalyticsSettingsResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet body = {}; // Object | Speech And Text Analytics Settings\n\n// Patch Speech And Text Analytics Settings\napiInstance.patchSpeechandtextanalyticsSettings(body)\n  .then((data) => {\n    console.log(`patchSpeechandtextanalyticsSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchSpeechandtextanalyticsSettings\");\n    console.error(err);\n  });"
   },
+  "postspeechandtextanalyticsdictionaryfeedback": {
+    "operationId": "postspeechandtextanalyticsdictionaryfeedback",
+    "functionName": "postSpeechandtextanalyticsDictionaryfeedback",
+    "signature": "postSpeechandtextanalyticsDictionaryfeedback(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "DictionaryFeedback",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet body = {}; // Object | The DictionaryFeedback to create\n\n// Create a Speech and Text Analytics DictionaryFeedback\napiInstance.postSpeechandtextanalyticsDictionaryfeedback(body)\n  .then((data) => {\n    console.log(`postSpeechandtextanalyticsDictionaryfeedback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postSpeechandtextanalyticsDictionaryfeedback\");\n    console.error(err);\n  });"
+  },
   "postspeechandtextanalyticsprograms": {
     "operationId": "postspeechandtextanalyticsprograms",
     "functionName": "postSpeechandtextanalyticsPrograms",
@@ -34815,6 +34880,25 @@
     ],
     "return": "TopicJob",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet body = {}; // Object | The publish topics job to create\n\n// Create new Speech and Text Analytics publish topics job\napiInstance.postSpeechandtextanalyticsTopicsPublishjobs(body)\n  .then((data) => {\n    console.log(`postSpeechandtextanalyticsTopicsPublishjobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postSpeechandtextanalyticsTopicsPublishjobs\");\n    console.error(err);\n  });"
+  },
+  "putspeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid": {
+    "operationId": "putspeechandtextanalyticsdictionaryfeedbackdictionaryfeedbackid",
+    "functionName": "putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId",
+    "signature": "putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, body)",
+    "parameters": [
+      {
+        "name": "dictionaryFeedbackId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "DictionaryFeedback",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet dictionaryFeedbackId = \"dictionaryFeedbackId_example\"; // String | The Id of the Dictionary Feedback\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Update existing Speech and Text Analytics dictionary feedback by id\napiInstance.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts)\n  .then((data) => {\n    console.log(`putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId\");\n    console.error(err);\n  });"
   },
   "putspeechandtextanalyticsprogram": {
     "operationId": "putspeechandtextanalyticsprogram",

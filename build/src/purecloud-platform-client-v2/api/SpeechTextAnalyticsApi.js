@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 177.0.0
+	 * @version 178.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class SpeechTextAnalyticsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a Speech and Text Analytics DictionaryFeedback by Id
+	 * 
+	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
+	 */
+	deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId) { 
+		// verify the required parameter 'dictionaryFeedbackId' is set
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null) {
+			throw 'Missing the required parameter "dictionaryFeedbackId" when calling deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}', 
+			'DELETE', 
+			{ 'dictionaryFeedbackId': dictionaryFeedbackId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a Speech and Text Analytics program by id
@@ -194,6 +219,57 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls', 
 			'GET', 
 			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech and Text Analytics dictionary feedbacks
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 * @param {String} opts.nextPage The key for listing the next page
+	 * @param {Number} opts.pageSize The page size for the listing (default to 500)
+	 */
+	getSpeechandtextanalyticsDictionaryfeedback(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback', 
+			'GET', 
+			{  },
+			{ 'dialect': opts['dialect'],'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics dictionary feedback by id
+	 * 
+	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
+	 */
+	getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId) { 
+		// verify the required parameter 'dictionaryFeedbackId' is set
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null) {
+			throw 'Missing the required parameter "dictionaryFeedbackId" when calling getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}', 
+			'GET', 
+			{ 'dictionaryFeedbackId': dictionaryFeedbackId },
 			{  },
 			{  },
 			{  },
@@ -663,6 +739,31 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Create a Speech and Text Analytics DictionaryFeedback
+	 * 
+	 * @param {Object} body The DictionaryFeedback to create
+	 */
+	postSpeechandtextanalyticsDictionaryfeedback(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsDictionaryfeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create new Speech and Text Analytics program
 	 * 
 	 * @param {Object} body The program to create
@@ -831,6 +932,35 @@ class SpeechTextAnalyticsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update existing Speech and Text Analytics dictionary feedback by id
+	 * 
+	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dictionaryFeedbackId' is set
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null) {
+			throw 'Missing the required parameter "dictionaryFeedbackId" when calling putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}', 
+			'PUT', 
+			{ 'dictionaryFeedbackId': dictionaryFeedbackId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
