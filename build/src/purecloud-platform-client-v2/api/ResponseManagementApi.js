@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 178.1.0
+	 * @version 178.2.0
 	 */
 
 	/**

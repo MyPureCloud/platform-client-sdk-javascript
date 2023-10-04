@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 178.1.0
+	 * @version 178.2.0
 	 */
 
 	/**
