@@ -5,7 +5,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -36,96 +36,6 @@ class LanguagesApi {
 			'/api/v2/languages/{languageId}', 
 			'DELETE', 
 			{ 'languageId': languageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all available languages for translation
-	 * 
-	 */
-	getAppsLegacyAvailabletranslations() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/availabletranslations', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get effective translation for an organization by language
-	 * 
-	 * @param {String} languageName The language of the translation to retrieve for the organization
-	 */
-	getAppsLegacyTranslation(languageName) { 
-		// verify the required parameter 'languageName' is set
-		if (languageName === undefined || languageName === null) {
-			throw 'Missing the required parameter "languageName" when calling getAppsLegacyTranslation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/translations/{languageName}', 
-			'GET', 
-			{ 'languageName': languageName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get effective translation for an organization
-	 * 
-	 */
-	getAppsLegacyTranslations() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/translations', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the builtin translation for a language
-	 * 
-	 * @param {String} languageName The language of the builtin translation to retrieve
-	 */
-	getAppsLegacyTranslationsBuiltinLanguageName(languageName) { 
-		// verify the required parameter 'languageName' is set
-		if (languageName === undefined || languageName === null) {
-			throw 'Missing the required parameter "languageName" when calling getAppsLegacyTranslationsBuiltinLanguageName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/translations/builtin/{languageName}', 
-			'GET', 
-			{ 'languageName': languageName },
 			{  },
 			{  },
 			{  },
@@ -279,36 +189,6 @@ class LanguagesApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a custom translation map for the requester's org and a language
-	 * 
-	 * @param {String} languageName The language of the translation to retrieve for the organization
-	 * @param {Object.<String, {String: String}>} body The new custom translation map for the requester's org and language
-	 */
-	postAppsLegacyTranslation(languageName, body) { 
-		// verify the required parameter 'languageName' is set
-		if (languageName === undefined || languageName === null) {
-			throw 'Missing the required parameter "languageName" when calling postAppsLegacyTranslation';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAppsLegacyTranslation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/translations/{languageName}', 
-			'POST', 
-			{ 'languageName': languageName },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

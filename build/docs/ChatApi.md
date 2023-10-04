@@ -3,7 +3,7 @@ title: ChatApi
 ---
 # platformClient.ChatApi
 
-All URIs are relative to *https://api.inindca.com*
+All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -11,18 +11,15 @@ All URIs are relative to *https://api.inindca.com*
 [**deleteChatsRoomParticipant**](ChatApi.html#deleteChatsRoomParticipant) | **DELETE** /api/v2/chats/rooms/{roomJid}/participants/{userId} | Remove a user from a room.
 [**deleteChatsRoomPinnedmessage**](ChatApi.html#deleteChatsRoomPinnedmessage) | **DELETE** /api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId} | Remove a pinned message from a room
 [**deleteChatsUserMessage**](ChatApi.html#deleteChatsUserMessage) | **DELETE** /api/v2/chats/users/{userId}/messages/{messageId} | Delete a message to a user
-[**getChatRoomParticipant**](ChatApi.html#getChatRoomParticipant) | **GET** /api/v2/chat/rooms/{roomJid}/participants/{participantJid} | Get Room Participant.
 [**getChatSettings**](ChatApi.html#getChatSettings) | **GET** /api/v2/chat/settings | Get Chat Settings.
 [**getChatsMessage**](ChatApi.html#getChatsMessage) | **GET** /api/v2/chats/messages/{messageId} | Get a message
 [**getChatsRoom**](ChatApi.html#getChatsRoom) | **GET** /api/v2/chats/rooms/{roomJid} | Get a room
 [**getChatsRoomMessage**](ChatApi.html#getChatsRoomMessage) | **GET** /api/v2/chats/rooms/{roomJid}/messages/{messageIds} | Get messages by id(s) from a room
 [**getChatsRoomMessages**](ChatApi.html#getChatsRoomMessages) | **GET** /api/v2/chats/rooms/{roomJid}/messages | Get a room's message history
-[**getChatsRoomParticipant**](ChatApi.html#getChatsRoomParticipant) | **GET** /api/v2/chats/rooms/{roomJid}/participants/{participantJid} | Get a room participant
 [**getChatsSettings**](ChatApi.html#getChatsSettings) | **GET** /api/v2/chats/settings | Get Chat Settings.
 [**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | **GET** /api/v2/chats/threads/{threadId}/messages | Get history by thread
 [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | **GET** /api/v2/chats/users/{userId}/messages/{messageIds} | Get messages by id(s) from a 1on1
 [**getChatsUserMessages**](ChatApi.html#getChatsUserMessages) | **GET** /api/v2/chats/users/{userId}/messages | Get 1on1 History between a user
-[**getChatsUserRooms**](ChatApi.html#getChatsUserRooms) | **GET** /api/v2/chats/users/{userId}/rooms | Get Room Jids for a User via a user's id
 [**patchChatSettings**](ChatApi.html#patchChatSettings) | **PATCH** /api/v2/chat/settings | Patch Chat Settings.
 [**patchChatsRoom**](ChatApi.html#patchChatsRoom) | **PATCH** /api/v2/chats/rooms/{roomJid} | Set properties for a room
 [**patchChatsRoomMessage**](ChatApi.html#patchChatsRoomMessage) | **PATCH** /api/v2/chats/rooms/{roomJid}/messages/{messageId} | Edit a message in a room
@@ -256,58 +253,6 @@ apiInstance.deleteChatsUserMessage(userId, messageId)
 ### Return type
 
 void (no response body)
-
-<a name="getChatRoomParticipant"></a>
-
-# RoomParticipant getChatRoomParticipant(roomJid, participantJid)
-
-
-GET /api/v2/chat/rooms/{roomJid}/participants/{participantJid}
-
-Get Room Participant.
-
-This route is deprecated, please use /chats/rooms/{roomJid}/participants/{participantJid} instead
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ChatApi();
-
-let roomJid = "roomJid_example"; // String | roomJid
-let participantJid = "participantJid_example"; // String | participantJid
-
-apiInstance.getChatRoomParticipant(roomJid, participantJid)
-  .then((data) => {
-    console.log(`getChatRoomParticipant success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getChatRoomParticipant');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **roomJid** | **String** | roomJid |  |
- **participantJid** | **String** | participantJid |  |
-{: class="table table-striped"}
-
-### Return type
-
-**RoomParticipant**
 
 <a name="getChatSettings"></a>
 
@@ -593,56 +538,6 @@ apiInstance.getChatsRoomMessages(roomJid, opts)
 
 **ChatMessageEntityListing**
 
-<a name="getChatsRoomParticipant"></a>
-
-# RoomParticipant getChatsRoomParticipant(roomJid, participantJid)
-
-
-GET /api/v2/chats/rooms/{roomJid}/participants/{participantJid}
-
-Get a room participant
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ChatApi();
-
-let roomJid = "roomJid_example"; // String | roomJid
-let participantJid = "participantJid_example"; // String | participantJid
-
-apiInstance.getChatsRoomParticipant(roomJid, participantJid)
-  .then((data) => {
-    console.log(`getChatsRoomParticipant success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getChatsRoomParticipant');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **roomJid** | **String** | roomJid |  |
- **participantJid** | **String** | participantJid |  |
-{: class="table table-striped"}
-
-### Return type
-
-**RoomParticipant**
-
 <a name="getChatsSettings"></a>
 
 # ChatSettings getChatsSettings()
@@ -889,56 +784,6 @@ apiInstance.getChatsUserMessages(userId, opts)
 ### Return type
 
 **ChatMessageResponse**
-
-<a name="getChatsUserRooms"></a>
-
-# RoomEntityListing getChatsUserRooms(userId)
-
-
-GET /api/v2/chats/users/{userId}/rooms
-
-Get Room Jids for a User via a user's id
-
-Requires ANY permissions:
-
-* chat:chat:access
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ChatApi();
-
-let userId = "userId_example"; // String | userId
-
-apiInstance.getChatsUserRooms(userId)
-  .then((data) => {
-    console.log(`getChatsUserRooms success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getChatsUserRooms');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | userId |  |
-{: class="table table-striped"}
-
-### Return type
-
-**RoomEntityListing**
 
 <a name="patchChatSettings"></a>
 

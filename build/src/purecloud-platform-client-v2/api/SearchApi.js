@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -179,35 +179,6 @@ class SearchApi {
 			'GET', 
 			{  },
 			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search sites using the q64 value returned from a previous search
-	 * 
-	 * @param {String} q64 q64
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand expand
-	 */
-	getTelephonyProvidersEdgesSitesSearch(q64, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'q64' is set
-		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getTelephonyProvidersEdgesSitesSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/search', 
-			'GET', 
-			{  },
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -578,31 +549,6 @@ class SearchApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/teams/search', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search sites
-	 * 
-	 * @param {Object} body Search request options
-	 */
-	postTelephonyProvidersEdgesSitesSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSitesSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/search', 
 			'POST', 
 			{  },
 			{  },

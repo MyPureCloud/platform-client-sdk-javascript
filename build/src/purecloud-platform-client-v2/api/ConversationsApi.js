@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -130,36 +130,6 @@ class ConversationsApi {
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'DELETE', 
 			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Cancel a pending media request.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} mediaRequestId mediaRequestId
-	 */
-	deleteConversationsChatMediarequest(conversationId, mediaRequestId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationsChatMediarequest';
-		}
-		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null) {
-			throw 'Missing the required parameter "mediaRequestId" when calling deleteConversationsChatMediarequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/mediarequests/{mediaRequestId}', 
-			'DELETE', 
-			{ 'conversationId': conversationId,'mediaRequestId': mediaRequestId },
 			{  },
 			{  },
 			{  },
@@ -435,36 +405,6 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
 			'DELETE', 
 			{ 'supportedContentId': supportedContentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Remove any pinned videos
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 */
-	deleteConversationsVideoParticipantPin(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationsVideoParticipantPin';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling deleteConversationsVideoParticipantPin';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/pin', 
-			'DELETE', 
-			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
 			{  },
 			{  },
@@ -825,91 +765,6 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Suggestion.
-	 * 
-	 * @param {String} conversationId Conversation ID
-	 * @param {String} suggestionId Suggestion ID
-	 */
-	getConversationSuggestion(conversationId, suggestionId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestion';
-		}
-		// verify the required parameter 'suggestionId' is set
-		if (suggestionId === undefined || suggestionId === null) {
-			throw 'Missing the required parameter "suggestionId" when calling getConversationSuggestion';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/suggestions/{suggestionId}', 
-			'GET', 
-			{ 'conversationId': conversationId,'suggestionId': suggestionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all suggestions for a conversation.
-	 * 
-	 * @param {String} conversationId Conversation ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 */
-	getConversationSuggestions(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/suggestions', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Bulk get conversations.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.ids Comma separated list of conversationIds to fetch. Max of 10.
-	 */
-	getConversationexport(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversationexport', 
-			'GET', 
-			{  },
-			{ 'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1302,68 +1157,6 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a specific media request in a chat conversation.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} mediaRequestId mediaRequestId
-	 */
-	getConversationsChatMediarequest(conversationId, mediaRequestId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMediarequest';
-		}
-		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null) {
-			throw 'Missing the required parameter "mediaRequestId" when calling getConversationsChatMediarequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/mediarequests/{mediaRequestId}', 
-			'GET', 
-			{ 'conversationId': conversationId,'mediaRequestId': mediaRequestId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all media requests for a chat conversation.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.type Optional filter for only this 'type' of media request
-	 * @param {String} opts.state Optional filter for only this 'state' of media request
-	 * @param {String} opts.to Optional filter for only this 'to' communicationId of media request
-	 * @param {String} opts.from Optional filter for only this 'from' communicationId of media request
-	 */
-	getConversationsChatMediarequests(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMediarequests';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/mediarequests', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{ 'type': opts['type'],'state': opts['state'],'to': opts['to'],'from': opts['from'] },
 			{  },
 			{  },
 			null, 
@@ -2322,26 +2115,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get a list of Facebook Permissions
-	 * 
-	 */
-	getConversationsMessagingFacebookPermissions() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/facebook/permissions', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a list of Integrations
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -2902,31 +2675,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get screen share conversation
-	 * 
-	 * @param {String} conversationId conversationId
-	 */
-	getConversationsScreenshare(conversationId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshare';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the wrap-up for this conversation communication. 
 	 * 
 	 * @param {String} conversationId conversationId
@@ -2966,90 +2714,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get the wrap-up for this conversation participant. 
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
-	 */
-	getConversationsScreenshareParticipantWrapup(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshareParticipantWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsScreenshareParticipantWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapup', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of wrapup codes for this conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 */
-	getConversationsScreenshareParticipantWrapupcodes(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshareParticipantWrapupcodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsScreenshareParticipantWrapupcodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapupcodes', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get active screen share conversations for the logged in user
-	 * 
-	 */
-	getConversationsScreenshares() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get Settings
 	 * 
 	 */
@@ -3059,31 +2723,6 @@ class ConversationsApi {
 			'/api/v2/conversations/settings', 
 			'GET', 
 			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get social conversation
-	 * 
-	 * @param {String} conversationId conversationId
-	 */
-	getConversationsSocial(conversationId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsSocial';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}', 
-			'GET', 
-			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
@@ -3124,115 +2763,6 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
 			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the wrap-up for this conversation participant. 
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
-	 */
-	getConversationsSocialParticipantWrapup(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsSocialParticipantWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsSocialParticipantWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapup', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of wrapup codes for this conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 */
-	getConversationsSocialParticipantWrapupcodes(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsSocialParticipantWrapupcodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsSocialParticipantWrapupcodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapupcodes', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get active social conversations for the logged in user
-	 * 
-	 */
-	getConversationsSocials() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get video conversation
-	 * 
-	 * @param {String} conversationId conversationId
-	 */
-	getConversationsVideo(conversationId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsVideo';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -3298,90 +2828,6 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
 			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the wrap-up for this conversation participant. 
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
-	 */
-	getConversationsVideoParticipantWrapup(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsVideoParticipantWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsVideoParticipantWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapup', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of wrapup codes for this conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 */
-	getConversationsVideoParticipantWrapupcodes(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsVideoParticipantWrapupcodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsVideoParticipantWrapupcodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapupcodes', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get active video conversations for the logged in user
-	 * 
-	 */
-	getConversationsVideos() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos', 
-			'GET', 
-			{  },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -4605,36 +4051,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-	 * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationActivationRequest
-	 */
-	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update or activate a WhatsApp messaging integration
 	 * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 	 * @param {String} integrationId Integration ID
@@ -4725,144 +4141,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Update a conversation by disconnecting all of the participants
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body Conversation
-	 */
-	patchConversationsScreenshare(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsScreenshare';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsScreenshare';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsScreenshareParticipant(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsScreenshareParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsScreenshareParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the attributes on a conversation participant.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsScreenshareParticipantAttributes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsScreenshareParticipantAttributes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsScreenshareParticipantAttributes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/attributes', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant's communication by disconnecting it.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} body Participant
-	 */
-	patchConversationsScreenshareParticipantCommunication(conversationId, participantId, communicationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsScreenshareParticipantCommunication';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsScreenshareParticipantCommunication';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsScreenshareParticipantCommunication';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsScreenshareParticipantCommunication';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update Settings
 	 * 
 	 * @param {Object} body Settings
@@ -4877,282 +4155,6 @@ class ConversationsApi {
 			'/api/v2/conversations/settings', 
 			'PATCH', 
 			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a conversation by disconnecting all of the participants
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body Conversation
-	 */
-	patchConversationsSocial(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsSocial';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsSocial';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsSocialParticipant(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsSocialParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsSocialParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the attributes on a conversation participant.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsSocialParticipantAttributes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsSocialParticipantAttributes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsSocialParticipantAttributes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/attributes', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant's communication by disconnecting it.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} body Participant
-	 */
-	patchConversationsSocialParticipantCommunication(conversationId, participantId, communicationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsSocialParticipantCommunication';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsSocialParticipantCommunication';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsSocialParticipantCommunication';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsSocialParticipantCommunication';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a conversation by disconnecting all of the participants
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body Conversation
-	 */
-	patchConversationsVideo(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsVideo';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsVideo';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsVideoParticipant(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsVideoParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsVideoParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the attributes on a conversation participant.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsVideoParticipantAttributes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsVideoParticipantAttributes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsVideoParticipantAttributes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/attributes', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant's communication by disconnecting it.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} body Participant
-	 */
-	patchConversationsVideoParticipantCommunication(conversationId, participantId, communicationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsVideoParticipantCommunication';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsVideoParticipantCommunication';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsVideoParticipantCommunication';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsVideoParticipantCommunication';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
 			{  },
 			{  },
 			{  },
@@ -5432,40 +4434,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a wrap-up for this conversation participant.
-	 * 
-	 * @param {String} conversationId conversation ID
-	 * @param {String} participantId participant ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Wrap-up
-	 */
-	postConversationParticipant(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/participants/{participantId}', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a new callback for the specified participant on the conversation.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -5487,40 +4455,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new code for the specified participant.
-	 * 
-	 * @param {String} conversationId conversation ID
-	 * @param {String} participantId participant ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Codes
-	 */
-	postConversationParticipantCodes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantCodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipantCodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/participants/{participantId}/codes', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
@@ -5561,36 +4495,6 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Hard disconnect conversation
-	 * 
-	 * @param {String} conversationId conversation ID
-	 * @param {String} participantId participant ID
-	 */
-	postConversationParticipantDisconnect(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantDisconnect';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipantDisconnect';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/participants/{participantId}/disconnect', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -5764,70 +4668,6 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Suggestion feedback.
-	 * 
-	 * @param {String} conversationId Conversation ID
-	 * @param {Object} body SuggestionFeedback
-	 */
-	postConversationSuggestionsFeedback(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationSuggestionsFeedback';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationSuggestionsFeedback';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/suggestions/feedback', 
-			'POST', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Submit feedback for the summary.
-	 * 
-	 * @param {String} conversationId Conversation ID
-	 * @param {String} summaryId Summary ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationSummaryFeedback(conversationId, summaryId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationSummaryFeedback';
-		}
-		// verify the required parameter 'summaryId' is set
-		if (summaryId === undefined || summaryId === null) {
-			throw 'Missing the required parameter "summaryId" when calling postConversationSummaryFeedback';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback', 
-			'POST', 
-			{ 'conversationId': conversationId,'summaryId': summaryId },
 			{  },
 			{  },
 			{  },
@@ -6446,36 +5286,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a new media request in a chat conversation.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body MediaRequest
-	 */
-	postConversationsChatMediarequests(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatMediarequests';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsChatMediarequests';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/mediarequests', 
-			'POST', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -6575,30 +5385,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Sign identifying information for ACD chat
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsChatsMemberauthtoken(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/memberauthtoken', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -6661,30 +5447,6 @@ class ConversationsApi {
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Lookup conversation and communication information for a generated code to add a communication
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Codes
-	 */
-	postConversationsCodes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/codes', 
-			'POST', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -7539,31 +6301,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a WhatsApp Integration using the WhatsApp embedded signup flow
-	 * Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
-	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationRequest
-	 */
-	postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsappEmbeddedsignup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a messaging setting
 	 * 
 	 * @param {Object} body MessagingSetting
@@ -7678,40 +6415,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Replace this participant with the specified user and/or address
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsScreenshareParticipantReplace(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsScreenshareParticipantReplace';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsScreenshareParticipantReplace';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/replace', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -7740,40 +6443,6 @@ class ConversationsApi {
 			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Replace this participant with the specified user and/or address
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsSocialParticipantReplace(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsSocialParticipantReplace';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsSocialParticipantReplace';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/replace', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
 			{  },
 			{  },
@@ -7817,99 +6486,6 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Pin to a participant's video so that they will always be seen.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsVideoParticipantPin(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoParticipantPin';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsVideoParticipantPin';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/pin', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Replace this participant with the specified user and/or address
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsVideoParticipantReplace(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoParticipantReplace';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsVideoParticipantReplace';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/replace', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add participant or create a video conference
-	 * 
-	 * @param {Object} body JoinRequest
-	 */
-	postConversationsVideos(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsVideos';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

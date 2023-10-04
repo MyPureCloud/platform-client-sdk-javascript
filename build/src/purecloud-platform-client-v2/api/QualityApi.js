@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -19,56 +19,6 @@ class QualityApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Unset favorite evaluation form template
-	 * 
-	 * @param {String} templateId templateId
-	 */
-	deleteEvaluationsFavoritetemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling deleteEvaluationsFavoritetemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/favoritetemplates/{templateId}', 
-			'DELETE', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an evaluation form template
-	 * 
-	 * @param {String} templateId Template ID
-	 */
-	deleteEvaluationsTemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling deleteEvaluationsTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates/{templateId}', 
-			'DELETE', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Delete a calibration by id.
@@ -323,78 +273,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Get favorite evaluation form templates
-	 * 
-	 */
-	getEvaluationsFavoritetemplates() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/favoritetemplates', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an evaluation form template
-	 * 
-	 * @param {String} templateId Template ID
-	 */
-	getEvaluationsTemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling getEvaluationsTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates/{templateId}', 
-			'GET', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of evaluation form templates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand
-	 * @param {String} opts.tags Tags
-	 */
-	getEvaluationsTemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'tags': opts['tags'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Gets a list of Agent Activities
 	 * Each item on the list shows one agents evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
 	 * @param {Object} opts Optional parameters
@@ -410,7 +288,6 @@ class QualityApi {
 	 * @param {String} opts.evaluatorUserId user id of the evaluator
 	 * @param {String} opts.name name
 	 * @param {String} opts.group group id
-	 * @param {String} opts.agentTeamId team id of agents requested
 	 * @param {String} opts.formContextId shared id between form versions
 	 */
 	getQualityAgentsActivity(opts) { 
@@ -421,7 +298,7 @@ class QualityApi {
 			'/api/v2/quality/agents/activity', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'agentTeamId': opts['agentTeamId'],'formContextId': opts['formContextId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'formContextId': opts['formContextId'] },
 			{  },
 			{  },
 			null, 
@@ -625,7 +502,6 @@ class QualityApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.conversationId conversationId specified
 	 * @param {String} opts.agentUserId user id of the agent
-	 * @param {String} opts.agentTeamId team id of the agent
 	 * @param {String} opts.evaluatorUserId evaluator user id
 	 * @param {String} opts.assigneeUserId assignee user id
 	 * @param {String} opts.queueId queue id
@@ -647,7 +523,7 @@ class QualityApi {
 			'/api/v2/quality/evaluations/query', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'agentTeamId': opts['agentTeamId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -672,7 +548,6 @@ class QualityApi {
 	 * @param {String} opts.name Evaluator name
 	 * @param {Array.<String>} opts.permission permission strings
 	 * @param {String} opts.group group id
-	 * @param {String} opts.agentTeamId team id of agents to be considered
 	 */
 	getQualityEvaluatorsActivity(opts) { 
 		opts = opts || {};
@@ -682,7 +557,7 @@ class QualityApi {
 			'/api/v2/quality/evaluators/activity', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'group': opts['group'],'agentTeamId': opts['agentTeamId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'group': opts['group'] },
 			{  },
 			{  },
 			null, 
@@ -1374,54 +1249,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Set a favorite evaluation form template
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postEvaluationsFavoritetemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/favoritetemplates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an evaluation form template
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postEvaluationsTemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a calibration
 	 * 
 	 * @param {Object} body calibration
@@ -1730,35 +1557,6 @@ class QualityApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an evaluation form template
-	 * 
-	 * @param {String} templateId Template ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putEvaluationsTemplate(templateId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling putEvaluationsTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates/{templateId}', 
-			'PUT', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

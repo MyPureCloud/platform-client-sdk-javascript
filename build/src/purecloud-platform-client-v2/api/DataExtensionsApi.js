@@ -5,7 +5,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**

@@ -5,7 +5,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -42,32 +42,6 @@ class DownloadsApi {
 			'GET', 
 			{ 'downloadId': downloadId },
 			{ 'contentDisposition': opts['contentDisposition'],'issueRedirect': opts['issueRedirect'],'redirectToAuth': opts['redirectToAuth'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * OAuth Callback used during code authorization grant flow.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.code code
-	 * @param {String} opts.state state
-	 * @param {String} opts.error error
-	 */
-	getDownloadsCallback(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/downloads/callback', 
-			'GET', 
-			{  },
-			{ 'code': opts['code'],'state': opts['state'],'error': opts['error'] },
 			{  },
 			{  },
 			null, 

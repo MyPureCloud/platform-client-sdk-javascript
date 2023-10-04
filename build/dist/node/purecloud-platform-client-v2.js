@@ -402,7 +402,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 178.2.0
+ * @version 179.0.0
  */
 class ApiClient {
 	/**
@@ -1484,738 +1484,11 @@ class ApiClient {
 	}
 }
 
-class AgentAssistantsApi {
-	/**
-	 * AgentAssistants service.
-	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new AgentAssistantsApi. 
-	 * @alias module:purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete an assistant.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 */
-	deleteAssistant(assistantId) { 
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling deleteAssistant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}', 
-			'DELETE', 
-			{ 'assistantId': assistantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Disassociate a queue from an assistant.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 * @param {String} queueId Queue ID
-	 */
-	deleteAssistantQueue(assistantId, queueId) { 
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling deleteAssistantQueue';
-		}
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling deleteAssistantQueue';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}/queues/{queueId}', 
-			'DELETE', 
-			{ 'assistantId': assistantId,'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Disassociate the queues from an assistant for the given assistant ID and queue IDs.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.queueIds Comma-separated identifiers of the queues that need to be deleted.
-	 */
-	deleteAssistantQueues(assistantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling deleteAssistantQueues';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}/queues', 
-			'DELETE', 
-			{ 'assistantId': assistantId },
-			{ 'queueIds': opts['queueIds'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an assistant.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 */
-	getAssistant(assistantId) { 
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling getAssistant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}', 
-			'GET', 
-			{ 'assistantId': assistantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get queue Information for an assistant.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 * @param {String} queueId Queue ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand.
-	 */
-	getAssistantQueue(assistantId, queueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling getAssistantQueue';
-		}
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getAssistantQueue';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}/queues/{queueId}', 
-			'GET', 
-			{ 'assistantId': assistantId,'queueId': queueId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all the queues associated with an assistant.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Object} opts.expand Which fields, if any, to expand.
-	 */
-	getAssistantQueues(assistantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling getAssistantQueues';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}/queues', 
-			'GET', 
-			{ 'assistantId': assistantId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all assistants.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.name Return the assistant by the given name.
-	 */
-	getAssistants(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants', 
-			'GET', 
-			{  },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all queues assigned to any assistant.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.queueIds Comma-separated identifiers of the queues that need to be retrieved.
-	 * @param {Object} opts.expand Which fields, if any, to expand.
-	 */
-	getAssistantsQueues(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/queues', 
-			'GET', 
-			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'queueIds': opts['queueIds'],'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an assistant.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 * @param {Object} body 
-	 */
-	patchAssistant(assistantId, body) { 
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling patchAssistant';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAssistant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}', 
-			'PATCH', 
-			{ 'assistantId': assistantId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update Queues for an Assistant.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 * @param {Array.<Object>} body 
-	 */
-	patchAssistantQueues(assistantId, body) { 
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling patchAssistantQueues';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAssistantQueues';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}/queues', 
-			'PATCH', 
-			{ 'assistantId': assistantId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an Assistant.
-	 * 
-	 * @param {Object} body 
-	 */
-	postAssistants(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAssistants';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a queue assistant association.
-	 * 
-	 * @param {String} assistantId Assistant ID
-	 * @param {String} queueId Queue ID
-	 * @param {Object} body 
-	 */
-	putAssistantQueue(assistantId, queueId, body) { 
-		// verify the required parameter 'assistantId' is set
-		if (assistantId === undefined || assistantId === null) {
-			throw 'Missing the required parameter "assistantId" when calling putAssistantQueue';
-		}
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling putAssistantQueue';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAssistantQueue';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/assistants/{assistantId}/queues/{queueId}', 
-			'PUT', 
-			{ 'assistantId': assistantId,'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class AgentUIApi {
-	/**
-	 * AgentUI service.
-	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new AgentUIApi. 
-	 * @alias module:purecloud-platform-client-v2/api/AgentUIApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete agent auto answer settings
-	 * 
-	 * @param {String} agentId The agent to apply the auto answer settings to
-	 */
-	deleteAppsAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling deleteAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings', 
-			'DELETE', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete queue-level default panel settings
-	 * 
-	 * @param {String} queueId The queue to apply the panel settings to
-	 */
-	deleteAppsAgentuiPanelsQueueSettings(queueId) { 
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling deleteAppsAgentuiPanelsQueueSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/queues/{queueId}/settings', 
-			'DELETE', 
-			{ 'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete organization-level default panel settings
-	 * 
-	 */
-	deleteAppsAgentuiPanelsSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/settings', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get agent auto answer settings
-	 * 
-	 * @param {String} agentId The agent to apply the auto answer settings to
-	 */
-	getAppsAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings', 
-			'GET', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of available Agent UI panels
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.acceptLanguage The locale used for panel name translations (default to en-us)
-	 */
-	getAppsAgentuiPanels(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels', 
-			'GET', 
-			{  },
-			{  },
-			{ 'Accept-Language': opts['acceptLanguage'] },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get queue-level default panel settings
-	 * 
-	 * @param {String} queueId The queue to apply the panel settings to
-	 */
-	getAppsAgentuiPanelsQueueSettings(queueId) { 
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getAppsAgentuiPanelsQueueSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/queues/{queueId}/settings', 
-			'GET', 
-			{ 'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get organization-level default panel settings
-	 * 
-	 */
-	getAppsAgentuiPanelsSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update agent auto answer settings
-	 * 
-	 * @param {String} agentId The agent to apply the auto answer settings to
-	 * @param {Object} body AutoAnswerSettings
-	 */
-	patchAppsAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling patchAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings', 
-			'PATCH', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update queue-level default panel settings
-	 * 
-	 * @param {String} queueId The queue to apply the panel settings to
-	 * @param {Object} body DefaultPanelSettings
-	 */
-	patchAppsAgentuiPanelsQueueSettings(queueId, body) { 
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling patchAppsAgentuiPanelsQueueSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAppsAgentuiPanelsQueueSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/queues/{queueId}/settings', 
-			'PATCH', 
-			{ 'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update organization-level default panel settings
-	 * 
-	 * @param {Object} body DefaultPanelSettings
-	 */
-	patchAppsAgentuiPanelsSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAppsAgentuiPanelsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/settings', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set agent auto answer settings
-	 * 
-	 * @param {String} agentId The agent to apply the auto answer settings to
-	 * @param {Object} body AutoAnswerSettings
-	 */
-	putAppsAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling putAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings', 
-			'PUT', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set queue-level default panel settings
-	 * 
-	 * @param {String} queueId The queue to apply the panel settings to
-	 * @param {Object} body DefaultPanelSettings
-	 */
-	putAppsAgentuiPanelsQueueSettings(queueId, body) { 
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling putAppsAgentuiPanelsQueueSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAppsAgentuiPanelsQueueSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/queues/{queueId}/settings', 
-			'PUT', 
-			{ 'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set organization-level default panel settings
-	 * 
-	 * @param {Object} body DefaultPanelSettings
-	 */
-	putAppsAgentuiPanelsSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAppsAgentuiPanelsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/settings', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -2245,26 +1518,6 @@ class AlertingApi {
 			'/api/v2/alerting/alerts/{alertId}', 
 			'DELETE', 
 			{ 'alertId': alertId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete all alerts for the user
-	 * 
-	 */
-	deleteAlertingAlertsAll() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/alerts/all', 
-			'DELETE', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -2565,30 +1818,6 @@ class AlertingApi {
 			'/api/v2/alerting/alerts/{alertId}', 
 			'PATCH', 
 			{ 'alertId': alertId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates all alerts
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchAlertingAlertsAll(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/alerts/all', 
-			'PATCH', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -2909,7 +2138,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -2950,86 +2179,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Delete a view export request for a user
-	 * 
-	 * @param {String} exportId Export ID
-	 */
-	deleteAnalyticsReportingExport(exportId) { 
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling deleteAnalyticsReportingExport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}', 
-			'DELETE', 
-			{ 'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a view export job history request for a user
-	 * 
-	 * @param {String} runId Export Schedule Run ID
-	 * @param {String} exportId Export Schedule ID
-	 */
-	deleteAnalyticsReportingExportHistoryRunId(runId, exportId) { 
-		// verify the required parameter 'runId' is set
-		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling deleteAnalyticsReportingExportHistoryRunId';
-		}
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling deleteAnalyticsReportingExportHistoryRunId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}/history/{runId}', 
-			'DELETE', 
-			{ 'runId': runId,'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a view schedule export request for a user
-	 * 
-	 * @param {String} exportId Export ID
-	 */
-	deleteAnalyticsReportingExportSchedule(exportId) { 
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling deleteAnalyticsReportingExportSchedule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}/schedule', 
-			'DELETE', 
-			{ 'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete a scheduled report job.
 	 * 
 	 * @param {String} scheduleId Schedule ID
@@ -3044,81 +2193,6 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
 			'DELETE', 
 			{ 'scheduleId': scheduleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a dashboard configuration
-	 * 
-	 * @param {String} dashboardId Dashboard Configuration ID
-	 */
-	deleteAnalyticsReportingSettingsDashboard(dashboardId) { 
-		// verify the required parameter 'dashboardId' is set
-		if (dashboardId === undefined || dashboardId === null) {
-			throw 'Missing the required parameter "dashboardId" when calling deleteAnalyticsReportingSettingsDashboard';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/dashboards/{dashboardId}', 
-			'DELETE', 
-			{ 'dashboardId': dashboardId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a tab configuration
-	 * 
-	 * @param {String} tabId Tab Configuration ID
-	 */
-	deleteAnalyticsReportingSettingsTabconfiguration(tabId) { 
-		// verify the required parameter 'tabId' is set
-		if (tabId === undefined || tabId === null) {
-			throw 'Missing the required parameter "tabId" when calling deleteAnalyticsReportingSettingsTabconfiguration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/tabconfigurations/{tabId}', 
-			'DELETE', 
-			{ 'tabId': tabId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a view configuration
-	 * 
-	 * @param {String} viewId View Configuration ID
-	 */
-	deleteAnalyticsReportingSettingsViewconfiguration(viewId) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling deleteAnalyticsReportingSettingsViewconfiguration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/viewconfigurations/{viewId}', 
-			'DELETE', 
-			{ 'viewId': viewId },
 			{  },
 			{  },
 			{  },
@@ -3236,39 +2310,6 @@ class AnalyticsApi {
 			'GET', 
 			{ 'botFlowId': botFlowId },
 			{ 'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'],'askActionResults': opts['askActionResults'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Bot Flow Sessions.
-	 * Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
-	 * @param {String} botFlowId ID of the bot flow.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
-	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 250 (default to 50)
-	 * @param {String} opts.interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-	 * @param {Object} opts.botResultCategories Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by.
-	 * @param {String} opts.endLanguage Optional case-insensitive language code to filter sessions by the language the sessions ended in.
-	 */
-	getAnalyticsBotflowSessions(botFlowId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'botFlowId' is set
-		if (botFlowId === undefined || botFlowId === null) {
-			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowSessions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/botflows/{botFlowId}/sessions', 
-			'GET', 
-			{ 'botFlowId': botFlowId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'botResultCategories': opts['botResultCategories'],'endLanguage': opts['endLanguage'] },
 			{  },
 			{  },
 			null, 
@@ -3591,60 +2632,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Get status for async query for flow execution aggregates
-	 * 
-	 * @param {String} jobId jobId
-	 */
-	getAnalyticsFlowexecutionsAggregatesJob(jobId) { 
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowexecutionsAggregatesJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}', 
-			'GET', 
-			{ 'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Fetch a page of results for an async aggregates query
-	 * 
-	 * @param {String} jobId jobId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.cursor Cursor token to retrieve next page
-	 */
-	getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowexecutionsAggregatesJobResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results', 
-			'GET', 
-			{ 'jobId': jobId },
-			{ 'cursor': opts['cursor'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get status for async query for Flow aggregates
 	 * 
 	 * @param {String} jobId jobId
@@ -3813,169 +2800,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Get dashboards summary for a user
-	 * 
-	 * @param {String} userId User ID
-	 */
-	getAnalyticsReportingDashboardsUser(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getAnalyticsReportingDashboardsUser';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/dashboards/users/{userId}', 
-			'GET', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get dashboards summary for users in a org
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.sortBy  (default to asc)
-	 * @param {Number} opts.pageNumber  (default to 1)
-	 * @param {Number} opts.pageSize  (default to 25)
-	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
-	 * @param {Object} opts.state Only list users of this state
-	 */
-	getAnalyticsReportingDashboardsUsers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/dashboards/users', 
-			'GET', 
-			{  },
-			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'state': opts['state'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a single view export request for a user
-	 * 
-	 * @param {String} exportId Export ID
-	 */
-	getAnalyticsReportingExport(exportId) { 
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling getAnalyticsReportingExport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}', 
-			'GET', 
-			{ 'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of all scheduled runs for an export schedule
-	 * 
-	 * @param {String} exportId Export Schedule ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber  (default to 1)
-	 * @param {Number} opts.pageSize  (default to 25)
-	 */
-	getAnalyticsReportingExportHistory(exportId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling getAnalyticsReportingExportHistory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}/history', 
-			'GET', 
-			{ 'exportId': exportId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get most recently scheduled run for an export schedule
-	 * 
-	 * @param {String} exportId Export Schedule ID
-	 */
-	getAnalyticsReportingExportHistoryLatest(exportId) { 
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling getAnalyticsReportingExportHistoryLatest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}/history/latest', 
-			'GET', 
-			{ 'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * A scheduled run for an export schedule
-	 * A scheduled run for an export schedule
-	 * @param {String} runId Export Schedule Run ID
-	 * @param {String} exportId Export Schedule ID
-	 */
-	getAnalyticsReportingExportHistoryRunId(runId, exportId) { 
-		// verify the required parameter 'runId' is set
-		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling getAnalyticsReportingExportHistoryRunId';
-		}
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling getAnalyticsReportingExportHistoryRunId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}/history/{runId}', 
-			'GET', 
-			{ 'runId': runId,'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get all view export requests for a user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -4001,31 +2825,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Get all view export job histories requests for a user
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 */
-	getAnalyticsReportingExportsAll(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/all', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get all export metadata
 	 * 
 	 */
@@ -4033,52 +2832,6 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports/metadata', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all view schedule export requests for a user
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.enabled Specifies if disabled schedules, enabled schedules, or all schedules are returned. If not specified, all schedules are returned (default to Any)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 */
-	getAnalyticsReportingExportsSchedule(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/schedule', 
-			'GET', 
-			{  },
-			{ 'enabled': opts['enabled'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the count of expiring and expired scheduled exports
-	 * 
-	 */
-	getAnalyticsReportingExportsScheduleSummary() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/schedule/summary', 
 			'GET', 
 			{  },
 			{  },
@@ -4309,202 +3062,6 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a dashboard configuration
-	 * 
-	 * @param {String} dashboardId Dashboard Configuration ID
-	 */
-	getAnalyticsReportingSettingsDashboard(dashboardId) { 
-		// verify the required parameter 'dashboardId' is set
-		if (dashboardId === undefined || dashboardId === null) {
-			throw 'Missing the required parameter "dashboardId" when calling getAnalyticsReportingSettingsDashboard';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/dashboards/{dashboardId}', 
-			'GET', 
-			{ 'dashboardId': dashboardId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of dashboard configuration
-	 * There is a limit of 5 dashboard configurations per user/organization combination.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.name name of the dashboard
-	 * @param {Boolean} opts.publicOnly public or private dashboard
-	 * @param {Boolean} opts.favoriteOnly favorite or unfavorite status of a dashboard
-	 * @param {Boolean} opts.mine dashboard which is been owned by the user
-	 * @param {String} opts.sortBy  (default to desc)
-	 * @param {Number} opts.pageNumber  (default to 1)
-	 * @param {Number} opts.pageSize  (default to 9)
-	 */
-	getAnalyticsReportingSettingsDashboards(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/dashboards', 
-			'GET', 
-			{  },
-			{ 'name': opts['name'],'publicOnly': opts['publicOnly'],'favoriteOnly': opts['favoriteOnly'],'mine': opts['mine'],'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an insight configurations
-	 * 
-	 */
-	getAnalyticsReportingSettingsInsights() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/insights', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a tab configuration
-	 * 
-	 * @param {String} tabId Tab Configuration ID
-	 */
-	getAnalyticsReportingSettingsTabconfiguration(tabId) { 
-		// verify the required parameter 'tabId' is set
-		if (tabId === undefined || tabId === null) {
-			throw 'Missing the required parameter "tabId" when calling getAnalyticsReportingSettingsTabconfiguration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/tabconfigurations/{tabId}', 
-			'GET', 
-			{ 'tabId': tabId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of tab configurations
-	 * 
-	 */
-	getAnalyticsReportingSettingsTabconfigurations() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/tabconfigurations', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of dashboards for an user
-	 * 
-	 * @param {String} userId User ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.sortBy  (default to asc)
-	 * @param {Number} opts.pageNumber  (default to 1)
-	 * @param {Number} opts.pageSize  (default to 50)
-	 */
-	getAnalyticsReportingSettingsUserDashboards(userId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getAnalyticsReportingSettingsUserDashboards';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/users/{userId}/dashboards', 
-			'GET', 
-			{ 'userId': userId },
-			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a view configuration
-	 * 
-	 * @param {String} viewId View Configuration ID
-	 */
-	getAnalyticsReportingSettingsViewconfiguration(viewId) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling getAnalyticsReportingSettingsViewconfiguration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/viewconfigurations/{viewId}', 
-			'GET', 
-			{ 'viewId': viewId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of configurations
-	 * 
-	 */
-	getAnalyticsReportingSettingsViewconfigurations() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/viewconfigurations', 
 			'GET', 
 			{  },
 			{  },
@@ -4893,101 +3450,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Updates only provided values for a view export request for a user
-	 * 
-	 * @param {String} exportId Export ID
-	 * @param {Object} body ReportingExportJobRequest
-	 */
-	patchAnalyticsReportingExport(exportId, body) { 
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling patchAnalyticsReportingExport';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAnalyticsReportingExport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}', 
-			'PATCH', 
-			{ 'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates only provided values for marking the completed runs as read for an schedule
-	 * 
-	 * @param {String} runId Export Schedule Run ID
-	 * @param {String} exportId Export Schedule ID
-	 * @param {Object} body ExportJobHistoryUpdate
-	 */
-	patchAnalyticsReportingExportHistoryRunId(runId, exportId, body) { 
-		// verify the required parameter 'runId' is set
-		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling patchAnalyticsReportingExportHistoryRunId';
-		}
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling patchAnalyticsReportingExportHistoryRunId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAnalyticsReportingExportHistoryRunId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}/history/{runId}', 
-			'PATCH', 
-			{ 'runId': runId,'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Enable/Disable for a view schedule export request for a user
-	 * 
-	 * @param {String} exportId Export ID
-	 * @param {Object} body ReportingScheduleExportJobRequest
-	 */
-	patchAnalyticsReportingExportSchedule(exportId, body) { 
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling patchAnalyticsReportingExportSchedule';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAnalyticsReportingExportSchedule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}/schedule', 
-			'PATCH', 
-			{ 'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Patch AnalyticsReportingSettings values for an organization
 	 * 
 	 * @param {Object} body AnalyticsReportingSettingsRequest
@@ -5006,36 +3468,6 @@ class AnalyticsApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Favorite or Unfavorite a dashboard configuration
-	 * 
-	 * @param {String} dashboardId Dashboard Configuration ID
-	 * @param {Boolean} favorite favorite or unfavorite a dashboard
-	 */
-	patchAnalyticsReportingSettingsDashboard(dashboardId, favorite) { 
-		// verify the required parameter 'dashboardId' is set
-		if (dashboardId === undefined || dashboardId === null) {
-			throw 'Missing the required parameter "dashboardId" when calling patchAnalyticsReportingSettingsDashboard';
-		}
-		// verify the required parameter 'favorite' is set
-		if (favorite === undefined || favorite === null) {
-			throw 'Missing the required parameter "favorite" when calling patchAnalyticsReportingSettingsDashboard';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/dashboards/{dashboardId}', 
-			'PATCH', 
-			{ 'dashboardId': dashboardId },
-			{ 'favorite': favorite },
-			{  },
-			{  },
-			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -5383,56 +3815,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Query for flow execution aggregates asynchronously
-	 * 
-	 * @param {Object} body query
-	 */
-	postAnalyticsFlowexecutionsAggregatesJobs(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsFlowexecutionsAggregatesJobs';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/flowexecutions/aggregates/jobs', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query for flow execution aggregates
-	 * 
-	 * @param {Object} body query
-	 */
-	postAnalyticsFlowexecutionsAggregatesQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsFlowexecutionsAggregatesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/flowexecutions/aggregates/query', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Query for flow activity observations
 	 * 
 	 * @param {Object} body query
@@ -5668,85 +4050,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Query for outer limits rate limit aggregates
-	 * 
-	 * @param {Object} body query
-	 */
-	postAnalyticsRatelimitsAggregatesQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsRatelimitsAggregatesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/ratelimits/aggregates/query', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Bulk delete dashboards owned by other user(s)
-	 * 
-	 * @param {Array.<String>} body List of userIds
-	 */
-	postAnalyticsReportingDashboardsUsersBulkRemove(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingDashboardsUsersBulkRemove';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/dashboards/users/bulk/remove', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Generate a export run now request
-	 * This API creates a new scheduled export  when runId is not passed and reruns a failed run when runId param is passed
-	 * @param {String} exportId Export ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.runId runId
-	 */
-	postAnalyticsReportingExportExecute(exportId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling postAnalyticsReportingExportExecute';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}/execute', 
-			'POST', 
-			{ 'exportId': exportId },
-			{ 'runId': opts['runId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Generate a view export request
 	 * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 	 * @param {Object} body ReportingExportJobRequest
@@ -5822,181 +4125,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Create a dashboard configuration
-	 * 
-	 * @param {Object} body DashboardConfigurationRequest
-	 */
-	postAnalyticsReportingSettingsDashboards(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsDashboards';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/dashboards', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Bulk remove dashboard configurations
-	 * 
-	 * @param {Object} body 
-	 */
-	postAnalyticsReportingSettingsDashboardsBulkRemove(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsDashboardsBulkRemove';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/dashboards/bulk/remove', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query dashboard configurations
-	 * 
-	 * @param {Object} body 
-	 */
-	postAnalyticsReportingSettingsDashboardsQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsDashboardsQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/dashboards/query', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a tab configuration
-	 * 
-	 * @param {Object} body TabConfigurationRequest
-	 */
-	postAnalyticsReportingSettingsTabconfigurations(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsTabconfigurations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/tabconfigurations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a list of tab configurations
-	 * 
-	 * @param {Array.<Object>} body TabConfigurationRequest
-	 */
-	postAnalyticsReportingSettingsTabconfigurationsBulk(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsTabconfigurationsBulk';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/tabconfigurations/bulk', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Bulk remove tab configurations
-	 * 
-	 * @param {Object} body 
-	 */
-	postAnalyticsReportingSettingsTabconfigurationsBulkRemove(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsTabconfigurationsBulkRemove';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/tabconfigurations/bulk/remove', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a view configuration
-	 * 
-	 * @param {Object} body ViewConfigurationsRequest
-	 */
-	postAnalyticsReportingSettingsViewconfigurations(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsViewconfigurations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/viewconfigurations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Query for resolution aggregates asynchronously
 	 * 
 	 * @param {Object} body query
@@ -6010,31 +4138,6 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/resolutions/aggregates/jobs', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query for resolution aggregates
-	 * 
-	 * @param {Object} body query
-	 */
-	postAnalyticsResolutionsAggregatesQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsResolutionsAggregatesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/resolutions/aggregates/query', 
 			'POST', 
 			{  },
 			{  },
@@ -6446,36 +4549,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Replaces view export request for a user
-	 * 
-	 * @param {String} exportId Export ID
-	 * @param {Object} body ReportingExportJobRequest
-	 */
-	putAnalyticsReportingExport(exportId, body) { 
-		// verify the required parameter 'exportId' is set
-		if (exportId === undefined || exportId === null) {
-			throw 'Missing the required parameter "exportId" when calling putAnalyticsReportingExport';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAnalyticsReportingExport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/exports/{exportId}', 
-			'PUT', 
-			{ 'exportId': exportId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a scheduled report job.
 	 * 
 	 * @param {String} scheduleId Schedule ID
@@ -6505,153 +4578,13 @@ class AnalyticsApi {
 		);
 	}
 
-	/**
-	 * Update a dashboard configuration
-	 * 
-	 * @param {String} dashboardId Dashboard Configuration ID
-	 * @param {Object} body DashboardConfigurationRequest
-	 */
-	putAnalyticsReportingSettingsDashboard(dashboardId, body) { 
-		// verify the required parameter 'dashboardId' is set
-		if (dashboardId === undefined || dashboardId === null) {
-			throw 'Missing the required parameter "dashboardId" when calling putAnalyticsReportingSettingsDashboard';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsDashboard';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/dashboards/{dashboardId}', 
-			'PUT', 
-			{ 'dashboardId': dashboardId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an insight configurations
-	 * 
-	 * @param {Object} body InsightConfigurations
-	 */
-	putAnalyticsReportingSettingsInsights(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsInsights';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/insights', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a tab configuration
-	 * 
-	 * @param {String} tabId Tab Configuration ID
-	 * @param {Object} body TabConfigurationRequest
-	 */
-	putAnalyticsReportingSettingsTabconfiguration(tabId, body) { 
-		// verify the required parameter 'tabId' is set
-		if (tabId === undefined || tabId === null) {
-			throw 'Missing the required parameter "tabId" when calling putAnalyticsReportingSettingsTabconfiguration';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsTabconfiguration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/tabconfigurations/{tabId}', 
-			'PUT', 
-			{ 'tabId': tabId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a list of tab configurations
-	 * 
-	 * @param {Array.<Object>} body TabConfigurationRequest
-	 */
-	putAnalyticsReportingSettingsTabconfigurationsBulk(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsTabconfigurationsBulk';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/tabconfigurations/bulk', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a view configuration
-	 * 
-	 * @param {String} viewId View Configuration ID
-	 * @param {Object} body ViewConfigurationsRequest
-	 */
-	putAnalyticsReportingSettingsViewconfiguration(viewId, body) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling putAnalyticsReportingSettingsViewconfiguration';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsViewconfiguration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/settings/viewconfigurations/{viewId}', 
-			'PUT', 
-			{ 'viewId': viewId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -7164,88 +5097,6 @@ class ArchitectApi {
 	}
 
 	/**
-	 * Gets architect-data-service flow audit entries.  Service name is automatically set.
-	 * 
-	 * @param {String} flowId Flow ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.sortBy Sort field (data is sorted as strings, not numbers) (default to timestamp)
-	 * @param {String} opts.sortOrder Sort order (asc or desc) (default to desc)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 500)
-	 */
-	getArchitectAudits(flowId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getArchitectAudits';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/architect/audits', 
-			'GET', 
-			{  },
-			{ 'flowId': flowId,'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get information for the current user of Architect.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Categories to return
-	 * @param {Array.<String>} opts.language Language ID
-	 */
-	getArchitectCapabilities(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/architect/capabilities', 
-			'GET', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get information for the current user of Architect.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Categories to return
-	 * @param {Array.<String>} opts.language Language ID
-	 */
-	getArchitectConfiguration(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/architect/configuration', 
-			'GET', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get Dependency Tracking objects that have a given display name
 	 * 
 	 * @param {String} name Object name to search for
@@ -7557,7 +5408,6 @@ class ArchitectApi {
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.name Name of the Emergency Group to filter by.
-	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getArchitectEmergencygroups(opts) { 
 		opts = opts || {};
@@ -7567,7 +5417,7 @@ class ArchitectApi {
 			'/api/v2/architect/emergencygroups', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -7737,7 +5587,6 @@ class ArchitectApi {
 	 * @param {String} opts.name Name of the IVR to filter by.
 	 * @param {String} opts.dnis The phone number of the IVR to filter by.
 	 * @param {String} opts.scheduleGroup The Schedule Group of the IVR to filter by.
-	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getArchitectIvrs(opts) { 
 		opts = opts || {};
@@ -7747,7 +5596,7 @@ class ArchitectApi {
 			'/api/v2/architect/ivrs', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'] },
 			{  },
 			{  },
 			null, 
@@ -7778,35 +5627,6 @@ class ArchitectApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get information for the current user of Architect.
-	 * 
-	 * @param {Array.<String>} expand Which fields to expand
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.language Language ID
-	 */
-	getArchitectMe(expand, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'expand' is set
-		if (expand === undefined || expand === null) {
-			throw 'Missing the required parameter "expand" when calling getArchitectMe';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/architect/me', 
-			'GET', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(expand, 'multi'),'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -8380,36 +6200,6 @@ class ArchitectApi {
 			'GET', 
 			{ 'flowId': flowId },
 			{ 'deleted': opts['deleted'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get flow validation results
-	 * 
-	 * @param {String} flowId Flow ID
-	 * @param {String} operationId Validation ID (operation ID)
-	 */
-	getFlowValidateOperationId(flowId, operationId) { 
-		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getFlowValidateOperationId';
-		}
-		// verify the required parameter 'operationId' is set
-		if (operationId === undefined || operationId === null) {
-			throw 'Missing the required parameter "operationId" when calling getFlowValidateOperationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/{flowId}/validate/{operationId}', 
-			'GET', 
-			{ 'flowId': flowId,'operationId': operationId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -9856,31 +7646,6 @@ class ArchitectApi {
 	}
 
 	/**
-	 * Check-in flow
-	 * 
-	 * @param {String} flow Flow ID
-	 */
-	postFlowsActionsCheckinsync(flow) { 
-		// verify the required parameter 'flow' is set
-		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsCheckinsync';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/actions/checkinsync', 
-			'POST', 
-			{  },
-			{ 'flow': flow },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Check-out flow
 	 * 
 	 * @param {String} flow Flow ID
@@ -9921,36 +7686,6 @@ class ArchitectApi {
 			'POST', 
 			{  },
 			{ 'flow': flow },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Debug flow
-	 * Asynchronous.  Notification topic: v2.flows.{flowId}
-	 * @param {String} flow Flow ID
-	 * @param {String} version 
-	 */
-	postFlowsActionsDebug(flow, version) { 
-		// verify the required parameter 'flow' is set
-		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsDebug';
-		}
-		// verify the required parameter 'version' is set
-		if (version === undefined || version === null) {
-			throw 'Missing the required parameter "version" when calling postFlowsActionsDebug';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/actions/debug', 
-			'POST', 
-			{  },
-			{ 'flow': flow,'version': version },
 			{  },
 			{  },
 			null, 
@@ -10033,40 +7768,6 @@ class ArchitectApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Validate flow
-	 * Asynchronous.  Notification topic: v2.flows.{flowId}
-	 * @param {String} flow Flow ID
-	 * @param {Object} body 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.flowType Flow type needed for validating a flow that doesn't yet exist.
-	 */
-	postFlowsActionsValidate(flow, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'flow' is set
-		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsValidate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postFlowsActionsValidate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/actions/validate', 
-			'POST', 
-			{  },
-			{ 'flow': flow,'flowType': opts['flowType'] },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -10718,7 +8419,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -10883,47 +8584,13 @@ class AuditApi {
 		);
 	}
 
-	/**
-	 * Get realtime audits for a trustor organization that were generated by the organization of the current user
-	 * Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
-	 * @param {String} trustorOrgId Trustor Organization ID
-	 * @param {Object} body query
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 */
-	postAuditsQueryRealtimeTrustorTrustorOrgId(trustorOrgId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
-			throw 'Missing the required parameter "trustorOrgId" when calling postAuditsQueryRealtimeTrustorTrustorOrgId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuditsQueryRealtimeTrustorTrustorOrgId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/audits/query/realtime/trustor/{trustorOrgId}', 
-			'POST', 
-			{ 'trustorOrgId': trustorOrgId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -10958,36 +8625,6 @@ class AuthorizationApi {
 			'DELETE', 
 			{ 'divisionId': divisionId },
 			{ 'force': opts['force'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an access control policy
-	 * 
-	 * @param {String} targetName The domain:entity:action target to which the policy is applied
-	 * @param {String} subjectId The ID of the subject to which the policy is applied
-	 */
-	deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
-		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
-			throw 'Missing the required parameter "targetName" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
-		}
-		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}', 
-			'DELETE', 
-			{ 'targetName': targetName,'subjectId': subjectId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -11312,166 +8949,6 @@ class AuthorizationApi {
 	}
 
 	/**
-	 * Get a page of access policies for an organization
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 */
-	getAuthorizationPolicies(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies', 
-			'GET', 
-			{  },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a page of access policies for a given subject
-	 * 
-	 * @param {String} subjectId The ID of the subject to which policies are applied
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 */
-	getAuthorizationPoliciesSubjectSubjectId(subjectId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling getAuthorizationPoliciesSubjectSubjectId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/subject/{subjectId}', 
-			'GET', 
-			{ 'subjectId': subjectId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a page of access policies for a given policy target
-	 * 
-	 * @param {String} targetName The domain:entity:action resource target to which policies are applied
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 */
-	getAuthorizationPoliciesTarget(targetName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
-			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTarget';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/targets/{targetName}', 
-			'GET', 
-			{ 'targetName': targetName },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an access control policy for a specified resource target and subject
-	 * 
-	 * @param {String} targetName The domain:entity:action resource target to which the policy is applied
-	 * @param {String} subjectId The ID of the subject to which the policy is applied
-	 */
-	getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
-		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
-			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
-		}
-		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}', 
-			'GET', 
-			{ 'targetName': targetName,'subjectId': subjectId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a map of policy targets to valid attributes for those targets
-	 * 
-	 */
-	getAuthorizationPoliciesTargets() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/targets', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an access control policy with the specified policy ID
-	 * 
-	 * @param {String} policyId The ID of the policy to retrieve
-	 */
-	getAuthorizationPolicy(policyId) { 
-		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicy';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/{policyId}', 
-			'GET', 
-			{ 'policyId': policyId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the list of enabled products
 	 * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
 	 */
@@ -11650,26 +9127,6 @@ class AuthorizationApi {
 	}
 
 	/**
-	 * Get authorization role settings
-	 * 
-	 */
-	getAuthorizationRolesSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/roles/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get authorization settings
 	 * 
 	 */
@@ -11762,13 +9219,8 @@ class AuthorizationApi {
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} subjectId User ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.enforceLicenses  (default to false)
-	 * @param {Boolean} opts.lookupGroups  (default to false)
 	 */
-	getUserRoles(subjectId, opts) { 
-		opts = opts || {};
-		
+	getUserRoles(subjectId) { 
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
 			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
@@ -11778,7 +9230,7 @@ class AuthorizationApi {
 			'/api/v2/users/{subjectId}/roles', 
 			'GET', 
 			{ 'subjectId': subjectId },
-			{ 'enforceLicenses': opts['enforceLicenses'],'lookupGroups': opts['lookupGroups'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -11923,66 +9375,6 @@ class AuthorizationApi {
 			'/api/v2/authorization/divisions', 
 			'POST', 
 			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add an access control policy for a specified resource target and subject
-	 * 
-	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
-	 * @param {Object} body Access control policy
-	 */
-	postAuthorizationPoliciesTarget(targetName, body) { 
-		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
-			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTarget';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationPoliciesTarget';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/targets/{targetName}', 
-			'POST', 
-			{ 'targetName': targetName },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Validate the conditions and attributes of an access control policy for a specified resource target
-	 * 
-	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
-	 * @param {Object} body Access control policy
-	 */
-	postAuthorizationPoliciesTargetValidate(targetName, body) { 
-		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
-			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTargetValidate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationPoliciesTargetValidate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/targets/{targetName}/validate', 
-			'POST', 
-			{ 'targetName': targetName },
 			{  },
 			{  },
 			{  },
@@ -12279,91 +9671,6 @@ class AuthorizationApi {
 	}
 
 	/**
-	 * Add an access control policy for a specified resource target and subject, overwriting any existing policy
-	 * 
-	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
-	 * @param {Object} body Access control policy
-	 */
-	putAuthorizationPoliciesTarget(targetName, body) { 
-		// verify the required parameter 'targetName' is set
-		if (targetName === undefined || targetName === null) {
-			throw 'Missing the required parameter "targetName" when calling putAuthorizationPoliciesTarget';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationPoliciesTarget';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/targets/{targetName}', 
-			'PUT', 
-			{ 'targetName': targetName },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an access control policy with a given ID
-	 * 
-	 * @param {String} policyId The ID of the policy to update
-	 * @param {Object} body Access control policy
-	 */
-	putAuthorizationPolicy(policyId, body) { 
-		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling putAuthorizationPolicy';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationPolicy';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/policies/{policyId}', 
-			'PUT', 
-			{ 'policyId': policyId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Enable a product for this organization.
-	 * 
-	 * @param {String} productId product id
-	 */
-	putAuthorizationProduct(productId) { 
-		// verify the required parameter 'productId' is set
-		if (productId === undefined || productId === null) {
-			throw 'Missing the required parameter "productId" when calling putAuthorizationProduct';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/products/{productId}', 
-			'PUT', 
-			{ 'productId': productId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update an organization role.
 	 * Update
 	 * @param {String} roleId Role ID
@@ -12479,31 +9786,6 @@ class AuthorizationApi {
 	}
 
 	/**
-	 * Change authorization role settings
-	 * Change role settings
-	 * @param {Object} body Authorization Role Settings
-	 */
-	putAuthorizationRolesSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationRolesSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/roles/settings', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Sets the user's roles
 	 * 
 	 * @param {String} subjectId User ID
@@ -12535,82 +9817,11 @@ class AuthorizationApi {
 
 }
 
-class BadgesApi {
-	/**
-	 * Badges service.
-	 * @module purecloud-platform-client-v2/api/BadgesApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new BadgesApi. 
-	 * @alias module:purecloud-platform-client-v2/api/BadgesApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Clear the unread chat notification badge count from a user
-	 * 
-	 * @param {String} jabberId jabberId of the entity from which the unread message(s) originated
-	 */
-	deleteBadgesChat(jabberId) { 
-		// verify the required parameter 'jabberId' is set
-		if (jabberId === undefined || jabberId === null) {
-			throw 'Missing the required parameter "jabberId" when calling deleteBadgesChat';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/badges/chats/{jabberId}', 
-			'DELETE', 
-			{ 'jabberId': jabberId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get unread chat notification badges
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getBadgesChats(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/badges/chats', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -12624,227 +9835,6 @@ class BillingApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Get billing account.
-	 * 
-	 * @param {String} accountId Identifies the account to be retrieved
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.fields Fields needed
-	 */
-	getBillingAccount(accountId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'accountId' is set
-		if (accountId === undefined || accountId === null) {
-			throw 'Missing the required parameter "accountId" when calling getBillingAccount';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/accounts/{accountId}', 
-			'GET', 
-			{ 'accountId': accountId },
-			{ 'fields': opts['fields'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get constumer account.
-	 * 
-	 */
-	getBillingAccount0() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/account', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get carrier services usage data.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.from startDateTime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.to endDateTime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Number} opts.limit Limit the number of results (default to 50)
-	 */
-	getBillingCarrierservicesUsageCalls(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/carrierservices/usage/calls', 
-			'GET', 
-			{  },
-			{ 'from': opts['from'],'to': opts['to'],'limit': opts['limit'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get customer free trial information.
-	 * 
-	 */
-	getBillingFreetrial() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/freetrial', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get invoice.
-	 * 
-	 * @param {String} invoiceId Identifies the invoice to be retrieved
-	 */
-	getBillingInvoice(invoiceId) { 
-		// verify the required parameter 'invoiceId' is set
-		if (invoiceId === undefined || invoiceId === null) {
-			throw 'Missing the required parameter "invoiceId" when calling getBillingInvoice';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/invoices/{invoiceId}', 
-			'GET', 
-			{ 'invoiceId': invoiceId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get invoice PDF.
-	 * 
-	 * @param {String} invoiceId Identifies the invoice PDF to be retrieved
-	 */
-	getBillingInvoicePdf(invoiceId) { 
-		// verify the required parameter 'invoiceId' is set
-		if (invoiceId === undefined || invoiceId === null) {
-			throw 'Missing the required parameter "invoiceId" when calling getBillingInvoicePdf';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/invoices/{invoiceId}/pdf', 
-			'GET', 
-			{ 'invoiceId': invoiceId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get invoices
-	 * Retrieve a list of invoices stored in the system.
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getBillingInvoices(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/invoices', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get billing periods
-	 * Retrieve a list of billing periods stored in the system.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.periodGranularity Period granularity
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getBillingPeriods(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/periods', 
-			'GET', 
-			{  },
-			{ 'periodGranularity': opts['periodGranularity'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Premium App listing.
-	 * 
-	 * @param {String} appId Identifies the App ID whose listing should be retrieved
-	 */
-	getBillingPremiumapplisting(appId) { 
-		// verify the required parameter 'appId' is set
-		if (appId === undefined || appId === null) {
-			throw 'Missing the required parameter "appId" when calling getBillingPremiumapplisting';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/premiumapplistings/{appId}', 
-			'GET', 
-			{ 'appId': appId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Get a report of the billable license usages
@@ -12867,200 +9857,6 @@ class BillingApi {
 			'GET', 
 			{  },
 			{ 'startDate': startDate,'endDate': endDate },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get billable usage data report CSV.
-	 * 
-	 * @param {String} reportId Identifies the report CSV to be retrieved
-	 */
-	getBillingReportsBillableusagedataReportIdCsv(reportId) { 
-		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling getBillingReportsBillableusagedataReportIdCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/reports/billableusagedata/{reportId}/csv', 
-			'GET', 
-			{ 'reportId': reportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get concurrent usage data report CSV.
-	 * 
-	 * @param {String} reportId Identifies the report CSV to be retrieved
-	 */
-	getBillingReportsConcurrentusagedataReportIdCsv(reportId) { 
-		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling getBillingReportsConcurrentusagedataReportIdCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/reports/concurrentusagedata/{reportId}/csv', 
-			'GET', 
-			{ 'reportId': reportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get resources usage data report CSV.
-	 * 
-	 * @param {String} reportId Identifies the report CSV to be retrieved
-	 */
-	getBillingReportsResourcesusagedataReportIdCsv(reportId) { 
-		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling getBillingReportsResourcesusagedataReportIdCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/reports/resourcesusagedata/{reportId}/csv', 
-			'GET', 
-			{ 'reportId': reportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get signup free trial for organization
-	 * 
-	 */
-	getBillingSignupFreetrial() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/freetrial', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a free trial staging instance
-	 * 
-	 * @param {String} freeTrialId freeTrialId
-	 */
-	getBillingSignupFreetrialStagingFreeTrialId(freeTrialId) { 
-		// verify the required parameter 'freeTrialId' is set
-		if (freeTrialId === undefined || freeTrialId === null) {
-			throw 'Missing the required parameter "freeTrialId" when calling getBillingSignupFreetrialStagingFreeTrialId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/freetrial/staging/{freeTrialId}', 
-			'GET', 
-			{ 'freeTrialId': freeTrialId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a provisioning record
-	 * 
-	 * @param {String} provisioningId provisioningId
-	 */
-	getBillingSignupProvisioningProvisioningId(provisioningId) { 
-		// verify the required parameter 'provisioningId' is set
-		if (provisioningId === undefined || provisioningId === null) {
-			throw 'Missing the required parameter "provisioningId" when calling getBillingSignupProvisioningProvisioningId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/provisioning/{provisioningId}', 
-			'GET', 
-			{ 'provisioningId': provisioningId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get subscription overview.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.periodEndingTimestamp Period ending timestamp
-	 */
-	getBillingSubscriptionoverview(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/subscriptionoverview', 
-			'GET', 
-			{  },
-			{ 'periodEndingTimestamp': opts['periodEndingTimestamp'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the result of an asynchronous billing task.
-	 * 
-	 * @param {String} taskId Identifies the task result to retrieve
-	 */
-	getBillingTask(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getBillingTask';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/tasks/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -13099,848 +9895,13 @@ class BillingApi {
 		);
 	}
 
-	/**
-	 * Get metered app customer usage details.
-	 * 
-	 * @param {String} organizationId The ID of the customer organization to retrieve or submit usage for.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.region Genesys Cloud region (us-east-1, eu-central-1, ap-southeast-2, etc.)
-	 * @param {String} opts.appIds Comma-separated list of app IDs to return usage for
-	 */
-	getBillingVendorusageOrganization(organizationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling getBillingVendorusageOrganization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/vendorusage/organizations/{organizationId}', 
-			'GET', 
-			{ 'organizationId': organizationId },
-			{ 'region': opts['region'],'appIds': opts['appIds'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get metered app customer usage counts by Genesys Cloud region
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Object} opts.region Genesys Cloud region (us-east-1, eu-central-1, ap-southeast-2, etc.)
-	 * @param {String} opts.appIds Comma-separated list of app IDs to return usage for
-	 */
-	getBillingVendorusageOrganizations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/vendorusage/organizations', 
-			'GET', 
-			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'region': opts['region'],'appIds': opts['appIds'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a free trial staging instance
-	 * 
-	 * @param {String} freeTrialId freeTrialId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to update a free trial
-	 */
-	patchBillingSignupFreetrialStagingFreeTrialId(freeTrialId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'freeTrialId' is set
-		if (freeTrialId === undefined || freeTrialId === null) {
-			throw 'Missing the required parameter "freeTrialId" when calling patchBillingSignupFreetrialStagingFreeTrialId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/freetrial/staging/{freeTrialId}', 
-			'PATCH', 
-			{ 'freeTrialId': freeTrialId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a provisioning record
-	 * 
-	 * @param {String} provisioningId provisioningId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to update a provisioning record
-	 */
-	patchBillingSignupProvisioningProvisioningId(provisioningId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'provisioningId' is set
-		if (provisioningId === undefined || provisioningId === null) {
-			throw 'Missing the required parameter "provisioningId" when calling patchBillingSignupProvisioningProvisioningId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/provisioning/{provisioningId}', 
-			'PATCH', 
-			{ 'provisioningId': provisioningId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Apply billing activation
-	 * Applies a billing activation job to this org, which activates billing for this customer.
-	 * @param {String} billingActivationJobId Identifies the billing activation job to apply
-	 */
-	postBillingActivation(billingActivationJobId) { 
-		// verify the required parameter 'billingActivationJobId' is set
-		if (billingActivationJobId === undefined || billingActivationJobId === null) {
-			throw 'Missing the required parameter "billingActivationJobId" when calling postBillingActivation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/activations/{billingActivationJobId}', 
-			'POST', 
-			{ 'billingActivationJobId': billingActivationJobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get carrier services usage data CSV.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.from startDateTime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.to endDateTime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Number} opts.limit Limit the number of results (default to -1)
-	 */
-	postBillingCarrierservicesUsageCallsCsv(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/carrierservices/usage/calls/csv', 
-			'POST', 
-			{  },
-			{ 'from': opts['from'],'to': opts['to'],'limit': opts['limit'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Request the organization's licensing standing.
-	 * 
-	 * @param {Object} body SignedBillingData
-	 */
-	postBillingPremiseLicensestatus(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postBillingPremiseLicensestatus';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/premise/licensestatus', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Request Upload URL for billing files.
-	 * 
-	 * @param {Object} body SignedBillingData
-	 */
-	postBillingPremiseUploadurl(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postBillingPremiseUploadurl';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/premise/uploadurl', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Activate a Premium App trial.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The Premium App trial details
-	 */
-	postBillingPremiumapptrials(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/premiumapptrials', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get billable usage data report CSV.
-	 * Gets the billable usage data report CSV for this customer.
-	 * @param {String} reportId Identifies the report CSV to be retrieved
-	 */
-	postBillingReportsBillableusagedataReportIdCsv(reportId) { 
-		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling postBillingReportsBillableusagedataReportIdCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/reports/billableusagedata/{reportId}/csv', 
-			'POST', 
-			{ 'reportId': reportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get concurrent data report CSV.
-	 * Gets the concurrent data report CSV for this customer.
-	 * @param {String} reportId Identifies the report CSV to be retrieved
-	 */
-	postBillingReportsConcurrentusagedataReportIdCsv(reportId) { 
-		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling postBillingReportsConcurrentusagedataReportIdCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/reports/concurrentusagedata/{reportId}/csv', 
-			'POST', 
-			{ 'reportId': reportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get hourly license usage data report CSV.
-	 * Gets the hourly license usage data report CSV for this customer.
-	 * @param {String} reportId Identifies the report CSV to be retrieved
-	 */
-	postBillingReportsHourlylicenseusagedataReportIdCsv(reportId) { 
-		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling postBillingReportsHourlylicenseusagedataReportIdCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/reports/hourlylicenseusagedata/{reportId}/csv', 
-			'POST', 
-			{ 'reportId': reportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get resources data report CSV.
-	 * Gets the resources data report CSV for this customer.
-	 * @param {String} reportId Identifies the report CSV to be retrieved
-	 */
-	postBillingReportsResourcesusagedataReportIdCsv(reportId) { 
-		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling postBillingReportsResourcesusagedataReportIdCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/reports/resourcesusagedata/{reportId}/csv', 
-			'POST', 
-			{ 'reportId': reportId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new free trial staging instance
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.utmCampaign Marketing campaign identifier
-	 * @param {String} opts.utmSource Source where traffic is coming from
-	 * @param {String} opts.utmMedium General channel where the traffic came from
-	 * @param {String} opts.utmContent What type of content initiated the event
-	 * @param {String} opts.utmTerm Which query term was used to access the page
-	 * @param {Object} opts.body Input used to create a free trial
-	 */
-	postBillingSignupFreetrialStaging(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/freetrial/staging', 
-			'POST', 
-			{  },
-			{ 'utmCampaign': opts['utmCampaign'],'utmSource': opts['utmSource'],'utmMedium': opts['utmMedium'],'utmContent': opts['utmContent'],'utmTerm': opts['utmTerm'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Generates a new OTP code for free trial signup
-	 * 
-	 * @param {String} freeTrialId freeTrialId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to activate a free trial
-	 */
-	postBillingSignupFreetrialStagingFreeTrialIdOtp(freeTrialId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'freeTrialId' is set
-		if (freeTrialId === undefined || freeTrialId === null) {
-			throw 'Missing the required parameter "freeTrialId" when calling postBillingSignupFreetrialStagingFreeTrialIdOtp';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/freetrial/staging/{freeTrialId}/otp', 
-			'POST', 
-			{ 'freeTrialId': freeTrialId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new provisioning record
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.utmCampaign Marketing campaign identifier
-	 * @param {String} opts.utmSource Source where traffic is coming from
-	 * @param {String} opts.utmMedium General channel where the traffic came from
-	 * @param {String} opts.utmContent What type of content initiated the event
-	 * @param {String} opts.utmTerm Which query term was used to access the page
-	 * @param {Object} opts.body Input used to create a provisioning
-	 */
-	postBillingSignupProvisioning(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/provisioning', 
-			'POST', 
-			{  },
-			{ 'utmCampaign': opts['utmCampaign'],'utmSource': opts['utmSource'],'utmMedium': opts['utmMedium'],'utmContent': opts['utmContent'],'utmTerm': opts['utmTerm'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Generates a new OTP code for a provisioning job
-	 * 
-	 * @param {String} provisioningId provisioningId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to create a new one-time passcode exchange
-	 */
-	postBillingSignupProvisioningProvisioningIdOtp(provisioningId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'provisioningId' is set
-		if (provisioningId === undefined || provisioningId === null) {
-			throw 'Missing the required parameter "provisioningId" when calling postBillingSignupProvisioningProvisioningIdOtp';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/signup/provisioning/{provisioningId}/otp', 
-			'POST', 
-			{ 'provisioningId': provisioningId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Activate a Subscription Product.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The Subscription Product activation details
-	 */
-	postBillingSubscriptionproductactivations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/subscriptionproductactivations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Cancel a Subscription Product.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The Subscription Product cancellation details
-	 */
-	postBillingSubscriptionproductcancellations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/subscriptionproductcancellations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Submit metered app usage data.
-	 * 
-	 * @param {String} organizationId The ID of the customer organization to retrieve or submit usage for.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body App usage submission detail
-	 */
-	postBillingVendorusageOrganization(organizationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling postBillingVendorusageOrganization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/vendorusage/organizations/{organizationId}', 
-			'POST', 
-			{ 'organizationId': organizationId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates the billing account.
-	 * 
-	 * @param {String} accountId Identifies the account to be updated
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The account to be updated
-	 */
-	putBillingAccount(accountId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'accountId' is set
-		if (accountId === undefined || accountId === null) {
-			throw 'Missing the required parameter "accountId" when calling putBillingAccount';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/accounts/{accountId}', 
-			'PUT', 
-			{ 'accountId': accountId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update customer account.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The account to be updated
-	 */
-	putBillingAccount0(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/billing/account', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class BotsApi {
-	/**
-	 * Bots service.
-	 * @module purecloud-platform-client-v2/api/BotsApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new BotsApi. 
-	 * @alias module:purecloud-platform-client-v2/api/BotsApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Start a process (job) to prepare a download of a singular bot execution data instance by Id
-	 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-	 * @param {String} instanceId Instance ID
-	 */
-	getBotsInstance(instanceId) { 
-		// verify the required parameter 'instanceId' is set
-		if (instanceId === undefined || instanceId === null) {
-			throw 'Missing the required parameter "instanceId" when calling getBotsInstance';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/bots/instances/{instanceId}', 
-			'GET', 
-			{ 'instanceId': instanceId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the status and/or results of an asynchronous bot execution data retrieval job
-	 * 
-	 * @param {String} jobId The asynchronous job ID
-	 */
-	getBotsInstancesJob(jobId) { 
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getBotsInstancesJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/bots/instances/jobs/{jobId}', 
-			'GET', 
-			{ 'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a list of capabilities that the org can use to query for execution data
-	 * Returns the queryable parameters that can be used to build a query for execution data.
-	 */
-	getBotsInstancesQuerycapabilities() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/bots/instances/querycapabilities', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start a process (job) that will prepare a list of execution data IDs for download.
-	 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-	 * @param {Object} body Requested Bot Ids
-	 */
-	postBotsInstancesJobs(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postBotsInstancesJobs';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/bots/instances/jobs', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query the database of existing bot execution histories to look for particular bot criteria
-	 * Returns a list of matching bot execution histories up to 200 max.
-	 * @param {Object} body query
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.indexOnly indexes only
-	 */
-	postBotsInstancesQuery(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postBotsInstancesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/bots/instances/query', 
-			'POST', 
-			{  },
-			{ 'indexOnly': opts['indexOnly'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class BridgeApi {
-	/**
-	 * Bridge service.
-	 * @module purecloud-platform-client-v2/api/BridgeApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new BridgeApi. 
-	 * @alias module:purecloud-platform-client-v2/api/BridgeApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Get user actions categories
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getBridgeUseractionsCategories(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/bridge/useractions/categories', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get user actions metadata
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to name)
-	 * @param {String} opts.sortOrder Sort order (default to ascending)
-	 * @param {String} opts.expand requests.inputSchema,requests.successSchema
-	 */
-	getBridgeUseractionsMetadata(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/bridge/useractions/metadata', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get user action metadata
-	 * 
-	 * @param {String} actionName Name
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand requests.inputSchema,requests.successSchema
-	 */
-	getBridgeUseractionsMetadataActionName(actionName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'actionName' is set
-		if (actionName === undefined || actionName === null) {
-			throw 'Missing the required parameter "actionName" when calling getBridgeUseractionsMetadataActionName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/bridge/useractions/metadata/{actionName}', 
-			'GET', 
-			{ 'actionName': actionName },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -13954,750 +9915,6 @@ class CarrierServicesApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete effective number rates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	deleteCarrierservicesBillingNumberrates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/numberrates', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update effective usageRateRegions
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	deleteCarrierservicesBillingUsagerateregions(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/usagerateregions', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes a specific service for a given carrier (i.e. OUTBOUND, INBOUND...)
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {String} serviceId Service ID
-	 */
-	deleteCarrierservicesCarrierService(carrierId, serviceId) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling deleteCarrierservicesCarrierService';
-		}
-		// verify the required parameter 'serviceId' is set
-		if (serviceId === undefined || serviceId === null) {
-			throw 'Missing the required parameter "serviceId" when calling deleteCarrierservicesCarrierService';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/{carrierId}/services/{serviceId}', 
-			'DELETE', 
-			{ 'carrierId': carrierId,'serviceId': serviceId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes a CSV schema for a carrier.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {String} schemaName Schema name
-	 */
-	deleteCarrierservicesCsvschemaNameSchemaName(carrierId, schemaName) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling deleteCarrierservicesCsvschemaNameSchemaName';
-		}
-		// verify the required parameter 'schemaName' is set
-		if (schemaName === undefined || schemaName === null) {
-			throw 'Missing the required parameter "schemaName" when calling deleteCarrierservicesCsvschemaNameSchemaName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/csvschemas/{carrierId}/name/{schemaName}', 
-			'DELETE', 
-			{ 'carrierId': carrierId,'schemaName': schemaName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Clear current emergency location for the logged in user
-	 * 
-	 */
-	deleteCarrierservicesIntegrationsEmergencylocationsMe() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/integrations/emergencylocations/me', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Disconnect the number purchased in a particular order.  The order record remains (in the deleted state) for record keeping.
-	 * 
-	 * @param {String} orderId Phone Number Order ID
-	 */
-	deleteCarrierservicesNumberpurchaseOrder(orderId) { 
-		// verify the required parameter 'orderId' is set
-		if (orderId === undefined || orderId === null) {
-			throw 'Missing the required parameter "orderId" when calling deleteCarrierservicesNumberpurchaseOrder';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/orders/{orderId}', 
-			'DELETE', 
-			{ 'orderId': orderId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Cancel a specific reservation, making the number available for other users, again.
-	 * 
-	 * @param {String} reservationId Phone Number Reservation ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.phoneNumberType Phone Number Type
-	 */
-	deleteCarrierservicesNumberpurchaseReservedReservationId(reservationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'reservationId' is set
-		if (reservationId === undefined || reservationId === null) {
-			throw 'Missing the required parameter "reservationId" when calling deleteCarrierservicesNumberpurchaseReservedReservationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/reserved/{reservationId}', 
-			'DELETE', 
-			{ 'reservationId': reservationId },
-			{ 'phoneNumberType': opts['phoneNumberType'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete template by id
-	 * 
-	 * @param {String} templateId Template ID
-	 */
-	deleteCarrierservicesTemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling deleteCarrierservicesTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/templates/{templateId}', 
-			'DELETE', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an existing Endpoint plan for uploaded Transforms
-	 * 
-	 * @param {String} endpointId Endpoint ID
-	 */
-	deleteCarrierservicesTransformendpoint(endpointId) { 
-		// verify the required parameter 'endpointId' is set
-		if (endpointId === undefined || endpointId === null) {
-			throw 'Missing the required parameter "endpointId" when calling deleteCarrierservicesTransformendpoint';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformendpoints/{endpointId}', 
-			'DELETE', 
-			{ 'endpointId': endpointId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an existing transform plan for uploaded spreadsheets
-	 * 
-	 * @param {String} transformId Transform ID
-	 */
-	deleteCarrierservicesUploadtransformSpreadsheet(transformId) { 
-		// verify the required parameter 'transformId' is set
-		if (transformId === undefined || transformId === null) {
-			throw 'Missing the required parameter "transformId" when calling deleteCarrierservicesUploadtransformSpreadsheet';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/spreadsheets/{transformId}', 
-			'DELETE', 
-			{ 'transformId': transformId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an existing transform plan for uploaded delimited text tables
-	 * 
-	 * @param {String} transformId Transform ID
-	 */
-	deleteCarrierservicesUploadtransformTexttable(transformId) { 
-		// verify the required parameter 'transformId' is set
-		if (transformId === undefined || transformId === null) {
-			throw 'Missing the required parameter "transformId" when calling deleteCarrierservicesUploadtransformTexttable';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/texttables/{transformId}', 
-			'DELETE', 
-			{ 'transformId': transformId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes a XLSX schema for a carrier.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {String} schemaName Schema name
-	 */
-	deleteCarrierservicesXlsxschemaNameSchemaName(carrierId, schemaName) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling deleteCarrierservicesXlsxschemaNameSchemaName';
-		}
-		// verify the required parameter 'schemaName' is set
-		if (schemaName === undefined || schemaName === null) {
-			throw 'Missing the required parameter "schemaName" when calling deleteCarrierservicesXlsxschemaNameSchemaName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/xlsxschemas/{carrierId}/name/{schemaName}', 
-			'DELETE', 
-			{ 'carrierId': carrierId,'schemaName': schemaName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the bandwidth currency pricing for the given currency
-	 * 
-	 * @param {Object} currencyName currency
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.effectiveDate Effective date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Object} opts.bandwidthPricingType Bandwidth pricing type.
-	 */
-	getCarrierservicesBillingBandwidthcurrencypricingCurrencyName(currencyName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'currencyName' is set
-		if (currencyName === undefined || currencyName === null) {
-			throw 'Missing the required parameter "currencyName" when calling getCarrierservicesBillingBandwidthcurrencypricingCurrencyName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/bandwidthcurrencypricing/{currencyName}', 
-			'GET', 
-			{ 'currencyName': currencyName },
-			{ 'effectiveDate': opts['effectiveDate'],'bandwidthPricingType': opts['bandwidthPricingType'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the bandwidth pricing for the given customerId
-	 * 
-	 * @param {String} customerId customer ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.effectiveDate Effective date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Object} opts.bandwidthPricingType Bandwidth pricing type.
-	 */
-	getCarrierservicesBillingBandwidthpricingCustomerId(customerId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'customerId' is set
-		if (customerId === undefined || customerId === null) {
-			throw 'Missing the required parameter "customerId" when calling getCarrierservicesBillingBandwidthpricingCustomerId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/bandwidthpricing/{customerId}', 
-			'GET', 
-			{ 'customerId': customerId },
-			{ 'effectiveDate': opts['effectiveDate'],'bandwidthPricingType': opts['bandwidthPricingType'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get updated task status for the bill generation
-	 * Responds with the generation status for the bill with the given ID. When the status is completed, the bill is part of the response.
-	 * @param {String} billId monthly non-recurring cost query ID
-	 */
-	getCarrierservicesBillingBill(billId) { 
-		// verify the required parameter 'billId' is set
-		if (billId === undefined || billId === null) {
-			throw 'Missing the required parameter "billId" when calling getCarrierservicesBillingBill';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/bills/{billId}', 
-			'GET', 
-			{ 'billId': billId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get updated task status for monthly recurring cost (MRC) line items
-	 * Responds with the generation status of the report with the given ID. When the status is completed, the report is part of the response.
-	 * @param {String} mrcId monthly recurring cost query ID
-	 */
-	getCarrierservicesBillingMonthlyrecurringcostMrcId(mrcId) { 
-		// verify the required parameter 'mrcId' is set
-		if (mrcId === undefined || mrcId === null) {
-			throw 'Missing the required parameter "mrcId" when calling getCarrierservicesBillingMonthlyrecurringcostMrcId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/monthlyrecurringcost/{mrcId}', 
-			'GET', 
-			{ 'mrcId': mrcId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get updated task status for non-recurring cost (NRC) line items
-	 * Responds with the generation status of the report with the given ID. When the status is completed, the report is part of the response.
-	 * @param {String} nrcId monthly non-recurring cost query ID
-	 */
-	getCarrierservicesBillingNonrecurringcostNrcId(nrcId) { 
-		// verify the required parameter 'nrcId' is set
-		if (nrcId === undefined || nrcId === null) {
-			throw 'Missing the required parameter "nrcId" when calling getCarrierservicesBillingNonrecurringcostNrcId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/nonrecurringcost/{nrcId}', 
-			'GET', 
-			{ 'nrcId': nrcId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View effective number rates.
-	 * 
-	 * @param {Boolean} porting Indicates if this number was ported, or purchased through the portal.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.purchaseGroup Prefix or geographical grouping of numbers for pricing purposes
-	 * @param {Object} opts.domain Country where org has assigned number
-	 * @param {Date} opts.effectiveDate Effective Date for prices. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {String} opts.orgId Organization ID, only used for searching org-specific rates. Leave empty otherwise
-	 */
-	getCarrierservicesBillingNumberrates(porting, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'porting' is set
-		if (porting === undefined || porting === null) {
-			throw 'Missing the required parameter "porting" when calling getCarrierservicesBillingNumberrates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/numberrates', 
-			'GET', 
-			{  },
-			{ 'purchaseGroup': opts['purchaseGroup'],'domain': opts['domain'],'porting': porting,'effectiveDate': opts['effectiveDate'],'orgId': opts['orgId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View effective usageRateRegions.
-	 * 
-	 * @param {String} pcvZone Country of recipient's end of the call
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.effectiveDate Effective Date for prices. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Object} opts.usageCountry Country of other end of the call (not client's end)
-	 * @param {Object} opts.domain Country of client's end of the call
-	 * @param {Object} opts.dialerType Dialer campaign type
-	 */
-	getCarrierservicesBillingUsagerateregions(pcvZone, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'pcvZone' is set
-		if (pcvZone === undefined || pcvZone === null) {
-			throw 'Missing the required parameter "pcvZone" when calling getCarrierservicesBillingUsagerateregions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/usagerateregions', 
-			'GET', 
-			{  },
-			{ 'effectiveDate': opts['effectiveDate'],'usageCountry': opts['usageCountry'],'domain': opts['domain'],'pcvZone': pcvZone,'dialerType': opts['dialerType'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get specified carrier by its carrier id
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 */
-	getCarrierservicesCarrier(carrierId) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling getCarrierservicesCarrier';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/{carrierId}', 
-			'GET', 
-			{ 'carrierId': carrierId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a specific service for a given carrier (i.e. OUTBOUND, INBOUND...)
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {String} serviceId Service ID
-	 */
-	getCarrierservicesCarrierService(carrierId, serviceId) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling getCarrierservicesCarrierService';
-		}
-		// verify the required parameter 'serviceId' is set
-		if (serviceId === undefined || serviceId === null) {
-			throw 'Missing the required parameter "serviceId" when calling getCarrierservicesCarrierService';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/{carrierId}/services/{serviceId}', 
-			'GET', 
-			{ 'carrierId': carrierId,'serviceId': serviceId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves all services for a given carrier (i.e. OUTBOUND, INBOUND...)
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.filter Filter
-	 */
-	getCarrierservicesCarrierServices(carrierId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling getCarrierservicesCarrierServices';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/{carrierId}/services', 
-			'GET', 
-			{ 'carrierId': carrierId },
-			{ 'filter': opts['filter'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of carriers, optionally filtered by inventory status
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.inventory Inventory
-	 */
-	getCarrierservicesCarriers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers', 
-			'GET', 
-			{  },
-			{ 'inventory': opts['inventory'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a the result from manually backing up CDRs.
-	 * 
-	 * @param {String} resultId The result ID
-	 */
-	getCarrierservicesCdrsBackupResultId(resultId) { 
-		// verify the required parameter 'resultId' is set
-		if (resultId === undefined || resultId === null) {
-			throw 'Missing the required parameter "resultId" when calling getCarrierservicesCdrsBackupResultId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/cdrs/backup/{resultId}', 
-			'GET', 
-			{ 'resultId': resultId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a the result from listing backed up CDRs.
-	 * 
-	 * @param {String} resultId The result ID
-	 */
-	getCarrierservicesCdrsBackupsListResultId(resultId) { 
-		// verify the required parameter 'resultId' is set
-		if (resultId === undefined || resultId === null) {
-			throw 'Missing the required parameter "resultId" when calling getCarrierservicesCdrsBackupsListResultId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/cdrs/backups/list/{resultId}', 
-			'GET', 
-			{ 'resultId': resultId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all CSV schemas for a given carrier.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 */
-	getCarrierservicesCsvschema(carrierId) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling getCarrierservicesCsvschema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/csvschemas/{carrierId}', 
-			'GET', 
-			{ 'carrierId': carrierId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all CSV schemas for a given carrier and name.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {String} schemaName Schema name
-	 */
-	getCarrierservicesCsvschemaNameSchemaName(carrierId, schemaName) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling getCarrierservicesCsvschemaNameSchemaName';
-		}
-		// verify the required parameter 'schemaName' is set
-		if (schemaName === undefined || schemaName === null) {
-			throw 'Missing the required parameter "schemaName" when calling getCarrierservicesCsvschemaNameSchemaName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/csvschemas/{carrierId}/name/{schemaName}', 
-			'GET', 
-			{ 'carrierId': carrierId,'schemaName': schemaName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all CSV schemas available.
-	 * 
-	 */
-	getCarrierservicesCsvschemas() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/csvschemas', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Get location for the logged in user
@@ -14715,1902 +9932,6 @@ class CarrierServicesApi {
 			'GET', 
 			{  },
 			{ 'phoneNumber': phoneNumber },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an InventoryNumber
-	 * 
-	 * @param {String} phoneNumberId Phone Number
-	 */
-	getCarrierservicesNumberinventoryInventorynumber(phoneNumberId) { 
-		// verify the required parameter 'phoneNumberId' is set
-		if (phoneNumberId === undefined || phoneNumberId === null) {
-			throw 'Missing the required parameter "phoneNumberId" when calling getCarrierservicesNumberinventoryInventorynumber';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers/{phoneNumberId}', 
-			'GET', 
-			{ 'phoneNumberId': phoneNumberId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all InventoryNumbers. Filtering is supported.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.sortBy Sort By Field (default to phoneNumber)
-	 * @param {Object} opts.sortOrder Sort Order (default to ascending)
-	 * @param {String} opts.phoneNumber Phone number filter
-	 * @param {String} opts.city City filter
-	 * @param {Object} opts.numberType Number type filter
-	 * @param {Object} opts.status Status filter
-	 * @param {Object} opts.addressStatus Address status filter
-	 * @param {Date} opts.carrierReservationExpiryStart Carrier reservation expiry range filter start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.carrierReservationExpiryStop Carrier reservation expiry range filter stop. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.customerReservationExpiryStart Customer reservation expiry range filter start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.customerReservationExpiryStop Customer reservation expiry range filter stop. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 */
-	getCarrierservicesNumberinventoryInventorynumbers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'phoneNumber': opts['phoneNumber'],'city': opts['city'],'numberType': opts['numberType'],'status': opts['status'],'addressStatus': opts['addressStatus'],'carrierReservationExpiryStart': opts['carrierReservationExpiryStart'],'carrierReservationExpiryStop': opts['carrierReservationExpiryStop'],'customerReservationExpiryStart': opts['customerReservationExpiryStart'],'customerReservationExpiryStop': opts['customerReservationExpiryStop'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get available InventoryNumbers.
-	 * 
-	 * @param {String} prefix Filter prefix
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort By Field (default to phoneNumber)
-	 * @param {String} opts.sortOrder Sort Order (default to asc)
-	 * @param {Boolean} opts.excludeCarrierExpired Exclude Carrier Expired (default to false)
-	 * @param {String} opts.numberType Number Type (default to DID)
-	 */
-	getCarrierservicesNumberinventoryInventorynumbersAvailable(prefix, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'prefix' is set
-		if (prefix === undefined || prefix === null) {
-			throw 'Missing the required parameter "prefix" when calling getCarrierservicesNumberinventoryInventorynumbersAvailable';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers/available', 
-			'GET', 
-			{  },
-			{ 'prefix': prefix,'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'excludeCarrierExpired': opts['excludeCarrierExpired'],'numberType': opts['numberType'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all available service capabilities
-	 * 
-	 */
-	getCarrierservicesNumberinventoryServicecapabilities() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/servicecapabilities', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all available service capabilities and descriptions
-	 * 
-	 */
-	getCarrierservicesNumberinventoryServicecapabilitiesDescriptions() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/servicecapabilities/descriptions', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve results from async port requests update task.
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumbermanagementPortrequestTaskResults(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumbermanagementPortrequestTaskResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequest/tasks/{taskId}/results', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a port request update task to check its state
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumbermanagementPortrequestTaskStatus(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumbermanagementPortrequestTaskStatus';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequest/tasks/{taskId}/status', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a port request delete task to check its state
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumbermanagementPortrequestsDisconnectTask(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumbermanagementPortrequestsDisconnectTask';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve results from async port requests delete task.
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumbermanagementPortrequestsDisconnectTaskResults(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumbermanagementPortrequestsDisconnectTaskResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks/{taskId}/results', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a port request task to check its state
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumbermanagementPortrequestsTask(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumbermanagementPortrequestsTask';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequests/tasks/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a list of number orders for a port request by their completed taskId
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumbermanagementPortrequestsTaskResults(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumbermanagementPortrequestsTaskResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequests/tasks/{taskId}/results', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve search result status for previous search.
-	 * 
-	 * @param {String} taskId Search result task id
-	 */
-	getCarrierservicesNumberpurchase20160715AvailableTaskId(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumberpurchase20160715AvailableTaskId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20160715/available/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve search result status for previous search.
-	 * 
-	 * @param {String} taskId Search result task id
-	 */
-	getCarrierservicesNumberpurchase20180810AvailableTaskId(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumberpurchase20180810AvailableTaskId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20180810/available/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a number orders task to check its state
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumberpurchase20190107DisconnectTask(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumberpurchase20190107DisconnectTask';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve the results task of a number orders tasks by its completed taskId
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumberpurchase20190107DisconnectTaskResults(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumberpurchase20190107DisconnectTaskResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks/{taskId}/results', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a number order export task to check its state
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumberpurchase20190107ExportTask(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumberpurchase20190107ExportTask';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20190107/export/tasks/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve the results task of a number order export tasks by its completed taskId
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumberpurchase20190107ExportTaskResult(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumberpurchase20190107ExportTaskResult';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20190107/export/tasks/{taskId}/result', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a reservation task to check its state
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumberpurchase20200902ReservationsTask(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumberpurchase20200902ReservationsTask';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a list of reservations by their completed taskId
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesNumberpurchase20200902ReservationsTaskResults(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesNumberpurchase20200902ReservationsTaskResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks/{taskId}/results', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View all number orders for the organization of a listing of phone number types or a status, or a combination thereof.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.phoneNumberType Comma separated list of Phone Number Types to be queried on
-	 * @param {Object} opts.status Status or the number order. Cannot be used in combination with 'excludedStatuses'
-	 * @param {String} opts.excludedStatuses Comma separated list of order statuses to be excluded. This parameter cannot be used together with 'status'
-	 * @param {String} opts.startE164 e164 formatted lower bound phone number of a range query (inclusive)
-	 * @param {String} opts.endE164 e164 formatted upper bound phone number of a range query (exclusive)
-	 * @param {String} opts.locationId Optional location ID to filter by.
-	 * @param {Boolean} opts.emergencyCapable Optional emergency capable filter. If set to true, only number orders that have emergency capabilities are returned
-	 * @param {String} opts.lastId Index for paged queries. To get the next page, this has to be the ID of the last number order, and the direction has to be NEXT. To get the previous page, this has to be the ID of the first item, and the direction has to be PREVIOUS
-	 * @param {Object} opts.direction The direction indicates if the NEXT or PREVIOUS page should be returned (default to NEXT)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 */
-	getCarrierservicesNumberpurchase20210520Orders(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20210520/orders', 
-			'GET', 
-			{  },
-			{ 'phoneNumberType': opts['phoneNumberType'],'status': opts['status'],'excludedStatuses': opts['excludedStatuses'],'startE164': opts['startE164'],'endE164': opts['endE164'],'locationId': opts['locationId'],'emergencyCapable': opts['emergencyCapable'],'lastId': opts['lastId'],'direction': opts['direction'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View all a number order record.  Some vendor apis have side effects when viewing records with pending operations.  This method also manages the side effects and updates ININ-side data stores to reflect any changes.
-	 * 
-	 * @param {String} orderId Phone Number Order ID
-	 */
-	getCarrierservicesNumberpurchaseOrder(orderId) { 
-		// verify the required parameter 'orderId' is set
-		if (orderId === undefined || orderId === null) {
-			throw 'Missing the required parameter "orderId" when calling getCarrierservicesNumberpurchaseOrder';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/orders/{orderId}', 
-			'GET', 
-			{ 'orderId': orderId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View all number orders for the organization of a phone number type or a status, or a combination thereof.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.phoneNumberType Phone Number Type
-	 * @param {Object} opts.status Status or the number order. Cannot be used in combination with 'excludeDisconnected'
-	 * @param {Boolean} opts.excludeDisconnected Exclude disconnected numbers. Cannot be used in combination with 'status'
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by
-	 * @param {Object} opts.sortOrder Sort order
-	 */
-	getCarrierservicesNumberpurchaseOrders(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/orders', 
-			'GET', 
-			{  },
-			{ 'phoneNumberType': opts['phoneNumberType'],'status': opts['status'],'excludeDisconnected': opts['excludeDisconnected'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Check if a number is PCV number. This would return 200 if there is an order with this number, and the status is COMPLETE. Otherwise a 404 is returned.
-	 * 
-	 * @param {String} did The DID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.findActive Find active orders only (default to false)
-	 */
-	getCarrierservicesNumberpurchaseOrdersDidDid(did, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'did' is set
-		if (did === undefined || did === null) {
-			throw 'Missing the required parameter "did" when calling getCarrierservicesNumberpurchaseOrdersDidDid';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/orders/did/{did}', 
-			'GET', 
-			{ 'did': did },
-			{ 'findActive': opts['findActive'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get details of a specific port request.
-	 * 
-	 * @param {String} portRequestId Port request id
-	 */
-	getCarrierservicesNumberpurchasePortrequest(portRequestId) { 
-		// verify the required parameter 'portRequestId' is set
-		if (portRequestId === undefined || portRequestId === null) {
-			throw 'Missing the required parameter "portRequestId" when calling getCarrierservicesNumberpurchasePortrequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/portrequests/{portRequestId}', 
-			'GET', 
-			{ 'portRequestId': portRequestId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View all number orders for a given port request in an organization.
-	 * 
-	 * @param {String} portRequestId Port Request to retrieve number orders from
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page Number (default to 1)
-	 * @param {Number} opts.pageSize Page Size (default to 25)
-	 */
-	getCarrierservicesNumberpurchasePortrequestOrders(portRequestId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'portRequestId' is set
-		if (portRequestId === undefined || portRequestId === null) {
-			throw 'Missing the required parameter "portRequestId" when calling getCarrierservicesNumberpurchasePortrequestOrders';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/portrequests/{portRequestId}/orders', 
-			'GET', 
-			{ 'portRequestId': portRequestId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View all port requests for an organization.
-	 * 
-	 */
-	getCarrierservicesNumberpurchasePortrequests() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/portrequests', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * All port requests with the transitive property added.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page Number (default to 1)
-	 * @param {Number} opts.pageSize Page Size (default to 25)
-	 */
-	getCarrierservicesNumberpurchasePortrequestsTransitive(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/portrequests/transitive', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View a specific reservation.
-	 * 
-	 * @param {String} reservationId Phone Number Reservation ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.phoneNumberType Phone Number Type
-	 */
-	getCarrierservicesNumberpurchaseReservedReservationId(reservationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'reservationId' is set
-		if (reservationId === undefined || reservationId === null) {
-			throw 'Missing the required parameter "reservationId" when calling getCarrierservicesNumberpurchaseReservedReservationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/reserved/{reservationId}', 
-			'GET', 
-			{ 'reservationId': reservationId },
-			{ 'phoneNumberType': opts['phoneNumberType'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Find supported countries based on country (US, CA, PR, etc.) and if the number is Tollfree or DID
-	 * 
-	 * @param {String} country country
-	 * @param {Boolean} tollfree Is numbertype tollfree
-	 */
-	getCarrierservicesNumberpurchaseSupportedcountries(country, tollfree) { 
-		// verify the required parameter 'country' is set
-		if (country === undefined || country === null) {
-			throw 'Missing the required parameter "country" when calling getCarrierservicesNumberpurchaseSupportedcountries';
-		}
-		// verify the required parameter 'tollfree' is set
-		if (tollfree === undefined || tollfree === null) {
-			throw 'Missing the required parameter "tollfree" when calling getCarrierservicesNumberpurchaseSupportedcountries';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/supportedcountries', 
-			'GET', 
-			{  },
-			{ 'country': country,'tollfree': tollfree },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get effective number rate.
-	 * 
-	 * @param {String} purchaseGroup Prefix or geographical grouping of numbers for pricing purposes
-	 * @param {Object} currency Currency of the rate.
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.effectiveDate Effective Date for prices. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {String} opts.orgId Organization ID.
-	 */
-	getCarrierservicesPricingNumberrate(purchaseGroup, currency, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'purchaseGroup' is set
-		if (purchaseGroup === undefined || purchaseGroup === null) {
-			throw 'Missing the required parameter "purchaseGroup" when calling getCarrierservicesPricingNumberrate';
-		}
-		// verify the required parameter 'currency' is set
-		if (currency === undefined || currency === null) {
-			throw 'Missing the required parameter "currency" when calling getCarrierservicesPricingNumberrate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/pricing/numberrate', 
-			'GET', 
-			{  },
-			{ 'effectiveDate': opts['effectiveDate'],'purchaseGroup': purchaseGroup,'currency': currency,'orgId': opts['orgId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get ratesheet upload progress for a user.
-	 * 
-	 */
-	getCarrierservicesProgress() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/progress', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get updated task status for fee line items
-	 * Responds with the generation status of the report with the given ID. When the status is completed, the report is part of the response.
-	 * @param {String} feesId Fees report ID
-	 */
-	getCarrierservicesReportLineitemsFee(feesId) { 
-		// verify the required parameter 'feesId' is set
-		if (feesId === undefined || feesId === null) {
-			throw 'Missing the required parameter "feesId" when calling getCarrierservicesReportLineitemsFee';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/report/lineitems/fees/{feesId}', 
-			'GET', 
-			{ 'feesId': feesId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get updated task status for usage line items
-	 * Responds with the generation status of the report with the given ID. When the status is completed, the report is part of the response.
-	 * @param {String} usageId Usage report ID
-	 */
-	getCarrierservicesReportLineitemsUsageUsageId(usageId) { 
-		// verify the required parameter 'usageId' is set
-		if (usageId === undefined || usageId === null) {
-			throw 'Missing the required parameter "usageId" when calling getCarrierservicesReportLineitemsUsageUsageId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/report/lineitems/usage/{usageId}', 
-			'GET', 
-			{ 'usageId': usageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all task statuses
-	 * 
-	 */
-	getCarrierservicesReportUsageCallsCsv() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/report/usage/calls/csv', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get updated task status
-	 * 
-	 * @param {String} csvId CSV ID
-	 */
-	getCarrierservicesReportUsageCallsCsvCsvId(csvId) { 
-		// verify the required parameter 'csvId' is set
-		if (csvId === undefined || csvId === null) {
-			throw 'Missing the required parameter "csvId" when calling getCarrierservicesReportUsageCallsCsvCsvId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/report/usage/calls/csv/{csvId}', 
-			'GET', 
-			{ 'csvId': csvId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a signature task to check its state
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesSignaturesTask(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesSignaturesTask';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/signatures/tasks/{taskId}', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve signature task by their completed taskId
-	 * 
-	 * @param {String} taskId Task id
-	 */
-	getCarrierservicesSignaturesTaskResults(taskId) { 
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getCarrierservicesSignaturesTaskResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/signatures/tasks/{taskId}/results', 
-			'GET', 
-			{ 'taskId': taskId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all SIP Dns data for the current region.
-	 * 
-	 */
-	getCarrierservicesSipdnsdetails() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/sipdnsdetails', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get service type sort weight limits and defaults.
-	 * 
-	 */
-	getCarrierservicesSortweightsInfo() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/sortweights/info', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all supported countries for PureCloud Voice.  These are returned in their ISO 3166-1 form.
-	 * 
-	 */
-	getCarrierservicesSupportedcountries() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/supportedcountries', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Check if country is supported for PureCloud Voice.
-	 * 
-	 * @param {String} countryCode ISO 3166-1 country code for the supported countries
-	 */
-	getCarrierservicesSupportedcountry(countryCode) { 
-		// verify the required parameter 'countryCode' is set
-		if (countryCode === undefined || countryCode === null) {
-			throw 'Missing the required parameter "countryCode" when calling getCarrierservicesSupportedcountry';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/supportedcountries/{countryCode}', 
-			'GET', 
-			{ 'countryCode': countryCode },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get template by id
-	 * 
-	 * @param {String} templateId Template ID
-	 */
-	getCarrierservicesTemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling getCarrierservicesTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/templates/{templateId}', 
-			'GET', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all templates
-	 * 
-	 */
-	getCarrierservicesTemplates() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/templates', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a stored Endpoint plan for uploaded Transforms
-	 * 
-	 * @param {String} endpointId Endpoint ID
-	 */
-	getCarrierservicesTransformendpoint(endpointId) { 
-		// verify the required parameter 'endpointId' is set
-		if (endpointId === undefined || endpointId === null) {
-			throw 'Missing the required parameter "endpointId" when calling getCarrierservicesTransformendpoint';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformendpoints/{endpointId}', 
-			'GET', 
-			{ 'endpointId': endpointId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a stored transform plan for uploaded spreadsheets
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.filter Filter
-	 * @param {String} opts.pageSize Page size
-	 * @param {String} opts.lastEntry Last entry
-	 */
-	getCarrierservicesTransformendpoints(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformendpoints', 
-			'GET', 
-			{  },
-			{ 'filter': opts['filter'],'pageSize': opts['pageSize'],'lastEntry': opts['lastEntry'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * The progress report for an upload
-	 * 
-	 * @param {String} progressId Upload Progress ID
-	 */
-	getCarrierservicesTransformprogres(progressId) { 
-		// verify the required parameter 'progressId' is set
-		if (progressId === undefined || progressId === null) {
-			throw 'Missing the required parameter "progressId" when calling getCarrierservicesTransformprogres';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformprogress/{progressId}', 
-			'GET', 
-			{ 'progressId': progressId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get The progress report for transforming uploaded documents
-	 * 
-	 * @param {String} serviceName Service Name
-	 */
-	getCarrierservicesTransformprogressSearchServiceName(serviceName) { 
-		// verify the required parameter 'serviceName' is set
-		if (serviceName === undefined || serviceName === null) {
-			throw 'Missing the required parameter "serviceName" when calling getCarrierservicesTransformprogressSearchServiceName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformprogress/search/{serviceName}', 
-			'GET', 
-			{ 'serviceName': serviceName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get The progress report for transforming uploaded documents
-	 * 
-	 * @param {String} serviceName Service Name
-	 * @param {String} modelType Model Type
-	 */
-	getCarrierservicesTransformprogressSearchServiceNameModelType(serviceName, modelType) { 
-		// verify the required parameter 'serviceName' is set
-		if (serviceName === undefined || serviceName === null) {
-			throw 'Missing the required parameter "serviceName" when calling getCarrierservicesTransformprogressSearchServiceNameModelType';
-		}
-		// verify the required parameter 'modelType' is set
-		if (modelType === undefined || modelType === null) {
-			throw 'Missing the required parameter "modelType" when calling getCarrierservicesTransformprogressSearchServiceNameModelType';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformprogress/search/{serviceName}/{modelType}', 
-			'GET', 
-			{ 'serviceName': serviceName,'modelType': modelType },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get The progress report for transforming uploaded documents
-	 * 
-	 * @param {String} serviceName Service Name
-	 * @param {String} modelType Model Type
-	 * @param {String} modelId Model ID
-	 */
-	getCarrierservicesTransformprogressSearchServiceNameModelTypeModelId(serviceName, modelType, modelId) { 
-		// verify the required parameter 'serviceName' is set
-		if (serviceName === undefined || serviceName === null) {
-			throw 'Missing the required parameter "serviceName" when calling getCarrierservicesTransformprogressSearchServiceNameModelTypeModelId';
-		}
-		// verify the required parameter 'modelType' is set
-		if (modelType === undefined || modelType === null) {
-			throw 'Missing the required parameter "modelType" when calling getCarrierservicesTransformprogressSearchServiceNameModelTypeModelId';
-		}
-		// verify the required parameter 'modelId' is set
-		if (modelId === undefined || modelId === null) {
-			throw 'Missing the required parameter "modelId" when calling getCarrierservicesTransformprogressSearchServiceNameModelTypeModelId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformprogress/search/{serviceName}/{modelType}/{modelId}', 
-			'GET', 
-			{ 'serviceName': serviceName,'modelType': modelType,'modelId': modelId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a stored transform plan for uploaded spreadsheets
-	 * 
-	 * @param {String} transformId Transform ID
-	 */
-	getCarrierservicesUploadtransformSpreadsheet(transformId) { 
-		// verify the required parameter 'transformId' is set
-		if (transformId === undefined || transformId === null) {
-			throw 'Missing the required parameter "transformId" when calling getCarrierservicesUploadtransformSpreadsheet';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/spreadsheets/{transformId}', 
-			'GET', 
-			{ 'transformId': transformId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a stored transform plan for uploaded spreadsheets
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.filter Filter
-	 * @param {String} opts.pageSize Page size
-	 * @param {String} opts.lastEntry Last entry
-	 */
-	getCarrierservicesUploadtransformSpreadsheets(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/spreadsheets', 
-			'GET', 
-			{  },
-			{ 'filter': opts['filter'],'pageSize': opts['pageSize'],'lastEntry': opts['lastEntry'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a stored transform plan for uploaded delimited text tables
-	 * 
-	 * @param {String} transformId Transform ID
-	 */
-	getCarrierservicesUploadtransformTexttable(transformId) { 
-		// verify the required parameter 'transformId' is set
-		if (transformId === undefined || transformId === null) {
-			throw 'Missing the required parameter "transformId" when calling getCarrierservicesUploadtransformTexttable';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/texttables/{transformId}', 
-			'GET', 
-			{ 'transformId': transformId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a stored transform plan for uploaded delimited text tables
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.filter Filter
-	 */
-	getCarrierservicesUploadtransformTexttables(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/texttables', 
-			'GET', 
-			{  },
-			{ 'filter': opts['filter'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all XLSX schemas for a given carrier.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 */
-	getCarrierservicesXlsxschema(carrierId) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling getCarrierservicesXlsxschema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/xlsxschemas/{carrierId}', 
-			'GET', 
-			{ 'carrierId': carrierId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all XLSX schemas for a given carrier and name.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {String} schemaName Schema name
-	 */
-	getCarrierservicesXlsxschemaNameSchemaName(carrierId, schemaName) { 
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling getCarrierservicesXlsxschemaNameSchemaName';
-		}
-		// verify the required parameter 'schemaName' is set
-		if (schemaName === undefined || schemaName === null) {
-			throw 'Missing the required parameter "schemaName" when calling getCarrierservicesXlsxschemaNameSchemaName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/xlsxschemas/{carrierId}/name/{schemaName}', 
-			'GET', 
-			{ 'carrierId': carrierId,'schemaName': schemaName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all available XLSX schemas.
-	 * 
-	 */
-	getCarrierservicesXlsxschemas() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/xlsxschemas', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Partial update or patch of an InventoryNumber.
-	 * 
-	 * @param {String} phoneNumberId Phone Number
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body InventoryNumber
-	 */
-	patchCarrierservicesNumberinventoryInventorynumber(phoneNumberId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'phoneNumberId' is set
-		if (phoneNumberId === undefined || phoneNumberId === null) {
-			throw 'Missing the required parameter "phoneNumberId" when calling patchCarrierservicesNumberinventoryInventorynumber';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers/{phoneNumberId}', 
-			'PATCH', 
-			{ 'phoneNumberId': phoneNumberId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Partial update or patch of many InventoryNumbers.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<String, Object>} opts.body InventoryNumbers Patch Map
-	 */
-	patchCarrierservicesNumberinventoryInventorynumbersBulk(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers/bulk', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Patches individual properties of a number order record.  Not all fields will be allowed to be modified.  Only defaultLocationId and phoneNumberType are currently allowed to be modified .
-	 * 
-	 * @param {String} orderId Phone Number Order ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchCarrierservicesNumberpurchaseOrder(orderId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'orderId' is set
-		if (orderId === undefined || orderId === null) {
-			throw 'Missing the required parameter "orderId" when calling patchCarrierservicesNumberpurchaseOrder';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/orders/{orderId}', 
-			'PATCH', 
-			{ 'orderId': orderId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates bandwidth currency pricing
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postCarrierservicesBillingBandwidthcurrencypricing(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/bandwidthcurrencypricing', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates bandwidth pricing
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesBillingBandwidthpricing(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/bandwidthpricing', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Initiate bill generation
-	 * Initiates the generation of a bill. A report ID is returned, it can be used to query the status of the creation, which also returns the bill in the end.
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.from Start date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.to End date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Boolean} opts.breakout Breakout.
-	 * @param {Number} opts.shortDurationMinCalls Short duration min. calls.
-	 */
-	postCarrierservicesBillingBills(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/bills', 
-			'POST', 
-			{  },
-			{ 'from': opts['from'],'to': opts['to'],'breakout': opts['breakout'],'shortDurationMinCalls': opts['shortDurationMinCalls'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Initiate monthly recurring cost (MRC) line items report generation
-	 * Initiates the generation of the monthly recurring cost (MRC) report. A report ID is returned, it can be used to query the status of the creation, which also returns the report in the end.
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.from Start date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.to End date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Boolean} opts.breakout Breakout.
-	 */
-	postCarrierservicesBillingMonthlyrecurringcost(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/monthlyrecurringcost', 
-			'POST', 
-			{  },
-			{ 'from': opts['from'],'to': opts['to'],'breakout': opts['breakout'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Initiate non-recurring cost (NRC) line items report generation
-	 * Initiates the generation of the non-recurring cost (NRC) report. A report ID is returned, it can be used to query the status of the creation, which also returns the report in the end.
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.from Start date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.to End date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Boolean} opts.breakout Breakout.
-	 */
-	postCarrierservicesBillingNonrecurringcost(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/nonrecurringcost', 
-			'POST', 
-			{  },
-			{ 'from': opts['from'],'to': opts['to'],'breakout': opts['breakout'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create effective number rates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postCarrierservicesBillingNumberrates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/numberrates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Queries a single usage pricing
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesBillingUsagepricingQuery(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/usagepricing/query', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create effective usageRateRegions
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postCarrierservicesBillingUsagerateregions(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/usagerateregions', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a carrier service of a specified type (i.e. OUTBOUND, INBOUND...)
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesCarrierServices(carrierId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling postCarrierservicesCarrierServices';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/{carrierId}/services', 
-			'POST', 
-			{ 'carrierId': carrierId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a carrier
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body Carrier data
-	 */
-	postCarrierservicesCarriers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Manually backs up CDRs with a given prefix, and within a given time frame.
-	 * 
-	 * @param {String} prefix Prefix
-	 * @param {Date} startDate Date range start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} endDate Date range end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 */
-	postCarrierservicesCdrsBackup(prefix, startDate, endDate) { 
-		// verify the required parameter 'prefix' is set
-		if (prefix === undefined || prefix === null) {
-			throw 'Missing the required parameter "prefix" when calling postCarrierservicesCdrsBackup';
-		}
-		// verify the required parameter 'startDate' is set
-		if (startDate === undefined || startDate === null) {
-			throw 'Missing the required parameter "startDate" when calling postCarrierservicesCdrsBackup';
-		}
-		// verify the required parameter 'endDate' is set
-		if (endDate === undefined || endDate === null) {
-			throw 'Missing the required parameter "endDate" when calling postCarrierservicesCdrsBackup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/cdrs/backup', 
-			'POST', 
-			{  },
-			{ 'prefix': prefix,'startDate': startDate,'endDate': endDate },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Initiates asynchronously getting a list of backed up CDRs. The response contains a resultId for obtaining the result.
-	 * 
-	 * @param {String} prefix prefix
-	 * @param {Date} startDate Date range start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} endDate Date range end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.showVersions Show versions
-	 */
-	postCarrierservicesCdrsBackupsList(prefix, startDate, endDate, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'prefix' is set
-		if (prefix === undefined || prefix === null) {
-			throw 'Missing the required parameter "prefix" when calling postCarrierservicesCdrsBackupsList';
-		}
-		// verify the required parameter 'startDate' is set
-		if (startDate === undefined || startDate === null) {
-			throw 'Missing the required parameter "startDate" when calling postCarrierservicesCdrsBackupsList';
-		}
-		// verify the required parameter 'endDate' is set
-		if (endDate === undefined || endDate === null) {
-			throw 'Missing the required parameter "endDate" when calling postCarrierservicesCdrsBackupsList';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/cdrs/backups/list', 
-			'POST', 
-			{  },
-			{ 'showVersions': opts['showVersions'],'prefix': prefix,'startDate': startDate,'endDate': endDate },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Triggers a job that generates mock CDR data and stores it in the appropriate S3 bucket.
-	 * 
-	 */
-	postCarrierservicesCdrsGenerateFiles() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/cdrs/generate/files', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Restores a backed up CDR.
-	 * 
-	 * @param {String} sourcePrefix Source prefix
-	 * @param {String} key Key of CDR
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.targetBucket Target S3 bucket, if different from original bucket
-	 * @param {String} opts.targetPrefix Target prefix, if different from original prefix
-	 * @param {String} opts.versionId Version ID
-	 */
-	postCarrierservicesCdrsRestore(sourcePrefix, key, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sourcePrefix' is set
-		if (sourcePrefix === undefined || sourcePrefix === null) {
-			throw 'Missing the required parameter "sourcePrefix" when calling postCarrierservicesCdrsRestore';
-		}
-		// verify the required parameter 'key' is set
-		if (key === undefined || key === null) {
-			throw 'Missing the required parameter "key" when calling postCarrierservicesCdrsRestore';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/cdrs/restore', 
-			'POST', 
-			{  },
-			{ 'sourcePrefix': sourcePrefix,'key': key,'targetBucket': opts['targetBucket'],'targetPrefix': opts['targetPrefix'],'versionId': opts['versionId'] },
 			{  },
 			{  },
 			null, 
@@ -16644,1038 +9965,13 @@ class CarrierServicesApi {
 		);
 	}
 
-	/**
-	 * Verify that phone number supports user location .
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Number to validate 
-	 */
-	postCarrierservicesIntegrationsEmergencylocationsVerifyphonenumber(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/integrations/emergencylocations/verifyphonenumber', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create InventoryNumber
-	 * 
-	 * @param {Object} body InventoryNumber
-	 */
-	postCarrierservicesNumberinventoryInventorynumbers(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCarrierservicesNumberinventoryInventorynumbers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create many InventoryNumbers
-	 * 
-	 * @param {Array.<Object>} body InventoryNumbers
-	 */
-	postCarrierservicesNumberinventoryInventorynumbersBulk(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCarrierservicesNumberinventoryInventorynumbersBulk';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers/bulk', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Starts a task that updates the effective start date of the associated pending number orders of the port request
-	 * 
-	 * @param {String} portRequestId Port Request id
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.body Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 */
-	postCarrierservicesNumbermanagementPortrequestTaskEffectivedate(portRequestId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'portRequestId' is set
-		if (portRequestId === undefined || portRequestId === null) {
-			throw 'Missing the required parameter "portRequestId" when calling postCarrierservicesNumbermanagementPortrequestTaskEffectivedate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequest/tasks/{portRequestId}/effectivedate', 
-			'POST', 
-			{ 'portRequestId': portRequestId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start a task that deletes all given port requests and associated number orders
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.body 
-	 */
-	postCarrierservicesNumbermanagementPortrequestsDisconnectTasks(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start a task to port numbers
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postCarrierservicesNumbermanagementPortrequestsTasks(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numbermanagement/portrequests/tasks', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search for available numbers.
-	 * 
-	 * @param {Object} body Search result parameters
-	 */
-	postCarrierservicesNumberpurchase20160715Available(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCarrierservicesNumberpurchase20160715Available';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20160715/available', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Purchase numbers.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postCarrierservicesNumberpurchase20160715Orders(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20160715/orders', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start a task to disconnect the numbers purchased in the given orders.  The orders record remain in the deleted state for record keeping.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.body 
-	 */
-	postCarrierservicesNumberpurchase20190107DisconnectTasks(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Exports number orders for the organization of one or more statuses, a phone number range, or a combination thereof, in CSV format.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesNumberpurchase20190107ExportTasks(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20190107/export/tasks', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start a task to reserve available numbers, making them ready for purchase and preventing other users from accessing them.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postCarrierservicesNumberpurchase20200902ReservationsTasks(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Purchase numbers.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesNumberpurchaseOrders(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/orders', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Initiate fee line items report generation
-	 * Initiates the generation of the fee line items report. A report ID is returned, it can be used to query the status of the creation, which also returns the report in the end.
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.from Start date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.to End date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Number} opts.shortDurationMinCalls Short duration min. calls.
-	 */
-	postCarrierservicesReportLineitemsFees(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/report/lineitems/fees', 
-			'POST', 
-			{  },
-			{ 'from': opts['from'],'to': opts['to'],'shortDurationMinCalls': opts['shortDurationMinCalls'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Initiate usage line items report generation
-	 * Initiates the generation of the usage line items report. A report ID is returned, it can be used to query the status of the creation, which also returns the report in the end.
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.from Start date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.to End date bound for starting time for calls. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Number} opts.shortDurationMinCalls Short duration min. calls.
-	 */
-	postCarrierservicesReportLineitemsUsage(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/report/lineitems/usage', 
-			'POST', 
-			{  },
-			{ 'from': opts['from'],'to': opts['to'],'shortDurationMinCalls': opts['shortDurationMinCalls'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get carrier services usage data CSV.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Date} opts.from startDateTime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} opts.to endDateTime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 */
-	postCarrierservicesReportUsageCallsCsv(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/report/usage/calls/csv', 
-			'POST', 
-			{  },
-			{ 'from': opts['from'],'to': opts['to'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get View Url
-	 * Provides url of a hosted DocuSign view/document, allowing user to sign document electronically
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesSignature(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/signature', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start task to get url of a hosted DocuSign view/document, allowing user to sign document electronically
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesSignaturesTasks(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/signatures/tasks', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create template
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Template data
-	 */
-	postCarrierservicesTemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/templates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add a new transform plan for uploaded spreadsheets
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesTransformendpoints(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformendpoints', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add a new transform plan for uploaded spreadsheets
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesUploadtransformSpreadsheets(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/spreadsheets', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add a new transform plan for uploaded delimited text tables
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postCarrierservicesUploadtransformTexttables(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/texttables', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates bandwidth currency pricing
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	putCarrierservicesBillingBandwidthcurrencypricing(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/bandwidthcurrencypricing', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates bandwidth pricing
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putCarrierservicesBillingBandwidthpricing(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/bandwidthpricing', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update effective number rates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	putCarrierservicesBillingNumberrates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/numberrates', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update effective usageRateRegions
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	putCarrierservicesBillingUsagerateregions(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/billing/usagerateregions', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a carrier.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Carrier data
-	 */
-	putCarrierservicesCarrier(carrierId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling putCarrierservicesCarrier';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/{carrierId}', 
-			'PUT', 
-			{ 'carrierId': carrierId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates a specific service for a given carrier (i.e. OUTBOUND, INBOUND...)
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {String} serviceId Service ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putCarrierservicesCarrierService(carrierId, serviceId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling putCarrierservicesCarrierService';
-		}
-		// verify the required parameter 'serviceId' is set
-		if (serviceId === undefined || serviceId === null) {
-			throw 'Missing the required parameter "serviceId" when calling putCarrierservicesCarrierService';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/{carrierId}/services/{serviceId}', 
-			'PUT', 
-			{ 'carrierId': carrierId,'serviceId': serviceId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * [20190123] Update a carrier
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Carrier data
-	 */
-	putCarrierservicesCarriers20190123Carrier(carrierId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling putCarrierservicesCarriers20190123Carrier';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/20190123/carriers/{carrierId}', 
-			'PUT', 
-			{ 'carrierId': carrierId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * [20190123] Update a service for a carrier
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {String} serviceId Service ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putCarrierservicesCarriers20190123CarrierService(carrierId, serviceId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling putCarrierservicesCarriers20190123CarrierService';
-		}
-		// verify the required parameter 'serviceId' is set
-		if (serviceId === undefined || serviceId === null) {
-			throw 'Missing the required parameter "serviceId" when calling putCarrierservicesCarriers20190123CarrierService';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/carriers/20190123/carriers/{carrierId}/services/{serviceId}', 
-			'PUT', 
-			{ 'carrierId': carrierId,'serviceId': serviceId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates or creates a CSV schema for a carrier.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Schema data
-	 */
-	putCarrierservicesCsvschema(carrierId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling putCarrierservicesCsvschema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/csvschemas/{carrierId}', 
-			'PUT', 
-			{ 'carrierId': carrierId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an InventoryNumber
-	 * 
-	 * @param {String} phoneNumberId Phone Number
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body InventoryNumber
-	 */
-	putCarrierservicesNumberinventoryInventorynumber(phoneNumberId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'phoneNumberId' is set
-		if (phoneNumberId === undefined || phoneNumberId === null) {
-			throw 'Missing the required parameter "phoneNumberId" when calling putCarrierservicesNumberinventoryInventorynumber';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers/{phoneNumberId}', 
-			'PUT', 
-			{ 'phoneNumberId': phoneNumberId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update many InventoryNumbers
-	 * 
-	 * @param {Array.<Object>} body InventoryNumbers
-	 */
-	putCarrierservicesNumberinventoryInventorynumbersBulk(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putCarrierservicesNumberinventoryInventorynumbersBulk';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberinventory/inventorynumbers/bulk', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates a number order record.  Not all fields will be allowed to be modified.  Only effectiveStartDate currently is allowed to be modified at the moment.
-	 * 
-	 * @param {String} orderId Phone Number Order ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putCarrierservicesNumberpurchaseOrder(orderId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'orderId' is set
-		if (orderId === undefined || orderId === null) {
-			throw 'Missing the required parameter "orderId" when calling putCarrierservicesNumberpurchaseOrder';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/orders/{orderId}', 
-			'PUT', 
-			{ 'orderId': orderId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Edit details of a specific port request.  You may only edit the company name, billing address, and contact info for the port request.  Editing is also only allowed before 30 minutes of activating time.
-	 * 
-	 * @param {String} portRequestId Port request id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putCarrierservicesNumberpurchasePortrequest(portRequestId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'portRequestId' is set
-		if (portRequestId === undefined || portRequestId === null) {
-			throw 'Missing the required parameter "portRequestId" when calling putCarrierservicesNumberpurchasePortrequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/numberpurchase/portrequests/{portRequestId}', 
-			'PUT', 
-			{ 'portRequestId': portRequestId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update template
-	 * 
-	 * @param {String} templateId Template ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Template data
-	 */
-	putCarrierservicesTemplate(templateId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling putCarrierservicesTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/templates/{templateId}', 
-			'PUT', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an existing Endpoint plan for uploaded Transforms
-	 * 
-	 * @param {String} endpointId Endpoint ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putCarrierservicesTransformendpoint(endpointId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'endpointId' is set
-		if (endpointId === undefined || endpointId === null) {
-			throw 'Missing the required parameter "endpointId" when calling putCarrierservicesTransformendpoint';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/transformendpoints/{endpointId}', 
-			'PUT', 
-			{ 'endpointId': endpointId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an existing transform plan for uploaded spreadsheets
-	 * 
-	 * @param {String} transformId Transform ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putCarrierservicesUploadtransformSpreadsheet(transformId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'transformId' is set
-		if (transformId === undefined || transformId === null) {
-			throw 'Missing the required parameter "transformId" when calling putCarrierservicesUploadtransformSpreadsheet';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/spreadsheets/{transformId}', 
-			'PUT', 
-			{ 'transformId': transformId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an existing transform plan for uploaded delimited text tables
-	 * 
-	 * @param {String} transformId Transform ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putCarrierservicesUploadtransformTexttable(transformId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'transformId' is set
-		if (transformId === undefined || transformId === null) {
-			throw 'Missing the required parameter "transformId" when calling putCarrierservicesUploadtransformTexttable';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/uploadtransform/texttables/{transformId}', 
-			'PUT', 
-			{ 'transformId': transformId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates or creates a XLSX schema for a carrier.
-	 * 
-	 * @param {String} carrierId Carrier ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Schema data
-	 */
-	putCarrierservicesXlsxschema(carrierId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'carrierId' is set
-		if (carrierId === undefined || carrierId === null) {
-			throw 'Missing the required parameter "carrierId" when calling putCarrierservicesXlsxschema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/carrierservices/xlsxschemas/{carrierId}', 
-			'PUT', 
-			{ 'carrierId': carrierId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -17804,36 +10100,6 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages/{messageId}', 
 			'DELETE', 
 			{ 'userId': userId,'messageId': messageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Room Participant.
-	 * This route is deprecated, please use /chats/rooms/{roomJid}/participants/{participantJid} instead
-	 * @param {String} roomJid roomJid
-	 * @param {String} participantJid participantJid
-	 */
-	getChatRoomParticipant(roomJid, participantJid) { 
-		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
-			throw 'Missing the required parameter "roomJid" when calling getChatRoomParticipant';
-		}
-		// verify the required parameter 'participantJid' is set
-		if (participantJid === undefined || participantJid === null) {
-			throw 'Missing the required parameter "participantJid" when calling getChatRoomParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/chat/rooms/{roomJid}/participants/{participantJid}', 
-			'GET', 
-			{ 'roomJid': roomJid,'participantJid': participantJid },
 			{  },
 			{  },
 			{  },
@@ -17987,36 +10253,6 @@ class ChatApi {
 	}
 
 	/**
-	 * Get a room participant
-	 * 
-	 * @param {String} roomJid roomJid
-	 * @param {String} participantJid participantJid
-	 */
-	getChatsRoomParticipant(roomJid, participantJid) { 
-		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
-			throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipant';
-		}
-		// verify the required parameter 'participantJid' is set
-		if (participantJid === undefined || participantJid === null) {
-			throw 'Missing the required parameter "participantJid" when calling getChatsRoomParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/chats/rooms/{roomJid}/participants/{participantJid}', 
-			'GET', 
-			{ 'roomJid': roomJid,'participantJid': participantJid },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get Chat Settings.
 	 * 
 	 */
@@ -18134,31 +10370,6 @@ class ChatApi {
 			'GET', 
 			{ 'userId': userId },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Room Jids for a User via a user's id
-	 * 
-	 * @param {String} userId userId
-	 */
-	getChatsUserRooms(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getChatsUserRooms';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/chats/users/{userId}/rooms', 
-			'GET', 
-			{ 'userId': userId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -18528,7 +10739,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -19101,184 +11312,11 @@ class CoachingApi {
 
 }
 
-class CobrowseApi {
-	/**
-	 * Cobrowse service.
-	 * @module purecloud-platform-client-v2/api/CobrowseApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new CobrowseApi. 
-	 * @alias module:purecloud-platform-client-v2/api/CobrowseApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Deletes a cobrowse deployment by id
-	 * 
-	 * @param {String} deploymentId Id of the deployment
-	 */
-	deleteCobrowseDeployment(deploymentId) { 
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling deleteCobrowseDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/cobrowse/deployments/{deploymentId}', 
-			'DELETE', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a cobrowse deployment by id
-	 * 
-	 * @param {String} deploymentId Id of the deployment
-	 */
-	getCobrowseDeployment(deploymentId) { 
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling getCobrowseDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/cobrowse/deployments/{deploymentId}', 
-			'GET', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a list cobrowse deployments within the org
-	 * 
-	 */
-	getCobrowseDeployments() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/cobrowse/deployments', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates a cobrowse deployment by id
-	 * 
-	 * @param {String} deploymentId Id of the deployment
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The hosts to add to the deployment
-	 */
-	postCobrowseDeployment(deploymentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling postCobrowseDeployment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/cobrowse/deployments/{deploymentId}', 
-			'POST', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a new cobrowse deployment
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The hosts to add to the deployment
-	 */
-	postCobrowseDeployments(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/cobrowse/deployments', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Notifies clients that a cobrowse session has failed to activate
-	 * 
-	 * @param {String} cobrowseSessionId Id of the cobrowse session
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The reason for why the cobrowse session was unable to be activated
-	 */
-	postCobrowseSessionCobrowseSessionIdActivationfailure(cobrowseSessionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'cobrowseSessionId' is set
-		if (cobrowseSessionId === undefined || cobrowseSessionId === null) {
-			throw 'Missing the required parameter "cobrowseSessionId" when calling postCobrowseSessionCobrowseSessionIdActivationfailure';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/cobrowse/session/{cobrowseSessionId}/activationfailure', 
-			'POST', 
-			{ 'cobrowseSessionId': cobrowseSessionId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -20421,7 +12459,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -20546,36 +12584,6 @@ class ConversationsApi {
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'DELETE', 
 			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Cancel a pending media request.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} mediaRequestId mediaRequestId
-	 */
-	deleteConversationsChatMediarequest(conversationId, mediaRequestId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationsChatMediarequest';
-		}
-		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null) {
-			throw 'Missing the required parameter "mediaRequestId" when calling deleteConversationsChatMediarequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/mediarequests/{mediaRequestId}', 
-			'DELETE', 
-			{ 'conversationId': conversationId,'mediaRequestId': mediaRequestId },
 			{  },
 			{  },
 			{  },
@@ -20851,36 +12859,6 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
 			'DELETE', 
 			{ 'supportedContentId': supportedContentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Remove any pinned videos
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 */
-	deleteConversationsVideoParticipantPin(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationsVideoParticipantPin';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling deleteConversationsVideoParticipantPin';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/pin', 
-			'DELETE', 
-			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
 			{  },
 			{  },
@@ -21241,91 +13219,6 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Suggestion.
-	 * 
-	 * @param {String} conversationId Conversation ID
-	 * @param {String} suggestionId Suggestion ID
-	 */
-	getConversationSuggestion(conversationId, suggestionId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestion';
-		}
-		// verify the required parameter 'suggestionId' is set
-		if (suggestionId === undefined || suggestionId === null) {
-			throw 'Missing the required parameter "suggestionId" when calling getConversationSuggestion';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/suggestions/{suggestionId}', 
-			'GET', 
-			{ 'conversationId': conversationId,'suggestionId': suggestionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all suggestions for a conversation.
-	 * 
-	 * @param {String} conversationId Conversation ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 */
-	getConversationSuggestions(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/suggestions', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Bulk get conversations.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.ids Comma separated list of conversationIds to fetch. Max of 10.
-	 */
-	getConversationexport(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversationexport', 
-			'GET', 
-			{  },
-			{ 'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -21718,68 +13611,6 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a specific media request in a chat conversation.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} mediaRequestId mediaRequestId
-	 */
-	getConversationsChatMediarequest(conversationId, mediaRequestId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMediarequest';
-		}
-		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null) {
-			throw 'Missing the required parameter "mediaRequestId" when calling getConversationsChatMediarequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/mediarequests/{mediaRequestId}', 
-			'GET', 
-			{ 'conversationId': conversationId,'mediaRequestId': mediaRequestId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all media requests for a chat conversation.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.type Optional filter for only this 'type' of media request
-	 * @param {String} opts.state Optional filter for only this 'state' of media request
-	 * @param {String} opts.to Optional filter for only this 'to' communicationId of media request
-	 * @param {String} opts.from Optional filter for only this 'from' communicationId of media request
-	 */
-	getConversationsChatMediarequests(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMediarequests';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/mediarequests', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{ 'type': opts['type'],'state': opts['state'],'to': opts['to'],'from': opts['from'] },
 			{  },
 			{  },
 			null, 
@@ -22738,26 +14569,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get a list of Facebook Permissions
-	 * 
-	 */
-	getConversationsMessagingFacebookPermissions() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/facebook/permissions', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a list of Integrations
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -23318,31 +15129,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get screen share conversation
-	 * 
-	 * @param {String} conversationId conversationId
-	 */
-	getConversationsScreenshare(conversationId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshare';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the wrap-up for this conversation communication. 
 	 * 
 	 * @param {String} conversationId conversationId
@@ -23382,90 +15168,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get the wrap-up for this conversation participant. 
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
-	 */
-	getConversationsScreenshareParticipantWrapup(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshareParticipantWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsScreenshareParticipantWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapup', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of wrapup codes for this conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 */
-	getConversationsScreenshareParticipantWrapupcodes(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshareParticipantWrapupcodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsScreenshareParticipantWrapupcodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapupcodes', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get active screen share conversations for the logged in user
-	 * 
-	 */
-	getConversationsScreenshares() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get Settings
 	 * 
 	 */
@@ -23475,31 +15177,6 @@ class ConversationsApi {
 			'/api/v2/conversations/settings', 
 			'GET', 
 			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get social conversation
-	 * 
-	 * @param {String} conversationId conversationId
-	 */
-	getConversationsSocial(conversationId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsSocial';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}', 
-			'GET', 
-			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
@@ -23540,115 +15217,6 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
 			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the wrap-up for this conversation participant. 
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
-	 */
-	getConversationsSocialParticipantWrapup(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsSocialParticipantWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsSocialParticipantWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapup', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of wrapup codes for this conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 */
-	getConversationsSocialParticipantWrapupcodes(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsSocialParticipantWrapupcodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsSocialParticipantWrapupcodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapupcodes', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get active social conversations for the logged in user
-	 * 
-	 */
-	getConversationsSocials() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get video conversation
-	 * 
-	 * @param {String} conversationId conversationId
-	 */
-	getConversationsVideo(conversationId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsVideo';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -23714,90 +15282,6 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
 			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the wrap-up for this conversation participant. 
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
-	 */
-	getConversationsVideoParticipantWrapup(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsVideoParticipantWrapup';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsVideoParticipantWrapup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapup', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{ 'provisional': opts['provisional'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of wrapup codes for this conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 */
-	getConversationsVideoParticipantWrapupcodes(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsVideoParticipantWrapupcodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsVideoParticipantWrapupcodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapupcodes', 
-			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get active video conversations for the logged in user
-	 * 
-	 */
-	getConversationsVideos() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos', 
-			'GET', 
-			{  },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -25021,36 +16505,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-	 * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationActivationRequest
-	 */
-	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update or activate a WhatsApp messaging integration
 	 * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 	 * @param {String} integrationId Integration ID
@@ -25141,144 +16595,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Update a conversation by disconnecting all of the participants
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body Conversation
-	 */
-	patchConversationsScreenshare(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsScreenshare';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsScreenshare';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsScreenshareParticipant(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsScreenshareParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsScreenshareParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the attributes on a conversation participant.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsScreenshareParticipantAttributes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsScreenshareParticipantAttributes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsScreenshareParticipantAttributes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/attributes', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant's communication by disconnecting it.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} body Participant
-	 */
-	patchConversationsScreenshareParticipantCommunication(conversationId, participantId, communicationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsScreenshareParticipantCommunication';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsScreenshareParticipantCommunication';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsScreenshareParticipantCommunication';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsScreenshareParticipantCommunication';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update Settings
 	 * 
 	 * @param {Object} body Settings
@@ -25293,282 +16609,6 @@ class ConversationsApi {
 			'/api/v2/conversations/settings', 
 			'PATCH', 
 			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a conversation by disconnecting all of the participants
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body Conversation
-	 */
-	patchConversationsSocial(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsSocial';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsSocial';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsSocialParticipant(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsSocialParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsSocialParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the attributes on a conversation participant.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsSocialParticipantAttributes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsSocialParticipantAttributes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsSocialParticipantAttributes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/attributes', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant's communication by disconnecting it.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} body Participant
-	 */
-	patchConversationsSocialParticipantCommunication(conversationId, participantId, communicationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsSocialParticipantCommunication';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsSocialParticipantCommunication';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsSocialParticipantCommunication';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsSocialParticipantCommunication';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a conversation by disconnecting all of the participants
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body Conversation
-	 */
-	patchConversationsVideo(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsVideo';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsVideo';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsVideoParticipant(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsVideoParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsVideoParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the attributes on a conversation participant.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchConversationsVideoParticipantAttributes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsVideoParticipantAttributes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsVideoParticipantAttributes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/attributes', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update conversation participant's communication by disconnecting it.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {String} communicationId communicationId
-	 * @param {Object} body Participant
-	 */
-	patchConversationsVideoParticipantCommunication(conversationId, participantId, communicationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsVideoParticipantCommunication';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsVideoParticipantCommunication';
-		}
-		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsVideoParticipantCommunication';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsVideoParticipantCommunication';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}', 
-			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
 			{  },
 			{  },
 			{  },
@@ -25848,40 +16888,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a wrap-up for this conversation participant.
-	 * 
-	 * @param {String} conversationId conversation ID
-	 * @param {String} participantId participant ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Wrap-up
-	 */
-	postConversationParticipant(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipant';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/participants/{participantId}', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a new callback for the specified participant on the conversation.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -25903,40 +16909,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new code for the specified participant.
-	 * 
-	 * @param {String} conversationId conversation ID
-	 * @param {String} participantId participant ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Codes
-	 */
-	postConversationParticipantCodes(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantCodes';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipantCodes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/participants/{participantId}/codes', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
@@ -25977,36 +16949,6 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Hard disconnect conversation
-	 * 
-	 * @param {String} conversationId conversation ID
-	 * @param {String} participantId participant ID
-	 */
-	postConversationParticipantDisconnect(conversationId, participantId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantDisconnect';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipantDisconnect';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/participants/{participantId}/disconnect', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -26180,70 +17122,6 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Suggestion feedback.
-	 * 
-	 * @param {String} conversationId Conversation ID
-	 * @param {Object} body SuggestionFeedback
-	 */
-	postConversationSuggestionsFeedback(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationSuggestionsFeedback';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationSuggestionsFeedback';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/suggestions/feedback', 
-			'POST', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Submit feedback for the summary.
-	 * 
-	 * @param {String} conversationId Conversation ID
-	 * @param {String} summaryId Summary ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationSummaryFeedback(conversationId, summaryId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationSummaryFeedback';
-		}
-		// verify the required parameter 'summaryId' is set
-		if (summaryId === undefined || summaryId === null) {
-			throw 'Missing the required parameter "summaryId" when calling postConversationSummaryFeedback';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback', 
-			'POST', 
-			{ 'conversationId': conversationId,'summaryId': summaryId },
 			{  },
 			{  },
 			{  },
@@ -26862,36 +17740,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a new media request in a chat conversation.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {Object} body MediaRequest
-	 */
-	postConversationsChatMediarequests(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatMediarequests';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsChatMediarequests';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/{conversationId}/mediarequests', 
-			'POST', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -26991,30 +17839,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Sign identifying information for ACD chat
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsChatsMemberauthtoken(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/chats/memberauthtoken', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -27077,30 +17901,6 @@ class ConversationsApi {
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Lookup conversation and communication information for a generated code to add a communication
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Codes
-	 */
-	postConversationsCodes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/codes', 
-			'POST', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -27955,31 +18755,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a WhatsApp Integration using the WhatsApp embedded signup flow
-	 * Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
-	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationRequest
-	 */
-	postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsappEmbeddedsignup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a messaging setting
 	 * 
 	 * @param {Object} body MessagingSetting
@@ -28094,40 +18869,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Replace this participant with the specified user and/or address
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsScreenshareParticipantReplace(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsScreenshareParticipantReplace';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsScreenshareParticipantReplace';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/replace', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Apply wrap-up for this conversation communication
 	 * 
 	 * @param {String} conversationId conversationId
@@ -28156,40 +18897,6 @@ class ConversationsApi {
 			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Replace this participant with the specified user and/or address
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsSocialParticipantReplace(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsSocialParticipantReplace';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsSocialParticipantReplace';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/replace', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
 			{  },
 			{  },
 			{  },
@@ -28233,99 +18940,6 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Pin to a participant's video so that they will always be seen.
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsVideoParticipantPin(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoParticipantPin';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsVideoParticipantPin';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/pin', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Replace this participant with the specified user and/or address
-	 * 
-	 * @param {String} conversationId conversationId
-	 * @param {String} participantId participantId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postConversationsVideoParticipantReplace(conversationId, participantId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoParticipantReplace';
-		}
-		// verify the required parameter 'participantId' is set
-		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsVideoParticipantReplace';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/replace', 
-			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add participant or create a video conference
-	 * 
-	 * @param {Object} body JoinRequest
-	 */
-	postConversationsVideos(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsVideos';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/videos', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -28925,272 +19539,11 @@ class ConversationsApi {
 
 }
 
-class DataActionMetricsApi {
-	/**
-	 * DataActionMetrics service.
-	 * @module purecloud-platform-client-v2/api/DataActionMetricsApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new DataActionMetricsApi. 
-	 * @alias module:purecloud-platform-client-v2/api/DataActionMetricsApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Gets the status of a duration query
-	 * 
-	 * @param {String} queryId Id of the query
-	 */
-	getIntegrationsActionsMetricsQueriesDurationQueryId(queryId) { 
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getIntegrationsActionsMetricsQueriesDurationQueryId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/duration/{queryId}', 
-			'GET', 
-			{ 'queryId': queryId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the results of a duration query
-	 * 
-	 * @param {String} queryId Id of the query
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.nextToken Token for next page of results
-	 * @param {String} opts.pageSize Indicates how large of a response should be returned. Allowed values are 1 up to 999
-	 */
-	getIntegrationsActionsMetricsQueriesDurationQueryIdResults(queryId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getIntegrationsActionsMetricsQueriesDurationQueryIdResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/duration/{queryId}/results', 
-			'GET', 
-			{ 'queryId': queryId },
-			{ 'nextToken': opts['nextToken'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the status of an execution count query
-	 * 
-	 * @param {String} queryId Id of the query
-	 */
-	getIntegrationsActionsMetricsQueriesExecutioncountQueryId(queryId) { 
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getIntegrationsActionsMetricsQueriesExecutioncountQueryId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/executioncount/{queryId}', 
-			'GET', 
-			{ 'queryId': queryId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the results of an execution count query
-	 * 
-	 * @param {String} queryId Id of the query
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.nextToken Token for next page of results
-	 * @param {String} opts.pageSize Indicates how large of a response should be returned. Allowed values are 1 up to 999
-	 */
-	getIntegrationsActionsMetricsQueriesExecutioncountQueryIdResults(queryId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getIntegrationsActionsMetricsQueriesExecutioncountQueryIdResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/executioncount/{queryId}/results', 
-			'GET', 
-			{ 'queryId': queryId },
-			{ 'nextToken': opts['nextToken'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the status of a response code query
-	 * 
-	 * @param {String} queryId Id of the query
-	 */
-	getIntegrationsActionsMetricsQueriesResponsecodeQueryId(queryId) { 
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getIntegrationsActionsMetricsQueriesResponsecodeQueryId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/responsecode/{queryId}', 
-			'GET', 
-			{ 'queryId': queryId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the results of a response code query
-	 * 
-	 * @param {String} queryId Id of the query
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.nextToken Token for next page of results
-	 * @param {String} opts.pageSize Indicates how large of a response should be returned. Allowed values are 1 up to 999
-	 */
-	getIntegrationsActionsMetricsQueriesResponsecodeQueryIdResults(queryId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getIntegrationsActionsMetricsQueriesResponsecodeQueryIdResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/responsecode/{queryId}/results', 
-			'GET', 
-			{ 'queryId': queryId },
-			{ 'nextToken': opts['nextToken'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start a query to get duration information about executions within a certain time range
-	 * 
-	 * @param {Object} body 
-	 */
-	postIntegrationsActionsMetricsQueriesDuration(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActionsMetricsQueriesDuration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/duration', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start a query to count of all executions within a certain time range
-	 * 
-	 * @param {Object} body 
-	 */
-	postIntegrationsActionsMetricsQueriesExecutioncount(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActionsMetricsQueriesExecutioncount';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/executioncount', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Start a query to count of all executions within a certain time range grouped by what response code they returned
-	 * 
-	 * @param {Object} body 
-	 */
-	postIntegrationsActionsMetricsQueriesResponsecode(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActionsMetricsQueriesResponsecode';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/metrics/queries/responsecode', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -29272,708 +19625,11 @@ class DataExtensionsApi {
 
 }
 
-class DataPrivacyApi {
-	/**
-	 * DataPrivacy service.
-	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new DataPrivacyApi. 
-	 * @alias module:purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete a masking rule.
-	 * 
-	 * @param {String} ruleId ruleId
-	 */
-	deleteDataprivacyMaskingrule(ruleId) { 
-		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling deleteDataprivacyMaskingrule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dataprivacy/maskingrules/{ruleId}', 
-			'DELETE', 
-			{ 'ruleId': ruleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Fetch details about a masking rule.
-	 * 
-	 * @param {String} ruleId ruleId
-	 */
-	getDataprivacyMaskingrule(ruleId) { 
-		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling getDataprivacyMaskingrule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dataprivacy/maskingrules/{ruleId}', 
-			'GET', 
-			{ 'ruleId': ruleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve the list of masking rules.
-	 * 
-	 */
-	getDataprivacyMaskingrules() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/dataprivacy/maskingrules', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update information about a masking rule.
-	 * 
-	 * @param {String} ruleId ruleId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchDataprivacyMaskingrule(ruleId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling patchDataprivacyMaskingrule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dataprivacy/maskingrules/{ruleId}', 
-			'PATCH', 
-			{ 'ruleId': ruleId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new masking rule resource.
-	 * 
-	 * @param {Object} body Details for creating masking rule resource
-	 */
-	postDataprivacyMaskingrules(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postDataprivacyMaskingrules';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dataprivacy/maskingrules', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Validate masking before creating.
-	 * 
-	 * @param {Object} body Text to be masked
-	 */
-	postDataprivacyMaskingrulesValidate(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postDataprivacyMaskingrulesValidate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dataprivacy/maskingrules/validate', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class DialogEngineApi {
-	/**
-	 * DialogEngine service.
-	 * @module purecloud-platform-client-v2/api/DialogEngineApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new DialogEngineApi. 
-	 * @alias module:purecloud-platform-client-v2/api/DialogEngineApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete a Bot.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 */
-	deleteDialogBot(botId) { 
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling deleteDialogBot';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}', 
-			'DELETE', 
-			{ 'botId': botId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Bot.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 */
-	getDialogBot(botId) { 
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getDialogBot';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}', 
-			'GET', 
-			{ 'botId': botId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a single dialog session.
-	 * 
-	 * @param {String} sessionId ID of the dialog session.
-	 * @param {String} botId ID of the dialog session's bot.
-	 */
-	getDialogBotSession(sessionId, botId) { 
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling getDialogBotSession';
-		}
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getDialogBotSession';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}/sessions/{sessionId}', 
-			'GET', 
-			{ 'sessionId': sessionId,'botId': botId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a single bot version.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 * @param {String} versionId ID of the bot version.
-	 */
-	getDialogBotVersion(botId, versionId) { 
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getDialogBotVersion';
-		}
-		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getDialogBotVersion';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}/versions/{versionId}', 
-			'GET', 
-			{ 'botId': botId,'versionId': versionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all bot versions.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Boolean} opts.published Filter by published field.
-	 */
-	getDialogBotVersions(botId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getDialogBotVersions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}/versions', 
-			'GET', 
-			{ 'botId': botId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'published': opts['published'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all Bots.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 */
-	getDialogBots(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots', 
-			'GET', 
-			{  },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an integration view of a Bot.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 */
-	getDialogIntegrationsBot(botId) { 
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getDialogIntegrationsBot';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/integrations/bots/{botId}', 
-			'GET', 
-			{ 'botId': botId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve the integration view of a single bot version.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 * @param {String} versionId ID of the bot version.
-	 */
-	getDialogIntegrationsBotVersion(botId, versionId) { 
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getDialogIntegrationsBotVersion';
-		}
-		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getDialogIntegrationsBotVersion';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/integrations/bots/{botId}/versions/{versionId}', 
-			'GET', 
-			{ 'botId': botId,'versionId': versionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an integration view listing of all bots.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 */
-	getDialogIntegrationsBots(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/integrations/bots', 
-			'GET', 
-			{  },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a bot version.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 * @param {String} versionId ID of the bot version.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchDialogBotVersion(botId, versionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling patchDialogBotVersion';
-		}
-		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling patchDialogBotVersion';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}/versions/{versionId}', 
-			'PATCH', 
-			{ 'botId': botId,'versionId': versionId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send user-input turn for dialog session.
-	 * 
-	 * @param {String} sessionId ID of the dialog session.
-	 * @param {String} botId ID of the dialog session's bot.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postDialogBotSessionTurns(sessionId, botId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling postDialogBotSessionTurns';
-		}
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling postDialogBotSessionTurns';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}/sessions/{sessionId}/turns', 
-			'POST', 
-			{ 'sessionId': sessionId,'botId': botId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new dialog session.
-	 * 
-	 * @param {String} botId ID of the dialog session's bot.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postDialogBotSessions(botId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling postDialogBotSessions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}/sessions', 
-			'POST', 
-			{ 'botId': botId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new bot version.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postDialogBotVersions(botId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling postDialogBotVersions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}/versions', 
-			'POST', 
-			{ 'botId': botId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new Bot.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postDialogBots(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Modify a Bot.
-	 * 
-	 * @param {String} botId ID of the bot.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putDialogBot(botId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling putDialogBot';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/dialog/bots/{botId}', 
-			'PUT', 
-			{ 'botId': botId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class DocsApi {
-	/**
-	 * Docs service.
-	 * @module purecloud-platform-client-v2/api/DocsApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new DocsApi. 
-	 * @alias module:purecloud-platform-client-v2/api/DocsApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * The swagger definition in JSON
-	 * 
-	 */
-	getDocsSwagger() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/docs/swagger', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * The swagger definition in JSON
-	 * 
-	 */
-	getDocsSwaggerall() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/docs/swaggerall', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * The swagger definition in JSON
-	 * 
-	 */
-	getDocsSwaggerpreview() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/docs/swaggerpreview', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -30019,39 +19675,13 @@ class DownloadsApi {
 		);
 	}
 
-	/**
-	 * OAuth Callback used during code authorization grant flow.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.code code
-	 * @param {String} opts.state state
-	 * @param {String} opts.error error
-	 */
-	getDownloadsCallback(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/downloads/callback', 
-			'GET', 
-			{  },
-			{ 'code': opts['code'],'state': opts['state'],'error': opts['error'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -30067,26 +19697,6 @@ class EmailsApi {
 
 
 	/**
-	 * Reset email threading settings to default
-	 * 
-	 */
-	deleteEmailsSettingsThreading() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/emails/settings/threading', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get email Contact Center settings
 	 * 
 	 */
@@ -30094,26 +19704,6 @@ class EmailsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get email threading settings
-	 * 
-	 */
-	getEmailsSettingsThreading() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/emails/settings/threading', 
 			'GET', 
 			{  },
 			{  },
@@ -30150,37 +19740,13 @@ class EmailsApi {
 		);
 	}
 
-	/**
-	 * Patch email threading settings
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchEmailsSettingsThreading(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/emails/settings/threading', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -30276,7 +19842,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -30350,12 +19916,8 @@ class ExternalContactsApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.hardDelete Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or is absent (the default behavior), we merely mark the schema as deleted but it still exists in the database. (default to false)
 	 */
-	deleteExternalcontactsContactsSchema(schemaId, opts) { 
-		opts = opts || {};
-		
+	deleteExternalcontactsContactsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
 			throw 'Missing the required parameter "schemaId" when calling deleteExternalcontactsContactsSchema';
@@ -30365,7 +19927,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
 			'DELETE', 
 			{ 'schemaId': schemaId },
-			{ 'hardDelete': opts['hardDelete'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -30456,35 +20018,6 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Delete a schema
-	 * 
-	 * @param {String} schemaId Schema ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.hardDelete Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or absent (the default behavior), we merely mark the schema as deleted but it still exists in the database. (default to false)
-	 */
-	deleteExternalcontactsOrganizationsSchema(schemaId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling deleteExternalcontactsOrganizationsSchema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/organizations/schemas/{schemaId}', 
-			'DELETE', 
-			{ 'schemaId': schemaId },
-			{ 'hardDelete': opts['hardDelete'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete a relationship
 	 * 
 	 * @param {String} relationshipId Relationship Id
@@ -30554,39 +20087,6 @@ class ExternalContactsApi {
 			'GET', 
 			{ 'contactId': contactId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve segment assignments by external contact ID.
-	 * 
-	 * @param {String} contactId ExternalContact ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
-	 */
-	getExternalcontactsContactJourneySegments(contactId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
-			'GET', 
-			{ 'contactId': contactId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'],'includeMerged': opts['includeMerged'] },
 			{  },
 			{  },
 			null, 
@@ -30871,56 +20371,6 @@ class ExternalContactsApi {
 			'GET', 
 			{ 'externalOrganizationId': externalOrganizationId },
 			{ 'expand': opts['expand'],'includeTrustors': opts['includeTrustors'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View the latest value of churn probability
-	 * 
-	 * @param {String} externalOrganizationId External Organization ID
-	 */
-	getExternalcontactsOrganizationChurn(externalOrganizationId) { 
-		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationChurn';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/churn', 
-			'GET', 
-			{ 'externalOrganizationId': externalOrganizationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * View a full time-series of churn predictions
-	 * 
-	 * @param {String} externalOrganizationId External Organization ID
-	 */
-	getExternalcontactsOrganizationChurnLatest(externalOrganizationId) { 
-		// verify the required parameter 'externalOrganizationId' is set
-		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationChurnLatest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/churn/latest', 
-			'GET', 
-			{ 'externalOrganizationId': externalOrganizationId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -31380,30 +20830,6 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Stitch an external contact
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body StitchingRequest
-	 */
-	patchExternalcontactsContacts(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/contacts', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Bulk fetch contacts
 	 * 
 	 * @param {Object} body Contact ids
@@ -31829,35 +21255,6 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
-	 * 
-	 * @param {String} contactId ExternalContact ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postExternalcontactsContactJourneySegments(contactId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactJourneySegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
-			'POST', 
-			{ 'contactId': contactId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a note for an external contact
 	 * 
 	 * @param {String} contactId ExternalContact Id
@@ -31956,30 +21353,6 @@ class ExternalContactsApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Suggests contacts that might be share the provided information
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body suggestionRequest
-	 */
-	postExternalcontactsContactsSuggestions(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/contacts/suggestions', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -32427,7 +21800,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -32543,26 +21916,6 @@ class FaxApi {
 	}
 
 	/**
-	 * Get organization config for given organization
-	 * 
-	 */
-	getFaxSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/fax/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get fax summary
 	 * 
 	 */
@@ -32612,37 +21965,13 @@ class FaxApi {
 		);
 	}
 
-	/**
-	 * Update/write organization config for given organization
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putFaxSettings(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/fax/settings', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -32826,7 +22155,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -33156,62 +22485,6 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'startWorkday': startWorkday },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get insights rankings
-	 * 
-	 * @param {Object} filterType Filter type for the query request.
-	 * @param {String} filterId ID for the filter type.
-	 * @param {Object} granularity Granularity
-	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} sortKey Sort key
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.sortMetricId Sort Metric Id
-	 * @param {Number} opts.sectionSize The number of top and bottom users to return before ties
-	 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
-	 */
-	getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'filterType' is set
-		if (filterType === undefined || filterType === null) {
-			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsRankings';
-		}
-		// verify the required parameter 'filterId' is set
-		if (filterId === undefined || filterId === null) {
-			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsRankings';
-		}
-		// verify the required parameter 'granularity' is set
-		if (granularity === undefined || granularity === null) {
-			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsRankings';
-		}
-		// verify the required parameter 'comparativePeriodStartWorkday' is set
-		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
-			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsRankings';
-		}
-		// verify the required parameter 'primaryPeriodStartWorkday' is set
-		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
-			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsRankings';
-		}
-		// verify the required parameter 'sortKey' is set
-		if (sortKey === undefined || sortKey === null) {
-			throw 'Missing the required parameter "sortKey" when calling getGamificationInsightsRankings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/gamification/insights/rankings', 
-			'GET', 
-			{  },
-			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'sortKey': sortKey,'sortMetricId': opts['sortMetricId'],'sectionSize': opts['sectionSize'],'userIds': opts['userIds'] },
 			{  },
 			{  },
 			null, 
@@ -34968,7 +24241,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -35098,7 +24371,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -35229,7 +24502,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -35684,7 +24957,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -35740,36 +25013,6 @@ class GroupsApi {
 			'/api/v2/groups/{groupId}/dynamicsettings', 
 			'DELETE', 
 			{ 'groupId': groupId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a group image.
-	 * 
-	 * @param {String} groupId Group ID
-	 * @param {String} imageId Image ID
-	 */
-	deleteGroupImage(groupId, imageId) { 
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteGroupImage';
-		}
-		// verify the required parameter 'imageId' is set
-		if (imageId === undefined || imageId === null) {
-			throw 'Missing the required parameter "imageId" when calling deleteGroupImage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/groups/{groupId}/images/{imageId}', 
-			'DELETE', 
-			{ 'groupId': groupId,'imageId': imageId },
 			{  },
 			{  },
 			{  },
@@ -35888,61 +25131,6 @@ class GroupsApi {
 	}
 
 	/**
-	 * Get a group image.
-	 * 
-	 * @param {String} groupId Group ID
-	 * @param {String} imageId Image ID
-	 */
-	getGroupImage(groupId, imageId) { 
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getGroupImage';
-		}
-		// verify the required parameter 'imageId' is set
-		if (imageId === undefined || imageId === null) {
-			throw 'Missing the required parameter "imageId" when calling getGroupImage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/groups/{groupId}/images/{imageId}', 
-			'GET', 
-			{ 'groupId': groupId,'imageId': imageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all group images.
-	 * 
-	 * @param {String} groupId Group ID
-	 */
-	getGroupImages(groupId) { 
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getGroupImages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/groups/{groupId}/images', 
-			'GET', 
-			{ 'groupId': groupId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get all individuals associated with the group
 	 * 
 	 * @param {String} groupId Group ID
@@ -36048,31 +25236,6 @@ class GroupsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a group list of deleted groups
-	 * 
-	 * @param {Array.<String>} jabberId A list of jabberIds to fetch by bulk, max 50.
-	 */
-	getGroupsBulkDeleted(jabberId) { 
-		// verify the required parameter 'jabberId' is set
-		if (jabberId === undefined || jabberId === null) {
-			throw 'Missing the required parameter "jabberId" when calling getGroupsBulkDeleted';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/groups/bulk/deleted', 
-			'GET', 
-			{  },
-			{ 'jabberId': this.apiClient.buildCollectionParam(jabberId, 'multi') },
 			{  },
 			{  },
 			null, 
@@ -36307,43 +25470,13 @@ class GroupsApi {
 		);
 	}
 
-	/**
-	 * Update group profile
-	 *  This api is deprecated. Use /api/v2/groups/group_id instead
-	 * @param {String} groupId groupId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Profile
-	 * @deprecated
-	 */
-	putGroupProfile(groupId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling putGroupProfile';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/groups/{groupId}/profile', 
-			'PUT', 
-			{ 'groupId': groupId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -37099,7 +26232,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -37266,7 +26399,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -37371,141 +26504,6 @@ class IntegrationsApi {
 			'/api/v2/integrations/credentials/{credentialId}', 
 			'DELETE', 
 			{ 'credentialId': credentialId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Invalidate the Microsoft Teams integration auth for the user.
-	 * For a Genesys Cloud user, they can only be associated with Microsoft Teams auth at a time.  This can be used to clear the session or a new creation can be created, which will supersede the current one.
-	 */
-	deleteIntegrationsMicrosoftteamsAuth() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/microsoftteams/auth', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Logout
-	 * 
-	 */
-	deleteIntegrationsSalesforceServicecloudvoiceLogout() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/salesforce/servicecloudvoice/logout', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Invalidates a 3rd-party integration auth for the user.
-	 * 
-	 * @param {String} ucIntegrationId UC Integration ID
-	 */
-	deleteIntegrationsUnifiedcommunicationAuth(ucIntegrationId) { 
-		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
-			throw 'Missing the required parameter "ucIntegrationId" when calling deleteIntegrationsUnifiedcommunicationAuth';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth', 
-			'DELETE', 
-			{ 'ucIntegrationId': ucIntegrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a Webhook
-	 * 
-	 * @param {String} webhookId The id of the webhook
-	 */
-	deleteIntegrationsWebhook(webhookId) { 
-		// verify the required parameter 'webhookId' is set
-		if (webhookId === undefined || webhookId === null) {
-			throw 'Missing the required parameter "webhookId" when calling deleteIntegrationsWebhook';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks/{webhookId}', 
-			'DELETE', 
-			{ 'webhookId': webhookId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a Webhook Schema
-	 * 
-	 * @param {String} webhookId The id of the webhook that the schema belongs to
-	 */
-	deleteIntegrationsWebhookSchema(webhookId) { 
-		// verify the required parameter 'webhookId' is set
-		if (webhookId === undefined || webhookId === null) {
-			throw 'Missing the required parameter "webhookId" when calling deleteIntegrationsWebhookSchema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks/{webhookId}/schema', 
-			'DELETE', 
-			{ 'webhookId': webhookId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Invalidate the Zoom integration auth for the user.
-	 * For a Genesys Cloud user, they can only be associated with Zoom auth at a time.  This can be used to clear the session or a new creation can be created, which will supersede the current one.
-	 */
-	deleteIntegrationsZoomAuth() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/auth', 
-			'DELETE', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -37908,37 +26906,6 @@ class IntegrationsApi {
 	}
 
 	/**
-	 * Retrieves the schema.
-	 * 
-	 * @param {String} providerName Name of provider.
-	 * @param {String} fileName File name of schema including .json suffix.
-	 * @deprecated
-	 */
-	getIntegrationsActionsSchemaFileName(providerName, fileName) { 
-		// verify the required parameter 'providerName' is set
-		if (providerName === undefined || providerName === null) {
-			throw 'Missing the required parameter "providerName" when calling getIntegrationsActionsSchemaFileName';
-		}
-		// verify the required parameter 'fileName' is set
-		if (fileName === undefined || fileName === null) {
-			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionsSchemaFileName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/actions/schemas/{providerName}/{fileName}', 
-			'GET', 
-			{ 'providerName': providerName,'fileName': fileName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a specific botConnector bot, plus versions, for this integration
 	 * 
 	 * @param {String} integrationId The integration ID for this group of bots
@@ -38191,51 +27158,6 @@ class IntegrationsApi {
 	}
 
 	/**
-	 * Gets a Microsoft Teams integration auth for the user.
-	 * 
-	 */
-	getIntegrationsMicrosoftteamsAuth() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/microsoftteams/auth', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a voice call record by job id
-	 * 
-	 * @param {String} jobId 
-	 */
-	getIntegrationsSalesforceServicecloudvoiceVoicecallrecordJob(jobId) { 
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getIntegrationsSalesforceServicecloudvoiceVoicecallrecordJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/jobs/{jobId}', 
-			'GET', 
-			{ 'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get details about a Dialogflow agent
 	 * 
 	 * @param {String} agentId The agent ID
@@ -38274,57 +27196,6 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/dialogflow/agents', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get details about a Dialogflow CX agent
-	 * 
-	 * @param {String} agentId The agent ID
-	 */
-	getIntegrationsSpeechDialogflowcxAgent(agentId) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowcxAgent';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/speech/dialogflowcx/agents/{agentId}', 
-			'GET', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Dialogflow CX agents in the customers' Google accounts
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.name Filter on agent name
-	 */
-	getIntegrationsSpeechDialogflowcxAgents(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/speech/dialogflowcx/agents', 
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
@@ -38408,89 +27279,6 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/lex/bots', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get details about a Lex V2 bot alias
-	 * 
-	 * @param {String} aliasId The Alias ID
-	 */
-	getIntegrationsSpeechLexv2BotAlias(aliasId) { 
-		// verify the required parameter 'aliasId' is set
-		if (aliasId === undefined || aliasId === null) {
-			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexv2BotAlias';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}', 
-			'GET', 
-			{ 'aliasId': aliasId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of aliases for a Lex V2 bot
-	 * 
-	 * @param {String} botId The Bot ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Object} opts.status Filter on alias status
-	 * @param {String} opts.name Filter on alias name
-	 */
-	getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechLexv2BotBotIdAliases';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/speech/lexv2/bot/{botId}/aliases', 
-			'GET', 
-			{ 'botId': botId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'status': opts['status'],'name': opts['name'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Lex V2 bots
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.name Filter on bot name
-	 */
-	getIntegrationsSpeechLexv2Bots(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/speech/lexv2/bots', 
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
@@ -38696,57 +27484,6 @@ class IntegrationsApi {
 			'GET', 
 			{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get details about a STT engine
-	 * 
-	 * @param {String} engineId The engine ID
-	 */
-	getIntegrationsSpeechSttEngine(engineId) { 
-		// verify the required parameter 'engineId' is set
-		if (engineId === undefined || engineId === null) {
-			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechSttEngine';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/speech/stt/engines/{engineId}', 
-			'GET', 
-			{ 'engineId': engineId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of STT engines enabled for org
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.name Filter on engine name
-	 */
-	getIntegrationsSpeechSttEngines(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/speech/stt/engines', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -38978,174 +27715,6 @@ class IntegrationsApi {
 	}
 
 	/**
-	 * Gets a 3rd-party integration auth for the user.
-	 * 
-	 * @param {String} ucIntegrationId UC Integration ID
-	 */
-	getIntegrationsUnifiedcommunicationAuth(ucIntegrationId) { 
-		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
-			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationAuth';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth', 
-			'GET', 
-			{ 'ucIntegrationId': ucIntegrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a meeting.
-	 * Get a meeting by ID.
-	 * @param {String} ucIntegrationId 3rd Party Service Type
-	 * @param {String} meetingId ID of meeting
-	 */
-	getIntegrationsUnifiedcommunicationMeeting(ucIntegrationId, meetingId) { 
-		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
-			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationMeeting';
-		}
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling getIntegrationsUnifiedcommunicationMeeting';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings/{meetingId}', 
-			'GET', 
-			{ 'ucIntegrationId': ucIntegrationId,'meetingId': meetingId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * List meetings
-	 * List meetings
-	 * @param {String} ucIntegrationId 3rd Party Service Type
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Size of Paged Results (default to 25)
-	 * @param {Number} opts.pageNumber Number of Page (default to 0)
-	 */
-	getIntegrationsUnifiedcommunicationMeetings(ucIntegrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
-			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationMeetings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings', 
-			'GET', 
-			{ 'ucIntegrationId': ucIntegrationId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get bulk user presences for an integration source
-	 * Gets the bulk presence for integration users.  This will return the integration presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-	 * @param {String} ucIntegrationId Integration Id
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.id A comma separated list of user IDs to fetch their presence status in bulk. Limit 25.
-	 */
-	getIntegrationsUnifiedcommunicationPresences(ucIntegrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
-			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationPresences';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/presences', 
-			'GET', 
-			{ 'ucIntegrationId': ucIntegrationId },
-			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * UC integration client application configuration.
-	 * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
-	 * @param {String} ucIntegrationId 3rd Party Service Type
-	 */
-	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId) { 
-		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
-			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationsClientapp';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}', 
-			'GET', 
-			{ 'ucIntegrationId': ucIntegrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * List UC integration client application configurations.
-	 * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The total page size requested (default to 25)
-	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
-	 * @param {String} opts.previousPage Previous page token
-	 */
-	getIntegrationsUnifiedcommunicationsClientapps(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/clientapps', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * List permitted user app integrations for the logged in user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -39166,222 +27735,6 @@ class IntegrationsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'appHost': opts['appHost'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Webhook
-	 * 
-	 * @param {String} webhookId The id of the webhook
-	 */
-	getIntegrationsWebhook(webhookId) { 
-		// verify the required parameter 'webhookId' is set
-		if (webhookId === undefined || webhookId === null) {
-			throw 'Missing the required parameter "webhookId" when calling getIntegrationsWebhook';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks/{webhookId}', 
-			'GET', 
-			{ 'webhookId': webhookId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Webhook Schema from a Webhook
-	 * 
-	 * @param {String} webhookId The id of the webhook that the schema belongs to
-	 */
-	getIntegrationsWebhookSchema(webhookId) { 
-		// verify the required parameter 'webhookId' is set
-		if (webhookId === undefined || webhookId === null) {
-			throw 'Missing the required parameter "webhookId" when calling getIntegrationsWebhookSchema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks/{webhookId}/schema', 
-			'GET', 
-			{ 'webhookId': webhookId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * List Webhooks
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 */
-	getIntegrationsWebhooks(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks', 
-			'GET', 
-			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Zoom meeting.
-	 * Get full details on a Zoom meeting
-	 * @param {String} meetingId Zoom meeting number
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.zoomAuthorization Zoom authorization token
-	 * @param {String} opts.occurrenceId Occurrence ID
-	 */
-	getIntegrationsZoom202004Meeting(meetingId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling getIntegrationsZoom202004Meeting';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/202004/meetings/{meetingId}', 
-			'GET', 
-			{ 'meetingId': meetingId },
-			{ 'zoomAuthorization': opts['zoomAuthorization'],'occurrenceId': opts['occurrenceId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Zoom user.
-	 * Get a Zoom user record.
-	 * @param {String} userId Zoom Meetings user ID. Special user ID value `me` returns your own Zoom user data.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.zoomAuthorization Zoom authorization token
-	 */
-	getIntegrationsZoom202004User(userId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getIntegrationsZoom202004User';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/202004/users/{userId}', 
-			'GET', 
-			{ 'userId': userId },
-			{ 'zoomAuthorization': opts['zoomAuthorization'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get meetings for a Zoom user.
-	 * Get a list of meetings owned by a given user.
-	 * @param {String} userId Zoom Meetings user ID. Special user ID value `me` returns your own Zoom user data.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.zoomAuthorization Zoom authorization token
-	 * @param {Object} opts.type Zoom meeting type. Possible values: `Scheduled` - This includes all valid past meetings (unexpired), live meetings and upcoming scheduled meetings. It is equivalent to the combined list of `Previous Meetings` and `Upcoming Meetings` displayed in the user's Meetings page on the Zoom Web Portal. `Live` - All the ongoing meetings. `Upcoming` - All upcoming meetings including live meetings.
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getIntegrationsZoom202004UserMeetings(userId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getIntegrationsZoom202004UserMeetings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/202004/users/{userId}/meetings', 
-			'GET', 
-			{ 'userId': userId },
-			{ 'zoomAuthorization': opts['zoomAuthorization'],'type': opts['type'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get settings for a Zoom user.
-	 * Get settings for a Zoom user.
-	 * @param {String} userId Zoom Meetings user ID. Special user ID value `me` returns your own Zoom user data.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.zoomAuthorization Zoom authorization token
-	 */
-	getIntegrationsZoom202004UserSettings(userId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getIntegrationsZoom202004UserSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/202004/users/{userId}/settings', 
-			'GET', 
-			{ 'userId': userId },
-			{ 'zoomAuthorization': opts['zoomAuthorization'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a Zoom integration auth for the user.
-	 * 
-	 */
-	getIntegrationsZoomAuth() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/auth', 
-			'GET', 
-			{  },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -39476,36 +27829,6 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/draft', 
 			'PATCH', 
 			{ 'actionId': actionId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a Webhook
-	 * 
-	 * @param {String} webhookId The id of the webhook
-	 * @param {Object} body Webhook Update Fields
-	 */
-	patchIntegrationsWebhook(webhookId, body) { 
-		// verify the required parameter 'webhookId' is set
-		if (webhookId === undefined || webhookId === null) {
-			throw 'Missing the required parameter "webhookId" when calling patchIntegrationsWebhook';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchIntegrationsWebhook';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks/{webhookId}', 
-			'PATCH', 
-			{ 'webhookId': webhookId },
 			{  },
 			{  },
 			{  },
@@ -39760,106 +28083,6 @@ class IntegrationsApi {
 	}
 
 	/**
-	 * Create a Microsoft Teams integration auth for the user.
-	 * This attaches a Microsoft Teams OAuth session for your user.  All external calls to Microsoft Teams will be made on behalf of this user.
-	 * @param {Object} body integrationAuthRequest
-	 */
-	postIntegrationsMicrosoftteamsAuth(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsMicrosoftteamsAuth';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/microsoftteams/auth', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Login
-	 * 
-	 * @param {Object} body 
-	 */
-	postIntegrationsSalesforceServicecloudvoiceLogin(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsSalesforceServicecloudvoiceLogin';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/salesforce/servicecloudvoice/login', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a voice call record in Salesforce
-	 * 
-	 * @param {Object} body 
-	 */
-	postIntegrationsSalesforceServicecloudvoiceVoicecallrecord(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsSalesforceServicecloudvoiceVoicecallrecord';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a voice call record in Salesforce
-	 * 
-	 * @param {Object} body 
-	 */
-	postIntegrationsSalesforceServicecloudvoiceVoicecallrecordUpdate(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsSalesforceServicecloudvoiceVoicecallrecordUpdate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/update', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a Nuance bot in the specified Integration asynchronously
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
@@ -39952,228 +28175,6 @@ class IntegrationsApi {
 			{  },
 			{  },
 			settings, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a 3rd-party integration auth for the user.
-	 * 
-	 * @param {String} ucIntegrationId UC Integration ID
-	 * @param {Object} body integrationAuthRequest
-	 */
-	postIntegrationsUnifiedcommunicationAuth(ucIntegrationId, body) { 
-		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
-			throw 'Missing the required parameter "ucIntegrationId" when calling postIntegrationsUnifiedcommunicationAuth';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsUnifiedcommunicationAuth';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth', 
-			'POST', 
-			{ 'ucIntegrationId': ucIntegrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a meeting.
-	 * Create a meeting.
-	 * @param {String} ucIntegrationId 3rd Party Service Type
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postIntegrationsUnifiedcommunicationMeetings(ucIntegrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
-			throw 'Missing the required parameter "ucIntegrationId" when calling postIntegrationsUnifiedcommunicationMeetings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings', 
-			'POST', 
-			{ 'ucIntegrationId': ucIntegrationId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send an email.
-	 * Send an email.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postIntegrationsUnifiedcommunicationsEmail(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/unifiedcommunications/email', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Invoke Webhook
-	 * 
-	 * @param {String} tokenId The token of the webhook to be invoked
-	 * @param {Object.<String, {String: Object}>} body Webhook Invocation Payload
-	 */
-	postIntegrationsWebhookEvents(tokenId, body) { 
-		// verify the required parameter 'tokenId' is set
-		if (tokenId === undefined || tokenId === null) {
-			throw 'Missing the required parameter "tokenId" when calling postIntegrationsWebhookEvents';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsWebhookEvents';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks/{tokenId}/events', 
-			'POST', 
-			{ 'tokenId': tokenId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create Webhook
-	 * 
-	 * @param {Object} body Create Webhook Request
-	 */
-	postIntegrationsWebhooks(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsWebhooks';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Generate a Zoom meeting signature.
-	 * Generate a meeting verification signature
-	 * @param {String} meetingId Zoom meeting number
-	 * @param {String} role Zoom meeting role
-	 */
-	postIntegrationsZoom202004MeetingSignature(meetingId, role) { 
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling postIntegrationsZoom202004MeetingSignature';
-		}
-		// verify the required parameter 'role' is set
-		if (role === undefined || role === null) {
-			throw 'Missing the required parameter "role" when calling postIntegrationsZoom202004MeetingSignature';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/202004/meetings/{meetingId}/signature', 
-			'POST', 
-			{ 'meetingId': meetingId },
-			{ 'role': role },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create meeting for a Zoom user.
-	 * Create a new meeting for a Zoom user.
-	 * @param {String} userId Zoom Meetings user ID. Special user ID value `me` returns your own Zoom user data.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body meetingRequest
-	 */
-	postIntegrationsZoom202004UserMeetings(userId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling postIntegrationsZoom202004UserMeetings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/202004/users/{userId}/meetings', 
-			'POST', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Zoom integration auth for the user.
-	 * This attaches a Zoom OAuth session for your user.  All external calls to Zoom will be made on behalf of this user.
-	 * @param {Object} body integrationAuthRequest
-	 */
-	postIntegrationsZoomAuth(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsZoomAuth';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/zoom/auth', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -40354,43 +28355,13 @@ class IntegrationsApi {
 		);
 	}
 
-	/**
-	 * Add/replace Webhook Schema on a Webhook
-	 * 
-	 * @param {String} webhookId The id of the webhook that the schema belongs to
-	 * @param {Object} body WebhookSchema
-	 */
-	putIntegrationsWebhookSchema(webhookId, body) { 
-		// verify the required parameter 'webhookId' is set
-		if (webhookId === undefined || webhookId === null) {
-			throw 'Missing the required parameter "webhookId" when calling putIntegrationsWebhookSchema';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIntegrationsWebhookSchema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/webhooks/{webhookId}/schema', 
-			'PUT', 
-			{ 'webhookId': webhookId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -40449,85 +28420,6 @@ class JourneyApi {
 			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
 			'DELETE', 
 			{ 'actionTemplateId': actionTemplateId },
-			{ 'hardDelete': opts['hardDelete'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a single event type.
-	 * 
-	 * @param {String} eventTypeId ID of the event type.
-	 */
-	deleteJourneyEventtype(eventTypeId) { 
-		// verify the required parameter 'eventTypeId' is set
-		if (eventTypeId === undefined || eventTypeId === null) {
-			throw 'Missing the required parameter "eventTypeId" when calling deleteJourneyEventtype';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/eventtypes/{eventTypeId}', 
-			'DELETE', 
-			{ 'eventTypeId': eventTypeId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an open action.
-	 * 
-	 * @param {String} openActionId Id of an open action
-	 */
-	deleteJourneyOpenaction(openActionId) { 
-		// verify the required parameter 'openActionId' is set
-		if (openActionId === undefined || openActionId === null) {
-			throw 'Missing the required parameter "openActionId" when calling deleteJourneyOpenaction';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/{openActionId}', 
-			'DELETE', 
-			{ 'openActionId': openActionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a schema
-	 * 
-	 * @param {String} schemaId Schema ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.hardDelete Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or absent (the default behavior), we merely mark the schema as deleted but it still exists in the database. (default to false)
-	 */
-	deleteJourneyOpenactionsSchema(schemaId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling deleteJourneyOpenactionsSchema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/schemas/{schemaId}', 
-			'DELETE', 
-			{ 'schemaId': schemaId },
 			{ 'hardDelete': opts['hardDelete'] },
 			{  },
 			{  },
@@ -40614,31 +28506,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Delete a Journey View by ID
-	 * deletes all versions
-	 * @param {String} viewId viewId
-	 */
-	deleteJourneyView(viewId) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling deleteJourneyView';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/{viewId}', 
-			'DELETE', 
-			{ 'viewId': viewId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get status for async query for journey aggregates
 	 * 
 	 * @param {String} jobId jobId
@@ -40685,39 +28552,6 @@ class JourneyApi {
 			'GET', 
 			{ 'jobId': jobId },
 			{ 'cursor': opts['cursor'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve segment assignments by external contact ID.
-	 * 
-	 * @param {String} contactId ExternalContact ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
-	 */
-	getExternalcontactsContactJourneySegments(contactId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
-			'GET', 
-			{ 'contactId': contactId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'],'includeMerged': opts['includeMerged'] },
 			{  },
 			{  },
 			null, 
@@ -40960,318 +28794,6 @@ class JourneyApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'mediaType': opts['mediaType'],'state': opts['state'],'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Sends web beacon, used for tracking customer activity on a website via transparent pixel.
-	 * 
-	 * @param {String} deploymentId The ID of the deployment sending the beacon.
-	 * @param {String} customerCookieId ID of the customer associated with the beacon.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.data The base-64 encoded beacon data which contains tracking information from web sessions.
-	 * @param {Object} opts.type The type of the beacon request.
-	 */
-	getJourneyDeploymentCustomerBeacons(deploymentId, customerCookieId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling getJourneyDeploymentCustomerBeacons';
-		}
-		// verify the required parameter 'customerCookieId' is set
-		if (customerCookieId === undefined || customerCookieId === null) {
-			throw 'Missing the required parameter "customerCookieId" when calling getJourneyDeploymentCustomerBeacons';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/beacons', 
-			'GET', 
-			{ 'deploymentId': deploymentId,'customerCookieId': customerCookieId },
-			{ 'data': opts['data'],'type': opts['type'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send a ping.
-	 * 
-	 * @param {String} deploymentId The ID of the deployment sending the ping.
-	 * @param {String} customerCookieId ID of the customer associated with the ping.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.dl Page URL if overridden or URL fragment identifier (window.location.hash).
-	 * @param {String} opts.dt Page title.
-	 * @param {String} opts.appNamespace Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in app sessions
-	 * @param {String} opts.sessionId sessionId
-	 * @param {Number} opts.sinceLastBeaconMilliseconds The number of milliseconds since the most recent beacon.
-	 */
-	getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling getJourneyDeploymentCustomerPing';
-		}
-		// verify the required parameter 'customerCookieId' is set
-		if (customerCookieId === undefined || customerCookieId === null) {
-			throw 'Missing the required parameter "customerCookieId" when calling getJourneyDeploymentCustomerPing';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping', 
-			'GET', 
-			{ 'deploymentId': deploymentId,'customerCookieId': customerCookieId },
-			{ 'dl': opts['dl'],'dt': opts['dt'],'appNamespace': opts['appNamespace'],'sessionId': opts['sessionId'],'sinceLastBeaconMilliseconds': opts['sinceLastBeaconMilliseconds'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a single event type.
-	 * 
-	 * @param {String} eventTypeId ID of the event type.
-	 */
-	getJourneyEventtype(eventTypeId) { 
-		// verify the required parameter 'eventTypeId' is set
-		if (eventTypeId === undefined || eventTypeId === null) {
-			throw 'Missing the required parameter "eventTypeId" when calling getJourneyEventtype';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/eventtypes/{eventTypeId}', 
-			'GET', 
-			{ 'eventTypeId': eventTypeId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve all event types.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate).
-	 * @param {Object} opts.streamType The stream type for which event types are to be retrieved.
-	 * @param {String} opts.sessionType The name of the session type for which event types are to be retrieved.
-	 * @param {Array.<String>} opts.queryFields Event Type field(s) to query on. Requires 'queryValue' to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
-	 */
-	getJourneyEventtypes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/eventtypes', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'streamType': opts['streamType'],'sessionType': opts['sessionType'],'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve segment assignments by external contact ID.
-	 * 
-	 * @param {String} externalContactId ID of the external contact to query for segment assignments.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
-	 */
-	getJourneyExternalcontactSegments(externalContactId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'externalContactId' is set
-		if (externalContactId === undefined || externalContactId === null) {
-			throw 'Missing the required parameter "externalContactId" when calling getJourneyExternalcontactSegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/externalcontacts/{externalContactId}/segments', 
-			'GET', 
-			{ 'externalContactId': externalContactId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'],'includeMerged': opts['includeMerged'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a single open action.
-	 * 
-	 * @param {String} openActionId Id of an open action
-	 */
-	getJourneyOpenaction(openActionId) { 
-		// verify the required parameter 'openActionId' is set
-		if (openActionId === undefined || openActionId === null) {
-			throw 'Missing the required parameter "openActionId" when calling getJourneyOpenaction';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/{openActionId}', 
-			'GET', 
-			{ 'openActionId': openActionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve a paged listing of open actions.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
-	 */
-	getJourneyOpenactions(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a schema
-	 * 
-	 * @param {String} schemaId Schema ID
-	 */
-	getJourneyOpenactionsSchema(schemaId) { 
-		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getJourneyOpenactionsSchema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/schemas/{schemaId}', 
-			'GET', 
-			{ 'schemaId': schemaId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a specific version of a schema
-	 * 
-	 * @param {String} schemaId Schema ID
-	 * @param {String} versionId Schema version
-	 */
-	getJourneyOpenactionsSchemaVersion(schemaId, versionId) { 
-		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getJourneyOpenactionsSchemaVersion';
-		}
-		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getJourneyOpenactionsSchemaVersion';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/schemas/{schemaId}/versions/{versionId}', 
-			'GET', 
-			{ 'schemaId': schemaId,'versionId': versionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all versions of a schema
-	 * 
-	 * @param {String} schemaId Schema ID
-	 */
-	getJourneyOpenactionsSchemaVersions(schemaId) { 
-		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getJourneyOpenactionsSchemaVersions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/schemas/{schemaId}/versions', 
-			'GET', 
-			{ 'schemaId': schemaId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of schemas.
-	 * 
-	 */
-	getJourneyOpenactionsSchemas() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/schemas', 
-			'GET', 
-			{  },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -41569,37 +29091,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve all recent sessions.
-	 * 
-	 * @param {Object} sessionType Filter recent sessions by type.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.assignedSegmentId Filter recent sessions by an assigned segment ID.
-	 */
-	getJourneySessionRecent(sessionType, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionType' is set
-		if (sessionType === undefined || sessionType === null) {
-			throw 'Missing the required parameter "sessionType" when calling getJourneySessionRecent';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/sessions/{sessionType}/recent', 
-			'GET', 
-			{ 'sessionType': sessionType },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'assignedSegmentId': opts['assignedSegmentId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Retrieve segment assignments by session ID.
 	 * 
 	 * @param {String} sessionId ID of the session to query for segment assignments.
@@ -41623,320 +29114,6 @@ class JourneyApi {
 			'GET', 
 			{ 'sessionId': sessionId },
 			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve clickstream settings.
-	 * 
-	 */
-	getJourneySettingsClickstream() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/settings/clickstream', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve web action settings.
-	 * 
-	 */
-	getJourneySettingsWebactions() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/settings/webactions', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Journey View by ID
-	 * returns the latest version
-	 * @param {String} viewId viewId
-	 */
-	getJourneyView(viewId) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling getJourneyView';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/{viewId}', 
-			'GET', 
-			{ 'viewId': viewId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a job for a journeyView.
-	 * used for long descriptions
-	 * @param {String} viewId Journey View Id
-	 * @param {String} journeyVersionId Journey View Version
-	 * @param {String} jobId JobId
-	 */
-	getJourneyViewVersionJob(viewId, journeyVersionId, jobId) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJob';
-		}
-		// verify the required parameter 'journeyVersionId' is set
-		if (journeyVersionId === undefined || journeyVersionId === null) {
-			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJob';
-		}
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}', 
-			'GET', 
-			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a JourneyViewResult.
-	 * used for long descriptions
-	 * @param {String} viewId JourneyViewResult id
-	 * @param {String} journeyViewVersion Journey View Version
-	 * @param {String} jobId Id of the executing job
-	 */
-	getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobResults';
-		}
-		// verify the required parameter 'journeyViewVersion' is set
-		if (journeyViewVersion === undefined || journeyViewVersion === null) {
-			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionJobResults';
-		}
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJobResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results', 
-			'GET', 
-			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query a job for a journeyView.
-	 * used for long descriptions
-	 * @param {String} viewId Journey View Id
-	 * @param {String} journeyVersionId Journey View Version
-	 */
-	getJourneyViewVersionJobsLatest(viewId, journeyVersionId) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobsLatest';
-		}
-		// verify the required parameter 'journeyVersionId' is set
-		if (journeyVersionId === undefined || journeyVersionId === null) {
-			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJobsLatest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest', 
-			'GET', 
-			{ 'viewId': viewId,'journeyVersionId': journeyVersionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Journey Views
-	 * 
-	 */
-	getJourneyViews() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an Event Definition
-	 * 
-	 * @param {String} eventDefinitionId Event Definition ID
-	 */
-	getJourneyViewsEventdefinition(eventDefinitionId) { 
-		// verify the required parameter 'eventDefinitionId' is set
-		if (eventDefinitionId === undefined || eventDefinitionId === null) {
-			throw 'Missing the required parameter "eventDefinitionId" when calling getJourneyViewsEventdefinition';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/eventdefinitions/{eventDefinitionId}', 
-			'GET', 
-			{ 'eventDefinitionId': eventDefinitionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Event Definitions
-	 * 
-	 */
-	getJourneyViewsEventdefinitions() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/eventdefinitions', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Sends web beacon, used for tracking customer activity on a website via transparent pixel.
-	 * 
-	 * @param {String} websiteId The ID of the website making the request.
-	 * @param {String} customerCookieId Customer cookie ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.data The base-64 encoded beacon data which contains tracking information from web sessions.
-	 * @param {Object} opts.type The type of the beacon request.
-	 * @param {String} opts.tid The tracker ID of the organization making the request.
-	 */
-	getJourneyWebsiteCustomerBeacons(websiteId, customerCookieId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'websiteId' is set
-		if (websiteId === undefined || websiteId === null) {
-			throw 'Missing the required parameter "websiteId" when calling getJourneyWebsiteCustomerBeacons';
-		}
-		// verify the required parameter 'customerCookieId' is set
-		if (customerCookieId === undefined || customerCookieId === null) {
-			throw 'Missing the required parameter "customerCookieId" when calling getJourneyWebsiteCustomerBeacons';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/beacons', 
-			'GET', 
-			{ 'websiteId': websiteId,'customerCookieId': customerCookieId },
-			{ 'data': opts['data'],'type': opts['type'],'tid': opts['tid'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send single page ping.
-	 * 
-	 * @param {String} websiteId The ID of the website making the request.
-	 * @param {String} customerCookieId Customer cookie ID.
-	 * @param {String} visitId Visit ID.
-	 * @param {Number} t Timestamp in milliseconds.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.dl Page URL if overridden or URL fragment identifier (window.location.hash).
-	 * @param {String} opts.dt Page title.
-	 * @param {String} opts.appNamespace Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in app sessions
-	 * @param {String} opts.sessionId sessionId
-	 * @param {Number} opts.sinceLastBeaconMilliseconds The number of milliseconds since the most recent beacon.
-	 */
-	getJourneyWebsiteCustomerPing(websiteId, customerCookieId, visitId, t, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'websiteId' is set
-		if (websiteId === undefined || websiteId === null) {
-			throw 'Missing the required parameter "websiteId" when calling getJourneyWebsiteCustomerPing';
-		}
-		// verify the required parameter 'customerCookieId' is set
-		if (customerCookieId === undefined || customerCookieId === null) {
-			throw 'Missing the required parameter "customerCookieId" when calling getJourneyWebsiteCustomerPing';
-		}
-		// verify the required parameter 'visitId' is set
-		if (visitId === undefined || visitId === null) {
-			throw 'Missing the required parameter "visitId" when calling getJourneyWebsiteCustomerPing';
-		}
-		// verify the required parameter 't' is set
-		if (t === undefined || t === null) {
-			throw 'Missing the required parameter "t" when calling getJourneyWebsiteCustomerPing';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/ping', 
-			'GET', 
-			{ 'websiteId': websiteId,'customerCookieId': customerCookieId },
-			{ 'dl': opts['dl'],'dt': opts['dt'],'appNamespace': opts['appNamespace'],'sessionId': opts['sessionId'],'sinceLastBeaconMilliseconds': opts['sinceLastBeaconMilliseconds'],'visitId': visitId,'t': t },
 			{  },
 			{  },
 			null, 
@@ -42034,64 +29211,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Update a single event type.
-	 * 
-	 * @param {String} eventTypeId ID of the event type.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchJourneyEventtype(eventTypeId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'eventTypeId' is set
-		if (eventTypeId === undefined || eventTypeId === null) {
-			throw 'Missing the required parameter "eventTypeId" when calling patchJourneyEventtype';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/eventtypes/{eventTypeId}', 
-			'PATCH', 
-			{ 'eventTypeId': eventTypeId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an open action.
-	 * 
-	 * @param {String} openActionId Id of an open action
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchJourneyOpenaction(openActionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'openActionId' is set
-		if (openActionId === undefined || openActionId === null) {
-			throw 'Missing the required parameter "openActionId" when calling patchJourneyOpenaction';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/{openActionId}', 
-			'PATCH', 
-			{ 'openActionId': openActionId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update an outcome.
 	 * 
 	 * @param {String} outcomeId ID of the outcome.
@@ -42139,54 +29258,6 @@ class JourneyApi {
 			'/api/v2/journey/segments/{segmentId}', 
 			'PATCH', 
 			{ 'segmentId': segmentId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update clickstream settings.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchJourneySettingsClickstream(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/settings/clickstream', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update web action settings.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchJourneySettingsWebactions(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/settings/webactions', 
-			'PATCH', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -42249,35 +29320,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
-	 * 
-	 * @param {String} contactId ExternalContact ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postExternalcontactsContactJourneySegments(contactId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactJourneySegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
-			'POST', 
-			{ 'contactId': contactId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create an action map.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -42327,30 +29369,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Perform bulk upsert of action targets.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postJourneyActiontargetsBulk(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/actiontargets/bulk', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a single action template.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -42368,36 +29386,6 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Sends an action event, which is used for changing the state of actions that have been offered to the user.
-	 * 
-	 * @param {String} deploymentId The ID of the deployment sending the beacon.
-	 * @param {Object} body 
-	 */
-	postJourneyDeploymentActionevent(deploymentId, body) { 
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentActionevent';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postJourneyDeploymentActionevent';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/deployments/{deploymentId}/actionevent', 
-			'POST', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -42428,172 +29416,6 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates multiple journey app events. Any unprocessed app events are returned in the body for the client to retry in the event of a partial success.
-	 * 
-	 * @param {String} deploymentId The ID of the deployment sending the app event.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postJourneyDeploymentAppeventsBulk(deploymentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentAppeventsBulk';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/deployments/{deploymentId}/appevents/bulk', 
-			'POST', 
-			{ 'deploymentId': deploymentId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Sends web beacon, used for tracking customer activity on a website, with support for the navigator.sendBeacon API available in most browsers.
-	 * 
-	 * @param {String} deploymentId The ID of the deployment sending the beacon.
-	 * @param {String} customerCookieId ID of the customer associated with the beacon.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.data The base-64 encoded beacon data which contains tracking information from web sessions.
-	 * @param {Object} opts.type The type of the beacon request.
-	 */
-	postJourneyDeploymentCustomerBeacons(deploymentId, customerCookieId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentCustomerBeacons';
-		}
-		// verify the required parameter 'customerCookieId' is set
-		if (customerCookieId === undefined || customerCookieId === null) {
-			throw 'Missing the required parameter "customerCookieId" when calling postJourneyDeploymentCustomerBeacons';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/beacons', 
-			'POST', 
-			{ 'deploymentId': deploymentId,'customerCookieId': customerCookieId },
-			{ 'data': opts['data'],'type': opts['type'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a single event type.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postJourneyEventtypes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/eventtypes', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
-	 * 
-	 * @param {String} externalContactId ID of the external contact to query for segment assignments.
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postJourneyExternalcontactSegments(externalContactId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'externalContactId' is set
-		if (externalContactId === undefined || externalContactId === null) {
-			throw 'Missing the required parameter "externalContactId" when calling postJourneyExternalcontactSegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/externalcontacts/{externalContactId}/segments', 
-			'POST', 
-			{ 'externalContactId': externalContactId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an open action.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postJourneyOpenactions(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a schema
-	 * 
-	 * @param {Object} body Schema
-	 */
-	postJourneyOpenactionsSchemas(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postJourneyOpenactionsSchemas';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/schemas', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -42697,164 +29519,13 @@ class JourneyApi {
 		);
 	}
 
-	/**
-	 * Submit an execution for a journeyView.
-	 * used for long descriptions
-	 * @param {String} viewId Journey View Id
-	 * @param {String} journeyVersionId Journey View Version
-	 */
-	postJourneyViewVersionJobs(viewId, journeyVersionId) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling postJourneyViewVersionJobs';
-		}
-		// verify the required parameter 'journeyVersionId' is set
-		if (journeyVersionId === undefined || journeyVersionId === null) {
-			throw 'Missing the required parameter "journeyVersionId" when calling postJourneyViewVersionJobs';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs', 
-			'POST', 
-			{ 'viewId': viewId,'journeyVersionId': journeyVersionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a Journey View by ID
-	 * creates a new version
-	 * @param {String} viewId viewId
-	 * @param {Object} body JourneyView
-	 */
-	postJourneyViewVersions(viewId, body) { 
-		// verify the required parameter 'viewId' is set
-		if (viewId === undefined || viewId === null) {
-			throw 'Missing the required parameter "viewId" when calling postJourneyViewVersions';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postJourneyViewVersions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views/{viewId}/versions', 
-			'POST', 
-			{ 'viewId': viewId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a new Journey View
-	 * 
-	 * @param {Object} body JourneyView
-	 */
-	postJourneyViews(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postJourneyViews';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/views', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Sends web beacon, used for tracking customer activity on a website, with support for navigator.sendBeacon API that's available in most modern browsers.
-	 * 
-	 * @param {String} websiteId The ID of the website making the request.
-	 * @param {String} customerCookieId Customer cookie ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.data The base-64 encoded beacon data which contains tracking information from web sessions.
-	 * @param {Object} opts.type The type of the beacon request.
-	 * @param {String} opts.tid The tracker ID of the organization making the request.
-	 */
-	postJourneyWebsiteCustomerBeacons(websiteId, customerCookieId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'websiteId' is set
-		if (websiteId === undefined || websiteId === null) {
-			throw 'Missing the required parameter "websiteId" when calling postJourneyWebsiteCustomerBeacons';
-		}
-		// verify the required parameter 'customerCookieId' is set
-		if (customerCookieId === undefined || customerCookieId === null) {
-			throw 'Missing the required parameter "customerCookieId" when calling postJourneyWebsiteCustomerBeacons';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/beacons', 
-			'POST', 
-			{ 'websiteId': websiteId,'customerCookieId': customerCookieId },
-			{ 'data': opts['data'],'type': opts['type'],'tid': opts['tid'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a schema
-	 * 
-	 * @param {String} schemaId Schema ID
-	 * @param {Object} body Data Schema
-	 */
-	putJourneyOpenactionsSchema(schemaId, body) { 
-		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling putJourneyOpenactionsSchema';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putJourneyOpenactionsSchema';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/openactions/schemas/{schemaId}', 
-			'PUT', 
-			{ 'schemaId': schemaId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -42914,71 +29585,6 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}', 
 			'DELETE', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'categoryId': categoryId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete context.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 */
-	deleteKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseContext';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling deleteKnowledgeKnowledgebaseContext';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}', 
-			'DELETE', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete context value.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 * @param {String} contextValueId Context Value ID.
-	 */
-	deleteKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseContextValue';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling deleteKnowledgeKnowledgebaseContextValue';
-		}
-		// verify the required parameter 'contextValueId' is set
-		if (contextValueId === undefined || contextValueId === null) {
-			throw 'Missing the required parameter "contextValueId" when calling deleteKnowledgeKnowledgebaseContextValue';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}', 
-			'DELETE', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId,'contextValueId': contextValueId },
 			{  },
 			{  },
 			{  },
@@ -43294,12 +29900,8 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {String} documentId Document ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.useContext If true, document variations will be filtered using the session context.
 	 */
-	getKnowledgeGuestSessionDocument(sessionId, documentId, opts) { 
-		opts = opts || {};
-		
+	getKnowledgeGuestSessionDocument(sessionId, documentId) { 
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null) {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionDocument';
@@ -43313,7 +29915,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}', 
 			'GET', 
 			{ 'sessionId': sessionId,'documentId': documentId },
-			{ 'useContext': opts['useContext'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -43329,14 +29931,7 @@ class KnowledgeApi {
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.categoryId If specified, retrieves documents associated with category ids, comma separated values expected.
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Number} opts.pageNumber The page number requested.
-	 * @param {Object} opts.sortBy The field to sort results by.
-	 * @param {Object} opts.sortOrder Sort order.
-	 * @param {Boolean} opts.useContext If true, document variations will be filtered using the session context.
-	 * @param {Array.<String>} opts.expand If provided, expands the specified property in the response. Valid values are: Variations. Variation expansion only takes effect when used with useContext or sortBy
 	 */
 	getKnowledgeGuestSessionDocuments(sessionId, opts) { 
 		opts = opts || {};
@@ -43350,7 +29945,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/guest/sessions/{sessionId}/documents', 
 			'GET', 
 			{ 'sessionId': sessionId },
-			{ 'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'useContext': opts['useContext'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -43443,139 +30038,6 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'categoryId': categoryId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get specific context data of the knowledge base.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 */
-	getKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseContext';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling getKnowledgeKnowledgebaseContext';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get specified context value data.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 * @param {String} contextValueId Context Value ID.
-	 */
-	getKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseContextValue';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling getKnowledgeKnowledgebaseContextValue';
-		}
-		// verify the required parameter 'contextValueId' is set
-		if (contextValueId === undefined || contextValueId === null) {
-			throw 'Missing the required parameter "contextValueId" when calling getKnowledgeKnowledgebaseContextValue';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId,'contextValueId': contextValueId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get context values for the specified context.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 */
-	getKnowledgeKnowledgebaseContextValues(knowledgeBaseId, contextId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseContextValues';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling getKnowledgeKnowledgebaseContextValues';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get contexts for the specified knowledge base.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Object} opts.contextType Client: contexts created by the user; System: contexts created by default (default to Client)
-	 */
-	getKnowledgeKnowledgebaseContexts(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseContexts';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'contextType': opts['contextType'] },
 			{  },
 			{  },
 			null, 
@@ -44002,92 +30464,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Get All feedbacks for a knowledgebase
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Date} dateCreatedFrom dateCreatedFrom. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} dateCreatedTo dateCreatedTo. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
-	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 100.
-	 * @param {Object} opts.expand when queryparam expand's value is Approval, approvals section is returned in feedback response.
-	 * @param {Number} opts.maximumConfidence Used to return feedback results for search documents with a confidence score lesser than or equal to the specified value.
-	 * @param {Number} opts.minimumConfidence Used to return feedback results for search documents with confidence score greater than or equal to the specified value.
-	 * @param {Number} opts.maximumRating Used to return feedback results with feedback rating less than or equal to the specified value.
-	 * @param {Number} opts.minimumRating Used to return feedback results with feedback rating greater than or equal to the specified value.
-	 * @param {Array.<String>} opts.approvalStatus Approval status of the feedback.
-	 * @param {Object} opts.sortOrder Sort order.
-	 * @param {Object} opts.sortBy Sort by.
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseFeedback(knowledgeBaseId, dateCreatedFrom, dateCreatedTo, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseFeedback';
-		}
-		// verify the required parameter 'dateCreatedFrom' is set
-		if (dateCreatedFrom === undefined || dateCreatedFrom === null) {
-			throw 'Missing the required parameter "dateCreatedFrom" when calling getKnowledgeKnowledgebaseFeedback';
-		}
-		// verify the required parameter 'dateCreatedTo' is set
-		if (dateCreatedTo === undefined || dateCreatedTo === null) {
-			throw 'Missing the required parameter "dateCreatedTo" when calling getKnowledgeKnowledgebaseFeedback';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'expand': opts['expand'],'maximumConfidence': opts['maximumConfidence'],'minimumConfidence': opts['minimumConfidence'],'maximumRating': opts['maximumRating'],'minimumRating': opts['minimumRating'],'approvalStatus': this.apiClient.buildCollectionParam(opts['approvalStatus'], 'multi'),'sortOrder': opts['sortOrder'],'dateCreatedFrom': dateCreatedFrom,'dateCreatedTo': dateCreatedTo,'sortBy': opts['sortBy'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Feedback details
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {String} feedbackId Feedback ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand when expands value is Approval, approvals section is returned in feedback response.
-	 * @deprecated
-	 */
-	getKnowledgeKnowledgebaseFeedbackFeedbackId(knowledgeBaseId, feedbackId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseFeedbackFeedbackId';
-		}
-		// verify the required parameter 'feedbackId' is set
-		if (feedbackId === undefined || feedbackId === null) {
-			throw 'Missing the required parameter "feedbackId" when calling getKnowledgeKnowledgebaseFeedbackFeedbackId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId}', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'feedbackId': feedbackId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get import job report
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -44492,100 +30868,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Get operations
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Array.<String>} opts.userId If specified, retrieves operations associated with user ids, comma separated values expected.
-	 * @param {Array.<String>} opts.type If specified, retrieves operations with specified operation type, comma separated values expected.
-	 * @param {Array.<String>} opts.status If specified, retrieves operations with specified operation status, comma separated values expected.
-	 * @param {String} opts.interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
-	 */
-	getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'interval': opts['interval'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get ids of operation creator users and oauth clients
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 */
-	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperationsUsersQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get parse job report
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {String} parseJobId Parse job ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
-	 */
-	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseParseJob';
-		}
-		// verify the required parameter 'parseJobId' is set
-		if (parseJobId === undefined || parseJobId === null) {
-			throw 'Missing the required parameter "parseJobId" when calling getKnowledgeKnowledgebaseParseJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get knowledge base unanswered group for a particular groupId
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -44684,36 +30966,6 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
 			{ 'app': opts['app'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get content upload from URL job status
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {String} jobId Upload job ID
-	 */
-	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
-		}
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'jobId': jobId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -44856,79 +31108,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Update specific context data of the knowledge base.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseContext';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling patchKnowledgeKnowledgebaseContext';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update context value.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 * @param {String} contextValueId Context Value ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseContextValue';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling patchKnowledgeKnowledgebaseContextValue';
-		}
-		// verify the required parameter 'contextValueId' is set
-		if (contextValueId === undefined || contextValueId === null) {
-			throw 'Missing the required parameter "contextValueId" when calling patchKnowledgeKnowledgebaseContextValue';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId,'contextValueId': contextValueId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update document.
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID.
@@ -44957,45 +31136,6 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update feedback on a document
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} documentId Document ID.
-	 * @param {String} feedbackId Feedback ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
-		}
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
-		}
-		// verify the required parameter 'feedbackId' is set
-		if (feedbackId === undefined || feedbackId === null) {
-			throw 'Missing the required parameter "feedbackId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId,'feedbackId': feedbackId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -45070,37 +31210,6 @@ class KnowledgeApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update or Create Feedbacks
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Array.<Object>} body 
-	 * @deprecated
-	 */
-	patchKnowledgeKnowledgebaseFeedback(knowledgeBaseId, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseFeedback';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseFeedback';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -45337,41 +31446,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Send update to the parse operation
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {String} parseJobId Parse job ID
-	 * @param {Object} body 
-	 */
-	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseParseJob';
-		}
-		// verify the required parameter 'parseJobId' is set
-		if (parseJobId === undefined || parseJobId === null) {
-			throw 'Missing the required parameter "parseJobId" when calling patchKnowledgeKnowledgebaseParseJob';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseParseJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a Knowledge base unanswered phrase group
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -45437,40 +31511,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Indicate that the document was copied by the user.
-	 * 
-	 * @param {String} sessionId Knowledge guest session ID.
-	 * @param {String} documentId Document ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentCopies';
-		}
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentCopies';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies', 
-			'POST', 
-			{ 'sessionId': sessionId,'documentId': documentId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Give feedback on a document
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -45494,69 +31534,6 @@ class KnowledgeApi {
 			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback', 
 			'POST', 
 			{ 'sessionId': sessionId,'documentId': documentId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create view event for a document.
-	 * 
-	 * @param {String} sessionId Knowledge guest session ID.
-	 * @param {String} documentId Document ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentViews';
-		}
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentViews';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views', 
-			'POST', 
-			{ 'sessionId': sessionId,'documentId': documentId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Indicate that documents were presented to the user.
-	 * 
-	 * @param {String} sessionId Knowledge guest session ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsPresentations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations', 
-			'POST', 
-			{ 'sessionId': sessionId },
 			{  },
 			{  },
 			{  },
@@ -45675,103 +31652,6 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create context value for the specified context.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postKnowledgeKnowledgebaseContextValues(knowledgeBaseId, contextId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseContextValues';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling postKnowledgeKnowledgebaseContextValues';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create context for the specified knowledge base.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postKnowledgeKnowledgebaseContexts(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseContexts';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Indicate that the document was copied by the user.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} documentId Document ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentCopies';
-		}
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentCopies';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -46009,65 +31889,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Indicate that documents were presented to the user.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsPresentations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query for knowledge documents.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge Base ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Fields, if any, to expand for each document in the search result matching the query.
-	 * @param {Object} opts.body 
-	 */
-	postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Search the documents in a knowledge base.
 	 * 
 	 * @param {String} knowledgeBaseId The ID of knowledge base containing the documents to query.
@@ -46181,66 +32002,6 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * save Feedback
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseFeedback(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseFeedback';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update approval for feedback(s)
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebaseFeedbackApprovalsBulk(knowledgeBaseId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseFeedbackApprovalsBulk';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/approvals/bulk', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -46525,71 +32286,6 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Import the parsed articles
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {String} parseJobId Parse job ID
-	 * @param {Object} body 
-	 */
-	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobImport';
-		}
-		// verify the required parameter 'parseJobId' is set
-		if (parseJobId === undefined || parseJobId === null) {
-			throw 'Missing the required parameter "parseJobId" when calling postKnowledgeKnowledgebaseParseJobImport';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseParseJobImport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create parse job
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} body 
-	 */
-	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobs';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseParseJobs';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Search Documents
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -46613,36 +32309,6 @@ class KnowledgeApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create content upload from URL job
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} body uploadRequest
-	 */
-	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -46674,147 +32340,13 @@ class KnowledgeApi {
 		);
 	}
 
-	/**
-	 * Get all feedbacks for knowledge
-	 * 
-	 * @param {Date} dateCreatedFrom dateCreatedFrom. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} dateCreatedTo dateCreatedTo. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
-	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 100.
-	 * @param {Object} opts.expand when queryparam expand's value is Approval, approvals section is returned in feedback response.
-	 * @param {Number} opts.maximumConfidence Used to return feedback results for search documents with a confidence score lesser than or equal to the specified value.
-	 * @param {Number} opts.minimumConfidence Used to return feedback results for search documents with confidence score greater than or equal to the specified value.
-	 * @param {Number} opts.maximumRating Used to return feedback results with feedback rating less than or equal to the specified value.
-	 * @param {Number} opts.minimumRating Used to return feedback results with feedback rating greater than or equal to the specified value.
-	 * @param {Array.<String>} opts.approvalStatus Approval status of the feedback.
-	 * @param {Object} opts.sortOrder Sort order.
-	 * @param {Object} opts.sortBy Sort by.
-	 * @param {Array.<Object>} opts.body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebasesFeedback(dateCreatedFrom, dateCreatedTo, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'dateCreatedFrom' is set
-		if (dateCreatedFrom === undefined || dateCreatedFrom === null) {
-			throw 'Missing the required parameter "dateCreatedFrom" when calling postKnowledgeKnowledgebasesFeedback';
-		}
-		// verify the required parameter 'dateCreatedTo' is set
-		if (dateCreatedTo === undefined || dateCreatedTo === null) {
-			throw 'Missing the required parameter "dateCreatedTo" when calling postKnowledgeKnowledgebasesFeedback';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/feedback', 
-			'POST', 
-			{  },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'expand': opts['expand'],'maximumConfidence': opts['maximumConfidence'],'minimumConfidence': opts['minimumConfidence'],'maximumRating': opts['maximumRating'],'minimumRating': opts['minimumRating'],'approvalStatus': this.apiClient.buildCollectionParam(opts['approvalStatus'], 'multi'),'sortOrder': opts['sortOrder'],'dateCreatedFrom': dateCreatedFrom,'dateCreatedTo': dateCreatedTo,'sortBy': opts['sortBy'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update approval/reject for at most 25 feedback(s) for knowledgebase
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebasesFeedbackApprovalsBulk(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/feedback/approvals/bulk', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get trainings for the specified Knowledge Bases
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
-	 * @param {Number} opts.trainingLimit Return the specified number of trainings for each knowledge base. The maximum number of trainings that you can request for each knowledge base is 5.
-	 * @param {Array.<Object>} opts.body 
-	 * @deprecated
-	 */
-	postKnowledgeKnowledgebasesTrainings(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/trainings', 
-			'POST', 
-			{  },
-			{ 'knowledgeDocumentsState': opts['knowledgeDocumentsState'],'trainingLimit': opts['trainingLimit'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update Feedback details
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {String} feedbackId Feedback ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 * @deprecated
-	 */
-	putKnowledgeKnowledgebaseFeedbackFeedbackId(knowledgeBaseId, feedbackId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseFeedbackFeedbackId';
-		}
-		// verify the required parameter 'feedbackId' is set
-		if (feedbackId === undefined || feedbackId === null) {
-			throw 'Missing the required parameter "feedbackId" when calling putKnowledgeKnowledgebaseFeedbackFeedbackId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId}', 
-			'PUT', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'feedbackId': feedbackId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -47827,7 +33359,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -47858,96 +33390,6 @@ class LanguagesApi {
 			'/api/v2/languages/{languageId}', 
 			'DELETE', 
 			{ 'languageId': languageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all available languages for translation
-	 * 
-	 */
-	getAppsLegacyAvailabletranslations() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/availabletranslations', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get effective translation for an organization by language
-	 * 
-	 * @param {String} languageName The language of the translation to retrieve for the organization
-	 */
-	getAppsLegacyTranslation(languageName) { 
-		// verify the required parameter 'languageName' is set
-		if (languageName === undefined || languageName === null) {
-			throw 'Missing the required parameter "languageName" when calling getAppsLegacyTranslation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/translations/{languageName}', 
-			'GET', 
-			{ 'languageName': languageName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get effective translation for an organization
-	 * 
-	 */
-	getAppsLegacyTranslations() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/translations', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the builtin translation for a language
-	 * 
-	 * @param {String} languageName The language of the builtin translation to retrieve
-	 */
-	getAppsLegacyTranslationsBuiltinLanguageName(languageName) { 
-		// verify the required parameter 'languageName' is set
-		if (languageName === undefined || languageName === null) {
-			throw 'Missing the required parameter "languageName" when calling getAppsLegacyTranslationsBuiltinLanguageName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/translations/builtin/{languageName}', 
-			'GET', 
-			{ 'languageName': languageName },
 			{  },
 			{  },
 			{  },
@@ -48108,36 +33550,6 @@ class LanguagesApi {
 	}
 
 	/**
-	 * Update a custom translation map for the requester's org and a language
-	 * 
-	 * @param {String} languageName The language of the translation to retrieve for the organization
-	 * @param {Object.<String, {String: String}>} body The new custom translation map for the requester's org and language
-	 */
-	postAppsLegacyTranslation(languageName, body) { 
-		// verify the required parameter 'languageName' is set
-		if (languageName === undefined || languageName === null) {
-			throw 'Missing the required parameter "languageName" when calling postAppsLegacyTranslation';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAppsLegacyTranslation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/translations/{languageName}', 
-			'POST', 
-			{ 'languageName': languageName },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create Language (Deprecated)
 	 * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 	 * @param {Object} body Language
@@ -48169,7 +33581,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -48254,41 +33666,6 @@ class LearningApi {
 			'GET', 
 			{ 'assignmentId': assignmentId },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Learning Assignment Step
-	 * Permission not required if you are the assigned user of the learning assignment
-	 * @param {String} assignmentId The ID of Learning Assignment
-	 * @param {String} stepId The ID of Learning Assignment Step
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.shareableContentObjectId The ID of SCO to load
-	 * @param {Array.<String>} opts.expand Fields to expand in response
-	 */
-	getLearningAssignmentStep(assignmentId, stepId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
-			throw 'Missing the required parameter "assignmentId" when calling getLearningAssignmentStep';
-		}
-		// verify the required parameter 'stepId' is set
-		if (stepId === undefined || stepId === null) {
-			throw 'Missing the required parameter "stepId" when calling getLearningAssignmentStep';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/learning/assignments/{assignmentId}/steps/{stepId}', 
-			'GET', 
-			{ 'assignmentId': assignmentId,'stepId': stepId },
-			{ 'shareableContentObjectId': opts['shareableContentObjectId'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -48433,36 +33810,6 @@ class LearningApi {
 	}
 
 	/**
-	 * Get all published versions of a learning module
-	 * 
-	 * @param {String} moduleId The ID of the learning module
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getLearningModulePublishedversions(moduleId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling getLearningModulePublishedversions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/learning/modules/{moduleId}/publishedversions', 
-			'GET', 
-			{ 'moduleId': moduleId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a learning module rule
 	 * 
 	 * @param {String} moduleId The ID of the learning module
@@ -48535,7 +33882,6 @@ class LearningApi {
 	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
 	 * @param {Object} opts.isPublished Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned (default to Any)
 	 * @param {Array.<String>} opts.statuses Specifies the module statuses to filter by
-	 * @param {Array.<String>} opts.externalIds Specifies the module external IDs to filter by. Only one ID is allowed
 	 */
 	getLearningModules(opts) { 
 		opts = opts || {};
@@ -48545,7 +33891,7 @@ class LearningApi {
 			'/api/v2/learning/modules', 
 			'GET', 
 			{  },
-			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'externalIds': this.apiClient.buildCollectionParam(opts['externalIds'], 'multi') },
+			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -48615,31 +33961,6 @@ class LearningApi {
 	}
 
 	/**
-	 * Get Learning SCORM Result
-	 * 
-	 * @param {String} scormId The ID of the SCORM package
-	 */
-	getLearningScormScormId(scormId) { 
-		// verify the required parameter 'scormId' is set
-		if (scormId === undefined || scormId === null) {
-			throw 'Missing the required parameter "scormId" when calling getLearningScormScormId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/learning/scorm/{scormId}', 
-			'GET', 
-			{ 'scormId': scormId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update Learning Assignment
 	 * 
 	 * @param {String} assignmentId The ID of Learning Assignment
@@ -48698,75 +34019,6 @@ class LearningApi {
 	}
 
 	/**
-	 * Update Learning Assignment Step
-	 * Permission not required if you are the assigned user of the learning assignment
-	 * @param {String} assignmentId The ID of Learning Assignment
-	 * @param {String} stepId The ID of Learning Assignment Step
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The Learning Assignment Step to be updated
-	 */
-	patchLearningAssignmentStep(assignmentId, stepId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'assignmentId' is set
-		if (assignmentId === undefined || assignmentId === null) {
-			throw 'Missing the required parameter "assignmentId" when calling patchLearningAssignmentStep';
-		}
-		// verify the required parameter 'stepId' is set
-		if (stepId === undefined || stepId === null) {
-			throw 'Missing the required parameter "stepId" when calling patchLearningAssignmentStep';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/learning/assignments/{assignmentId}/steps/{stepId}', 
-			'PATCH', 
-			{ 'assignmentId': assignmentId,'stepId': stepId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an external assignment for a specific user
-	 * 
-	 * @param {String} moduleId Key identifier for the module
-	 * @param {String} userId Key identifier for the user
-	 * @param {Object} body The learning request for updating the assignment
-	 */
-	patchLearningModuleUserAssignments(moduleId, userId, body) { 
-		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling patchLearningModuleUserAssignments';
-		}
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchLearningModuleUserAssignments';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchLearningModuleUserAssignments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/learning/modules/{moduleId}/users/{userId}/assignments', 
-			'PATCH', 
-			{ 'moduleId': moduleId,'userId': userId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Score learning assessment for preview
 	 * 
 	 * @param {Object} body Assessment form and answers to score
@@ -48795,12 +34047,8 @@ class LearningApi {
 	 * Reassign Learning Assignment
 	 * This will reassign the state of the assignment to Assigned and update the assignment to the latest version of the module
 	 * @param {String} assignmentId The Learning Assignment ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Reassign assignment parameters
 	 */
-	postLearningAssignmentReassign(assignmentId, opts) { 
-		opts = opts || {};
-		
+	postLearningAssignmentReassign(assignmentId) { 
 		// verify the required parameter 'assignmentId' is set
 		if (assignmentId === undefined || assignmentId === null) {
 			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReassign';
@@ -48813,7 +34061,7 @@ class LearningApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -49087,30 +34335,6 @@ class LearningApi {
 	}
 
 	/**
-	 * Create a SCORM package upload request
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body The SCORM package to be uploaded
-	 */
-	postLearningScorm(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/learning/scorm', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a learning module
 	 * This will update the name, description, completion time in days and inform steps for a learning module
 	 * @param {String} moduleId The ID of the learning module
@@ -49128,37 +34352,6 @@ class LearningApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}', 
-			'PUT', 
-			{ 'moduleId': moduleId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Archive/Unarchive a learning module
-	 * This will archive/unarchive the learning module
-	 * @param {String} moduleId The ID of the learning module
-	 * @param {Object} body The learning module archive details
-	 * @deprecated
-	 */
-	putLearningModuleArchive(moduleId, body) { 
-		// verify the required parameter 'moduleId' is set
-		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling putLearningModuleArchive';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putLearningModuleArchive';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/learning/modules/{moduleId}/archive', 
 			'PUT', 
 			{ 'moduleId': moduleId },
 			{  },
@@ -49207,7 +34400,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -49445,7 +34638,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -49677,1882 +34870,11 @@ class LocationsApi {
 
 }
 
-class LogCaptureApi {
-	/**
-	 * LogCapture service.
-	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new LogCaptureApi. 
-	 * @alias module:purecloud-platform-client-v2/api/LogCaptureApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Disable browser log capture for the user
-	 * 
-	 * @param {String} userId The id of the user to disable browser log capture
-	 */
-	deleteDiagnosticsLogcaptureBrowserUser(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteDiagnosticsLogcaptureBrowserUser';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/users/{userId}', 
-			'DELETE', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets status of async download execution
-	 * 
-	 * @param {String} jobId Job ID
-	 */
-	getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId) { 
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getDiagnosticsLogcaptureBrowserEntriesDownloadJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}', 
-			'GET', 
-			{ 'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get log capture configuration for the user
-	 * 
-	 * @param {String} userId The id of the user to get browser log capture configuration
-	 */
-	getDiagnosticsLogcaptureBrowserUser(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getDiagnosticsLogcaptureBrowserUser';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/users/{userId}', 
-			'GET', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all log capture enabled users for an org
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.includeExpired Include expired users with log captures still available for search or download (default to false)
-	 */
-	getDiagnosticsLogcaptureBrowserUsers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/users', 
-			'GET', 
-			{  },
-			{ 'includeExpired': opts['includeExpired'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Stores log entries coming from a user for an org
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postDiagnosticsLogcaptureBrowserEntries(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/entries', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a link to a file with log records.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postDiagnosticsLogcaptureBrowserEntriesDownload(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/entries/download', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates an async download execution
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/entries/download/jobs', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {Object} opts.body 
-	 */
-	postDiagnosticsLogcaptureBrowserEntriesQuery(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/entries/query', 
-			'POST', 
-			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Enable log capture for a user or update expiration
-	 * 
-	 * @param {String} userId The id of the user to enable browser log capture
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postDiagnosticsLogcaptureBrowserUser(userId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling postDiagnosticsLogcaptureBrowserUser';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/logcapture/browser/users/{userId}', 
-			'POST', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class MarketplaceApi {
-	/**
-	 * Marketplace service.
-	 * @module purecloud-platform-client-v2/api/MarketplaceApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new MarketplaceApi. 
-	 * @alias module:purecloud-platform-client-v2/api/MarketplaceApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete ad with specified platform and ad type
-	 * 
-	 * @param {String} platformName 
-	 * @param {Object} adType 
-	 */
-	deleteMarketplaceAdAdType(platformName, adType) { 
-		// verify the required parameter 'platformName' is set
-		if (platformName === undefined || platformName === null) {
-			throw 'Missing the required parameter "platformName" when calling deleteMarketplaceAdAdType';
-		}
-		// verify the required parameter 'adType' is set
-		if (adType === undefined || adType === null) {
-			throw 'Missing the required parameter "adType" when calling deleteMarketplaceAdAdType';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/ads/{platformName}/{adType}', 
-			'DELETE', 
-			{ 'platformName': platformName,'adType': adType },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete document with specified ID
-	 * 
-	 * @param {String} documentId 
-	 */
-	deleteMarketplaceDocument(documentId) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling deleteMarketplaceDocument';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/{documentId}', 
-			'DELETE', 
-			{ 'documentId': documentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete document navigation with specified ID
-	 * 
-	 * @param {String} navigationId 
-	 */
-	deleteMarketplaceDocumentsNavigation(navigationId) { 
-		// verify the required parameter 'navigationId' is set
-		if (navigationId === undefined || navigationId === null) {
-			throw 'Missing the required parameter "navigationId" when calling deleteMarketplaceDocumentsNavigation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/navigations/{navigationId}', 
-			'DELETE', 
-			{ 'navigationId': navigationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an existing enterprise agreement
-	 * 
-	 * @param {String} enterpriseAgreementId The unique identifier for an enterprise agreement
-	 */
-	deleteMarketplaceEnterpriseagreement(enterpriseAgreementId) { 
-		// verify the required parameter 'enterpriseAgreementId' is set
-		if (enterpriseAgreementId === undefined || enterpriseAgreementId === null) {
-			throw 'Missing the required parameter "enterpriseAgreementId" when calling deleteMarketplaceEnterpriseagreement';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/enterpriseagreements/{enterpriseAgreementId}', 
-			'DELETE', 
-			{ 'enterpriseAgreementId': enterpriseAgreementId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete listing with specified ID
-	 * 
-	 * @param {String} listingId The unique identifier for a listing
-	 */
-	deleteMarketplaceListing(listingId) { 
-		// verify the required parameter 'listingId' is set
-		if (listingId === undefined || listingId === null) {
-			throw 'Missing the required parameter "listingId" when calling deleteMarketplaceListing';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/{listingId}', 
-			'DELETE', 
-			{ 'listingId': listingId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete all media files and update listing
-	 * 
-	 * @param {String} listingId 
-	 */
-	deleteMarketplaceListingMedia(listingId) { 
-		// verify the required parameter 'listingId' is set
-		if (listingId === undefined || listingId === null) {
-			throw 'Missing the required parameter "listingId" when calling deleteMarketplaceListingMedia';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/{listingId}/media', 
-			'DELETE', 
-			{ 'listingId': listingId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete media file and update listing.
-	 * 
-	 * @param {String} listingId 
-	 * @param {String} fileName 
-	 */
-	deleteMarketplaceListingMediaFileName(listingId, fileName) { 
-		// verify the required parameter 'listingId' is set
-		if (listingId === undefined || listingId === null) {
-			throw 'Missing the required parameter "listingId" when calling deleteMarketplaceListingMediaFileName';
-		}
-		// verify the required parameter 'fileName' is set
-		if (fileName === undefined || fileName === null) {
-			throw 'Missing the required parameter "fileName" when calling deleteMarketplaceListingMediaFileName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/{listingId}/media/{fileName}', 
-			'DELETE', 
-			{ 'listingId': listingId,'fileName': fileName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete existing partner
-	 * 
-	 * @param {String} partnerId 
-	 */
-	deleteMarketplacePartner(partnerId) { 
-		// verify the required parameter 'partnerId' is set
-		if (partnerId === undefined || partnerId === null) {
-			throw 'Missing the required parameter "partnerId" when calling deleteMarketplacePartner';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/partners/{partnerId}', 
-			'DELETE', 
-			{ 'partnerId': partnerId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete existing reseller by partnerId
-	 * 
-	 * @param {String} partnerId 
-	 */
-	deleteMarketplaceResellersPartner(partnerId) { 
-		// verify the required parameter 'partnerId' is set
-		if (partnerId === undefined || partnerId === null) {
-			throw 'Missing the required parameter "partnerId" when calling deleteMarketplaceResellersPartner';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/resellers/partners/{partnerId}', 
-			'DELETE', 
-			{ 'partnerId': partnerId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Return ads for a specific platform
-	 * 
-	 * @param {String} platformName 
-	 */
-	getMarketplaceAd(platformName) { 
-		// verify the required parameter 'platformName' is set
-		if (platformName === undefined || platformName === null) {
-			throw 'Missing the required parameter "platformName" when calling getMarketplaceAd';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/ads/{platformName}', 
-			'GET', 
-			{ 'platformName': platformName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves all ads
-	 * 
-	 */
-	getMarketplaceAds() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/ads', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Return a structured hierarchy of available listing categories
-	 * 
-	 */
-	getMarketplaceCategories() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/categories', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a document by Id
-	 * 
-	 * @param {String} documentId 
-	 */
-	getMarketplaceDocument(documentId) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getMarketplaceDocument';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/{documentId}', 
-			'GET', 
-			{ 'documentId': documentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves all documents 
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 */
-	getMarketplaceDocuments(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a document navigation by Id
-	 * 
-	 * @param {String} navigationId 
-	 */
-	getMarketplaceDocumentsNavigation(navigationId) { 
-		// verify the required parameter 'navigationId' is set
-		if (navigationId === undefined || navigationId === null) {
-			throw 'Missing the required parameter "navigationId" when calling getMarketplaceDocumentsNavigation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/navigations/{navigationId}', 
-			'GET', 
-			{ 'navigationId': navigationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves all document navigations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 */
-	getMarketplaceDocumentsNavigations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/navigations', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve an enterprise agreement by Id
-	 * 
-	 * @param {String} enterpriseAgreementId The unique identifier for an enterprise agreement
-	 */
-	getMarketplaceEnterpriseagreement(enterpriseAgreementId) { 
-		// verify the required parameter 'enterpriseAgreementId' is set
-		if (enterpriseAgreementId === undefined || enterpriseAgreementId === null) {
-			throw 'Missing the required parameter "enterpriseAgreementId" when calling getMarketplaceEnterpriseagreement';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/enterpriseagreements/{enterpriseAgreementId}', 
-			'GET', 
-			{ 'enterpriseAgreementId': enterpriseAgreementId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Return listing with specified ID
-	 * 
-	 * @param {String} listingId The unique identifier for a listing
-	 */
-	getMarketplaceListing(listingId) { 
-		// verify the required parameter 'listingId' is set
-		if (listingId === undefined || listingId === null) {
-			throw 'Missing the required parameter "listingId" when calling getMarketplaceListing';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/{listingId}', 
-			'GET', 
-			{ 'listingId': listingId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves all listings associated with filters passed in via query param.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.category 
-	 * @param {String} opts.subcategory 
-	 * @param {String} opts.platform 
-	 * @param {Object} opts.brief Brief listing type
-	 * @param {Number} opts.pageSize The total page size requested (default to 25)
-	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
-	 * @param {String} opts.previousPage Previous page token
-	 */
-	getMarketplaceListings(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings', 
-			'GET', 
-			{  },
-			{ 'category': opts['category'],'subcategory': opts['subcategory'],'platform': opts['platform'],'brief': opts['brief'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Return listings with specified Vendor ID
-	 * 
-	 * @param {String} vendorId The unique identifier for the vendor associated with the listing
-	 */
-	getMarketplaceListingsVendor(vendorId) { 
-		// verify the required parameter 'vendorId' is set
-		if (vendorId === undefined || vendorId === null) {
-			throw 'Missing the required parameter "vendorId" when calling getMarketplaceListingsVendor';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/vendors/{vendorId}', 
-			'GET', 
-			{ 'vendorId': vendorId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a partner by id
-	 * 
-	 * @param {String} partnerId 
-	 */
-	getMarketplacePartner(partnerId) { 
-		// verify the required parameter 'partnerId' is set
-		if (partnerId === undefined || partnerId === null) {
-			throw 'Missing the required parameter "partnerId" when calling getMarketplacePartner';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/partners/{partnerId}', 
-			'GET', 
-			{ 'partnerId': partnerId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a partner by org id and partner type
-	 * 
-	 * @param {Object} partnerType 
-	 * @param {String} organizationId 
-	 */
-	getMarketplacePartnerOrganization(partnerType, organizationId) { 
-		// verify the required parameter 'partnerType' is set
-		if (partnerType === undefined || partnerType === null) {
-			throw 'Missing the required parameter "partnerType" when calling getMarketplacePartnerOrganization';
-		}
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling getMarketplacePartnerOrganization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/partners/{partnerType}/organizations/{organizationId}', 
-			'GET', 
-			{ 'partnerType': partnerType,'organizationId': organizationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves all partners
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 */
-	getMarketplacePartners(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/partners', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves partners by a search term
-	 * 
-	 * @param {String} q Search query
-	 */
-	getMarketplacePartnersSearch(q) { 
-		// verify the required parameter 'q' is set
-		if (q === undefined || q === null) {
-			throw 'Missing the required parameter "q" when calling getMarketplacePartnersSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/partners/search', 
-			'GET', 
-			{  },
-			{ 'q': q },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a reseller by Id
-	 * 
-	 * @param {String} resellerId 
-	 */
-	getMarketplaceReseller(resellerId) { 
-		// verify the required parameter 'resellerId' is set
-		if (resellerId === undefined || resellerId === null) {
-			throw 'Missing the required parameter "resellerId" when calling getMarketplaceReseller';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/resellers/{resellerId}', 
-			'GET', 
-			{ 'resellerId': resellerId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves all resellers across all organizations.
-	 * 
-	 */
-	getMarketplaceResellers() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/resellers', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves all resellers for the specified organization.
-	 * 
-	 * @param {String} organizationId 
-	 */
-	getMarketplaceResellersOrganization(organizationId) { 
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling getMarketplaceResellersOrganization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/resellers/organizations/{organizationId}', 
-			'GET', 
-			{ 'organizationId': organizationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a review by Id
-	 * 
-	 * @param {String} reviewId 
-	 */
-	getMarketplaceReview(reviewId) { 
-		// verify the required parameter 'reviewId' is set
-		if (reviewId === undefined || reviewId === null) {
-			throw 'Missing the required parameter "reviewId" when calling getMarketplaceReview';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/reviews/{reviewId}', 
-			'GET', 
-			{ 'reviewId': reviewId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the target url for an ad
-	 * 
-	 * @param {String} platformName 
-	 * @param {Object} adType 
-	 * @param {Object} body 
-	 */
-	patchMarketplaceAdAdTypeTargeturl(platformName, adType, body) { 
-		// verify the required parameter 'platformName' is set
-		if (platformName === undefined || platformName === null) {
-			throw 'Missing the required parameter "platformName" when calling patchMarketplaceAdAdTypeTargeturl';
-		}
-		// verify the required parameter 'adType' is set
-		if (adType === undefined || adType === null) {
-			throw 'Missing the required parameter "adType" when calling patchMarketplaceAdAdTypeTargeturl';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchMarketplaceAdAdTypeTargeturl';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/ads/{platformName}/{adType}/targeturl', 
-			'PATCH', 
-			{ 'platformName': platformName,'adType': adType },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update listing with specified ID
-	 * 
-	 * @param {String} listingId The unique identifier for a listing
-	 * @param {Object} body 
-	 */
-	patchMarketplaceListing(listingId, body) { 
-		// verify the required parameter 'listingId' is set
-		if (listingId === undefined || listingId === null) {
-			throw 'Missing the required parameter "listingId" when calling patchMarketplaceListing';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchMarketplaceListing';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/{listingId}', 
-			'PATCH', 
-			{ 'listingId': listingId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an ad
-	 * 
-	 * @param {String} platformName 
-	 * @param {Object} adType 
-	 * @param {Object} body 
-	 */
-	postMarketplaceAdAdType(platformName, adType, body) { 
-		// verify the required parameter 'platformName' is set
-		if (platformName === undefined || platformName === null) {
-			throw 'Missing the required parameter "platformName" when calling postMarketplaceAdAdType';
-		}
-		// verify the required parameter 'adType' is set
-		if (adType === undefined || adType === null) {
-			throw 'Missing the required parameter "adType" when calling postMarketplaceAdAdType';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceAdAdType';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/ads/{platformName}/{adType}', 
-			'POST', 
-			{ 'platformName': platformName,'adType': adType },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a document
-	 * 
-	 * @param {Object} body 
-	 */
-	postMarketplaceDocuments(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceDocuments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a presigned url for uploading images for documents
-	 * 
-	 * @param {String} documentId 
-	 * @param {Object} body query
-	 */
-	postMarketplaceDocumentsImage(documentId, body) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling postMarketplaceDocumentsImage';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceDocumentsImage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/images/{documentId}', 
-			'POST', 
-			{ 'documentId': documentId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a documentation navigation
-	 * 
-	 * @param {Object} body 
-	 */
-	postMarketplaceDocumentsNavigations(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceDocumentsNavigations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/navigations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves document by a search term
-	 * 
-	 * @param {Object} body 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 20)
-	 */
-	postMarketplaceDocumentsSearch(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceDocumentsSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/search', 
-			'POST', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an enterprise agreement
-	 * 
-	 * @param {Object} body 
-	 */
-	postMarketplaceEnterpriseagreements(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceEnterpriseagreements';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/enterpriseagreements', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search for an enterprise agreement by a search term
-	 * 
-	 * @param {Array.<Object>} body 
-	 */
-	postMarketplaceEnterpriseagreementsSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceEnterpriseagreementsSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/enterpriseagreements/search', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a listing
-	 * 
-	 * @param {Object} body 
-	 */
-	postMarketplaceListings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceListings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search for listing matching specified filters and terms
-	 * 
-	 * @param {Object} body 
-	 */
-	postMarketplaceListingsSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceListingsSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/search', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a partner
-	 * 
-	 * @param {Object} body 
-	 */
-	postMarketplacePartners(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplacePartners';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/partners', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Returns the listing type for the specified partner and listing id.
-	 * 
-	 * @param {Object} body 
-	 */
-	postMarketplaceResellersListings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceResellersListings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/resellers/listings', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates resellers for an organization
-	 * 
-	 * @param {String} organizationId 
-	 * @param {Object} body 
-	 */
-	postMarketplaceResellersOrganization(organizationId, body) { 
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling postMarketplaceResellersOrganization';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMarketplaceResellersOrganization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/resellers/organizations/{organizationId}', 
-			'POST', 
-			{ 'organizationId': organizationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a document with specified ID
-	 * 
-	 * @param {String} documentId 
-	 * @param {Object} body 
-	 */
-	putMarketplaceDocument(documentId, body) { 
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling putMarketplaceDocument';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMarketplaceDocument';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/{documentId}', 
-			'PUT', 
-			{ 'documentId': documentId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update document navigation with specified ID
-	 * 
-	 * @param {String} navigationId 
-	 * @param {Object} body 
-	 */
-	putMarketplaceDocumentsNavigation(navigationId, body) { 
-		// verify the required parameter 'navigationId' is set
-		if (navigationId === undefined || navigationId === null) {
-			throw 'Missing the required parameter "navigationId" when calling putMarketplaceDocumentsNavigation';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMarketplaceDocumentsNavigation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/documents/navigations/{navigationId}', 
-			'PUT', 
-			{ 'navigationId': navigationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an existing enterprise agreement
-	 * 
-	 * @param {String} enterpriseAgreementId The unique identifier for an enterprise agreement
-	 * @param {Object} body 
-	 */
-	putMarketplaceEnterpriseagreement(enterpriseAgreementId, body) { 
-		// verify the required parameter 'enterpriseAgreementId' is set
-		if (enterpriseAgreementId === undefined || enterpriseAgreementId === null) {
-			throw 'Missing the required parameter "enterpriseAgreementId" when calling putMarketplaceEnterpriseagreement';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMarketplaceEnterpriseagreement';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/enterpriseagreements/{enterpriseAgreementId}', 
-			'PUT', 
-			{ 'enterpriseAgreementId': enterpriseAgreementId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set categories on listing
-	 * 
-	 * @param {String} listingId The unique identifier for a listing
-	 * @param {Object} body 
-	 */
-	putMarketplaceListingCategories(listingId, body) { 
-		// verify the required parameter 'listingId' is set
-		if (listingId === undefined || listingId === null) {
-			throw 'Missing the required parameter "listingId" when calling putMarketplaceListingCategories';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMarketplaceListingCategories';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/{listingId}/categories', 
-			'PUT', 
-			{ 'listingId': listingId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set the order of media on the listing
-	 * 
-	 * @param {String} listingId 
-	 * @param {Object} body 
-	 */
-	putMarketplaceListingMediaOrder(listingId, body) { 
-		// verify the required parameter 'listingId' is set
-		if (listingId === undefined || listingId === null) {
-			throw 'Missing the required parameter "listingId" when calling putMarketplaceListingMediaOrder';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMarketplaceListingMediaOrder';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/{listingId}/media/order', 
-			'PUT', 
-			{ 'listingId': listingId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set metadata on listing
-	 * 
-	 * @param {String} listingId The unique identifier for a listing
-	 * @param {Object} body 
-	 */
-	putMarketplaceListingMetadata(listingId, body) { 
-		// verify the required parameter 'listingId' is set
-		if (listingId === undefined || listingId === null) {
-			throw 'Missing the required parameter "listingId" when calling putMarketplaceListingMetadata';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMarketplaceListingMetadata';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/listings/{listingId}/metadata', 
-			'PUT', 
-			{ 'listingId': listingId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a partner
-	 * 
-	 * @param {String} partnerId 
-	 * @param {Object} body 
-	 */
-	putMarketplacePartner(partnerId, body) { 
-		// verify the required parameter 'partnerId' is set
-		if (partnerId === undefined || partnerId === null) {
-			throw 'Missing the required parameter "partnerId" when calling putMarketplacePartner';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMarketplacePartner';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/partners/{partnerId}', 
-			'PUT', 
-			{ 'partnerId': partnerId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update all existing resellers for an organization
-	 * 
-	 * @param {String} organizationId 
-	 * @param {Object} body 
-	 */
-	putMarketplaceResellersOrganization(organizationId, body) { 
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling putMarketplaceResellersOrganization';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMarketplaceResellersOrganization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/marketplace/resellers/organizations/{organizationId}', 
-			'PUT', 
-			{ 'organizationId': organizationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class MeetingApi {
-	/**
-	 * Meeting service.
-	 * @module purecloud-platform-client-v2/api/MeetingApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new MeetingApi. 
-	 * @alias module:purecloud-platform-client-v2/api/MeetingApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete a Meeting
-	 * 
-	 * @param {String} meetingId Meeting ID
-	 */
-	deleteMeeting(meetingId) { 
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling deleteMeeting';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/meetings/{meetingId}', 
-			'DELETE', 
-			{ 'meetingId': meetingId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a Meeting Occurrence
-	 * 
-	 * @param {String} meetingId Meeting ID
-	 * @param {String} occurrenceId Meeting Occurrence ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.series Set this to true to delete entire series (default to false)
-	 */
-	deleteMeetingOccurrence(meetingId, occurrenceId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling deleteMeetingOccurrence';
-		}
-		// verify the required parameter 'occurrenceId' is set
-		if (occurrenceId === undefined || occurrenceId === null) {
-			throw 'Missing the required parameter "occurrenceId" when calling deleteMeetingOccurrence';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/meetings/{meetingId}/occurrences/{occurrenceId}', 
-			'DELETE', 
-			{ 'meetingId': meetingId,'occurrenceId': occurrenceId },
-			{ 'series': opts['series'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Meeting based on ID
-	 * 
-	 * @param {String} meetingId Meeting ID
-	 */
-	getMeeting(meetingId) { 
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling getMeeting';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/meetings/{meetingId}', 
-			'GET', 
-			{ 'meetingId': meetingId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Meeting Occurrence based on Occurrence ID
-	 * 
-	 * @param {String} meetingId Meeting ID
-	 * @param {String} occurrenceId Meeting Occurrence ID
-	 */
-	getMeetingOccurrence(meetingId, occurrenceId) { 
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling getMeetingOccurrence';
-		}
-		// verify the required parameter 'occurrenceId' is set
-		if (occurrenceId === undefined || occurrenceId === null) {
-			throw 'Missing the required parameter "occurrenceId" when calling getMeetingOccurrence';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/meetings/{meetingId}/occurrences/{occurrenceId}', 
-			'GET', 
-			{ 'meetingId': meetingId,'occurrenceId': occurrenceId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all user's meetings
-	 * 
-	 * @param {String} userId User ID
-	 * @param {Date} startDate Meeting's start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 * @param {Date} endDate Meeting's end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-	 */
-	getUserMeetings(userId, startDate, endDate) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserMeetings';
-		}
-		// verify the required parameter 'startDate' is set
-		if (startDate === undefined || startDate === null) {
-			throw 'Missing the required parameter "startDate" when calling getUserMeetings';
-		}
-		// verify the required parameter 'endDate' is set
-		if (endDate === undefined || endDate === null) {
-			throw 'Missing the required parameter "endDate" when calling getUserMeetings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/meetings', 
-			'GET', 
-			{ 'userId': userId },
-			{ 'startDate': startDate,'endDate': endDate },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Meeting
-	 * 
-	 * @param {Object} body Meeting to create
-	 */
-	postMeetings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMeetings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/meetings', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a Meeting
-	 * 
-	 * @param {String} meetingId Meeting ID
-	 * @param {Object} body Meeting to update
-	 */
-	putMeeting(meetingId, body) { 
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling putMeeting';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMeeting';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/meetings/{meetingId}', 
-			'PUT', 
-			{ 'meetingId': meetingId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a Meeting Occurrence
-	 * 
-	 * @param {String} meetingId Meeting ID
-	 * @param {String} occurrenceId Meeting Occurrence ID
-	 * @param {Object} body Meeting Occurrence to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.series Set this to true to apply updates to the entire series (default to false)
-	 */
-	putMeetingOccurrence(meetingId, occurrenceId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'meetingId' is set
-		if (meetingId === undefined || meetingId === null) {
-			throw 'Missing the required parameter "meetingId" when calling putMeetingOccurrence';
-		}
-		// verify the required parameter 'occurrenceId' is set
-		if (occurrenceId === undefined || occurrenceId === null) {
-			throw 'Missing the required parameter "occurrenceId" when calling putMeetingOccurrence';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMeetingOccurrence';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/meetings/{meetingId}/occurrences/{occurrenceId}', 
-			'PUT', 
-			{ 'meetingId': meetingId,'occurrenceId': occurrenceId },
-			{ 'series': opts['series'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -51566,136 +34888,6 @@ class MessagingApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete a Facebook messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteMessagingIntegrationsFacebookIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsFacebookIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/facebook/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteMessagingIntegrationsLineIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an Open messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteMessagingIntegrationsOpenIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsOpenIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/open/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a Twitter messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteMessagingIntegrationsTwitterIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/twitter/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a WhatsApp messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteMessagingIntegrationsWhatsappIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsWhatsappIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/whatsapp/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Delete a messaging setting
@@ -51745,81 +34937,6 @@ class MessagingApi {
 	}
 
 	/**
-	 * Deprovision a Longcode.
-	 * 
-	 * @param {String} longCode Longcode in international format.
-	 */
-	deleteMessagingSmsProvisioningLongcode(longCode) { 
-		// verify the required parameter 'longCode' is set
-		if (longCode === undefined || longCode === null) {
-			throw 'Missing the required parameter "longCode" when calling deleteMessagingSmsProvisioningLongcode';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/longcodes/{longCode}', 
-			'DELETE', 
-			{ 'longCode': longCode },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deprovision a Simulated Number.
-	 * 
-	 * @param {String} senderId The Number to be deleted
-	 */
-	deleteMessagingSmsProvisioningSimulatedSenderId(senderId) { 
-		// verify the required parameter 'senderId' is set
-		if (senderId === undefined || senderId === null) {
-			throw 'Missing the required parameter "senderId" when calling deleteMessagingSmsProvisioningSimulatedSenderId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/simulated/{senderId}', 
-			'DELETE', 
-			{ 'senderId': senderId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deprovision a Tollfree Number.
-	 * 
-	 * @param {String} tollfreeNumberCode Tollfree Number in international format. For ex 18445551212
-	 */
-	deleteMessagingSmsProvisioningTollfreenumber(tollfreeNumberCode) { 
-		// verify the required parameter 'tollfreeNumberCode' is set
-		if (tollfreeNumberCode === undefined || tollfreeNumberCode === null) {
-			throw 'Missing the required parameter "tollfreeNumberCode" when calling deleteMessagingSmsProvisioningTollfreenumber';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/tollfreenumbers/{tollfreeNumberCode}', 
-			'DELETE', 
-			{ 'tollfreeNumberCode': tollfreeNumberCode },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete a supported content profile
 	 * Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 	 * @param {String} supportedContentId Supported Content ID
@@ -51836,359 +34953,6 @@ class MessagingApi {
 			'DELETE', 
 			{ 'supportedContentId': supportedContentId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Messaging Facebook App Id
-	 * 
-	 * @deprecated
-	 */
-	getMessagingFacebookApp() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/facebook/app', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves the status of the job to retrieve an integration's public message. This API will return either a status code of 202 (to indicate that the request is still being processed), or 200 (when the requested public message becomes available).
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {String} messageId Message ID
-	 * @param {String} queryId Query ID
-	 * @deprecated
-	 */
-	getMessagingIntegrationMessageQueryQueryId(integrationId, messageId, queryId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationMessageQueryQueryId';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getMessagingIntegrationMessageQueryQueryId';
-		}
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getMessagingIntegrationMessageQueryQueryId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query/{queryId}', 
-			'GET', 
-			{ 'integrationId': integrationId,'messageId': messageId,'queryId': queryId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves the results of the job to retrieve an integration's public message. Note that the public message will be cached up to 10 minutes from the first query request, and the same query requests after that period will force the query request to be reprocessed.
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {String} messageId Message ID
-	 * @param {String} queryId Query ID
-	 * @deprecated
-	 */
-	getMessagingIntegrationMessageQueryQueryIdResults(integrationId, messageId, queryId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationMessageQueryQueryIdResults';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getMessagingIntegrationMessageQueryQueryIdResults';
-		}
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getMessagingIntegrationMessageQueryQueryIdResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query/{queryId}/results', 
-			'GET', 
-			{ 'integrationId': integrationId,'messageId': messageId,'queryId': queryId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves the status of the job to retrieve replies to an integration's public message. This API will return either a status code of 202 (to indicate that the request is still being processed), or 200 (when the requested replies to the public message becomes available).
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {String} messageId Message ID
-	 * @param {String} queryId Query ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @deprecated
-	 */
-	getMessagingIntegrationMessageRepliesQueryQueryId(integrationId, messageId, queryId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationMessageRepliesQueryQueryId';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getMessagingIntegrationMessageRepliesQueryQueryId';
-		}
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getMessagingIntegrationMessageRepliesQueryQueryId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query/{queryId}', 
-			'GET', 
-			{ 'integrationId': integrationId,'messageId': messageId,'queryId': queryId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves the results of the job to retrieve replies to an integration's public message. Note that the replies to the public message will be cached up to 10 minutes from the first query request, and the same query requests after that period will force the query request to be reprocessed.
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {String} messageId Message ID
-	 * @param {String} queryId Query ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @deprecated
-	 */
-	getMessagingIntegrationMessageRepliesQueryQueryIdResults(integrationId, messageId, queryId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationMessageRepliesQueryQueryIdResults';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getMessagingIntegrationMessageRepliesQueryQueryIdResults';
-		}
-		// verify the required parameter 'queryId' is set
-		if (queryId === undefined || queryId === null) {
-			throw 'Missing the required parameter "queryId" when calling getMessagingIntegrationMessageRepliesQueryQueryIdResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query/{queryId}/results', 
-			'GET', 
-			{ 'integrationId': integrationId,'messageId': messageId,'queryId': queryId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
-	 * @deprecated
-	 */
-	getMessagingIntegrations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Facebook messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getMessagingIntegrationsFacebookIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsFacebookIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/facebook/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getMessagingIntegrationsLineIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an Open messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getMessagingIntegrationsOpenIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsOpenIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/open/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Twitter messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getMessagingIntegrationsTwitterIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/twitter/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a WhatsApp messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getMessagingIntegrationsWhatsappIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsWhatsappIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/whatsapp/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -52272,174 +35036,6 @@ class MessagingApi {
 	}
 
 	/**
-	 * List longcodes provisioned for this user
-	 * 
-	 */
-	getMessagingSmsProvisioningLongcodes() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/longcodes', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search for Longcodes
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.numberOfResults The number of search results to return. Returns a maximum of 100 results. (default to 10)
-	 * @param {String} opts.longCode Longcode in international format. For example 17035551212
-	 * @param {Number} opts.areaCode Area code or NPA. The allowed number ranges are [2-9] for the first digit and [0-9] for both the second and third digits. Can be used with nxx, city, state and postalCode.
-	 * @param {Number} opts.exchangeCode NXX or Exchange. The allowed number ranges are [2-9] for the first digit and [0-9] for both the second and third digits. Must be used with area_code, city, state and postalCode.
-	 * @param {String} opts.country Ony US and CA supported at this time. Can be used with city, state and postalCode.\\nFuture: 2 letter country code - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2.
-	 * @param {String} opts.state State or Province. Can be used with areaCode, nxx, city and postalCode.
-	 * @param {String} opts.city City or Town. Can be used with areaCode, nxx, state and postalCode.
-	 * @param {String} opts.postalCode Postal Code. Can be used with areaCode, nxx, city and state.
-	 * @param {String} opts.vanity 4 to 7 alpha-numeric vanity characters. Must be used with area_code. Can be used with ends_with. Will match anywhere in numbers unless used together with ends_with.
-	 * @param {String} opts.endsWith Matches the vanity characters at the end of the number. Must be used with vanity.
-	 */
-	getMessagingSmsProvisioningLongcodesAvailable(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/longcodes/available', 
-			'GET', 
-			{  },
-			{ 'numberOfResults': opts['numberOfResults'],'longCode': opts['longCode'],'areaCode': opts['areaCode'],'exchangeCode': opts['exchangeCode'],'country': opts['country'],'state': opts['state'],'city': opts['city'],'postalCode': opts['postalCode'],'vanity': opts['vanity'],'endsWith': opts['endsWith'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get details for an order.
-	 * 
-	 * @param {String} orderId Unique id for order.
-	 */
-	getMessagingSmsProvisioningOrder(orderId) { 
-		// verify the required parameter 'orderId' is set
-		if (orderId === undefined || orderId === null) {
-			throw 'Missing the required parameter "orderId" when calling getMessagingSmsProvisioningOrder';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/orders/{orderId}', 
-			'GET', 
-			{ 'orderId': orderId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * List Simulated Numbers provisioned for this org.
-	 * 
-	 */
-	getMessagingSmsProvisioningSimulated() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/simulated', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * List details of a Simulated Number.
-	 * 
-	 * @param {String} senderId The SenderId.
-	 */
-	getMessagingSmsProvisioningSimulatedSenderId(senderId) { 
-		// verify the required parameter 'senderId' is set
-		if (senderId === undefined || senderId === null) {
-			throw 'Missing the required parameter "senderId" when calling getMessagingSmsProvisioningSimulatedSenderId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/simulated/{senderId}', 
-			'GET', 
-			{ 'senderId': senderId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * List tollfree numbers provisioned for this user
-	 * 
-	 */
-	getMessagingSmsProvisioningTollfreenumbers() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/tollfreenumbers', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search for Tollfree Numbers
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.numberOfResults The number of search results to return. Returns a maximum of 100 results. (default to 10)
-	 * @param {String} opts.vanity 4 to 7 alpha-numeric vanity characters.
-	 */
-	getMessagingSmsProvisioningTollfreenumbersAvailable(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/tollfreenumbers/available', 
-			'GET', 
-			{  },
-			{ 'numberOfResults': opts['numberOfResults'],'vanity': opts['vanity'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a list of Supported Content profiles
 	 * Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
 	 * @param {Object} opts Optional parameters
@@ -52492,161 +35088,6 @@ class MessagingApi {
 	}
 
 	/**
-	 * Update a Facebook messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body PlatformFacebookIntegrationPatchRequest
-	 * @deprecated
-	 */
-	patchMessagingIntegrationsFacebookIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchMessagingIntegrationsFacebookIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchMessagingIntegrationsFacebookIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/facebook/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body PlatformLineIntegrationPatchRequest
-	 * @deprecated
-	 */
-	patchMessagingIntegrationsLineIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchMessagingIntegrationsLineIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an Open messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body PlatformOpenIntegrationPatchRequest
-	 * @deprecated
-	 */
-	patchMessagingIntegrationsOpenIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchMessagingIntegrationsOpenIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchMessagingIntegrationsOpenIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/open/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a Twitter messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body PlatformTwitterIntegrationPatchRequest
-	 * @deprecated
-	 */
-	patchMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchMessagingIntegrationsTwitterIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/twitter/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Activate, confirm or update a WhatsApp messaging integration.
-	 * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an authentication method choosing from sms or voice, a phone number and a verifiedNameCertificate(WhatsApp Business Manager Certificate) of the whatsApp integration. Once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: the confirmation code you have received from Whatsapp.
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body PlatformWhatsAppIntegrationPatchRequest
-	 * @deprecated
-	 */
-	patchMessagingIntegrationsWhatsappIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchMessagingIntegrationsWhatsappIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchMessagingIntegrationsWhatsappIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/whatsapp/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a messaging setting
 	 * 
 	 * @param {String} messageSettingId Message Settings ID
@@ -52671,96 +35112,6 @@ class MessagingApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a Longcode
-	 * Can be used to reassign to another account. Cannot be used to deprovision - use delete instead.
-	 * @param {String} longCode Longcode in international format.
-	 * @param {Object} request The new longcode details
-	 */
-	patchMessagingSmsProvisioningLongcode(longCode, request) { 
-		// verify the required parameter 'longCode' is set
-		if (longCode === undefined || longCode === null) {
-			throw 'Missing the required parameter "longCode" when calling patchMessagingSmsProvisioningLongcode';
-		}
-		// verify the required parameter 'request' is set
-		if (request === undefined || request === null) {
-			throw 'Missing the required parameter "request" when calling patchMessagingSmsProvisioningLongcode';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/longcodes/{longCode}', 
-			'PATCH', 
-			{ 'longCode': longCode },
-			{  },
-			{  },
-			{  },
-			request, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a Simulated Number
-	 * Cannot be used to deprovision - use delete instead.
-	 * @param {String} senderId The Number to be modified
-	 * @param {Object} request The new Simulated Number details
-	 */
-	patchMessagingSmsProvisioningSimulatedSenderId(senderId, request) { 
-		// verify the required parameter 'senderId' is set
-		if (senderId === undefined || senderId === null) {
-			throw 'Missing the required parameter "senderId" when calling patchMessagingSmsProvisioningSimulatedSenderId';
-		}
-		// verify the required parameter 'request' is set
-		if (request === undefined || request === null) {
-			throw 'Missing the required parameter "request" when calling patchMessagingSmsProvisioningSimulatedSenderId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/simulated/{senderId}', 
-			'PATCH', 
-			{ 'senderId': senderId },
-			{  },
-			{  },
-			{  },
-			request, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a Tollfree Number
-	 * Can be used to reassign to another account. Cannot be used to deprovision - use delete instead.
-	 * @param {String} tollfreeNumberCode Tollfree Number in international format. For ex 18445551212
-	 * @param {Object} request The new Tollfree Number details
-	 */
-	patchMessagingSmsProvisioningTollfreenumber(tollfreeNumberCode, request) { 
-		// verify the required parameter 'tollfreeNumberCode' is set
-		if (tollfreeNumberCode === undefined || tollfreeNumberCode === null) {
-			throw 'Missing the required parameter "tollfreeNumberCode" when calling patchMessagingSmsProvisioningTollfreenumber';
-		}
-		// verify the required parameter 'request' is set
-		if (request === undefined || request === null) {
-			throw 'Missing the required parameter "request" when calling patchMessagingSmsProvisioningTollfreenumber';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/tollfreenumbers/{tollfreeNumberCode}', 
-			'PATCH', 
-			{ 'tollfreeNumberCode': tollfreeNumberCode },
-			{  },
-			{  },
-			{  },
-			request, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -52799,370 +35150,6 @@ class MessagingApi {
 	}
 
 	/**
-	 * Send an email
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postMessagingEmail(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/email', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send emails
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postMessagingEmailBulk(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/email/bulk', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Post message action
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {String} messageId Message ID
-	 * @param {Object} body Public message action
-	 * @deprecated
-	 */
-	postMessagingIntegrationMessageAction(integrationId, messageId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling postMessagingIntegrationMessageAction';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling postMessagingIntegrationMessageAction';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationMessageAction';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/action', 
-			'POST', 
-			{ 'integrationId': integrationId,'messageId': messageId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Starts the job to retrieve an integration's public message.
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {String} messageId Message ID
-	 * @deprecated
-	 */
-	postMessagingIntegrationMessageQuery(integrationId, messageId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling postMessagingIntegrationMessageQuery';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling postMessagingIntegrationMessageQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query', 
-			'POST', 
-			{ 'integrationId': integrationId,'messageId': messageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Starts the job to retrieve replies to an integration's public message.
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {String} messageId Message ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @deprecated
-	 */
-	postMessagingIntegrationMessageRepliesQuery(integrationId, messageId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling postMessagingIntegrationMessageRepliesQuery';
-		}
-		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling postMessagingIntegrationMessageRepliesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query', 
-			'POST', 
-			{ 'integrationId': integrationId,'messageId': messageId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send message
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body Message
-	 * @deprecated
-	 */
-	postMessagingIntegrationMessages(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling postMessagingIntegrationMessages';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationMessages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/{integrationId}/messages', 
-			'POST', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Facebook Integration
-	 * 
-	 * @param {Object} body PlatformFacebookIntegrationRequest
-	 * @deprecated
-	 */
-	postMessagingIntegrationsFacebook(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsFacebook';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/facebook', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a LINE messenger Integration
-	 * 
-	 * @param {Object} body PlatformLineIntegrationRequest
-	 * @deprecated
-	 */
-	postMessagingIntegrationsLine(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsLine';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an Open messenger Integration
-	 * 
-	 * @param {Object} body PlatformOpenIntegrationRequest
-	 * @deprecated
-	 */
-	postMessagingIntegrationsOpen(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsOpen';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/open', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Twitter Integration
-	 * 
-	 * @param {Object} body PlatformTwitterIntegrationRequest
-	 * @deprecated
-	 */
-	postMessagingIntegrationsTwitter(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsTwitter';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/twitter', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates presigned url for uploading messaging attachment
-	 * 
-	 * @param {Object} body query
-	 * @deprecated
-	 */
-	postMessagingIntegrationsUploads(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsUploads';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/uploads', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a WhatsApp Integration
-	 * 
-	 * @param {Object} body PlatformWhatsAppIntegrationRequest
-	 * @deprecated
-	 */
-	postMessagingIntegrationsWhatsapp(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsWhatsapp';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/whatsapp', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send an inbound Open Message
-	 * Send an inbound message. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
-	 * @param {Object} body NormalizedMessage
-	 * @deprecated
-	 */
-	postMessagingMessagesInboundOpen(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingMessagesInboundOpen';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/messages/inbound/open', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a messaging setting
 	 * 
 	 * @param {Object} body MessagingSetting
@@ -53182,174 +35169,6 @@ class MessagingApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send an SMS message
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postMessagingSms(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Send SMS messages
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postMessagingSmsBulk(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/bulk', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Provision new Longcode(s). Use orderId returned by this method to check status.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postMessagingSmsProvisioningLongcodes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/longcodes', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Port in Longcode(s). Use orderId returned by this method to check status.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postMessagingSmsProvisioningLongcodesPortin(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/longcodes/portin', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Provision Simulated Number(s). Use orderId returned by this method to check status.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postMessagingSmsProvisioningSimulated(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/simulated', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Provision Tollfree Number(s). Use orderId returned by this method to check status.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postMessagingSmsProvisioningTollfreenumbers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/tollfreenumbers', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Port in Tollfree Number(s). Use orderId returned by this method to check status.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postMessagingSmsProvisioningTollfreenumbersPortin(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/sms/provisioning/tollfreenumbers/portin', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -53414,7 +35233,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -53565,7 +35384,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -53596,86 +35415,6 @@ class NotificationsApi {
 			'DELETE', 
 			{ 'channelId': channelId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete registration
-	 * 
-	 * @param {String} registrationId Registration ID
-	 */
-	deleteNotificationsPushRegistration(registrationId) { 
-		// verify the required parameter 'registrationId' is set
-		if (registrationId === undefined || registrationId === null) {
-			throw 'Missing the required parameter "registrationId" when calling deleteNotificationsPushRegistration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/notifications/push/registrations/{registrationId}', 
-			'DELETE', 
-			{ 'registrationId': registrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete registration by device token
-	 * 
-	 * @param {String} deviceToken Device token for app.
-	 */
-	deleteNotificationsPushRegistrations(deviceToken) { 
-		// verify the required parameter 'deviceToken' is set
-		if (deviceToken === undefined || deviceToken === null) {
-			throw 'Missing the required parameter "deviceToken" when calling deleteNotificationsPushRegistrations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/notifications/push/registrations', 
-			'DELETE', 
-			{  },
-			{ 'deviceToken': deviceToken },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a notification topic's details
-	 * 
-	 * @param {String} topicName Which topics information to get
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @param {Boolean} opts.includePreview Whether or not to include Preview topics (default to true)
-	 */
-	getNotificationsAvailabletopic(topicName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'topicName' is set
-		if (topicName === undefined || topicName === null) {
-			throw 'Missing the required parameter "topicName" when calling getNotificationsAvailabletopic';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/notifications/availabletopics/{topicName}', 
-			'GET', 
-			{ 'topicName': topicName },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includePreview': opts['includePreview'] },
 			{  },
 			{  },
 			null, 
@@ -53740,7 +35479,6 @@ class NotificationsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.includechannels Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (default to token)
-	 * @param {Object} opts.connectionType Connection type of the channels to query. (default to streaming)
 	 */
 	getNotificationsChannels(opts) { 
 		opts = opts || {};
@@ -53750,77 +35488,7 @@ class NotificationsApi {
 			'/api/v2/notifications/channels', 
 			'GET', 
 			{  },
-			{ 'includechannels': opts['includechannels'],'connectionType': opts['connectionType'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get registration
-	 * 
-	 * @param {String} registrationId Registration ID
-	 */
-	getNotificationsPushRegistration(registrationId) { 
-		// verify the required parameter 'registrationId' is set
-		if (registrationId === undefined || registrationId === null) {
-			throw 'Missing the required parameter "registrationId" when calling getNotificationsPushRegistration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/notifications/push/registrations/{registrationId}', 
-			'GET', 
-			{ 'registrationId': registrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get registration by device token
-	 * 
-	 * @param {String} deviceToken Device token for app.
-	 */
-	getNotificationsPushRegistrations(deviceToken) { 
-		// verify the required parameter 'deviceToken' is set
-		if (deviceToken === undefined || deviceToken === null) {
-			throw 'Missing the required parameter "deviceToken" when calling getNotificationsPushRegistrations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/notifications/push/registrations', 
-			'GET', 
-			{  },
-			{ 'deviceToken': deviceToken },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the Notification settings for the organization
-	 * 
-	 */
-	getNotificationsSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/notifications/settings', 
-			'GET', 
-			{  },
-			{  },
+			{ 'includechannels': opts['includechannels'] },
 			{  },
 			{  },
 			null, 
@@ -53892,46 +35560,17 @@ class NotificationsApi {
 	/**
 	 * Create a new channel
 	 * There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.connectionType Service where connections will be made for this channel. (default to streaming)
 	 */
-	postNotificationsChannels(opts) { 
-		opts = opts || {};
-		
+	postNotificationsChannels() { 
 
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels', 
 			'POST', 
 			{  },
-			{ 'connectionType': opts['connectionType'] },
+			{  },
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a registration
-	 * 
-	 * @param {Object} body Registration
-	 */
-	postNotificationsPushRegistrations(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postNotificationsPushRegistrations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/notifications/push/registrations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -53972,38 +35611,13 @@ class NotificationsApi {
 		);
 	}
 
-	/**
-	 * Update the Notification settings for the organization
-	 * 
-	 * @param {Object} body Body
-	 */
-	putNotificationsSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putNotificationsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/notifications/settings', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -54017,35 +35631,6 @@ class OAuthApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete an authorization for a client
-	 * 
-	 * @param {String} clientId The ID of client
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
-	 */
-	deleteOauthAuthorization(clientId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling deleteOauthAuthorization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/oauth/authorizations/{clientId}', 
-			'DELETE', 
-			{ 'clientId': clientId },
-			{  },
-			{ 'Accept-Language': opts['acceptLanguage'] },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Delete OAuth Client
@@ -54308,36 +35893,6 @@ class OAuthApi {
 	}
 
 	/**
-	 * Query data transfer bytes for an OAuth client ID usage for an organization
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
-	 * @param {String} clientId Client ID
-	 * @param {Object} body Query
-	 */
-	postOauthClientUsageDatatransferAggregatesQuery(clientId, body) { 
-		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageDatatransferAggregatesQuery';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOauthClientUsageDatatransferAggregatesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query', 
-			'POST', 
-			{ 'clientId': clientId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Query for OAuth client API usage
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
@@ -54393,40 +35948,6 @@ class OAuthApi {
 	}
 
 	/**
-	 * Authorize a client for the resource owner
-	 * 
-	 * @param {String} clientId The ID of client
-	 * @param {Object} body Authorization
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
-	 */
-	putOauthAuthorization(clientId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling putOauthAuthorization';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOauthAuthorization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/oauth/authorizations/{clientId}', 
-			'PUT', 
-			{ 'clientId': clientId },
-			{  },
-			{ 'Accept-Language': opts['acceptLanguage'] },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update OAuth Client
 	 * 
 	 * @param {String} clientId Client ID
@@ -54462,7 +35983,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -54729,544 +36250,11 @@ class ObjectsApi {
 
 }
 
-class OnboardingApi {
-	/**
-	 * Onboarding service.
-	 * @module purecloud-platform-client-v2/api/OnboardingApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new OnboardingApi. 
-	 * @alias module:purecloud-platform-client-v2/api/OnboardingApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete an invite
-	 * 
-	 * @param {String} inviteId inviteId
-	 */
-	deleteOnboardingInvite(inviteId) { 
-		// verify the required parameter 'inviteId' is set
-		if (inviteId === undefined || inviteId === null) {
-			throw 'Missing the required parameter "inviteId" when calling deleteOnboardingInvite';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/invites/{inviteId}', 
-			'DELETE', 
-			{ 'inviteId': inviteId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a join code
-	 * 
-	 * @param {String} joinCodeId joinCodeId
-	 */
-	deleteOnboardingJoincode(joinCodeId) { 
-		// verify the required parameter 'joinCodeId' is set
-		if (joinCodeId === undefined || joinCodeId === null) {
-			throw 'Missing the required parameter "joinCodeId" when calling deleteOnboardingJoincode';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/joincodes/{joinCodeId}', 
-			'DELETE', 
-			{ 'joinCodeId': joinCodeId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get org billing activation
-	 * 
-	 * @param {String} activationId activationId
-	 */
-	getOnboardingActivation(activationId) { 
-		// verify the required parameter 'activationId' is set
-		if (activationId === undefined || activationId === null) {
-			throw 'Missing the required parameter "activationId" when calling getOnboardingActivation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/activations/{activationId}', 
-			'GET', 
-			{ 'activationId': activationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get invite
-	 * 
-	 * @param {String} inviteId inviteId
-	 */
-	getOnboardingInvite(inviteId) { 
-		// verify the required parameter 'inviteId' is set
-		if (inviteId === undefined || inviteId === null) {
-			throw 'Missing the required parameter "inviteId" when calling getOnboardingInvite';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/invites/{inviteId}', 
-			'GET', 
-			{ 'inviteId': inviteId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all invites for org
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber  (default to 1)
-	 * @param {Number} opts.pageSize  (default to 25)
-	 */
-	getOnboardingInvites(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/invites', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get join code
-	 * 
-	 * @param {String} joinCodeId joinCodeId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.emailDomain Email Domain
-	 */
-	getOnboardingJoincode(joinCodeId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'joinCodeId' is set
-		if (joinCodeId === undefined || joinCodeId === null) {
-			throw 'Missing the required parameter "joinCodeId" when calling getOnboardingJoincode';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/joincodes/{joinCodeId}', 
-			'GET', 
-			{ 'joinCodeId': joinCodeId },
-			{ 'emailDomain': opts['emailDomain'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all join codes for org
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber  (default to 1)
-	 * @param {Number} opts.pageSize  (default to 25)
-	 */
-	getOnboardingJoincodes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/joincodes', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get org provisioning
-	 * 
-	 * @param {String} provisioningId provisioningId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.existingOrganizationId Existing Organization Id
-	 * @param {Boolean} opts.billingActivationJob Is a Billing activation job request
-	 */
-	getOnboardingOrgprovisioning(provisioningId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'provisioningId' is set
-		if (provisioningId === undefined || provisioningId === null) {
-			throw 'Missing the required parameter "provisioningId" when calling getOnboardingOrgprovisioning';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/orgprovisionings/{provisioningId}', 
-			'GET', 
-			{ 'provisioningId': provisioningId },
-			{ 'existingOrganizationId': opts['existingOrganizationId'],'billingActivationJob': opts['billingActivationJob'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Verify a user exists
-	 * Returns a 200 OK if user exists, and a 404 Not Found if it doesnt
-	 * @param {String} organizationId organizationId
-	 * @param {String} email User email
-	 */
-	headOnboardingOrganizationUsers(organizationId, email) { 
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling headOnboardingOrganizationUsers';
-		}
-		// verify the required parameter 'email' is set
-		if (email === undefined || email === null) {
-			throw 'Missing the required parameter "email" when calling headOnboardingOrganizationUsers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/organizations/{organizationId}/users', 
-			'HEAD', 
-			{ 'organizationId': organizationId },
-			{ 'email': email },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Apply org billing activation
-	 * 
-	 * @param {String} activationId activationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to complete org billing activation process
-	 */
-	postOnboardingActivationApply(activationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'activationId' is set
-		if (activationId === undefined || activationId === null) {
-			throw 'Missing the required parameter "activationId" when calling postOnboardingActivationApply';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/activations/{activationId}/apply', 
-			'POST', 
-			{ 'activationId': activationId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a join code
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to create a join code
-	 */
-	postOnboardingJoincodes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/joincodes', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Complete org provisioning process
-	 * 
-	 * @param {String} provisioningId provisioningId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to complete org provisioning process
-	 */
-	postOnboardingOrgprovisioningComplete(provisioningId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'provisioningId' is set
-		if (provisioningId === undefined || provisioningId === null) {
-			throw 'Missing the required parameter "provisioningId" when calling postOnboardingOrgprovisioningComplete';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/orgprovisionings/{provisioningId}/complete', 
-			'POST', 
-			{ 'provisioningId': provisioningId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Stage org provisioning for org creation
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to stage an org
-	 */
-	postOnboardingOrgprovisionings(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/orgprovisionings', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create user in organization
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to create a user
-	 */
-	postOnboardingUsers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/users', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Allows user to join organization or multiple organizations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to have a user join an org or orgs
-	 */
-	postOnboardingUsersJoinexistingorgs(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/users/joinexistingorgs', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Prepare user for creation
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to stage a user
-	 */
-	postOnboardingUsersStage(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/users/stage', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a join code
-	 * 
-	 * @param {String} joinCodeId joinCodeId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Input used to update a join code
-	 */
-	putOnboardingJoincode(joinCodeId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'joinCodeId' is set
-		if (joinCodeId === undefined || joinCodeId === null) {
-			throw 'Missing the required parameter "joinCodeId" when calling putOnboardingJoincode';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/onboarding/joincodes/{joinCodeId}', 
-			'PUT', 
-			{ 'joinCodeId': joinCodeId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class OperationalEventsApi {
-	/**
-	 * OperationalEvents service.
-	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new OperationalEventsApi. 
-	 * @alias module:purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Get an operational event definition by its id
-	 * 
-	 * @param {String} eventDefinitionId EventDefinition id
-	 */
-	getUsageEventsDefinition(eventDefinitionId) { 
-		// verify the required parameter 'eventDefinitionId' is set
-		if (eventDefinitionId === undefined || eventDefinitionId === null) {
-			throw 'Missing the required parameter "eventDefinitionId" when calling getUsageEventsDefinition';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/usage/events/definitions/{eventDefinitionId}', 
-			'GET', 
-			{ 'eventDefinitionId': eventDefinitionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all operational event definitions
-	 * 
-	 */
-	getUsageEventsDefinitions() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/usage/events/definitions', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -55280,26 +36268,6 @@ class OrganizationApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete the organization.
-	 * 
-	 */
-	deleteOrganizationsMe() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/me', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Fetch field config for an entity type
@@ -55356,27 +36324,6 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the setting for whether or not the organization enforces OAuth Scopes
-	 * 
-	 * @deprecated
-	 */
-	getOrganizationsEnforcescopes() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/enforcescopes', 
 			'GET', 
 			{  },
 			{  },
@@ -55579,107 +36526,6 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Get a migration
-	 * 
-	 * @param {String} migrationName The name of the migration
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.includeDetails Return additional properties for a Migration
-	 */
-	getOrganizationsMigration(migrationName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'migrationName' is set
-		if (migrationName === undefined || migrationName === null) {
-			throw 'Missing the required parameter "migrationName" when calling getOrganizationsMigration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/migrations/{migrationName}', 
-			'GET', 
-			{ 'migrationName': migrationName },
-			{ 'includeDetails': opts['includeDetails'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a migrations state
-	 * 
-	 * @param {String} migrationName The name of the migration
-	 */
-	getOrganizationsMigrationState(migrationName) { 
-		// verify the required parameter 'migrationName' is set
-		if (migrationName === undefined || migrationName === null) {
-			throw 'Missing the required parameter "migrationName" when calling getOrganizationsMigrationState';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/migrations/{migrationName}/state', 
-			'GET', 
-			{ 'migrationName': migrationName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get all migrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.migrationType The type of migrations to query on
-	 * @param {Boolean} opts.includeHidden Return hidden migrations
-	 * @param {Boolean} opts.includeDetails Return additional properties for a Migration
-	 */
-	getOrganizationsMigrations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/migrations', 
-			'GET', 
-			{  },
-			{ 'migrationType': opts['migrationType'],'includeHidden': opts['includeHidden'],'includeDetails': opts['includeDetails'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the password requirement settings for the organization
-	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-	 * @deprecated
-	 */
-	getOrganizationsPasswordrequirements() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/passwordrequirements', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
 	 * @deprecated
@@ -55756,115 +36602,6 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Update a limit change request
-	 * 
-	 * @param {String} requestId Unique id for the limit change request
-	 * @param {Object} body Change Request Update
-	 */
-	patchOrganizationsLimitsChangerequest(requestId, body) { 
-		// verify the required parameter 'requestId' is set
-		if (requestId === undefined || requestId === null) {
-			throw 'Missing the required parameter "requestId" when calling patchOrganizationsLimitsChangerequest';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchOrganizationsLimitsChangerequest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/limits/changerequests/{requestId}', 
-			'PATCH', 
-			{ 'requestId': requestId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a migration
-	 * 
-	 * @param {String} migrationName The name of the migration
-	 * @param {Object} body Migration State
-	 */
-	patchOrganizationsMigration(migrationName, body) { 
-		// verify the required parameter 'migrationName' is set
-		if (migrationName === undefined || migrationName === null) {
-			throw 'Missing the required parameter "migrationName" when calling patchOrganizationsMigration';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchOrganizationsMigration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/migrations/{migrationName}', 
-			'PATCH', 
-			{ 'migrationName': migrationName },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an organization.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Organization
-	 */
-	postOrganizations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a limit change request
-	 * 
-	 * @param {Object} body Change Request
-	 */
-	postOrganizationsLimitsChangerequests(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOrganizationsLimitsChangerequests';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/limits/changerequests', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update the list of domains that will be allowed to embed PureCloud applications
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body Whitelist settings
@@ -55878,32 +36615,6 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the setting for whether or not the organization enforces OAuth Scopes
-	 * 
-	 * @param {Object} body Enforce scope setting
-	 * @deprecated
-	 */
-	putOrganizationsEnforcescopes(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOrganizationsEnforcescopes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/enforcescopes', 
 			'PUT', 
 			{  },
 			{  },
@@ -55967,32 +36678,6 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Updates the password requirement settings for the organization
-	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-	 * @param {Object} body Password requirement settings
-	 * @deprecated
-	 */
-	putOrganizationsPasswordrequirements(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOrganizationsPasswordrequirements';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/organizations/passwordrequirements', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
 	 * @param {Object} body Whitelist settings
@@ -56024,7 +36709,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -57371,7 +38056,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -57672,56 +38357,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Delete Contact List Template
-	 * 
-	 * @param {String} contactListTemplateId ContactListTemplate ID
-	 */
-	deleteOutboundContactlisttemplate(contactListTemplateId) { 
-		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
-			throw 'Missing the required parameter "contactListTemplateId" when calling deleteOutboundContactlisttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
-			'DELETE', 
-			{ 'contactListTemplateId': contactListTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete multiple contact list templates.
-	 * 
-	 * @param {Array.<String>} id contact list template id(s) to delete
-	 */
-	deleteOutboundContactlisttemplates(id) { 
-		// verify the required parameter 'id' is set
-		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling deleteOutboundContactlisttemplates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates', 
-			'DELETE', 
-			{  },
-			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
@@ -57849,56 +38484,6 @@ class OutboundApi {
 			'DELETE', 
 			{ 'dncListId': dncListId },
 			{ 'expiredOnly': opts['expiredOnly'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete Import Template
-	 * 
-	 * @param {String} importTemplateId Import Template ID
-	 */
-	deleteOutboundImporttemplate(importTemplateId) { 
-		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
-			throw 'Missing the required parameter "importTemplateId" when calling deleteOutboundImporttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/{importTemplateId}', 
-			'DELETE', 
-			{ 'importTemplateId': importTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete multiple import templates.
-	 * 
-	 * @param {Array.<String>} id import template id(s) to delete
-	 */
-	deleteOutboundImporttemplates(id) { 
-		// verify the required parameter 'id' is set
-		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling deleteOutboundImporttemplates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates', 
-			'DELETE', 
-			{  },
-			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
 			{  },
 			{  },
 			null, 
@@ -58630,57 +39215,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Get a download link to download the compliance data file
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.type The type of compliance data file
-	 * @param {String} opts.country Two letters of ISO3166-1 Alpha-2 code specifies which country the data file is requested
-	 */
-	getOutboundCompliancedata(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/compliancedata', 
-			'GET', 
-			{  },
-			{ 'type': opts['type'],'country': opts['country'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the info of telephone numbers, such as their country and region, wireless or land line, DNC status, geo location
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.device The CSV string of the telephone numbers with E164 format, max 10 devices and min 1 device
-	 * @param {String} opts.callingCountryCode the optional country code for dialing
-	 * @param {String} opts.carrierLookup the optional carrier lookup flag
-	 */
-	getOutboundCompliancedataDeviceinfo(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/compliancedata/deviceinfo', 
-			'GET', 
-			{  },
-			{ 'device': opts['device'],'callingCountryCode': opts['callingCountryCode'],'carrierLookup': opts['carrierLookup'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a dialer contact list.
 	 * 
 	 * @param {String} contactListId ContactList ID
@@ -58856,7 +39390,6 @@ class OutboundApi {
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
 	 * @param {String} opts.contactListId Contact List ID
-	 * @param {Object} opts.sourceType Source Type
 	 */
 	getOutboundContactlistfilters(opts) { 
 		opts = opts || {};
@@ -58866,7 +39399,7 @@ class OutboundApi {
 			'/api/v2/outbound/contactlistfilters', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'],'sourceType': opts['sourceType'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'] },
 			{  },
 			{  },
 			null, 
@@ -58963,61 +39496,6 @@ class OutboundApi {
 			'GET', 
 			{  },
 			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Contact List Template
-	 * 
-	 * @param {String} contactListTemplateId ContactListTemplate ID
-	 */
-	getOutboundContactlisttemplate(contactListTemplateId) { 
-		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
-			throw 'Missing the required parameter "contactListTemplateId" when calling getOutboundContactlisttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
-			'GET', 
-			{ 'contactListTemplateId': contactListTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query a list of contact list templates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
-	 * @param {Object} opts.filterType Filter type (default to Prefix)
-	 * @param {String} opts.name Name
-	 * @param {String} opts.sortBy Sort by
-	 * @param {Object} opts.sortOrder Sort order (default to a)
-	 */
-	getOutboundContactlisttemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -59177,7 +39655,6 @@ class OutboundApi {
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {Object} opts.dncSourceType DncSourceType
-	 * @param {Object} opts.contactMethod Contact method
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order
@@ -59190,7 +39667,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists', 
 			'GET', 
 			{  },
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'contactMethod': opts['contactMethod'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -59241,7 +39718,6 @@ class OutboundApi {
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {Object} opts.dncSourceType DncSourceType
-	 * @param {Object} opts.contactMethod Contact method
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
@@ -59254,7 +39730,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/divisionviews', 
 			'GET', 
 			{  },
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'contactMethod': opts['contactMethod'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -59310,111 +39786,6 @@ class OutboundApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'category': opts['category'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Import Template
-	 * 
-	 * @param {String} importTemplateId Import Template ID
-	 */
-	getOutboundImporttemplate(importTemplateId) { 
-		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
-			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/{importTemplateId}', 
-			'GET', 
-			{ 'importTemplateId': importTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the import status for an import template.
-	 * 
-	 * @param {String} importTemplateId importTemplateId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.listNamePrefix listNamePrefix
-	 */
-	getOutboundImporttemplateImportstatus(importTemplateId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
-			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplateImportstatus';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/{importTemplateId}/importstatus', 
-			'GET', 
-			{ 'importTemplateId': importTemplateId },
-			{ 'listNamePrefix': opts['listNamePrefix'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query Import Templates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
-	 * @param {Object} opts.filterType Filter type (default to Prefix)
-	 * @param {String} opts.name Name
-	 * @param {String} opts.sortBy Sort by
-	 * @param {Object} opts.sortOrder Sort order (default to a)
-	 * @param {String} opts.contactListTemplateId Contact List Template ID
-	 */
-	getOutboundImporttemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListTemplateId': opts['contactListTemplateId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the outbound messaging settings for this organization
-	 * 
-	 */
-	getOutboundMessagingSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/messaging/settings', 
-			'GET', 
-			{  },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -59513,8 +39884,6 @@ class OutboundApi {
 	 * @param {Object} opts.type Campaign Type
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
 	 * @param {Array.<String>} opts.id A list of messaging campaign ids to bulk fetch
-	 * @param {String} opts.contentTemplateId Content template ID
-	 * @param {Object} opts.campaignStatus Campaign Status
 	 */
 	getOutboundMessagingcampaigns(opts) { 
 		opts = opts || {};
@@ -59524,7 +39893,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -59570,8 +39939,6 @@ class OutboundApi {
 	 * @param {Object} opts.type Campaign Type
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
-	 * @param {String} opts.contentTemplateId Content template ID
-	 * @param {Object} opts.campaignStatus Campaign Status
 	 */
 	getOutboundMessagingcampaignsDivisionviews(opts) { 
 		opts = opts || {};
@@ -59581,7 +39948,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns/divisionviews', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'] },
 			{  },
 			{  },
 			null, 
@@ -60001,31 +40368,6 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
 			'PATCH', 
 			{ 'dncListId': dncListId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the Digital outbound settings for this organization
-	 * 
-	 * @param {Object} body outboundMessagingSettings
-	 */
-	patchOutboundMessagingSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchOutboundMessagingSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/messaging/settings', 
-			'PATCH', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -60492,56 +40834,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Create Contact List Template
-	 * 
-	 * @param {Object} body ContactListTemplate
-	 */
-	postOutboundContactlisttemplates(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add multiple contact list templates
-	 * 
-	 * @param {Array.<Object>} body contact list template(s) to add
-	 */
-	postOutboundContactlisttemplatesBulkAdd(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplatesBulkAdd';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates/bulk/add', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Add phone numbers to a Dialer DNC list.
 	 * 
 	 * @param {String} conversationId Conversation ID
@@ -60596,12 +40888,8 @@ class OutboundApi {
 	 * Only Internal DNC lists may be appended to
 	 * @param {String} dncListId DncList ID
 	 * @param {Array.<String>} body DNC email addresses
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expirationDateTime Expiration date for emails
 	 */
-	postOutboundDnclistEmailaddresses(dncListId, body, opts) { 
-		opts = opts || {};
-		
+	postOutboundDnclistEmailaddresses(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistEmailaddresses';
@@ -60615,7 +40903,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}/emailaddresses', 
 			'POST', 
 			{ 'dncListId': dncListId },
-			{ 'expirationDateTime': opts['expirationDateTime'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -60697,56 +40985,6 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create Import Template
-	 * 
-	 * @param {Object} body ImportTemplate
-	 */
-	postOutboundImporttemplates(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundImporttemplates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add multiple import templates
-	 * 
-	 * @param {Array.<Object>} body import template(s) to add
-	 */
-	postOutboundImporttemplatesBulkAdd(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundImporttemplatesBulkAdd';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/bulk/add', 
 			'POST', 
 			{  },
 			{  },
@@ -61140,36 +41378,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Update a contact list template.
-	 * 
-	 * @param {String} contactListTemplateId ContactListTemplate ID
-	 * @param {Object} body ContactListTemplate
-	 */
-	putOutboundContactlisttemplate(contactListTemplateId, body) { 
-		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
-			throw 'Missing the required parameter "contactListTemplateId" when calling putOutboundContactlisttemplate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundContactlisttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
-			'PUT', 
-			{ 'contactListTemplateId': contactListTemplateId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
@@ -61219,36 +41427,6 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}', 
 			'PUT', 
 			{ 'dncListId': dncListId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update Import Template
-	 * 
-	 * @param {String} importTemplateId Import Template ID
-	 * @param {Object} body importTemplate
-	 */
-	putOutboundImporttemplate(importTemplateId, body) { 
-		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
-			throw 'Missing the required parameter "importTemplateId" when calling putOutboundImporttemplate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundImporttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/{importTemplateId}', 
-			'PUT', 
-			{ 'importTemplateId': importTemplateId },
 			{  },
 			{  },
 			{  },
@@ -61500,7 +41678,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -62239,7 +42417,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -62270,98 +42448,6 @@ class ProcessAutomationApi {
 			'DELETE', 
 			{ 'triggerId': triggerId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the meta-data for a versioned flow
-	 * This will get the meta-data about a particular version of a flow.<br>.
-	 * @param {String} flowId Flow ID
-	 * @param {String} versionId Flow Version
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 */
-	getProcessautomationFlowsDefinitionVersion(flowId, versionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getProcessautomationFlowsDefinitionVersion';
-		}
-		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getProcessautomationFlowsDefinitionVersion';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/processautomation/flows/definitions/{flowId}/versions/{versionId}', 
-			'GET', 
-			{ 'flowId': flowId,'versionId': versionId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the running data for a flow instance
-	 * This will get the information about the current running state of the flow instance. It requires the workflow:instance:search permission.
-	 * @param {String} instanceId Flow Exec ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 */
-	getProcessautomationFlowsInstance(instanceId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'instanceId' is set
-		if (instanceId === undefined || instanceId === null) {
-			throw 'Missing the required parameter "instanceId" when calling getProcessautomationFlowsInstance';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/processautomation/flows/instances/{instanceId}', 
-			'GET', 
-			{ 'instanceId': instanceId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search currently running flow instances using q64
-	 * Searches the pool of running flow instances given a SearchRequest and returns the matching results.
-	 * @param {String} q64 q64
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Expand instructions for the return value.
-	 */
-	getProcessautomationFlowsInstancesCommandsSearch(q64, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'q64' is set
-		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getProcessautomationFlowsInstancesCommandsSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/processautomation/flows/instances/commands/search', 
-			'GET', 
-			{  },
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -62445,31 +42531,6 @@ class ProcessAutomationApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search the currently running flow instances
-	 * Searches the pool of running flow instances given a SearchRequest and returns the matching results. It requires the Some Search Examples: Note the various filters, sort and searchPhrase options can be combined/omitted as needed.Search for a specific definition ID:{"query": [{"fields": ["flowConfigId.id"],"type": "EXACT","values": ["e88db9fb-aaa0-46f8-81d5-4a30e323bdfa"]}]}Search for a specific execution instance and sort on the config name:{"query": [{"fields": ["flowExecId"],"type": "EXACT","values": ["99"]}],"sortBy" : "flowConfigName","sortOrder" : "ASC"}
-	 * @param {Object} body SearchRequest data containing search parameters and paging response.
-	 */
-	postProcessautomationFlowsInstancesCommandsSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postProcessautomationFlowsInstancesCommandsSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/processautomation/flows/instances/commands/search', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -62595,7 +42656,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -62609,56 +42670,6 @@ class QualityApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Unset favorite evaluation form template
-	 * 
-	 * @param {String} templateId templateId
-	 */
-	deleteEvaluationsFavoritetemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling deleteEvaluationsFavoritetemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/favoritetemplates/{templateId}', 
-			'DELETE', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an evaluation form template
-	 * 
-	 * @param {String} templateId Template ID
-	 */
-	deleteEvaluationsTemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling deleteEvaluationsTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates/{templateId}', 
-			'DELETE', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Delete a calibration by id.
@@ -62913,78 +42924,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Get favorite evaluation form templates
-	 * 
-	 */
-	getEvaluationsFavoritetemplates() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/favoritetemplates', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an evaluation form template
-	 * 
-	 * @param {String} templateId Template ID
-	 */
-	getEvaluationsTemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling getEvaluationsTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates/{templateId}', 
-			'GET', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of evaluation form templates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand
-	 * @param {String} opts.tags Tags
-	 */
-	getEvaluationsTemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'tags': opts['tags'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Gets a list of Agent Activities
 	 * Each item on the list shows one agents evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
 	 * @param {Object} opts Optional parameters
@@ -63000,7 +42939,6 @@ class QualityApi {
 	 * @param {String} opts.evaluatorUserId user id of the evaluator
 	 * @param {String} opts.name name
 	 * @param {String} opts.group group id
-	 * @param {String} opts.agentTeamId team id of agents requested
 	 * @param {String} opts.formContextId shared id between form versions
 	 */
 	getQualityAgentsActivity(opts) { 
@@ -63011,7 +42949,7 @@ class QualityApi {
 			'/api/v2/quality/agents/activity', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'agentTeamId': opts['agentTeamId'],'formContextId': opts['formContextId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'formContextId': opts['formContextId'] },
 			{  },
 			{  },
 			null, 
@@ -63215,7 +43153,6 @@ class QualityApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.conversationId conversationId specified
 	 * @param {String} opts.agentUserId user id of the agent
-	 * @param {String} opts.agentTeamId team id of the agent
 	 * @param {String} opts.evaluatorUserId evaluator user id
 	 * @param {String} opts.assigneeUserId assignee user id
 	 * @param {String} opts.queueId queue id
@@ -63237,7 +43174,7 @@ class QualityApi {
 			'/api/v2/quality/evaluations/query', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'agentTeamId': opts['agentTeamId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -63262,7 +43199,6 @@ class QualityApi {
 	 * @param {String} opts.name Evaluator name
 	 * @param {Array.<String>} opts.permission permission strings
 	 * @param {String} opts.group group id
-	 * @param {String} opts.agentTeamId team id of agents to be considered
 	 */
 	getQualityEvaluatorsActivity(opts) { 
 		opts = opts || {};
@@ -63272,7 +43208,7 @@ class QualityApi {
 			'/api/v2/quality/evaluators/activity', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'group': opts['group'],'agentTeamId': opts['agentTeamId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'group': opts['group'] },
 			{  },
 			{  },
 			null, 
@@ -63964,54 +43900,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Set a favorite evaluation form template
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postEvaluationsFavoritetemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/favoritetemplates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an evaluation form template
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postEvaluationsTemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a calibration
 	 * 
 	 * @param {Object} body calibration
@@ -64327,35 +44215,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Update an evaluation form template
-	 * 
-	 * @param {String} templateId Template ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putEvaluationsTemplate(templateId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling putEvaluationsTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/evaluations/templates/{templateId}', 
-			'PUT', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 	 * 
 	 * @param {String} calibrationId Calibration ID
@@ -64551,7 +44410,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -64692,31 +44551,6 @@ class RecordingApi {
 			'DELETE', 
 			{ 'jobId': jobId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Clear the jobs in org by state specified.
-	 * 
-	 * @param {Object} state Valid states: FULFILLED, CANCELLED
-	 */
-	deleteRecordingJobs(state) { 
-		// verify the required parameter 'state' is set
-		if (state === undefined || state === null) {
-			throw 'Missing the required parameter "state" when calling deleteRecordingJobs';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/recording/jobs', 
-			'DELETE', 
-			{  },
-			{ 'state': state },
 			{  },
 			{  },
 			null, 
@@ -65123,12 +44957,8 @@ class RecordingApi {
 	 * Get a media retention policy
 	 * 
 	 * @param {String} policyId Policy ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	getRecordingCrossplatformMediaretentionpolicy(policyId, opts) { 
-		opts = opts || {};
-		
+	getRecordingCrossplatformMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling getRecordingCrossplatformMediaretentionpolicy';
@@ -65138,7 +44968,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'GET', 
 			{ 'policyId': policyId },
-			{ 'expand': opts['expand'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -65319,12 +45149,8 @@ class RecordingApi {
 	 * Get a media retention policy
 	 * 
 	 * @param {String} policyId Policy ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	getRecordingMediaretentionpolicy(policyId, opts) { 
-		opts = opts || {};
-		
+	getRecordingMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling getRecordingMediaretentionpolicy';
@@ -65334,7 +45160,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'GET', 
 			{ 'policyId': policyId },
-			{ 'expand': opts['expand'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -65498,12 +45324,8 @@ class RecordingApi {
 	 * 
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts) { 
-		opts = opts || {};
-		
+	patchRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling patchRecordingCrossplatformMediaretentionpolicy';
@@ -65517,7 +45339,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'PATCH', 
 			{ 'policyId': policyId },
-			{ 'expand': opts['expand'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -65532,12 +45354,8 @@ class RecordingApi {
 	 * 
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	patchRecordingMediaretentionpolicy(policyId, body, opts) { 
-		opts = opts || {};
-		
+	patchRecordingMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling patchRecordingMediaretentionpolicy';
@@ -65551,7 +45369,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'PATCH', 
 			{ 'policyId': policyId },
-			{ 'expand': opts['expand'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -65654,12 +45472,8 @@ class RecordingApi {
 	 * Create media retention policy
 	 * Policy does not work retroactively
 	 * @param {Object} body Policy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	postRecordingCrossplatformMediaretentionpolicies(body, opts) { 
-		opts = opts || {};
-		
+	postRecordingCrossplatformMediaretentionpolicies(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingCrossplatformMediaretentionpolicies';
@@ -65669,7 +45483,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'POST', 
 			{  },
-			{ 'expand': opts['expand'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -65783,12 +45597,8 @@ class RecordingApi {
 	 * Create media retention policy
 	 * Policy does not work retroactively
 	 * @param {Object} body Policy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	postRecordingMediaretentionpolicies(body, opts) { 
-		opts = opts || {};
-		
+	postRecordingMediaretentionpolicies(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingMediaretentionpolicies';
@@ -65798,7 +45608,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies', 
 			'POST', 
 			{  },
-			{ 'expand': opts['expand'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -65929,31 +45739,6 @@ class RecordingApi {
 	}
 
 	/**
-	 * Provide meta-data for a screen recording for background assistant using screen recording jwt token.
-	 * 
-	 * @param {Object} body ScreenRecordingMetaDataRequest
-	 */
-	postRecordingsScreensessionsMetadataBackgroundassistant(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingsScreensessionsMetadataBackgroundassistant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/recordings/screensessions/metadata/backgroundassistant', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Updates the retention records on a recording.
 	 * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
 	 * @param {String} conversationId Conversation ID
@@ -66066,12 +45851,8 @@ class RecordingApi {
 	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	putRecordingCrossplatformMediaretentionpolicy(policyId, body, opts) { 
-		opts = opts || {};
-		
+	putRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling putRecordingCrossplatformMediaretentionpolicy';
@@ -66085,7 +45866,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'PUT', 
 			{ 'policyId': policyId },
-			{ 'expand': opts['expand'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -66160,12 +45941,8 @@ class RecordingApi {
 	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	putRecordingMediaretentionpolicy(policyId, body, opts) { 
-		opts = opts || {};
-		
+	putRecordingMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling putRecordingMediaretentionpolicy';
@@ -66179,7 +45956,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'PUT', 
 			{ 'policyId': policyId },
-			{ 'expand': opts['expand'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -66270,7 +46047,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -66755,7 +46532,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -66785,26 +46562,6 @@ class RoutingApi {
 			'/api/v2/routing/assessments/{assessmentId}', 
 			'DELETE', 
 			{ 'assessmentId': assessmentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
-	 * 
-	 */
-	deleteRoutingDirectroutingbackupSettingsMe() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/directroutingbackup/settings/me', 
-			'DELETE', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -66935,31 +46692,6 @@ class RoutingApi {
 			'/api/v2/routing/predictors/{predictorId}', 
 			'DELETE', 
 			{ 'predictorId': predictorId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a custom Key Performance Indicator.
-	 * 
-	 * @param {String} kpiId Key Performance Indicator ID
-	 */
-	deleteRoutingPredictorsKeyperformanceindicator(kpiId) { 
-		// verify the required parameter 'kpiId' is set
-		if (kpiId === undefined || kpiId === null) {
-			throw 'Missing the required parameter "kpiId" when calling deleteRoutingPredictorsKeyperformanceindicator';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
-			'DELETE', 
-			{ 'kpiId': kpiId },
 			{  },
 			{  },
 			{  },
@@ -67211,31 +46943,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	deleteRoutingUserDirectroutingbackupSettings(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
-			'DELETE', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
@@ -67281,35 +46988,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Delete a utilization label
-	 * 
-	 * @param {String} labelId Utilization Label ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDelete Remove all label usages (if found) without warning (default to false)
-	 */
-	deleteRoutingUtilizationLabel(labelId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
-			throw 'Missing the required parameter "labelId" when calling deleteRoutingUtilizationLabel';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/labels/{labelId}', 
-			'DELETE', 
-			{ 'labelId': labelId },
-			{ 'forceDelete': opts['forceDelete'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete an utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
@@ -67343,12 +47021,8 @@ class RoutingApi {
 	 * Delete wrap-up code
 	 * 
 	 * @param {String} codeId Wrapup Code ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.hardDelete Boolean to perform a hard delete. If hardDelete is set to true, the wrapup code is completely removed from our database. If it is set to false (default behavior), we mark the wrapup code as deleted.
 	 */
-	deleteRoutingWrapupcode(codeId, opts) { 
-		opts = opts || {};
-		
+	deleteRoutingWrapupcode(codeId) { 
 		// verify the required parameter 'codeId' is set
 		if (codeId === undefined || codeId === null) {
 			throw 'Missing the required parameter "codeId" when calling deleteRoutingWrapupcode';
@@ -67358,7 +47032,7 @@ class RoutingApi {
 			'/api/v2/routing/wrapupcodes/{codeId}', 
 			'DELETE', 
 			{ 'codeId': codeId },
-			{ 'hardDelete': opts['hardDelete'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -67551,55 +47225,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get list of comparison periods by queue ID(s)
-	 * 
-	 * @param {Array.<String>} queueId Comma separated list of Queue IDs to filter by.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.maxPerQueue Maximum number of entities to return per queue.
-	 */
-	getRoutingComparisonperiods(queueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getRoutingComparisonperiods';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/comparisonperiods', 
-			'GET', 
-			{  },
-			{ 'queueId': this.apiClient.buildCollectionParam(queueId, 'multi'),'maxPerQueue': opts['maxPerQueue'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the user's Direct Routing Backup settings.
-	 * 
-	 */
-	getRoutingDirectroutingbackupSettingsMe() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/directroutingbackup/settings/me', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get domain
 	 * 
 	 * @param {String} domainId domain ID
@@ -67612,56 +47237,6 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}', 
-			'GET', 
-			{ 'domainId': domainId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get domain dkim settings
-	 * 
-	 * @param {String} domainId domain ID
-	 */
-	getRoutingEmailDomainDkim(domainId) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainDkim';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/domains/{domainId}/dkim', 
-			'GET', 
-			{ 'domainId': domainId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get domain mail from settings
-	 * 
-	 * @param {String} domainId domain ID
-	 */
-	getRoutingEmailDomainMailfrom(domainId) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainMailfrom';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
 			'GET', 
 			{ 'domainId': domainId },
 			{  },
@@ -67726,31 +47301,6 @@ class RoutingApi {
 			'GET', 
 			{ 'domainName': domainName },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get domain verification settings
-	 * 
-	 * @param {String} domainId domain ID
-	 */
-	getRoutingEmailDomainVerification(domainId) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainVerification';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/domains/{domainId}/verification', 
-			'GET', 
-			{ 'domainId': domainId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -68120,35 +47670,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Retrieve a single Key Performance Indicator.
-	 * 
-	 * @param {String} kpiId Key Performance Indicator ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
-	 */
-	getRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'kpiId' is set
-		if (kpiId === undefined || kpiId === null) {
-			throw 'Missing the required parameter "kpiId" when calling getRoutingPredictorsKeyperformanceindicator';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
-			'GET', 
-			{ 'kpiId': kpiId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a list of Key Performance Indicators
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -68174,26 +47695,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get a list of Key Performance Indicators Types available.
-	 * 
-	 */
-	getRoutingPredictorsKeyperformanceindicatortypes() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/predictors/keyperformanceindicatortypes', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get details about this queue.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -68209,35 +47710,6 @@ class RoutingApi {
 			'GET', 
 			{ 'queueId': queueId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an assistant associated with a queue.
-	 * 
-	 * @param {String} queueId Queue ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand.
-	 */
-	getRoutingQueueAssistant(queueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getRoutingQueueAssistant';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/queues/{queueId}/assistant', 
-			'GET', 
-			{ 'queueId': queueId },
-			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -68293,156 +47765,6 @@ class RoutingApi {
 			'GET', 
 			{ 'queueId': queueId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get recent conversations that are still active
-	 * 
-	 * @param {String} queueId Queue ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getRoutingQueueConversations(queueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/queues/{queueId}/conversations', 
-			'GET', 
-			{ 'queueId': queueId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get recent callback conversations that are still active
-	 * 
-	 * @param {String} queueId Queue ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getRoutingQueueConversationsCallbacks(queueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversationsCallbacks';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/queues/{queueId}/conversations/callbacks', 
-			'GET', 
-			{ 'queueId': queueId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get recent call conversations that are still active
-	 * 
-	 * @param {String} queueId Queue ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getRoutingQueueConversationsCalls(queueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversationsCalls';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/queues/{queueId}/conversations/calls', 
-			'GET', 
-			{ 'queueId': queueId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get recent chat conversations that are still active
-	 * 
-	 * @param {String} queueId Queue ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getRoutingQueueConversationsChats(queueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversationsChats';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/queues/{queueId}/conversations/chats', 
-			'GET', 
-			{ 'queueId': queueId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get recent email conversations that are still active
-	 * 
-	 * @param {String} queueId Queue ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getRoutingQueueConversationsEmails(queueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversationsEmails';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/queues/{queueId}/conversations/emails', 
-			'GET', 
-			{ 'queueId': queueId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 
@@ -69111,31 +48433,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get the user's Direct Routing Backup settings.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	getRoutingUserDirectroutingbackupSettings(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
-			'GET', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 	 * 
 	 * @param {String} userId User ID
@@ -69171,83 +48468,6 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get details about this utilization label
-	 * 
-	 * @param {String} labelId Utilization Label ID
-	 */
-	getRoutingUtilizationLabel(labelId) { 
-		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
-			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabel';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/labels/{labelId}', 
-			'GET', 
-			{ 'labelId': labelId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of agent ids associated with a utilization label
-	 * 
-	 * @param {String} labelId Utilization Label ID
-	 */
-	getRoutingUtilizationLabelAgents(labelId) { 
-		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
-			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabelAgents';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/labels/{labelId}/agents', 
-			'GET', 
-			{ 'labelId': labelId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of utilization labels
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
-	 * @param {String} opts.name Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
-	 */
-	getRoutingUtilizationLabels(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/labels', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -69383,60 +48603,6 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a simplified wrap-up code.
-	 * 
-	 * @param {String} codeId Wrapup Code ID
-	 */
-	getRoutingWrapupcodesDivisionview(codeId) { 
-		// verify the required parameter 'codeId' is set
-		if (codeId === undefined || codeId === null) {
-			throw 'Missing the required parameter "codeId" when calling getRoutingWrapupcodesDivisionview';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/wrapupcodes/divisionviews/{codeId}', 
-			'GET', 
-			{ 'codeId': codeId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
-	 * Specifying both name and ID parameters is not supported.
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.name Name
-	 * @param {Array.<String>} opts.id Wrapup code ID(s)
-	 * @param {Array.<String>} opts.divisionId Division ID(s)
-	 * @param {Object} opts.includeState Wrapup code state(s) to include
-	 */
-	getRoutingWrapupcodesDivisionviews(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/wrapupcodes/divisionviews', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'includeState': opts['includeState'] },
 			{  },
 			{  },
 			null, 
@@ -69691,35 +48857,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update a custom Key Performance Indicator.
-	 * 
-	 * @param {String} kpiId Key Performance Indicator ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'kpiId' is set
-		if (kpiId === undefined || kpiId === null) {
-			throw 'Missing the required parameter "kpiId" when calling patchRoutingPredictorsKeyperformanceindicator';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
-			'PATCH', 
-			{ 'kpiId': kpiId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update the ring number OR joined status for a queue member.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -69864,31 +49001,6 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/contactcenter', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Patch Transcription Settings
-	 * 
-	 * @param {Object} body Organization Settings
-	 */
-	patchRoutingSettingsTranscription(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchRoutingSettingsTranscription';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/settings/transcription', 
 			'PATCH', 
 			{  },
 			{  },
@@ -70200,111 +49312,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Query for comparison report detail.
-	 * 
-	 * @param {Object} body request
-	 */
-	postRoutingComparisonreportsDetails(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRoutingComparisonreportsDetails';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/comparisonreports/details', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query for comparison report summary.
-	 * 
-	 * @param {Object} body request
-	 */
-	postRoutingComparisonreportsSummary(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRoutingComparisonreportsSummary';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/comparisonreports/summary', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Restart domain dkim
-	 * 
-	 * @param {String} domainId domain ID
-	 */
-	postRoutingEmailDomainDkim(domainId) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainDkim';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/domains/{domainId}/dkim', 
-			'POST', 
-			{ 'domainId': domainId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set domain mail from settings
-	 * 
-	 * @param {String} domainId domain ID
-	 * @param {Object} body Mail From Settings
-	 */
-	postRoutingEmailDomainMailfrom(domainId, body) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainMailfrom';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRoutingEmailDomainMailfrom';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
-			'POST', 
-			{ 'domainId': domainId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a route
 	 * 
 	 * @param {String} domainName email domain
@@ -70357,31 +49364,6 @@ class RoutingApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Restart domain verification
-	 * 
-	 * @param {String} domainId domain ID
-	 */
-	postRoutingEmailDomainVerification(domainId) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainVerification';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/domains/{domainId}/verification', 
-			'POST', 
-			{ 'domainId': domainId },
-			{  },
-			{  },
-			{  },
-			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -70500,79 +49482,6 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Scores interactions based on machine learning metrics.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postRoutingPredictorsInteractionscores(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/predictors/interactionscores', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a custom Key Performance Indicator.
-	 * 
-	 * @param {Object} body request
-	 */
-	postRoutingPredictorsKeyperformanceindicators(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRoutingPredictorsKeyperformanceindicators';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/predictors/keyperformanceindicators', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Scores users based on machine learning metrics.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postRoutingPredictorsUserscores(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/predictors/userscores', 
 			'POST', 
 			{  },
 			{  },
@@ -70865,31 +49774,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Create a utilization label
-	 * 
-	 * @param {Object} body UtilizationLabel
-	 */
-	postRoutingUtilizationLabels(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRoutingUtilizationLabels';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/labels', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create an utilization tag
 	 * 
 	 * @param {Object} body UtilizationTag
@@ -70990,31 +49874,6 @@ class RoutingApi {
 			'/api/v2/users/{userId}/routingskills', 
 			'POST', 
 			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the user's Direct Routing Backup settings.
-	 * 
-	 * @param {Object} body directRoutingBackup
-	 */
-	putRoutingDirectroutingbackupSettingsMe(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/directroutingbackup/settings/me', 
-			'PUT', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -71226,36 +50085,6 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update the user's Direct Routing Backup settings.
-	 * 
-	 * @param {String} userId User ID
-	 * @param {Object} body directRoutingBackup
-	 */
-	putRoutingUserDirectroutingbackupSettings(userId, body) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRoutingUserDirectroutingbackupSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
-			'PUT', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 	 * 
 	 * @param {String} userId User ID
@@ -71300,36 +50129,6 @@ class RoutingApi {
 			'/api/v2/routing/utilization', 
 			'PUT', 
 			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a utilization label
-	 * 
-	 * @param {String} labelId Utilization Label ID
-	 * @param {Object} body UtilizationLabel
-	 */
-	putRoutingUtilizationLabel(labelId, body) { 
-		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
-			throw 'Missing the required parameter "labelId" when calling putRoutingUtilizationLabel';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRoutingUtilizationLabel';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/labels/{labelId}', 
-			'PUT', 
-			{ 'labelId': labelId },
 			{  },
 			{  },
 			{  },
@@ -71441,7 +50240,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -71455,35 +50254,6 @@ class SCIMApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete a group
-	 * 
-	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
-	 */
-	deleteScimGroup(groupId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteScimGroup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/groups/{groupId}', 
-			'DELETE', 
-			{ 'groupId': groupId },
-			{  },
-			{ 'If-Match': opts['ifMatch'] },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/scim+json', 'application/json']
-		);
-	}
 
 	/**
 	 * Delete a user
@@ -71504,35 +50274,6 @@ class SCIMApi {
 			'/api/v2/scim/users/{userId}', 
 			'DELETE', 
 			{ 'userId': userId },
-			{  },
-			{ 'If-Match': opts['ifMatch'] },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/scim+json', 'application/json']
-		);
-	}
-
-	/**
-	 * Delete a group
-	 * 
-	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
-	 */
-	deleteScimV2Group(groupId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteScimV2Group';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/v2/groups/{groupId}', 
-			'DELETE', 
-			{ 'groupId': groupId },
 			{  },
 			{ 'If-Match': opts['ifMatch'] },
 			{  },
@@ -72185,31 +50926,6 @@ class SCIMApi {
 	}
 
 	/**
-	 * Create a group
-	 * Creates a Genesys Cloud group with group visibility set to "public" and rules visibility set to "true". Auto-creates an "externalId". "externalId" is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} is allowed.
-	 * @param {Object} body The information used to create a group.
-	 */
-	postScimGroups(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postScimGroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/groups', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
-		);
-	}
-
-	/**
 	 * Create a user
 	 * 
 	 * @param {Object} body The information used to create a user.
@@ -72222,31 +50938,6 @@ class SCIMApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/users', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
-		);
-	}
-
-	/**
-	 * Create a group
-	 * Creates an "official" Genesys Cloud group with group visibility set to "public" and rules visibility set to "true". Auto-creates an "externalId". "externalId" is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
-	 * @param {Object} body The information used to create a group.
-	 */
-	postScimV2Groups(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postScimV2Groups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/v2/groups', 
 			'POST', 
 			{  },
 			{  },
@@ -72422,56 +51113,11 @@ class SCIMApi {
 
 }
 
-class ScreenRecordingApi {
-	/**
-	 * ScreenRecording service.
-	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new ScreenRecordingApi. 
-	 * @alias module:purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Sign identifying information for screen recording
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postScreenrecordingToken(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/screenrecording/token', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -72485,119 +51131,6 @@ class ScriptsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete a script.
-	 * 
-	 * @param {String} scriptId Script ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 */
-	deleteScript(scriptId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling deleteScript';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/{scriptId}', 
-			'DELETE', 
-			{ 'scriptId': scriptId },
-			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a page.
-	 * 
-	 * @param {String} scriptId Script ID
-	 * @param {String} pageId Page ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 */
-	deleteScriptPage(scriptId, pageId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling deleteScriptPage';
-		}
-		// verify the required parameter 'pageId' is set
-		if (pageId === undefined || pageId === null) {
-			throw 'Missing the required parameter "pageId" when calling deleteScriptPage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/{scriptId}/pages/{pageId}', 
-			'DELETE', 
-			{ 'scriptId': scriptId,'pageId': pageId },
-			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Unset favorite template
-	 * 
-	 * @param {String} templateId templateId
-	 */
-	deleteScripterFavoritetemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling deleteScripterFavoritetemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripter/favoritetemplates/{templateId}', 
-			'DELETE', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a composer template
-	 * 
-	 * @param {String} templateId Template ID
-	 */
-	deleteScripterTemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling deleteScripterTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripter/templates/{templateId}', 
-			'DELETE', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Get a script
@@ -72678,78 +51211,6 @@ class ScriptsApi {
 			'GET', 
 			{ 'scriptId': scriptId },
 			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get favorite templates
-	 * 
-	 */
-	getScripterFavoritetemplates() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/scripter/favoritetemplates', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a composer template
-	 * 
-	 * @param {String} templateId Template ID
-	 */
-	getScripterTemplate(templateId) { 
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling getScripterTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripter/templates/{templateId}', 
-			'GET', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of templates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.expand Expand
-	 * @param {String} opts.tags Tags
-	 */
-	getScripterTemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/scripter/templates', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'tags': opts['tags'] },
 			{  },
 			{  },
 			null, 
@@ -72847,38 +51308,6 @@ class ScriptsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the published variables
-	 * 
-	 * @param {String} scriptId Script ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.input input
-	 * @param {Object} opts.output output
-	 * @param {Object} opts.type type
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 */
-	getScriptsPublishedDivisionviewVariables(scriptId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedDivisionviewVariables';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/published/divisionviews/{scriptId}/variables', 
-			'GET', 
-			{ 'scriptId': scriptId },
-			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] },
 			{  },
 			{  },
 			null, 
@@ -73044,69 +51473,6 @@ class ScriptsApi {
 	}
 
 	/**
-	 * Get the template as script.
-	 * 
-	 * @param {String} scriptId Script ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 */
-	getScriptsTemplate(scriptId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptsTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/templates/{scriptId}', 
-			'GET', 
-			{ 'scriptId': scriptId },
-			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the template page.
-	 * 
-	 * @param {String} scriptId Script ID
-	 * @param {String} pageId Page ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 */
-	getScriptsTemplatePage(scriptId, pageId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptsTemplatePage';
-		}
-		// verify the required parameter 'pageId' is set
-		if (pageId === undefined || pageId === null) {
-			throw 'Missing the required parameter "pageId" when calling getScriptsTemplatePage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/templates/{scriptId}/pages/{pageId}', 
-			'GET', 
-			{ 'scriptId': scriptId,'pageId': pageId },
-			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the upload status of an imported script
 	 * 
 	 * @param {String} uploadId Upload ID
@@ -73165,108 +51531,6 @@ class ScriptsApi {
 	}
 
 	/**
-	 * Create a page.
-	 * 
-	 * @param {String} scriptId Script ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 * @param {Object} opts.body 
-	 */
-	postScriptPages(scriptId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling postScriptPages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/{scriptId}/pages', 
-			'POST', 
-			{ 'scriptId': scriptId },
-			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set a favorite template
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postScripterFavoritetemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/scripter/favoritetemplates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a user script template.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postScripterTemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/scripter/templates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a script.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<String, {String: Object}>} opts.body 
-	 */
-	postScripts(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Publish a script.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -73291,132 +51555,13 @@ class ScriptsApi {
 		);
 	}
 
-	/**
-	 * Create a template from a script.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 * @param {Object} opts.body 
-	 */
-	postScriptsTemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/templates', 
-			'POST', 
-			{  },
-			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a script.
-	 * 
-	 * @param {String} scriptId Script ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 * @param {Object} opts.body 
-	 */
-	putScript(scriptId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling putScript';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/{scriptId}', 
-			'PUT', 
-			{ 'scriptId': scriptId },
-			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a page.
-	 * 
-	 * @param {String} scriptId Script ID
-	 * @param {String} pageId Page ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
-	 * @param {Object} opts.body 
-	 */
-	putScriptPage(scriptId, pageId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling putScriptPage';
-		}
-		// verify the required parameter 'pageId' is set
-		if (pageId === undefined || pageId === null) {
-			throw 'Missing the required parameter "pageId" when calling putScriptPage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripts/{scriptId}/pages/{pageId}', 
-			'PUT', 
-			{ 'scriptId': scriptId,'pageId': pageId },
-			{ 'scriptDataVersion': opts['scriptDataVersion'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a composer template
-	 * 
-	 * @param {String} templateId Template ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putScripterTemplate(templateId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling putScripterTemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scripter/templates/{templateId}', 
-			'PUT', 
-			{ 'templateId': templateId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -73590,35 +51735,6 @@ class SearchApi {
 			'GET', 
 			{  },
 			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search sites using the q64 value returned from a previous search
-	 * 
-	 * @param {String} q64 q64
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand expand
-	 */
-	getTelephonyProvidersEdgesSitesSearch(q64, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'q64' is set
-		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getTelephonyProvidersEdgesSitesSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/search', 
-			'GET', 
-			{  },
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -74002,31 +52118,6 @@ class SearchApi {
 	}
 
 	/**
-	 * Search sites
-	 * 
-	 * @param {Object} body Search request options
-	 */
-	postTelephonyProvidersEdgesSitesSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSitesSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/search', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Search users
 	 * 
 	 * @param {Object} body Search request options
@@ -74159,7 +52250,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -74175,206 +52266,6 @@ class SettingsApi {
 
 
 	/**
-	 * Delete agent auto answer settings
-	 * 
-	 * @param {String} agentId The agent to apply the auto answer settings to
-	 */
-	deleteAppsAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling deleteAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings', 
-			'DELETE', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete queue-level default panel settings
-	 * 
-	 * @param {String} queueId The queue to apply the panel settings to
-	 */
-	deleteAppsAgentuiPanelsQueueSettings(queueId) { 
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling deleteAppsAgentuiPanelsQueueSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/queues/{queueId}/settings', 
-			'DELETE', 
-			{ 'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete organization-level default panel settings
-	 * 
-	 */
-	deleteAppsAgentuiPanelsSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/settings', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Reset email threading settings to default
-	 * 
-	 */
-	deleteEmailsSettingsThreading() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/emails/settings/threading', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete settings for the current user
-	 * 
-	 */
-	deleteSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/settings', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete webrtc settings for a given user, org and oauth client
-	 * 
-	 */
-	deleteSettingsWebrtcUsers() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/settings/webrtc/users', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get agent auto answer settings
-	 * 
-	 * @param {String} agentId The agent to apply the auto answer settings to
-	 */
-	getAppsAgentuiAgentsAutoanswerAgentIdSettings(agentId) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings', 
-			'GET', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get queue-level default panel settings
-	 * 
-	 * @param {String} queueId The queue to apply the panel settings to
-	 */
-	getAppsAgentuiPanelsQueueSettings(queueId) { 
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getAppsAgentuiPanelsQueueSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/queues/{queueId}/settings', 
-			'GET', 
-			{ 'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get organization-level default panel settings
-	 * 
-	 */
-	getAppsAgentuiPanelsSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get email Contact Center settings
 	 * 
 	 */
@@ -74388,151 +52279,6 @@ class SettingsApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get email threading settings
-	 * 
-	 */
-	getEmailsSettingsThreading() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/emails/settings/threading', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get settings for the current user
-	 * 
-	 */
-	getSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/settings', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get webrtc settings for a given user, org and oauth client. The TTL of 30 days is reset on retrieval of settings.
-	 * 
-	 */
-	getSettingsWebrtcUsers() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/settings/webrtc/users', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update agent auto answer settings
-	 * 
-	 * @param {String} agentId The agent to apply the auto answer settings to
-	 * @param {Object} body AutoAnswerSettings
-	 */
-	patchAppsAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling patchAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings', 
-			'PATCH', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update queue-level default panel settings
-	 * 
-	 * @param {String} queueId The queue to apply the panel settings to
-	 * @param {Object} body DefaultPanelSettings
-	 */
-	patchAppsAgentuiPanelsQueueSettings(queueId, body) { 
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling patchAppsAgentuiPanelsQueueSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAppsAgentuiPanelsQueueSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/queues/{queueId}/settings', 
-			'PATCH', 
-			{ 'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update organization-level default panel settings
-	 * 
-	 * @param {Object} body DefaultPanelSettings
-	 */
-	patchAppsAgentuiPanelsSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAppsAgentuiPanelsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/settings', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -74563,239 +52309,13 @@ class SettingsApi {
 		);
 	}
 
-	/**
-	 * Patch email threading settings
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchEmailsSettingsThreading(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/emails/settings/threading', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update webrtc settings for a given user, org and oauth client. The TTL of 30 days is reset on update of settings.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchSettingsWebrtcUsers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/settings/webrtc/users', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set agent auto answer settings
-	 * 
-	 * @param {String} agentId The agent to apply the auto answer settings to
-	 * @param {Object} body AutoAnswerSettings
-	 */
-	putAppsAgentuiAgentsAutoanswerAgentIdSettings(agentId, body) { 
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling putAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAppsAgentuiAgentsAutoanswerAgentIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings', 
-			'PUT', 
-			{ 'agentId': agentId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set queue-level default panel settings
-	 * 
-	 * @param {String} queueId The queue to apply the panel settings to
-	 * @param {Object} body DefaultPanelSettings
-	 */
-	putAppsAgentuiPanelsQueueSettings(queueId, body) { 
-		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling putAppsAgentuiPanelsQueueSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAppsAgentuiPanelsQueueSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/queues/{queueId}/settings', 
-			'PUT', 
-			{ 'queueId': queueId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set organization-level default panel settings
-	 * 
-	 * @param {Object} body DefaultPanelSettings
-	 */
-	putAppsAgentuiPanelsSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAppsAgentuiPanelsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/agentui/panels/settings', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update settings for the current user
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<String, {String: Object}>} opts.body 
-	 */
-	putSettings(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/settings', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Set/Add webrtc settings for a given user, org and oauth client. A TTL of 30 days is set on the settings.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	putSettingsWebrtcUsers(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/settings/webrtc/users', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class SignedDataApi {
-	/**
-	 * SignedData service.
-	 * @module purecloud-platform-client-v2/api/SignedDataApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new SignedDataApi. 
-	 * @alias module:purecloud-platform-client-v2/api/SignedDataApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Sign identifying information
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<String, {String: Object}>} opts.body 
-	 */
-	postSigneddata(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/signeddata', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -74809,31 +52329,6 @@ class SpeechTextAnalyticsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete a Speech and Text Analytics category by ID
-	 * 
-	 * @param {String} categoryId The id of the category
-	 */
-	deleteSpeechandtextanalyticsCategory(categoryId) { 
-		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
-			throw 'Missing the required parameter "categoryId" when calling deleteSpeechandtextanalyticsCategory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
-			'DELETE', 
-			{ 'categoryId': categoryId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Delete a Speech and Text Analytics DictionaryFeedback by Id
@@ -74949,59 +52444,6 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/topics/{topicId}', 
 			'DELETE', 
 			{ 'topicId': topicId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of Speech and Text Analytics categories
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 50. (default to 25)
-	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
-	 * @param {String} opts.name The category name filter applied to the listing
-	 * @param {Object} opts.sortOrder The sort order for the listing (default to asc)
-	 * @param {Object} opts.sortBy The field to sort by for the listing (default to name)
-	 */
-	getSpeechandtextanalyticsCategories(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/categories', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Speech and Text Analytics Category by ID
-	 * 
-	 * @param {String} categoryId The id of the category
-	 */
-	getSpeechandtextanalyticsCategory(categoryId) { 
-		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
-			throw 'Missing the required parameter "categoryId" when calling getSpeechandtextanalyticsCategory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
-			'GET', 
-			{ 'categoryId': categoryId },
 			{  },
 			{  },
 			{  },
@@ -75467,7 +52909,6 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts.state Topic state. Defaults to latest
 	 * @param {String} opts.name Case insensitive partial name to filter by
 	 * @param {Array.<String>} opts.ids Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
-	 * @param {Array.<String>} opts.dialects Comma separated dialect strings to filter by. Maximum of 15 dialects allowed.
 	 * @param {Object} opts.sortBy Sort results by. Defaults to name
 	 * @param {Object} opts.sortOrder Sort order. Defaults to asc
 	 */
@@ -75479,7 +52920,7 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/topics', 
 			'GET', 
 			{  },
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'dialects': this.apiClient.buildCollectionParam(opts['dialects'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -75596,31 +53037,6 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/settings', 
 			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create new Speech and Text Analytics category
-	 * 
-	 * @param {Object} body The category to create
-	 */
-	postSpeechandtextanalyticsCategories(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsCategories';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/categories', 
-			'POST', 
 			{  },
 			{  },
 			{  },
@@ -75833,36 +53249,6 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
-	 * Update a Speech and Text Analytics category by ID
-	 * 
-	 * @param {String} categoryId The id of the category
-	 * @param {Object} body The updated category
-	 */
-	putSpeechandtextanalyticsCategory(categoryId, body) { 
-		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
-			throw 'Missing the required parameter "categoryId" when calling putSpeechandtextanalyticsCategory';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsCategory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
-			'PUT', 
-			{ 'categoryId': categoryId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update existing Speech and Text Analytics dictionary feedback by id
 	 * 
 	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
@@ -76042,7 +53428,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -76144,7 +53530,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -76283,7 +53669,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -77564,7 +54950,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -77866,7 +55252,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -77892,110 +55278,6 @@ class TelephonyApi {
 			'GET', 
 			{  },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * GET phone address data
-	 * 
-	 * @param {String} phoneId Phone Identifier
-	 */
-	getTelephonyPhonePhoneIdSettings(phoneId) { 
-		// verify the required parameter 'phoneId' is set
-		if (phoneId === undefined || phoneId === null) {
-			throw 'Missing the required parameter "phoneId" when calling getTelephonyPhonePhoneIdSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/phone/{phoneId}/settings', 
-			'GET', 
-			{ 'phoneId': phoneId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * GET phone configuration data
-	 * 
-	 * @param {String} hardwareId Phone's physical address AKA MAC address or FQDN for softphones
-	 */
-	getTelephonyPhonehomePhoneconfigurationHardwareId(hardwareId) { 
-		// verify the required parameter 'hardwareId' is set
-		if (hardwareId === undefined || hardwareId === null) {
-			throw 'Missing the required parameter "hardwareId" when calling getTelephonyPhonehomePhoneconfigurationHardwareId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/phonehome/phoneconfiguration/{hardwareId}', 
-			'GET', 
-			{ 'hardwareId': hardwareId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a SIP message.
-	 * Get the raw form of the SIP message
-	 * @param {String} conversationId Conversation id
-	 */
-	getTelephonySipmessagesConversation(conversationId) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/sipmessages/conversations/{conversationId}', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get SIP headers.
-	 * Get parsed SIP headers. Returns specific headers if key query parameters are added.
-	 * @param {String} conversationId Conversation id
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.keys comma-separated list of header identifiers to query. e.g. ruri,to,from
-	 */
-	getTelephonySipmessagesConversationHeaders(conversationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversationHeaders';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/sipmessages/conversations/{conversationId}/headers', 
-			'GET', 
-			{ 'conversationId': conversationId },
-			{ 'keys': this.apiClient.buildCollectionParam(opts['keys'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -78068,31 +55350,6 @@ class TelephonyApi {
 	}
 
 	/**
-	 * Schedule a job in the near future.
-	 * 
-	 * @param {String} siteId Site ID
-	 */
-	postTelephonyProvidersEdgesSiteSchedulereboot(siteId) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling postTelephonyProvidersEdgesSiteSchedulereboot';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/schedulereboot', 
-			'POST', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Request a download of a pcap file to S3
 	 * 
 	 * @param {Object} sIPSearchPublicRequest 
@@ -78123,7 +55380,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -78208,36 +55465,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/{edgeId}/softwareupdate', 
 			'DELETE', 
 			{ 'edgeId': edgeId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes an instance from the specified ASG
-	 * 
-	 * @param {String} autoScalingGroupId Id that is associated with the asg
-	 * @param {String} edgeId Edge id that is associated with the asg
-	 */
-	deleteTelephonyProvidersEdgesAutoscalinggroupEdge(autoScalingGroupId, edgeId) { 
-		// verify the required parameter 'autoScalingGroupId' is set
-		if (autoScalingGroupId === undefined || autoScalingGroupId === null) {
-			throw 'Missing the required parameter "autoScalingGroupId" when calling deleteTelephonyProvidersEdgesAutoscalinggroupEdge';
-		}
-		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
-			throw 'Missing the required parameter "edgeId" when calling deleteTelephonyProvidersEdgesAutoscalinggroupEdge';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/autoscalinggroups/{autoScalingGroupId}/edges/{edgeId}', 
-			'DELETE', 
-			{ 'autoScalingGroupId': autoScalingGroupId,'edgeId': edgeId },
 			{  },
 			{  },
 			{  },
@@ -78349,35 +55576,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Deletes a testing volume by id
-	 * 
-	 * @param {String} volumeId Volume Id
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.volumeRegion Specifies the volume region
-	 */
-	deleteTelephonyProvidersEdgesFilesVolume(volumeId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'volumeId' is set
-		if (volumeId === undefined || volumeId === null) {
-			throw 'Missing the required parameter "volumeId" when calling deleteTelephonyProvidersEdgesFilesVolume';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/{volumeId}', 
-			'DELETE', 
-			{ 'volumeId': volumeId },
-			{ 'volumeRegion': opts['volumeRegion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete a Phone by ID
 	 * 
 	 * @param {String} phoneId Phone ID
@@ -78417,26 +55615,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}', 
 			'DELETE', 
 			{ 'phoneBaseId': phoneBaseId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes upgrade ruleset
-	 * 
-	 */
-	deleteTelephonyProvidersEdgesProvisioningUpgraderule() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/provisioning/upgraderule', 
-			'DELETE', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -78493,40 +55671,6 @@ class TelephonyProvidersEdgeApi {
 			'DELETE', 
 			{ 'siteId': siteId,'outboundRouteId': outboundRouteId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes an ASG from a site
-	 * 
-	 * @param {String} siteId Id of the site that contains the asg to be deleted
-	 * @param {String} asgVersion Version of the ASG that needs to be deleted (ex. 001 or 002)
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDelete If set to true, the ASG will be deleted even if its edges are still active.
-	 */
-	deleteTelephonyProvidersEdgesSiteProvisioning(siteId, asgVersion, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling deleteTelephonyProvidersEdgesSiteProvisioning';
-		}
-		// verify the required parameter 'asgVersion' is set
-		if (asgVersion === undefined || asgVersion === null) {
-			throw 'Missing the required parameter "asgVersion" when calling deleteTelephonyProvidersEdgesSiteProvisioning';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/provisioning', 
-			'DELETE', 
-			{ 'siteId': siteId },
-			{ 'asgVersion': asgVersion,'forceDelete': opts['forceDelete'] },
 			{  },
 			{  },
 			null, 
@@ -79004,31 +56148,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Gets information about the current ami in a tier.
-	 * 
-	 * @param {String} tierName Tier to retrieve current ami info about.
-	 */
-	getTelephonyProvidersEdgesAutoscalinggroupsImagesCurrentTier(tierName) { 
-		// verify the required parameter 'tierName' is set
-		if (tierName === undefined || tierName === null) {
-			throw 'Missing the required parameter "tierName" when calling getTelephonyProvidersEdgesAutoscalinggroupsImagesCurrentTier';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/autoscalinggroups/images/current/tiers/{tierName}', 
-			'GET', 
-			{ 'tierName': tierName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the list of available languages.
 	 * 
 	 */
@@ -79419,7 +56538,6 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {String} opts._number Deprecated, filtering by number not supported
-	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getTelephonyProvidersEdgesExtensionpools(opts) { 
 		opts = opts || {};
@@ -79429,7 +56547,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/extensionpools', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'number': opts['_number'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'number': opts['_number'] },
 			{  },
 			{  },
 			null, 
@@ -79479,7 +56597,6 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortBy Sort by (default to number)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts._number Filter by number
-	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getTelephonyProvidersEdgesExtensions(opts) { 
 		opts = opts || {};
@@ -79489,171 +56606,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/extensions', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'number': opts['_number'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets testing volume by id
-	 * 
-	 * @param {String} volumeId Volume Id
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.volumeRegion Specifies the volume region
-	 */
-	getTelephonyProvidersEdgesFilesVolume(volumeId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'volumeId' is set
-		if (volumeId === undefined || volumeId === null) {
-			throw 'Missing the required parameter "volumeId" when calling getTelephonyProvidersEdgesFilesVolume';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/{volumeId}', 
-			'GET', 
-			{ 'volumeId': volumeId },
-			{ 'volumeRegion': opts['volumeRegion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets all testing volumes
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.volumeRegion Specifies the volumes region
-	 */
-	getTelephonyProvidersEdgesFilesVolumes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes', 
-			'GET', 
-			{  },
-			{ 'volumeRegion': opts['volumeRegion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves the recovered volume by its completed taskId
-	 * 
-	 * @param {String} taskId Task id
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.volumeRegion Specifies the region to get the volume from.
-	 */
-	getTelephonyProvidersEdgesFilesVolumesRecoveredTaskResults(taskId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getTelephonyProvidersEdgesFilesVolumesRecoveredTaskResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/recovered/tasks/{taskId}/results', 
-			'GET', 
-			{ 'taskId': taskId },
-			{ 'volumeRegion': opts['volumeRegion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves the created volume by its completed taskId
-	 * 
-	 * @param {String} taskId Task id
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.volumeRegion Specifies the volume region
-	 */
-	getTelephonyProvidersEdgesFilesVolumesTaskResults(taskId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getTelephonyProvidersEdgesFilesVolumesTaskResults';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/results', 
-			'GET', 
-			{ 'taskId': taskId },
-			{ 'volumeRegion': opts['volumeRegion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves the status of a create/recover volume request by its taskId
-	 * 
-	 * @param {String} taskId Task id
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.volumeRegion Specifies the volume region
-	 */
-	getTelephonyProvidersEdgesFilesVolumesTaskStatus(taskId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'taskId' is set
-		if (taskId === undefined || taskId === null) {
-			throw 'Missing the required parameter "taskId" when calling getTelephonyProvidersEdgesFilesVolumesTaskStatus';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/status', 
-			'GET', 
-			{ 'taskId': taskId },
-			{ 'volumeRegion': opts['volumeRegion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the compatibility of an organization for the hybrid product.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.hybridOverride Flag to indicate immediate hybrid migration. (default to false)
-	 */
-	getTelephonyProvidersEdgesHybridcompatibility(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/hybridcompatibility', 
-			'GET', 
-			{  },
-			{ 'hybridOverride': opts['hybridOverride'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'number': opts['_number'] },
 			{  },
 			{  },
 			null, 
@@ -80180,51 +57133,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Checks if the ami is available in aws
-	 * 
-	 * @param {String} amiId AmiId that is going to be validated
-	 */
-	getTelephonyProvidersEdgesProvisioningAmi(amiId) { 
-		// verify the required parameter 'amiId' is set
-		if (amiId === undefined || amiId === null) {
-			throw 'Missing the required parameter "amiId" when calling getTelephonyProvidersEdgesProvisioningAmi';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/provisioning/amis/{amiId}', 
-			'GET', 
-			{ 'amiId': amiId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the upgrades ruleset
-	 * 
-	 */
-	getTelephonyProvidersEdgesProvisioningUpgraderule() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/provisioning/upgraderule', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a Site by ID.
 	 * 
 	 * @param {String} siteId Site ID
@@ -80237,61 +57145,6 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}', 
-			'GET', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the basic information about an asg
-	 * 
-	 * @param {String} siteId Site id associated with the asg
-	 * @param {String} autoScalingGroupId Id associated with the asg
-	 */
-	getTelephonyProvidersEdgesSiteAutoscalinggroup(siteId, autoScalingGroupId) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteAutoscalinggroup';
-		}
-		// verify the required parameter 'autoScalingGroupId' is set
-		if (autoScalingGroupId === undefined || autoScalingGroupId === null) {
-			throw 'Missing the required parameter "autoScalingGroupId" when calling getTelephonyProvidersEdgesSiteAutoscalinggroup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/{autoScalingGroupId}', 
-			'GET', 
-			{ 'siteId': siteId,'autoScalingGroupId': autoScalingGroupId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the basic information about an asg in a specified site
-	 * 
-	 * @param {String} siteId Site id associated with the asg
-	 */
-	getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteAutoscalinggroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups', 
 			'GET', 
 			{ 'siteId': siteId },
 			{  },
@@ -80452,56 +57305,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Get a list of edges that are in the decommissioning state
-	 * 
-	 * @param {String} siteId Site id associated with the asg
-	 */
-	getTelephonyProvidersEdgesSiteProvisioningDecommissioning(siteId) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteProvisioningDecommissioning';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/provisioning/decommissioning', 
-			'GET', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get site connections for a site.
-	 * 
-	 * @param {String} siteId Site ID
-	 */
-	getTelephonyProvidersEdgesSiteSiteconnections(siteId) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteSiteconnections';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
-			'GET', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the list of Sites.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -80522,55 +57325,6 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'location.id': opts['locationId'],'managed': opts['managed'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search sites using the q64 value returned from a previous search
-	 * 
-	 * @param {String} q64 q64
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand expand
-	 */
-	getTelephonyProvidersEdgesSitesSearch(q64, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'q64' is set
-		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getTelephonyProvidersEdgesSitesSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/search', 
-			'GET', 
-			{  },
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets the tier of an organization
-	 * 
-	 */
-	getTelephonyProvidersEdgesTiers() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/tiers', 
-			'GET', 
-			{  },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -80743,38 +57497,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Get Trunk Base Settings listing for site
-	 * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
-	 * @param {String} siteId Site ID for trunk bases
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.sortBy Value by which to sort (default to name)
-	 * @param {String} opts.sortOrder Sort order (default to ASC)
-	 */
-	getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId(siteId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId}', 
-			'GET', 
-			{ 'siteId': siteId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
 	 * 
 	 * @param {String} trunkMetabaseId The id of a metabase object upon which to base this Trunk Base Settings
@@ -80872,66 +57594,6 @@ class TelephonyProvidersEdgeApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Scales the ASG to match the desired capacity
-	 * 
-	 * @param {String} asgId Id of the asg that is to be scaled
-	 * @param {Object} body AsgScaleRequest
-	 */
-	patchTelephonyProvidersEdgesAutoscalinggroupCapacity(asgId, body) { 
-		// verify the required parameter 'asgId' is set
-		if (asgId === undefined || asgId === null) {
-			throw 'Missing the required parameter "asgId" when calling patchTelephonyProvidersEdgesAutoscalinggroupCapacity';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchTelephonyProvidersEdgesAutoscalinggroupCapacity';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity', 
-			'PATCH', 
-			{ 'asgId': asgId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Disable site connections for a site.
-	 * 
-	 * @param {String} siteId Site ID
-	 * @param {Object} body Site
-	 */
-	patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling patchTelephonyProvidersEdgesSiteSiteconnections';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchTelephonyProvidersEdgesSiteSiteconnections';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
-			'PATCH', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -81141,36 +57803,6 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logs/jobs', 
-			'POST', 
-			{ 'edgeId': edgeId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a file that can be used to configure a hardware Edge's settings.
-	 * 
-	 * @param {String} edgeId Edge Id
-	 * @param {Object} body EdgeOfflineConfiguration
-	 */
-	postTelephonyProvidersEdgeOfflineconfiguration(edgeId, body) { 
-		// verify the required parameter 'edgeId' is set
-		if (edgeId === undefined || edgeId === null) {
-			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeOfflineconfiguration';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgeOfflineconfiguration';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration', 
 			'POST', 
 			{ 'edgeId': edgeId },
 			{  },
@@ -81447,110 +58079,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Recovers a testing volume by id
-	 * 
-	 * @param {String} volumeId Volume Id
-	 */
-	postTelephonyProvidersEdgesFilesVolume(volumeId) { 
-		// verify the required parameter 'volumeId' is set
-		if (volumeId === undefined || volumeId === null) {
-			throw 'Missing the required parameter "volumeId" when calling postTelephonyProvidersEdgesFilesVolume';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/{volumeId}', 
-			'POST', 
-			{ 'volumeId': volumeId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Starts a task to recover a test volume by skipping the queue
-	 * 
-	 * @param {String} volumeId Volume Id
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.volumeRegion Specifies the volume recovery region.
-	 */
-	postTelephonyProvidersEdgesFilesVolumeTasks(volumeId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'volumeId' is set
-		if (volumeId === undefined || volumeId === null) {
-			throw 'Missing the required parameter "volumeId" when calling postTelephonyProvidersEdgesFilesVolumeTasks';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/{volumeId}/tasks', 
-			'POST', 
-			{ 'volumeId': volumeId },
-			{ 'volumeRegion': opts['volumeRegion'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Starts a task to create a test volume
-	 * 
-	 * @param {Object} body CreateVolumePayload
-	 */
-	postTelephonyProvidersEdgesFilesVolumesTasks(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesFilesVolumesTasks';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/tasks', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Verifies that the testing volumes properly recovered
-	 * 
-	 * @param {Object} body VerifyVolumeRecoveredRequest
-	 */
-	postTelephonyProvidersEdgesFilesVolumesVerify(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesFilesVolumesVerify';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/files/volumes/verify', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Reboot a Phone
 	 * 
 	 * @param {String} phoneId Phone Id
@@ -81651,60 +58179,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Adds upgrade allow ruleset
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postTelephonyProvidersEdgesProvisioningUpgraderule(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/provisioning/upgraderule', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates an ASG for the specified site
-	 * 
-	 * @param {String} siteId Site that will be associated with the asg
-	 * @param {Object} body CreateAsgRequest
-	 */
-	postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling postTelephonyProvidersEdgesSiteAutoscalinggroups';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSiteAutoscalinggroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups', 
-			'POST', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create outbound route
 	 * 
 	 * @param {String} siteId Site ID
@@ -81760,31 +58234,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Search sites
-	 * 
-	 * @param {Object} body Search request options
-	 */
-	postTelephonyProvidersEdgesSitesSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSitesSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/search', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a Trunk Base Settings object
 	 * 
 	 * @param {Object} body Trunk base settings
@@ -81797,56 +58246,6 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search Trunk Base Settings
-	 * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
-	 * @param {Object} body Telephony search request
-	 */
-	postTelephonyProvidersEdgesTrunkbasesettingsSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesTrunkbasesettingsSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/trunkbasesettings/search', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search for trunks
-	 * 
-	 * @param {Object} body Telephony search request
-	 */
-	postTelephonyProvidersEdgesTrunksSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesTrunksSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/trunks/search', 
 			'POST', 
 			{  },
 			{  },
@@ -81944,31 +58343,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}', 
 			'PUT', 
 			{ 'certificateId': certificateId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Checks if a DID or an Extension is configured in Genesys Cloud.
-	 * 
-	 * @param {Object} body DialTargetRequest
-	 */
-	putTelephonyProvidersEdgesDialtargets(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesDialtargets';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/dialtargets', 
-			'PUT', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -82195,35 +58569,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Upgrades an ASG to the specified or newest ami.
-	 * 
-	 * @param {String} siteId Site that is associated with the asg
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body AsgUpgradeRequest
-	 */
-	putTelephonyProvidersEdgesSiteAutoscalinggroupsUpgrade(siteId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteAutoscalinggroupsUpgrade';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/upgrade', 
-			'PUT', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
 	 * 
 	 * @param {String} siteId Site ID
@@ -82289,61 +58634,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Update site connections for a site.
-	 * 
-	 * @param {String} siteId Site ID
-	 * @param {Object} body Site
-	 */
-	putTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteSiteconnections';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesSiteSiteconnections';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
-			'PUT', 
-			{ 'siteId': siteId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Sets the tier for an organization
-	 * 
-	 * @param {Object} body the new tier of the organization
-	 */
-	putTelephonyProvidersEdgesTiers(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesTiers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/tiers', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a Trunk Base Settings object by ID
 	 * 
 	 * @param {String} trunkBaseSettingsId Trunk Base ID
@@ -82375,558 +58665,11 @@ class TelephonyProvidersEdgeApi {
 
 }
 
-class TestAutomationApi {
-	/**
-	 * TestAutomation service.
-	 * @module purecloud-platform-client-v2/api/TestAutomationApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new TestAutomationApi. 
-	 * @alias module:purecloud-platform-client-v2/api/TestAutomationApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * delete a TIM environment
-	 * 
-	 * @param {String} environmentName environmentName
-	 */
-	deleteTestautomationExistingresourcesEnvironment(environmentName) { 
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling deleteTestautomationExistingresourcesEnvironment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments/{environmentName}', 
-			'DELETE', 
-			{ 'environmentName': environmentName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * remove a user from the TIM service
-	 * 
-	 * @param {String} environmentName environmentName
-	 * @param {String} userId userId
-	 */
-	deleteTestautomationExistingresourcesEnvironmentUser(environmentName, userId) { 
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling deleteTestautomationExistingresourcesEnvironmentUser';
-		}
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteTestautomationExistingresourcesEnvironmentUser';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments/{environmentName}/users/{userId}', 
-			'DELETE', 
-			{ 'environmentName': environmentName,'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * delete a TIM organization
-	 * 
-	 * @param {String} organizationId organizationId
-	 */
-	deleteTestautomationExistingresourcesOrganization(organizationId) { 
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling deleteTestautomationExistingresourcesOrganization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/organizations/{organizationId}', 
-			'DELETE', 
-			{ 'organizationId': organizationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get TIM environment by its environment name
-	 * 
-	 * @param {String} environmentName environmentName
-	 */
-	getTestautomationExistingresourcesEnvironment(environmentName) { 
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling getTestautomationExistingresourcesEnvironment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments/{environmentName}', 
-			'GET', 
-			{ 'environmentName': environmentName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get a TIM user by their environment
-	 * 
-	 * @param {String} environmentName environmentName
-	 * @param {String} userId userId
-	 */
-	getTestautomationExistingresourcesEnvironmentUser(environmentName, userId) { 
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling getTestautomationExistingresourcesEnvironmentUser';
-		}
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getTestautomationExistingresourcesEnvironmentUser';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments/{environmentName}/users/{userId}', 
-			'GET', 
-			{ 'environmentName': environmentName,'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get TIM users by their environment and inuse or quarantined status
-	 * 
-	 * @param {String} environmentName environmentName
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.page Page number (default to 1)
-	 * @param {String} opts.status user's status
-	 */
-	getTestautomationExistingresourcesEnvironmentUsers(environmentName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling getTestautomationExistingresourcesEnvironmentUsers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments/{environmentName}/users', 
-			'GET', 
-			{ 'environmentName': environmentName },
-			{ 'pageSize': opts['pageSize'],'page': opts['page'],'status': opts['status'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get all the TIM environments
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.page Page number (default to 1)
-	 */
-	getTestautomationExistingresourcesEnvironments(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'page': opts['page'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get a TIM OAuth Client by its environment
-	 * 
-	 * @param {String} environmentName environmentName
-	 */
-	getTestautomationExistingresourcesOauthclient(environmentName) { 
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling getTestautomationExistingresourcesOauthclient';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/oauthclients/{environmentName}', 
-			'GET', 
-			{ 'environmentName': environmentName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get all the TIM OAuth Clients
-	 * 
-	 * @param {String} environmentName environmentName
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.page Page number (default to 1)
-	 */
-	getTestautomationExistingresourcesOauthclients(environmentName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling getTestautomationExistingresourcesOauthclients';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/oauthclients', 
-			'GET', 
-			{ 'environmentName': environmentName },
-			{ 'pageSize': opts['pageSize'],'page': opts['page'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get a TIM org by its environment
-	 * 
-	 * @param {String} organizationId organizationId
-	 */
-	getTestautomationExistingresourcesOrganization(organizationId) { 
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling getTestautomationExistingresourcesOrganization';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/organizations/{organizationId}', 
-			'GET', 
-			{ 'organizationId': organizationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get TIM users by their organization and inuse or quarantined status
-	 * 
-	 * @param {String} organizationId organizationId
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.page Page number (default to 1)
-	 * @param {String} opts.status user's status
-	 */
-	getTestautomationExistingresourcesOrganizationUsers(organizationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling getTestautomationExistingresourcesOrganizationUsers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/organizations/{organizationId}/users', 
-			'GET', 
-			{ 'organizationId': organizationId },
-			{ 'pageSize': opts['pageSize'],'page': opts['page'],'status': opts['status'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * get all the TIM orgs
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.page Page number (default to 1)
-	 */
-	getTestautomationExistingresourcesOrganizations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/organizations', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'page': opts['page'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * update a TIM environment
-	 * 
-	 * @param {String} environmentName environmentName
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Environment
-	 */
-	patchTestautomationExistingresourcesEnvironment(environmentName, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling patchTestautomationExistingresourcesEnvironment';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments/{environmentName}', 
-			'PATCH', 
-			{ 'environmentName': environmentName },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * add a new user to the TIM service
-	 * 
-	 * @param {String} environmentName environmentName
-	 * @param {Object} body staticUser
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.setAsInUse new user is immediately marked as in use
-	 * @param {String} opts.sessionTimeoutInSeconds new user is given an in use session timeout value
-	 */
-	postTestautomationExistingresourcesEnvironmentUsers(environmentName, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'environmentName' is set
-		if (environmentName === undefined || environmentName === null) {
-			throw 'Missing the required parameter "environmentName" when calling postTestautomationExistingresourcesEnvironmentUsers';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTestautomationExistingresourcesEnvironmentUsers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments/{environmentName}/users', 
-			'POST', 
-			{ 'environmentName': environmentName },
-			{ 'setAsInUse': opts['setAsInUse'],'sessionTimeoutInSeconds': opts['sessionTimeoutInSeconds'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * add a new environment to the TIM service
-	 * 
-	 * @param {Object} body staticEnvironment
-	 */
-	postTestautomationExistingresourcesEnvironments(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTestautomationExistingresourcesEnvironments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/environments', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * add a new user to the TIM service
-	 * 
-	 * @param {String} organizationId organizationId
-	 * @param {Object} body staticUser
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.setAsInUse new user is immediately marked as in use
-	 * @param {String} opts.sessionTimeoutInSeconds new user is given a session timeout value
-	 */
-	postTestautomationExistingresourcesOrganizationUsers(organizationId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'organizationId' is set
-		if (organizationId === undefined || organizationId === null) {
-			throw 'Missing the required parameter "organizationId" when calling postTestautomationExistingresourcesOrganizationUsers';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTestautomationExistingresourcesOrganizationUsers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/organizations/{organizationId}/users', 
-			'POST', 
-			{ 'organizationId': organizationId },
-			{ 'setAsInUse': opts['setAsInUse'],'sessionTimeoutInSeconds': opts['sessionTimeoutInSeconds'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * add a new org to the TIM service
-	 * 
-	 * @param {Object} body staticOrg
-	 */
-	postTestautomationExistingresourcesOrganizations(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTestautomationExistingresourcesOrganizations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/organizations', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * check users back into the TIM service
-	 * 
-	 * @param {Object} body checkinUsers
-	 */
-	postTestautomationExistingresourcesUsersCheckin(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTestautomationExistingresourcesUsersCheckin';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/users/checkin', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * check a user out from the TIM service
-	 * 
-	 * @param {Object} body checkoutUser
-	 */
-	postTestautomationExistingresourcesUsersCheckout(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTestautomationExistingresourcesUsersCheckout';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/testautomation/existingresources/users/checkout', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
 class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -83054,7 +58797,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -83210,7 +58953,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -83224,36 +58967,6 @@ class UploadsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Get content upload from URL job status
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {String} jobId Upload job ID
-	 */
-	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
-		}
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}', 
-			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -83270,36 +58983,6 @@ class UploadsApi {
 			'/api/v2/knowledge/documentuploads', 
 			'POST', 
 			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create content upload from URL job
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * @param {Object} body uploadRequest
-	 */
-	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs', 
-			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId },
 			{  },
 			{  },
 			{  },
@@ -83440,63 +59123,13 @@ class UploadsApi {
 		);
 	}
 
-	/**
-	 * Creates presigned urls for uploading WFM historical data files in chunks. Use to upload files larger than 5GB
-	 * 
-	 * @param {Object} body query
-	 */
-	postWorkforcemanagementHistoricaldataMultipartuploadsCsv(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataMultipartuploadsCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/historicaldata/multipartuploads/csv', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Completes or aborts the uploading of WFM historical data files in chunks
-	 * 
-	 * @param {Object} body query
-	 */
-	putWorkforcemanagementHistoricaldataMultipartuploadsCsv(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWorkforcemanagementHistoricaldataMultipartuploadsCsv';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/historicaldata/multipartuploads/csv', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -83571,31 +59204,6 @@ class UsageApi {
 	}
 
 	/**
-	 * Get the results of an organizations data transfer bytes usage query
-	 * 
-	 * @param {String} executionId ID of the query execution
-	 */
-	getUsageDatatransferAggregatesQueryResult(executionId) { 
-		// verify the required parameter 'executionId' is set
-		if (executionId === undefined || executionId === null) {
-			throw 'Missing the required parameter "executionId" when calling getUsageDatatransferAggregatesQueryResult';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/usage/datatransfer/aggregates/query/results/{executionId}', 
-			'GET', 
-			{ 'executionId': executionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the results of a usage query
 	 * 
 	 * @param {String} executionId ID of the query execution
@@ -83646,36 +59254,6 @@ class UsageApi {
 	}
 
 	/**
-	 * Query data transfer bytes for an OAuth client ID usage for an organization
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
-	 * @param {String} clientId Client ID
-	 * @param {Object} body Query
-	 */
-	postOauthClientUsageDatatransferAggregatesQuery(clientId, body) { 
-		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageDatatransferAggregatesQuery';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOauthClientUsageDatatransferAggregatesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query', 
-			'POST', 
-			{ 'clientId': clientId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Query for OAuth client API usage
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
@@ -83695,31 +59273,6 @@ class UsageApi {
 			'/api/v2/oauth/clients/{clientId}/usage/query', 
 			'POST', 
 			{ 'clientId': clientId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query data transfer bytes for an organization's usage
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
-	 * @param {Object} body Query
-	 */
-	postUsageDatatransferAggregatesQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUsageDatatransferAggregatesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/usage/datatransfer/aggregates/query', 
-			'POST', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -83786,7 +59339,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -83971,7 +59524,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -84047,51 +59600,6 @@ class UsersApi {
 	}
 
 	/**
-	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
-	 * 
-	 */
-	deleteRoutingDirectroutingbackupSettingsMe() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/directroutingbackup/settings/me', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	deleteRoutingUserDirectroutingbackupSettings(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
-			'DELETE', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
@@ -84131,41 +59639,6 @@ class UsersApi {
 			'/api/v2/users/{userId}', 
 			'DELETE', 
 			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete the external identifier for user.
-	 * 
-	 * @param {String} userId User ID
-	 * @param {String} authorityName Authority Name
-	 * @param {String} externalKey External Key
-	 */
-	deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserExternalidAuthorityNameExternalKey';
-		}
-		// verify the required parameter 'authorityName' is set
-		if (authorityName === undefined || authorityName === null) {
-			throw 'Missing the required parameter "authorityName" when calling deleteUserExternalidAuthorityNameExternalKey';
-		}
-		// verify the required parameter 'externalKey' is set
-		if (externalKey === undefined || externalKey === null) {
-			throw 'Missing the required parameter "externalKey" when calling deleteUserExternalidAuthorityNameExternalKey';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}', 
-			'DELETE', 
-			{ 'userId': userId,'authorityName': authorityName,'externalKey': externalKey },
 			{  },
 			{  },
 			{  },
@@ -84276,36 +59749,6 @@ class UsersApi {
 			'/api/v2/users/{userId}/station/defaultstation', 
 			'DELETE', 
 			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a verifier
-	 * 
-	 * @param {String} userId User ID
-	 * @param {String} verifierId Verifier ID
-	 */
-	deleteUserVerifier(userId, verifierId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserVerifier';
-		}
-		// verify the required parameter 'verifierId' is set
-		if (verifierId === undefined || verifierId === null) {
-			throw 'Missing the required parameter "verifierId" when calling deleteUserVerifier';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/verifiers/{verifierId}', 
-			'DELETE', 
-			{ 'userId': userId,'verifierId': verifierId },
 			{  },
 			{  },
 			{  },
@@ -84646,51 +60089,6 @@ class UsersApi {
 	}
 
 	/**
-	 * Get the user's Direct Routing Backup settings.
-	 * 
-	 */
-	getRoutingDirectroutingbackupSettingsMe() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/directroutingbackup/settings/me', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the user's Direct Routing Backup settings.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	getRoutingUserDirectroutingbackupSettings(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
-			'GET', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 	 * 
 	 * @param {String} userId User ID
@@ -84820,61 +60218,6 @@ class UsersApi {
 			'GET', 
 			{ 'userId': userId },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the external identifiers for a user.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	getUserExternalid(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserExternalid';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/externalid', 
-			'GET', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the external identifier of user for an authority.
-	 * Authority name and external key are case sensitive.
-	 * @param {String} userId User ID
-	 * @param {String} authorityName Authority Name
-	 */
-	getUserExternalidAuthorityName(userId, authorityName) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserExternalidAuthorityName';
-		}
-		// verify the required parameter 'authorityName' is set
-		if (authorityName === undefined || authorityName === null) {
-			throw 'Missing the required parameter "authorityName" when calling getUserExternalidAuthorityName';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/externalid/{authorityName}', 
-			'GET', 
-			{ 'userId': userId,'authorityName': authorityName },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -85064,13 +60407,8 @@ class UsersApi {
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} subjectId User ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.enforceLicenses  (default to false)
-	 * @param {Boolean} opts.lookupGroups  (default to false)
 	 */
-	getUserRoles(subjectId, opts) { 
-		opts = opts || {};
-		
+	getUserRoles(subjectId) { 
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
 			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
@@ -85080,7 +60418,7 @@ class UsersApi {
 			'/api/v2/users/{subjectId}/roles', 
 			'GET', 
 			{ 'subjectId': subjectId },
-			{ 'enforceLicenses': opts['enforceLicenses'],'lookupGroups': opts['lookupGroups'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -85318,31 +60656,6 @@ class UsersApi {
 	}
 
 	/**
-	 * Get a list of verifiers
-	 * 
-	 * @param {String} userId User ID
-	 */
-	getUserVerifiers(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserVerifiers';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/verifiers', 
-			'GET', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the list of available users.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -85463,40 +60776,6 @@ class UsersApi {
 			'GET', 
 			{ 'activityId': activityId },
 			{ 'type': type },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the user associated with external identifier.
-	 * Authority name and external key are case sensitive.
-	 * @param {String} authorityName Authority Name
-	 * @param {String} externalKey External Key
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 */
-	getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'authorityName' is set
-		if (authorityName === undefined || authorityName === null) {
-			throw 'Missing the required parameter "authorityName" when calling getUsersExternalidAuthorityNameExternalKey';
-		}
-		// verify the required parameter 'externalKey' is set
-		if (externalKey === undefined || externalKey === null) {
-			throw 'Missing the required parameter "externalKey" when calling getUsersExternalidAuthorityNameExternalKey';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/externalid/{authorityName}/{externalKey}', 
-			'GET', 
-			{ 'authorityName': authorityName,'externalKey': externalKey },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -86466,61 +61745,6 @@ class UsersApi {
 	}
 
 	/**
-	 * Update the user's Direct Routing Backup settings.
-	 * 
-	 * @param {Object} body directRoutingBackup
-	 */
-	putRoutingDirectroutingbackupSettingsMe(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/directroutingbackup/settings/me', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the user's Direct Routing Backup settings.
-	 * 
-	 * @param {String} userId User ID
-	 * @param {Object} body directRoutingBackup
-	 */
-	putRoutingUserDirectroutingbackupSettings(userId, body) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRoutingUserDirectroutingbackupSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
-			'PUT', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 	 * 
 	 * @param {String} userId User ID
@@ -86604,36 +61828,6 @@ class UsersApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update user profile
-	 * This api has been deprecated. Use api/v2/users/user_id instead
-	 * @param {String} userId userId
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Profile
-	 * @deprecated
-	 */
-	putUserProfile(userId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserProfile';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/profile', 
-			'PUT', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -86885,48 +62079,13 @@ class UsersApi {
 		);
 	}
 
-	/**
-	 * Update a verifier
-	 * 
-	 * @param {String} userId User ID
-	 * @param {String} verifierId Verifier ID
-	 * @param {Object} body Verifier Update
-	 */
-	putUserVerifier(userId, verifierId, body) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserVerifier';
-		}
-		// verify the required parameter 'verifierId' is set
-		if (verifierId === undefined || verifierId === null) {
-			throw 'Missing the required parameter "verifierId" when calling putUserVerifier';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserVerifier';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/verifiers/{verifierId}', 
-			'PUT', 
-			{ 'userId': userId,'verifierId': verifierId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -86940,195 +62099,6 @@ class UtilitiesApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Force-logout specified user.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	deleteAppsUserLogout(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteAppsUserLogout';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/users/{userId}/logout', 
-			'DELETE', 
-			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete settings for the current user
-	 * 
-	 */
-	deleteSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/settings', 
-			'DELETE', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Redirect to signed download url
-	 * 
-	 * @param {String} downloadId Download ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.contentDisposition Content Disposition (default to attachment)
-	 */
-	getAppsDownload(downloadId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'downloadId' is set
-		if (downloadId === undefined || downloadId === null) {
-			throw 'Missing the required parameter "downloadId" when calling getAppsDownload';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/downloads/{downloadId}', 
-			'GET', 
-			{ 'downloadId': downloadId },
-			{ 'contentDisposition': opts['contentDisposition'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get whether or not a feature toggle is globally enabled
-	 * In order to use this resource, feature toggles must be added to the set declared in this resource. Otherwise, theyll always return false.
-	 * @param {Array.<String>} feature The features to query
-	 */
-	getAppsGlobalfeaturetoggles(feature) { 
-		// verify the required parameter 'feature' is set
-		if (feature === undefined || feature === null) {
-			throw 'Missing the required parameter "feature" when calling getAppsGlobalfeaturetoggles';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/globalfeaturetoggles', 
-			'GET', 
-			{  },
-			{ 'feature': this.apiClient.buildCollectionParam(feature, 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a user image
-	 * 
-	 * @param {String} imageId The image id
-	 */
-	getAppsLegacyImage(imageId) { 
-		// verify the required parameter 'imageId' is set
-		if (imageId === undefined || imageId === null) {
-			throw 'Missing the required parameter "imageId" when calling getAppsLegacyImage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/images/{imageId}', 
-			'GET', 
-			{ 'imageId': imageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a user image by hash
-	 * 
-	 * @param {String} imageHashId The hash id associated with the image
-	 */
-	getAppsLegacyImagesHashImageHashId(imageHashId) { 
-		// verify the required parameter 'imageHashId' is set
-		if (imageHashId === undefined || imageHashId === null) {
-			throw 'Missing the required parameter "imageHashId" when calling getAppsLegacyImagesHashImageHashId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/images/hash/{imageHashId}', 
-			'GET', 
-			{ 'imageHashId': imageHashId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Return a legacy directory session
-	 * 
-	 */
-	getAppsLegacySession() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/session', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Returns list of permission bundles with values for this organization.
-	 * 
-	 */
-	getAppsPermissionbundles() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/permissionbundles', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
 
 	/**
 	 * Get the current system date/time
@@ -87151,76 +62121,6 @@ class UtilitiesApi {
 	}
 
 	/**
-	 * Get the features that are enabled or disabled for this user
-	 * 
-	 * @param {Array.<String>} feature The features to query.
-	 */
-	getFeaturetoggles(feature) { 
-		// verify the required parameter 'feature' is set
-		if (feature === undefined || feature === null) {
-			throw 'Missing the required parameter "feature" when calling getFeaturetoggles';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/featuretoggles', 
-			'GET', 
-			{  },
-			{ 'feature': this.apiClient.buildCollectionParam(feature, 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get health.
-	 * 
-	 */
-	getHealthCheck() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/health/check', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Health check for backend service
-	 * 
-	 * @param {String} serviceName serviceName
-	 */
-	getHealthCheckDc5ea213B82940c8Ab65B1eb2b583ff7Service(serviceName) { 
-		// verify the required parameter 'serviceName' is set
-		if (serviceName === undefined || serviceName === null) {
-			throw 'Missing the required parameter "serviceName" when calling getHealthCheckDc5ea213B82940c8Ab65B1eb2b583ff7Service';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/health/check/dc5ea213-b829-40c8-ab65-b1eb2b583ff7/services/{serviceName}', 
-			'GET', 
-			{ 'serviceName': serviceName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get public ip address ranges for Genesys Cloud
 	 * 
 	 */
@@ -87228,26 +62128,6 @@ class UtilitiesApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/ipranges', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get settings for the current user
-	 * 
-	 */
-	getSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/settings', 
 			'GET', 
 			{  },
 			{  },
@@ -87286,164 +62166,6 @@ class UtilitiesApi {
 	}
 
 	/**
-	 * Get health.
-	 * 
-	 */
-	headHealthCheck() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/health/check', 
-			'HEAD', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Health check for backend service
-	 * 
-	 * @param {String} serviceName serviceName
-	 */
-	headHealthCheckDc5ea213B82940c8Ab65B1eb2b583ff7Service(serviceName) { 
-		// verify the required parameter 'serviceName' is set
-		if (serviceName === undefined || serviceName === null) {
-			throw 'Missing the required parameter "serviceName" when calling headHealthCheckDc5ea213B82940c8Ab65B1eb2b583ff7Service';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/health/check/dc5ea213-b829-40c8-ab65-b1eb2b583ff7/services/{serviceName}', 
-			'HEAD', 
-			{ 'serviceName': serviceName },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Links a previously uploaded image to an entity
-	 * 
-	 * @param {String} imageId The image id
-	 * @param {String} entityType The type of entity (e.g. person, group, etc.)
-	 * @param {String} entityId The entity id
-	 * @param {String} targetField The target field of the given entity (e.g. uploads.images)
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body query
-	 */
-	postAppsLegacyImageLinkEntityTypeEntityIdTargetField(imageId, entityType, entityId, targetField, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'imageId' is set
-		if (imageId === undefined || imageId === null) {
-			throw 'Missing the required parameter "imageId" when calling postAppsLegacyImageLinkEntityTypeEntityIdTargetField';
-		}
-		// verify the required parameter 'entityType' is set
-		if (entityType === undefined || entityType === null) {
-			throw 'Missing the required parameter "entityType" when calling postAppsLegacyImageLinkEntityTypeEntityIdTargetField';
-		}
-		// verify the required parameter 'entityId' is set
-		if (entityId === undefined || entityId === null) {
-			throw 'Missing the required parameter "entityId" when calling postAppsLegacyImageLinkEntityTypeEntityIdTargetField';
-		}
-		// verify the required parameter 'targetField' is set
-		if (targetField === undefined || targetField === null) {
-			throw 'Missing the required parameter "targetField" when calling postAppsLegacyImageLinkEntityTypeEntityIdTargetField';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/images/{imageId}/link/{entityType}/{entityId}/{targetField}', 
-			'POST', 
-			{ 'imageId': imageId,'entityType': entityType,'entityId': entityId,'targetField': targetField },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Uploads a user image and returns the image url
-	 * 
-	 * @param {Object} body Image upload request
-	 */
-	postAppsLegacyImages(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAppsLegacyImages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/images', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update preferred language and return the legacy directory session
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postAppsLegacySession(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/legacy/session', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create apps session cookie named PureCloud-Apps-Session
-	 * 
-	 */
-	postAppsSession() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/apps/session', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Returns the information about an X509 PEM encoded certificate or certificate chain.
 	 * 
 	 * @param {Object} body Certificate
@@ -87468,227 +62190,13 @@ class UtilitiesApi {
 		);
 	}
 
-	/**
-	 * Send an email with diagnostic information.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Diagnostic
-	 */
-	postDiagnostics(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Proxy NewRelic Insights events
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Event List
-	 */
-	postDiagnosticsNewrelicInsights(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/newrelic/insights', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Proxy NewRelic Insights events for background assistant using screen recording jwt token
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Event List
-	 */
-	postDiagnosticsNewrelicInsightsBackgroundassistant(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/newrelic/insights/backgroundassistant', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Contact support with diagnostic information.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Diagnostic
-	 */
-	postDiagnosticsSupport(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/support', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Trace messages
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Trace List
-	 */
-	postDiagnosticsTrace(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/trace', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Trace messages for background assistant using screen recording jwt token
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Trace List
-	 */
-	postDiagnosticsTraceBackgroundassistant(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/diagnostics/trace/backgroundassistant', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update settings for the current user
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object.<String, {String: Object}>} opts.body 
-	 */
-	putSettings(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/settings', 
-			'PUT', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-}
-
-class VoicebotsApi {
-	/**
-	 * Voicebots service.
-	 * @module purecloud-platform-client-v2/api/VoicebotsApi
-	 * @version 178.2.0
-	 */
-
-	/**
-	 * Constructs a new VoicebotsApi. 
-	 * @alias module:purecloud-platform-client-v2/api/VoicebotsApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Creates connection information that can be used to invoke a voice bot.
-	 * 
-	 * @param {Object} voicebotConnectionRequest 
-	 */
-	postVoicebotsBotConnection(voicebotConnectionRequest) { 
-		// verify the required parameter 'voicebotConnectionRequest' is set
-		if (voicebotConnectionRequest === undefined || voicebotConnectionRequest === null) {
-			throw 'Missing the required parameter "voicebotConnectionRequest" when calling postVoicebotsBotConnection';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/voicebots/bot/connection', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			voicebotConnectionRequest, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
 }
 
 class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -88240,30 +62748,6 @@ class VoicemailApi {
 	}
 
 	/**
-	 * Create a test voicemail
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postVoicemailMessagesCreate(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/voicemail/messages/create', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Search voicemails
 	 * 
 	 * @param {Object} body Search request options
@@ -88379,7 +62863,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -88928,7 +63412,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -89455,7 +63939,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -89501,7 +63985,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -89647,7 +64131,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -89797,96 +64281,6 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}', 
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'serviceGoalTemplateId': serviceGoalTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes a staffing group
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} staffingGroupId The ID of the staffing group to delete
-	 */
-	deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitStaffinggroup';
-		}
-		// verify the required parameter 'staffingGroupId' is set
-		if (staffingGroupId === undefined || staffingGroupId === null) {
-			throw 'Missing the required parameter "staffingGroupId" when calling deleteWorkforcemanagementBusinessunitStaffinggroup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}', 
-			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'staffingGroupId': staffingGroupId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes a time-off limit object
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} timeOffLimitId The ID of the time-off limit object to delete
-	 */
-	deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitTimeofflimit';
-		}
-		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
-			throw 'Missing the required parameter "timeOffLimitId" when calling deleteWorkforcemanagementBusinessunitTimeofflimit';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}', 
-			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes a time-off plan
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} timeOffPlanId The ID of the time-off plan to delete
-	 */
-	deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitTimeoffplan';
-		}
-		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
-			throw 'Missing the required parameter "timeOffPlanId" when calling deleteWorkforcemanagementBusinessunitTimeoffplan';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}', 
-			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'timeOffPlanId': timeOffPlanId },
 			{  },
 			{  },
 			{  },
@@ -90338,26 +64732,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get data for agent in the management unit
-	 * 
-	 */
-	getWorkforcemanagementAgentsMe() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/agents/me', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the management unit to which the currently logged in agent belongs
 	 * 
 	 */
@@ -90440,12 +64814,8 @@ class WorkforceManagementApi {
 	 * Get activity codes
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 */
-	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts) { 
-		opts = opts || {};
-		
+	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycodes';
@@ -90453,31 +64823,6 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId },
-			{ 'forceDownloadService': opts['forceDownloadService'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get alternative shifts settings for a business unit
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 */
-	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -90764,183 +65109,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets a staffing group
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} staffingGroupId The ID of the staffing group to fetch
-	 */
-	getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitStaffinggroup';
-		}
-		// verify the required parameter 'staffingGroupId' is set
-		if (staffingGroupId === undefined || staffingGroupId === null) {
-			throw 'Missing the required parameter "staffingGroupId" when calling getWorkforcemanagementBusinessunitStaffinggroup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId,'staffingGroupId': staffingGroupId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a list of staffing groups
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
-	 */
-	getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitStaffinggroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId },
-			{ 'managementUnitId': opts['managementUnitId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a time-off limit object
-	 * Returns properties of time-off limit object, but not daily values
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} timeOffLimitId The ID of the time-off limit to fetch
-	 */
-	getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimit';
-		}
-		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
-			throw 'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementBusinessunitTimeofflimit';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a list of time-off limit objects
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific time-off limit objects
-	 */
-	getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeofflimits';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId },
-			{ 'managementUnitId': opts['managementUnitId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a time-off plan
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} timeOffPlanId The ID of the time-off plan to fetch
-	 */
-	getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeoffplan';
-		}
-		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
-			throw 'Missing the required parameter "timeOffPlanId" when calling getWorkforcemanagementBusinessunitTimeoffplan';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId,'timeOffPlanId': timeOffPlanId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a list of time-off plans
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.managementUnitId The ID of the management unit to get management unit specific staffing groups
-	 */
-	getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitTimeoffplans';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId },
-			{ 'managementUnitId': opts['managementUnitId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -91094,81 +65262,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get the performance prediction for the associated schedule
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
-	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
-	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-	 */
-	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';
-		}
-		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';
-		}
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get recalculated performance prediction result
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
-	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
-	 * @param {String} scheduleId The ID of the schedule the recalculation belongs to
-	 * @param {String} recalculationId The ID of the recalculation request
-	 */
-	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
-		}
-		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
-		}
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
-		}
-		// verify the required parameter 'recalculationId' is set
-		if (recalculationId === undefined || recalculationId === null) {
-			throw 'Missing the required parameter "recalculationId" when calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId,'recalculationId': recalculationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the list of week schedules for the specified week
 	 * Use "recent" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 	 * @param {String} businessUnitId The ID of the business unit
@@ -91250,7 +65343,6 @@ class WorkforceManagementApi {
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.weekNumber The week number to fetch (for multi-week forecasts)
-	 * @param {Boolean} opts.doNotApplyModifications Whether to skip calculating modifications on the forecast (useful when editing the forecast)
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId, weekDateId, forecastId, opts) { 
@@ -91273,7 +65365,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{ 'weekNumber': opts['weekNumber'],'doNotApplyModifications': opts['doNotApplyModifications'],'forceDownloadService': opts['forceDownloadService'] },
+			{ 'weekNumber': opts['weekNumber'],'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			null, 
@@ -91319,48 +65411,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Query which historical overlay periods are available for a forecast
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit for the historical overlay data job
-	 * @param {String} forecastId The forecast id of the historical overlay data job
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 */
-	getWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataAvailability(businessUnitId, forecastId, weekDateId) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataAvailability';
-		}
-		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataAvailability';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataAvailability';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/historicaldata/availability', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId,'forecastId': forecastId,'weekDateId': weekDateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the result of a long term forecast calculation
 	 * Includes modifications unless you pass the doNotApplyModifications query parameter
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.doNotApplyModifications Whether to skip calculating modifications on the forecast (useful when editing the forecast)
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts) { 
@@ -91383,7 +65439,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{ 'doNotApplyModifications': opts['doNotApplyModifications'],'forceDownloadService': opts['forceDownloadService'] },
+			{ 'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			null, 
@@ -91419,45 +65475,6 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the staffing requirement by planning group for a forecast
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} forecastId The ID of the forecast
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.weekNumbers The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
-	 */
-	getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';
-		}
-		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement', 
-			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{ 'weekNumbers': this.apiClient.buildCollectionParam(opts['weekNumbers'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -91581,60 +65598,6 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/calendar/url/ics', 
 			'GET', 
 			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get decisions download link
-	 * 
-	 * @param {String} downloadId The decisions file download id
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.downloadfilename The file name used to get the download url (default to downloadfilename)
-	 */
-	getWorkforcemanagementDecisionsDownload(downloadId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'downloadId' is set
-		if (downloadId === undefined || downloadId === null) {
-			throw 'Missing the required parameter "downloadId" when calling getWorkforcemanagementDecisionsDownload';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/decisions/downloads/{downloadId}', 
-			'GET', 
-			{ 'downloadId': downloadId },
-			{ 'downloadfilename': opts['downloadfilename'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get status of the forecast
-	 * 
-	 * @param {String} forecastId The forecast id
-	 */
-	getWorkforcemanagementForecastsAdhocForecastId(forecastId) { 
-		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementForecastsAdhocForecastId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/forecasts/adhoc/{forecastId}', 
-			'GET', 
-			{ 'forecastId': forecastId },
 			{  },
 			{  },
 			{  },
@@ -91869,36 +65832,6 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'agentId': agentId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get agents in the management unit
-	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-	 * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
-	 */
-	getWorkforcemanagementManagementunitAgents(managementUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgents';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents', 
-			'GET', 
-			{ 'managementUnitId': managementUnitId },
-			{ 'forceDownloadService': opts['forceDownloadService'],'excludeCapabilities': opts['excludeCapabilities'] },
 			{  },
 			{  },
 			null, 
@@ -92282,7 +66215,6 @@ class WorkforceManagementApi {
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 */
 	getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts) { 
 		opts = opts || {};
@@ -92300,7 +66232,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId },
-			{ 'evaluateMatches': opts['evaluateMatches'],'forceDownloadService': opts['forceDownloadService'] },
+			{ 'evaluateMatches': opts['evaluateMatches'] },
 			{  },
 			{  },
 			null, 
@@ -92575,31 +66507,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get a list of user schedule adherence records for the requested team
-	 * 
-	 * @param {String} teamId The ID of the team
-	 */
-	getWorkforcemanagementTeamAdherence(teamId) { 
-		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
-			throw 'Missing the required parameter "teamId" when calling getWorkforcemanagementTeamAdherence';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/teams/{teamId}/adherence', 
-			'GET', 
-			{ 'teamId': teamId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Query the results of time off types job
 	 * 
 	 * @param {String} jobId The ID of the job.
@@ -92734,31 +66641,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Update my agent details
-	 * 
-	 * @param {Object} body The request body
-	 */
-	patchWorkforcemanagementAgentsMe(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAgentsMe';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/agents/me', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
@@ -92811,35 +66693,6 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update alternative shifts settings for a business unit
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings', 
-			'PATCH', 
-			{ 'businessUnitId': businessUnitId },
 			{  },
 			{  },
 			{  },
@@ -92953,118 +66806,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Updates a staffing group
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} staffingGroupId The ID of the staffing group to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';
-		}
-		// verify the required parameter 'staffingGroupId' is set
-		if (staffingGroupId === undefined || staffingGroupId === null) {
-			throw 'Missing the required parameter "staffingGroupId" when calling patchWorkforcemanagementBusinessunitStaffinggroup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}', 
-			'PATCH', 
-			{ 'businessUnitId': businessUnitId,'staffingGroupId': staffingGroupId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates a time-off plan
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} timeOffPlanId The ID of the time-off plan to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';
-		}
-		// verify the required parameter 'timeOffPlanId' is set
-		if (timeOffPlanId === undefined || timeOffPlanId === null) {
-			throw 'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementBusinessunitTimeoffplan';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}', 
-			'PATCH', 
-			{ 'businessUnitId': businessUnitId,'timeOffPlanId': timeOffPlanId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a short term forecast
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} forecastId The ID of the forecast
-	 * @param {Object} body body
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 */
-	patchWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWeekShorttermforecast';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling patchWorkforcemanagementBusinessunitWeekShorttermforecast';
-		}
-		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling patchWorkforcemanagementBusinessunitWeekShorttermforecast';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWeekShorttermforecast';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}', 
-			'PATCH', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{ 'forceAsync': opts['forceAsync'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update the requested management unit
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -93081,35 +66822,6 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
-			'PATCH', 
-			{ 'managementUnitId': managementUnitId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update agent configurations
-	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	patchWorkforcemanagementManagementunitAgents(managementUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgents';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents', 
 			'PATCH', 
 			{ 'managementUnitId': managementUnitId },
 			{  },
@@ -93649,31 +67361,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get the management units to which the agents belong
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Include to access additional data for the agents
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementAgentsV2Managementunits(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/agents/v2/managementunits', 
-			'POST', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get published schedule for the current user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -93798,7 +67485,6 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Boolean} opts.useMockExternalData Mocks data from external sources.  For testing/app development purposes
 	 * @param {Object} opts.body body
 	 */
 	postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts) { 
@@ -93813,7 +67499,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
-			{ 'forceAsync': opts['forceAsync'],'useMockExternalData': opts['useMockExternalData'] },
+			{ 'forceAsync': opts['forceAsync'] },
 			{  },
 			{  },
 			opts['body'], 
@@ -93853,41 +67539,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get the planning groups by version
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit.
-	 * @param {Number} planningGroupVersion The version from the planning group list
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementBusinessunitPlanninggroupsHistoryVersionQuery(businessUnitId, planningGroupVersion, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroupsHistoryVersionQuery';
-		}
-		// verify the required parameter 'planningGroupVersion' is set
-		if (planningGroupVersion === undefined || planningGroupVersion === null) {
-			throw 'Missing the required parameter "planningGroupVersion" when calling postWorkforcemanagementBusinessunitPlanninggroupsHistoryVersionQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/history/versions/{planningGroupVersion}/query', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'planningGroupVersion': planningGroupVersion },
-			{ 'forceDownloadService': opts['forceDownloadService'] },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Adds a new service goal template
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
@@ -93904,151 +67555,6 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a new staffing group
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets staffing group associations for a list of user IDs
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitStaffinggroupsQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a new time-off limit object
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimits';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves time-off limit related values based on a given set of filters.
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a new time-off plan
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitTimeoffplans';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId },
 			{  },
@@ -94140,84 +67646,6 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Request a daily recalculation of the performance prediction for the associated schedule
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
-	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
-	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
-		}
-		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
-		}
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Upload daily activity changes to be able to request a performance prediction recalculation
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the performance prediction belongs
-	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format
-	 * @param {String} scheduleId The ID of the schedule the performance prediction belongs to
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
-		}
-		// verify the required parameter 'weekId' is set
-		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
-		}
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -94485,50 +67913,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Compute the raw forecast with an updated list of source days
-	 * This DOES NOT save the forecast
-	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} forecastId The ID of the forecast for which this compute request is being made
-	 * @param {Object} body body
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 */
-	postWorkforcemanagementBusinessunitWeekShorttermforecastCompute(businessUnitId, weekDateId, forecastId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCompute';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCompute';
-		}
-		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCompute';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCompute';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/compute', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{ 'forceAsync': opts['forceAsync'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Copy a short term forecast
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
@@ -94573,161 +67957,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Request to get historical data within time ranges for planning groups
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit for the historical overlay data job
-	 * @param {String} forecastId The forecast id of the historical overlay data job
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataQuery(businessUnitId, forecastId, weekDateId, body) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataQuery';
-		}
-		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataQuery';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataQuery';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastHistoricaldataQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/historicaldata/query', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'forecastId': forecastId,'weekDateId': weekDateId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Import source data
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} forecastId The ID of the forecast
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedata(businessUnitId, weekDateId, forecastId, body) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedata';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedata';
-		}
-		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedata';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedata';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/sourcedata', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Fetch source data
-	 * Query by date only if you dont already have a data key.  Imported data is only accessible by key
-	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} forecastId The ID of the forecast
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedataQuery(businessUnitId, weekDateId, forecastId, body) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedataQuery';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedataQuery';
-		}
-		// verify the required parameter 'forecastId' is set
-		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedataQuery';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastSourcedataQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/sourcedata/query', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a blank short term forecast
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId, body) { 
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecasts';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecasts';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecasts';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Generate a short term forecast
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
@@ -94754,45 +67983,6 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate', 
-			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId },
-			{ 'forceAsync': opts['forceAsync'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Generate a short term forecast using a historical weighted average calculation
-	 * 
-	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 */
-	postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateLegacyweightedaverage(businessUnitId, weekDateId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateLegacyweightedaverage';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateLegacyweightedaverage';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateLegacyweightedaverage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate/legacyweightedaverage', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId },
 			{ 'forceAsync': opts['forceAsync'] },
@@ -94924,56 +68114,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Download decisions files metadata
-	 * 
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementDecisionsDownloadsSearch(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementDecisionsDownloadsSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/decisions/downloads/search', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a forecast
-	 * 
-	 * @param {Object} body The request body
-	 */
-	postWorkforcemanagementForecastsAdhoc(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementForecastsAdhoc';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/forecasts/adhoc', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete the entries of the historical data imports in the organization
 	 * 
 	 */
@@ -95036,36 +68176,6 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Sync agent details in management unit. If list of agents is empty or not specified, data for all the agents in the management unit will be updated
-	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Object} opts.body body
-	 */
-	postWorkforcemanagementManagementunitAgentsSync(managementUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentsSync';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/sync', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId },
-			{ 'forceAsync': opts['forceAsync'] },
-			{  },
-			{  },
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -95370,7 +68480,6 @@ class WorkforceManagementApi {
 	 * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 * @param {Object} opts.body body
 	 */
 	postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts) { 
@@ -95385,7 +68494,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId },
-			{ 'forceDownloadService': opts['forceDownloadService'] },
+			{  },
 			{  },
 			{  },
 			opts['body'], 
@@ -95609,12 +68718,8 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 */
-	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
@@ -95632,7 +68737,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId },
-			{ 'forceDownloadService': opts['forceDownloadService'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -96126,40 +69231,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Sets daily values for a date range of time-off limit object
-	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
-	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} timeOffLimitId The ID of the time-off limit object to set values for
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'businessUnitId' is set
-		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';
-		}
-		// verify the required parameter 'timeOffLimitId' is set
-		if (timeOffLimitId === undefined || timeOffLimitId === null) {
-			throw 'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementBusinessunitTimeofflimitValues';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values', 
-			'PUT', 
-			{ 'businessUnitId': businessUnitId,'timeOffLimitId': timeOffLimitId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Sets daily values for a date range of time off limit object
 	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
 	 * @param {String} managementUnitId The ID of the management unit.
@@ -96224,7 +69295,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 178.2.0
+ * @version 179.0.0
  */
 class platformClient {
 	constructor() {
@@ -96238,16 +69309,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/ApiClient}
 		 */
 		this.ApiClientClass = ApiClient;
-		/**
-		 * The AgentAssistantsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/AgentAssistantsApi}
-		 */
-		this.AgentAssistantsApi = AgentAssistantsApi;
-		/**
-		 * The AgentUIApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/AgentUIApi}
-		 */
-		this.AgentUIApi = AgentUIApi;
 		/**
 		 * The AlertingApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/AlertingApi}
@@ -96274,25 +69335,10 @@ class platformClient {
 		 */
 		this.AuthorizationApi = AuthorizationApi;
 		/**
-		 * The BadgesApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/BadgesApi}
-		 */
-		this.BadgesApi = BadgesApi;
-		/**
 		 * The BillingApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/BillingApi}
 		 */
 		this.BillingApi = BillingApi;
-		/**
-		 * The BotsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/BotsApi}
-		 */
-		this.BotsApi = BotsApi;
-		/**
-		 * The BridgeApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/BridgeApi}
-		 */
-		this.BridgeApi = BridgeApi;
 		/**
 		 * The CarrierServicesApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/CarrierServicesApi}
@@ -96309,11 +69355,6 @@ class platformClient {
 		 */
 		this.CoachingApi = CoachingApi;
 		/**
-		 * The CobrowseApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/CobrowseApi}
-		 */
-		this.CobrowseApi = CobrowseApi;
-		/**
 		 * The ContentManagementApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ContentManagementApi}
 		 */
@@ -96324,30 +69365,10 @@ class platformClient {
 		 */
 		this.ConversationsApi = ConversationsApi;
 		/**
-		 * The DataActionMetricsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/DataActionMetricsApi}
-		 */
-		this.DataActionMetricsApi = DataActionMetricsApi;
-		/**
 		 * The DataExtensionsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/DataExtensionsApi}
 		 */
 		this.DataExtensionsApi = DataExtensionsApi;
-		/**
-		 * The DataPrivacyApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/DataPrivacyApi}
-		 */
-		this.DataPrivacyApi = DataPrivacyApi;
-		/**
-		 * The DialogEngineApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/DialogEngineApi}
-		 */
-		this.DialogEngineApi = DialogEngineApi;
-		/**
-		 * The DocsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/DocsApi}
-		 */
-		this.DocsApi = DocsApi;
 		/**
 		 * The DownloadsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/DownloadsApi}
@@ -96454,21 +69475,6 @@ class platformClient {
 		 */
 		this.LocationsApi = LocationsApi;
 		/**
-		 * The LogCaptureApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/LogCaptureApi}
-		 */
-		this.LogCaptureApi = LogCaptureApi;
-		/**
-		 * The MarketplaceApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/MarketplaceApi}
-		 */
-		this.MarketplaceApi = MarketplaceApi;
-		/**
-		 * The MeetingApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/MeetingApi}
-		 */
-		this.MeetingApi = MeetingApi;
-		/**
 		 * The MessagingApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/MessagingApi}
 		 */
@@ -96493,16 +69499,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/ObjectsApi}
 		 */
 		this.ObjectsApi = ObjectsApi;
-		/**
-		 * The OnboardingApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/OnboardingApi}
-		 */
-		this.OnboardingApi = OnboardingApi;
-		/**
-		 * The OperationalEventsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/OperationalEventsApi}
-		 */
-		this.OperationalEventsApi = OperationalEventsApi;
 		/**
 		 * The OrganizationApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/OrganizationApi}
@@ -96554,11 +69550,6 @@ class platformClient {
 		 */
 		this.SCIMApi = SCIMApi;
 		/**
-		 * The ScreenRecordingApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/ScreenRecordingApi}
-		 */
-		this.ScreenRecordingApi = ScreenRecordingApi;
-		/**
 		 * The ScriptsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ScriptsApi}
 		 */
@@ -96573,11 +69564,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SettingsApi}
 		 */
 		this.SettingsApi = SettingsApi;
-		/**
-		 * The SignedDataApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/SignedDataApi}
-		 */
-		this.SignedDataApi = SignedDataApi;
 		/**
 		 * The SpeechTextAnalyticsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}
@@ -96614,11 +69600,6 @@ class platformClient {
 		 */
 		this.TelephonyProvidersEdgeApi = TelephonyProvidersEdgeApi;
 		/**
-		 * The TestAutomationApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/TestAutomationApi}
-		 */
-		this.TestAutomationApi = TestAutomationApi;
-		/**
 		 * The TextbotsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/TextbotsApi}
 		 */
@@ -96653,11 +69634,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/UtilitiesApi}
 		 */
 		this.UtilitiesApi = UtilitiesApi;
-		/**
-		 * The VoicebotsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/VoicebotsApi}
-		 */
-		this.VoicebotsApi = VoicebotsApi;
 		/**
 		 * The VoicemailApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/VoicemailApi}

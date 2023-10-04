@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**

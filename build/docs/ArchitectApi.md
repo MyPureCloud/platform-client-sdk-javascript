@@ -3,7 +3,7 @@ title: ArchitectApi
 ---
 # platformClient.ArchitectApi
 
-All URIs are relative to *https://api.inindca.com*
+All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -25,9 +25,6 @@ All URIs are relative to *https://api.inindca.com*
 [**deleteFlowsDatatable**](ArchitectApi.html#deleteFlowsDatatable) | **DELETE** /api/v2/flows/datatables/{datatableId} | deletes a specific datatable by id
 [**deleteFlowsDatatableRow**](ArchitectApi.html#deleteFlowsDatatableRow) | **DELETE** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Delete a row entry
 [**deleteFlowsMilestone**](ArchitectApi.html#deleteFlowsMilestone) | **DELETE** /api/v2/flows/milestones/{milestoneId} | Delete a flow milestone.
-[**getArchitectAudits**](ArchitectApi.html#getArchitectAudits) | **GET** /api/v2/architect/audits | Gets architect-data-service flow audit entries.  Service name is automatically set.
-[**getArchitectCapabilities**](ArchitectApi.html#getArchitectCapabilities) | **GET** /api/v2/architect/capabilities | Get information for the current user of Architect.
-[**getArchitectConfiguration**](ArchitectApi.html#getArchitectConfiguration) | **GET** /api/v2/architect/configuration | Get information for the current user of Architect.
 [**getArchitectDependencytracking**](ArchitectApi.html#getArchitectDependencytracking) | **GET** /api/v2/architect/dependencytracking | Get Dependency Tracking objects that have a given display name
 [**getArchitectDependencytrackingBuild**](ArchitectApi.html#getArchitectDependencytrackingBuild) | **GET** /api/v2/architect/dependencytracking/build | Get Dependency Tracking build status for an organization
 [**getArchitectDependencytrackingConsumedresources**](ArchitectApi.html#getArchitectDependencytrackingConsumedresources) | **GET** /api/v2/architect/dependencytracking/consumedresources | Get resources that are consumed by a given Dependency Tracking object
@@ -46,7 +43,6 @@ All URIs are relative to *https://api.inindca.com*
 [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | **GET** /api/v2/architect/ivrs/{ivrId} | Get an IVR config.
 [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | **GET** /api/v2/architect/ivrs | Get IVR configs.
 [**getArchitectIvrsDivisionviews**](ArchitectApi.html#getArchitectIvrsDivisionviews) | **GET** /api/v2/architect/ivrs/divisionviews | Get a pageable list of basic ivr configuration information objects filterable by query parameters.
-[**getArchitectMe**](ArchitectApi.html#getArchitectMe) | **GET** /api/v2/architect/me | Get information for the current user of Architect.
 [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | **GET** /api/v2/architect/prompts/{promptId} | Get specified user prompt
 [**getArchitectPromptHistoryHistoryId**](ArchitectApi.html#getArchitectPromptHistoryHistoryId) | **GET** /api/v2/architect/prompts/{promptId}/history/{historyId} | Get generated prompt history
 [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | **GET** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Get specified user prompt resource
@@ -66,7 +62,6 @@ All URIs are relative to *https://api.inindca.com*
 [**getFlow**](ArchitectApi.html#getFlow) | **GET** /api/v2/flows/{flowId} | Get flow
 [**getFlowHistoryHistoryId**](ArchitectApi.html#getFlowHistoryHistoryId) | **GET** /api/v2/flows/{flowId}/history/{historyId} | Get generated flow history
 [**getFlowLatestconfiguration**](ArchitectApi.html#getFlowLatestconfiguration) | **GET** /api/v2/flows/{flowId}/latestconfiguration | Get the latest configuration for flow
-[**getFlowValidateOperationId**](ArchitectApi.html#getFlowValidateOperationId) | **GET** /api/v2/flows/{flowId}/validate/{operationId} | Get flow validation results
 [**getFlowVersion**](ArchitectApi.html#getFlowVersion) | **GET** /api/v2/flows/{flowId}/versions/{versionId} | Get flow version
 [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/configuration | Create flow version configuration
 [**getFlowVersionHealth**](ArchitectApi.html#getFlowVersionHealth) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/health | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
@@ -115,14 +110,11 @@ All URIs are relative to *https://api.inindca.com*
 [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | **POST** /api/v2/flows/{flowId}/versions | Create flow version
 [**postFlows**](ArchitectApi.html#postFlows) | **POST** /api/v2/flows | Create flow
 [**postFlowsActionsCheckin**](ArchitectApi.html#postFlowsActionsCheckin) | **POST** /api/v2/flows/actions/checkin | Check-in flow
-[**postFlowsActionsCheckinsync**](ArchitectApi.html#postFlowsActionsCheckinsync) | **POST** /api/v2/flows/actions/checkinsync | Check-in flow
 [**postFlowsActionsCheckout**](ArchitectApi.html#postFlowsActionsCheckout) | **POST** /api/v2/flows/actions/checkout | Check-out flow
 [**postFlowsActionsDeactivate**](ArchitectApi.html#postFlowsActionsDeactivate) | **POST** /api/v2/flows/actions/deactivate | Deactivate flow
-[**postFlowsActionsDebug**](ArchitectApi.html#postFlowsActionsDebug) | **POST** /api/v2/flows/actions/debug | Debug flow
 [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | **POST** /api/v2/flows/actions/publish | Publish flow
 [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | **POST** /api/v2/flows/actions/revert | Revert flow
 [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | **POST** /api/v2/flows/actions/unlock | Unlock flow
-[**postFlowsActionsValidate**](ArchitectApi.html#postFlowsActionsValidate) | **POST** /api/v2/flows/actions/validate | Validate flow
 [**postFlowsDatatableExportJobs**](ArchitectApi.html#postFlowsDatatableExportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/export/jobs | Begin an export process for exporting all rows from a datatable
 [**postFlowsDatatableImportJobs**](ArchitectApi.html#postFlowsDatatableImportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/import/jobs | Begin an import process for importing rows into a datatable
 [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
@@ -1086,174 +1078,6 @@ apiInstance.deleteFlowsMilestone(milestoneId)
 
 **Object**
 
-<a name="getArchitectAudits"></a>
-
-# ArchitectAuditMessageListing getArchitectAudits(flowId, opts)
-
-
-GET /api/v2/architect/audits
-
-Gets architect-data-service flow audit entries.  Service name is automatically set.
-
-Requires ANY permissions:
-
-* architect:flow:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let flowId = "flowId_example"; // String | Flow ID
-let opts = { 
-  'sortBy': "timestamp", // String | Sort field (data is sorted as strings, not numbers)
-  'sortOrder': "desc", // String | Sort order (asc or desc)
-  'pageNumber': 1, // Number | Page number
-  'pageSize': 500 // Number | Page size
-};
-
-apiInstance.getArchitectAudits(flowId, opts)
-  .then((data) => {
-    console.log(`getArchitectAudits success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getArchitectAudits');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String** | Flow ID |  |
- **sortBy** | **String** | Sort field (data is sorted as strings, not numbers) | [optional] [default to timestamp] |
- **sortOrder** | **String** | Sort order (asc or desc) | [optional] [default to desc] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pageSize** | **Number** | Page size | [optional] [default to 500] |
-{: class="table table-striped"}
-
-### Return type
-
-**ArchitectAuditMessageListing**
-
-<a name="getArchitectCapabilities"></a>
-
-# Capabilities getArchitectCapabilities(opts)
-
-
-GET /api/v2/architect/capabilities
-
-Get information for the current user of Architect.
-
-Requires ALL permissions:
-
-* architect:ui:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let opts = { 
-  'expand': ["expand_example"], // [String] | Categories to return
-  'language': ["language_example"] // [String] | Language ID
-};
-
-apiInstance.getArchitectCapabilities(opts)
-  .then((data) => {
-    console.log(`getArchitectCapabilities success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getArchitectCapabilities');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Categories to return | [optional] <br />**Values**: actions, datatypes, dependencytypes, features, flowtypes, functions, languages, operators, organization |
- **language** | **[String]** | Language ID | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**Capabilities**
-
-<a name="getArchitectConfiguration"></a>
-
-# Configuration getArchitectConfiguration(opts)
-
-
-GET /api/v2/architect/configuration
-
-Get information for the current user of Architect.
-
-Requires ALL permissions:
-
-* architect:ui:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let opts = { 
-  'expand': ["expand_example"], // [String] | Categories to return
-  'language': ["language_example"] // [String] | Language ID
-};
-
-apiInstance.getArchitectConfiguration(opts)
-  .then((data) => {
-    console.log(`getArchitectConfiguration success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getArchitectConfiguration');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Categories to return | [optional] <br />**Values**: actions, features, flowtypes, functions, languages, operators |
- **language** | **[String]** | Language ID | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**Configuration**
-
 <a name="getArchitectDependencytracking"></a>
 
 # DependencyObjectEntityListing getArchitectDependencytracking(name, opts)
@@ -1868,8 +1692,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
-  'name': "name_example", // String | Name of the Emergency Group to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'name': "name_example" // String | Name of the Emergency Group to filter by.
 };
 
 apiInstance.getArchitectEmergencygroups(opts)
@@ -1892,7 +1715,6 @@ apiInstance.getArchitectEmergencygroups(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **name** | **String** | Name of the Emergency Group to filter by. | [optional]  |
- **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2232,8 +2054,7 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example", // String | Name of the IVR to filter by.
   'dnis': "dnis_example", // String | The phone number of the IVR to filter by.
-  'scheduleGroup': "scheduleGroup_example", // String | The Schedule Group of the IVR to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'scheduleGroup': "scheduleGroup_example" // String | The Schedule Group of the IVR to filter by.
 };
 
 apiInstance.getArchitectIvrs(opts)
@@ -2258,7 +2079,6 @@ apiInstance.getArchitectIvrs(opts)
  **name** | **String** | Name of the IVR to filter by. | [optional]  |
  **dnis** | **String** | The phone number of the IVR to filter by. | [optional]  |
  **scheduleGroup** | **String** | The Schedule Group of the IVR to filter by. | [optional]  |
- **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2328,60 +2148,6 @@ apiInstance.getArchitectIvrsDivisionviews(opts)
 ### Return type
 
 **IVRDivisionViewEntityListing**
-
-<a name="getArchitectMe"></a>
-
-# Configuration getArchitectMe(expand, opts)
-
-
-GET /api/v2/architect/me
-
-Get information for the current user of Architect.
-
-Requires ALL permissions:
-
-* architect:ui:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let expand = ["expand_example"]; // [String] | Which fields to expand
-let opts = { 
-  'language': ["language_example"] // [String] | Language ID
-};
-
-apiInstance.getArchitectMe(expand, opts)
-  .then((data) => {
-    console.log(`getArchitectMe success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getArchitectMe');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields to expand | <br />**Values**: actions, features, flowtypes, functions, languages, operators |
- **language** | **[String]** | Language ID | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**Configuration**
 
 <a name="getArchitectPrompt"></a>
 
@@ -3488,58 +3254,6 @@ apiInstance.getFlowLatestconfiguration(flowId, opts)
 ### Return type
 
 **Object**
-
-<a name="getFlowValidateOperationId"></a>
-
-# FlowValidationResults getFlowValidateOperationId(flowId, operationId)
-
-
-GET /api/v2/flows/{flowId}/validate/{operationId}
-
-Get flow validation results
-
-Requires ANY permissions:
-
-* architect:flow:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let flowId = "flowId_example"; // String | Flow ID
-let operationId = "operationId_example"; // String | Validation ID (operation ID)
-
-apiInstance.getFlowValidateOperationId(flowId, operationId)
-  .then((data) => {
-    console.log(`getFlowValidateOperationId success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getFlowValidateOperationId');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String** | Flow ID |  |
- **operationId** | **String** | Validation ID (operation ID) |  |
-{: class="table table-striped"}
-
-### Return type
-
-**FlowValidationResults**
 
 <a name="getFlowVersion"></a>
 
@@ -6276,57 +5990,6 @@ apiInstance.postFlowsActionsCheckin(flow)
 
 **Operation**
 
-<a name="postFlowsActionsCheckinsync"></a>
-
-# Flow postFlowsActionsCheckinsync(flow)
-
-
-POST /api/v2/flows/actions/checkinsync
-
-Check-in flow
-
-Requires ANY permissions:
-
-* architect:flow:edit
-* architect:flow:unlock
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let flow = "flow_example"; // String | Flow ID
-
-apiInstance.postFlowsActionsCheckinsync(flow)
-  .then((data) => {
-    console.log(`postFlowsActionsCheckinsync success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postFlowsActionsCheckinsync');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **flow** | **String** | Flow ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**Flow**
-
 <a name="postFlowsActionsCheckout"></a>
 
 # Flow postFlowsActionsCheckout(flow)
@@ -6426,60 +6089,6 @@ apiInstance.postFlowsActionsDeactivate(flow)
 ### Return type
 
 **Flow**
-
-<a name="postFlowsActionsDebug"></a>
-
-# Operation postFlowsActionsDebug(flow, version)
-
-
-POST /api/v2/flows/actions/debug
-
-Debug flow
-
-Asynchronous.  Notification topic: v2.flows.{flowId}
-
-Requires ANY permissions:
-
-* architect:flow:publish
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let flow = "flow_example"; // String | Flow ID
-let version = "version_example"; // String | 
-
-apiInstance.postFlowsActionsDebug(flow, version)
-  .then((data) => {
-    console.log(`postFlowsActionsDebug success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postFlowsActionsDebug');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **flow** | **String** | Flow ID |  |
- **version** | **String** |  |  |
-{: class="table table-striped"}
-
-### Return type
-
-**Operation**
 
 <a name="postFlowsActionsPublish"></a>
 
@@ -6639,64 +6248,6 @@ apiInstance.postFlowsActionsUnlock(flow)
 ### Return type
 
 **Flow**
-
-<a name="postFlowsActionsValidate"></a>
-
-# Operation postFlowsActionsValidate(flow, body, opts)
-
-
-POST /api/v2/flows/actions/validate
-
-Validate flow
-
-Asynchronous.  Notification topic: v2.flows.{flowId}
-
-Requires ANY permissions:
-
-* architect:flow:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let flow = "flow_example"; // String | Flow ID
-let body = {}; // Object | 
-let opts = { 
-  'flowType': "flowType_example" // String | Flow type needed for validating a flow that doesn't yet exist.
-};
-
-apiInstance.postFlowsActionsValidate(flow, body, opts)
-  .then((data) => {
-    console.log(`postFlowsActionsValidate success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postFlowsActionsValidate');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **flow** | **String** | Flow ID |  |
- **body** | **Object** |  |  |
- **flowType** | **String** | Flow type needed for validating a flow that doesn't yet exist. | [optional] <br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, workflow, workitem |
-{: class="table table-striped"}
-
-### Return type
-
-**Operation**
 
 <a name="postFlowsDatatableExportJobs"></a>
 

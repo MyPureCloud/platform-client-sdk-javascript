@@ -3,8674 +3,7775 @@ Platform API version: 7379
 
 
 
-# Major Changes (52 changes)
+# Major Changes (2029 changes)
+
+**/api/v2/authorization/policies/targets/{targetName}** (1 change)
+
+* Path /api/v2/authorization/policies/targets/{targetName} was removed
+
+**/api/v2/authorization/policies/targets/{targetName}/validate** (1 change)
+
+* Path /api/v2/authorization/policies/targets/{targetName}/validate was removed
+
+**/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}** (1 change)
+
+* Path /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId} was removed
+
+**/api/v2/authorization/policies** (1 change)
+
+* Path /api/v2/authorization/policies was removed
+
+**/api/v2/authorization/policies/subject/{subjectId}** (1 change)
+
+* Path /api/v2/authorization/policies/subject/{subjectId} was removed
+
+**/api/v2/authorization/policies/{policyId}** (1 change)
+
+* Path /api/v2/authorization/policies/{policyId} was removed
+
+**/api/v2/authorization/policies/targets** (1 change)
+
+* Path /api/v2/authorization/policies/targets was removed
+
+**/api/v2/featuretoggles** (1 change)
+
+* Path /api/v2/featuretoggles was removed
+
+**/api/v2/settings** (1 change)
+
+* Path /api/v2/settings was removed
+
+**/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings** (1 change)
+
+* Path /api/v2/apps/agentui/agents/autoanswer/{agentId}/settings was removed
+
+**/api/v2/apps/agentui/panels/settings** (1 change)
+
+* Path /api/v2/apps/agentui/panels/settings was removed
+
+**/api/v2/apps/agentui/panels** (1 change)
+
+* Path /api/v2/apps/agentui/panels was removed
+
+**/api/v2/apps/agentui/panels/queues/{queueId}/settings** (1 change)
+
+* Path /api/v2/apps/agentui/panels/queues/{queueId}/settings was removed
+
+**/api/v2/analytics/flowexecutions/aggregates/query** (1 change)
+
+* Path /api/v2/analytics/flowexecutions/aggregates/query was removed
+
+**/api/v2/analytics/flowexecutions/aggregates/jobs** (1 change)
+
+* Path /api/v2/analytics/flowexecutions/aggregates/jobs was removed
+
+**/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}** (1 change)
+
+* Path /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} was removed
+
+**/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results** (1 change)
+
+* Path /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results was removed
+
+**/api/v2/analytics/ratelimits/aggregates/query** (1 change)
+
+* Path /api/v2/analytics/ratelimits/aggregates/query was removed
+
+**/api/v2/analytics/resolutions/aggregates/query** (1 change)
+
+* Path /api/v2/analytics/resolutions/aggregates/query was removed
+
+**/api/v2/analytics/botflows/{botFlowId}/sessions** (1 change)
+
+* Path /api/v2/analytics/botflows/{botFlowId}/sessions was removed
+
+**/api/v2/analytics/reporting/settings/dashboards/{dashboardId}** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/dashboards/{dashboardId} was removed
+
+**/api/v2/analytics/reporting/settings/dashboards/bulk/remove** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/dashboards/bulk/remove was removed
+
+**/api/v2/analytics/reporting/settings/dashboards/query** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/dashboards/query was removed
+
+**/api/v2/analytics/reporting/settings/dashboards** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/dashboards was removed
+
+**/api/v2/analytics/reporting/dashboards/users/{userId}** (1 change)
+
+* Path /api/v2/analytics/reporting/dashboards/users/{userId} was removed
+
+**/api/v2/analytics/reporting/dashboards/users/bulk/remove** (1 change)
+
+* Path /api/v2/analytics/reporting/dashboards/users/bulk/remove was removed
+
+**/api/v2/analytics/reporting/dashboards/users** (1 change)
+
+* Path /api/v2/analytics/reporting/dashboards/users was removed
+
+**/api/v2/analytics/reporting/settings/insights** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/insights was removed
+
+**/api/v2/analytics/reporting/settings/tabconfigurations/{tabId}** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/tabconfigurations/{tabId} was removed
+
+**/api/v2/analytics/reporting/settings/tabconfigurations/bulk** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/tabconfigurations/bulk was removed
+
+**/api/v2/analytics/reporting/settings/tabconfigurations/bulk/remove** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/tabconfigurations/bulk/remove was removed
+
+**/api/v2/analytics/reporting/settings/tabconfigurations** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/tabconfigurations was removed
+
+**/api/v2/analytics/reporting/settings/users/{userId}/dashboards** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/users/{userId}/dashboards was removed
+
+**/api/v2/analytics/reporting/settings/viewconfigurations/{viewId}** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/viewconfigurations/{viewId} was removed
+
+**/api/v2/analytics/reporting/settings/viewconfigurations** (1 change)
+
+* Path /api/v2/analytics/reporting/settings/viewconfigurations was removed
+
+**/api/v2/analytics/reporting/exports/{exportId}/history** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/{exportId}/history was removed
+
+**/api/v2/analytics/reporting/exports/{exportId}/history/latest** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/{exportId}/history/latest was removed
+
+**/api/v2/analytics/reporting/exports/{exportId}/history/{runId}** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/{exportId}/history/{runId} was removed
+
+**/api/v2/analytics/reporting/exports/all** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/all was removed
+
+**/api/v2/analytics/reporting/exports/{exportId}** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/{exportId} was removed
+
+**/api/v2/analytics/reporting/exports/{exportId}/schedule** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/{exportId}/schedule was removed
+
+**/api/v2/analytics/reporting/exports/{exportId}/execute** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/{exportId}/execute was removed
+
+**/api/v2/analytics/reporting/exports/schedule** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/schedule was removed
+
+**/api/v2/analytics/reporting/exports/schedule/summary** (1 change)
+
+* Path /api/v2/analytics/reporting/exports/schedule/summary was removed
+
+**/api/v2/apps/permissionbundles** (1 change)
+
+* Path /api/v2/apps/permissionbundles was removed
+
+**/api/v2/apps/legacy/images/{imageId}** (1 change)
+
+* Path /api/v2/apps/legacy/images/{imageId} was removed
+
+**/api/v2/apps/legacy/images/hash/{imageHashId}** (1 change)
+
+* Path /api/v2/apps/legacy/images/hash/{imageHashId} was removed
+
+**/api/v2/apps/legacy/images** (1 change)
+
+* Path /api/v2/apps/legacy/images was removed
+
+**/api/v2/apps/legacy/images/{imageId}/link/{entityType}/{entityId}/{targetField}** (1 change)
+
+* Path /api/v2/apps/legacy/images/{imageId}/link/{entityType}/{entityId}/{targetField} was removed
+
+**/api/v2/apps/legacy/session** (1 change)
+
+* Path /api/v2/apps/legacy/session was removed
+
+**/api/v2/apps/session** (1 change)
+
+* Path /api/v2/apps/session was removed
+
+**/api/v2/apps/users/{userId}/logout** (1 change)
+
+* Path /api/v2/apps/users/{userId}/logout was removed
+
+**/api/v2/assistants/{assistantId}/queues/{queueId}** (1 change)
+
+* Path /api/v2/assistants/{assistantId}/queues/{queueId} was removed
+
+**/api/v2/assistants/{assistantId}/queues** (1 change)
+
+* Path /api/v2/assistants/{assistantId}/queues was removed
+
+**/api/v2/assistants/{assistantId}** (1 change)
+
+* Path /api/v2/assistants/{assistantId} was removed
+
+**/api/v2/assistants** (1 change)
+
+* Path /api/v2/assistants was removed
+
+**/api/v2/assistants/queues** (1 change)
+
+* Path /api/v2/assistants/queues was removed
+
+**/api/v2/audits/query/realtime/trustor/{trustorOrgId}** (1 change)
+
+* Path /api/v2/audits/query/realtime/trustor/{trustorOrgId} was removed
+
+**/api/v2/authorization/products/{productId}** (1 change)
+
+* Path /api/v2/authorization/products/{productId} was removed
+
+**/api/v2/authorization/roles/settings** (1 change)
+
+* Path /api/v2/authorization/roles/settings was removed
+
+**/api/v2/processautomation/flows/instances/commands/search** (1 change)
+
+* Path /api/v2/processautomation/flows/instances/commands/search was removed
+
+**/api/v2/processautomation/flows/instances/{instanceId}** (1 change)
+
+* Path /api/v2/processautomation/flows/instances/{instanceId} was removed
+
+**/api/v2/processautomation/flows/definitions/{flowId}/versions/{versionId}** (1 change)
+
+* Path /api/v2/processautomation/flows/definitions/{flowId}/versions/{versionId} was removed
+
+**/api/v2/screenrecording/token** (1 change)
+
+* Path /api/v2/screenrecording/token was removed
+
+**/api/v2/badges/chats** (1 change)
+
+* Path /api/v2/badges/chats was removed
+
+**/api/v2/badges/chats/{jabberId}** (1 change)
+
+* Path /api/v2/badges/chats/{jabberId} was removed
+
+**/api/v2/billing/accounts/{accountId}** (1 change)
+
+* Path /api/v2/billing/accounts/{accountId} was removed
+
+**/api/v2/billing/reports/billableusagedata/{reportId}/csv** (1 change)
+
+* Path /api/v2/billing/reports/billableusagedata/{reportId}/csv was removed
+
+**/api/v2/billing/activations/{billingActivationJobId}** (1 change)
+
+* Path /api/v2/billing/activations/{billingActivationJobId} was removed
+
+**/api/v2/billing/periods** (1 change)
+
+* Path /api/v2/billing/periods was removed
+
+**/api/v2/billing/tasks/{taskId}** (1 change)
+
+* Path /api/v2/billing/tasks/{taskId} was removed
+
+**/api/v2/billing/reports/concurrentusagedata/{reportId}/csv** (1 change)
+
+* Path /api/v2/billing/reports/concurrentusagedata/{reportId}/csv was removed
+
+**/api/v2/billing/account** (1 change)
+
+* Path /api/v2/billing/account was removed
+
+**/api/v2/billing/freetrial** (1 change)
+
+* Path /api/v2/billing/freetrial was removed
+
+**/api/v2/billing/reports/hourlylicenseusagedata/{reportId}/csv** (1 change)
+
+* Path /api/v2/billing/reports/hourlylicenseusagedata/{reportId}/csv was removed
+
+**/api/v2/billing/invoices/{invoiceId}/pdf** (1 change)
+
+* Path /api/v2/billing/invoices/{invoiceId}/pdf was removed
+
+**/api/v2/billing/invoices/{invoiceId}** (1 change)
+
+* Path /api/v2/billing/invoices/{invoiceId} was removed
+
+**/api/v2/billing/invoices** (1 change)
+
+* Path /api/v2/billing/invoices was removed
+
+**/api/v2/billing/premise/uploadurl** (1 change)
+
+* Path /api/v2/billing/premise/uploadurl was removed
+
+**/api/v2/billing/premise/licensestatus** (1 change)
+
+* Path /api/v2/billing/premise/licensestatus was removed
+
+**/api/v2/billing/premiumapplistings/{appId}** (1 change)
+
+* Path /api/v2/billing/premiumapplistings/{appId} was removed
+
+**/api/v2/billing/premiumapptrials** (1 change)
+
+* Path /api/v2/billing/premiumapptrials was removed
+
+**/api/v2/billing/carrierservices/usage/calls/csv** (1 change)
+
+* Path /api/v2/billing/carrierservices/usage/calls/csv was removed
+
+**/api/v2/billing/carrierservices/usage/calls** (1 change)
+
+* Path /api/v2/billing/carrierservices/usage/calls was removed
+
+**/api/v2/billing/reports/resourcesusagedata/{reportId}/csv** (1 change)
+
+* Path /api/v2/billing/reports/resourcesusagedata/{reportId}/csv was removed
+
+**/api/v2/billing/subscriptionoverview** (1 change)
+
+* Path /api/v2/billing/subscriptionoverview was removed
+
+**/api/v2/billing/subscriptionproductactivations** (1 change)
+
+* Path /api/v2/billing/subscriptionproductactivations was removed
+
+**/api/v2/billing/subscriptionproductcancellations** (1 change)
+
+* Path /api/v2/billing/subscriptionproductcancellations was removed
+
+**/api/v2/billing/vendorusage/organizations/{organizationId}** (1 change)
+
+* Path /api/v2/billing/vendorusage/organizations/{organizationId} was removed
+
+**/api/v2/billing/vendorusage/organizations** (1 change)
+
+* Path /api/v2/billing/vendorusage/organizations was removed
+
+**/api/v2/bridge/useractions/categories** (1 change)
+
+* Path /api/v2/bridge/useractions/categories was removed
+
+**/api/v2/bridge/useractions/metadata/{actionName}** (1 change)
+
+* Path /api/v2/bridge/useractions/metadata/{actionName} was removed
+
+**/api/v2/bridge/useractions/metadata** (1 change)
+
+* Path /api/v2/bridge/useractions/metadata was removed
+
+**/api/v2/carrierservices/sortweights/info** (1 change)
+
+* Path /api/v2/carrierservices/sortweights/info was removed
+
+**/api/v2/carrierservices/supportedcountries/{countryCode}** (1 change)
+
+* Path /api/v2/carrierservices/supportedcountries/{countryCode} was removed
+
+**/api/v2/carrierservices/supportedcountries** (1 change)
+
+* Path /api/v2/carrierservices/supportedcountries was removed
+
+**/api/v2/carrierservices/billing/bandwidthcurrencypricing/{currencyName}** (1 change)
+
+* Path /api/v2/carrierservices/billing/bandwidthcurrencypricing/{currencyName} was removed
+
+**/api/v2/carrierservices/billing/bandwidthcurrencypricing** (1 change)
+
+* Path /api/v2/carrierservices/billing/bandwidthcurrencypricing was removed
+
+**/api/v2/carrierservices/billing/bandwidthpricing/{customerId}** (1 change)
+
+* Path /api/v2/carrierservices/billing/bandwidthpricing/{customerId} was removed
+
+**/api/v2/carrierservices/billing/bandwidthpricing** (1 change)
+
+* Path /api/v2/carrierservices/billing/bandwidthpricing was removed
+
+**/api/v2/carrierservices/billing/monthlyrecurringcost/{mrcId}** (1 change)
+
+* Path /api/v2/carrierservices/billing/monthlyrecurringcost/{mrcId} was removed
+
+**/api/v2/carrierservices/billing/nonrecurringcost** (1 change)
+
+* Path /api/v2/carrierservices/billing/nonrecurringcost was removed
+
+**/api/v2/carrierservices/billing/nonrecurringcost/{nrcId}** (1 change)
+
+* Path /api/v2/carrierservices/billing/nonrecurringcost/{nrcId} was removed
+
+**/api/v2/carrierservices/billing/bills** (1 change)
+
+* Path /api/v2/carrierservices/billing/bills was removed
+
+**/api/v2/carrierservices/billing/bills/{billId}** (1 change)
+
+* Path /api/v2/carrierservices/billing/bills/{billId} was removed
+
+**/api/v2/carrierservices/billing/monthlyrecurringcost** (1 change)
+
+* Path /api/v2/carrierservices/billing/monthlyrecurringcost was removed
+
+**/api/v2/carrierservices/billing/numberrates** (1 change)
+
+* Path /api/v2/carrierservices/billing/numberrates was removed
+
+**/api/v2/carrierservices/billing/usagepricing/query** (1 change)
+
+* Path /api/v2/carrierservices/billing/usagepricing/query was removed
+
+**/api/v2/carrierservices/billing/usagerateregions** (1 change)
+
+* Path /api/v2/carrierservices/billing/usagerateregions was removed
+
+**/api/v2/carrierservices/carriers/{carrierId}** (1 change)
+
+* Path /api/v2/carrierservices/carriers/{carrierId} was removed
+
+**/api/v2/carrierservices/carriers/20190123/carriers/{carrierId}** (1 change)
+
+* Path /api/v2/carrierservices/carriers/20190123/carriers/{carrierId} was removed
+
+**/api/v2/carrierservices/carriers** (1 change)
+
+* Path /api/v2/carrierservices/carriers was removed
+
+**/api/v2/carrierservices/carriers/{carrierId}/services/{serviceId}** (1 change)
+
+* Path /api/v2/carrierservices/carriers/{carrierId}/services/{serviceId} was removed
+
+**/api/v2/carrierservices/carriers/20190123/carriers/{carrierId}/services/{serviceId}** (1 change)
+
+* Path /api/v2/carrierservices/carriers/20190123/carriers/{carrierId}/services/{serviceId} was removed
+
+**/api/v2/carrierservices/carriers/{carrierId}/services** (1 change)
+
+* Path /api/v2/carrierservices/carriers/{carrierId}/services was removed
+
+**/api/v2/carrierservices/cdrs/generate/files** (1 change)
+
+* Path /api/v2/carrierservices/cdrs/generate/files was removed
+
+**/api/v2/carrierservices/cdrs/backups/list** (1 change)
+
+* Path /api/v2/carrierservices/cdrs/backups/list was removed
+
+**/api/v2/carrierservices/cdrs/backups/list/{resultId}** (1 change)
+
+* Path /api/v2/carrierservices/cdrs/backups/list/{resultId} was removed
+
+**/api/v2/carrierservices/cdrs/backup** (1 change)
+
+* Path /api/v2/carrierservices/cdrs/backup was removed
+
+**/api/v2/carrierservices/cdrs/backup/{resultId}** (1 change)
+
+* Path /api/v2/carrierservices/cdrs/backup/{resultId} was removed
+
+**/api/v2/carrierservices/cdrs/restore** (1 change)
+
+* Path /api/v2/carrierservices/cdrs/restore was removed
+
+**/api/v2/carrierservices/integrations/emergencylocations/verifyphonenumber** (1 change)
+
+* Path /api/v2/carrierservices/integrations/emergencylocations/verifyphonenumber was removed
+
+**/api/v2/carrierservices/numberinventory/inventorynumbers/available** (1 change)
+
+* Path /api/v2/carrierservices/numberinventory/inventorynumbers/available was removed
+
+**/api/v2/carrierservices/numberinventory/inventorynumbers/bulk** (1 change)
+
+* Path /api/v2/carrierservices/numberinventory/inventorynumbers/bulk was removed
+
+**/api/v2/carrierservices/numberinventory/inventorynumbers/{phoneNumberId}** (1 change)
+
+* Path /api/v2/carrierservices/numberinventory/inventorynumbers/{phoneNumberId} was removed
+
+**/api/v2/carrierservices/numberinventory/servicecapabilities/descriptions** (1 change)
+
+* Path /api/v2/carrierservices/numberinventory/servicecapabilities/descriptions was removed
+
+**/api/v2/carrierservices/numberinventory/servicecapabilities** (1 change)
+
+* Path /api/v2/carrierservices/numberinventory/servicecapabilities was removed
+
+**/api/v2/carrierservices/numberinventory/inventorynumbers** (1 change)
+
+* Path /api/v2/carrierservices/numberinventory/inventorynumbers was removed
+
+**/api/v2/carrierservices/numberpurchase/portrequests/{portRequestId}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/portrequests/{portRequestId} was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequests/tasks/{taskId}/results** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequests/tasks/{taskId}/results was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequests/tasks/{taskId}** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequests/tasks/{taskId} was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequests/tasks** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequests/tasks was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks/{taskId}** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks/{taskId} was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks/{taskId}/results** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks/{taskId}/results was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequest/tasks/{portRequestId}/effectivedate** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequest/tasks/{portRequestId}/effectivedate was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequest/tasks/{taskId}/status** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequest/tasks/{taskId}/status was removed
+
+**/api/v2/carrierservices/numbermanagement/portrequest/tasks/{taskId}/results** (1 change)
+
+* Path /api/v2/carrierservices/numbermanagement/portrequest/tasks/{taskId}/results was removed
+
+**/api/v2/carrierservices/numberpurchase/portrequests** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/portrequests was removed
+
+**/api/v2/carrierservices/numberpurchase/portrequests/{portRequestId}/orders** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/portrequests/{portRequestId}/orders was removed
+
+**/api/v2/carrierservices/numberpurchase/portrequests/transitive** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/portrequests/transitive was removed
+
+**/api/v2/carrierservices/numberpurchase/20160715/available** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20160715/available was removed
+
+**/api/v2/carrierservices/numberpurchase/20160715/available/{taskId}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20160715/available/{taskId} was removed
+
+**/api/v2/carrierservices/numberpurchase/20180810/available/{taskId}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20180810/available/{taskId} was removed
+
+**/api/v2/carrierservices/numberpurchase/orders/{orderId}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/orders/{orderId} was removed
+
+**/api/v2/carrierservices/numberpurchase/orders** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/orders was removed
+
+**/api/v2/carrierservices/numberpurchase/orders/did/{did}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/orders/did/{did} was removed
+
+**/api/v2/carrierservices/numberpurchase/20160715/orders** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20160715/orders was removed
+
+**/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks/{taskId}/results** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks/{taskId}/results was removed
+
+**/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks/{taskId}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks/{taskId} was removed
+
+**/api/v2/carrierservices/numberpurchase/20190107/export/tasks/{taskId}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20190107/export/tasks/{taskId} was removed
+
+**/api/v2/carrierservices/numberpurchase/20190107/export/tasks/{taskId}/result** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20190107/export/tasks/{taskId}/result was removed
+
+**/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks was removed
+
+**/api/v2/carrierservices/numberpurchase/20190107/export/tasks** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20190107/export/tasks was removed
+
+**/api/v2/carrierservices/numberpurchase/20210520/orders** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20210520/orders was removed
+
+**/api/v2/carrierservices/numberpurchase/reserved/{reservationId}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/reserved/{reservationId} was removed
+
+**/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks/{taskId}/results** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20200902/reservations/tasks/{taskId}/results was removed
+
+**/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks/{taskId}** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20200902/reservations/tasks/{taskId} was removed
+
+**/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/20200902/reservations/tasks was removed
+
+**/api/v2/carrierservices/numberpurchase/supportedcountries** (1 change)
+
+* Path /api/v2/carrierservices/numberpurchase/supportedcountries was removed
+
+**/api/v2/carrierservices/pricing/numberrate** (1 change)
+
+* Path /api/v2/carrierservices/pricing/numberrate was removed
+
+**/api/v2/carrierservices/report/lineitems/fees** (1 change)
+
+* Path /api/v2/carrierservices/report/lineitems/fees was removed
+
+**/api/v2/carrierservices/report/lineitems/fees/{feesId}** (1 change)
+
+* Path /api/v2/carrierservices/report/lineitems/fees/{feesId} was removed
+
+**/api/v2/carrierservices/report/lineitems/usage** (1 change)
+
+* Path /api/v2/carrierservices/report/lineitems/usage was removed
+
+**/api/v2/carrierservices/report/lineitems/usage/{usageId}** (1 change)
+
+* Path /api/v2/carrierservices/report/lineitems/usage/{usageId} was removed
+
+**/api/v2/carrierservices/report/usage/calls/csv** (1 change)
+
+* Path /api/v2/carrierservices/report/usage/calls/csv was removed
+
+**/api/v2/carrierservices/report/usage/calls/csv/{csvId}** (1 change)
+
+* Path /api/v2/carrierservices/report/usage/calls/csv/{csvId} was removed
+
+**/api/v2/carrierservices/templates/{templateId}** (1 change)
+
+* Path /api/v2/carrierservices/templates/{templateId} was removed
+
+**/api/v2/carrierservices/templates** (1 change)
+
+* Path /api/v2/carrierservices/templates was removed
+
+**/api/v2/carrierservices/signature** (1 change)
+
+* Path /api/v2/carrierservices/signature was removed
+
+**/api/v2/carrierservices/signatures/tasks/{taskId}/results** (1 change)
+
+* Path /api/v2/carrierservices/signatures/tasks/{taskId}/results was removed
+
+**/api/v2/carrierservices/signatures/tasks/{taskId}** (1 change)
+
+* Path /api/v2/carrierservices/signatures/tasks/{taskId} was removed
+
+**/api/v2/carrierservices/signatures/tasks** (1 change)
+
+* Path /api/v2/carrierservices/signatures/tasks was removed
+
+**/api/v2/carrierservices/sipdnsdetails** (1 change)
+
+* Path /api/v2/carrierservices/sipdnsdetails was removed
+
+**/api/v2/carrierservices/uploadtransform/spreadsheets/{transformId}** (1 change)
+
+* Path /api/v2/carrierservices/uploadtransform/spreadsheets/{transformId} was removed
+
+**/api/v2/carrierservices/uploadtransform/spreadsheets** (1 change)
+
+* Path /api/v2/carrierservices/uploadtransform/spreadsheets was removed
+
+**/api/v2/carrierservices/uploadtransform/texttables/{transformId}** (1 change)
+
+* Path /api/v2/carrierservices/uploadtransform/texttables/{transformId} was removed
+
+**/api/v2/carrierservices/uploadtransform/texttables** (1 change)
+
+* Path /api/v2/carrierservices/uploadtransform/texttables was removed
+
+**/api/v2/carrierservices/transformendpoints/{endpointId}** (1 change)
+
+* Path /api/v2/carrierservices/transformendpoints/{endpointId} was removed
+
+**/api/v2/carrierservices/transformendpoints** (1 change)
+
+* Path /api/v2/carrierservices/transformendpoints was removed
+
+**/api/v2/carrierservices/transformprogress/search/{serviceName}/{modelType}/{modelId}** (1 change)
+
+* Path /api/v2/carrierservices/transformprogress/search/{serviceName}/{modelType}/{modelId} was removed
+
+**/api/v2/carrierservices/transformprogress/search/{serviceName}/{modelType}** (1 change)
+
+* Path /api/v2/carrierservices/transformprogress/search/{serviceName}/{modelType} was removed
+
+**/api/v2/carrierservices/transformprogress/search/{serviceName}** (1 change)
+
+* Path /api/v2/carrierservices/transformprogress/search/{serviceName} was removed
+
+**/api/v2/carrierservices/transformprogress/{progressId}** (1 change)
+
+* Path /api/v2/carrierservices/transformprogress/{progressId} was removed
+
+**/api/v2/carrierservices/csvschemas/{carrierId}/name/{schemaName}** (1 change)
+
+* Path /api/v2/carrierservices/csvschemas/{carrierId}/name/{schemaName} was removed
+
+**/api/v2/carrierservices/csvschemas/{carrierId}** (1 change)
+
+* Path /api/v2/carrierservices/csvschemas/{carrierId} was removed
+
+**/api/v2/carrierservices/csvschemas** (1 change)
+
+* Path /api/v2/carrierservices/csvschemas was removed
+
+**/api/v2/carrierservices/progress** (1 change)
+
+* Path /api/v2/carrierservices/progress was removed
+
+**/api/v2/carrierservices/xlsxschemas/{carrierId}/name/{schemaName}** (1 change)
+
+* Path /api/v2/carrierservices/xlsxschemas/{carrierId}/name/{schemaName} was removed
+
+**/api/v2/carrierservices/xlsxschemas** (1 change)
+
+* Path /api/v2/carrierservices/xlsxschemas was removed
+
+**/api/v2/carrierservices/xlsxschemas/{carrierId}** (1 change)
+
+* Path /api/v2/carrierservices/xlsxschemas/{carrierId} was removed
+
+**/api/v2/chats/users/{userId}/rooms** (1 change)
+
+* Path /api/v2/chats/users/{userId}/rooms was removed
+
+**/api/v2/chat/rooms/{roomJid}/participants/{participantJid}** (1 change)
+
+* Path /api/v2/chat/rooms/{roomJid}/participants/{participantJid} was removed
+
+**/api/v2/chats/rooms/{roomJid}/participants/{participantJid}** (1 change)
+
+* Path /api/v2/chats/rooms/{roomJid}/participants/{participantJid} was removed
+
+**/api/v2/cobrowse/deployments** (1 change)
+
+* Path /api/v2/cobrowse/deployments was removed
+
+**/api/v2/cobrowse/deployments/{deploymentId}** (1 change)
+
+* Path /api/v2/cobrowse/deployments/{deploymentId} was removed
+
+**/api/v2/cobrowse/session/{cobrowseSessionId}/activationfailure** (1 change)
+
+* Path /api/v2/cobrowse/session/{cobrowseSessionId}/activationfailure was removed
+
+**/api/v2/outbound/compliancedata/deviceinfo** (1 change)
+
+* Path /api/v2/outbound/compliancedata/deviceinfo was removed
+
+**/api/v2/outbound/compliancedata** (1 change)
+
+* Path /api/v2/outbound/compliancedata was removed
+
+**/api/v2/scripts/published/divisionviews/{scriptId}/variables** (1 change)
+
+* Path /api/v2/scripts/published/divisionviews/{scriptId}/variables was removed
+
+**/api/v2/scripts/templates** (1 change)
+
+* Path /api/v2/scripts/templates was removed
+
+**/api/v2/scripts/templates/{scriptId}** (1 change)
+
+* Path /api/v2/scripts/templates/{scriptId} was removed
+
+**/api/v2/scripts/templates/{scriptId}/pages/{pageId}** (1 change)
+
+* Path /api/v2/scripts/templates/{scriptId}/pages/{pageId} was removed
+
+**/api/v2/evaluations/favoritetemplates/{templateId}** (1 change)
+
+* Path /api/v2/evaluations/favoritetemplates/{templateId} was removed
+
+**/api/v2/evaluations/favoritetemplates** (1 change)
+
+* Path /api/v2/evaluations/favoritetemplates was removed
+
+**/api/v2/evaluations/templates/{templateId}** (1 change)
+
+* Path /api/v2/evaluations/templates/{templateId} was removed
+
+**/api/v2/evaluations/templates** (1 change)
+
+* Path /api/v2/evaluations/templates was removed
+
+**/api/v2/scripter/favoritetemplates/{templateId}** (1 change)
+
+* Path /api/v2/scripter/favoritetemplates/{templateId} was removed
+
+**/api/v2/scripter/favoritetemplates** (1 change)
+
+* Path /api/v2/scripter/favoritetemplates was removed
+
+**/api/v2/scripter/templates/{templateId}** (1 change)
+
+* Path /api/v2/scripter/templates/{templateId} was removed
+
+**/api/v2/scripter/templates** (1 change)
+
+* Path /api/v2/scripter/templates was removed
+
+**/api/v2/externalcontacts/contacts/suggestions** (1 change)
+
+* Path /api/v2/externalcontacts/contacts/suggestions was removed
+
+**/api/v2/externalcontacts/organizations/{externalOrganizationId}/churn** (1 change)
+
+* Path /api/v2/externalcontacts/organizations/{externalOrganizationId}/churn was removed
+
+**/api/v2/externalcontacts/organizations/{externalOrganizationId}/churn/latest** (1 change)
+
+* Path /api/v2/externalcontacts/organizations/{externalOrganizationId}/churn/latest was removed
+
+**/api/v2/externalcontacts/contacts/{contactId}/journey/segments** (1 change)
+
+* Path /api/v2/externalcontacts/contacts/{contactId}/journey/segments was removed
+
+**/api/v2/billing/signup/freetrial** (1 change)
+
+* Path /api/v2/billing/signup/freetrial was removed
+
+**/api/v2/conversations/codes** (1 change)
+
+* Path /api/v2/conversations/codes was removed
+
+**/api/v2/conversationexport** (1 change)
+
+* Path /api/v2/conversationexport was removed
+
+**/api/v2/conversations/chats/memberauthtoken** (1 change)
+
+* Path /api/v2/conversations/chats/memberauthtoken was removed
+
+**/api/v2/conversations/chats/{conversationId}/mediarequests/{mediaRequestId}** (1 change)
+
+* Path /api/v2/conversations/chats/{conversationId}/mediarequests/{mediaRequestId} was removed
+
+**/api/v2/conversations/chats/{conversationId}/mediarequests** (1 change)
+
+* Path /api/v2/conversations/chats/{conversationId}/mediarequests was removed
+
+**/api/v2/emails/settings/threading** (1 change)
+
+* Path /api/v2/emails/settings/threading was removed
+
+**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Path /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapupcodes was removed
+
+**/api/v2/conversations/screenshares** (1 change)
+
+* Path /api/v2/conversations/screenshares was removed
+
+**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Path /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/attributes was removed
+
+**/api/v2/conversations/screenshares/{conversationId}** (1 change)
+
+* Path /api/v2/conversations/screenshares/{conversationId} was removed
+
+**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Path /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapup was removed
+
+**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}** (1 change)
+
+* Path /api/v2/conversations/screenshares/{conversationId}/participants/{participantId} was removed
+
+**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Path /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId} was removed
+
+**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Path /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/replace was removed
+
+**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Path /api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapupcodes was removed
+
+**/api/v2/conversations/socials** (1 change)
+
+* Path /api/v2/conversations/socials was removed
+
+**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Path /api/v2/conversations/socials/{conversationId}/participants/{participantId}/attributes was removed
+
+**/api/v2/conversations/socials/{conversationId}** (1 change)
+
+* Path /api/v2/conversations/socials/{conversationId} was removed
+
+**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Path /api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapup was removed
+
+**/api/v2/conversations/socials/{conversationId}/participants/{participantId}** (1 change)
+
+* Path /api/v2/conversations/socials/{conversationId}/participants/{participantId} was removed
+
+**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Path /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId} was removed
+
+**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Path /api/v2/conversations/socials/{conversationId}/participants/{participantId}/replace was removed
+
+**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Path /api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapupcodes was removed
+
+**/api/v2/conversations/videos** (1 change)
+
+* Path /api/v2/conversations/videos was removed
+
+**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/pin** (1 change)
+
+* Path /api/v2/conversations/videos/{conversationId}/participants/{participantId}/pin was removed
+
+**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Path /api/v2/conversations/videos/{conversationId}/participants/{participantId}/attributes was removed
+
+**/api/v2/conversations/videos/{conversationId}** (1 change)
+
+* Path /api/v2/conversations/videos/{conversationId} was removed
+
+**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Path /api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapup was removed
+
+**/api/v2/conversations/videos/{conversationId}/participants/{participantId}** (1 change)
+
+* Path /api/v2/conversations/videos/{conversationId}/participants/{participantId} was removed
+
+**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Path /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId} was removed
+
+**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Path /api/v2/conversations/videos/{conversationId}/participants/{participantId}/replace was removed
+
+**/api/v2/conversations/messaging/facebook/permissions** (1 change)
+
+* Path /api/v2/conversations/messaging/facebook/permissions was removed
+
+**/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}** (1 change)
+
+* Path /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} was removed
+
+**/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup** (1 change)
+
+* Path /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup was removed
+
+**/api/v2/conversations/{conversationId}/participants/{participantId}/codes** (1 change)
+
+* Path /api/v2/conversations/{conversationId}/participants/{participantId}/codes was removed
+
+**/api/v2/conversations/{conversationId}/participants/{participantId}/disconnect** (1 change)
+
+* Path /api/v2/conversations/{conversationId}/participants/{participantId}/disconnect was removed
+
+**/api/v2/conversations/{conversationId}/suggestions** (1 change)
+
+* Path /api/v2/conversations/{conversationId}/suggestions was removed
+
+**/api/v2/conversations/{conversationId}/suggestions/{suggestionId}** (1 change)
+
+* Path /api/v2/conversations/{conversationId}/suggestions/{suggestionId} was removed
+
+**/api/v2/conversations/{conversationId}/suggestions/feedback** (1 change)
+
+* Path /api/v2/conversations/{conversationId}/suggestions/feedback was removed
+
+**/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback** (1 change)
+
+* Path /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback was removed
+
+**/api/v2/workforcemanagement/historicaldata/multipartuploads/csv** (1 change)
+
+* Path /api/v2/workforcemanagement/historicaldata/multipartuploads/csv was removed
+
+**/api/v2/dataprivacy/maskingrules** (1 change)
+
+* Path /api/v2/dataprivacy/maskingrules was removed
+
+**/api/v2/dataprivacy/maskingrules/validate** (1 change)
+
+* Path /api/v2/dataprivacy/maskingrules/validate was removed
+
+**/api/v2/dataprivacy/maskingrules/{ruleId}** (1 change)
+
+* Path /api/v2/dataprivacy/maskingrules/{ruleId} was removed
+
+**/api/v2/diagnostics/support** (1 change)
+
+* Path /api/v2/diagnostics/support was removed
+
+**/api/v2/diagnostics/trace** (1 change)
+
+* Path /api/v2/diagnostics/trace was removed
+
+**/api/v2/diagnostics** (1 change)
+
+* Path /api/v2/diagnostics was removed
+
+**/api/v2/diagnostics/trace/backgroundassistant** (1 change)
+
+* Path /api/v2/diagnostics/trace/backgroundassistant was removed
+
+**/api/v2/outbound/contactlisttemplates/{contactListTemplateId}** (1 change)
+
+* Path /api/v2/outbound/contactlisttemplates/{contactListTemplateId} was removed
+
+**/api/v2/outbound/contactlisttemplates** (1 change)
+
+* Path /api/v2/outbound/contactlisttemplates was removed
+
+**/api/v2/outbound/contactlisttemplates/bulk/add** (1 change)
+
+* Path /api/v2/outbound/contactlisttemplates/bulk/add was removed
+
+**/api/v2/outbound/importtemplates/{importTemplateId}/importstatus** (1 change)
+
+* Path /api/v2/outbound/importtemplates/{importTemplateId}/importstatus was removed
+
+**/api/v2/outbound/importtemplates/{importTemplateId}** (1 change)
+
+* Path /api/v2/outbound/importtemplates/{importTemplateId} was removed
+
+**/api/v2/outbound/importtemplates** (1 change)
+
+* Path /api/v2/outbound/importtemplates was removed
+
+**/api/v2/outbound/importtemplates/bulk/add** (1 change)
+
+* Path /api/v2/outbound/importtemplates/bulk/add was removed
+
+**/api/v2/outbound/messaging/settings** (1 change)
+
+* Path /api/v2/outbound/messaging/settings was removed
+
+**/api/v2/dialog/bots/{botId}** (1 change)
+
+* Path /api/v2/dialog/bots/{botId} was removed
+
+**/api/v2/dialog/bots** (1 change)
+
+* Path /api/v2/dialog/bots was removed
+
+**/api/v2/dialog/bots/{botId}/sessions/{sessionId}/turns** (1 change)
+
+* Path /api/v2/dialog/bots/{botId}/sessions/{sessionId}/turns was removed
+
+**/api/v2/dialog/bots/{botId}/sessions/{sessionId}** (1 change)
+
+* Path /api/v2/dialog/bots/{botId}/sessions/{sessionId} was removed
+
+**/api/v2/dialog/bots/{botId}/sessions** (1 change)
+
+* Path /api/v2/dialog/bots/{botId}/sessions was removed
+
+**/api/v2/dialog/bots/{botId}/versions/{versionId}** (1 change)
+
+* Path /api/v2/dialog/bots/{botId}/versions/{versionId} was removed
+
+**/api/v2/dialog/bots/{botId}/versions** (1 change)
+
+* Path /api/v2/dialog/bots/{botId}/versions was removed
+
+**/api/v2/dialog/integrations/bots/{botId}** (1 change)
+
+* Path /api/v2/dialog/integrations/bots/{botId} was removed
+
+**/api/v2/dialog/integrations/bots/{botId}/versions/{versionId}** (1 change)
+
+* Path /api/v2/dialog/integrations/bots/{botId}/versions/{versionId} was removed
+
+**/api/v2/dialog/integrations/bots** (1 change)
+
+* Path /api/v2/dialog/integrations/bots was removed
+
+**/api/v2/groups/{groupId}/images/{imageId}** (1 change)
+
+* Path /api/v2/groups/{groupId}/images/{imageId} was removed
+
+**/api/v2/groups/{groupId}/images** (1 change)
+
+* Path /api/v2/groups/{groupId}/images was removed
+
+**/api/v2/groups/bulk/deleted** (1 change)
+
+* Path /api/v2/groups/bulk/deleted was removed
+
+**/api/v2/organizations** (1 change)
+
+* Path /api/v2/organizations was removed
+
+**/api/v2/apps/legacy/translations** (1 change)
+
+* Path /api/v2/apps/legacy/translations was removed
+
+**/api/v2/apps/legacy/translations/builtin/{languageName}** (1 change)
+
+* Path /api/v2/apps/legacy/translations/builtin/{languageName} was removed
+
+**/api/v2/apps/legacy/translations/{languageName}** (1 change)
+
+* Path /api/v2/apps/legacy/translations/{languageName} was removed
+
+**/api/v2/apps/legacy/availabletranslations** (1 change)
+
+* Path /api/v2/apps/legacy/availabletranslations was removed
+
+**/api/v2/bots/instances/{instanceId}** (1 change)
+
+* Path /api/v2/bots/instances/{instanceId} was removed
+
+**/api/v2/bots/instances/jobs/{jobId}** (1 change)
+
+* Path /api/v2/bots/instances/jobs/{jobId} was removed
+
+**/api/v2/bots/instances/jobs** (1 change)
+
+* Path /api/v2/bots/instances/jobs was removed
+
+**/api/v2/bots/instances/querycapabilities** (1 change)
+
+* Path /api/v2/bots/instances/querycapabilities was removed
+
+**/api/v2/bots/instances/query** (1 change)
+
+* Path /api/v2/bots/instances/query was removed
+
+**/api/v2/fax/settings** (1 change)
+
+* Path /api/v2/fax/settings was removed
+
+**/api/v2/gamification/insights/rankings** (1 change)
+
+* Path /api/v2/gamification/insights/rankings was removed
+
+**/api/v2/integrations/actions/schemas/{providerName}/{fileName}** (1 change)
+
+* Path /api/v2/integrations/actions/schemas/{providerName}/{fileName} was removed
+
+**/api/v2/integrations/actions/metrics/queries/executioncount** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/executioncount was removed
+
+**/api/v2/integrations/actions/metrics/queries/executioncount/{queryId}** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/executioncount/{queryId} was removed
+
+**/api/v2/integrations/actions/metrics/queries/executioncount/{queryId}/results** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/executioncount/{queryId}/results was removed
+
+**/api/v2/integrations/actions/metrics/queries/responsecode** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/responsecode was removed
+
+**/api/v2/integrations/actions/metrics/queries/responsecode/{queryId}** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/responsecode/{queryId} was removed
+
+**/api/v2/integrations/actions/metrics/queries/responsecode/{queryId}/results** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/responsecode/{queryId}/results was removed
+
+**/api/v2/integrations/actions/metrics/queries/duration** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/duration was removed
+
+**/api/v2/integrations/actions/metrics/queries/duration/{queryId}** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/duration/{queryId} was removed
+
+**/api/v2/integrations/actions/metrics/queries/duration/{queryId}/results** (1 change)
+
+* Path /api/v2/integrations/actions/metrics/queries/duration/{queryId}/results was removed
+
+**/api/v2/integrations/salesforce/servicecloudvoice/login** (1 change)
+
+* Path /api/v2/integrations/salesforce/servicecloudvoice/login was removed
+
+**/api/v2/integrations/salesforce/servicecloudvoice/logout** (1 change)
+
+* Path /api/v2/integrations/salesforce/servicecloudvoice/logout was removed
+
+**/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/update** (1 change)
+
+* Path /api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/update was removed
+
+**/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/jobs/{jobId}** (1 change)
+
+* Path /api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/jobs/{jobId} was removed
+
+**/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord** (1 change)
+
+* Path /api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord was removed
+
+**/api/v2/integrations/speech/dialogflowcx/agents/{agentId}** (1 change)
+
+* Path /api/v2/integrations/speech/dialogflowcx/agents/{agentId} was removed
+
+**/api/v2/integrations/speech/dialogflowcx/agents** (1 change)
+
+* Path /api/v2/integrations/speech/dialogflowcx/agents was removed
+
+**/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}** (1 change)
+
+* Path /api/v2/integrations/speech/lexv2/bot/alias/{aliasId} was removed
+
+**/api/v2/integrations/speech/lexv2/bot/{botId}/aliases** (1 change)
+
+* Path /api/v2/integrations/speech/lexv2/bot/{botId}/aliases was removed
+
+**/api/v2/integrations/speech/lexv2/bots** (1 change)
+
+* Path /api/v2/integrations/speech/lexv2/bots was removed
+
+**/api/v2/integrations/speech/stt/engines/{engineId}** (1 change)
+
+* Path /api/v2/integrations/speech/stt/engines/{engineId} was removed
+
+**/api/v2/integrations/speech/stt/engines** (1 change)
+
+* Path /api/v2/integrations/speech/stt/engines was removed
+
+**/api/v2/integrations/webhooks/{webhookId}** (1 change)
+
+* Path /api/v2/integrations/webhooks/{webhookId} was removed
+
+**/api/v2/integrations/webhooks** (1 change)
+
+* Path /api/v2/integrations/webhooks was removed
+
+**/api/v2/journey/actiontargets/bulk** (1 change)
+
+* Path /api/v2/journey/actiontargets/bulk was removed
+
+**/api/v2/journey/eventtypes/{eventTypeId}** (1 change)
+
+* Path /api/v2/journey/eventtypes/{eventTypeId} was removed
+
+**/api/v2/journey/eventtypes** (1 change)
+
+* Path /api/v2/journey/eventtypes was removed
+
+**/api/v2/journey/openactions/{openActionId}** (1 change)
+
+* Path /api/v2/journey/openactions/{openActionId} was removed
+
+**/api/v2/journey/openactions/schemas/{schemaId}** (1 change)
+
+* Path /api/v2/journey/openactions/schemas/{schemaId} was removed
+
+**/api/v2/journey/openactions/schemas/{schemaId}/versions/{versionId}** (1 change)
+
+* Path /api/v2/journey/openactions/schemas/{schemaId}/versions/{versionId} was removed
+
+**/api/v2/journey/openactions/schemas/{schemaId}/versions** (1 change)
+
+* Path /api/v2/journey/openactions/schemas/{schemaId}/versions was removed
+
+**/api/v2/journey/openactions/schemas** (1 change)
+
+* Path /api/v2/journey/openactions/schemas was removed
+
+**/api/v2/journey/openactions** (1 change)
+
+* Path /api/v2/journey/openactions was removed
+
+**/api/v2/journey/externalcontacts/{externalContactId}/segments** (1 change)
+
+* Path /api/v2/journey/externalcontacts/{externalContactId}/segments was removed
+
+**/api/v2/journey/sessions/{sessionType}/recent** (1 change)
+
+* Path /api/v2/journey/sessions/{sessionType}/recent was removed
+
+**/api/v2/journey/settings/clickstream** (1 change)
+
+* Path /api/v2/journey/settings/clickstream was removed
+
+**/api/v2/journey/settings/webactions** (1 change)
+
+* Path /api/v2/journey/settings/webactions was removed
+
+**/api/v2/journey/views/{viewId}** (1 change)
+
+* Path /api/v2/journey/views/{viewId} was removed
+
+**/api/v2/journey/views/{viewId}/versions** (1 change)
+
+* Path /api/v2/journey/views/{viewId}/versions was removed
+
+**/api/v2/journey/views** (1 change)
+
+* Path /api/v2/journey/views was removed
+
+**/api/v2/journey/views/eventdefinitions/{eventDefinitionId}** (1 change)
+
+* Path /api/v2/journey/views/eventdefinitions/{eventDefinitionId} was removed
+
+**/api/v2/journey/views/eventdefinitions** (1 change)
+
+* Path /api/v2/journey/views/eventdefinitions was removed
+
+**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest** (1 change)
+
+* Path /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest was removed
+
+**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}** (1 change)
+
+* Path /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} was removed
+
+**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs** (1 change)
+
+* Path /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs was removed
+
+**/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results** (1 change)
+
+* Path /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/approvals/bulk** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/approvals/bulk was removed
+
+**/api/v2/knowledge/knowledgebases/feedback/approvals/bulk** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/feedback/approvals/bulk was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId}** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId} was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback was removed
+
+**/api/v2/knowledge/knowledgebases/feedback** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/feedback was removed
+
+**/api/v2/knowledge/knowledgebases/trainings** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/trainings was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId} was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId} was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} was removed
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs** (1 change)
+
+* Path /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs was removed
+
+**/api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}** (1 change)
+
+* Path /api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId} was removed
+
+**/api/v2/diagnostics/logcapture/browser/entries/download/jobs** (1 change)
+
+* Path /api/v2/diagnostics/logcapture/browser/entries/download/jobs was removed
+
+**/api/v2/diagnostics/logcapture/browser/entries/download** (1 change)
+
+* Path /api/v2/diagnostics/logcapture/browser/entries/download was removed
+
+**/api/v2/diagnostics/logcapture/browser/entries** (1 change)
+
+* Path /api/v2/diagnostics/logcapture/browser/entries was removed
+
+**/api/v2/diagnostics/logcapture/browser/entries/query** (1 change)
+
+* Path /api/v2/diagnostics/logcapture/browser/entries/query was removed
+
+**/api/v2/diagnostics/logcapture/browser/users** (1 change)
+
+* Path /api/v2/diagnostics/logcapture/browser/users was removed
+
+**/api/v2/diagnostics/logcapture/browser/users/{userId}** (1 change)
+
+* Path /api/v2/diagnostics/logcapture/browser/users/{userId} was removed
+
+**/api/v2/marketplace/ads/{platformName}/{adType}** (1 change)
+
+* Path /api/v2/marketplace/ads/{platformName}/{adType} was removed
+
+**/api/v2/marketplace/ads/{platformName}/{adType}/targeturl** (1 change)
+
+* Path /api/v2/marketplace/ads/{platformName}/{adType}/targeturl was removed
+
+**/api/v2/marketplace/listings** (1 change)
+
+* Path /api/v2/marketplace/listings was removed
+
+**/api/v2/marketplace/listings/{listingId}/media/{fileName}** (1 change)
+
+* Path /api/v2/marketplace/listings/{listingId}/media/{fileName} was removed
+
+**/api/v2/marketplace/listings/{listingId}/media** (1 change)
+
+* Path /api/v2/marketplace/listings/{listingId}/media was removed
+
+**/api/v2/marketplace/listings/{listingId}/media/order** (1 change)
+
+* Path /api/v2/marketplace/listings/{listingId}/media/order was removed
+
+**/api/v2/marketplace/listings/{listingId}** (1 change)
+
+* Path /api/v2/marketplace/listings/{listingId} was removed
+
+**/api/v2/marketplace/listings/{listingId}/categories** (1 change)
+
+* Path /api/v2/marketplace/listings/{listingId}/categories was removed
+
+**/api/v2/marketplace/listings/{listingId}/metadata** (1 change)
+
+* Path /api/v2/marketplace/listings/{listingId}/metadata was removed
+
+**/api/v2/marketplace/documents/navigations/{navigationId}** (1 change)
+
+* Path /api/v2/marketplace/documents/navigations/{navigationId} was removed
+
+**/api/v2/marketplace/documents/navigations** (1 change)
+
+* Path /api/v2/marketplace/documents/navigations was removed
+
+**/api/v2/marketplace/documents** (1 change)
+
+* Path /api/v2/marketplace/documents was removed
+
+**/api/v2/marketplace/documents/{documentId}** (1 change)
+
+* Path /api/v2/marketplace/documents/{documentId} was removed
+
+**/api/v2/marketplace/documents/images/{documentId}** (1 change)
+
+* Path /api/v2/marketplace/documents/images/{documentId} was removed
+
+**/api/v2/marketplace/enterpriseagreements** (1 change)
+
+* Path /api/v2/marketplace/enterpriseagreements was removed
+
+**/api/v2/marketplace/enterpriseagreements/{enterpriseAgreementId}** (1 change)
+
+* Path /api/v2/marketplace/enterpriseagreements/{enterpriseAgreementId} was removed
+
+**/api/v2/marketplace/enterpriseagreements/search** (1 change)
+
+* Path /api/v2/marketplace/enterpriseagreements/search was removed
+
+**/api/v2/marketplace/partners** (1 change)
+
+* Path /api/v2/marketplace/partners was removed
+
+**/api/v2/marketplace/partners/{partnerId}** (1 change)
+
+* Path /api/v2/marketplace/partners/{partnerId} was removed
+
+**/api/v2/marketplace/resellers/organizations/{organizationId}** (1 change)
+
+* Path /api/v2/marketplace/resellers/organizations/{organizationId} was removed
+
+**/api/v2/marketplace/resellers/partners/{partnerId}** (1 change)
+
+* Path /api/v2/marketplace/resellers/partners/{partnerId} was removed
+
+**/api/v2/marketplace/resellers/{resellerId}** (1 change)
+
+* Path /api/v2/marketplace/resellers/{resellerId} was removed
+
+**/api/v2/marketplace/resellers** (1 change)
+
+* Path /api/v2/marketplace/resellers was removed
+
+**/api/v2/marketplace/resellers/listings** (1 change)
+
+* Path /api/v2/marketplace/resellers/listings was removed
+
+**/api/v2/meetings/{meetingId}/occurrences/{occurrenceId}** (1 change)
+
+* Path /api/v2/meetings/{meetingId}/occurrences/{occurrenceId} was removed
+
+**/api/v2/meetings/{meetingId}** (1 change)
+
+* Path /api/v2/meetings/{meetingId} was removed
+
+**/api/v2/meetings** (1 change)
+
+* Path /api/v2/meetings was removed
+
+**/api/v2/users/{userId}/meetings** (1 change)
+
+* Path /api/v2/users/{userId}/meetings was removed
+
+**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/action** (1 change)
+
+* Path /api/v2/messaging/integrations/{integrationId}/messages/{messageId}/action was removed
+
+**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query** (1 change)
+
+* Path /api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query was removed
+
+**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query/{queryId}** (1 change)
+
+* Path /api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query/{queryId} was removed
+
+**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query/{queryId}/results** (1 change)
+
+* Path /api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query/{queryId}/results was removed
+
+**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query** (1 change)
+
+* Path /api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query was removed
+
+**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query/{queryId}** (1 change)
+
+* Path /api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query/{queryId} was removed
+
+**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query/{queryId}/results** (1 change)
+
+* Path /api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query/{queryId}/results was removed
+
+**/api/v2/messaging/integrations/{integrationId}/messages** (1 change)
+
+* Path /api/v2/messaging/integrations/{integrationId}/messages was removed
+
+**/api/v2/messaging/integrations** (1 change)
+
+* Path /api/v2/messaging/integrations was removed
+
+**/api/v2/messaging/integrations/uploads** (1 change)
+
+* Path /api/v2/messaging/integrations/uploads was removed
+
+**/api/v2/messaging/email** (1 change)
+
+* Path /api/v2/messaging/email was removed
+
+**/api/v2/messaging/email/bulk** (1 change)
+
+* Path /api/v2/messaging/email/bulk was removed
+
+**/api/v2/messaging/facebook/app** (1 change)
+
+* Path /api/v2/messaging/facebook/app was removed
+
+**/api/v2/messaging/integrations/facebook/{integrationId}** (1 change)
+
+* Path /api/v2/messaging/integrations/facebook/{integrationId} was removed
+
+**/api/v2/messaging/integrations/facebook** (1 change)
+
+* Path /api/v2/messaging/integrations/facebook was removed
+
+**/api/v2/messaging/integrations/line/{integrationId}** (1 change)
+
+* Path /api/v2/messaging/integrations/line/{integrationId} was removed
+
+**/api/v2/messaging/integrations/line** (1 change)
+
+* Path /api/v2/messaging/integrations/line was removed
+
+**/api/v2/messaging/messages/inbound/open** (1 change)
+
+* Path /api/v2/messaging/messages/inbound/open was removed
+
+**/api/v2/messaging/integrations/open/{integrationId}** (1 change)
+
+* Path /api/v2/messaging/integrations/open/{integrationId} was removed
+
+**/api/v2/messaging/integrations/open** (1 change)
+
+* Path /api/v2/messaging/integrations/open was removed
+
+**/api/v2/messaging/sms/bulk** (1 change)
+
+* Path /api/v2/messaging/sms/bulk was removed
+
+**/api/v2/messaging/sms** (1 change)
+
+* Path /api/v2/messaging/sms was removed
+
+**/api/v2/messaging/sms/provisioning/longcodes/available** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/longcodes/available was removed
+
+**/api/v2/messaging/sms/provisioning/longcodes** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/longcodes was removed
+
+**/api/v2/messaging/sms/provisioning/longcodes/portin** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/longcodes/portin was removed
+
+**/api/v2/messaging/sms/provisioning/longcodes/{longCode}** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/longcodes/{longCode} was removed
+
+**/api/v2/messaging/sms/provisioning/orders/{orderId}** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/orders/{orderId} was removed
+
+**/api/v2/messaging/sms/provisioning/simulated/{senderId}** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/simulated/{senderId} was removed
+
+**/api/v2/messaging/sms/provisioning/simulated** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/simulated was removed
+
+**/api/v2/messaging/sms/provisioning/tollfreenumbers** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/tollfreenumbers was removed
+
+**/api/v2/messaging/sms/provisioning/tollfreenumbers/portin** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/tollfreenumbers/portin was removed
+
+**/api/v2/messaging/sms/provisioning/tollfreenumbers/{tollfreeNumberCode}** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/tollfreenumbers/{tollfreeNumberCode} was removed
+
+**/api/v2/messaging/sms/provisioning/tollfreenumbers/available** (1 change)
+
+* Path /api/v2/messaging/sms/provisioning/tollfreenumbers/available was removed
+
+**/api/v2/messaging/integrations/twitter/{integrationId}** (1 change)
+
+* Path /api/v2/messaging/integrations/twitter/{integrationId} was removed
+
+**/api/v2/messaging/integrations/twitter** (1 change)
+
+* Path /api/v2/messaging/integrations/twitter was removed
+
+**/api/v2/messaging/integrations/whatsapp/{integrationId}** (1 change)
+
+* Path /api/v2/messaging/integrations/whatsapp/{integrationId} was removed
+
+**/api/v2/messaging/integrations/whatsapp** (1 change)
+
+* Path /api/v2/messaging/integrations/whatsapp was removed
+
+**/api/v2/users/{userId}/verifiers/{verifierId}** (1 change)
+
+* Path /api/v2/users/{userId}/verifiers/{verifierId} was removed
+
+**/api/v2/users/{userId}/verifiers** (1 change)
+
+* Path /api/v2/users/{userId}/verifiers was removed
+
+**/api/v2/organizations/migrations/{migrationName}** (1 change)
+
+* Path /api/v2/organizations/migrations/{migrationName} was removed
+
+**/api/v2/organizations/migrations/{migrationName}/state** (1 change)
+
+* Path /api/v2/organizations/migrations/{migrationName}/state was removed
+
+**/api/v2/organizations/migrations** (1 change)
+
+* Path /api/v2/organizations/migrations was removed
+
+**/api/v2/diagnostics/newrelic/insights/backgroundassistant** (1 change)
+
+* Path /api/v2/diagnostics/newrelic/insights/backgroundassistant was removed
+
+**/api/v2/diagnostics/newrelic/insights** (1 change)
+
+* Path /api/v2/diagnostics/newrelic/insights was removed
+
+**/api/v2/apps/downloads/{downloadId}** (1 change)
+
+* Path /api/v2/apps/downloads/{downloadId} was removed
+
+**/api/v2/downloads/callback** (1 change)
+
+* Path /api/v2/downloads/callback was removed
+
+**/api/v2/apps/globalfeaturetoggles** (1 change)
+
+* Path /api/v2/apps/globalfeaturetoggles was removed
+
+**/api/v2/health/check/dc5ea213-b829-40c8-ab65-b1eb2b583ff7/services/{serviceName}** (1 change)
+
+* Path /api/v2/health/check/dc5ea213-b829-40c8-ab65-b1eb2b583ff7/services/{serviceName} was removed
+
+**/api/v2/health/check** (1 change)
+
+* Path /api/v2/health/check was removed
+
+**/health/check** (1 change)
+
+* Path /health/check was removed
+
+**/health/check/dc5ea213-b829-40c8-ab65-b1eb2b583ff7/services/{serviceName}** (1 change)
+
+* Path /health/check/dc5ea213-b829-40c8-ab65-b1eb2b583ff7/services/{serviceName} was removed
+
+**/api/v2/integrations/webhooks/{tokenId}/events** (1 change)
+
+* Path /api/v2/integrations/webhooks/{tokenId}/events was removed
+
+**/api/v2/integrations/webhooks/{webhookId}/schema** (1 change)
+
+* Path /api/v2/integrations/webhooks/{webhookId}/schema was removed
+
+**/api/v2/journey/deployments/{deploymentId}/actionevent** (1 change)
+
+* Path /api/v2/journey/deployments/{deploymentId}/actionevent was removed
+
+**/api/v2/journey/deployments/{deploymentId}/appevents/bulk** (1 change)
+
+* Path /api/v2/journey/deployments/{deploymentId}/appevents/bulk was removed
+
+**/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/beacons** (1 change)
+
+* Path /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/beacons was removed
+
+**/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping** (1 change)
+
+* Path /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping was removed
+
+**/api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/beacons** (1 change)
+
+* Path /api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/beacons was removed
+
+**/api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/ping** (1 change)
+
+* Path /api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/ping was removed
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views** (1 change)
+
+* Path /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views was removed
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations** (1 change)
+
+* Path /api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations was removed
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies** (1 change)
+
+* Path /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies was removed
+
+**/api/v2/marketplace/ads** (1 change)
+
+* Path /api/v2/marketplace/ads was removed
+
+**/api/v2/marketplace/ads/{platformName}** (1 change)
+
+* Path /api/v2/marketplace/ads/{platformName} was removed
+
+**/api/v2/marketplace/categories** (1 change)
+
+* Path /api/v2/marketplace/categories was removed
+
+**/api/v2/marketplace/listings/search** (1 change)
+
+* Path /api/v2/marketplace/listings/search was removed
+
+**/api/v2/marketplace/listings/vendors/{vendorId}** (1 change)
+
+* Path /api/v2/marketplace/listings/vendors/{vendorId} was removed
+
+**/api/v2/marketplace/documents/search** (1 change)
+
+* Path /api/v2/marketplace/documents/search was removed
+
+**/api/v2/marketplace/reviews/{reviewId}** (1 change)
+
+* Path /api/v2/marketplace/reviews/{reviewId} was removed
+
+**/api/v2/marketplace/partners/{partnerType}/organizations/{organizationId}** (1 change)
+
+* Path /api/v2/marketplace/partners/{partnerType}/organizations/{organizationId} was removed
+
+**/api/v2/marketplace/partners/search** (1 change)
+
+* Path /api/v2/marketplace/partners/search was removed
+
+**/api/v2/billing/signup/freetrial/staging** (1 change)
+
+* Path /api/v2/billing/signup/freetrial/staging was removed
+
+**/api/v2/billing/signup/freetrial/staging/{freeTrialId}** (1 change)
+
+* Path /api/v2/billing/signup/freetrial/staging/{freeTrialId} was removed
+
+**/api/v2/billing/signup/freetrial/staging/{freeTrialId}/otp** (1 change)
+
+* Path /api/v2/billing/signup/freetrial/staging/{freeTrialId}/otp was removed
+
+**/api/v2/onboarding/invites/{inviteId}** (1 change)
+
+* Path /api/v2/onboarding/invites/{inviteId} was removed
+
+**/api/v2/onboarding/joincodes/{joinCodeId}** (1 change)
+
+* Path /api/v2/onboarding/joincodes/{joinCodeId} was removed
+
+**/api/v2/onboarding/activations/{activationId}** (1 change)
+
+* Path /api/v2/onboarding/activations/{activationId} was removed
+
+**/api/v2/onboarding/activations/{activationId}/apply** (1 change)
+
+* Path /api/v2/onboarding/activations/{activationId}/apply was removed
+
+**/api/v2/onboarding/orgprovisionings/{provisioningId}** (1 change)
+
+* Path /api/v2/onboarding/orgprovisionings/{provisioningId} was removed
+
+**/api/v2/onboarding/orgprovisionings/{provisioningId}/complete** (1 change)
+
+* Path /api/v2/onboarding/orgprovisionings/{provisioningId}/complete was removed
+
+**/api/v2/onboarding/orgprovisionings** (1 change)
+
+* Path /api/v2/onboarding/orgprovisionings was removed
+
+**/api/v2/onboarding/organizations/{organizationId}/users** (1 change)
+
+* Path /api/v2/onboarding/organizations/{organizationId}/users was removed
+
+**/api/v2/billing/signup/provisioning/{provisioningId}** (1 change)
+
+* Path /api/v2/billing/signup/provisioning/{provisioningId} was removed
+
+**/api/v2/billing/signup/provisioning** (1 change)
+
+* Path /api/v2/billing/signup/provisioning was removed
+
+**/api/v2/billing/signup/provisioning/{provisioningId}/otp** (1 change)
+
+* Path /api/v2/billing/signup/provisioning/{provisioningId}/otp was removed
+
+**/api/v2/onboarding/users** (1 change)
+
+* Path /api/v2/onboarding/users was removed
+
+**/api/v2/onboarding/users/stage** (1 change)
+
+* Path /api/v2/onboarding/users/stage was removed
+
+**/api/v2/onboarding/users/joinexistingorgs** (1 change)
+
+* Path /api/v2/onboarding/users/joinexistingorgs was removed
+
+**/api/v2/telephony/phonehome/phoneconfiguration/{hardwareId}** (1 change)
+
+* Path /api/v2/telephony/phonehome/phoneconfiguration/{hardwareId} was removed
+
+**/api/v2/notifications/availabletopics/{topicName}** (1 change)
+
+* Path /api/v2/notifications/availabletopics/{topicName} was removed
+
+**/api/v2/notifications/settings** (1 change)
+
+* Path /api/v2/notifications/settings was removed
+
+**/api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query** (1 change)
+
+* Path /api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query was removed
+
+**/api/v2/onboarding/invites** (1 change)
+
+* Path /api/v2/onboarding/invites was removed
+
+**/api/v2/onboarding/joincodes** (1 change)
+
+* Path /api/v2/onboarding/joincodes was removed
+
+**/api/v2/usage/events/definitions** (1 change)
+
+* Path /api/v2/usage/events/definitions was removed
+
+**/api/v2/usage/events/definitions/{eventDefinitionId}** (1 change)
+
+* Path /api/v2/usage/events/definitions/{eventDefinitionId} was removed
+
+**/api/v2/organizations/enforcescopes** (1 change)
+
+* Path /api/v2/organizations/enforcescopes was removed
+
+**/api/v2/organizations/passwordrequirements** (1 change)
+
+* Path /api/v2/organizations/passwordrequirements was removed
+
+**/api/v2/telephony/providers/edges/sites/{siteId}/schedulereboot** (1 change)
+
+* Path /api/v2/telephony/providers/edges/sites/{siteId}/schedulereboot was removed
+
+**/api/v2/telephony/phone/{phoneId}/settings** (1 change)
+
+* Path /api/v2/telephony/phone/{phoneId}/settings was removed
+
+**/api/v2/notifications/push/registrations/{registrationId}** (1 change)
+
+* Path /api/v2/notifications/push/registrations/{registrationId} was removed
+
+**/api/v2/notifications/push/registrations** (1 change)
+
+* Path /api/v2/notifications/push/registrations was removed
+
+**/api/v2/recordings/screensessions/metadata/backgroundassistant** (1 change)
+
+* Path /api/v2/recordings/screensessions/metadata/backgroundassistant was removed
+
+**/api/v2/alerting/alerts/all** (1 change)
+
+* Path /api/v2/alerting/alerts/all was removed
+
+**/api/v2/routing/comparisonperiods** (1 change)
+
+* Path /api/v2/routing/comparisonperiods was removed
+
+**/api/v2/routing/utilization/labels/{labelId}** (1 change)
+
+* Path /api/v2/routing/utilization/labels/{labelId} was removed
+
+**/api/v2/routing/utilization/labels/{labelId}/agents** (1 change)
+
+* Path /api/v2/routing/utilization/labels/{labelId}/agents was removed
+
+**/api/v2/routing/utilization/labels** (1 change)
+
+* Path /api/v2/routing/utilization/labels was removed
+
+**/api/v2/routing/queues/{queueId}/conversations/calls** (1 change)
+
+* Path /api/v2/routing/queues/{queueId}/conversations/calls was removed
+
+**/api/v2/routing/queues/{queueId}/conversations/callbacks** (1 change)
+
+* Path /api/v2/routing/queues/{queueId}/conversations/callbacks was removed
+
+**/api/v2/routing/queues/{queueId}/conversations/chats** (1 change)
+
+* Path /api/v2/routing/queues/{queueId}/conversations/chats was removed
+
+**/api/v2/routing/queues/{queueId}/conversations/emails** (1 change)
+
+* Path /api/v2/routing/queues/{queueId}/conversations/emails was removed
+
+**/api/v2/routing/queues/{queueId}/conversations** (1 change)
+
+* Path /api/v2/routing/queues/{queueId}/conversations was removed
+
+**/api/v2/routing/email/domains/{domainId}/dkim** (1 change)
+
+* Path /api/v2/routing/email/domains/{domainId}/dkim was removed
+
+**/api/v2/routing/email/domains/{domainId}/verification** (1 change)
+
+* Path /api/v2/routing/email/domains/{domainId}/verification was removed
+
+**/api/v2/routing/email/domains/{domainId}/mailfrom** (1 change)
+
+* Path /api/v2/routing/email/domains/{domainId}/mailfrom was removed
+
+**/api/v2/routing/predictors/interactionscores** (1 change)
+
+* Path /api/v2/routing/predictors/interactionscores was removed
+
+**/api/v2/routing/predictors/userscores** (1 change)
+
+* Path /api/v2/routing/predictors/userscores was removed
+
+**/api/v2/routing/predictors/keyperformanceindicators/{kpiId}** (1 change)
+
+* Path /api/v2/routing/predictors/keyperformanceindicators/{kpiId} was removed
+
+**/api/v2/routing/predictors/keyperformanceindicatortypes** (1 change)
+
+* Path /api/v2/routing/predictors/keyperformanceindicatortypes was removed
+
+**/api/v2/routing/queues/{queueId}/assistant** (1 change)
+
+* Path /api/v2/routing/queues/{queueId}/assistant was removed
+
+**/api/v2/routing/comparisonreports/summary** (1 change)
+
+* Path /api/v2/routing/comparisonreports/summary was removed
+
+**/api/v2/routing/comparisonreports/details** (1 change)
+
+* Path /api/v2/routing/comparisonreports/details was removed
+
+**/api/v2/routing/directroutingbackup/settings/me** (1 change)
+
+* Path /api/v2/routing/directroutingbackup/settings/me was removed
+
+**/api/v2/routing/users/{userId}/directroutingbackup/settings** (1 change)
+
+* Path /api/v2/routing/users/{userId}/directroutingbackup/settings was removed
+
+**/api/v2/routing/wrapupcodes/divisionviews/{codeId}** (1 change)
+
+* Path /api/v2/routing/wrapupcodes/divisionviews/{codeId} was removed
+
+**/api/v2/routing/wrapupcodes/divisionviews** (1 change)
+
+* Path /api/v2/routing/wrapupcodes/divisionviews was removed
+
+**/api/v2/settings/webrtc/users** (1 change)
+
+* Path /api/v2/settings/webrtc/users was removed
+
+**/api/v2/signeddata** (1 change)
+
+* Path /api/v2/signeddata was removed
+
+**/api/v2/speechandtextanalytics/categories** (1 change)
+
+* Path /api/v2/speechandtextanalytics/categories was removed
+
+**/api/v2/speechandtextanalytics/categories/{categoryId}** (1 change)
+
+* Path /api/v2/speechandtextanalytics/categories/{categoryId} was removed
+
+**/api/v2/docs/swagger** (1 change)
+
+* Path /api/v2/docs/swagger was removed
+
+**/api/v2/docs/swaggerpreview** (1 change)
+
+* Path /api/v2/docs/swaggerpreview was removed
+
+**/api/v2/docs/swaggerall** (1 change)
+
+* Path /api/v2/docs/swaggerall was removed
+
+**/api/v2/telephony/sipmessages/conversations/{conversationId}/headers** (1 change)
+
+* Path /api/v2/telephony/sipmessages/conversations/{conversationId}/headers was removed
+
+**/api/v2/telephony/sipmessages/conversations/{conversationId}** (1 change)
+
+* Path /api/v2/telephony/sipmessages/conversations/{conversationId} was removed
+
+**/api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration** (1 change)
+
+* Path /api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration was removed
+
+**/api/v2/telephony/providers/edges/dialtargets** (1 change)
+
+* Path /api/v2/telephony/providers/edges/dialtargets was removed
+
+**/api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/status** (1 change)
+
+* Path /api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/status was removed
+
+**/api/v2/telephony/providers/edges/files/volumes/tasks** (1 change)
+
+* Path /api/v2/telephony/providers/edges/files/volumes/tasks was removed
+
+**/api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/results** (1 change)
+
+* Path /api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/results was removed
+
+**/api/v2/telephony/providers/edges/files/volumes/{volumeId}/tasks** (1 change)
+
+* Path /api/v2/telephony/providers/edges/files/volumes/{volumeId}/tasks was removed
+
+**/api/v2/telephony/providers/edges/files/volumes/recovered/tasks/{taskId}/results** (1 change)
+
+* Path /api/v2/telephony/providers/edges/files/volumes/recovered/tasks/{taskId}/results was removed
+
+**/api/v2/telephony/providers/edges/files/volumes/{volumeId}** (1 change)
+
+* Path /api/v2/telephony/providers/edges/files/volumes/{volumeId} was removed
+
+**/api/v2/telephony/providers/edges/files/volumes** (1 change)
+
+* Path /api/v2/telephony/providers/edges/files/volumes was removed
+
+**/api/v2/telephony/providers/edges/files/volumes/verify** (1 change)
+
+* Path /api/v2/telephony/providers/edges/files/volumes/verify was removed
+
+**/api/v2/telephony/providers/edges/hybridcompatibility** (1 change)
+
+* Path /api/v2/telephony/providers/edges/hybridcompatibility was removed
+
+**/api/v2/telephony/providers/edges/provisioning/amis/{amiId}** (1 change)
+
+* Path /api/v2/telephony/providers/edges/provisioning/amis/{amiId} was removed
+
+**/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/{autoScalingGroupId}** (1 change)
+
+* Path /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/{autoScalingGroupId} was removed
+
+**/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups** (1 change)
+
+* Path /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups was removed
+
+**/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/upgrade** (1 change)
+
+* Path /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/upgrade was removed
+
+**/api/v2/telephony/providers/edges/autoscalinggroups/images/current/tiers/{tierName}** (1 change)
+
+* Path /api/v2/telephony/providers/edges/autoscalinggroups/images/current/tiers/{tierName} was removed
+
+**/api/v2/telephony/providers/edges/sites/{siteId}/provisioning/decommissioning** (1 change)
+
+* Path /api/v2/telephony/providers/edges/sites/{siteId}/provisioning/decommissioning was removed
+
+**/api/v2/telephony/providers/edges/sites/{siteId}/provisioning** (1 change)
+
+* Path /api/v2/telephony/providers/edges/sites/{siteId}/provisioning was removed
+
+**/api/v2/telephony/providers/edges/autoscalinggroups/{autoScalingGroupId}/edges/{edgeId}** (1 change)
+
+* Path /api/v2/telephony/providers/edges/autoscalinggroups/{autoScalingGroupId}/edges/{edgeId} was removed
+
+**/api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity** (1 change)
+
+* Path /api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity was removed
+
+**/api/v2/telephony/providers/edges/provisioning/upgraderule** (1 change)
+
+* Path /api/v2/telephony/providers/edges/provisioning/upgraderule was removed
+
+**/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections** (1 change)
+
+* Path /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections was removed
+
+**/api/v2/telephony/providers/edges/sites/search** (1 change)
+
+* Path /api/v2/telephony/providers/edges/sites/search was removed
+
+**/api/v2/telephony/providers/edges/tiers** (1 change)
+
+* Path /api/v2/telephony/providers/edges/tiers was removed
+
+**/api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId}** (1 change)
+
+* Path /api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId} was removed
+
+**/api/v2/telephony/providers/edges/trunkbasesettings/search** (1 change)
+
+* Path /api/v2/telephony/providers/edges/trunkbasesettings/search was removed
+
+**/api/v2/telephony/providers/edges/trunks/search** (1 change)
+
+* Path /api/v2/telephony/providers/edges/trunks/search was removed
+
+**/api/v2/testautomation/existingresources/users/checkin** (1 change)
+
+* Path /api/v2/testautomation/existingresources/users/checkin was removed
+
+**/api/v2/testautomation/existingresources/users/checkout** (1 change)
+
+* Path /api/v2/testautomation/existingresources/users/checkout was removed
+
+**/api/v2/testautomation/existingresources/environments/{environmentName}** (1 change)
+
+* Path /api/v2/testautomation/existingresources/environments/{environmentName} was removed
+
+**/api/v2/testautomation/existingresources/environments/{environmentName}/users/{userId}** (1 change)
+
+* Path /api/v2/testautomation/existingresources/environments/{environmentName}/users/{userId} was removed
+
+**/api/v2/testautomation/existingresources/environments/{environmentName}/users** (1 change)
+
+* Path /api/v2/testautomation/existingresources/environments/{environmentName}/users was removed
+
+**/api/v2/testautomation/existingresources/environments** (1 change)
+
+* Path /api/v2/testautomation/existingresources/environments was removed
+
+**/api/v2/testautomation/existingresources/oauthclients/{environmentName}** (1 change)
+
+* Path /api/v2/testautomation/existingresources/oauthclients/{environmentName} was removed
+
+**/api/v2/testautomation/existingresources/oauthclients** (1 change)
+
+* Path /api/v2/testautomation/existingresources/oauthclients was removed
+
+**/api/v2/testautomation/existingresources/organizations/{organizationId}** (1 change)
+
+* Path /api/v2/testautomation/existingresources/organizations/{organizationId} was removed
+
+**/api/v2/testautomation/existingresources/organizations/{organizationId}/users** (1 change)
+
+* Path /api/v2/testautomation/existingresources/organizations/{organizationId}/users was removed
+
+**/api/v2/testautomation/existingresources/organizations** (1 change)
+
+* Path /api/v2/testautomation/existingresources/organizations was removed
+
+**/api/v2/integrations/unifiedcommunications/email** (1 change)
+
+* Path /api/v2/integrations/unifiedcommunications/email was removed
+
+**/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth** (1 change)
+
+* Path /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth was removed
+
+**/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/presences** (1 change)
+
+* Path /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/presences was removed
+
+**/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}** (1 change)
+
+* Path /api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId} was removed
+
+**/api/v2/integrations/unifiedcommunications/clientapps** (1 change)
+
+* Path /api/v2/integrations/unifiedcommunications/clientapps was removed
+
+**/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings** (1 change)
+
+* Path /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings was removed
+
+**/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings/{meetingId}** (1 change)
+
+* Path /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings/{meetingId} was removed
+
+**/api/v2/integrations/microsoftteams/auth** (1 change)
+
+* Path /api/v2/integrations/microsoftteams/auth was removed
+
+**/api/v2/integrations/zoom/auth** (1 change)
+
+* Path /api/v2/integrations/zoom/auth was removed
+
+**/api/v2/integrations/zoom/202004/meetings/{meetingId}** (1 change)
+
+* Path /api/v2/integrations/zoom/202004/meetings/{meetingId} was removed
+
+**/api/v2/integrations/zoom/202004/meetings/{meetingId}/signature** (1 change)
+
+* Path /api/v2/integrations/zoom/202004/meetings/{meetingId}/signature was removed
+
+**/api/v2/integrations/zoom/202004/users/{userId}** (1 change)
+
+* Path /api/v2/integrations/zoom/202004/users/{userId} was removed
+
+**/api/v2/integrations/zoom/202004/users/{userId}/settings** (1 change)
+
+* Path /api/v2/integrations/zoom/202004/users/{userId}/settings was removed
+
+**/api/v2/integrations/zoom/202004/users/{userId}/meetings** (1 change)
+
+* Path /api/v2/integrations/zoom/202004/users/{userId}/meetings was removed
+
+**/api/v2/usage/datatransfer/aggregates/query** (1 change)
+
+* Path /api/v2/usage/datatransfer/aggregates/query was removed
+
+**/api/v2/usage/datatransfer/aggregates/query/results/{executionId}** (1 change)
+
+* Path /api/v2/usage/datatransfer/aggregates/query/results/{executionId} was removed
+
+**/api/v2/users/externalid/{authorityName}/{externalKey}** (1 change)
+
+* Path /api/v2/users/externalid/{authorityName}/{externalKey} was removed
+
+**/api/v2/users/{userId}/externalid/{authorityName}** (1 change)
+
+* Path /api/v2/users/{userId}/externalid/{authorityName} was removed
+
+**/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}** (1 change)
+
+* Path /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} was removed
+
+**/api/v2/voicebots/bot/connection** (1 change)
+
+* Path /api/v2/voicebots/bot/connection was removed
+
+**/api/v2/voicemail/messages/create** (1 change)
+
+* Path /api/v2/voicemail/messages/create was removed
+
+**/api/v2/architect/audits** (1 change)
+
+* Path /api/v2/architect/audits was removed
+
+**/api/v2/architect/me** (1 change)
+
+* Path /api/v2/architect/me was removed
+
+**/api/v2/architect/configuration** (1 change)
+
+* Path /api/v2/architect/configuration was removed
+
+**/api/v2/architect/capabilities** (1 change)
+
+* Path /api/v2/architect/capabilities was removed
+
+**/api/v2/flows/actions/checkinsync** (1 change)
+
+* Path /api/v2/flows/actions/checkinsync was removed
+
+**/api/v2/flows/actions/validate** (1 change)
+
+* Path /api/v2/flows/actions/validate was removed
+
+**/api/v2/flows/actions/debug** (1 change)
+
+* Path /api/v2/flows/actions/debug was removed
+
+**/api/v2/flows/{flowId}/validate/{operationId}** (1 change)
+
+* Path /api/v2/flows/{flowId}/validate/{operationId} was removed
+
+**/api/v2/learning/assignments/{assignmentId}/steps/{stepId}** (1 change)
+
+* Path /api/v2/learning/assignments/{assignmentId}/steps/{stepId} was removed
+
+**/api/v2/learning/modules/{moduleId}/archive** (1 change)
+
+* Path /api/v2/learning/modules/{moduleId}/archive was removed
+
+**/api/v2/learning/modules/{moduleId}/publishedversions** (1 change)
+
+* Path /api/v2/learning/modules/{moduleId}/publishedversions was removed
+
+**/api/v2/learning/modules/{moduleId}/users/{userId}/assignments** (1 change)
+
+* Path /api/v2/learning/modules/{moduleId}/users/{userId}/assignments was removed
+
+**/api/v2/learning/scorm/{scormId}** (1 change)
+
+* Path /api/v2/learning/scorm/{scormId} was removed
+
+**/api/v2/learning/scorm** (1 change)
+
+* Path /api/v2/learning/scorm was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate/legacyweightedaverage** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate/legacyweightedaverage was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/compute** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/compute was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/sourcedata/query** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/sourcedata/query was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/sourcedata** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/sourcedata was removed
+
+**/api/v2/workforcemanagement/decisions/downloads/search** (1 change)
+
+* Path /api/v2/workforcemanagement/decisions/downloads/search was removed
+
+**/api/v2/workforcemanagement/decisions/downloads/{downloadId}** (1 change)
+
+* Path /api/v2/workforcemanagement/decisions/downloads/{downloadId} was removed
+
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents** (1 change)
+
+* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents was removed
+
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/sync** (1 change)
+
+* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/sync was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/history/versions/{planningGroupVersion}/query** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/history/versions/{planningGroupVersion}/query was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query was removed
+
+**/api/v2/workforcemanagement/agents/v2/managementunits** (1 change)
+
+* Path /api/v2/workforcemanagement/agents/v2/managementunits was removed
+
+**/api/v2/workforcemanagement/teams/{teamId}/adherence** (1 change)
+
+* Path /api/v2/workforcemanagement/teams/{teamId}/adherence was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings was removed
+
+**/api/v2/workforcemanagement/agents/me** (1 change)
+
+* Path /api/v2/workforcemanagement/agents/me was removed
+
+**/api/v2/workforcemanagement/forecasts/adhoc** (1 change)
+
+* Path /api/v2/workforcemanagement/forecasts/adhoc was removed
+
+**/api/v2/workforcemanagement/forecasts/adhoc/{forecastId}** (1 change)
+
+* Path /api/v2/workforcemanagement/forecasts/adhoc/{forecastId} was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/historicaldata/availability** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/historicaldata/availability was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/historicaldata/query** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/historicaldata/query was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId} was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} was removed
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans** (1 change)
+
+* Path /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans was removed
 
 **GET /api/v2/users/{subjectId}/roles** (2 changes)
 
-* Parameter enforceLicenses was added
-* Parameter lookupGroups was added
-
-**POST /api/v2/recording/crossplatform/mediaretentionpolicies** (1 change)
-
-* Parameter expand was added
-
-**GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
-
-* Parameter expand was added
-
-**PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
-
-* Parameter expand was added
-
-**PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
-
-* Parameter expand was added
-
-**POST /api/v2/recording/mediaretentionpolicies** (1 change)
-
-* Parameter expand was added
-
-**GET /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
-
-* Parameter expand was added
-
-**PUT /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
-
-* Parameter expand was added
-
-**PATCH /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
-
-* Parameter expand was added
-
-**DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}** (1 change)
-
-* Parameter hardDelete was added
-
-**GET /api/v2/outbound/contactlistfilters** (1 change)
-
-* Parameter sourceType was added
-
-**GET /api/v2/outbound/dnclists/divisionviews** (1 change)
-
-* Parameter contactMethod was added
-
-**POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses** (1 change)
-
-* Parameter expirationDateTime was added
-
-**GET /api/v2/outbound/dnclists** (1 change)
-
-* Parameter contactMethod was added
-
-**GET /api/v2/outbound/messagingcampaigns/divisionviews** (2 changes)
-
-* Parameter contentTemplateId was added
-* Parameter campaignStatus was added
-
-**GET /api/v2/outbound/messagingcampaigns** (2 changes)
-
-* Parameter contentTemplateId was added
-* Parameter campaignStatus was added
-
-**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}** (1 change)
-
-* Parameter useContext was added
-
-**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents** (7 changes)
-
-* Parameter before was added
-* Parameter after was added
-* Parameter pageNumber was added
-* Parameter sortBy was added
-* Parameter sortOrder was added
-* Parameter useContext was added
-* Parameter expand was added
-
-**GET /api/v2/notifications/channels** (1 change)
-
-* Parameter connectionType was added
-
-**POST /api/v2/notifications/channels** (1 change)
-
-* Parameter connectionType was added
-
-**GET /api/v2/quality/agents/activity** (1 change)
-
-* Parameter agentTeamId was added
-
-**GET /api/v2/quality/evaluations/query** (1 change)
-
-* Parameter agentTeamId was added
-
-**GET /api/v2/quality/evaluators/activity** (1 change)
-
-* Parameter agentTeamId was added
-
-**DELETE /api/v2/routing/wrapupcodes/{codeId}** (1 change)
-
-* Parameter hardDelete was added
-
-**GET /api/v2/speechandtextanalytics/topics** (1 change)
-
-* Parameter dialects was added
-
-**GET /api/v2/telephony/providers/edges/extensionpools** (1 change)
-
-* Parameter divisionId was added
-
-**GET /api/v2/telephony/providers/edges/extensions** (1 change)
-
-* Parameter divisionId was added
-
-**GET /api/v2/architect/emergencygroups** (1 change)
-
-* Parameter divisionId was added
-
-**GET /api/v2/architect/ivrs** (1 change)
-
-* Parameter divisionId was added
-
-**POST /api/v2/learning/assignments/{assignmentId}/reassign** (1 change)
-
-* Parameter body was added
-
-**GET /api/v2/learning/modules** (1 change)
-
-* Parameter externalIds was added
-
-**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes** (1 change)
-
-* Parameter forceDownloadService was added
-
-**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday** (1 change)
-
-* Parameter useMockExternalData was added
-
-**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data** (1 change)
-
-* Parameter doNotApplyModifications was added
-
-**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata** (1 change)
-
-* Parameter doNotApplyModifications was added
-
-**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query** (1 change)
-
-* Parameter forceDownloadService was added
-
-**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades** (1 change)
-
-* Parameter forceDownloadService was added
-
-**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search** (1 change)
-
-* Parameter forceDownloadService was added
-
-**DirectRoutingCallMediaSettings** (1 change)
-
-* Model DirectRoutingCallMediaSettings was removed
-
-**DirectRouting** (1 change)
-
-* Property callMediaSettings was changed from DirectRoutingCallMediaSettings to DirectRoutingMediaSettings
-
-**DirectRoutingMediaSettings** (2 changes)
-
-* Property enabled was removed
-* Property inboundFlow was removed
-
-**MediaEndpointStatistics** (1 change)
-
-* Property trunk was changed from NamedEntity to MediaStatisticsTrunkInfo
-
-
-# Minor Changes (2891 changes)
-
-**/api/v2/authorization/policies/targets/{targetName}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation PUT was added
-
-**/api/v2/authorization/policies/targets/{targetName}/validate** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/authorization/policies** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/authorization/policies/subject/{subjectId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/authorization/policies/{policyId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/authorization/policies/targets** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/featuretoggles** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/settings** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/apps/agentui/agents/autoanswer/{agentId}/settings** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/apps/agentui/panels/settings** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/apps/agentui/panels** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/apps/agentui/panels/queues/{queueId}/settings** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/analytics/flowexecutions/aggregates/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/flowexecutions/aggregates/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/ratelimits/aggregates/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/resolutions/aggregates/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/botflows/{botFlowId}/sessions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/reporting/settings/dashboards/{dashboardId}** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/analytics/reporting/settings/dashboards/bulk/remove** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/reporting/settings/dashboards/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/reporting/settings/dashboards** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/analytics/reporting/dashboards/users/{userId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/reporting/dashboards/users/bulk/remove** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/reporting/dashboards/users** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/reporting/settings/insights** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/analytics/reporting/settings/tabconfigurations/{tabId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/analytics/reporting/settings/tabconfigurations/bulk** (3 changes)
-
-* Path was added
-* Operation POST was added
-* Operation PUT was added
-
-**/api/v2/analytics/reporting/settings/tabconfigurations/bulk/remove** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/reporting/settings/tabconfigurations** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/analytics/reporting/settings/users/{userId}/dashboards** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/reporting/settings/viewconfigurations/{viewId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/analytics/reporting/settings/viewconfigurations** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/analytics/reporting/exports/{exportId}/history** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/reporting/exports/{exportId}/history/latest** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/reporting/exports/{exportId}/history/{runId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/analytics/reporting/exports/all** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/reporting/exports/{exportId}** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/analytics/reporting/exports/{exportId}/schedule** (3 changes)
-
-* Path was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/analytics/reporting/exports/{exportId}/execute** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/reporting/exports/schedule** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/reporting/exports/schedule/summary** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/apps/permissionbundles** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/apps/legacy/images/{imageId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/apps/legacy/images/hash/{imageHashId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/apps/legacy/images** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/apps/legacy/images/{imageId}/link/{entityType}/{entityId}/{targetField}** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/apps/legacy/session** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/apps/session** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/apps/users/{userId}/logout** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/assistants/{assistantId}/queues/{queueId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/assistants/{assistantId}/queues** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/assistants/{assistantId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/assistants** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/assistants/queues** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/audits/query/realtime/trustor/{trustorOrgId}** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/authorization/products/{productId}** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/authorization/roles/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/processautomation/flows/instances/commands/search** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/processautomation/flows/instances/{instanceId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/processautomation/flows/definitions/{flowId}/versions/{versionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/screenrecording/token** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/badges/chats** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/badges/chats/{jabberId}** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/billing/accounts/{accountId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/billing/reports/billableusagedata/{reportId}/csv** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/billing/activations/{billingActivationJobId}** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/periods** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/tasks/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/reports/concurrentusagedata/{reportId}/csv** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/billing/account** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/billing/freetrial** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/reports/hourlylicenseusagedata/{reportId}/csv** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/invoices/{invoiceId}/pdf** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/invoices/{invoiceId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/invoices** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/premise/uploadurl** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/premise/licensestatus** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/premiumapplistings/{appId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/premiumapptrials** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/carrierservices/usage/calls/csv** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/carrierservices/usage/calls** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/reports/resourcesusagedata/{reportId}/csv** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/billing/subscriptionoverview** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/subscriptionproductactivations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/subscriptionproductcancellations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/vendorusage/organizations/{organizationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/billing/vendorusage/organizations** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/bridge/useractions/categories** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/bridge/useractions/metadata/{actionName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/bridge/useractions/metadata** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/sortweights/info** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/supportedcountries/{countryCode}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/supportedcountries** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/billing/bandwidthcurrencypricing/{currencyName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/billing/bandwidthcurrencypricing** (3 changes)
-
-* Path was added
-* Operation POST was added
-* Operation PUT was added
-
-**/api/v2/carrierservices/billing/bandwidthpricing/{customerId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/billing/bandwidthpricing** (3 changes)
-
-* Path was added
-* Operation POST was added
-* Operation PUT was added
-
-**/api/v2/carrierservices/billing/monthlyrecurringcost/{mrcId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/billing/nonrecurringcost** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/billing/nonrecurringcost/{nrcId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/billing/bills** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/billing/bills/{billId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/billing/monthlyrecurringcost** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/billing/numberrates** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/billing/usagepricing/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/billing/usagerateregions** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/carriers/{carrierId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/carrierservices/carriers/20190123/carriers/{carrierId}** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/carrierservices/carriers** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/carriers/{carrierId}/services/{serviceId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/carriers/20190123/carriers/{carrierId}/services/{serviceId}** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/carrierservices/carriers/{carrierId}/services** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/cdrs/generate/files** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/cdrs/backups/list** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/cdrs/backups/list/{resultId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/cdrs/backup** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/cdrs/backup/{resultId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/cdrs/restore** (2 changes)
-
-* Path was added
-* Operation POST was added
+* Parameter enforceLicenses was removed
+* Parameter lookupGroups was removed
 
 **/api/v2/carrierservices/integrations/emergencylocations/me** (1 change)
 
-* Operation delete was added. Summary: Clear current emergency location for the logged in user
-
-**/api/v2/carrierservices/integrations/emergencylocations/verifyphonenumber** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numberinventory/inventorynumbers/available** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberinventory/inventorynumbers/bulk** (4 changes)
-
-* Path was added
-* Operation POST was added
-* Operation PUT was added
-* Operation PATCH was added
-
-**/api/v2/carrierservices/numberinventory/inventorynumbers/{phoneNumberId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation PATCH was added
-
-**/api/v2/carrierservices/numberinventory/servicecapabilities/descriptions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberinventory/servicecapabilities** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberinventory/inventorynumbers** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numberpurchase/portrequests/{portRequestId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/carrierservices/numbermanagement/portrequests/tasks/{taskId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numbermanagement/portrequests/tasks/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numbermanagement/portrequests/tasks** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numbermanagement/portrequests/disconnect/tasks/{taskId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numbermanagement/portrequest/tasks/{portRequestId}/effectivedate** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numbermanagement/portrequest/tasks/{taskId}/status** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numbermanagement/portrequest/tasks/{taskId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/portrequests** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/portrequests/{portRequestId}/orders** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/portrequests/transitive** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20160715/available** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numberpurchase/20160715/available/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20180810/available/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/orders/{orderId}** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/carrierservices/numberpurchase/orders** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numberpurchase/orders/did/{did}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20160715/orders** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks/{taskId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20190107/export/tasks/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20190107/export/tasks/{taskId}/result** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20190107/disconnect/tasks** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numberpurchase/20190107/export/tasks** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numberpurchase/20210520/orders** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/reserved/{reservationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks/{taskId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/numberpurchase/20200902/reservations/tasks** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/numberpurchase/supportedcountries** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/pricing/numberrate** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/report/lineitems/fees** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/report/lineitems/fees/{feesId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/report/lineitems/usage** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/report/lineitems/usage/{usageId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/report/usage/calls/csv** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/report/usage/calls/csv/{csvId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/templates/{templateId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/templates** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/signature** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/signatures/tasks/{taskId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/signatures/tasks/{taskId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/signatures/tasks** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/carrierservices/sipdnsdetails** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/uploadtransform/spreadsheets/{transformId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/uploadtransform/spreadsheets** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/uploadtransform/texttables/{transformId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/uploadtransform/texttables** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/transformendpoints/{endpointId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/transformendpoints** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/carrierservices/transformprogress/search/{serviceName}/{modelType}/{modelId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/transformprogress/search/{serviceName}/{modelType}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/transformprogress/search/{serviceName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/transformprogress/{progressId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/csvschemas/{carrierId}/name/{schemaName}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/csvschemas/{carrierId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/carrierservices/csvschemas** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/progress** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/xlsxschemas/{carrierId}/name/{schemaName}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/carrierservices/xlsxschemas** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/carrierservices/xlsxschemas/{carrierId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/chats/users/{userId}/rooms** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/chat/rooms/{roomJid}/participants/{participantJid}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/chats/rooms/{roomJid}/participants/{participantJid}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/cobrowse/deployments** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/cobrowse/deployments/{deploymentId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/cobrowse/session/{cobrowseSessionId}/activationfailure** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/outbound/compliancedata/deviceinfo** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/outbound/compliancedata** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Operation DELETE was removed
 
 **/api/v2/scripts/{scriptId}/pages/{pageId}** (2 changes)
 
-* Operation put was added. Summary: Update a page.
-* Operation delete was added. Summary: Delete a page.
+* Operation PUT was removed
+* Operation DELETE was removed
 
 **/api/v2/scripts/{scriptId}/pages** (1 change)
 
-* Operation post was added. Summary: Create a page.
-
-**/api/v2/scripts/published/divisionviews/{scriptId}/variables** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Operation POST was removed
 
 **/api/v2/scripts/{scriptId}** (2 changes)
 
-* Operation put was added. Summary: Update a script.
-* Operation delete was added. Summary: Delete a script.
-
-**/api/v2/scripts/templates** (2 changes)
-
-* Path was added
-* Operation POST was added
+* Operation PUT was removed
+* Operation DELETE was removed
 
 **/api/v2/scripts** (1 change)
 
-* Operation post was added. Summary: Create a script.
+* Operation POST was removed
 
-**/api/v2/scripts/templates/{scriptId}** (2 changes)
+**POST /api/v2/recording/crossplatform/mediaretentionpolicies** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter expand was removed
 
-**/api/v2/scripts/templates/{scriptId}/pages/{pageId}** (2 changes)
+**GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter expand was removed
 
-**/api/v2/evaluations/favoritetemplates/{templateId}** (2 changes)
+**PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
 
-* Path was added
-* Operation DELETE was added
+* Parameter expand was removed
 
-**/api/v2/evaluations/favoritetemplates** (3 changes)
+**PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Parameter expand was removed
 
-**/api/v2/evaluations/templates/{templateId}** (4 changes)
+**POST /api/v2/recording/mediaretentionpolicies** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
+* Parameter expand was removed
 
-**/api/v2/evaluations/templates** (3 changes)
+**GET /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Parameter expand was removed
 
-**/api/v2/scripter/favoritetemplates/{templateId}** (2 changes)
+**PUT /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
 
-* Path was added
-* Operation DELETE was added
+* Parameter expand was removed
 
-**/api/v2/scripter/favoritetemplates** (3 changes)
+**PATCH /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Parameter expand was removed
 
-**/api/v2/scripter/templates/{templateId}** (4 changes)
+**DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/scripter/templates** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Parameter hardDelete was removed
 
 **/api/v2/externalcontacts/contacts** (1 change)
 
-* Operation patch was added. Summary: Stitch an external contact
-
-**/api/v2/externalcontacts/contacts/suggestions** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/externalcontacts/organizations/{externalOrganizationId}/churn** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/externalcontacts/organizations/{externalOrganizationId}/churn/latest** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Operation PATCH was removed
 
 **/api/v2/externalcontacts/organizations/schemas/{schemaId}** (1 change)
 
-* Operation delete was added. Summary: Delete a schema
-
-**/api/v2/externalcontacts/contacts/{contactId}/journey/segments** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/billing/signup/freetrial** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/codes** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversationexport** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/chats/memberauthtoken** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/chats/{conversationId}/mediarequests/{mediaRequestId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/conversations/chats/{conversationId}/mediarequests** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/emails/settings/threading** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapupcodes** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/screenshares** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/attributes** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/screenshares/{conversationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/wrapup** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/replace** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapupcodes** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/socials** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/attributes** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/socials/{conversationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/wrapup** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/socials/{conversationId}/participants/{participantId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/socials/{conversationId}/participants/{participantId}/replace** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapupcodes** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/videos** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/pin** (3 changes)
-
-* Path was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/attributes** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/videos/{conversationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/wrapup** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/videos/{conversationId}/participants/{participantId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/videos/{conversationId}/participants/{participantId}/replace** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/messaging/facebook/permissions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/{conversationId}/participants/{participantId}/codes** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/{conversationId}/participants/{participantId}/disconnect** (2 changes)
-
-* Path was added
-* Operation POST was added
+* Operation DELETE was removed
 
 **/api/v2/conversations/{conversationId}/participants/{participantId}** (1 change)
 
-* Operation post was added. Summary: Create a wrap-up for this conversation participant.
+* Operation POST was removed
 
-**/api/v2/conversations/{conversationId}/suggestions** (2 changes)
+**GET /api/v2/outbound/contactlistfilters** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter sourceType was removed
 
-**/api/v2/conversations/{conversationId}/suggestions/{suggestionId}** (2 changes)
+**GET /api/v2/outbound/dnclists/divisionviews** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter contactMethod was removed
 
-**/api/v2/conversations/{conversationId}/suggestions/feedback** (2 changes)
+**POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter expirationDateTime was removed
 
-**/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback** (2 changes)
+**GET /api/v2/outbound/dnclists** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter contactMethod was removed
 
-**/api/v2/workforcemanagement/historicaldata/multipartuploads/csv** (3 changes)
+**GET /api/v2/outbound/messagingcampaigns/divisionviews** (2 changes)
 
-* Path was added
-* Operation POST was added
-* Operation PUT was added
+* Parameter contentTemplateId was removed
+* Parameter campaignStatus was removed
 
-**/api/v2/dataprivacy/maskingrules** (3 changes)
+**GET /api/v2/outbound/messagingcampaigns** (2 changes)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/dataprivacy/maskingrules/validate** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/dataprivacy/maskingrules/{ruleId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/diagnostics/support** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/diagnostics/trace** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/diagnostics** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/diagnostics/trace/backgroundassistant** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/outbound/contactlisttemplates/{contactListTemplateId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/outbound/contactlisttemplates** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/outbound/contactlisttemplates/bulk/add** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/outbound/importtemplates/{importTemplateId}/importstatus** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/outbound/importtemplates/{importTemplateId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/outbound/importtemplates** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/outbound/importtemplates/bulk/add** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/outbound/messaging/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/dialog/bots/{botId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/dialog/bots** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/dialog/bots/{botId}/sessions/{sessionId}/turns** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/dialog/bots/{botId}/sessions/{sessionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/dialog/bots/{botId}/sessions** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/dialog/bots/{botId}/versions/{versionId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/dialog/bots/{botId}/versions** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/dialog/integrations/bots/{botId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/dialog/integrations/bots/{botId}/versions/{versionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/dialog/integrations/bots** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/groups/{groupId}/images/{imageId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/groups/{groupId}/images** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Parameter contentTemplateId was removed
+* Parameter campaignStatus was removed
 
 **/api/v2/groups/{groupId}/profile** (1 change)
 
-* Operation put was added. Summary: Update group profile
-
-**/api/v2/groups/bulk/deleted** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Operation PUT was removed
 
 **/api/v2/organizations/me** (1 change)
 
-* Operation delete was added. Summary: Delete the organization.
-
-**/api/v2/organizations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/apps/legacy/translations** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/apps/legacy/translations/builtin/{languageName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/apps/legacy/translations/{languageName}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/apps/legacy/availabletranslations** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Operation DELETE was removed
 
 **/api/v2/users/{userId}/profile** (1 change)
 
-* Operation put was added. Summary: Update user profile
-
-**/api/v2/bots/instances/{instanceId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/bots/instances/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/bots/instances/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/bots/instances/querycapabilities** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/bots/instances/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/fax/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/gamification/insights/rankings** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/actions/schemas/{providerName}/{fileName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/actions/metrics/queries/executioncount** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/actions/metrics/queries/executioncount/{queryId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/actions/metrics/queries/executioncount/{queryId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/actions/metrics/queries/responsecode** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/actions/metrics/queries/responsecode/{queryId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/actions/metrics/queries/responsecode/{queryId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/actions/metrics/queries/duration** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/actions/metrics/queries/duration/{queryId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/actions/metrics/queries/duration/{queryId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/salesforce/servicecloudvoice/login** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/salesforce/servicecloudvoice/logout** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/update** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/speech/dialogflowcx/agents/{agentId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/speech/dialogflowcx/agents** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/speech/lexv2/bot/{botId}/aliases** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/speech/lexv2/bots** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/speech/stt/engines/{engineId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/speech/stt/engines** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/webhooks/{webhookId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/integrations/webhooks** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/journey/actiontargets/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/journey/eventtypes/{eventTypeId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/journey/eventtypes** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/journey/openactions/{openActionId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/journey/openactions/schemas/{schemaId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/journey/openactions/schemas/{schemaId}/versions/{versionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/openactions/schemas/{schemaId}/versions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/openactions/schemas** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/journey/openactions** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/journey/externalcontacts/{externalContactId}/segments** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/journey/sessions/{sessionType}/recent** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/settings/clickstream** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/journey/settings/webactions** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/journey/views/{viewId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/journey/views/{viewId}/versions** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/journey/views** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/journey/views/eventdefinitions/{eventDefinitionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/views/eventdefinitions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/approvals/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/feedback/approvals/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation PATCH was added
-
-**/api/v2/knowledge/knowledgebases/feedback** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/trainings** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations** (2 changes)
-
-* Path was added
-* Operation POST was added
+* Operation PUT was removed
 
 **/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}** (1 change)
 
-* Operation patch was added. Summary: Update feedback on a document
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
+* Operation PATCH was removed
 
 **/api/v2/organizations/limits/changerequests/{requestId}** (1 change)
 
-* Operation patch was added. Summary: Update a limit change request
+* Operation PATCH was removed
 
 **/api/v2/organizations/limits/changerequests** (1 change)
 
-* Operation post was added. Summary: Create a limit change request
+* Operation POST was removed
 
-**/api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}** (2 changes)
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter useContext was removed
 
-**/api/v2/diagnostics/logcapture/browser/entries/download/jobs** (2 changes)
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents** (7 changes)
 
-* Path was added
-* Operation POST was added
+* Parameter before was removed
+* Parameter after was removed
+* Parameter pageNumber was removed
+* Parameter sortBy was removed
+* Parameter sortOrder was removed
+* Parameter useContext was removed
+* Parameter expand was removed
 
-**/api/v2/diagnostics/logcapture/browser/entries/download** (2 changes)
+**GET /api/v2/notifications/channels** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter connectionType was removed
 
-**/api/v2/diagnostics/logcapture/browser/entries** (2 changes)
+**POST /api/v2/notifications/channels** (1 change)
 
-* Path was added
-* Operation POST was added
-
-**/api/v2/diagnostics/logcapture/browser/entries/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/diagnostics/logcapture/browser/users** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/diagnostics/logcapture/browser/users/{userId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/ads/{platformName}/{adType}** (3 changes)
-
-* Path was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/ads/{platformName}/{adType}/targeturl** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/marketplace/listings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/marketplace/listings/{listingId}/media/{fileName}** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/listings/{listingId}/media** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/listings/{listingId}/media/order** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/marketplace/listings/{listingId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/marketplace/listings/{listingId}/categories** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/marketplace/listings/{listingId}/metadata** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/marketplace/documents/navigations/{navigationId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/documents/navigations** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/marketplace/documents** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/marketplace/documents/{documentId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/documents/images/{documentId}** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/marketplace/enterpriseagreements** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/marketplace/enterpriseagreements/{enterpriseAgreementId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/enterpriseagreements/search** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/marketplace/partners** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/marketplace/partners/{partnerId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/resellers/organizations/{organizationId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation PUT was added
-
-**/api/v2/marketplace/resellers/partners/{partnerId}** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/marketplace/resellers/{resellerId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/marketplace/resellers** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/marketplace/resellers/listings** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/meetings/{meetingId}/occurrences/{occurrenceId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/meetings/{meetingId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/meetings** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/users/{userId}/meetings** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/action** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query/{queryId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/replies/query/{queryId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query/{queryId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/integrations/{integrationId}/messages/{messageId}/query/{queryId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/integrations/{integrationId}/messages** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/integrations** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/integrations/uploads** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/email** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/email/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/facebook/app** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/integrations/facebook/{integrationId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/integrations/facebook** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/integrations/line/{integrationId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/integrations/line** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/messages/inbound/open** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/integrations/open/{integrationId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/integrations/open** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/sms/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/sms** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/sms/provisioning/longcodes/available** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/sms/provisioning/longcodes** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/messaging/sms/provisioning/longcodes/portin** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/sms/provisioning/longcodes/{longCode}** (3 changes)
-
-* Path was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/sms/provisioning/orders/{orderId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/sms/provisioning/simulated/{senderId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/sms/provisioning/simulated** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/messaging/sms/provisioning/tollfreenumbers** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/messaging/sms/provisioning/tollfreenumbers/portin** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/sms/provisioning/tollfreenumbers/{tollfreeNumberCode}** (3 changes)
-
-* Path was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/sms/provisioning/tollfreenumbers/available** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/messaging/integrations/twitter/{integrationId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/integrations/twitter** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/messaging/integrations/whatsapp/{integrationId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/integrations/whatsapp** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/users/{userId}/verifiers/{verifierId}** (3 changes)
-
-* Path was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/users/{userId}/verifiers** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/organizations/migrations/{migrationName}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/organizations/migrations/{migrationName}/state** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/organizations/migrations** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/diagnostics/newrelic/insights/backgroundassistant** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/diagnostics/newrelic/insights** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/apps/downloads/{downloadId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/downloads/callback** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/apps/globalfeaturetoggles** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/health/check/dc5ea213-b829-40c8-ab65-b1eb2b583ff7/services/{serviceName}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation HEAD was added
-
-**/api/v2/health/check** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation HEAD was added
-
-**/health/check** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation HEAD was added
-
-**/health/check/dc5ea213-b829-40c8-ab65-b1eb2b583ff7/services/{serviceName}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation HEAD was added
-
-**/api/v2/integrations/webhooks/{tokenId}/events** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/webhooks/{webhookId}/schema** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/journey/deployments/{deploymentId}/actionevent** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/journey/deployments/{deploymentId}/appevents/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/beacons** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/beacons** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/journey/websites/{websiteId}/customers/{customerCookieId}/ping** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/marketplace/ads** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/marketplace/ads/{platformName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/marketplace/categories** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/marketplace/listings/search** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/marketplace/listings/vendors/{vendorId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/marketplace/documents/search** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/marketplace/reviews/{reviewId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/marketplace/partners/{partnerType}/organizations/{organizationId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/marketplace/partners/search** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/billing/signup/freetrial/staging** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/signup/freetrial/staging/{freeTrialId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/billing/signup/freetrial/staging/{freeTrialId}/otp** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/onboarding/invites/{inviteId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/onboarding/joincodes/{joinCodeId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/onboarding/activations/{activationId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/onboarding/activations/{activationId}/apply** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/onboarding/orgprovisionings/{provisioningId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/onboarding/orgprovisionings/{provisioningId}/complete** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/onboarding/orgprovisionings** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/onboarding/organizations/{organizationId}/users** (2 changes)
-
-* Path was added
-* Operation HEAD was added
-
-**/api/v2/billing/signup/provisioning/{provisioningId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/billing/signup/provisioning** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/billing/signup/provisioning/{provisioningId}/otp** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/onboarding/users** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/onboarding/users/stage** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/onboarding/users/joinexistingorgs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/phonehome/phoneconfiguration/{hardwareId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/notifications/availabletopics/{topicName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/notifications/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
+* Parameter connectionType was removed
 
 **/api/v2/oauth/authorizations/{clientId}** (2 changes)
 
-* Operation put was added. Summary: Authorize a client for the resource owner
-* Operation delete was added. Summary: Delete an authorization for a client
+* Operation PUT was removed
+* Operation DELETE was removed
 
-**/api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query** (2 changes)
+**GET /api/v2/quality/agents/activity** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter agentTeamId was removed
 
-**/api/v2/onboarding/invites** (2 changes)
+**GET /api/v2/quality/evaluations/query** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter agentTeamId was removed
 
-**/api/v2/onboarding/joincodes** (3 changes)
+**GET /api/v2/quality/evaluators/activity** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/usage/events/definitions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/usage/events/definitions/{eventDefinitionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/organizations/enforcescopes** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/organizations/passwordrequirements** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/telephony/providers/edges/sites/{siteId}/schedulereboot** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/phone/{phoneId}/settings** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/notifications/push/registrations/{registrationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/notifications/push/registrations** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
+* Parameter agentTeamId was removed
 
 **/api/v2/recording/jobs** (1 change)
 
-* Operation delete was added. Summary: Clear the jobs in org by state specified.
-
-**/api/v2/recordings/screensessions/metadata/backgroundassistant** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/alerting/alerts/all** (3 changes)
-
-* Path was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/routing/comparisonperiods** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Operation DELETE was removed
 
 **/api/v2/routing/settings/transcription** (1 change)
 
-* Operation patch was added. Summary: Patch Transcription Settings
-
-**/api/v2/routing/utilization/labels/{labelId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/routing/utilization/labels/{labelId}/agents** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/utilization/labels** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/routing/queues/{queueId}/conversations/calls** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/queues/{queueId}/conversations/callbacks** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/queues/{queueId}/conversations/chats** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/queues/{queueId}/conversations/emails** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/queues/{queueId}/conversations** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/email/domains/{domainId}/dkim** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/routing/email/domains/{domainId}/verification** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/routing/email/domains/{domainId}/mailfrom** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/routing/predictors/interactionscores** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/routing/predictors/userscores** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/routing/predictors/keyperformanceindicators/{kpiId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/routing/predictors/keyperformanceindicatortypes** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Operation PATCH was removed
 
 **/api/v2/routing/predictors/keyperformanceindicators** (1 change)
 
-* Operation post was added. Summary: Create a custom Key Performance Indicator.
+* Operation POST was removed
 
-**/api/v2/routing/queues/{queueId}/assistant** (2 changes)
+**DELETE /api/v2/routing/wrapupcodes/{codeId}** (1 change)
 
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/comparisonreports/summary** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/routing/comparisonreports/details** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/routing/directroutingbackup/settings/me** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/routing/users/{userId}/directroutingbackup/settings** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/routing/wrapupcodes/divisionviews/{codeId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/wrapupcodes/divisionviews** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Parameter hardDelete was removed
 
 **/api/v2/scim/groups/{groupId}** (1 change)
 
-* Operation delete was added. Summary: Delete a group
+* Operation DELETE was removed
 
 **/api/v2/scim/groups** (1 change)
 
-* Operation post was added. Summary: Create a group
+* Operation POST was removed
 
 **/api/v2/scim/v2/groups** (1 change)
 
-* Operation post was added. Summary: Create a group
+* Operation POST was removed
 
 **/api/v2/scim/v2/groups/{groupId}** (1 change)
 
-* Operation delete was added. Summary: Delete a group
+* Operation DELETE was removed
 
-**/api/v2/settings/webrtc/users** (5 changes)
+**GET /api/v2/speechandtextanalytics/topics** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
+* Parameter dialects was removed
 
-**/api/v2/signeddata** (2 changes)
+**GET /api/v2/telephony/providers/edges/extensionpools** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter divisionId was removed
 
-**/api/v2/speechandtextanalytics/categories** (3 changes)
+**GET /api/v2/telephony/providers/edges/extensions** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/speechandtextanalytics/categories/{categoryId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/docs/swagger** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/docs/swaggerpreview** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/docs/swaggerall** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/sipmessages/conversations/{conversationId}/headers** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/sipmessages/conversations/{conversationId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/providers/edges/dialtargets** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/status** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/files/volumes/tasks** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/files/volumes/{volumeId}/tasks** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/providers/edges/files/volumes/recovered/tasks/{taskId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/files/volumes/{volumeId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/telephony/providers/edges/files/volumes** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/files/volumes/verify** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/providers/edges/hybridcompatibility** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/provisioning/amis/{amiId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/{autoScalingGroupId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/upgrade** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/telephony/providers/edges/autoscalinggroups/images/current/tiers/{tierName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/sites/{siteId}/provisioning/decommissioning** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/sites/{siteId}/provisioning** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/telephony/providers/edges/autoscalinggroups/{autoScalingGroupId}/edges/{edgeId}** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/telephony/providers/edges/provisioning/upgraderule** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation PATCH was added
-
-**/api/v2/telephony/providers/edges/sites/search** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/telephony/providers/edges/tiers** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/providers/edges/trunkbasesettings/search** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/providers/edges/trunks/search** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/testautomation/existingresources/users/checkin** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/testautomation/existingresources/users/checkout** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/testautomation/existingresources/environments/{environmentName}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/testautomation/existingresources/environments/{environmentName}/users/{userId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/testautomation/existingresources/environments/{environmentName}/users** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/testautomation/existingresources/environments** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/testautomation/existingresources/oauthclients/{environmentName}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/testautomation/existingresources/oauthclients** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/testautomation/existingresources/organizations/{organizationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/testautomation/existingresources/organizations/{organizationId}/users** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/testautomation/existingresources/organizations** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/integrations/unifiedcommunications/email** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/presences** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/unifiedcommunications/clientapps** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings/{meetingId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/microsoftteams/auth** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/integrations/zoom/auth** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/integrations/zoom/202004/meetings/{meetingId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/zoom/202004/meetings/{meetingId}/signature** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/integrations/zoom/202004/users/{userId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/zoom/202004/users/{userId}/settings** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/integrations/zoom/202004/users/{userId}/meetings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/usage/datatransfer/aggregates/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/usage/datatransfer/aggregates/query/results/{executionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/users/externalid/{authorityName}/{externalKey}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/users/{userId}/externalid/{authorityName}** (2 changes)
-
-* Path was added
-* Operation GET was added
+* Parameter divisionId was removed
 
 **/api/v2/users/{userId}/externalid** (1 change)
 
-* Operation get was added. Summary: Get the external identifiers for a user.
+* Operation GET was removed
 
-**/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}** (2 changes)
+**GET /api/v2/architect/emergencygroups** (1 change)
 
-* Path was added
-* Operation DELETE was added
+* Parameter divisionId was removed
 
-**/api/v2/voicebots/bot/connection** (2 changes)
+**GET /api/v2/architect/ivrs** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter divisionId was removed
 
-**/api/v2/voicemail/messages/create** (2 changes)
+**POST /api/v2/learning/assignments/{assignmentId}/reassign** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter body was removed
 
-**/api/v2/architect/audits** (2 changes)
+**GET /api/v2/learning/modules** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter externalIds was removed
 
-**/api/v2/architect/me** (2 changes)
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter forceDownloadService was removed
 
-**/api/v2/architect/configuration** (2 changes)
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday** (1 change)
 
-* Path was added
-* Operation GET was added
-
-**/api/v2/architect/capabilities** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/flows/actions/checkinsync** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/flows/actions/validate** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/flows/actions/debug** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/flows/{flowId}/validate/{operationId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/learning/assignments/{assignmentId}/steps/{stepId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/learning/modules/{moduleId}/archive** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/learning/modules/{moduleId}/publishedversions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/learning/modules/{moduleId}/users/{userId}/assignments** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/learning/scorm/{scormId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/learning/scorm** (2 changes)
-
-* Path was added
-* Operation POST was added
+* Parameter useMockExternalData was removed
 
 **/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts** (1 change)
 
-* Operation post was added. Summary: Create a blank short term forecast
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate/legacyweightedaverage** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/compute** (2 changes)
-
-* Path was added
-* Operation POST was added
+* Operation POST was removed
 
 **/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}** (1 change)
 
-* Operation patch was added. Summary: Update a short term forecast
+* Operation PATCH was removed
 
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement** (2 changes)
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data** (1 change)
 
-* Path was added
-* Operation GET was added
+* Parameter doNotApplyModifications was removed
 
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/sourcedata/query** (2 changes)
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter doNotApplyModifications was removed
 
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/sourcedata** (2 changes)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter forceDownloadService was removed
 
-**/api/v2/workforcemanagement/decisions/downloads/search** (2 changes)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search** (1 change)
 
-* Path was added
-* Operation POST was added
+* Parameter forceDownloadService was removed
 
-**/api/v2/workforcemanagement/decisions/downloads/{downloadId}** (2 changes)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades** (1 change)
 
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/sync** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/history/versions/{planningGroupVersion}/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/agents/v2/managementunits** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/teams/{teamId}/adherence** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/agents/me** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/forecasts/adhoc** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/forecasts/adhoc/{forecastId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/historicaldata/availability** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/historicaldata/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Parameter forceDownloadService was removed
 
 **AuthorizationPolicy** (1 change)
 
-* Model was added
+* Model AuthorizationPolicy was removed
+
+**PolicyCondition** (1 change)
+
+* Model PolicyCondition was removed
 
 **Subject** (1 change)
 
-* Model was added
+* Model Subject was removed
 
 **TypedAttribute** (1 change)
 
-* Model was added
+* Model TypedAttribute was removed
 
 **ValidationError** (1 change)
 
-* Model was added
+* Model ValidationError was removed
 
 **ValidationErrorListing** (1 change)
 
-* Model was added
+* Model ValidationErrorListing was removed
 
 **AuthorizationPolicyEntityListing** (1 change)
 
-* Model was added
+* Model AuthorizationPolicyEntityListing was removed
 
 **PolicyAttribute** (1 change)
 
-* Model was added
+* Model PolicyAttribute was removed
 
 **TargetAttributes** (1 change)
 
-* Model was added
+* Model TargetAttributes was removed
 
 **AutoAnswerSetting** (1 change)
 
-* Model was added
+* Model AutoAnswerSetting was removed
 
 **AutoAnswerSettings** (1 change)
 
-* Model was added
+* Model AutoAnswerSettings was removed
 
 **PanelSetting** (1 change)
 
-* Model was added
+* Model PanelSetting was removed
 
 **PanelSettings** (1 change)
 
-* Model was added
+* Model PanelSettings was removed
 
 **Panel** (1 change)
 
-* Model was added
-
-**Group** (1 change)
-
-* Optional property chat was added
-
-**ConversationAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**QueryDivision** (2 changes)
-
-* Optional property divisionId was added
-* Optional property homeDivision was added
-
-**ConversationAsyncAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**ConversationActivityResponse** (2 changes)
-
-* Optional property subscriptions was added
-* Optional property subscriptionExpirationDate was added
-
-**ConversationActivityQuery** (2 changes)
-
-* Optional property subscribe was added
-* Optional property peekAtLast was added
-
-**ConversationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**AsyncConversationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**EvaluationAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**EvaluationAsyncAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
+* Model Panel was removed
 
 **FlowExecutionAggregateDataContainer** (1 change)
 
-* Model was added
+* Model FlowExecutionAggregateDataContainer was removed
 
 **FlowExecutionAggregateQueryResponse** (1 change)
 
-* Model was added
+* Model FlowExecutionAggregateQueryResponse was removed
 
 **FlowExecutionAggregateQueryClause** (1 change)
 
-* Model was added
+* Model FlowExecutionAggregateQueryClause was removed
 
 **FlowExecutionAggregateQueryFilter** (1 change)
 
-* Model was added
+* Model FlowExecutionAggregateQueryFilter was removed
 
 **FlowExecutionAggregateQueryPredicate** (1 change)
 
-* Model was added
+* Model FlowExecutionAggregateQueryPredicate was removed
 
 **FlowExecutionAggregationQuery** (1 change)
 
-* Model was added
+* Model FlowExecutionAggregationQuery was removed
 
 **FlowExecutionAggregationView** (1 change)
 
-* Model was added
+* Model FlowExecutionAggregationView was removed
 
 **FlowExecutionAsyncAggregationQuery** (1 change)
 
-* Model was added
+* Model FlowExecutionAsyncAggregationQuery was removed
 
 **FlowExecutionAsyncAggregateQueryResponse** (1 change)
 
-* Model was added
-
-**FlowActivityResponse** (2 changes)
-
-* Optional property subscriptions was added
-* Optional property subscriptionExpirationDate was added
-
-**FlowActivityQuery** (2 changes)
-
-* Optional property subscribe was added
-* Optional property peekAtLast was added
-
-**FlowAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**FlowAsyncAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
+* Model FlowExecutionAsyncAggregateQueryResponse was removed
 
 **RateLimitAggregateDataContainer** (1 change)
 
-* Model was added
+* Model RateLimitAggregateDataContainer was removed
 
 **RateLimitAggregateQueryResponse** (1 change)
 
-* Model was added
+* Model RateLimitAggregateQueryResponse was removed
 
 **RateLimitAggregateQueryClause** (1 change)
 
-* Model was added
+* Model RateLimitAggregateQueryClause was removed
 
 **RateLimitAggregateQueryFilter** (1 change)
 
-* Model was added
+* Model RateLimitAggregateQueryFilter was removed
 
 **RateLimitAggregateQueryPredicate** (1 change)
 
-* Model was added
+* Model RateLimitAggregateQueryPredicate was removed
 
 **RateLimitAggregationQuery** (1 change)
 
-* Model was added
+* Model RateLimitAggregationQuery was removed
 
 **RateLimitAggregationView** (1 change)
 
-* Model was added
+* Model RateLimitAggregationView was removed
 
 **ResolutionAggregateQueryResponse** (1 change)
 
-* Model was added
+* Model ResolutionAggregateQueryResponse was removed
 
 **ResolutionAggregationQuery** (1 change)
 
-* Model was added
-
-**RoutingActivityResponse** (2 changes)
-
-* Optional property subscriptions was added
-* Optional property subscriptionExpirationDate was added
-
-**RoutingActivityQuery** (2 changes)
-
-* Optional property subscribe was added
-* Optional property peekAtLast was added
-
-**SurveyAsyncAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**SurveyAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**TaskManagementAsyncAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**TaskManagementAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**TeamActivityResponse** (2 changes)
-
-* Optional property subscriptions was added
-* Optional property subscriptionExpirationDate was added
-
-**TeamActivityQuery** (2 changes)
-
-* Optional property subscribe was added
-* Optional property peekAtLast was added
-
-**TranscriptAsyncAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**TranscriptAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**UserAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**UserAsyncAggregationQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**UserDetailsQuery** (1 change)
-
-* Optional property divisionIds was added
-
-**UserActivityResponse** (2 changes)
-
-* Optional property subscriptions was added
-* Optional property subscriptionExpirationDate was added
-
-**UserActivityQuery** (2 changes)
-
-* Optional property subscribe was added
-* Optional property peekAtLast was added
-
-**AsyncUserDetailsQuery** (1 change)
-
-* Optional property divisionIds was added
+* Model ResolutionAggregationQuery was removed
 
 **BotChannel** (1 change)
 
-* Model was added
+* Model BotChannel was removed
 
 **BotFlowSession** (1 change)
 
-* Model was added
+* Model BotFlowSession was removed
 
 **SessionsResponse** (1 change)
 
-* Model was added
+* Model SessionsResponse was removed
 
 **DashboardConfiguration** (1 change)
 
-* Model was added
-
-**ViewFilter** (11 changes)
-
-* Optional property showSecondaryStatus was added
-* Optional property agentDurationSortOrder was added
-* Optional property waitingDurationSortOrder was added
-* Optional property interactingDurationSortOrder was added
-* Optional property agentName was added
-* Optional property skillsList was added
-* Optional property languageList was added
-* Optional property statusList was added
-* Optional property oauthClientIds was added
-* Optional property apiOperations was added
-* Optional property dashboardIds was added
+* Model DashboardConfiguration was removed
 
 **Warning** (1 change)
 
-* Model was added
+* Model Warning was removed
 
 **Widget** (1 change)
 
-* Model was added
+* Model Widget was removed
 
 **DashboardConfigurationBulkRequest** (1 change)
 
-* Model was added
+* Model DashboardConfigurationBulkRequest was removed
 
 **DashboardConfigurationListing** (1 change)
 
-* Model was added
+* Model DashboardConfigurationListing was removed
 
 **DashboardConfigurationQueryRequest** (1 change)
 
-* Model was added
+* Model DashboardConfigurationQueryRequest was removed
 
 **DashboardUser** (1 change)
 
-* Model was added
+* Model DashboardUser was removed
 
 **DashboardUserListing** (1 change)
 
-* Model was added
+* Model DashboardUserListing was removed
 
 **InsightConfiguration** (1 change)
 
-* Model was added
+* Model InsightConfiguration was removed
 
 **InsightConfigurations** (1 change)
 
-* Model was added
+* Model InsightConfigurations was removed
 
 **TabConfiguration** (1 change)
 
-* Model was added
+* Model TabConfiguration was removed
 
 **TableConfiguration** (1 change)
 
-* Model was added
+* Model TableConfiguration was removed
 
 **TabConfigurationListing** (1 change)
 
-* Model was added
+* Model TabConfigurationListing was removed
 
 **TabConfigurationsDeleteRequest** (1 change)
 
-* Model was added
+* Model TabConfigurationsDeleteRequest was removed
 
 **ViewConfigurations** (1 change)
 
-* Model was added
+* Model ViewConfigurations was removed
 
 **ViewConfigurationsListing** (1 change)
 
-* Model was added
+* Model ViewConfigurationsListing was removed
 
 **ReportingExportHistory** (1 change)
 
-* Model was added
+* Model ReportingExportHistory was removed
 
 **ReportingExportJobHistoryListing** (1 change)
 
-* Model was added
-
-**ReportingExportJobResponse** (14 changes)
-
-* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
-* Optional property description was added
-* Optional property scheduleExpression was added
-* Optional property timePeriod was added
-* Optional property recurrence was added
-* Optional property dateNextExecution was added
-* Optional property dateLastDownload was added
-* Optional property dateLastConfirmed was added
-* Optional property intervalKeyType was added
-* Optional property requestedColumnIds was added
-* Optional property sortOrder was added
-* Optional property sortKey was added
-* Optional property scheduleHasStaticLink was added
-* Optional property scheduleStaticLinkUrl was added
+* Model ReportingExportJobHistoryListing was removed
 
 **ExportJobHistoryUpdate** (1 change)
 
-* Model was added
-
-**ReportingExportMetadataJobResponse** (1 change)
-
-* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
-
-**ReportingExportJobRequest** (11 changes)
-
-* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
-* Optional property description was added
-* Optional property isEnabled was added
-* Optional property scheduleExpression was added
-* Optional property timePeriod was added
-* Optional property recurrence was added
-* Optional property intervalKeyType was added
-* Optional property requestedColumnIds was added
-* Optional property sortOrder was added
-* Optional property sortKey was added
-* Optional property scheduleHasStaticLink was added
+* Model ExportJobHistoryUpdate was removed
 
 **ReportingScheduleExportJobRequest** (1 change)
 
-* Model was added
+* Model ReportingScheduleExportJobRequest was removed
 
 **ReportingExportRunNowResponse** (1 change)
 
-* Model was added
+* Model ReportingExportRunNowResponse was removed
 
 **ReportingScheduleExportSummaryResponse** (1 change)
 
-* Model was added
+* Model ReportingScheduleExportSummaryResponse was removed
 
 **PermissionBundle** (1 change)
 
-* Model was added
+* Model PermissionBundle was removed
 
 **PermissionBundleListing** (1 change)
 
-* Model was added
+* Model PermissionBundleListing was removed
 
 **Dimensions** (1 change)
 
-* Model was added
+* Model Dimensions was removed
 
 **DirectoryLegacyImageUploadResponse** (1 change)
 
-* Model was added
+* Model DirectoryLegacyImageUploadResponse was removed
 
 **DirectoryLegacyImageUploadRequest** (1 change)
 
-* Model was added
+* Model DirectoryLegacyImageUploadRequest was removed
 
 **BoundingBox** (1 change)
 
-* Model was added
+* Model BoundingBox was removed
 
 **DirectoryLegacyImage** (1 change)
 
-* Model was added
+* Model DirectoryLegacyImage was removed
 
 **DirectoryLegacyImageLink** (1 change)
 
-* Model was added
+* Model DirectoryLegacyImageLink was removed
 
 **DirectoryLegacyImageLinkResponse** (1 change)
 
-* Model was added
+* Model DirectoryLegacyImageLinkResponse was removed
 
 **DirectoryLegacyImageRel** (1 change)
 
-* Model was added
+* Model DirectoryLegacyImageRel was removed
 
 **DirectoryLegacyImageSize** (1 change)
 
-* Model was added
+* Model DirectoryLegacyImageSize was removed
 
 **DirectoryLegacyImageLinkRequest** (1 change)
 
-* Model was added
+* Model DirectoryLegacyImageLinkRequest was removed
 
 **AppLegacy** (1 change)
 
-* Model was added
+* Model AppLegacy was removed
 
 **Apps** (1 change)
 
-* Model was added
+* Model Apps was removed
 
 **ChatLegacy** (1 change)
 
-* Model was added
+* Model ChatLegacy was removed
 
 **ClientVersions** (1 change)
 
-* Model was added
+* Model ClientVersions was removed
 
 **ContactInfo** (1 change)
 
-* Model was added
+* Model ContactInfo was removed
 
 **Department** (1 change)
 
-* Model was added
+* Model Department was removed
 
 **DirectReportCount** (1 change)
 
-* Model was added
+* Model DirectReportCount was removed
 
 **DirectoryGroupFieldConfig** (1 change)
 
-* Model was added
+* Model DirectoryGroupFieldConfig was removed
 
 **DirectoryOrgFieldConfig** (1 change)
 
-* Model was added
+* Model DirectoryOrgFieldConfig was removed
 
 **DirectoryOrganization** (1 change)
 
-* Model was added
+* Model DirectoryOrganization was removed
 
 **DirectoryPersonFieldConfig** (1 change)
 
-* Model was added
+* Model DirectoryPersonFieldConfig was removed
 
 **DirectorySession** (1 change)
 
-* Model was added
+* Model DirectorySession was removed
 
 **DirectorySessionResponse** (1 change)
 
-* Model was added
+* Model DirectorySessionResponse was removed
 
 **EmailLegacy** (1 change)
 
-* Model was added
+* Model EmailLegacy was removed
 
 **EmailMain** (1 change)
 
-* Model was added
+* Model EmailMain was removed
+
+**EnabledFeatures** (1 change)
+
+* Model EnabledFeatures was removed
 
 **FieldConfigs_** (1 change)
 
-* Model was added
+* Model FieldConfigs_ was removed
 
 **General** (1 change)
 
-* Model was added
+* Model General was removed
 
 **GeneralLegacy** (1 change)
 
-* Model was added
+* Model GeneralLegacy was removed
 
 **GroupLegacy** (1 change)
 
-* Model was added
+* Model GroupLegacy was removed
 
 **Images** (1 change)
 
-* Model was added
+* Model Images was removed
 
 **LocationLegacy** (1 change)
 
-* Model was added
+* Model LocationLegacy was removed
 
 **ManagerLegacy** (1 change)
 
-* Model was added
+* Model ManagerLegacy was removed
 
 **MessageLegacy** (1 change)
 
-* Model was added
+* Model MessageLegacy was removed
 
 **NameLegacy** (1 change)
 
-* Model was added
+* Model NameLegacy was removed
 
 **Orgspan** (1 change)
 
-* Model was added
+* Model Orgspan was removed
 
 **Person** (1 change)
 
-* Model was added
+* Model Person was removed
 
 **Person_** (1 change)
 
-* Model was added
+* Model Person_ was removed
 
 **PhoneCell** (1 change)
 
-* Model was added
+* Model PhoneCell was removed
 
 **PhoneHome** (1 change)
 
-* Model was added
+* Model PhoneHome was removed
 
 **Presence** (1 change)
 
-* Model was added
+* Model Presence was removed
 
 **PrimaryContactInfo** (1 change)
 
-* Model was added
+* Model PrimaryContactInfo was removed
 
 **Profile** (1 change)
 
-* Model was added
+* Model Profile was removed
 
 **Ref** (1 change)
 
-* Model was added
+* Model Ref was removed
 
 **Ref_** (1 change)
 
-* Model was added
+* Model Ref_ was removed
 
 **Ref__** (1 change)
 
-* Model was added
+* Model Ref__ was removed
 
 **Ref___** (1 change)
 
-* Model was added
+* Model Ref___ was removed
 
 **Rel** (1 change)
 
-* Model was added
+* Model Rel was removed
 
 **Rel_** (1 change)
 
-* Model was added
+* Model Rel_ was removed
 
 **Relationships** (1 change)
 
-* Model was added
+* Model Relationships was removed
 
 **Section_** (1 change)
 
-* Model was added
+* Model Section_ was removed
 
 **ShortName** (1 change)
 
-* Model was added
+* Model ShortName was removed
 
 **Skill** (1 change)
 
-* Model was added
+* Model Skill was removed
 
 **Skills** (1 change)
 
-* Model was added
+* Model Skills was removed
 
 **Sm** (1 change)
 
-* Model was added
+* Model Sm was removed
 
 **Statu** (1 change)
 
-* Model was added
+* Model Statu was removed
 
 **Status** (1 change)
 
-* Model was added
+* Model Status was removed
 
 **Status_** (1 change)
 
-* Model was added
+* Model Status_ was removed
 
 **SupportURus** (1 change)
 
-* Model was added
+* Model SupportURus was removed
 
 **Title** (1 change)
 
-* Model was added
+* Model Title was removed
 
 **Uploads** (1 change)
 
-* Model was added
+* Model Uploads was removed
 
 **UserLegacy** (1 change)
 
-* Model was added
+* Model UserLegacy was removed
 
 **Value** (1 change)
 
-* Model was added
+* Model Value was removed
 
 **Value_** (1 change)
 
-* Model was added
+* Model Value_ was removed
 
 **Value__** (1 change)
 
-* Model was added
+* Model Value__ was removed
 
 **Value___** (1 change)
 
-* Model was added
+* Model Value___ was removed
 
 **Value____** (1 change)
 
-* Model was added
+* Model Value____ was removed
 
 **Value_____** (1 change)
 
-* Model was added
+* Model Value_____ was removed
 
 **Value______** (1 change)
 
-* Model was added
+* Model Value______ was removed
 
 **Value_______** (1 change)
 
-* Model was added
+* Model Value_______ was removed
 
 **Voice** (1 change)
 
-* Model was added
+* Model Voice was removed
 
 **DirectorySessionPreferredLanguage** (1 change)
 
-* Model was added
+* Model DirectorySessionPreferredLanguage was removed
 
 **Assistant** (1 change)
 
-* Model was added
+* Model Assistant was removed
 
 **AssistantQueue** (1 change)
 
-* Model was added
+* Model AssistantQueue was removed
 
 **ConversationProfile** (1 change)
 
-* Model was added
+* Model ConversationProfile was removed
 
 **GoogleDialogflowConfig** (1 change)
 
-* Model was added
+* Model GoogleDialogflowConfig was removed
 
 **KnowledgeBaseWithDialectReference** (1 change)
 
-* Model was added
+* Model KnowledgeBaseWithDialectReference was removed
 
 **KnowledgeSuggestionConfig** (1 change)
 
-* Model was added
+* Model KnowledgeSuggestionConfig was removed
 
 **TranscriptionConfig** (1 change)
 
-* Model was added
+* Model TranscriptionConfig was removed
 
 **AssistantQueueListing** (1 change)
 
-* Model was added
+* Model AssistantQueueListing was removed
 
 **AssistantListing** (1 change)
 
-* Model was added
+* Model AssistantListing was removed
 
 **RoleSettings** (1 change)
 
-* Model was added
-
-**CallbackMediaSettings** (3 changes)
-
-* Optional property enableAutoDialAndEnd was added
-* Optional property autoDialDelaySeconds was added
-* Optional property autoEndDelaySeconds was added
-
-**DirectRoutingMediaSettings** (1 change)
-
-* Optional property useAgentAddressOutbound was added
-
-**Queue** (1 change)
-
-* Optional property predictiveRouting was added
-
-**QueueMediaSettings** (1 change)
-
-* Optional property workitem was added
+* Model RoleSettings was removed
 
 **DataValue** (1 change)
 
-* Model was added
+* Model DataValue was removed
 
 **FacetResult** (1 change)
 
-* Model was added
+* Model FacetResult was removed
 
 **FacetResultItem** (1 change)
 
-* Model was added
+* Model FacetResultItem was removed
 
 **FlowConfigId** (1 change)
 
-* Model was added
+* Model FlowConfigId was removed
 
 **FlowDetails** (1 change)
 
-* Model was added
+* Model FlowDetails was removed
 
 **FlowDetailsSearchResult** (1 change)
 
-* Model was added
+* Model FlowDetailsSearchResult was removed
 
 **FlowSearchCriteria** (1 change)
 
-* Model was added
+* Model FlowSearchCriteria was removed
 
 **FlowSearchRequest** (1 change)
 
-* Model was added
+* Model FlowSearchRequest was removed
 
 **FlowVersionConfigMetaData** (1 change)
 
-* Model was added
+* Model FlowVersionConfigMetaData was removed
 
 **ScreenRecordingUserAuthenticatedInfo** (1 change)
 
-* Model was added
+* Model ScreenRecordingUserAuthenticatedInfo was removed
 
 **BadgeEntity** (1 change)
 
-* Model was added
+* Model BadgeEntity was removed
 
 **ChatBadge** (1 change)
 
-* Model was added
+* Model ChatBadge was removed
 
 **ChatBadgeEntityListing** (1 change)
 
-* Model was added
+* Model ChatBadgeEntityListing was removed
 
 **Account** (1 change)
 
-* Model was added
+* Model Account was removed
 
 **BillingTaskResult** (1 change)
 
-* Model was added
+* Model BillingTaskResult was removed
 
 **UrlRequest** (1 change)
 
-* Model was added
+* Model UrlRequest was removed
 
 **BillingPeriod** (1 change)
 
-* Model was added
+* Model BillingPeriod was removed
 
 **DomainBillingPeriodEntityListing** (1 change)
 
-* Model was added
+* Model DomainBillingPeriodEntityListing was removed
 
 **BillingAddress** (1 change)
 
-* Model was added
+* Model BillingAddress was removed
 
 **CustomerAccount** (1 change)
 
-* Model was added
+* Model CustomerAccount was removed
 
 **FreeTrial** (1 change)
 
-* Model was added
+* Model FreeTrial was removed
 
 **Invoice** (1 change)
 
-* Model was added
+* Model Invoice was removed
 
 **DomainInvoiceEntityListing** (1 change)
 
-* Model was added
+* Model DomainInvoiceEntityListing was removed
 
 **SignedBillingData** (1 change)
 
-* Model was added
+* Model SignedBillingData was removed
 
 **PremiumAppListing** (1 change)
 
-* Model was added
+* Model PremiumAppListing was removed
 
 **PremiumAppOffering** (1 change)
 
-* Model was added
+* Model PremiumAppOffering was removed
 
 **PremiumAppTrial** (1 change)
 
-* Model was added
+* Model PremiumAppTrial was removed
 
 **BillingPendingTask** (1 change)
 
-* Model was added
+* Model BillingPendingTask was removed
 
 **SubscriptionOverview** (1 change)
 
-* Model was added
+* Model SubscriptionOverview was removed
 
 **SubscriptionProductActivation** (1 change)
 
-* Model was added
+* Model SubscriptionProductActivation was removed
 
 **SubscriptionProductCancellation** (1 change)
 
-* Model was added
+* Model SubscriptionProductCancellation was removed
 
 **MeteredAppContract** (1 change)
 
-* Model was added
+* Model MeteredAppContract was removed
 
 **MeteredAppOrganizationDetail** (1 change)
 
-* Model was added
+* Model MeteredAppOrganizationDetail was removed
 
 **MeteredAppOrganizationUsageDetail** (1 change)
 
-* Model was added
+* Model MeteredAppOrganizationUsageDetail was removed
 
 **MeteredAppUsageCreate** (1 change)
 
-* Model was added
+* Model MeteredAppUsageCreate was removed
 
 **MeteredAppOrganizationList** (1 change)
 
-* Model was added
+* Model MeteredAppOrganizationList was removed
 
 **MeteredAppOrganizationUsageSummary** (1 change)
 
-* Model was added
+* Model MeteredAppOrganizationUsageSummary was removed
 
 **UserActionCategory** (1 change)
 
-* Model was added
+* Model UserActionCategory was removed
 
 **UserActionCategoryEntityListing** (1 change)
 
-* Model was added
+* Model UserActionCategoryEntityListing was removed
 
 **UserActionMetadata** (1 change)
 
-* Model was added
+* Model UserActionMetadata was removed
 
 **UserActionMetadataEntityListing** (1 change)
 
-* Model was added
+* Model UserActionMetadataEntityListing was removed
 
 **UserActionMetadataRequest** (1 change)
 
-* Model was added
+* Model UserActionMetadataRequest was removed
 
 **SortWeightInfo** (1 change)
 
-* Model was added
+* Model SortWeightInfo was removed
 
 **BandwidthCurrencyPricing** (1 change)
 
-* Model was added
+* Model BandwidthCurrencyPricing was removed
 
 **BandwidthPricing** (1 change)
 
-* Model was added
+* Model BandwidthPricing was removed
 
 **BandwidthListPricing** (1 change)
 
-* Model was added
+* Model BandwidthListPricing was removed
 
 **BillingLineItemAsynchronousTask** (1 change)
 
-* Model was added
+* Model BillingLineItemAsynchronousTask was removed
 
 **LineItemRequest** (1 change)
 
-* Model was added
+* Model LineItemRequest was removed
 
 **ResourceInfoProvider** (1 change)
 
-* Model was added
+* Model ResourceInfoProvider was removed
 
 **CDRLineItem** (1 change)
 
-* Model was added
+* Model CDRLineItem was removed
 
 **FeeLineItem** (1 change)
 
-* Model was added
+* Model FeeLineItem was removed
 
 **MRCLineItem** (1 change)
 
-* Model was added
+* Model MRCLineItem was removed
 
 **NRCLineItem** (1 change)
 
-* Model was added
+* Model NRCLineItem was removed
 
 **PCVBill** (1 change)
 
-* Model was added
+* Model PCVBill was removed
 
 **PCVBillAsynchronousTask** (1 change)
 
-* Model was added
+* Model PCVBillAsynchronousTask was removed
 
 **PCVBillRequest** (1 change)
 
-* Model was added
+* Model PCVBillRequest was removed
 
 **PurchaseGroupDisplay** (1 change)
 
-* Model was added
+* Model PurchaseGroupDisplay was removed
 
 **UsageGroup** (1 change)
 
-* Model was added
+* Model UsageGroup was removed
 
 **ListedNumberRate** (1 change)
 
-* Model was added
+* Model ListedNumberRate was removed
 
 **NumberRate** (1 change)
 
-* Model was added
+* Model NumberRate was removed
 
 **NumberRateEntityListing** (1 change)
 
-* Model was added
+* Model NumberRateEntityListing was removed
 
 **UsagePricing** (1 change)
 
-* Model was added
+* Model UsagePricing was removed
 
 **UsagePricingQuery** (1 change)
 
-* Model was added
+* Model UsagePricingQuery was removed
 
 **UsageRate** (1 change)
 
-* Model was added
+* Model UsageRate was removed
 
 **UsageRateRegion** (1 change)
 
-* Model was added
+* Model UsageRateRegion was removed
 
 **UsageRateRegionEntityListing** (1 change)
 
-* Model was added
+* Model UsageRateRegionEntityListing was removed
 
 **AccountManager** (1 change)
 
-* Model was added
+* Model AccountManager was removed
 
 **Btn** (1 change)
 
-* Model was added
+* Model Btn was removed
 
 **Carrier** (1 change)
 
-* Model was added
+* Model Carrier was removed
 
 **CarrierAddress** (1 change)
 
-* Model was added
+* Model CarrierAddress was removed
 
 **Dns** (1 change)
 
-* Model was added
+* Model Dns was removed
 
 **Gateway** (1 change)
 
-* Model was added
+* Model Gateway was removed
 
 **NocSupport** (1 change)
 
-* Model was added
+* Model NocSupport was removed
 
 **Service** (1 change)
 
-* Model was added
+* Model Service was removed
 
 **ServiceType** (1 change)
 
-* Model was added
+* Model ServiceType was removed
 
 **Support** (1 change)
 
-* Model was added
+* Model Support was removed
 
 **Vpn** (1 change)
 
-* Model was added
+* Model Vpn was removed
 
 **CarrierEntityListing** (1 change)
 
-* Model was added
+* Model CarrierEntityListing was removed
 
 **ServiceEntityListing** (1 change)
 
-* Model was added
+* Model ServiceEntityListing was removed
 
 **CDRError** (1 change)
 
-* Model was added
+* Model CDRError was removed
 
 **CDRsLambdaResponse** (1 change)
 
-* Model was added
+* Model CDRsLambdaResponse was removed
 
 **CDREntry** (1 change)
 
-* Model was added
+* Model CDREntry was removed
 
 **CDRVersion** (1 change)
 
-* Model was added
+* Model CDRVersion was removed
 
 **ListCDRsAsyncResponse** (1 change)
 
-* Model was added
+* Model ListCDRsAsyncResponse was removed
 
 **ListCDRsProperties** (1 change)
 
-* Model was added
+* Model ListCDRsProperties was removed
 
 **ListCDRsResult** (1 change)
 
-* Model was added
+* Model ListCDRsResult was removed
 
 **ManualBackupCDRsAsyncResponse** (1 change)
 
-* Model was added
+* Model ManualBackupCDRsAsyncResponse was removed
 
 **ManualBackupCDRsProperties** (1 change)
 
-* Model was added
+* Model ManualBackupCDRsProperties was removed
 
 **ManualBackupCDRsResponse** (1 change)
 
-* Model was added
+* Model ManualBackupCDRsResponse was removed
 
 **RestoreCDRAsyncResponse** (1 change)
 
-* Model was added
+* Model RestoreCDRAsyncResponse was removed
 
 **RestoreCDRProperties** (1 change)
 
-* Model was added
+* Model RestoreCDRProperties was removed
 
 **RestoreCDRResponseBody** (1 change)
 
-* Model was added
+* Model RestoreCDRResponseBody was removed
 
 **EnhancedEmergencyServices** (1 change)
 
-* Model was added
+* Model EnhancedEmergencyServices was removed
 
 **InventoryNumber** (1 change)
 
-* Model was added
+* Model InventoryNumber was removed
 
 **InventoryNumbersEntityListing** (1 change)
 
-* Model was added
+* Model InventoryNumbersEntityListing was removed
 
 **PCVLocation** (1 change)
 
-* Model was added
+* Model PCVLocation was removed
 
 **InventoryNumberResponse** (1 change)
 
-* Model was added
+* Model InventoryNumberResponse was removed
 
 **InventoryNumberPatch** (1 change)
 
-* Model was added
+* Model InventoryNumberPatch was removed
 
 **DetailedInventoryNumber** (1 change)
 
-* Model was added
-
-**Organization** (2 changes)
-
-* Optional property thirdPartyOrgId was added
-* Optional property deletable was added
+* Model DetailedInventoryNumber was removed
 
 **ServiceCapabilitiesDescriptionMapping** (1 change)
 
-* Model was added
+* Model ServiceCapabilitiesDescriptionMapping was removed
 
 **ServiceCapabilitiesListing** (1 change)
 
-* Model was added
+* Model ServiceCapabilitiesListing was removed
 
 **NumberPortRequest** (1 change)
 
-* Model was added
+* Model NumberPortRequest was removed
 
 **PortBillingAddress** (1 change)
 
-* Model was added
+* Model PortBillingAddress was removed
 
 **PortContact** (1 change)
 
-* Model was added
+* Model PortContact was removed
 
 **NumberOrder** (1 change)
 
-* Model was added
+* Model NumberOrder was removed
 
 **RespOrg** (1 change)
 
-* Model was added
+* Model RespOrg was removed
 
 **PortTask** (1 change)
 
-* Model was added
+* Model PortTask was removed
 
 **PortRequestTask** (1 change)
 
-* Model was added
+* Model PortRequestTask was removed
 
 **PortUpdateTask** (1 change)
 
-* Model was added
+* Model PortUpdateTask was removed
 
 **NumberPortRequestListing** (1 change)
 
-* Model was added
+* Model NumberPortRequestListing was removed
 
 **SearchResult** (1 change)
 
-* Model was added
+* Model SearchResult was removed
 
 **SearchResultTask** (1 change)
 
-* Model was added
+* Model SearchResultTask was removed
 
 **TelephoneNumberDetail** (1 change)
 
-* Model was added
+* Model TelephoneNumberDetail was removed
 
 **CarrierSearchRequestV2** (1 change)
 
-* Model was added
+* Model CarrierSearchRequestV2 was removed
 
 **AvailableNumber** (1 change)
 
-* Model was added
+* Model AvailableNumber was removed
 
 **SearchResultTaskV2** (1 change)
 
-* Model was added
+* Model SearchResultTaskV2 was removed
 
 **NumberOrderPatch** (1 change)
 
-* Model was added
+* Model NumberOrderPatch was removed
 
 **NumberOrderEntityListing** (1 change)
 
-* Model was added
+* Model NumberOrderEntityListing was removed
 
 **NumberOrderRequest** (1 change)
 
-* Model was added
+* Model NumberOrderRequest was removed
 
 **OrderTask** (1 change)
 
-* Model was added
+* Model OrderTask was removed
 
 **ExportTask** (1 change)
 
-* Model was added
+* Model ExportTask was removed
 
 **NumberOrderExportRequest** (1 change)
 
-* Model was added
+* Model NumberOrderExportRequest was removed
 
 **NumberOrderLinkedPagedEntityListing** (1 change)
 
-* Model was added
+* Model NumberOrderLinkedPagedEntityListing was removed
 
 **Reservation** (1 change)
 
-* Model was added
+* Model Reservation was removed
 
 **PurchasingTask** (1 change)
 
-* Model was added
+* Model PurchasingTask was removed
 
 **LineItemAsynchronousTask** (1 change)
 
-* Model was added
+* Model LineItemAsynchronousTask was removed
 
 **UrlResponseAsynchronousTask** (1 change)
 
-* Model was added
+* Model UrlResponseAsynchronousTask was removed
 
 **UrlResponseAsynchronousTaskEntityListing** (1 change)
 
-* Model was added
+* Model UrlResponseAsynchronousTaskEntityListing was removed
 
 **DocusignTemplateMapping** (1 change)
 
-* Model was added
+* Model DocusignTemplateMapping was removed
 
 **EmbeddedSignatureView** (1 change)
 
-* Model was added
+* Model EmbeddedSignatureView was removed
 
 **View** (1 change)
 
-* Model was added
+* Model View was removed
 
 **AdditionalPortingFields** (1 change)
 
-* Model was added
+* Model AdditionalPortingFields was removed
 
 **PhoneNumberAndType** (1 change)
 
-* Model was added
+* Model PhoneNumberAndType was removed
 
 **SignatureDocumentInfo** (1 change)
 
-* Model was added
+* Model SignatureDocumentInfo was removed
 
 **SignatureTask** (1 change)
 
-* Model was added
+* Model SignatureTask was removed
 
 **SipDnsResolver** (1 change)
 
-* Model was added
+* Model SipDnsResolver was removed
 
 **BasicTransform** (1 change)
 
-* Model was added
+* Model BasicTransform was removed
 
 **ClientSpreadsheetTransform** (1 change)
 
-* Model was added
+* Model ClientSpreadsheetTransform was removed
 
 **ColumnCollapse** (1 change)
 
-* Model was added
+* Model ColumnCollapse was removed
 
 **IndexedTransform** (1 change)
 
-* Model was added
+* Model IndexedTransform was removed
 
 **SheetTransform** (1 change)
 
-* Model was added
+* Model SheetTransform was removed
 
 **SpreadsheetTransform** (1 change)
 
-* Model was added
+* Model SpreadsheetTransform was removed
 
 **TableTransform** (1 change)
 
-* Model was added
+* Model TableTransform was removed
 
 **TagModel** (1 change)
 
-* Model was added
+* Model TagModel was removed
 
 **TransformEndpoint** (1 change)
 
-* Model was added
+* Model TransformEndpoint was removed
 
 **TransformLens** (1 change)
 
-* Model was added
+* Model TransformLens was removed
 
 **UnpivotColumns** (1 change)
 
-* Model was added
+* Model UnpivotColumns was removed
 
 **SpreadsheetTransformEntityListing** (1 change)
 
-* Model was added
+* Model SpreadsheetTransformEntityListing was removed
 
 **TextTableTransform** (1 change)
 
-* Model was added
+* Model TextTableTransform was removed
 
 **TextTableTransformEntityListing** (1 change)
 
-* Model was added
+* Model TextTableTransformEntityListing was removed
 
 **ClientTransformModel** (1 change)
 
-* Model was added
+* Model ClientTransformModel was removed
 
 **ProgressModel** (1 change)
 
-* Model was added
+* Model ProgressModel was removed
 
 **TransformModel** (1 change)
 
-* Model was added
+* Model TransformModel was removed
 
 **TransformProgress** (1 change)
 
-* Model was added
+* Model TransformProgress was removed
 
 **CsvSchema** (1 change)
 
-* Model was added
+* Model CsvSchema was removed
 
 **UploadProgress** (1 change)
 
-* Model was added
+* Model UploadProgress was removed
 
 **SheetSchema** (1 change)
 
-* Model was added
+* Model SheetSchema was removed
 
 **XlsxSchema** (1 change)
 
-* Model was added
-
-**ChatMessageResponse** (1 change)
-
-* Optional property metadata was added
-
-**SendMessageBody** (1 change)
-
-* Optional property metadata was added
+* Model XlsxSchema was removed
 
 **RoomEntityListing** (1 change)
 
-* Model was added
+* Model RoomEntityListing was removed
 
 **RoomJid** (1 change)
 
-* Model was added
+* Model RoomJid was removed
 
 **RoomParticipant** (1 change)
 
-* Model was added
+* Model RoomParticipant was removed
 
 **Deployment** (1 change)
 
-* Model was added
+* Model Deployment was removed
 
 **DeploymentEntityListing** (1 change)
 
-* Model was added
+* Model DeploymentEntityListing was removed
 
 **ActivationFailureRequest** (1 change)
 
-* Model was added
+* Model ActivationFailureRequest was removed
 
 **ComplianceDataDeviceInfoEntity** (1 change)
 
-* Model was added
+* Model ComplianceDataDeviceInfoEntity was removed
 
 **DeviceInfo** (1 change)
 
-* Model was added
+* Model DeviceInfo was removed
 
 **ComplianceFileEntity** (1 change)
 
-* Model was added
+* Model ComplianceFileEntity was removed
 
 **PageCreate** (1 change)
 
-* Model was added
+* Model PageCreate was removed
 
 **ComposerTemplate** (1 change)
 
-* Model was added
+* Model ComposerTemplate was removed
 
 **CreateTemplateFromScriptRequestData** (1 change)
 
-* Model was added
+* Model CreateTemplateFromScriptRequestData was removed
 
 **FavoriteTemplateRequestData** (1 change)
 
-* Model was added
+* Model FavoriteTemplateRequestData was removed
 
 **TemplateEntityListing** (1 change)
 
-* Model was added
-
-**CallMediaPolicyConditions** (1 change)
-
-* Optional property teams was added
-
-**ChatMediaPolicyConditions** (1 change)
-
-* Optional property teams was added
-
-**EmailMediaPolicyConditions** (1 change)
-
-* Optional property teams was added
-
-**EvaluationForm** (2 changes)
-
-* Optional property weightMode was added
-* Optional property evaluationSettings was added
-
-**EvaluationSettings** (4 changes)
-
-* Optional property revisionsEnabled was added
-* Optional property disputesEnabled was added
-* Optional property disputesAllowedPerEvaluation was added
-* Optional property disputesAssignees was added
-
-**EvaluationSettingsAssignee** (2 changes)
-
-* Optional property user was added
-* Optional property type was added
-
-**MessageMediaPolicyConditions** (1 change)
-
-* Optional property teams was added
-
-**MeteredAssignmentByAgent** (3 changes)
-
-* Optional property percentage was added
-* Optional property minimum was added
-* Optional property agentConnectedTimeCriteria was added
-
-**PolicyConditions** (1 change)
-
-* Optional property teams was added
+* Model TemplateEntityListing was removed
 
 **BulkErrorObject** (1 change)
 
-* Model was added
+* Model BulkErrorObject was removed
 
 **BulkResponseResult** (1 change)
 
-* Model was added
-
-**DataSchema** (1 change)
-
-* Optional property deleted was added
-
-**ExternalContact** (1 change)
-
-* Optional property instagramId was added
-
-**PhoneNumber** (1 change)
-
-* Optional property normalizationCountryCode was added
+* Model BulkResponseResult was removed
 
 **StitchingRequest** (1 change)
 
-* Model was added
+* Model StitchingRequest was removed
 
 **UserDetails** (1 change)
 
-* Model was added
+* Model UserDetails was removed
 
 **SuggestionResult** (1 change)
 
-* Model was added
+* Model SuggestionResult was removed
 
 **SuggestionRequest** (1 change)
 
-* Model was added
+* Model SuggestionRequest was removed
 
 **Prediction** (1 change)
 
-* Model was added
+* Model Prediction was removed
 
 **PredictionListing** (1 change)
 
-* Model was added
+* Model PredictionListing was removed
 
 **SegmentAssignmentsUpdate** (1 change)
 
-* Model was added
-
-**Session** (1 change)
-
-* Optional property divisionIds was added
+* Model SegmentAssignmentsUpdate was removed
 
 **SignupFreeTrial** (1 change)
 
-* Model was added
-
-**Call** (1 change)
-
-* Optional property bargedTime was added
+* Model SignupFreeTrial was removed
 
 **CodeResponse** (1 change)
 
-* Model was added
-
-**ConversationMessageMetadataEvent** (1 change)
-
-* Enum value SignIn was added to property subType
-
-**Evaluation** (7 changes)
-
-* Optional property agentTeam was added
-* Optional property disputeCount was added
-* Optional property version was added
-* Optional property versionHistory was added
-* Optional property declinedReview was added
-* Optional property evaluationContextId was added
-* Optional property retractedEvaluation was added
-
-**EvaluationVersion** (3 changes)
-
-* Optional property submittedDate was added
-* Optional property version was added
-* Optional property status was added
+* Model CodeResponse was removed
 
 **PagelessDomainEntityListing** (1 change)
 
-* Model was added
+* Model PagelessDomainEntityListing was removed
 
 **CodesRequest** (1 change)
 
-* Model was added
-
-**CallMediaParticipant** (1 change)
-
-* Optional property screenRecordingState was added
-
-**Campaign** (2 changes)
-
-* Optional property agentOwnedColumn was added
-* Optional property skillColumns was added
-
-**CallbackMediaParticipant** (1 change)
-
-* Optional property screenRecordingState was added
+* Model CodesRequest was removed
 
 **ChatMemberAuthenticationInfo** (1 change)
 
-* Model was added
+* Model ChatMemberAuthenticationInfo was removed
 
 **WebChatMediaRequest** (1 change)
 
-* Model was added
+* Model WebChatMediaRequest was removed
 
 **WebChatMediaRequestEntityList** (1 change)
 
-* Model was added
-
-**ChatMediaParticipant** (1 change)
-
-* Optional property screenRecordingState was added
-
-**CobrowseMediaParticipant** (1 change)
-
-* Optional property screenRecordingState was added
-
-**EmailMediaParticipant** (1 change)
-
-* Optional property screenRecordingState was added
+* Model WebChatMediaRequestEntityList was removed
 
 **EmailThreadingSettings** (1 change)
 
-* Model was added
-
-**MessageMediaParticipant** (1 change)
-
-* Optional property screenRecordingState was added
-
-**ConversationChannelMetadata** (1 change)
-
-* Optional property customAttributes was added
-
-**ConversationEventPresence** (1 change)
-
-* Enum value SignIn was added to property type
-
-**ConversationMessagingChannel** (1 change)
-
-* Optional property metadata was added
-
-**CreateOutboundMessagingConversationRequest** (1 change)
-
-* Optional property useUserFromAddress was added
+* Model EmailThreadingSettings was removed
 
 **ScreenShareConversation** (1 change)
 
-* Model was added
+* Model ScreenShareConversation was removed
 
 **ScreenShareConversationEntityListing** (1 change)
 
-* Model was added
+* Model ScreenShareConversationEntityListing was removed
 
 **ScreenShareMediaParticipant** (1 change)
 
-* Model was added
+* Model ScreenShareMediaParticipant was removed
 
 **SocialConversation** (1 change)
 
-* Model was added
+* Model SocialConversation was removed
 
 **SocialConversationEntityListing** (1 change)
 
-* Model was added
+* Model SocialConversationEntityListing was removed
 
 **SocialMediaParticipant** (1 change)
 
-* Model was added
+* Model SocialMediaParticipant was removed
 
 **VideoConversation** (1 change)
 
-* Model was added
+* Model VideoConversation was removed
 
 **VideoConversationEntityListing** (1 change)
 
-* Model was added
+* Model VideoConversationEntityListing was removed
 
 **VideoMediaParticipant** (1 change)
 
-* Model was added
+* Model VideoMediaParticipant was removed
 
 **VideoPinRequest** (1 change)
 
-* Model was added
+* Model VideoPinRequest was removed
 
 **CreateJoinVideoResponse** (1 change)
 
-* Model was added
+* Model CreateJoinVideoResponse was removed
 
 **CreateJoinVideoRequest** (1 change)
 
-* Model was added
+* Model CreateJoinVideoRequest was removed
 
 **FacebookPermission** (1 change)
 
-* Model was added
+* Model FacebookPermission was removed
 
 **FacebookPermissionEntityListing** (1 change)
 
-* Model was added
+* Model FacebookPermissionEntityListing was removed
 
 **WhatsAppEmbeddedSignupIntegrationActivationRequest** (1 change)
 
-* Model was added
+* Model WhatsAppEmbeddedSignupIntegrationActivationRequest was removed
 
 **WhatsAppEmbeddedSignupIntegrationRequest** (1 change)
 
-* Model was added
+* Model WhatsAppEmbeddedSignupIntegrationRequest was removed
 
 **CodeCommand** (1 change)
 
-* Model was added
-
-**CreateCallbackOnConversationCommand** (1 change)
-
-* Optional property voicemailId was added
+* Model CodeCommand was removed
 
 **Article** (1 change)
 
-* Model was added
+* Model Article was removed
 
 **Faq** (1 change)
 
-* Model was added
+* Model Faq was removed
 
 **MetadataAttribute** (1 change)
 
-* Model was added
+* Model MetadataAttribute was removed
 
 **Suggestion** (1 change)
 
-* Model was added
+* Model Suggestion was removed
 
 **SuggestionListing** (1 change)
 
-* Model was added
+* Model SuggestionListing was removed
 
 **SuggestionFeedback** (1 change)
 
-* Model was added
+* Model SuggestionFeedback was removed
 
 **FeedbackAddRequest** (1 change)
 
-* Model was added
+* Model FeedbackAddRequest was removed
 
 **CompleteMultipartUploadRequest** (1 change)
 
-* Model was added
+* Model CompleteMultipartUploadRequest was removed
 
 **MultipartUploadUrlInfo** (1 change)
 
-* Model was added
+* Model MultipartUploadUrlInfo was removed
 
 **MultipartUploadUrlResponse** (1 change)
 
-* Model was added
+* Model MultipartUploadUrlResponse was removed
 
 **MultipartUploadUrlRequest** (1 change)
 
-* Model was added
-
-**UploadUrlResponse** (1 change)
-
-* Optional property fileUrl was added
-
-**LearningCoverArtUploadUrlRequest** (1 change)
-
-* Optional property tags was added
-
-**UploadUrlRequest** (1 change)
-
-* Optional property tags was added
+* Model MultipartUploadUrlRequest was removed
 
 **MaskingRule** (1 change)
 
-* Model was added
+* Model MaskingRule was removed
 
 **MaskingRuleListing** (1 change)
 
-* Model was added
+* Model MaskingRuleListing was removed
 
 **MaskingRuleValidateResponse** (1 change)
 
-* Model was added
+* Model MaskingRuleValidateResponse was removed
 
 **MaskingRuleValidateRequest** (1 change)
 
-* Model was added
+* Model MaskingRuleValidateRequest was removed
 
 **DiagnosticEmail** (1 change)
 
-* Model was added
+* Model DiagnosticEmail was removed
 
 **App** (1 change)
 
-* Model was added
+* Model App was removed
 
 **Trace** (1 change)
 
-* Model was added
+* Model Trace was removed
 
 **TraceList** (1 change)
 
-* Model was added
-
-**ResponseSet** (1 change)
-
-* Optional property liveSpeakerDetectionMode was added
-
-**CallBasic** (1 change)
-
-* Optional property bargedTime was added
-
-**ImportStatus** (2 changes)
-
-* Optional property targetContactListIds was added
-* Optional property listNamePrefix was added
-
-**ContactListFilter** (2 changes)
-
-* Optional property contactListTemplate was added
-* Optional property sourceType was added
+* Model TraceList was removed
 
 **ContactListTemplate** (1 change)
 
-* Model was added
+* Model ContactListTemplate was removed
 
 **ContactListTemplateEntityListing** (1 change)
 
-* Model was added
+* Model ContactListTemplateEntityListing was removed
 
 **ImportTemplate** (1 change)
 
-* Model was added
+* Model ImportTemplate was removed
 
 **SplittingInformation** (1 change)
 
-* Model was added
+* Model SplittingInformation was removed
 
 **ImportTemplateEntityListing** (1 change)
 
-* Model was added
+* Model ImportTemplateEntityListing was removed
 
 **OutboundMessagingSettings** (1 change)
 
-* Model was added
-
-**LastAttemptByColumnConditionSettings** (1 change)
-
-* Optional property voiceColumnName was added
-
-**LastResultByColumnConditionSettings** (2 changes)
-
-* Optional property voiceColumnName was added
-* Optional property voiceWrapupCodes was added
-
-**LastResultOverallConditionSettings** (1 change)
-
-* Optional property voiceWrapupCodes was added
-
-**SmsConfig** (1 change)
-
-* Optional property phoneColumns was added
+* Model OutboundMessagingSettings was removed
 
 **Bot** (1 change)
 
-* Model was added
+* Model Bot was removed
 
 **BotUpdate** (1 change)
 
-* Model was added
+* Model BotUpdate was removed
 
 **BotListing** (1 change)
 
-* Model was added
+* Model BotListing was removed
 
 **BotCreate** (1 change)
 
-* Model was added
+* Model BotCreate was removed
 
 **Alternative** (1 change)
 
-* Model was added
+* Model Alternative was removed
 
 **BotVersionKnowledgebaseVersion** (1 change)
 
-* Model was added
+* Model BotVersionKnowledgebaseVersion was removed
 
 **BotVersionNluDomainVersion** (1 change)
 
-* Model was added
+* Model BotVersionNluDomainVersion was removed
 
 **Slot** (1 change)
 
-* Model was added
+* Model Slot was removed
 
 **Turn** (1 change)
 
-* Model was added
+* Model Turn was removed
 
 **TurnInput** (1 change)
 
-* Model was added
+* Model TurnInput was removed
 
 **TurnOutput** (1 change)
 
-* Model was added
+* Model TurnOutput was removed
 
 **TurnOutputIntent** (1 change)
 
-* Model was added
+* Model TurnOutputIntent was removed
 
 **TurnOutputIntentBase** (1 change)
 
-* Model was added
+* Model TurnOutputIntentBase was removed
 
 **TurnOutputKnowledgeAnswer** (1 change)
 
-* Model was added
+* Model TurnOutputKnowledgeAnswer was removed
 
 **TurnOutputKnowledgeAnswerBase** (1 change)
 
-* Model was added
+* Model TurnOutputKnowledgeAnswerBase was removed
 
 **BotDialogSession** (1 change)
 
-* Model was added
+* Model BotDialogSession was removed
 
 **BotReference** (1 change)
 
-* Model was added
+* Model BotReference was removed
 
 **BotVersionReference** (1 change)
 
-* Model was added
+* Model BotVersionReference was removed
 
 **DialogContext** (1 change)
 
-* Model was added
+* Model DialogContext was removed
 
 **DialogContextIntent** (1 change)
 
-* Model was added
+* Model DialogContextIntent was removed
 
 **BotVersion** (1 change)
 
-* Model was added
+* Model BotVersion was removed
 
 **BotVersionIntent** (1 change)
 
-* Model was added
+* Model BotVersionIntent was removed
 
 **Config** (1 change)
 
-* Model was added
+* Model Config was removed
 
 **DefaultIntentProperties** (1 change)
 
-* Model was added
+* Model DefaultIntentProperties was removed
 
 **DefaultKnowledgeProperties** (1 change)
 
-* Model was added
+* Model DefaultKnowledgeProperties was removed
 
 **DefaultPrompts** (1 change)
 
-* Model was added
+* Model DefaultPrompts was removed
 
 **DefaultSlotProperties** (1 change)
 
-* Model was added
+* Model DefaultSlotProperties was removed
 
 **IntentPrompts** (1 change)
 
-* Model was added
+* Model IntentPrompts was removed
 
 **IntentSlot** (1 change)
 
-* Model was added
+* Model IntentSlot was removed
 
 **KnowledgePrompts** (1 change)
 
-* Model was added
+* Model KnowledgePrompts was removed
 
 **SlotPrompts** (1 change)
 
-* Model was added
+* Model SlotPrompts was removed
 
 **SlotType** (1 change)
 
-* Model was added
+* Model SlotType was removed
 
 **BotVersionUpdate** (1 change)
 
-* Model was added
+* Model BotVersionUpdate was removed
 
 **BotVersionListing** (1 change)
 
-* Model was added
+* Model BotVersionListing was removed
 
 **BotVersionReduced** (1 change)
 
-* Model was added
+* Model BotVersionReduced was removed
 
 **DialogEngineIntegrationBot** (1 change)
 
-* Model was added
+* Model DialogEngineIntegrationBot was removed
 
 **DialogEngineIntegrationBotListing** (1 change)
 
-* Model was added
+* Model DialogEngineIntegrationBotListing was removed
 
 **GroupImage** (1 change)
 
-* Model was added
+* Model GroupImage was removed
 
 **GroupImageSize** (1 change)
 
-* Model was added
+* Model GroupImageSize was removed
 
 **GroupImageListing** (1 change)
 
-* Model was added
-
-**GroupUpdate** (1 change)
-
-* Optional property chat was added
-
-**GroupCreate** (1 change)
-
-* Optional property chat was added
+* Model GroupImageListing was removed
 
 **OrganizationCreate** (1 change)
 
-* Model was added
+* Model OrganizationCreate was removed
 
 **GetBotExecutionDataJobResult** (1 change)
 
-* Model was added
+* Model GetBotExecutionDataJobResult was removed
 
 **BotsQueryCriteriaResponse** (1 change)
 
-* Model was added
+* Model BotsQueryCriteriaResponse was removed
 
 **BotExecutionDataQueryResult** (1 change)
 
-* Model was added
+* Model BotExecutionDataQueryResult was removed
 
 **BotResultEntityListing** (1 change)
 
-* Model was added
+* Model BotResultEntityListing was removed
 
 **FaxConfig** (1 change)
 
-* Model was added
+* Model FaxConfig was removed
 
 **InsightsRankings** (1 change)
 
-* Model was added
-
-**GDPRRequest** (1 change)
-
-* Optional property relatedRequests was added
+* Model InsightsRankings was removed
 
 **QueryPostResponse** (1 change)
 
-* Model was added
+* Model QueryPostResponse was removed
 
 **FieldFilter** (1 change)
 
-* Model was added
+* Model FieldFilter was removed
 
 **QueryInput** (1 change)
 
-* Model was added
+* Model QueryInput was removed
 
 **QueryStatusResponse** (1 change)
 
-* Model was added
+* Model QueryStatusResponse was removed
 
 **AggregateExecutionCountResponse** (1 change)
 
-* Model was added
+* Model AggregateExecutionCountResponse was removed
 
 **ExecutionCountResponse** (1 change)
 
-* Model was added
+* Model ExecutionCountResponse was removed
 
 **AggregateResponseCodeResponse** (1 change)
 
-* Model was added
+* Model AggregateResponseCodeResponse was removed
 
 **ResponseCodeResponse** (1 change)
 
-* Model was added
+* Model ResponseCodeResponse was removed
 
 **AggregateDurationResponse** (1 change)
 
-* Model was added
+* Model AggregateDurationResponse was removed
 
 **DurationResponse** (1 change)
 
-* Model was added
+* Model DurationResponse was removed
 
 **LoginRequest** (1 change)
 
-* Model was added
+* Model LoginRequest was removed
 
 **VoiceCallRecordAsyncJob** (1 change)
 
-* Model was added
+* Model VoiceCallRecordAsyncJob was removed
 
 **UpdateVoiceCallRecordRequest** (1 change)
 
-* Model was added
+* Model UpdateVoiceCallRecordRequest was removed
 
 **CreateVoiceCallRecordRequest** (1 change)
 
-* Model was added
+* Model CreateVoiceCallRecordRequest was removed
 
 **DialogflowCXAgent** (1 change)
 
-* Model was added
+* Model DialogflowCXAgent was removed
 
 **DialogflowCXEnvironment** (1 change)
 
-* Model was added
+* Model DialogflowCXEnvironment was removed
 
 **DialogflowCXProject** (1 change)
 
-* Model was added
+* Model DialogflowCXProject was removed
 
 **DialogflowCXAgentSummary** (1 change)
 
-* Model was added
+* Model DialogflowCXAgentSummary was removed
 
 **DialogflowCXAgentSummaryEntityListing** (1 change)
 
-* Model was added
+* Model DialogflowCXAgentSummaryEntityListing was removed
 
 **LexV2Bot** (1 change)
 
-* Model was added
+* Model LexV2Bot was removed
 
 **LexV2BotAlias** (1 change)
 
-* Model was added
+* Model LexV2BotAlias was removed
 
 **LexV2Intent** (1 change)
 
-* Model was added
+* Model LexV2Intent was removed
 
 **LexV2Slot** (1 change)
 
-* Model was added
+* Model LexV2Slot was removed
 
 **LexV2BotAliasEntityListing** (1 change)
 
-* Model was added
+* Model LexV2BotAliasEntityListing was removed
 
 **LexV2BotEntityListing** (1 change)
 
-* Model was added
+* Model LexV2BotEntityListing was removed
 
 **SttEngineEntity** (1 change)
 
-* Model was added
+* Model SttEngineEntity was removed
 
 **SttEngineEntityListing** (1 change)
 
-* Model was added
+* Model SttEngineEntityListing was removed
 
 **Webhook** (1 change)
 
-* Model was added
+* Model Webhook was removed
 
 **CreateWebhookRequest** (1 change)
 
-* Model was added
+* Model CreateWebhookRequest was removed
 
 **WebhookEntityListing** (1 change)
 
-* Model was added
+* Model WebhookEntityListing was removed
 
 **AddressableEntity** (1 change)
 
-* Model was added
+* Model AddressableEntity was removed
 
 **BulkResultEnrichedBulkActionTarget** (1 change)
 
-* Model was added
+* Model BulkResultEnrichedBulkActionTarget was removed
 
 **BulkResultError** (1 change)
 
-* Model was added
+* Model BulkResultError was removed
 
 **BulkResultErrorInformation** (1 change)
 
-* Model was added
+* Model BulkResultErrorInformation was removed
 
 **EnrichedActionTargetBulkResult** (1 change)
 
-* Model was added
+* Model EnrichedActionTargetBulkResult was removed
 
 **EnrichedBulkActionTarget** (1 change)
 
-* Model was added
+* Model EnrichedBulkActionTarget was removed
 
 **RawStatistics** (1 change)
 
-* Model was added
+* Model RawStatistics was removed
 
 **BulkActionTarget** (1 change)
 
-* Model was added
+* Model BulkActionTarget was removed
 
 **EntityListingBulkActionTarget** (1 change)
 
-* Model was added
-
-**ActionTemplate** (1 change)
-
-* Optional property integrationActionFields was added
-
-**PatchActionTemplate** (1 change)
-
-* Optional property integrationActionFields was added
+* Model EntityListingBulkActionTarget was removed
 
 **JourneyEventType** (1 change)
 
-* Model was added
+* Model JourneyEventType was removed
 
 **JourneyEventTypeAttribute** (1 change)
 
-* Model was added
+* Model JourneyEventTypeAttribute was removed
 
 **JourneyEventTypeDisplayOptions** (1 change)
 
-* Model was added
+* Model JourneyEventTypeDisplayOptions was removed
 
 **JourneyEventTypeSessionType** (1 change)
 
-* Model was added
+* Model JourneyEventTypeSessionType was removed
 
 **PatchJourneyEventType** (1 change)
 
-* Model was added
+* Model PatchJourneyEventType was removed
 
 **JourneyEventTypeListing** (1 change)
 
-* Model was added
+* Model JourneyEventTypeListing was removed
 
 **ActionMapIcon** (1 change)
 
-* Model was added
+* Model ActionMapIcon was removed
 
 **ActionMapIconConfig** (1 change)
 
-* Model was added
+* Model ActionMapIconConfig was removed
 
 **OpenAction** (1 change)
 
-* Model was added
+* Model OpenAction was removed
 
 **OpenActionDocumentation** (1 change)
 
-* Model was added
+* Model OpenActionDocumentation was removed
 
 **OpenActionIcons** (1 change)
 
-* Model was added
+* Model OpenActionIcons was removed
 
 **OpenActionSchema** (1 change)
 
-* Model was added
+* Model OpenActionSchema was removed
 
 **PatchOpenAction** (1 change)
 
-* Model was added
+* Model PatchOpenAction was removed
 
 **OpenActionListing** (1 change)
 
-* Model was added
+* Model OpenActionListing was removed
 
 **ClickstreamSettings** (1 change)
 
-* Model was added
+* Model ClickstreamSettings was removed
 
 **IpAddressFilter** (1 change)
 
-* Model was added
+* Model IpAddressFilter was removed
 
 **FrequencyCapBehaviour** (1 change)
 
-* Model was added
+* Model FrequencyCapBehaviour was removed
 
 **WebActionSettings** (1 change)
 
-* Model was added
+* Model WebActionSettings was removed
 
 **PatchWebActionSettings** (1 change)
 
-* Model was added
+* Model PatchWebActionSettings was removed
 
 **Duration** (1 change)
 
-* Model was added
+* Model Duration was removed
 
 **IsoChronology** (1 change)
 
-* Model was added
+* Model IsoChronology was removed
 
 **JourneyView** (1 change)
 
-* Model was added
+* Model JourneyView was removed
 
 **JourneyViewElement** (1 change)
 
-* Model was added
+* Model JourneyViewElement was removed
 
 **JourneyViewElementAttributes** (1 change)
 
-* Model was added
+* Model JourneyViewElementAttributes was removed
 
 **JourneyViewElementFilter** (1 change)
 
-* Model was added
+* Model JourneyViewElementFilter was removed
 
 **JourneyViewElementFilterPredicate** (1 change)
 
-* Model was added
+* Model JourneyViewElementFilterPredicate was removed
 
 **JourneyViewLink** (1 change)
 
-* Model was added
+* Model JourneyViewLink was removed
 
 **TemporalUnit** (1 change)
 
-* Model was added
+* Model TemporalUnit was removed
 
 **AddressableEntityListing** (1 change)
 
-* Model was added
+* Model AddressableEntityListing was removed
 
 **JourneyEventDefinition** (1 change)
 
-* Model was added
+* Model JourneyEventDefinition was removed
 
 **JourneyEventDefinitionListing** (1 change)
 
-* Model was added
+* Model JourneyEventDefinitionListing was removed
 
 **JourneyViewJob** (1 change)
 
-* Model was added
+* Model JourneyViewJob was removed
 
 **JourneyViewResult** (1 change)
 
-* Model was added
+* Model JourneyViewResult was removed
 
 **JourneyViewResultElement** (1 change)
 
-* Model was added
+* Model JourneyViewResultElement was removed
 
 **JourneyViewResultLink** (1 change)
 
-* Model was added
+* Model JourneyViewResultLink was removed
 
 **JourneyViewResultMetrics** (1 change)
 
-* Model was added
+* Model JourneyViewResultMetrics was removed
 
 **KnowledgeFeedbackApproval** (1 change)
 
-* Model was added
+* Model KnowledgeFeedbackApproval was removed
 
 **KnowledgeFeedbackResponse** (1 change)
 
-* Model was added
+* Model KnowledgeFeedbackResponse was removed
 
 **KnowledgeFeedbackResponseListing** (1 change)
 
-* Model was added
+* Model KnowledgeFeedbackResponseListing was removed
 
 **KnowledgeSearchFeedbackResponse** (1 change)
 
-* Model was added
+* Model KnowledgeSearchFeedbackResponse was removed
 
 **KnowledgeFeedbackApprovalRequest** (1 change)
 
-* Model was added
+* Model KnowledgeFeedbackApprovalRequest was removed
 
 **KnowledgeSearchFeedback** (1 change)
 
-* Model was added
+* Model KnowledgeSearchFeedback was removed
 
 **KnowledgeSearchFeedbackApprovalsRequest** (1 change)
 
-* Model was added
+* Model KnowledgeSearchFeedbackApprovalsRequest was removed
 
 **KnowledgeFeedbackRequest** (1 change)
 
-* Model was added
+* Model KnowledgeFeedbackRequest was removed
 
 **KnowledgeSearchFeedbackDocuments** (1 change)
 
-* Model was added
+* Model KnowledgeSearchFeedbackDocuments was removed
 
 **KnowledgeFeedbackPatchRequest** (1 change)
 
-* Model was added
+* Model KnowledgeFeedbackPatchRequest was removed
 
 **KnowledgeTrainingRequest** (1 change)
 
-* Model was added
+* Model KnowledgeTrainingRequest was removed
 
 **GetUploadSourceUrlJobStatusResponse** (1 change)
 
-* Model was added
+* Model GetUploadSourceUrlJobStatusResponse was removed
 
 **CreateUploadSourceUrlJobResponse** (1 change)
 
-* Model was added
+* Model CreateUploadSourceUrlJobResponse was removed
 
 **CreateUploadSourceUrlJobRequest** (1 change)
 
-* Model was added
+* Model CreateUploadSourceUrlJobRequest was removed
 
 **KnowledgeContextResponse** (1 change)
 
-* Model was added
+* Model KnowledgeContextResponse was removed
 
 **KnowledgeContextValueResponse** (1 change)
 
-* Model was added
+* Model KnowledgeContextValueResponse was removed
 
 **KnowledgeContextRequest** (1 change)
 
-* Model was added
+* Model KnowledgeContextRequest was removed
 
 **KnowledgeContextResponseListing** (1 change)
 
-* Model was added
+* Model KnowledgeContextResponseListing was removed
 
 **KnowledgeContextValueRequest** (1 change)
 
-* Model was added
+* Model KnowledgeContextValueRequest was removed
 
 **KnowledgeContextValueResponseListing** (1 change)
 
-* Model was added
-
-**DocumentBodyImageProperties** (2 changes)
-
-* Optional property width was added
-* Optional property widthUnit was added
-
-**DocumentBodyTableCellBlockProperties** (1 change)
-
-* Optional property widthUnit was added
-
-**DocumentBodyTableProperties** (1 change)
-
-* Optional property widthUnit was added
-
-**DocumentVariation** (2 changes)
-
-* Optional property priority was added
-* Optional property name was added
-
-**KnowledgeDocumentVersionVariation** (2 changes)
-
-* Optional property priority was added
-* Optional property name was added
+* Model KnowledgeContextValueResponseListing was removed
 
 **KnowledgeDocumentCopy** (1 change)
 
-* Model was added
+* Model KnowledgeDocumentCopy was removed
 
 **KnowledgeDocumentPresentation** (1 change)
 
-* Model was added
+* Model KnowledgeDocumentPresentation was removed
 
 **KnowledgeDocumentVersionVariationReference** (1 change)
 
-* Model was added
+* Model KnowledgeDocumentVersionVariationReference was removed
 
 **KnowledgeDocumentFeedbackUpdateRequest** (1 change)
 
-* Model was added
+* Model KnowledgeDocumentFeedbackUpdateRequest was removed
 
 **KnowledgeDocumentQueryResponse** (1 change)
 
-* Model was added
+* Model KnowledgeDocumentQueryResponse was removed
 
 **KnowledgeDocumentQuery** (1 change)
 
-* Model was added
+* Model KnowledgeDocumentQuery was removed
 
 **OperationListing** (1 change)
 
-* Model was added
+* Model OperationListing was removed
 
 **OperationResponse** (1 change)
 
-* Model was added
+* Model OperationResponse was removed
 
 **OperationCreatorUserResponse** (1 change)
 
-* Model was added
+* Model OperationCreatorUserResponse was removed
 
 **KnowledgeParseJobRequestImport** (1 change)
 
-* Model was added
+* Model KnowledgeParseJobRequestImport was removed
 
 **KnowledgeParseRecord** (1 change)
 
-* Model was added
+* Model KnowledgeParseRecord was removed
 
 **KnowledgeParseImportResult** (1 change)
 
-* Model was added
+* Model KnowledgeParseImportResult was removed
 
 **KnowledgeParseJobResponse** (1 change)
 
-* Model was added
+* Model KnowledgeParseJobResponse was removed
 
 **KnowledgeParseJobRequestPatch** (1 change)
 
-* Model was added
+* Model KnowledgeParseJobRequestPatch was removed
 
 **KnowledgeParseJobRequest** (1 change)
 
-* Model was added
-
-**KnowledgeDocumentSearchRequest** (1 change)
-
-* Optional property includeVariations was added
-
-**DraftListing** (1 change)
-
-* Optional property cursors was added
-
-**MinedIntentsListing** (1 change)
-
-* Optional property cursors was added
-
-**MinerListing** (1 change)
-
-* Optional property cursors was added
+* Model KnowledgeParseJobRequest was removed
 
 **LimitChangeRequestUpdate** (1 change)
 
-* Model was added
+* Model LimitChangeRequestUpdate was removed
 
 **LimitChangeRequest** (1 change)
 
-* Model was added
+* Model LimitChangeRequest was removed
 
 **LogCaptureDownloadExecutionResponse** (1 change)
 
-* Model was added
+* Model LogCaptureDownloadExecutionResponse was removed
 
 **LogCaptureQueryRequest** (1 change)
 
-* Model was added
+* Model LogCaptureQueryRequest was removed
 
 **LogCaptureFileResponse** (1 change)
 
-* Model was added
+* Model LogCaptureFileResponse was removed
 
 **LogEntry** (1 change)
 
-* Model was added
+* Model LogEntry was removed
 
 **LogCaptureQueryResponse** (1 change)
 
-* Model was added
+* Model LogCaptureQueryResponse was removed
 
 **PagelessEntityListing** (1 change)
 
-* Model was added
+* Model PagelessEntityListing was removed
 
 **MarketplaceAd** (1 change)
 
-* Model was added
+* Model MarketplaceAd was removed
 
 **MarketplaceAdInput** (1 change)
 
-* Model was added
+* Model MarketplaceAdInput was removed
 
 **ApiInstructionResponseMapping** (1 change)
 
-* Model was added
+* Model ApiInstructionResponseMapping was removed
 
 **HardwareInfo** (1 change)
 
-* Model was added
+* Model HardwareInfo was removed
 
 **InstallationInstructions** (1 change)
 
-* Model was added
+* Model InstallationInstructions was removed
 
 **InstructionApiData** (1 change)
 
-* Model was added
+* Model InstructionApiData was removed
 
 **InstructionPrerequisite** (1 change)
 
-* Model was added
+* Model InstructionPrerequisite was removed
 
 **InstructionRequirement** (1 change)
 
-* Model was added
+* Model InstructionRequirement was removed
 
 **LicensingInfo** (1 change)
 
-* Model was added
+* Model LicensingInfo was removed
 
 **MarketingInfo** (1 change)
 
-* Model was added
+* Model MarketingInfo was removed
 
 **MarketplaceListing** (1 change)
 
-* Model was added
+* Model MarketplaceListing was removed
 
 **MarketplaceListingCategoryPriority** (1 change)
 
-* Model was added
+* Model MarketplaceListingCategoryPriority was removed
 
 **MarketplaceListingMetadata** (1 change)
 
-* Model was added
+* Model MarketplaceListingMetadata was removed
 
 **MarketplaceListingRegistryInfo** (1 change)
 
-* Model was added
+* Model MarketplaceListingRegistryInfo was removed
 
 **MarketplacePlatform** (1 change)
 
-* Model was added
+* Model MarketplacePlatform was removed
 
 **PricingOption** (1 change)
 
-* Model was added
+* Model PricingOption was removed
 
 **ProductPermissionCombination** (1 change)
 
-* Model was added
+* Model ProductPermissionCombination was removed
 
 **SmartCase** (1 change)
 
-* Model was added
+* Model SmartCase was removed
 
 **MarketplacePostListingInput** (1 change)
 
-* Model was added
+* Model MarketplacePostListingInput was removed
 
 **MarketplaceListingMetadataInput** (1 change)
 
-* Model was added
+* Model MarketplaceListingMetadataInput was removed
 
 **ReorderListingMediaInput** (1 change)
 
-* Model was added
+* Model ReorderListingMediaInput was removed
 
 **UpdateMarketplaceListingInput** (1 change)
 
-* Model was added
+* Model UpdateMarketplaceListingInput was removed
 
 **MarketplaceCategoryInput** (1 change)
 
-* Model was added
+* Model MarketplaceCategoryInput was removed
 
 **MarketplaceListingAdminMetadataInput** (1 change)
 
-* Model was added
+* Model MarketplaceListingAdminMetadataInput was removed
 
 **DocumentNavigation** (1 change)
 
-* Model was added
+* Model DocumentNavigation was removed
 
 **Restrictions** (1 change)
 
-* Model was added
+* Model Restrictions was removed
 
 **DocumentNavigationRequest** (1 change)
 
-* Model was added
+* Model DocumentNavigationRequest was removed
 
 **Component** (1 change)
 
-* Model was added
+* Model Component was removed
 
 **DocumentSection** (1 change)
 
-* Model was added
+* Model DocumentSection was removed
 
 **MarketplaceDocument** (1 change)
 
-* Model was added
+* Model MarketplaceDocument was removed
 
 **MarketplaceDocumentRequest** (1 change)
 
-* Model was added
+* Model MarketplaceDocumentRequest was removed
 
 **EnterpriseAgreement** (1 change)
 
-* Model was added
+* Model EnterpriseAgreement was removed
 
 **EnterpriseAgreementPart** (1 change)
 
-* Model was added
+* Model EnterpriseAgreementPart was removed
 
 **EnterpriseAgreementCreateRequest** (1 change)
 
-* Model was added
+* Model EnterpriseAgreementCreateRequest was removed
 
 **EnterpriseAgreementUpdateRequest** (1 change)
 
-* Model was added
+* Model EnterpriseAgreementUpdateRequest was removed
 
 **EnterpriseAgreementList** (1 change)
 
-* Model was added
+* Model EnterpriseAgreementList was removed
 
 **EnterpriseAgreementSearchFilter** (1 change)
 
-* Model was added
+* Model EnterpriseAgreementSearchFilter was removed
 
 **Partner** (1 change)
 
-* Model was added
+* Model Partner was removed
 
 **PartnerOffice** (1 change)
 
-* Model was added
+* Model PartnerOffice was removed
 
 **PartnerOfficeHour** (1 change)
 
-* Model was added
+* Model PartnerOfficeHour was removed
 
 **PartnerOfficePhoneNumber** (1 change)
 
-* Model was added
+* Model PartnerOfficePhoneNumber was removed
 
 **PartnerWebsite** (1 change)
 
-* Model was added
+* Model PartnerWebsite was removed
 
 **PartnerRequest** (1 change)
 
-* Model was added
+* Model PartnerRequest was removed
 
 **Reseller** (1 change)
 
-* Model was added
+* Model Reseller was removed
 
 **ResellerListing** (1 change)
 
-* Model was added
+* Model ResellerListing was removed
 
 **ResellerCreateRequest** (1 change)
 
-* Model was added
+* Model ResellerCreateRequest was removed
 
 **ResellerUpdateRequest** (1 change)
 
-* Model was added
+* Model ResellerUpdateRequest was removed
 
 **ResellerListingSupportRequest** (1 change)
 
-* Model was added
+* Model ResellerListingSupportRequest was removed
 
 **Meeting** (1 change)
 
-* Model was added
+* Model Meeting was removed
 
 **MeetingOccurrence** (1 change)
 
-* Model was added
+* Model MeetingOccurrence was removed
 
 **UserKey** (1 change)
 
-* Model was added
+* Model UserKey was removed
 
 **MeetingOccurrenceEntityListing** (1 change)
 
-* Model was added
+* Model MeetingOccurrenceEntityListing was removed
 
 **PublicMessageActionRequest** (1 change)
 
-* Model was added
+* Model PublicMessageActionRequest was removed
 
 **MessagingTask** (1 change)
 
-* Model was added
+* Model MessagingTask was removed
 
 **PagedEntityListing** (1 change)
 
-* Model was added
+* Model PagedEntityListing was removed
 
 **ChannelMetadata** (1 change)
 
-* Model was added
+* Model ChannelMetadata was removed
 
 **MessageMetadata** (1 change)
 
-* Model was added
+* Model MessageMetadata was removed
 
 **MessageMetadataContent** (1 change)
 
-* Model was added
+* Model MessageMetadataContent was removed
 
 **MessageMetadataEvent** (1 change)
 
-* Model was added
+* Model MessageMetadataEvent was removed
 
 **MessagingChannel** (1 change)
 
-* Model was added
+* Model MessagingChannel was removed
 
 **NormalizedMessage** (1 change)
 
-* Model was added
+* Model NormalizedMessage was removed
 
 **PublicMetadata** (1 change)
 
-* Model was added
+* Model PublicMetadata was removed
 
 **Reason** (1 change)
 
-* Model was added
+* Model Reason was removed
 
 **MessageResponse** (1 change)
 
-* Model was added
+* Model MessageResponse was removed
 
 **MessagingPlatformIntegration** (1 change)
 
-* Model was added
+* Model MessagingPlatformIntegration was removed
 
 **MessagingPlatformIntegrationEntityListing** (1 change)
 
-* Model was added
+* Model MessagingPlatformIntegrationEntityListing was removed
 
 **SendMessageResponse** (1 change)
 
-* Model was added
+* Model SendMessageResponse was removed
 
 **AggregationEmailAddress** (1 change)
 
-* Model was added
+* Model AggregationEmailAddress was removed
 
 **EmailMessageRequest** (1 change)
 
-* Model was added
+* Model EmailMessageRequest was removed
 
 **SendMessagesResponse** (1 change)
 
-* Model was added
+* Model SendMessagesResponse was removed
 
 **PlatformFacebookAppCredentials** (1 change)
 
-* Model was added
+* Model PlatformFacebookAppCredentials was removed
 
 **PlatformFacebookIntegration** (1 change)
 
-* Model was added
+* Model PlatformFacebookIntegration was removed
 
 **PlatformFacebookIntegrationPatchRequest** (1 change)
 
-* Model was added
+* Model PlatformFacebookIntegrationPatchRequest was removed
 
 **PlatformFacebookIntegrationRequest** (1 change)
 
-* Model was added
+* Model PlatformFacebookIntegrationRequest was removed
 
 **PlatformLineIntegration** (1 change)
 
-* Model was added
+* Model PlatformLineIntegration was removed
 
 **PlatformLineIntegrationPatchRequest** (1 change)
 
-* Model was added
+* Model PlatformLineIntegrationPatchRequest was removed
 
 **PlatformLineIntegrationRequest** (1 change)
 
-* Model was added
+* Model PlatformLineIntegrationRequest was removed
 
 **PlatformOpenIntegration** (1 change)
 
-* Model was added
+* Model PlatformOpenIntegration was removed
 
 **PlatformOpenIntegrationPatchRequest** (1 change)
 
-* Model was added
+* Model PlatformOpenIntegrationPatchRequest was removed
 
 **PlatformOpenIntegrationRequest** (1 change)
 
-* Model was added
+* Model PlatformOpenIntegrationRequest was removed
 
 **SmsMessageRequest** (1 change)
 
-* Model was added
+* Model SmsMessageRequest was removed
 
 **LongcodeSearchResult** (1 change)
 
-* Model was added
+* Model LongcodeSearchResult was removed
 
 **Longcode** (1 change)
 
-* Model was added
+* Model Longcode was removed
 
 **LongcodeListResult** (1 change)
 
-* Model was added
+* Model LongcodeListResult was removed
 
 **LongcodeOrder** (1 change)
 
-* Model was added
+* Model LongcodeOrder was removed
 
 **LongcodeRequest** (1 change)
 
-* Model was added
+* Model LongcodeRequest was removed
 
 **LongcodePortInRequest** (1 change)
 
-* Model was added
+* Model LongcodePortInRequest was removed
 
 **SenderPatchRequest** (1 change)
 
-* Model was added
+* Model SenderPatchRequest was removed
 
 **ProvisioningOrder** (1 change)
 
-* Model was added
+* Model ProvisioningOrder was removed
 
 **SimulatedSender** (1 change)
 
-* Model was added
+* Model SimulatedSender was removed
 
 **AutoResponders** (1 change)
 
-* Model was added
+* Model AutoResponders was removed
 
 **SimulatedSenderRequest** (1 change)
 
-* Model was added
+* Model SimulatedSenderRequest was removed
 
 **SimulatedSenderListResult** (1 change)
 
-* Model was added
+* Model SimulatedSenderListResult was removed
 
 **SenderOrder** (1 change)
 
-* Model was added
+* Model SenderOrder was removed
 
 **TollfreeNumber** (1 change)
 
-* Model was added
+* Model TollfreeNumber was removed
 
 **TollfreeNumberListResult** (1 change)
 
-* Model was added
+* Model TollfreeNumberListResult was removed
 
 **TollfreeNumberOrder** (1 change)
 
-* Model was added
+* Model TollfreeNumberOrder was removed
 
 **TollfreeNumberRequest** (1 change)
 
-* Model was added
+* Model TollfreeNumberRequest was removed
 
 **TollfreeNumberPortInRequest** (1 change)
 
-* Model was added
+* Model TollfreeNumberPortInRequest was removed
 
 **TollfreeNumberSearchResult** (1 change)
 
-* Model was added
+* Model TollfreeNumberSearchResult was removed
 
 **PlatformTwitterIntegration** (1 change)
 
-* Model was added
+* Model PlatformTwitterIntegration was removed
 
 **PlatformTwitterIntegrationPatchRequest** (1 change)
 
-* Model was added
+* Model PlatformTwitterIntegrationPatchRequest was removed
 
 **PlatformTwitterIntegrationRequest** (1 change)
 
-* Model was added
+* Model PlatformTwitterIntegrationRequest was removed
 
 **PlatformWhatsAppIntegration** (1 change)
 
-* Model was added
+* Model PlatformWhatsAppIntegration was removed
 
 **PlatformWhatsAppIntegrationPatchRequest** (1 change)
 
-* Model was added
+* Model PlatformWhatsAppIntegrationPatchRequest was removed
 
 **PlatformWhatsAppIntegrationRequest** (1 change)
 
-* Model was added
+* Model PlatformWhatsAppIntegrationRequest was removed
 
 **Verifier** (1 change)
 
-* Model was added
+* Model Verifier was removed
 
 **UpdateVerifierRequest** (1 change)
 
-* Model was added
+* Model UpdateVerifierRequest was removed
 
 **VerifierEntityListing** (1 change)
 
-* Model was added
+* Model VerifierEntityListing was removed
 
 **Migration** (1 change)
 
-* Model was added
+* Model Migration was removed
 
 **MigrationState** (1 change)
 
-* Model was added
+* Model MigrationState was removed
 
 **MigrationUpdate** (1 change)
 
-* Model was added
+* Model MigrationUpdate was removed
 
 **MigrationListing** (1 change)
 
-* Model was added
+* Model MigrationListing was removed
 
 **NewRelicAction** (1 change)
 
-* Model was added
+* Model NewRelicAction was removed
 
 **NewRelicActionList** (1 change)
 
-* Model was added
+* Model NewRelicActionList was removed
 
 **HealthCheckInfo** (1 change)
 
-* Model was added
+* Model HealthCheckInfo was removed
 
 **WebhookInvocationResponse** (1 change)
 
-* Model was added
+* Model WebhookInvocationResponse was removed
 
 **WebhookSchema** (1 change)
 
-* Model was added
+* Model WebhookSchema was removed
 
 **ActionEventRequest** (1 change)
 
-* Model was added
+* Model ActionEventRequest was removed
 
 **BaseAppEventRequest** (1 change)
 
-* Model was added
+* Model BaseAppEventRequest was removed
 
 **BulkAppEventResponse** (1 change)
 
-* Model was added
+* Model BulkAppEventResponse was removed
 
 **UnprocessedAppEvent** (1 change)
 
-* Model was added
+* Model UnprocessedAppEvent was removed
 
 **BulkAppEventRequest** (1 change)
 
-* Model was added
+* Model BulkAppEventRequest was removed
 
 **DeploymentPing** (1 change)
 
-* Model was added
+* Model DeploymentPing was removed
 
 **DeploymentWebAction** (1 change)
 
-* Model was added
+* Model DeploymentWebAction was removed
 
 **OpenActionProperties** (1 change)
 
-* Model was added
+* Model OpenActionProperties was removed
 
 **WebMessagingOfferProperties** (1 change)
 
-* Model was added
+* Model WebMessagingOfferProperties was removed
 
 **WebActionProperties** (1 change)
 
-* Model was added
+* Model WebActionProperties was removed
 
 **WebsitePing** (1 change)
 
-* Model was added
+* Model WebsitePing was removed
 
 **WebsiteWebAction** (1 change)
 
-* Model was added
+* Model WebsiteWebAction was removed
 
 **KnowledgeGuestDocumentView** (1 change)
 
-* Model was added
+* Model KnowledgeGuestDocumentView was removed
 
 **KnowledgeGuestDocumentPresentation** (1 change)
 
-* Model was added
+* Model KnowledgeGuestDocumentPresentation was removed
 
 **KnowledgeGuestDocumentCopy** (1 change)
 
-* Model was added
+* Model KnowledgeGuestDocumentCopy was removed
 
 **PagedAdEntity** (1 change)
 
-* Model was added
+* Model PagedAdEntity was removed
 
 **MarketplaceListingCategory** (1 change)
 
-* Model was added
+* Model MarketplaceListingCategory was removed
 
 **DocumentNavigationList** (1 change)
 
-* Model was added
+* Model DocumentNavigationList was removed
 
 **PagedListingEntity** (1 change)
 
-* Model was added
+* Model PagedListingEntity was removed
 
 **MarketplaceFacet** (1 change)
 
-* Model was added
+* Model MarketplaceFacet was removed
 
 **MarketplaceFacetValue** (1 change)
 
-* Model was added
+* Model MarketplaceFacetValue was removed
 
 **PagedMarketplaceListings** (1 change)
 
-* Model was added
+* Model PagedMarketplaceListings was removed
 
 **MarketplaceListingSearchInput** (1 change)
 
-* Model was added
+* Model MarketplaceListingSearchInput was removed
 
 **DocumentList** (1 change)
 
-* Model was added
+* Model DocumentList was removed
 
 **DocumentSearchInput** (1 change)
 
-* Model was added
+* Model DocumentSearchInput was removed
 
 **MarketplaceReview** (1 change)
 
-* Model was added
+* Model MarketplaceReview was removed
 
 **MarketplaceReviewAnswer** (1 change)
 
-* Model was added
+* Model MarketplaceReviewAnswer was removed
 
 **MarketplaceReviewAnswers** (1 change)
 
-* Model was added
+* Model MarketplaceReviewAnswers was removed
 
 **MarketplaceReviewUser** (1 change)
 
-* Model was added
+* Model MarketplaceReviewUser was removed
 
 **MarketplaceReviews** (1 change)
 
-* Model was added
+* Model MarketplaceReviews was removed
 
 **PartnerList** (1 change)
 
-* Model was added
+* Model PartnerList was removed
 
 **Captcha** (1 change)
 
-* Model was added
+* Model Captcha was removed
 
 **CreateFreeTrialStaging** (1 change)
 
-* Model was added
+* Model CreateFreeTrialStaging was removed
 
 **FreeTrialOtp** (1 change)
 
-* Model was added
+* Model FreeTrialOtp was removed
 
 **LocationValidation** (1 change)
 
-* Model was added
+* Model LocationValidation was removed
 
 **Terms** (1 change)
 
-* Model was added
+* Model Terms was removed
 
 **FreeTrialStaging** (1 change)
 
-* Model was added
+* Model FreeTrialStaging was removed
 
 **Utm** (1 change)
 
-* Model was added
+* Model Utm was removed
 
 **CreateFreeTrialOtp** (1 change)
 
-* Model was added
+* Model CreateFreeTrialOtp was removed
 
 **Invite** (1 change)
 
-* Model was added
+* Model Invite was removed
 
 **JoinCode** (1 change)
 
-* Model was added
+* Model JoinCode was removed
 
 **OrgBillingActivation** (1 change)
 
-* Model was added
+* Model OrgBillingActivation was removed
 
 **ApplyOrgBillingActivationResponse** (1 change)
 
-* Model was added
+* Model ApplyOrgBillingActivationResponse was removed
 
 **ApplyOrgBillingActivationRequest** (1 change)
 
-* Model was added
+* Model ApplyOrgBillingActivationRequest was removed
 
 **OrgProvisioning** (1 change)
 
-* Model was added
+* Model OrgProvisioning was removed
 
 **CompleteOrgProvisioningResponse** (1 change)
 
-* Model was added
+* Model CompleteOrgProvisioningResponse was removed
 
 **CompleteOrgProvisioningRequest** (1 change)
 
-* Model was added
+* Model CompleteOrgProvisioningRequest was removed
 
 **OrgProvisioningUser** (1 change)
 
-* Model was added
+* Model OrgProvisioningUser was removed
 
 **StageOrgProvisioningResponse** (1 change)
 
-* Model was added
+* Model StageOrgProvisioningResponse was removed
 
 **StageOrgProvisioningRequest** (1 change)
 
-* Model was added
+* Model StageOrgProvisioningRequest was removed
 
 **Provisioning** (1 change)
 
-* Model was added
+* Model Provisioning was removed
 
 **ProvisioningJobOtp** (1 change)
 
-* Model was added
+* Model ProvisioningJobOtp was removed
 
 **CreateProvisioning** (1 change)
 
-* Model was added
+* Model CreateProvisioning was removed
 
 **CreateProvisioningOtp** (1 change)
 
-* Model was added
+* Model CreateProvisioningOtp was removed
 
 **CreateUserResponse** (1 change)
 
-* Model was added
+* Model CreateUserResponse was removed
 
 **CreateUserRequest** (1 change)
 
-* Model was added
+* Model CreateUserRequest was removed
 
 **StageUserRequest** (1 change)
 
-* Model was added
+* Model StageUserRequest was removed
 
 **JoinExistingOrgsResponse** (1 change)
 
-* Model was added
+* Model JoinExistingOrgsResponse was removed
 
 **JoinExistingOrgsRequest** (1 change)
 
-* Model was added
+* Model JoinExistingOrgsRequest was removed
 
-**DocumentationSearchRequest** (2 changes)
+**PhoneConfigData** (1 change)
 
-* Optional property returnFields was added
-* Optional property expand was added
-
-**DocumentationV2SearchRequest** (1 change)
-
-* Optional property returnFields was added
-
-**GKNDocumentationSearchRequest** (2 changes)
-
-* Optional property returnFields was added
-* Optional property expand was added
+* Model PhoneConfigData was removed
 
 **NotificationSettings** (1 change)
 
-* Model was added
+* Model NotificationSettings was removed
 
 **ApiUsageClientDataTransferExecutionResult** (1 change)
 
-* Model was added
+* Model ApiUsageClientDataTransferExecutionResult was removed
 
 **ApiUsageDataTransferQuery** (1 change)
 
-* Model was added
+* Model ApiUsageDataTransferQuery was removed
 
 **InviteListing** (1 change)
 
-* Model was added
+* Model InviteListing was removed
 
 **JoinCodeRequest** (1 change)
 
-* Model was added
+* Model JoinCodeRequest was removed
 
 **JoinCodeListing** (1 change)
 
-* Model was added
+* Model JoinCodeListing was removed
 
 **EventDefinition** (1 change)
 
-* Model was added
+* Model EventDefinition was removed
 
 **EventDefinitionListing** (1 change)
 
-* Model was added
+* Model EventDefinitionListing was removed
 
 **EnforceScopesSetting** (1 change)
 
-* Model was added
-
-**TrustGroup** (1 change)
-
-* Optional property chat was added
+* Model EnforceScopesSetting was removed
 
 **PhoneAddressData** (1 change)
 
-* Model was added
+* Model PhoneAddressData was removed
 
 **RegistrationConfiguration** (1 change)
 
-* Model was added
+* Model RegistrationConfiguration was removed
 
 **Registration** (1 change)
 
-* Model was added
-
-**BatchDownloadJobSubmission** (1 change)
-
-* Optional property restoreArchivedRecordings was added
-
-**EvaluationFormResponse** (2 changes)
-
-* Optional property weightMode was added
-* Optional property evaluationSettings was added
-
-**EvaluationResponse** (7 changes)
-
-* Optional property agentTeam was added
-* Optional property disputeCount was added
-* Optional property version was added
-* Optional property versionHistory was added
-* Optional property declinedReview was added
-* Optional property evaluationContextId was added
-* Optional property retractedEvaluation was added
-
-**Survey** (1 change)
-
-* Optional property agentTeam was added
-
-**Annotation** (2 changes)
-
-* Optional property queue was added
-* Optional property flow was added
-
-**MediaResult** (5 changes)
-
-* Optional property screenId was added
-* Optional property originX was added
-* Optional property originY was added
-* Optional property resolutionX was added
-* Optional property resolutionY was added
-
-**Recording** (1 change)
-
-* Optional property externalContacts was added
-
-**RecordingMessagingMessage** (2 changes)
-
-* Optional property genericTemplates was added
-* Optional property events was added
-
-**RecordingMetadata** (1 change)
-
-* Optional property region was added
+* Model Registration was removed
 
 **CommonAllAlertUpdateRequest** (1 change)
 
-* Model was added
-
-**ResponseText** (1 change)
-
-* Optional property type was added
-
-**QueueRequest** (1 change)
-
-* Optional property predictiveRouting was added
-
-**UserQueue** (1 change)
-
-* Optional property predictiveRouting was added
-
-**CreateQueueRequest** (1 change)
-
-* Optional property predictiveRouting was added
-
-**TranscriptionSettings** (2 changes)
-
-* Optional property pciDssRedactionEnabled was added
-* Optional property piiRedactionEnabled was added
-
-**RoutingSettings** (1 change)
-
-* Optional property allowCrossDivisionQueueMembers was added
+* Model CommonAllAlertUpdateRequest was removed
 
 **UtilizationLabelRequest** (1 change)
 
-* Model was added
+* Model UtilizationLabelRequest was removed
 
 **UtilizationLabelEntityListing** (1 change)
 
-* Model was added
-
-**MediaUtilization** (1 change)
-
-* Optional property utilizationTags was added
-
-**Utilization** (1 change)
-
-* Optional property labelUtilizations was added
-
-**RoutingConversationAttributesResponse** (1 change)
-
-* Optional property label was added
-
-**RoutingConversationAttributesRequest** (1 change)
-
-* Optional property labelId was added
+* Model UtilizationLabelEntityListing was removed
 
 **InteractionScore** (1 change)
 
-* Model was added
+* Model InteractionScore was removed
 
 **InteractionScoresResult** (1 change)
 
-* Model was added
+* Model InteractionScoresResult was removed
 
 **InteractionScoresRequest** (1 change)
 
-* Model was added
+* Model InteractionScoresRequest was removed
 
 **InteractionToScore** (1 change)
 
-* Model was added
+* Model InteractionToScore was removed
 
 **UserScore** (1 change)
 
-* Model was added
+* Model UserScore was removed
 
 **UserScoresResult** (1 change)
 
-* Model was added
+* Model UserScoresResult was removed
 
 **UserScoresRequest** (1 change)
 
-* Model was added
+* Model UserScoresRequest was removed
 
 **UserToScore** (1 change)
 
-* Model was added
+* Model UserToScore was removed
 
 **UpdateKpiRequest** (1 change)
 
-* Model was added
+* Model UpdateKpiRequest was removed
 
 **KeyPerformanceIndicatorType** (1 change)
 
-* Model was added
+* Model KeyPerformanceIndicatorType was removed
 
 **CreateKpiRequest** (1 change)
 
-* Model was added
+* Model CreateKpiRequest was removed
 
 **ComparisonReportSummary** (1 change)
 
-* Model was added
+* Model ComparisonReportSummary was removed
 
 **MediaTypeComparisonSummaryItem** (1 change)
 
-* Model was added
+* Model MediaTypeComparisonSummaryItem was removed
 
 **RoutingComparisonItem** (1 change)
 
-* Model was added
+* Model RoutingComparisonItem was removed
 
 **ComparisonReportSummaryRequest** (1 change)
 
-* Model was added
+* Model ComparisonReportSummaryRequest was removed
 
 **ComparisonReportDetail** (1 change)
 
-* Model was added
+* Model ComparisonReportDetail was removed
 
 **InteractionTimedOutComparisonItem** (1 change)
 
-* Model was added
+* Model InteractionTimedOutComparisonItem was removed
 
 **ComparisonReportDetailRequest** (1 change)
 
-* Model was added
+* Model ComparisonReportDetailRequest was removed
 
 **AgentDirectRoutingBackupSettings** (1 change)
 
-* Model was added
-
-**AgentMaxUtilization** (1 change)
-
-* Optional property labelUtilizations was added
-
-**WrapupCodeRequest** (1 change)
-
-* Optional property division was added
+* Model AgentDirectRoutingBackupSettings was removed
 
 **UpdatedSettingsResponse** (1 change)
 
-* Model was added
+* Model UpdatedSettingsResponse was removed
 
 **AdvancedMicSettings** (1 change)
 
-* Model was added
+* Model AdvancedMicSettings was removed
 
 **DeviceProfile** (1 change)
 
-* Model was added
+* Model DeviceProfile was removed
 
 **DeviceVolumeSettings** (1 change)
 
-* Model was added
+* Model DeviceVolumeSettings was removed
 
 **MediaHelperSettings** (1 change)
 
-* Model was added
+* Model MediaHelperSettings was removed
 
 **VoltSettings** (1 change)
 
-* Model was added
+* Model VoltSettings was removed
 
 **WebrtcDevice** (1 change)
 
-* Model was added
+* Model WebrtcDevice was removed
 
 **WebrtcDirectorySettings** (1 change)
 
-* Model was added
+* Model WebrtcDirectorySettings was removed
 
 **WebrtcGeneralSettings** (1 change)
 
-* Model was added
+* Model WebrtcGeneralSettings was removed
 
 **WebrtcUserSettings** (1 change)
 
-* Model was added
+* Model WebrtcUserSettings was removed
 
 **InfixOperator** (1 change)
 
-* Model was added
+* Model InfixOperator was removed
 
 **Operand** (1 change)
 
-* Model was added
+* Model Operand was removed
 
 **OperandPosition** (1 change)
 
-* Model was added
+* Model OperandPosition was removed
 
 **OperatorPosition** (1 change)
 
-* Model was added
+* Model OperatorPosition was removed
 
 **StaCategory** (1 change)
 
-* Model was added
+* Model StaCategory was removed
 
 **Term** (1 change)
 
-* Model was added
+* Model Term was removed
 
 **CategoryRequest** (1 change)
 
-* Model was added
+* Model CategoryRequest was removed
 
 **CategoriesEntityListing** (1 change)
 
-* Model was added
-
-**ConversationMetrics** (1 change)
-
-* Optional property empathyScores was added
-
-**SpeechTextAnalyticsSettingsResponse** (1 change)
-
-* Optional property agentEmpathyEnabled was added
-
-**SpeechTextAnalyticsSettingsRequest** (1 change)
-
-* Optional property agentEmpathyEnabled was added
+* Model CategoriesEntityListing was removed
 
 **Callheader** (1 change)
 
-* Model was added
+* Model Callheader was removed
 
 **Callmessage** (1 change)
 
-* Model was added
+* Model Callmessage was removed
 
 **EdgeOfflineConfigurationResponse** (1 change)
 
-* Model was added
+* Model EdgeOfflineConfigurationResponse was removed
 
 **EdgeOfflineConfiguration** (1 change)
 
-* Model was added
+* Model EdgeOfflineConfiguration was removed
 
 **EdgeOfflineConfigurationInterface** (1 change)
 
-* Model was added
+* Model EdgeOfflineConfigurationInterface was removed
 
 **EdgeOfflineConfigurationNetwork** (1 change)
 
-* Model was added
-
-**Edge** (3 changes)
-
-* Optional property healthStatus was added
-* Optional property dnsServers was added
-* Optional property pin was added
-
-**Site** (1 change)
-
-* Optional property edgeGroup was added
-
-**TrunkBase** (3 changes)
-
-* Optional property mediaRegions was added
-* Optional property site was added
-* Optional property inboundSite was added
-
-**DomainLogicalInterface** (1 change)
-
-* Optional property networkCaptureEndDate was added
+* Model EdgeOfflineConfigurationNetwork was removed
 
 **DialTargetResponse** (1 change)
 
-* Model was added
+* Model DialTargetResponse was removed
 
 **DialTargetRequest** (1 change)
 
-* Model was added
-
-**EdgeTrunkBase** (4 changes)
-
-* Optional property managed was added
-* Optional property mediaRegions was added
-* Optional property site was added
-* Optional property inboundSite was added
+* Model DialTargetRequest was removed
 
 **VolumeTask** (1 change)
 
-* Model was added
+* Model VolumeTask was removed
 
 **CreateVolumePayload** (1 change)
 
-* Model was added
+* Model CreateVolumePayload was removed
 
 **FileConfiguration** (1 change)
 
-* Model was added
+* Model FileConfiguration was removed
 
 **TestVolumeFileConfigurationResponse** (1 change)
 
-* Model was added
+* Model TestVolumeFileConfigurationResponse was removed
 
 **VolumeRecoveryEntity** (1 change)
 
-* Model was added
+* Model VolumeRecoveryEntity was removed
 
 **SerializableVolume** (1 change)
 
-* Model was added
+* Model SerializableVolume was removed
 
 **FileRecoveryVolume** (1 change)
 
-* Model was added
+* Model FileRecoveryVolume was removed
 
 **FileStatus** (1 change)
 
-* Model was added
+* Model FileStatus was removed
 
 **S3VerificationResponse** (1 change)
 
-* Model was added
+* Model S3VerificationResponse was removed
 
 **RecoveredVolumePayload** (1 change)
 
-* Model was added
+* Model RecoveredVolumePayload was removed
 
 **EntityListingAddressableEntityRef** (1 change)
 
-* Model was added
+* Model EntityListingAddressableEntityRef was removed
 
 **HybridCompatibilityResponse** (1 change)
 
-* Model was added
+* Model HybridCompatibilityResponse was removed
 
 **MediaStatisticsTrunkInfo** (1 change)
 
-* Model was added
+* Model MediaStatisticsTrunkInfo was removed
 
 **AsgInfoResponse** (1 change)
 
-* Model was added
+* Model AsgInfoResponse was removed
 
 **InstanceInfo** (1 change)
 
-* Model was added
+* Model InstanceInfo was removed
 
 **AsgInfoListing** (1 change)
 
-* Model was added
+* Model AsgInfoListing was removed
 
 **UpgradeAsgResponse** (1 change)
 
-* Model was added
+* Model UpgradeAsgResponse was removed
 
 **AsgUpgradeRequest** (1 change)
 
-* Model was added
+* Model AsgUpgradeRequest was removed
 
 **AwsConfigRequest** (1 change)
 
-* Model was added
+* Model AwsConfigRequest was removed
 
 **CreateAsgRequest** (1 change)
 
-* Model was added
+* Model CreateAsgRequest was removed
 
 **CurrentAsgImage** (1 change)
 
-* Model was added
+* Model CurrentAsgImage was removed
 
 **DecommissionedEdgeEntityListing** (1 change)
 
-* Model was added
+* Model DecommissionedEdgeEntityListing was removed
 
 **ScaleASGResponse** (1 change)
 
-* Model was added
+* Model ScaleASGResponse was removed
 
 **AsgScaleRequest** (1 change)
 
-* Model was added
+* Model AsgScaleRequest was removed
 
 **UpgradeRule** (1 change)
 
-* Model was added
+* Model UpgradeRule was removed
 
 **SiteConnections** (1 change)
 
-* Model was added
+* Model SiteConnections was removed
 
 **DisableSiteConnectionsRequest** (1 change)
 
-* Model was added
+* Model DisableSiteConnectionsRequest was removed
 
 **SitesSearchResponse** (1 change)
 
-* Model was added
+* Model SitesSearchResponse was removed
 
 **SiteSearchCriteria** (1 change)
 
-* Model was added
+* Model SiteSearchCriteria was removed
 
 **SiteSearchRequest** (1 change)
 
-* Model was added
+* Model SiteSearchRequest was removed
 
 **EdgeTier** (1 change)
 
-* Model was added
+* Model EdgeTier was removed
 
 **TrunkBasesSearchResponse** (1 change)
 
-* Model was added
+* Model TrunkBasesSearchResponse was removed
 
 **TelephonySearchCriteria** (1 change)
 
-* Model was added
+* Model TelephonySearchCriteria was removed
 
 **TelephonySearchRequest** (1 change)
 
-* Model was added
+* Model TelephonySearchRequest was removed
 
 **TrunkInstanceSearchResponse** (1 change)
 
-* Model was added
+* Model TrunkInstanceSearchResponse was removed
 
 **CheckinUsers** (1 change)
 
-* Model was added
+* Model CheckinUsers was removed
 
 **TimUser** (1 change)
 
-* Model was added
+* Model TimUser was removed
 
 **CheckoutUser** (1 change)
 
-* Model was added
+* Model CheckoutUser was removed
 
 **QueryInfo** (1 change)
 
-* Model was added
+* Model QueryInfo was removed
 
 **StaticEnvironment** (1 change)
 
-* Model was added
+* Model StaticEnvironment was removed
 
 **TestAutomationUsers** (1 change)
 
-* Model was added
+* Model TestAutomationUsers was removed
 
 **TimUserCreate** (1 change)
 
-* Model was added
+* Model TimUserCreate was removed
 
 **StaticEnvironments** (1 change)
 
-* Model was added
+* Model StaticEnvironments was removed
 
 **StaticOauthClient** (1 change)
 
-* Model was added
+* Model StaticOauthClient was removed
 
 **StaticOauthClients** (1 change)
 
-* Model was added
+* Model StaticOauthClients was removed
 
 **IntegrationApp** (1 change)
 
-* Model was added
+* Model IntegrationApp was removed
 
 **StaticOrg** (1 change)
 
-* Model was added
+* Model StaticOrg was removed
 
 **StaticOrgs** (1 change)
 
-* Model was added
+* Model StaticOrgs was removed
 
 **EmailResponse** (1 change)
 
-* Model was added
+* Model EmailResponse was removed
 
 **Body** (1 change)
 
-* Model was added
+* Model Body was removed
 
 **Content** (1 change)
 
-* Model was added
+* Model Content was removed
 
 **EmailContent** (1 change)
 
-* Model was added
+* Model EmailContent was removed
 
 **EmailDestination** (1 change)
 
-* Model was added
+* Model EmailDestination was removed
 
 **EmailRequest** (1 change)
 
-* Model was added
+* Model EmailRequest was removed
 
 **EmailTemplate** (1 change)
 
-* Model was added
+* Model EmailTemplate was removed
 
 **MessageTag** (1 change)
 
-* Model was added
+* Model MessageTag was removed
 
 **RawMessage** (1 change)
 
-* Model was added
+* Model RawMessage was removed
 
 **S3Object** (1 change)
 
-* Model was added
+* Model S3Object was removed
 
 **SimpleMessage** (1 change)
 
-* Model was added
+* Model SimpleMessage was removed
 
 **IntegrationAuthResponse** (1 change)
 
-* Model was added
+* Model IntegrationAuthResponse was removed
 
 **IntegrationAuthRequest** (1 change)
 
-* Model was added
+* Model IntegrationAuthRequest was removed
 
 **UnifiedCommunicationsIntegration** (1 change)
 
-* Model was added
+* Model UnifiedCommunicationsIntegration was removed
 
 **UnifiedCommunicationsIntegrationListing** (1 change)
 
-* Model was added
+* Model UnifiedCommunicationsIntegrationListing was removed
 
 **ListMeetingsResponsePageResult** (1 change)
 
-* Model was added
+* Model ListMeetingsResponsePageResult was removed
 
 **MeetingResponse** (1 change)
 
-* Model was added
+* Model MeetingResponse was removed
 
 **MeetingsRequest** (1 change)
 
-* Model was added
+* Model MeetingsRequest was removed
 
 **ZoomDetailedGlobalDialInNumber** (1 change)
 
-* Model was added
+* Model ZoomDetailedGlobalDialInNumber was removed
 
 **ZoomDetailedMeeting** (1 change)
 
-* Model was added
+* Model ZoomDetailedMeeting was removed
 
 **ZoomDetailedMeetingOccurrence** (1 change)
 
-* Model was added
+* Model ZoomDetailedMeetingOccurrence was removed
 
 **ZoomDetailedMeetingRecurrence** (1 change)
 
-* Model was added
+* Model ZoomDetailedMeetingRecurrence was removed
 
 **ZoomDetailedMeetingSettings** (1 change)
 
-* Model was added
+* Model ZoomDetailedMeetingSettings was removed
 
 **ZoomDetailedMeetingTrackingField** (1 change)
 
-* Model was added
+* Model ZoomDetailedMeetingTrackingField was removed
 
 **ZoomSignatureResponse** (1 change)
 
-* Model was added
+* Model ZoomSignatureResponse was removed
 
 **ZoomUserResponse** (1 change)
 
-* Model was added
+* Model ZoomUserResponse was removed
 
 **ZoomEmailNotificationSetting** (1 change)
 
-* Model was added
+* Model ZoomEmailNotificationSetting was removed
 
 **ZoomFeatureSetting** (1 change)
 
-* Model was added
+* Model ZoomFeatureSetting was removed
 
 **ZoomInMeetingSetting** (1 change)
 
-* Model was added
+* Model ZoomInMeetingSetting was removed
 
 **ZoomMeetingPasswordRequirementSetting** (1 change)
 
-* Model was added
+* Model ZoomMeetingPasswordRequirementSetting was removed
 
 **ZoomRecordingPasswordRequirementSetting** (1 change)
 
-* Model was added
+* Model ZoomRecordingPasswordRequirementSetting was removed
 
 **ZoomRecordingSetting** (1 change)
 
-* Model was added
+* Model ZoomRecordingSetting was removed
 
 **ZoomScheduleMeetingSetting** (1 change)
 
-* Model was added
+* Model ZoomScheduleMeetingSetting was removed
 
 **ZoomTelephonySetting** (1 change)
 
-* Model was added
+* Model ZoomTelephonySetting was removed
 
 **ZoomTspSetting** (1 change)
 
-* Model was added
+* Model ZoomTspSetting was removed
 
 **ZoomUserSettingsResponse** (1 change)
 
-* Model was added
+* Model ZoomUserSettingsResponse was removed
 
 **ZoomMeetingEntityListing** (1 change)
 
-* Model was added
+* Model ZoomMeetingEntityListing was removed
 
 **ZoomMeetingEntityResponse** (1 change)
 
-* Model was added
+* Model ZoomMeetingEntityResponse was removed
 
 **ZoomNewMeetingRequest** (1 change)
 
-* Model was added
+* Model ZoomNewMeetingRequest was removed
 
 **ApiUsageOrganizationDataTransferExecutionResult** (1 change)
 
-* Model was added
+* Model ApiUsageOrganizationDataTransferExecutionResult was removed
 
 **ApiUsageDataTransferQueryResult** (1 change)
 
-* Model was added
+* Model ApiUsageDataTransferQueryResult was removed
 
 **ApiUsageDataTransferRow** (1 change)
 
-* Model was added
-
-**UserMe** (1 change)
-
-* Optional property logCapture was added
+* Model ApiUsageDataTransferRow was removed
 
 **VoicebotConnectionResponse** (1 change)
 
-* Model was added
+* Model VoicebotConnectionResponse was removed
 
 **WebsocketConnectionParameters** (1 change)
 
-* Model was added
+* Model WebsocketConnectionParameters was removed
 
 **VoicebotConnectionRequest** (1 change)
 
-* Model was added
+* Model VoicebotConnectionRequest was removed
 
 **CreateVoicemailMessage** (1 change)
 
-* Model was added
+* Model CreateVoicemailMessage was removed
 
 **ArchitectAuditMessage** (1 change)
 
-* Model was added
+* Model ArchitectAuditMessage was removed
 
 **ArchitectAuditMessageListing** (1 change)
 
-* Model was added
+* Model ArchitectAuditMessageListing was removed
 
 **CapabilitiesNluSettings** (1 change)
 
-* Model was added
+* Model CapabilitiesNluSettings was removed
 
 **CapabilitiesNluSupport** (1 change)
 
-* Model was added
+* Model CapabilitiesNluSupport was removed
 
 **CapabilitiesNluSupportedLanguage** (1 change)
 
-* Model was added
+* Model CapabilitiesNluSupportedLanguage was removed
 
 **CategoryInfo** (1 change)
 
-* Model was added
+* Model CategoryInfo was removed
 
 **Configuration** (1 change)
 
-* Model was added
+* Model Configuration was removed
 
 **ConfigurationCondition** (1 change)
 
-* Model was added
+* Model ConfigurationCondition was removed
+
+**ConfigurationFeature** (1 change)
+
+* Model ConfigurationFeature was removed
 
 **ConfigurationLanguage** (1 change)
 
-* Model was added
+* Model ConfigurationLanguage was removed
 
 **ConfigurationOverloads** (1 change)
 
-* Model was added
+* Model ConfigurationOverloads was removed
 
 **ConfigurationSubConditions** (1 change)
 
-* Model was added
+* Model ConfigurationSubConditions was removed
 
 **FeatureSubConditions** (1 change)
 
-* Model was added
+* Model FeatureSubConditions was removed
 
 **FeatureSupportConfiguration** (1 change)
 
-* Model was added
+* Model FeatureSupportConfiguration was removed
 
 **TTSConfiguration** (1 change)
 
-* Model was added
+* Model TTSConfiguration was removed
 
 **TTSEngine** (1 change)
 
-* Model was added
+* Model TTSEngine was removed
 
 **TTSEngineRef** (1 change)
 
-* Model was added
+* Model TTSEngineRef was removed
 
 **TTSVoice** (1 change)
 
-* Model was added
+* Model TTSVoice was removed
 
 **TTSVoiceRef** (1 change)
 
-* Model was added
+* Model TTSVoiceRef was removed
 
 **Capabilities** (1 change)
 
-* Model was added
+* Model Capabilities was removed
 
 **CapabilitiesAction** (1 change)
 
-* Model was added
+* Model CapabilitiesAction was removed
 
 **CapabilitiesAvailability** (1 change)
 
-* Model was added
+* Model CapabilitiesAvailability was removed
 
 **CapabilitiesCategoryInfo** (1 change)
 
-* Model was added
+* Model CapabilitiesCategoryInfo was removed
 
 **CapabilitiesDataType** (1 change)
 
-* Model was added
+* Model CapabilitiesDataType was removed
 
 **CapabilitiesDataTypeCharacteristicModel** (1 change)
 
-* Model was added
+* Model CapabilitiesDataTypeCharacteristicModel was removed
 
 **CapabilitiesDataTypeCharacteristicsModel** (1 change)
 
-* Model was added
+* Model CapabilitiesDataTypeCharacteristicsModel was removed
 
 **CapabilitiesDataTypeDirectionByObject** (1 change)
 
-* Model was added
+* Model CapabilitiesDataTypeDirectionByObject was removed
 
 **CapabilitiesDataTypeFacetsLimit** (1 change)
 
-* Model was added
+* Model CapabilitiesDataTypeFacetsLimit was removed
 
 **CapabilitiesDataTypeFacetsModel** (1 change)
 
-* Model was added
+* Model CapabilitiesDataTypeFacetsModel was removed
 
 **CapabilitiesDataTypeInputOutputInfo** (1 change)
 
-* Model was added
+* Model CapabilitiesDataTypeInputOutputInfo was removed
 
 **CapabilitiesDataTypeProperty** (1 change)
 
-* Model was added
+* Model CapabilitiesDataTypeProperty was removed
 
 **CapabilitiesDependencyType** (1 change)
 
-* Model was added
+* Model CapabilitiesDependencyType was removed
 
 **CapabilitiesFeatureSupport** (1 change)
 
-* Model was added
+* Model CapabilitiesFeatureSupport was removed
 
 **CapabilitiesFlowComponent** (1 change)
 
-* Model was added
+* Model CapabilitiesFlowComponent was removed
 
 **CapabilitiesFlowType** (1 change)
 
-* Model was added
+* Model CapabilitiesFlowType was removed
 
 **CapabilitiesFlowTypeLanguageSupport** (1 change)
 
-* Model was added
+* Model CapabilitiesFlowTypeLanguageSupport was removed
 
 **CapabilitiesFlowTypesAvailability** (1 change)
 
-* Model was added
+* Model CapabilitiesFlowTypesAvailability was removed
 
 **CapabilitiesFuncOpOverloadIdModel** (1 change)
 
-* Model was added
+* Model CapabilitiesFuncOpOverloadIdModel was removed
 
 **CapabilitiesFunction** (1 change)
 
-* Model was added
+* Model CapabilitiesFunction was removed
 
 **CapabilitiesKnowledgeBase** (1 change)
 
-* Model was added
+* Model CapabilitiesKnowledgeBase was removed
 
 **CapabilitiesLanguage** (1 change)
 
-* Model was added
+* Model CapabilitiesLanguage was removed
 
 **CapabilitiesLanguageContextsModel** (1 change)
 
-* Model was added
+* Model CapabilitiesLanguageContextsModel was removed
 
 **CapabilitiesLanguageFeatures** (1 change)
 
-* Model was added
+* Model CapabilitiesLanguageFeatures was removed
 
 **CapabilitiesLanguageTTS** (1 change)
 
-* Model was added
+* Model CapabilitiesLanguageTTS was removed
 
 **CapabilitiesLanguageTTSEngine** (1 change)
 
-* Model was added
+* Model CapabilitiesLanguageTTSEngine was removed
 
 **CapabilitiesLanguageTTSEngineVoice** (1 change)
 
-* Model was added
+* Model CapabilitiesLanguageTTSEngineVoice was removed
 
 **CapabilitiesOrganization** (1 change)
 
-* Model was added
+* Model CapabilitiesOrganization was removed
 
 **CapabilitiesTTSConfiguration** (1 change)
 
-* Model was added
+* Model CapabilitiesTTSConfiguration was removed
 
 **CapabilitiesTTSEngine** (1 change)
 
-* Model was added
+* Model CapabilitiesTTSEngine was removed
 
 **CapabilitiesTTSVoice** (1 change)
 
-* Model was added
+* Model CapabilitiesTTSVoice was removed
 
 **CapabilitiesUnavailableReason** (1 change)
 
-* Model was added
+* Model CapabilitiesUnavailableReason was removed
 
 **ActionValidationObject** (1 change)
 
-* Model was added
+* Model ActionValidationObject was removed
 
 **BotConnectorValidationObject** (1 change)
 
-* Model was added
+* Model BotConnectorValidationObject was removed
 
 **ComposerScriptValidationObject** (1 change)
 
-* Model was added
+* Model ComposerScriptValidationObject was removed
 
 **ContactListValidationObject** (1 change)
 
-* Model was added
+* Model ContactListValidationObject was removed
 
 **DialogEngineBotValidationObject** (1 change)
 
-* Model was added
+* Model DialogEngineBotValidationObject was removed
 
 **DialogEngineBotVersionValidationObject** (1 change)
 
-* Model was added
+* Model DialogEngineBotVersionValidationObject was removed
 
 **DialogEngineIntegrationIntent** (1 change)
 
-* Model was added
+* Model DialogEngineIntegrationIntent was removed
 
 **DialogEngineIntegrationSlot** (1 change)
 
-* Model was added
+* Model DialogEngineIntegrationSlot was removed
 
 **DialogflowAgentValidationObject** (1 change)
 
-* Model was added
+* Model DialogflowAgentValidationObject was removed
 
 **DialogflowCxAgentValidationObject** (1 change)
 
-* Model was added
+* Model DialogflowCxAgentValidationObject was removed
 
 **FlowManifest** (1 change)
 
-* Model was added
+* Model FlowManifest was removed
 
 **FlowValidationObject** (1 change)
 
-* Model was added
+* Model FlowValidationObject was removed
 
 **GrammarLanguageValidationObject** (1 change)
 
-* Model was added
+* Model GrammarLanguageValidationObject was removed
 
 **GrammarValidationObject** (1 change)
 
-* Model was added
+* Model GrammarValidationObject was removed
 
 **GroupAddress** (1 change)
 
-* Model was added
+* Model GroupAddress was removed
 
 **GroupValidationObject** (1 change)
 
-* Model was added
+* Model GroupValidationObject was removed
 
 **ImageValidationObject** (1 change)
 
-* Model was added
+* Model ImageValidationObject was removed
 
 **IntegrationValidationObject** (1 change)
 
-* Model was added
+* Model IntegrationValidationObject was removed
 
 **KnowledgeBaseDocumentValidationObject** (1 change)
 
-* Model was added
+* Model KnowledgeBaseDocumentValidationObject was removed
 
 **KnowledgeBaseValidationObject** (1 change)
 
-* Model was added
+* Model KnowledgeBaseValidationObject was removed
 
 **LanguageConfiguration** (1 change)
 
-* Model was added
+* Model LanguageConfiguration was removed
 
 **LexBotAliasValidationObject** (1 change)
 
-* Model was added
+* Model LexBotAliasValidationObject was removed
 
 **LexV2BotAliasValidationObject** (1 change)
 
-* Model was added
+* Model LexV2BotAliasValidationObject was removed
 
 **NluDomainValidationObject** (1 change)
 
-* Model was added
+* Model NluDomainValidationObject was removed
 
 **NuanceMixBotValidationObject** (1 change)
 
-* Model was added
+* Model NuanceMixBotValidationObject was removed
 
 **PromptResourceValidationObject** (1 change)
 
-* Model was added
+* Model PromptResourceValidationObject was removed
 
 **PromptValidationObject** (1 change)
 
-* Model was added
+* Model PromptValidationObject was removed
 
 **Property** (1 change)
 
-* Model was added
+* Model Property was removed
 
 **ResponseLibrary** (1 change)
 
-* Model was added
+* Model ResponseLibrary was removed
 
 **ResponseValidationObject** (1 change)
 
-* Model was added
+* Model ResponseValidationObject was removed
 
 **STTEngineValidationObject** (1 change)
 
-* Model was added
+* Model STTEngineValidationObject was removed
 
 **ScheduleGroupValidationObject** (1 change)
 
-* Model was added
+* Model ScheduleGroupValidationObject was removed
 
 **ScheduleRef** (1 change)
 
-* Model was added
+* Model ScheduleRef was removed
 
 **SchemaValidationObject** (1 change)
 
-* Model was added
+* Model SchemaValidationObject was removed
 
 **StateValidationObject** (1 change)
 
-* Model was added
+* Model StateValidationObject was removed
 
 **TTSEngineValidationObject** (1 change)
 
-* Model was added
+* Model TTSEngineValidationObject was removed
 
 **TTSVoiceValidationObject** (1 change)
 
-* Model was added
+* Model TTSVoiceValidationObject was removed
 
 **UserValidationObject** (1 change)
 
-* Model was added
+* Model UserValidationObject was removed
 
 **ValidationObject** (1 change)
 
-* Model was added
+* Model ValidationObject was removed
 
 **VariableSchema** (1 change)
 
-* Model was added
+* Model VariableSchema was removed
 
 **FlowValidationResults** (1 change)
 
-* Model was added
-
-**AssessmentForm** (1 change)
-
-* Optional property weightMode was added
-
-**LearningAssignment** (5 changes)
-
-* Optional property assessmentProgress was added
-* Optional property progress was added
-* Optional property steps was added
-* Optional property nextStep was added
-* Optional property lengthInMinutes was added
-
-**LearningModule** (4 changes)
-
-* Optional property excludedFromCatalog was added
-* Optional property enforceContentOrder was added
-* Optional property reviewAssessmentResults was added
-* Optional property lengthInMinutes was added
-
-**ReviewAssessmentResults** (2 changes)
-
-* Optional property byAssignees was added
-* Optional property byViewers was added
-
-**LearningAssignmentCreate** (1 change)
-
-* Optional property lengthInMinutes was added
+* Model FlowValidationResults was removed
 
 **DisallowedEntity** (1 change)
 
-* Model was added
-
-**LearningModuleRequest** (5 changes)
-
-* Optional property lengthInMinutes was added
-* Optional property excludedFromCatalog was added
-* Optional property externalId was added
-* Optional property enforceContentOrder was added
-* Optional property reviewAssessmentResults was added
+* Model DisallowedEntity was removed
 
 **LearningModuleArchiveResponse** (1 change)
 
-* Model was added
+* Model LearningModuleArchiveResponse was removed
 
 **LearningModuleArchiveRequest** (1 change)
 
-* Model was added
-
-**AssignedLearningModule** (4 changes)
-
-* Optional property excludedFromCatalog was added
-* Optional property enforceContentOrder was added
-* Optional property reviewAssessmentResults was added
-* Optional property lengthInMinutes was added
+* Model LearningModuleArchiveRequest was removed
 
 **LearningAssignmentExternalUpdate** (1 change)
 
-* Model was added
+* Model LearningAssignmentExternalUpdate was removed
 
 **LearningScormResponse** (1 change)
 
-* Model was added
+* Model LearningScormResponse was removed
 
 **LearningScormUploadResponse** (1 change)
 
-* Model was added
+* Model LearningScormUploadResponse was removed
 
 **LearningScormUploadRequest** (1 change)
 
-* Model was added
-
-**BusinessUnitActivityCodeListing** (1 change)
-
-* Optional property downloadUrl was added
+* Model LearningScormUploadRequest was removed
 
 **ListWrapper** (1 change)
 
-* Model was added
-
-**BuForecastModificationResponse** (2 changes)
-
-* Optional property secondaryValues was added
-* Optional property secondaryGranularity was added
+* Model ListWrapper was removed
 
 **CreateBuForecastRequest** (1 change)
 
-* Model was added
-
-**GenerateBuForecastRequest** (1 change)
-
-* Optional property forecastingMethod was added
+* Model CreateBuForecastRequest was removed
 
 **ComputeRawBuForecastResponse** (1 change)
 
-* Model was added
+* Model ComputeRawBuForecastResponse was removed
 
 **ComputeRawBuForecastResult** (1 change)
 
-* Model was added
+* Model ComputeRawBuForecastResult was removed
 
 **ForecastPlanningGroupIntervalValues** (1 change)
 
-* Model was added
+* Model ForecastPlanningGroupIntervalValues was removed
 
 **ComputeRawBuForecastRequest** (1 change)
 
-* Model was added
+* Model ComputeRawBuForecastRequest was removed
 
 **BuForecastStaffingRequirementsResult** (1 change)
 
-* Model was added
+* Model BuForecastStaffingRequirementsResult was removed
 
 **BuForecastStaffingRequirementsResultResponse** (1 change)
 
-* Model was added
+* Model BuForecastStaffingRequirementsResultResponse was removed
 
 **StaffingRequirementsPlanningGroupData** (1 change)
 
-* Model was added
+* Model StaffingRequirementsPlanningGroupData was removed
 
 **ForecastSourceDataActuals** (1 change)
 
-* Model was added
+* Model ForecastSourceDataActuals was removed
 
 **GetSourceDataRequest** (1 change)
 
-* Model was added
+* Model GetSourceDataRequest was removed
 
 **BuForecastModificationRequest** (1 change)
 
-* Model was added
+* Model BuForecastModificationRequest was removed
 
 **ListWrapperBuForecastModificationRequest** (1 change)
 
-* Model was added
+* Model ListWrapperBuForecastModificationRequest was removed
 
 **ListWrapperForecastSourceDayPointer** (1 change)
 
-* Model was added
+* Model ListWrapperForecastSourceDayPointer was removed
 
 **UpdateBuForecastRequest** (1 change)
 
-* Model was added
+* Model UpdateBuForecastRequest was removed
 
 **SetWrapper** (1 change)
 
-* Model was added
+* Model SetWrapper was removed
 
 **DecisionsDownloadMetadata** (1 change)
 
-* Model was added
+* Model DecisionsDownloadMetadata was removed
 
 **DecisionsFileMetadataEntityListing** (1 change)
 
-* Model was added
+* Model DecisionsFileMetadataEntityListing was removed
 
 **ForecastSearchCriteria** (1 change)
 
-* Model was added
+* Model ForecastSearchCriteria was removed
 
 **ForecastSearchRequest** (1 change)
 
-* Model was added
+* Model ForecastSearchRequest was removed
 
 **DecisionsDownloadLink** (1 change)
 
-* Model was added
+* Model DecisionsDownloadLink was removed
 
 **ValueWrapper** (1 change)
 
-* Model was added
+* Model ValueWrapper was removed
 
 **AgentListResponse** (1 change)
 
-* Model was added
+* Model AgentListResponse was removed
 
 **UpdateMuAgentRequest** (1 change)
 
-* Model was added
+* Model UpdateMuAgentRequest was removed
 
 **UpdateMuAgentsRequest** (1 change)
 
-* Model was added
+* Model UpdateMuAgentsRequest was removed
 
 **UpdateAgentDetailsResponse** (1 change)
 
-* Model was added
+* Model UpdateAgentDetailsResponse was removed
 
 **AgentListWrapperRequest** (1 change)
 
-* Model was added
+* Model AgentListWrapperRequest was removed
 
 **PlanningGroupHistoryEntity** (1 change)
 
-* Model was added
+* Model PlanningGroupHistoryEntity was removed
 
 **PlanningGroupHistoryQueryByVersionResponse** (1 change)
 
-* Model was added
+* Model PlanningGroupHistoryQueryByVersionResponse was removed
 
 **PlanningGroupHistoryQueryByVersionResult** (1 change)
 
-* Model was added
+* Model PlanningGroupHistoryQueryByVersionResult was removed
 
 **PlanningGroupHistoryRoutePath** (1 change)
 
-* Model was added
+* Model PlanningGroupHistoryRoutePath was removed
 
 **PlanningGroupHistoryQueryByVersionRequest** (1 change)
 
-* Model was added
-
-**PlanningGroupList** (1 change)
-
-* Optional property metadata was added
-
-**ServiceGoalTemplateList** (1 change)
-
-* Optional property metadata was added
+* Model PlanningGroupHistoryQueryByVersionRequest was removed
 
 **StaffingGroupListing** (1 change)
 
-* Model was added
+* Model StaffingGroupListing was removed
 
 **StaffingGroupResponse** (1 change)
 
-* Model was added
+* Model StaffingGroupResponse was removed
 
 **CreateStaffingGroupRequest** (1 change)
 
-* Model was added
+* Model CreateStaffingGroupRequest was removed
 
 **UpdateStaffingGroupRequest** (1 change)
 
-* Model was added
-
-**TimeOffPlan** (1 change)
-
-* Optional property hrisTimeOffType was added
-
-**AdminTimeOffRequestPatch** (1 change)
-
-* Optional property paid was added
-
-**TimeOffRequestListing** (1 change)
-
-* Optional property downloadUrl was added
+* Model UpdateStaffingGroupRequest was removed
 
 **StaffingGroupReference** (1 change)
 
-* Model was added
+* Model StaffingGroupReference was removed
 
 **UserStaffingGroupListing** (1 change)
 
-* Model was added
+* Model UserStaffingGroupListing was removed
 
 **UserStaffingGroupResponse** (1 change)
 
-* Model was added
+* Model UserStaffingGroupResponse was removed
 
 **QueryUserStaffingGroupListRequest** (1 change)
 
-* Model was added
-
-**WeekShiftTradeListResponse** (1 change)
-
-* Optional property downloadUrl was added
-
-**SearchShiftTradesResponse** (1 change)
-
-* Optional property downloadUrl was added
+* Model QueryUserStaffingGroupListRequest was removed
 
 **AgentManagementUnitListResponse** (1 change)
 
-* Model was added
-
-**WorkPlanListItemResponse** (1 change)
-
-* Optional property startDayOfWeekend was added
-
-**WorkPlan** (1 change)
-
-* Optional property startDayOfWeekend was added
-
-**CreateWorkPlan** (1 change)
-
-* Optional property startDayOfWeekend was added
-
-**WorkPlanValidationRequest** (1 change)
-
-* Optional property startDayOfWeekend was added
+* Model AgentManagementUnitListResponse was removed
 
 **AlternativeShiftBuSettingsResponse** (1 change)
 
-* Model was added
+* Model AlternativeShiftBuSettingsResponse was removed
 
 **ListWrapperAlternativeShiftBuSettingsActivityCategory** (1 change)
 
-* Model was added
+* Model ListWrapperAlternativeShiftBuSettingsActivityCategory was removed
 
 **ListWrapperAlternativeShiftBuSettingsGranularity** (1 change)
 
-* Model was added
+* Model ListWrapperAlternativeShiftBuSettingsGranularity was removed
 
 **UpdateAlternativeShiftBuSettingsRequest** (1 change)
 
-* Model was added
+* Model UpdateAlternativeShiftBuSettingsRequest was removed
 
 **UpdateAgentRequest** (1 change)
 
-* Model was added
+* Model UpdateAgentRequest was removed
 
 **ForecastCreationResponse** (1 change)
 
-* Model was added
+* Model ForecastCreationResponse was removed
 
 **ForecastProcessingError** (1 change)
 
-* Model was added
+* Model ForecastProcessingError was removed
 
 **ForecastCreationRequest** (1 change)
 
-* Model was added
+* Model ForecastCreationRequest was removed
 
 **HistoricalDataSet** (1 change)
 
-* Model was added
+* Model HistoricalDataSet was removed
 
 **OperatingDayOfWeekTimePair** (1 change)
 
-* Model was added
+* Model OperatingDayOfWeekTimePair was removed
 
 **OperatingPeriod** (1 change)
 
-* Model was added
+* Model OperatingPeriod was removed
 
 **TimeSeriesDataPoint** (1 change)
 
-* Model was added
+* Model TimeSeriesDataPoint was removed
 
 **AvailablePeriod** (1 change)
 
-* Model was added
+* Model AvailablePeriod was removed
 
 **HistoricalOverlayDataAvailability** (1 change)
 
-* Model was added
+* Model HistoricalOverlayDataAvailability was removed
 
 **HistoricalOverlayDataQueryResponse** (1 change)
 
-* Model was added
+* Model HistoricalOverlayDataQueryResponse was removed
 
 **PlanningGroupHistory** (1 change)
 
-* Model was added
+* Model PlanningGroupHistory was removed
 
 **HistoricalOverlayDataQueryRequest** (1 change)
 
-* Model was added
+* Model HistoricalOverlayDataQueryRequest was removed
 
 **PerformancePredictionOutputs** (1 change)
 
-* Model was added
+* Model PerformancePredictionOutputs was removed
 
 **PerformancePredictionResponse** (1 change)
 
-* Model was added
+* Model PerformancePredictionResponse was removed
 
 **PlanningGroupOutputs** (1 change)
 
-* Model was added
+* Model PlanningGroupOutputs was removed
 
 **AgentQueueTimeRequest** (1 change)
 
-* Model was added
+* Model AgentQueueTimeRequest was removed
 
 **MuAgentQueueTimeRequest** (1 change)
 
-* Model was added
+* Model MuAgentQueueTimeRequest was removed
 
 **PerformancePredictionRecalculationUploadResponse** (1 change)
 
-* Model was added
+* Model PerformancePredictionRecalculationUploadResponse was removed
 
 **PerformancePredictionUploadSchema** (1 change)
 
-* Model was added
+* Model PerformancePredictionUploadSchema was removed
 
 **PerformancePredictionRecalculationResponse** (1 change)
 
-* Model was added
-
-**BuRescheduleRequest** (1 change)
-
-* Optional property testingOptions was added
-
-**BuGenerateScheduleRequest** (1 change)
-
-* Optional property testingOptions was added
+* Model PerformancePredictionRecalculationResponse was removed
 
 **BuTimeOffLimitListing** (1 change)
 
-* Model was added
+* Model BuTimeOffLimitListing was removed
 
 **BuTimeOffLimitResponse** (1 change)
 
-* Model was added
+* Model BuTimeOffLimitResponse was removed
 
 **BuSetTimeOffLimitValuesRequest** (1 change)
 
-* Model was added
+* Model BuSetTimeOffLimitValuesRequest was removed
 
 **BuTimeOffLimitRange** (1 change)
 
-* Model was added
+* Model BuTimeOffLimitRange was removed
 
 **BuTimeOffLimitReference** (1 change)
 
-* Model was added
+* Model BuTimeOffLimitReference was removed
 
 **BuTimeOffLimitValueRange** (1 change)
 
-* Model was added
+* Model BuTimeOffLimitValueRange was removed
 
 **BuTimeOffLimitValuesResponse** (1 change)
 
-* Model was added
+* Model BuTimeOffLimitValuesResponse was removed
 
 **BuCreateTimeOffLimitRequest** (1 change)
 
-* Model was added
+* Model BuCreateTimeOffLimitRequest was removed
 
 **BuTimeOffPlanResponse** (1 change)
 
-* Model was added
+* Model BuTimeOffPlanResponse was removed
 
 **TimeOffPlanBusinessUnitAssociation** (1 change)
 
-* Model was added
+* Model TimeOffPlanBusinessUnitAssociation was removed
 
 **TimeOffPlanManagementUnitAssociation** (1 change)
 
-* Model was added
+* Model TimeOffPlanManagementUnitAssociation was removed
 
 **BuUpdateTimeOffPlanRequest** (1 change)
 
-* Model was added
+* Model BuUpdateTimeOffPlanRequest was removed
 
 **UpdateTimeOffPlanBusinessUnitAssociation** (1 change)
 
-* Model was added
+* Model UpdateTimeOffPlanBusinessUnitAssociation was removed
 
 **UpdateTimeOffPlanManagementUnitAssociation** (1 change)
 
-* Model was added
+* Model UpdateTimeOffPlanManagementUnitAssociation was removed
 
 **BuCreateTimeOffPlanRequest** (1 change)
 
-* Model was added
+* Model BuCreateTimeOffPlanRequest was removed
 
 **CreateTimeOffPlanBusinessUnitAssociation** (1 change)
 
-* Model was added
+* Model CreateTimeOffPlanBusinessUnitAssociation was removed
 
 **CreateTimeOffPlanManagementUnitAssociation** (1 change)
 
-* Model was added
+* Model CreateTimeOffPlanManagementUnitAssociation was removed
 
 **BuTimeOffPlanListing** (1 change)
 
-* Model was added
+* Model BuTimeOffPlanListing was removed
 
 **WorkitemsAttributeChange** (1 change)
 
-* Model was added
+* Model WorkitemsAttributeChange was removed
 
 **WorkitemsChange** (1 change)
 
+* Model WorkitemsChange was removed
+
+**Group** (1 change)
+
+* Property chat was removed
+
+**ConversationAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**QueryDivision** (2 changes)
+
+* Property divisionId was removed
+* Property homeDivision was removed
+
+**ConversationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**AsyncConversationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**EvaluationAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**FlowAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**SurveyAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**TranscriptAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**UserAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**UserDetailsQuery** (1 change)
+
+* Property divisionIds was removed
+
+**AsyncUserDetailsQuery** (1 change)
+
+* Property divisionIds was removed
+
+**ViewFilter** (11 changes)
+
+* Property showSecondaryStatus was removed
+* Property agentDurationSortOrder was removed
+* Property waitingDurationSortOrder was removed
+* Property interactingDurationSortOrder was removed
+* Property agentName was removed
+* Property skillsList was removed
+* Property languageList was removed
+* Property statusList was removed
+* Property oauthClientIds was removed
+* Property apiOperations was removed
+* Property dashboardIds was removed
+
+**ReportingExportJobResponse** (14 changes)
+
+* Property description was removed
+* Property scheduleExpression was removed
+* Property timePeriod was removed
+* Property recurrence was removed
+* Property dateNextExecution was removed
+* Property dateLastDownload was removed
+* Property dateLastConfirmed was removed
+* Property intervalKeyType was removed
+* Property requestedColumnIds was removed
+* Property sortOrder was removed
+* Property sortKey was removed
+* Property scheduleHasStaticLink was removed
+* Property scheduleStaticLinkUrl was removed
+* Enum value DASHBOARD_USERS_DETAIL was removed from property viewType
+
+**ReportingExportMetadataJobResponse** (1 change)
+
+* Enum value DASHBOARD_USERS_DETAIL was removed from property viewType
+
+**ReportingExportJobRequest** (11 changes)
+
+* Property description was removed
+* Property isEnabled was removed
+* Property scheduleExpression was removed
+* Property timePeriod was removed
+* Property recurrence was removed
+* Property intervalKeyType was removed
+* Property requestedColumnIds was removed
+* Property sortOrder was removed
+* Property sortKey was removed
+* Property scheduleHasStaticLink was removed
+* Enum value DASHBOARD_USERS_DETAIL was removed from property viewType
+
+**CallbackMediaSettings** (3 changes)
+
+* Property enableAutoDialAndEnd was removed
+* Property autoDialDelaySeconds was removed
+* Property autoEndDelaySeconds was removed
+
+**DirectRouting** (1 change)
+
+* Property callMediaSettings was changed from DirectRoutingMediaSettings to DirectRoutingCallMediaSettings
+
+**DirectRoutingMediaSettings** (1 change)
+
+* Property useAgentAddressOutbound was removed
+
+**Queue** (1 change)
+
+* Property predictiveRouting was removed
+
+**QueueMediaSettings** (1 change)
+
+* Property workitem was removed
+
+**Organization** (2 changes)
+
+* Property thirdPartyOrgId was removed
+* Property deletable was removed
+
+**CallMediaPolicyConditions** (1 change)
+
+* Property teams was removed
+
+**ChatMediaPolicyConditions** (1 change)
+
+* Property teams was removed
+
+**EmailMediaPolicyConditions** (1 change)
+
+* Property teams was removed
+
+**EvaluationForm** (2 changes)
+
+* Property weightMode was removed
+* Property evaluationSettings was removed
+
+**EvaluationSettings** (4 changes)
+
+* Property revisionsEnabled was removed
+* Property disputesEnabled was removed
+* Property disputesAllowedPerEvaluation was removed
+* Property disputesAssignees was removed
+
+**EvaluationSettingsAssignee** (2 changes)
+
+* Property user was removed
+* Property type was removed
+
+**MessageMediaPolicyConditions** (1 change)
+
+* Property teams was removed
+
+**MeteredAssignmentByAgent** (3 changes)
+
+* Property percentage was removed
+* Property minimum was removed
+* Property agentConnectedTimeCriteria was removed
+
+**PolicyConditions** (1 change)
+
+* Property teams was removed
+
+**DataSchema** (1 change)
+
+* Property deleted was removed
+
+**ExternalContact** (1 change)
+
+* Property instagramId was removed
+
+**PhoneNumber** (1 change)
+
+* Property normalizationCountryCode was removed
+
+**Session** (1 change)
+
+* Property divisionIds was removed
+
+**Call** (1 change)
+
+* Property bargedTime was removed
+
+**ConversationMessageMetadataEvent** (1 change)
+
+* Enum value SignIn was removed from property subType
+
+**Evaluation** (7 changes)
+
+* Property agentTeam was removed
+* Property disputeCount was removed
+* Property version was removed
+* Property versionHistory was removed
+* Property declinedReview was removed
+* Property evaluationContextId was removed
+* Property retractedEvaluation was removed
+
+**EvaluationVersion** (3 changes)
+
+* Property submittedDate was removed
+* Property version was removed
+* Property status was removed
+
+**CallMediaParticipant** (1 change)
+
+* Property screenRecordingState was removed
+
+**Campaign** (2 changes)
+
+* Property agentOwnedColumn was removed
+* Property skillColumns was removed
+
+**CallbackMediaParticipant** (1 change)
+
+* Property screenRecordingState was removed
+
+**ChatMediaParticipant** (1 change)
+
+* Property screenRecordingState was removed
+
+**CobrowseMediaParticipant** (1 change)
+
+* Property screenRecordingState was removed
+
+**EmailMediaParticipant** (1 change)
+
+* Property screenRecordingState was removed
+
+**MessageMediaParticipant** (1 change)
+
+* Property screenRecordingState was removed
+
+**ConversationChannelMetadata** (1 change)
+
+* Property customAttributes was removed
+
+**ConversationEventPresence** (1 change)
+
+* Enum value SignIn was removed from property type
+
+**ConversationMessagingChannel** (1 change)
+
+* Property metadata was removed
+
+**CreateOutboundMessagingConversationRequest** (1 change)
+
+* Property useUserFromAddress was removed
+
+**CreateCallbackOnConversationCommand** (1 change)
+
+* Property voicemailId was removed
+
+**UploadUrlResponse** (1 change)
+
+* Property fileUrl was removed
+
+**LearningCoverArtUploadUrlRequest** (1 change)
+
+* Property tags was removed
+
+**UploadUrlRequest** (1 change)
+
+* Property tags was removed
+
+**ResponseSet** (1 change)
+
+* Property liveSpeakerDetectionMode was removed
+
+**CallBasic** (1 change)
+
+* Property bargedTime was removed
+
+**ImportStatus** (2 changes)
+
+* Property targetContactListIds was removed
+* Property listNamePrefix was removed
+
+**ContactListFilter** (2 changes)
+
+* Property contactListTemplate was removed
+* Property sourceType was removed
+
+**LastAttemptByColumnConditionSettings** (1 change)
+
+* Property voiceColumnName was removed
+
+**LastResultByColumnConditionSettings** (2 changes)
+
+* Property voiceColumnName was removed
+* Property voiceWrapupCodes was removed
+
+**LastResultOverallConditionSettings** (1 change)
+
+* Property voiceWrapupCodes was removed
+
+**SmsConfig** (1 change)
+
+* Property phoneColumns was removed
+
+**GroupUpdate** (1 change)
+
+* Property chat was removed
+
+**GroupCreate** (1 change)
+
+* Property chat was removed
+
+**GDPRRequest** (1 change)
+
+* Property relatedRequests was removed
+
+**ActionTemplate** (1 change)
+
+* Property integrationActionFields was removed
+
+**PatchActionTemplate** (1 change)
+
+* Property integrationActionFields was removed
+
+**DocumentBodyImageProperties** (2 changes)
+
+* Property width was removed
+* Property widthUnit was removed
+
+**DocumentBodyTableCellBlockProperties** (1 change)
+
+* Property widthUnit was removed
+
+**DocumentBodyTableProperties** (1 change)
+
+* Property widthUnit was removed
+
+**DocumentVariation** (2 changes)
+
+* Property priority was removed
+* Property name was removed
+
+**KnowledgeDocumentVersionVariation** (2 changes)
+
+* Property priority was removed
+* Property name was removed
+
+**KnowledgeDocumentSearchRequest** (1 change)
+
+* Property includeVariations was removed
+
+**DraftListing** (1 change)
+
+* Property cursors was removed
+
+**MinedIntentsListing** (1 change)
+
+* Property cursors was removed
+
+**MinerListing** (1 change)
+
+* Property cursors was removed
+
+**DocumentationSearchRequest** (2 changes)
+
+* Property returnFields was removed
+* Property expand was removed
+
+**GKNDocumentationSearchRequest** (2 changes)
+
+* Property returnFields was removed
+* Property expand was removed
+
+**TrustGroup** (1 change)
+
+* Property chat was removed
+
+**BatchDownloadJobSubmission** (1 change)
+
+* Property restoreArchivedRecordings was removed
+
+**EvaluationFormResponse** (2 changes)
+
+* Property weightMode was removed
+* Property evaluationSettings was removed
+
+**EvaluationResponse** (7 changes)
+
+* Property agentTeam was removed
+* Property disputeCount was removed
+* Property version was removed
+* Property versionHistory was removed
+* Property declinedReview was removed
+* Property evaluationContextId was removed
+* Property retractedEvaluation was removed
+
+**Survey** (1 change)
+
+* Property agentTeam was removed
+
+**Annotation** (2 changes)
+
+* Property queue was removed
+* Property flow was removed
+
+**MediaResult** (5 changes)
+
+* Property screenId was removed
+* Property originX was removed
+* Property originY was removed
+* Property resolutionX was removed
+* Property resolutionY was removed
+
+**Recording** (1 change)
+
+* Property externalContacts was removed
+
+**RecordingMessagingMessage** (2 changes)
+
+* Property genericTemplates was removed
+* Property events was removed
+
+**RecordingMetadata** (1 change)
+
+* Property region was removed
+
+**ResponseText** (1 change)
+
+* Property type was removed
+
+**QueueRequest** (1 change)
+
+* Property predictiveRouting was removed
+
+**UserQueue** (1 change)
+
+* Property predictiveRouting was removed
+
+**CreateQueueRequest** (1 change)
+
+* Property predictiveRouting was removed
+
+**TranscriptionSettings** (2 changes)
+
+* Property pciDssRedactionEnabled was removed
+* Property piiRedactionEnabled was removed
+
+**RoutingSettings** (1 change)
+
+* Property allowCrossDivisionQueueMembers was removed
+
+**MediaUtilization** (1 change)
+
+* Property utilizationTags was removed
+
+**Utilization** (1 change)
+
+* Property labelUtilizations was removed
+
+**RoutingConversationAttributesResponse** (1 change)
+
+* Property label was removed
+
+**RoutingConversationAttributesRequest** (1 change)
+
+* Property labelId was removed
+
+**AgentMaxUtilization** (1 change)
+
+* Property labelUtilizations was removed
+
+**WrapupCodeRequest** (1 change)
+
+* Property division was removed
+
+**ConversationMetrics** (1 change)
+
+* Property empathyScores was removed
+
+**SpeechTextAnalyticsSettingsResponse** (1 change)
+
+* Property agentEmpathyEnabled was removed
+
+**SpeechTextAnalyticsSettingsRequest** (1 change)
+
+* Property agentEmpathyEnabled was removed
+
+**Edge** (3 changes)
+
+* Property healthStatus was removed
+* Property dnsServers was removed
+* Property pin was removed
+
+**Site** (1 change)
+
+* Property edgeGroup was removed
+
+**TrunkBase** (3 changes)
+
+* Property mediaRegions was removed
+* Property site was removed
+* Property inboundSite was removed
+
+**DomainLogicalInterface** (1 change)
+
+* Property networkCaptureEndDate was removed
+
+**EdgeTrunkBase** (4 changes)
+
+* Property managed was removed
+* Property mediaRegions was removed
+* Property site was removed
+* Property inboundSite was removed
+
+**UserMe** (1 change)
+
+* Property logCapture was removed
+
+**AssessmentForm** (1 change)
+
+* Property weightMode was removed
+
+**LearningAssignment** (5 changes)
+
+* Property assessmentProgress was removed
+* Property progress was removed
+* Property steps was removed
+* Property nextStep was removed
+* Property lengthInMinutes was removed
+
+**LearningModule** (4 changes)
+
+* Property excludedFromCatalog was removed
+* Property enforceContentOrder was removed
+* Property reviewAssessmentResults was removed
+* Property lengthInMinutes was removed
+
+**ReviewAssessmentResults** (2 changes)
+
+* Property byAssignees was removed
+* Property byViewers was removed
+
+**LearningAssignmentCreate** (1 change)
+
+* Property lengthInMinutes was removed
+
+**LearningModuleRequest** (5 changes)
+
+* Property lengthInMinutes was removed
+* Property excludedFromCatalog was removed
+* Property externalId was removed
+* Property enforceContentOrder was removed
+* Property reviewAssessmentResults was removed
+
+**AssignedLearningModule** (4 changes)
+
+* Property excludedFromCatalog was removed
+* Property enforceContentOrder was removed
+* Property reviewAssessmentResults was removed
+* Property lengthInMinutes was removed
+
+**BusinessUnitActivityCodeListing** (1 change)
+
+* Property downloadUrl was removed
+
+**BuForecastModificationResponse** (2 changes)
+
+* Property secondaryValues was removed
+* Property secondaryGranularity was removed
+
+**GenerateBuForecastRequest** (1 change)
+
+* Property forecastingMethod was removed
+
+**PlanningGroupList** (1 change)
+
+* Property metadata was removed
+
+**ServiceGoalTemplateList** (1 change)
+
+* Property metadata was removed
+
+**TimeOffPlan** (1 change)
+
+* Property hrisTimeOffType was removed
+
+**TimeOffRequestListing** (1 change)
+
+* Property downloadUrl was removed
+
+**AdminTimeOffRequestPatch** (1 change)
+
+* Property paid was removed
+
+**SearchShiftTradesResponse** (1 change)
+
+* Property downloadUrl was removed
+
+**WeekShiftTradeListResponse** (1 change)
+
+* Property downloadUrl was removed
+
+**WorkPlanListItemResponse** (1 change)
+
+* Property startDayOfWeekend was removed
+
+**WorkPlan** (1 change)
+
+* Property startDayOfWeekend was removed
+
+**CreateWorkPlan** (1 change)
+
+* Property startDayOfWeekend was removed
+
+**WorkPlanValidationRequest** (1 change)
+
+* Property startDayOfWeekend was removed
+
+**BuRescheduleRequest** (1 change)
+
+* Property testingOptions was removed
+
+**BuGenerateScheduleRequest** (1 change)
+
+* Property testingOptions was removed
+
+**ConversationAsyncAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**ConversationActivityResponse** (2 changes)
+
+* Property subscriptions was removed
+* Property subscriptionExpirationDate was removed
+
+**ConversationActivityQuery** (2 changes)
+
+* Property subscribe was removed
+* Property peekAtLast was removed
+
+**EvaluationAsyncAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**FlowAsyncAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**FlowActivityResponse** (2 changes)
+
+* Property subscriptions was removed
+* Property subscriptionExpirationDate was removed
+
+**FlowActivityQuery** (2 changes)
+
+* Property subscribe was removed
+* Property peekAtLast was removed
+
+**RoutingActivityResponse** (2 changes)
+
+* Property subscriptions was removed
+* Property subscriptionExpirationDate was removed
+
+**RoutingActivityQuery** (2 changes)
+
+* Property subscribe was removed
+* Property peekAtLast was removed
+
+**SurveyAsyncAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**TaskManagementAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**TaskManagementAsyncAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**TeamActivityResponse** (2 changes)
+
+* Property subscriptions was removed
+* Property subscriptionExpirationDate was removed
+
+**TeamActivityQuery** (2 changes)
+
+* Property subscribe was removed
+* Property peekAtLast was removed
+
+**TranscriptAsyncAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**UserAsyncAggregationQuery** (1 change)
+
+* Property divisionIds was removed
+
+**UserActivityResponse** (2 changes)
+
+* Property subscriptions was removed
+* Property subscriptionExpirationDate was removed
+
+**UserActivityQuery** (2 changes)
+
+* Property subscribe was removed
+* Property peekAtLast was removed
+
+**ChatMessageResponse** (1 change)
+
+* Property metadata was removed
+
+**SendMessageBody** (1 change)
+
+* Property metadata was removed
+
+**DocumentationV2SearchRequest** (1 change)
+
+* Property returnFields was removed
+
+**MediaEndpointStatistics** (1 change)
+
+* Property trunk was changed from MediaStatisticsTrunkInfo to NamedEntity
+
+
+# Minor Changes (3 changes)
+
+**DirectRoutingCallMediaSettings** (1 change)
+
 * Model was added
+
+**DirectRoutingMediaSettings** (2 changes)
+
+* Optional property enabled was added
+* Optional property inboundFlow was added
 
 
 # Point Changes (0 changes)

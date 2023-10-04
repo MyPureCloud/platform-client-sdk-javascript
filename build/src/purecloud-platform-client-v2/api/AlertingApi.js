@@ -5,7 +5,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -35,26 +35,6 @@ class AlertingApi {
 			'/api/v2/alerting/alerts/{alertId}', 
 			'DELETE', 
 			{ 'alertId': alertId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete all alerts for the user
-	 * 
-	 */
-	deleteAlertingAlertsAll() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/alerts/all', 
-			'DELETE', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -355,30 +335,6 @@ class AlertingApi {
 			'/api/v2/alerting/alerts/{alertId}', 
 			'PATCH', 
 			{ 'alertId': alertId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates all alerts
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchAlertingAlertsAll(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/alerts/all', 
-			'PATCH', 
-			{  },
 			{  },
 			{  },
 			{  },

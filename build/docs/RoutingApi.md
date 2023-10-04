@@ -3,18 +3,16 @@ title: RoutingApi
 ---
 # platformClient.RoutingApi
 
-All URIs are relative to *https://api.inindca.com*
+All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteRoutingAssessment**](RoutingApi.html#deleteRoutingAssessment) | **DELETE** /api/v2/routing/assessments/{assessmentId} | Delete single benefit assessment.
-[**deleteRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#deleteRoutingDirectroutingbackupSettingsMe) | **DELETE** /api/v2/routing/directroutingbackup/settings/me | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | **DELETE** /api/v2/routing/email/domains/{domainId} | Delete a domain
 [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | **DELETE** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Delete a route
 [**deleteRoutingEmailOutboundDomain**](RoutingApi.html#deleteRoutingEmailOutboundDomain) | **DELETE** /api/v2/routing/email/outbound/domains/{domainId} | Delete an outbound domain
 [**deleteRoutingLanguage**](RoutingApi.html#deleteRoutingLanguage) | **DELETE** /api/v2/routing/languages/{languageId} | Delete a routing language
 [**deleteRoutingPredictor**](RoutingApi.html#deleteRoutingPredictor) | **DELETE** /api/v2/routing/predictors/{predictorId} | Delete single predictor.
-[**deleteRoutingPredictorsKeyperformanceindicator**](RoutingApi.html#deleteRoutingPredictorsKeyperformanceindicator) | **DELETE** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Delete a custom Key Performance Indicator.
 [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | **DELETE** /api/v2/routing/queues/{queueId} | Delete a queue
 [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | **DELETE** /api/v2/routing/queues/{queueId}/members/{memberId} | Delete a queue member.
 [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | **DELETE** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
@@ -24,10 +22,8 @@ All URIs are relative to *https://api.inindca.com*
 [**deleteRoutingSkillgroup**](RoutingApi.html#deleteRoutingSkillgroup) | **DELETE** /api/v2/routing/skillgroups/{skillGroupId} | Remove skill group definition
 [**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | **DELETE** /api/v2/routing/sms/addresses/{addressId} | Delete an Address by Id for SMS
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
-[**deleteRoutingUserDirectroutingbackupSettings**](RoutingApi.html#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
-[**deleteRoutingUtilizationLabel**](RoutingApi.html#deleteRoutingUtilizationLabel) | **DELETE** /api/v2/routing/utilization/labels/{labelId} | Delete a utilization label
 [**deleteRoutingUtilizationTag**](RoutingApi.html#deleteRoutingUtilizationTag) | **DELETE** /api/v2/routing/utilization/tags/{tagId} | Delete an utilization tag
 [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | **DELETE** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code
 [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
@@ -37,14 +33,9 @@ All URIs are relative to *https://api.inindca.com*
 [**getRoutingAssessmentsJob**](RoutingApi.html#getRoutingAssessmentsJob) | **GET** /api/v2/routing/assessments/jobs/{jobId} | Retrieve a single benefit assessments job.
 [**getRoutingAssessmentsJobs**](RoutingApi.html#getRoutingAssessmentsJobs) | **GET** /api/v2/routing/assessments/jobs | Retrieve all benefit assessment jobs.
 [**getRoutingAvailablemediatypes**](RoutingApi.html#getRoutingAvailablemediatypes) | **GET** /api/v2/routing/availablemediatypes | Get available media types
-[**getRoutingComparisonperiods**](RoutingApi.html#getRoutingComparisonperiods) | **GET** /api/v2/routing/comparisonperiods | Get list of comparison periods by queue ID(s)
-[**getRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
 [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | **GET** /api/v2/routing/email/domains/{domainId} | Get domain
-[**getRoutingEmailDomainDkim**](RoutingApi.html#getRoutingEmailDomainDkim) | **GET** /api/v2/routing/email/domains/{domainId}/dkim | Get domain dkim settings
-[**getRoutingEmailDomainMailfrom**](RoutingApi.html#getRoutingEmailDomainMailfrom) | **GET** /api/v2/routing/email/domains/{domainId}/mailfrom | Get domain mail from settings
 [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Get a route
 [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | **GET** /api/v2/routing/email/domains/{domainName}/routes | Get routes
-[**getRoutingEmailDomainVerification**](RoutingApi.html#getRoutingEmailDomainVerification) | **GET** /api/v2/routing/email/domains/{domainId}/verification | Get domain verification settings
 [**getRoutingEmailDomains**](RoutingApi.html#getRoutingEmailDomains) | **GET** /api/v2/routing/email/domains | Get domains
 [**getRoutingEmailOutboundDomain**](RoutingApi.html#getRoutingEmailOutboundDomain) | **GET** /api/v2/routing/email/outbound/domains/{domainId} | Get domain
 [**getRoutingEmailOutboundDomainActivation**](RoutingApi.html#getRoutingEmailOutboundDomainActivation) | **GET** /api/v2/routing/email/outbound/domains/{domainId}/activation | Get activation status (cname + dkim) of an outbound domain
@@ -59,18 +50,10 @@ All URIs are relative to *https://api.inindca.com*
 [**getRoutingPredictorModelFeatures**](RoutingApi.html#getRoutingPredictorModelFeatures) | **GET** /api/v2/routing/predictors/{predictorId}/models/{modelId}/features | Retrieve Predictor Model Features.
 [**getRoutingPredictorModels**](RoutingApi.html#getRoutingPredictorModels) | **GET** /api/v2/routing/predictors/{predictorId}/models | Retrieve Predictor Models and Top Features.
 [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | **GET** /api/v2/routing/predictors | Retrieve all predictors.
-[**getRoutingPredictorsKeyperformanceindicator**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicator) | **GET** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Retrieve a single Key Performance Indicator.
 [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | **GET** /api/v2/routing/predictors/keyperformanceindicators | Get a list of Key Performance Indicators
-[**getRoutingPredictorsKeyperformanceindicatortypes**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicatortypes) | **GET** /api/v2/routing/predictors/keyperformanceindicatortypes | Get a list of Key Performance Indicators Types available.
 [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | **GET** /api/v2/routing/queues/{queueId} | Get details about this queue.
-[**getRoutingQueueAssistant**](RoutingApi.html#getRoutingQueueAssistant) | **GET** /api/v2/routing/queues/{queueId}/assistant | Get an assistant associated with a queue.
 [**getRoutingQueueComparisonperiod**](RoutingApi.html#getRoutingQueueComparisonperiod) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId} | Get a Comparison Period.
 [**getRoutingQueueComparisonperiods**](RoutingApi.html#getRoutingQueueComparisonperiods) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods | Get list of comparison periods
-[**getRoutingQueueConversations**](RoutingApi.html#getRoutingQueueConversations) | **GET** /api/v2/routing/queues/{queueId}/conversations | Get recent conversations that are still active
-[**getRoutingQueueConversationsCallbacks**](RoutingApi.html#getRoutingQueueConversationsCallbacks) | **GET** /api/v2/routing/queues/{queueId}/conversations/callbacks | Get recent callback conversations that are still active
-[**getRoutingQueueConversationsCalls**](RoutingApi.html#getRoutingQueueConversationsCalls) | **GET** /api/v2/routing/queues/{queueId}/conversations/calls | Get recent call conversations that are still active
-[**getRoutingQueueConversationsChats**](RoutingApi.html#getRoutingQueueConversationsChats) | **GET** /api/v2/routing/queues/{queueId}/conversations/chats | Get recent chat conversations that are still active
-[**getRoutingQueueConversationsEmails**](RoutingApi.html#getRoutingQueueConversationsEmails) | **GET** /api/v2/routing/queues/{queueId}/conversations/emails | Get recent email conversations that are still active
 [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/estimatedwaittime | Get Estimated Wait Time
 [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi.html#getRoutingQueueMediatypeEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime | Get Estimated Wait Time
 [**getRoutingQueueMembers**](RoutingApi.html#getRoutingQueueMembers) | **GET** /api/v2/routing/queues/{queueId}/members | Get the members of this queue.
@@ -94,19 +77,13 @@ All URIs are relative to *https://api.inindca.com*
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
 [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{addressId} | Get a phone number provisioned for SMS.
 [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
-[**getRoutingUserDirectroutingbackupSettings**](RoutingApi.html#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
 [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | **GET** /api/v2/routing/utilization | Get the organization-wide max utilization settings.
-[**getRoutingUtilizationLabel**](RoutingApi.html#getRoutingUtilizationLabel) | **GET** /api/v2/routing/utilization/labels/{labelId} | Get details about this utilization label
-[**getRoutingUtilizationLabelAgents**](RoutingApi.html#getRoutingUtilizationLabelAgents) | **GET** /api/v2/routing/utilization/labels/{labelId}/agents | Get list of agent ids associated with a utilization label
-[**getRoutingUtilizationLabels**](RoutingApi.html#getRoutingUtilizationLabels) | **GET** /api/v2/routing/utilization/labels | Get list of utilization labels
 [**getRoutingUtilizationTag**](RoutingApi.html#getRoutingUtilizationTag) | **GET** /api/v2/routing/utilization/tags/{tagId} | Get details about this utilization tag
 [**getRoutingUtilizationTagAgents**](RoutingApi.html#getRoutingUtilizationTagAgents) | **GET** /api/v2/routing/utilization/tags/{tagId}/agents | Get list of agent ids associated with a utilization tag
 [**getRoutingUtilizationTags**](RoutingApi.html#getRoutingUtilizationTags) | **GET** /api/v2/routing/utilization/tags | Get list of utilization tags
 [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | **GET** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code.
 [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | **GET** /api/v2/routing/wrapupcodes | Get list of wrapup codes.
-[**getRoutingWrapupcodesDivisionview**](RoutingApi.html#getRoutingWrapupcodesDivisionview) | **GET** /api/v2/routing/wrapupcodes/divisionviews/{codeId} | Get a simplified wrap-up code.
-[**getRoutingWrapupcodesDivisionviews**](RoutingApi.html#getRoutingWrapupcodesDivisionviews) | **GET** /api/v2/routing/wrapupcodes/divisionviews | Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
 [**getUserQueues**](RoutingApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
 [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
@@ -115,13 +92,11 @@ All URIs are relative to *https://api.inindca.com*
 [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
 [**patchRoutingPredictor**](RoutingApi.html#patchRoutingPredictor) | **PATCH** /api/v2/routing/predictors/{predictorId} | Update single predictor.
-[**patchRoutingPredictorsKeyperformanceindicator**](RoutingApi.html#patchRoutingPredictorsKeyperformanceindicator) | **PATCH** /api/v2/routing/predictors/keyperformanceindicators/{kpiId} | Update a custom Key Performance Indicator.
 [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
 [**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | **PATCH** /api/v2/routing/queues/{queueId}/members | Join or unjoin a set of users for a queue
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
-[**patchRoutingSettingsTranscription**](RoutingApi.html#patchRoutingSettingsTranscription) | **PATCH** /api/v2/routing/settings/transcription | Patch Transcription Settings
 [**patchRoutingSkillgroup**](RoutingApi.html#patchRoutingSkillgroup) | **PATCH** /api/v2/routing/skillgroups/{skillGroupId} | Update skill group definition
 [**patchUserQueue**](RoutingApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
 [**patchUserQueues**](RoutingApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
@@ -132,21 +107,13 @@ All URIs are relative to *https://api.inindca.com*
 [**postAnalyticsRoutingActivityQuery**](RoutingApi.html#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
 [**postRoutingAssessments**](RoutingApi.html#postRoutingAssessments) | **POST** /api/v2/routing/assessments | Create a benefit assessment.
 [**postRoutingAssessmentsJobs**](RoutingApi.html#postRoutingAssessmentsJobs) | **POST** /api/v2/routing/assessments/jobs | Create a benefit assessment job.
-[**postRoutingComparisonreportsDetails**](RoutingApi.html#postRoutingComparisonreportsDetails) | **POST** /api/v2/routing/comparisonreports/details | Query for comparison report detail.
-[**postRoutingComparisonreportsSummary**](RoutingApi.html#postRoutingComparisonreportsSummary) | **POST** /api/v2/routing/comparisonreports/summary | Query for comparison report summary.
-[**postRoutingEmailDomainDkim**](RoutingApi.html#postRoutingEmailDomainDkim) | **POST** /api/v2/routing/email/domains/{domainId}/dkim | Restart domain dkim
-[**postRoutingEmailDomainMailfrom**](RoutingApi.html#postRoutingEmailDomainMailfrom) | **POST** /api/v2/routing/email/domains/{domainId}/mailfrom | Set domain mail from settings
 [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
 [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this domain
-[**postRoutingEmailDomainVerification**](RoutingApi.html#postRoutingEmailDomainVerification) | **POST** /api/v2/routing/email/domains/{domainId}/verification | Restart domain verification
 [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
 [**postRoutingEmailOutboundDomains**](RoutingApi.html#postRoutingEmailOutboundDomains) | **POST** /api/v2/routing/email/outbound/domains | Create a domain
 [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi.html#postRoutingEmailOutboundDomainsSimulated) | **POST** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain
 [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
 [**postRoutingPredictors**](RoutingApi.html#postRoutingPredictors) | **POST** /api/v2/routing/predictors | Create a predictor.
-[**postRoutingPredictorsInteractionscores**](RoutingApi.html#postRoutingPredictorsInteractionscores) | **POST** /api/v2/routing/predictors/interactionscores | Scores interactions based on machine learning metrics.
-[**postRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#postRoutingPredictorsKeyperformanceindicators) | **POST** /api/v2/routing/predictors/keyperformanceindicators | Create a custom Key Performance Indicator.
-[**postRoutingPredictorsUserscores**](RoutingApi.html#postRoutingPredictorsUserscores) | **POST** /api/v2/routing/predictors/userscores | Scores users based on machine learning metrics.
 [**postRoutingQueueMembers**](RoutingApi.html#postRoutingQueueMembers) | **POST** /api/v2/routing/queues/{queueId}/members | Bulk add or delete up to 100 queue members
 [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | **POST** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | **POST** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue
@@ -157,12 +124,10 @@ All URIs are relative to *https://api.inindca.com*
 [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | **POST** /api/v2/routing/sms/addresses | Provision an Address for SMS
 [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | **POST** /api/v2/routing/sms/phonenumbers | Provision a phone number for SMS
 [**postRoutingSmsPhonenumbersImport**](RoutingApi.html#postRoutingSmsPhonenumbersImport) | **POST** /api/v2/routing/sms/phonenumbers/import | Imports a phone number for SMS
-[**postRoutingUtilizationLabels**](RoutingApi.html#postRoutingUtilizationLabels) | **POST** /api/v2/routing/utilization/labels | Create a utilization label
 [**postRoutingUtilizationTags**](RoutingApi.html#postRoutingUtilizationTags) | **POST** /api/v2/routing/utilization/tags | Create an utilization tag
 [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | **POST** /api/v2/routing/wrapupcodes | Create a wrap-up code
 [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
 [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
-[**putRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
 [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Update a route
 [**putRoutingEmailOutboundDomainActivation**](RoutingApi.html#putRoutingEmailOutboundDomainActivation) | **PUT** /api/v2/routing/email/outbound/domains/{domainId}/activation | Request an activation status (cname + dkim) update of an outbound domain
 [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | **PUT** /api/v2/routing/message/recipients/{recipientId} | Update a recipient
@@ -170,10 +135,8 @@ All URIs are relative to *https://api.inindca.com*
 [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | **PUT** /api/v2/routing/settings | Update an organization's routing settings
 [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
 [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{addressId} | Update a phone number provisioned for SMS.
-[**putRoutingUserDirectroutingbackupSettings**](RoutingApi.html#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
 [**putRoutingUserUtilization**](RoutingApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
-[**putRoutingUtilizationLabel**](RoutingApi.html#putRoutingUtilizationLabel) | **PUT** /api/v2/routing/utilization/labels/{labelId} | Update a utilization label
 [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | **PUT** /api/v2/routing/wrapupcodes/{codeId} | Update wrap-up code
 [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
 [**putUserRoutingskillsBulk**](RoutingApi.html#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
@@ -224,51 +187,6 @@ apiInstance.deleteRoutingAssessment(assessmentId)
 | ------------- | ------------- | ------------- | ------------- |
  **assessmentId** | **String** | Benefit Assessment ID |  |
 {: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteRoutingDirectroutingbackupSettingsMe"></a>
-
-# void deleteRoutingDirectroutingbackupSettingsMe()
-
-
-DELETE /api/v2/routing/directroutingbackup/settings/me
-
-Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
-
-Requires ANY permissions:
-
-* routing:directRoutingBackup:selfDelete
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
-  .then(() => {
-    console.log('deleteRoutingDirectroutingbackupSettingsMe returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteRoutingDirectroutingbackupSettingsMe');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
 
 ### Return type
 
@@ -521,56 +439,6 @@ apiInstance.deleteRoutingPredictor(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | Predictor ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteRoutingPredictorsKeyperformanceindicator"></a>
-
-# void deleteRoutingPredictorsKeyperformanceindicator(kpiId)
-
-
-DELETE /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
-
-Delete a custom Key Performance Indicator.
-
-Requires ANY permissions:
-
-* routing:keyPerformanceIndicator:delete
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
-
-apiInstance.deleteRoutingPredictorsKeyperformanceindicator(kpiId)
-  .then(() => {
-    console.log('deleteRoutingPredictorsKeyperformanceindicator returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteRoutingPredictorsKeyperformanceindicator');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **kpiId** | **String** | Key Performance Indicator ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1035,56 +903,6 @@ apiInstance.deleteRoutingSmsPhonenumber(addressId)
 
 void (no response body)
 
-<a name="deleteRoutingUserDirectroutingbackupSettings"></a>
-
-# void deleteRoutingUserDirectroutingbackupSettings(userId)
-
-
-DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings
-
-Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
-
-Requires ANY permissions:
-
-* routing:directRoutingBackup:delete
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let userId = "userId_example"; // String | User ID
-
-apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
-  .then(() => {
-    console.log('deleteRoutingUserDirectroutingbackupSettings returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteRoutingUserDirectroutingbackupSettings');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
 <a name="deleteRoutingUserUtilization"></a>
 
 # void deleteRoutingUserUtilization(userId)
@@ -1180,60 +998,6 @@ This endpoint does not need any parameter.
 
 void (no response body)
 
-<a name="deleteRoutingUtilizationLabel"></a>
-
-# void deleteRoutingUtilizationLabel(labelId, opts)
-
-
-DELETE /api/v2/routing/utilization/labels/{labelId}
-
-Delete a utilization label
-
-Requires ALL permissions:
-
-* routing:utilization:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let labelId = "labelId_example"; // String | Utilization Label ID
-let opts = { 
-  'forceDelete': false // Boolean | Remove all label usages (if found) without warning
-};
-
-apiInstance.deleteRoutingUtilizationLabel(labelId, opts)
-  .then(() => {
-    console.log('deleteRoutingUtilizationLabel returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteRoutingUtilizationLabel');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **labelId** | **String** | Utilization Label ID |  |
- **forceDelete** | **Boolean** | Remove all label usages (if found) without warning | [optional] [default to false] |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
 <a name="deleteRoutingUtilizationTag"></a>
 
 # void deleteRoutingUtilizationTag(tagId, opts)
@@ -1292,7 +1056,7 @@ void (no response body)
 
 <a name="deleteRoutingWrapupcode"></a>
 
-# void deleteRoutingWrapupcode(codeId, opts)
+# void deleteRoutingWrapupcode(codeId)
 
 
 DELETE /api/v2/routing/wrapupcodes/{codeId}
@@ -1317,11 +1081,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let codeId = "codeId_example"; // String | Wrapup Code ID
-let opts = { 
-  'hardDelete': true // Boolean | Boolean to perform a hard delete. If hardDelete is set to true, the wrapup code is completely removed from our database. If it is set to false (default behavior), we mark the wrapup code as deleted.
-};
 
-apiInstance.deleteRoutingWrapupcode(codeId, opts)
+apiInstance.deleteRoutingWrapupcode(codeId)
   .then(() => {
     console.log('deleteRoutingWrapupcode returned successfully.');
   })
@@ -1337,7 +1098,6 @@ apiInstance.deleteRoutingWrapupcode(codeId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **codeId** | **String** | Wrapup Code ID |  |
- **hardDelete** | **Boolean** | Boolean to perform a hard delete. If hardDelete is set to true, the wrapup code is completely removed from our database. If it is set to false (default behavior), we mark the wrapup code as deleted. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1705,106 +1465,6 @@ This endpoint does not need any parameter.
 
 **AvailableMediaTypeEntityListing**
 
-<a name="getRoutingComparisonperiods"></a>
-
-# ComparisonPeriodListing getRoutingComparisonperiods(queueId, opts)
-
-
-GET /api/v2/routing/comparisonperiods
-
-Get list of comparison periods by queue ID(s)
-
-Requires ANY permissions:
-
-* routing:comparisonPeriod:view
-* routing:queue:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let queueId = ["queueId_example"]; // [String] | Comma separated list of Queue IDs to filter by.
-let opts = { 
-  'maxPerQueue': "maxPerQueue_example" // String | Maximum number of entities to return per queue.
-};
-
-apiInstance.getRoutingComparisonperiods(queueId, opts)
-  .then((data) => {
-    console.log(`getRoutingComparisonperiods success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingComparisonperiods');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **queueId** | **[String]** | Comma separated list of Queue IDs to filter by. |  |
- **maxPerQueue** | **String** | Maximum number of entities to return per queue. | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**ComparisonPeriodListing**
-
-<a name="getRoutingDirectroutingbackupSettingsMe"></a>
-
-# AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
-
-
-GET /api/v2/routing/directroutingbackup/settings/me
-
-Get the user's Direct Routing Backup settings.
-
-Requires ANY permissions:
-
-* routing:directRoutingBackup:selfView
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-apiInstance.getRoutingDirectroutingbackupSettingsMe()
-  .then((data) => {
-    console.log(`getRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingDirectroutingbackupSettingsMe');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-
-### Return type
-
-**AgentDirectRoutingBackupSettings**
-
 <a name="getRoutingEmailDomain"></a>
 
 # InboundDomain getRoutingEmailDomain(domainId)
@@ -1854,106 +1514,6 @@ apiInstance.getRoutingEmailDomain(domainId)
 ### Return type
 
 **InboundDomain**
-
-<a name="getRoutingEmailDomainDkim"></a>
-
-# VerificationResult getRoutingEmailDomainDkim(domainId)
-
-
-GET /api/v2/routing/email/domains/{domainId}/dkim
-
-Get domain dkim settings
-
-Requires ALL permissions:
-
-* routing:email:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let domainId = "domainId_example"; // String | domain ID
-
-apiInstance.getRoutingEmailDomainDkim(domainId)
-  .then((data) => {
-    console.log(`getRoutingEmailDomainDkim success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingEmailDomainDkim');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String** | domain ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**VerificationResult**
-
-<a name="getRoutingEmailDomainMailfrom"></a>
-
-# MailFromResult getRoutingEmailDomainMailfrom(domainId)
-
-
-GET /api/v2/routing/email/domains/{domainId}/mailfrom
-
-Get domain mail from settings
-
-Requires ALL permissions:
-
-* routing:email:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let domainId = "domainId_example"; // String | domain ID
-
-apiInstance.getRoutingEmailDomainMailfrom(domainId)
-  .then((data) => {
-    console.log(`getRoutingEmailDomainMailfrom success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingEmailDomainMailfrom');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String** | domain ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**MailFromResult**
 
 <a name="getRoutingEmailDomainRoute"></a>
 
@@ -2064,56 +1624,6 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
 ### Return type
 
 **InboundRouteEntityListing**
-
-<a name="getRoutingEmailDomainVerification"></a>
-
-# VerificationResult getRoutingEmailDomainVerification(domainId)
-
-
-GET /api/v2/routing/email/domains/{domainId}/verification
-
-Get domain verification settings
-
-Requires ALL permissions:
-
-* routing:email:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let domainId = "domainId_example"; // String | domain ID
-
-apiInstance.getRoutingEmailDomainVerification(domainId)
-  .then((data) => {
-    console.log(`getRoutingEmailDomainVerification success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingEmailDomainVerification');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String** | domain ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**VerificationResult**
 
 <a name="getRoutingEmailDomains"></a>
 
@@ -2847,60 +2357,6 @@ apiInstance.getRoutingPredictors(opts)
 
 **PredictorListing**
 
-<a name="getRoutingPredictorsKeyperformanceindicator"></a>
-
-# KeyPerformanceIndicator getRoutingPredictorsKeyperformanceindicator(kpiId, opts)
-
-
-GET /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
-
-Retrieve a single Key Performance Indicator.
-
-Requires ANY permissions:
-
-* routing:keyPerformanceIndicator:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
-let opts = { 
-  'expand': ["expand_example"] // [String] | Parameter to request additional data to return in KPI payload
-};
-
-apiInstance.getRoutingPredictorsKeyperformanceindicator(kpiId, opts)
-  .then((data) => {
-    console.log(`getRoutingPredictorsKeyperformanceindicator success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingPredictorsKeyperformanceindicator');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **kpiId** | **String** | Key Performance Indicator ID |  |
- **expand** | **[String]** | Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
-{: class="table table-striped"}
-
-### Return type
-
-**KeyPerformanceIndicator**
-
 <a name="getRoutingPredictorsKeyperformanceindicators"></a>
 
 # [KeyPerformanceIndicator] getRoutingPredictorsKeyperformanceindicators(opts)
@@ -2955,51 +2411,6 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
 
 **[KeyPerformanceIndicator]**
 
-<a name="getRoutingPredictorsKeyperformanceindicatortypes"></a>
-
-# [KeyPerformanceIndicatorType] getRoutingPredictorsKeyperformanceindicatortypes()
-
-
-GET /api/v2/routing/predictors/keyperformanceindicatortypes
-
-Get a list of Key Performance Indicators Types available.
-
-Requires ANY permissions:
-
-* routing:keyPerformanceIndicator:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-apiInstance.getRoutingPredictorsKeyperformanceindicatortypes()
-  .then((data) => {
-    console.log(`getRoutingPredictorsKeyperformanceindicatortypes success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingPredictorsKeyperformanceindicatortypes');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-
-### Return type
-
-**[KeyPerformanceIndicatorType]**
-
 <a name="getRoutingQueue"></a>
 
 # Queue getRoutingQueue(queueId)
@@ -3049,60 +2460,6 @@ apiInstance.getRoutingQueue(queueId)
 ### Return type
 
 **Queue**
-
-<a name="getRoutingQueueAssistant"></a>
-
-# AssistantQueue getRoutingQueueAssistant(queueId, opts)
-
-
-GET /api/v2/routing/queues/{queueId}/assistant
-
-Get an assistant associated with a queue.
-
-Requires ALL permissions:
-
-* assistants:queue:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let queueId = "queueId_example"; // String | Queue ID
-let opts = { 
-  'expand': "expand_example" // String | Which fields, if any, to expand.
-};
-
-apiInstance.getRoutingQueueAssistant(queueId, opts)
-  .then((data) => {
-    console.log(`getRoutingQueueAssistant success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingQueueAssistant');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String** | Queue ID |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
-{: class="table table-striped"}
-
-### Return type
-
-**AssistantQueue**
 
 <a name="getRoutingQueueComparisonperiod"></a>
 
@@ -3207,276 +2564,6 @@ apiInstance.getRoutingQueueComparisonperiods(queueId)
 ### Return type
 
 **ComparisonPeriodListing**
-
-<a name="getRoutingQueueConversations"></a>
-
-# ConversationEntityListing getRoutingQueueConversations(queueId, opts)
-
-
-GET /api/v2/routing/queues/{queueId}/conversations
-
-Get recent conversations that are still active
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let queueId = "queueId_example"; // String | Queue ID
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getRoutingQueueConversations(queueId, opts)
-  .then((data) => {
-    console.log(`getRoutingQueueConversations success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingQueueConversations');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String** | Queue ID |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-**ConversationEntityListing**
-
-<a name="getRoutingQueueConversationsCallbacks"></a>
-
-# CallbackConversationEntityListing getRoutingQueueConversationsCallbacks(queueId, opts)
-
-
-GET /api/v2/routing/queues/{queueId}/conversations/callbacks
-
-Get recent callback conversations that are still active
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let queueId = "queueId_example"; // String | Queue ID
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getRoutingQueueConversationsCallbacks(queueId, opts)
-  .then((data) => {
-    console.log(`getRoutingQueueConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingQueueConversationsCallbacks');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String** | Queue ID |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-**CallbackConversationEntityListing**
-
-<a name="getRoutingQueueConversationsCalls"></a>
-
-# CallConversationEntityListing getRoutingQueueConversationsCalls(queueId, opts)
-
-
-GET /api/v2/routing/queues/{queueId}/conversations/calls
-
-Get recent call conversations that are still active
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let queueId = "queueId_example"; // String | Queue ID
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getRoutingQueueConversationsCalls(queueId, opts)
-  .then((data) => {
-    console.log(`getRoutingQueueConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingQueueConversationsCalls');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String** | Queue ID |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-**CallConversationEntityListing**
-
-<a name="getRoutingQueueConversationsChats"></a>
-
-# ChatConversationEntityListing getRoutingQueueConversationsChats(queueId, opts)
-
-
-GET /api/v2/routing/queues/{queueId}/conversations/chats
-
-Get recent chat conversations that are still active
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let queueId = "queueId_example"; // String | Queue ID
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getRoutingQueueConversationsChats(queueId, opts)
-  .then((data) => {
-    console.log(`getRoutingQueueConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingQueueConversationsChats');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String** | Queue ID |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-**ChatConversationEntityListing**
-
-<a name="getRoutingQueueConversationsEmails"></a>
-
-# EmailConversationEntityListing getRoutingQueueConversationsEmails(queueId, opts)
-
-
-GET /api/v2/routing/queues/{queueId}/conversations/emails
-
-Get recent email conversations that are still active
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let queueId = "queueId_example"; // String | Queue ID
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getRoutingQueueConversationsEmails(queueId, opts)
-  .then((data) => {
-    console.log(`getRoutingQueueConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingQueueConversationsEmails');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String** | Queue ID |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-**EmailConversationEntityListing**
 
 <a name="getRoutingQueueEstimatedwaittime"></a>
 
@@ -4788,56 +3875,6 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 
 **SmsPhoneNumberEntityListing**
 
-<a name="getRoutingUserDirectroutingbackupSettings"></a>
-
-# AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
-
-
-GET /api/v2/routing/users/{userId}/directroutingbackup/settings
-
-Get the user's Direct Routing Backup settings.
-
-Requires ANY permissions:
-
-* routing:directRoutingBackup:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let userId = "userId_example"; // String | User ID
-
-apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
-  .then((data) => {
-    console.log(`getRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingUserDirectroutingbackupSettings');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**AgentDirectRoutingBackupSettings**
-
 <a name="getRoutingUserUtilization"></a>
 
 # AgentMaxUtilization getRoutingUserUtilization(userId)
@@ -4934,164 +3971,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 **Utilization**
-
-<a name="getRoutingUtilizationLabel"></a>
-
-# UtilizationLabel getRoutingUtilizationLabel(labelId)
-
-
-GET /api/v2/routing/utilization/labels/{labelId}
-
-Get details about this utilization label
-
-Requires ALL permissions:
-
-* routing:utilization:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let labelId = "labelId_example"; // String | Utilization Label ID
-
-apiInstance.getRoutingUtilizationLabel(labelId)
-  .then((data) => {
-    console.log(`getRoutingUtilizationLabel success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingUtilizationLabel');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **labelId** | **String** | Utilization Label ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**UtilizationLabel**
-
-<a name="getRoutingUtilizationLabelAgents"></a>
-
-# **[Object]** getRoutingUtilizationLabelAgents(labelId)
-
-
-GET /api/v2/routing/utilization/labels/{labelId}/agents
-
-Get list of agent ids associated with a utilization label
-
-Requires ALL permissions:
-
-* routing:utilization:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let labelId = "labelId_example"; // String | Utilization Label ID
-
-apiInstance.getRoutingUtilizationLabelAgents(labelId)
-  .then((data) => {
-    console.log(`getRoutingUtilizationLabelAgents success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingUtilizationLabelAgents');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **labelId** | **String** | Utilization Label ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**[Object]**
-
-<a name="getRoutingUtilizationLabels"></a>
-
-# UtilizationLabelEntityListing getRoutingUtilizationLabels(opts)
-
-
-GET /api/v2/routing/utilization/labels
-
-Get list of utilization labels
-
-Requires ALL permissions:
-
-* routing:utilization:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'sortOrder': "ascending", // String | Sort order by name
-  'name': "name_example" // String | Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
-};
-
-apiInstance.getRoutingUtilizationLabels(opts)
-  .then((data) => {
-    console.log(`getRoutingUtilizationLabels success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingUtilizationLabels');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortOrder** | **String** | Sort order by name | [optional] [default to ascending]<br />**Values**: ascending, descending |
- **name** | **String** | Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*' | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**UtilizationLabelEntityListing**
 
 <a name="getRoutingUtilizationTag"></a>
 
@@ -5365,120 +4244,6 @@ apiInstance.getRoutingWrapupcodes(opts)
  **name** | **String** | Wrapup code's name ('Sort by' param is ignored unless this field is provided) | [optional]  |
  **id** | **[String]** | Filter by wrapup code ID(s) | [optional]  |
  **divisionId** | **[String]** | Filter by division ID(s) | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**WrapupCodeEntityListing**
-
-<a name="getRoutingWrapupcodesDivisionview"></a>
-
-# WrapupCode getRoutingWrapupcodesDivisionview(codeId)
-
-
-GET /api/v2/routing/wrapupcodes/divisionviews/{codeId}
-
-Get a simplified wrap-up code.
-
-Requires ALL permissions:
-
-* routing:wrapupCode:search
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let codeId = "codeId_example"; // String | Wrapup Code ID
-
-apiInstance.getRoutingWrapupcodesDivisionview(codeId)
-  .then((data) => {
-    console.log(`getRoutingWrapupcodesDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingWrapupcodesDivisionview');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **codeId** | **String** | Wrapup Code ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**WrapupCode**
-
-<a name="getRoutingWrapupcodesDivisionviews"></a>
-
-# WrapupCodeEntityListing getRoutingWrapupcodesDivisionviews(opts)
-
-
-GET /api/v2/routing/wrapupcodes/divisionviews
-
-Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
-
-Specifying both name and ID parameters is not supported.
-
-Requires ALL permissions:
-
-* routing:wrapupCode:search
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'name': "name_example", // String | Name
-  'id': ["id_example"], // [String] | Wrapup code ID(s)
-  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
-  'includeState': "includeState_example" // String | Wrapup code state(s) to include
-};
-
-apiInstance.getRoutingWrapupcodesDivisionviews(opts)
-  .then((data) => {
-    console.log(`getRoutingWrapupcodesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingWrapupcodesDivisionviews');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **name** | **String** | Name | [optional]  |
- **id** | **[String]** | Wrapup code ID(s) | [optional]  |
- **divisionId** | **[String]** | Division ID(s) | [optional]  |
- **includeState** | **String** | Wrapup code state(s) to include | [optional] <br />**Values**: Active, Deleted, ActiveAndDeleted |
 {: class="table table-striped"}
 
 ### Return type
@@ -5930,60 +4695,6 @@ apiInstance.patchRoutingPredictor(predictorId, opts)
 
 **Predictor**
 
-<a name="patchRoutingPredictorsKeyperformanceindicator"></a>
-
-# KeyPerformanceIndicator patchRoutingPredictorsKeyperformanceindicator(kpiId, opts)
-
-
-PATCH /api/v2/routing/predictors/keyperformanceindicators/{kpiId}
-
-Update a custom Key Performance Indicator.
-
-Requires ANY permissions:
-
-* routing:keyPerformanceIndicator:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let kpiId = "kpiId_example"; // String | Key Performance Indicator ID
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.patchRoutingPredictorsKeyperformanceindicator(kpiId, opts)
-  .then((data) => {
-    console.log(`patchRoutingPredictorsKeyperformanceindicator success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchRoutingPredictorsKeyperformanceindicator');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **kpiId** | **String** | Key Performance Indicator ID |  |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**KeyPerformanceIndicator**
-
 <a name="patchRoutingQueueMember"></a>
 
 # void patchRoutingQueueMember(queueId, memberId, body)
@@ -6251,56 +4962,6 @@ apiInstance.patchRoutingSettingsContactcenter(body)
 ### Return type
 
 void (no response body)
-
-<a name="patchRoutingSettingsTranscription"></a>
-
-# TranscriptionSettings patchRoutingSettingsTranscription(body)
-
-
-PATCH /api/v2/routing/settings/transcription
-
-Patch Transcription Settings
-
-Requires ANY permissions:
-
-* routing:transcriptionSettings:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let body = {}; // Object | Organization Settings
-
-apiInstance.patchRoutingSettingsTranscription(body)
-  .then((data) => {
-    console.log(`patchRoutingSettingsTranscription success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchRoutingSettingsTranscription');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Organization Settings |  |
-{: class="table table-striped"}
-
-### Return type
-
-**TranscriptionSettings**
 
 <a name="patchRoutingSkillgroup"></a>
 
@@ -6839,208 +5500,6 @@ apiInstance.postRoutingAssessmentsJobs(opts)
 
 **BenefitAssessmentJob**
 
-<a name="postRoutingComparisonreportsDetails"></a>
-
-# ComparisonReportDetail postRoutingComparisonreportsDetails(body)
-
-
-POST /api/v2/routing/comparisonreports/details
-
-Query for comparison report detail.
-
-Requires ALL permissions:
-
-* routing:comparisonPeriod:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let body = {}; // Object | request
-
-apiInstance.postRoutingComparisonreportsDetails(body)
-  .then((data) => {
-    console.log(`postRoutingComparisonreportsDetails success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingComparisonreportsDetails');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | request |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ComparisonReportDetail**
-
-<a name="postRoutingComparisonreportsSummary"></a>
-
-# ComparisonReportSummary postRoutingComparisonreportsSummary(body)
-
-
-POST /api/v2/routing/comparisonreports/summary
-
-Query for comparison report summary.
-
-Requires ALL permissions:
-
-* routing:comparisonPeriod:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let body = {}; // Object | request
-
-apiInstance.postRoutingComparisonreportsSummary(body)
-  .then((data) => {
-    console.log(`postRoutingComparisonreportsSummary success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingComparisonreportsSummary');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | request |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ComparisonReportSummary**
-
-<a name="postRoutingEmailDomainDkim"></a>
-
-# VerificationResult postRoutingEmailDomainDkim(domainId)
-
-
-POST /api/v2/routing/email/domains/{domainId}/dkim
-
-Restart domain dkim
-
-Requires ALL permissions:
-
-* routing:email:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let domainId = "domainId_example"; // String | domain ID
-
-apiInstance.postRoutingEmailDomainDkim(domainId)
-  .then((data) => {
-    console.log(`postRoutingEmailDomainDkim success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingEmailDomainDkim');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String** | domain ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**VerificationResult**
-
-<a name="postRoutingEmailDomainMailfrom"></a>
-
-# MailFromResult postRoutingEmailDomainMailfrom(domainId, body)
-
-
-POST /api/v2/routing/email/domains/{domainId}/mailfrom
-
-Set domain mail from settings
-
-Requires ALL permissions:
-
-* routing:email:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let domainId = "domainId_example"; // String | domain ID
-let body = {}; // Object | Mail From Settings
-
-apiInstance.postRoutingEmailDomainMailfrom(domainId, body)
-  .then((data) => {
-    console.log(`postRoutingEmailDomainMailfrom success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingEmailDomainMailfrom');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String** | domain ID |  |
- **body** | **Object** | Mail From Settings |  |
-{: class="table table-striped"}
-
-### Return type
-
-**MailFromResult**
-
 <a name="postRoutingEmailDomainRoutes"></a>
 
 # InboundRoute postRoutingEmailDomainRoutes(domainName, body)
@@ -7148,56 +5607,6 @@ apiInstance.postRoutingEmailDomainTestconnection(domainId, opts)
 ### Return type
 
 **TestMessage**
-
-<a name="postRoutingEmailDomainVerification"></a>
-
-# VerificationResult postRoutingEmailDomainVerification(domainId)
-
-
-POST /api/v2/routing/email/domains/{domainId}/verification
-
-Restart domain verification
-
-Requires ALL permissions:
-
-* routing:email:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let domainId = "domainId_example"; // String | domain ID
-
-apiInstance.postRoutingEmailDomainVerification(domainId)
-  .then((data) => {
-    console.log(`postRoutingEmailDomainVerification success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingEmailDomainVerification');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String** | domain ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**VerificationResult**
 
 <a name="postRoutingEmailDomains"></a>
 
@@ -7451,160 +5860,6 @@ apiInstance.postRoutingPredictors(opts)
 ### Return type
 
 **Predictor**
-
-<a name="postRoutingPredictorsInteractionscores"></a>
-
-# InteractionScoresResult postRoutingPredictorsInteractionscores(opts)
-
-
-POST /api/v2/routing/predictors/interactionscores
-
-Scores interactions based on machine learning metrics.
-
-Requires ANY permissions:
-
-* routing:predictor:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.postRoutingPredictorsInteractionscores(opts)
-  .then((data) => {
-    console.log(`postRoutingPredictorsInteractionscores success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingPredictorsInteractionscores');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**InteractionScoresResult**
-
-<a name="postRoutingPredictorsKeyperformanceindicators"></a>
-
-# KeyPerformanceIndicator postRoutingPredictorsKeyperformanceindicators(body)
-
-
-POST /api/v2/routing/predictors/keyperformanceindicators
-
-Create a custom Key Performance Indicator.
-
-Requires ANY permissions:
-
-* routing:keyPerformanceIndicator:add
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let body = {}; // Object | request
-
-apiInstance.postRoutingPredictorsKeyperformanceindicators(body)
-  .then((data) => {
-    console.log(`postRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingPredictorsKeyperformanceindicators');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | request |  |
-{: class="table table-striped"}
-
-### Return type
-
-**KeyPerformanceIndicator**
-
-<a name="postRoutingPredictorsUserscores"></a>
-
-# UserScoresResult postRoutingPredictorsUserscores(opts)
-
-
-POST /api/v2/routing/predictors/userscores
-
-Scores users based on machine learning metrics.
-
-Requires ANY permissions:
-
-* routing:predictor:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.postRoutingPredictorsUserscores(opts)
-  .then((data) => {
-    console.log(`postRoutingPredictorsUserscores success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingPredictorsUserscores');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**UserScoresResult**
 
 <a name="postRoutingQueueMembers"></a>
 
@@ -8129,56 +6384,6 @@ apiInstance.postRoutingSmsPhonenumbersImport(body)
 
 **SmsPhoneNumber**
 
-<a name="postRoutingUtilizationLabels"></a>
-
-# UtilizationLabel postRoutingUtilizationLabels(body)
-
-
-POST /api/v2/routing/utilization/labels
-
-Create a utilization label
-
-Requires ALL permissions:
-
-* routing:utilization:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let body = {}; // Object | UtilizationLabel
-
-apiInstance.postRoutingUtilizationLabels(body)
-  .then((data) => {
-    console.log(`postRoutingUtilizationLabels success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRoutingUtilizationLabels');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | UtilizationLabel |  |
-{: class="table table-striped"}
-
-### Return type
-
-**UtilizationLabel**
-
 <a name="postRoutingUtilizationTags"></a>
 
 # UtilizationTag postRoutingUtilizationTags(body)
@@ -8385,56 +6590,6 @@ apiInstance.postUserRoutingskills(userId, body)
 ### Return type
 
 **UserRoutingSkill**
-
-<a name="putRoutingDirectroutingbackupSettingsMe"></a>
-
-# AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
-
-
-PUT /api/v2/routing/directroutingbackup/settings/me
-
-Update the user's Direct Routing Backup settings.
-
-Requires ANY permissions:
-
-* routing:directRoutingBackup:selfEdit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let body = {}; // Object | directRoutingBackup
-
-apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
-  .then((data) => {
-    console.log(`putRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putRoutingDirectroutingbackupSettingsMe');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | directRoutingBackup |  |
-{: class="table table-striped"}
-
-### Return type
-
-**AgentDirectRoutingBackupSettings**
 
 <a name="putRoutingEmailDomainRoute"></a>
 
@@ -8796,58 +6951,6 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 
 **SmsPhoneNumber**
 
-<a name="putRoutingUserDirectroutingbackupSettings"></a>
-
-# AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
-
-
-PUT /api/v2/routing/users/{userId}/directroutingbackup/settings
-
-Update the user's Direct Routing Backup settings.
-
-Requires ANY permissions:
-
-* routing:directRoutingBackup:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let userId = "userId_example"; // String | User ID
-let body = {}; // Object | directRoutingBackup
-
-apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
-  .then((data) => {
-    console.log(`putRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putRoutingUserDirectroutingbackupSettings');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
- **body** | **Object** | directRoutingBackup |  |
-{: class="table table-striped"}
-
-### Return type
-
-**AgentDirectRoutingBackupSettings**
-
 <a name="putRoutingUserUtilization"></a>
 
 # AgentMaxUtilization putRoutingUserUtilization(userId, body)
@@ -8949,58 +7052,6 @@ apiInstance.putRoutingUtilization(body)
 ### Return type
 
 **Utilization**
-
-<a name="putRoutingUtilizationLabel"></a>
-
-# UtilizationLabel putRoutingUtilizationLabel(labelId, body)
-
-
-PUT /api/v2/routing/utilization/labels/{labelId}
-
-Update a utilization label
-
-Requires ALL permissions:
-
-* routing:utilization:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let labelId = "labelId_example"; // String | Utilization Label ID
-let body = {}; // Object | UtilizationLabel
-
-apiInstance.putRoutingUtilizationLabel(labelId, body)
-  .then((data) => {
-    console.log(`putRoutingUtilizationLabel success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putRoutingUtilizationLabel');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **labelId** | **String** | Utilization Label ID |  |
- **body** | **Object** | UtilizationLabel |  |
-{: class="table table-striped"}
-
-### Return type
-
-**UtilizationLabel**
 
 <a name="putRoutingWrapupcode"></a>
 

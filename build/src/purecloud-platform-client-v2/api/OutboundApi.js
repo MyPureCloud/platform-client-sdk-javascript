@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -306,56 +306,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Delete Contact List Template
-	 * 
-	 * @param {String} contactListTemplateId ContactListTemplate ID
-	 */
-	deleteOutboundContactlisttemplate(contactListTemplateId) { 
-		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
-			throw 'Missing the required parameter "contactListTemplateId" when calling deleteOutboundContactlisttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
-			'DELETE', 
-			{ 'contactListTemplateId': contactListTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete multiple contact list templates.
-	 * 
-	 * @param {Array.<String>} id contact list template id(s) to delete
-	 */
-	deleteOutboundContactlisttemplates(id) { 
-		// verify the required parameter 'id' is set
-		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling deleteOutboundContactlisttemplates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates', 
-			'DELETE', 
-			{  },
-			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
@@ -483,56 +433,6 @@ class OutboundApi {
 			'DELETE', 
 			{ 'dncListId': dncListId },
 			{ 'expiredOnly': opts['expiredOnly'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete Import Template
-	 * 
-	 * @param {String} importTemplateId Import Template ID
-	 */
-	deleteOutboundImporttemplate(importTemplateId) { 
-		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
-			throw 'Missing the required parameter "importTemplateId" when calling deleteOutboundImporttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/{importTemplateId}', 
-			'DELETE', 
-			{ 'importTemplateId': importTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete multiple import templates.
-	 * 
-	 * @param {Array.<String>} id import template id(s) to delete
-	 */
-	deleteOutboundImporttemplates(id) { 
-		// verify the required parameter 'id' is set
-		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling deleteOutboundImporttemplates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates', 
-			'DELETE', 
-			{  },
-			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1264,57 +1164,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Get a download link to download the compliance data file
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.type The type of compliance data file
-	 * @param {String} opts.country Two letters of ISO3166-1 Alpha-2 code specifies which country the data file is requested
-	 */
-	getOutboundCompliancedata(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/compliancedata', 
-			'GET', 
-			{  },
-			{ 'type': opts['type'],'country': opts['country'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the info of telephone numbers, such as their country and region, wireless or land line, DNC status, geo location
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.device The CSV string of the telephone numbers with E164 format, max 10 devices and min 1 device
-	 * @param {String} opts.callingCountryCode the optional country code for dialing
-	 * @param {String} opts.carrierLookup the optional carrier lookup flag
-	 */
-	getOutboundCompliancedataDeviceinfo(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/compliancedata/deviceinfo', 
-			'GET', 
-			{  },
-			{ 'device': opts['device'],'callingCountryCode': opts['callingCountryCode'],'carrierLookup': opts['carrierLookup'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a dialer contact list.
 	 * 
 	 * @param {String} contactListId ContactList ID
@@ -1490,7 +1339,6 @@ class OutboundApi {
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
 	 * @param {String} opts.contactListId Contact List ID
-	 * @param {Object} opts.sourceType Source Type
 	 */
 	getOutboundContactlistfilters(opts) { 
 		opts = opts || {};
@@ -1500,7 +1348,7 @@ class OutboundApi {
 			'/api/v2/outbound/contactlistfilters', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'],'sourceType': opts['sourceType'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'] },
 			{  },
 			{  },
 			null, 
@@ -1597,61 +1445,6 @@ class OutboundApi {
 			'GET', 
 			{  },
 			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Contact List Template
-	 * 
-	 * @param {String} contactListTemplateId ContactListTemplate ID
-	 */
-	getOutboundContactlisttemplate(contactListTemplateId) { 
-		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
-			throw 'Missing the required parameter "contactListTemplateId" when calling getOutboundContactlisttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
-			'GET', 
-			{ 'contactListTemplateId': contactListTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query a list of contact list templates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
-	 * @param {Object} opts.filterType Filter type (default to Prefix)
-	 * @param {String} opts.name Name
-	 * @param {String} opts.sortBy Sort by
-	 * @param {Object} opts.sortOrder Sort order (default to a)
-	 */
-	getOutboundContactlisttemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -1811,7 +1604,6 @@ class OutboundApi {
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {Object} opts.dncSourceType DncSourceType
-	 * @param {Object} opts.contactMethod Contact method
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order
@@ -1824,7 +1616,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists', 
 			'GET', 
 			{  },
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'contactMethod': opts['contactMethod'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -1875,7 +1667,6 @@ class OutboundApi {
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {Object} opts.dncSourceType DncSourceType
-	 * @param {Object} opts.contactMethod Contact method
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
@@ -1888,7 +1679,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/divisionviews', 
 			'GET', 
 			{  },
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'contactMethod': opts['contactMethod'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -1944,111 +1735,6 @@ class OutboundApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'category': opts['category'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Import Template
-	 * 
-	 * @param {String} importTemplateId Import Template ID
-	 */
-	getOutboundImporttemplate(importTemplateId) { 
-		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
-			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/{importTemplateId}', 
-			'GET', 
-			{ 'importTemplateId': importTemplateId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the import status for an import template.
-	 * 
-	 * @param {String} importTemplateId importTemplateId
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.listNamePrefix listNamePrefix
-	 */
-	getOutboundImporttemplateImportstatus(importTemplateId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
-			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplateImportstatus';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/{importTemplateId}/importstatus', 
-			'GET', 
-			{ 'importTemplateId': importTemplateId },
-			{ 'listNamePrefix': opts['listNamePrefix'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query Import Templates
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
-	 * @param {Object} opts.filterType Filter type (default to Prefix)
-	 * @param {String} opts.name Name
-	 * @param {String} opts.sortBy Sort by
-	 * @param {Object} opts.sortOrder Sort order (default to a)
-	 * @param {String} opts.contactListTemplateId Contact List Template ID
-	 */
-	getOutboundImporttemplates(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListTemplateId': opts['contactListTemplateId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the outbound messaging settings for this organization
-	 * 
-	 */
-	getOutboundMessagingSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/messaging/settings', 
-			'GET', 
-			{  },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -2147,8 +1833,6 @@ class OutboundApi {
 	 * @param {Object} opts.type Campaign Type
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
 	 * @param {Array.<String>} opts.id A list of messaging campaign ids to bulk fetch
-	 * @param {String} opts.contentTemplateId Content template ID
-	 * @param {Object} opts.campaignStatus Campaign Status
 	 */
 	getOutboundMessagingcampaigns(opts) { 
 		opts = opts || {};
@@ -2158,7 +1842,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -2204,8 +1888,6 @@ class OutboundApi {
 	 * @param {Object} opts.type Campaign Type
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
-	 * @param {String} opts.contentTemplateId Content template ID
-	 * @param {Object} opts.campaignStatus Campaign Status
 	 */
 	getOutboundMessagingcampaignsDivisionviews(opts) { 
 		opts = opts || {};
@@ -2215,7 +1897,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns/divisionviews', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'] },
 			{  },
 			{  },
 			null, 
@@ -2635,31 +2317,6 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
 			'PATCH', 
 			{ 'dncListId': dncListId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update the Digital outbound settings for this organization
-	 * 
-	 * @param {Object} body outboundMessagingSettings
-	 */
-	patchOutboundMessagingSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchOutboundMessagingSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/messaging/settings', 
-			'PATCH', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -3126,56 +2783,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Create Contact List Template
-	 * 
-	 * @param {Object} body ContactListTemplate
-	 */
-	postOutboundContactlisttemplates(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add multiple contact list templates
-	 * 
-	 * @param {Array.<Object>} body contact list template(s) to add
-	 */
-	postOutboundContactlisttemplatesBulkAdd(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplatesBulkAdd';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates/bulk/add', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Add phone numbers to a Dialer DNC list.
 	 * 
 	 * @param {String} conversationId Conversation ID
@@ -3230,12 +2837,8 @@ class OutboundApi {
 	 * Only Internal DNC lists may be appended to
 	 * @param {String} dncListId DncList ID
 	 * @param {Array.<String>} body DNC email addresses
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expirationDateTime Expiration date for emails
 	 */
-	postOutboundDnclistEmailaddresses(dncListId, body, opts) { 
-		opts = opts || {};
-		
+	postOutboundDnclistEmailaddresses(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistEmailaddresses';
@@ -3249,7 +2852,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}/emailaddresses', 
 			'POST', 
 			{ 'dncListId': dncListId },
-			{ 'expirationDateTime': opts['expirationDateTime'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -3331,56 +2934,6 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create Import Template
-	 * 
-	 * @param {Object} body ImportTemplate
-	 */
-	postOutboundImporttemplates(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundImporttemplates';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add multiple import templates
-	 * 
-	 * @param {Array.<Object>} body import template(s) to add
-	 */
-	postOutboundImporttemplatesBulkAdd(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundImporttemplatesBulkAdd';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/bulk/add', 
 			'POST', 
 			{  },
 			{  },
@@ -3774,36 +3327,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Update a contact list template.
-	 * 
-	 * @param {String} contactListTemplateId ContactListTemplate ID
-	 * @param {Object} body ContactListTemplate
-	 */
-	putOutboundContactlisttemplate(contactListTemplateId, body) { 
-		// verify the required parameter 'contactListTemplateId' is set
-		if (contactListTemplateId === undefined || contactListTemplateId === null) {
-			throw 'Missing the required parameter "contactListTemplateId" when calling putOutboundContactlisttemplate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundContactlisttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
-			'PUT', 
-			{ 'contactListTemplateId': contactListTemplateId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
@@ -3853,36 +3376,6 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}', 
 			'PUT', 
 			{ 'dncListId': dncListId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update Import Template
-	 * 
-	 * @param {String} importTemplateId Import Template ID
-	 * @param {Object} body importTemplate
-	 */
-	putOutboundImporttemplate(importTemplateId, body) { 
-		// verify the required parameter 'importTemplateId' is set
-		if (importTemplateId === undefined || importTemplateId === null) {
-			throw 'Missing the required parameter "importTemplateId" when calling putOutboundImporttemplate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundImporttemplate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/importtemplates/{importTemplateId}', 
-			'PUT', 
-			{ 'importTemplateId': importTemplateId },
 			{  },
 			{  },
 			{  },

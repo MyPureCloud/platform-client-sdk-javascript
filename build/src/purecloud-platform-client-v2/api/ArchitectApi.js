@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -518,88 +518,6 @@ class ArchitectApi {
 	}
 
 	/**
-	 * Gets architect-data-service flow audit entries.  Service name is automatically set.
-	 * 
-	 * @param {String} flowId Flow ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.sortBy Sort field (data is sorted as strings, not numbers) (default to timestamp)
-	 * @param {String} opts.sortOrder Sort order (asc or desc) (default to desc)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 500)
-	 */
-	getArchitectAudits(flowId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getArchitectAudits';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/architect/audits', 
-			'GET', 
-			{  },
-			{ 'flowId': flowId,'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get information for the current user of Architect.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Categories to return
-	 * @param {Array.<String>} opts.language Language ID
-	 */
-	getArchitectCapabilities(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/architect/capabilities', 
-			'GET', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get information for the current user of Architect.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Categories to return
-	 * @param {Array.<String>} opts.language Language ID
-	 */
-	getArchitectConfiguration(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/architect/configuration', 
-			'GET', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get Dependency Tracking objects that have a given display name
 	 * 
 	 * @param {String} name Object name to search for
@@ -911,7 +829,6 @@ class ArchitectApi {
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.name Name of the Emergency Group to filter by.
-	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getArchitectEmergencygroups(opts) { 
 		opts = opts || {};
@@ -921,7 +838,7 @@ class ArchitectApi {
 			'/api/v2/architect/emergencygroups', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -1091,7 +1008,6 @@ class ArchitectApi {
 	 * @param {String} opts.name Name of the IVR to filter by.
 	 * @param {String} opts.dnis The phone number of the IVR to filter by.
 	 * @param {String} opts.scheduleGroup The Schedule Group of the IVR to filter by.
-	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getArchitectIvrs(opts) { 
 		opts = opts || {};
@@ -1101,7 +1017,7 @@ class ArchitectApi {
 			'/api/v2/architect/ivrs', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'] },
 			{  },
 			{  },
 			null, 
@@ -1132,35 +1048,6 @@ class ArchitectApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get information for the current user of Architect.
-	 * 
-	 * @param {Array.<String>} expand Which fields to expand
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.language Language ID
-	 */
-	getArchitectMe(expand, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'expand' is set
-		if (expand === undefined || expand === null) {
-			throw 'Missing the required parameter "expand" when calling getArchitectMe';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/architect/me', 
-			'GET', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(expand, 'multi'),'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1734,36 +1621,6 @@ class ArchitectApi {
 			'GET', 
 			{ 'flowId': flowId },
 			{ 'deleted': opts['deleted'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get flow validation results
-	 * 
-	 * @param {String} flowId Flow ID
-	 * @param {String} operationId Validation ID (operation ID)
-	 */
-	getFlowValidateOperationId(flowId, operationId) { 
-		// verify the required parameter 'flowId' is set
-		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getFlowValidateOperationId';
-		}
-		// verify the required parameter 'operationId' is set
-		if (operationId === undefined || operationId === null) {
-			throw 'Missing the required parameter "operationId" when calling getFlowValidateOperationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/{flowId}/validate/{operationId}', 
-			'GET', 
-			{ 'flowId': flowId,'operationId': operationId },
-			{  },
 			{  },
 			{  },
 			null, 
@@ -3210,31 +3067,6 @@ class ArchitectApi {
 	}
 
 	/**
-	 * Check-in flow
-	 * 
-	 * @param {String} flow Flow ID
-	 */
-	postFlowsActionsCheckinsync(flow) { 
-		// verify the required parameter 'flow' is set
-		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsCheckinsync';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/actions/checkinsync', 
-			'POST', 
-			{  },
-			{ 'flow': flow },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Check-out flow
 	 * 
 	 * @param {String} flow Flow ID
@@ -3275,36 +3107,6 @@ class ArchitectApi {
 			'POST', 
 			{  },
 			{ 'flow': flow },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Debug flow
-	 * Asynchronous.  Notification topic: v2.flows.{flowId}
-	 * @param {String} flow Flow ID
-	 * @param {String} version 
-	 */
-	postFlowsActionsDebug(flow, version) { 
-		// verify the required parameter 'flow' is set
-		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsDebug';
-		}
-		// verify the required parameter 'version' is set
-		if (version === undefined || version === null) {
-			throw 'Missing the required parameter "version" when calling postFlowsActionsDebug';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/actions/debug', 
-			'POST', 
-			{  },
-			{ 'flow': flow,'version': version },
 			{  },
 			{  },
 			null, 
@@ -3387,40 +3189,6 @@ class ArchitectApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Validate flow
-	 * Asynchronous.  Notification topic: v2.flows.{flowId}
-	 * @param {String} flow Flow ID
-	 * @param {Object} body 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.flowType Flow type needed for validating a flow that doesn't yet exist.
-	 */
-	postFlowsActionsValidate(flow, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'flow' is set
-		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsValidate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postFlowsActionsValidate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/actions/validate', 
-			'POST', 
-			{  },
-			{ 'flow': flow,'flowType': opts['flowType'] },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

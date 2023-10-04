@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -19,35 +19,6 @@ class SCIMApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete a group
-	 * 
-	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
-	 */
-	deleteScimGroup(groupId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteScimGroup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/groups/{groupId}', 
-			'DELETE', 
-			{ 'groupId': groupId },
-			{  },
-			{ 'If-Match': opts['ifMatch'] },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/scim+json', 'application/json']
-		);
-	}
 
 	/**
 	 * Delete a user
@@ -68,35 +39,6 @@ class SCIMApi {
 			'/api/v2/scim/users/{userId}', 
 			'DELETE', 
 			{ 'userId': userId },
-			{  },
-			{ 'If-Match': opts['ifMatch'] },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/scim+json', 'application/json']
-		);
-	}
-
-	/**
-	 * Delete a group
-	 * 
-	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
-	 */
-	deleteScimV2Group(groupId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteScimV2Group';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/v2/groups/{groupId}', 
-			'DELETE', 
-			{ 'groupId': groupId },
 			{  },
 			{ 'If-Match': opts['ifMatch'] },
 			{  },
@@ -749,31 +691,6 @@ class SCIMApi {
 	}
 
 	/**
-	 * Create a group
-	 * Creates a Genesys Cloud group with group visibility set to "public" and rules visibility set to "true". Auto-creates an "externalId". "externalId" is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} is allowed.
-	 * @param {Object} body The information used to create a group.
-	 */
-	postScimGroups(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postScimGroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/groups', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
-		);
-	}
-
-	/**
 	 * Create a user
 	 * 
 	 * @param {Object} body The information used to create a user.
@@ -786,31 +703,6 @@ class SCIMApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/users', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'],
-			['application/scim+json', 'application/json']
-		);
-	}
-
-	/**
-	 * Create a group
-	 * Creates an "official" Genesys Cloud group with group visibility set to "public" and rules visibility set to "true". Auto-creates an "externalId". "externalId" is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
-	 * @param {Object} body The information used to create a group.
-	 */
-	postScimV2Groups(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postScimV2Groups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/v2/groups', 
 			'POST', 
 			{  },
 			{  },

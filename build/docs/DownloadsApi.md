@@ -3,12 +3,11 @@ title: DownloadsApi
 ---
 # platformClient.DownloadsApi
 
-All URIs are relative to *https://api.inindca.com*
+All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getDownload**](DownloadsApi.html#getDownload) | **GET** /api/v2/downloads/{downloadId} | Issues a redirect to a signed secure download URL for specified download
-[**getDownloadsCallback**](DownloadsApi.html#getDownloadsCallback) | **GET** /api/v2/downloads/callback | OAuth Callback used during code authorization grant flow.
 {: class="table table-striped"}
 
 <a name="getDownload"></a>
@@ -68,55 +67,4 @@ apiInstance.getDownload(downloadId, opts)
 ### Return type
 
 **UrlResponse**
-
-<a name="getDownloadsCallback"></a>
-
-# void getDownloadsCallback(opts)
-
-
-GET /api/v2/downloads/callback
-
-OAuth Callback used during code authorization grant flow.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-let apiInstance = new platformClient.DownloadsApi();
-
-let opts = { 
-  'code': "code_example", // String | code
-  'state': "state_example", // String | state
-  'error': "error_example" // String | error
-};
-
-apiInstance.getDownloadsCallback(opts)
-  .then(() => {
-    console.log('getDownloadsCallback returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getDownloadsCallback');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **code** | **String** | code | [optional]  |
- **state** | **String** | state | [optional]  |
- **error** | **String** | error | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
 

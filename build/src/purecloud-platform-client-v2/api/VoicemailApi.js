@@ -5,7 +5,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -544,30 +544,6 @@ class VoicemailApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a test voicemail
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postVoicemailMessagesCreate(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/voicemail/messages/create', 
 			'POST', 
 			{  },
 			{  },

@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 178.2.0
+	 * @version 179.0.0
 	 */
 
 	/**
@@ -80,31 +80,6 @@ class UsageApi {
 	}
 
 	/**
-	 * Get the results of an organizations data transfer bytes usage query
-	 * 
-	 * @param {String} executionId ID of the query execution
-	 */
-	getUsageDatatransferAggregatesQueryResult(executionId) { 
-		// verify the required parameter 'executionId' is set
-		if (executionId === undefined || executionId === null) {
-			throw 'Missing the required parameter "executionId" when calling getUsageDatatransferAggregatesQueryResult';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/usage/datatransfer/aggregates/query/results/{executionId}', 
-			'GET', 
-			{ 'executionId': executionId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the results of a usage query
 	 * 
 	 * @param {String} executionId ID of the query execution
@@ -155,36 +130,6 @@ class UsageApi {
 	}
 
 	/**
-	 * Query data transfer bytes for an OAuth client ID usage for an organization
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
-	 * @param {String} clientId Client ID
-	 * @param {Object} body Query
-	 */
-	postOauthClientUsageDatatransferAggregatesQuery(clientId, body) { 
-		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageDatatransferAggregatesQuery';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOauthClientUsageDatatransferAggregatesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query', 
-			'POST', 
-			{ 'clientId': clientId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Query for OAuth client API usage
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
@@ -204,31 +149,6 @@ class UsageApi {
 			'/api/v2/oauth/clients/{clientId}/usage/query', 
 			'POST', 
 			{ 'clientId': clientId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query data transfer bytes for an organization's usage
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
-	 * @param {Object} body Query
-	 */
-	postUsageDatatransferAggregatesQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUsageDatatransferAggregatesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/usage/datatransfer/aggregates/query', 
-			'POST', 
-			{  },
 			{  },
 			{  },
 			{  },

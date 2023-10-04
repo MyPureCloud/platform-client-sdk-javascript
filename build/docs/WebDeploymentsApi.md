@@ -3,7 +3,7 @@ title: WebDeploymentsApi
 ---
 # platformClient.WebDeploymentsApi
 
-All URIs are relative to *https://api.inindca.com*
+All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |

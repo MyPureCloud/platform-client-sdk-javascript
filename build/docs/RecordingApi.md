@@ -3,7 +3,7 @@ title: RecordingApi
 ---
 # platformClient.RecordingApi
 
-All URIs are relative to *https://api.inindca.com*
+All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -12,7 +12,6 @@ All URIs are relative to *https://api.inindca.com*
 [**deleteRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#deleteRecordingCrossplatformMediaretentionpolicies) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies | Delete media retention policies
 [**deleteRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#deleteRecordingCrossplatformMediaretentionpolicy) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Delete a media retention policy
 [**deleteRecordingJob**](RecordingApi.html#deleteRecordingJob) | **DELETE** /api/v2/recording/jobs/{jobId} | Delete the recording bulk job
-[**deleteRecordingJobs**](RecordingApi.html#deleteRecordingJobs) | **DELETE** /api/v2/recording/jobs | Clear the jobs in org by state specified.
 [**deleteRecordingMediaretentionpolicies**](RecordingApi.html#deleteRecordingMediaretentionpolicies) | **DELETE** /api/v2/recording/mediaretentionpolicies | Delete media retention policies
 [**deleteRecordingMediaretentionpolicy**](RecordingApi.html#deleteRecordingMediaretentionpolicy) | **DELETE** /api/v2/recording/mediaretentionpolicies/{policyId} | Delete a media retention policy
 [**getConversationRecording**](RecordingApi.html#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
@@ -56,7 +55,6 @@ All URIs are relative to *https://api.inindca.com*
 [**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | **POST** /api/v2/recordings/deletionprotection | Get a list of conversations with protected recordings
 [**postRecordingsScreensessionsAcknowledge**](RecordingApi.html#postRecordingsScreensessionsAcknowledge) | **POST** /api/v2/recordings/screensessions/acknowledge | Acknowledge a screen recording.
 [**postRecordingsScreensessionsMetadata**](RecordingApi.html#postRecordingsScreensessionsMetadata) | **POST** /api/v2/recordings/screensessions/metadata | Provide meta-data a screen recording.
-[**postRecordingsScreensessionsMetadataBackgroundassistant**](RecordingApi.html#postRecordingsScreensessionsMetadataBackgroundassistant) | **POST** /api/v2/recordings/screensessions/metadata/backgroundassistant | Provide meta-data for a screen recording for background assistant using screen recording jwt token.
 [**putConversationRecording**](RecordingApi.html#putConversationRecording) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Updates the retention records on a recording.
 [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Update annotation
 [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | **PUT** /api/v2/orphanrecordings/{orphanId} | Updates an orphan recording to a regular recording with retention values
@@ -319,56 +317,6 @@ apiInstance.deleteRecordingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteRecordingJobs"></a>
-
-# void deleteRecordingJobs(state)
-
-
-DELETE /api/v2/recording/jobs
-
-Clear the jobs in org by state specified.
-
-Requires ALL permissions:
-
-* recording:job:delete
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let state = "state_example"; // String | Valid states: FULFILLED, CANCELLED
-
-apiInstance.deleteRecordingJobs(state)
-  .then(() => {
-    console.log('deleteRecordingJobs returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteRecordingJobs');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **state** | **String** | Valid states: FULFILLED, CANCELLED | <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
 {: class="table table-striped"}
 
 ### Return type
@@ -1127,7 +1075,7 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
 
 <a name="getRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId, opts)
+# CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId)
 
 
 GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -1152,11 +1100,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
-let opts = { 
-  'expand': "all" // String | Which fields, if any, to expand.
-};
 
-apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId, opts)
+apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId)
   .then((data) => {
     console.log(`getRecordingCrossplatformMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1172,7 +1117,6 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] [default to all]<br />**Values**: all, none |
 {: class="table table-striped"}
 
 ### Return type
@@ -1526,7 +1470,7 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
 
 <a name="getRecordingMediaretentionpolicy"></a>
 
-# Policy getRecordingMediaretentionpolicy(policyId, opts)
+# Policy getRecordingMediaretentionpolicy(policyId)
 
 
 GET /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -1551,11 +1495,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
-let opts = { 
-  'expand': "all" // String | Which fields, if any, to expand.
-};
 
-apiInstance.getRecordingMediaretentionpolicy(policyId, opts)
+apiInstance.getRecordingMediaretentionpolicy(policyId)
   .then((data) => {
     console.log(`getRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1571,7 +1512,6 @@ apiInstance.getRecordingMediaretentionpolicy(policyId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] [default to all]<br />**Values**: all, none |
 {: class="table table-striped"}
 
 ### Return type
@@ -1892,7 +1832,7 @@ apiInstance.getRecordingsScreensessions(opts)
 
 <a name="patchRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
+# CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 
 PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -1918,11 +1858,8 @@ let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
 let body = {}; // Object | Policy
-let opts = { 
-  'expand': "all" // String | Which fields, if any, to expand.
-};
 
-apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
+apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
   .then((data) => {
     console.log(`patchRecordingCrossplatformMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1939,7 +1876,6 @@ apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] [default to all]<br />**Values**: all, none |
 {: class="table table-striped"}
 
 ### Return type
@@ -1948,7 +1884,7 @@ apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts
 
 <a name="patchRecordingMediaretentionpolicy"></a>
 
-# Policy patchRecordingMediaretentionpolicy(policyId, body, opts)
+# Policy patchRecordingMediaretentionpolicy(policyId, body)
 
 
 PATCH /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -1974,11 +1910,8 @@ let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
 let body = {}; // Object | Policy
-let opts = { 
-  'expand': "all" // String | Which fields, if any, to expand.
-};
 
-apiInstance.patchRecordingMediaretentionpolicy(policyId, body, opts)
+apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
   .then((data) => {
     console.log(`patchRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1995,7 +1928,6 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] [default to all]<br />**Values**: all, none |
 {: class="table table-striped"}
 
 ### Return type
@@ -2163,7 +2095,7 @@ apiInstance.postRecordingBatchrequests(body)
 
 <a name="postRecordingCrossplatformMediaretentionpolicies"></a>
 
-# CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body, opts)
+# CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body)
 
 
 POST /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -2190,11 +2122,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Policy
-let opts = { 
-  'expand': "all" // String | Which fields, if any, to expand.
-};
 
-apiInstance.postRecordingCrossplatformMediaretentionpolicies(body, opts)
+apiInstance.postRecordingCrossplatformMediaretentionpolicies(body)
   .then((data) => {
     console.log(`postRecordingCrossplatformMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2210,7 +2139,6 @@ apiInstance.postRecordingCrossplatformMediaretentionpolicies(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] [default to all]<br />**Values**: all, none |
 {: class="table table-striped"}
 
 ### Return type
@@ -2421,7 +2349,7 @@ apiInstance.postRecordingLocalkeys(body)
 
 <a name="postRecordingMediaretentionpolicies"></a>
 
-# Policy postRecordingMediaretentionpolicies(body, opts)
+# Policy postRecordingMediaretentionpolicies(body)
 
 
 POST /api/v2/recording/mediaretentionpolicies
@@ -2448,11 +2376,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Policy
-let opts = { 
-  'expand': "all" // String | Which fields, if any, to expand.
-};
 
-apiInstance.postRecordingMediaretentionpolicies(body, opts)
+apiInstance.postRecordingMediaretentionpolicies(body)
   .then((data) => {
     console.log(`postRecordingMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2468,7 +2393,6 @@ apiInstance.postRecordingMediaretentionpolicies(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] [default to all]<br />**Values**: all, none |
 {: class="table table-striped"}
 
 ### Return type
@@ -2714,51 +2638,6 @@ apiInstance.postRecordingsScreensessionsMetadata(body)
 
 void (no response body)
 
-<a name="postRecordingsScreensessionsMetadataBackgroundassistant"></a>
-
-# void postRecordingsScreensessionsMetadataBackgroundassistant(body)
-
-
-POST /api/v2/recordings/screensessions/metadata/backgroundassistant
-
-Provide meta-data for a screen recording for background assistant using screen recording jwt token.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-let apiInstance = new platformClient.RecordingApi();
-
-let body = {}; // Object | ScreenRecordingMetaDataRequest
-
-apiInstance.postRecordingsScreensessionsMetadataBackgroundassistant(body)
-  .then(() => {
-    console.log('postRecordingsScreensessionsMetadataBackgroundassistant returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRecordingsScreensessionsMetadataBackgroundassistant');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | ScreenRecordingMetaDataRequest |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
 <a name="putConversationRecording"></a>
 
 # Recording putConversationRecording(conversationId, recordingId, body, opts)
@@ -2937,7 +2816,7 @@ apiInstance.putOrphanrecording(orphanId, opts)
 
 <a name="putRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
+# CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 
 PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -2965,11 +2844,8 @@ let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
 let body = {}; // Object | Policy
-let opts = { 
-  'expand': "all" // String | Which fields, if any, to expand.
-};
 
-apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
+apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body)
   .then((data) => {
     console.log(`putRecordingCrossplatformMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2986,7 +2862,6 @@ apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] [default to all]<br />**Values**: all, none |
 {: class="table table-striped"}
 
 ### Return type
@@ -3103,7 +2978,7 @@ apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)
 
 <a name="putRecordingMediaretentionpolicy"></a>
 
-# Policy putRecordingMediaretentionpolicy(policyId, body, opts)
+# Policy putRecordingMediaretentionpolicy(policyId, body)
 
 
 PUT /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -3131,11 +3006,8 @@ let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
 let body = {}; // Object | Policy
-let opts = { 
-  'expand': "all" // String | Which fields, if any, to expand.
-};
 
-apiInstance.putRecordingMediaretentionpolicy(policyId, body, opts)
+apiInstance.putRecordingMediaretentionpolicy(policyId, body)
   .then((data) => {
     console.log(`putRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3152,7 +3024,6 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
- **expand** | **String** | Which fields, if any, to expand. | [optional] [default to all]<br />**Values**: all, none |
 {: class="table table-striped"}
 
 ### Return type

@@ -3,12 +3,11 @@ title: AlertingApi
 ---
 # platformClient.AlertingApi
 
-All URIs are relative to *https://api.inindca.com*
+All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteAlertingAlert**](AlertingApi.html#deleteAlertingAlert) | **DELETE** /api/v2/alerting/alerts/{alertId} | Delete an alert
-[**deleteAlertingAlertsAll**](AlertingApi.html#deleteAlertingAlertsAll) | **DELETE** /api/v2/alerting/alerts/all | Delete all alerts for the user
 [**deleteAlertingInteractionstatsAlert**](AlertingApi.html#deleteAlertingInteractionstatsAlert) | **DELETE** /api/v2/alerting/interactionstats/alerts/{alertId} | Delete an interaction stats alert
 [**deleteAlertingInteractionstatsRule**](AlertingApi.html#deleteAlertingInteractionstatsRule) | **DELETE** /api/v2/alerting/interactionstats/rules/{ruleId} | Delete an interaction stats rule.
 [**deleteAlertingRule**](AlertingApi.html#deleteAlertingRule) | **DELETE** /api/v2/alerting/rules/{ruleId} | Delete a rule.
@@ -21,7 +20,6 @@ All URIs are relative to *https://api.inindca.com*
 [**getAlertingInteractionstatsRules**](AlertingApi.html#getAlertingInteractionstatsRules) | **GET** /api/v2/alerting/interactionstats/rules | Get an interaction stats rule list.
 [**getAlertingRule**](AlertingApi.html#getAlertingRule) | **GET** /api/v2/alerting/rules/{ruleId} | Get a rule.
 [**patchAlertingAlert**](AlertingApi.html#patchAlertingAlert) | **PATCH** /api/v2/alerting/alerts/{alertId} | Allows an entity to mute/snooze an alert or update the unread status of the alert.
-[**patchAlertingAlertsAll**](AlertingApi.html#patchAlertingAlertsAll) | **PATCH** /api/v2/alerting/alerts/all | Updates all alerts
 [**patchAlertingAlertsBulk**](AlertingApi.html#patchAlertingAlertsBulk) | **PATCH** /api/v2/alerting/alerts/bulk | Bulk alert updates
 [**patchAlertingRulesBulk**](AlertingApi.html#patchAlertingRulesBulk) | **PATCH** /api/v2/alerting/rules/bulk | Bulk update of notification lists
 [**postAlertingAlertsQuery**](AlertingApi.html#postAlertingAlertsQuery) | **POST** /api/v2/alerting/alerts/query | Gets a paged list of alerts. The max page size is 50
@@ -80,51 +78,6 @@ apiInstance.deleteAlertingAlert(alertId)
 | ------------- | ------------- | ------------- | ------------- |
  **alertId** | **String** | Alert ID |  |
 {: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteAlertingAlertsAll"></a>
-
-# void deleteAlertingAlertsAll()
-
-
-DELETE /api/v2/alerting/alerts/all
-
-Delete all alerts for the user
-
-Requires ALL permissions:
-
-* alerting:alert:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AlertingApi();
-
-apiInstance.deleteAlertingAlertsAll()
-  .then(() => {
-    console.log('deleteAlertingAlertsAll returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteAlertingAlertsAll');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
 
 ### Return type
 
@@ -733,58 +686,6 @@ apiInstance.patchAlertingAlert(alertId, opts)
 ### Return type
 
 **CommonAlert**
-
-<a name="patchAlertingAlertsAll"></a>
-
-# **Object** patchAlertingAlertsAll(opts)
-
-
-PATCH /api/v2/alerting/alerts/all
-
-Updates all alerts
-
-Requires ALL permissions:
-
-* alerting:alert:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AlertingApi();
-
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.patchAlertingAlertsAll(opts)
-  .then((data) => {
-    console.log(`patchAlertingAlertsAll success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchAlertingAlertsAll');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**Object**
 
 <a name="patchAlertingAlertsBulk"></a>
 
