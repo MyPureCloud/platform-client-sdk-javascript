@@ -5,7 +5,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 179.1.0
+	 * @version 179.2.0
 	 */
 
 	/**

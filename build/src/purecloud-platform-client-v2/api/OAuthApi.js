@@ -5,7 +5,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 179.1.0
+	 * @version 179.2.0
 	 */
 
 	/**
