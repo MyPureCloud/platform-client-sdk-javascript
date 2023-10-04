@@ -1,0 +1,33 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.QualityApi();
+
+let opts = { 
+  "pageSize": 25, // Number | The total page size requested
+  "pageNumber": 1, // Number | The page number requested
+  "sortBy": "sortBy_example", // String | variable name requested to sort by
+  "expand": ["expand_example"], // [String] | variable name requested by expand list
+  "nextPage": "nextPage_example", // String | next page token
+  "previousPage": "previousPage_example", // String | Previous page token
+  "startTime": new Date("2013-10-20T19:20:30+01:00"), // Date | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  "endTime": new Date("2013-10-20T19:20:30+01:00"), // Date | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  "name": "name_example", // String | Evaluator name
+  "permission": ["permission_example"], // [String] | permission strings
+  "group": "group_example" // String | group id
+};
+
+// Get an evaluator activity
+apiInstance.getQualityEvaluatorsActivity(opts)
+  .then((data) => {
+    console.log(`getQualityEvaluatorsActivity success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getQualityEvaluatorsActivity");
+    console.error(err);
+  });

@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.PresenceApi();
+
+let userId = "userId_example"; // String | user ID
+let body = {}; // Object | Primary Source
+
+// Update a user's Primary Presence Source
+apiInstance.putPresenceUserPrimarysource(userId, body)
+  .then((data) => {
+    console.log(`putPresenceUserPrimarysource success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling putPresenceUserPrimarysource");
+    console.error(err);
+  });

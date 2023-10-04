@@ -1,0 +1,324 @@
+{
+    "DELETE /api/v2/groups/{groupId}": {
+        "operationId": "deletegroup",
+        "functionName": "deleteGroup",
+        "signature": "deleteGroup(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/groups/{groupId}/dynamicsettings": {
+        "operationId": "deletegroupdynamicsettings",
+        "functionName": "deleteGroupDynamicsettings",
+        "signature": "deleteGroupDynamicsettings(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/groups/{groupId}/members": {
+        "operationId": "deletegroupmembers",
+        "functionName": "deleteGroupMembers",
+        "signature": "deleteGroupMembers(groupId, ids)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "ids",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "GET /api/v2/fieldconfig": {
+        "operationId": "getfieldconfig",
+        "functionName": "getFieldconfig",
+        "signature": "getFieldconfig(type)",
+        "parameters": [
+            {
+                "name": "type",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "FieldConfig"
+    },
+    "GET /api/v2/groups/{groupId}": {
+        "operationId": "getgroup",
+        "functionName": "getGroup",
+        "signature": "getGroup(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Group"
+    },
+    "GET /api/v2/groups/{groupId}/dynamicsettings": {
+        "operationId": "getgroupdynamicsettings",
+        "functionName": "getGroupDynamicsettings",
+        "signature": "getGroupDynamicsettings(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DynamicGroupDefinition"
+    },
+    "GET /api/v2/groups/{groupId}/individuals": {
+        "operationId": "getgroupindividuals",
+        "functionName": "getGroupIndividuals",
+        "signature": "getGroupIndividuals(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "UserEntityListing"
+    },
+    "GET /api/v2/groups/{groupId}/members": {
+        "operationId": "getgroupmembers",
+        "functionName": "getGroupMembers",
+        "signature": "getGroupMembers(groupId, pageSize, pageNumber, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "UserEntityListing"
+    },
+    "GET /api/v2/groups/{groupId}/profile": {
+        "operationId": "getgroupprofile",
+        "functionName": "getGroupProfile",
+        "signature": "getGroupProfile(groupId, fields)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "fields",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "GroupProfile"
+    },
+    "GET /api/v2/groups": {
+        "operationId": "getgroups",
+        "functionName": "getGroups",
+        "signature": "getGroups(pageSize, pageNumber, id, jabberId, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "jabberId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "GroupEntityListing"
+    },
+    "GET /api/v2/groups/search": {
+        "operationId": "getgroupssearch",
+        "functionName": "getGroupsSearch",
+        "signature": "getGroupsSearch(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "GroupsSearchResponse"
+    },
+    "GET /api/v2/profiles/groups": {
+        "operationId": "getprofilesgroups",
+        "functionName": "getProfilesGroups",
+        "signature": "getProfilesGroups(pageSize, pageNumber, id, jabberId, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "jabberId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "GroupProfileEntityListing"
+    },
+    "POST /api/v2/groups/{groupId}/members": {
+        "operationId": "postgroupmembers",
+        "functionName": "postGroupMembers",
+        "signature": "postGroupMembers(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "POST /api/v2/groups": {
+        "operationId": "postgroups",
+        "functionName": "postGroups",
+        "signature": "postGroups(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Group"
+    },
+    "POST /api/v2/groups/dynamicsettings/preview": {
+        "operationId": "postgroupsdynamicsettingspreview",
+        "functionName": "postGroupsDynamicsettingsPreview",
+        "signature": "postGroupsDynamicsettingsPreview(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DynamicGroupQueryPreview"
+    },
+    "POST /api/v2/groups/search": {
+        "operationId": "postgroupssearch",
+        "functionName": "postGroupsSearch",
+        "signature": "postGroupsSearch(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "GroupsSearchResponse"
+    },
+    "PUT /api/v2/groups/{groupId}": {
+        "operationId": "putgroup",
+        "functionName": "putGroup",
+        "signature": "putGroup(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "Group"
+    },
+    "PUT /api/v2/groups/{groupId}/dynamicsettings": {
+        "operationId": "putgroupdynamicsettings",
+        "functionName": "putGroupDynamicsettings",
+        "signature": "putGroupDynamicsettings(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    }
+    
+}

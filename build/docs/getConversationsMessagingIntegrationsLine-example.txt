@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "expand": "expand_example", // String | Expand instructions for the return value.
+  "supportedContentId": "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  "messagingSettingId": "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+};
+
+// Get a list of LINE messenger Integrations
+apiInstance.getConversationsMessagingIntegrationsLine(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getConversationsMessagingIntegrationsLine");
+    console.error(err);
+  });

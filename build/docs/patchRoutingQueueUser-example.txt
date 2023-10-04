@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let memberId = "memberId_example"; // String | Member ID
+let body = {}; // Object | Queue Member
+
+// DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
+apiInstance.patchRoutingQueueUser(queueId, memberId, body)
+  .then(() => {
+    console.log("patchRoutingQueueUser returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchRoutingQueueUser");
+    console.error(err);
+  });

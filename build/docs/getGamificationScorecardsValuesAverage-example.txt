@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  "timeZone": "UTC" // String | Timezone for the workday. Defaults to UTC
+};
+
+// Average values of the requesting user's division or performance profile
+apiInstance.getGamificationScorecardsValuesAverage(workday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsValuesAverage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getGamificationScorecardsValuesAverage");
+    console.error(err);
+  });

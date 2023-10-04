@@ -1,0 +1,33 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  "pageSize": 25, // Number | The total page size requested
+  "pageNumber": 1, // Number | The page number requested
+  "nextPage": "nextPage_example", // String | next page token
+  "previousPage": "previousPage_example", // String | Previous page token
+  "sortBy": "sortBy_example", // String | Root level field name to sort on.
+  "sortOrder": "asc", // String | Direction to sort 'sortBy' field.
+  "category": "category_example", // String | Filter by category name.
+  "name": "name_example", // String | Filter by partial or complete action name.
+  "ids": "ids_example", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+  "secure": "secure_example", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
+  "includeAuthActions": "false" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
+};
+
+// Retrieves all actions associated with filters passed in via query param.
+apiInstance.getIntegrationsActions(opts)
+  .then((data) => {
+    console.log(`getIntegrationsActions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getIntegrationsActions");
+    console.error(err);
+  });

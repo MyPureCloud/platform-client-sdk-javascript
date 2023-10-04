@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let siteId = "siteId_example"; // String | Site ID
+let opts = { 
+  "classification": "classification_example" // String | Classification
+};
+
+// Get a list of Classifications for this Site
+apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opts)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesSiteNumberplansClassifications success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getTelephonyProvidersEdgesSiteNumberplansClassifications");
+    console.error(err);
+  });

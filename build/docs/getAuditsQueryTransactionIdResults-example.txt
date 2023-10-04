@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AuditApi();
+
+let transactionId = "transactionId_example"; // String | Transaction ID
+let opts = { 
+  "cursor": "cursor_example", // String | Indicates where to resume query results (not required for first page)
+  "pageSize": 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
+  "expand": ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+// Get results of audit query
+apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
+  .then((data) => {
+    console.log(`getAuditsQueryTransactionIdResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getAuditsQueryTransactionIdResults");
+    console.error(err);
+  });

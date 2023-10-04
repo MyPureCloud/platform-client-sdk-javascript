@@ -1,0 +1,259 @@
+{
+    "DELETE /api/v2/greetings/{greetingId}": {
+        "operationId": "deletegreeting",
+        "functionName": "deleteGreeting",
+        "signature": "deleteGreeting(greetingId)",
+        "parameters": [
+            {
+                "name": "greetingId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/greetings/{greetingId}": {
+        "operationId": "getgreeting",
+        "functionName": "getGreeting",
+        "signature": "getGreeting(greetingId)",
+        "parameters": [
+            {
+                "name": "greetingId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "GET /api/v2/greetings/{greetingId}/media": {
+        "operationId": "getgreetingmedia",
+        "functionName": "getGreetingMedia",
+        "signature": "getGreetingMedia(greetingId, formatId)",
+        "parameters": [
+            {
+                "name": "greetingId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "formatId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "GreetingMediaInfo"
+    },
+    "GET /api/v2/greetings": {
+        "operationId": "getgreetings",
+        "functionName": "getGreetings",
+        "signature": "getGreetings(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "DomainEntityListing"
+    },
+    "GET /api/v2/greetings/defaults": {
+        "operationId": "getgreetingsdefaults",
+        "functionName": "getGreetingsDefaults",
+        "signature": "getGreetingsDefaults()",
+        
+        "return": "DefaultGreetingList"
+    },
+    "GET /api/v2/groups/{groupId}/greetings": {
+        "operationId": "getgroupgreetings",
+        "functionName": "getGroupGreetings",
+        "signature": "getGroupGreetings(groupId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "GreetingListing"
+    },
+    "GET /api/v2/groups/{groupId}/greetings/defaults": {
+        "operationId": "getgroupgreetingsdefaults",
+        "functionName": "getGroupGreetingsDefaults",
+        "signature": "getGroupGreetingsDefaults(groupId)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DefaultGreetingList"
+    },
+    "GET /api/v2/users/{userId}/greetings": {
+        "operationId": "getusergreetings",
+        "functionName": "getUserGreetings",
+        "signature": "getUserGreetings(userId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "DomainEntityListing"
+    },
+    "GET /api/v2/users/{userId}/greetings/defaults": {
+        "operationId": "getusergreetingsdefaults",
+        "functionName": "getUserGreetingsDefaults",
+        "signature": "getUserGreetingsDefaults(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DefaultGreetingList"
+    },
+    "POST /api/v2/greetings": {
+        "operationId": "postgreetings",
+        "functionName": "postGreetings",
+        "signature": "postGreetings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "POST /api/v2/groups/{groupId}/greetings": {
+        "operationId": "postgroupgreetings",
+        "functionName": "postGroupGreetings",
+        "signature": "postGroupGreetings(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "POST /api/v2/users/{userId}/greetings": {
+        "operationId": "postusergreetings",
+        "functionName": "postUserGreetings",
+        "signature": "postUserGreetings(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "PUT /api/v2/greetings/{greetingId}": {
+        "operationId": "putgreeting",
+        "functionName": "putGreeting",
+        "signature": "putGreeting(greetingId, body)",
+        "parameters": [
+            {
+                "name": "greetingId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Greeting"
+    },
+    "PUT /api/v2/greetings/defaults": {
+        "operationId": "putgreetingsdefaults",
+        "functionName": "putGreetingsDefaults",
+        "signature": "putGreetingsDefaults(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DefaultGreetingList"
+    },
+    "PUT /api/v2/groups/{groupId}/greetings/defaults": {
+        "operationId": "putgroupgreetingsdefaults",
+        "functionName": "putGroupGreetingsDefaults",
+        "signature": "putGroupGreetingsDefaults(groupId, body)",
+        "parameters": [
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DefaultGreetingList"
+    },
+    "PUT /api/v2/users/{userId}/greetings/defaults": {
+        "operationId": "putusergreetingsdefaults",
+        "functionName": "putUserGreetingsDefaults",
+        "signature": "putUserGreetingsDefaults(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DefaultGreetingList"
+    }
+    
+}

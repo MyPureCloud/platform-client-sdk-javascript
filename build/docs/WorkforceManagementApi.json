@@ -1,0 +1,3230 @@
+{
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
+        "operationId": "deleteworkforcemanagementbusinessunit",
+        "functionName": "deleteWorkforcemanagementBusinessunit",
+        "signature": "deleteWorkforcemanagementBusinessunit(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "operationId": "deleteworkforcemanagementbusinessunitactivitycode",
+        "functionName": "deleteWorkforcemanagementBusinessunitActivitycode",
+        "signature": "deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "activityCodeId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "operationId": "deleteworkforcemanagementbusinessunitplanninggroup",
+        "functionName": "deleteWorkforcemanagementBusinessunitPlanninggroup",
+        "signature": "deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "planningGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "operationId": "deleteworkforcemanagementbusinessunitschedulingrun",
+        "functionName": "deleteWorkforcemanagementBusinessunitSchedulingRun",
+        "signature": "deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "runId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "operationId": "deleteworkforcemanagementbusinessunitservicegoaltemplate",
+        "functionName": "deleteWorkforcemanagementBusinessunitServicegoaltemplate",
+        "signature": "deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "serviceGoalTemplateId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "operationId": "deleteworkforcemanagementbusinessunitweekschedule",
+        "functionName": "deleteWorkforcemanagementBusinessunitWeekSchedule",
+        "signature": "deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "BuAsyncScheduleResponse"
+    },
+    "DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}": {
+        "operationId": "deleteworkforcemanagementbusinessunitweekshorttermforecast",
+        "functionName": "deleteWorkforcemanagementBusinessunitWeekShorttermforecast",
+        "signature": "deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forecastId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/calendar/url/ics": {
+        "operationId": "deleteworkforcemanagementcalendarurlics",
+        "functionName": "deleteWorkforcemanagementCalendarUrlIcs",
+        "signature": "deleteWorkforcemanagementCalendarUrlIcs()"
+        
+    },
+    "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "operationId": "deleteworkforcemanagementmanagementunit",
+        "functionName": "deleteWorkforcemanagementManagementunit",
+        "signature": "deleteWorkforcemanagementManagementunit(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}": {
+        "operationId": "deleteworkforcemanagementmanagementunittimeofflimit",
+        "functionName": "deleteWorkforcemanagementManagementunitTimeofflimit",
+        "signature": "deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffLimitId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
+        "operationId": "deleteworkforcemanagementmanagementunittimeoffplan",
+        "functionName": "deleteWorkforcemanagementManagementunitTimeoffplan",
+        "signature": "deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffPlanId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "operationId": "deleteworkforcemanagementmanagementunitworkplan",
+        "functionName": "deleteWorkforcemanagementManagementunitWorkplan",
+        "signature": "deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
+        "operationId": "deleteworkforcemanagementmanagementunitworkplanrotation",
+        "functionName": "deleteWorkforcemanagementManagementunitWorkplanrotation",
+        "signature": "deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanRotationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/workforcemanagement/adherence": {
+        "operationId": "getworkforcemanagementadherence",
+        "functionName": "getWorkforcemanagementAdherence",
+        "signature": "getWorkforcemanagementAdherence(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "[String]",
+                "required": "true"
+            }
+        ],
+        "return": "[UserScheduleAdherence]"
+    },
+    "GET /api/v2/workforcemanagement/adherence/explanations/{explanationId}": {
+        "operationId": "getworkforcemanagementadherenceexplanation",
+        "functionName": "getWorkforcemanagementAdherenceExplanation",
+        "signature": "getWorkforcemanagementAdherenceExplanation(explanationId)",
+        "parameters": [
+            {
+                "name": "explanationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AdherenceExplanationResponse"
+    },
+    "GET /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}": {
+        "operationId": "getworkforcemanagementadherenceexplanationsjob",
+        "functionName": "getWorkforcemanagementAdherenceExplanationsJob",
+        "signature": "getWorkforcemanagementAdherenceExplanationsJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AdherenceExplanationJob"
+    },
+    "GET /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId}": {
+        "operationId": "getworkforcemanagementadherencehistoricalbulkjob",
+        "functionName": "getWorkforcemanagementAdherenceHistoricalBulkJob",
+        "signature": "getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WfmHistoricalAdherenceBulkResponse"
+    },
+    "GET /api/v2/workforcemanagement/adherence/historical/jobs/{jobId}": {
+        "operationId": "getworkforcemanagementadherencehistoricaljob",
+        "functionName": "getWorkforcemanagementAdherenceHistoricalJob",
+        "signature": "getWorkforcemanagementAdherenceHistoricalJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WfmHistoricalAdherenceResponse"
+    },
+    "GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}": {
+        "operationId": "getworkforcemanagementadhocmodelingjob",
+        "functionName": "getWorkforcemanagementAdhocmodelingjob",
+        "signature": "getWorkforcemanagementAdhocmodelingjob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ModelingStatusResponse"
+    },
+    "GET /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}": {
+        "operationId": "getworkforcemanagementagentadherenceexplanation",
+        "functionName": "getWorkforcemanagementAgentAdherenceExplanation",
+        "signature": "getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "explanationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AdherenceExplanationResponse"
+    },
+    "GET /api/v2/workforcemanagement/agents/{agentId}/managementunit": {
+        "operationId": "getworkforcemanagementagentmanagementunit",
+        "functionName": "getWorkforcemanagementAgentManagementunit",
+        "signature": "getWorkforcemanagementAgentManagementunit(agentId)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AgentManagementUnitReference"
+    },
+    "GET /api/v2/workforcemanagement/agents/me/managementunit": {
+        "operationId": "getworkforcemanagementagentsmemanagementunit",
+        "functionName": "getWorkforcemanagementAgentsMeManagementunit",
+        "signature": "getWorkforcemanagementAgentsMeManagementunit()",
+        
+        "return": "AgentManagementUnitReference"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
+        "operationId": "getworkforcemanagementbusinessunit",
+        "functionName": "getWorkforcemanagementBusinessunit",
+        "signature": "getWorkforcemanagementBusinessunit(businessUnitId, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "BusinessUnitResponse"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "operationId": "getworkforcemanagementbusinessunitactivitycode",
+        "functionName": "getWorkforcemanagementBusinessunitActivitycode",
+        "signature": "getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "activityCodeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "BusinessUnitActivityCode"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes": {
+        "operationId": "getworkforcemanagementbusinessunitactivitycodes",
+        "functionName": "getWorkforcemanagementBusinessunitActivitycodes",
+        "signature": "getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "BusinessUnitActivityCodeListing"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups": {
+        "operationId": "getworkforcemanagementbusinessunitintradayplanninggroups",
+        "functionName": "getWorkforcemanagementBusinessunitIntradayPlanninggroups",
+        "signature": "getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "_date",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WfmIntradayPlanningGroupListing"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits": {
+        "operationId": "getworkforcemanagementbusinessunitmanagementunits",
+        "functionName": "getWorkforcemanagementBusinessunitManagementunits",
+        "signature": "getWorkforcemanagementBusinessunitManagementunits(businessUnitId, feature, divisionId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "feature",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ManagementUnitListing"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "operationId": "getworkforcemanagementbusinessunitplanninggroup",
+        "functionName": "getWorkforcemanagementBusinessunitPlanninggroup",
+        "signature": "getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "planningGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "PlanningGroup"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups": {
+        "operationId": "getworkforcemanagementbusinessunitplanninggroups",
+        "functionName": "getWorkforcemanagementBusinessunitPlanninggroups",
+        "signature": "getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "PlanningGroupList"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "operationId": "getworkforcemanagementbusinessunitschedulingrun",
+        "functionName": "getWorkforcemanagementBusinessunitSchedulingRun",
+        "signature": "getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "runId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "BuScheduleRun"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result": {
+        "operationId": "getworkforcemanagementbusinessunitschedulingrunresult",
+        "functionName": "getWorkforcemanagementBusinessunitSchedulingRunResult",
+        "signature": "getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "runId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "managementUnitIds",
+                "type": "[String]",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "true"
+            }
+        ],
+        "return": "BuRescheduleResult"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs": {
+        "operationId": "getworkforcemanagementbusinessunitschedulingruns",
+        "functionName": "getWorkforcemanagementBusinessunitSchedulingRuns",
+        "signature": "getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "BuScheduleRunListing"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "operationId": "getworkforcemanagementbusinessunitservicegoaltemplate",
+        "functionName": "getWorkforcemanagementBusinessunitServicegoaltemplate",
+        "signature": "getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "serviceGoalTemplateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "ServiceGoalTemplate"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates": {
+        "operationId": "getworkforcemanagementbusinessunitservicegoaltemplates",
+        "functionName": "getWorkforcemanagementBusinessunitServicegoaltemplates",
+        "signature": "getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "ServiceGoalTemplateList"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "operationId": "getworkforcemanagementbusinessunitweekschedule",
+        "functionName": "getWorkforcemanagementBusinessunitWeekSchedule",
+        "signature": "getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "BuScheduleMetadata"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults": {
+        "operationId": "getworkforcemanagementbusinessunitweekschedulegenerationresults",
+        "functionName": "getWorkforcemanagementBusinessunitWeekScheduleGenerationresults",
+        "signature": "getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ScheduleGenerationResult"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast": {
+        "operationId": "getworkforcemanagementbusinessunitweekscheduleheadcountforecast",
+        "functionName": "getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast",
+        "signature": "getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId, weekId, scheduleId, forceDownload)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forceDownload",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "BuHeadcountForecastResponse"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}": {
+        "operationId": "getworkforcemanagementbusinessunitweekschedulehistoryagent",
+        "functionName": "getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent",
+        "signature": "getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "BuAgentScheduleHistoryResponse"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules": {
+        "operationId": "getworkforcemanagementbusinessunitweekschedules",
+        "functionName": "getWorkforcemanagementBusinessunitWeekSchedules",
+        "signature": "getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, includeOnlyPublished, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "includeOnlyPublished",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "BuScheduleListing"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}": {
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecast",
+        "functionName": "getWorkforcemanagementBusinessunitWeekShorttermforecast",
+        "signature": "getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, expand)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forecastId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "BuShortTermForecast"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data": {
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecastdata",
+        "functionName": "getWorkforcemanagementBusinessunitWeekShorttermforecastData",
+        "signature": "getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId, weekDateId, forecastId, weekNumber, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forecastId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "BuForecastResultResponse"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults": {
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecastgenerationresults",
+        "functionName": "getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults",
+        "signature": "getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forecastId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "BuForecastGenerationResult"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata": {
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecastlongtermforecastdata",
+        "functionName": "getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata",
+        "signature": "getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forecastId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "LongTermForecastResultResponse"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups": {
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecastplanninggroups",
+        "functionName": "getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups",
+        "signature": "getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forecastId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ForecastPlanningGroupsResponse"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts": {
+        "operationId": "getworkforcemanagementbusinessunitweekshorttermforecasts",
+        "functionName": "getWorkforcemanagementBusinessunitWeekShorttermforecasts",
+        "signature": "getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "BuShortTermForecastListing"
+    },
+    "GET /api/v2/workforcemanagement/businessunits": {
+        "operationId": "getworkforcemanagementbusinessunits",
+        "functionName": "getWorkforcemanagementBusinessunits",
+        "signature": "getWorkforcemanagementBusinessunits(feature, divisionId)",
+        "parameters": [
+            {
+                "name": "feature",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "BusinessUnitListing"
+    },
+    "GET /api/v2/workforcemanagement/businessunits/divisionviews": {
+        "operationId": "getworkforcemanagementbusinessunitsdivisionviews",
+        "functionName": "getWorkforcemanagementBusinessunitsDivisionviews",
+        "signature": "getWorkforcemanagementBusinessunitsDivisionviews(divisionId)",
+        "parameters": [
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "BusinessUnitListing"
+    },
+    "GET /api/v2/workforcemanagement/calendar/data/ics": {
+        "operationId": "getworkforcemanagementcalendardataics",
+        "functionName": "getWorkforcemanagementCalendarDataIcs",
+        "signature": "getWorkforcemanagementCalendarDataIcs(calendarId)",
+        "parameters": [
+            {
+                "name": "calendarId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "GET /api/v2/workforcemanagement/calendar/url/ics": {
+        "operationId": "getworkforcemanagementcalendarurlics",
+        "functionName": "getWorkforcemanagementCalendarUrlIcs",
+        "signature": "getWorkforcemanagementCalendarUrlIcs()",
+        
+        "return": "CalendarUrlResponse"
+    },
+    "GET /api/v2/workforcemanagement/historicaldata/deletejob": {
+        "operationId": "getworkforcemanagementhistoricaldatadeletejob",
+        "functionName": "getWorkforcemanagementHistoricaldataDeletejob",
+        "signature": "getWorkforcemanagementHistoricaldataDeletejob()",
+        
+        "return": "HistoricalImportDeleteJobResponse"
+    },
+    "GET /api/v2/workforcemanagement/historicaldata/importstatus": {
+        "operationId": "getworkforcemanagementhistoricaldataimportstatus",
+        "functionName": "getWorkforcemanagementHistoricaldataImportstatus",
+        "signature": "getWorkforcemanagementHistoricaldataImportstatus()",
+        
+        "return": "HistoricalImportStatusListing"
+    },
+    "GET /api/v2/workforcemanagement/integrations/hris": {
+        "operationId": "getworkforcemanagementintegrationshris",
+        "functionName": "getWorkforcemanagementIntegrationsHris",
+        "signature": "getWorkforcemanagementIntegrationsHris()",
+        
+        "return": "WfmIntegrationListing"
+    },
+    "GET /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId}": {
+        "operationId": "getworkforcemanagementintegrationshristimeofftypesjob",
+        "functionName": "getWorkforcemanagementIntegrationsHrisTimeofftypesJob",
+        "signature": "getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "HrisTimeOffTypesJobResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "operationId": "getworkforcemanagementmanagementunit",
+        "functionName": "getWorkforcemanagementManagementunit",
+        "signature": "getWorkforcemanagementManagementunit(managementUnitId, expand)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "ManagementUnit"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes": {
+        "operationId": "getworkforcemanagementmanagementunitactivitycodes",
+        "functionName": "getWorkforcemanagementManagementunitActivitycodes",
+        "signature": "getWorkforcemanagementManagementunitActivitycodes(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ActivityCodeContainer"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence": {
+        "operationId": "getworkforcemanagementmanagementunitadherence",
+        "functionName": "getWorkforcemanagementManagementunitAdherence",
+        "signature": "getWorkforcemanagementManagementunitAdherence(managementUnitId, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "UserScheduleAdherenceListing"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}": {
+        "operationId": "getworkforcemanagementmanagementunitagent",
+        "functionName": "getWorkforcemanagementManagementunitAgent",
+        "signature": "getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "excludeCapabilities",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "WfmAgent"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades": {
+        "operationId": "getworkforcemanagementmanagementunitagentshifttrades",
+        "functionName": "getWorkforcemanagementManagementunitAgentShifttrades",
+        "signature": "getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ShiftTradeListResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched": {
+        "operationId": "getworkforcemanagementmanagementunitshifttradesmatched",
+        "functionName": "getWorkforcemanagementManagementunitShifttradesMatched",
+        "signature": "getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ShiftTradeMatchesSummaryResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users": {
+        "operationId": "getworkforcemanagementmanagementunitshifttradesusers",
+        "functionName": "getWorkforcemanagementManagementunitShifttradesUsers",
+        "signature": "getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WfmUserEntityListing"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}": {
+        "operationId": "getworkforcemanagementmanagementunittimeofflimit",
+        "functionName": "getWorkforcemanagementManagementunitTimeofflimit",
+        "signature": "getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffLimitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffLimit"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits": {
+        "operationId": "getworkforcemanagementmanagementunittimeofflimits",
+        "functionName": "getWorkforcemanagementManagementunitTimeofflimits",
+        "signature": "getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffLimitListing"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
+        "operationId": "getworkforcemanagementmanagementunittimeoffplan",
+        "functionName": "getWorkforcemanagementManagementunitTimeoffplan",
+        "signature": "getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffPlanId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffPlan"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans": {
+        "operationId": "getworkforcemanagementmanagementunittimeoffplans",
+        "functionName": "getWorkforcemanagementManagementunitTimeoffplans",
+        "signature": "getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffPlanListing"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}": {
+        "operationId": "getworkforcemanagementmanagementunitusertimeoffrequest",
+        "functionName": "getWorkforcemanagementManagementunitUserTimeoffrequest",
+        "signature": "getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffRequestId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffRequestResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits": {
+        "operationId": "getworkforcemanagementmanagementunitusertimeoffrequesttimeofflimits",
+        "functionName": "getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits",
+        "signature": "getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffRequestId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "QueryTimeOffLimitValuesResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests": {
+        "operationId": "getworkforcemanagementmanagementunitusertimeoffrequests",
+        "functionName": "getWorkforcemanagementManagementunitUserTimeoffrequests",
+        "signature": "getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, recentlyReviewed)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "recentlyReviewed",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffRequestList"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users": {
+        "operationId": "getworkforcemanagementmanagementunitusers",
+        "functionName": "getWorkforcemanagementManagementunitUsers",
+        "signature": "getWorkforcemanagementManagementunitUsers(managementUnitId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WfmUserEntityListing"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}": {
+        "operationId": "getworkforcemanagementmanagementunitweekschedule",
+        "functionName": "getWorkforcemanagementManagementunitWeekSchedule",
+        "signature": "getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, expand, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "WeekScheduleResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules": {
+        "operationId": "getworkforcemanagementmanagementunitweekschedules",
+        "functionName": "getWorkforcemanagementManagementunitWeekSchedules",
+        "signature": "getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "includeOnlyPublished",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "earliestWeekDate",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "latestWeekDate",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "WeekScheduleListResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades": {
+        "operationId": "getworkforcemanagementmanagementunitweekshifttrades",
+        "functionName": "getWorkforcemanagementManagementunitWeekShifttrades",
+        "signature": "getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, evaluateMatches)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "evaluateMatches",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "WeekShiftTradeListResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "operationId": "getworkforcemanagementmanagementunitworkplan",
+        "functionName": "getWorkforcemanagementManagementunitWorkplan",
+        "signature": "getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, includeOnly)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "includeOnly",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlan"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
+        "operationId": "getworkforcemanagementmanagementunitworkplanrotation",
+        "functionName": "getWorkforcemanagementManagementunitWorkplanrotation",
+        "signature": "getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanRotationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WorkPlanRotationResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations": {
+        "operationId": "getworkforcemanagementmanagementunitworkplanrotations",
+        "functionName": "getWorkforcemanagementManagementunitWorkplanrotations",
+        "signature": "getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, expand)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlanRotationListResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans": {
+        "operationId": "getworkforcemanagementmanagementunitworkplans",
+        "functionName": "getWorkforcemanagementManagementunitWorkplans",
+        "signature": "getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlanListResponse"
+    },
+    "GET /api/v2/workforcemanagement/managementunits": {
+        "operationId": "getworkforcemanagementmanagementunits",
+        "functionName": "getWorkforcemanagementManagementunits",
+        "signature": "getWorkforcemanagementManagementunits(pageSize, pageNumber, expand, feature, divisionId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "feature",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ManagementUnitListing"
+    },
+    "GET /api/v2/workforcemanagement/managementunits/divisionviews": {
+        "operationId": "getworkforcemanagementmanagementunitsdivisionviews",
+        "functionName": "getWorkforcemanagementManagementunitsDivisionviews",
+        "signature": "getWorkforcemanagementManagementunitsDivisionviews(divisionId)",
+        "parameters": [
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "ManagementUnitListing"
+    },
+    "GET /api/v2/workforcemanagement/notifications": {
+        "operationId": "getworkforcemanagementnotifications",
+        "functionName": "getWorkforcemanagementNotifications",
+        "signature": "getWorkforcemanagementNotifications()",
+        
+        "return": "NotificationsResponse"
+    },
+    "GET /api/v2/workforcemanagement/schedulingjobs/{jobId}": {
+        "operationId": "getworkforcemanagementschedulingjob",
+        "functionName": "getWorkforcemanagementSchedulingjob",
+        "signature": "getWorkforcemanagementSchedulingjob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "SchedulingStatusResponse"
+    },
+    "GET /api/v2/workforcemanagement/shifttrades": {
+        "operationId": "getworkforcemanagementshifttrades",
+        "functionName": "getWorkforcemanagementShifttrades",
+        "signature": "getWorkforcemanagementShifttrades()",
+        
+        "return": "ShiftTradeListResponse"
+    },
+    "GET /api/v2/workforcemanagement/shrinkage/jobs/{jobId}": {
+        "operationId": "getworkforcemanagementshrinkagejob",
+        "functionName": "getWorkforcemanagementShrinkageJob",
+        "signature": "getWorkforcemanagementShrinkageJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WfmHistoricalShrinkageResponse"
+    },
+    "GET /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId}": {
+        "operationId": "getworkforcemanagementtimeoffbalancejob",
+        "functionName": "getWorkforcemanagementTimeoffbalanceJob",
+        "signature": "getWorkforcemanagementTimeoffbalanceJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffBalanceJobResponse"
+    },
+    "GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}": {
+        "operationId": "getworkforcemanagementtimeoffrequest",
+        "functionName": "getWorkforcemanagementTimeoffrequest",
+        "signature": "getWorkforcemanagementTimeoffrequest(timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "timeOffRequestId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffRequestResponse"
+    },
+    "GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions": {
+        "operationId": "getworkforcemanagementtimeoffrequestwaitlistpositions",
+        "functionName": "getWorkforcemanagementTimeoffrequestWaitlistpositions",
+        "signature": "getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "timeOffRequestId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WaitlistPositionListing"
+    },
+    "GET /api/v2/workforcemanagement/timeoffrequests": {
+        "operationId": "getworkforcemanagementtimeoffrequests",
+        "functionName": "getWorkforcemanagementTimeoffrequests",
+        "signature": "getWorkforcemanagementTimeoffrequests(recentlyReviewed)",
+        "parameters": [
+            {
+                "name": "recentlyReviewed",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffRequestList"
+    },
+    "PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}": {
+        "operationId": "patchworkforcemanagementagentadherenceexplanation",
+        "functionName": "patchWorkforcemanagementAgentAdherenceExplanation",
+        "signature": "patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "explanationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AdherenceExplanationAsyncResponse"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}": {
+        "operationId": "patchworkforcemanagementbusinessunit",
+        "functionName": "patchWorkforcemanagementBusinessunit",
+        "signature": "patchWorkforcemanagementBusinessunit(businessUnitId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "BusinessUnitResponse"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}": {
+        "operationId": "patchworkforcemanagementbusinessunitactivitycode",
+        "functionName": "patchWorkforcemanagementBusinessunitActivitycode",
+        "signature": "patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "activityCodeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "BusinessUnitActivityCode"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}": {
+        "operationId": "patchworkforcemanagementbusinessunitplanninggroup",
+        "functionName": "patchWorkforcemanagementBusinessunitPlanninggroup",
+        "signature": "patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "planningGroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "PlanningGroup"
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}": {
+        "operationId": "patchworkforcemanagementbusinessunitschedulingrun",
+        "functionName": "patchWorkforcemanagementBusinessunitSchedulingRun",
+        "signature": "patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "runId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}": {
+        "operationId": "patchworkforcemanagementbusinessunitservicegoaltemplate",
+        "functionName": "patchWorkforcemanagementBusinessunitServicegoaltemplate",
+        "signature": "patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "serviceGoalTemplateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "ServiceGoalTemplate"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}": {
+        "operationId": "patchworkforcemanagementmanagementunit",
+        "functionName": "patchWorkforcemanagementManagementunit",
+        "signature": "patchWorkforcemanagementManagementunit(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "ManagementUnit"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}": {
+        "operationId": "patchworkforcemanagementmanagementunittimeofflimit",
+        "functionName": "patchWorkforcemanagementManagementunitTimeofflimit",
+        "signature": "patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffLimitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffLimit"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}": {
+        "operationId": "patchworkforcemanagementmanagementunittimeoffplan",
+        "functionName": "patchWorkforcemanagementManagementunitTimeoffplan",
+        "signature": "patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffPlanId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffPlan"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus": {
+        "operationId": "patchworkforcemanagementmanagementunittimeoffrequestuserintegrationstatus",
+        "functionName": "patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus",
+        "signature": "patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffRequestId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "UserTimeOffIntegrationStatusResponse"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}": {
+        "operationId": "patchworkforcemanagementmanagementunitusertimeoffrequest",
+        "functionName": "patchWorkforcemanagementManagementunitUserTimeoffrequest",
+        "signature": "patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffRequestId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffRequestResponse"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}": {
+        "operationId": "patchworkforcemanagementmanagementunitweekshifttrade",
+        "functionName": "patchWorkforcemanagementManagementunitWeekShifttrade",
+        "signature": "patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "tradeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ShiftTradeResponse"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}": {
+        "operationId": "patchworkforcemanagementmanagementunitworkplan",
+        "functionName": "patchWorkforcemanagementManagementunitWorkplan",
+        "signature": "patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, validationMode, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "validationMode",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlan"
+    },
+    "PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}": {
+        "operationId": "patchworkforcemanagementmanagementunitworkplanrotation",
+        "functionName": "patchWorkforcemanagementManagementunitWorkplanrotation",
+        "signature": "patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanRotationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlanRotationResponse"
+    },
+    "PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}": {
+        "operationId": "patchworkforcemanagementtimeoffrequest",
+        "functionName": "patchWorkforcemanagementTimeoffrequest",
+        "signature": "patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)",
+        "parameters": [
+            {
+                "name": "timeOffRequestId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffRequestResponse"
+    },
+    "POST /api/v2/workforcemanagement/adherence/explanations": {
+        "operationId": "postworkforcemanagementadherenceexplanations",
+        "functionName": "postWorkforcemanagementAdherenceExplanations",
+        "signature": "postWorkforcemanagementAdherenceExplanations(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AdherenceExplanationAsyncResponse"
+    },
+    "POST /api/v2/workforcemanagement/adherence/explanations/query": {
+        "operationId": "postworkforcemanagementadherenceexplanationsquery",
+        "functionName": "postWorkforcemanagementAdherenceExplanationsQuery",
+        "signature": "postWorkforcemanagementAdherenceExplanationsQuery(body, forceAsync, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "QueryAdherenceExplanationsResponse"
+    },
+    "POST /api/v2/workforcemanagement/adherence/historical": {
+        "operationId": "postworkforcemanagementadherencehistorical",
+        "functionName": "postWorkforcemanagementAdherenceHistorical",
+        "signature": "postWorkforcemanagementAdherenceHistorical(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WfmHistoricalAdherenceResponse"
+    },
+    "POST /api/v2/workforcemanagement/adherence/historical/bulk": {
+        "operationId": "postworkforcemanagementadherencehistoricalbulk",
+        "functionName": "postWorkforcemanagementAdherenceHistoricalBulk",
+        "signature": "postWorkforcemanagementAdherenceHistoricalBulk(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WfmHistoricalAdherenceBulkResponse"
+    },
+    "POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations": {
+        "operationId": "postworkforcemanagementagentadherenceexplanations",
+        "functionName": "postWorkforcemanagementAgentAdherenceExplanations",
+        "signature": "postWorkforcemanagementAgentAdherenceExplanations(agentId, body)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AdherenceExplanationAsyncResponse"
+    },
+    "POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query": {
+        "operationId": "postworkforcemanagementagentadherenceexplanationsquery",
+        "functionName": "postWorkforcemanagementAgentAdherenceExplanationsQuery",
+        "signature": "postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, forceAsync, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AgentQueryAdherenceExplanationsResponse"
+    },
+    "POST /api/v2/workforcemanagement/agents": {
+        "operationId": "postworkforcemanagementagents",
+        "functionName": "postWorkforcemanagementAgents",
+        "signature": "postWorkforcemanagementAgents(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "MoveAgentsResponse"
+    },
+    "POST /api/v2/workforcemanagement/agents/integrations/hris/query": {
+        "operationId": "postworkforcemanagementagentsintegrationshrisquery",
+        "functionName": "postWorkforcemanagementAgentsIntegrationsHrisQuery",
+        "signature": "postWorkforcemanagementAgentsIntegrationsHrisQuery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "AgentsIntegrationsListing"
+    },
+    "POST /api/v2/workforcemanagement/agents/me/possibleworkshifts": {
+        "operationId": "postworkforcemanagementagentsmepossibleworkshifts",
+        "functionName": "postWorkforcemanagementAgentsMePossibleworkshifts",
+        "signature": "postWorkforcemanagementAgentsMePossibleworkshifts(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AgentPossibleWorkShiftsResponse"
+    },
+    "POST /api/v2/workforcemanagement/agentschedules/mine": {
+        "operationId": "postworkforcemanagementagentschedulesmine",
+        "functionName": "postWorkforcemanagementAgentschedulesMine",
+        "signature": "postWorkforcemanagementAgentschedulesMine(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "BuCurrentAgentScheduleSearchResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes": {
+        "operationId": "postworkforcemanagementbusinessunitactivitycodes",
+        "functionName": "postWorkforcemanagementBusinessunitActivitycodes",
+        "signature": "postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "BusinessUnitActivityCode"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query": {
+        "operationId": "postworkforcemanagementbusinessunitadherenceexplanationsquery",
+        "functionName": "postWorkforcemanagementBusinessunitAdherenceExplanationsQuery",
+        "signature": "postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, forceAsync, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "BuQueryAdherenceExplanationsResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search": {
+        "operationId": "postworkforcemanagementbusinessunitagentschedulessearch",
+        "functionName": "postWorkforcemanagementBusinessunitAgentschedulesSearch",
+        "signature": "postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, forceAsync, forceDownloadService, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "BuAsyncAgentSchedulesSearchResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday": {
+        "operationId": "postworkforcemanagementbusinessunitintraday",
+        "functionName": "postWorkforcemanagementBusinessunitIntraday",
+        "signature": "postWorkforcemanagementBusinessunitIntraday(businessUnitId, forceAsync, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "AsyncIntradayResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups": {
+        "operationId": "postworkforcemanagementbusinessunitplanninggroups",
+        "functionName": "postWorkforcemanagementBusinessunitPlanninggroups",
+        "signature": "postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "PlanningGroup"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates": {
+        "operationId": "postworkforcemanagementbusinessunitservicegoaltemplates",
+        "functionName": "postWorkforcemanagementBusinessunitServicegoaltemplates",
+        "signature": "postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "ServiceGoalTemplate"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query": {
+        "operationId": "postworkforcemanagementbusinessunitweekscheduleagentschedulesquery",
+        "functionName": "postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery",
+        "signature": "postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, forceAsync, forceDownloadService)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "BuAsyncAgentSchedulesQueryResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy": {
+        "operationId": "postworkforcemanagementbusinessunitweekschedulecopy",
+        "functionName": "postWorkforcemanagementBusinessunitWeekScheduleCopy",
+        "signature": "postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BuAsyncScheduleResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule": {
+        "operationId": "postworkforcemanagementbusinessunitweekschedulereschedule",
+        "functionName": "postWorkforcemanagementBusinessunitWeekScheduleReschedule",
+        "signature": "postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BuAsyncScheduleRunResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update": {
+        "operationId": "postworkforcemanagementbusinessunitweekscheduleupdate",
+        "functionName": "postWorkforcemanagementBusinessunitWeekScheduleUpdate",
+        "signature": "postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BuAsyncScheduleResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl": {
+        "operationId": "postworkforcemanagementbusinessunitweekscheduleupdateuploadurl",
+        "functionName": "postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl",
+        "signature": "postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "scheduleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "UpdateScheduleUploadResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules": {
+        "operationId": "postworkforcemanagementbusinessunitweekschedules",
+        "functionName": "postWorkforcemanagementBusinessunitWeekSchedules",
+        "signature": "postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BuScheduleMetadata"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate": {
+        "operationId": "postworkforcemanagementbusinessunitweekschedulesgenerate",
+        "functionName": "postWorkforcemanagementBusinessunitWeekSchedulesGenerate",
+        "signature": "postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BuAsyncScheduleRunResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import": {
+        "operationId": "postworkforcemanagementbusinessunitweekschedulesimport",
+        "functionName": "postWorkforcemanagementBusinessunitWeekSchedulesImport",
+        "signature": "postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ScheduleUploadProcessingResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl": {
+        "operationId": "postworkforcemanagementbusinessunitweekschedulesimportuploadurl",
+        "functionName": "postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl",
+        "signature": "postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ImportScheduleUploadResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy": {
+        "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastcopy",
+        "functionName": "postWorkforcemanagementBusinessunitWeekShorttermforecastCopy",
+        "signature": "postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId, weekDateId, forecastId, body, forceAsync)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forecastId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AsyncForecastOperationResult"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate": {
+        "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsgenerate",
+        "functionName": "postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate",
+        "signature": "postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, forceAsync)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AsyncForecastOperationResult"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import": {
+        "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsimport",
+        "functionName": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImport",
+        "signature": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ImportForecastResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl": {
+        "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsimportuploadurl",
+        "functionName": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl",
+        "signature": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)",
+        "parameters": [
+            {
+                "name": "businessUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ImportForecastUploadResponse"
+    },
+    "POST /api/v2/workforcemanagement/businessunits": {
+        "operationId": "postworkforcemanagementbusinessunits",
+        "functionName": "postWorkforcemanagementBusinessunits",
+        "signature": "postWorkforcemanagementBusinessunits(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "BusinessUnitResponse"
+    },
+    "POST /api/v2/workforcemanagement/calendar/url/ics": {
+        "operationId": "postworkforcemanagementcalendarurlics",
+        "functionName": "postWorkforcemanagementCalendarUrlIcs",
+        "signature": "postWorkforcemanagementCalendarUrlIcs(language)",
+        "parameters": [
+            {
+                "name": "language",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CalendarUrlResponse"
+    },
+    "POST /api/v2/workforcemanagement/historicaldata/deletejob": {
+        "operationId": "postworkforcemanagementhistoricaldatadeletejob",
+        "functionName": "postWorkforcemanagementHistoricaldataDeletejob",
+        "signature": "postWorkforcemanagementHistoricaldataDeletejob()",
+        
+        "return": "HistoricalImportDeleteJobResponse"
+    },
+    "POST /api/v2/workforcemanagement/historicaldata/validate": {
+        "operationId": "postworkforcemanagementhistoricaldatavalidate",
+        "functionName": "postWorkforcemanagementHistoricaldataValidate",
+        "signature": "postWorkforcemanagementHistoricaldataValidate(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs": {
+        "operationId": "postworkforcemanagementintegrationshritimeofftypesjobs",
+        "functionName": "postWorkforcemanagementIntegrationsHriTimeofftypesJobs",
+        "signature": "postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId)",
+        "parameters": [
+            {
+                "name": "hrisIntegrationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "HrisTimeOffTypesResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search": {
+        "operationId": "postworkforcemanagementmanagementunitagentschedulessearch",
+        "functionName": "postWorkforcemanagementManagementunitAgentschedulesSearch",
+        "signature": "postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, forceAsync, forceDownloadService, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "forceDownloadService",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "BuAsyncAgentSchedulesSearchResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery": {
+        "operationId": "postworkforcemanagementmanagementunithistoricaladherencequery",
+        "functionName": "postWorkforcemanagementManagementunitHistoricaladherencequery",
+        "signature": "postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WfmHistoricalAdherenceResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move": {
+        "operationId": "postworkforcemanagementmanagementunitmove",
+        "functionName": "postWorkforcemanagementManagementunitMove",
+        "signature": "postWorkforcemanagementManagementunitMove(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "MoveManagementUnitResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search": {
+        "operationId": "postworkforcemanagementmanagementunitschedulessearch",
+        "functionName": "postWorkforcemanagementManagementunitSchedulesSearch",
+        "signature": "postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "UserScheduleContainer"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs": {
+        "operationId": "postworkforcemanagementmanagementunitshrinkagejobs",
+        "functionName": "postWorkforcemanagementManagementunitShrinkageJobs",
+        "signature": "postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WfmHistoricalShrinkageResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits": {
+        "operationId": "postworkforcemanagementmanagementunittimeofflimits",
+        "functionName": "postWorkforcemanagementManagementunitTimeofflimits",
+        "signature": "postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffLimit"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query": {
+        "operationId": "postworkforcemanagementmanagementunittimeofflimitsvaluesquery",
+        "functionName": "postWorkforcemanagementManagementunitTimeofflimitsValuesQuery",
+        "signature": "postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "QueryTimeOffLimitValuesResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans": {
+        "operationId": "postworkforcemanagementmanagementunittimeoffplans",
+        "functionName": "postWorkforcemanagementManagementunitTimeoffplans",
+        "signature": "postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffPlan"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests": {
+        "operationId": "postworkforcemanagementmanagementunittimeoffrequests",
+        "functionName": "postWorkforcemanagementManagementunitTimeoffrequests",
+        "signature": "postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffRequestList"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query": {
+        "operationId": "postworkforcemanagementmanagementunittimeoffrequestsintegrationstatusquery",
+        "functionName": "postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery",
+        "signature": "postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "UserTimeOffIntegrationStatusResponseListing"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query": {
+        "operationId": "postworkforcemanagementmanagementunittimeoffrequestsquery",
+        "functionName": "postWorkforcemanagementManagementunitTimeoffrequestsQuery",
+        "signature": "postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffRequestListing"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query": {
+        "operationId": "postworkforcemanagementmanagementunittimeoffrequestswaitlistpositionsquery",
+        "functionName": "postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery",
+        "signature": "postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WaitlistPositionListing"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs": {
+        "operationId": "postworkforcemanagementmanagementunitusertimeoffbalancejobs",
+        "functionName": "postWorkforcemanagementManagementunitUserTimeoffbalanceJobs",
+        "signature": "postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffBalancesResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs": {
+        "operationId": "postworkforcemanagementmanagementunitusertimeoffrequesttimeoffbalancejobs",
+        "functionName": "postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs",
+        "signature": "postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffRequestId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffBalancesResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate": {
+        "operationId": "postworkforcemanagementmanagementunitusertimeoffrequestsestimate",
+        "functionName": "postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate",
+        "signature": "postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "EstimateAvailableTimeOffResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match": {
+        "operationId": "postworkforcemanagementmanagementunitweekshifttradematch",
+        "functionName": "postWorkforcemanagementManagementunitWeekShifttradeMatch",
+        "signature": "postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "tradeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MatchShiftTradeResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades": {
+        "operationId": "postworkforcemanagementmanagementunitweekshifttrades",
+        "functionName": "postWorkforcemanagementManagementunitWeekShifttrades",
+        "signature": "postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ShiftTradeResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search": {
+        "operationId": "postworkforcemanagementmanagementunitweekshifttradessearch",
+        "functionName": "postWorkforcemanagementManagementunitWeekShifttradesSearch",
+        "signature": "postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "SearchShiftTradesResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk": {
+        "operationId": "postworkforcemanagementmanagementunitweekshifttradesstatebulk",
+        "functionName": "postWorkforcemanagementManagementunitWeekShifttradesStateBulk",
+        "signature": "postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId, weekDateId, body, forceAsync)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "weekDateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "forceAsync",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "BulkUpdateShiftTradeStateResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy": {
+        "operationId": "postworkforcemanagementmanagementunitworkplancopy",
+        "functionName": "postWorkforcemanagementManagementunitWorkplanCopy",
+        "signature": "postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlan"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate": {
+        "operationId": "postworkforcemanagementmanagementunitworkplanvalidate",
+        "functionName": "postWorkforcemanagementManagementunitWorkplanValidate",
+        "signature": "postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, expand, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "ValidateWorkPlanResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy": {
+        "operationId": "postworkforcemanagementmanagementunitworkplanrotationcopy",
+        "functionName": "postWorkforcemanagementManagementunitWorkplanrotationCopy",
+        "signature": "postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "workPlanRotationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlanRotationResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations": {
+        "operationId": "postworkforcemanagementmanagementunitworkplanrotations",
+        "functionName": "postWorkforcemanagementManagementunitWorkplanrotations",
+        "signature": "postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlanRotationResponse"
+    },
+    "POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans": {
+        "operationId": "postworkforcemanagementmanagementunitworkplans",
+        "functionName": "postWorkforcemanagementManagementunitWorkplans",
+        "signature": "postWorkforcemanagementManagementunitWorkplans(managementUnitId, validationMode, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "validationMode",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WorkPlan"
+    },
+    "POST /api/v2/workforcemanagement/managementunits": {
+        "operationId": "postworkforcemanagementmanagementunits",
+        "functionName": "postWorkforcemanagementManagementunits",
+        "signature": "postWorkforcemanagementManagementunits(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "ManagementUnit"
+    },
+    "POST /api/v2/workforcemanagement/notifications/update": {
+        "operationId": "postworkforcemanagementnotificationsupdate",
+        "functionName": "postWorkforcemanagementNotificationsUpdate",
+        "signature": "postWorkforcemanagementNotificationsUpdate(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "UpdateNotificationsResponse"
+    },
+    "POST /api/v2/workforcemanagement/schedules": {
+        "operationId": "postworkforcemanagementschedules",
+        "functionName": "postWorkforcemanagementSchedules",
+        "signature": "postWorkforcemanagementSchedules(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "UserScheduleContainer"
+    },
+    "POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical": {
+        "operationId": "postworkforcemanagementteamadherencehistorical",
+        "functionName": "postWorkforcemanagementTeamAdherenceHistorical",
+        "signature": "postWorkforcemanagementTeamAdherenceHistorical(teamId, body)",
+        "parameters": [
+            {
+                "name": "teamId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WfmHistoricalAdherenceResponse"
+    },
+    "POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs": {
+        "operationId": "postworkforcemanagementteamshrinkagejobs",
+        "functionName": "postWorkforcemanagementTeamShrinkageJobs",
+        "signature": "postWorkforcemanagementTeamShrinkageJobs(teamId, body)",
+        "parameters": [
+            {
+                "name": "teamId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "WfmHistoricalShrinkageResponse"
+    },
+    "POST /api/v2/workforcemanagement/timeoffbalance/jobs": {
+        "operationId": "postworkforcemanagementtimeoffbalancejobs",
+        "functionName": "postWorkforcemanagementTimeoffbalanceJobs",
+        "signature": "postWorkforcemanagementTimeoffbalanceJobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TimeOffBalancesResponse"
+    },
+    "POST /api/v2/workforcemanagement/timeofflimits/available/query": {
+        "operationId": "postworkforcemanagementtimeofflimitsavailablequery",
+        "functionName": "postWorkforcemanagementTimeofflimitsAvailableQuery",
+        "signature": "postWorkforcemanagementTimeofflimitsAvailableQuery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "AvailableTimeOffResponse"
+    },
+    "POST /api/v2/workforcemanagement/timeoffrequests": {
+        "operationId": "postworkforcemanagementtimeoffrequests",
+        "functionName": "postWorkforcemanagementTimeoffrequests",
+        "signature": "postWorkforcemanagementTimeoffrequests(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffRequestResponse"
+    },
+    "POST /api/v2/workforcemanagement/timeoffrequests/estimate": {
+        "operationId": "postworkforcemanagementtimeoffrequestsestimate",
+        "functionName": "postWorkforcemanagementTimeoffrequestsEstimate",
+        "signature": "postWorkforcemanagementTimeoffrequestsEstimate(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "EstimateAvailableTimeOffResponse"
+    },
+    "POST /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query": {
+        "operationId": "postworkforcemanagementtimeoffrequestsintegrationstatusquery",
+        "functionName": "postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery",
+        "signature": "postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffIntegrationStatusResponseListing"
+    },
+    "PUT /api/v2/workforcemanagement/agents/{agentId}/integrations/hris": {
+        "operationId": "putworkforcemanagementagentintegrationshris",
+        "functionName": "putWorkforcemanagementAgentIntegrationsHris",
+        "signature": "putWorkforcemanagementAgentIntegrationsHris(agentId, body)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AgentIntegrationsResponse"
+    },
+    "PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values": {
+        "operationId": "putworkforcemanagementmanagementunittimeofflimitvalues",
+        "functionName": "putWorkforcemanagementManagementunitTimeofflimitValues",
+        "signature": "putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body)",
+        "parameters": [
+            {
+                "name": "managementUnitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "timeOffLimitId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "TimeOffLimit"
+    }
+    
+}

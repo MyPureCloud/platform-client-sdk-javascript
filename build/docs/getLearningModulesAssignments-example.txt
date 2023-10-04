@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LearningApi();
+
+let userIds = ["userIds_example"]; // [String] | The IDs of the users to include
+let opts = { 
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "searchTerm": "searchTerm_example", // String | Search Term (searches by name and description)
+  "overdue": "Any", // String | Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned.
+  "assignmentStates": ["assignmentStates_example"], // [String] | Specifies the assignment states to return.
+  "expand": ["expand_example"] // [String] | Fields to expand in response(case insensitive)
+};
+
+// Get all learning modules of an organization including assignments for a specific user
+apiInstance.getLearningModulesAssignments(userIds, opts)
+  .then((data) => {
+    console.log(`getLearningModulesAssignments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getLearningModulesAssignments");
+    console.error(err);
+  });

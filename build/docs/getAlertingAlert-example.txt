@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AlertingApi();
+
+let alertId = "alertId_example"; // String | Alert ID
+
+// Get an alert
+apiInstance.getAlertingAlert(alertId)
+  .then((data) => {
+    console.log(`getAlertingAlert success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getAlertingAlert");
+    console.error(err);
+  });

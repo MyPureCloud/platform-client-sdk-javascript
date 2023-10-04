@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let sourceProfileId = "sourceProfileId_example"; // String | Source Performance Profile Id
+let sourceMetricId = "sourceMetricId_example"; // String | Source Metric Id
+let body = {}; // Object | linkedMetric
+
+// Creates a linked metric
+apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
+  .then((data) => {
+    console.log(`postGamificationProfileMetricLink success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postGamificationProfileMetricLink");
+    console.error(err);
+  });

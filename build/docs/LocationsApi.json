@@ -1,0 +1,136 @@
+{
+    "DELETE /api/v2/locations/{locationId}": {
+        "operationId": "deletelocation",
+        "functionName": "deleteLocation",
+        "signature": "deleteLocation(locationId)",
+        "parameters": [
+            {
+                "name": "locationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/locations/{locationId}": {
+        "operationId": "getlocation",
+        "functionName": "getLocation",
+        "signature": "getLocation(locationId, expand)",
+        "parameters": [
+            {
+                "name": "locationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "LocationDefinition"
+    },
+    "GET /api/v2/locations/{locationId}/sublocations": {
+        "operationId": "getlocationsublocations",
+        "functionName": "getLocationSublocations",
+        "signature": "getLocationSublocations(locationId)",
+        "parameters": [
+            {
+                "name": "locationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "LocationEntityListing"
+    },
+    "GET /api/v2/locations": {
+        "operationId": "getlocations",
+        "functionName": "getLocations",
+        "signature": "getLocations(pageSize, pageNumber, id, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "LocationEntityListing"
+    },
+    "GET /api/v2/locations/search": {
+        "operationId": "getlocationssearch",
+        "functionName": "getLocationsSearch",
+        "signature": "getLocationsSearch(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "LocationsSearchResponse"
+    },
+    "PATCH /api/v2/locations/{locationId}": {
+        "operationId": "patchlocation",
+        "functionName": "patchLocation",
+        "signature": "patchLocation(locationId, body)",
+        "parameters": [
+            {
+                "name": "locationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "LocationDefinition"
+    },
+    "POST /api/v2/locations": {
+        "operationId": "postlocations",
+        "functionName": "postLocations",
+        "signature": "postLocations(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "LocationDefinition"
+    },
+    "POST /api/v2/locations/search": {
+        "operationId": "postlocationssearch",
+        "functionName": "postLocationsSearch",
+        "signature": "postLocationsSearch(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "LocationsSearchResponse"
+    }
+    
+}

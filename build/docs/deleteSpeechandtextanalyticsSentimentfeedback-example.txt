@@ -1,0 +1,19 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+// Delete All Speech and Text Analytics SentimentFeedback
+apiInstance.deleteSpeechandtextanalyticsSentimentfeedback()
+  .then(() => {
+    console.log("deleteSpeechandtextanalyticsSentimentfeedback returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteSpeechandtextanalyticsSentimentfeedback");
+    console.error(err);
+  });

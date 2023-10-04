@@ -1,0 +1,177 @@
+{
+    "DELETE /api/v2/messaging/settings/{messageSettingId}": {
+        "operationId": "deletemessagingsetting",
+        "functionName": "deleteMessagingSetting",
+        "signature": "deleteMessagingSetting(messageSettingId)",
+        "parameters": [
+            {
+                "name": "messageSettingId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/messaging/settings/default": {
+        "operationId": "deletemessagingsettingsdefault",
+        "functionName": "deleteMessagingSettingsDefault",
+        "signature": "deleteMessagingSettingsDefault()"
+        
+    },
+    "DELETE /api/v2/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "deletemessagingsupportedcontentsupportedcontentid",
+        "functionName": "deleteMessagingSupportedcontentSupportedContentId",
+        "signature": "deleteMessagingSupportedcontentSupportedContentId(supportedContentId)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/messaging/settings/{messageSettingId}": {
+        "operationId": "getmessagingsetting",
+        "functionName": "getMessagingSetting",
+        "signature": "getMessagingSetting(messageSettingId)",
+        "parameters": [
+            {
+                "name": "messageSettingId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "GET /api/v2/messaging/settings": {
+        "operationId": "getmessagingsettings",
+        "functionName": "getMessagingSettings",
+        "signature": "getMessagingSettings(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingConfigListing"
+    },
+    "GET /api/v2/messaging/settings/default": {
+        "operationId": "getmessagingsettingsdefault",
+        "functionName": "getMessagingSettingsDefault",
+        "signature": "getMessagingSettingsDefault()",
+        
+        "return": "MessagingSetting"
+    },
+    "GET /api/v2/messaging/supportedcontent": {
+        "operationId": "getmessagingsupportedcontent",
+        "functionName": "getMessagingSupportedcontent",
+        "signature": "getMessagingSupportedcontent(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "SupportedContentListing"
+    },
+    "GET /api/v2/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "getmessagingsupportedcontentsupportedcontentid",
+        "functionName": "getMessagingSupportedcontentSupportedContentId",
+        "signature": "getMessagingSupportedcontentSupportedContentId(supportedContentId)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "PATCH /api/v2/messaging/settings/{messageSettingId}": {
+        "operationId": "patchmessagingsetting",
+        "functionName": "patchMessagingSetting",
+        "signature": "patchMessagingSetting(messageSettingId, body)",
+        "parameters": [
+            {
+                "name": "messageSettingId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "PATCH /api/v2/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "patchmessagingsupportedcontentsupportedcontentid",
+        "functionName": "patchMessagingSupportedcontentSupportedContentId",
+        "signature": "patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "POST /api/v2/messaging/settings": {
+        "operationId": "postmessagingsettings",
+        "functionName": "postMessagingSettings",
+        "signature": "postMessagingSettings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "POST /api/v2/messaging/supportedcontent": {
+        "operationId": "postmessagingsupportedcontent",
+        "functionName": "postMessagingSupportedcontent",
+        "signature": "postMessagingSupportedcontent(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "PUT /api/v2/messaging/settings/default": {
+        "operationId": "putmessagingsettingsdefault",
+        "functionName": "putMessagingSettingsDefault",
+        "signature": "putMessagingSettingsDefault(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    }
+    
+}

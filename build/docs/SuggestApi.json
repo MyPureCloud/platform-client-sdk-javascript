@@ -1,0 +1,85 @@
+{
+    "GET /api/v2/search": {
+        "operationId": "getsearch",
+        "functionName": "getSearch",
+        "signature": "getSearch(q64, expand, profile)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "profile",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    },
+    "GET /api/v2/search/suggest": {
+        "operationId": "getsearchsuggest",
+        "functionName": "getSearchSuggest",
+        "signature": "getSearchSuggest(q64, expand, profile)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "profile",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    },
+    "POST /api/v2/search": {
+        "operationId": "postsearch",
+        "functionName": "postSearch",
+        "signature": "postSearch(body, profile)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "profile",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    },
+    "POST /api/v2/search/suggest": {
+        "operationId": "postsearchsuggest",
+        "functionName": "postSearchSuggest",
+        "signature": "postSearchSuggest(body, profile)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "profile",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    }
+    
+}

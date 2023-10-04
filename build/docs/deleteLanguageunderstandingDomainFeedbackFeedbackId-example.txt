@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let domainId = "domainId_example"; // String | ID of the NLU domain.
+let feedbackId = "feedbackId_example"; // String | ID of the Feedback
+
+// Delete the feedback on the NLU Domain Version.
+apiInstance.deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId)
+  .then(() => {
+    console.log("deleteLanguageunderstandingDomainFeedbackFeedbackId returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteLanguageunderstandingDomainFeedbackFeedbackId");
+    console.error(err);
+  });

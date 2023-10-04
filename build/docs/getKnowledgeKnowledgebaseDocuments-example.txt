@@ -1,0 +1,34 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  "before": "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "pageSize": "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  "interval": "interval_example", // String | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+  "documentId": ["documentId_example"], // [String] | Retrieves the specified documents, comma separated values expected.
+  "categoryId": ["categoryId_example"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.
+  "includeSubcategories": true, // Boolean | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
+  "includeDrafts": true, // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.
+  "labelIds": ["labelIds_example"], // [String] | If specified, retrieves documents associated with label ids, comma separated values expected.
+  "expand": ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  "externalIds": ["externalIds_example"] // [String] | If specified, retrieves documents associated with external ids, comma separated values expected.
+};
+
+// Get documents.
+apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseDocuments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getKnowledgeKnowledgebaseDocuments");
+    console.error(err);
+  });

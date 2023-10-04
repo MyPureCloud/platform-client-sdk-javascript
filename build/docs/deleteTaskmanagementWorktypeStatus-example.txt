@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let statusId = "statusId_example"; // String | Status id
+
+// Delete a status
+apiInstance.deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
+  .then(() => {
+    console.log("deleteTaskmanagementWorktypeStatus returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteTaskmanagementWorktypeStatus");
+    console.error(err);
+  });

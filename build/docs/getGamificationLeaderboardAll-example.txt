@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type. For example, division or performance profile Id
+let startWorkday = "startWorkday_example"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  "metricId": "metricId_example" // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+};
+
+// Leaderboard by filter type
+apiInstance.getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationLeaderboardAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getGamificationLeaderboardAll");
+    console.error(err);
+  });

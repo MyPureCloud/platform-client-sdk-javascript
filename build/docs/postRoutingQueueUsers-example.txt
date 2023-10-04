@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let body = [{}]; // Object | Queue Members
+let opts = { 
+  "_delete": false // Boolean | True to delete queue members
+};
+
+// DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
+apiInstance.postRoutingQueueUsers(queueId, body, opts)
+  .then(() => {
+    console.log("postRoutingQueueUsers returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postRoutingQueueUsers");
+    console.error(err);
+  });

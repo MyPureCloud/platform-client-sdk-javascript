@@ -1,0 +1,28 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | AuditSearch
+let opts = { 
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "sortBy": "entity.name", // String | Sort by
+  "sortOrder": "ascending", // String | Sort order
+  "facetsOnly": false // Boolean | Facets only
+};
+
+// Retrieves audits for dialer.
+apiInstance.postOutboundAudits(body, opts)
+  .then((data) => {
+    console.log(`postOutboundAudits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postOutboundAudits");
+    console.error(err);
+  });

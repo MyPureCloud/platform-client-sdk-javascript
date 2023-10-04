@@ -1,0 +1,75 @@
+{
+    "GET /api/v2/textbots/bots/search": {
+        "operationId": "gettextbotsbotssearch",
+        "functionName": "getTextbotsBotsSearch",
+        "signature": "getTextbotsBotsSearch(botType, botName, botId, pageSize)",
+        "parameters": [
+            {
+                "name": "botType",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "botName",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "botId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "BotSearchResponseEntityListing"
+    },
+    "POST /api/v2/textbots/botflows/sessions/{sessionId}/turns": {
+        "operationId": "posttextbotsbotflowssessionturns",
+        "functionName": "postTextbotsBotflowsSessionTurns",
+        "signature": "postTextbotsBotflowsSessionTurns(sessionId, turnRequest)",
+        "parameters": [
+            {
+                "name": "sessionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "turnRequest",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TextBotFlowTurnResponse"
+    },
+    "POST /api/v2/textbots/botflows/sessions": {
+        "operationId": "posttextbotsbotflowssessions",
+        "functionName": "postTextbotsBotflowsSessions",
+        "signature": "postTextbotsBotflowsSessions(launchRequest)",
+        "parameters": [
+            {
+                "name": "launchRequest",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TextBotFlowLaunchResponse"
+    },
+    "POST /api/v2/textbots/bots/execute": {
+        "operationId": "posttextbotsbotsexecute",
+        "functionName": "postTextbotsBotsExecute",
+        "signature": "postTextbotsBotsExecute(postTextRequest)",
+        "parameters": [
+            {
+                "name": "postTextRequest",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "PostTextResponse"
+    }
+    
+}

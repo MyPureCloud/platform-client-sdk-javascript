@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let tagId = "tagId_example"; // String | Utilization Tag ID
+
+// Get list of agent ids associated with a utilization tag
+apiInstance.getRoutingUtilizationTagAgents(tagId)
+  .then((data) => {
+    console.log(`getRoutingUtilizationTagAgents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRoutingUtilizationTagAgents");
+    console.error(err);
+  });

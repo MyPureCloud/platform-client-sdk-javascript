@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = ["body_example"]; // [String] | DNC Phone Numbers
+let opts = { 
+  "expirationDateTime": "expirationDateTime_example" // String | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
+};
+
+// Add phone numbers to a DNC list.
+apiInstance.postOutboundDnclistPhonenumbers(dncListId, body, opts)
+  .then(() => {
+    console.log("postOutboundDnclistPhonenumbers returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postOutboundDnclistPhonenumbers");
+    console.error(err);
+  });

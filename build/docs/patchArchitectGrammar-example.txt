@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let grammarId = "grammarId_example"; // String | grammar ID
+let opts = { 
+  "body": {} // Object | 
+};
+
+// Updates a grammar
+apiInstance.patchArchitectGrammar(grammarId, opts)
+  .then((data) => {
+    console.log(`patchArchitectGrammar success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchArchitectGrammar");
+    console.error(err);
+  });

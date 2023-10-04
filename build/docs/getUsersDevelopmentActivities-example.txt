@@ -1,0 +1,34 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.UsersApi();
+
+let opts = { 
+  "userId": ["userId_example"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.
+  "moduleId": "moduleId_example", // String | Specifies the ID of the learning module.
+  "interval": "interval_example", // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+  "completionInterval": "completionInterval_example", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+  "overdue": "Any", // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
+  "pass": "Any", // String | Specifies if only the failed (pass is False) or passed (pass is True) activities are returned. If pass is Any or if the pass parameter is not supplied, all activities are returned
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "sortOrder": "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
+  "types": ["types_example"], // [String] | Specifies the activity types.
+  "statuses": ["statuses_example"], // [String] | Specifies the activity statuses to filter by
+  "relationship": ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
+};
+
+// Get list of Development Activities
+apiInstance.getUsersDevelopmentActivities(opts)
+  .then((data) => {
+    console.log(`getUsersDevelopmentActivities success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getUsersDevelopmentActivities");
+    console.error(err);
+  });

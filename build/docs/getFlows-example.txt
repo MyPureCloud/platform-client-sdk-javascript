@@ -1,0 +1,41 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  "type": ["type_example"], // [String] | Type
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "sortBy": "id", // String | Sort by
+  "sortOrder": "asc", // String | Sort order
+  "id": ["id_example"], // [String] | ID
+  "name": "name_example", // String | Name
+  "description": "description_example", // String | Description
+  "nameOrDescription": "nameOrDescription_example", // String | Name or description
+  "publishVersionId": "publishVersionId_example", // String | Publish version ID
+  "editableBy": "editableBy_example", // String | Editable by
+  "lockedBy": "lockedBy_example", // String | Locked by
+  "lockedByClientId": "lockedByClientId_example", // String | Locked by client ID
+  "secure": "secure_example", // String | Secure
+  "deleted": false, // Boolean | Include deleted
+  "includeSchemas": false, // Boolean | Include variable schemas
+  "publishedAfter": 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published after
+  "publishedBefore": 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published before
+  "divisionId": ["divisionId_example"] // [String] | division ID(s)
+};
+
+// Get a pageable list of flows, filtered by query parameters
+apiInstance.getFlows(opts)
+  .then((data) => {
+    console.log(`getFlows success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getFlows");
+    console.error(err);
+  });

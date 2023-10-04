@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let domainId = "domainId_example"; // String | ID of the NLU domain.
+let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
+let body = {}; // Object | The input data to perform detection on.
+
+// Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
+apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
+  .then((data) => {
+    console.log(`postLanguageunderstandingDomainVersionDetect success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postLanguageunderstandingDomainVersionDetect");
+    console.error(err);
+  });

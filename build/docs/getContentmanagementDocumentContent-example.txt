@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ContentManagementApi();
+
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  "disposition": "disposition_example", // String | Request how the content will be downloaded: a file attachment or inline. Default is attachment.
+  "contentType": "contentType_example" // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
+};
+
+// Download a document.
+apiInstance.getContentmanagementDocumentContent(documentId, opts)
+  .then((data) => {
+    console.log(`getContentmanagementDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getContentmanagementDocumentContent");
+    console.error(err);
+  });

@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let roleId = "roleId_example"; // String | Role ID
+
+// Delete an organization role.
+apiInstance.deleteAuthorizationRole(roleId)
+  .then(() => {
+    console.log("deleteAuthorizationRole returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteAuthorizationRole");
+    console.error(err);
+  });

@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let opts = { 
+  "dialect": "dialect_example" // String | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+};
+
+// Get the list of general topics from the org and the system with their current status
+apiInstance.getSpeechandtextanalyticsTopicsGeneralStatus(opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsTopicsGeneralStatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getSpeechandtextanalyticsTopicsGeneralStatus");
+    console.error(err);
+  });

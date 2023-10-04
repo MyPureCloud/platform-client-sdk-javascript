@@ -1,0 +1,28 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let workitemId = "workitemId_example"; // String | The ID of the Workitem.
+let userId = "userId_example"; // String | The ID of the user
+let opts = { 
+  "expands": "expands_example", // String | Which fields, if any, to expand.
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "pageSize": 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50.
+  "sortOrder": "descending" // String | Ascending or descending sort order
+};
+
+// Get all wrapup codes added for the given user for a workitem.
+apiInstance.getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemUserWrapups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getTaskmanagementWorkitemUserWrapups");
+    console.error(err);
+  });

@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let documentVariationId = "documentVariationId_example"; // String | Globally unique identifier for a document variation.
+let documentId = "documentId_example"; // String | Globally unique identifier for a document.
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
+
+// Delete a variation for a document.
+apiInstance.deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId)
+  .then(() => {
+    console.log("deleteKnowledgeKnowledgebaseDocumentVariation returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteKnowledgeKnowledgebaseDocumentVariation");
+    console.error(err);
+  });

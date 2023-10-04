@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ContentManagementApi();
+
+let body = {}; // Object | CreateShareRequest - entity id and type and a single member or list of members are required
+
+// Creates a new share or updates an existing share if the entity has already been shared
+apiInstance.postContentmanagementShares(body)
+  .then((data) => {
+    console.log(`postContentmanagementShares success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postContentmanagementShares");
+    console.error(err);
+  });

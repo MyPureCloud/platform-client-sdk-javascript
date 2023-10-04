@@ -1,0 +1,33 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RecordingApi();
+
+let opts = { 
+  "pageSize": 25, // Number | The total page size requested
+  "pageNumber": 1, // Number | The page number requested
+  "sortBy": "sortBy_example", // String | variable name requested to sort by
+  "expand": ["expand_example"], // [String] | variable name requested by expand list
+  "nextPage": "nextPage_example", // String | next page token
+  "previousPage": "previousPage_example", // String | Previous page token
+  "name": "name_example", // String | the policy name - used for filtering results in searches.
+  "enabled": true, // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
+  "summary": false, // Boolean | provides a less verbose response of policy lists.
+  "hasErrors": true, // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
+  "deleteDaysThreshold": 3.4 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+};
+
+// Gets media retention policy list with query options to filter on name and enabled.
+apiInstance.getRecordingMediaretentionpolicies(opts)
+  .then((data) => {
+    console.log(`getRecordingMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRecordingMediaretentionpolicies");
+    console.error(err);
+  });

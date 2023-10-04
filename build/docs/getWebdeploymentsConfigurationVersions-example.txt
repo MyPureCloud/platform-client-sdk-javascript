@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let configurationId = "configurationId_example"; // String | The configuration version ID
+
+// Get the versions of a configuration
+apiInstance.getWebdeploymentsConfigurationVersions(configurationId)
+  .then((data) => {
+    console.log(`getWebdeploymentsConfigurationVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getWebdeploymentsConfigurationVersions");
+    console.error(err);
+  });

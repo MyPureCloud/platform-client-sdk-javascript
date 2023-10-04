@@ -1,0 +1,20 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let searchId = "searchId_example"; // String | Search Result ID
+let body = {}; // Object | 
+
+// Update search result.
+apiInstance.patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)
+  .then(() => {
+    console.log("patchKnowledgeGuestSessionDocumentsSearchSearchId returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchKnowledgeGuestSessionDocumentsSearchSearchId");
+    console.error(err);
+  });

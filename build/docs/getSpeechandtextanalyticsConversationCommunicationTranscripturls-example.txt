@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+
+// Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
+apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsConversationCommunicationTranscripturls success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getSpeechandtextanalyticsConversationCommunicationTranscripturls");
+    console.error(err);
+  });

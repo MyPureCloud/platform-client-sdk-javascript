@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let scheduleId = "scheduleId_example"; // String | Schedule ID
+
+// Place a scheduled report immediately into the reporting queue
+apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
+  .then((data) => {
+    console.log(`postAnalyticsReportingScheduleRunreport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postAnalyticsReportingScheduleRunreport");
+    console.error(err);
+  });

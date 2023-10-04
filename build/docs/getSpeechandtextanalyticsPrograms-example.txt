@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let opts = { 
+  "nextPage": "nextPage_example", // String | The key for listing the next page
+  "pageSize": 20, // Number | The page size for the listing
+  "state": "state_example" // String | Program state. Defaults to Latest
+};
+
+// Get the list of Speech and Text Analytics programs
+apiInstance.getSpeechandtextanalyticsPrograms(opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsPrograms success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getSpeechandtextanalyticsPrograms");
+    console.error(err);
+  });

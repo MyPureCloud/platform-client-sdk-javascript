@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  "kpiGroup": "kpiGroup_example", // String | The Group of Key Performance Indicators to return
+  "expand": ["expand_example"] // [String] | Parameter to request additional data to return in KPI payload
+};
+
+// Get a list of Key Performance Indicators
+apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
+  .then((data) => {
+    console.log(`getRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRoutingPredictorsKeyperformanceindicators");
+    console.error(err);
+  });

@@ -1,0 +1,4377 @@
+{
+    "DELETE /api/v2/analytics/conversations/details/jobs/{jobId}": {
+        "operationId": "deleteanalyticsconversationsdetailsjob",
+        "functionName": "deleteAnalyticsConversationsDetailsJob",
+        "signature": "deleteAnalyticsConversationsDetailsJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}": {
+        "operationId": "deleteconversationparticipantcode",
+        "functionName": "deleteConversationParticipantCode",
+        "signature": "deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "addCommunicationCode",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason": {
+        "operationId": "deleteconversationparticipantflaggedreason",
+        "functionName": "deleteConversationParticipantFlaggedreason",
+        "signature": "deleteConversationParticipantFlaggedreason(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
+        "operationId": "deleteconversationscallparticipantconsult",
+        "functionName": "deleteConversationsCallParticipantConsult",
+        "signature": "deleteConversationsCallParticipantConsult(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}": {
+        "operationId": "deleteconversationsemailmessagesdraftattachment",
+        "functionName": "deleteConversationsEmailMessagesDraftAttachment",
+        "signature": "deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "attachmentId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}": {
+        "operationId": "deleteconversationsmessagescachedmediacachedmediaitemid",
+        "functionName": "deleteConversationsMessagesCachedmediaCachedMediaItemId",
+        "signature": "deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)",
+        "parameters": [
+            {
+                "name": "cachedMediaItemId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "deleteconversationsmessagingintegrationsfacebookintegrationid",
+        "functionName": "deleteConversationsMessagingIntegrationsFacebookIntegrationId",
+        "signature": "deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId}": {
+        "operationId": "deleteconversationsmessagingintegrationsinstagramintegrationid",
+        "functionName": "deleteConversationsMessagingIntegrationsInstagramIntegrationId",
+        "signature": "deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}": {
+        "operationId": "deleteconversationsmessagingintegrationslineintegrationid",
+        "functionName": "deleteConversationsMessagingIntegrationsLineIntegrationId",
+        "signature": "deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}": {
+        "operationId": "deleteconversationsmessagingintegrationsopenintegrationid",
+        "functionName": "deleteConversationsMessagingIntegrationsOpenIntegrationId",
+        "signature": "deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
+        "operationId": "deleteconversationsmessagingintegrationstwitterintegrationid",
+        "functionName": "deleteConversationsMessagingIntegrationsTwitterIntegrationId",
+        "signature": "deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
+        "operationId": "deleteconversationsmessagingintegrationswhatsappintegrationid",
+        "functionName": "deleteConversationsMessagingIntegrationsWhatsappIntegrationId",
+        "signature": "deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WhatsAppIntegration"
+    },
+    "DELETE /api/v2/conversations/messaging/settings/{messageSettingId}": {
+        "operationId": "deleteconversationsmessagingsetting",
+        "functionName": "deleteConversationsMessagingSetting",
+        "signature": "deleteConversationsMessagingSetting(messageSettingId)",
+        "parameters": [
+            {
+                "name": "messageSettingId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/settings/default": {
+        "operationId": "deleteconversationsmessagingsettingsdefault",
+        "functionName": "deleteConversationsMessagingSettingsDefault",
+        "signature": "deleteConversationsMessagingSettingsDefault()"
+        
+    },
+    "DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "deleteconversationsmessagingsupportedcontentsupportedcontentid",
+        "functionName": "deleteConversationsMessagingSupportedcontentSupportedContentId",
+        "signature": "deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/analytics/conversations/{conversationId}/details": {
+        "operationId": "getanalyticsconversationdetails",
+        "functionName": "getAnalyticsConversationDetails",
+        "signature": "getAnalyticsConversationDetails(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsConversationWithoutAttributes"
+    },
+    "GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}": {
+        "operationId": "getanalyticsconversationsaggregatesjob",
+        "functionName": "getAnalyticsConversationsAggregatesJob",
+        "signature": "getAnalyticsConversationsAggregatesJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results": {
+        "operationId": "getanalyticsconversationsaggregatesjobresults",
+        "functionName": "getAnalyticsConversationsAggregatesJobResults",
+        "signature": "getAnalyticsConversationsAggregatesJobResults(jobId, cursor)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ConversationAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/conversations/details": {
+        "operationId": "getanalyticsconversationsdetails",
+        "functionName": "getAnalyticsConversationsDetails",
+        "signature": "getAnalyticsConversationsDetails(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "AnalyticsConversationWithoutAttributesMultiGetResponse"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/{jobId}": {
+        "operationId": "getanalyticsconversationsdetailsjob",
+        "functionName": "getAnalyticsConversationsDetailsJob",
+        "signature": "getAnalyticsConversationsDetailsJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/{jobId}/results": {
+        "operationId": "getanalyticsconversationsdetailsjobresults",
+        "functionName": "getAnalyticsConversationsDetailsJobResults",
+        "signature": "getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "AnalyticsConversationAsyncQueryResponse"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/availability": {
+        "operationId": "getanalyticsconversationsdetailsjobsavailability",
+        "functionName": "getAnalyticsConversationsDetailsJobsAvailability",
+        "signature": "getAnalyticsConversationsDetailsJobsAvailability()",
+        
+        "return": "DataAvailabilityResponse"
+    },
+    "GET /api/v2/conversations/{conversationId}": {
+        "operationId": "getconversation",
+        "functionName": "getConversation",
+        "signature": "getConversation(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}": {
+        "operationId": "getconversationparticipantsecureivrsession",
+        "functionName": "getConversationParticipantSecureivrsession",
+        "signature": "getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "secureSessionId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "SecureSession"
+    },
+    "GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions": {
+        "operationId": "getconversationparticipantsecureivrsessions",
+        "functionName": "getConversationParticipantSecureivrsessions",
+        "signature": "getConversationParticipantSecureivrsessions(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "SecureSessionEntityListing"
+    },
+    "GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "getconversationparticipantwrapup",
+        "functionName": "getConversationParticipantWrapup",
+        "signature": "getConversationParticipantWrapup(conversationId, participantId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "getconversationparticipantwrapupcodes",
+        "functionName": "getConversationParticipantWrapupcodes",
+        "signature": "getConversationParticipantWrapupcodes(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[WrapupCode]"
+    },
+    "GET /api/v2/conversations/{conversationId}/secureattributes": {
+        "operationId": "getconversationsecureattributes",
+        "functionName": "getConversationSecureattributes",
+        "signature": "getConversationSecureattributes(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationSecureAttributes"
+    },
+    "GET /api/v2/conversations": {
+        "operationId": "getconversations",
+        "functionName": "getConversations",
+        "signature": "getConversations(communicationType)",
+        "parameters": [
+            {
+                "name": "communicationType",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ConversationEntityListing"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "getconversationscall",
+        "functionName": "getConversationsCall",
+        "signature": "getConversationsCall(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CallConversation"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationscallparticipantcommunicationwrapup",
+        "functionName": "getConversationsCallParticipantCommunicationWrapup",
+        "signature": "getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "getconversationscallparticipantwrapup",
+        "functionName": "getConversationsCallParticipantWrapup",
+        "signature": "getConversationsCallParticipantWrapup(conversationId, participantId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "getconversationscallparticipantwrapupcodes",
+        "functionName": "getConversationsCallParticipantWrapupcodes",
+        "signature": "getConversationsCallParticipantWrapupcodes(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[WrapupCode]"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}": {
+        "operationId": "getconversationscallback",
+        "functionName": "getConversationsCallback",
+        "signature": "getConversationsCallback(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CallbackConversation"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationscallbackparticipantcommunicationwrapup",
+        "functionName": "getConversationsCallbackParticipantCommunicationWrapup",
+        "signature": "getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "getconversationscallbackparticipantwrapup",
+        "functionName": "getConversationsCallbackParticipantWrapup",
+        "signature": "getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "getconversationscallbackparticipantwrapupcodes",
+        "functionName": "getConversationsCallbackParticipantWrapupcodes",
+        "signature": "getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[WrapupCode]"
+    },
+    "GET /api/v2/conversations/callbacks": {
+        "operationId": "getconversationscallbacks",
+        "functionName": "getConversationsCallbacks",
+        "signature": "getConversationsCallbacks()",
+        
+        "return": "CallbackConversationEntityListing"
+    },
+    "GET /api/v2/conversations/calls": {
+        "operationId": "getconversationscalls",
+        "functionName": "getConversationsCalls",
+        "signature": "getConversationsCalls()",
+        
+        "return": "CallConversationEntityListing"
+    },
+    "GET /api/v2/conversations/calls/history": {
+        "operationId": "getconversationscallshistory",
+        "functionName": "getConversationsCallsHistory",
+        "signature": "getConversationsCallsHistory(pageSize, pageNumber, interval, expand)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "interval",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "CallHistoryConversationEntityListing"
+    },
+    "GET /api/v2/conversations/calls/maximumconferenceparties": {
+        "operationId": "getconversationscallsmaximumconferenceparties",
+        "functionName": "getConversationsCallsMaximumconferenceparties",
+        "signature": "getConversationsCallsMaximumconferenceparties()",
+        
+        "return": "MaxParticipants"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}": {
+        "operationId": "getconversationschat",
+        "functionName": "getConversationsChat",
+        "signature": "getConversationsChat(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ChatConversation"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}": {
+        "operationId": "getconversationschatmessage",
+        "functionName": "getConversationsChatMessage",
+        "signature": "getConversationsChatMessage(conversationId, messageId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "messageId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WebChatMessage"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/messages": {
+        "operationId": "getconversationschatmessages",
+        "functionName": "getConversationsChatMessages",
+        "signature": "getConversationsChatMessages(conversationId, after, before, sortOrder, maxResults)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "maxResults",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "WebChatMessageEntityList"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationschatparticipantcommunicationwrapup",
+        "functionName": "getConversationsChatParticipantCommunicationWrapup",
+        "signature": "getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "getconversationschatparticipantwrapup",
+        "functionName": "getConversationsChatParticipantWrapup",
+        "signature": "getConversationsChatParticipantWrapup(conversationId, participantId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "getconversationschatparticipantwrapupcodes",
+        "functionName": "getConversationsChatParticipantWrapupcodes",
+        "signature": "getConversationsChatParticipantWrapupcodes(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[WrapupCode]"
+    },
+    "GET /api/v2/conversations/chats": {
+        "operationId": "getconversationschats",
+        "functionName": "getConversationsChats",
+        "signature": "getConversationsChats()",
+        
+        "return": "ChatConversationEntityListing"
+    },
+    "GET /api/v2/conversations/cobrowsesessions/{conversationId}": {
+        "operationId": "getconversationscobrowsesession",
+        "functionName": "getConversationsCobrowsesession",
+        "signature": "getConversationsCobrowsesession(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CobrowseConversation"
+    },
+    "GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationscobrowsesessionparticipantcommunicationwrapup",
+        "functionName": "getConversationsCobrowsesessionParticipantCommunicationWrapup",
+        "signature": "getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "getconversationscobrowsesessionparticipantwrapup",
+        "functionName": "getConversationsCobrowsesessionParticipantWrapup",
+        "signature": "getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "getconversationscobrowsesessionparticipantwrapupcodes",
+        "functionName": "getConversationsCobrowsesessionParticipantWrapupcodes",
+        "signature": "getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[WrapupCode]"
+    },
+    "GET /api/v2/conversations/cobrowsesessions": {
+        "operationId": "getconversationscobrowsesessions",
+        "functionName": "getConversationsCobrowsesessions",
+        "signature": "getConversationsCobrowsesessions()",
+        
+        "return": "CobrowseConversationEntityListing"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}": {
+        "operationId": "getconversationsemail",
+        "functionName": "getConversationsEmail",
+        "signature": "getConversationsEmail(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EmailConversation"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}": {
+        "operationId": "getconversationsemailmessage",
+        "functionName": "getConversationsEmailMessage",
+        "signature": "getConversationsEmailMessage(conversationId, messageId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "messageId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/messages": {
+        "operationId": "getconversationsemailmessages",
+        "functionName": "getConversationsEmailMessages",
+        "signature": "getConversationsEmailMessages(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessagePreviewListing"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/messages/draft": {
+        "operationId": "getconversationsemailmessagesdraft",
+        "functionName": "getConversationsEmailMessagesDraft",
+        "signature": "getConversationsEmailMessagesDraft(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationsemailparticipantcommunicationwrapup",
+        "functionName": "getConversationsEmailParticipantCommunicationWrapup",
+        "signature": "getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "getconversationsemailparticipantwrapup",
+        "functionName": "getConversationsEmailParticipantWrapup",
+        "signature": "getConversationsEmailParticipantWrapup(conversationId, participantId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "getconversationsemailparticipantwrapupcodes",
+        "functionName": "getConversationsEmailParticipantWrapupcodes",
+        "signature": "getConversationsEmailParticipantWrapupcodes(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[WrapupCode]"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/settings": {
+        "operationId": "getconversationsemailsettings",
+        "functionName": "getConversationsEmailSettings",
+        "signature": "getConversationsEmailSettings(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EmailsSettings"
+    },
+    "GET /api/v2/conversations/emails": {
+        "operationId": "getconversationsemails",
+        "functionName": "getConversationsEmails",
+        "signature": "getConversationsEmails()",
+        
+        "return": "EmailConversationEntityListing"
+    },
+    "GET /api/v2/conversations/keyconfigurations/{keyconfigurationsId}": {
+        "operationId": "getconversationskeyconfiguration",
+        "functionName": "getConversationsKeyconfiguration",
+        "signature": "getConversationsKeyconfiguration(keyconfigurationsId)",
+        "parameters": [
+            {
+                "name": "keyconfigurationsId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationEncryptionConfiguration"
+    },
+    "GET /api/v2/conversations/keyconfigurations": {
+        "operationId": "getconversationskeyconfigurations",
+        "functionName": "getConversationsKeyconfigurations",
+        "signature": "getConversationsKeyconfigurations()",
+        
+        "return": "ConversationEncryptionConfigurationListing"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}": {
+        "operationId": "getconversationsmessage",
+        "functionName": "getConversationsMessage",
+        "signature": "getConversationsMessage(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessageConversation"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}": {
+        "operationId": "getconversationsmessagecommunicationmessagesmediamediaid",
+        "functionName": "getConversationsMessageCommunicationMessagesMediaMediaId",
+        "signature": "getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "mediaId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessageMediaData"
+    },
+    "GET /api/v2/conversations/messages/{messageId}/details": {
+        "operationId": "getconversationsmessagedetails",
+        "functionName": "getConversationsMessageDetails",
+        "signature": "getConversationsMessageDetails(messageId, useNormalizedMessage)",
+        "parameters": [
+            {
+                "name": "messageId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "useNormalizedMessage",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "MessageData"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}": {
+        "operationId": "getconversationsmessagemessage",
+        "functionName": "getConversationsMessageMessage",
+        "signature": "getConversationsMessageMessage(conversationId, messageId, useNormalizedMessage)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "messageId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "useNormalizedMessage",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "MessageData"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationsmessageparticipantcommunicationwrapup",
+        "functionName": "getConversationsMessageParticipantCommunicationWrapup",
+        "signature": "getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "getconversationsmessageparticipantwrapup",
+        "functionName": "getConversationsMessageParticipantWrapup",
+        "signature": "getConversationsMessageParticipantWrapup(conversationId, participantId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "getconversationsmessageparticipantwrapupcodes",
+        "functionName": "getConversationsMessageParticipantWrapupcodes",
+        "signature": "getConversationsMessageParticipantWrapupcodes(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[WrapupCode]"
+    },
+    "GET /api/v2/conversations/messages": {
+        "operationId": "getconversationsmessages",
+        "functionName": "getConversationsMessages",
+        "signature": "getConversationsMessages()",
+        
+        "return": "MessageConversationEntityListing"
+    },
+    "GET /api/v2/conversations/messages/cachedmedia": {
+        "operationId": "getconversationsmessagescachedmedia",
+        "functionName": "getConversationsMessagesCachedmedia",
+        "signature": "getConversationsMessagesCachedmedia(pageSize, pageNumber, url)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "url",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CachedMediaItemEntityListing"
+    },
+    "GET /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}": {
+        "operationId": "getconversationsmessagescachedmediacachedmediaitemid",
+        "functionName": "getConversationsMessagesCachedmediaCachedMediaItemId",
+        "signature": "getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)",
+        "parameters": [
+            {
+                "name": "cachedMediaItemId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CachedMediaItem"
+    },
+    "GET /api/v2/conversations/messaging/facebook/app": {
+        "operationId": "getconversationsmessagingfacebookapp",
+        "functionName": "getConversationsMessagingFacebookApp",
+        "signature": "getConversationsMessagingFacebookApp()",
+        
+        "return": "FacebookAppCredentials"
+    },
+    "GET /api/v2/conversations/messaging/integrations": {
+        "operationId": "getconversationsmessagingintegrations",
+        "functionName": "getConversationsMessagingIntegrations",
+        "signature": "getConversationsMessagingIntegrations(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "messagingSettingId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/facebook": {
+        "operationId": "getconversationsmessagingintegrationsfacebook",
+        "functionName": "getConversationsMessagingIntegrationsFacebook",
+        "signature": "getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "messagingSettingId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "FacebookIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "getconversationsmessagingintegrationsfacebookintegrationid",
+        "functionName": "getConversationsMessagingIntegrationsFacebookIntegrationId",
+        "signature": "getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, expand)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "FacebookIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/instagram": {
+        "operationId": "getconversationsmessagingintegrationsinstagram",
+        "functionName": "getConversationsMessagingIntegrationsInstagram",
+        "signature": "getConversationsMessagingIntegrationsInstagram(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "messagingSettingId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "InstagramIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/instagram/{integrationId}": {
+        "operationId": "getconversationsmessagingintegrationsinstagramintegrationid",
+        "functionName": "getConversationsMessagingIntegrationsInstagramIntegrationId",
+        "signature": "getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, expand)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "InstagramIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/line": {
+        "operationId": "getconversationsmessagingintegrationsline",
+        "functionName": "getConversationsMessagingIntegrationsLine",
+        "signature": "getConversationsMessagingIntegrationsLine(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "messagingSettingId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "LineIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/line/{integrationId}": {
+        "operationId": "getconversationsmessagingintegrationslineintegrationid",
+        "functionName": "getConversationsMessagingIntegrationsLineIntegrationId",
+        "signature": "getConversationsMessagingIntegrationsLineIntegrationId(integrationId, expand)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "LineIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/open": {
+        "operationId": "getconversationsmessagingintegrationsopen",
+        "functionName": "getConversationsMessagingIntegrationsOpen",
+        "signature": "getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "messagingSettingId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "OpenIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/open/{integrationId}": {
+        "operationId": "getconversationsmessagingintegrationsopenintegrationid",
+        "functionName": "getConversationsMessagingIntegrationsOpenIntegrationId",
+        "signature": "getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, expand)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "OpenIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/twitter": {
+        "operationId": "getconversationsmessagingintegrationstwitter",
+        "functionName": "getConversationsMessagingIntegrationsTwitter",
+        "signature": "getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "messagingSettingId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "TwitterIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
+        "operationId": "getconversationsmessagingintegrationstwitterintegrationid",
+        "functionName": "getConversationsMessagingIntegrationsTwitterIntegrationId",
+        "signature": "getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, expand)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "TwitterIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/whatsapp": {
+        "operationId": "getconversationsmessagingintegrationswhatsapp",
+        "functionName": "getConversationsMessagingIntegrationsWhatsapp",
+        "signature": "getConversationsMessagingIntegrationsWhatsapp(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "messagingSettingId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "WhatsAppIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
+        "operationId": "getconversationsmessagingintegrationswhatsappintegrationid",
+        "functionName": "getConversationsMessagingIntegrationsWhatsappIntegrationId",
+        "signature": "getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, expand)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "WhatsAppIntegration"
+    },
+    "GET /api/v2/conversations/messaging/settings/{messageSettingId}": {
+        "operationId": "getconversationsmessagingsetting",
+        "functionName": "getConversationsMessagingSetting",
+        "signature": "getConversationsMessagingSetting(messageSettingId)",
+        "parameters": [
+            {
+                "name": "messageSettingId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "GET /api/v2/conversations/messaging/settings": {
+        "operationId": "getconversationsmessagingsettings",
+        "functionName": "getConversationsMessagingSettings",
+        "signature": "getConversationsMessagingSettings(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingConfigListing"
+    },
+    "GET /api/v2/conversations/messaging/settings/default": {
+        "operationId": "getconversationsmessagingsettingsdefault",
+        "functionName": "getConversationsMessagingSettingsDefault",
+        "signature": "getConversationsMessagingSettingsDefault()",
+        
+        "return": "MessagingSetting"
+    },
+    "GET /api/v2/conversations/messaging/stickers/{messengerType}": {
+        "operationId": "getconversationsmessagingsticker",
+        "functionName": "getConversationsMessagingSticker",
+        "signature": "getConversationsMessagingSticker(messengerType, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "messengerType",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingStickerEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/supportedcontent": {
+        "operationId": "getconversationsmessagingsupportedcontent",
+        "functionName": "getConversationsMessagingSupportedcontent",
+        "signature": "getConversationsMessagingSupportedcontent(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "SupportedContentListing"
+    },
+    "GET /api/v2/conversations/messaging/supportedcontent/default": {
+        "operationId": "getconversationsmessagingsupportedcontentdefault",
+        "functionName": "getConversationsMessagingSupportedcontentDefault",
+        "signature": "getConversationsMessagingSupportedcontentDefault()",
+        
+        "return": "SupportedContent"
+    },
+    "GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "getconversationsmessagingsupportedcontentsupportedcontentid",
+        "functionName": "getConversationsMessagingSupportedcontentSupportedContentId",
+        "signature": "getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "GET /api/v2/conversations/messaging/threadingtimeline": {
+        "operationId": "getconversationsmessagingthreadingtimeline",
+        "functionName": "getConversationsMessagingThreadingtimeline",
+        "signature": "getConversationsMessagingThreadingtimeline()",
+        
+        "return": "ConversationThreadingWindow"
+    },
+    "GET /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationsscreenshareparticipantcommunicationwrapup",
+        "functionName": "getConversationsScreenshareParticipantCommunicationWrapup",
+        "signature": "getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/settings": {
+        "operationId": "getconversationssettings",
+        "functionName": "getConversationsSettings",
+        "signature": "getConversationsSettings()",
+        
+        "return": "Settings"
+    },
+    "GET /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationssocialparticipantcommunicationwrapup",
+        "functionName": "getConversationsSocialParticipantCommunicationWrapup",
+        "signature": "getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/videos/{conferenceId}/details": {
+        "operationId": "getconversationsvideodetails",
+        "functionName": "getConversationsVideoDetails",
+        "signature": "getConversationsVideoDetails(conferenceId)",
+        "parameters": [
+            {
+                "name": "conferenceId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "VideoConferenceDetails"
+    },
+    "GET /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "getconversationsvideoparticipantcommunicationwrapup",
+        "functionName": "getConversationsVideoParticipantCommunicationWrapup",
+        "signature": "getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/videos/meetings/{meetingId}": {
+        "operationId": "getconversationsvideosmeeting",
+        "functionName": "getConversationsVideosMeeting",
+        "signature": "getConversationsVideosMeeting(meetingId)",
+        "parameters": [
+            {
+                "name": "meetingId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MeetingIdRecord"
+    },
+    "PATCH /api/v2/conversations/{conversationId}/participants/{participantId}": {
+        "operationId": "patchconversationparticipant",
+        "functionName": "patchConversationParticipant",
+        "signature": "patchConversationParticipant(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patchconversationparticipantattributes",
+        "functionName": "patchConversationParticipantAttributes",
+        "signature": "patchConversationParticipantAttributes(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/{conversationId}/secureattributes": {
+        "operationId": "patchconversationsecureattributes",
+        "functionName": "patchConversationSecureattributes",
+        "signature": "patchConversationSecureattributes(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PATCH /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patchconversationsaftercallworkconversationidparticipantcommunication",
+        "functionName": "patchConversationsAftercallworkConversationIdParticipantCommunication",
+        "signature": "patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AfterCallWorkUpdate"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "patchconversationscall",
+        "functionName": "patchConversationsCall",
+        "signature": "patchConversationsCall(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}": {
+        "operationId": "patchconversationscallparticipant",
+        "functionName": "patchConversationsCallParticipant",
+        "signature": "patchConversationsCallParticipant(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patchconversationscallparticipantattributes",
+        "functionName": "patchConversationsCallParticipantAttributes",
+        "signature": "patchConversationsCallParticipantAttributes(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patchconversationscallparticipantcommunication",
+        "functionName": "patchConversationsCallParticipantCommunication",
+        "signature": "patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
+        "operationId": "patchconversationscallparticipantconsult",
+        "functionName": "patchConversationsCallParticipantConsult",
+        "signature": "patchConversationsCallParticipantConsult(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}": {
+        "operationId": "patchconversationscallback",
+        "functionName": "patchConversationsCallback",
+        "signature": "patchConversationsCallback(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}": {
+        "operationId": "patchconversationscallbackparticipant",
+        "functionName": "patchConversationsCallbackParticipant",
+        "signature": "patchConversationsCallbackParticipant(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patchconversationscallbackparticipantattributes",
+        "functionName": "patchConversationsCallbackParticipantAttributes",
+        "signature": "patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patchconversationscallbackparticipantcommunication",
+        "functionName": "patchConversationsCallbackParticipantCommunication",
+        "signature": "patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "PATCH /api/v2/conversations/callbacks": {
+        "operationId": "patchconversationscallbacks",
+        "functionName": "patchConversationsCallbacks",
+        "signature": "patchConversationsCallbacks(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "PatchCallbackResponse"
+    },
+    "PATCH /api/v2/conversations/chats/{conversationId}": {
+        "operationId": "patchconversationschat",
+        "functionName": "patchConversationsChat",
+        "signature": "patchConversationsChat(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}": {
+        "operationId": "patchconversationschatparticipant",
+        "functionName": "patchConversationsChatParticipant",
+        "signature": "patchConversationsChatParticipant(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patchconversationschatparticipantattributes",
+        "functionName": "patchConversationsChatParticipantAttributes",
+        "signature": "patchConversationsChatParticipantAttributes(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patchconversationschatparticipantcommunication",
+        "functionName": "patchConversationsChatParticipantCommunication",
+        "signature": "patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}": {
+        "operationId": "patchconversationscobrowsesession",
+        "functionName": "patchConversationsCobrowsesession",
+        "signature": "patchConversationsCobrowsesession(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}": {
+        "operationId": "patchconversationscobrowsesessionparticipant",
+        "functionName": "patchConversationsCobrowsesessionParticipant",
+        "signature": "patchConversationsCobrowsesessionParticipant(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patchconversationscobrowsesessionparticipantattributes",
+        "functionName": "patchConversationsCobrowsesessionParticipantAttributes",
+        "signature": "patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patchconversationscobrowsesessionparticipantcommunication",
+        "functionName": "patchConversationsCobrowsesessionParticipantCommunication",
+        "signature": "patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}": {
+        "operationId": "patchconversationsemail",
+        "functionName": "patchConversationsEmail",
+        "signature": "patchConversationsEmail(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}/messages/draft": {
+        "operationId": "patchconversationsemailmessagesdraft",
+        "functionName": "patchConversationsEmailMessagesDraft",
+        "signature": "patchConversationsEmailMessagesDraft(conversationId, autoFill, discard, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "autoFill",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "discard",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}": {
+        "operationId": "patchconversationsemailparticipant",
+        "functionName": "patchConversationsEmailParticipant",
+        "signature": "patchConversationsEmailParticipant(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patchconversationsemailparticipantattributes",
+        "functionName": "patchConversationsEmailParticipantAttributes",
+        "signature": "patchConversationsEmailParticipantAttributes(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patchconversationsemailparticipantcommunication",
+        "functionName": "patchConversationsEmailParticipantCommunication",
+        "signature": "patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "PATCH /api/v2/conversations/messages/{conversationId}": {
+        "operationId": "patchconversationsmessage",
+        "functionName": "patchConversationsMessage",
+        "signature": "patchConversationsMessage(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}": {
+        "operationId": "patchconversationsmessageparticipant",
+        "functionName": "patchConversationsMessageParticipant",
+        "signature": "patchConversationsMessageParticipant(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patchconversationsmessageparticipantattributes",
+        "functionName": "patchConversationsMessageParticipantAttributes",
+        "signature": "patchConversationsMessageParticipantAttributes(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patchconversationsmessageparticipantcommunication",
+        "functionName": "patchConversationsMessageParticipantCommunication",
+        "signature": "patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "patchconversationsmessagingintegrationsfacebookintegrationid",
+        "functionName": "patchConversationsMessagingIntegrationsFacebookIntegrationId",
+        "signature": "patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "FacebookIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/instagram/{integrationId}": {
+        "operationId": "patchconversationsmessagingintegrationsinstagramintegrationid",
+        "functionName": "patchConversationsMessagingIntegrationsInstagramIntegrationId",
+        "signature": "patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "InstagramIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}": {
+        "operationId": "patchconversationsmessagingintegrationsopenintegrationid",
+        "functionName": "patchConversationsMessagingIntegrationsOpenIntegrationId",
+        "signature": "patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "OpenIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
+        "operationId": "patchconversationsmessagingintegrationstwitterintegrationid",
+        "functionName": "patchConversationsMessagingIntegrationsTwitterIntegrationId",
+        "signature": "patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TwitterIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
+        "operationId": "patchconversationsmessagingintegrationswhatsappintegrationid",
+        "functionName": "patchConversationsMessagingIntegrationsWhatsappIntegrationId",
+        "signature": "patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "WhatsAppIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/settings/{messageSettingId}": {
+        "operationId": "patchconversationsmessagingsetting",
+        "functionName": "patchConversationsMessagingSetting",
+        "signature": "patchConversationsMessagingSetting(messageSettingId, body)",
+        "parameters": [
+            {
+                "name": "messageSettingId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "patchconversationsmessagingsupportedcontentsupportedcontentid",
+        "functionName": "patchConversationsMessagingSupportedcontentSupportedContentId",
+        "signature": "patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)",
+        "parameters": [
+            {
+                "name": "supportedContentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "PATCH /api/v2/conversations/settings": {
+        "operationId": "patchconversationssettings",
+        "functionName": "patchConversationsSettings",
+        "signature": "patchConversationsSettings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/analytics/conversations/{conversationId}/details/properties": {
+        "operationId": "postanalyticsconversationdetailsproperties",
+        "functionName": "postAnalyticsConversationDetailsProperties",
+        "signature": "postAnalyticsConversationDetailsProperties(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "PropertyIndexRequest"
+    },
+    "POST /api/v2/analytics/conversations/activity/query": {
+        "operationId": "postanalyticsconversationsactivityquery",
+        "functionName": "postAnalyticsConversationsActivityQuery",
+        "signature": "postAnalyticsConversationsActivityQuery(body, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "ConversationActivityResponse"
+    },
+    "POST /api/v2/analytics/conversations/aggregates/jobs": {
+        "operationId": "postanalyticsconversationsaggregatesjobs",
+        "functionName": "postAnalyticsConversationsAggregatesJobs",
+        "signature": "postAnalyticsConversationsAggregatesJobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/aggregates/query": {
+        "operationId": "postanalyticsconversationsaggregatesquery",
+        "functionName": "postAnalyticsConversationsAggregatesQuery",
+        "signature": "postAnalyticsConversationsAggregatesQuery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/details/jobs": {
+        "operationId": "postanalyticsconversationsdetailsjobs",
+        "functionName": "postAnalyticsConversationsDetailsJobs",
+        "signature": "postAnalyticsConversationsDetailsJobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/details/query": {
+        "operationId": "postanalyticsconversationsdetailsquery",
+        "functionName": "postAnalyticsConversationsDetailsQuery",
+        "signature": "postAnalyticsConversationsDetailsQuery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsConversationQueryResponse"
+    },
+    "POST /api/v2/conversations/{conversationId}/assign": {
+        "operationId": "postconversationassign",
+        "functionName": "postConversationAssign",
+        "signature": "postConversationAssign(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "POST /api/v2/conversations/{conversationId}/barge": {
+        "operationId": "postconversationbarge",
+        "functionName": "postConversationBarge",
+        "signature": "postConversationBarge(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/cobrowse": {
+        "operationId": "postconversationcobrowse",
+        "functionName": "postConversationCobrowse",
+        "signature": "postConversationCobrowse(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CobrowseWebMessagingSession"
+    },
+    "POST /api/v2/conversations/{conversationId}/disconnect": {
+        "operationId": "postconversationdisconnect",
+        "functionName": "postConversationDisconnect",
+        "signature": "postConversationDisconnect(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks": {
+        "operationId": "postconversationparticipantcallbacks",
+        "functionName": "postConversationParticipantCallbacks",
+        "signature": "postConversationParticipantCallbacks(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits": {
+        "operationId": "postconversationparticipantdigits",
+        "functionName": "postConversationParticipantDigits",
+        "signature": "postConversationParticipantDigits(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "postconversationparticipantreplace",
+        "functionName": "postConversationParticipantReplace",
+        "signature": "postConversationParticipantReplace(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent": {
+        "operationId": "postconversationparticipantreplaceagent",
+        "functionName": "postConversationParticipantReplaceAgent",
+        "signature": "postConversationParticipantReplaceAgent(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external": {
+        "operationId": "postconversationparticipantreplaceexternal",
+        "functionName": "postConversationParticipantReplaceExternal",
+        "signature": "postConversationParticipantReplaceExternal(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue": {
+        "operationId": "postconversationparticipantreplacequeue",
+        "functionName": "postConversationParticipantReplaceQueue",
+        "signature": "postConversationParticipantReplaceQueue(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions": {
+        "operationId": "postconversationparticipantsecureivrsessions",
+        "functionName": "postConversationParticipantSecureivrsessions",
+        "signature": "postConversationParticipantSecureivrsessions(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "SecureSession"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "postconversationscall",
+        "functionName": "postConversationsCall",
+        "signature": "postConversationsCall(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge": {
+        "operationId": "postconversationscallparticipantbarge",
+        "functionName": "postConversationsCallParticipantBarge",
+        "signature": "postConversationsCallParticipantBarge(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach": {
+        "operationId": "postconversationscallparticipantcoach",
+        "functionName": "postConversationsCallParticipantCoach",
+        "signature": "postConversationsCallParticipantCoach(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationscallparticipantcommunicationwrapup",
+        "functionName": "postConversationsCallParticipantCommunicationWrapup",
+        "signature": "postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
+        "operationId": "postconversationscallparticipantconsult",
+        "functionName": "postConversationsCallParticipantConsult",
+        "signature": "postConversationsCallParticipantConsult(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent": {
+        "operationId": "postconversationscallparticipantconsultagent",
+        "functionName": "postConversationsCallParticipantConsultAgent",
+        "signature": "postConversationsCallParticipantConsultAgent(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external": {
+        "operationId": "postconversationscallparticipantconsultexternal",
+        "functionName": "postConversationsCallParticipantConsultExternal",
+        "signature": "postConversationsCallParticipantConsultExternal(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue": {
+        "operationId": "postconversationscallparticipantconsultqueue",
+        "functionName": "postConversationsCallParticipantConsultQueue",
+        "signature": "postConversationsCallParticipantConsultQueue(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor": {
+        "operationId": "postconversationscallparticipantmonitor",
+        "functionName": "postConversationsCallParticipantMonitor",
+        "signature": "postConversationsCallParticipantMonitor(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "postconversationscallparticipantreplace",
+        "functionName": "postConversationsCallParticipantReplace",
+        "signature": "postConversationsCallParticipantReplace(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants": {
+        "operationId": "postconversationscallparticipants",
+        "functionName": "postConversationsCallParticipants",
+        "signature": "postConversationsCallParticipants(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationscallbackparticipantcommunicationwrapup",
+        "functionName": "postConversationsCallbackParticipantCommunicationWrapup",
+        "signature": "postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "postconversationscallbackparticipantreplace",
+        "functionName": "postConversationsCallbackParticipantReplace",
+        "signature": "postConversationsCallbackParticipantReplace(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/callbacks": {
+        "operationId": "postconversationscallbacks",
+        "functionName": "postConversationsCallbacks",
+        "signature": "postConversationsCallbacks(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CreateCallbackResponse"
+    },
+    "POST /api/v2/conversations/callbacks/bulk/disconnect": {
+        "operationId": "postconversationscallbacksbulkdisconnect",
+        "functionName": "postConversationsCallbacksBulkDisconnect",
+        "signature": "postConversationsCallbacksBulkDisconnect(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/callbacks/bulk/update": {
+        "operationId": "postconversationscallbacksbulkupdate",
+        "functionName": "postConversationsCallbacksBulkUpdate",
+        "signature": "postConversationsCallbacksBulkUpdate(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BulkCallbackPatchResponse"
+    },
+    "POST /api/v2/conversations/calls": {
+        "operationId": "postconversationscalls",
+        "functionName": "postConversationsCalls",
+        "signature": "postConversationsCalls(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CreateCallResponse"
+    },
+    "POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages": {
+        "operationId": "postconversationschatcommunicationmessages",
+        "functionName": "postConversationsChatCommunicationMessages",
+        "signature": "postConversationsChatCommunicationMessages(conversationId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "WebChatMessage"
+    },
+    "POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing": {
+        "operationId": "postconversationschatcommunicationtyping",
+        "functionName": "postConversationsChatCommunicationTyping",
+        "signature": "postConversationsChatCommunicationTyping(conversationId, communicationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "WebChatTyping"
+    },
+    "POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationschatparticipantcommunicationwrapup",
+        "functionName": "postConversationsChatParticipantCommunicationWrapup",
+        "signature": "postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "postconversationschatparticipantreplace",
+        "functionName": "postConversationsChatParticipantReplace",
+        "signature": "postConversationsChatParticipantReplace(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/chats": {
+        "operationId": "postconversationschats",
+        "functionName": "postConversationsChats",
+        "signature": "postConversationsChats(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ChatConversation"
+    },
+    "POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationscobrowsesessionparticipantcommunicationwrapup",
+        "functionName": "postConversationsCobrowsesessionParticipantCommunicationWrapup",
+        "signature": "postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "postconversationscobrowsesessionparticipantreplace",
+        "functionName": "postConversationsCobrowsesessionParticipantReplace",
+        "signature": "postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/inboundmessages": {
+        "operationId": "postconversationsemailinboundmessages",
+        "functionName": "postConversationsEmailInboundmessages",
+        "signature": "postConversationsEmailInboundmessages(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EmailConversation"
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/messages": {
+        "operationId": "postconversationsemailmessages",
+        "functionName": "postConversationsEmailMessages",
+        "signature": "postConversationsEmailMessages(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessageReply"
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy": {
+        "operationId": "postconversationsemailmessagesdraftattachmentscopy",
+        "functionName": "postConversationsEmailMessagesDraftAttachmentsCopy",
+        "signature": "postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationsemailparticipantcommunicationwrapup",
+        "functionName": "postConversationsEmailParticipantCommunicationWrapup",
+        "signature": "postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "postconversationsemailparticipantreplace",
+        "functionName": "postConversationsEmailParticipantReplace",
+        "signature": "postConversationsEmailParticipantReplace(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/emails": {
+        "operationId": "postconversationsemails",
+        "functionName": "postConversationsEmails",
+        "signature": "postConversationsEmails(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EmailConversation"
+    },
+    "POST /api/v2/conversations/emails/agentless": {
+        "operationId": "postconversationsemailsagentless",
+        "functionName": "postConversationsEmailsAgentless",
+        "signature": "postConversationsEmailsAgentless(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AgentlessEmailSendResponseDto"
+    },
+    "POST /api/v2/conversations/faxes": {
+        "operationId": "postconversationsfaxes",
+        "functionName": "postConversationsFaxes",
+        "signature": "postConversationsFaxes(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "FaxSendResponse"
+    },
+    "POST /api/v2/conversations/keyconfigurations": {
+        "operationId": "postconversationskeyconfigurations",
+        "functionName": "postConversationsKeyconfigurations",
+        "signature": "postConversationsKeyconfigurations(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationEncryptionConfiguration"
+    },
+    "POST /api/v2/conversations/keyconfigurations/validate": {
+        "operationId": "postconversationskeyconfigurationsvalidate",
+        "functionName": "postConversationsKeyconfigurationsValidate",
+        "signature": "postConversationsKeyconfigurationsValidate(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationEncryptionConfiguration"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages": {
+        "operationId": "postconversationsmessagecommunicationmessages",
+        "functionName": "postConversationsMessageCommunicationMessages",
+        "signature": "postConversationsMessageCommunicationMessages(conversationId, communicationId, body, useNormalizedMessage)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "useNormalizedMessage",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "MessageData"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media": {
+        "operationId": "postconversationsmessagecommunicationmessagesmedia",
+        "functionName": "postConversationsMessageCommunicationMessagesMedia",
+        "signature": "postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessageMediaData"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing": {
+        "operationId": "postconversationsmessagecommunicationtyping",
+        "functionName": "postConversationsMessageCommunicationTyping",
+        "signature": "postConversationsMessageCommunicationTyping(conversationId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/messages/{integrationId}/inbound/open/event": {
+        "operationId": "postconversationsmessageinboundopenevent",
+        "functionName": "postConversationsMessageInboundOpenEvent",
+        "signature": "postConversationsMessageInboundOpenEvent(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "OpenEventNormalizedMessage"
+    },
+    "POST /api/v2/conversations/messages/{integrationId}/inbound/open/message": {
+        "operationId": "postconversationsmessageinboundopenmessage",
+        "functionName": "postConversationsMessageInboundOpenMessage",
+        "signature": "postConversationsMessageInboundOpenMessage(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "OpenMessageNormalizedMessage"
+    },
+    "POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt": {
+        "operationId": "postconversationsmessageinboundopenreceipt",
+        "functionName": "postConversationsMessageInboundOpenReceipt",
+        "signature": "postConversationsMessageInboundOpenReceipt(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "OpenReceiptNormalizedMessage"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/messages/bulk": {
+        "operationId": "postconversationsmessagemessagesbulk",
+        "functionName": "postConversationsMessageMessagesBulk",
+        "signature": "postConversationsMessageMessagesBulk(conversationId, useNormalizedMessage, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "useNormalizedMessage",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "TextMessageListing"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationsmessageparticipantcommunicationwrapup",
+        "functionName": "postConversationsMessageParticipantCommunicationWrapup",
+        "signature": "postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor": {
+        "operationId": "postconversationsmessageparticipantmonitor",
+        "functionName": "postConversationsMessageParticipantMonitor",
+        "signature": "postConversationsMessageParticipantMonitor(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "postconversationsmessageparticipantreplace",
+        "functionName": "postConversationsMessageParticipantReplace",
+        "signature": "postConversationsMessageParticipantReplace(conversationId, participantId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/messages": {
+        "operationId": "postconversationsmessages",
+        "functionName": "postConversationsMessages",
+        "signature": "postConversationsMessages(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessageConversation"
+    },
+    "POST /api/v2/conversations/messages/agentless": {
+        "operationId": "postconversationsmessagesagentless",
+        "functionName": "postConversationsMessagesAgentless",
+        "signature": "postConversationsMessagesAgentless(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "SendAgentlessOutboundMessageResponse"
+    },
+    "POST /api/v2/conversations/messages/inbound/open": {
+        "operationId": "postconversationsmessagesinboundopen",
+        "functionName": "postConversationsMessagesInboundOpen",
+        "signature": "postConversationsMessagesInboundOpen(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "OpenNormalizedMessage"
+    },
+    "POST /api/v2/conversations/messaging/integrations/facebook": {
+        "operationId": "postconversationsmessagingintegrationsfacebook",
+        "functionName": "postConversationsMessagingIntegrationsFacebook",
+        "signature": "postConversationsMessagingIntegrationsFacebook(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "FacebookIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/instagram": {
+        "operationId": "postconversationsmessagingintegrationsinstagram",
+        "functionName": "postConversationsMessagingIntegrationsInstagram",
+        "signature": "postConversationsMessagingIntegrationsInstagram(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "InstagramIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/line": {
+        "operationId": "postconversationsmessagingintegrationsline",
+        "functionName": "postConversationsMessagingIntegrationsLine",
+        "signature": "postConversationsMessagingIntegrationsLine(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "LineIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/open": {
+        "operationId": "postconversationsmessagingintegrationsopen",
+        "functionName": "postConversationsMessagingIntegrationsOpen",
+        "signature": "postConversationsMessagingIntegrationsOpen(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "OpenIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/twitter": {
+        "operationId": "postconversationsmessagingintegrationstwitter",
+        "functionName": "postConversationsMessagingIntegrationsTwitter",
+        "signature": "postConversationsMessagingIntegrationsTwitter(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TwitterIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/whatsapp": {
+        "operationId": "postconversationsmessagingintegrationswhatsapp",
+        "functionName": "postConversationsMessagingIntegrationsWhatsapp",
+        "signature": "postConversationsMessagingIntegrationsWhatsapp(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "WhatsAppIntegration"
+    },
+    "POST /api/v2/conversations/messaging/settings": {
+        "operationId": "postconversationsmessagingsettings",
+        "functionName": "postConversationsMessagingSettings",
+        "signature": "postConversationsMessagingSettings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "POST /api/v2/conversations/messaging/supportedcontent": {
+        "operationId": "postconversationsmessagingsupportedcontent",
+        "functionName": "postConversationsMessagingSupportedcontent",
+        "signature": "postConversationsMessagingSupportedcontent(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "POST /api/v2/conversations/participants/attributes/search": {
+        "operationId": "postconversationsparticipantsattributessearch",
+        "functionName": "postConversationsParticipantsAttributesSearch",
+        "signature": "postConversationsParticipantsAttributesSearch(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "JsonCursorSearchResponse"
+    },
+    "POST /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationsscreenshareparticipantcommunicationwrapup",
+        "functionName": "postConversationsScreenshareParticipantCommunicationWrapup",
+        "signature": "postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationssocialparticipantcommunicationwrapup",
+        "functionName": "postConversationsSocialParticipantCommunicationWrapup",
+        "signature": "postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "postconversationsvideoparticipantcommunicationwrapup",
+        "functionName": "postConversationsVideoParticipantCommunicationWrapup",
+        "signature": "postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/videos/meetings": {
+        "operationId": "postconversationsvideosmeetings",
+        "functionName": "postConversationsVideosMeetings",
+        "signature": "postConversationsVideosMeetings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MeetingIdRecord"
+    },
+    "PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason": {
+        "operationId": "putconversationparticipantflaggedreason",
+        "functionName": "putConversationParticipantFlaggedreason",
+        "signature": "putConversationParticipantFlaggedreason(conversationId, participantId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "PUT /api/v2/conversations/{conversationId}/secureattributes": {
+        "operationId": "putconversationsecureattributes",
+        "functionName": "putConversationSecureattributes",
+        "signature": "putConversationSecureattributes(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/{conversationId}/tags": {
+        "operationId": "putconversationtags",
+        "functionName": "putConversationTags",
+        "signature": "putConversationTags(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata": {
+        "operationId": "putconversationscallparticipantcommunicationuuidata",
+        "functionName": "putConversationsCallParticipantCommunicationUuidata",
+        "signature": "putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "participantId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "PUT /api/v2/conversations/calls/{conversationId}/recordingstate": {
+        "operationId": "putconversationscallrecordingstate",
+        "functionName": "putConversationsCallRecordingstate",
+        "signature": "putConversationsCallRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate": {
+        "operationId": "putconversationscallbackrecordingstate",
+        "functionName": "putConversationsCallbackRecordingstate",
+        "signature": "putConversationsCallbackRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/chats/{conversationId}/recordingstate": {
+        "operationId": "putconversationschatrecordingstate",
+        "functionName": "putConversationsChatRecordingstate",
+        "signature": "putConversationsChatRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate": {
+        "operationId": "putconversationscobrowsesessionrecordingstate",
+        "functionName": "putConversationsCobrowsesessionRecordingstate",
+        "signature": "putConversationsCobrowsesessionRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/emails/{conversationId}/messages/draft": {
+        "operationId": "putconversationsemailmessagesdraft",
+        "functionName": "putConversationsEmailMessagesDraft",
+        "signature": "putConversationsEmailMessagesDraft(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "PUT /api/v2/conversations/emails/{conversationId}/recordingstate": {
+        "operationId": "putconversationsemailrecordingstate",
+        "functionName": "putConversationsEmailRecordingstate",
+        "signature": "putConversationsEmailRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/keyconfigurations/{keyconfigurationsId}": {
+        "operationId": "putconversationskeyconfiguration",
+        "functionName": "putConversationsKeyconfiguration",
+        "signature": "putConversationsKeyconfiguration(keyconfigurationsId, body)",
+        "parameters": [
+            {
+                "name": "keyconfigurationsId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationEncryptionConfiguration"
+    },
+    "PUT /api/v2/conversations/messages/{conversationId}/recordingstate": {
+        "operationId": "putconversationsmessagerecordingstate",
+        "functionName": "putConversationsMessageRecordingstate",
+        "signature": "putConversationsMessageRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/messaging/integrations/line/{integrationId}": {
+        "operationId": "putconversationsmessagingintegrationslineintegrationid",
+        "functionName": "putConversationsMessagingIntegrationsLineIntegrationId",
+        "signature": "putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)",
+        "parameters": [
+            {
+                "name": "integrationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "LineIntegration"
+    },
+    "PUT /api/v2/conversations/messaging/settings/default": {
+        "operationId": "putconversationsmessagingsettingsdefault",
+        "functionName": "putConversationsMessagingSettingsDefault",
+        "signature": "putConversationsMessagingSettingsDefault(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "PUT /api/v2/conversations/messaging/supportedcontent/default": {
+        "operationId": "putconversationsmessagingsupportedcontentdefault",
+        "functionName": "putConversationsMessagingSupportedcontentDefault",
+        "signature": "putConversationsMessagingSupportedcontentDefault(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "PUT /api/v2/conversations/messaging/threadingtimeline": {
+        "operationId": "putconversationsmessagingthreadingtimeline",
+        "functionName": "putConversationsMessagingThreadingtimeline",
+        "signature": "putConversationsMessagingThreadingtimeline(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationThreadingWindow"
+    },
+    "PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate": {
+        "operationId": "putconversationsscreensharerecordingstate",
+        "functionName": "putConversationsScreenshareRecordingstate",
+        "signature": "putConversationsScreenshareRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/socials/{conversationId}/recordingstate": {
+        "operationId": "putconversationssocialrecordingstate",
+        "functionName": "putConversationsSocialRecordingstate",
+        "signature": "putConversationsSocialRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/conversations/videos/{conversationId}/recordingstate": {
+        "operationId": "putconversationsvideorecordingstate",
+        "functionName": "putConversationsVideoRecordingstate",
+        "signature": "putConversationsVideoRecordingstate(conversationId, body)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    }
+    
+}

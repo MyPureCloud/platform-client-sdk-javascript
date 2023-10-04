@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.StationsApi();
+
+let stationId = "stationId_example"; // String | Station ID
+
+// Unassigns the user assigned to this station
+apiInstance.deleteStationAssociateduser(stationId)
+  .then(() => {
+    console.log("deleteStationAssociateduser returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteStationAssociateduser");
+    console.error(err);
+  });

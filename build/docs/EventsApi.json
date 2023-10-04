@@ -1,0 +1,42 @@
+{
+    "POST /api/v2/events/conversations": {
+        "operationId": "posteventsconversations",
+        "functionName": "postEventsConversations",
+        "signature": "postEventsConversations(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BatchEventResponse"
+    },
+    "POST /api/v2/events/users/presence": {
+        "operationId": "posteventsuserspresence",
+        "functionName": "postEventsUsersPresence",
+        "signature": "postEventsUsersPresence(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BatchEventResponse"
+    },
+    "POST /api/v2/events/users/routingstatus": {
+        "operationId": "posteventsusersroutingstatus",
+        "functionName": "postEventsUsersRoutingstatus",
+        "signature": "postEventsUsersRoutingstatus(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BatchEventResponse"
+    }
+    
+}

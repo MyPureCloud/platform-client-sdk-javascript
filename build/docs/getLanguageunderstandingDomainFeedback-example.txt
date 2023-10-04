@@ -1,0 +1,35 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let domainId = "domainId_example"; // String | ID of the NLU domain.
+let opts = { 
+  "intentName": "intentName_example", // String | The top intent name to retrieve feedback for.
+  "assessment": "assessment_example", // String | The top assessment to retrieve feedback for.
+  "dateStart": "dateStart_example", // String | Begin of time window as ISO-8601 date.
+  "dateEnd": "dateEnd_example", // String | End of time window as ISO-8601 date.
+  "includeDeleted": true, // Boolean | Whether to include soft-deleted items in the result.
+  "language": "language_example", // String | Whether to filter response based on the language, e.g. en-us, pt-br.
+  "pageNumber": 1, // Number | Page number
+  "pageSize": 25, // Number | Page size
+  "enableCursorPagination": false, // Boolean | Enable Cursor Pagination
+  "includeTrainingUtterances": true, // Boolean | Include Training Utterances. By default they're included.
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
+  "fields": ["fields_example"] // [String] | Fields and properties to get, comma-separated
+};
+
+// Get all feedback in the given NLU Domain Version.
+apiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)
+  .then((data) => {
+    console.log(`getLanguageunderstandingDomainFeedback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getLanguageunderstandingDomainFeedback");
+    console.error(err);
+  });

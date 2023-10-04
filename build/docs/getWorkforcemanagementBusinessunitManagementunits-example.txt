@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let opts = { 
+  "feature": "feature_example", // String | If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+  "divisionId": "divisionId_example" // String | If specified, the list of management units belonging to the specified division will be returned
+};
+
+// Get all authorized management units in the business unit
+apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitManagementunits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getWorkforcemanagementBusinessunitManagementunits");
+    console.error(err);
+  });

@@ -1,0 +1,32 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ChatApi();
+
+let roomJid = "roomJid_example"; // String | roomJid
+let opts = { 
+  "pageSize": 25, // Number | The total page size requested
+  "pageNumber": 1, // Number | The page number requested
+  "sortBy": "sortBy_example", // String | variable name requested to sort by
+  "expand": ["expand_example"], // [String] | variable name requested by expand list
+  "nextPage": "nextPage_example", // String | next page token
+  "previousPage": "previousPage_example", // String | Previous page token
+  "limit": "limit_example", // String | The maximum number of messages to retrieve
+  "before": "before_example", // String | The cutoff date for messages to retrieve
+  "after": "after_example" // String | The beginning date for messages to retrieve
+};
+
+// Get a room's message history
+apiInstance.getChatsRoomMessages(roomJid, opts)
+  .then((data) => {
+    console.log(`getChatsRoomMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getChatsRoomMessages");
+    console.error(err);
+  });

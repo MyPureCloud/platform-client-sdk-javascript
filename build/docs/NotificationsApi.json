@@ -1,0 +1,124 @@
+{
+    "DELETE /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "operationId": "deletenotificationschannelsubscriptions",
+        "functionName": "deleteNotificationsChannelSubscriptions",
+        "signature": "deleteNotificationsChannelSubscriptions(channelId)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/notifications/availabletopics": {
+        "operationId": "getnotificationsavailabletopics",
+        "functionName": "getNotificationsAvailabletopics",
+        "signature": "getNotificationsAvailabletopics(expand, includePreview)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "includePreview",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AvailableTopicEntityListing"
+    },
+    "GET /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "operationId": "getnotificationschannelsubscriptions",
+        "functionName": "getNotificationsChannelSubscriptions",
+        "signature": "getNotificationsChannelSubscriptions(channelId)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ChannelTopicEntityListing"
+    },
+    "GET /api/v2/notifications/channels": {
+        "operationId": "getnotificationschannels",
+        "functionName": "getNotificationsChannels",
+        "signature": "getNotificationsChannels(includechannels)",
+        "parameters": [
+            {
+                "name": "includechannels",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ChannelEntityListing"
+    },
+    "HEAD /api/v2/notifications/channels/{channelId}": {
+        "operationId": "headnotificationschannel",
+        "functionName": "headNotificationsChannel",
+        "signature": "headNotificationsChannel(channelId)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "operationId": "postnotificationschannelsubscriptions",
+        "functionName": "postNotificationsChannelSubscriptions",
+        "signature": "postNotificationsChannelSubscriptions(channelId, body, ignoreErrors)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "ignoreErrors",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "ChannelTopicEntityListing"
+    },
+    "POST /api/v2/notifications/channels": {
+        "operationId": "postnotificationschannels",
+        "functionName": "postNotificationsChannels",
+        "signature": "postNotificationsChannels()",
+        
+        "return": "Channel"
+    },
+    "PUT /api/v2/notifications/channels/{channelId}/subscriptions": {
+        "operationId": "putnotificationschannelsubscriptions",
+        "functionName": "putNotificationsChannelSubscriptions",
+        "signature": "putNotificationsChannelSubscriptions(channelId, body, ignoreErrors)",
+        "parameters": [
+            {
+                "name": "channelId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "ignoreErrors",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "ChannelTopicEntityListing"
+    }
+    
+}

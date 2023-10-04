@@ -1,0 +1,109 @@
+{
+    "DELETE /api/v2/userrecordings/{recordingId}": {
+        "operationId": "deleteuserrecording",
+        "functionName": "deleteUserrecording",
+        "signature": "deleteUserrecording(recordingId)",
+        "parameters": [
+            {
+                "name": "recordingId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/userrecordings/{recordingId}": {
+        "operationId": "getuserrecording",
+        "functionName": "getUserrecording",
+        "signature": "getUserrecording(recordingId, expand)",
+        "parameters": [
+            {
+                "name": "recordingId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "UserRecording"
+    },
+    "GET /api/v2/userrecordings/{recordingId}/media": {
+        "operationId": "getuserrecordingmedia",
+        "functionName": "getUserrecordingMedia",
+        "signature": "getUserrecordingMedia(recordingId, formatId, async)",
+        "parameters": [
+            {
+                "name": "recordingId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "formatId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "async",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "DownloadResponse"
+    },
+    "GET /api/v2/userrecordings": {
+        "operationId": "getuserrecordings",
+        "functionName": "getUserrecordings",
+        "signature": "getUserrecordings(pageSize, pageNumber, expand)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "UserRecordingEntityListing"
+    },
+    "GET /api/v2/userrecordings/summary": {
+        "operationId": "getuserrecordingssummary",
+        "functionName": "getUserrecordingsSummary",
+        "signature": "getUserrecordingsSummary()",
+        
+        "return": "FaxSummary"
+    },
+    "PUT /api/v2/userrecordings/{recordingId}": {
+        "operationId": "putuserrecording",
+        "functionName": "putUserrecording",
+        "signature": "putUserrecording(recordingId, body, expand)",
+        "parameters": [
+            {
+                "name": "recordingId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "UserRecording"
+    }
+    
+}

@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RecordingApi();
+
+let policyId = "policyId_example"; // String | Policy ID
+
+// Delete a media retention policy
+apiInstance.deleteRecordingMediaretentionpolicy(policyId)
+  .then(() => {
+    console.log("deleteRecordingMediaretentionpolicy returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteRecordingMediaretentionpolicy");
+    console.error(err);
+  });

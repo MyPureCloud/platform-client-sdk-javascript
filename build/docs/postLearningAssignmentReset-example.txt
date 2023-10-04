@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.LearningApi();
+
+let assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+
+// Reset Learning Assignment
+apiInstance.postLearningAssignmentReset(assignmentId)
+  .then((data) => {
+    console.log(`postLearningAssignmentReset success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postLearningAssignmentReset");
+    console.error(err);
+  });

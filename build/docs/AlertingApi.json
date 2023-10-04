@@ -1,0 +1,349 @@
+{
+    "DELETE /api/v2/alerting/alerts/{alertId}": {
+        "operationId": "deletealertingalert",
+        "functionName": "deleteAlertingAlert",
+        "signature": "deleteAlertingAlert(alertId)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "operationId": "deletealertinginteractionstatsalert",
+        "functionName": "deleteAlertingInteractionstatsAlert",
+        "signature": "deleteAlertingInteractionstatsAlert(alertId)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "operationId": "deletealertinginteractionstatsrule",
+        "functionName": "deleteAlertingInteractionstatsRule",
+        "signature": "deleteAlertingInteractionstatsRule(ruleId)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/alerting/rules/{ruleId}": {
+        "operationId": "deletealertingrule",
+        "functionName": "deleteAlertingRule",
+        "signature": "deleteAlertingRule(ruleId)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/alerting/alerts/{alertId}": {
+        "operationId": "getalertingalert",
+        "functionName": "getAlertingAlert",
+        "signature": "getAlertingAlert(alertId)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CommonAlert"
+    },
+    "GET /api/v2/alerting/alerts/active": {
+        "operationId": "getalertingalertsactive",
+        "functionName": "getAlertingAlertsActive",
+        "signature": "getAlertingAlertsActive()",
+        
+        "return": "ActiveAlertCount"
+    },
+    "GET /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "operationId": "getalertinginteractionstatsalert",
+        "functionName": "getAlertingInteractionstatsAlert",
+        "signature": "getAlertingInteractionstatsAlert(alertId, expand)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "InteractionStatsAlert"
+    },
+    "GET /api/v2/alerting/interactionstats/alerts": {
+        "operationId": "getalertinginteractionstatsalerts",
+        "functionName": "getAlertingInteractionstatsAlerts",
+        "signature": "getAlertingInteractionstatsAlerts(expand)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "InteractionStatsAlertContainer"
+    },
+    "GET /api/v2/alerting/interactionstats/alerts/unread": {
+        "operationId": "getalertinginteractionstatsalertsunread",
+        "functionName": "getAlertingInteractionstatsAlertsUnread",
+        "signature": "getAlertingInteractionstatsAlertsUnread()",
+        
+        "return": "UnreadMetric"
+    },
+    "GET /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "operationId": "getalertinginteractionstatsrule",
+        "functionName": "getAlertingInteractionstatsRule",
+        "signature": "getAlertingInteractionstatsRule(ruleId, expand)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "InteractionStatsRule"
+    },
+    "GET /api/v2/alerting/interactionstats/rules": {
+        "operationId": "getalertinginteractionstatsrules",
+        "functionName": "getAlertingInteractionstatsRules",
+        "signature": "getAlertingInteractionstatsRules(expand)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "InteractionStatsRuleContainer"
+    },
+    "GET /api/v2/alerting/rules/{ruleId}": {
+        "operationId": "getalertingrule",
+        "functionName": "getAlertingRule",
+        "signature": "getAlertingRule(ruleId)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CommonRule"
+    },
+    "PATCH /api/v2/alerting/alerts/{alertId}": {
+        "operationId": "patchalertingalert",
+        "functionName": "patchAlertingAlert",
+        "signature": "patchAlertingAlert(alertId, body)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "CommonAlert"
+    },
+    "PATCH /api/v2/alerting/alerts/bulk": {
+        "operationId": "patchalertingalertsbulk",
+        "functionName": "patchAlertingAlertsBulk",
+        "signature": "patchAlertingAlertsBulk(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BulkResponse"
+    },
+    "PATCH /api/v2/alerting/rules/bulk": {
+        "operationId": "patchalertingrulesbulk",
+        "functionName": "patchAlertingRulesBulk",
+        "signature": "patchAlertingRulesBulk(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BulkResponse"
+    },
+    "POST /api/v2/alerting/alerts/query": {
+        "operationId": "postalertingalertsquery",
+        "functionName": "postAlertingAlertsQuery",
+        "signature": "postAlertingAlertsQuery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "AlertListing"
+    },
+    "POST /api/v2/alerting/interactionstats/rules": {
+        "operationId": "postalertinginteractionstatsrules",
+        "functionName": "postAlertingInteractionstatsRules",
+        "signature": "postAlertingInteractionstatsRules(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "InteractionStatsRule"
+    },
+    "POST /api/v2/alerting/rules": {
+        "operationId": "postalertingrules",
+        "functionName": "postAlertingRules",
+        "signature": "postAlertingRules(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CommonRule"
+    },
+    "POST /api/v2/alerting/rules/bulk/remove": {
+        "operationId": "postalertingrulesbulkremove",
+        "functionName": "postAlertingRulesBulkRemove",
+        "signature": "postAlertingRulesBulkRemove(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BulkResponse"
+    },
+    "POST /api/v2/alerting/rules/query": {
+        "operationId": "postalertingrulesquery",
+        "functionName": "postAlertingRulesQuery",
+        "signature": "postAlertingRulesQuery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "CommonRuleContainer"
+    },
+    "PUT /api/v2/alerting/alerts/{alertId}": {
+        "operationId": "putalertingalert",
+        "functionName": "putAlertingAlert",
+        "signature": "putAlertingAlert(alertId, body)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "UnreadStatus"
+    },
+    "PUT /api/v2/alerting/interactionstats/alerts/{alertId}": {
+        "operationId": "putalertinginteractionstatsalert",
+        "functionName": "putAlertingInteractionstatsAlert",
+        "signature": "putAlertingInteractionstatsAlert(alertId, body, expand)",
+        "parameters": [
+            {
+                "name": "alertId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "UnreadStatus"
+    },
+    "PUT /api/v2/alerting/interactionstats/rules/{ruleId}": {
+        "operationId": "putalertinginteractionstatsrule",
+        "functionName": "putAlertingInteractionstatsRule",
+        "signature": "putAlertingInteractionstatsRule(ruleId, body, expand)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "InteractionStatsRule"
+    },
+    "PUT /api/v2/alerting/rules/{ruleId}": {
+        "operationId": "putalertingrule",
+        "functionName": "putAlertingRule",
+        "signature": "putAlertingRule(ruleId, body)",
+        "parameters": [
+            {
+                "name": "ruleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CommonRule"
+    }
+    
+}

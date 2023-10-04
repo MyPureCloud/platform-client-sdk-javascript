@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.PresenceApi();
+
+let opts = { 
+  "id": ["id_example"] // [String] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+};
+
+// Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+apiInstance.getUsersPresencesPurecloudBulk(opts)
+  .then((data) => {
+    console.log(`getUsersPresencesPurecloudBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getUsersPresencesPurecloudBulk");
+    console.error(err);
+  });

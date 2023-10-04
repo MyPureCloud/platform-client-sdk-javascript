@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SCIMApi();
+
+let opts = { 
+  "filter": displayName eq groupName // String | Filtered results are invalid and return 403 Unauthorized.
+};
+
+// Get a list of SCIM schemas
+apiInstance.getScimV2Schemas(opts)
+  .then((data) => {
+    console.log(`getScimV2Schemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getScimV2Schemas");
+    console.error(err);
+  });

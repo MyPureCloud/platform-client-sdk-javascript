@@ -1,0 +1,823 @@
+{
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "operationId": "deleteorgauthorizationtrustee",
+        "functionName": "deleteOrgauthorizationTrustee",
+        "signature": "deleteOrgauthorizationTrustee(trusteeOrgId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}": {
+        "operationId": "deleteorgauthorizationtrusteecloneduser",
+        "functionName": "deleteOrgauthorizationTrusteeCloneduser",
+        "signature": "deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}": {
+        "operationId": "deleteorgauthorizationtrusteegroup",
+        "functionName": "deleteOrgauthorizationTrusteeGroup",
+        "signature": "deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles": {
+        "operationId": "deleteorgauthorizationtrusteegrouproles",
+        "functionName": "deleteOrgauthorizationTrusteeGroupRoles",
+        "signature": "deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}": {
+        "operationId": "deleteorgauthorizationtrusteeuser",
+        "functionName": "deleteOrgauthorizationTrusteeUser",
+        "signature": "deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "operationId": "deleteorgauthorizationtrusteeuserroles",
+        "functionName": "deleteOrgauthorizationTrusteeUserRoles",
+        "signature": "deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustees": {
+        "operationId": "deleteorgauthorizationtrustees",
+        "functionName": "deleteOrgauthorizationTrustees",
+        "signature": "deleteOrgauthorizationTrustees(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}": {
+        "operationId": "deleteorgauthorizationtrustor",
+        "functionName": "deleteOrgauthorizationTrustor",
+        "signature": "deleteOrgauthorizationTrustor(trustorOrgId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
+        "operationId": "deleteorgauthorizationtrustorcloneduser",
+        "functionName": "deleteOrgauthorizationTrustorCloneduser",
+        "signature": "deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}": {
+        "operationId": "deleteorgauthorizationtrustorgroup",
+        "functionName": "deleteOrgauthorizationTrustorGroup",
+        "signature": "deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trustorGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
+        "operationId": "deleteorgauthorizationtrustoruser",
+        "functionName": "deleteOrgauthorizationTrustorUser",
+        "signature": "deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/orgauthorization/trustors": {
+        "operationId": "deleteorgauthorizationtrustors",
+        "functionName": "deleteOrgauthorizationTrustors",
+        "signature": "deleteOrgauthorizationTrustors(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/orgauthorization/pairings/{pairingId}": {
+        "operationId": "getorgauthorizationpairing",
+        "functionName": "getOrgauthorizationPairing",
+        "signature": "getOrgauthorizationPairing(pairingId)",
+        "parameters": [
+            {
+                "name": "pairingId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrustRequest"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "operationId": "getorgauthorizationtrustee",
+        "functionName": "getOrgauthorizationTrustee",
+        "signature": "getOrgauthorizationTrustee(trusteeOrgId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Trustee"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers": {
+        "operationId": "getorgauthorizationtrusteeclonedusers",
+        "functionName": "getOrgauthorizationTrusteeClonedusers",
+        "signature": "getOrgauthorizationTrusteeClonedusers(trusteeOrgId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ClonedUserEntityListing"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}": {
+        "operationId": "getorgauthorizationtrusteegroup",
+        "functionName": "getOrgauthorizationTrusteeGroup",
+        "signature": "getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrustGroup"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles": {
+        "operationId": "getorgauthorizationtrusteegrouproles",
+        "functionName": "getOrgauthorizationTrusteeGroupRoles",
+        "signature": "getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "UserAuthorization"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups": {
+        "operationId": "getorgauthorizationtrusteegroups",
+        "functionName": "getOrgauthorizationTrusteeGroups",
+        "signature": "getOrgauthorizationTrusteeGroups(trusteeOrgId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "TrustGroupEntityListing"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}": {
+        "operationId": "getorgauthorizationtrusteeuser",
+        "functionName": "getOrgauthorizationTrusteeUser",
+        "signature": "getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrustUser"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "operationId": "getorgauthorizationtrusteeuserroles",
+        "functionName": "getOrgauthorizationTrusteeUserRoles",
+        "signature": "getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "UserAuthorization"
+    },
+    "GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users": {
+        "operationId": "getorgauthorizationtrusteeusers",
+        "functionName": "getOrgauthorizationTrusteeUsers",
+        "signature": "getOrgauthorizationTrusteeUsers(trusteeOrgId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "TrustUserEntityListing"
+    },
+    "GET /api/v2/orgauthorization/trustees": {
+        "operationId": "getorgauthorizationtrustees",
+        "functionName": "getOrgauthorizationTrustees",
+        "signature": "getOrgauthorizationTrustees(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "TrustEntityListing"
+    },
+    "GET /api/v2/orgauthorization/trustees/default": {
+        "operationId": "getorgauthorizationtrusteesdefault",
+        "functionName": "getOrgauthorizationTrusteesDefault",
+        "signature": "getOrgauthorizationTrusteesDefault()",
+        
+        "return": "Trustee"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}": {
+        "operationId": "getorgauthorizationtrustor",
+        "functionName": "getOrgauthorizationTrustor",
+        "signature": "getOrgauthorizationTrustor(trustorOrgId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Trustor"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
+        "operationId": "getorgauthorizationtrustorcloneduser",
+        "functionName": "getOrgauthorizationTrustorCloneduser",
+        "signature": "getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ClonedUser"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers": {
+        "operationId": "getorgauthorizationtrustorclonedusers",
+        "functionName": "getOrgauthorizationTrustorClonedusers",
+        "signature": "getOrgauthorizationTrustorClonedusers(trustorOrgId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ClonedUserEntityListing"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}": {
+        "operationId": "getorgauthorizationtrustorgroup",
+        "functionName": "getOrgauthorizationTrustorGroup",
+        "signature": "getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trustorGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrustGroup"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups": {
+        "operationId": "getorgauthorizationtrustorgroups",
+        "functionName": "getOrgauthorizationTrustorGroups",
+        "signature": "getOrgauthorizationTrustorGroups(trustorOrgId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "TrustGroupEntityListing"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
+        "operationId": "getorgauthorizationtrustoruser",
+        "functionName": "getOrgauthorizationTrustorUser",
+        "signature": "getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrustUser"
+    },
+    "GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users": {
+        "operationId": "getorgauthorizationtrustorusers",
+        "functionName": "getOrgauthorizationTrustorUsers",
+        "signature": "getOrgauthorizationTrustorUsers(trustorOrgId, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "TrustUserEntityListing"
+    },
+    "GET /api/v2/orgauthorization/trustors": {
+        "operationId": "getorgauthorizationtrustors",
+        "functionName": "getOrgauthorizationTrustors",
+        "signature": "getOrgauthorizationTrustors(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "TrustorEntityListing"
+    },
+    "POST /api/v2/orgauthorization/pairings": {
+        "operationId": "postorgauthorizationpairings",
+        "functionName": "postOrgauthorizationPairings",
+        "signature": "postOrgauthorizationPairings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TrustRequest"
+    },
+    "POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups": {
+        "operationId": "postorgauthorizationtrusteegroups",
+        "functionName": "postOrgauthorizationTrusteeGroups",
+        "signature": "postOrgauthorizationTrusteeGroups(trusteeOrgId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TrustGroup"
+    },
+    "POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users": {
+        "operationId": "postorgauthorizationtrusteeusers",
+        "functionName": "postOrgauthorizationTrusteeUsers",
+        "signature": "postOrgauthorizationTrusteeUsers(trusteeOrgId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TrustUser"
+    },
+    "POST /api/v2/orgauthorization/trustees": {
+        "operationId": "postorgauthorizationtrustees",
+        "functionName": "postOrgauthorizationTrustees",
+        "signature": "postOrgauthorizationTrustees(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Trustee"
+    },
+    "POST /api/v2/orgauthorization/trustees/audits": {
+        "operationId": "postorgauthorizationtrusteesaudits",
+        "functionName": "postOrgauthorizationTrusteesAudits",
+        "signature": "postOrgauthorizationTrusteesAudits(body, pageSize, pageNumber, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "Object"
+    },
+    "POST /api/v2/orgauthorization/trustees/default": {
+        "operationId": "postorgauthorizationtrusteesdefault",
+        "functionName": "postOrgauthorizationTrusteesDefault",
+        "signature": "postOrgauthorizationTrusteesDefault(assignDefaultRole, autoExpire)",
+        "parameters": [
+            {
+                "name": "assignDefaultRole",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "autoExpire",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "Trustee"
+    },
+    "POST /api/v2/orgauthorization/trustor/audits": {
+        "operationId": "postorgauthorizationtrustoraudits",
+        "functionName": "postOrgauthorizationTrustorAudits",
+        "signature": "postOrgauthorizationTrustorAudits(body, pageSize, pageNumber, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "Object"
+    },
+    "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}": {
+        "operationId": "putorgauthorizationtrustee",
+        "functionName": "putOrgauthorizationTrustee",
+        "signature": "putOrgauthorizationTrustee(trusteeOrgId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Trustee"
+    },
+    "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions": {
+        "operationId": "putorgauthorizationtrusteegrouproledivisions",
+        "functionName": "putOrgauthorizationTrusteeGroupRoledivisions",
+        "signature": "putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeGroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "UserAuthorization"
+    },
+    "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles": {
+        "operationId": "putorgauthorizationtrusteegrouproles",
+        "functionName": "putOrgauthorizationTrusteeGroupRoles",
+        "signature": "putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeGroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "[String]",
+                "required": "true"
+            }
+        ],
+        "return": "UserAuthorization"
+    },
+    "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions": {
+        "operationId": "putorgauthorizationtrusteeuserroledivisions",
+        "functionName": "putOrgauthorizationTrusteeUserRoledivisions",
+        "signature": "putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "UserAuthorization"
+    },
+    "PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles": {
+        "operationId": "putorgauthorizationtrusteeuserroles",
+        "functionName": "putOrgauthorizationTrusteeUserRoles",
+        "signature": "putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body)",
+        "parameters": [
+            {
+                "name": "trusteeOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "[String]",
+                "required": "true"
+            }
+        ],
+        "return": "UserAuthorization"
+    },
+    "PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}": {
+        "operationId": "putorgauthorizationtrustorcloneduser",
+        "functionName": "putOrgauthorizationTrustorCloneduser",
+        "signature": "putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ClonedUser"
+    },
+    "PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}": {
+        "operationId": "putorgauthorizationtrustorgroup",
+        "functionName": "putOrgauthorizationTrustorGroup",
+        "signature": "putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trustorGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrustGroup"
+    },
+    "PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}": {
+        "operationId": "putorgauthorizationtrustoruser",
+        "functionName": "putOrgauthorizationTrustorUser",
+        "signature": "putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)",
+        "parameters": [
+            {
+                "name": "trustorOrgId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trusteeUserId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrustUser"
+    }
+    
+}

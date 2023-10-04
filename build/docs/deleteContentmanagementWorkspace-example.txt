@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ContentManagementApi();
+
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let opts = { 
+  "moveChildrenToWorkspaceId": "moveChildrenToWorkspaceId_example" // String | New location for objects in deleted workspace.
+};
+
+// Delete a workspace
+apiInstance.deleteContentmanagementWorkspace(workspaceId, opts)
+  .then(() => {
+    console.log("deleteContentmanagementWorkspace returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling deleteContentmanagementWorkspace");
+    console.error(err);
+  });

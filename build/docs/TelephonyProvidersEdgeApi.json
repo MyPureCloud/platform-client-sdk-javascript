@@ -1,0 +1,2271 @@
+{
+    "DELETE /api/v2/telephony/providers/edges/{edgeId}": {
+        "operationId": "deletetelephonyprovidersedge",
+        "functionName": "deleteTelephonyProvidersEdge",
+        "signature": "deleteTelephonyProvidersEdge(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "operationId": "deletetelephonyprovidersedgelogicalinterface",
+        "functionName": "deleteTelephonyProvidersEdgeLogicalinterface",
+        "signature": "deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "interfaceId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate": {
+        "operationId": "deletetelephonyprovidersedgesoftwareupdate",
+        "functionName": "deleteTelephonyProvidersEdgeSoftwareupdate",
+        "signature": "deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "operationId": "deletetelephonyprovidersedgescertificateauthority",
+        "functionName": "deleteTelephonyProvidersEdgesCertificateauthority",
+        "signature": "deleteTelephonyProvidersEdgesCertificateauthority(certificateId)",
+        "parameters": [
+            {
+                "name": "certificateId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId}": {
+        "operationId": "deletetelephonyprovidersedgesdidpool",
+        "functionName": "deleteTelephonyProvidersEdgesDidpool",
+        "signature": "deleteTelephonyProvidersEdgesDidpool(didPoolId)",
+        "parameters": [
+            {
+                "name": "didPoolId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}": {
+        "operationId": "deletetelephonyprovidersedgesedgegroup",
+        "functionName": "deleteTelephonyProvidersEdgesEdgegroup",
+        "signature": "deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)",
+        "parameters": [
+            {
+                "name": "edgeGroupId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "operationId": "deletetelephonyprovidersedgesextensionpool",
+        "functionName": "deleteTelephonyProvidersEdgesExtensionpool",
+        "signature": "deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)",
+        "parameters": [
+            {
+                "name": "extensionPoolId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/phones/{phoneId}": {
+        "operationId": "deletetelephonyprovidersedgesphone",
+        "functionName": "deleteTelephonyProvidersEdgesPhone",
+        "signature": "deleteTelephonyProvidersEdgesPhone(phoneId)",
+        "parameters": [
+            {
+                "name": "phoneId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "operationId": "deletetelephonyprovidersedgesphonebasesetting",
+        "functionName": "deleteTelephonyProvidersEdgesPhonebasesetting",
+        "signature": "deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)",
+        "parameters": [
+            {
+                "name": "phoneBaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "operationId": "deletetelephonyprovidersedgessite",
+        "functionName": "deleteTelephonyProvidersEdgesSite",
+        "signature": "deleteTelephonyProvidersEdgesSite(siteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "operationId": "deletetelephonyprovidersedgessiteoutboundroute",
+        "functionName": "deleteTelephonyProvidersEdgesSiteOutboundroute",
+        "signature": "deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "outboundRouteId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
+        "operationId": "deletetelephonyprovidersedgestrunkbasesetting",
+        "functionName": "deleteTelephonyProvidersEdgesTrunkbasesetting",
+        "signature": "deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)",
+        "parameters": [
+            {
+                "name": "trunkBaseSettingsId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}": {
+        "operationId": "gettelephonyprovidersedge",
+        "functionName": "getTelephonyProvidersEdge",
+        "signature": "getTelephonyProvidersEdge(edgeId, expand)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "Edge"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup": {
+        "operationId": "gettelephonyprovidersedgediagnosticnslookup",
+        "functionName": "getTelephonyProvidersEdgeDiagnosticNslookup",
+        "signature": "getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeNetworkDiagnosticResponse"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping": {
+        "operationId": "gettelephonyprovidersedgediagnosticping",
+        "functionName": "getTelephonyProvidersEdgeDiagnosticPing",
+        "signature": "getTelephonyProvidersEdgeDiagnosticPing(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeNetworkDiagnosticResponse"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route": {
+        "operationId": "gettelephonyprovidersedgediagnosticroute",
+        "functionName": "getTelephonyProvidersEdgeDiagnosticRoute",
+        "signature": "getTelephonyProvidersEdgeDiagnosticRoute(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeNetworkDiagnosticResponse"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath": {
+        "operationId": "gettelephonyprovidersedgediagnostictracepath",
+        "functionName": "getTelephonyProvidersEdgeDiagnosticTracepath",
+        "signature": "getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeNetworkDiagnosticResponse"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "operationId": "gettelephonyprovidersedgelogicalinterface",
+        "functionName": "getTelephonyProvidersEdgeLogicalinterface",
+        "signature": "getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, expand)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "interfaceId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "DomainLogicalInterface"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces": {
+        "operationId": "gettelephonyprovidersedgelogicalinterfaces",
+        "functionName": "getTelephonyProvidersEdgeLogicalinterfaces",
+        "signature": "getTelephonyProvidersEdgeLogicalinterfaces(edgeId, expand)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "LogicalInterfaceEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}": {
+        "operationId": "gettelephonyprovidersedgelogsjob",
+        "functionName": "getTelephonyProvidersEdgeLogsJob",
+        "signature": "getTelephonyProvidersEdgeLogsJob(edgeId, jobId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeLogsJob"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/metrics": {
+        "operationId": "gettelephonyprovidersedgemetrics",
+        "functionName": "getTelephonyProvidersEdgeMetrics",
+        "signature": "getTelephonyProvidersEdgeMetrics(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeMetrics"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}": {
+        "operationId": "gettelephonyprovidersedgephysicalinterface",
+        "functionName": "getTelephonyProvidersEdgePhysicalinterface",
+        "signature": "getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "interfaceId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DomainPhysicalInterface"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces": {
+        "operationId": "gettelephonyprovidersedgephysicalinterfaces",
+        "functionName": "getTelephonyProvidersEdgePhysicalinterfaces",
+        "signature": "getTelephonyProvidersEdgePhysicalinterfaces(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "PhysicalInterfaceEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage": {
+        "operationId": "gettelephonyprovidersedgesetuppackage",
+        "functionName": "getTelephonyProvidersEdgeSetuppackage",
+        "signature": "getTelephonyProvidersEdgeSetuppackage(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "VmPairingInfo"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate": {
+        "operationId": "gettelephonyprovidersedgesoftwareupdate",
+        "functionName": "getTelephonyProvidersEdgeSoftwareupdate",
+        "signature": "getTelephonyProvidersEdgeSoftwareupdate(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DomainEdgeSoftwareUpdateDto"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions": {
+        "operationId": "gettelephonyprovidersedgesoftwareversions",
+        "functionName": "getTelephonyProvidersEdgeSoftwareversions",
+        "signature": "getTelephonyProvidersEdgeSoftwareversions(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DomainEdgeSoftwareVersionDtoEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/{edgeId}/trunks": {
+        "operationId": "gettelephonyprovidersedgetrunks",
+        "functionName": "getTelephonyProvidersEdgeTrunks",
+        "signature": "getTelephonyProvidersEdgeTrunks(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "trunkBaseId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "trunkType",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "TrunkEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges": {
+        "operationId": "gettelephonyprovidersedges",
+        "functionName": "getTelephonyProvidersEdges",
+        "signature": "getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed, showCloudMedia)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "edgeGroupId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "managed",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "showCloudMedia",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "EdgeEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/availablelanguages": {
+        "operationId": "gettelephonyprovidersedgesavailablelanguages",
+        "functionName": "getTelephonyProvidersEdgesAvailablelanguages",
+        "signature": "getTelephonyProvidersEdgesAvailablelanguages()",
+        
+        "return": "AvailableLanguageList"
+    },
+    "GET /api/v2/telephony/providers/edges/certificateauthorities": {
+        "operationId": "gettelephonyprovidersedgescertificateauthorities",
+        "functionName": "getTelephonyProvidersEdgesCertificateauthorities",
+        "signature": "getTelephonyProvidersEdgesCertificateauthorities()",
+        
+        "return": "CertificateAuthorityEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "operationId": "gettelephonyprovidersedgescertificateauthority",
+        "functionName": "getTelephonyProvidersEdgesCertificateauthority",
+        "signature": "getTelephonyProvidersEdgesCertificateauthority(certificateId)",
+        "parameters": [
+            {
+                "name": "certificateId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DomainCertificateAuthority"
+    },
+    "GET /api/v2/telephony/providers/edges/dids/{didId}": {
+        "operationId": "gettelephonyprovidersedgesdid",
+        "functionName": "getTelephonyProvidersEdgesDid",
+        "signature": "getTelephonyProvidersEdgesDid(didId)",
+        "parameters": [
+            {
+                "name": "didId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DID"
+    },
+    "GET /api/v2/telephony/providers/edges/didpools/{didPoolId}": {
+        "operationId": "gettelephonyprovidersedgesdidpool",
+        "functionName": "getTelephonyProvidersEdgesDidpool",
+        "signature": "getTelephonyProvidersEdgesDidpool(didPoolId)",
+        "parameters": [
+            {
+                "name": "didPoolId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DIDPool"
+    },
+    "GET /api/v2/telephony/providers/edges/didpools": {
+        "operationId": "gettelephonyprovidersedgesdidpools",
+        "functionName": "getTelephonyProvidersEdgesDidpools",
+        "signature": "getTelephonyProvidersEdgesDidpools(pageSize, pageNumber, sortBy, id)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "DIDPoolEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/didpools/dids": {
+        "operationId": "gettelephonyprovidersedgesdidpoolsdids",
+        "functionName": "getTelephonyProvidersEdgesDidpoolsDids",
+        "signature": "getTelephonyProvidersEdgesDidpoolsDids(type, id, numberMatch, pageSize, pageNumber, sortOrder)",
+        "parameters": [
+            {
+                "name": "type",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "numberMatch",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "DIDNumberEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/dids": {
+        "operationId": "gettelephonyprovidersedgesdids",
+        "functionName": "getTelephonyProvidersEdgesDids",
+        "signature": "getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "phoneNumber",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "ownerId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "didPoolId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "DIDEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}": {
+        "operationId": "gettelephonyprovidersedgesedgegroup",
+        "functionName": "getTelephonyProvidersEdgesEdgegroup",
+        "signature": "getTelephonyProvidersEdgesEdgegroup(edgeGroupId, expand)",
+        "parameters": [
+            {
+                "name": "edgeGroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "EdgeGroup"
+    },
+    "GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}": {
+        "operationId": "gettelephonyprovidersedgesedgegroupedgetrunkbase",
+        "functionName": "getTelephonyProvidersEdgesEdgegroupEdgetrunkbase",
+        "signature": "getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)",
+        "parameters": [
+            {
+                "name": "edgegroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "edgetrunkbaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeTrunkBase"
+    },
+    "GET /api/v2/telephony/providers/edges/edgegroups": {
+        "operationId": "gettelephonyprovidersedgesedgegroups",
+        "functionName": "getTelephonyProvidersEdgesEdgegroups",
+        "signature": "getTelephonyProvidersEdgesEdgegroups(pageSize, pageNumber, name, sortBy, managed)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "managed",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "EdgeGroupEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/edgeversionreport": {
+        "operationId": "gettelephonyprovidersedgesedgeversionreport",
+        "functionName": "getTelephonyProvidersEdgesEdgeversionreport",
+        "signature": "getTelephonyProvidersEdgesEdgeversionreport()",
+        
+        "return": "EdgeVersionReport"
+    },
+    "GET /api/v2/telephony/providers/edges/expired": {
+        "operationId": "gettelephonyprovidersedgesexpired",
+        "functionName": "getTelephonyProvidersEdgesExpired",
+        "signature": "getTelephonyProvidersEdgesExpired()",
+        
+        "return": "ExpiredEdgeListing"
+    },
+    "GET /api/v2/telephony/providers/edges/extensions/{extensionId}": {
+        "operationId": "gettelephonyprovidersedgesextension",
+        "functionName": "getTelephonyProvidersEdgesExtension",
+        "signature": "getTelephonyProvidersEdgesExtension(extensionId)",
+        "parameters": [
+            {
+                "name": "extensionId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Extension"
+    },
+    "GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "operationId": "gettelephonyprovidersedgesextensionpool",
+        "functionName": "getTelephonyProvidersEdgesExtensionpool",
+        "signature": "getTelephonyProvidersEdgesExtensionpool(extensionPoolId)",
+        "parameters": [
+            {
+                "name": "extensionPoolId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ExtensionPool"
+    },
+    "GET /api/v2/telephony/providers/edges/extensionpools": {
+        "operationId": "gettelephonyprovidersedgesextensionpools",
+        "functionName": "getTelephonyProvidersEdgesExtensionpools",
+        "signature": "getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, _number)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "_number",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ExtensionPoolEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/extensionpools/divisionviews": {
+        "operationId": "gettelephonyprovidersedgesextensionpoolsdivisionviews",
+        "functionName": "getTelephonyProvidersEdgesExtensionpoolsDivisionviews",
+        "signature": "getTelephonyProvidersEdgesExtensionpoolsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "ExtensionPoolDivisionViewEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/extensions": {
+        "operationId": "gettelephonyprovidersedgesextensions",
+        "functionName": "getTelephonyProvidersEdgesExtensions",
+        "signature": "getTelephonyProvidersEdgesExtensions(pageSize, pageNumber, sortBy, sortOrder, _number)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "_number",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ExtensionEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/lines/{lineId}": {
+        "operationId": "gettelephonyprovidersedgesline",
+        "functionName": "getTelephonyProvidersEdgesLine",
+        "signature": "getTelephonyProvidersEdgesLine(lineId)",
+        "parameters": [
+            {
+                "name": "lineId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Line"
+    },
+    "GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}": {
+        "operationId": "gettelephonyprovidersedgeslinebasesetting",
+        "functionName": "getTelephonyProvidersEdgesLinebasesetting",
+        "signature": "getTelephonyProvidersEdgesLinebasesetting(lineBaseId)",
+        "parameters": [
+            {
+                "name": "lineBaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "LineBase"
+    },
+    "GET /api/v2/telephony/providers/edges/linebasesettings": {
+        "operationId": "gettelephonyprovidersedgeslinebasesettings",
+        "functionName": "getTelephonyProvidersEdgesLinebasesettings",
+        "signature": "getTelephonyProvidersEdgesLinebasesettings(pageNumber, pageSize, sortBy, sortOrder, expand)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "LineBaseEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/lines": {
+        "operationId": "gettelephonyprovidersedgeslines",
+        "functionName": "getTelephonyProvidersEdgesLines",
+        "signature": "getTelephonyProvidersEdgesLines(pageSize, pageNumber, name, sortBy, expand)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "LineEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/lines/template": {
+        "operationId": "gettelephonyprovidersedgeslinestemplate",
+        "functionName": "getTelephonyProvidersEdgesLinesTemplate",
+        "signature": "getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)",
+        "parameters": [
+            {
+                "name": "lineBaseSettingsId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Line"
+    },
+    "GET /api/v2/telephony/providers/edges/logicalinterfaces": {
+        "operationId": "gettelephonyprovidersedgeslogicalinterfaces",
+        "functionName": "getTelephonyProvidersEdgesLogicalinterfaces",
+        "signature": "getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, expand)",
+        "parameters": [
+            {
+                "name": "edgeIds",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "LogicalInterfaceEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}": {
+        "operationId": "gettelephonyprovidersedgesmediastatisticsconversation",
+        "functionName": "getTelephonyProvidersEdgesMediastatisticsConversation",
+        "signature": "getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MediaStatisticsListing"
+    },
+    "GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}": {
+        "operationId": "gettelephonyprovidersedgesmediastatisticsconversationcommunication",
+        "functionName": "getTelephonyProvidersEdgesMediastatisticsConversationCommunication",
+        "signature": "getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "communicationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MediaStatistics"
+    },
+    "GET /api/v2/telephony/providers/edges/metrics": {
+        "operationId": "gettelephonyprovidersedgesmetrics",
+        "functionName": "getTelephonyProvidersEdgesMetrics",
+        "signature": "getTelephonyProvidersEdgesMetrics(edgeIds)",
+        "parameters": [
+            {
+                "name": "edgeIds",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[EdgeMetrics]"
+    },
+    "GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}": {
+        "operationId": "gettelephonyprovidersedgesoutboundroute",
+        "functionName": "getTelephonyProvidersEdgesOutboundroute",
+        "signature": "getTelephonyProvidersEdgesOutboundroute(outboundRouteId)",
+        "parameters": [
+            {
+                "name": "outboundRouteId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "OutboundRoute"
+    },
+    "GET /api/v2/telephony/providers/edges/outboundroutes": {
+        "operationId": "gettelephonyprovidersedgesoutboundroutes",
+        "functionName": "getTelephonyProvidersEdgesOutboundroutes",
+        "signature": "getTelephonyProvidersEdgesOutboundroutes(pageSize, pageNumber, name, siteId, externalTrunkBasesIds, sortBy)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "externalTrunkBasesIds",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "OutboundRouteEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/phones/{phoneId}": {
+        "operationId": "gettelephonyprovidersedgesphone",
+        "functionName": "getTelephonyProvidersEdgesPhone",
+        "signature": "getTelephonyProvidersEdgesPhone(phoneId)",
+        "parameters": [
+            {
+                "name": "phoneId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Phone"
+    },
+    "GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "operationId": "gettelephonyprovidersedgesphonebasesetting",
+        "functionName": "getTelephonyProvidersEdgesPhonebasesetting",
+        "signature": "getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)",
+        "parameters": [
+            {
+                "name": "phoneBaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "PhoneBase"
+    },
+    "GET /api/v2/telephony/providers/edges/phonebasesettings": {
+        "operationId": "gettelephonyprovidersedgesphonebasesettings",
+        "functionName": "getTelephonyProvidersEdgesPhonebasesettings",
+        "signature": "getTelephonyProvidersEdgesPhonebasesettings(pageSize, pageNumber, sortBy, sortOrder, expand, name)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "PhoneBaseEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/phonebasesettings/availablemetabases": {
+        "operationId": "gettelephonyprovidersedgesphonebasesettingsavailablemetabases",
+        "functionName": "getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases",
+        "signature": "getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "PhoneMetaBaseEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/phonebasesettings/template": {
+        "operationId": "gettelephonyprovidersedgesphonebasesettingstemplate",
+        "functionName": "getTelephonyProvidersEdgesPhonebasesettingsTemplate",
+        "signature": "getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)",
+        "parameters": [
+            {
+                "name": "phoneMetabaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "PhoneBase"
+    },
+    "GET /api/v2/telephony/providers/edges/phones": {
+        "operationId": "gettelephonyprovidersedgesphones",
+        "functionName": "getTelephonyProvidersEdgesPhones",
+        "signature": "getTelephonyProvidersEdgesPhones(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, statusOperationalStatus, secondaryStatusOperationalStatus, expand, fields)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "webRtcUserId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "phoneBaseSettingsId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "linesLoggedInUserId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "linesDefaultForUserId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "phoneHardwareId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "linesId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "linesName",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "statusOperationalStatus",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "secondaryStatusOperationalStatus",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "fields",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "PhoneEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/phones/template": {
+        "operationId": "gettelephonyprovidersedgesphonestemplate",
+        "functionName": "getTelephonyProvidersEdgesPhonesTemplate",
+        "signature": "getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)",
+        "parameters": [
+            {
+                "name": "phoneBaseSettingsId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Phone"
+    },
+    "GET /api/v2/telephony/providers/edges/physicalinterfaces": {
+        "operationId": "gettelephonyprovidersedgesphysicalinterfaces",
+        "functionName": "getTelephonyProvidersEdgesPhysicalinterfaces",
+        "signature": "getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)",
+        "parameters": [
+            {
+                "name": "edgeIds",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "PhysicalInterfaceEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "operationId": "gettelephonyprovidersedgessite",
+        "functionName": "getTelephonyProvidersEdgesSite",
+        "signature": "getTelephonyProvidersEdgesSite(siteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Site"
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}": {
+        "operationId": "gettelephonyprovidersedgessitenumberplan",
+        "functionName": "getTelephonyProvidersEdgesSiteNumberplan",
+        "signature": "getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "numberPlanId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "NumberPlan"
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans": {
+        "operationId": "gettelephonyprovidersedgessitenumberplans",
+        "functionName": "getTelephonyProvidersEdgesSiteNumberplans",
+        "signature": "getTelephonyProvidersEdgesSiteNumberplans(siteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[NumberPlan]"
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications": {
+        "operationId": "gettelephonyprovidersedgessitenumberplansclassifications",
+        "functionName": "getTelephonyProvidersEdgesSiteNumberplansClassifications",
+        "signature": "getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, classification)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "classification",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "['String']"
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "operationId": "gettelephonyprovidersedgessiteoutboundroute",
+        "functionName": "getTelephonyProvidersEdgesSiteOutboundroute",
+        "signature": "getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "outboundRouteId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "OutboundRouteBase"
+    },
+    "GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes": {
+        "operationId": "gettelephonyprovidersedgessiteoutboundroutes",
+        "functionName": "getTelephonyProvidersEdgesSiteOutboundroutes",
+        "signature": "getTelephonyProvidersEdgesSiteOutboundroutes(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "externalTrunkBasesIds",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "OutboundRouteBaseEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/sites": {
+        "operationId": "gettelephonyprovidersedgessites",
+        "functionName": "getTelephonyProvidersEdgesSites",
+        "signature": "getTelephonyProvidersEdgesSites(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "locationId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "managed",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "SiteEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/timezones": {
+        "operationId": "gettelephonyprovidersedgestimezones",
+        "functionName": "getTelephonyProvidersEdgesTimezones",
+        "signature": "getTelephonyProvidersEdgesTimezones(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "TimeZoneEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/trunks/{trunkId}": {
+        "operationId": "gettelephonyprovidersedgestrunk",
+        "functionName": "getTelephonyProvidersEdgesTrunk",
+        "signature": "getTelephonyProvidersEdgesTrunk(trunkId)",
+        "parameters": [
+            {
+                "name": "trunkId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Trunk"
+    },
+    "GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics": {
+        "operationId": "gettelephonyprovidersedgestrunkmetrics",
+        "functionName": "getTelephonyProvidersEdgesTrunkMetrics",
+        "signature": "getTelephonyProvidersEdgesTrunkMetrics(trunkId)",
+        "parameters": [
+            {
+                "name": "trunkId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrunkMetrics"
+    },
+    "GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
+        "operationId": "gettelephonyprovidersedgestrunkbasesetting",
+        "functionName": "getTelephonyProvidersEdgesTrunkbasesetting",
+        "signature": "getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, ignoreHidden)",
+        "parameters": [
+            {
+                "name": "trunkBaseSettingsId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "ignoreHidden",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "TrunkBase"
+    },
+    "GET /api/v2/telephony/providers/edges/trunkbasesettings": {
+        "operationId": "gettelephonyprovidersedgestrunkbasesettings",
+        "functionName": "getTelephonyProvidersEdgesTrunkbasesettings",
+        "signature": "getTelephonyProvidersEdgesTrunkbasesettings(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "recordingEnabled",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "ignoreHidden",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "managed",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "TrunkBaseEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases": {
+        "operationId": "gettelephonyprovidersedgestrunkbasesettingsavailablemetabases",
+        "functionName": "getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases",
+        "signature": "getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(type, pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "type",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "TrunkMetabaseEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/trunkbasesettings/template": {
+        "operationId": "gettelephonyprovidersedgestrunkbasesettingstemplate",
+        "functionName": "getTelephonyProvidersEdgesTrunkbasesettingsTemplate",
+        "signature": "getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)",
+        "parameters": [
+            {
+                "name": "trunkMetabaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TrunkBase"
+    },
+    "GET /api/v2/telephony/providers/edges/trunks": {
+        "operationId": "gettelephonyprovidersedgestrunks",
+        "functionName": "getTelephonyProvidersEdgesTrunks",
+        "signature": "getTelephonyProvidersEdgesTrunks(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "trunkBaseId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "trunkType",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "TrunkEntityListing"
+    },
+    "GET /api/v2/telephony/providers/edges/trunks/metrics": {
+        "operationId": "gettelephonyprovidersedgestrunksmetrics",
+        "functionName": "getTelephonyProvidersEdgesTrunksMetrics",
+        "signature": "getTelephonyProvidersEdgesTrunksMetrics(trunkIds)",
+        "parameters": [
+            {
+                "name": "trunkIds",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "[TrunkMetrics]"
+    },
+    "GET /api/v2/telephony/providers/edges/trunkswithrecording": {
+        "operationId": "gettelephonyprovidersedgestrunkswithrecording",
+        "functionName": "getTelephonyProvidersEdgesTrunkswithrecording",
+        "signature": "getTelephonyProvidersEdgesTrunkswithrecording(trunkType)",
+        "parameters": [
+            {
+                "name": "trunkType",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "TrunkRecordingEnabledCount"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup": {
+        "operationId": "posttelephonyprovidersedgediagnosticnslookup",
+        "functionName": "postTelephonyProvidersEdgeDiagnosticNslookup",
+        "signature": "postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeNetworkDiagnostic"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping": {
+        "operationId": "posttelephonyprovidersedgediagnosticping",
+        "functionName": "postTelephonyProvidersEdgeDiagnosticPing",
+        "signature": "postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeNetworkDiagnostic"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route": {
+        "operationId": "posttelephonyprovidersedgediagnosticroute",
+        "functionName": "postTelephonyProvidersEdgeDiagnosticRoute",
+        "signature": "postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeNetworkDiagnostic"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath": {
+        "operationId": "posttelephonyprovidersedgediagnostictracepath",
+        "functionName": "postTelephonyProvidersEdgeDiagnosticTracepath",
+        "signature": "postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeNetworkDiagnostic"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces": {
+        "operationId": "posttelephonyprovidersedgelogicalinterfaces",
+        "functionName": "postTelephonyProvidersEdgeLogicalinterfaces",
+        "signature": "postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DomainLogicalInterface"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload": {
+        "operationId": "posttelephonyprovidersedgelogsjobupload",
+        "functionName": "postTelephonyProvidersEdgeLogsJobUpload",
+        "signature": "postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs": {
+        "operationId": "posttelephonyprovidersedgelogsjobs",
+        "functionName": "postTelephonyProvidersEdgeLogsJobs",
+        "signature": "postTelephonyProvidersEdgeLogsJobs(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeLogsJobResponse"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/reboot": {
+        "operationId": "posttelephonyprovidersedgereboot",
+        "functionName": "postTelephonyProvidersEdgeReboot",
+        "signature": "postTelephonyProvidersEdgeReboot(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "'String'"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate": {
+        "operationId": "posttelephonyprovidersedgesoftwareupdate",
+        "functionName": "postTelephonyProvidersEdgeSoftwareupdate",
+        "signature": "postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DomainEdgeSoftwareUpdateDto"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/statuscode": {
+        "operationId": "posttelephonyprovidersedgestatuscode",
+        "functionName": "postTelephonyProvidersEdgeStatuscode",
+        "signature": "postTelephonyProvidersEdgeStatuscode(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "'String'"
+    },
+    "POST /api/v2/telephony/providers/edges/{edgeId}/unpair": {
+        "operationId": "posttelephonyprovidersedgeunpair",
+        "functionName": "postTelephonyProvidersEdgeUnpair",
+        "signature": "postTelephonyProvidersEdgeUnpair(edgeId)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "POST /api/v2/telephony/providers/edges": {
+        "operationId": "posttelephonyprovidersedges",
+        "functionName": "postTelephonyProvidersEdges",
+        "signature": "postTelephonyProvidersEdges(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Edge"
+    },
+    "POST /api/v2/telephony/providers/edges/addressvalidation": {
+        "operationId": "posttelephonyprovidersedgesaddressvalidation",
+        "functionName": "postTelephonyProvidersEdgesAddressvalidation",
+        "signature": "postTelephonyProvidersEdgesAddressvalidation(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ValidateAddressResponse"
+    },
+    "POST /api/v2/telephony/providers/edges/certificateauthorities": {
+        "operationId": "posttelephonyprovidersedgescertificateauthorities",
+        "functionName": "postTelephonyProvidersEdgesCertificateauthorities",
+        "signature": "postTelephonyProvidersEdgesCertificateauthorities(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DomainCertificateAuthority"
+    },
+    "POST /api/v2/telephony/providers/edges/didpools": {
+        "operationId": "posttelephonyprovidersedgesdidpools",
+        "functionName": "postTelephonyProvidersEdgesDidpools",
+        "signature": "postTelephonyProvidersEdgesDidpools(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DIDPool"
+    },
+    "POST /api/v2/telephony/providers/edges/edgegroups": {
+        "operationId": "posttelephonyprovidersedgesedgegroups",
+        "functionName": "postTelephonyProvidersEdgesEdgegroups",
+        "signature": "postTelephonyProvidersEdgesEdgegroups(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeGroup"
+    },
+    "POST /api/v2/telephony/providers/edges/extensionpools": {
+        "operationId": "posttelephonyprovidersedgesextensionpools",
+        "functionName": "postTelephonyProvidersEdgesExtensionpools",
+        "signature": "postTelephonyProvidersEdgesExtensionpools(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ExtensionPool"
+    },
+    "POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot": {
+        "operationId": "posttelephonyprovidersedgesphonereboot",
+        "functionName": "postTelephonyProvidersEdgesPhoneReboot",
+        "signature": "postTelephonyProvidersEdgesPhoneReboot(phoneId)",
+        "parameters": [
+            {
+                "name": "phoneId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/telephony/providers/edges/phonebasesettings": {
+        "operationId": "posttelephonyprovidersedgesphonebasesettings",
+        "functionName": "postTelephonyProvidersEdgesPhonebasesettings",
+        "signature": "postTelephonyProvidersEdgesPhonebasesettings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "PhoneBase"
+    },
+    "POST /api/v2/telephony/providers/edges/phones": {
+        "operationId": "posttelephonyprovidersedgesphones",
+        "functionName": "postTelephonyProvidersEdgesPhones",
+        "signature": "postTelephonyProvidersEdgesPhones(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Phone"
+    },
+    "POST /api/v2/telephony/providers/edges/phones/reboot": {
+        "operationId": "posttelephonyprovidersedgesphonesreboot",
+        "functionName": "postTelephonyProvidersEdgesPhonesReboot",
+        "signature": "postTelephonyProvidersEdgesPhonesReboot(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes": {
+        "operationId": "posttelephonyprovidersedgessiteoutboundroutes",
+        "functionName": "postTelephonyProvidersEdgesSiteOutboundroutes",
+        "signature": "postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "OutboundRouteBase"
+    },
+    "POST /api/v2/telephony/providers/edges/sites": {
+        "operationId": "posttelephonyprovidersedgessites",
+        "functionName": "postTelephonyProvidersEdgesSites",
+        "signature": "postTelephonyProvidersEdgesSites(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Site"
+    },
+    "POST /api/v2/telephony/providers/edges/trunkbasesettings": {
+        "operationId": "posttelephonyprovidersedgestrunkbasesettings",
+        "functionName": "postTelephonyProvidersEdgesTrunkbasesettings",
+        "signature": "postTelephonyProvidersEdgesTrunkbasesettings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TrunkBase"
+    },
+    "PUT /api/v2/telephony/providers/edges/{edgeId}": {
+        "operationId": "puttelephonyprovidersedge",
+        "functionName": "putTelephonyProvidersEdge",
+        "signature": "putTelephonyProvidersEdge(edgeId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Edge"
+    },
+    "PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}": {
+        "operationId": "puttelephonyprovidersedgelogicalinterface",
+        "functionName": "putTelephonyProvidersEdgeLogicalinterface",
+        "signature": "putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)",
+        "parameters": [
+            {
+                "name": "edgeId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "interfaceId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DomainLogicalInterface"
+    },
+    "PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}": {
+        "operationId": "puttelephonyprovidersedgescertificateauthority",
+        "functionName": "putTelephonyProvidersEdgesCertificateauthority",
+        "signature": "putTelephonyProvidersEdgesCertificateauthority(certificateId, body)",
+        "parameters": [
+            {
+                "name": "certificateId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DomainCertificateAuthority"
+    },
+    "PUT /api/v2/telephony/providers/edges/didpools/{didPoolId}": {
+        "operationId": "puttelephonyprovidersedgesdidpool",
+        "functionName": "putTelephonyProvidersEdgesDidpool",
+        "signature": "putTelephonyProvidersEdgesDidpool(didPoolId, body)",
+        "parameters": [
+            {
+                "name": "didPoolId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DIDPool"
+    },
+    "PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}": {
+        "operationId": "puttelephonyprovidersedgesedgegroup",
+        "functionName": "putTelephonyProvidersEdgesEdgegroup",
+        "signature": "putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)",
+        "parameters": [
+            {
+                "name": "edgeGroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeGroup"
+    },
+    "PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}": {
+        "operationId": "puttelephonyprovidersedgesedgegroupedgetrunkbase",
+        "functionName": "putTelephonyProvidersEdgesEdgegroupEdgetrunkbase",
+        "signature": "putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)",
+        "parameters": [
+            {
+                "name": "edgegroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "edgetrunkbaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EdgeTrunkBase"
+    },
+    "PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}": {
+        "operationId": "puttelephonyprovidersedgesextensionpool",
+        "functionName": "putTelephonyProvidersEdgesExtensionpool",
+        "signature": "putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)",
+        "parameters": [
+            {
+                "name": "extensionPoolId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ExtensionPool"
+    },
+    "PUT /api/v2/telephony/providers/edges/phones/{phoneId}": {
+        "operationId": "puttelephonyprovidersedgesphone",
+        "functionName": "putTelephonyProvidersEdgesPhone",
+        "signature": "putTelephonyProvidersEdgesPhone(phoneId, body)",
+        "parameters": [
+            {
+                "name": "phoneId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Phone"
+    },
+    "PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}": {
+        "operationId": "puttelephonyprovidersedgesphonebasesetting",
+        "functionName": "putTelephonyProvidersEdgesPhonebasesetting",
+        "signature": "putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)",
+        "parameters": [
+            {
+                "name": "phoneBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "PhoneBase"
+    },
+    "PUT /api/v2/telephony/providers/edges/sites/{siteId}": {
+        "operationId": "puttelephonyprovidersedgessite",
+        "functionName": "putTelephonyProvidersEdgesSite",
+        "signature": "putTelephonyProvidersEdgesSite(siteId, body)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Site"
+    },
+    "PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans": {
+        "operationId": "puttelephonyprovidersedgessitenumberplans",
+        "functionName": "putTelephonyProvidersEdgesSiteNumberplans",
+        "signature": "putTelephonyProvidersEdgesSiteNumberplans(siteId, body)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "[NumberPlan]"
+    },
+    "PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}": {
+        "operationId": "puttelephonyprovidersedgessiteoutboundroute",
+        "functionName": "putTelephonyProvidersEdgesSiteOutboundroute",
+        "signature": "putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)",
+        "parameters": [
+            {
+                "name": "siteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "outboundRouteId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "OutboundRouteBase"
+    },
+    "PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}": {
+        "operationId": "puttelephonyprovidersedgestrunkbasesetting",
+        "functionName": "putTelephonyProvidersEdgesTrunkbasesetting",
+        "signature": "putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)",
+        "parameters": [
+            {
+                "name": "trunkBaseSettingsId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "TrunkBase"
+    }
+    
+}

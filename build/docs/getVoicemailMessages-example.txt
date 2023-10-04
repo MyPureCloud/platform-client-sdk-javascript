@@ -1,0 +1,24 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.VoicemailApi();
+
+let opts = { 
+  "ids": "ids_example", // String | An optional comma separated list of VoicemailMessage ids
+  "expand": ["expand_example"] // [String] | If the caller is a known user, which fields, if any, to expand
+};
+
+// List voicemail messages
+apiInstance.getVoicemailMessages(opts)
+  .then((data) => {
+    console.log(`getVoicemailMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getVoicemailMessages");
+    console.error(err);
+  });

@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+
+// Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+apiInstance.postOutboundContactlistClear(contactListId)
+  .then(() => {
+    console.log("postOutboundContactlistClear returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postOutboundContactlistClear");
+    console.error(err);
+  });

@@ -1,0 +1,2598 @@
+{
+    "DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "operationId": "deleteoutboundattemptlimit",
+        "functionName": "deleteOutboundAttemptlimit",
+        "signature": "deleteOutboundAttemptlimit(attemptLimitsId)",
+        "parameters": [
+            {
+                "name": "attemptLimitsId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "operationId": "deleteoutboundcallabletimeset",
+        "functionName": "deleteOutboundCallabletimeset",
+        "signature": "deleteOutboundCallabletimeset(callableTimeSetId)",
+        "parameters": [
+            {
+                "name": "callableTimeSetId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
+        "operationId": "deleteoutboundcallanalysisresponseset",
+        "functionName": "deleteOutboundCallanalysisresponseset",
+        "signature": "deleteOutboundCallanalysisresponseset(callAnalysisSetId)",
+        "parameters": [
+            {
+                "name": "callAnalysisSetId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/campaigns/{campaignId}": {
+        "operationId": "deleteoutboundcampaign",
+        "functionName": "deleteOutboundCampaign",
+        "signature": "deleteOutboundCampaign(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Campaign"
+    },
+    "DELETE /api/v2/outbound/campaigns/{campaignId}/progress": {
+        "operationId": "deleteoutboundcampaignprogress",
+        "functionName": "deleteOutboundCampaignProgress",
+        "signature": "deleteOutboundCampaignProgress(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/campaignrules/{campaignRuleId}": {
+        "operationId": "deleteoutboundcampaignrule",
+        "functionName": "deleteOutboundCampaignrule",
+        "signature": "deleteOutboundCampaignrule(campaignRuleId)",
+        "parameters": [
+            {
+                "name": "campaignRuleId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/contactlists/{contactListId}": {
+        "operationId": "deleteoutboundcontactlist",
+        "functionName": "deleteOutboundContactlist",
+        "signature": "deleteOutboundContactlist(contactListId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
+        "operationId": "deleteoutboundcontactlistcontact",
+        "functionName": "deleteOutboundContactlistContact",
+        "signature": "deleteOutboundContactlistContact(contactListId, contactId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "contactId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/contactlists/{contactListId}/contacts": {
+        "operationId": "deleteoutboundcontactlistcontacts",
+        "functionName": "deleteOutboundContactlistContacts",
+        "signature": "deleteOutboundContactlistContacts(contactListId, contactIds)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "contactIds",
+                "type": "[String]",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "operationId": "deleteoutboundcontactlistfilter",
+        "functionName": "deleteOutboundContactlistfilter",
+        "signature": "deleteOutboundContactlistfilter(contactListFilterId)",
+        "parameters": [
+            {
+                "name": "contactListFilterId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/contactlists": {
+        "operationId": "deleteoutboundcontactlists",
+        "functionName": "deleteOutboundContactlists",
+        "signature": "deleteOutboundContactlists(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId}": {
+        "operationId": "deleteoutbounddigitalruleset",
+        "functionName": "deleteOutboundDigitalruleset",
+        "signature": "deleteOutboundDigitalruleset(digitalRuleSetId)",
+        "parameters": [
+            {
+                "name": "digitalRuleSetId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/dnclists/{dncListId}": {
+        "operationId": "deleteoutbounddnclist",
+        "functionName": "deleteOutboundDnclist",
+        "signature": "deleteOutboundDnclist(dncListId)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns": {
+        "operationId": "deleteoutbounddnclistcustomexclusioncolumns",
+        "functionName": "deleteOutboundDnclistCustomexclusioncolumns",
+        "signature": "deleteOutboundDnclistCustomexclusioncolumns(dncListId, expiredOnly)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expiredOnly",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/dnclists/{dncListId}/emailaddresses": {
+        "operationId": "deleteoutbounddnclistemailaddresses",
+        "functionName": "deleteOutboundDnclistEmailaddresses",
+        "signature": "deleteOutboundDnclistEmailaddresses(dncListId, expiredOnly)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expiredOnly",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/dnclists/{dncListId}/phonenumbers": {
+        "operationId": "deleteoutbounddnclistphonenumbers",
+        "functionName": "deleteOutboundDnclistPhonenumbers",
+        "signature": "deleteOutboundDnclistPhonenumbers(dncListId, expiredOnly)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expiredOnly",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "deleteoutboundmessagingcampaign",
+        "functionName": "deleteOutboundMessagingcampaign",
+        "signature": "deleteOutboundMessagingcampaign(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingCampaign"
+    },
+    "DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress": {
+        "operationId": "deleteoutboundmessagingcampaignprogress",
+        "functionName": "deleteOutboundMessagingcampaignProgress",
+        "signature": "deleteOutboundMessagingcampaignProgress(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/rulesets/{ruleSetId}": {
+        "operationId": "deleteoutboundruleset",
+        "functionName": "deleteOutboundRuleset",
+        "signature": "deleteOutboundRuleset(ruleSetId)",
+        "parameters": [
+            {
+                "name": "ruleSetId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/schedules/campaigns/{campaignId}": {
+        "operationId": "deleteoutboundschedulescampaign",
+        "functionName": "deleteOutboundSchedulesCampaign",
+        "signature": "deleteOutboundSchedulesCampaign(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}": {
+        "operationId": "deleteoutboundschedulesemailcampaign",
+        "functionName": "deleteOutboundSchedulesEmailcampaign",
+        "signature": "deleteOutboundSchedulesEmailcampaign(emailCampaignId)",
+        "parameters": [
+            {
+                "name": "emailCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "deleteoutboundschedulesmessagingcampaign",
+        "functionName": "deleteOutboundSchedulesMessagingcampaign",
+        "signature": "deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/schedules/sequences/{sequenceId}": {
+        "operationId": "deleteoutboundschedulessequence",
+        "functionName": "deleteOutboundSchedulesSequence",
+        "signature": "deleteOutboundSchedulesSequence(sequenceId)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/outbound/sequences/{sequenceId}": {
+        "operationId": "deleteoutboundsequence",
+        "functionName": "deleteOutboundSequence",
+        "signature": "deleteOutboundSequence(sequenceId)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "operationId": "getoutboundattemptlimit",
+        "functionName": "getOutboundAttemptlimit",
+        "signature": "getOutboundAttemptlimit(attemptLimitsId)",
+        "parameters": [
+            {
+                "name": "attemptLimitsId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AttemptLimits"
+    },
+    "GET /api/v2/outbound/attemptlimits": {
+        "operationId": "getoutboundattemptlimits",
+        "functionName": "getOutboundAttemptlimits",
+        "signature": "getOutboundAttemptlimits(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "AttemptLimitsEntityListing"
+    },
+    "GET /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "operationId": "getoutboundcallabletimeset",
+        "functionName": "getOutboundCallabletimeset",
+        "signature": "getOutboundCallabletimeset(callableTimeSetId)",
+        "parameters": [
+            {
+                "name": "callableTimeSetId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CallableTimeSet"
+    },
+    "GET /api/v2/outbound/callabletimesets": {
+        "operationId": "getoutboundcallabletimesets",
+        "functionName": "getOutboundCallabletimesets",
+        "signature": "getOutboundCallabletimesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CallableTimeSetEntityListing"
+    },
+    "GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
+        "operationId": "getoutboundcallanalysisresponseset",
+        "functionName": "getOutboundCallanalysisresponseset",
+        "signature": "getOutboundCallanalysisresponseset(callAnalysisSetId)",
+        "parameters": [
+            {
+                "name": "callAnalysisSetId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseSet"
+    },
+    "GET /api/v2/outbound/callanalysisresponsesets": {
+        "operationId": "getoutboundcallanalysisresponsesets",
+        "functionName": "getOutboundCallanalysisresponsesets",
+        "signature": "getOutboundCallanalysisresponsesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ResponseSetEntityListing"
+    },
+    "GET /api/v2/outbound/campaigns/{campaignId}": {
+        "operationId": "getoutboundcampaign",
+        "functionName": "getOutboundCampaign",
+        "signature": "getOutboundCampaign(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Campaign"
+    },
+    "GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results": {
+        "operationId": "getoutboundcampaignagentownedmappingpreviewresults",
+        "functionName": "getOutboundCampaignAgentownedmappingpreviewResults",
+        "signature": "getOutboundCampaignAgentownedmappingpreviewResults(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AgentOwnedMappingPreviewListing"
+    },
+    "GET /api/v2/outbound/campaigns/{campaignId}/diagnostics": {
+        "operationId": "getoutboundcampaigndiagnostics",
+        "functionName": "getOutboundCampaignDiagnostics",
+        "signature": "getOutboundCampaignDiagnostics(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignDiagnostics"
+    },
+    "GET /api/v2/outbound/campaigns/{campaignId}/interactions": {
+        "operationId": "getoutboundcampaigninteractions",
+        "functionName": "getOutboundCampaignInteractions",
+        "signature": "getOutboundCampaignInteractions(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignInteractions"
+    },
+    "GET /api/v2/outbound/campaigns/{campaignId}/progress": {
+        "operationId": "getoutboundcampaignprogress",
+        "functionName": "getOutboundCampaignProgress",
+        "signature": "getOutboundCampaignProgress(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignProgress"
+    },
+    "GET /api/v2/outbound/campaigns/{campaignId}/stats": {
+        "operationId": "getoutboundcampaignstats",
+        "functionName": "getOutboundCampaignStats",
+        "signature": "getOutboundCampaignStats(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignStats"
+    },
+    "GET /api/v2/outbound/campaignrules/{campaignRuleId}": {
+        "operationId": "getoutboundcampaignrule",
+        "functionName": "getOutboundCampaignrule",
+        "signature": "getOutboundCampaignrule(campaignRuleId)",
+        "parameters": [
+            {
+                "name": "campaignRuleId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignRule"
+    },
+    "GET /api/v2/outbound/campaignrules": {
+        "operationId": "getoutboundcampaignrules",
+        "functionName": "getOutboundCampaignrules",
+        "signature": "getOutboundCampaignrules(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CampaignRuleEntityListing"
+    },
+    "GET /api/v2/outbound/campaigns": {
+        "operationId": "getoutboundcampaigns",
+        "functionName": "getOutboundCampaigns",
+        "signature": "getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dncListIds",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "distributionQueueId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "edgeGroupId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "callAnalysisResponseSetId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CampaignEntityListing"
+    },
+    "GET /api/v2/outbound/campaigns/all": {
+        "operationId": "getoutboundcampaignsall",
+        "functionName": "getOutboundCampaignsAll",
+        "signature": "getOutboundCampaignsAll(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "mediaType",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CommonCampaignEntityListing"
+    },
+    "GET /api/v2/outbound/campaigns/all/divisionviews": {
+        "operationId": "getoutboundcampaignsalldivisionviews",
+        "functionName": "getOutboundCampaignsAllDivisionviews",
+        "signature": "getOutboundCampaignsAllDivisionviews(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "mediaType",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CommonCampaignDivisionViewEntityListing"
+    },
+    "GET /api/v2/outbound/campaigns/divisionviews/{campaignId}": {
+        "operationId": "getoutboundcampaignsdivisionview",
+        "functionName": "getOutboundCampaignsDivisionview",
+        "signature": "getOutboundCampaignsDivisionview(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignDivisionView"
+    },
+    "GET /api/v2/outbound/campaigns/divisionviews": {
+        "operationId": "getoutboundcampaignsdivisionviews",
+        "functionName": "getOutboundCampaignsDivisionviews",
+        "signature": "getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CampaignDivisionViewListing"
+    },
+    "GET /api/v2/outbound/contactlists/{contactListId}": {
+        "operationId": "getoutboundcontactlist",
+        "functionName": "getOutboundContactlist",
+        "signature": "getOutboundContactlist(contactListId, includeImportStatus, includeSize)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "includeImportStatus",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeSize",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "ContactList"
+    },
+    "GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
+        "operationId": "getoutboundcontactlistcontact",
+        "functionName": "getOutboundContactlistContact",
+        "signature": "getOutboundContactlistContact(contactListId, contactId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "contactId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DialerContact"
+    },
+    "GET /api/v2/outbound/contactlists/{contactListId}/export": {
+        "operationId": "getoutboundcontactlistexport",
+        "functionName": "getOutboundContactlistExport",
+        "signature": "getOutboundContactlistExport(contactListId, download)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "download",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ExportUri"
+    },
+    "GET /api/v2/outbound/contactlists/{contactListId}/importstatus": {
+        "operationId": "getoutboundcontactlistimportstatus",
+        "functionName": "getOutboundContactlistImportstatus",
+        "signature": "getOutboundContactlistImportstatus(contactListId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ImportStatus"
+    },
+    "GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview": {
+        "operationId": "getoutboundcontactlisttimezonemappingpreview",
+        "functionName": "getOutboundContactlistTimezonemappingpreview",
+        "signature": "getOutboundContactlistTimezonemappingpreview(contactListId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "TimeZoneMappingPreview"
+    },
+    "GET /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "operationId": "getoutboundcontactlistfilter",
+        "functionName": "getOutboundContactlistfilter",
+        "signature": "getOutboundContactlistfilter(contactListFilterId)",
+        "parameters": [
+            {
+                "name": "contactListFilterId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ContactListFilter"
+    },
+    "GET /api/v2/outbound/contactlistfilters": {
+        "operationId": "getoutboundcontactlistfilters",
+        "functionName": "getOutboundContactlistfilters",
+        "signature": "getOutboundContactlistfilters(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ContactListFilterEntityListing"
+    },
+    "GET /api/v2/outbound/contactlists": {
+        "operationId": "getoutboundcontactlists",
+        "functionName": "getOutboundContactlists",
+        "signature": "getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "includeImportStatus",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeSize",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ContactListEntityListing"
+    },
+    "GET /api/v2/outbound/contactlists/divisionviews/{contactListId}": {
+        "operationId": "getoutboundcontactlistsdivisionview",
+        "functionName": "getOutboundContactlistsDivisionview",
+        "signature": "getOutboundContactlistsDivisionview(contactListId, includeImportStatus, includeSize)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "includeImportStatus",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeSize",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "ContactListDivisionView"
+    },
+    "GET /api/v2/outbound/contactlists/divisionviews": {
+        "operationId": "getoutboundcontactlistsdivisionviews",
+        "functionName": "getOutboundContactlistsDivisionviews",
+        "signature": "getOutboundContactlistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "includeImportStatus",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeSize",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ContactListDivisionViewListing"
+    },
+    "GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId}": {
+        "operationId": "getoutbounddigitalruleset",
+        "functionName": "getOutboundDigitalruleset",
+        "signature": "getOutboundDigitalruleset(digitalRuleSetId)",
+        "parameters": [
+            {
+                "name": "digitalRuleSetId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DigitalRuleSet"
+    },
+    "GET /api/v2/outbound/digitalrulesets": {
+        "operationId": "getoutbounddigitalrulesets",
+        "functionName": "getOutboundDigitalrulesets",
+        "signature": "getOutboundDigitalrulesets(pageSize, pageNumber, sortBy, sortOrder, name, id)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "DigitalRuleSetEntityListing"
+    },
+    "GET /api/v2/outbound/dnclists/{dncListId}": {
+        "operationId": "getoutbounddnclist",
+        "functionName": "getOutboundDnclist",
+        "signature": "getOutboundDnclist(dncListId, includeImportStatus, includeSize)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "includeImportStatus",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeSize",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "DncList"
+    },
+    "GET /api/v2/outbound/dnclists/{dncListId}/export": {
+        "operationId": "getoutbounddnclistexport",
+        "functionName": "getOutboundDnclistExport",
+        "signature": "getOutboundDnclistExport(dncListId, download)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "download",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ExportUri"
+    },
+    "GET /api/v2/outbound/dnclists/{dncListId}/importstatus": {
+        "operationId": "getoutbounddnclistimportstatus",
+        "functionName": "getOutboundDnclistImportstatus",
+        "signature": "getOutboundDnclistImportstatus(dncListId)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ImportStatus"
+    },
+    "GET /api/v2/outbound/dnclists": {
+        "operationId": "getoutbounddnclists",
+        "functionName": "getOutboundDnclists",
+        "signature": "getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "includeImportStatus",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeSize",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dncSourceType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "DncListEntityListing"
+    },
+    "GET /api/v2/outbound/dnclists/divisionviews/{dncListId}": {
+        "operationId": "getoutbounddnclistsdivisionview",
+        "functionName": "getOutboundDnclistsDivisionview",
+        "signature": "getOutboundDnclistsDivisionview(dncListId, includeImportStatus, includeSize)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "includeImportStatus",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeSize",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "DncListDivisionView"
+    },
+    "GET /api/v2/outbound/dnclists/divisionviews": {
+        "operationId": "getoutbounddnclistsdivisionviews",
+        "functionName": "getOutboundDnclistsDivisionviews",
+        "signature": "getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "includeImportStatus",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeSize",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dncSourceType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "DncListDivisionViewListing"
+    },
+    "GET /api/v2/outbound/events/{eventId}": {
+        "operationId": "getoutboundevent",
+        "functionName": "getOutboundEvent",
+        "signature": "getOutboundEvent(eventId)",
+        "parameters": [
+            {
+                "name": "eventId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EventLog"
+    },
+    "GET /api/v2/outbound/events": {
+        "operationId": "getoutboundevents",
+        "functionName": "getOutboundEvents",
+        "signature": "getOutboundEvents(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "category",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "level",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "DialerEventEntityListing"
+    },
+    "GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "getoutboundmessagingcampaign",
+        "functionName": "getOutboundMessagingcampaign",
+        "signature": "getOutboundMessagingcampaign(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingCampaign"
+    },
+    "GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics": {
+        "operationId": "getoutboundmessagingcampaigndiagnostics",
+        "functionName": "getOutboundMessagingcampaignDiagnostics",
+        "signature": "getOutboundMessagingcampaignDiagnostics(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingCampaignDiagnostics"
+    },
+    "GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress": {
+        "operationId": "getoutboundmessagingcampaignprogress",
+        "functionName": "getOutboundMessagingcampaignProgress",
+        "signature": "getOutboundMessagingcampaignProgress(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignProgress"
+    },
+    "GET /api/v2/outbound/messagingcampaigns": {
+        "operationId": "getoutboundmessagingcampaigns",
+        "functionName": "getOutboundMessagingcampaigns",
+        "signature": "getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "divisionId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "type",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "senderSmsPhoneNumber",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingCampaignEntityListing"
+    },
+    "GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}": {
+        "operationId": "getoutboundmessagingcampaignsdivisionview",
+        "functionName": "getOutboundMessagingcampaignsDivisionview",
+        "signature": "getOutboundMessagingcampaignsDivisionview(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingCampaignDivisionView"
+    },
+    "GET /api/v2/outbound/messagingcampaigns/divisionviews": {
+        "operationId": "getoutboundmessagingcampaignsdivisionviews",
+        "functionName": "getOutboundMessagingcampaignsDivisionviews",
+        "signature": "getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "type",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "senderSmsPhoneNumber",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingCampaignDivisionViewEntityListing"
+    },
+    "GET /api/v2/outbound/rulesets/{ruleSetId}": {
+        "operationId": "getoutboundruleset",
+        "functionName": "getOutboundRuleset",
+        "signature": "getOutboundRuleset(ruleSetId)",
+        "parameters": [
+            {
+                "name": "ruleSetId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "RuleSet"
+    },
+    "GET /api/v2/outbound/rulesets": {
+        "operationId": "getoutboundrulesets",
+        "functionName": "getOutboundRulesets",
+        "signature": "getOutboundRulesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "RuleSetEntityListing"
+    },
+    "GET /api/v2/outbound/schedules/campaigns/{campaignId}": {
+        "operationId": "getoutboundschedulescampaign",
+        "functionName": "getOutboundSchedulesCampaign",
+        "signature": "getOutboundSchedulesCampaign(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignSchedule"
+    },
+    "GET /api/v2/outbound/schedules/campaigns": {
+        "operationId": "getoutboundschedulescampaigns",
+        "functionName": "getOutboundSchedulesCampaigns",
+        "signature": "getOutboundSchedulesCampaigns()",
+        
+        "return": "[CampaignSchedule]"
+    },
+    "GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}": {
+        "operationId": "getoutboundschedulesemailcampaign",
+        "functionName": "getOutboundSchedulesEmailcampaign",
+        "signature": "getOutboundSchedulesEmailcampaign(emailCampaignId)",
+        "parameters": [
+            {
+                "name": "emailCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EmailCampaignSchedule"
+    },
+    "GET /api/v2/outbound/schedules/emailcampaigns": {
+        "operationId": "getoutboundschedulesemailcampaigns",
+        "functionName": "getOutboundSchedulesEmailcampaigns",
+        "signature": "getOutboundSchedulesEmailcampaigns()",
+        
+        "return": "MessagingCampaignScheduleEntityListing"
+    },
+    "GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "getoutboundschedulesmessagingcampaign",
+        "functionName": "getOutboundSchedulesMessagingcampaign",
+        "signature": "getOutboundSchedulesMessagingcampaign(messagingCampaignId)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingCampaignSchedule"
+    },
+    "GET /api/v2/outbound/schedules/messagingcampaigns": {
+        "operationId": "getoutboundschedulesmessagingcampaigns",
+        "functionName": "getOutboundSchedulesMessagingcampaigns",
+        "signature": "getOutboundSchedulesMessagingcampaigns()",
+        
+        "return": "MessagingCampaignScheduleEntityListing"
+    },
+    "GET /api/v2/outbound/schedules/sequences/{sequenceId}": {
+        "operationId": "getoutboundschedulessequence",
+        "functionName": "getOutboundSchedulesSequence",
+        "signature": "getOutboundSchedulesSequence(sequenceId)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "SequenceSchedule"
+    },
+    "GET /api/v2/outbound/schedules/sequences": {
+        "operationId": "getoutboundschedulessequences",
+        "functionName": "getOutboundSchedulesSequences",
+        "signature": "getOutboundSchedulesSequences()",
+        
+        "return": "[SequenceSchedule]"
+    },
+    "GET /api/v2/outbound/sequences/{sequenceId}": {
+        "operationId": "getoutboundsequence",
+        "functionName": "getOutboundSequence",
+        "signature": "getOutboundSequence(sequenceId)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignSequence"
+    },
+    "GET /api/v2/outbound/sequences": {
+        "operationId": "getoutboundsequences",
+        "functionName": "getOutboundSequences",
+        "signature": "getOutboundSequences(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "allowEmptyResult",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "filterType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CampaignSequenceEntityListing"
+    },
+    "GET /api/v2/outbound/settings": {
+        "operationId": "getoutboundsettings",
+        "functionName": "getOutboundSettings",
+        "signature": "getOutboundSettings()",
+        
+        "return": "OutboundSettings"
+    },
+    "GET /api/v2/outbound/wrapupcodemappings": {
+        "operationId": "getoutboundwrapupcodemappings",
+        "functionName": "getOutboundWrapupcodemappings",
+        "signature": "getOutboundWrapupcodemappings()",
+        
+        "return": "WrapUpCodeMapping"
+    },
+    "PATCH /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns": {
+        "operationId": "patchoutbounddnclistcustomexclusioncolumns",
+        "functionName": "patchOutboundDnclistCustomexclusioncolumns",
+        "signature": "patchOutboundDnclistCustomexclusioncolumns(dncListId, body)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/outbound/dnclists/{dncListId}/emailaddresses": {
+        "operationId": "patchoutbounddnclistemailaddresses",
+        "functionName": "patchOutboundDnclistEmailaddresses",
+        "signature": "patchOutboundDnclistEmailaddresses(dncListId, body)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/outbound/dnclists/{dncListId}/phonenumbers": {
+        "operationId": "patchoutbounddnclistphonenumbers",
+        "functionName": "patchOutboundDnclistPhonenumbers",
+        "signature": "patchOutboundDnclistPhonenumbers(dncListId, body)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/outbound/settings": {
+        "operationId": "patchoutboundsettings",
+        "functionName": "patchOutboundSettings",
+        "signature": "patchOutboundSettings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/outbound/attemptlimits": {
+        "operationId": "postoutboundattemptlimits",
+        "functionName": "postOutboundAttemptlimits",
+        "signature": "postOutboundAttemptlimits(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AttemptLimits"
+    },
+    "POST /api/v2/outbound/audits": {
+        "operationId": "postoutboundaudits",
+        "functionName": "postOutboundAudits",
+        "signature": "postOutboundAudits(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "facetsOnly",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "AuditSearchResult"
+    },
+    "POST /api/v2/outbound/callabletimesets": {
+        "operationId": "postoutboundcallabletimesets",
+        "functionName": "postOutboundCallabletimesets",
+        "signature": "postOutboundCallabletimesets(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CallableTimeSet"
+    },
+    "POST /api/v2/outbound/callanalysisresponsesets": {
+        "operationId": "postoutboundcallanalysisresponsesets",
+        "functionName": "postOutboundCallanalysisresponsesets",
+        "signature": "postOutboundCallanalysisresponsesets(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseSet"
+    },
+    "POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview": {
+        "operationId": "postoutboundcampaignagentownedmappingpreview",
+        "functionName": "postOutboundCampaignAgentownedmappingpreview",
+        "signature": "postOutboundCampaignAgentownedmappingpreview(campaignId)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Object"
+    },
+    "POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule": {
+        "operationId": "postoutboundcampaigncallbackschedule",
+        "functionName": "postOutboundCampaignCallbackSchedule",
+        "signature": "postOutboundCampaignCallbackSchedule(campaignId, body)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ContactCallbackRequest"
+    },
+    "POST /api/v2/outbound/campaignrules": {
+        "operationId": "postoutboundcampaignrules",
+        "functionName": "postOutboundCampaignrules",
+        "signature": "postOutboundCampaignrules(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignRule"
+    },
+    "POST /api/v2/outbound/campaigns": {
+        "operationId": "postoutboundcampaigns",
+        "functionName": "postOutboundCampaigns",
+        "signature": "postOutboundCampaigns(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Campaign"
+    },
+    "POST /api/v2/outbound/campaigns/progress": {
+        "operationId": "postoutboundcampaignsprogress",
+        "functionName": "postOutboundCampaignsProgress",
+        "signature": "postOutboundCampaignsProgress(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "[String]",
+                "required": "true"
+            }
+        ],
+        "return": "[CampaignProgress]"
+    },
+    "POST /api/v2/outbound/contactlists/{contactListId}/clear": {
+        "operationId": "postoutboundcontactlistclear",
+        "functionName": "postOutboundContactlistClear",
+        "signature": "postOutboundContactlistClear(contactListId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/outbound/contactlists/{contactListId}/contacts": {
+        "operationId": "postoutboundcontactlistcontacts",
+        "functionName": "postOutboundContactlistContacts",
+        "signature": "postOutboundContactlistContacts(contactListId, body, priority, clearSystemData, doNotQueue)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "priority",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "clearSystemData",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "doNotQueue",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "[DialerContact]"
+    },
+    "POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk": {
+        "operationId": "postoutboundcontactlistcontactsbulk",
+        "functionName": "postOutboundContactlistContactsBulk",
+        "signature": "postOutboundContactlistContactsBulk(contactListId, body)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "[String]",
+                "required": "true"
+            }
+        ],
+        "return": "[DialerContact]"
+    },
+    "POST /api/v2/outbound/contactlists/{contactListId}/export": {
+        "operationId": "postoutboundcontactlistexport",
+        "functionName": "postOutboundContactlistExport",
+        "signature": "postOutboundContactlistExport(contactListId)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DomainEntityRef"
+    },
+    "POST /api/v2/outbound/contactlistfilters": {
+        "operationId": "postoutboundcontactlistfilters",
+        "functionName": "postOutboundContactlistfilters",
+        "signature": "postOutboundContactlistfilters(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ContactListFilter"
+    },
+    "POST /api/v2/outbound/contactlistfilters/preview": {
+        "operationId": "postoutboundcontactlistfilterspreview",
+        "functionName": "postOutboundContactlistfiltersPreview",
+        "signature": "postOutboundContactlistfiltersPreview(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "FilterPreviewResponse"
+    },
+    "POST /api/v2/outbound/contactlists": {
+        "operationId": "postoutboundcontactlists",
+        "functionName": "postOutboundContactlists",
+        "signature": "postOutboundContactlists(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ContactList"
+    },
+    "POST /api/v2/outbound/conversations/{conversationId}/dnc": {
+        "operationId": "postoutboundconversationdnc",
+        "functionName": "postOutboundConversationDnc",
+        "signature": "postOutboundConversationDnc(conversationId)",
+        "parameters": [
+            {
+                "name": "conversationId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/outbound/digitalrulesets": {
+        "operationId": "postoutbounddigitalrulesets",
+        "functionName": "postOutboundDigitalrulesets",
+        "signature": "postOutboundDigitalrulesets(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DigitalRuleSet"
+    },
+    "POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses": {
+        "operationId": "postoutbounddnclistemailaddresses",
+        "functionName": "postOutboundDnclistEmailaddresses",
+        "signature": "postOutboundDnclistEmailaddresses(dncListId, body)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "[String]",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/outbound/dnclists/{dncListId}/export": {
+        "operationId": "postoutbounddnclistexport",
+        "functionName": "postOutboundDnclistExport",
+        "signature": "postOutboundDnclistExport(dncListId)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DomainEntityRef"
+    },
+    "POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers": {
+        "operationId": "postoutbounddnclistphonenumbers",
+        "functionName": "postOutboundDnclistPhonenumbers",
+        "signature": "postOutboundDnclistPhonenumbers(dncListId, body, expirationDateTime)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "[String]",
+                "required": "true"
+            },
+            {
+                "name": "expirationDateTime",
+                "type": "String",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/outbound/dnclists": {
+        "operationId": "postoutbounddnclists",
+        "functionName": "postOutboundDnclists",
+        "signature": "postOutboundDnclists(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DncList"
+    },
+    "POST /api/v2/outbound/messagingcampaigns": {
+        "operationId": "postoutboundmessagingcampaigns",
+        "functionName": "postOutboundMessagingcampaigns",
+        "signature": "postOutboundMessagingcampaigns(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingCampaign"
+    },
+    "POST /api/v2/outbound/messagingcampaigns/progress": {
+        "operationId": "postoutboundmessagingcampaignsprogress",
+        "functionName": "postOutboundMessagingcampaignsProgress",
+        "signature": "postOutboundMessagingcampaignsProgress(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "[String]",
+                "required": "true"
+            }
+        ],
+        "return": "[CampaignProgress]"
+    },
+    "POST /api/v2/outbound/rulesets": {
+        "operationId": "postoutboundrulesets",
+        "functionName": "postOutboundRulesets",
+        "signature": "postOutboundRulesets(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "RuleSet"
+    },
+    "POST /api/v2/outbound/sequences": {
+        "operationId": "postoutboundsequences",
+        "functionName": "postOutboundSequences",
+        "signature": "postOutboundSequences(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignSequence"
+    },
+    "PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}": {
+        "operationId": "putoutboundattemptlimit",
+        "functionName": "putOutboundAttemptlimit",
+        "signature": "putOutboundAttemptlimit(attemptLimitsId, body)",
+        "parameters": [
+            {
+                "name": "attemptLimitsId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "AttemptLimits"
+    },
+    "PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}": {
+        "operationId": "putoutboundcallabletimeset",
+        "functionName": "putOutboundCallabletimeset",
+        "signature": "putOutboundCallabletimeset(callableTimeSetId, body)",
+        "parameters": [
+            {
+                "name": "callableTimeSetId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CallableTimeSet"
+    },
+    "PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}": {
+        "operationId": "putoutboundcallanalysisresponseset",
+        "functionName": "putOutboundCallanalysisresponseset",
+        "signature": "putOutboundCallanalysisresponseset(callAnalysisSetId, body)",
+        "parameters": [
+            {
+                "name": "callAnalysisSetId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseSet"
+    },
+    "PUT /api/v2/outbound/campaigns/{campaignId}": {
+        "operationId": "putoutboundcampaign",
+        "functionName": "putOutboundCampaign",
+        "signature": "putOutboundCampaign(campaignId, body)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Campaign"
+    },
+    "PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}": {
+        "operationId": "putoutboundcampaignagent",
+        "functionName": "putOutboundCampaignAgent",
+        "signature": "putOutboundCampaignAgent(campaignId, userId, body)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "'String'"
+    },
+    "PUT /api/v2/outbound/campaignrules/{campaignRuleId}": {
+        "operationId": "putoutboundcampaignrule",
+        "functionName": "putOutboundCampaignrule",
+        "signature": "putOutboundCampaignrule(campaignRuleId, body)",
+        "parameters": [
+            {
+                "name": "campaignRuleId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignRule"
+    },
+    "PUT /api/v2/outbound/contactlists/{contactListId}": {
+        "operationId": "putoutboundcontactlist",
+        "functionName": "putOutboundContactlist",
+        "signature": "putOutboundContactlist(contactListId, body)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ContactList"
+    },
+    "PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}": {
+        "operationId": "putoutboundcontactlistcontact",
+        "functionName": "putOutboundContactlistContact",
+        "signature": "putOutboundContactlistContact(contactListId, contactId, body)",
+        "parameters": [
+            {
+                "name": "contactListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "contactId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DialerContact"
+    },
+    "PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}": {
+        "operationId": "putoutboundcontactlistfilter",
+        "functionName": "putOutboundContactlistfilter",
+        "signature": "putOutboundContactlistfilter(contactListFilterId, body)",
+        "parameters": [
+            {
+                "name": "contactListFilterId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ContactListFilter"
+    },
+    "PUT /api/v2/outbound/digitalrulesets/{digitalRuleSetId}": {
+        "operationId": "putoutbounddigitalruleset",
+        "functionName": "putOutboundDigitalruleset",
+        "signature": "putOutboundDigitalruleset(digitalRuleSetId, body)",
+        "parameters": [
+            {
+                "name": "digitalRuleSetId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DigitalRuleSet"
+    },
+    "PUT /api/v2/outbound/dnclists/{dncListId}": {
+        "operationId": "putoutbounddnclist",
+        "functionName": "putOutboundDnclist",
+        "signature": "putOutboundDnclist(dncListId, body)",
+        "parameters": [
+            {
+                "name": "dncListId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DncList"
+    },
+    "PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "putoutboundmessagingcampaign",
+        "functionName": "putOutboundMessagingcampaign",
+        "signature": "putOutboundMessagingcampaign(messagingCampaignId, body)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingCampaign"
+    },
+    "PUT /api/v2/outbound/rulesets/{ruleSetId}": {
+        "operationId": "putoutboundruleset",
+        "functionName": "putOutboundRuleset",
+        "signature": "putOutboundRuleset(ruleSetId, body)",
+        "parameters": [
+            {
+                "name": "ruleSetId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "RuleSet"
+    },
+    "PUT /api/v2/outbound/schedules/campaigns/{campaignId}": {
+        "operationId": "putoutboundschedulescampaign",
+        "functionName": "putOutboundSchedulesCampaign",
+        "signature": "putOutboundSchedulesCampaign(campaignId, body)",
+        "parameters": [
+            {
+                "name": "campaignId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignSchedule"
+    },
+    "PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}": {
+        "operationId": "putoutboundschedulesemailcampaign",
+        "functionName": "putOutboundSchedulesEmailcampaign",
+        "signature": "putOutboundSchedulesEmailcampaign(emailCampaignId, body)",
+        "parameters": [
+            {
+                "name": "emailCampaignId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "EmailCampaignSchedule"
+    },
+    "PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}": {
+        "operationId": "putoutboundschedulesmessagingcampaign",
+        "functionName": "putOutboundSchedulesMessagingcampaign",
+        "signature": "putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)",
+        "parameters": [
+            {
+                "name": "messagingCampaignId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingCampaignSchedule"
+    },
+    "PUT /api/v2/outbound/schedules/sequences/{sequenceId}": {
+        "operationId": "putoutboundschedulessequence",
+        "functionName": "putOutboundSchedulesSequence",
+        "signature": "putOutboundSchedulesSequence(sequenceId, body)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "SequenceSchedule"
+    },
+    "PUT /api/v2/outbound/sequences/{sequenceId}": {
+        "operationId": "putoutboundsequence",
+        "functionName": "putOutboundSequence",
+        "signature": "putOutboundSequence(sequenceId, body)",
+        "parameters": [
+            {
+                "name": "sequenceId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CampaignSequence"
+    },
+    "PUT /api/v2/outbound/wrapupcodemappings": {
+        "operationId": "putoutboundwrapupcodemappings",
+        "functionName": "putOutboundWrapupcodemappings",
+        "signature": "putOutboundWrapupcodemappings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "WrapUpCodeMapping"
+    }
+    
+}

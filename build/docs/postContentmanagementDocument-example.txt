@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ContentManagementApi();
+
+let documentId = "documentId_example"; // String | Document ID
+let body = {}; // Object | Document
+let opts = { 
+  "expand": "expand_example", // String | Expand some document fields
+  "override": true // Boolean | Override any lock on the document
+};
+
+// Update a document.
+apiInstance.postContentmanagementDocument(documentId, body, opts)
+  .then((data) => {
+    console.log(`postContentmanagementDocument success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postContentmanagementDocument");
+    console.error(err);
+  });

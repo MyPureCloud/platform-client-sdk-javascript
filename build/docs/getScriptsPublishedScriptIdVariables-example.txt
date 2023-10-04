@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ScriptsApi();
+
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
+  "input": "input_example", // String | input
+  "output": "output_example", // String | output
+  "type": "type_example", // String | type
+  "scriptDataVersion": "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+
+// Get the published variables
+apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
+  .then((data) => {
+    console.log(`getScriptsPublishedScriptIdVariables success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getScriptsPublishedScriptIdVariables");
+    console.error(err);
+  });

@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let actionId = "actionId_example"; // String | actionId
+let body = null; // {String: Object} | Map of parameters used for variable substitution.
+
+// Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
+apiInstance.postIntegrationsActionExecute(actionId, body)
+  .then((data) => {
+    console.log(`postIntegrationsActionExecute success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postIntegrationsActionExecute");
+    console.error(err);
+  });

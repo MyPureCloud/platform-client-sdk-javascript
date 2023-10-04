@@ -1,0 +1,23 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let documentId = "documentId_example"; // String | Document ID.
+let feedbackId = "feedbackId_example"; // String | Feedback ID.
+
+// Get a single feedback record given on a document
+apiInstance.getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId");
+    console.error(err);
+  });

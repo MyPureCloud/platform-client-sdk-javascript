@@ -1,0 +1,286 @@
+{
+    "DELETE /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "deleteresponsemanagementlibrary",
+        "functionName": "deleteResponsemanagementLibrary",
+        "signature": "deleteResponsemanagementLibrary(libraryId)",
+        "parameters": [
+            {
+                "name": "libraryId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "deleteresponsemanagementresponse",
+        "functionName": "deleteResponsemanagementResponse",
+        "signature": "deleteResponsemanagementResponse(responseId)",
+        "parameters": [
+            {
+                "name": "responseId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "deleteresponsemanagementresponseasset",
+        "functionName": "deleteResponsemanagementResponseasset",
+        "signature": "deleteResponsemanagementResponseasset(responseAssetId)",
+        "parameters": [
+            {
+                "name": "responseAssetId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/responsemanagement/libraries": {
+        "operationId": "getresponsemanagementlibraries",
+        "functionName": "getResponsemanagementLibraries",
+        "signature": "getResponsemanagementLibraries(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix)",
+        "parameters": [
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "messagingTemplateFilter",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "libraryPrefix",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "LibraryEntityListing"
+    },
+    "GET /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "getresponsemanagementlibrary",
+        "functionName": "getResponsemanagementLibrary",
+        "signature": "getResponsemanagementLibrary(libraryId)",
+        "parameters": [
+            {
+                "name": "libraryId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "Library"
+    },
+    "GET /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "getresponsemanagementresponse",
+        "functionName": "getResponsemanagementResponse",
+        "signature": "getResponsemanagementResponse(responseId, expand)",
+        "parameters": [
+            {
+                "name": "responseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "Response"
+    },
+    "GET /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "getresponsemanagementresponseasset",
+        "functionName": "getResponsemanagementResponseasset",
+        "signature": "getResponsemanagementResponseasset(responseAssetId)",
+        "parameters": [
+            {
+                "name": "responseAssetId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseAsset"
+    },
+    "GET /api/v2/responsemanagement/responseassets/status/{statusId}": {
+        "operationId": "getresponsemanagementresponseassetsstatusstatusid",
+        "functionName": "getResponsemanagementResponseassetsStatusStatusId",
+        "signature": "getResponsemanagementResponseassetsStatusStatusId(statusId)",
+        "parameters": [
+            {
+                "name": "statusId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseAssetStatus"
+    },
+    "GET /api/v2/responsemanagement/responses": {
+        "operationId": "getresponsemanagementresponses",
+        "functionName": "getResponsemanagementResponses",
+        "signature": "getResponsemanagementResponses(libraryId, pageNumber, pageSize, expand)",
+        "parameters": [
+            {
+                "name": "libraryId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "ResponseEntityListing"
+    },
+    "POST /api/v2/responsemanagement/libraries": {
+        "operationId": "postresponsemanagementlibraries",
+        "functionName": "postResponsemanagementLibraries",
+        "signature": "postResponsemanagementLibraries(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Library"
+    },
+    "POST /api/v2/responsemanagement/responseassets/search": {
+        "operationId": "postresponsemanagementresponseassetssearch",
+        "functionName": "postResponsemanagementResponseassetsSearch",
+        "signature": "postResponsemanagementResponseassetsSearch(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "ResponseAssetSearchResults"
+    },
+    "POST /api/v2/responsemanagement/responseassets/uploads": {
+        "operationId": "postresponsemanagementresponseassetsuploads",
+        "functionName": "postResponsemanagementResponseassetsUploads",
+        "signature": "postResponsemanagementResponseassetsUploads(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CreateResponseAssetResponse"
+    },
+    "POST /api/v2/responsemanagement/responses": {
+        "operationId": "postresponsemanagementresponses",
+        "functionName": "postResponsemanagementResponses",
+        "signature": "postResponsemanagementResponses(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "Response"
+    },
+    "POST /api/v2/responsemanagement/responses/query": {
+        "operationId": "postresponsemanagementresponsesquery",
+        "functionName": "postResponsemanagementResponsesQuery",
+        "signature": "postResponsemanagementResponsesQuery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseQueryResults"
+    },
+    "PUT /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "putresponsemanagementlibrary",
+        "functionName": "putResponsemanagementLibrary",
+        "signature": "putResponsemanagementLibrary(libraryId, body)",
+        "parameters": [
+            {
+                "name": "libraryId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "Library"
+    },
+    "PUT /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "putresponsemanagementresponse",
+        "functionName": "putResponsemanagementResponse",
+        "signature": "putResponsemanagementResponse(responseId, body, expand)",
+        "parameters": [
+            {
+                "name": "responseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "Response"
+    },
+    "PUT /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "putresponsemanagementresponseasset",
+        "functionName": "putResponsemanagementResponseasset",
+        "signature": "putResponsemanagementResponseasset(responseAssetId, body)",
+        "parameters": [
+            {
+                "name": "responseAssetId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseAsset"
+    }
+    
+}

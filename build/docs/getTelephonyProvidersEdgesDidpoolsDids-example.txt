@@ -1,0 +1,28 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let type = "type_example"; // String | The type of numbers to return.
+let opts = { 
+  "id": ["id_example"], // [String] | Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned.
+  "numberMatch": "numberMatch_example", // String | A number to filter the results by.
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "sortOrder": "ascending" // String | Sort order
+};
+
+// Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+apiInstance.getTelephonyProvidersEdgesDidpoolsDids(type, opts)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesDidpoolsDids success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getTelephonyProvidersEdgesDidpoolsDids");
+    console.error(err);
+  });

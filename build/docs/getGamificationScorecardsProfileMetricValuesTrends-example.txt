@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let profileId = "profileId_example"; // String | performanceProfileId
+let metricId = "metricId_example"; // String | metricId
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  "filterType": "filterType_example", // String | Filter type for the query request. If not set, returns the values trends of the requesting user
+  "referenceWorkday": "referenceWorkday_example", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  "timeZone": "UTC" // String | Timezone for the workday. Defaults to UTC
+};
+
+// Average performance values trends by metric of the requesting user
+apiInstance.getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsProfileMetricValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getGamificationScorecardsProfileMetricValuesTrends");
+    console.error(err);
+  });

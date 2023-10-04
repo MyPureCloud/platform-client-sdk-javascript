@@ -1,0 +1,2141 @@
+{
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "operationId": "deleteknowledgeknowledgebase",
+        "functionName": "deleteKnowledgeKnowledgebase",
+        "signature": "deleteKnowledgeKnowledgebase(knowledgeBaseId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeBase"
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}": {
+        "operationId": "deleteknowledgeknowledgebasecategory",
+        "functionName": "deleteKnowledgeKnowledgebaseCategory",
+        "signature": "deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "categoryId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CategoryResponse"
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}": {
+        "operationId": "deleteknowledgeknowledgebasedocument",
+        "functionName": "deleteKnowledgeKnowledgebaseDocument",
+        "signature": "deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}": {
+        "operationId": "deleteknowledgeknowledgebasedocumentvariation",
+        "functionName": "deleteKnowledgeKnowledgebaseDocumentVariation",
+        "signature": "deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId)",
+        "parameters": [
+            {
+                "name": "documentVariationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}": {
+        "operationId": "deleteknowledgeknowledgebaseexportjob",
+        "functionName": "deleteKnowledgeKnowledgebaseExportJob",
+        "signature": "deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "exportJobId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}": {
+        "operationId": "deleteknowledgeknowledgebaseimportjob",
+        "functionName": "deleteKnowledgeKnowledgebaseImportJob",
+        "signature": "deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "importJobId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}": {
+        "operationId": "deleteknowledgeknowledgebaselabel",
+        "functionName": "deleteKnowledgeKnowledgebaseLabel",
+        "signature": "deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "labelId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "LabelResponse"
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
+        "operationId": "deleteknowledgeknowledgebaselanguagecategory",
+        "functionName": "deleteKnowledgeKnowledgebaseLanguageCategory",
+        "signature": "deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)",
+        "parameters": [
+            {
+                "name": "categoryId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeCategory"
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "operationId": "deleteknowledgeknowledgebaselanguagedocument",
+        "functionName": "deleteKnowledgeKnowledgebaseLanguageDocument",
+        "signature": "deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocument"
+    },
+    "DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "operationId": "deleteknowledgeknowledgebaselanguagedocumentsimport",
+        "functionName": "deleteKnowledgeKnowledgebaseLanguageDocumentsImport",
+        "signature": "deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "importId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/knowledge/guest/sessions/{sessionId}/categories": {
+        "operationId": "getknowledgeguestsessioncategories",
+        "functionName": "getKnowledgeGuestSessionCategories",
+        "signature": "getKnowledgeGuestSessionCategories(sessionId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)",
+        "parameters": [
+            {
+                "name": "sessionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "parentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "isRoot",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "includeDocumentCount",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "GuestCategoryResponseListing"
+    },
+    "GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}": {
+        "operationId": "getknowledgeguestsessiondocument",
+        "functionName": "getKnowledgeGuestSessionDocument",
+        "signature": "getKnowledgeGuestSessionDocument(sessionId, documentId)",
+        "parameters": [
+            {
+                "name": "sessionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeGuestDocument"
+    },
+    "GET /api/v2/knowledge/guest/sessions/{sessionId}/documents": {
+        "operationId": "getknowledgeguestsessiondocuments",
+        "functionName": "getKnowledgeGuestSessionDocuments",
+        "signature": "getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize)",
+        "parameters": [
+            {
+                "name": "sessionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "categoryId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeGuestDocumentResponseListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "operationId": "getknowledgeknowledgebase",
+        "functionName": "getKnowledgeKnowledgebase",
+        "signature": "getKnowledgeKnowledgebase(knowledgeBaseId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeBase"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories": {
+        "operationId": "getknowledgeknowledgebasecategories",
+        "functionName": "getKnowledgeKnowledgebaseCategories",
+        "signature": "getKnowledgeKnowledgebaseCategories(knowledgeBaseId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "parentId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "isRoot",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "includeDocumentCount",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "CategoryResponseListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}": {
+        "operationId": "getknowledgeknowledgebasecategory",
+        "functionName": "getKnowledgeKnowledgebaseCategory",
+        "signature": "getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "categoryId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "CategoryResponse"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}": {
+        "operationId": "getknowledgeknowledgebasedocument",
+        "functionName": "getKnowledgeKnowledgebaseDocument",
+        "signature": "getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, expand, state)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "state",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentResponse"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback": {
+        "operationId": "getknowledgeknowledgebasedocumentfeedback",
+        "functionName": "getKnowledgeKnowledgebaseDocumentFeedback",
+        "signature": "getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "onlyCommented",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "documentVersionId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "documentVariationId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "appType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "queryType",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "queueId",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "state",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentFeedbackResponseListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}": {
+        "operationId": "getknowledgeknowledgebasedocumentfeedbackfeedbackid",
+        "functionName": "getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId",
+        "signature": "getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "feedbackId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocumentFeedbackResponse"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}": {
+        "operationId": "getknowledgeknowledgebasedocumentvariation",
+        "functionName": "getKnowledgeKnowledgebaseDocumentVariation",
+        "signature": "getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState)",
+        "parameters": [
+            {
+                "name": "documentVariationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentState",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "DocumentVariation"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations": {
+        "operationId": "getknowledgeknowledgebasedocumentvariations",
+        "functionName": "getKnowledgeKnowledgebaseDocumentVariations",
+        "signature": "getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "documentState",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "DocumentVariationListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}": {
+        "operationId": "getknowledgeknowledgebasedocumentversion",
+        "functionName": "getKnowledgeKnowledgebaseDocumentVersion",
+        "signature": "getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId, versionId, expand)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "versionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentVersion"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations/{variationId}": {
+        "operationId": "getknowledgeknowledgebasedocumentversionvariation",
+        "functionName": "getKnowledgeKnowledgebaseDocumentVersionVariation",
+        "signature": "getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "versionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "variationId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocumentVersionVariation"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations": {
+        "operationId": "getknowledgeknowledgebasedocumentversionvariations",
+        "functionName": "getKnowledgeKnowledgebaseDocumentVersionVariations",
+        "signature": "getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, documentId, versionId, before, after, pageSize)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "versionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentVersionVariationListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions": {
+        "operationId": "getknowledgeknowledgebasedocumentversions",
+        "functionName": "getKnowledgeKnowledgebaseDocumentVersions",
+        "signature": "getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, before, after, pageSize, expand)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentVersionListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents": {
+        "operationId": "getknowledgeknowledgebasedocuments",
+        "functionName": "getKnowledgeKnowledgebaseDocuments",
+        "signature": "getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand, externalIds)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "interval",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "documentId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "categoryId",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "includeSubcategories",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "includeDrafts",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "labelIds",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "externalIds",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentResponseListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}": {
+        "operationId": "getknowledgeknowledgebaseexportjob",
+        "functionName": "getKnowledgeKnowledgebaseExportJob",
+        "signature": "getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "exportJobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeExportJobResponse"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}": {
+        "operationId": "getknowledgeknowledgebaseimportjob",
+        "functionName": "getKnowledgeKnowledgebaseImportJob",
+        "signature": "getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, expand)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "importJobId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeImportJobResponse"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}": {
+        "operationId": "getknowledgeknowledgebaselabel",
+        "functionName": "getKnowledgeKnowledgebaseLabel",
+        "signature": "getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "labelId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "LabelResponse"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels": {
+        "operationId": "getknowledgeknowledgebaselabels",
+        "functionName": "getKnowledgeKnowledgebaseLabels",
+        "signature": "getKnowledgeKnowledgebaseLabels(knowledgeBaseId, before, after, pageSize, name, includeDocumentCount)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "includeDocumentCount",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "LabelListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories": {
+        "operationId": "getknowledgeknowledgebaselanguagecategories",
+        "functionName": "getKnowledgeKnowledgebaseLanguageCategories",
+        "signature": "getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize, name)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "limit",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "CategoryListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
+        "operationId": "getknowledgeknowledgebaselanguagecategory",
+        "functionName": "getKnowledgeKnowledgebaseLanguageCategory",
+        "signature": "getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)",
+        "parameters": [
+            {
+                "name": "categoryId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeExtendedCategory"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "operationId": "getknowledgeknowledgebaselanguagedocument",
+        "functionName": "getKnowledgeKnowledgebaseLanguageDocument",
+        "signature": "getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocument"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}": {
+        "operationId": "getknowledgeknowledgebaselanguagedocumentupload",
+        "functionName": "getKnowledgeKnowledgebaseLanguageDocumentUpload",
+        "signature": "getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "uploadId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocumentContentUpload"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "operationId": "getknowledgeknowledgebaselanguagedocuments",
+        "functionName": "getKnowledgeKnowledgebaseLanguageDocuments",
+        "signature": "getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "limit",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "categories",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "title",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "documentIds",
+                "type": "[String]",
+                "required": "false"
+            }
+        ],
+        "return": "DocumentListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "operationId": "getknowledgeknowledgebaselanguagedocumentsimport",
+        "functionName": "getKnowledgeKnowledgebaseLanguageDocumentsImport",
+        "signature": "getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "importId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeImport"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}": {
+        "operationId": "getknowledgeknowledgebaselanguagetraining",
+        "functionName": "getKnowledgeKnowledgebaseLanguageTraining",
+        "signature": "getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trainingId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeTraining"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings": {
+        "operationId": "getknowledgeknowledgebaselanguagetrainings",
+        "functionName": "getKnowledgeKnowledgebaseLanguageTrainings",
+        "signature": "getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "limit",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "knowledgeDocumentsState",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "TrainingListing"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}": {
+        "operationId": "getknowledgeknowledgebaseunansweredgroup",
+        "functionName": "getKnowledgeKnowledgebaseUnansweredGroup",
+        "signature": "getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app, dateStart, dateEnd)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "app",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dateStart",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dateEnd",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "UnansweredGroup"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}": {
+        "operationId": "getknowledgeknowledgebaseunansweredgroupphrasegroup",
+        "functionName": "getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup",
+        "signature": "getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app, dateStart, dateEnd)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "phraseGroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "app",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dateStart",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dateEnd",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "UnansweredPhraseGroup"
+    },
+    "GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups": {
+        "operationId": "getknowledgeknowledgebaseunansweredgroups",
+        "functionName": "getKnowledgeKnowledgebaseUnansweredGroups",
+        "signature": "getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app, dateStart, dateEnd)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "app",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dateStart",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "dateEnd",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "UnansweredGroups"
+    },
+    "GET /api/v2/knowledge/knowledgebases": {
+        "operationId": "getknowledgeknowledgebases",
+        "functionName": "getKnowledgeKnowledgebases",
+        "signature": "getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "limit",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "coreLanguage",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "published",
+                "type": "Boolean",
+                "required": "false"
+            },
+            {
+                "name": "sortBy",
+                "type": "String",
+                "required": "false"
+            },
+            {
+                "name": "sortOrder",
+                "type": "String",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeBaseListing"
+    },
+    "PATCH /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}": {
+        "operationId": "patchknowledgeguestsessiondocumentssearchsearchid",
+        "functionName": "patchKnowledgeGuestSessionDocumentsSearchSearchId",
+        "signature": "patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)",
+        "parameters": [
+            {
+                "name": "sessionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "searchId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}": {
+        "operationId": "patchknowledgeknowledgebase",
+        "functionName": "patchKnowledgeKnowledgebase",
+        "signature": "patchKnowledgeKnowledgebase(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeBase"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}": {
+        "operationId": "patchknowledgeknowledgebasecategory",
+        "functionName": "patchKnowledgeKnowledgebaseCategory",
+        "signature": "patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "categoryId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CategoryResponse"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}": {
+        "operationId": "patchknowledgeknowledgebasedocument",
+        "functionName": "patchKnowledgeKnowledgebaseDocument",
+        "signature": "patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocumentResponse"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}": {
+        "operationId": "patchknowledgeknowledgebasedocumentvariation",
+        "functionName": "patchKnowledgeKnowledgebaseDocumentVariation",
+        "signature": "patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "documentVariationId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DocumentVariation"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}": {
+        "operationId": "patchknowledgeknowledgebasedocumentssearchsearchid",
+        "functionName": "patchKnowledgeKnowledgebaseDocumentsSearchSearchId",
+        "signature": "patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, searchId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "searchId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}": {
+        "operationId": "patchknowledgeknowledgebaseimportjob",
+        "functionName": "patchKnowledgeKnowledgebaseImportJob",
+        "signature": "patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "importJobId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeImportJobResponse"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}": {
+        "operationId": "patchknowledgeknowledgebaselabel",
+        "functionName": "patchKnowledgeKnowledgebaseLabel",
+        "signature": "patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "labelId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "LabelResponse"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}": {
+        "operationId": "patchknowledgeknowledgebaselanguagecategory",
+        "functionName": "patchKnowledgeKnowledgebaseLanguageCategory",
+        "signature": "patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "categoryId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeExtendedCategory"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}": {
+        "operationId": "patchknowledgeknowledgebaselanguagedocument",
+        "functionName": "patchKnowledgeKnowledgebaseLanguageDocument",
+        "signature": "patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocument"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "operationId": "patchknowledgeknowledgebaselanguagedocuments",
+        "functionName": "patchKnowledgeKnowledgebaseLanguageDocuments",
+        "signature": "patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DocumentListing"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}": {
+        "operationId": "patchknowledgeknowledgebaselanguagedocumentsimport",
+        "functionName": "patchKnowledgeKnowledgebaseLanguageDocumentsImport",
+        "signature": "patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "importId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeImport"
+    },
+    "PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}": {
+        "operationId": "patchknowledgeknowledgebaseunansweredgroupphrasegroup",
+        "functionName": "patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup",
+        "signature": "patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "groupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "phraseGroupId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "UnansweredPhraseGroupUpdateResponse"
+    },
+    "POST /api/v2/knowledge/documentuploads": {
+        "operationId": "postknowledgedocumentuploads",
+        "functionName": "postKnowledgeDocumentuploads",
+        "signature": "postKnowledgeDocumentuploads(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "UploadUrlResponse"
+    },
+    "POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback": {
+        "operationId": "postknowledgeguestsessiondocumentfeedback",
+        "functionName": "postKnowledgeGuestSessionDocumentFeedback",
+        "signature": "postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, body)",
+        "parameters": [
+            {
+                "name": "sessionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeGuestDocumentFeedback"
+    },
+    "POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/search": {
+        "operationId": "postknowledgeguestsessiondocumentssearch",
+        "functionName": "postKnowledgeGuestSessionDocumentsSearch",
+        "signature": "postKnowledgeGuestSessionDocumentsSearch(sessionId, expand, body)",
+        "parameters": [
+            {
+                "name": "sessionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentGuestSearch"
+    },
+    "POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions": {
+        "operationId": "postknowledgeguestsessiondocumentssearchsuggestions",
+        "functionName": "postKnowledgeGuestSessionDocumentsSearchSuggestions",
+        "signature": "postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, body)",
+        "parameters": [
+            {
+                "name": "sessionId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeGuestDocumentSuggestion"
+    },
+    "POST /api/v2/knowledge/guest/sessions": {
+        "operationId": "postknowledgeguestsessions",
+        "functionName": "postKnowledgeGuestSessions",
+        "signature": "postKnowledgeGuestSessions(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeGuestSession"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories": {
+        "operationId": "postknowledgeknowledgebasecategories",
+        "functionName": "postKnowledgeKnowledgebaseCategories",
+        "signature": "postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "CategoryResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback": {
+        "operationId": "postknowledgeknowledgebasedocumentfeedback",
+        "functionName": "postKnowledgeKnowledgebaseDocumentFeedback",
+        "signature": "postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentFeedbackResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations": {
+        "operationId": "postknowledgeknowledgebasedocumentvariations",
+        "functionName": "postKnowledgeKnowledgebaseDocumentVariations",
+        "signature": "postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "DocumentVariation"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions": {
+        "operationId": "postknowledgeknowledgebasedocumentversions",
+        "functionName": "postKnowledgeKnowledgebaseDocumentVersions",
+        "signature": "postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocumentVersion"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/views": {
+        "operationId": "postknowledgeknowledgebasedocumentviews",
+        "functionName": "postKnowledgeKnowledgebaseDocumentViews",
+        "signature": "postKnowledgeKnowledgebaseDocumentViews(knowledgeBaseId, documentId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents": {
+        "operationId": "postknowledgeknowledgebasedocuments",
+        "functionName": "postKnowledgeKnowledgebaseDocuments",
+        "signature": "postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocumentResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove": {
+        "operationId": "postknowledgeknowledgebasedocumentsbulkremove",
+        "functionName": "postKnowledgeKnowledgebaseDocumentsBulkRemove",
+        "signature": "postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BulkResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update": {
+        "operationId": "postknowledgeknowledgebasedocumentsbulkupdate",
+        "functionName": "postKnowledgeKnowledgebaseDocumentsBulkUpdate",
+        "signature": "postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BulkResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search": {
+        "operationId": "postknowledgeknowledgebasedocumentssearch",
+        "functionName": "postKnowledgeKnowledgebaseDocumentsSearch",
+        "signature": "postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, expand, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "[String]",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentSearch"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions": {
+        "operationId": "postknowledgeknowledgebasedocumentssearchsuggestions",
+        "functionName": "postKnowledgeKnowledgebaseDocumentsSearchSuggestions",
+        "signature": "postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeDocumentSuggestion"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add": {
+        "operationId": "postknowledgeknowledgebasedocumentsversionsbulkadd",
+        "functionName": "postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd",
+        "signature": "postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "BulkResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs": {
+        "operationId": "postknowledgeknowledgebaseexportjobs",
+        "functionName": "postKnowledgeKnowledgebaseExportJobs",
+        "signature": "postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeExportJobResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs": {
+        "operationId": "postknowledgeknowledgebaseimportjobs",
+        "functionName": "postKnowledgeKnowledgebaseImportJobs",
+        "signature": "postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeImportJobResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels": {
+        "operationId": "postknowledgeknowledgebaselabels",
+        "functionName": "postKnowledgeKnowledgebaseLabels",
+        "signature": "postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "LabelResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories": {
+        "operationId": "postknowledgeknowledgebaselanguagecategories",
+        "functionName": "postKnowledgeKnowledgebaseLanguageCategories",
+        "signature": "postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeExtendedCategory"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads": {
+        "operationId": "postknowledgeknowledgebaselanguagedocumentuploads",
+        "functionName": "postKnowledgeKnowledgebaseLanguageDocumentUploads",
+        "signature": "postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocumentContentUpload"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents": {
+        "operationId": "postknowledgeknowledgebaselanguagedocuments",
+        "functionName": "postKnowledgeKnowledgebaseLanguageDocuments",
+        "signature": "postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeDocument"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports": {
+        "operationId": "postknowledgeknowledgebaselanguagedocumentsimports",
+        "functionName": "postKnowledgeKnowledgebaseLanguageDocumentsImports",
+        "signature": "postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeImport"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote": {
+        "operationId": "postknowledgeknowledgebaselanguagetrainingpromote",
+        "functionName": "postKnowledgeKnowledgebaseLanguageTrainingPromote",
+        "signature": "postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "trainingId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeTraining"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings": {
+        "operationId": "postknowledgeknowledgebaselanguagetrainings",
+        "functionName": "postKnowledgeKnowledgebaseLanguageTrainings",
+        "signature": "postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "languageCode",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeTraining"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search": {
+        "operationId": "postknowledgeknowledgebasesearch",
+        "functionName": "postKnowledgeKnowledgebaseSearch",
+        "signature": "postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)",
+        "parameters": [
+            {
+                "name": "knowledgeBaseId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeSearchResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases": {
+        "operationId": "postknowledgeknowledgebases",
+        "functionName": "postKnowledgeKnowledgebases",
+        "signature": "postKnowledgeKnowledgebases(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeBase"
+    }
+    
+}

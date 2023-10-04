@@ -1,0 +1,60 @@
+{
+    "DELETE /api/v2/tokens/{userId}": {
+        "operationId": "deletetoken",
+        "functionName": "deleteToken",
+        "signature": "deleteToken(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/tokens/me": {
+        "operationId": "deletetokensme",
+        "functionName": "deleteTokensMe",
+        "signature": "deleteTokensMe()"
+        
+    },
+    "GET /api/v2/tokens/me": {
+        "operationId": "gettokensme",
+        "functionName": "getTokensMe",
+        "signature": "getTokensMe(preserveIdleTTL)",
+        "parameters": [
+            {
+                "name": "preserveIdleTTL",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "TokenInfo"
+    },
+    "GET /api/v2/tokens/timeout": {
+        "operationId": "gettokenstimeout",
+        "functionName": "getTokensTimeout",
+        "signature": "getTokensTimeout()",
+        
+        "return": "IdleTokenTimeout"
+    },
+    "HEAD /api/v2/tokens/me": {
+        "operationId": "headtokensme",
+        "functionName": "headTokensMe",
+        "signature": "headTokensMe()"
+        
+    },
+    "PUT /api/v2/tokens/timeout": {
+        "operationId": "puttokenstimeout",
+        "functionName": "putTokensTimeout",
+        "signature": "putTokensTimeout(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "false"
+            }
+        ],
+        "return": "IdleTokenTimeout"
+    }
+    
+}

@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.MessagingApi();
+
+let messageSettingId = "messageSettingId_example"; // String | Message Settings ID
+let body = {}; // Object | MessagingSetting
+
+// Update a messaging setting
+apiInstance.patchMessagingSetting(messageSettingId, body)
+  .then((data) => {
+    console.log(`patchMessagingSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchMessagingSetting");
+    console.error(err);
+  });

@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+
+// Get networking-related information from an Edge for a target IP or host.
+apiInstance.getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgeDiagnosticTracepath success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getTelephonyProvidersEdgeDiagnosticTracepath");
+    console.error(err);
+  });

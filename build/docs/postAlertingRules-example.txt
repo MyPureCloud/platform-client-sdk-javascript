@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.AlertingApi();
+
+let body = {}; // Object | rule to be created
+
+// Create a Rule.
+apiInstance.postAlertingRules(body)
+  .then((data) => {
+    console.log(`postAlertingRules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postAlertingRules");
+    console.error(err);
+  });

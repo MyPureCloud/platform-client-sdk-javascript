@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ContentManagementApi();
+
+let body = {}; // Object | Document
+let opts = { 
+  "copySource": "copySource_example", // String | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source.
+  "moveSource": "moveSource_example", // String | Move a document to a new workspace. Provide a document ID as the move source.
+  "override": true // Boolean | Override any lock on the source document
+};
+
+// Add a document.
+apiInstance.postContentmanagementDocuments(body, opts)
+  .then((data) => {
+    console.log(`postContentmanagementDocuments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postContentmanagementDocuments");
+    console.error(err);
+  });

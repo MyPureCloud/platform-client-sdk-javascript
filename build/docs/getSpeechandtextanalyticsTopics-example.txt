@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let opts = { 
+  "nextPage": "nextPage_example", // String | The key for listing the next page
+  "pageSize": 20, // Number | The page size for the listing
+  "state": "state_example", // String | Topic state. Defaults to latest
+  "name": "name_example", // String | Case insensitive partial name to filter by
+  "ids": ["ids_example"], // [String] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+  "sortBy": "sortBy_example", // String | Sort results by. Defaults to name
+  "sortOrder": "sortOrder_example" // String | Sort order. Defaults to asc
+};
+
+// Get the list of Speech and Text Analytics topics
+apiInstance.getSpeechandtextanalyticsTopics(opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsTopics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getSpeechandtextanalyticsTopics");
+    console.error(err);
+  });

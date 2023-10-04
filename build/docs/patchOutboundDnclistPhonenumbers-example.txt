@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = {}; // Object | DNC Phone Numbers
+
+// Add numbers to or delete numbers from a DNC list.
+apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body)
+  .then(() => {
+    console.log("patchOutboundDnclistPhonenumbers returned successfully.");
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchOutboundDnclistPhonenumbers");
+    console.error(err);
+  });

@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.JourneyApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
+  "pageSize": "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "includeMerged": true // Boolean | Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+};
+
+// Retrieve all sessions for a given external contact.
+apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsContactJourneySessions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getExternalcontactsContactJourneySessions");
+    console.error(err);
+  });

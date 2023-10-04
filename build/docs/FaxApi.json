@@ -1,0 +1,84 @@
+{
+    "DELETE /api/v2/fax/documents/{documentId}": {
+        "operationId": "deletefaxdocument",
+        "functionName": "deleteFaxDocument",
+        "signature": "deleteFaxDocument(documentId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/fax/documents/{documentId}": {
+        "operationId": "getfaxdocument",
+        "functionName": "getFaxDocument",
+        "signature": "getFaxDocument(documentId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "FaxDocument"
+    },
+    "GET /api/v2/fax/documents/{documentId}/content": {
+        "operationId": "getfaxdocumentcontent",
+        "functionName": "getFaxDocumentContent",
+        "signature": "getFaxDocumentContent(documentId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DownloadResponse"
+    },
+    "GET /api/v2/fax/documents": {
+        "operationId": "getfaxdocuments",
+        "functionName": "getFaxDocuments",
+        "signature": "getFaxDocuments(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Number",
+                "required": "false"
+            },
+            {
+                "name": "pageNumber",
+                "type": "Number",
+                "required": "false"
+            }
+        ],
+        "return": "FaxDocumentEntityListing"
+    },
+    "GET /api/v2/fax/summary": {
+        "operationId": "getfaxsummary",
+        "functionName": "getFaxSummary",
+        "signature": "getFaxSummary()",
+        
+        "return": "FaxSummary"
+    },
+    "PUT /api/v2/fax/documents/{documentId}": {
+        "operationId": "putfaxdocument",
+        "functionName": "putFaxDocument",
+        "signature": "putFaxDocument(documentId, body)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Object",
+                "required": "true"
+            }
+        ],
+        "return": "FaxDocument"
+    }
+    
+}

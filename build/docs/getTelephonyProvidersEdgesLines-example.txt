@@ -1,0 +1,27 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let opts = { 
+  "pageSize": 25, // Number | Page size
+  "pageNumber": 1, // Number | Page number
+  "name": "name_example", // String | Name
+  "sortBy": "name", // String | Value by which to sort
+  "expand": ["expand_example"] // [String] | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.
+};
+
+// Get a list of Lines
+apiInstance.getTelephonyProvidersEdgesLines(opts)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesLines success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getTelephonyProvidersEdgesLines");
+    console.error(err);
+  });

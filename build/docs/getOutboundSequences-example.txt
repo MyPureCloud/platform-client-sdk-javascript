@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  "pageSize": 25, // Number | Page size. The max that will be returned is 100.
+  "pageNumber": 1, // Number | Page number
+  "allowEmptyResult": false, // Boolean | Whether to return an empty page when there are no results for that page
+  "filterType": "Prefix", // String | Filter type
+  "name": "name_example", // String | Name
+  "sortBy": "sortBy_example", // String | Sort by
+  "sortOrder": "a" // String | Sort order
+};
+
+// Query a list of dialer campaign sequences.
+apiInstance.getOutboundSequences(opts)
+  .then((data) => {
+    console.log(`getOutboundSequences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getOutboundSequences");
+    console.error(err);
+  });

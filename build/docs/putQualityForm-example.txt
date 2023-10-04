@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.QualityApi();
+
+let formId = "formId_example"; // String | Form ID
+let body = {}; // Object | Evaluation form
+
+// Update an evaluation form.
+apiInstance.putQualityForm(formId, body)
+  .then((data) => {
+    console.log(`putQualityForm success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling putQualityForm");
+    console.error(err);
+  });

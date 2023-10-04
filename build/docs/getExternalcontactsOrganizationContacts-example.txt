@@ -1,0 +1,28 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let opts = { 
+  "pageSize": 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  "pageNumber": 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  "q": "q_example", // String | User supplied search keywords (no special syntax is currently supported)
+  "sortOrder": "sortOrder_example", // String | Sort order
+  "expand": ["expand_example"] // [String] | which fields, if any, to expand
+};
+
+// Search for external contacts in an external organization
+apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationContacts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getExternalcontactsOrganizationContacts");
+    console.error(err);
+  });

@@ -1,0 +1,26 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID
+let opts = { 
+  "expand": ["expand_example"], // [String] | expand
+  "body": "body_example" // String | targetChannel
+};
+
+// Get a Nuance bot in the specified Integration asynchronously
+apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts)
+  .then((data) => {
+    console.log(`postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs");
+    console.error(err);
+  });

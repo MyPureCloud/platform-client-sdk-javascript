@@ -1,0 +1,25 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.QualityApi();
+
+let calibrationId = "calibrationId_example"; // String | Calibration ID
+let opts = { 
+  "calibratorId": "calibratorId_example", // String | calibratorId
+  "conversationId": "conversationId_example" // String | conversationId
+};
+
+// Get a calibration by id.  Requires either calibrator id or conversation id
+apiInstance.getQualityCalibration(calibrationId, opts)
+  .then((data) => {
+    console.log(`getQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getQualityCalibration");
+    console.error(err);
+  });

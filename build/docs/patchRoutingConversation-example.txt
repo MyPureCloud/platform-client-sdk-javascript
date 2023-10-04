@@ -1,0 +1,22 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let body = {}; // Object | Conversation Attributes
+
+// Update attributes of an in-queue conversation
+apiInstance.patchRoutingConversation(conversationId, body)
+  .then((data) => {
+    console.log(`patchRoutingConversation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling patchRoutingConversation");
+    console.error(err);
+  });

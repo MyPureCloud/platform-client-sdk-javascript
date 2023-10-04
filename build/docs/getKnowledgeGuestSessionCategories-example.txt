@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let opts = { 
+  "before": "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  "after": "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  "pageSize": "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  "parentId": "parentId_example", // String | If specified, retrieves the children categories by parent category ID.
+  "isRoot": true, // Boolean | If specified, retrieves only the root categories.
+  "name": "name_example", // String | Filter to return the categories that starts with the given category name.
+  "sortBy": "Name", // String | Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically
+  "expand": "expand_example", // String | The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.
+  "includeDocumentCount": true // Boolean | If specified, retrieves the number of documents related to category.
+};
+
+// Get categories
+apiInstance.getKnowledgeGuestSessionCategories(sessionId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeGuestSessionCategories success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getKnowledgeGuestSessionCategories");
+    console.error(err);
+  });

@@ -1,0 +1,21 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.GamificationApi();
+
+let body = {}; // Object | The date range of work day.
+
+// Query performance profiles in date range for the current user
+apiInstance.postGamificationProfilesUsersMeQuery(body)
+  .then((data) => {
+    console.log(`postGamificationProfilesUsersMeQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling postGamificationProfilesUsersMeQuery");
+    console.error(err);
+  });

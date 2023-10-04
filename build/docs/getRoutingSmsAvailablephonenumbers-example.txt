@@ -1,0 +1,29 @@
+const platformClient = require("purecloud-platform-client-v2");
+
+const client = platformClient.ApiClient.instance;
+client.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+client.setAccessToken("your_access_token");
+
+let apiInstance = new platformClient.RoutingApi();
+
+let countryCode = "countryCode_example"; // String | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
+let phoneNumberType = "phoneNumberType_example"; // String | Type of available phone numbers searched
+let opts = { 
+  "region": "region_example", // String | Region/province/state that can be used to restrict the numbers returned
+  "city": "city_example", // String | City that can be used to restrict the numbers returned
+  "areaCode": "areaCode_example", // String | Area code that can be used to restrict the numbers returned
+  "pattern": "pattern_example", // String | A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
+  "addressRequirement": "addressRequirement_example" // String | This indicates whether the phone number requires to have an Address registered.
+};
+
+// Get a list of available phone numbers for SMS provisioning.
+apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts)
+  .then((data) => {
+    console.log(`getRoutingSmsAvailablephonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log("There was a failure calling getRoutingSmsAvailablephonenumbers");
+    console.error(err);
+  });
