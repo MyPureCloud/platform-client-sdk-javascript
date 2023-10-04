@@ -3,18 +3,22 @@ title: UsersApi
 ---
 # platformClient.UsersApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsUsersDetailsJob**](UsersApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
+[**deleteRoutingDirectroutingbackupSettingsMe**](UsersApi.html#deleteRoutingDirectroutingbackupSettingsMe) | **DELETE** /api/v2/routing/directroutingbackup/settings/me | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+[**deleteRoutingUserDirectroutingbackupSettings**](UsersApi.html#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteUser**](UsersApi.html#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
+[**deleteUserExternalidAuthorityNameExternalKey**](UsersApi.html#deleteUserExternalidAuthorityNameExternalKey) | **DELETE** /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} | Delete the external identifier for user.
 [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
 [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
 [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
 [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
+[**deleteUserVerifier**](UsersApi.html#deleteUserVerifier) | **DELETE** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier
 [**getAnalyticsUsersAggregatesJob**](UsersApi.html#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
 [**getAnalyticsUsersAggregatesJobResults**](UsersApi.html#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
@@ -27,11 +31,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
 [**getFieldconfig**](UsersApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getProfilesUsers**](UsersApi.html#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
+[**getRoutingDirectroutingbackupSettingsMe**](UsersApi.html#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
+[**getRoutingUserDirectroutingbackupSettings**](UsersApi.html#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
 [**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 [**getUser**](UsersApi.html#getUser) | **GET** /api/v2/users/{userId} | Get user.
 [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
 [**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user's CallForwarding
 [**getUserDirectreports**](UsersApi.html#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
+[**getUserExternalid**](UsersApi.html#getUserExternalid) | **GET** /api/v2/users/{userId}/externalid | Get the external identifiers for a user.
+[**getUserExternalidAuthorityName**](UsersApi.html#getUserExternalidAuthorityName) | **GET** /api/v2/users/{userId}/externalid/{authorityName} | Get the external identifier of user for an authority.
 [**getUserFavorites**](UsersApi.html#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Deprecated; will be revived with new contract
 [**getUserGeolocation**](UsersApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
 [**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
@@ -47,10 +55,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserStation**](UsersApi.html#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
 [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
 [**getUserTrustors**](UsersApi.html#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
+[**getUserVerifiers**](UsersApi.html#getUserVerifiers) | **GET** /api/v2/users/{userId}/verifiers | Get a list of verifiers
 [**getUsers**](UsersApi.html#getUsers) | **GET** /api/v2/users | Get the list of available users.
 [**getUsersDevelopmentActivities**](UsersApi.html#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
 [**getUsersDevelopmentActivitiesMe**](UsersApi.html#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
 [**getUsersDevelopmentActivity**](UsersApi.html#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
+[**getUsersExternalidAuthorityNameExternalKey**](UsersApi.html#getUsersExternalidAuthorityNameExternalKey) | **GET** /api/v2/users/externalid/{authorityName}/{externalKey} | Get the user associated with external identifier.
 [**getUsersMe**](UsersApi.html#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
 [**getUsersSearch**](UsersApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**patchUser**](UsersApi.html#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
@@ -84,9 +94,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUsersSearchConversationTarget**](UsersApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
 [**postUsersSearchQueuemembersManage**](UsersApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
 [**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
+[**putRoutingDirectroutingbackupSettingsMe**](UsersApi.html#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
+[**putRoutingUserDirectroutingbackupSettings**](UsersApi.html#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
 [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
 [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
+[**putUserProfile**](UsersApi.html#putUserProfile) | **PUT** /api/v2/users/{userId}/profile | Update user profile
 [**putUserProfileskills**](UsersApi.html#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
 [**putUserRoles**](UsersApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
 [**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
@@ -95,6 +108,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserState**](UsersApi.html#putUserState) | **PUT** /api/v2/users/{userId}/state | Update user state information.
 [**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
 [**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
+[**putUserVerifier**](UsersApi.html#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
 {: class="table table-striped"}
 
 <a name="deleteAnalyticsUsersDetailsJob"></a>
@@ -201,6 +215,101 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
 
 void (no response body)
 
+<a name="deleteRoutingDirectroutingbackupSettingsMe"></a>
+
+# void deleteRoutingDirectroutingbackupSettingsMe()
+
+
+DELETE /api/v2/routing/directroutingbackup/settings/me
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfDelete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
+  .then(() => {
+    console.log('deleteRoutingDirectroutingbackupSettingsMe returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingUserDirectroutingbackupSettings"></a>
+
+# void deleteRoutingUserDirectroutingbackupSettings(userId)
+
+
+DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
+  .then(() => {
+    console.log('deleteRoutingUserDirectroutingbackupSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteRoutingUserUtilization"></a>
 
 # void deleteRoutingUserUtilization(userId)
@@ -301,6 +410,60 @@ apiInstance.deleteUser(userId)
 ### Return type
 
 **Object**
+
+<a name="deleteUserExternalidAuthorityNameExternalKey"></a>
+
+# void deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+
+
+DELETE /api/v2/users/{userId}/externalid/{authorityName}/{externalKey}
+
+Delete the external identifier for user.
+
+Requires ANY permissions:
+
+* directory:user:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let authorityName = "authorityName_example"; // String | Authority Name
+let externalKey = "externalKey_example"; // String | External Key
+
+apiInstance.deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+  .then(() => {
+    console.log('deleteUserExternalidAuthorityNameExternalKey returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserExternalidAuthorityNameExternalKey');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **authorityName** | **String** | Authority Name |  |
+ **externalKey** | **String** | External Key |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteUserRoutinglanguage"></a>
 
@@ -500,6 +663,58 @@ apiInstance.deleteUserStationDefaultstation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteUserVerifier"></a>
+
+# void deleteUserVerifier(userId, verifierId)
+
+
+DELETE /api/v2/users/{userId}/verifiers/{verifierId}
+
+Delete a verifier
+
+Requires ANY permissions:
+
+* mfa:verifier:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let verifierId = "verifierId_example"; // String | Verifier ID
+
+apiInstance.deleteUserVerifier(userId, verifierId)
+  .then(() => {
+    console.log('deleteUserVerifier returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **verifierId** | **String** | Verifier ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1140,6 +1355,101 @@ apiInstance.getProfilesUsers(opts)
 
 **UserProfileEntityListing**
 
+<a name="getRoutingDirectroutingbackupSettingsMe"></a>
+
+# AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
+
+
+GET /api/v2/routing/directroutingbackup/settings/me
+
+Get the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.getRoutingDirectroutingbackupSettingsMe()
+  .then((data) => {
+    console.log(`getRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
+<a name="getRoutingUserDirectroutingbackupSettings"></a>
+
+# AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
+
+
+GET /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Get the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
+  .then((data) => {
+    console.log(`getRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
 <a name="getRoutingUserUtilization"></a>
 
 # AgentMaxUtilization getRoutingUserUtilization(userId)
@@ -1398,6 +1708,106 @@ apiInstance.getUserDirectreports(userId, opts)
 ### Return type
 
 **[User]**
+
+<a name="getUserExternalid"></a>
+
+# [UserExternalIdentifier] getUserExternalid(userId)
+
+
+GET /api/v2/users/{userId}/externalid
+
+Get the external identifiers for a user.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getUserExternalid(userId)
+  .then((data) => {
+    console.log(`getUserExternalid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserExternalid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[UserExternalIdentifier]**
+
+<a name="getUserExternalidAuthorityName"></a>
+
+# UserExternalIdentifier getUserExternalidAuthorityName(userId, authorityName)
+
+
+GET /api/v2/users/{userId}/externalid/{authorityName}
+
+Get the external identifier of user for an authority.
+
+Authority name and external key are case sensitive.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let authorityName = "authorityName_example"; // String | Authority Name
+
+apiInstance.getUserExternalidAuthorityName(userId, authorityName)
+  .then((data) => {
+    console.log(`getUserExternalidAuthorityName success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserExternalidAuthorityName');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **authorityName** | **String** | Authority Name |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserExternalIdentifier**
 
 <a name="getUserFavorites"></a>
 
@@ -1727,7 +2137,7 @@ apiInstance.getUserQueues(userId, opts)
 
 <a name="getUserRoles"></a>
 
-# UserAuthorization getUserRoles(subjectId)
+# UserAuthorization getUserRoles(subjectId, opts)
 
 
 GET /api/v2/users/{subjectId}/roles
@@ -1752,8 +2162,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let subjectId = "subjectId_example"; // String | User ID
+let opts = { 
+  'enforceLicenses': false, // Boolean | 
+  'lookupGroups': false // Boolean | 
+};
 
-apiInstance.getUserRoles(subjectId)
+apiInstance.getUserRoles(subjectId, opts)
   .then((data) => {
     console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1769,6 +2183,8 @@ apiInstance.getUserRoles(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
+ **enforceLicenses** | **Boolean** |  | [optional] [default to false] |
+ **lookupGroups** | **Boolean** |  | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2199,6 +2615,56 @@ apiInstance.getUserTrustors(userId, opts)
 
 **TrustorEntityListing**
 
+<a name="getUserVerifiers"></a>
+
+# VerifierEntityListing getUserVerifiers(userId)
+
+
+GET /api/v2/users/{userId}/verifiers
+
+Get a list of verifiers
+
+Requires ANY permissions:
+
+* mfa:verifier:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getUserVerifiers(userId)
+  .then((data) => {
+    console.log(`getUserVerifiers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserVerifiers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**VerifierEntityListing**
+
 <a name="getUsers"></a>
 
 # UserEntityListing getUsers(opts)
@@ -2466,6 +2932,62 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 ### Return type
 
 **DevelopmentActivity**
+
+<a name="getUsersExternalidAuthorityNameExternalKey"></a>
+
+# User getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts)
+
+
+GET /api/v2/users/externalid/{authorityName}/{externalKey}
+
+Get the user associated with external identifier.
+
+Authority name and external key are case sensitive.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let authorityName = "authorityName_example"; // String | Authority Name
+let externalKey = "externalKey_example"; // String | External Key
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+apiInstance.getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts)
+  .then((data) => {
+    console.log(`getUsersExternalidAuthorityNameExternalKey success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersExternalidAuthorityNameExternalKey');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **authorityName** | **String** | Authority Name |  |
+ **externalKey** | **String** | External Key |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+{: class="table table-striped"}
+
+### Return type
+
+**User**
 
 <a name="getUsersMe"></a>
 
@@ -4218,6 +4740,108 @@ apiInstance.postUsersSearchTeamsAssign(body)
 
 **UsersSearchResponse**
 
+<a name="putRoutingDirectroutingbackupSettingsMe"></a>
+
+# AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
+
+
+PUT /api/v2/routing/directroutingbackup/settings/me
+
+Update the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfEdit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | directRoutingBackup
+
+apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
+  .then((data) => {
+    console.log(`putRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
+<a name="putRoutingUserDirectroutingbackupSettings"></a>
+
+# AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
+
+
+PUT /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Update the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | directRoutingBackup
+
+apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
+  .then((data) => {
+    console.log(`putRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
 <a name="putRoutingUserUtilization"></a>
 
 # AgentMaxUtilization putRoutingUserUtilization(userId, body)
@@ -4371,6 +4995,64 @@ apiInstance.putUserOutofoffice(userId, body)
 ### Return type
 
 **OutOfOffice**
+
+<a name="putUserProfile"></a>
+
+# UserProfile putUserProfile(userId, opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+PUT /api/v2/users/{userId}/profile
+
+Update user profile
+
+This api has been deprecated. Use api/v2/users/user_id instead
+
+Requires ANY permissions:
+
+* directory:user:edit
+* directory:organization:admin
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | userId
+let opts = { 
+  'body': {} // Object | Profile
+};
+
+apiInstance.putUserProfile(userId, opts)
+  .then((data) => {
+    console.log(`putUserProfile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUserProfile');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | userId |  |
+ **body** | **Object** | Profile | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserProfile**
 
 <a name="putUserProfileskills"></a>
 
@@ -4786,4 +5468,58 @@ apiInstance.putUserStationDefaultstationStationId(userId, stationId)
 ### Return type
 
 void (no response body)
+
+<a name="putUserVerifier"></a>
+
+# Verifier putUserVerifier(userId, verifierId, body)
+
+
+PUT /api/v2/users/{userId}/verifiers/{verifierId}
+
+Update a verifier
+
+Requires ANY permissions:
+
+* mfa:verifier:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let verifierId = "verifierId_example"; // String | Verifier ID
+let body = {}; // Object | Verifier Update
+
+apiInstance.putUserVerifier(userId, verifierId, body)
+  .then((data) => {
+    console.log(`putUserVerifier success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUserVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **verifierId** | **String** | Verifier ID |  |
+ **body** | **Object** | Verifier Update |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Verifier**
 

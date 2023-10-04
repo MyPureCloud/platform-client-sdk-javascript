@@ -121,6 +121,141 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Invalidate the Microsoft Teams integration auth for the user.
+	 * For a Genesys Cloud user, they can only be associated with Microsoft Teams auth at a time.  This can be used to clear the session or a new creation can be created, which will supersede the current one.
+	 */
+	deleteIntegrationsMicrosoftteamsAuth() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/microsoftteams/auth', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Logout
+	 * 
+	 */
+	deleteIntegrationsSalesforceServicecloudvoiceLogout() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/salesforce/servicecloudvoice/logout', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Invalidates a 3rd-party integration auth for the user.
+	 * 
+	 * @param {String} ucIntegrationId UC Integration ID
+	 */
+	deleteIntegrationsUnifiedcommunicationAuth(ucIntegrationId) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling deleteIntegrationsUnifiedcommunicationAuth';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth', 
+			'DELETE', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Webhook
+	 * 
+	 * @param {String} webhookId The id of the webhook
+	 */
+	deleteIntegrationsWebhook(webhookId) { 
+		// verify the required parameter 'webhookId' is set
+		if (webhookId === undefined || webhookId === null) {
+			throw 'Missing the required parameter "webhookId" when calling deleteIntegrationsWebhook';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{webhookId}', 
+			'DELETE', 
+			{ 'webhookId': webhookId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Webhook Schema
+	 * 
+	 * @param {String} webhookId The id of the webhook that the schema belongs to
+	 */
+	deleteIntegrationsWebhookSchema(webhookId) { 
+		// verify the required parameter 'webhookId' is set
+		if (webhookId === undefined || webhookId === null) {
+			throw 'Missing the required parameter "webhookId" when calling deleteIntegrationsWebhookSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{webhookId}/schema', 
+			'DELETE', 
+			{ 'webhookId': webhookId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Invalidate the Zoom integration auth for the user.
+	 * For a Genesys Cloud user, they can only be associated with Zoom auth at a time.  This can be used to clear the session or a new creation can be created, which will supersede the current one.
+	 */
+	deleteIntegrationsZoomAuth() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/auth', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get integration.
 	 * 
 	 * @param {String} integrationId Integration Id
@@ -512,6 +647,37 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Retrieves the schema.
+	 * 
+	 * @param {String} providerName Name of provider.
+	 * @param {String} fileName File name of schema including .json suffix.
+	 * @deprecated
+	 */
+	getIntegrationsActionsSchemaFileName(providerName, fileName) { 
+		// verify the required parameter 'providerName' is set
+		if (providerName === undefined || providerName === null) {
+			throw 'Missing the required parameter "providerName" when calling getIntegrationsActionsSchemaFileName';
+		}
+		// verify the required parameter 'fileName' is set
+		if (fileName === undefined || fileName === null) {
+			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionsSchemaFileName';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/schemas/{providerName}/{fileName}', 
+			'GET', 
+			{ 'providerName': providerName,'fileName': fileName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a specific botConnector bot, plus versions, for this integration
 	 * 
 	 * @param {String} integrationId The integration ID for this group of bots
@@ -764,6 +930,51 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Gets a Microsoft Teams integration auth for the user.
+	 * 
+	 */
+	getIntegrationsMicrosoftteamsAuth() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/microsoftteams/auth', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a voice call record by job id
+	 * 
+	 * @param {String} jobId 
+	 */
+	getIntegrationsSalesforceServicecloudvoiceVoicecallrecordJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getIntegrationsSalesforceServicecloudvoiceVoicecallrecordJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about a Dialogflow agent
 	 * 
 	 * @param {String} agentId The agent ID
@@ -802,6 +1013,57 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/dialogflow/agents', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a Dialogflow CX agent
+	 * 
+	 * @param {String} agentId The agent ID
+	 */
+	getIntegrationsSpeechDialogflowcxAgent(agentId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowcxAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflowcx/agents/{agentId}', 
+			'GET', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Dialogflow CX agents in the customers' Google accounts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on agent name
+	 */
+	getIntegrationsSpeechDialogflowcxAgents(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflowcx/agents', 
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
@@ -885,6 +1147,89 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/lex/bots', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a Lex V2 bot alias
+	 * 
+	 * @param {String} aliasId The Alias ID
+	 */
+	getIntegrationsSpeechLexv2BotAlias(aliasId) { 
+		// verify the required parameter 'aliasId' is set
+		if (aliasId === undefined || aliasId === null) {
+			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexv2BotAlias';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}', 
+			'GET', 
+			{ 'aliasId': aliasId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of aliases for a Lex V2 bot
+	 * 
+	 * @param {String} botId The Bot ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.status Filter on alias status
+	 * @param {String} opts.name Filter on alias name
+	 */
+	getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechLexv2BotBotIdAliases';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bot/{botId}/aliases', 
+			'GET', 
+			{ 'botId': botId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'status': opts['status'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Lex V2 bots
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on bot name
+	 */
+	getIntegrationsSpeechLexv2Bots(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bots', 
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
@@ -1090,6 +1435,57 @@ class IntegrationsApi {
 			'GET', 
 			{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a STT engine
+	 * 
+	 * @param {String} engineId The engine ID
+	 */
+	getIntegrationsSpeechSttEngine(engineId) { 
+		// verify the required parameter 'engineId' is set
+		if (engineId === undefined || engineId === null) {
+			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechSttEngine';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/stt/engines/{engineId}', 
+			'GET', 
+			{ 'engineId': engineId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of STT engines enabled for org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on engine name
+	 */
+	getIntegrationsSpeechSttEngines(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/stt/engines', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -1321,6 +1717,174 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Gets a 3rd-party integration auth for the user.
+	 * 
+	 * @param {String} ucIntegrationId UC Integration ID
+	 */
+	getIntegrationsUnifiedcommunicationAuth(ucIntegrationId) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationAuth';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth', 
+			'GET', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a meeting.
+	 * Get a meeting by ID.
+	 * @param {String} ucIntegrationId 3rd Party Service Type
+	 * @param {String} meetingId ID of meeting
+	 */
+	getIntegrationsUnifiedcommunicationMeeting(ucIntegrationId, meetingId) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationMeeting';
+		}
+		// verify the required parameter 'meetingId' is set
+		if (meetingId === undefined || meetingId === null) {
+			throw 'Missing the required parameter "meetingId" when calling getIntegrationsUnifiedcommunicationMeeting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings/{meetingId}', 
+			'GET', 
+			{ 'ucIntegrationId': ucIntegrationId,'meetingId': meetingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List meetings
+	 * List meetings
+	 * @param {String} ucIntegrationId 3rd Party Service Type
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Size of Paged Results (default to 25)
+	 * @param {Number} opts.pageNumber Number of Page (default to 0)
+	 */
+	getIntegrationsUnifiedcommunicationMeetings(ucIntegrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationMeetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings', 
+			'GET', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk user presences for an integration source
+	 * Gets the bulk presence for integration users.  This will return the integration presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
+	 * @param {String} ucIntegrationId Integration Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id A comma separated list of user IDs to fetch their presence status in bulk. Limit 25.
+	 */
+	getIntegrationsUnifiedcommunicationPresences(ucIntegrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationPresences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/presences', 
+			'GET', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * UC integration client application configuration.
+	 * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+	 * @param {String} ucIntegrationId 3rd Party Service Type
+	 */
+	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationsClientapp';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}', 
+			'GET', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List UC integration client application configurations.
+	 * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 */
+	getIntegrationsUnifiedcommunicationsClientapps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/clientapps', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * List permitted user app integrations for the logged in user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1341,6 +1905,222 @@ class IntegrationsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'appHost': opts['appHost'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Webhook
+	 * 
+	 * @param {String} webhookId The id of the webhook
+	 */
+	getIntegrationsWebhook(webhookId) { 
+		// verify the required parameter 'webhookId' is set
+		if (webhookId === undefined || webhookId === null) {
+			throw 'Missing the required parameter "webhookId" when calling getIntegrationsWebhook';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{webhookId}', 
+			'GET', 
+			{ 'webhookId': webhookId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Webhook Schema from a Webhook
+	 * 
+	 * @param {String} webhookId The id of the webhook that the schema belongs to
+	 */
+	getIntegrationsWebhookSchema(webhookId) { 
+		// verify the required parameter 'webhookId' is set
+		if (webhookId === undefined || webhookId === null) {
+			throw 'Missing the required parameter "webhookId" when calling getIntegrationsWebhookSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{webhookId}/schema', 
+			'GET', 
+			{ 'webhookId': webhookId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List Webhooks
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 */
+	getIntegrationsWebhooks(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Zoom meeting.
+	 * Get full details on a Zoom meeting
+	 * @param {String} meetingId Zoom meeting number
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.zoomAuthorization Zoom authorization token
+	 * @param {String} opts.occurrenceId Occurrence ID
+	 */
+	getIntegrationsZoom202004Meeting(meetingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'meetingId' is set
+		if (meetingId === undefined || meetingId === null) {
+			throw 'Missing the required parameter "meetingId" when calling getIntegrationsZoom202004Meeting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/202004/meetings/{meetingId}', 
+			'GET', 
+			{ 'meetingId': meetingId },
+			{ 'zoomAuthorization': opts['zoomAuthorization'],'occurrenceId': opts['occurrenceId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Zoom user.
+	 * Get a Zoom user record.
+	 * @param {String} userId Zoom Meetings user ID. Special user ID value `me` returns your own Zoom user data.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.zoomAuthorization Zoom authorization token
+	 */
+	getIntegrationsZoom202004User(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getIntegrationsZoom202004User';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/202004/users/{userId}', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'zoomAuthorization': opts['zoomAuthorization'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get meetings for a Zoom user.
+	 * Get a list of meetings owned by a given user.
+	 * @param {String} userId Zoom Meetings user ID. Special user ID value `me` returns your own Zoom user data.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.zoomAuthorization Zoom authorization token
+	 * @param {Object} opts.type Zoom meeting type. Possible values: `Scheduled` - This includes all valid past meetings (unexpired), live meetings and upcoming scheduled meetings. It is equivalent to the combined list of `Previous Meetings` and `Upcoming Meetings` displayed in the user's Meetings page on the Zoom Web Portal. `Live` - All the ongoing meetings. `Upcoming` - All upcoming meetings including live meetings.
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getIntegrationsZoom202004UserMeetings(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getIntegrationsZoom202004UserMeetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/202004/users/{userId}/meetings', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'zoomAuthorization': opts['zoomAuthorization'],'type': opts['type'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get settings for a Zoom user.
+	 * Get settings for a Zoom user.
+	 * @param {String} userId Zoom Meetings user ID. Special user ID value `me` returns your own Zoom user data.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.zoomAuthorization Zoom authorization token
+	 */
+	getIntegrationsZoom202004UserSettings(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getIntegrationsZoom202004UserSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/202004/users/{userId}/settings', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'zoomAuthorization': opts['zoomAuthorization'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a Zoom integration auth for the user.
+	 * 
+	 */
+	getIntegrationsZoomAuth() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/auth', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1435,6 +2215,36 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/draft', 
 			'PATCH', 
 			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Webhook
+	 * 
+	 * @param {String} webhookId The id of the webhook
+	 * @param {Object} body Webhook Update Fields
+	 */
+	patchIntegrationsWebhook(webhookId, body) { 
+		// verify the required parameter 'webhookId' is set
+		if (webhookId === undefined || webhookId === null) {
+			throw 'Missing the required parameter "webhookId" when calling patchIntegrationsWebhook';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchIntegrationsWebhook';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{webhookId}', 
+			'PATCH', 
+			{ 'webhookId': webhookId },
 			{  },
 			{  },
 			{  },
@@ -1689,6 +2499,106 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Create a Microsoft Teams integration auth for the user.
+	 * This attaches a Microsoft Teams OAuth session for your user.  All external calls to Microsoft Teams will be made on behalf of this user.
+	 * @param {Object} body integrationAuthRequest
+	 */
+	postIntegrationsMicrosoftteamsAuth(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsMicrosoftteamsAuth';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/microsoftteams/auth', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Login
+	 * 
+	 * @param {Object} body 
+	 */
+	postIntegrationsSalesforceServicecloudvoiceLogin(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsSalesforceServicecloudvoiceLogin';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/salesforce/servicecloudvoice/login', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a voice call record in Salesforce
+	 * 
+	 * @param {Object} body 
+	 */
+	postIntegrationsSalesforceServicecloudvoiceVoicecallrecord(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsSalesforceServicecloudvoiceVoicecallrecord';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a voice call record in Salesforce
+	 * 
+	 * @param {Object} body 
+	 */
+	postIntegrationsSalesforceServicecloudvoiceVoicecallrecordUpdate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsSalesforceServicecloudvoiceVoicecallrecordUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/salesforce/servicecloudvoice/voicecallrecord/update', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Nuance bot in the specified Integration asynchronously
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
@@ -1781,6 +2691,228 @@ class IntegrationsApi {
 			{  },
 			{  },
 			settings, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a 3rd-party integration auth for the user.
+	 * 
+	 * @param {String} ucIntegrationId UC Integration ID
+	 * @param {Object} body integrationAuthRequest
+	 */
+	postIntegrationsUnifiedcommunicationAuth(ucIntegrationId, body) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling postIntegrationsUnifiedcommunicationAuth';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsUnifiedcommunicationAuth';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/auth', 
+			'POST', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a meeting.
+	 * Create a meeting.
+	 * @param {String} ucIntegrationId 3rd Party Service Type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postIntegrationsUnifiedcommunicationMeetings(ucIntegrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling postIntegrationsUnifiedcommunicationMeetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/meetings', 
+			'POST', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send an email.
+	 * Send an email.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postIntegrationsUnifiedcommunicationsEmail(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/email', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Invoke Webhook
+	 * 
+	 * @param {String} tokenId The token of the webhook to be invoked
+	 * @param {Object.<String, {String: Object}>} body Webhook Invocation Payload
+	 */
+	postIntegrationsWebhookEvents(tokenId, body) { 
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null) {
+			throw 'Missing the required parameter "tokenId" when calling postIntegrationsWebhookEvents';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsWebhookEvents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{tokenId}/events', 
+			'POST', 
+			{ 'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Webhook
+	 * 
+	 * @param {Object} body Create Webhook Request
+	 */
+	postIntegrationsWebhooks(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsWebhooks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generate a Zoom meeting signature.
+	 * Generate a meeting verification signature
+	 * @param {String} meetingId Zoom meeting number
+	 * @param {String} role Zoom meeting role
+	 */
+	postIntegrationsZoom202004MeetingSignature(meetingId, role) { 
+		// verify the required parameter 'meetingId' is set
+		if (meetingId === undefined || meetingId === null) {
+			throw 'Missing the required parameter "meetingId" when calling postIntegrationsZoom202004MeetingSignature';
+		}
+		// verify the required parameter 'role' is set
+		if (role === undefined || role === null) {
+			throw 'Missing the required parameter "role" when calling postIntegrationsZoom202004MeetingSignature';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/202004/meetings/{meetingId}/signature', 
+			'POST', 
+			{ 'meetingId': meetingId },
+			{ 'role': role },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create meeting for a Zoom user.
+	 * Create a new meeting for a Zoom user.
+	 * @param {String} userId Zoom Meetings user ID. Special user ID value `me` returns your own Zoom user data.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body meetingRequest
+	 */
+	postIntegrationsZoom202004UserMeetings(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postIntegrationsZoom202004UserMeetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/202004/users/{userId}/meetings', 
+			'POST', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Zoom integration auth for the user.
+	 * This attaches a Zoom OAuth session for your user.  All external calls to Zoom will be made on behalf of this user.
+	 * @param {Object} body integrationAuthRequest
+	 */
+	postIntegrationsZoomAuth(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsZoomAuth';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/zoom/auth', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1951,6 +3083,36 @@ class IntegrationsApi {
 			'/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences', 
 			'PUT', 
 			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add/replace Webhook Schema on a Webhook
+	 * 
+	 * @param {String} webhookId The id of the webhook that the schema belongs to
+	 * @param {Object} body WebhookSchema
+	 */
+	putIntegrationsWebhookSchema(webhookId, body) { 
+		// verify the required parameter 'webhookId' is set
+		if (webhookId === undefined || webhookId === null) {
+			throw 'Missing the required parameter "webhookId" when calling putIntegrationsWebhookSchema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIntegrationsWebhookSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{webhookId}/schema', 
+			'PUT', 
+			{ 'webhookId': webhookId },
 			{  },
 			{  },
 			{  },

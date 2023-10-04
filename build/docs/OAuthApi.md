@@ -3,10 +3,11 @@ title: OAuthApi
 ---
 # platformClient.OAuthApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteOauthAuthorization**](OAuthApi.html#deleteOauthAuthorization) | **DELETE** /api/v2/oauth/authorizations/{clientId} | Delete an authorization for a client
 [**deleteOauthClient**](OAuthApi.html#deleteOauthClient) | **DELETE** /api/v2/oauth/clients/{clientId} | Delete OAuth Client
 [**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | **GET** /api/v2/oauth/authorizations/{clientId} | Get a client that is authorized by the resource owner
 [**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that have been authorized, requested, or revoked by the resource owner
@@ -17,10 +18,66 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOauthScope**](OAuthApi.html#getOauthScope) | **GET** /api/v2/oauth/scopes/{scopeId} | An OAuth scope
 [**getOauthScopes**](OAuthApi.html#getOauthScopes) | **GET** /api/v2/oauth/scopes | The list of OAuth scopes
 [**postOauthClientSecret**](OAuthApi.html#postOauthClientSecret) | **POST** /api/v2/oauth/clients/{clientId}/secret | Regenerate Client Secret
+[**postOauthClientUsageDatatransferAggregatesQuery**](OAuthApi.html#postOauthClientUsageDatatransferAggregatesQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query | Query data transfer bytes for an OAuth client ID usage for an organization
 [**postOauthClientUsageQuery**](OAuthApi.html#postOauthClientUsageQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/query | Query for OAuth client API usage
 [**postOauthClients**](OAuthApi.html#postOauthClients) | **POST** /api/v2/oauth/clients | Create OAuth client
+[**putOauthAuthorization**](OAuthApi.html#putOauthAuthorization) | **PUT** /api/v2/oauth/authorizations/{clientId} | Authorize a client for the resource owner
 [**putOauthClient**](OAuthApi.html#putOauthClient) | **PUT** /api/v2/oauth/clients/{clientId} | Update OAuth Client
 {: class="table table-striped"}
+
+<a name="deleteOauthAuthorization"></a>
+
+# void deleteOauthAuthorization(clientId, opts)
+
+
+DELETE /api/v2/oauth/authorizations/{clientId}
+
+Delete an authorization for a client
+
+Requires ANY permissions:
+
+* oauth:client:authorize
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let clientId = "clientId_example"; // String | The ID of client
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language in which to display the client descriptions.
+};
+
+apiInstance.deleteOauthAuthorization(clientId, opts)
+  .then(() => {
+    console.log('deleteOauthAuthorization returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOauthAuthorization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **clientId** | **String** | The ID of client |  |
+ **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteOauthClient"></a>
 
@@ -537,6 +594,60 @@ apiInstance.postOauthClientSecret(clientId)
 
 **OAuthClient**
 
+<a name="postOauthClientUsageDatatransferAggregatesQuery"></a>
+
+# ApiUsageClientDataTransferExecutionResult postOauthClientUsageDatatransferAggregatesQuery(clientId, body)
+
+
+POST /api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query
+
+Query data transfer bytes for an OAuth client ID usage for an organization
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+Requires ANY permissions:
+
+* usage:dataTransfer:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let clientId = "clientId_example"; // String | Client ID
+let body = {}; // Object | Query
+
+apiInstance.postOauthClientUsageDatatransferAggregatesQuery(clientId, body)
+  .then((data) => {
+    console.log(`postOauthClientUsageDatatransferAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOauthClientUsageDatatransferAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **clientId** | **String** | Client ID |  |
+ **body** | **Object** | Query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ApiUsageClientDataTransferExecutionResult**
+
 <a name="postOauthClientUsageQuery"></a>
 
 # UsageExecutionResult postOauthClientUsageQuery(clientId, body)
@@ -643,6 +754,62 @@ apiInstance.postOauthClients(body)
 ### Return type
 
 **OAuthClient**
+
+<a name="putOauthAuthorization"></a>
+
+# OAuthAuthorization putOauthAuthorization(clientId, body, opts)
+
+
+PUT /api/v2/oauth/authorizations/{clientId}
+
+Authorize a client for the resource owner
+
+Requires ANY permissions:
+
+* oauth:client:authorize
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let clientId = "clientId_example"; // String | The ID of client
+let body = {}; // Object | Authorization
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language in which to display the client descriptions.
+};
+
+apiInstance.putOauthAuthorization(clientId, body, opts)
+  .then((data) => {
+    console.log(`putOauthAuthorization success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOauthAuthorization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **clientId** | **String** | The ID of client |  |
+ **body** | **Object** | Authorization |  |
+ **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
+{: class="table table-striped"}
+
+### Return type
+
+**OAuthAuthorization**
 
 <a name="putOauthClient"></a>
 

@@ -46,6 +46,98 @@ class ProcessAutomationApi {
 	}
 
 	/**
+	 * Get the meta-data for a versioned flow
+	 * This will get the meta-data about a particular version of a flow.<br>.
+	 * @param {String} flowId Flow ID
+	 * @param {String} versionId Flow Version
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 */
+	getProcessautomationFlowsDefinitionVersion(flowId, versionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling getProcessautomationFlowsDefinitionVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling getProcessautomationFlowsDefinitionVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/flows/definitions/{flowId}/versions/{versionId}', 
+			'GET', 
+			{ 'flowId': flowId,'versionId': versionId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the running data for a flow instance
+	 * This will get the information about the current running state of the flow instance. It requires the workflow:instance:search permission.
+	 * @param {String} instanceId Flow Exec ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 */
+	getProcessautomationFlowsInstance(instanceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'instanceId' is set
+		if (instanceId === undefined || instanceId === null) {
+			throw 'Missing the required parameter "instanceId" when calling getProcessautomationFlowsInstance';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/flows/instances/{instanceId}', 
+			'GET', 
+			{ 'instanceId': instanceId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search currently running flow instances using q64
+	 * Searches the pool of running flow instances given a SearchRequest and returns the matching results.
+	 * @param {String} q64 q64
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the return value.
+	 */
+	getProcessautomationFlowsInstancesCommandsSearch(q64, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'q64' is set
+		if (q64 === undefined || q64 === null) {
+			throw 'Missing the required parameter "q64" when calling getProcessautomationFlowsInstancesCommandsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/flows/instances/commands/search', 
+			'GET', 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve a single Trigger matching id
 	 * 
 	 * @param {String} triggerId triggerId
@@ -119,6 +211,31 @@ class ProcessAutomationApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search the currently running flow instances
+	 * Searches the pool of running flow instances given a SearchRequest and returns the matching results. It requires the Some Search Examples: Note the various filters, sort and searchPhrase options can be combined/omitted as needed.Search for a specific definition ID:{"query": [{"fields": ["flowConfigId.id"],"type": "EXACT","values": ["e88db9fb-aaa0-46f8-81d5-4a30e323bdfa"]}]}Search for a specific execution instance and sort on the config name:{"query": [{"fields": ["flowExecId"],"type": "EXACT","values": ["99"]}],"sortBy" : "flowConfigName","sortOrder" : "ASC"}
+	 * @param {Object} body SearchRequest data containing search parameters and paging response.
+	 */
+	postProcessautomationFlowsInstancesCommandsSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postProcessautomationFlowsInstancesCommandsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/processautomation/flows/instances/commands/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

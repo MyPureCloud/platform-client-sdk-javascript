@@ -3,7 +3,7 @@ title: ExternalContactsApi
 ---
 # platformClient.ExternalContactsApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -13,9 +13,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteExternalcontactsOrganization**](ExternalContactsApi.html#deleteExternalcontactsOrganization) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Delete an external organization
 [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi.html#deleteExternalcontactsOrganizationNote) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Delete a note for an external organization
 [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi.html#deleteExternalcontactsOrganizationTrustor) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor | Unlink the Trustor for this External Organization
+[**deleteExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#deleteExternalcontactsOrganizationsSchema) | **DELETE** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Delete a schema
 [**deleteExternalcontactsRelationship**](ExternalContactsApi.html#deleteExternalcontactsRelationship) | **DELETE** /api/v2/externalcontacts/relationships/{relationshipId} | Delete a relationship
 [**getExternalcontactsContact**](ExternalContactsApi.html#getExternalcontactsContact) | **GET** /api/v2/externalcontacts/contacts/{contactId} | Fetch an external contact
 [**getExternalcontactsContactIdentifiers**](ExternalContactsApi.html#getExternalcontactsContactIdentifiers) | **GET** /api/v2/externalcontacts/contacts/{contactId}/identifiers | List the identifiers for a contact
+[**getExternalcontactsContactJourneySegments**](ExternalContactsApi.html#getExternalcontactsContactJourneySegments) | **GET** /api/v2/externalcontacts/contacts/{contactId}/journey/segments | Retrieve segment assignments by external contact ID.
 [**getExternalcontactsContactJourneySessions**](ExternalContactsApi.html#getExternalcontactsContactJourneySessions) | **GET** /api/v2/externalcontacts/contacts/{contactId}/journey/sessions | Retrieve all sessions for a given external contact.
 [**getExternalcontactsContactNote**](ExternalContactsApi.html#getExternalcontactsContactNote) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Fetch a note for an external contact
 [**getExternalcontactsContactNotes**](ExternalContactsApi.html#getExternalcontactsContactNotes) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes | List notes for an external contact
@@ -26,6 +28,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
 [**getExternalcontactsContactsSchemas**](ExternalContactsApi.html#getExternalcontactsContactsSchemas) | **GET** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas.
 [**getExternalcontactsOrganization**](ExternalContactsApi.html#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
+[**getExternalcontactsOrganizationChurn**](ExternalContactsApi.html#getExternalcontactsOrganizationChurn) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/churn | View the latest value of churn probability
+[**getExternalcontactsOrganizationChurnLatest**](ExternalContactsApi.html#getExternalcontactsOrganizationChurnLatest) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/churn/latest | View a full time-series of churn predictions
 [**getExternalcontactsOrganizationContacts**](ExternalContactsApi.html#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
 [**getExternalcontactsOrganizationNote**](ExternalContactsApi.html#getExternalcontactsOrganizationNote) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Fetch a note for an external organization
 [**getExternalcontactsOrganizationNotes**](ExternalContactsApi.html#getExternalcontactsOrganizationNotes) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | List notes for an external organization
@@ -42,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsScanOrganizations**](ExternalContactsApi.html#getExternalcontactsScanOrganizations) | **GET** /api/v2/externalcontacts/scan/organizations | Scan for external organizations using paging
 [**getExternalcontactsScanRelationships**](ExternalContactsApi.html#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
 [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi.html#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
+[**patchExternalcontactsContacts**](ExternalContactsApi.html#patchExternalcontactsContacts) | **PATCH** /api/v2/externalcontacts/contacts | Stitch an external contact
 [**postExternalcontactsBulkContacts**](ExternalContactsApi.html#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
 [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi.html#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
 [**postExternalcontactsBulkContactsRemove**](ExternalContactsApi.html#postExternalcontactsBulkContactsRemove) | **POST** /api/v2/externalcontacts/bulk/contacts/remove | Bulk remove contacts
@@ -59,10 +64,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsBulkRelationshipsAdd**](ExternalContactsApi.html#postExternalcontactsBulkRelationshipsAdd) | **POST** /api/v2/externalcontacts/bulk/relationships/add | Bulk add relationships
 [**postExternalcontactsBulkRelationshipsRemove**](ExternalContactsApi.html#postExternalcontactsBulkRelationshipsRemove) | **POST** /api/v2/externalcontacts/bulk/relationships/remove | Bulk remove relationships
 [**postExternalcontactsBulkRelationshipsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkRelationshipsUpdate) | **POST** /api/v2/externalcontacts/bulk/relationships/update | Bulk update relationships
+[**postExternalcontactsContactJourneySegments**](ExternalContactsApi.html#postExternalcontactsContactJourneySegments) | **POST** /api/v2/externalcontacts/contacts/{contactId}/journey/segments | Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
 [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
 [**postExternalcontactsContactPromotion**](ExternalContactsApi.html#postExternalcontactsContactPromotion) | **POST** /api/v2/externalcontacts/contacts/{contactId}/promotion | Promote an observed contact (ephemeral or identified) to a curated contact
 [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
+[**postExternalcontactsContactsSuggestions**](ExternalContactsApi.html#postExternalcontactsContactsSuggestions) | **POST** /api/v2/externalcontacts/contacts/suggestions | Suggests contacts that might be share the provided information
 [**postExternalcontactsIdentifierlookup**](ExternalContactsApi.html#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
 [**postExternalcontactsMergeContacts**](ExternalContactsApi.html#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
 [**postExternalcontactsOrganizationNotes**](ExternalContactsApi.html#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
@@ -184,7 +191,7 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 
 <a name="deleteExternalcontactsContactsSchema"></a>
 
-# void deleteExternalcontactsContactsSchema(schemaId)
+# void deleteExternalcontactsContactsSchema(schemaId, opts)
 
 
 DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}
@@ -209,8 +216,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'hardDelete': false // Boolean | Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or is absent (the default behavior), we merely mark the schema as deleted but it still exists in the database.
+};
 
-apiInstance.deleteExternalcontactsContactsSchema(schemaId)
+apiInstance.deleteExternalcontactsContactsSchema(schemaId, opts)
   .then(() => {
     console.log('deleteExternalcontactsContactsSchema returned successfully.');
   })
@@ -226,6 +236,7 @@ apiInstance.deleteExternalcontactsContactsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **hardDelete** | **Boolean** | Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or is absent (the default behavior), we merely mark the schema as deleted but it still exists in the database. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -385,6 +396,60 @@ apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 void (no response body)
 
+<a name="deleteExternalcontactsOrganizationsSchema"></a>
+
+# void deleteExternalcontactsOrganizationsSchema(schemaId, opts)
+
+
+DELETE /api/v2/externalcontacts/organizations/schemas/{schemaId}
+
+Delete a schema
+
+Requires ANY permissions:
+
+* externalContacts:customFields:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'hardDelete': false // Boolean | Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or absent (the default behavior), we merely mark the schema as deleted but it still exists in the database.
+};
+
+apiInstance.deleteExternalcontactsOrganizationsSchema(schemaId, opts)
+  .then(() => {
+    console.log('deleteExternalcontactsOrganizationsSchema returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsOrganizationsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **hardDelete** | **Boolean** | Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or absent (the default behavior), we merely mark the schema as deleted but it still exists in the database. | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteExternalcontactsRelationship"></a>
 
 # **Object** deleteExternalcontactsRelationship(relationshipId)
@@ -538,6 +603,68 @@ apiInstance.getExternalcontactsContactIdentifiers(contactId)
 ### Return type
 
 **EntityListing**
+
+<a name="getExternalcontactsContactJourneySegments"></a>
+
+# SegmentAssignmentListing getExternalcontactsContactJourneySegments(contactId, opts)
+
+
+GET /api/v2/externalcontacts/contacts/{contactId}/journey/segments
+
+Retrieve segment assignments by external contact ID.
+
+Requires ANY permissions:
+
+* externalContacts:segmentAssignment:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'segmentScope': "segmentScope_example", // String | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
+  'assignmentState': "assignmentState_example", // String | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
+  'includeMerged': true // Boolean | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
+};
+
+apiInstance.getExternalcontactsContactJourneySegments(contactId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsContactJourneySegments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactJourneySegments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **segmentScope** | **String** | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. | [optional] <br />**Values**: Session, Customer |
+ **assignmentState** | **String** | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. | [optional] <br />**Values**: Assigned, Unassigned |
+ **includeMerged** | **Boolean** | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SegmentAssignmentListing**
 
 <a name="getExternalcontactsContactJourneySessions"></a>
 
@@ -1080,6 +1207,108 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
 ### Return type
 
 **ExternalOrganization**
+
+<a name="getExternalcontactsOrganizationChurn"></a>
+
+# PredictionListing getExternalcontactsOrganizationChurn(externalOrganizationId)
+
+
+GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/churn
+
+View the latest value of churn probability
+
+Requires ANY permissions:
+
+* relate:externalOrganization:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+
+apiInstance.getExternalcontactsOrganizationChurn(externalOrganizationId)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationChurn success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationChurn');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PredictionListing**
+
+<a name="getExternalcontactsOrganizationChurnLatest"></a>
+
+# Prediction getExternalcontactsOrganizationChurnLatest(externalOrganizationId)
+
+
+GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/churn/latest
+
+View a full time-series of churn predictions
+
+Requires ANY permissions:
+
+* relate:externalOrganization:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+
+apiInstance.getExternalcontactsOrganizationChurnLatest(externalOrganizationId)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationChurnLatest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationChurnLatest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Prediction**
 
 <a name="getExternalcontactsOrganizationContacts"></a>
 
@@ -1959,6 +2188,58 @@ apiInstance.patchExternalcontactsContactIdentifiers(contactId, body)
 
 **ContactIdentifier**
 
+<a name="patchExternalcontactsContacts"></a>
+
+# ExternalContact patchExternalcontactsContacts(opts)
+
+
+PATCH /api/v2/externalcontacts/contacts
+
+Stitch an external contact
+
+Requires ANY permissions:
+
+* externalContacts:contact:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'body': {} // Object | StitchingRequest
+};
+
+apiInstance.patchExternalcontactsContacts(opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsContacts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsContacts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | StitchingRequest | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalContact**
+
 <a name="postExternalcontactsBulkContacts"></a>
 
 # BulkFetchContactsResponse postExternalcontactsBulkContacts(body)
@@ -2817,6 +3098,61 @@ apiInstance.postExternalcontactsBulkRelationshipsUpdate(body)
 
 **BulkRelationshipsResponse**
 
+<a name="postExternalcontactsContactJourneySegments"></a>
+
+# void postExternalcontactsContactJourneySegments(contactId, opts)
+
+
+POST /api/v2/externalcontacts/contacts/{contactId}/journey/segments
+
+Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+
+Requires ANY permissions:
+
+* externalContacts:segmentAssignment:add
+* externalContacts:segmentAssignment:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
+  'body': [{}] // Object | 
+};
+
+apiInstance.postExternalcontactsContactJourneySegments(contactId, opts)
+  .then(() => {
+    console.log('postExternalcontactsContactJourneySegments returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactJourneySegments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postExternalcontactsContactNotes"></a>
 
 # Note postExternalcontactsContactNotes(contactId, body)
@@ -3018,6 +3354,58 @@ apiInstance.postExternalcontactsContactsSchemas(body)
 ### Return type
 
 **DataSchema**
+
+<a name="postExternalcontactsContactsSuggestions"></a>
+
+# SuggestionResult postExternalcontactsContactsSuggestions(opts)
+
+
+POST /api/v2/externalcontacts/contacts/suggestions
+
+Suggests contacts that might be share the provided information
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'body': {} // Object | suggestionRequest
+};
+
+apiInstance.postExternalcontactsContactsSuggestions(opts)
+  .then((data) => {
+    console.log(`postExternalcontactsContactsSuggestions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactsSuggestions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | suggestionRequest | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SuggestionResult**
 
 <a name="postExternalcontactsIdentifierlookup"></a>
 

@@ -46,6 +46,26 @@ class RoutingApi {
 	}
 
 	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 */
+	deleteRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a domain
 	 * 
 	 * @param {String} domainId domain ID
@@ -165,6 +185,31 @@ class RoutingApi {
 			'/api/v2/routing/predictors/{predictorId}', 
 			'DELETE', 
 			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a custom Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 */
+	deleteRoutingPredictorsKeyperformanceindicator(kpiId) { 
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null) {
+			throw 'Missing the required parameter "kpiId" when calling deleteRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'DELETE', 
+			{ 'kpiId': kpiId },
 			{  },
 			{  },
 			{  },
@@ -416,6 +461,31 @@ class RoutingApi {
 	}
 
 	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'DELETE', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
@@ -461,6 +531,35 @@ class RoutingApi {
 	}
 
 	/**
+	 * Delete a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDelete Remove all label usages (if found) without warning (default to false)
+	 */
+	deleteRoutingUtilizationLabel(labelId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null) {
+			throw 'Missing the required parameter "labelId" when calling deleteRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'DELETE', 
+			{ 'labelId': labelId },
+			{ 'forceDelete': opts['forceDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete an utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
@@ -494,8 +593,12 @@ class RoutingApi {
 	 * Delete wrap-up code
 	 * 
 	 * @param {String} codeId Wrapup Code ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hardDelete Boolean to perform a hard delete. If hardDelete is set to true, the wrapup code is completely removed from our database. If it is set to false (default behavior), we mark the wrapup code as deleted.
 	 */
-	deleteRoutingWrapupcode(codeId) { 
+	deleteRoutingWrapupcode(codeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'codeId' is set
 		if (codeId === undefined || codeId === null) {
 			throw 'Missing the required parameter "codeId" when calling deleteRoutingWrapupcode';
@@ -505,7 +608,7 @@ class RoutingApi {
 			'/api/v2/routing/wrapupcodes/{codeId}', 
 			'DELETE', 
 			{ 'codeId': codeId },
-			{  },
+			{ 'hardDelete': opts['hardDelete'] },
 			{  },
 			{  },
 			null, 
@@ -698,6 +801,55 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get list of comparison periods by queue ID(s)
+	 * 
+	 * @param {Array.<String>} queueId Comma separated list of Queue IDs to filter by.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.maxPerQueue Maximum number of entities to return per queue.
+	 */
+	getRoutingComparisonperiods(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingComparisonperiods';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/comparisonperiods', 
+			'GET', 
+			{  },
+			{ 'queueId': this.apiClient.buildCollectionParam(queueId, 'multi'),'maxPerQueue': opts['maxPerQueue'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 */
+	getRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get domain
 	 * 
 	 * @param {String} domainId domain ID
@@ -710,6 +862,56 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get domain dkim settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainDkim(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainDkim';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/dkim', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get domain mail from settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainMailfrom(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainMailfrom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
 			'GET', 
 			{ 'domainId': domainId },
 			{  },
@@ -774,6 +976,31 @@ class RoutingApi {
 			'GET', 
 			{ 'domainName': domainName },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get domain verification settings
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailDomainVerification(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainVerification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/verification', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1143,6 +1370,35 @@ class RoutingApi {
 	}
 
 	/**
+	 * Retrieve a single Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
+	 */
+	getRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null) {
+			throw 'Missing the required parameter "kpiId" when calling getRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'GET', 
+			{ 'kpiId': kpiId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of Key Performance Indicators
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1168,6 +1424,26 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get a list of Key Performance Indicators Types available.
+	 * 
+	 */
+	getRoutingPredictorsKeyperformanceindicatortypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicatortypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about this queue.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -1183,6 +1459,35 @@ class RoutingApi {
 			'GET', 
 			{ 'queueId': queueId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an assistant associated with a queue.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 */
+	getRoutingQueueAssistant(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueAssistant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/assistant', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -1238,6 +1543,156 @@ class RoutingApi {
 			'GET', 
 			{ 'queueId': queueId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get recent conversations that are still active
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRoutingQueueConversations(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/conversations', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get recent callback conversations that are still active
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRoutingQueueConversationsCallbacks(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversationsCallbacks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/conversations/callbacks', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get recent call conversations that are still active
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRoutingQueueConversationsCalls(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversationsCalls';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/conversations/calls', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get recent chat conversations that are still active
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRoutingQueueConversationsChats(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversationsChats';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/conversations/chats', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get recent email conversations that are still active
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRoutingQueueConversationsEmails(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueConversationsEmails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/conversations/emails', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 
@@ -1906,6 +2361,31 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 	 * 
 	 * @param {String} userId User ID
@@ -1941,6 +2421,83 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about this utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 */
+	getRoutingUtilizationLabel(labelId) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null) {
+			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'GET', 
+			{ 'labelId': labelId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of agent ids associated with a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 */
+	getRoutingUtilizationLabelAgents(labelId) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null) {
+			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabelAgents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}/agents', 
+			'GET', 
+			{ 'labelId': labelId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of utilization labels
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
+	 * @param {String} opts.name Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
+	 */
+	getRoutingUtilizationLabels(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -2076,6 +2633,60 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a simplified wrap-up code.
+	 * 
+	 * @param {String} codeId Wrapup Code ID
+	 */
+	getRoutingWrapupcodesDivisionview(codeId) { 
+		// verify the required parameter 'codeId' is set
+		if (codeId === undefined || codeId === null) {
+			throw 'Missing the required parameter "codeId" when calling getRoutingWrapupcodesDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/wrapupcodes/divisionviews/{codeId}', 
+			'GET', 
+			{ 'codeId': codeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+	 * Specifying both name and ID parameters is not supported.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.name Name
+	 * @param {Array.<String>} opts.id Wrapup code ID(s)
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Object} opts.includeState Wrapup code state(s) to include
+	 */
+	getRoutingWrapupcodesDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/wrapupcodes/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'includeState': opts['includeState'] },
 			{  },
 			{  },
 			null, 
@@ -2330,6 +2941,35 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update a custom Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null) {
+			throw 'Missing the required parameter "kpiId" when calling patchRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'PATCH', 
+			{ 'kpiId': kpiId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the ring number OR joined status for a queue member.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -2474,6 +3114,31 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/contactcenter', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch Transcription Settings
+	 * 
+	 * @param {Object} body Organization Settings
+	 */
+	patchRoutingSettingsTranscription(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSettingsTranscription';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings/transcription', 
 			'PATCH', 
 			{  },
 			{  },
@@ -2785,6 +3450,111 @@ class RoutingApi {
 	}
 
 	/**
+	 * Query for comparison report detail.
+	 * 
+	 * @param {Object} body request
+	 */
+	postRoutingComparisonreportsDetails(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingComparisonreportsDetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/comparisonreports/details', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for comparison report summary.
+	 * 
+	 * @param {Object} body request
+	 */
+	postRoutingComparisonreportsSummary(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingComparisonreportsSummary';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/comparisonreports/summary', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Restart domain dkim
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	postRoutingEmailDomainDkim(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainDkim';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/dkim', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set domain mail from settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body Mail From Settings
+	 */
+	postRoutingEmailDomainMailfrom(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainMailfrom';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailDomainMailfrom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a route
 	 * 
 	 * @param {String} domainName email domain
@@ -2837,6 +3607,31 @@ class RoutingApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Restart domain verification
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	postRoutingEmailDomainVerification(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainVerification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/verification', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2955,6 +3750,79 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scores interactions based on machine learning metrics.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postRoutingPredictorsInteractionscores(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/interactionscores', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a custom Key Performance Indicator.
+	 * 
+	 * @param {Object} body request
+	 */
+	postRoutingPredictorsKeyperformanceindicators(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingPredictorsKeyperformanceindicators';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scores users based on machine learning metrics.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postRoutingPredictorsUserscores(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/userscores', 
 			'POST', 
 			{  },
 			{  },
@@ -3247,6 +4115,31 @@ class RoutingApi {
 	}
 
 	/**
+	 * Create a utilization label
+	 * 
+	 * @param {Object} body UtilizationLabel
+	 */
+	postRoutingUtilizationLabels(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingUtilizationLabels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an utilization tag
 	 * 
 	 * @param {Object} body UtilizationTag
@@ -3347,6 +4240,31 @@ class RoutingApi {
 			'/api/v2/users/{userId}/routingskills', 
 			'POST', 
 			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingDirectroutingbackupSettingsMe(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'PUT', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -3558,6 +4476,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingUserDirectroutingbackupSettings(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'PUT', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 	 * 
 	 * @param {String} userId User ID
@@ -3602,6 +4550,36 @@ class RoutingApi {
 			'/api/v2/routing/utilization', 
 			'PUT', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 * @param {Object} body UtilizationLabel
+	 */
+	putRoutingUtilizationLabel(labelId, body) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null) {
+			throw 'Missing the required parameter "labelId" when calling putRoutingUtilizationLabel';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'PUT', 
+			{ 'labelId': labelId },
 			{  },
 			{  },
 			{  },

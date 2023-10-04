@@ -21,6 +21,26 @@ class OrganizationApi {
 
 
 	/**
+	 * Delete the organization.
+	 * 
+	 */
+	deleteOrganizationsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/me', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
@@ -75,6 +95,27 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the setting for whether or not the organization enforces OAuth Scopes
+	 * 
+	 * @deprecated
+	 */
+	getOrganizationsEnforcescopes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/enforcescopes', 
 			'GET', 
 			{  },
 			{  },
@@ -277,6 +318,107 @@ class OrganizationApi {
 	}
 
 	/**
+	 * Get a migration
+	 * 
+	 * @param {String} migrationName The name of the migration
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeDetails Return additional properties for a Migration
+	 */
+	getOrganizationsMigration(migrationName, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'migrationName' is set
+		if (migrationName === undefined || migrationName === null) {
+			throw 'Missing the required parameter "migrationName" when calling getOrganizationsMigration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/migrations/{migrationName}', 
+			'GET', 
+			{ 'migrationName': migrationName },
+			{ 'includeDetails': opts['includeDetails'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a migrations state
+	 * 
+	 * @param {String} migrationName The name of the migration
+	 */
+	getOrganizationsMigrationState(migrationName) { 
+		// verify the required parameter 'migrationName' is set
+		if (migrationName === undefined || migrationName === null) {
+			throw 'Missing the required parameter "migrationName" when calling getOrganizationsMigrationState';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/migrations/{migrationName}/state', 
+			'GET', 
+			{ 'migrationName': migrationName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all migrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.migrationType The type of migrations to query on
+	 * @param {Boolean} opts.includeHidden Return hidden migrations
+	 * @param {Boolean} opts.includeDetails Return additional properties for a Migration
+	 */
+	getOrganizationsMigrations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/migrations', 
+			'GET', 
+			{  },
+			{ 'migrationType': opts['migrationType'],'includeHidden': opts['includeHidden'],'includeDetails': opts['includeDetails'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the password requirement settings for the organization
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+	 * @deprecated
+	 */
+	getOrganizationsPasswordrequirements() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/passwordrequirements', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
 	 * @deprecated
@@ -353,6 +495,115 @@ class OrganizationApi {
 	}
 
 	/**
+	 * Update a limit change request
+	 * 
+	 * @param {String} requestId Unique id for the limit change request
+	 * @param {Object} body Change Request Update
+	 */
+	patchOrganizationsLimitsChangerequest(requestId, body) { 
+		// verify the required parameter 'requestId' is set
+		if (requestId === undefined || requestId === null) {
+			throw 'Missing the required parameter "requestId" when calling patchOrganizationsLimitsChangerequest';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOrganizationsLimitsChangerequest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/changerequests/{requestId}', 
+			'PATCH', 
+			{ 'requestId': requestId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a migration
+	 * 
+	 * @param {String} migrationName The name of the migration
+	 * @param {Object} body Migration State
+	 */
+	patchOrganizationsMigration(migrationName, body) { 
+		// verify the required parameter 'migrationName' is set
+		if (migrationName === undefined || migrationName === null) {
+			throw 'Missing the required parameter "migrationName" when calling patchOrganizationsMigration';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOrganizationsMigration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/migrations/{migrationName}', 
+			'PATCH', 
+			{ 'migrationName': migrationName },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Organization
+	 */
+	postOrganizations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a limit change request
+	 * 
+	 * @param {Object} body Change Request
+	 */
+	postOrganizationsLimitsChangerequests(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOrganizationsLimitsChangerequests';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/changerequests', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the list of domains that will be allowed to embed PureCloud applications
 	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body Whitelist settings
@@ -366,6 +617,32 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the setting for whether or not the organization enforces OAuth Scopes
+	 * 
+	 * @param {Object} body Enforce scope setting
+	 * @deprecated
+	 */
+	putOrganizationsEnforcescopes(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrganizationsEnforcescopes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/enforcescopes', 
 			'PUT', 
 			{  },
 			{  },
@@ -422,6 +699,32 @@ class OrganizationApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates the password requirement settings for the organization
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+	 * @param {Object} body Password requirement settings
+	 * @deprecated
+	 */
+	putOrganizationsPasswordrequirements(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrganizationsPasswordrequirements';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/passwordrequirements', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

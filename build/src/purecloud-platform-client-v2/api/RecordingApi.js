@@ -156,6 +156,31 @@ class RecordingApi {
 	}
 
 	/**
+	 * Clear the jobs in org by state specified.
+	 * 
+	 * @param {Object} state Valid states: FULFILLED, CANCELLED
+	 */
+	deleteRecordingJobs(state) { 
+		// verify the required parameter 'state' is set
+		if (state === undefined || state === null) {
+			throw 'Missing the required parameter "state" when calling deleteRecordingJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/jobs', 
+			'DELETE', 
+			{  },
+			{ 'state': state },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete media retention policies
 	 * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 	 * @param {String} ids 
@@ -552,8 +577,12 @@ class RecordingApi {
 	 * Get a media retention policy
 	 * 
 	 * @param {String} policyId Policy ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	getRecordingCrossplatformMediaretentionpolicy(policyId) { 
+	getRecordingCrossplatformMediaretentionpolicy(policyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling getRecordingCrossplatformMediaretentionpolicy';
@@ -563,7 +592,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'GET', 
 			{ 'policyId': policyId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -744,8 +773,12 @@ class RecordingApi {
 	 * Get a media retention policy
 	 * 
 	 * @param {String} policyId Policy ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	getRecordingMediaretentionpolicy(policyId) { 
+	getRecordingMediaretentionpolicy(policyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling getRecordingMediaretentionpolicy';
@@ -755,7 +788,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'GET', 
 			{ 'policyId': policyId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -919,8 +952,12 @@ class RecordingApi {
 	 * 
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	patchRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
+	patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling patchRecordingCrossplatformMediaretentionpolicy';
@@ -934,7 +971,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'PATCH', 
 			{ 'policyId': policyId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			body, 
@@ -949,8 +986,12 @@ class RecordingApi {
 	 * 
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	patchRecordingMediaretentionpolicy(policyId, body) { 
+	patchRecordingMediaretentionpolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling patchRecordingMediaretentionpolicy';
@@ -964,7 +1005,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'PATCH', 
 			{ 'policyId': policyId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			body, 
@@ -1067,8 +1108,12 @@ class RecordingApi {
 	 * Create media retention policy
 	 * Policy does not work retroactively
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	postRecordingCrossplatformMediaretentionpolicies(body) { 
+	postRecordingCrossplatformMediaretentionpolicies(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingCrossplatformMediaretentionpolicies';
@@ -1078,7 +1123,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'POST', 
 			{  },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			body, 
@@ -1192,8 +1237,12 @@ class RecordingApi {
 	 * Create media retention policy
 	 * Policy does not work retroactively
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	postRecordingMediaretentionpolicies(body) { 
+	postRecordingMediaretentionpolicies(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRecordingMediaretentionpolicies';
@@ -1203,7 +1252,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies', 
 			'POST', 
 			{  },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			body, 
@@ -1334,6 +1383,31 @@ class RecordingApi {
 	}
 
 	/**
+	 * Provide meta-data for a screen recording for background assistant using screen recording jwt token.
+	 * 
+	 * @param {Object} body ScreenRecordingMetaDataRequest
+	 */
+	postRecordingsScreensessionsMetadataBackgroundassistant(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingsScreensessionsMetadataBackgroundassistant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/screensessions/metadata/backgroundassistant', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates the retention records on a recording.
 	 * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
 	 * @param {String} conversationId Conversation ID
@@ -1446,8 +1520,12 @@ class RecordingApi {
 	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	putRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
+	putRecordingCrossplatformMediaretentionpolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling putRecordingCrossplatformMediaretentionpolicy';
@@ -1461,7 +1539,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'PUT', 
 			{ 'policyId': policyId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			body, 
@@ -1536,8 +1614,12 @@ class RecordingApi {
 	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand. (default to all)
 	 */
-	putRecordingMediaretentionpolicy(policyId, body) { 
+	putRecordingMediaretentionpolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
 			throw 'Missing the required parameter "policyId" when calling putRecordingMediaretentionpolicy';
@@ -1551,7 +1633,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'PUT', 
 			{ 'policyId': policyId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			body, 

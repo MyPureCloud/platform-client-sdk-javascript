@@ -100,6 +100,41 @@ class LearningApi {
 	}
 
 	/**
+	 * Get Learning Assignment Step
+	 * Permission not required if you are the assigned user of the learning assignment
+	 * @param {String} assignmentId The ID of Learning Assignment
+	 * @param {String} stepId The ID of Learning Assignment Step
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.shareableContentObjectId The ID of SCO to load
+	 * @param {Array.<String>} opts.expand Fields to expand in response
+	 */
+	getLearningAssignmentStep(assignmentId, stepId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling getLearningAssignmentStep';
+		}
+		// verify the required parameter 'stepId' is set
+		if (stepId === undefined || stepId === null) {
+			throw 'Missing the required parameter "stepId" when calling getLearningAssignmentStep';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}/steps/{stepId}', 
+			'GET', 
+			{ 'assignmentId': assignmentId,'stepId': stepId },
+			{ 'shareableContentObjectId': opts['shareableContentObjectId'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * List of Learning module Assignments
 	 * Either moduleId or user value is required
 	 * @param {Object} opts Optional parameters
@@ -234,6 +269,36 @@ class LearningApi {
 	}
 
 	/**
+	 * Get all published versions of a learning module
+	 * 
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getLearningModulePublishedversions(moduleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling getLearningModulePublishedversions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/publishedversions', 
+			'GET', 
+			{ 'moduleId': moduleId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a learning module rule
 	 * 
 	 * @param {String} moduleId The ID of the learning module
@@ -306,6 +371,7 @@ class LearningApi {
 	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
 	 * @param {Object} opts.isPublished Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned (default to Any)
 	 * @param {Array.<String>} opts.statuses Specifies the module statuses to filter by
+	 * @param {Array.<String>} opts.externalIds Specifies the module external IDs to filter by. Only one ID is allowed
 	 */
 	getLearningModules(opts) { 
 		opts = opts || {};
@@ -315,7 +381,7 @@ class LearningApi {
 			'/api/v2/learning/modules', 
 			'GET', 
 			{  },
-			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi') },
+			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'externalIds': this.apiClient.buildCollectionParam(opts['externalIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -385,6 +451,31 @@ class LearningApi {
 	}
 
 	/**
+	 * Get Learning SCORM Result
+	 * 
+	 * @param {String} scormId The ID of the SCORM package
+	 */
+	getLearningScormScormId(scormId) { 
+		// verify the required parameter 'scormId' is set
+		if (scormId === undefined || scormId === null) {
+			throw 'Missing the required parameter "scormId" when calling getLearningScormScormId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/scorm/{scormId}', 
+			'GET', 
+			{ 'scormId': scormId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update Learning Assignment
 	 * 
 	 * @param {String} assignmentId The ID of Learning Assignment
@@ -443,6 +534,75 @@ class LearningApi {
 	}
 
 	/**
+	 * Update Learning Assignment Step
+	 * Permission not required if you are the assigned user of the learning assignment
+	 * @param {String} assignmentId The ID of Learning Assignment
+	 * @param {String} stepId The ID of Learning Assignment Step
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The Learning Assignment Step to be updated
+	 */
+	patchLearningAssignmentStep(assignmentId, stepId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling patchLearningAssignmentStep';
+		}
+		// verify the required parameter 'stepId' is set
+		if (stepId === undefined || stepId === null) {
+			throw 'Missing the required parameter "stepId" when calling patchLearningAssignmentStep';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}/steps/{stepId}', 
+			'PATCH', 
+			{ 'assignmentId': assignmentId,'stepId': stepId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an external assignment for a specific user
+	 * 
+	 * @param {String} moduleId Key identifier for the module
+	 * @param {String} userId Key identifier for the user
+	 * @param {Object} body The learning request for updating the assignment
+	 */
+	patchLearningModuleUserAssignments(moduleId, userId, body) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling patchLearningModuleUserAssignments';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchLearningModuleUserAssignments';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchLearningModuleUserAssignments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/users/{userId}/assignments', 
+			'PATCH', 
+			{ 'moduleId': moduleId,'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Score learning assessment for preview
 	 * 
 	 * @param {Object} body Assessment form and answers to score
@@ -471,8 +631,12 @@ class LearningApi {
 	 * Reassign Learning Assignment
 	 * This will reassign the state of the assignment to Assigned and update the assignment to the latest version of the module
 	 * @param {String} assignmentId The Learning Assignment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Reassign assignment parameters
 	 */
-	postLearningAssignmentReassign(assignmentId) { 
+	postLearningAssignmentReassign(assignmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assignmentId' is set
 		if (assignmentId === undefined || assignmentId === null) {
 			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReassign';
@@ -485,7 +649,7 @@ class LearningApi {
 			{  },
 			{  },
 			{  },
-			null, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -759,6 +923,30 @@ class LearningApi {
 	}
 
 	/**
+	 * Create a SCORM package upload request
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The SCORM package to be uploaded
+	 */
+	postLearningScorm(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/scorm', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a learning module
 	 * This will update the name, description, completion time in days and inform steps for a learning module
 	 * @param {String} moduleId The ID of the learning module
@@ -776,6 +964,37 @@ class LearningApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}', 
+			'PUT', 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Archive/Unarchive a learning module
+	 * This will archive/unarchive the learning module
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} body The learning module archive details
+	 * @deprecated
+	 */
+	putLearningModuleArchive(moduleId, body) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling putLearningModuleArchive';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putLearningModuleArchive';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/archive', 
 			'PUT', 
 			{ 'moduleId': moduleId },
 			{  },

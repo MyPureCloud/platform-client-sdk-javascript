@@ -3,24 +3,29 @@ title: LearningApi
 ---
 # platformClient.LearningApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteLearningAssignment**](LearningApi.html#deleteLearningAssignment) | **DELETE** /api/v2/learning/assignments/{assignmentId} | Delete a learning assignment
 [**deleteLearningModule**](LearningApi.html#deleteLearningModule) | **DELETE** /api/v2/learning/modules/{moduleId} | Delete a learning module
 [**getLearningAssignment**](LearningApi.html#getLearningAssignment) | **GET** /api/v2/learning/assignments/{assignmentId} | Get Learning Assignment
+[**getLearningAssignmentStep**](LearningApi.html#getLearningAssignmentStep) | **GET** /api/v2/learning/assignments/{assignmentId}/steps/{stepId} | Get Learning Assignment Step
 [**getLearningAssignments**](LearningApi.html#getLearningAssignments) | **GET** /api/v2/learning/assignments | List of Learning module Assignments
 [**getLearningAssignmentsMe**](LearningApi.html#getLearningAssignmentsMe) | **GET** /api/v2/learning/assignments/me | List of Learning Assignments assigned to current user
 [**getLearningModule**](LearningApi.html#getLearningModule) | **GET** /api/v2/learning/modules/{moduleId} | Get a learning module
 [**getLearningModuleJob**](LearningApi.html#getLearningModuleJob) | **GET** /api/v2/learning/modules/{moduleId}/jobs/{jobId} | Get a specific Learning Module job status
+[**getLearningModulePublishedversions**](LearningApi.html#getLearningModulePublishedversions) | **GET** /api/v2/learning/modules/{moduleId}/publishedversions | Get all published versions of a learning module
 [**getLearningModuleRule**](LearningApi.html#getLearningModuleRule) | **GET** /api/v2/learning/modules/{moduleId}/rule | Get a learning module rule
 [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | **GET** /api/v2/learning/modules/{moduleId}/versions/{versionId} | Get specific version of a published module
 [**getLearningModules**](LearningApi.html#getLearningModules) | **GET** /api/v2/learning/modules | Get all learning modules of an organization
 [**getLearningModulesAssignments**](LearningApi.html#getLearningModulesAssignments) | **GET** /api/v2/learning/modules/assignments | Get all learning modules of an organization including assignments for a specific user
 [**getLearningModulesCoverartCoverArtId**](LearningApi.html#getLearningModulesCoverartCoverArtId) | **GET** /api/v2/learning/modules/coverart/{coverArtId} | Get a specific Learning Module cover art using ID
+[**getLearningScormScormId**](LearningApi.html#getLearningScormScormId) | **GET** /api/v2/learning/scorm/{scormId} | Get Learning SCORM Result
 [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
 [**patchLearningAssignmentReschedule**](LearningApi.html#patchLearningAssignmentReschedule) | **PATCH** /api/v2/learning/assignments/{assignmentId}/reschedule | Reschedule Learning Assignment
+[**patchLearningAssignmentStep**](LearningApi.html#patchLearningAssignmentStep) | **PATCH** /api/v2/learning/assignments/{assignmentId}/steps/{stepId} | Update Learning Assignment Step
+[**patchLearningModuleUserAssignments**](LearningApi.html#patchLearningModuleUserAssignments) | **PATCH** /api/v2/learning/modules/{moduleId}/users/{userId}/assignments | Update an external assignment for a specific user
 [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | **POST** /api/v2/learning/assessments/scoring | Score learning assessment for preview
 [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | **POST** /api/v2/learning/assignments/{assignmentId}/reassign | Reassign Learning Assignment
 [**postLearningAssignmentReset**](LearningApi.html#postLearningAssignmentReset) | **POST** /api/v2/learning/assignments/{assignmentId}/reset | Reset Learning Assignment
@@ -33,7 +38,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postLearningModules**](LearningApi.html#postLearningModules) | **POST** /api/v2/learning/modules | Create a new learning module
 [**postLearningRulesQuery**](LearningApi.html#postLearningRulesQuery) | **POST** /api/v2/learning/rules/query | Get users for learning module rule
 [**postLearningScheduleslotsQuery**](LearningApi.html#postLearningScheduleslotsQuery) | **POST** /api/v2/learning/scheduleslots/query | Get list of possible slots where a learning activity can be scheduled.
+[**postLearningScorm**](LearningApi.html#postLearningScorm) | **POST** /api/v2/learning/scorm | Create a SCORM package upload request
 [**putLearningModule**](LearningApi.html#putLearningModule) | **PUT** /api/v2/learning/modules/{moduleId} | Update a learning module
+[**putLearningModuleArchive**](LearningApi.html#putLearningModuleArchive) | **PUT** /api/v2/learning/modules/{moduleId}/archive | Archive/Unarchive a learning module
 [**putLearningModuleRule**](LearningApi.html#putLearningModuleRule) | **PUT** /api/v2/learning/modules/{moduleId}/rule | Update a learning module rule
 {: class="table table-striped"}
 
@@ -194,6 +201,66 @@ apiInstance.getLearningAssignment(assignmentId, opts)
 ### Return type
 
 **LearningAssignment**
+
+<a name="getLearningAssignmentStep"></a>
+
+# LearningAssignmentStep getLearningAssignmentStep(assignmentId, stepId, opts)
+
+
+GET /api/v2/learning/assignments/{assignmentId}/steps/{stepId}
+
+Get Learning Assignment Step
+
+Permission not required if you are the assigned user of the learning assignment
+
+Requires ANY permissions:
+
+* learning:assignment:viewOwn
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
+let stepId = "stepId_example"; // String | The ID of Learning Assignment Step
+let opts = { 
+  'shareableContentObjectId': "shareableContentObjectId_example", // String | The ID of SCO to load
+  'expand': ["expand_example"] // [String] | Fields to expand in response
+};
+
+apiInstance.getLearningAssignmentStep(assignmentId, stepId, opts)
+  .then((data) => {
+    console.log(`getLearningAssignmentStep success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLearningAssignmentStep');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assignmentId** | **String** | The ID of Learning Assignment |  |
+ **stepId** | **String** | The ID of Learning Assignment Step |  |
+ **shareableContentObjectId** | **String** | The ID of SCO to load | [optional]  |
+ **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: moduleStep |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningAssignmentStep**
 
 <a name="getLearningAssignments"></a>
 
@@ -459,6 +526,62 @@ apiInstance.getLearningModuleJob(moduleId, jobId)
 
 **LearningModuleJobResponse**
 
+<a name="getLearningModulePublishedversions"></a>
+
+# LearningModulesDomainEntityListing getLearningModulePublishedversions(moduleId, opts)
+
+
+GET /api/v2/learning/modules/{moduleId}/publishedversions
+
+Get all published versions of a learning module
+
+Requires ANY permissions:
+
+* learning:module:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let moduleId = "moduleId_example"; // String | The ID of the learning module
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getLearningModulePublishedversions(moduleId, opts)
+  .then((data) => {
+    console.log(`getLearningModulePublishedversions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLearningModulePublishedversions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **moduleId** | **String** | The ID of the learning module |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningModulesDomainEntityListing**
+
 <a name="getLearningModuleRule"></a>
 
 # LearningModuleRule getLearningModuleRule(moduleId)
@@ -601,7 +724,8 @@ let opts = {
   'searchTerm': "searchTerm_example", // String | Search Term (searchable by name)
   'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
   'isPublished': "Any", // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned
-  'statuses': ["statuses_example"] // [String] | Specifies the module statuses to filter by
+  'statuses': ["statuses_example"], // [String] | Specifies the module statuses to filter by
+  'externalIds': ["externalIds_example"] // [String] | Specifies the module external IDs to filter by. Only one ID is allowed
 };
 
 apiInstance.getLearningModules(opts)
@@ -629,6 +753,7 @@ apiInstance.getLearningModules(opts)
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
  **isPublished** | **String** | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **statuses** | **[String]** | Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
+ **externalIds** | **[String]** | Specifies the module external IDs to filter by. Only one ID is allowed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -750,6 +875,56 @@ apiInstance.getLearningModulesCoverartCoverArtId(coverArtId)
 
 **LearningModuleCoverArtResponse**
 
+<a name="getLearningScormScormId"></a>
+
+# LearningScormResponse getLearningScormScormId(scormId)
+
+
+GET /api/v2/learning/scorm/{scormId}
+
+Get Learning SCORM Result
+
+Requires ANY permissions:
+
+* learning:scorm:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let scormId = "scormId_example"; // String | The ID of the SCORM package
+
+apiInstance.getLearningScormScormId(scormId)
+  .then((data) => {
+    console.log(`getLearningScormScormId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLearningScormScormId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scormId** | **String** | The ID of the SCORM package |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningScormResponse**
+
 <a name="patchLearningAssignment"></a>
 
 # LearningAssignment patchLearningAssignment(assignmentId, opts)
@@ -856,6 +1031,118 @@ apiInstance.patchLearningAssignmentReschedule(assignmentId, opts)
 
 **LearningAssignment**
 
+<a name="patchLearningAssignmentStep"></a>
+
+# LearningAssignmentStep patchLearningAssignmentStep(assignmentId, stepId, opts)
+
+
+PATCH /api/v2/learning/assignments/{assignmentId}/steps/{stepId}
+
+Update Learning Assignment Step
+
+Permission not required if you are the assigned user of the learning assignment
+
+Requires ANY permissions:
+
+* learning:assignment:editOwn
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let assignmentId = "assignmentId_example"; // String | The ID of Learning Assignment
+let stepId = "stepId_example"; // String | The ID of Learning Assignment Step
+let opts = { 
+  'body': {} // Object | The Learning Assignment Step to be updated
+};
+
+apiInstance.patchLearningAssignmentStep(assignmentId, stepId, opts)
+  .then((data) => {
+    console.log(`patchLearningAssignmentStep success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchLearningAssignmentStep');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assignmentId** | **String** | The ID of Learning Assignment |  |
+ **stepId** | **String** | The ID of Learning Assignment Step |  |
+ **body** | **Object** | The Learning Assignment Step to be updated | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningAssignmentStep**
+
+<a name="patchLearningModuleUserAssignments"></a>
+
+# LearningAssignment patchLearningModuleUserAssignments(moduleId, userId, body)
+
+
+PATCH /api/v2/learning/modules/{moduleId}/users/{userId}/assignments
+
+Update an external assignment for a specific user
+
+Requires ALL permissions:
+
+* learning:externalAssignment:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let moduleId = "moduleId_example"; // String | Key identifier for the module
+let userId = "userId_example"; // String | Key identifier for the user
+let body = {}; // Object | The learning request for updating the assignment
+
+apiInstance.patchLearningModuleUserAssignments(moduleId, userId, body)
+  .then((data) => {
+    console.log(`patchLearningModuleUserAssignments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchLearningModuleUserAssignments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **moduleId** | **String** | Key identifier for the module |  |
+ **userId** | **String** | Key identifier for the user |  |
+ **body** | **Object** | The learning request for updating the assignment |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningAssignment**
+
 <a name="postLearningAssessmentsScoring"></a>
 
 # AssessmentScoringSet postLearningAssessmentsScoring(body)
@@ -910,7 +1197,7 @@ apiInstance.postLearningAssessmentsScoring(body)
 
 <a name="postLearningAssignmentReassign"></a>
 
-# LearningAssignment postLearningAssignmentReassign(assignmentId)
+# LearningAssignment postLearningAssignmentReassign(assignmentId, opts)
 
 
 POST /api/v2/learning/assignments/{assignmentId}/reassign
@@ -937,8 +1224,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+let opts = { 
+  'body': {} // Object | Reassign assignment parameters
+};
 
-apiInstance.postLearningAssignmentReassign(assignmentId)
+apiInstance.postLearningAssignmentReassign(assignmentId, opts)
   .then((data) => {
     console.log(`postLearningAssignmentReassign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -954,6 +1244,7 @@ apiInstance.postLearningAssignmentReassign(assignmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The Learning Assignment ID |  |
+ **body** | **Object** | Reassign assignment parameters | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1484,6 +1775,58 @@ apiInstance.postLearningScheduleslotsQuery(body)
 
 **LearningScheduleSlotsQueryResponse**
 
+<a name="postLearningScorm"></a>
+
+# LearningScormUploadResponse postLearningScorm(opts)
+
+
+POST /api/v2/learning/scorm
+
+Create a SCORM package upload request
+
+Requires ANY permissions:
+
+* learning:scorm:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let opts = { 
+  'body': {} // Object | The SCORM package to be uploaded
+};
+
+apiInstance.postLearningScorm(opts)
+  .then((data) => {
+    console.log(`postLearningScorm success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningScorm');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The SCORM package to be uploaded | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningScormUploadResponse**
+
 <a name="putLearningModule"></a>
 
 # LearningModule putLearningModule(moduleId, body)
@@ -1537,6 +1880,61 @@ apiInstance.putLearningModule(moduleId, body)
 ### Return type
 
 **LearningModule**
+
+<a name="putLearningModuleArchive"></a>
+
+# LearningModuleArchiveResponse putLearningModuleArchive(moduleId, body)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+PUT /api/v2/learning/modules/{moduleId}/archive
+
+Archive/Unarchive a learning module
+
+This will archive/unarchive the learning module
+
+Requires ANY permissions:
+
+* learning:module:archive
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let moduleId = "moduleId_example"; // String | The ID of the learning module
+let body = {}; // Object | The learning module archive details
+
+apiInstance.putLearningModuleArchive(moduleId, body)
+  .then((data) => {
+    console.log(`putLearningModuleArchive success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putLearningModuleArchive');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **moduleId** | **String** | The ID of the learning module |  |
+ **body** | **Object** | The learning module archive details |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningModuleArchiveResponse**
 
 <a name="putLearningModuleRule"></a>
 

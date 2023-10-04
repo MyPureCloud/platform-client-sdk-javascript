@@ -3,20 +3,24 @@ title: GroupsApi
 ---
 # platformClient.GroupsApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteGroup**](GroupsApi.html#deleteGroup) | **DELETE** /api/v2/groups/{groupId} | Delete group
 [**deleteGroupDynamicsettings**](GroupsApi.html#deleteGroupDynamicsettings) | **DELETE** /api/v2/groups/{groupId}/dynamicsettings | Remove dynamic group definition
+[**deleteGroupImage**](GroupsApi.html#deleteGroupImage) | **DELETE** /api/v2/groups/{groupId}/images/{imageId} | Delete a group image.
 [**deleteGroupMembers**](GroupsApi.html#deleteGroupMembers) | **DELETE** /api/v2/groups/{groupId}/members | Remove members
 [**getFieldconfig**](GroupsApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getGroup**](GroupsApi.html#getGroup) | **GET** /api/v2/groups/{groupId} | Get group
 [**getGroupDynamicsettings**](GroupsApi.html#getGroupDynamicsettings) | **GET** /api/v2/groups/{groupId}/dynamicsettings | Get dynamic group definition
+[**getGroupImage**](GroupsApi.html#getGroupImage) | **GET** /api/v2/groups/{groupId}/images/{imageId} | Get a group image.
+[**getGroupImages**](GroupsApi.html#getGroupImages) | **GET** /api/v2/groups/{groupId}/images | Get all group images.
 [**getGroupIndividuals**](GroupsApi.html#getGroupIndividuals) | **GET** /api/v2/groups/{groupId}/individuals | Get all individuals associated with the group
 [**getGroupMembers**](GroupsApi.html#getGroupMembers) | **GET** /api/v2/groups/{groupId}/members | Get group members, includes individuals, owners, and dynamically included people
 [**getGroupProfile**](GroupsApi.html#getGroupProfile) | **GET** /api/v2/groups/{groupId}/profile | Get group profile
 [**getGroups**](GroupsApi.html#getGroups) | **GET** /api/v2/groups | Get a group list
+[**getGroupsBulkDeleted**](GroupsApi.html#getGroupsBulkDeleted) | **GET** /api/v2/groups/bulk/deleted | Get a group list of deleted groups
 [**getGroupsSearch**](GroupsApi.html#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
 [**getProfilesGroups**](GroupsApi.html#getProfilesGroups) | **GET** /api/v2/profiles/groups | Get group profile listing
 [**postGroupMembers**](GroupsApi.html#postGroupMembers) | **POST** /api/v2/groups/{groupId}/members | Add members
@@ -25,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postGroupsSearch**](GroupsApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
 [**putGroup**](GroupsApi.html#putGroup) | **PUT** /api/v2/groups/{groupId} | Update group
 [**putGroupDynamicsettings**](GroupsApi.html#putGroupDynamicsettings) | **PUT** /api/v2/groups/{groupId}/dynamicsettings | Create / Update dynamic group definition
+[**putGroupProfile**](GroupsApi.html#putGroupProfile) | **PUT** /api/v2/groups/{groupId}/profile | Update group profile
 {: class="table table-striped"}
 
 <a name="deleteGroup"></a>
@@ -123,6 +128,58 @@ apiInstance.deleteGroupDynamicsettings(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteGroupImage"></a>
+
+# void deleteGroupImage(groupId, imageId)
+
+
+DELETE /api/v2/groups/{groupId}/images/{imageId}
+
+Delete a group image.
+
+Requires ANY permissions:
+
+* directory:group:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let groupId = "groupId_example"; // String | Group ID
+let imageId = "imageId_example"; // String | Image ID
+
+apiInstance.deleteGroupImage(groupId, imageId)
+  .then(() => {
+    console.log('deleteGroupImage returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteGroupImage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | Group ID |  |
+ **imageId** | **String** | Image ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -327,6 +384,108 @@ apiInstance.getGroupDynamicsettings(groupId)
 ### Return type
 
 **DynamicGroupDefinition**
+
+<a name="getGroupImage"></a>
+
+# GroupImage getGroupImage(groupId, imageId)
+
+
+GET /api/v2/groups/{groupId}/images/{imageId}
+
+Get a group image.
+
+Requires ANY permissions:
+
+* directory:group:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let groupId = "groupId_example"; // String | Group ID
+let imageId = "imageId_example"; // String | Image ID
+
+apiInstance.getGroupImage(groupId, imageId)
+  .then((data) => {
+    console.log(`getGroupImage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGroupImage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | Group ID |  |
+ **imageId** | **String** | Image ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GroupImage**
+
+<a name="getGroupImages"></a>
+
+# GroupImageListing getGroupImages(groupId)
+
+
+GET /api/v2/groups/{groupId}/images
+
+Get all group images.
+
+Requires ANY permissions:
+
+* directory:group:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let groupId = "groupId_example"; // String | Group ID
+
+apiInstance.getGroupImages(groupId)
+  .then((data) => {
+    console.log(`getGroupImages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGroupImages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GroupImageListing**
 
 <a name="getGroupIndividuals"></a>
 
@@ -541,6 +700,54 @@ apiInstance.getGroups(opts)
  **id** | **[String]** | id | [optional]  |
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the id parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**GroupEntityListing**
+
+<a name="getGroupsBulkDeleted"></a>
+
+# GroupEntityListing getGroupsBulkDeleted(jabberId)
+
+
+GET /api/v2/groups/bulk/deleted
+
+Get a group list of deleted groups
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let jabberId = ["jabberId_example"]; // [String] | A list of jabberIds to fetch by bulk, max 50.
+
+apiInstance.getGroupsBulkDeleted(jabberId)
+  .then((data) => {
+    console.log(`getGroupsBulkDeleted success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGroupsBulkDeleted');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jabberId** | **[String]** | A list of jabberIds to fetch by bulk, max 50. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -968,4 +1175,59 @@ apiInstance.putGroupDynamicsettings(groupId, body)
 ### Return type
 
 void (no response body)
+
+<a name="putGroupProfile"></a>
+
+# GroupProfile putGroupProfile(groupId, opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+PUT /api/v2/groups/{groupId}/profile
+
+Update group profile
+
+ This api is deprecated. Use /api/v2/groups/group_id instead
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GroupsApi();
+
+let groupId = "groupId_example"; // String | groupId
+let opts = { 
+  'body': {} // Object | Profile
+};
+
+apiInstance.putGroupProfile(groupId, opts)
+  .then((data) => {
+    console.log(`putGroupProfile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putGroupProfile');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | groupId |  |
+ **body** | **Object** | Profile | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**GroupProfile**
 

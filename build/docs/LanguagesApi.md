@@ -3,17 +3,22 @@ title: LanguagesApi
 ---
 # platformClient.LanguagesApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteLanguage**](LanguagesApi.html#deleteLanguage) | **DELETE** /api/v2/languages/{languageId} | Delete Language (Deprecated)
+[**getAppsLegacyAvailabletranslations**](LanguagesApi.html#getAppsLegacyAvailabletranslations) | **GET** /api/v2/apps/legacy/availabletranslations | Get all available languages for translation
+[**getAppsLegacyTranslation**](LanguagesApi.html#getAppsLegacyTranslation) | **GET** /api/v2/apps/legacy/translations/{languageName} | Get effective translation for an organization by language
+[**getAppsLegacyTranslations**](LanguagesApi.html#getAppsLegacyTranslations) | **GET** /api/v2/apps/legacy/translations | Get effective translation for an organization
+[**getAppsLegacyTranslationsBuiltinLanguageName**](LanguagesApi.html#getAppsLegacyTranslationsBuiltinLanguageName) | **GET** /api/v2/apps/legacy/translations/builtin/{languageName} | Get the builtin translation for a language
 [**getLanguage**](LanguagesApi.html#getLanguage) | **GET** /api/v2/languages/{languageId} | Get Language (Deprecated)
 [**getLanguages**](LanguagesApi.html#getLanguages) | **GET** /api/v2/languages | Get the list of supported languages. (Deprecated)
 [**getLanguagesTranslations**](LanguagesApi.html#getLanguagesTranslations) | **GET** /api/v2/languages/translations | Get all available languages for translation
 [**getLanguagesTranslationsBuiltin**](LanguagesApi.html#getLanguagesTranslationsBuiltin) | **GET** /api/v2/languages/translations/builtin | Get the builtin translation for a language
 [**getLanguagesTranslationsOrganization**](LanguagesApi.html#getLanguagesTranslationsOrganization) | **GET** /api/v2/languages/translations/organization | Get effective translation for an organization by language
 [**getLanguagesTranslationsUser**](LanguagesApi.html#getLanguagesTranslationsUser) | **GET** /api/v2/languages/translations/users/{userId} | Get effective language translation for a user
+[**postAppsLegacyTranslation**](LanguagesApi.html#postAppsLegacyTranslation) | **POST** /api/v2/apps/legacy/translations/{languageName} | Update a custom translation map for the requester's org and a language
 [**postLanguages**](LanguagesApi.html#postLanguages) | **POST** /api/v2/languages | Create Language (Deprecated)
 {: class="table table-striped"}
 
@@ -69,6 +74,188 @@ apiInstance.deleteLanguage(languageId)
 ### Return type
 
 void (no response body)
+
+<a name="getAppsLegacyAvailabletranslations"></a>
+
+# AvailableTranslations getAppsLegacyAvailabletranslations()
+
+
+GET /api/v2/apps/legacy/availabletranslations
+
+Get all available languages for translation
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguagesApi();
+
+apiInstance.getAppsLegacyAvailabletranslations()
+  .then((data) => {
+    console.log(`getAppsLegacyAvailabletranslations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAppsLegacyAvailabletranslations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**AvailableTranslations**
+
+<a name="getAppsLegacyTranslation"></a>
+
+# **{&#39;String&#39;: Object}** getAppsLegacyTranslation(languageName)
+
+
+GET /api/v2/apps/legacy/translations/{languageName}
+
+Get effective translation for an organization by language
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguagesApi();
+
+let languageName = "languageName_example"; // String | The language of the translation to retrieve for the organization
+
+apiInstance.getAppsLegacyTranslation(languageName)
+  .then((data) => {
+    console.log(`getAppsLegacyTranslation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAppsLegacyTranslation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageName** | **String** | The language of the translation to retrieve for the organization |  |
+{: class="table table-striped"}
+
+### Return type
+
+**{&#39;String&#39;: Object}**
+
+<a name="getAppsLegacyTranslations"></a>
+
+# **{&#39;String&#39;: Object}** getAppsLegacyTranslations()
+
+
+GET /api/v2/apps/legacy/translations
+
+Get effective translation for an organization
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguagesApi();
+
+apiInstance.getAppsLegacyTranslations()
+  .then((data) => {
+    console.log(`getAppsLegacyTranslations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAppsLegacyTranslations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**{&#39;String&#39;: Object}**
+
+<a name="getAppsLegacyTranslationsBuiltinLanguageName"></a>
+
+# **{&#39;String&#39;: Object}** getAppsLegacyTranslationsBuiltinLanguageName(languageName)
+
+
+GET /api/v2/apps/legacy/translations/builtin/{languageName}
+
+Get the builtin translation for a language
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguagesApi();
+
+let languageName = "languageName_example"; // String | The language of the builtin translation to retrieve
+
+apiInstance.getAppsLegacyTranslationsBuiltinLanguageName(languageName)
+  .then((data) => {
+    console.log(`getAppsLegacyTranslationsBuiltinLanguageName success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAppsLegacyTranslationsBuiltinLanguageName');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageName** | **String** | The language of the builtin translation to retrieve |  |
+{: class="table table-striped"}
+
+### Return type
+
+**{&#39;String&#39;: Object}**
 
 <a name="getLanguage"></a>
 
@@ -365,6 +552,56 @@ apiInstance.getLanguagesTranslationsUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The user id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**{&#39;String&#39;: Object}**
+
+<a name="postAppsLegacyTranslation"></a>
+
+# **{&#39;String&#39;: Object}** postAppsLegacyTranslation(languageName, body)
+
+
+POST /api/v2/apps/legacy/translations/{languageName}
+
+Update a custom translation map for the requester's org and a language
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguagesApi();
+
+let languageName = "languageName_example"; // String | The language of the translation to retrieve for the organization
+let body = {key: "body_example"}; // {String: String} | The new custom translation map for the requester's org and language
+
+apiInstance.postAppsLegacyTranslation(languageName, body)
+  .then((data) => {
+    console.log(`postAppsLegacyTranslation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAppsLegacyTranslation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageName** | **String** | The language of the translation to retrieve for the organization |  |
+ **body** | **{String: String}** | The new custom translation map for the requester's org and language |  |
 {: class="table table-striped"}
 
 ### Return type

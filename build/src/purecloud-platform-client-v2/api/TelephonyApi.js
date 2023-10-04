@@ -41,6 +41,110 @@ class TelephonyApi {
 	}
 
 	/**
+	 * GET phone address data
+	 * 
+	 * @param {String} phoneId Phone Identifier
+	 */
+	getTelephonyPhonePhoneIdSettings(phoneId) { 
+		// verify the required parameter 'phoneId' is set
+		if (phoneId === undefined || phoneId === null) {
+			throw 'Missing the required parameter "phoneId" when calling getTelephonyPhonePhoneIdSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/phone/{phoneId}/settings', 
+			'GET', 
+			{ 'phoneId': phoneId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * GET phone configuration data
+	 * 
+	 * @param {String} hardwareId Phone's physical address AKA MAC address or FQDN for softphones
+	 */
+	getTelephonyPhonehomePhoneconfigurationHardwareId(hardwareId) { 
+		// verify the required parameter 'hardwareId' is set
+		if (hardwareId === undefined || hardwareId === null) {
+			throw 'Missing the required parameter "hardwareId" when calling getTelephonyPhonehomePhoneconfigurationHardwareId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/phonehome/phoneconfiguration/{hardwareId}', 
+			'GET', 
+			{ 'hardwareId': hardwareId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a SIP message.
+	 * Get the raw form of the SIP message
+	 * @param {String} conversationId Conversation id
+	 */
+	getTelephonySipmessagesConversation(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/sipmessages/conversations/{conversationId}', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get SIP headers.
+	 * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+	 * @param {String} conversationId Conversation id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.keys comma-separated list of header identifiers to query. e.g. ruri,to,from
+	 */
+	getTelephonySipmessagesConversationHeaders(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversationHeaders';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/sipmessages/conversations/{conversationId}/headers', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{ 'keys': this.apiClient.buildCollectionParam(opts['keys'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch SIP metadata
 	 * Fetch SIP metadata that matches a given parameter. If exactMatch is passed as a parameter only sip records that have exactly that value will be returned. For example, some records contain conversationId but not all relevant records for that call may contain the conversationId so only a partial view of the call will be reflected
 	 * @param {Date} dateStart Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -92,6 +196,31 @@ class TelephonyApi {
 			'/api/v2/telephony/siptraces/download/{downloadId}', 
 			'GET', 
 			{ 'downloadId': downloadId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Schedule a job in the near future.
+	 * 
+	 * @param {String} siteId Site ID
+	 */
+	postTelephonyProvidersEdgesSiteSchedulereboot(siteId) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling postTelephonyProvidersEdgesSiteSchedulereboot';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/schedulereboot', 
+			'POST', 
+			{ 'siteId': siteId },
 			{  },
 			{  },
 			{  },

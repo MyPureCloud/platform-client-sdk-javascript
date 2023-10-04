@@ -145,6 +145,36 @@ class ChatApi {
 	}
 
 	/**
+	 * Get Room Participant.
+	 * This route is deprecated, please use /chats/rooms/{roomJid}/participants/{participantJid} instead
+	 * @param {String} roomJid roomJid
+	 * @param {String} participantJid participantJid
+	 */
+	getChatRoomParticipant(roomJid, participantJid) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling getChatRoomParticipant';
+		}
+		// verify the required parameter 'participantJid' is set
+		if (participantJid === undefined || participantJid === null) {
+			throw 'Missing the required parameter "participantJid" when calling getChatRoomParticipant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chat/rooms/{roomJid}/participants/{participantJid}', 
+			'GET', 
+			{ 'roomJid': roomJid,'participantJid': participantJid },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Chat Settings.
 	 * This route is deprecated, please use /chats/settings instead
 	 * @deprecated
@@ -287,6 +317,36 @@ class ChatApi {
 	}
 
 	/**
+	 * Get a room participant
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {String} participantJid participantJid
+	 */
+	getChatsRoomParticipant(roomJid, participantJid) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipant';
+		}
+		// verify the required parameter 'participantJid' is set
+		if (participantJid === undefined || participantJid === null) {
+			throw 'Missing the required parameter "participantJid" when calling getChatsRoomParticipant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/participants/{participantJid}', 
+			'GET', 
+			{ 'roomJid': roomJid,'participantJid': participantJid },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Chat Settings.
 	 * 
 	 */
@@ -404,6 +464,31 @@ class ChatApi {
 			'GET', 
 			{ 'userId': userId },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Room Jids for a User via a user's id
+	 * 
+	 * @param {String} userId userId
+	 */
+	getChatsUserRooms(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getChatsUserRooms';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/rooms', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
 			{  },
 			{  },
 			null, 

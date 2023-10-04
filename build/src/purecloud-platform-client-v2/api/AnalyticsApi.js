@@ -46,6 +46,86 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Delete a view export request for a user
+	 * 
+	 * @param {String} exportId Export ID
+	 */
+	deleteAnalyticsReportingExport(exportId) { 
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling deleteAnalyticsReportingExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}', 
+			'DELETE', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a view export job history request for a user
+	 * 
+	 * @param {String} runId Export Schedule Run ID
+	 * @param {String} exportId Export Schedule ID
+	 */
+	deleteAnalyticsReportingExportHistoryRunId(runId, exportId) { 
+		// verify the required parameter 'runId' is set
+		if (runId === undefined || runId === null) {
+			throw 'Missing the required parameter "runId" when calling deleteAnalyticsReportingExportHistoryRunId';
+		}
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling deleteAnalyticsReportingExportHistoryRunId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}/history/{runId}', 
+			'DELETE', 
+			{ 'runId': runId,'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a view schedule export request for a user
+	 * 
+	 * @param {String} exportId Export ID
+	 */
+	deleteAnalyticsReportingExportSchedule(exportId) { 
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling deleteAnalyticsReportingExportSchedule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}/schedule', 
+			'DELETE', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a scheduled report job.
 	 * 
 	 * @param {String} scheduleId Schedule ID
@@ -60,6 +140,81 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
 			'DELETE', 
 			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a dashboard configuration
+	 * 
+	 * @param {String} dashboardId Dashboard Configuration ID
+	 */
+	deleteAnalyticsReportingSettingsDashboard(dashboardId) { 
+		// verify the required parameter 'dashboardId' is set
+		if (dashboardId === undefined || dashboardId === null) {
+			throw 'Missing the required parameter "dashboardId" when calling deleteAnalyticsReportingSettingsDashboard';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/{dashboardId}', 
+			'DELETE', 
+			{ 'dashboardId': dashboardId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a tab configuration
+	 * 
+	 * @param {String} tabId Tab Configuration ID
+	 */
+	deleteAnalyticsReportingSettingsTabconfiguration(tabId) { 
+		// verify the required parameter 'tabId' is set
+		if (tabId === undefined || tabId === null) {
+			throw 'Missing the required parameter "tabId" when calling deleteAnalyticsReportingSettingsTabconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/tabconfigurations/{tabId}', 
+			'DELETE', 
+			{ 'tabId': tabId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a view configuration
+	 * 
+	 * @param {String} viewId View Configuration ID
+	 */
+	deleteAnalyticsReportingSettingsViewconfiguration(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling deleteAnalyticsReportingSettingsViewconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/viewconfigurations/{viewId}', 
+			'DELETE', 
+			{ 'viewId': viewId },
 			{  },
 			{  },
 			{  },
@@ -177,6 +332,39 @@ class AnalyticsApi {
 			'GET', 
 			{ 'botFlowId': botFlowId },
 			{ 'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'],'askActionResults': opts['askActionResults'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Bot Flow Sessions.
+	 * Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+	 * @param {String} botFlowId ID of the bot flow.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
+	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 250 (default to 50)
+	 * @param {String} opts.interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {Object} opts.botResultCategories Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by.
+	 * @param {String} opts.endLanguage Optional case-insensitive language code to filter sessions by the language the sessions ended in.
+	 */
+	getAnalyticsBotflowSessions(botFlowId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botFlowId' is set
+		if (botFlowId === undefined || botFlowId === null) {
+			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowSessions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/botflows/{botFlowId}/sessions', 
+			'GET', 
+			{ 'botFlowId': botFlowId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'botResultCategories': opts['botResultCategories'],'endLanguage': opts['endLanguage'] },
 			{  },
 			{  },
 			null, 
@@ -499,6 +687,60 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Get status for async query for flow execution aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getAnalyticsFlowexecutionsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowexecutionsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 */
+	getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowexecutionsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get status for async query for Flow aggregates
 	 * 
 	 * @param {String} jobId jobId
@@ -667,6 +909,169 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Get dashboards summary for a user
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getAnalyticsReportingDashboardsUser(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getAnalyticsReportingDashboardsUser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/dashboards/users/{userId}', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get dashboards summary for users in a org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.sortBy  (default to asc)
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
+	 * @param {Object} opts.state Only list users of this state
+	 */
+	getAnalyticsReportingDashboardsUsers(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/dashboards/users', 
+			'GET', 
+			{  },
+			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'state': opts['state'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a single view export request for a user
+	 * 
+	 * @param {String} exportId Export ID
+	 */
+	getAnalyticsReportingExport(exportId) { 
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling getAnalyticsReportingExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}', 
+			'GET', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of all scheduled runs for an export schedule
+	 * 
+	 * @param {String} exportId Export Schedule ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 */
+	getAnalyticsReportingExportHistory(exportId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling getAnalyticsReportingExportHistory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}/history', 
+			'GET', 
+			{ 'exportId': exportId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get most recently scheduled run for an export schedule
+	 * 
+	 * @param {String} exportId Export Schedule ID
+	 */
+	getAnalyticsReportingExportHistoryLatest(exportId) { 
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling getAnalyticsReportingExportHistoryLatest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}/history/latest', 
+			'GET', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * A scheduled run for an export schedule
+	 * A scheduled run for an export schedule
+	 * @param {String} runId Export Schedule Run ID
+	 * @param {String} exportId Export Schedule ID
+	 */
+	getAnalyticsReportingExportHistoryRunId(runId, exportId) { 
+		// verify the required parameter 'runId' is set
+		if (runId === undefined || runId === null) {
+			throw 'Missing the required parameter "runId" when calling getAnalyticsReportingExportHistoryRunId';
+		}
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling getAnalyticsReportingExportHistoryRunId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}/history/{runId}', 
+			'GET', 
+			{ 'runId': runId,'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get all view export requests for a user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -692,6 +1097,31 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Get all view export job histories requests for a user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAnalyticsReportingExportsAll(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/all', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get all export metadata
 	 * 
 	 */
@@ -699,6 +1129,52 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports/metadata', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all view schedule export requests for a user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.enabled Specifies if disabled schedules, enabled schedules, or all schedules are returned. If not specified, all schedules are returned (default to Any)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAnalyticsReportingExportsSchedule(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/schedule', 
+			'GET', 
+			{  },
+			{ 'enabled': opts['enabled'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the count of expiring and expired scheduled exports
+	 * 
+	 */
+	getAnalyticsReportingExportsScheduleSummary() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/schedule/summary', 
 			'GET', 
 			{  },
 			{  },
@@ -929,6 +1405,202 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a dashboard configuration
+	 * 
+	 * @param {String} dashboardId Dashboard Configuration ID
+	 */
+	getAnalyticsReportingSettingsDashboard(dashboardId) { 
+		// verify the required parameter 'dashboardId' is set
+		if (dashboardId === undefined || dashboardId === null) {
+			throw 'Missing the required parameter "dashboardId" when calling getAnalyticsReportingSettingsDashboard';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/{dashboardId}', 
+			'GET', 
+			{ 'dashboardId': dashboardId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of dashboard configuration
+	 * There is a limit of 5 dashboard configurations per user/organization combination.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.name name of the dashboard
+	 * @param {Boolean} opts.publicOnly public or private dashboard
+	 * @param {Boolean} opts.favoriteOnly favorite or unfavorite status of a dashboard
+	 * @param {Boolean} opts.mine dashboard which is been owned by the user
+	 * @param {String} opts.sortBy  (default to desc)
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 9)
+	 */
+	getAnalyticsReportingSettingsDashboards(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards', 
+			'GET', 
+			{  },
+			{ 'name': opts['name'],'publicOnly': opts['publicOnly'],'favoriteOnly': opts['favoriteOnly'],'mine': opts['mine'],'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an insight configurations
+	 * 
+	 */
+	getAnalyticsReportingSettingsInsights() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/insights', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a tab configuration
+	 * 
+	 * @param {String} tabId Tab Configuration ID
+	 */
+	getAnalyticsReportingSettingsTabconfiguration(tabId) { 
+		// verify the required parameter 'tabId' is set
+		if (tabId === undefined || tabId === null) {
+			throw 'Missing the required parameter "tabId" when calling getAnalyticsReportingSettingsTabconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/tabconfigurations/{tabId}', 
+			'GET', 
+			{ 'tabId': tabId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of tab configurations
+	 * 
+	 */
+	getAnalyticsReportingSettingsTabconfigurations() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/tabconfigurations', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of dashboards for an user
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.sortBy  (default to asc)
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 50)
+	 */
+	getAnalyticsReportingSettingsUserDashboards(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getAnalyticsReportingSettingsUserDashboards';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/users/{userId}/dashboards', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a view configuration
+	 * 
+	 * @param {String} viewId View Configuration ID
+	 */
+	getAnalyticsReportingSettingsViewconfiguration(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getAnalyticsReportingSettingsViewconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/viewconfigurations/{viewId}', 
+			'GET', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of configurations
+	 * 
+	 */
+	getAnalyticsReportingSettingsViewconfigurations() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/viewconfigurations', 
 			'GET', 
 			{  },
 			{  },
@@ -1317,6 +1989,101 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Updates only provided values for a view export request for a user
+	 * 
+	 * @param {String} exportId Export ID
+	 * @param {Object} body ReportingExportJobRequest
+	 */
+	patchAnalyticsReportingExport(exportId, body) { 
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling patchAnalyticsReportingExport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAnalyticsReportingExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}', 
+			'PATCH', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates only provided values for marking the completed runs as read for an schedule
+	 * 
+	 * @param {String} runId Export Schedule Run ID
+	 * @param {String} exportId Export Schedule ID
+	 * @param {Object} body ExportJobHistoryUpdate
+	 */
+	patchAnalyticsReportingExportHistoryRunId(runId, exportId, body) { 
+		// verify the required parameter 'runId' is set
+		if (runId === undefined || runId === null) {
+			throw 'Missing the required parameter "runId" when calling patchAnalyticsReportingExportHistoryRunId';
+		}
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling patchAnalyticsReportingExportHistoryRunId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAnalyticsReportingExportHistoryRunId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}/history/{runId}', 
+			'PATCH', 
+			{ 'runId': runId,'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Enable/Disable for a view schedule export request for a user
+	 * 
+	 * @param {String} exportId Export ID
+	 * @param {Object} body ReportingScheduleExportJobRequest
+	 */
+	patchAnalyticsReportingExportSchedule(exportId, body) { 
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling patchAnalyticsReportingExportSchedule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAnalyticsReportingExportSchedule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}/schedule', 
+			'PATCH', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Patch AnalyticsReportingSettings values for an organization
 	 * 
 	 * @param {Object} body AnalyticsReportingSettingsRequest
@@ -1335,6 +2102,36 @@ class AnalyticsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Favorite or Unfavorite a dashboard configuration
+	 * 
+	 * @param {String} dashboardId Dashboard Configuration ID
+	 * @param {Boolean} favorite favorite or unfavorite a dashboard
+	 */
+	patchAnalyticsReportingSettingsDashboard(dashboardId, favorite) { 
+		// verify the required parameter 'dashboardId' is set
+		if (dashboardId === undefined || dashboardId === null) {
+			throw 'Missing the required parameter "dashboardId" when calling patchAnalyticsReportingSettingsDashboard';
+		}
+		// verify the required parameter 'favorite' is set
+		if (favorite === undefined || favorite === null) {
+			throw 'Missing the required parameter "favorite" when calling patchAnalyticsReportingSettingsDashboard';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/{dashboardId}', 
+			'PATCH', 
+			{ 'dashboardId': dashboardId },
+			{ 'favorite': favorite },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1682,6 +2479,56 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Query for flow execution aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsFlowexecutionsAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsFlowexecutionsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flowexecutions/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for flow execution aggregates
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsFlowexecutionsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsFlowexecutionsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flowexecutions/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for flow activity observations
 	 * 
 	 * @param {Object} body query
@@ -1917,6 +2764,85 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Query for outer limits rate limit aggregates
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsRatelimitsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsRatelimitsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/ratelimits/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk delete dashboards owned by other user(s)
+	 * 
+	 * @param {Array.<String>} body List of userIds
+	 */
+	postAnalyticsReportingDashboardsUsersBulkRemove(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingDashboardsUsersBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/dashboards/users/bulk/remove', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generate a export run now request
+	 * This API creates a new scheduled export  when runId is not passed and reruns a failed run when runId param is passed
+	 * @param {String} exportId Export ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.runId runId
+	 */
+	postAnalyticsReportingExportExecute(exportId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling postAnalyticsReportingExportExecute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}/execute', 
+			'POST', 
+			{ 'exportId': exportId },
+			{ 'runId': opts['runId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Generate a view export request
 	 * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 	 * @param {Object} body ReportingExportJobRequest
@@ -1992,6 +2918,181 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Create a dashboard configuration
+	 * 
+	 * @param {Object} body DashboardConfigurationRequest
+	 */
+	postAnalyticsReportingSettingsDashboards(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsDashboards';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk remove dashboard configurations
+	 * 
+	 * @param {Object} body 
+	 */
+	postAnalyticsReportingSettingsDashboardsBulkRemove(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsDashboardsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/bulk/remove', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query dashboard configurations
+	 * 
+	 * @param {Object} body 
+	 */
+	postAnalyticsReportingSettingsDashboardsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsDashboardsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a tab configuration
+	 * 
+	 * @param {Object} body TabConfigurationRequest
+	 */
+	postAnalyticsReportingSettingsTabconfigurations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsTabconfigurations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/tabconfigurations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a list of tab configurations
+	 * 
+	 * @param {Array.<Object>} body TabConfigurationRequest
+	 */
+	postAnalyticsReportingSettingsTabconfigurationsBulk(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsTabconfigurationsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/tabconfigurations/bulk', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk remove tab configurations
+	 * 
+	 * @param {Object} body 
+	 */
+	postAnalyticsReportingSettingsTabconfigurationsBulkRemove(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsTabconfigurationsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/tabconfigurations/bulk/remove', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a view configuration
+	 * 
+	 * @param {Object} body ViewConfigurationsRequest
+	 */
+	postAnalyticsReportingSettingsViewconfigurations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsViewconfigurations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/viewconfigurations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for resolution aggregates asynchronously
 	 * 
 	 * @param {Object} body query
@@ -2005,6 +3106,31 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/resolutions/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for resolution aggregates
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsResolutionsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsResolutionsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/resolutions/aggregates/query', 
 			'POST', 
 			{  },
 			{  },
@@ -2416,6 +3542,36 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Replaces view export request for a user
+	 * 
+	 * @param {String} exportId Export ID
+	 * @param {Object} body ReportingExportJobRequest
+	 */
+	putAnalyticsReportingExport(exportId, body) { 
+		// verify the required parameter 'exportId' is set
+		if (exportId === undefined || exportId === null) {
+			throw 'Missing the required parameter "exportId" when calling putAnalyticsReportingExport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAnalyticsReportingExport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/{exportId}', 
+			'PUT', 
+			{ 'exportId': exportId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a scheduled report job.
 	 * 
 	 * @param {String} scheduleId Schedule ID
@@ -2435,6 +3591,146 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
 			'PUT', 
 			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a dashboard configuration
+	 * 
+	 * @param {String} dashboardId Dashboard Configuration ID
+	 * @param {Object} body DashboardConfigurationRequest
+	 */
+	putAnalyticsReportingSettingsDashboard(dashboardId, body) { 
+		// verify the required parameter 'dashboardId' is set
+		if (dashboardId === undefined || dashboardId === null) {
+			throw 'Missing the required parameter "dashboardId" when calling putAnalyticsReportingSettingsDashboard';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsDashboard';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/{dashboardId}', 
+			'PUT', 
+			{ 'dashboardId': dashboardId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an insight configurations
+	 * 
+	 * @param {Object} body InsightConfigurations
+	 */
+	putAnalyticsReportingSettingsInsights(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsInsights';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/insights', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a tab configuration
+	 * 
+	 * @param {String} tabId Tab Configuration ID
+	 * @param {Object} body TabConfigurationRequest
+	 */
+	putAnalyticsReportingSettingsTabconfiguration(tabId, body) { 
+		// verify the required parameter 'tabId' is set
+		if (tabId === undefined || tabId === null) {
+			throw 'Missing the required parameter "tabId" when calling putAnalyticsReportingSettingsTabconfiguration';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsTabconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/tabconfigurations/{tabId}', 
+			'PUT', 
+			{ 'tabId': tabId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a list of tab configurations
+	 * 
+	 * @param {Array.<Object>} body TabConfigurationRequest
+	 */
+	putAnalyticsReportingSettingsTabconfigurationsBulk(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsTabconfigurationsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/tabconfigurations/bulk', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a view configuration
+	 * 
+	 * @param {String} viewId View Configuration ID
+	 * @param {Object} body ViewConfigurationsRequest
+	 */
+	putAnalyticsReportingSettingsViewconfiguration(viewId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling putAnalyticsReportingSettingsViewconfiguration';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSettingsViewconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/viewconfigurations/{viewId}', 
+			'PUT', 
+			{ 'viewId': viewId },
 			{  },
 			{  },
 			{  },

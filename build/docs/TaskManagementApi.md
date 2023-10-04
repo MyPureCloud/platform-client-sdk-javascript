@@ -3,7 +3,7 @@ title: TaskManagementApi
 ---
 # platformClient.TaskManagementApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |

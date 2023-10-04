@@ -21,6 +21,35 @@ class OAuthApi {
 
 
 	/**
+	 * Delete an authorization for a client
+	 * 
+	 * @param {String} clientId The ID of client
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
+	 */
+	deleteOauthAuthorization(clientId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null) {
+			throw 'Missing the required parameter "clientId" when calling deleteOauthAuthorization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/authorizations/{clientId}', 
+			'DELETE', 
+			{ 'clientId': clientId },
+			{  },
+			{ 'Accept-Language': opts['acceptLanguage'] },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete OAuth Client
 	 * 
 	 * @param {String} clientId Client ID
@@ -281,6 +310,36 @@ class OAuthApi {
 	}
 
 	/**
+	 * Query data transfer bytes for an OAuth client ID usage for an organization
+	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * @param {String} clientId Client ID
+	 * @param {Object} body Query
+	 */
+	postOauthClientUsageDatatransferAggregatesQuery(clientId, body) { 
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null) {
+			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageDatatransferAggregatesQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOauthClientUsageDatatransferAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query', 
+			'POST', 
+			{ 'clientId': clientId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for OAuth client API usage
 	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
 	 * @param {String} clientId Client ID
@@ -327,6 +386,40 @@ class OAuthApi {
 			{  },
 			{  },
 			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Authorize a client for the resource owner
+	 * 
+	 * @param {String} clientId The ID of client
+	 * @param {Object} body Authorization
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
+	 */
+	putOauthAuthorization(clientId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null) {
+			throw 'Missing the required parameter "clientId" when calling putOauthAuthorization';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOauthAuthorization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/authorizations/{clientId}', 
+			'PUT', 
+			{ 'clientId': clientId },
+			{  },
+			{ 'Accept-Language': opts['acceptLanguage'] },
 			{  },
 			body, 
 			['PureCloud OAuth'], 

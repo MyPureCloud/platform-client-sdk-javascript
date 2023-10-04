@@ -21,6 +21,119 @@ class ScriptsApi {
 
 
 	/**
+	 * Delete a script.
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 */
+	deleteScript(scriptId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling deleteScript';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/{scriptId}', 
+			'DELETE', 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a page.
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {String} pageId Page ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 */
+	deleteScriptPage(scriptId, pageId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling deleteScriptPage';
+		}
+		// verify the required parameter 'pageId' is set
+		if (pageId === undefined || pageId === null) {
+			throw 'Missing the required parameter "pageId" when calling deleteScriptPage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/{scriptId}/pages/{pageId}', 
+			'DELETE', 
+			{ 'scriptId': scriptId,'pageId': pageId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Unset favorite template
+	 * 
+	 * @param {String} templateId templateId
+	 */
+	deleteScripterFavoritetemplate(templateId) { 
+		// verify the required parameter 'templateId' is set
+		if (templateId === undefined || templateId === null) {
+			throw 'Missing the required parameter "templateId" when calling deleteScripterFavoritetemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripter/favoritetemplates/{templateId}', 
+			'DELETE', 
+			{ 'templateId': templateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a composer template
+	 * 
+	 * @param {String} templateId Template ID
+	 */
+	deleteScripterTemplate(templateId) { 
+		// verify the required parameter 'templateId' is set
+		if (templateId === undefined || templateId === null) {
+			throw 'Missing the required parameter "templateId" when calling deleteScripterTemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripter/templates/{templateId}', 
+			'DELETE', 
+			{ 'templateId': templateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a script
 	 * 
 	 * @param {String} scriptId Script ID
@@ -99,6 +212,78 @@ class ScriptsApi {
 			'GET', 
 			{ 'scriptId': scriptId },
 			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get favorite templates
+	 * 
+	 */
+	getScripterFavoritetemplates() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/scripter/favoritetemplates', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a composer template
+	 * 
+	 * @param {String} templateId Template ID
+	 */
+	getScripterTemplate(templateId) { 
+		// verify the required parameter 'templateId' is set
+		if (templateId === undefined || templateId === null) {
+			throw 'Missing the required parameter "templateId" when calling getScripterTemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripter/templates/{templateId}', 
+			'GET', 
+			{ 'templateId': templateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of templates
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.expand Expand
+	 * @param {String} opts.tags Tags
+	 */
+	getScripterTemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripter/templates', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'tags': opts['tags'] },
 			{  },
 			{  },
 			null, 
@@ -196,6 +381,38 @@ class ScriptsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the published variables
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.input input
+	 * @param {Object} opts.output output
+	 * @param {Object} opts.type type
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 */
+	getScriptsPublishedDivisionviewVariables(scriptId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedDivisionviewVariables';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published/divisionviews/{scriptId}/variables', 
+			'GET', 
+			{ 'scriptId': scriptId },
+			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] },
 			{  },
 			{  },
 			null, 
@@ -361,6 +578,69 @@ class ScriptsApi {
 	}
 
 	/**
+	 * Get the template as script.
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 */
+	getScriptsTemplate(scriptId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling getScriptsTemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/templates/{scriptId}', 
+			'GET', 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the template page.
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {String} pageId Page ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 */
+	getScriptsTemplatePage(scriptId, pageId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling getScriptsTemplatePage';
+		}
+		// verify the required parameter 'pageId' is set
+		if (pageId === undefined || pageId === null) {
+			throw 'Missing the required parameter "pageId" when calling getScriptsTemplatePage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/templates/{scriptId}/pages/{pageId}', 
+			'GET', 
+			{ 'scriptId': scriptId,'pageId': pageId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the upload status of an imported script
 	 * 
 	 * @param {String} uploadId Upload ID
@@ -419,6 +699,108 @@ class ScriptsApi {
 	}
 
 	/**
+	 * Create a page.
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object} opts.body 
+	 */
+	postScriptPages(scriptId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling postScriptPages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/{scriptId}/pages', 
+			'POST', 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set a favorite template
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postScripterFavoritetemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripter/favoritetemplates', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a user script template.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postScripterTemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripter/templates', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a script.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<String, {String: Object}>} opts.body 
+	 */
+	postScripts(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Publish a script.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -434,6 +816,125 @@ class ScriptsApi {
 			'POST', 
 			{  },
 			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a template from a script.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object} opts.body 
+	 */
+	postScriptsTemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/templates', 
+			'POST', 
+			{  },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a script.
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object} opts.body 
+	 */
+	putScript(scriptId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling putScript';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/{scriptId}', 
+			'PUT', 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a page.
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {String} pageId Page ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object} opts.body 
+	 */
+	putScriptPage(scriptId, pageId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null) {
+			throw 'Missing the required parameter "scriptId" when calling putScriptPage';
+		}
+		// verify the required parameter 'pageId' is set
+		if (pageId === undefined || pageId === null) {
+			throw 'Missing the required parameter "pageId" when calling putScriptPage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/{scriptId}/pages/{pageId}', 
+			'PUT', 
+			{ 'scriptId': scriptId,'pageId': pageId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a composer template
+	 * 
+	 * @param {String} templateId Template ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putScripterTemplate(templateId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'templateId' is set
+		if (templateId === undefined || templateId === null) {
+			throw 'Missing the required parameter "templateId" when calling putScripterTemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripter/templates/{templateId}', 
+			'PUT', 
+			{ 'templateId': templateId },
+			{  },
 			{  },
 			{  },
 			opts['body'], 

@@ -121,6 +121,26 @@ class FaxApi {
 	}
 
 	/**
+	 * Get organization config for given organization
+	 * 
+	 */
+	getFaxSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/fax/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get fax summary
 	 * 
 	 */
@@ -164,6 +184,30 @@ class FaxApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update/write organization config for given organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putFaxSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/fax/settings', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

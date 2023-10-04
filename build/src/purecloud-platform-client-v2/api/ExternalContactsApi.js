@@ -79,8 +79,12 @@ class ExternalContactsApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hardDelete Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or is absent (the default behavior), we merely mark the schema as deleted but it still exists in the database. (default to false)
 	 */
-	deleteExternalcontactsContactsSchema(schemaId) { 
+	deleteExternalcontactsContactsSchema(schemaId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
 			throw 'Missing the required parameter "schemaId" when calling deleteExternalcontactsContactsSchema';
@@ -90,7 +94,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
 			'DELETE', 
 			{ 'schemaId': schemaId },
-			{  },
+			{ 'hardDelete': opts['hardDelete'] },
 			{  },
 			{  },
 			null, 
@@ -181,6 +185,35 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Delete a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hardDelete Boolean to perform a hard delete.  If hardDelete is set to true, the schema is completely and permanently removed from our database.  If it is set to false or absent (the default behavior), we merely mark the schema as deleted but it still exists in the database. (default to false)
+	 */
+	deleteExternalcontactsOrganizationsSchema(schemaId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling deleteExternalcontactsOrganizationsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas/{schemaId}', 
+			'DELETE', 
+			{ 'schemaId': schemaId },
+			{ 'hardDelete': opts['hardDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a relationship
 	 * 
 	 * @param {String} relationshipId Relationship Id
@@ -250,6 +283,39 @@ class ExternalContactsApi {
 			'GET', 
 			{ 'contactId': contactId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve segment assignments by external contact ID.
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
+	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
+	 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
+	 */
+	getExternalcontactsContactJourneySegments(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySegments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
+			'GET', 
+			{ 'contactId': contactId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'],'includeMerged': opts['includeMerged'] },
 			{  },
 			{  },
 			null, 
@@ -534,6 +600,56 @@ class ExternalContactsApi {
 			'GET', 
 			{ 'externalOrganizationId': externalOrganizationId },
 			{ 'expand': opts['expand'],'includeTrustors': opts['includeTrustors'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * View the latest value of churn probability
+	 * 
+	 * @param {String} externalOrganizationId External Organization ID
+	 */
+	getExternalcontactsOrganizationChurn(externalOrganizationId) { 
+		// verify the required parameter 'externalOrganizationId' is set
+		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationChurn';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/churn', 
+			'GET', 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * View a full time-series of churn predictions
+	 * 
+	 * @param {String} externalOrganizationId External Organization ID
+	 */
+	getExternalcontactsOrganizationChurnLatest(externalOrganizationId) { 
+		// verify the required parameter 'externalOrganizationId' is set
+		if (externalOrganizationId === undefined || externalOrganizationId === null) {
+			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationChurnLatest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/churn/latest', 
+			'GET', 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -993,6 +1109,30 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Stitch an external contact
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body StitchingRequest
+	 */
+	patchExternalcontactsContacts(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Bulk fetch contacts
 	 * 
 	 * @param {Object} body Contact ids
@@ -1418,6 +1558,35 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 */
+	postExternalcontactsContactJourneySegments(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactJourneySegments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
+			'POST', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a note for an external contact
 	 * 
 	 * @param {String} contactId ExternalContact Id
@@ -1516,6 +1685,30 @@ class ExternalContactsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Suggests contacts that might be share the provided information
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body suggestionRequest
+	 */
+	postExternalcontactsContactsSuggestions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/suggestions', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

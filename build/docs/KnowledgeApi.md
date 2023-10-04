@@ -3,12 +3,14 @@ title: KnowledgeApi
 ---
 # platformClient.KnowledgeApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteKnowledgeKnowledgebase**](KnowledgeApi.html#deleteKnowledgeKnowledgebase) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Delete knowledge base
 [**deleteKnowledgeKnowledgebaseCategory**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseCategory) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} | Delete category
+[**deleteKnowledgeKnowledgebaseContext**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseContext) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId} | Delete context.
+[**deleteKnowledgeKnowledgebaseContextValue**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseContextValue) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId} | Delete context value.
 [**deleteKnowledgeKnowledgebaseDocument**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseDocument) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId} | Delete document.
 [**deleteKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseDocumentVariation) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId} | Delete a variation for a document.
 [**deleteKnowledgeKnowledgebaseExportJob**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseExportJob) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId} | Delete export job
@@ -23,6 +25,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebase**](KnowledgeApi.html#getKnowledgeKnowledgebase) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Get knowledge base
 [**getKnowledgeKnowledgebaseCategories**](KnowledgeApi.html#getKnowledgeKnowledgebaseCategories) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories | Get categories
 [**getKnowledgeKnowledgebaseCategory**](KnowledgeApi.html#getKnowledgeKnowledgebaseCategory) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} | Get category
+[**getKnowledgeKnowledgebaseContext**](KnowledgeApi.html#getKnowledgeKnowledgebaseContext) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId} | Get specific context data of the knowledge base.
+[**getKnowledgeKnowledgebaseContextValue**](KnowledgeApi.html#getKnowledgeKnowledgebaseContextValue) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId} | Get specified context value data.
+[**getKnowledgeKnowledgebaseContextValues**](KnowledgeApi.html#getKnowledgeKnowledgebaseContextValues) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values | Get context values for the specified context.
+[**getKnowledgeKnowledgebaseContexts**](KnowledgeApi.html#getKnowledgeKnowledgebaseContexts) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts | Get contexts for the specified knowledge base.
 [**getKnowledgeKnowledgebaseDocument**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocument) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId} | Get document.
 [**getKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentFeedback) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback | Get a list of feedback records given on a document
 [**getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId} | Get a single feedback record given on a document
@@ -34,6 +40,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentVersions) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions | Get document versions.
 [**getKnowledgeKnowledgebaseDocuments**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocuments) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents | Get documents.
 [**getKnowledgeKnowledgebaseExportJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseExportJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId} | Get export job report
+[**getKnowledgeKnowledgebaseFeedback**](KnowledgeApi.html#getKnowledgeKnowledgebaseFeedback) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback | Get All feedbacks for a knowledgebase
+[**getKnowledgeKnowledgebaseFeedbackFeedbackId**](KnowledgeApi.html#getKnowledgeKnowledgebaseFeedbackFeedbackId) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId} | Get Feedback details
 [**getKnowledgeKnowledgebaseImportJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseImportJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId} | Get import job report
 [**getKnowledgeKnowledgebaseLabel**](KnowledgeApi.html#getKnowledgeKnowledgebaseLabel) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId} | Get label
 [**getKnowledgeKnowledgebaseLabels**](KnowledgeApi.html#getKnowledgeKnowledgebaseLabels) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels | Get labels
@@ -45,29 +53,44 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentsImport) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} | Get import operation report
 [**getKnowledgeKnowledgebaseLanguageTraining**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTraining) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId} | Get training detail
 [**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings | Get all trainings information for a knowledgebase
+[**getKnowledgeKnowledgebaseOperations**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperations) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations | Get operations
+[**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperationsUsersQuery) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query | Get ids of operation creator users and oauth clients
+[**getKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseParseJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} | Get parse job report
 [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroup) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId} | Get knowledge base unanswered group for a particular groupId
 [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Get knowledge base unanswered phrase group for a particular phraseGroupId
 [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroups) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups | Get knowledge base unanswered groups
+[**getKnowledgeKnowledgebaseUploadsUrlsJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseUploadsUrlsJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} | Get content upload from URL job status
 [**getKnowledgeKnowledgebases**](KnowledgeApi.html#getKnowledgeKnowledgebases) | **GET** /api/v2/knowledge/knowledgebases | Get knowledge bases
 [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi.html#patchKnowledgeGuestSessionDocumentsSearchSearchId) | **PATCH** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId} | Update search result.
 [**patchKnowledgeKnowledgebase**](KnowledgeApi.html#patchKnowledgeKnowledgebase) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Update knowledge base
 [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi.html#patchKnowledgeKnowledgebaseCategory) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} | Update category
+[**patchKnowledgeKnowledgebaseContext**](KnowledgeApi.html#patchKnowledgeKnowledgebaseContext) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId} | Update specific context data of the knowledge base.
+[**patchKnowledgeKnowledgebaseContextValue**](KnowledgeApi.html#patchKnowledgeKnowledgebaseContextValue) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId} | Update context value.
 [**patchKnowledgeKnowledgebaseDocument**](KnowledgeApi.html#patchKnowledgeKnowledgebaseDocument) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId} | Update document.
+[**patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi.html#patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId} | Update feedback on a document
 [**patchKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi.html#patchKnowledgeKnowledgebaseDocumentVariation) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId} | Update a variation for a document.
 [**patchKnowledgeKnowledgebaseDocumentsSearchSearchId**](KnowledgeApi.html#patchKnowledgeKnowledgebaseDocumentsSearchSearchId) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId} | Update search result.
+[**patchKnowledgeKnowledgebaseFeedback**](KnowledgeApi.html#patchKnowledgeKnowledgebaseFeedback) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback | Update or Create Feedbacks
 [**patchKnowledgeKnowledgebaseImportJob**](KnowledgeApi.html#patchKnowledgeKnowledgebaseImportJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId} | Start import job
 [**patchKnowledgeKnowledgebaseLabel**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLabel) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId} | Update label
 [**patchKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageCategory) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId} | Update category
 [**patchKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocument) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} | Update document
 [**patchKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocuments) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents | Update documents collection
 [**patchKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocumentsImport) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} | Start import operation
+[**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#patchKnowledgeKnowledgebaseParseJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} | Send update to the parse operation
 [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Update a Knowledge base unanswered phrase group
 [**postKnowledgeDocumentuploads**](KnowledgeApi.html#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
+[**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentCopies) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies | Indicate that the document was copied by the user.
 [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentFeedback) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback | Give feedback on a document
+[**postKnowledgeGuestSessionDocumentViews**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentViews) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views | Create view event for a document.
+[**postKnowledgeGuestSessionDocumentsPresentations**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsPresentations) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations | Indicate that documents were presented to the user.
 [**postKnowledgeGuestSessionDocumentsSearch**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsSearch) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search | Search the documents in a guest session.
 [**postKnowledgeGuestSessionDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsSearchSuggestions) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions | Query the knowledge documents to provide suggestions for auto completion.
 [**postKnowledgeGuestSessions**](KnowledgeApi.html#postKnowledgeGuestSessions) | **POST** /api/v2/knowledge/guest/sessions | Create guest session
 [**postKnowledgeKnowledgebaseCategories**](KnowledgeApi.html#postKnowledgeKnowledgebaseCategories) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories | Create new category
+[**postKnowledgeKnowledgebaseContextValues**](KnowledgeApi.html#postKnowledgeKnowledgebaseContextValues) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values | Create context value for the specified context.
+[**postKnowledgeKnowledgebaseContexts**](KnowledgeApi.html#postKnowledgeKnowledgebaseContexts) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts | Create context for the specified knowledge base.
+[**postKnowledgeKnowledgebaseDocumentCopies**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentCopies) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies | Indicate that the document was copied by the user.
 [**postKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentFeedback) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback | Give feedback on a document
 [**postKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVariations) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations | Create a variation for a document.
 [**postKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVersions) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions | Creates or restores a document version.
@@ -75,10 +98,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocuments) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents | Create document.
 [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkRemove) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove | Bulk remove documents.
 [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update | Bulk update documents.
+[**postKnowledgeKnowledgebaseDocumentsPresentations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsPresentations) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations | Indicate that documents were presented to the user.
+[**postKnowledgeKnowledgebaseDocumentsQuery**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsQuery) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query | Query for knowledge documents.
 [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search | Search the documents in a knowledge base.
 [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions | Query the knowledge documents to provide suggestions for auto completion.
 [**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add | Bulk add document versions.
 [**postKnowledgeKnowledgebaseExportJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseExportJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs | Create export job
+[**postKnowledgeKnowledgebaseFeedback**](KnowledgeApi.html#postKnowledgeKnowledgebaseFeedback) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback | save Feedback
+[**postKnowledgeKnowledgebaseFeedbackApprovalsBulk**](KnowledgeApi.html#postKnowledgeKnowledgebaseFeedbackApprovalsBulk) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/approvals/bulk | Update approval for feedback(s)
 [**postKnowledgeKnowledgebaseImportJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseImportJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs | Create import job
 [**postKnowledgeKnowledgebaseLabels**](KnowledgeApi.html#postKnowledgeKnowledgebaseLabels) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels | Create new label
 [**postKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageCategories) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories | Create new category
@@ -87,8 +114,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseLanguageDocumentsImports**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentsImports) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports | Create import operation
 [**postKnowledgeKnowledgebaseLanguageTrainingPromote**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainingPromote) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote | Promote trained documents from draft state to active.
 [**postKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainings) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings | Trigger training
+[**postKnowledgeKnowledgebaseParseJobImport**](KnowledgeApi.html#postKnowledgeKnowledgebaseParseJobImport) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import | Import the parsed articles
+[**postKnowledgeKnowledgebaseParseJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseParseJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs | Create parse job
 [**postKnowledgeKnowledgebaseSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search | Search Documents
+[**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
 [**postKnowledgeKnowledgebases**](KnowledgeApi.html#postKnowledgeKnowledgebases) | **POST** /api/v2/knowledge/knowledgebases | Create new knowledge base
+[**postKnowledgeKnowledgebasesFeedback**](KnowledgeApi.html#postKnowledgeKnowledgebasesFeedback) | **POST** /api/v2/knowledge/knowledgebases/feedback | Get all feedbacks for knowledge
+[**postKnowledgeKnowledgebasesFeedbackApprovalsBulk**](KnowledgeApi.html#postKnowledgeKnowledgebasesFeedbackApprovalsBulk) | **POST** /api/v2/knowledge/knowledgebases/feedback/approvals/bulk | Update approval/reject for at most 25 feedback(s) for knowledgebase
+[**postKnowledgeKnowledgebasesTrainings**](KnowledgeApi.html#postKnowledgeKnowledgebasesTrainings) | **POST** /api/v2/knowledge/knowledgebases/trainings | Get trainings for the specified Knowledge Bases
+[**putKnowledgeKnowledgebaseFeedbackFeedbackId**](KnowledgeApi.html#putKnowledgeKnowledgebaseFeedbackFeedbackId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId} | Update Feedback details
 {: class="table table-striped"}
 
 <a name="deleteKnowledgeKnowledgebase"></a>
@@ -192,6 +226,112 @@ apiInstance.deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
 ### Return type
 
 **CategoryResponse**
+
+<a name="deleteKnowledgeKnowledgebaseContext"></a>
+
+# void deleteKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId)
+
+
+DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}
+
+Delete context.
+
+Requires ALL permissions:
+
+* knowledge:context:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let contextId = "contextId_example"; // String | Context ID.
+
+apiInstance.deleteKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId)
+  .then(() => {
+    console.log('deleteKnowledgeKnowledgebaseContext returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeKnowledgebaseContext');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **contextId** | **String** | Context ID. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteKnowledgeKnowledgebaseContextValue"></a>
+
+# void deleteKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId)
+
+
+DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}
+
+Delete context value.
+
+Requires ALL permissions:
+
+* knowledge:context:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let contextId = "contextId_example"; // String | Context ID.
+let contextValueId = "contextValueId_example"; // String | Context Value ID.
+
+apiInstance.deleteKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId)
+  .then(() => {
+    console.log('deleteKnowledgeKnowledgebaseContextValue returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeKnowledgebaseContextValue');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **contextId** | **String** | Context ID. |  |
+ **contextValueId** | **String** | Context Value ID. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteKnowledgeKnowledgebaseDocument"></a>
 
@@ -688,7 +828,7 @@ apiInstance.getKnowledgeGuestSessionCategories(sessionId, opts)
 
 <a name="getKnowledgeGuestSessionDocument"></a>
 
-# KnowledgeGuestDocument getKnowledgeGuestSessionDocument(sessionId, documentId)
+# KnowledgeGuestDocument getKnowledgeGuestSessionDocument(sessionId, documentId, opts)
 
 
 GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}
@@ -709,8 +849,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'useContext': true // Boolean | If true, document variations will be filtered using the session context.
+};
 
-apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId)
+apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId, opts)
   .then((data) => {
     console.log(`getKnowledgeGuestSessionDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -727,6 +870,7 @@ apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **documentId** | **String** | Document ID |  |
+ **useContext** | **Boolean** | If true, document variations will be filtered using the session context. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -757,7 +901,14 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let opts = { 
   'categoryId': ["categoryId_example"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.
-  'pageSize': 3.4 // Number | Number of entities to return. Maximum of 200.
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': 3.4, // Number | Number of entities to return. Maximum of 200.
+  'pageNumber': 3.4, // Number | The page number requested.
+  'sortBy': "sortBy_example", // String | The field to sort results by.
+  'sortOrder': "sortOrder_example", // String | Sort order.
+  'useContext': true, // Boolean | If true, document variations will be filtered using the session context.
+  'expand': ["expand_example"] // [String] | If provided, expands the specified property in the response. Valid values are: Variations. Variation expansion only takes effect when used with useContext or sortBy
 };
 
 apiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)
@@ -777,7 +928,14 @@ apiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **categoryId** | **[String]** | If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional]  |
+ **pageNumber** | **Number** | The page number requested. | [optional]  |
+ **sortBy** | **String** | The field to sort results by. | [optional] <br />**Values**: ViewCount |
+ **sortOrder** | **String** | Sort order. | [optional] <br />**Values**: Asc, Desc |
+ **useContext** | **Boolean** | If true, document variations will be filtered using the session context. | [optional]  |
+ **expand** | **[String]** | If provided, expands the specified property in the response. Valid values are: Variations. Variation expansion only takes effect when used with useContext or sortBy | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -955,6 +1113,232 @@ apiInstance.getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
 ### Return type
 
 **CategoryResponse**
+
+<a name="getKnowledgeKnowledgebaseContext"></a>
+
+# KnowledgeContextResponse getKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}
+
+Get specific context data of the knowledge base.
+
+Requires ALL permissions:
+
+* knowledge:context:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let contextId = "contextId_example"; // String | Context ID.
+
+apiInstance.getKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseContext success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseContext');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **contextId** | **String** | Context ID. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeContextResponse**
+
+<a name="getKnowledgeKnowledgebaseContextValue"></a>
+
+# KnowledgeContextValueResponse getKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}
+
+Get specified context value data.
+
+Requires ALL permissions:
+
+* knowledge:context:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let contextId = "contextId_example"; // String | Context ID.
+let contextValueId = "contextValueId_example"; // String | Context Value ID.
+
+apiInstance.getKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseContextValue success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseContextValue');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **contextId** | **String** | Context ID. |  |
+ **contextValueId** | **String** | Context Value ID. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeContextValueResponse**
+
+<a name="getKnowledgeKnowledgebaseContextValues"></a>
+
+# KnowledgeContextValueResponseListing getKnowledgeKnowledgebaseContextValues(knowledgeBaseId, contextId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values
+
+Get context values for the specified context.
+
+Requires ALL permissions:
+
+* knowledge:context:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let contextId = "contextId_example"; // String | Context ID.
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+};
+
+apiInstance.getKnowledgeKnowledgebaseContextValues(knowledgeBaseId, contextId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseContextValues success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseContextValues');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **contextId** | **String** | Context ID. |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeContextValueResponseListing**
+
+<a name="getKnowledgeKnowledgebaseContexts"></a>
+
+# KnowledgeContextResponseListing getKnowledgeKnowledgebaseContexts(knowledgeBaseId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts
+
+Get contexts for the specified knowledge base.
+
+Requires ALL permissions:
+
+* knowledge:context:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'contextType': "Client" // String | Client: contexts created by the user; System: contexts created by default
+};
+
+apiInstance.getKnowledgeKnowledgebaseContexts(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseContexts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseContexts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **contextType** | **String** | Client: contexts created by the user; System: contexts created by default | [optional] [default to Client]<br />**Values**: System, Client |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeContextResponseListing**
 
 <a name="getKnowledgeKnowledgebaseDocument"></a>
 
@@ -1628,6 +2012,144 @@ apiInstance.getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
 
 **KnowledgeExportJobResponse**
 
+<a name="getKnowledgeKnowledgebaseFeedback"></a>
+
+# KnowledgeFeedbackResponseListing getKnowledgeKnowledgebaseFeedback(knowledgeBaseId, dateCreatedFrom, dateCreatedTo, opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback
+
+Get All feedbacks for a knowledgebase
+
+Requires ANY permissions:
+
+* knowledge:feedback:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let dateCreatedFrom = new Date("2013-10-20T19:20:30+01:00"); // Date | dateCreatedFrom. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+let dateCreatedTo = new Date("2013-10-20T19:20:30+01:00"); // Date | dateCreatedTo. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
+  'pageSize': "pageSize_example", // String | Max number of entities to return. Maximum of 100.
+  'expand': "expand_example", // String | when queryparam expand's value is Approval, approvals section is returned in feedback response.
+  'maximumConfidence': 3.4, // Number | Used to return feedback results for search documents with a confidence score lesser than or equal to the specified value.
+  'minimumConfidence': 3.4, // Number | Used to return feedback results for search documents with confidence score greater than or equal to the specified value.
+  'maximumRating': 3.4, // Number | Used to return feedback results with feedback rating less than or equal to the specified value.
+  'minimumRating': 3.4, // Number | Used to return feedback results with feedback rating greater than or equal to the specified value.
+  'approvalStatus': ["approvalStatus_example"], // [String] | Approval status of the feedback.
+  'sortOrder': "sortOrder_example", // String | Sort order.
+  'sortBy': "sortBy_example" // String | Sort by.
+};
+
+apiInstance.getKnowledgeKnowledgebaseFeedback(knowledgeBaseId, dateCreatedFrom, dateCreatedTo, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseFeedback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **dateCreatedFrom** | **Date** | dateCreatedFrom. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+ **dateCreatedTo** | **Date** | dateCreatedTo. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
+ **pageSize** | **String** | Max number of entities to return. Maximum of 100. | [optional]  |
+ **expand** | **String** | when queryparam expand's value is Approval, approvals section is returned in feedback response. | [optional] <br />**Values**: Approval |
+ **maximumConfidence** | **Number** | Used to return feedback results for search documents with a confidence score lesser than or equal to the specified value. | [optional]  |
+ **minimumConfidence** | **Number** | Used to return feedback results for search documents with confidence score greater than or equal to the specified value. | [optional]  |
+ **maximumRating** | **Number** | Used to return feedback results with feedback rating less than or equal to the specified value. | [optional]  |
+ **minimumRating** | **Number** | Used to return feedback results with feedback rating greater than or equal to the specified value. | [optional]  |
+ **approvalStatus** | **[String]** | Approval status of the feedback. | [optional] <br />**Values**: Approved, Rejected, NotAvailable |
+ **sortOrder** | **String** | Sort order. | [optional] <br />**Values**: ascending, descending |
+ **sortBy** | **String** | Sort by. | [optional] <br />**Values**: confidence |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeFeedbackResponseListing**
+
+<a name="getKnowledgeKnowledgebaseFeedbackFeedbackId"></a>
+
+# KnowledgeFeedbackResponse getKnowledgeKnowledgebaseFeedbackFeedbackId(knowledgeBaseId, feedbackId, opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId}
+
+Get Feedback details
+
+Requires ANY permissions:
+
+* knowledge:feedback:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let feedbackId = "feedbackId_example"; // String | Feedback ID
+let opts = { 
+  'expand': "expand_example" // String | when expands value is Approval, approvals section is returned in feedback response.
+};
+
+apiInstance.getKnowledgeKnowledgebaseFeedbackFeedbackId(knowledgeBaseId, feedbackId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseFeedbackFeedbackId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseFeedbackFeedbackId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **feedbackId** | **String** | Feedback ID |  |
+ **expand** | **String** | when expands value is Approval, approvals section is returned in feedback response. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeFeedbackResponse**
+
 <a name="getKnowledgeKnowledgebaseImportJob"></a>
 
 # KnowledgeImportJobResponse getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, opts)
@@ -2280,6 +2802,178 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, language
 
 **TrainingListing**
 
+<a name="getKnowledgeKnowledgebaseOperations"></a>
+
+# OperationListing getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations
+
+Get operations
+
+Requires ALL permissions:
+
+* knowledge:importExportOperationsList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'userId': ["userId_example"], // [String] | If specified, retrieves operations associated with user ids, comma separated values expected.
+  'type': ["type_example"], // [String] | If specified, retrieves operations with specified operation type, comma separated values expected.
+  'status': ["status_example"], // [String] | If specified, retrieves operations with specified operation status, comma separated values expected.
+  'interval': "interval_example" // String | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+};
+
+apiInstance.getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseOperations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseOperations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **userId** | **[String]** | If specified, retrieves operations associated with user ids, comma separated values expected. | [optional]  |
+ **type** | **[String]** | If specified, retrieves operations with specified operation type, comma separated values expected. | [optional] <br />**Values**: Export, Import, Parse |
+ **status** | **[String]** | If specified, retrieves operations with specified operation status, comma separated values expected. | [optional]  |
+ **interval** | **String** | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**OperationListing**
+
+<a name="getKnowledgeKnowledgebaseOperationsUsersQuery"></a>
+
+# OperationCreatorUserResponse getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query
+
+Get ids of operation creator users and oauth clients
+
+Requires ALL permissions:
+
+* knowledge:importExportOperationsList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+
+apiInstance.getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseOperationsUsersQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseOperationsUsersQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OperationCreatorUserResponse**
+
+<a name="getKnowledgeKnowledgebaseParseJob"></a>
+
+# KnowledgeParseJobResponse getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}
+
+Get parse job report
+
+Requires ALL permissions:
+
+* knowledge:importJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let parseJobId = "parseJobId_example"; // String | Parse job ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+};
+
+apiInstance.getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseParseJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseParseJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **parseJobId** | **String** | Parse job ID |  |
+ **expand** | **[String]** | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeParseJobResponse**
+
 <a name="getKnowledgeKnowledgebaseUnansweredGroup"></a>
 
 # UnansweredGroup getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, opts)
@@ -2459,6 +3153,58 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
 ### Return type
 
 **UnansweredGroups**
+
+<a name="getKnowledgeKnowledgebaseUploadsUrlsJob"></a>
+
+# GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}
+
+Get content upload from URL job status
+
+Requires ALL permissions:
+
+* knowledge:uploadSourceUrlJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let jobId = "jobId_example"; // String | Upload job ID
+
+apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseUploadsUrlsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseUploadsUrlsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **jobId** | **String** | Upload job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GetUploadSourceUrlJobStatusResponse**
 
 <a name="getKnowledgeKnowledgebases"></a>
 
@@ -2683,6 +3429,120 @@ apiInstance.patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, bod
 
 **CategoryResponse**
 
+<a name="patchKnowledgeKnowledgebaseContext"></a>
+
+# KnowledgeContextResponse patchKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId, opts)
+
+
+PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}
+
+Update specific context data of the knowledge base.
+
+Requires ALL permissions:
+
+* knowledge:context:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let contextId = "contextId_example"; // String | Context ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId, opts)
+  .then((data) => {
+    console.log(`patchKnowledgeKnowledgebaseContext success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeKnowledgebaseContext');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **contextId** | **String** | Context ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeContextResponse**
+
+<a name="patchKnowledgeKnowledgebaseContextValue"></a>
+
+# KnowledgeContextValueResponse patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId, opts)
+
+
+PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}
+
+Update context value.
+
+Requires ALL permissions:
+
+* knowledge:context:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let contextId = "contextId_example"; // String | Context ID.
+let contextValueId = "contextValueId_example"; // String | Context Value ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId, opts)
+  .then((data) => {
+    console.log(`patchKnowledgeKnowledgebaseContextValue success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeKnowledgebaseContextValue');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **contextId** | **String** | Context ID. |  |
+ **contextValueId** | **String** | Context Value ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeContextValueResponse**
+
 <a name="patchKnowledgeKnowledgebaseDocument"></a>
 
 # KnowledgeDocumentResponse patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)
@@ -2736,6 +3596,64 @@ apiInstance.patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, bod
 ### Return type
 
 **KnowledgeDocumentResponse**
+
+<a name="patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId"></a>
+
+# KnowledgeDocumentFeedbackResponse patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts)
+
+
+PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}
+
+Update feedback on a document
+
+Requires ANY permissions:
+
+* knowledge:feedback:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let documentId = "documentId_example"; // String | Document ID.
+let feedbackId = "feedbackId_example"; // String | Feedback ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts)
+  .then((data) => {
+    console.log(`patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **documentId** | **String** | Document ID. |  |
+ **feedbackId** | **String** | Feedback ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeDocumentFeedbackResponse**
 
 <a name="patchKnowledgeKnowledgebaseDocumentVariation"></a>
 
@@ -2848,6 +3766,59 @@ apiInstance.patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, 
 ### Return type
 
 void (no response body)
+
+<a name="patchKnowledgeKnowledgebaseFeedback"></a>
+
+# KnowledgeFeedbackResponseListing patchKnowledgeKnowledgebaseFeedback(knowledgeBaseId, body)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback
+
+Update or Create Feedbacks
+
+Requires ANY permissions:
+
+* knowledge:feedback:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = [{}]; // Object | 
+
+apiInstance.patchKnowledgeKnowledgebaseFeedback(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`patchKnowledgeKnowledgebaseFeedback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeKnowledgebaseFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeFeedbackResponseListing**
 
 <a name="patchKnowledgeKnowledgebaseImportJob"></a>
 
@@ -3184,6 +4155,60 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, 
 
 **KnowledgeImport**
 
+<a name="patchKnowledgeKnowledgebaseParseJob"></a>
+
+# void patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
+
+
+PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}
+
+Send update to the parse operation
+
+Requires ALL permissions:
+
+* knowledge:importJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let parseJobId = "parseJobId_example"; // String | Parse job ID
+let body = {}; // Object | 
+
+apiInstance.patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
+  .then(() => {
+    console.log('patchKnowledgeKnowledgebaseParseJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeKnowledgebaseParseJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **parseJobId** | **String** | Parse job ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup"></a>
 
 # UnansweredPhraseGroupUpdateResponse patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)
@@ -3291,6 +4316,57 @@ apiInstance.postKnowledgeDocumentuploads(body)
 
 **UploadUrlResponse**
 
+<a name="postKnowledgeGuestSessionDocumentCopies"></a>
+
+# void postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts)
+
+
+POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies
+
+Indicate that the document was copied by the user.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts)
+  .then(() => {
+    console.log('postKnowledgeGuestSessionDocumentCopies returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeGuestSessionDocumentCopies');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | Knowledge guest session ID. |  |
+ **documentId** | **String** | Document ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postKnowledgeGuestSessionDocumentFeedback"></a>
 
 # KnowledgeGuestDocumentFeedback postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, opts)
@@ -3341,6 +4417,106 @@ apiInstance.postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, opt
 ### Return type
 
 **KnowledgeGuestDocumentFeedback**
+
+<a name="postKnowledgeGuestSessionDocumentViews"></a>
+
+# void postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts)
+
+
+POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views
+
+Create view event for a document.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts)
+  .then(() => {
+    console.log('postKnowledgeGuestSessionDocumentViews returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeGuestSessionDocumentViews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | Knowledge guest session ID. |  |
+ **documentId** | **String** | Document ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postKnowledgeGuestSessionDocumentsPresentations"></a>
+
+# void postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts)
+
+
+POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations
+
+Indicate that documents were presented to the user.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts)
+  .then(() => {
+    console.log('postKnowledgeGuestSessionDocumentsPresentations returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeGuestSessionDocumentsPresentations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | Knowledge guest session ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postKnowledgeGuestSessionDocumentsSearch"></a>
 
@@ -3538,6 +4714,172 @@ apiInstance.postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
 ### Return type
 
 **CategoryResponse**
+
+<a name="postKnowledgeKnowledgebaseContextValues"></a>
+
+# KnowledgeContextValueResponse postKnowledgeKnowledgebaseContextValues(knowledgeBaseId, contextId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values
+
+Create context value for the specified context.
+
+Requires ALL permissions:
+
+* knowledge:context:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let contextId = "contextId_example"; // String | Context ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseContextValues(knowledgeBaseId, contextId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseContextValues success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseContextValues');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **contextId** | **String** | Context ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeContextValueResponse**
+
+<a name="postKnowledgeKnowledgebaseContexts"></a>
+
+# KnowledgeContextResponse postKnowledgeKnowledgebaseContexts(knowledgeBaseId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts
+
+Create context for the specified knowledge base.
+
+Requires ALL permissions:
+
+* knowledge:context:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseContexts(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseContexts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseContexts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeContextResponse**
+
+<a name="postKnowledgeKnowledgebaseDocumentCopies"></a>
+
+# void postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies
+
+Indicate that the document was copied by the user.
+
+Requires ALL permissions:
+
+* knowledge:documentCopy:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let documentId = "documentId_example"; // String | Document ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts)
+  .then(() => {
+    console.log('postKnowledgeKnowledgebaseDocumentCopies returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentCopies');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **documentId** | **String** | Document ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postKnowledgeKnowledgebaseDocumentFeedback"></a>
 
@@ -3920,6 +5262,116 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
 
 **BulkResponse**
 
+<a name="postKnowledgeKnowledgebaseDocumentsPresentations"></a>
+
+# void postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations
+
+Indicate that documents were presented to the user.
+
+Requires ALL permissions:
+
+* knowledge:documentPresentation:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts)
+  .then(() => {
+    console.log('postKnowledgeKnowledgebaseDocumentsPresentations returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentsPresentations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postKnowledgeKnowledgebaseDocumentsQuery"></a>
+
+# KnowledgeDocumentQueryResponse postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query
+
+Query for knowledge documents.
+
+Requires ALL permissions:
+
+* knowledge:document:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
+let opts = { 
+  'expand': ["expand_example"], // [String] | Fields, if any, to expand for each document in the search result matching the query.
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseDocumentsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge Base ID |  |
+ **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeDocumentQueryResponse**
+
 <a name="postKnowledgeKnowledgebaseDocumentsSearch"></a>
 
 # KnowledgeDocumentSearch postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, opts)
@@ -4135,6 +5587,116 @@ apiInstance.postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)
 ### Return type
 
 **KnowledgeExportJobResponse**
+
+<a name="postKnowledgeKnowledgebaseFeedback"></a>
+
+# KnowledgeFeedbackResponse postKnowledgeKnowledgebaseFeedback(knowledgeBaseId, opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback
+
+save Feedback
+
+Requires ANY permissions:
+
+* knowledge:feedback:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseFeedback(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseFeedback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeFeedbackResponse**
+
+<a name="postKnowledgeKnowledgebaseFeedbackApprovalsBulk"></a>
+
+# KnowledgeFeedbackResponseListing postKnowledgeKnowledgebaseFeedbackApprovalsBulk(knowledgeBaseId, opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/approvals/bulk
+
+Update approval for feedback(s)
+
+Requires ANY permissions:
+
+* knowledge:feedback:approve
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'body': [{}] // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseFeedbackApprovalsBulk(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseFeedbackApprovalsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseFeedbackApprovalsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeFeedbackResponseListing**
 
 <a name="postKnowledgeKnowledgebaseImportJobs"></a>
 
@@ -4572,6 +6134,112 @@ apiInstance.postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languag
 
 **KnowledgeTraining**
 
+<a name="postKnowledgeKnowledgebaseParseJobImport"></a>
+
+# void postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import
+
+Import the parsed articles
+
+Requires ALL permissions:
+
+* knowledge:importJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let parseJobId = "parseJobId_example"; // String | Parse job ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
+  .then(() => {
+    console.log('postKnowledgeKnowledgebaseParseJobImport returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseParseJobImport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **parseJobId** | **String** | Parse job ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postKnowledgeKnowledgebaseParseJobs"></a>
+
+# KnowledgeParseJobResponse postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs
+
+Create parse job
+
+Requires ALL permissions:
+
+* knowledge:importJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseParseJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseParseJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeParseJobResponse**
+
 <a name="postKnowledgeKnowledgebaseSearch"></a>
 
 # KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
@@ -4627,6 +6295,58 @@ apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 
 **KnowledgeSearchResponse**
 
+<a name="postKnowledgeKnowledgebaseUploadsUrlsJobs"></a>
+
+# CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs
+
+Create content upload from URL job
+
+Requires ALL permissions:
+
+* knowledge:uploadSourceUrlJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | uploadRequest
+
+apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseUploadsUrlsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseUploadsUrlsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** | uploadRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CreateUploadSourceUrlJobResponse**
+
 <a name="postKnowledgeKnowledgebases"></a>
 
 # KnowledgeBase postKnowledgeKnowledgebases(body)
@@ -4676,4 +6396,252 @@ apiInstance.postKnowledgeKnowledgebases(body)
 ### Return type
 
 **KnowledgeBase**
+
+<a name="postKnowledgeKnowledgebasesFeedback"></a>
+
+# KnowledgeFeedbackResponseListing postKnowledgeKnowledgebasesFeedback(dateCreatedFrom, dateCreatedTo, opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+POST /api/v2/knowledge/knowledgebases/feedback
+
+Get all feedbacks for knowledge
+
+Requires ANY permissions:
+
+* knowledge:feedback:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let dateCreatedFrom = new Date("2013-10-20T19:20:30+01:00"); // Date | dateCreatedFrom. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+let dateCreatedTo = new Date("2013-10-20T19:20:30+01:00"); // Date | dateCreatedTo. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
+  'pageSize': "pageSize_example", // String | Max number of entities to return. Maximum of 100.
+  'expand': "expand_example", // String | when queryparam expand's value is Approval, approvals section is returned in feedback response.
+  'maximumConfidence': 3.4, // Number | Used to return feedback results for search documents with a confidence score lesser than or equal to the specified value.
+  'minimumConfidence': 3.4, // Number | Used to return feedback results for search documents with confidence score greater than or equal to the specified value.
+  'maximumRating': 3.4, // Number | Used to return feedback results with feedback rating less than or equal to the specified value.
+  'minimumRating': 3.4, // Number | Used to return feedback results with feedback rating greater than or equal to the specified value.
+  'approvalStatus': ["approvalStatus_example"], // [String] | Approval status of the feedback.
+  'sortOrder': "sortOrder_example", // String | Sort order.
+  'sortBy': "sortBy_example", // String | Sort by.
+  'body': [{}] // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebasesFeedback(dateCreatedFrom, dateCreatedTo, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebasesFeedback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebasesFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dateCreatedFrom** | **Date** | dateCreatedFrom. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+ **dateCreatedTo** | **Date** | dateCreatedTo. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
+ **pageSize** | **String** | Max number of entities to return. Maximum of 100. | [optional]  |
+ **expand** | **String** | when queryparam expand's value is Approval, approvals section is returned in feedback response. | [optional] <br />**Values**: Approval |
+ **maximumConfidence** | **Number** | Used to return feedback results for search documents with a confidence score lesser than or equal to the specified value. | [optional]  |
+ **minimumConfidence** | **Number** | Used to return feedback results for search documents with confidence score greater than or equal to the specified value. | [optional]  |
+ **maximumRating** | **Number** | Used to return feedback results with feedback rating less than or equal to the specified value. | [optional]  |
+ **minimumRating** | **Number** | Used to return feedback results with feedback rating greater than or equal to the specified value. | [optional]  |
+ **approvalStatus** | **[String]** | Approval status of the feedback. | [optional] <br />**Values**: Approved, Rejected, NotAvailable |
+ **sortOrder** | **String** | Sort order. | [optional] <br />**Values**: ascending, descending |
+ **sortBy** | **String** | Sort by. | [optional] <br />**Values**: approvalStatus, confidence, rating, dateCreated |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeFeedbackResponseListing**
+
+<a name="postKnowledgeKnowledgebasesFeedbackApprovalsBulk"></a>
+
+# KnowledgeFeedbackResponseListing postKnowledgeKnowledgebasesFeedbackApprovalsBulk(opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+POST /api/v2/knowledge/knowledgebases/feedback/approvals/bulk
+
+Update approval/reject for at most 25 feedback(s) for knowledgebase
+
+Requires ANY permissions:
+
+* knowledge:feedback:approve
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'body': [{}] // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebasesFeedbackApprovalsBulk(opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebasesFeedbackApprovalsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebasesFeedbackApprovalsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeFeedbackResponseListing**
+
+<a name="postKnowledgeKnowledgebasesTrainings"></a>
+
+# KnowledgeTraining postKnowledgeKnowledgebasesTrainings(opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+POST /api/v2/knowledge/knowledgebases/trainings
+
+Get trainings for the specified Knowledge Bases
+
+Requires ALL permissions:
+
+* knowledge:training:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let opts = { 
+  'knowledgeDocumentsState': "knowledgeDocumentsState_example", // String | Return the training with the specified state of the trained documents.
+  'trainingLimit': 3.4, // Number | Return the specified number of trainings for each knowledge base. The maximum number of trainings that you can request for each knowledge base is 5.
+  'body': [{}] // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebasesTrainings(opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebasesTrainings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebasesTrainings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeDocumentsState** | **String** | Return the training with the specified state of the trained documents. | [optional] <br />**Values**: Draft, Active, Discarded, Archived |
+ **trainingLimit** | **Number** | Return the specified number of trainings for each knowledge base. The maximum number of trainings that you can request for each knowledge base is 5. | [optional]  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeTraining**
+
+<a name="putKnowledgeKnowledgebaseFeedbackFeedbackId"></a>
+
+# KnowledgeFeedbackResponse putKnowledgeKnowledgebaseFeedbackFeedbackId(knowledgeBaseId, feedbackId, opts)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId}
+
+Update Feedback details
+
+Requires ANY permissions:
+
+* knowledge:feedback:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let feedbackId = "feedbackId_example"; // String | Feedback ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.putKnowledgeKnowledgebaseFeedbackFeedbackId(knowledgeBaseId, feedbackId, opts)
+  .then((data) => {
+    console.log(`putKnowledgeKnowledgebaseFeedbackFeedbackId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putKnowledgeKnowledgebaseFeedbackFeedbackId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **feedbackId** | **String** | Feedback ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeFeedbackResponse**
 

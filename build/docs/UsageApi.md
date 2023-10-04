@@ -3,15 +3,18 @@ title: UsageApi
 ---
 # platformClient.UsageApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getOauthClientUsageQueryResult**](UsageApi.html#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
 [**getOauthClientUsageSummary**](UsageApi.html#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
+[**getUsageDatatransferAggregatesQueryResult**](UsageApi.html#getUsageDatatransferAggregatesQueryResult) | **GET** /api/v2/usage/datatransfer/aggregates/query/results/{executionId} | Get the results of an organizations data transfer bytes usage query
 [**getUsageQueryExecutionIdResults**](UsageApi.html#getUsageQueryExecutionIdResults) | **GET** /api/v2/usage/query/{executionId}/results | Get the results of a usage query
 [**getUsageSimplesearchExecutionIdResults**](UsageApi.html#getUsageSimplesearchExecutionIdResults) | **GET** /api/v2/usage/simplesearch/{executionId}/results | Get the results of a usage search
+[**postOauthClientUsageDatatransferAggregatesQuery**](UsageApi.html#postOauthClientUsageDatatransferAggregatesQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query | Query data transfer bytes for an OAuth client ID usage for an organization
 [**postOauthClientUsageQuery**](UsageApi.html#postOauthClientUsageQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/query | Query for OAuth client API usage
+[**postUsageDatatransferAggregatesQuery**](UsageApi.html#postUsageDatatransferAggregatesQuery) | **POST** /api/v2/usage/datatransfer/aggregates/query | Query data transfer bytes for an organization's usage
 [**postUsageQuery**](UsageApi.html#postUsageQuery) | **POST** /api/v2/usage/query | Query organization API Usage - 
 [**postUsageSimplesearch**](UsageApi.html#postUsageSimplesearch) | **POST** /api/v2/usage/simplesearch | Search organization API Usage - 
 {: class="table table-striped"}
@@ -126,6 +129,56 @@ apiInstance.getOauthClientUsageSummary(clientId, opts)
 
 **UsageExecutionResult**
 
+<a name="getUsageDatatransferAggregatesQueryResult"></a>
+
+# ApiUsageDataTransferQueryResult getUsageDatatransferAggregatesQueryResult(executionId)
+
+
+GET /api/v2/usage/datatransfer/aggregates/query/results/{executionId}
+
+Get the results of an organizations data transfer bytes usage query
+
+Requires ANY permissions:
+
+* usage:dataTransfer:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsageApi();
+
+let executionId = "executionId_example"; // String | ID of the query execution
+
+apiInstance.getUsageDatatransferAggregatesQueryResult(executionId)
+  .then((data) => {
+    console.log(`getUsageDatatransferAggregatesQueryResult success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsageDatatransferAggregatesQueryResult');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **executionId** | **String** | ID of the query execution |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ApiUsageDataTransferQueryResult**
+
 <a name="getUsageQueryExecutionIdResults"></a>
 
 # ApiUsageQueryResult getUsageQueryExecutionIdResults(executionId)
@@ -228,6 +281,60 @@ apiInstance.getUsageSimplesearchExecutionIdResults(executionId)
 
 **ApiUsageQueryResult**
 
+<a name="postOauthClientUsageDatatransferAggregatesQuery"></a>
+
+# ApiUsageClientDataTransferExecutionResult postOauthClientUsageDatatransferAggregatesQuery(clientId, body)
+
+
+POST /api/v2/oauth/clients/{clientId}/usage/datatransfer/aggregates/query
+
+Query data transfer bytes for an OAuth client ID usage for an organization
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+Requires ANY permissions:
+
+* usage:dataTransfer:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsageApi();
+
+let clientId = "clientId_example"; // String | Client ID
+let body = {}; // Object | Query
+
+apiInstance.postOauthClientUsageDatatransferAggregatesQuery(clientId, body)
+  .then((data) => {
+    console.log(`postOauthClientUsageDatatransferAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOauthClientUsageDatatransferAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **clientId** | **String** | Client ID |  |
+ **body** | **Object** | Query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ApiUsageClientDataTransferExecutionResult**
+
 <a name="postOauthClientUsageQuery"></a>
 
 # UsageExecutionResult postOauthClientUsageQuery(clientId, body)
@@ -282,6 +389,58 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 ### Return type
 
 **UsageExecutionResult**
+
+<a name="postUsageDatatransferAggregatesQuery"></a>
+
+# ApiUsageOrganizationDataTransferExecutionResult postUsageDatatransferAggregatesQuery(body)
+
+
+POST /api/v2/usage/datatransfer/aggregates/query
+
+Query data transfer bytes for an organization's usage
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+Requires ANY permissions:
+
+* usage:dataTransfer:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsageApi();
+
+let body = {}; // Object | Query
+
+apiInstance.postUsageDatatransferAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postUsageDatatransferAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsageDatatransferAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ApiUsageOrganizationDataTransferExecutionResult**
 
 <a name="postUsageQuery"></a>
 

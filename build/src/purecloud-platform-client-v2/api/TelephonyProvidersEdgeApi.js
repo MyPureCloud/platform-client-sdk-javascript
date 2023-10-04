@@ -101,6 +101,36 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Deletes an instance from the specified ASG
+	 * 
+	 * @param {String} autoScalingGroupId Id that is associated with the asg
+	 * @param {String} edgeId Edge id that is associated with the asg
+	 */
+	deleteTelephonyProvidersEdgesAutoscalinggroupEdge(autoScalingGroupId, edgeId) { 
+		// verify the required parameter 'autoScalingGroupId' is set
+		if (autoScalingGroupId === undefined || autoScalingGroupId === null) {
+			throw 'Missing the required parameter "autoScalingGroupId" when calling deleteTelephonyProvidersEdgesAutoscalinggroupEdge';
+		}
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling deleteTelephonyProvidersEdgesAutoscalinggroupEdge';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/autoscalinggroups/{autoScalingGroupId}/edges/{edgeId}', 
+			'DELETE', 
+			{ 'autoScalingGroupId': autoScalingGroupId,'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a certificate authority.
 	 * 
 	 * @param {String} certificateId Certificate ID
@@ -201,6 +231,35 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Deletes a testing volume by id
+	 * 
+	 * @param {String} volumeId Volume Id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.volumeRegion Specifies the volume region
+	 */
+	deleteTelephonyProvidersEdgesFilesVolume(volumeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'volumeId' is set
+		if (volumeId === undefined || volumeId === null) {
+			throw 'Missing the required parameter "volumeId" when calling deleteTelephonyProvidersEdgesFilesVolume';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/{volumeId}', 
+			'DELETE', 
+			{ 'volumeId': volumeId },
+			{ 'volumeRegion': opts['volumeRegion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a Phone by ID
 	 * 
 	 * @param {String} phoneId Phone ID
@@ -240,6 +299,26 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}', 
 			'DELETE', 
 			{ 'phoneBaseId': phoneBaseId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes upgrade ruleset
+	 * 
+	 */
+	deleteTelephonyProvidersEdgesProvisioningUpgraderule() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/provisioning/upgraderule', 
+			'DELETE', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -296,6 +375,40 @@ class TelephonyProvidersEdgeApi {
 			'DELETE', 
 			{ 'siteId': siteId,'outboundRouteId': outboundRouteId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes an ASG from a site
+	 * 
+	 * @param {String} siteId Id of the site that contains the asg to be deleted
+	 * @param {String} asgVersion Version of the ASG that needs to be deleted (ex. 001 or 002)
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDelete If set to true, the ASG will be deleted even if its edges are still active.
+	 */
+	deleteTelephonyProvidersEdgesSiteProvisioning(siteId, asgVersion, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling deleteTelephonyProvidersEdgesSiteProvisioning';
+		}
+		// verify the required parameter 'asgVersion' is set
+		if (asgVersion === undefined || asgVersion === null) {
+			throw 'Missing the required parameter "asgVersion" when calling deleteTelephonyProvidersEdgesSiteProvisioning';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/provisioning', 
+			'DELETE', 
+			{ 'siteId': siteId },
+			{ 'asgVersion': asgVersion,'forceDelete': opts['forceDelete'] },
 			{  },
 			{  },
 			null, 
@@ -773,6 +886,31 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Gets information about the current ami in a tier.
+	 * 
+	 * @param {String} tierName Tier to retrieve current ami info about.
+	 */
+	getTelephonyProvidersEdgesAutoscalinggroupsImagesCurrentTier(tierName) { 
+		// verify the required parameter 'tierName' is set
+		if (tierName === undefined || tierName === null) {
+			throw 'Missing the required parameter "tierName" when calling getTelephonyProvidersEdgesAutoscalinggroupsImagesCurrentTier';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/autoscalinggroups/images/current/tiers/{tierName}', 
+			'GET', 
+			{ 'tierName': tierName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of available languages.
 	 * 
 	 */
@@ -1163,6 +1301,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {String} opts._number Deprecated, filtering by number not supported
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getTelephonyProvidersEdgesExtensionpools(opts) { 
 		opts = opts || {};
@@ -1172,7 +1311,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/extensionpools', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'number': opts['_number'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'number': opts['_number'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1222,6 +1361,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortBy Sort by (default to number)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts._number Filter by number
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getTelephonyProvidersEdgesExtensions(opts) { 
 		opts = opts || {};
@@ -1231,7 +1371,171 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/extensions', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'number': opts['_number'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'number': opts['_number'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets testing volume by id
+	 * 
+	 * @param {String} volumeId Volume Id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.volumeRegion Specifies the volume region
+	 */
+	getTelephonyProvidersEdgesFilesVolume(volumeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'volumeId' is set
+		if (volumeId === undefined || volumeId === null) {
+			throw 'Missing the required parameter "volumeId" when calling getTelephonyProvidersEdgesFilesVolume';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/{volumeId}', 
+			'GET', 
+			{ 'volumeId': volumeId },
+			{ 'volumeRegion': opts['volumeRegion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets all testing volumes
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.volumeRegion Specifies the volumes region
+	 */
+	getTelephonyProvidersEdgesFilesVolumes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes', 
+			'GET', 
+			{  },
+			{ 'volumeRegion': opts['volumeRegion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves the recovered volume by its completed taskId
+	 * 
+	 * @param {String} taskId Task id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.volumeRegion Specifies the region to get the volume from.
+	 */
+	getTelephonyProvidersEdgesFilesVolumesRecoveredTaskResults(taskId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'taskId' is set
+		if (taskId === undefined || taskId === null) {
+			throw 'Missing the required parameter "taskId" when calling getTelephonyProvidersEdgesFilesVolumesRecoveredTaskResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/recovered/tasks/{taskId}/results', 
+			'GET', 
+			{ 'taskId': taskId },
+			{ 'volumeRegion': opts['volumeRegion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves the created volume by its completed taskId
+	 * 
+	 * @param {String} taskId Task id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.volumeRegion Specifies the volume region
+	 */
+	getTelephonyProvidersEdgesFilesVolumesTaskResults(taskId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'taskId' is set
+		if (taskId === undefined || taskId === null) {
+			throw 'Missing the required parameter "taskId" when calling getTelephonyProvidersEdgesFilesVolumesTaskResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/results', 
+			'GET', 
+			{ 'taskId': taskId },
+			{ 'volumeRegion': opts['volumeRegion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves the status of a create/recover volume request by its taskId
+	 * 
+	 * @param {String} taskId Task id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.volumeRegion Specifies the volume region
+	 */
+	getTelephonyProvidersEdgesFilesVolumesTaskStatus(taskId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'taskId' is set
+		if (taskId === undefined || taskId === null) {
+			throw 'Missing the required parameter "taskId" when calling getTelephonyProvidersEdgesFilesVolumesTaskStatus';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/tasks/{taskId}/status', 
+			'GET', 
+			{ 'taskId': taskId },
+			{ 'volumeRegion': opts['volumeRegion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the compatibility of an organization for the hybrid product.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hybridOverride Flag to indicate immediate hybrid migration. (default to false)
+	 */
+	getTelephonyProvidersEdgesHybridcompatibility(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/hybridcompatibility', 
+			'GET', 
+			{  },
+			{ 'hybridOverride': opts['hybridOverride'] },
 			{  },
 			{  },
 			null, 
@@ -1758,6 +2062,51 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Checks if the ami is available in aws
+	 * 
+	 * @param {String} amiId AmiId that is going to be validated
+	 */
+	getTelephonyProvidersEdgesProvisioningAmi(amiId) { 
+		// verify the required parameter 'amiId' is set
+		if (amiId === undefined || amiId === null) {
+			throw 'Missing the required parameter "amiId" when calling getTelephonyProvidersEdgesProvisioningAmi';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/provisioning/amis/{amiId}', 
+			'GET', 
+			{ 'amiId': amiId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the upgrades ruleset
+	 * 
+	 */
+	getTelephonyProvidersEdgesProvisioningUpgraderule() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/provisioning/upgraderule', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Site by ID.
 	 * 
 	 * @param {String} siteId Site ID
@@ -1770,6 +2119,61 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}', 
+			'GET', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the basic information about an asg
+	 * 
+	 * @param {String} siteId Site id associated with the asg
+	 * @param {String} autoScalingGroupId Id associated with the asg
+	 */
+	getTelephonyProvidersEdgesSiteAutoscalinggroup(siteId, autoScalingGroupId) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteAutoscalinggroup';
+		}
+		// verify the required parameter 'autoScalingGroupId' is set
+		if (autoScalingGroupId === undefined || autoScalingGroupId === null) {
+			throw 'Missing the required parameter "autoScalingGroupId" when calling getTelephonyProvidersEdgesSiteAutoscalinggroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/{autoScalingGroupId}', 
+			'GET', 
+			{ 'siteId': siteId,'autoScalingGroupId': autoScalingGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the basic information about an asg in a specified site
+	 * 
+	 * @param {String} siteId Site id associated with the asg
+	 */
+	getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteAutoscalinggroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups', 
 			'GET', 
 			{ 'siteId': siteId },
 			{  },
@@ -1930,6 +2334,56 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Get a list of edges that are in the decommissioning state
+	 * 
+	 * @param {String} siteId Site id associated with the asg
+	 */
+	getTelephonyProvidersEdgesSiteProvisioningDecommissioning(siteId) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteProvisioningDecommissioning';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/provisioning/decommissioning', 
+			'GET', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get site connections for a site.
+	 * 
+	 * @param {String} siteId Site ID
+	 */
+	getTelephonyProvidersEdgesSiteSiteconnections(siteId) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteSiteconnections';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
+			'GET', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of Sites.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1950,6 +2404,55 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'location.id': opts['locationId'],'managed': opts['managed'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search sites using the q64 value returned from a previous search
+	 * 
+	 * @param {String} q64 q64
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand expand
+	 */
+	getTelephonyProvidersEdgesSitesSearch(q64, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'q64' is set
+		if (q64 === undefined || q64 === null) {
+			throw 'Missing the required parameter "q64" when calling getTelephonyProvidersEdgesSitesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/search', 
+			'GET', 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the tier of an organization
+	 * 
+	 */
+	getTelephonyProvidersEdgesTiers() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/tiers', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -2122,6 +2625,38 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Get Trunk Base Settings listing for site
+	 * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+	 * @param {String} siteId Site ID for trunk bases
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Value by which to sort (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 */
+	getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId(siteId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesTrunkbasesettingsSiteSiteId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId}', 
+			'GET', 
+			{ 'siteId': siteId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
 	 * 
 	 * @param {String} trunkMetabaseId The id of a metabase object upon which to base this Trunk Base Settings
@@ -2219,6 +2754,66 @@ class TelephonyProvidersEdgeApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scales the ASG to match the desired capacity
+	 * 
+	 * @param {String} asgId Id of the asg that is to be scaled
+	 * @param {Object} body AsgScaleRequest
+	 */
+	patchTelephonyProvidersEdgesAutoscalinggroupCapacity(asgId, body) { 
+		// verify the required parameter 'asgId' is set
+		if (asgId === undefined || asgId === null) {
+			throw 'Missing the required parameter "asgId" when calling patchTelephonyProvidersEdgesAutoscalinggroupCapacity';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTelephonyProvidersEdgesAutoscalinggroupCapacity';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity', 
+			'PATCH', 
+			{ 'asgId': asgId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Disable site connections for a site.
+	 * 
+	 * @param {String} siteId Site ID
+	 * @param {Object} body Site
+	 */
+	patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling patchTelephonyProvidersEdgesSiteSiteconnections';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTelephonyProvidersEdgesSiteSiteconnections';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
+			'PATCH', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2428,6 +3023,36 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logs/jobs', 
+			'POST', 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a file that can be used to configure a hardware Edge's settings.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 * @param {Object} body EdgeOfflineConfiguration
+	 */
+	postTelephonyProvidersEdgeOfflineconfiguration(edgeId, body) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeOfflineconfiguration';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgeOfflineconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration', 
 			'POST', 
 			{ 'edgeId': edgeId },
 			{  },
@@ -2704,6 +3329,110 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Recovers a testing volume by id
+	 * 
+	 * @param {String} volumeId Volume Id
+	 */
+	postTelephonyProvidersEdgesFilesVolume(volumeId) { 
+		// verify the required parameter 'volumeId' is set
+		if (volumeId === undefined || volumeId === null) {
+			throw 'Missing the required parameter "volumeId" when calling postTelephonyProvidersEdgesFilesVolume';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/{volumeId}', 
+			'POST', 
+			{ 'volumeId': volumeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts a task to recover a test volume by skipping the queue
+	 * 
+	 * @param {String} volumeId Volume Id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.volumeRegion Specifies the volume recovery region.
+	 */
+	postTelephonyProvidersEdgesFilesVolumeTasks(volumeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'volumeId' is set
+		if (volumeId === undefined || volumeId === null) {
+			throw 'Missing the required parameter "volumeId" when calling postTelephonyProvidersEdgesFilesVolumeTasks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/{volumeId}/tasks', 
+			'POST', 
+			{ 'volumeId': volumeId },
+			{ 'volumeRegion': opts['volumeRegion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts a task to create a test volume
+	 * 
+	 * @param {Object} body CreateVolumePayload
+	 */
+	postTelephonyProvidersEdgesFilesVolumesTasks(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesFilesVolumesTasks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/tasks', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Verifies that the testing volumes properly recovered
+	 * 
+	 * @param {Object} body VerifyVolumeRecoveredRequest
+	 */
+	postTelephonyProvidersEdgesFilesVolumesVerify(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesFilesVolumesVerify';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/files/volumes/verify', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Reboot a Phone
 	 * 
 	 * @param {String} phoneId Phone Id
@@ -2804,6 +3533,60 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Adds upgrade allow ruleset
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postTelephonyProvidersEdgesProvisioningUpgraderule(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/provisioning/upgraderule', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates an ASG for the specified site
+	 * 
+	 * @param {String} siteId Site that will be associated with the asg
+	 * @param {Object} body CreateAsgRequest
+	 */
+	postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling postTelephonyProvidersEdgesSiteAutoscalinggroups';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSiteAutoscalinggroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups', 
+			'POST', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create outbound route
 	 * 
 	 * @param {String} siteId Site ID
@@ -2859,6 +3642,31 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Search sites
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postTelephonyProvidersEdgesSitesSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSitesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a Trunk Base Settings object
 	 * 
 	 * @param {Object} body Trunk base settings
@@ -2871,6 +3679,56 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search Trunk Base Settings
+	 * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+	 * @param {Object} body Telephony search request
+	 */
+	postTelephonyProvidersEdgesTrunkbasesettingsSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesTrunkbasesettingsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/trunkbasesettings/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search for trunks
+	 * 
+	 * @param {Object} body Telephony search request
+	 */
+	postTelephonyProvidersEdgesTrunksSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesTrunksSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/trunks/search', 
 			'POST', 
 			{  },
 			{  },
@@ -2968,6 +3826,31 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}', 
 			'PUT', 
 			{ 'certificateId': certificateId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Checks if a DID or an Extension is configured in Genesys Cloud.
+	 * 
+	 * @param {Object} body DialTargetRequest
+	 */
+	putTelephonyProvidersEdgesDialtargets(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesDialtargets';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/dialtargets', 
+			'PUT', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -3194,6 +4077,35 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Upgrades an ASG to the specified or newest ami.
+	 * 
+	 * @param {String} siteId Site that is associated with the asg
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body AsgUpgradeRequest
+	 */
+	putTelephonyProvidersEdgesSiteAutoscalinggroupsUpgrade(siteId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteAutoscalinggroupsUpgrade';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups/upgrade', 
+			'PUT', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
 	 * 
 	 * @param {String} siteId Site ID
@@ -3248,6 +4160,61 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}', 
 			'PUT', 
 			{ 'siteId': siteId,'outboundRouteId': outboundRouteId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update site connections for a site.
+	 * 
+	 * @param {String} siteId Site ID
+	 * @param {Object} body Site
+	 */
+	putTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteSiteconnections';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesSiteSiteconnections';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
+			'PUT', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Sets the tier for an organization
+	 * 
+	 * @param {Object} body the new tier of the organization
+	 */
+	putTelephonyProvidersEdgesTiers(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesTiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/tiers', 
+			'PUT', 
+			{  },
 			{  },
 			{  },
 			{  },

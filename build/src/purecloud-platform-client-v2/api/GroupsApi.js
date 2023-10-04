@@ -72,6 +72,36 @@ class GroupsApi {
 	}
 
 	/**
+	 * Delete a group image.
+	 * 
+	 * @param {String} groupId Group ID
+	 * @param {String} imageId Image ID
+	 */
+	deleteGroupImage(groupId, imageId) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling deleteGroupImage';
+		}
+		// verify the required parameter 'imageId' is set
+		if (imageId === undefined || imageId === null) {
+			throw 'Missing the required parameter "imageId" when calling deleteGroupImage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/images/{imageId}', 
+			'DELETE', 
+			{ 'groupId': groupId,'imageId': imageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Remove members
 	 * 
 	 * @param {String} groupId Group ID
@@ -166,6 +196,61 @@ class GroupsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/dynamicsettings', 
+			'GET', 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a group image.
+	 * 
+	 * @param {String} groupId Group ID
+	 * @param {String} imageId Image ID
+	 */
+	getGroupImage(groupId, imageId) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling getGroupImage';
+		}
+		// verify the required parameter 'imageId' is set
+		if (imageId === undefined || imageId === null) {
+			throw 'Missing the required parameter "imageId" when calling getGroupImage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/images/{imageId}', 
+			'GET', 
+			{ 'groupId': groupId,'imageId': imageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all group images.
+	 * 
+	 * @param {String} groupId Group ID
+	 */
+	getGroupImages(groupId) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling getGroupImages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/images', 
 			'GET', 
 			{ 'groupId': groupId },
 			{  },
@@ -284,6 +369,31 @@ class GroupsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a group list of deleted groups
+	 * 
+	 * @param {Array.<String>} jabberId A list of jabberIds to fetch by bulk, max 50.
+	 */
+	getGroupsBulkDeleted(jabberId) { 
+		// verify the required parameter 'jabberId' is set
+		if (jabberId === undefined || jabberId === null) {
+			throw 'Missing the required parameter "jabberId" when calling getGroupsBulkDeleted';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/bulk/deleted', 
+			'GET', 
+			{  },
+			{ 'jabberId': this.apiClient.buildCollectionParam(jabberId, 'multi') },
 			{  },
 			{  },
 			null, 
@@ -512,6 +622,36 @@ class GroupsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update group profile
+	 *  This api is deprecated. Use /api/v2/groups/group_id instead
+	 * @param {String} groupId groupId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Profile
+	 * @deprecated
+	 */
+	putGroupProfile(groupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling putGroupProfile';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/profile', 
+			'PUT', 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

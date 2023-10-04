@@ -3,7 +3,7 @@ title: SearchApi
 ---
 # platformClient.SearchApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLocationsSearch**](SearchApi.html#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
 [**getSearch**](SearchApi.html#getSearch) | **GET** /api/v2/search | Search using the q64 value returned from a previous search.
 [**getSearchSuggest**](SearchApi.html#getSearchSuggest) | **GET** /api/v2/search/suggest | Suggest resources using the q64 value returned from a previous suggest query.
+[**getTelephonyProvidersEdgesSitesSearch**](SearchApi.html#getTelephonyProvidersEdgesSitesSearch) | **GET** /api/v2/telephony/providers/edges/sites/search | Search sites using the q64 value returned from a previous search
 [**getUsersSearch**](SearchApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
 [**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
@@ -27,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
 [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
 [**postTeamsSearch**](SearchApi.html#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
+[**postTelephonyProvidersEdgesSitesSearch**](SearchApi.html#postTelephonyProvidersEdgesSitesSearch) | **POST** /api/v2/telephony/providers/edges/sites/search | Search sites
 [**postUsersSearch**](SearchApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
 [**postUsersSearchConversationTarget**](SearchApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
 [**postUsersSearchQueuemembersManage**](SearchApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
@@ -339,6 +341,61 @@ apiInstance.getSearchSuggest(q64, opts)
 ### Return type
 
 **JsonNodeSearchResponse**
+
+<a name="getTelephonyProvidersEdgesSitesSearch"></a>
+
+# SitesSearchResponse getTelephonyProvidersEdgesSitesSearch(q64, opts)
+
+
+GET /api/v2/telephony/providers/edges/sites/search
+
+Search sites using the q64 value returned from a previous search
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let q64 = "q64_example"; // String | q64
+let opts = { 
+  'expand': ["expand_example"] // [String] | expand
+};
+
+apiInstance.getTelephonyProvidersEdgesSitesSearch(q64, opts)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesSitesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSitesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SitesSearchResponse**
 
 <a name="getUsersSearch"></a>
 
@@ -1044,6 +1101,57 @@ apiInstance.postTeamsSearch(body)
 ### Return type
 
 **TeamsSearchResponse**
+
+<a name="postTelephonyProvidersEdgesSitesSearch"></a>
+
+# SitesSearchResponse postTelephonyProvidersEdgesSitesSearch(body)
+
+
+POST /api/v2/telephony/providers/edges/sites/search
+
+Search sites
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postTelephonyProvidersEdgesSitesSearch(body)
+  .then((data) => {
+    console.log(`postTelephonyProvidersEdgesSitesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesSitesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SitesSearchResponse**
 
 <a name="postUsersSearch"></a>
 

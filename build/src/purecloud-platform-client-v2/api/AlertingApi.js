@@ -46,6 +46,26 @@ class AlertingApi {
 	}
 
 	/**
+	 * Delete all alerts for the user
+	 * 
+	 */
+	deleteAlertingAlertsAll() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/alerting/alerts/all', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete an interaction stats alert
 	 * 
 	 * @param {String} alertId Alert ID
@@ -335,6 +355,30 @@ class AlertingApi {
 			'/api/v2/alerting/alerts/{alertId}', 
 			'PATCH', 
 			{ 'alertId': alertId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates all alerts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchAlertingAlertsAll(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/alerting/alerts/all', 
+			'PATCH', 
+			{  },
 			{  },
 			{  },
 			{  },

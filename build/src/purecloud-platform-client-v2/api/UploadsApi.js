@@ -21,6 +21,36 @@ class UploadsApi {
 
 
 	/**
+	 * Get content upload from URL job status
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} jobId Upload job ID
+	 */
+	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Creates a presigned URL for uploading a knowledge import file with a set of documents
 	 * 
 	 * @param {Object} body query
@@ -35,6 +65,36 @@ class UploadsApi {
 			'/api/v2/knowledge/documentuploads', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create content upload from URL job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body uploadRequest
+	 */
+	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
 			{  },
 			{  },
 			{  },
@@ -164,6 +224,56 @@ class UploadsApi {
 		return this.apiClient.callApi(
 			'/api/v2/uploads/workforcemanagement/historicaldata/csv', 
 			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates presigned urls for uploading WFM historical data files in chunks. Use to upload files larger than 5GB
+	 * 
+	 * @param {Object} body query
+	 */
+	postWorkforcemanagementHistoricaldataMultipartuploadsCsv(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementHistoricaldataMultipartuploadsCsv';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/multipartuploads/csv', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Completes or aborts the uploading of WFM historical data files in chunks
+	 * 
+	 * @param {Object} body query
+	 */
+	putWorkforcemanagementHistoricaldataMultipartuploadsCsv(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putWorkforcemanagementHistoricaldataMultipartuploadsCsv';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/multipartuploads/csv', 
+			'PUT', 
 			{  },
 			{  },
 			{  },

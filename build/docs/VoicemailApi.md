@@ -3,7 +3,7 @@ title: VoicemailApi
 ---
 # platformClient.VoicemailApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchVoicemailMessage**](VoicemailApi.html#patchVoicemailMessage) | **PATCH** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
 [**patchVoicemailUserpolicy**](VoicemailApi.html#patchVoicemailUserpolicy) | **PATCH** /api/v2/voicemail/userpolicies/{userId} | Update a user's voicemail policy
 [**postVoicemailMessages**](VoicemailApi.html#postVoicemailMessages) | **POST** /api/v2/voicemail/messages | Copy a voicemail message to a user or group
+[**postVoicemailMessagesCreate**](VoicemailApi.html#postVoicemailMessagesCreate) | **POST** /api/v2/voicemail/messages/create | Create a test voicemail
 [**postVoicemailSearch**](VoicemailApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 [**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | **PUT** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
 [**putVoicemailPolicy**](VoicemailApi.html#putVoicemailPolicy) | **PUT** /api/v2/voicemail/policy | Update a policy
@@ -1055,6 +1056,56 @@ apiInstance.postVoicemailMessages(opts)
   })
   .catch((err) => {
     console.log('There was a failure calling postVoicemailMessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**VoicemailMessage**
+
+<a name="postVoicemailMessagesCreate"></a>
+
+# VoicemailMessage postVoicemailMessagesCreate(opts)
+
+
+POST /api/v2/voicemail/messages/create
+
+Create a test voicemail
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.VoicemailApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postVoicemailMessagesCreate(opts)
+  .then((data) => {
+    console.log(`postVoicemailMessagesCreate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postVoicemailMessagesCreate');
     console.error(err);
   });
 ```

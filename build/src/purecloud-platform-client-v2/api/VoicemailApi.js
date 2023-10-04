@@ -557,6 +557,30 @@ class VoicemailApi {
 	}
 
 	/**
+	 * Create a test voicemail
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postVoicemailMessagesCreate(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/voicemail/messages/create', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search voicemails
 	 * 
 	 * @param {Object} body Search request options

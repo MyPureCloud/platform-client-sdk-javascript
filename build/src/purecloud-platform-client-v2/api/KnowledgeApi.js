@@ -76,6 +76,71 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Delete context.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 */
+	deleteKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseContext';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling deleteKnowledgeKnowledgebaseContext';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete context value.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 * @param {String} contextValueId Context Value ID.
+	 */
+	deleteKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseContextValue';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling deleteKnowledgeKnowledgebaseContextValue';
+		}
+		// verify the required parameter 'contextValueId' is set
+		if (contextValueId === undefined || contextValueId === null) {
+			throw 'Missing the required parameter "contextValueId" when calling deleteKnowledgeKnowledgebaseContextValue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId,'contextValueId': contextValueId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete document.
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID.
@@ -380,8 +445,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useContext If true, document variations will be filtered using the session context.
 	 */
-	getKnowledgeGuestSessionDocument(sessionId, documentId) { 
+	getKnowledgeGuestSessionDocument(sessionId, documentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null) {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionDocument';
@@ -395,7 +464,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}', 
 			'GET', 
 			{ 'sessionId': sessionId,'documentId': documentId },
-			{  },
+			{ 'useContext': opts['useContext'] },
 			{  },
 			{  },
 			null, 
@@ -411,7 +480,14 @@ class KnowledgeApi {
 	 * @param {String} sessionId Knowledge guest session ID.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.categoryId If specified, retrieves documents associated with category ids, comma separated values expected.
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Number} opts.pageNumber The page number requested.
+	 * @param {Object} opts.sortBy The field to sort results by.
+	 * @param {Object} opts.sortOrder Sort order.
+	 * @param {Boolean} opts.useContext If true, document variations will be filtered using the session context.
+	 * @param {Array.<String>} opts.expand If provided, expands the specified property in the response. Valid values are: Variations. Variation expansion only takes effect when used with useContext or sortBy
 	 */
 	getKnowledgeGuestSessionDocuments(sessionId, opts) { 
 		opts = opts || {};
@@ -425,7 +501,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/guest/sessions/{sessionId}/documents', 
 			'GET', 
 			{ 'sessionId': sessionId },
-			{ 'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'pageSize': opts['pageSize'] },
+			{ 'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'useContext': opts['useContext'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -518,6 +594,139 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'categoryId': categoryId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get specific context data of the knowledge base.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 */
+	getKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseContext';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling getKnowledgeKnowledgebaseContext';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get specified context value data.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 * @param {String} contextValueId Context Value ID.
+	 */
+	getKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseContextValue';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling getKnowledgeKnowledgebaseContextValue';
+		}
+		// verify the required parameter 'contextValueId' is set
+		if (contextValueId === undefined || contextValueId === null) {
+			throw 'Missing the required parameter "contextValueId" when calling getKnowledgeKnowledgebaseContextValue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId,'contextValueId': contextValueId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get context values for the specified context.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 */
+	getKnowledgeKnowledgebaseContextValues(knowledgeBaseId, contextId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseContextValues';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling getKnowledgeKnowledgebaseContextValues';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get contexts for the specified knowledge base.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object} opts.contextType Client: contexts created by the user; System: contexts created by default (default to Client)
+	 */
+	getKnowledgeKnowledgebaseContexts(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseContexts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'contextType': opts['contextType'] },
 			{  },
 			{  },
 			null, 
@@ -944,6 +1153,92 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Get All feedbacks for a knowledgebase
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Date} dateCreatedFrom dateCreatedFrom. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Date} dateCreatedTo dateCreatedTo. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
+	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 100.
+	 * @param {Object} opts.expand when queryparam expand's value is Approval, approvals section is returned in feedback response.
+	 * @param {Number} opts.maximumConfidence Used to return feedback results for search documents with a confidence score lesser than or equal to the specified value.
+	 * @param {Number} opts.minimumConfidence Used to return feedback results for search documents with confidence score greater than or equal to the specified value.
+	 * @param {Number} opts.maximumRating Used to return feedback results with feedback rating less than or equal to the specified value.
+	 * @param {Number} opts.minimumRating Used to return feedback results with feedback rating greater than or equal to the specified value.
+	 * @param {Array.<String>} opts.approvalStatus Approval status of the feedback.
+	 * @param {Object} opts.sortOrder Sort order.
+	 * @param {Object} opts.sortBy Sort by.
+	 * @deprecated
+	 */
+	getKnowledgeKnowledgebaseFeedback(knowledgeBaseId, dateCreatedFrom, dateCreatedTo, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseFeedback';
+		}
+		// verify the required parameter 'dateCreatedFrom' is set
+		if (dateCreatedFrom === undefined || dateCreatedFrom === null) {
+			throw 'Missing the required parameter "dateCreatedFrom" when calling getKnowledgeKnowledgebaseFeedback';
+		}
+		// verify the required parameter 'dateCreatedTo' is set
+		if (dateCreatedTo === undefined || dateCreatedTo === null) {
+			throw 'Missing the required parameter "dateCreatedTo" when calling getKnowledgeKnowledgebaseFeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'expand': opts['expand'],'maximumConfidence': opts['maximumConfidence'],'minimumConfidence': opts['minimumConfidence'],'maximumRating': opts['maximumRating'],'minimumRating': opts['minimumRating'],'approvalStatus': this.apiClient.buildCollectionParam(opts['approvalStatus'], 'multi'),'sortOrder': opts['sortOrder'],'dateCreatedFrom': dateCreatedFrom,'dateCreatedTo': dateCreatedTo,'sortBy': opts['sortBy'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Feedback details
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} feedbackId Feedback ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.expand when expands value is Approval, approvals section is returned in feedback response.
+	 * @deprecated
+	 */
+	getKnowledgeKnowledgebaseFeedbackFeedbackId(knowledgeBaseId, feedbackId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseFeedbackFeedbackId';
+		}
+		// verify the required parameter 'feedbackId' is set
+		if (feedbackId === undefined || feedbackId === null) {
+			throw 'Missing the required parameter "feedbackId" when calling getKnowledgeKnowledgebaseFeedbackFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'feedbackId': feedbackId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get import job report
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -1348,6 +1643,100 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Get operations
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Array.<String>} opts.userId If specified, retrieves operations associated with user ids, comma separated values expected.
+	 * @param {Array.<String>} opts.type If specified, retrieves operations with specified operation type, comma separated values expected.
+	 * @param {Array.<String>} opts.status If specified, retrieves operations with specified operation status, comma separated values expected.
+	 * @param {String} opts.interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+	 */
+	getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'interval': opts['interval'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get ids of operation creator users and oauth clients
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 */
+	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperationsUsersQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get parse job report
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} parseJobId Parse job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+	 */
+	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseParseJob';
+		}
+		// verify the required parameter 'parseJobId' is set
+		if (parseJobId === undefined || parseJobId === null) {
+			throw 'Missing the required parameter "parseJobId" when calling getKnowledgeKnowledgebaseParseJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get knowledge base unanswered group for a particular groupId
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -1446,6 +1835,36 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
 			{ 'app': opts['app'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get content upload from URL job status
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} jobId Upload job ID
+	 */
+	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1588,6 +2007,79 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Update specific context data of the knowledge base.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseContext';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling patchKnowledgeKnowledgebaseContext';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update context value.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 * @param {String} contextValueId Context Value ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseContextValue';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling patchKnowledgeKnowledgebaseContextValue';
+		}
+		// verify the required parameter 'contextValueId' is set
+		if (contextValueId === undefined || contextValueId === null) {
+			throw 'Missing the required parameter "contextValueId" when calling patchKnowledgeKnowledgebaseContextValue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId,'contextValueId': contextValueId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update document.
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID.
@@ -1616,6 +2108,45 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update feedback on a document
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} documentId Document ID.
+	 * @param {String} feedbackId Feedback ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
+		}
+		// verify the required parameter 'feedbackId' is set
+		if (feedbackId === undefined || feedbackId === null) {
+			throw 'Missing the required parameter "feedbackId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId,'feedbackId': feedbackId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1690,6 +2221,37 @@ class KnowledgeApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update or Create Feedbacks
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Array.<Object>} body 
+	 * @deprecated
+	 */
+	patchKnowledgeKnowledgebaseFeedback(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseFeedback';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseFeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1926,6 +2488,41 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Send update to the parse operation
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} parseJobId Parse job ID
+	 * @param {Object} body 
+	 */
+	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseParseJob';
+		}
+		// verify the required parameter 'parseJobId' is set
+		if (parseJobId === undefined || parseJobId === null) {
+			throw 'Missing the required parameter "parseJobId" when calling patchKnowledgeKnowledgebaseParseJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseParseJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a Knowledge base unanswered phrase group
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -1991,6 +2588,40 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Indicate that the document was copied by the user.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentCopies';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentCopies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies', 
+			'POST', 
+			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Give feedback on a document
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -2014,6 +2645,69 @@ class KnowledgeApi {
 			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback', 
 			'POST', 
 			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create view event for a document.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentViews';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentViews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views', 
+			'POST', 
+			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Indicate that documents were presented to the user.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsPresentations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations', 
+			'POST', 
+			{ 'sessionId': sessionId },
 			{  },
 			{  },
 			{  },
@@ -2132,6 +2826,103 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create context value for the specified context.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseContextValues(knowledgeBaseId, contextId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseContextValues';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling postKnowledgeKnowledgebaseContextValues';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create context for the specified knowledge base.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseContexts(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseContexts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Indicate that the document was copied by the user.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} documentId Document ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentCopies';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentCopies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2369,6 +3160,65 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Indicate that documents were presented to the user.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsPresentations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for knowledge documents.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge Base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Fields, if any, to expand for each document in the search result matching the query.
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search the documents in a knowledge base.
 	 * 
 	 * @param {String} knowledgeBaseId The ID of knowledge base containing the documents to query.
@@ -2482,6 +3332,66 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * save Feedback
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @deprecated
+	 */
+	postKnowledgeKnowledgebaseFeedback(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseFeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update approval for feedback(s)
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 * @deprecated
+	 */
+	postKnowledgeKnowledgebaseFeedbackApprovalsBulk(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseFeedbackApprovalsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/approvals/bulk', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2766,6 +3676,71 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Import the parsed articles
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} parseJobId Parse job ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobImport';
+		}
+		// verify the required parameter 'parseJobId' is set
+		if (parseJobId === undefined || parseJobId === null) {
+			throw 'Missing the required parameter "parseJobId" when calling postKnowledgeKnowledgebaseParseJobImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseParseJobImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create parse job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseParseJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search Documents
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -2796,6 +3771,36 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Create content upload from URL job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body uploadRequest
+	 */
+	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create new knowledge base
 	 * 
 	 * @param {Object} body 
@@ -2814,6 +3819,140 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all feedbacks for knowledge
+	 * 
+	 * @param {Date} dateCreatedFrom dateCreatedFrom. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Date} dateCreatedTo dateCreatedTo. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
+	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 100.
+	 * @param {Object} opts.expand when queryparam expand's value is Approval, approvals section is returned in feedback response.
+	 * @param {Number} opts.maximumConfidence Used to return feedback results for search documents with a confidence score lesser than or equal to the specified value.
+	 * @param {Number} opts.minimumConfidence Used to return feedback results for search documents with confidence score greater than or equal to the specified value.
+	 * @param {Number} opts.maximumRating Used to return feedback results with feedback rating less than or equal to the specified value.
+	 * @param {Number} opts.minimumRating Used to return feedback results with feedback rating greater than or equal to the specified value.
+	 * @param {Array.<String>} opts.approvalStatus Approval status of the feedback.
+	 * @param {Object} opts.sortOrder Sort order.
+	 * @param {Object} opts.sortBy Sort by.
+	 * @param {Array.<Object>} opts.body 
+	 * @deprecated
+	 */
+	postKnowledgeKnowledgebasesFeedback(dateCreatedFrom, dateCreatedTo, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dateCreatedFrom' is set
+		if (dateCreatedFrom === undefined || dateCreatedFrom === null) {
+			throw 'Missing the required parameter "dateCreatedFrom" when calling postKnowledgeKnowledgebasesFeedback';
+		}
+		// verify the required parameter 'dateCreatedTo' is set
+		if (dateCreatedTo === undefined || dateCreatedTo === null) {
+			throw 'Missing the required parameter "dateCreatedTo" when calling postKnowledgeKnowledgebasesFeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/feedback', 
+			'POST', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'expand': opts['expand'],'maximumConfidence': opts['maximumConfidence'],'minimumConfidence': opts['minimumConfidence'],'maximumRating': opts['maximumRating'],'minimumRating': opts['minimumRating'],'approvalStatus': this.apiClient.buildCollectionParam(opts['approvalStatus'], 'multi'),'sortOrder': opts['sortOrder'],'dateCreatedFrom': dateCreatedFrom,'dateCreatedTo': dateCreatedTo,'sortBy': opts['sortBy'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update approval/reject for at most 25 feedback(s) for knowledgebase
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 * @deprecated
+	 */
+	postKnowledgeKnowledgebasesFeedbackApprovalsBulk(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/feedback/approvals/bulk', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get trainings for the specified Knowledge Bases
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
+	 * @param {Number} opts.trainingLimit Return the specified number of trainings for each knowledge base. The maximum number of trainings that you can request for each knowledge base is 5.
+	 * @param {Array.<Object>} opts.body 
+	 * @deprecated
+	 */
+	postKnowledgeKnowledgebasesTrainings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/trainings', 
+			'POST', 
+			{  },
+			{ 'knowledgeDocumentsState': opts['knowledgeDocumentsState'],'trainingLimit': opts['trainingLimit'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Feedback details
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} feedbackId Feedback ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @deprecated
+	 */
+	putKnowledgeKnowledgebaseFeedbackFeedbackId(knowledgeBaseId, feedbackId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseFeedbackFeedbackId';
+		}
+		// verify the required parameter 'feedbackId' is set
+		if (feedbackId === undefined || feedbackId === null) {
+			throw 'Missing the required parameter "feedbackId" when calling putKnowledgeKnowledgebaseFeedbackFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/feedback/{feedbackId}', 
+			'PUT', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'feedbackId': feedbackId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

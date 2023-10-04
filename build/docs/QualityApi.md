@@ -3,10 +3,12 @@ title: QualityApi
 ---
 # platformClient.QualityApi
 
-All URIs are relative to *https://api.mypurecloud.com*
+All URIs are relative to *https://api.inindca.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteEvaluationsFavoritetemplate**](QualityApi.html#deleteEvaluationsFavoritetemplate) | **DELETE** /api/v2/evaluations/favoritetemplates/{templateId} | Unset favorite evaluation form template
+[**deleteEvaluationsTemplate**](QualityApi.html#deleteEvaluationsTemplate) | **DELETE** /api/v2/evaluations/templates/{templateId} | Delete an evaluation form template
 [**deleteQualityCalibration**](QualityApi.html#deleteQualityCalibration) | **DELETE** /api/v2/quality/calibrations/{calibrationId} | Delete a calibration by id.
 [**deleteQualityConversationEvaluation**](QualityApi.html#deleteQualityConversationEvaluation) | **DELETE** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Delete an evaluation
 [**deleteQualityForm**](QualityApi.html#deleteQualityForm) | **DELETE** /api/v2/quality/forms/{formId} | Delete an evaluation form.
@@ -16,6 +18,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsEvaluationsAggregatesJobResults**](QualityApi.html#getAnalyticsEvaluationsAggregatesJobResults) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsSurveysAggregatesJob**](QualityApi.html#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
 [**getAnalyticsSurveysAggregatesJobResults**](QualityApi.html#getAnalyticsSurveysAggregatesJobResults) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getEvaluationsFavoritetemplates**](QualityApi.html#getEvaluationsFavoritetemplates) | **GET** /api/v2/evaluations/favoritetemplates | Get favorite evaluation form templates
+[**getEvaluationsTemplate**](QualityApi.html#getEvaluationsTemplate) | **GET** /api/v2/evaluations/templates/{templateId} | Get an evaluation form template
+[**getEvaluationsTemplates**](QualityApi.html#getEvaluationsTemplates) | **GET** /api/v2/evaluations/templates | Get the list of evaluation form templates
 [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | **GET** /api/v2/quality/agents/activity | Gets a list of Agent Activities
 [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | **GET** /api/v2/quality/calibrations/{calibrationId} | Get a calibration by id.  Requires either calibrator id or conversation id
 [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | **GET** /api/v2/quality/calibrations | Get the list of calibrations
@@ -50,6 +55,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsEvaluationsAggregatesQuery**](QualityApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
 [**postAnalyticsSurveysAggregatesJobs**](QualityApi.html#postAnalyticsSurveysAggregatesJobs) | **POST** /api/v2/analytics/surveys/aggregates/jobs | Query for survey aggregates asynchronously
 [**postAnalyticsSurveysAggregatesQuery**](QualityApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
+[**postEvaluationsFavoritetemplates**](QualityApi.html#postEvaluationsFavoritetemplates) | **POST** /api/v2/evaluations/favoritetemplates | Set a favorite evaluation form template
+[**postEvaluationsTemplates**](QualityApi.html#postEvaluationsTemplates) | **POST** /api/v2/evaluations/templates | Create an evaluation form template
 [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | **POST** /api/v2/quality/calibrations | Create a calibration
 [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | **POST** /api/v2/quality/conversations/{conversationId}/evaluations | Create an evaluation
 [**postQualityConversationsAuditsQuery**](QualityApi.html#postQualityConversationsAuditsQuery) | **POST** /api/v2/quality/conversations/audits/query | Create audit query execution
@@ -62,6 +69,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postQualityPublishedformsEvaluations**](QualityApi.html#postQualityPublishedformsEvaluations) | **POST** /api/v2/quality/publishedforms/evaluations | Publish an evaluation form.
 [**postQualityPublishedformsSurveys**](QualityApi.html#postQualityPublishedformsSurveys) | **POST** /api/v2/quality/publishedforms/surveys | Publish a survey form.
 [**postQualitySurveysScoring**](QualityApi.html#postQualitySurveysScoring) | **POST** /api/v2/quality/surveys/scoring | Score survey
+[**putEvaluationsTemplate**](QualityApi.html#putEvaluationsTemplate) | **PUT** /api/v2/evaluations/templates/{templateId} | Update an evaluation form template
 [**putQualityCalibration**](QualityApi.html#putQualityCalibration) | **PUT** /api/v2/quality/calibrations/{calibrationId} | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | **PUT** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Update an evaluation
 [**putQualityForm**](QualityApi.html#putQualityForm) | **PUT** /api/v2/quality/forms/{formId} | Update an evaluation form.
@@ -69,6 +77,108 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | **PUT** /api/v2/quality/forms/surveys/{formId} | Update a survey form.
 [**putQualitySurveysScorable**](QualityApi.html#putQualitySurveysScorable) | **PUT** /api/v2/quality/surveys/scorable | Update a survey as an end-customer, for the purposes of scoring it.
 {: class="table table-striped"}
+
+<a name="deleteEvaluationsFavoritetemplate"></a>
+
+# void deleteEvaluationsFavoritetemplate(templateId)
+
+
+DELETE /api/v2/evaluations/favoritetemplates/{templateId}
+
+Unset favorite evaluation form template
+
+Requires ANY permissions:
+
+* quality:evaluationForm:add
+* quality:evaluationForm:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let templateId = "templateId_example"; // String | templateId
+
+apiInstance.deleteEvaluationsFavoritetemplate(templateId)
+  .then(() => {
+    console.log('deleteEvaluationsFavoritetemplate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteEvaluationsFavoritetemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **templateId** | **String** | templateId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteEvaluationsTemplate"></a>
+
+# void deleteEvaluationsTemplate(templateId)
+
+
+DELETE /api/v2/evaluations/templates/{templateId}
+
+Delete an evaluation form template
+
+Requires ANY permissions:
+
+* quality:evaluationForm:add
+* quality:evaluationForm:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let templateId = "templateId_example"; // String | Template ID
+
+apiInstance.deleteEvaluationsTemplate(templateId)
+  .then(() => {
+    console.log('deleteEvaluationsTemplate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteEvaluationsTemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **templateId** | **String** | Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteQualityCalibration"></a>
 
@@ -545,6 +655,162 @@ apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
 
 **SurveyAsyncAggregateQueryResponse**
 
+<a name="getEvaluationsFavoritetemplates"></a>
+
+# [ComposerTemplate] getEvaluationsFavoritetemplates()
+
+
+GET /api/v2/evaluations/favoritetemplates
+
+Get favorite evaluation form templates
+
+Requires ANY permissions:
+
+* quality:evaluationForm:add
+* quality:evaluationForm:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+apiInstance.getEvaluationsFavoritetemplates()
+  .then((data) => {
+    console.log(`getEvaluationsFavoritetemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getEvaluationsFavoritetemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**[ComposerTemplate]**
+
+<a name="getEvaluationsTemplate"></a>
+
+# ComposerTemplate getEvaluationsTemplate(templateId)
+
+
+GET /api/v2/evaluations/templates/{templateId}
+
+Get an evaluation form template
+
+Requires ANY permissions:
+
+* quality:evaluationForm:add
+* quality:evaluationForm:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let templateId = "templateId_example"; // String | Template ID
+
+apiInstance.getEvaluationsTemplate(templateId)
+  .then((data) => {
+    console.log(`getEvaluationsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getEvaluationsTemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **templateId** | **String** | Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ComposerTemplate**
+
+<a name="getEvaluationsTemplates"></a>
+
+# TemplateEntityListing getEvaluationsTemplates(opts)
+
+
+GET /api/v2/evaluations/templates
+
+Get the list of evaluation form templates
+
+Requires ANY permissions:
+
+* quality:evaluationForm:add
+* quality:evaluationForm:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'expand': "expand_example", // String | Expand
+  'tags': "tags_example" // String | Tags
+};
+
+apiInstance.getEvaluationsTemplates(opts)
+  .then((data) => {
+    console.log(`getEvaluationsTemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getEvaluationsTemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **String** | Expand | [optional] <br />**Values**: data |
+ **tags** | **String** | Tags | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**TemplateEntityListing**
+
 <a name="getQualityAgentsActivity"></a>
 
 # AgentActivityEntityListing getQualityAgentsActivity(opts)
@@ -586,6 +852,7 @@ let opts = {
   'evaluatorUserId': "evaluatorUserId_example", // String | user id of the evaluator
   'name': "name_example", // String | name
   'group': "group_example", // String | group id
+  'agentTeamId': "agentTeamId_example", // String | team id of agents requested
   'formContextId': "formContextId_example" // String | shared id between form versions
 };
 
@@ -616,6 +883,7 @@ apiInstance.getQualityAgentsActivity(opts)
  **evaluatorUserId** | **String** | user id of the evaluator | [optional]  |
  **name** | **String** | name | [optional]  |
  **group** | **String** | group id | [optional]  |
+ **agentTeamId** | **String** | team id of agents requested | [optional]  |
  **formContextId** | **String** | shared id between form versions | [optional]  |
 {: class="table table-striped"}
 
@@ -1002,6 +1270,7 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversationId specified
   'agentUserId': "agentUserId_example", // String | user id of the agent
+  'agentTeamId': "agentTeamId_example", // String | team id of the agent
   'evaluatorUserId': "evaluatorUserId_example", // String | evaluator user id
   'assigneeUserId': "assigneeUserId_example", // String | assignee user id
   'queueId': "queueId_example", // String | queue id
@@ -1039,6 +1308,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **previousPage** | **String** | Previous page token | [optional]  |
  **conversationId** | **String** | conversationId specified | [optional]  |
  **agentUserId** | **String** | user id of the agent | [optional]  |
+ **agentTeamId** | **String** | team id of the agent | [optional]  |
  **evaluatorUserId** | **String** | evaluator user id | [optional]  |
  **assigneeUserId** | **String** | assignee user id | [optional]  |
  **queueId** | **String** | queue id | [optional]  |
@@ -1094,7 +1364,8 @@ let opts = {
   'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
   'name': "name_example", // String | Evaluator name
   'permission': ["permission_example"], // [String] | permission strings
-  'group': "group_example" // String | group id
+  'group': "group_example", // String | group id
+  'agentTeamId': "agentTeamId_example" // String | team id of agents to be considered
 };
 
 apiInstance.getQualityEvaluatorsActivity(opts)
@@ -1123,6 +1394,7 @@ apiInstance.getQualityEvaluatorsActivity(opts)
  **name** | **String** | Evaluator name | [optional]  |
  **permission** | **[String]** | permission strings | [optional]  |
  **group** | **String** | group id | [optional]  |
+ **agentTeamId** | **String** | team id of agents to be considered | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2481,6 +2753,112 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 
 **SurveyAggregateQueryResponse**
 
+<a name="postEvaluationsFavoritetemplates"></a>
+
+# ComposerTemplate postEvaluationsFavoritetemplates(opts)
+
+
+POST /api/v2/evaluations/favoritetemplates
+
+Set a favorite evaluation form template
+
+Requires ANY permissions:
+
+* quality:evaluationForm:add
+* quality:evaluationForm:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postEvaluationsFavoritetemplates(opts)
+  .then((data) => {
+    console.log(`postEvaluationsFavoritetemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postEvaluationsFavoritetemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ComposerTemplate**
+
+<a name="postEvaluationsTemplates"></a>
+
+# ComposerTemplate postEvaluationsTemplates(opts)
+
+
+POST /api/v2/evaluations/templates
+
+Create an evaluation form template
+
+Requires ANY permissions:
+
+* quality:evaluationForm:add
+* quality:evaluationForm:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postEvaluationsTemplates(opts)
+  .then((data) => {
+    console.log(`postEvaluationsTemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postEvaluationsTemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ComposerTemplate**
+
 <a name="postQualityCalibrations"></a>
 
 # Calibration postQualityCalibrations(body, opts)
@@ -3086,6 +3464,61 @@ apiInstance.postQualitySurveysScoring(body)
 ### Return type
 
 **SurveyScoringSet**
+
+<a name="putEvaluationsTemplate"></a>
+
+# ComposerTemplate putEvaluationsTemplate(templateId, opts)
+
+
+PUT /api/v2/evaluations/templates/{templateId}
+
+Update an evaluation form template
+
+Requires ANY permissions:
+
+* quality:evaluationForm:add
+* quality:evaluationForm:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let templateId = "templateId_example"; // String | Template ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.putEvaluationsTemplate(templateId, opts)
+  .then((data) => {
+    console.log(`putEvaluationsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putEvaluationsTemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **templateId** | **String** | Template ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ComposerTemplate**
 
 <a name="putQualityCalibration"></a>
 
