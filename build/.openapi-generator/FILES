@@ -1338,6 +1338,8 @@ docs/getTelephonyProvidersEdgesTrunkbasesettingsTemplate-example.txt
 docs/getTelephonyProvidersEdgesTrunks-example.txt
 docs/getTelephonyProvidersEdgesTrunksMetrics-example.txt
 docs/getTelephonyProvidersEdgesTrunkswithrecording-example.txt
+docs/getTelephonySipmessagesConversation-example.txt
+docs/getTelephonySipmessagesConversationHeaders-example.txt
 docs/getTelephonySiptraces-example.txt
 docs/getTelephonySiptracesDownloadDownloadId-example.txt
 docs/getTextbotsBotsSearch-example.txt

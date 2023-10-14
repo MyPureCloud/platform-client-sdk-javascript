@@ -8,6 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getTelephonyMediaregions**](TelephonyApi.html#getTelephonyMediaregions) | **GET** /api/v2/telephony/mediaregions | Retrieve the list of AWS regions media can stream through.
+[**getTelephonySipmessagesConversation**](TelephonyApi.html#getTelephonySipmessagesConversation) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId} | Get a SIP message.
+[**getTelephonySipmessagesConversationHeaders**](TelephonyApi.html#getTelephonySipmessagesConversationHeaders) | **GET** /api/v2/telephony/sipmessages/conversations/{conversationId}/headers | Get SIP headers.
 [**getTelephonySiptraces**](TelephonyApi.html#getTelephonySiptraces) | **GET** /api/v2/telephony/siptraces | Fetch SIP metadata
 [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi.html#getTelephonySiptracesDownloadDownloadId) | **GET** /api/v2/telephony/siptraces/download/{downloadId} | Get signed S3 URL for a pcap download
 [**postTelephonySiptracesDownload**](TelephonyApi.html#postTelephonySiptracesDownload) | **POST** /api/v2/telephony/siptraces/download | Request a download of a pcap file to S3
@@ -57,6 +59,118 @@ This endpoint does not need any parameter.
 ### Return type
 
 **MediaRegions**
+
+<a name="getTelephonySipmessagesConversation"></a>
+
+# Callmessage getTelephonySipmessagesConversation(conversationId)
+
+
+GET /api/v2/telephony/sipmessages/conversations/{conversationId}
+
+Get a SIP message.
+
+Get the raw form of the SIP message
+
+getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* telephony:pcap:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let conversationId = "conversationId_example"; // String | Conversation id
+
+apiInstance.getTelephonySipmessagesConversation(conversationId)
+  .then((data) => {
+    console.log(`getTelephonySipmessagesConversation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonySipmessagesConversation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Callmessage**
+
+<a name="getTelephonySipmessagesConversationHeaders"></a>
+
+# Callheader getTelephonySipmessagesConversationHeaders(conversationId, opts)
+
+
+GET /api/v2/telephony/sipmessages/conversations/{conversationId}/headers
+
+Get SIP headers.
+
+Get parsed SIP headers. Returns specific headers if key query parameters are added.
+
+getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* telephony:pcap:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+let conversationId = "conversationId_example"; // String | Conversation id
+let opts = { 
+  'keys': ["keys_example"] // [String] | comma-separated list of header identifiers to query. e.g. ruri,to,from
+};
+
+apiInstance.getTelephonySipmessagesConversationHeaders(conversationId, opts)
+  .then((data) => {
+    console.log(`getTelephonySipmessagesConversationHeaders success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonySipmessagesConversationHeaders');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation id |  |
+ **keys** | **[String]** | comma-separated list of header identifiers to query. e.g. ruri,to,from | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Callheader**
 
 <a name="getTelephonySiptraces"></a>
 

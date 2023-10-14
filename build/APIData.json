@@ -6478,11 +6478,11 @@
       {
         "name": "body",
         "type": "Object",
-        "required": "false"
+        "required": "true"
       }
     ],
     "return": "CreateRoomResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet opts = { \n  \"body\": {} // Object | Room properties\n};\n\n// Create an adhoc room\napiInstance.postChatsRooms(opts)\n  .then((data) => {\n    console.log(`postChatsRooms success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postChatsRooms\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ChatApi();\n\nlet body = {}; // Object | Room properties\n\n// Create an adhoc room\napiInstance.postChatsRooms(body)\n  .then((data) => {\n    console.log(`postChatsRooms success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postChatsRooms\");\n    console.error(err);\n  });"
   },
   "postchatsusermessages": {
     "operationId": "postchatsusermessages",
@@ -36061,6 +36061,39 @@
     "signature": "getTelephonyMediaregions()",
     "return": "MediaRegions",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyApi();\n\n// Retrieve the list of AWS regions media can stream through.\napiInstance.getTelephonyMediaregions()\n  .then((data) => {\n    console.log(`getTelephonyMediaregions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyMediaregions\");\n    console.error(err);\n  });"
+  },
+  "gettelephonysipmessagesconversation": {
+    "operationId": "gettelephonysipmessagesconversation",
+    "functionName": "getTelephonySipmessagesConversation",
+    "signature": "getTelephonySipmessagesConversation(conversationId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Callmessage",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation id\n\n// Get a SIP message.\napiInstance.getTelephonySipmessagesConversation(conversationId)\n  .then((data) => {\n    console.log(`getTelephonySipmessagesConversation success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonySipmessagesConversation\");\n    console.error(err);\n  });"
+  },
+  "gettelephonysipmessagesconversationheaders": {
+    "operationId": "gettelephonysipmessagesconversationheaders",
+    "functionName": "getTelephonySipmessagesConversationHeaders",
+    "signature": "getTelephonySipmessagesConversationHeaders(conversationId, keys)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "keys",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "Callheader",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation id\nlet opts = { \n  \"keys\": [\"keys_example\"] // [String] | comma-separated list of header identifiers to query. e.g. ruri,to,from\n};\n\n// Get SIP headers.\napiInstance.getTelephonySipmessagesConversationHeaders(conversationId, opts)\n  .then((data) => {\n    console.log(`getTelephonySipmessagesConversationHeaders success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonySipmessagesConversationHeaders\");\n    console.error(err);\n  });"
   },
   "gettelephonysiptraces": {
     "operationId": "gettelephonysiptraces",

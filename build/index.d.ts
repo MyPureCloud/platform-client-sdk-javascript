@@ -1024,7 +1024,7 @@ declare class ChatApi {
   	postChatsRoomMessages(roomJid: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
   	postChatsRoomParticipant(roomJid: string, userId: string): Promise<void>; 
   	postChatsRoomPinnedmessages(roomJid: string, body: Models.PinnedMessageRequest): Promise<void>; 
-  	postChatsRooms(opts?: ChatApi.postChatsRoomsOptions): Promise<Models.CreateRoomResponse>; 
+  	postChatsRooms(body: Models.CreateRoomRequest): Promise<Models.CreateRoomResponse>; 
   	postChatsUserMessages(userId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
   	putChatSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>; 
   	putChatsSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>;
@@ -1063,9 +1063,6 @@ declare namespace ChatApi {
 		"limit"?: string;
 		"before"?: string;
 		"after"?: string;
-	}
-	export interface postChatsRoomsOptions { 
-		"body"?: Models.CreateRoomRequest;
 	}
 }
 
@@ -5399,12 +5396,17 @@ declare namespace TeamsApi {
 
 declare class TelephonyApi {  
   	getTelephonyMediaregions(): Promise<Models.MediaRegions>; 
+  	getTelephonySipmessagesConversation(conversationId: string): Promise<Models.Callmessage>; 
+  	getTelephonySipmessagesConversationHeaders(conversationId: string, opts?: TelephonyApi.getTelephonySipmessagesConversationHeadersOptions): Promise<Models.Callheader>; 
   	getTelephonySiptraces(dateStart: string, dateEnd: string, opts?: TelephonyApi.getTelephonySiptracesOptions): Promise<Models.SipSearchResult>; 
   	getTelephonySiptracesDownloadDownloadId(downloadId: string): Promise<Models.SignedUrlResponse>; 
   	postTelephonySiptracesDownload(sIPSearchPublicRequest: Models.SIPSearchPublicRequest): Promise<Models.SipDownloadResponse>;
 }
 
 declare namespace TelephonyApi { 
+	export interface getTelephonySipmessagesConversationHeadersOptions { 
+		"keys"?: Array<string>;
+	}
 	export interface getTelephonySiptracesOptions { 
 		"callId"?: string;
 		"toUser"?: string;
@@ -6985,8 +6987,10 @@ declare namespace Models {
 	
 	export interface ActionMapEstimateOutcomeCriteria { 
 		"outcomeId": string;
-		"maxProbability": number;
+		"maxProbability"?: number;
 		"probability"?: number;
+		"quantile"?: number;
+		"maxQuantile"?: number;
 	}
 	
 	export interface ActionMapEstimateRequest { 
@@ -8860,7 +8864,7 @@ declare namespace Models {
 	
 	export interface AuditRealtimeQueryRequest { 
 		"interval": string;
-		"serviceName": string;
+		"serviceName"?: string;
 		"filters"?: Array<Models.AuditQueryFilter>;
 		"sort"?: Array<Models.AuditQuerySort>;
 		"pageNumber"?: number;
@@ -10750,6 +10754,20 @@ declare namespace Models {
 		"autoAnswerAlertToneSeconds"?: number;
 		"manualAnswerAlertToneSeconds"?: number;
 		"subTypeSettings"?: { [key: string]: Models.BaseMediaSettings; };
+	}
+	
+	export interface Callheader { 
+		"id"?: string;
+		"name"?: string;
+		"headers"?: { [key: string]: Array<string>; };
+		"selfUri"?: string;
+	}
+	
+	export interface Callmessage { 
+		"id"?: string;
+		"name"?: string;
+		"message"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface Campaign { 
@@ -14263,6 +14281,7 @@ declare namespace Models {
 		"sentimentScore"?: number;
 		"sentimentTrend"?: number;
 		"sentimentTrendClass"?: string;
+		"empathyScores"?: Array<Models.EmpathyScore>;
 		"participantMetrics"?: Models.ParticipantMetrics;
 	}
 	
@@ -15204,6 +15223,7 @@ declare namespace Models {
 	export interface CreateRoomRequest { 
 		"description"?: string;
 		"subject": string;
+		"userIds"?: Array<string>;
 	}
 	
 	export interface CreateRoomResponse { 
@@ -16904,7 +16924,7 @@ declare namespace Models {
 	}
 	
 	export interface DirectRouting { 
-		"callMediaSettings"?: Models.DirectRoutingCallMediaSettings;
+		"callMediaSettings"?: Models.DirectRoutingMediaSettings;
 		"emailMediaSettings"?: Models.DirectRoutingMediaSettings;
 		"messageMediaSettings"?: Models.DirectRoutingMediaSettings;
 		"backupQueueId"?: string;
@@ -16912,15 +16932,8 @@ declare namespace Models {
 		"agentWaitSeconds"?: number;
 	}
 	
-	export interface DirectRoutingCallMediaSettings { 
-		"enabled"?: boolean;
-		"inboundFlow"?: Models.AddressableEntityRef;
-		"voicemailFlow"?: Models.AddressableEntityRef;
-	}
-	
 	export interface DirectRoutingMediaSettings { 
-		"enabled"?: boolean;
-		"inboundFlow"?: Models.AddressableEntityRef;
+		"useAgentAddressOutbound"?: boolean;
 	}
 	
 	export interface DirectoryUserDevicesListing { 
@@ -25704,7 +25717,7 @@ declare namespace Models {
 	}
 	
 	export interface MediaEndpointStatistics { 
-		"trunk"?: Models.NamedEntity;
+		"trunk"?: Models.MediaStatisticsTrunkInfo;
 		"station"?: Models.NamedEntity;
 		"user"?: Models.NamedEntity;
 		"ice"?: Models.MediaIceStatistics;
@@ -25782,6 +25795,12 @@ declare namespace Models {
 	
 	export interface MediaStatisticsListing { 
 		"entities"?: Array<Models.MediaStatistics>;
+	}
+	
+	export interface MediaStatisticsTrunkInfo { 
+		"id"?: string;
+		"name"?: string;
+		"type"?: string;
 	}
 	
 	export interface MediaSummary { 
@@ -34664,6 +34683,7 @@ declare namespace Models {
 		"memberCount"?: number;
 		"dateModified"?: string;
 		"dateCreated"?: string;
+		"status"?: string;
 		"skillConditions": Array<Models.SkillGroupCondition>;
 		"selfUri"?: string;
 	}
@@ -34730,6 +34750,7 @@ declare namespace Models {
 		"memberCount"?: number;
 		"dateModified"?: string;
 		"dateCreated"?: string;
+		"status"?: string;
 		"skillConditions": Array<Models.SkillGroupCondition>;
 		"memberDivisions"?: Array<string>;
 		"selfUri"?: string;
@@ -34936,12 +34957,14 @@ declare namespace Models {
 		"defaultProgramId"?: string;
 		"expectedDialects"?: Array<string>;
 		"textAnalyticsEnabled"?: boolean;
+		"agentEmpathyEnabled"?: boolean;
 	}
 	
 	export interface SpeechTextAnalyticsSettingsResponse { 
 		"defaultProgram"?: Models.AddressableEntityRef;
 		"expectedDialects"?: Array<string>;
 		"textAnalyticsEnabled"?: boolean;
+		"agentEmpathyEnabled"?: boolean;
 	}
 	
 	export interface StarrableDivision { 

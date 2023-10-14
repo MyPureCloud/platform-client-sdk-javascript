@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 179.3.0
+	 * @version 180.0.0
 	 */
 
 	/**
@@ -31,6 +31,62 @@ class TelephonyApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a SIP message.
+	 * Get the raw form of the SIP message
+	 * @param {String} conversationId Conversation id
+	 * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTelephonySipmessagesConversation(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/sipmessages/conversations/{conversationId}', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get SIP headers.
+	 * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+	 * @param {String} conversationId Conversation id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.keys comma-separated list of header identifiers to query. e.g. ruri,to,from
+	 * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTelephonySipmessagesConversationHeaders(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversationHeaders';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/sipmessages/conversations/{conversationId}/headers', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{ 'keys': this.apiClient.buildCollectionParam(opts['keys'], 'multi') },
 			{  },
 			{  },
 			null, 

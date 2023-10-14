@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 179.3.0
+	 * @version 180.0.0
 	 */
 
 	/**
@@ -663,13 +663,14 @@ class ChatApi {
 	/**
 	 * Create an adhoc room
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Room properties
+	 * @param {Object} body Room properties
 	 * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postChatsRooms(opts) { 
-		opts = opts || {};
-		
+	postChatsRooms(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postChatsRooms';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/chats/rooms', 
@@ -678,7 +679,7 @@ class ChatApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

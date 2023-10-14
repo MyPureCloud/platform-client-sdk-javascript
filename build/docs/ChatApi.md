@@ -1224,7 +1224,7 @@ void (no response body)
 
 <a name="postChatsRooms"></a>
 
-# CreateRoomResponse postChatsRooms(opts)
+# CreateRoomResponse postChatsRooms(body)
 
 
 POST /api/v2/chats/rooms
@@ -1251,11 +1251,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ChatApi();
 
-let opts = { 
-  'body': {} // Object | Room properties
-};
+let body = {}; // Object | Room properties
 
-apiInstance.postChatsRooms(opts)
+apiInstance.postChatsRooms(body)
   .then((data) => {
     console.log(`postChatsRooms success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1270,7 +1268,7 @@ apiInstance.postChatsRooms(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Room properties | [optional]  |
+ **body** | **Object** | Room properties |  |
 {: class="table table-striped"}
 
 ### Return type
