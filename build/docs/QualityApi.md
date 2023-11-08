@@ -1421,6 +1421,8 @@ GET /api/v2/quality/forms/evaluations
 
 Get the list of evaluation forms
 
+By default, "published" field is always returned as false for all evaluation forms. If you set "expand=publishHistory", then you will be able to get published versions for each corresponding evaluation form. In addition, "questionGroups", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+
 Requires ANY permissions:
 
 * quality:evaluationForm:view

@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 180.0.0
+	 * @version 181.0.0
 	 */
 
 	/**
@@ -438,6 +438,48 @@ class JourneyApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'mediaType': opts['mediaType'],'state': opts['state'],'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a ping.
+	 * 
+	 * @param {String} deploymentId The ID of the deployment sending the ping.
+	 * @param {String} customerCookieId ID of the customer associated with the ping.
+	 * @param {String} sessionId UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.dl Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions.
+	 * @param {String} opts.dt Document Title.  A human readable name for the page or screen
+	 * @param {String} opts.appNamespace Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
+	 * @param {Number} opts.sinceLastBeaconMilliseconds How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
+	 */
+	getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, sessionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling getJourneyDeploymentCustomerPing';
+		}
+		// verify the required parameter 'customerCookieId' is set
+		if (customerCookieId === undefined || customerCookieId === null) {
+			throw 'Missing the required parameter "customerCookieId" when calling getJourneyDeploymentCustomerPing';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getJourneyDeploymentCustomerPing';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping', 
+			'GET', 
+			{ 'deploymentId': deploymentId,'customerCookieId': customerCookieId },
+			{ 'dl': opts['dl'],'dt': opts['dt'],'appNamespace': opts['appNamespace'],'sessionId': sessionId,'sinceLastBeaconMilliseconds': opts['sinceLastBeaconMilliseconds'] },
 			{  },
 			{  },
 			null, 
@@ -1037,12 +1079,41 @@ class JourneyApi {
 	}
 
 	/**
+	 * Sends an action event, which is used for changing the state of actions that have been offered to the user.
+	 * 
+	 * @param {String} deploymentId The ID of the deployment sending the beacon.
+	 * @param {Object} body 
+	 */
+	postJourneyDeploymentActionevent(deploymentId, body) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentActionevent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyDeploymentActionevent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/deployments/{deploymentId}/actionevent', 
+			'POST', 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Send a journey app event, used for tracking customer activity on an application.
 	 * 
 	 * @param {String} deploymentId The ID of the deployment sending the app event.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyDeploymentAppevents(deploymentId, opts) { 
 		opts = opts || {};

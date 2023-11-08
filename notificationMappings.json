@@ -105,6 +105,10 @@
       "class": "FlowEndDetailEventTopicFlowEndEvent"
     },
     {
+      "topic": "v2.detail.events.conversation.{id}.flow.outcome",
+      "class": "FlowOutcomeDetailEventTopicFlowOutcomeEvent"
+    },
+    {
       "topic": "v2.detail.events.conversation.{id}.flow.start",
       "class": "FlowStartDetailEventTopicFlowStartEvent"
     },

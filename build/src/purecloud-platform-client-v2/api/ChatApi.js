@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 180.0.0
+	 * @version 181.0.0
 	 */
 
 	/**
@@ -134,27 +134,6 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages/{messageId}', 
 			'DELETE', 
 			{ 'userId': userId,'messageId': messageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get Chat Settings.
-	 * This route is deprecated, please use /chats/settings instead
-	 * @deprecated
-	 */
-	getChatSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/chat/settings', 
-			'GET', 
-			{  },
 			{  },
 			{  },
 			{  },
@@ -407,32 +386,6 @@ class ChatApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Patch Chat Settings.
-	 * This route is deprecated, please use /chats/settings instead
-	 * @param {Object} body Chat
-	 * @deprecated
-	 */
-	patchChatSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchChatSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/chat/settings', 
-			'PATCH', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -707,32 +660,6 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages', 
 			'POST', 
 			{ 'userId': userId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update Chat Settings.
-	 * This route is deprecated, please use /chats/settings instead
-	 * @param {Object} body Chat
-	 * @deprecated
-	 */
-	putChatSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putChatSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/chat/settings', 
-			'PUT', 
-			{  },
 			{  },
 			{  },
 			{  },

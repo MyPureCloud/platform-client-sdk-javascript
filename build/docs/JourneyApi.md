@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | **GET** /api/v2/journey/actiontargets | Retrieve all action targets.
 [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | **GET** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template.
 [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | **GET** /api/v2/journey/actiontemplates | Retrieve all action templates.
+[**getJourneyDeploymentCustomerPing**](JourneyApi.html#getJourneyDeploymentCustomerPing) | **GET** /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping | Send a ping.
 [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | **GET** /api/v2/journey/outcomes/{outcomeId} | Retrieve a single outcome.
 [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | **GET** /api/v2/journey/outcomes | Retrieve all outcomes.
 [**getJourneyOutcomesAttributionsJob**](JourneyApi.html#getJourneyOutcomesAttributionsJob) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId} | Get job status.
@@ -45,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | **POST** /api/v2/journey/actionmaps | Create an action map.
 [**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | **POST** /api/v2/journey/actionmaps/estimates/jobs | Query for estimates
 [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | **POST** /api/v2/journey/actiontemplates | Create a single action template.
+[**postJourneyDeploymentActionevent**](JourneyApi.html#postJourneyDeploymentActionevent) | **POST** /api/v2/journey/deployments/{deploymentId}/actionevent | Sends an action event, which is used for changing the state of actions that have been offered to the user.
 [**postJourneyDeploymentAppevents**](JourneyApi.html#postJourneyDeploymentAppevents) | **POST** /api/v2/journey/deployments/{deploymentId}/appevents | Send a journey app event, used for tracking customer activity on an application.
 [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | **POST** /api/v2/journey/outcomes | Create an outcome.
 [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | **POST** /api/v2/journey/outcomes/attributions/jobs | Create Outcome Attributions
@@ -905,6 +907,65 @@ apiInstance.getJourneyActiontemplates(opts)
 ### Return type
 
 **ActionTemplateListing**
+
+<a name="getJourneyDeploymentCustomerPing"></a>
+
+# DeploymentPing getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, sessionId, opts)
+
+
+GET /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping
+
+Send a ping.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.JourneyApi();
+
+let deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the ping.
+let customerCookieId = "customerCookieId_example"; // String | ID of the customer associated with the ping.
+let sessionId = "sessionId_example"; // String | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
+let opts = { 
+  'dl': "dl_example", // String | Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions.
+  'dt': "dt_example", // String | Document Title.  A human readable name for the page or screen
+  'appNamespace': "appNamespace_example", // String | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
+  'sinceLastBeaconMilliseconds': 3.4 // Number | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
+};
+
+apiInstance.getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, sessionId, opts)
+  .then((data) => {
+    console.log(`getJourneyDeploymentCustomerPing success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyDeploymentCustomerPing');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deploymentId** | **String** | The ID of the deployment sending the ping. |  |
+ **customerCookieId** | **String** | ID of the customer associated with the ping. |  |
+ **sessionId** | **String** | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session |  |
+ **dl** | **String** | Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. | [optional]  |
+ **dt** | **String** | Document Title.  A human readable name for the page or screen | [optional]  |
+ **appNamespace** | **String** | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions | [optional]  |
+ **sinceLastBeaconMilliseconds** | **Number** | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**DeploymentPing**
 
 <a name="getJourneyOutcome"></a>
 
@@ -2078,6 +2139,53 @@ apiInstance.postJourneyActiontemplates(opts)
 
 **ActionTemplate**
 
+<a name="postJourneyDeploymentActionevent"></a>
+
+# void postJourneyDeploymentActionevent(deploymentId, body)
+
+
+POST /api/v2/journey/deployments/{deploymentId}/actionevent
+
+Sends an action event, which is used for changing the state of actions that have been offered to the user.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.JourneyApi();
+
+let deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the beacon.
+let body = {}; // Object | 
+
+apiInstance.postJourneyDeploymentActionevent(deploymentId, body)
+  .then(() => {
+    console.log('postJourneyDeploymentActionevent returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyDeploymentActionevent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deploymentId** | **String** | The ID of the deployment sending the beacon. |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postJourneyDeploymentAppevents"></a>
 
 # AppEventResponse postJourneyDeploymentAppevents(deploymentId, opts)
@@ -2086,8 +2194,6 @@ apiInstance.postJourneyActiontemplates(opts)
 POST /api/v2/journey/deployments/{deploymentId}/appevents
 
 Send a journey app event, used for tracking customer activity on an application.
-
-postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires NO permissions:
 

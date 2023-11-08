@@ -76,6 +76,8 @@ docs/OAuthApi.json
 docs/OAuthApi.md
 docs/ObjectsApi.json
 docs/ObjectsApi.md
+docs/OperationalEventsApi.json
+docs/OperationalEventsApi.md
 docs/OrganizationApi.json
 docs/OrganizationApi.md
 docs/OrganizationAuthorizationApi.json
@@ -369,6 +371,7 @@ docs/deleteUserRoutingskill-example.txt
 docs/deleteUserRoutingskill-example.txt
 docs/deleteUserStationAssociatedstation-example.txt
 docs/deleteUserStationDefaultstation-example.txt
+docs/deleteUserVerifier-example.txt
 docs/deleteUserrecording-example.txt
 docs/deleteVoicemailMessage-example.txt
 docs/deleteVoicemailMessages-example.txt
@@ -536,7 +539,6 @@ docs/getAuthorizationSubjectsRolecounts-example.txt
 docs/getBillingReportsBillableusage-example.txt
 docs/getBillingTrusteebillingoverviewTrustorOrgId-example.txt
 docs/getCarrierservicesIntegrationsEmergencylocationsMe-example.txt
-docs/getChatSettings-example.txt
 docs/getChatsMessage-example.txt
 docs/getChatsRoom-example.txt
 docs/getChatsRoomMessage-example.txt
@@ -866,6 +868,7 @@ docs/getJourneyActiontarget-example.txt
 docs/getJourneyActiontargets-example.txt
 docs/getJourneyActiontemplate-example.txt
 docs/getJourneyActiontemplates-example.txt
+docs/getJourneyDeploymentCustomerPing-example.txt
 docs/getJourneyOutcome-example.txt
 docs/getJourneyOutcomes-example.txt
 docs/getJourneyOutcomesAttributionsJob-example.txt
@@ -1327,6 +1330,7 @@ docs/getTelephonyProvidersEdgesSiteNumberplans-example.txt
 docs/getTelephonyProvidersEdgesSiteNumberplansClassifications-example.txt
 docs/getTelephonyProvidersEdgesSiteOutboundroute-example.txt
 docs/getTelephonyProvidersEdgesSiteOutboundroutes-example.txt
+docs/getTelephonyProvidersEdgesSiteSiteconnections-example.txt
 docs/getTelephonyProvidersEdgesSites-example.txt
 docs/getTelephonyProvidersEdgesTimezones-example.txt
 docs/getTelephonyProvidersEdgesTrunk-example.txt
@@ -1346,6 +1350,8 @@ docs/getTextbotsBotsSearch-example.txt
 docs/getTimezones-example.txt
 docs/getTokensMe-example.txt
 docs/getTokensTimeout-example.txt
+docs/getUsageEventsDefinition-example.txt
+docs/getUsageEventsDefinitions-example.txt
 docs/getUsageQueryExecutionIdResults-example.txt
 docs/getUsageSimplesearchExecutionIdResults-example.txt
 docs/getUser-example.txt
@@ -1377,6 +1383,7 @@ docs/getUserState-example.txt
 docs/getUserStation-example.txt
 docs/getUserSuperiors-example.txt
 docs/getUserTrustors-example.txt
+docs/getUserVerifiers-example.txt
 docs/getUserrecording-example.txt
 docs/getUserrecordingMedia-example.txt
 docs/getUserrecordings-example.txt
@@ -1507,7 +1514,6 @@ docs/patchArchitectGrammar-example.txt
 docs/patchArchitectGrammarLanguage-example.txt
 docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
-docs/patchChatSettings-example.txt
 docs/patchChatsRoom-example.txt
 docs/patchChatsRoomMessage-example.txt
 docs/patchChatsSettings-example.txt
@@ -1551,6 +1557,7 @@ docs/patchConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsInstagramIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
+docs/patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSetting-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
@@ -1621,6 +1628,7 @@ docs/patchTaskmanagementWorkitemUsersMeWrapups-example.txt
 docs/patchTaskmanagementWorktype-example.txt
 docs/patchTaskmanagementWorktypeStatus-example.txt
 docs/patchTeam-example.txt
+docs/patchTelephonyProvidersEdgesSiteSiteconnections-example.txt
 docs/patchUser-example.txt
 docs/patchUserCallforwarding-example.txt
 docs/patchUserGeolocation-example.txt
@@ -1849,6 +1857,7 @@ docs/postConversationsMessagingIntegrationsLine-example.txt
 docs/postConversationsMessagingIntegrationsOpen-example.txt
 docs/postConversationsMessagingIntegrationsTwitter-example.txt
 docs/postConversationsMessagingIntegrationsWhatsapp-example.txt
+docs/postConversationsMessagingIntegrationsWhatsappEmbeddedsignup-example.txt
 docs/postConversationsMessagingSettings-example.txt
 docs/postConversationsMessagingSupportedcontent-example.txt
 docs/postConversationsParticipantsAttributesSearch-example.txt
@@ -1944,6 +1953,7 @@ docs/postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate-example.t
 docs/postJourneyActionmaps-example.txt
 docs/postJourneyActionmapsEstimatesJobs-example.txt
 docs/postJourneyActiontemplates-example.txt
+docs/postJourneyDeploymentActionevent-example.txt
 docs/postJourneyDeploymentAppevents-example.txt
 docs/postJourneyOutcomes-example.txt
 docs/postJourneyOutcomesAttributionsJobs-example.txt
@@ -2291,7 +2301,6 @@ docs/putAuthorizationRole-example.txt
 docs/putAuthorizationRoleUsersAdd-example.txt
 docs/putAuthorizationRoleUsersRemove-example.txt
 docs/putAuthorizationRolesDefault-example.txt
-docs/putChatSettings-example.txt
 docs/putChatsSettings-example.txt
 docs/putContentmanagementWorkspace-example.txt
 docs/putContentmanagementWorkspaceMember-example.txt
@@ -2452,6 +2461,7 @@ docs/putTelephonyProvidersEdgesPhonebasesetting-example.txt
 docs/putTelephonyProvidersEdgesSite-example.txt
 docs/putTelephonyProvidersEdgesSiteNumberplans-example.txt
 docs/putTelephonyProvidersEdgesSiteOutboundroute-example.txt
+docs/putTelephonyProvidersEdgesSiteSiteconnections-example.txt
 docs/putTelephonyProvidersEdgesTrunkbasesetting-example.txt
 docs/putTokensTimeout-example.txt
 docs/putUserCallforwarding-example.txt
@@ -2468,6 +2478,7 @@ docs/putUserRoutingstatus-example.txt
 docs/putUserState-example.txt
 docs/putUserStationAssociatedstationStationId-example.txt
 docs/putUserStationDefaultstationStationId-example.txt
+docs/putUserVerifier-example.txt
 docs/putUserrecording-example.txt
 docs/putUsersPresencesBulk-example.txt
 docs/putVoicemailMessage-example.txt
@@ -2524,6 +2535,7 @@ src/purecloud-platform-client-v2/api/MobileDevicesApi.js
 src/purecloud-platform-client-v2/api/NotificationsApi.js
 src/purecloud-platform-client-v2/api/OAuthApi.js
 src/purecloud-platform-client-v2/api/ObjectsApi.js
+src/purecloud-platform-client-v2/api/OperationalEventsApi.js
 src/purecloud-platform-client-v2/api/OrganizationApi.js
 src/purecloud-platform-client-v2/api/OrganizationAuthorizationApi.js
 src/purecloud-platform-client-v2/api/OutboundApi.js

@@ -1446,6 +1446,8 @@ Requires ANY permissions:
 * wfm:workPlanRotation:view
 * coaching:appointment:add
 * coaching:appointment:edit
+* learning:assignment:add
+* learning:assignment:reschedule
 
 ### Example Usage
 
@@ -1542,7 +1544,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activ
 
 <a name="getWorkforcemanagementBusinessunitActivitycodes"></a>
 
-# BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
+# BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
@@ -1625,8 +1627,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let opts = { 
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
 
-apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1642,6 +1647,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4208,7 +4214,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'evaluateMatches': true // Boolean | Whether to evaluate the matches for violations
+  'evaluateMatches': true, // Boolean | Whether to evaluate the matches for violations
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
 apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts)
@@ -4229,6 +4236,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **evaluateMatches** | **Boolean** | Whether to evaluate the matches for violations | [optional] [default to true] |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -8244,6 +8252,7 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
   'body': {} // Object | body
 };
 
@@ -8263,6 +8272,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -8600,7 +8610,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitI
 
 <a name="postWorkforcemanagementManagementunitWeekShifttradesSearch"></a>
 
-# SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)
+# SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search
@@ -8627,8 +8637,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
+let opts = { 
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
 
-apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)
+apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShifttradesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8646,6 +8659,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managemen
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

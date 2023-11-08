@@ -192,7 +192,7 @@ void (no response body)
 
 <a name="getPresenceDefinition0"></a>
 
-# OrganizationPresenceDefinition getPresenceDefinition0(definitionId)
+# OrganizationPresenceDefinition getPresenceDefinition0(definitionId, opts)
 
 
 GET /api/v2/presence/definitions/{definitionId}
@@ -219,8 +219,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let definitionId = "definitionId_example"; // String | Presence Definition ID
+let opts = { 
+  'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
+};
 
-apiInstance.getPresenceDefinition0(definitionId)
+apiInstance.getPresenceDefinition0(definitionId, opts)
   .then((data) => {
     console.log(`getPresenceDefinition0 success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -236,6 +239,7 @@ apiInstance.getPresenceDefinition0(definitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **definitionId** | **String** | Presence Definition ID |  |
+ **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
 {: class="table table-striped"}
 
 ### Return type
@@ -272,7 +276,8 @@ let apiInstance = new platformClient.PresenceApi();
 
 let opts = { 
   'deactivated': "false", // String | Deactivated query can be TRUE or FALSE
-  'divisionId': ["divisionId_example"] // [String] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+  'divisionId': ["divisionId_example"], // [String] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+  'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 };
 
 apiInstance.getPresenceDefinitions0(opts)
@@ -292,6 +297,7 @@ apiInstance.getPresenceDefinitions0(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deactivated** | **String** | Deactivated query can be TRUE or FALSE | [optional] [default to false] |
  **divisionId** | **[String]** | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional]  |
+ **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
 {: class="table table-striped"}
 
 ### Return type

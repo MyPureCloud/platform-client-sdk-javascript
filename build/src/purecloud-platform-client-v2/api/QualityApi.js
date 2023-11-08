@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 180.0.0
+	 * @version 181.0.0
 	 */
 
 	/**
@@ -714,7 +714,7 @@ class QualityApi {
 
 	/**
 	 * Get the list of evaluation forms
-	 * 
+	 * By default, "published" field is always returned as false for all evaluation forms. If you set "expand=publishHistory", then you will be able to get published versions for each corresponding evaluation form. In addition, "questionGroups", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)

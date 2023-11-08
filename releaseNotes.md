@@ -1,120 +1,304 @@
-Platform API version: 7413
+Platform API version: 7466
 
 
 
 
-# Major Changes (6 changes)
+# Major Changes (10 changes)
 
-**POST /api/v2/chats/rooms** (1 change)
+**/api/v2/chat/settings** (1 change)
 
-* Parameter body was made required
+* Path /api/v2/chat/settings was removed
 
-**DirectRoutingCallMediaSettings** (1 change)
+**POST /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
 
-* Model DirectRoutingCallMediaSettings was removed
+* Has been deprecated
 
-**DirectRouting** (1 change)
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes** (1 change)
 
-* Property callMediaSettings was changed from DirectRoutingCallMediaSettings to DirectRoutingMediaSettings
+* Parameter forceDownloadService was added
 
-**DirectRoutingMediaSettings** (2 changes)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query** (1 change)
 
-* Property enabled was removed
-* Property inboundFlow was removed
+* Parameter forceDownloadService was added
 
-**MediaEndpointStatistics** (1 change)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search** (1 change)
 
-* Property trunk was changed from NamedEntity to MediaStatisticsTrunkInfo
+* Parameter forceDownloadService was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades** (1 change)
+
+* Parameter forceDownloadService was added
+
+**GET /api/v2/presence/definitions/{definitionId}** (1 change)
+
+* Parameter localeCode was added
+
+**GET /api/v2/presence/definitions** (1 change)
+
+* Parameter localeCode was added
+
+**AppEventRequestSession** (1 change)
+
+* Model AppEventRequestSession was removed
+
+**AppEventRequest** (1 change)
+
+* Property session was removed
 
 
-# Minor Changes (24 changes)
+# Minor Changes (74 changes)
 
-**/api/v2/telephony/sipmessages/conversations/{conversationId}/headers** (2 changes)
+**/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/users/{userId}/verifiers** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/telephony/sipmessages/conversations/{conversationId}** (2 changes)
+**/api/v2/users/{userId}/verifiers/{verifierId}** (3 changes)
+
+* Path was added
+* Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/journey/deployments/{deploymentId}/actionevent** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping** (2 changes)
 
 * Path was added
 * Operation GET was added
+
+**/api/v2/usage/events/definitions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/usage/events/definitions/{eventDefinitionId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation PATCH was added
+
+**ConversationAggregationQuery** (2 changes)
+
+* Enum value tPark was added to property metrics
+* Enum value tParkComplete was added to property metrics
+
+**ConversationAggregationView** (2 changes)
+
+* Enum value tPark was added to property target
+* Enum value tParkComplete was added to property target
+
+**AnalyticsConversationSegment** (1 change)
+
+* Enum value parked was added to property segmentType
+
+**ConversationDetailQueryPredicate** (2 changes)
+
+* Enum value tPark was added to property metric
+* Enum value tParkComplete was added to property metric
 
 **ReportingExportJobResponse** (1 change)
 
-* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
+* Enum value CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE was added to property exportErrorMessagesType
 
-**ReportingExportMetadataJobResponse** (1 change)
+**DomainOrganizationRole** (1 change)
 
-* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
+* id is no longer readonly
 
-**ReportingExportJobRequest** (1 change)
+**DomainOrganizationRoleUpdate** (1 change)
 
-* Enum value DASHBOARD_USERS_DETAIL was added to property viewType
+* id is no longer readonly
 
-**DirectRoutingMediaSettings** (1 change)
+**DomainOrganizationRoleCreate** (1 change)
 
-* Optional property useAgentAddressOutbound was added
+* id is no longer readonly
 
-**ConversationMessageMetadataEvent** (1 change)
+**Evaluation** (1 change)
 
-* Enum value SignIn was added to property subType
+* Optional property revisionCreatedDate was added
 
-**ConversationEventPresence** (1 change)
+**WhatsAppEmbeddedSignupIntegrationActivationRequest** (1 change)
 
+* Model was added
+
+**WhatsAppEmbeddedSignupIntegrationRequest** (1 change)
+
+* Model was added
+
+**KnowledgeBase** (1 change)
+
+* Enum value ja-JP was added to property coreLanguage
+
+**KnowledgeCategory** (1 change)
+
+* Enum value ja-JP was added to property languageCode
+
+**KnowledgeSearchDocument** (1 change)
+
+* Enum value ja-JP was added to property languageCode
+
+**KnowledgeExtendedCategory** (1 change)
+
+* Enum value ja-JP was added to property languageCode
+
+**KnowledgeImport** (1 change)
+
+* Enum value ja-JP was added to property languageCode
+
+**KnowledgeDocument** (1 change)
+
+* Enum value ja-JP was added to property languageCode
+
+**KnowledgeBaseCreateRequest** (1 change)
+
+* Enum value ja-JP was added to property coreLanguage
+
+**Verifier** (1 change)
+
+* Model was added
+
+**VerifierEntityListing** (1 change)
+
+* Model was added
+
+**UpdateVerifierRequest** (1 change)
+
+* Model was added
+
+**ActionEventRequest** (1 change)
+
+* Model was added
+
+**DeploymentPing** (1 change)
+
+* Model was added
+
+**DeploymentWebAction** (1 change)
+
+* Model was added
+
+**OpenActionProperties** (1 change)
+
+* Model was added
+
+**WebMessagingOfferProperties** (1 change)
+
+* Model was added
+
+**EventDefinition** (1 change)
+
+* Model was added
+
+**EventDefinitionListing** (1 change)
+
+* Model was added
+
+**MutableUserPresence** (1 change)
+
+* Model was added
+
+**EvaluationResponse** (1 change)
+
+* Optional property revisionCreatedDate was added
+
+**TrunkBase** (2 changes)
+
+* Optional property site was added
+* Optional property inboundSite was added
+
+**EdgeTrunkBase** (2 changes)
+
+* Optional property site was added
+* Optional property inboundSite was added
+
+**SiteConnections** (1 change)
+
+* Model was added
+
+**DisableSiteConnectionsRequest** (1 change)
+
+* Model was added
+
+**Dependency** (1 change)
+
+* Enum value AUDIOCONNECTORBOT was added to property type
+
+**DependencyObject** (1 change)
+
+* Enum value AUDIOCONNECTORBOT was added to property type
+
+**WebMessagingEventPresence** (2 changes)
+
+* Enum value Clear was added to property type
 * Enum value SignIn was added to property type
 
-**ActionMapEstimateOutcomeCriteria** (2 changes)
+**BusinessUnitActivityCodeListing** (1 change)
 
-* Optional property quantile was added
-* Optional property maxQuantile was added
+* Optional property downloadUrl was added
 
-**AlertRuleProperties** (1 change)
+**PlanningGroupList** (1 change)
 
-* Enum value WorkforceManagement was added to property type
+* Optional property metadata was added
 
-**CommonRulePredicate** (1 change)
+**ServiceGoalTemplateList** (1 change)
 
-* Enum value tAdherenceStatus was added to property metric
+* Optional property metadata was added
 
-**CommonRule** (1 change)
+**TimeOffPlan** (1 change)
 
-* Enum value WorkforceManagement was added to property type
+* Optional property hrisTimeOffType was added
 
-**SkillGroup** (1 change)
+**AdminTimeOffRequestPatch** (1 change)
 
-* Optional property status was added
+* Optional property paid was added
 
-**SkillGroupWithMemberDivisions** (1 change)
+**TimeOffRequestListing** (1 change)
 
-* Optional property status was added
+* Optional property downloadUrl was added
 
-**ConversationMetrics** (1 change)
+**SearchShiftTradesResponse** (1 change)
 
-* Optional property empathyScores was added
+* Optional property downloadUrl was added
 
-**SpeechTextAnalyticsSettingsResponse** (1 change)
+**WeekShiftTradeListResponse** (1 change)
 
-* Optional property agentEmpathyEnabled was added
+* Optional property downloadUrl was added
 
-**SpeechTextAnalyticsSettingsRequest** (1 change)
+**ConversationAsyncAggregationQuery** (2 changes)
 
-* Optional property agentEmpathyEnabled was added
-
-**CreateRoomRequest** (1 change)
-
-* Optional property userIds was added
-
-**Callheader** (1 change)
-
-* Model was added
-
-**Callmessage** (1 change)
-
-* Model was added
-
-**MediaStatisticsTrunkInfo** (1 change)
-
-* Model was added
+* Enum value tPark was added to property metrics
+* Enum value tParkComplete was added to property metrics
 
 
-# Point Changes (0 changes)
+# Point Changes (4 changes)
+
+**POST /api/v2/conversations/messaging/integrations/whatsapp** (2 changes)
+
+* Description was changed
+* Summary was changed
+
+**GET /api/v2/quality/forms/evaluations** (1 change)
+
+* Description was changed
+
+**PATCH /api/v2/users/bulk** (1 change)
+
+* Summary was changed

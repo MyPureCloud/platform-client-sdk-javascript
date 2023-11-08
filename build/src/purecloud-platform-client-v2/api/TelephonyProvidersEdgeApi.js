@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 180.0.0
+	 * @version 181.0.0
 	 */
 
 	/**
@@ -1930,6 +1930,31 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
+	 * Get site connections for a site.
+	 * 
+	 * @param {String} siteId Site ID
+	 */
+	getTelephonyProvidersEdgesSiteSiteconnections(siteId) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteSiteconnections';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
+			'GET', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of Sites.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -2219,6 +2244,36 @@ class TelephonyProvidersEdgeApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Disable site connections for a site.
+	 * 
+	 * @param {String} siteId Site ID
+	 * @param {Object} body Site
+	 */
+	patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling patchTelephonyProvidersEdgesSiteSiteconnections';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTelephonyProvidersEdgesSiteSiteconnections';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
+			'PATCH', 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -3248,6 +3303,36 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}', 
 			'PUT', 
 			{ 'siteId': siteId,'outboundRouteId': outboundRouteId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update site connections for a site.
+	 * 
+	 * @param {String} siteId Site ID
+	 * @param {Object} body Site
+	 */
+	putTelephonyProvidersEdgesSiteSiteconnections(siteId, body) { 
+		// verify the required parameter 'siteId' is set
+		if (siteId === undefined || siteId === null) {
+			throw 'Missing the required parameter "siteId" when calling putTelephonyProvidersEdgesSiteSiteconnections';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesSiteSiteconnections';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/{siteId}/siteconnections', 
+			'PUT', 
+			{ 'siteId': siteId },
 			{  },
 			{  },
 			{  },

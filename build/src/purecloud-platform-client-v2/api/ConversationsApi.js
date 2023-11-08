@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 180.0.0
+	 * @version 181.0.0
 	 */
 
 	/**
@@ -4051,6 +4051,36 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
+	 * Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationActivationRequest
+	 */
+	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update or activate a WhatsApp messaging integration
 	 * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 	 * @param {String} integrationId Integration ID
@@ -6276,9 +6306,10 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a WhatsApp Integration
-	 * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
+	 * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
+	 * [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
 	 * @param {Object} body WhatsAppIntegrationRequest
+	 * @deprecated
 	 */
 	postConversationsMessagingIntegrationsWhatsapp(body) { 
 		// verify the required parameter 'body' is set
@@ -6288,6 +6319,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a WhatsApp Integration using the WhatsApp embedded signup flow
+	 * Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
+	 * @param {Object} body WhatsAppEmbeddedSignupIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsappEmbeddedsignup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup', 
 			'POST', 
 			{  },
 			{  },

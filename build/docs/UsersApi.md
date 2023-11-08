@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
 [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
 [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
+[**deleteUserVerifier**](UsersApi.html#deleteUserVerifier) | **DELETE** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier
 [**getAnalyticsUsersAggregatesJob**](UsersApi.html#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
 [**getAnalyticsUsersAggregatesJobResults**](UsersApi.html#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
@@ -47,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserStation**](UsersApi.html#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
 [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
 [**getUserTrustors**](UsersApi.html#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
+[**getUserVerifiers**](UsersApi.html#getUserVerifiers) | **GET** /api/v2/users/{userId}/verifiers | Get a list of verifiers
 [**getUsers**](UsersApi.html#getUsers) | **GET** /api/v2/users | Get the list of available users.
 [**getUsersDevelopmentActivities**](UsersApi.html#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
 [**getUsersDevelopmentActivitiesMe**](UsersApi.html#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
@@ -61,7 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
 [**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
 [**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
-[**patchUsersBulk**](UsersApi.html#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users
+[**patchUsersBulk**](UsersApi.html#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
 [**postAnalyticsUsersActivityQuery**](UsersApi.html#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
 [**postAnalyticsUsersAggregatesJobs**](UsersApi.html#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
 [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
@@ -95,6 +97,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserState**](UsersApi.html#putUserState) | **PUT** /api/v2/users/{userId}/state | Update user state information.
 [**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
 [**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
+[**putUserVerifier**](UsersApi.html#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
 {: class="table table-striped"}
 
 <a name="deleteAnalyticsUsersDetailsJob"></a>
@@ -500,6 +503,58 @@ apiInstance.deleteUserStationDefaultstation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteUserVerifier"></a>
+
+# void deleteUserVerifier(userId, verifierId)
+
+
+DELETE /api/v2/users/{userId}/verifiers/{verifierId}
+
+Delete a verifier
+
+Requires ANY permissions:
+
+* mfa:verifier:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let verifierId = "verifierId_example"; // String | Verifier ID
+
+apiInstance.deleteUserVerifier(userId, verifierId)
+  .then(() => {
+    console.log('deleteUserVerifier returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **verifierId** | **String** | Verifier ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2199,6 +2254,56 @@ apiInstance.getUserTrustors(userId, opts)
 
 **TrustorEntityListing**
 
+<a name="getUserVerifiers"></a>
+
+# VerifierEntityListing getUserVerifiers(userId)
+
+
+GET /api/v2/users/{userId}/verifiers
+
+Get a list of verifiers
+
+Requires ANY permissions:
+
+* mfa:verifier:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getUserVerifiers(userId)
+  .then((data) => {
+    console.log(`getUserVerifiers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserVerifiers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**VerifierEntityListing**
+
 <a name="getUsers"></a>
 
 # UserEntityListing getUsers(opts)
@@ -3015,7 +3120,7 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 
 PATCH /api/v2/users/bulk
 
-Update bulk acd autoanswer on users
+Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
 
 Requires ANY permissions:
 
@@ -4786,4 +4891,58 @@ apiInstance.putUserStationDefaultstationStationId(userId, stationId)
 ### Return type
 
 void (no response body)
+
+<a name="putUserVerifier"></a>
+
+# Verifier putUserVerifier(userId, verifierId, body)
+
+
+PUT /api/v2/users/{userId}/verifiers/{verifierId}
+
+Update a verifier
+
+Requires ANY permissions:
+
+* mfa:verifier:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let verifierId = "verifierId_example"; // String | Verifier ID
+let body = {}; // Object | Verifier Update
+
+apiInstance.putUserVerifier(userId, verifierId, body)
+  .then((data) => {
+    console.log(`putUserVerifier success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUserVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **verifierId** | **String** | Verifier ID |  |
+ **body** | **Object** | Verifier Update |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Verifier**
 

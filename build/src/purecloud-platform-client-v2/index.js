@@ -39,6 +39,7 @@ import MobileDevicesApi from './api/MobileDevicesApi.js';
 import NotificationsApi from './api/NotificationsApi.js';
 import OAuthApi from './api/OAuthApi.js';
 import ObjectsApi from './api/ObjectsApi.js';
+import OperationalEventsApi from './api/OperationalEventsApi.js';
 import OrganizationApi from './api/OrganizationApi.js';
 import OrganizationAuthorizationApi from './api/OrganizationAuthorizationApi.js';
 import OutboundApi from './api/OutboundApi.js';
@@ -104,7 +105,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 180.0.0
+ * @version 181.0.0
  */
 class platformClient {
 	constructor() {
@@ -308,6 +309,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/ObjectsApi}
 		 */
 		this.ObjectsApi = ObjectsApi;
+		/**
+		 * The OperationalEventsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/OperationalEventsApi}
+		 */
+		this.OperationalEventsApi = OperationalEventsApi;
 		/**
 		 * The OrganizationApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/OrganizationApi}

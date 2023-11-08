@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 180.0.0
+	 * @version 181.0.0
 	 */
 
 	/**
@@ -100,9 +100,13 @@ class PresenceApi {
 	 * Get a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
 	 * getPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getPresenceDefinition0(definitionId) { 
+	getPresenceDefinition0(definitionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'definitionId' is set
 		if (definitionId === undefined || definitionId === null) {
 			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition0';
@@ -112,7 +116,7 @@ class PresenceApi {
 			'/api/v2/presence/definitions/{definitionId}', 
 			'GET', 
 			{ 'definitionId': definitionId },
-			{  },
+			{ 'localeCode': opts['localeCode'] },
 			{  },
 			{  },
 			null, 
@@ -128,6 +132,7 @@ class PresenceApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
 	 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
 	 * getPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getPresenceDefinitions0(opts) { 
@@ -138,7 +143,7 @@ class PresenceApi {
 			'/api/v2/presence/definitions', 
 			'GET', 
 			{  },
-			{ 'deactivated': opts['deactivated'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'deactivated': opts['deactivated'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'localeCode': opts['localeCode'] },
 			{  },
 			{  },
 			null, 

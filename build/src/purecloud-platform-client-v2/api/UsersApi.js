@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 180.0.0
+	 * @version 181.0.0
 	 */
 
 	/**
@@ -230,6 +230,36 @@ class UsersApi {
 			'/api/v2/users/{userId}/station/defaultstation', 
 			'DELETE', 
 			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a verifier
+	 * 
+	 * @param {String} userId User ID
+	 * @param {String} verifierId Verifier ID
+	 */
+	deleteUserVerifier(userId, verifierId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteUserVerifier';
+		}
+		// verify the required parameter 'verifierId' is set
+		if (verifierId === undefined || verifierId === null) {
+			throw 'Missing the required parameter "verifierId" when calling deleteUserVerifier';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/verifiers/{verifierId}', 
+			'DELETE', 
+			{ 'userId': userId,'verifierId': verifierId },
 			{  },
 			{  },
 			{  },
@@ -1137,6 +1167,31 @@ class UsersApi {
 	}
 
 	/**
+	 * Get a list of verifiers
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getUserVerifiers(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserVerifiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/verifiers', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of available users.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1581,7 +1636,7 @@ class UsersApi {
 	}
 
 	/**
-	 * Update bulk acd autoanswer on users
+	 * Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
 	 * 
 	 * @param {Array.<Object>} body Users
 	 */
@@ -2554,6 +2609,41 @@ class UsersApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a verifier
+	 * 
+	 * @param {String} userId User ID
+	 * @param {String} verifierId Verifier ID
+	 * @param {Object} body Verifier Update
+	 */
+	putUserVerifier(userId, verifierId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putUserVerifier';
+		}
+		// verify the required parameter 'verifierId' is set
+		if (verifierId === undefined || verifierId === null) {
+			throw 'Missing the required parameter "verifierId" when calling putUserVerifier';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putUserVerifier';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/verifiers/{verifierId}', 
+			'PUT', 
+			{ 'userId': userId,'verifierId': verifierId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

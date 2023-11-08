@@ -78,6 +78,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesSiteNumberplansClassifications**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplansClassifications) | **GET** /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications | Get a list of Classifications for this Site
 [**getTelephonyProvidersEdgesSiteOutboundroute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteOutboundroute) | **GET** /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} | Get an outbound route
 [**getTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteOutboundroutes) | **GET** /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes | Get outbound routes
+[**getTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteSiteconnections) | **GET** /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections | Get site connections for a site.
 [**getTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSites) | **GET** /api/v2/telephony/providers/edges/sites | Get the list of Sites.
 [**getTelephonyProvidersEdgesTimezones**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTimezones) | **GET** /api/v2/telephony/providers/edges/timezones | Get a list of Edge-compatible time zones
 [**getTelephonyProvidersEdgesTrunk**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunk) | **GET** /api/v2/telephony/providers/edges/trunks/{trunkId} | Get a Trunk by ID
@@ -89,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesTrunks**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunks) | **GET** /api/v2/telephony/providers/edges/trunks | Get the list of available trunks.
 [**getTelephonyProvidersEdgesTrunksMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunksMetrics) | **GET** /api/v2/telephony/providers/edges/trunks/metrics | Get the metrics for a list of trunks.
 [**getTelephonyProvidersEdgesTrunkswithrecording**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkswithrecording) | **GET** /api/v2/telephony/providers/edges/trunkswithrecording | Get Counts of trunks that have recording disabled or enabled
+[**patchTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi.html#patchTelephonyProvidersEdgesSiteSiteconnections) | **PATCH** /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections | Disable site connections for a site.
 [**postTelephonyProvidersEdgeDiagnosticNslookup**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticNslookup) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup | Nslookup request command to collect networking-related information from an Edge for a target IP or host.
 [**postTelephonyProvidersEdgeDiagnosticPing**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticPing) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping | Ping Request command to collect networking-related information from an Edge for a target IP or host.
 [**postTelephonyProvidersEdgeDiagnosticRoute**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticRoute) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route | Route request command to collect networking-related information from an Edge for a target IP or host.
@@ -125,6 +127,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putTelephonyProvidersEdgesSite**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSite) | **PUT** /api/v2/telephony/providers/edges/sites/{siteId} | Update a Site by ID.
 [**putTelephonyProvidersEdgesSiteNumberplans**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSiteNumberplans) | **PUT** /api/v2/telephony/providers/edges/sites/{siteId}/numberplans | Update the list of Number Plans. A user can update maximum 200 number plans at a time.
 [**putTelephonyProvidersEdgesSiteOutboundroute**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSiteOutboundroute) | **PUT** /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} | Update outbound route
+[**putTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSiteSiteconnections) | **PUT** /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections | Update site connections for a site.
 [**putTelephonyProvidersEdgesTrunkbasesetting**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesTrunkbasesetting) | **PUT** /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} | Update a Trunk Base Settings object by ID
 {: class="table table-striped"}
 
@@ -3917,6 +3920,57 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
 
 **OutboundRouteBaseEntityListing**
 
+<a name="getTelephonyProvidersEdgesSiteSiteconnections"></a>
+
+# SiteConnections getTelephonyProvidersEdgesSiteSiteconnections(siteId)
+
+
+GET /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections
+
+Get site connections for a site.
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let siteId = "siteId_example"; // String | Site ID
+
+apiInstance.getTelephonyProvidersEdgesSiteSiteconnections(siteId)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesSiteSiteconnections success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSiteSiteconnections');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **siteId** | **String** | Site ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SiteConnections**
+
 <a name="getTelephonyProvidersEdgesSites"></a>
 
 # SiteEntityListing getTelephonyProvidersEdgesSites(opts)
@@ -4531,6 +4585,58 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
 ### Return type
 
 **TrunkRecordingEnabledCount**
+
+<a name="patchTelephonyProvidersEdgesSiteSiteconnections"></a>
+
+# SiteConnections patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+
+
+PATCH /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections
+
+Disable site connections for a site.
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let siteId = "siteId_example"; // String | Site ID
+let body = {}; // Object | Site
+
+apiInstance.patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+  .then((data) => {
+    console.log(`patchTelephonyProvidersEdgesSiteSiteconnections success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchTelephonyProvidersEdgesSiteSiteconnections');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **siteId** | **String** | Site ID |  |
+ **body** | **Object** | Site |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SiteConnections**
 
 <a name="postTelephonyProvidersEdgeDiagnosticNslookup"></a>
 
@@ -6387,6 +6493,58 @@ apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId,
 ### Return type
 
 **OutboundRouteBase**
+
+<a name="putTelephonyProvidersEdgesSiteSiteconnections"></a>
+
+# SiteConnections putTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+
+
+PUT /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections
+
+Update site connections for a site.
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let siteId = "siteId_example"; // String | Site ID
+let body = {}; // Object | Site
+
+apiInstance.putTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+  .then((data) => {
+    console.log(`putTelephonyProvidersEdgesSiteSiteconnections success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesSiteSiteconnections');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **siteId** | **String** | Site ID |  |
+ **body** | **Object** | Site |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SiteConnections**
 
 <a name="putTelephonyProvidersEdgesTrunkbasesetting"></a>
 

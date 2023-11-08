@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 180.0.0
+	 * @version 181.0.0
 	 */
 
 	/**
@@ -688,8 +688,12 @@ class WorkforceManagementApi {
 	 * Get activity codes
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 */
-	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId) { 
+	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycodes';
@@ -699,7 +703,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
-			{  },
+			{ 'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			null, 
@@ -2089,6 +2093,7 @@ class WorkforceManagementApi {
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 */
 	getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts) { 
 		opts = opts || {};
@@ -2106,7 +2111,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId },
-			{ 'evaluateMatches': opts['evaluateMatches'] },
+			{ 'evaluateMatches': opts['evaluateMatches'],'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			null, 
@@ -4354,6 +4359,7 @@ class WorkforceManagementApi {
 	 * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 * @param {Object} opts.body body
 	 */
 	postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts) { 
@@ -4368,7 +4374,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId },
-			{  },
+			{ 'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			opts['body'], 
@@ -4592,8 +4598,12 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 */
-	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body) { 
+	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
@@ -4611,7 +4621,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId },
-			{  },
+			{ 'forceDownloadService': opts['forceDownloadService'] },
 			{  },
 			{  },
 			body, 
