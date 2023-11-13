@@ -1,7 +1,5 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
-import replace from 'rollup-plugin-re';
 
 export default {
 	input: 'src/purecloud-platform-client-v2/index.js',

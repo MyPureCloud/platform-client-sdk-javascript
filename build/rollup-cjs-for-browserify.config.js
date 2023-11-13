@@ -4,6 +4,7 @@ import json from '@rollup/plugin-json';
 import replace from 'rollup-plugin-re';
 import builtins from 'rollup-plugin-node-builtins';
 import globals from 'rollup-plugin-node-globals';
+import babel, { getBabelOutputPlugin } from '@rollup/plugin-babel';
 
 export default {
 	input: 'src/purecloud-platform-client-v2/index.js',
@@ -11,6 +12,7 @@ export default {
 		file: 'dist/web-cjs/bundle.js',
 		format: 'cjs',
 		name: 'platformClient',
+		plugins: [getBabelOutputPlugin({ presets: ['@babel/preset-env'] })],
 		globals: [
 			'tty',
 			'util',
@@ -93,7 +95,6 @@ export default {
 		'tty',
 		'crypto',
 		'os',
-		'axios',
 		'qs'
 	]
 };
