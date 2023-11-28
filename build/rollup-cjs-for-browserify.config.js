@@ -33,18 +33,18 @@ export default {
 			'qs'
 		]
 	},
-	plugins: [ 
+	plugins: [
 		builtins(),
-		nodeResolve(),
+		nodeResolve({ browser: true }),
 		replace({
 			// https://github.com/rollup/rollup-plugin-commonjs/issues/166#issuecomment-328853157
 			// do replace before commonjs
 			patterns: [
 				{
 					// regexp match with resolved path
-					match: /formidable(\/|\\)lib/, 
+					match: /formidable(\/|\\)lib/,
 					// string or regexp
-					test: 'if (global.GENTLY) require = GENTLY.hijack(require);', 
+					test: 'if (global.GENTLY) require = GENTLY.hijack(require);',
 					// string or function to replaced with
 					replace: '',
 				},

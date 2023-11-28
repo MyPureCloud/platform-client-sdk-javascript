@@ -1,7 +1,7 @@
 Platform API version: 7466
 
 
-Upgraded axios to latest version 
+Fixing CJS file
 
 # Major Changes (0 changes)
 

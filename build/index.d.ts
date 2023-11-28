@@ -27573,6 +27573,14 @@ declare namespace Models {
 		"eventEntity"?: Models.OperationalEventNotificationTopicEventEntity;
 		"entityId"?: string;
 		"entityName"?: string;
+		"previousValue"?: string;
+		"currentValue"?: string;
+		"errorCode"?: string;
+		"version"?: string;
+		"parentEntity"?: string;
+		"entityType"?: string;
+		"conversationId"?: string;
+		"timestamp"?: string;
 	}
 	
 	export interface OptInSettings { 
@@ -36704,6 +36712,8 @@ declare namespace Models {
 		"durationMs"?: number;
 		"transcript"?: string;
 		"words"?: Array<Models.TranscriptionTopicTranscriptWord>;
+		"decoratedTranscript"?: string;
+		"decoratedWords"?: Array<Models.TranscriptionTopicTranscriptWord>;
 	}
 	
 	export interface TranscriptionTopicTranscriptResult { 
