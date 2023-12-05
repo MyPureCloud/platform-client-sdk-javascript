@@ -586,6 +586,7 @@ let opts = {
   'evaluatorUserId': "evaluatorUserId_example", // String | user id of the evaluator
   'name': "name_example", // String | name
   'group': "group_example", // String | group id
+  'agentTeamId': "agentTeamId_example", // String | team id of agents requested
   'formContextId': "formContextId_example" // String | shared id between form versions
 };
 
@@ -616,6 +617,7 @@ apiInstance.getQualityAgentsActivity(opts)
  **evaluatorUserId** | **String** | user id of the evaluator | [optional]  |
  **name** | **String** | name | [optional]  |
  **group** | **String** | group id | [optional]  |
+ **agentTeamId** | **String** | team id of agents requested | [optional]  |
  **formContextId** | **String** | shared id between form versions | [optional]  |
 {: class="table table-striped"}
 
@@ -1002,6 +1004,7 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversationId specified
   'agentUserId': "agentUserId_example", // String | user id of the agent
+  'agentTeamId': "agentTeamId_example", // String | team id of the agent
   'evaluatorUserId': "evaluatorUserId_example", // String | evaluator user id
   'assigneeUserId': "assigneeUserId_example", // String | assignee user id
   'queueId': "queueId_example", // String | queue id
@@ -1039,6 +1042,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **previousPage** | **String** | Previous page token | [optional]  |
  **conversationId** | **String** | conversationId specified | [optional]  |
  **agentUserId** | **String** | user id of the agent | [optional]  |
+ **agentTeamId** | **String** | team id of the agent | [optional]  |
  **evaluatorUserId** | **String** | evaluator user id | [optional]  |
  **assigneeUserId** | **String** | assignee user id | [optional]  |
  **queueId** | **String** | queue id | [optional]  |
@@ -1094,7 +1098,8 @@ let opts = {
   'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
   'name': "name_example", // String | Evaluator name
   'permission': ["permission_example"], // [String] | permission strings
-  'group': "group_example" // String | group id
+  'group': "group_example", // String | group id
+  'agentTeamId': "agentTeamId_example" // String | team id of agents to be considered
 };
 
 apiInstance.getQualityEvaluatorsActivity(opts)
@@ -1123,6 +1128,7 @@ apiInstance.getQualityEvaluatorsActivity(opts)
  **name** | **String** | Evaluator name | [optional]  |
  **permission** | **[String]** | permission strings | [optional]  |
  **group** | **String** | group id | [optional]  |
+ **agentTeamId** | **String** | team id of agents to be considered | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

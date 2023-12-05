@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsActionsAggregatesJob**](AnalyticsApi.html#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
 [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
+[**getAnalyticsBotflowSessions**](AnalyticsApi.html#getAnalyticsBotflowSessions) | **GET** /api/v2/analytics/botflows/{botFlowId}/sessions | Get Bot Flow Sessions.
 [**getAnalyticsBotsAggregatesJob**](AnalyticsApi.html#getAnalyticsBotsAggregatesJob) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Get status for async query for bot aggregates
 [**getAnalyticsBotsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsBotsAggregatesJobResults) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
@@ -369,7 +370,7 @@ GET /api/v2/analytics/botflows/{botFlowId}/reportingturns
 
 Get Reporting Turns.
 
-Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 
 Requires ANY permissions:
 
@@ -427,6 +428,70 @@ apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
 ### Return type
 
 **ReportingTurnsResponse**
+
+<a name="getAnalyticsBotflowSessions"></a>
+
+# SessionsResponse getAnalyticsBotflowSessions(botFlowId, opts)
+
+
+GET /api/v2/analytics/botflows/{botFlowId}/sessions
+
+Get Bot Flow Sessions.
+
+Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+Requires ANY permissions:
+
+* analytics:botFlowSession:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let botFlowId = "botFlowId_example"; // String | ID of the bot flow.
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
+  'pageSize': "50", // String | Max number of entities to return. Maximum of 250
+  'interval': 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z, // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+  'botResultCategories': "botResultCategories_example", // String | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by.
+  'endLanguage': "endLanguage_example" // String | Optional case-insensitive language code to filter sessions by the language the sessions ended in.
+};
+
+apiInstance.getAnalyticsBotflowSessions(botFlowId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsBotflowSessions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsBotflowSessions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **botFlowId** | **String** | ID of the bot flow. |  |
+ **after** | **String** | The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
+ **interval** | **String** | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+ **botResultCategories** | **String** | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. | [optional] <br />**Values**: Unknown, UserExit, BotExit, Error, RecognitionFailure, UserDisconnect, BotDisconnect, SessionExpired, Transfer |
+ **endLanguage** | **String** | Optional case-insensitive language code to filter sessions by the language the sessions ended in. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SessionsResponse**
 
 <a name="getAnalyticsBotsAggregatesJob"></a>
 
@@ -3914,10 +3979,13 @@ apiInstance.postAnalyticsReportingExports(body)
 
 # RunNowResponse postAnalyticsReportingScheduleRunreport(scheduleId)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport
 
 Place a scheduled report immediately into the reporting queue
+
+This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
 
 Requires ANY permissions:
 
@@ -3964,12 +4032,13 @@ apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
 
 # ReportSchedule postAnalyticsReportingSchedules(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/analytics/reporting/schedules
 
 Create a scheduled report job
 
-Create a scheduled report job.
+This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
 
 Requires ANY permissions:
 
@@ -4852,10 +4921,13 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 
 # ReportSchedule putAnalyticsReportingSchedule(scheduleId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PUT /api/v2/analytics/reporting/schedules/{scheduleId}
 
 Update a scheduled report job.
+
+This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
 
 Requires ANY permissions:
 

@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 182.1.0
+	 * @version 183.0.0
 	 */
 
 	/**
@@ -153,7 +153,7 @@ class AnalyticsApi {
 
 	/**
 	 * Get Reporting Turns.
-	 * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+	 * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 	 * @param {String} botFlowId ID of the bot flow.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
@@ -177,6 +177,39 @@ class AnalyticsApi {
 			'GET', 
 			{ 'botFlowId': botFlowId },
 			{ 'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'],'askActionResults': opts['askActionResults'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Bot Flow Sessions.
+	 * Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+	 * @param {String} botFlowId ID of the bot flow.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
+	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 250 (default to 50)
+	 * @param {String} opts.interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {Object} opts.botResultCategories Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by.
+	 * @param {String} opts.endLanguage Optional case-insensitive language code to filter sessions by the language the sessions ended in.
+	 */
+	getAnalyticsBotflowSessions(botFlowId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botFlowId' is set
+		if (botFlowId === undefined || botFlowId === null) {
+			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowSessions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/botflows/{botFlowId}/sessions', 
+			'GET', 
+			{ 'botFlowId': botFlowId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'botResultCategories': opts['botResultCategories'],'endLanguage': opts['endLanguage'] },
 			{  },
 			{  },
 			null, 
@@ -1943,8 +1976,9 @@ class AnalyticsApi {
 
 	/**
 	 * Place a scheduled report immediately into the reporting queue
-	 * 
+	 * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
 	 * @param {String} scheduleId Schedule ID
+	 * @deprecated
 	 */
 	postAnalyticsReportingScheduleRunreport(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
@@ -1968,8 +2002,9 @@ class AnalyticsApi {
 
 	/**
 	 * Create a scheduled report job
-	 * Create a scheduled report job.
+	 * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
 	 * @param {Object} body ReportSchedule
+	 * @deprecated
 	 */
 	postAnalyticsReportingSchedules(body) { 
 		// verify the required parameter 'body' is set
@@ -2417,9 +2452,10 @@ class AnalyticsApi {
 
 	/**
 	 * Update a scheduled report job.
-	 * 
+	 * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
 	 * @param {String} scheduleId Schedule ID
 	 * @param {Object} body ReportSchedule
+	 * @deprecated
 	 */
 	putAnalyticsReportingSchedule(scheduleId, body) { 
 		// verify the required parameter 'scheduleId' is set

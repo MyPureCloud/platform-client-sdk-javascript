@@ -407,6 +407,7 @@ docs/getAlertingRule-example.txt
 docs/getAnalyticsActionsAggregatesJob-example.txt
 docs/getAnalyticsActionsAggregatesJobResults-example.txt
 docs/getAnalyticsBotflowReportingturns-example.txt
+docs/getAnalyticsBotflowSessions-example.txt
 docs/getAnalyticsBotsAggregatesJob-example.txt
 docs/getAnalyticsBotsAggregatesJobResults-example.txt
 docs/getAnalyticsConversationDetails-example.txt
@@ -1592,6 +1593,7 @@ docs/patchLanguageunderstandingDomain-example.txt
 docs/patchLanguageunderstandingMinerDraft-example.txt
 docs/patchLearningAssignment-example.txt
 docs/patchLearningAssignmentReschedule-example.txt
+docs/patchLearningModuleUserAssignments-example.txt
 docs/patchLocation-example.txt
 docs/patchMessagingSetting-example.txt
 docs/patchMessagingSupportedcontentSupportedContentId-example.txt

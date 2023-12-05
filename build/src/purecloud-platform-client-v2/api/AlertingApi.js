@@ -5,7 +5,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 182.1.0
+	 * @version 183.0.0
 	 */
 
 	/**
@@ -47,8 +47,9 @@ class AlertingApi {
 
 	/**
 	 * Delete an interaction stats alert
-	 * 
+	 * Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
 	 * @param {String} alertId Alert ID
+	 * @deprecated
 	 */
 	deleteAlertingInteractionstatsAlert(alertId) { 
 		// verify the required parameter 'alertId' is set
@@ -71,9 +72,10 @@ class AlertingApi {
 	}
 
 	/**
-	 * Delete an interaction stats rule.
-	 * 
+	 * Delete an interaction stats rule
+	 * Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
 	 * @param {String} ruleId Rule ID
+	 * @deprecated
 	 */
 	deleteAlertingInteractionstatsRule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
@@ -146,8 +148,9 @@ class AlertingApi {
 	}
 
 	/**
-	 * Gets active alert count for a user.
-	 * 
+	 * Gets active alert count for a user
+	 * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to Count and alertStatus to Active in the request body.
+	 * @deprecated
 	 */
 	getAlertingAlertsActive() { 
 
@@ -167,10 +170,11 @@ class AlertingApi {
 
 	/**
 	 * Get an interaction stats alert
-	 * 
+	 * Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
 	 * @param {String} alertId Alert ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @deprecated
 	 */
 	getAlertingInteractionstatsAlert(alertId, opts) { 
 		opts = opts || {};
@@ -195,10 +199,11 @@ class AlertingApi {
 	}
 
 	/**
-	 * Get interaction stats alert list.
-	 * 
+	 * Get interaction stats alert list
+	 * Apps should migrate to use POST /api/v2/alerting/alerts/query.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @deprecated
 	 */
 	getAlertingInteractionstatsAlerts(opts) { 
 		opts = opts || {};
@@ -219,8 +224,9 @@ class AlertingApi {
 	}
 
 	/**
-	 * Gets user unread count of interaction stats alerts.
-	 * 
+	 * Gets user unread count of interaction stats alerts
+	 * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to Count and viewStatus to Unread in the request body.
+	 * @deprecated
 	 */
 	getAlertingInteractionstatsAlertsUnread() { 
 
@@ -239,11 +245,12 @@ class AlertingApi {
 	}
 
 	/**
-	 * Get an interaction stats rule.
-	 * 
+	 * Get an interaction stats rule
+	 * Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
 	 * @param {String} ruleId Rule ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @deprecated
 	 */
 	getAlertingInteractionstatsRule(ruleId, opts) { 
 		opts = opts || {};
@@ -268,10 +275,11 @@ class AlertingApi {
 	}
 
 	/**
-	 * Get an interaction stats rule list.
-	 * 
+	 * Get an interaction stats rule list
+	 * Apps should migrate to use POST /api/v2/alerting/rules/query.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @deprecated
 	 */
 	getAlertingInteractionstatsRules(opts) { 
 		opts = opts || {};
@@ -420,11 +428,12 @@ class AlertingApi {
 	}
 
 	/**
-	 * Create an interaction stats rule.
-	 * 
+	 * Create an interaction stats rule
+	 * Apps should migrate to use POST /api/v2/alerting/rules.
 	 * @param {Object} body AlertingRule
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @deprecated
 	 */
 	postAlertingInteractionstatsRules(body, opts) { 
 		opts = opts || {};
@@ -553,11 +562,12 @@ class AlertingApi {
 
 	/**
 	 * Update an interaction stats alert read status
-	 * 
+	 * Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
 	 * @param {String} alertId Alert ID
 	 * @param {Object} body InteractionStatsAlert
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @deprecated
 	 */
 	putAlertingInteractionstatsAlert(alertId, body, opts) { 
 		opts = opts || {};
@@ -587,11 +597,12 @@ class AlertingApi {
 
 	/**
 	 * Update an interaction stats rule
-	 * 
+	 * Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
 	 * @param {String} ruleId Rule ID
 	 * @param {Object} body AlertingRule
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @deprecated
 	 */
 	putAlertingInteractionstatsRule(ruleId, body, opts) { 
 		opts = opts || {};

@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLearningModulesCoverartCoverArtId**](LearningApi.html#getLearningModulesCoverartCoverArtId) | **GET** /api/v2/learning/modules/coverart/{coverArtId} | Get a specific Learning Module cover art using ID
 [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
 [**patchLearningAssignmentReschedule**](LearningApi.html#patchLearningAssignmentReschedule) | **PATCH** /api/v2/learning/assignments/{assignmentId}/reschedule | Reschedule Learning Assignment
+[**patchLearningModuleUserAssignments**](LearningApi.html#patchLearningModuleUserAssignments) | **PATCH** /api/v2/learning/modules/{moduleId}/users/{userId}/assignments | Update an external assignment for a specific user
 [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | **POST** /api/v2/learning/assessments/scoring | Score learning assessment for preview
 [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | **POST** /api/v2/learning/assignments/{assignmentId}/reassign | Reassign Learning Assignment
 [**postLearningAssignmentReset**](LearningApi.html#postLearningAssignmentReset) | **POST** /api/v2/learning/assignments/{assignmentId}/reset | Reset Learning Assignment
@@ -601,7 +602,8 @@ let opts = {
   'searchTerm': "searchTerm_example", // String | Search Term (searchable by name)
   'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
   'isPublished': "Any", // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned
-  'statuses': ["statuses_example"] // [String] | Specifies the module statuses to filter by
+  'statuses': ["statuses_example"], // [String] | Specifies the module statuses to filter by
+  'externalIds': ["externalIds_example"] // [String] | Specifies the module external IDs to filter by. Only one ID is allowed
 };
 
 apiInstance.getLearningModules(opts)
@@ -629,6 +631,7 @@ apiInstance.getLearningModules(opts)
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
  **isPublished** | **String** | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **statuses** | **[String]** | Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
+ **externalIds** | **[String]** | Specifies the module external IDs to filter by. Only one ID is allowed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -850,6 +853,62 @@ apiInstance.patchLearningAssignmentReschedule(assignmentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The ID of Learning Assignment |  |
  **body** | **Object** | The Learning assignment reschedule model | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningAssignment**
+
+<a name="patchLearningModuleUserAssignments"></a>
+
+# LearningAssignment patchLearningModuleUserAssignments(moduleId, userId, body)
+
+
+PATCH /api/v2/learning/modules/{moduleId}/users/{userId}/assignments
+
+Update an external assignment for a specific user
+
+patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* learning:externalAssignment:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let moduleId = "moduleId_example"; // String | Key identifier for the module
+let userId = "userId_example"; // String | Key identifier for the user
+let body = {}; // Object | The learning request for updating the assignment
+
+apiInstance.patchLearningModuleUserAssignments(moduleId, userId, body)
+  .then((data) => {
+    console.log(`patchLearningModuleUserAssignments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchLearningModuleUserAssignments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **moduleId** | **String** | Key identifier for the module |  |
+ **userId** | **String** | Key identifier for the user |  |
+ **body** | **Object** | The learning request for updating the assignment |  |
 {: class="table table-striped"}
 
 ### Return type

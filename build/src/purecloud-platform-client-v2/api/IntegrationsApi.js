@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 182.1.0
+	 * @version 183.0.0
 	 */
 
 	/**
@@ -1615,7 +1615,7 @@ class IntegrationsApi {
 	}
 
 	/**
-	 * Create a new Action
+	 * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
 	 * 
 	 * @param {Object} body Input used to create Action.
 	 */

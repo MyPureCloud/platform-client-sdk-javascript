@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 182.1.0
+	 * @version 183.0.0
 	 */
 
 	/**
@@ -24,7 +24,6 @@ class PresenceApi {
 	 * Delete a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
-	 * deletePresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deletePresenceDefinition0(definitionId) { 
 		// verify the required parameter 'definitionId' is set
@@ -102,7 +101,6 @@ class PresenceApi {
 	 * @param {String} definitionId Presence Definition ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
-	 * getPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getPresenceDefinition0(definitionId, opts) { 
 		opts = opts || {};
@@ -133,7 +131,6 @@ class PresenceApi {
 	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
 	 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
 	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
-	 * getPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getPresenceDefinitions0(opts) { 
 		opts = opts || {};
@@ -500,7 +497,6 @@ class PresenceApi {
 	 * Create a Presence Definition
 	 * 
 	 * @param {Object} body The Presence Definition to create
-	 * postPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postPresenceDefinitions0(body) { 
 		// verify the required parameter 'body' is set
@@ -577,7 +573,6 @@ class PresenceApi {
 	 * 
 	 * @param {String} definitionId Presence Definition ID
 	 * @param {Object} body The updated Presence Definition
-	 * putPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putPresenceDefinition0(definitionId, body) { 
 		// verify the required parameter 'definitionId' is set

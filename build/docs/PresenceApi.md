@@ -45,8 +45,6 @@ DELETE /api/v2/presence/definitions/{definitionId}
 
 Delete a Presence Definition
 
-deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * presence:presenceDefinition:delete
@@ -199,8 +197,6 @@ GET /api/v2/presence/definitions/{definitionId}
 
 Get a Presence Definition
 
-getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * presence:presenceDefinition:view
@@ -254,8 +250,6 @@ apiInstance.getPresenceDefinition0(definitionId, opts)
 GET /api/v2/presence/definitions
 
 Get a list of Presence Definitions
-
-getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -973,8 +967,6 @@ POST /api/v2/presence/definitions
 
 Create a Presence Definition
 
-postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * presence:presenceDefinition:add
@@ -1124,8 +1116,6 @@ apiInstance.postPresencedefinitions(body)
 PUT /api/v2/presence/definitions/{definitionId}
 
 Update a Presence Definition
-
-putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
