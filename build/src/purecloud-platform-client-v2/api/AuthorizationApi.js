@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 183.0.0
+	 * @version 184.0.0
 	 */
 
 	/**
@@ -749,16 +749,15 @@ class AuthorizationApi {
 	 * Recreate a previously deleted division.
 	 * 
 	 * @param {String} divisionId Division ID
-	 * @param {Object} body Recreated division data
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Recreated division data
 	 */
-	postAuthorizationDivisionRestore(divisionId, body) { 
+	postAuthorizationDivisionRestore(divisionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationDivisionRestore';
 		}
 
 		return this.apiClient.callApi(
@@ -768,7 +767,7 @@ class AuthorizationApi {
 			{  },
 			{  },
 			{  },
-			body, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

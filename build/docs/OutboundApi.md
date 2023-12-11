@@ -18,11 +18,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list.
 [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
 [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
+[**deleteOutboundContactlisttemplate**](OutboundApi.html#deleteOutboundContactlisttemplate) | **DELETE** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Delete Contact List Template
+[**deleteOutboundContactlisttemplates**](OutboundApi.html#deleteOutboundContactlisttemplates) | **DELETE** /api/v2/outbound/contactlisttemplates | Delete multiple contact list templates.
 [**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | **DELETE** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Delete an Outbound Digital Rule Set
 [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
 [**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#deleteOutboundDnclistCustomexclusioncolumns) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Deletes all or expired custom exclusion column entries from a DNC list.
 [**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Deletes all or expired email addresses from a DNC list.
 [**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Deletes all or expired phone numbers from a DNC list.
+[**deleteOutboundImporttemplate**](OutboundApi.html#deleteOutboundImporttemplate) | **DELETE** /api/v2/outbound/importtemplates/{importTemplateId} | Delete Import Template
+[**deleteOutboundImporttemplates**](OutboundApi.html#deleteOutboundImporttemplates) | **DELETE** /api/v2/outbound/importtemplates | Delete multiple import templates.
 [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
 [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Reset messaging campaign progress and recycle the messaging campaign
 [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule Set.
@@ -60,6 +64,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | **GET** /api/v2/outbound/contactlists | Query a list of contact lists.
 [**getOutboundContactlistsDivisionview**](OutboundApi.html#getOutboundContactlistsDivisionview) | **GET** /api/v2/outbound/contactlists/divisionviews/{contactListId} | Get a basic ContactList information object
 [**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | **GET** /api/v2/outbound/contactlists/divisionviews | Query a list of simplified contact list objects.
+[**getOutboundContactlisttemplate**](OutboundApi.html#getOutboundContactlisttemplate) | **GET** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Get Contact List Template
+[**getOutboundContactlisttemplates**](OutboundApi.html#getOutboundContactlisttemplates) | **GET** /api/v2/outbound/contactlisttemplates | Query a list of contact list templates
 [**getOutboundDigitalruleset**](OutboundApi.html#getOutboundDigitalruleset) | **GET** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Get an Outbound Digital Rule Set
 [**getOutboundDigitalrulesets**](OutboundApi.html#getOutboundDigitalrulesets) | **GET** /api/v2/outbound/digitalrulesets | Query a list of Outbound Digital Rule Sets
 [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | **GET** /api/v2/outbound/dnclists/{dncListId} | Get dialer DNC list
@@ -70,6 +76,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | **GET** /api/v2/outbound/dnclists/divisionviews | Query a list of simplified dnc list objects.
 [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | **GET** /api/v2/outbound/events/{eventId} | Get Dialer Event
 [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | **GET** /api/v2/outbound/events | Query Event Logs
+[**getOutboundImporttemplate**](OutboundApi.html#getOutboundImporttemplate) | **GET** /api/v2/outbound/importtemplates/{importTemplateId} | Get Import Template
+[**getOutboundImporttemplateImportstatus**](OutboundApi.html#getOutboundImporttemplateImportstatus) | **GET** /api/v2/outbound/importtemplates/{importTemplateId}/importstatus | Get the import status for an import template.
+[**getOutboundImporttemplates**](OutboundApi.html#getOutboundImporttemplates) | **GET** /api/v2/outbound/importtemplates | Query Import Templates
 [**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Get an Outbound Messaging Campaign
 [**getOutboundMessagingcampaignDiagnostics**](OutboundApi.html#getOutboundMessagingcampaignDiagnostics) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics | Get messaging campaign diagnostics
 [**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Get messaging campaign's progress
@@ -110,12 +119,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | **POST** /api/v2/outbound/contactlistfilters | Create Contact List Filter
 [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
 [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
+[**postOutboundContactlisttemplates**](OutboundApi.html#postOutboundContactlisttemplates) | **POST** /api/v2/outbound/contactlisttemplates | Create Contact List Template
+[**postOutboundContactlisttemplatesBulkAdd**](OutboundApi.html#postOutboundContactlisttemplatesBulkAdd) | **POST** /api/v2/outbound/contactlisttemplates/bulk/add | Add multiple contact list templates
 [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | **POST** /api/v2/outbound/conversations/{conversationId}/dnc | Add phone numbers to a Dialer DNC list.
 [**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | **POST** /api/v2/outbound/digitalrulesets | Create an Outbound Digital Rule Set
 [**postOutboundDnclistEmailaddresses**](OutboundApi.html#postOutboundDnclistEmailaddresses) | **POST** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add email addresses to a DNC list.
 [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
 [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a DNC list.
 [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
+[**postOutboundImporttemplates**](OutboundApi.html#postOutboundImporttemplates) | **POST** /api/v2/outbound/importtemplates | Create Import Template
+[**postOutboundImporttemplatesBulkAdd**](OutboundApi.html#postOutboundImporttemplatesBulkAdd) | **POST** /api/v2/outbound/importtemplates/bulk/add | Add multiple import templates
 [**postOutboundMessagingcampaigns**](OutboundApi.html#postOutboundMessagingcampaigns) | **POST** /api/v2/outbound/messagingcampaigns | Create a Messaging Campaign
 [**postOutboundMessagingcampaignsProgress**](OutboundApi.html#postOutboundMessagingcampaignsProgress) | **POST** /api/v2/outbound/messagingcampaigns/progress | Get progress for a list of messaging campaigns
 [**postOutboundRulesets**](OutboundApi.html#postOutboundRulesets) | **POST** /api/v2/outbound/rulesets | Create a Rule Set.
@@ -129,8 +142,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | **PUT** /api/v2/outbound/contactlists/{contactListId} | Update a contact list.
 [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | **PUT** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Update a contact.
 [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | **PUT** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Update Contact List Filter
+[**putOutboundContactlisttemplate**](OutboundApi.html#putOutboundContactlisttemplate) | **PUT** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Update a contact list template.
 [**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | **PUT** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Update an Outbound Digital Rule Set
 [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | **PUT** /api/v2/outbound/dnclists/{dncListId} | Update dialer DNC list
+[**putOutboundImporttemplate**](OutboundApi.html#putOutboundImporttemplate) | **PUT** /api/v2/outbound/importtemplates/{importTemplateId} | Update Import Template
 [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | **PUT** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Update an Outbound Messaging Campaign
 [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | **PUT** /api/v2/outbound/rulesets/{ruleSetId} | Update a Rule Set.
 [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | **PUT** /api/v2/outbound/schedules/campaigns/{campaignId} | Update a new campaign schedule.
@@ -695,6 +710,106 @@ apiInstance.deleteOutboundContactlists(id)
 
 void (no response body)
 
+<a name="deleteOutboundContactlisttemplate"></a>
+
+# void deleteOutboundContactlisttemplate(contactListTemplateId)
+
+
+DELETE /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
+
+Delete Contact List Template
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+
+apiInstance.deleteOutboundContactlisttemplate(contactListTemplateId)
+  .then(() => {
+    console.log('deleteOutboundContactlisttemplate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundContactlisttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListTemplateId** | **String** | ContactListTemplate ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundContactlisttemplates"></a>
+
+# void deleteOutboundContactlisttemplates(id)
+
+
+DELETE /api/v2/outbound/contactlisttemplates
+
+Delete multiple contact list templates.
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let id = ["id_example"]; // [String] | contact list template id(s) to delete
+
+apiInstance.deleteOutboundContactlisttemplates(id)
+  .then(() => {
+    console.log('deleteOutboundContactlisttemplates returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundContactlisttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | contact list template id(s) to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteOutboundDigitalruleset"></a>
 
 # void deleteOutboundDigitalruleset(digitalRuleSetId)
@@ -957,6 +1072,106 @@ apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundImporttemplate"></a>
+
+# void deleteOutboundImporttemplate(importTemplateId)
+
+
+DELETE /api/v2/outbound/importtemplates/{importTemplateId}
+
+Delete Import Template
+
+Requires ANY permissions:
+
+* outbound:importTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let importTemplateId = "importTemplateId_example"; // String | Import Template ID
+
+apiInstance.deleteOutboundImporttemplate(importTemplateId)
+  .then(() => {
+    console.log('deleteOutboundImporttemplate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundImporttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **importTemplateId** | **String** | Import Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundImporttemplates"></a>
+
+# void deleteOutboundImporttemplates(id)
+
+
+DELETE /api/v2/outbound/importtemplates
+
+Delete multiple import templates.
+
+Requires ANY permissions:
+
+* outbound:importTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let id = ["id_example"]; // [String] | import template id(s) to delete
+
+apiInstance.deleteOutboundImporttemplates(id)
+  .then(() => {
+    console.log('deleteOutboundImporttemplates returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundImporttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | import template id(s) to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3028,6 +3243,120 @@ apiInstance.getOutboundContactlistsDivisionviews(opts)
 
 **ContactListDivisionViewListing**
 
+<a name="getOutboundContactlisttemplate"></a>
+
+# ContactListTemplate getOutboundContactlisttemplate(contactListTemplateId)
+
+
+GET /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
+
+Get Contact List Template
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+
+apiInstance.getOutboundContactlisttemplate(contactListTemplateId)
+  .then((data) => {
+    console.log(`getOutboundContactlisttemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlisttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListTemplateId** | **String** | ContactListTemplate ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListTemplate**
+
+<a name="getOutboundContactlisttemplates"></a>
+
+# ContactListTemplateEntityListing getOutboundContactlisttemplates(opts)
+
+
+GET /api/v2/outbound/contactlisttemplates
+
+Query a list of contact list templates
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
+  'filterType': "Prefix", // String | Filter type
+  'name': "name_example", // String | Name
+  'sortBy': "sortBy_example", // String | Sort by
+  'sortOrder': "a" // String | Sort order
+};
+
+apiInstance.getOutboundContactlisttemplates(opts)
+  .then((data) => {
+    console.log(`getOutboundContactlisttemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlisttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListTemplateEntityListing**
+
 <a name="getOutboundDigitalruleset"></a>
 
 # DigitalRuleSet getOutboundDigitalruleset(digitalRuleSetId)
@@ -3616,6 +3945,176 @@ apiInstance.getOutboundEvents(opts)
 ### Return type
 
 **DialerEventEntityListing**
+
+<a name="getOutboundImporttemplate"></a>
+
+# ImportTemplate getOutboundImporttemplate(importTemplateId)
+
+
+GET /api/v2/outbound/importtemplates/{importTemplateId}
+
+Get Import Template
+
+Requires ANY permissions:
+
+* outbound:importTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let importTemplateId = "importTemplateId_example"; // String | Import Template ID
+
+apiInstance.getOutboundImporttemplate(importTemplateId)
+  .then((data) => {
+    console.log(`getOutboundImporttemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundImporttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **importTemplateId** | **String** | Import Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ImportTemplate**
+
+<a name="getOutboundImporttemplateImportstatus"></a>
+
+# ImportStatus getOutboundImporttemplateImportstatus(importTemplateId, opts)
+
+
+GET /api/v2/outbound/importtemplates/{importTemplateId}/importstatus
+
+Get the import status for an import template.
+
+Requires ANY permissions:
+
+* outbound:importTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let importTemplateId = "importTemplateId_example"; // String | importTemplateId
+let opts = { 
+  'listNamePrefix': "listNamePrefix_example" // String | listNamePrefix
+};
+
+apiInstance.getOutboundImporttemplateImportstatus(importTemplateId, opts)
+  .then((data) => {
+    console.log(`getOutboundImporttemplateImportstatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundImporttemplateImportstatus');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **importTemplateId** | **String** | importTemplateId |  |
+ **listNamePrefix** | **String** | listNamePrefix | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ImportStatus**
+
+<a name="getOutboundImporttemplates"></a>
+
+# ImportTemplateEntityListing getOutboundImporttemplates(opts)
+
+
+GET /api/v2/outbound/importtemplates
+
+Query Import Templates
+
+Requires ANY permissions:
+
+* outbound:importTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
+  'filterType': "Prefix", // String | Filter type
+  'name': "name_example", // String | Name
+  'sortBy': "sortBy_example", // String | Sort by
+  'sortOrder': "a", // String | Sort order
+  'contactListTemplateId': "contactListTemplateId_example" // String | Contact List Template ID
+};
+
+apiInstance.getOutboundImporttemplates(opts)
+  .then((data) => {
+    console.log(`getOutboundImporttemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundImporttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **contactListTemplateId** | **String** | Contact List Template ID | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ImportTemplateEntityListing**
 
 <a name="getOutboundMessagingcampaign"></a>
 
@@ -5703,6 +6202,106 @@ apiInstance.postOutboundContactlists(body)
 
 **ContactList**
 
+<a name="postOutboundContactlisttemplates"></a>
+
+# ContactListTemplate postOutboundContactlisttemplates(body)
+
+
+POST /api/v2/outbound/contactlisttemplates
+
+Create Contact List Template
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | ContactListTemplate
+
+apiInstance.postOutboundContactlisttemplates(body)
+  .then((data) => {
+    console.log(`postOutboundContactlisttemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlisttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | ContactListTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListTemplate**
+
+<a name="postOutboundContactlisttemplatesBulkAdd"></a>
+
+# ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkAdd(body)
+
+
+POST /api/v2/outbound/contactlisttemplates/bulk/add
+
+Add multiple contact list templates
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = [{}]; // Object | contact list template(s) to add
+
+apiInstance.postOutboundContactlisttemplatesBulkAdd(body)
+  .then((data) => {
+    console.log(`postOutboundContactlisttemplatesBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlisttemplatesBulkAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | contact list template(s) to add |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListTemplateEntityListing**
+
 <a name="postOutboundConversationDnc"></a>
 
 # void postOutboundConversationDnc(conversationId)
@@ -6017,6 +6616,106 @@ apiInstance.postOutboundDnclists(body)
 ### Return type
 
 **DncList**
+
+<a name="postOutboundImporttemplates"></a>
+
+# ImportTemplate postOutboundImporttemplates(body)
+
+
+POST /api/v2/outbound/importtemplates
+
+Create Import Template
+
+Requires ANY permissions:
+
+* outbound:importTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | ImportTemplate
+
+apiInstance.postOutboundImporttemplates(body)
+  .then((data) => {
+    console.log(`postOutboundImporttemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundImporttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | ImportTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ImportTemplate**
+
+<a name="postOutboundImporttemplatesBulkAdd"></a>
+
+# ImportTemplateEntityListing postOutboundImporttemplatesBulkAdd(body)
+
+
+POST /api/v2/outbound/importtemplates/bulk/add
+
+Add multiple import templates
+
+Requires ANY permissions:
+
+* outbound:importTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = [{}]; // Object | import template(s) to add
+
+apiInstance.postOutboundImporttemplatesBulkAdd(body)
+  .then((data) => {
+    console.log(`postOutboundImporttemplatesBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundImporttemplatesBulkAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | import template(s) to add |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ImportTemplateEntityListing**
 
 <a name="postOutboundMessagingcampaigns"></a>
 
@@ -6692,6 +7391,58 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 
 **ContactListFilter**
 
+<a name="putOutboundContactlisttemplate"></a>
+
+# ContactListTemplate putOutboundContactlisttemplate(contactListTemplateId, body)
+
+
+PUT /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
+
+Update a contact list template.
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+let body = {}; // Object | ContactListTemplate
+
+apiInstance.putOutboundContactlisttemplate(contactListTemplateId, body)
+  .then((data) => {
+    console.log(`putOutboundContactlisttemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundContactlisttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListTemplateId** | **String** | ContactListTemplate ID |  |
+ **body** | **Object** | ContactListTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListTemplate**
+
 <a name="putOutboundDigitalruleset"></a>
 
 # DigitalRuleSet putOutboundDigitalruleset(digitalRuleSetId, body)
@@ -6795,6 +7546,58 @@ apiInstance.putOutboundDnclist(dncListId, body)
 ### Return type
 
 **DncList**
+
+<a name="putOutboundImporttemplate"></a>
+
+# ImportTemplate putOutboundImporttemplate(importTemplateId, body)
+
+
+PUT /api/v2/outbound/importtemplates/{importTemplateId}
+
+Update Import Template
+
+Requires ANY permissions:
+
+* outbound:importTemplate:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let importTemplateId = "importTemplateId_example"; // String | Import Template ID
+let body = {}; // Object | importTemplate
+
+apiInstance.putOutboundImporttemplate(importTemplateId, body)
+  .then((data) => {
+    console.log(`putOutboundImporttemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundImporttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **importTemplateId** | **String** | Import Template ID |  |
+ **body** | **Object** | importTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ImportTemplate**
 
 <a name="putOutboundMessagingcampaign"></a>
 

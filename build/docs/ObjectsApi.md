@@ -336,7 +336,7 @@ void (no response body)
 
 <a name="postAuthorizationDivisionRestore"></a>
 
-# AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
+# AuthzDivision postAuthorizationDivisionRestore(divisionId, opts)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/restore
@@ -361,9 +361,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ObjectsApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
-let body = {}; // Object | Recreated division data
+let opts = { 
+  'body': {} // Object | Recreated division data
+};
 
-apiInstance.postAuthorizationDivisionRestore(divisionId, body)
+apiInstance.postAuthorizationDivisionRestore(divisionId, opts)
   .then((data) => {
     console.log(`postAuthorizationDivisionRestore success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -379,7 +381,7 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **body** | **Object** | Recreated division data |  |
+ **body** | **Object** | Recreated division data | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

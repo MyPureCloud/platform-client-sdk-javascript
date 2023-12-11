@@ -442,7 +442,7 @@ Delete an extension pool by ID
 
 Requires ALL permissions:
 
-* telephony:plugin:all
+* telephony:extensionPool:delete
 
 ### Example Usage
 
@@ -2275,7 +2275,7 @@ Get an extension by ID.
 
 Requires ANY permissions:
 
-* telephony:plugin:all
+* telephony:extensionPool:view
 
 ### Example Usage
 
@@ -2325,7 +2325,7 @@ Get an extension pool by ID
 
 Requires ALL permissions:
 
-* telephony:plugin:all
+* telephony:extensionPool:view
 
 ### Example Usage
 
@@ -2375,7 +2375,7 @@ Get a listing of extension pools
 
 Requires ALL permissions:
 
-* telephony:plugin:all
+* telephony:extensionPool:view
 
 ### Example Usage
 
@@ -2501,7 +2501,7 @@ Get a listing of extensions
 
 Requires ANY permissions:
 
-* telephony:plugin:all
+* telephony:extensionPool:view
 
 ### Example Usage
 
@@ -5473,7 +5473,7 @@ Create a new extension pool
 
 Requires ALL permissions:
 
-* telephony:plugin:all
+* telephony:extensionPool:add
 
 ### Example Usage
 
@@ -6191,7 +6191,7 @@ Update an extension pool by ID
 
 Requires ALL permissions:
 
-* telephony:plugin:all
+* telephony:extensionPool:edit
 
 ### Example Usage
 

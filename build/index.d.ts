@@ -151,6 +151,8 @@ declare class AnalyticsApi {
   	getAnalyticsDataretentionSettings(): Promise<Models.AnalyticsDataRetentionResponse>; 
   	getAnalyticsEvaluationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsEvaluationsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsEvaluationsAggregatesJobResultsOptions): Promise<Models.EvaluationAsyncAggregateQueryResponse>; 
+  	getAnalyticsFlowexecutionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsFlowexecutionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsFlowexecutionsAggregatesJobResultsOptions): Promise<Models.FlowExecutionAsyncAggregateQueryResponse>; 
   	getAnalyticsFlowsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsFlowsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsFlowsAggregatesJobResultsOptions): Promise<Models.FlowAsyncAggregateQueryResponse>; 
   	getAnalyticsJourneysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
@@ -196,6 +198,8 @@ declare class AnalyticsApi {
   	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
   	postAnalyticsEvaluationsAggregatesJobs(body: Models.EvaluationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>; 
+  	postAnalyticsFlowexecutionsAggregatesJobs(body: Models.FlowExecutionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
+  	postAnalyticsFlowexecutionsAggregatesQuery(body: Models.FlowExecutionAggregationQuery): Promise<Models.FlowExecutionAggregateQueryResponse>; 
   	postAnalyticsFlowsActivityQuery(body: Models.FlowActivityQuery, opts?: AnalyticsApi.postAnalyticsFlowsActivityQueryOptions): Promise<Models.FlowActivityResponse>; 
   	postAnalyticsFlowsAggregatesJobs(body: Models.FlowAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsFlowsAggregatesQuery(body: Models.FlowAggregationQuery): Promise<Models.FlowAggregateQueryResponse>; 
@@ -261,6 +265,9 @@ declare namespace AnalyticsApi {
 		"pageSize"?: number;
 	}
 	export interface getAnalyticsEvaluationsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsFlowexecutionsAggregatesJobResultsOptions { 
 		"cursor"?: string;
 	}
 	export interface getAnalyticsFlowsAggregatesJobResultsOptions { 
@@ -882,7 +889,7 @@ declare class AuthorizationApi {
   	patchAuthorizationRole(roleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrganizationRole>; 
   	patchAuthorizationSettings(body: Models.AuthorizationSettings): Promise<Models.AuthorizationSettings>; 
   	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>; 
-  	postAuthorizationDivisionRestore(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
+  	postAuthorizationDivisionRestore(divisionId: string, opts?: AuthorizationApi.postAuthorizationDivisionRestoreOptions): Promise<Models.AuthzDivision>; 
   	postAuthorizationDivisions(body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
   	postAuthorizationRole(roleId: string, body: Models.SubjectDivisions, opts?: AuthorizationApi.postAuthorizationRoleOptions): Promise<void>; 
   	postAuthorizationRoleComparedefaultRightRoleId(leftRoleId: string, rightRoleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrgRoleDifference>; 
@@ -970,6 +977,9 @@ declare namespace AuthorizationApi {
 	}
 	export interface getAuthorizationSubjectsRolecountsOptions { 
 		"id"?: Array<string>;
+	}
+	export interface postAuthorizationDivisionRestoreOptions { 
+		"body"?: Models.AuthzDivision;
 	}
 	export interface postAuthorizationRoleOptions { 
 		"subjectType"?: string;
@@ -3296,6 +3306,17 @@ declare namespace LocationsApi {
 	}
 }
 
+declare class LogCaptureApi {  
+  	getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId: string): Promise<Models.LogCaptureDownloadExecutionResponse>; 
+  	postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(opts?: LogCaptureApi.postDiagnosticsLogcaptureBrowserEntriesDownloadJobsOptions): Promise<Models.LogCaptureDownloadExecutionResponse>;
+}
+
+declare namespace LogCaptureApi { 
+	export interface postDiagnosticsLogcaptureBrowserEntriesDownloadJobsOptions { 
+		"body"?: Models.LogCaptureQueryRequest;
+	}
+}
+
 declare class MessagingApi {  
   	deleteMessagingSetting(messageSettingId: string): Promise<void>; 
   	deleteMessagingSettingsDefault(): Promise<void>; 
@@ -3410,7 +3431,7 @@ declare class ObjectsApi {
   	getAuthorizationDivisionsHome(): Promise<Models.AuthzDivision>; 
   	getAuthorizationDivisionsLimit(): Promise<number>; 
   	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>; 
-  	postAuthorizationDivisionRestore(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
+  	postAuthorizationDivisionRestore(divisionId: string, opts?: ObjectsApi.postAuthorizationDivisionRestoreOptions): Promise<Models.AuthzDivision>; 
   	postAuthorizationDivisions(body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
   	putAuthorizationDivision(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>;
 }
@@ -3432,6 +3453,9 @@ declare namespace ObjectsApi {
 		"objectCount"?: boolean;
 		"id"?: Array<string>;
 		"name"?: string;
+	}
+	export interface postAuthorizationDivisionRestoreOptions { 
+		"body"?: Models.AuthzDivision;
 	}
 }
 
@@ -3585,11 +3609,15 @@ declare class OutboundApi {
   	deleteOutboundContactlistContacts(contactListId: string, contactIds: Array<string>): Promise<void>; 
   	deleteOutboundContactlistfilter(contactListFilterId: string): Promise<void>; 
   	deleteOutboundContactlists(id: Array<string>): Promise<void>; 
+  	deleteOutboundContactlisttemplate(contactListTemplateId: string): Promise<void>; 
+  	deleteOutboundContactlisttemplates(id: Array<string>): Promise<void>; 
   	deleteOutboundDigitalruleset(digitalRuleSetId: string): Promise<void>; 
   	deleteOutboundDnclist(dncListId: string): Promise<void>; 
   	deleteOutboundDnclistCustomexclusioncolumns(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistCustomexclusioncolumnsOptions): Promise<void>; 
   	deleteOutboundDnclistEmailaddresses(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistEmailaddressesOptions): Promise<void>; 
   	deleteOutboundDnclistPhonenumbers(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistPhonenumbersOptions): Promise<void>; 
+  	deleteOutboundImporttemplate(importTemplateId: string): Promise<void>; 
+  	deleteOutboundImporttemplates(id: Array<string>): Promise<void>; 
   	deleteOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>; 
   	deleteOutboundMessagingcampaignProgress(messagingCampaignId: string): Promise<void>; 
   	deleteOutboundRuleset(ruleSetId: string): Promise<void>; 
@@ -3627,6 +3655,8 @@ declare class OutboundApi {
   	getOutboundContactlists(opts?: OutboundApi.getOutboundContactlistsOptions): Promise<Models.ContactListEntityListing>; 
   	getOutboundContactlistsDivisionview(contactListId: string, opts?: OutboundApi.getOutboundContactlistsDivisionviewOptions): Promise<Models.ContactListDivisionView>; 
   	getOutboundContactlistsDivisionviews(opts?: OutboundApi.getOutboundContactlistsDivisionviewsOptions): Promise<Models.ContactListDivisionViewListing>; 
+  	getOutboundContactlisttemplate(contactListTemplateId: string): Promise<Models.ContactListTemplate>; 
+  	getOutboundContactlisttemplates(opts?: OutboundApi.getOutboundContactlisttemplatesOptions): Promise<Models.ContactListTemplateEntityListing>; 
   	getOutboundDigitalruleset(digitalRuleSetId: string): Promise<Models.DigitalRuleSet>; 
   	getOutboundDigitalrulesets(opts?: OutboundApi.getOutboundDigitalrulesetsOptions): Promise<Models.DigitalRuleSetEntityListing>; 
   	getOutboundDnclist(dncListId: string, opts?: OutboundApi.getOutboundDnclistOptions): Promise<Models.DncList>; 
@@ -3637,6 +3667,9 @@ declare class OutboundApi {
   	getOutboundDnclistsDivisionviews(opts?: OutboundApi.getOutboundDnclistsDivisionviewsOptions): Promise<Models.DncListDivisionViewListing>; 
   	getOutboundEvent(eventId: string): Promise<Models.EventLog>; 
   	getOutboundEvents(opts?: OutboundApi.getOutboundEventsOptions): Promise<Models.DialerEventEntityListing>; 
+  	getOutboundImporttemplate(importTemplateId: string): Promise<Models.ImportTemplate>; 
+  	getOutboundImporttemplateImportstatus(importTemplateId: string, opts?: OutboundApi.getOutboundImporttemplateImportstatusOptions): Promise<Models.ImportStatus>; 
+  	getOutboundImporttemplates(opts?: OutboundApi.getOutboundImporttemplatesOptions): Promise<Models.ImportTemplateEntityListing>; 
   	getOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>; 
   	getOutboundMessagingcampaignDiagnostics(messagingCampaignId: string): Promise<Models.MessagingCampaignDiagnostics>; 
   	getOutboundMessagingcampaignProgress(messagingCampaignId: string): Promise<Models.CampaignProgress>; 
@@ -3677,12 +3710,16 @@ declare class OutboundApi {
   	postOutboundContactlistfilters(body: Models.ContactListFilter): Promise<Models.ContactListFilter>; 
   	postOutboundContactlistfiltersPreview(body: Models.ContactListFilter): Promise<Models.FilterPreviewResponse>; 
   	postOutboundContactlists(body: Models.ContactList): Promise<Models.ContactList>; 
+  	postOutboundContactlisttemplates(body: Models.ContactListTemplate): Promise<Models.ContactListTemplate>; 
+  	postOutboundContactlisttemplatesBulkAdd(body: Array<Models.ContactListTemplate>): Promise<Models.ContactListTemplateEntityListing>; 
   	postOutboundConversationDnc(conversationId: string): Promise<void>; 
   	postOutboundDigitalrulesets(body: Models.DigitalRuleSet): Promise<Models.DigitalRuleSet>; 
   	postOutboundDnclistEmailaddresses(dncListId: string, body: Array<string>): Promise<void>; 
   	postOutboundDnclistExport(dncListId: string): Promise<Models.DomainEntityRef>; 
   	postOutboundDnclistPhonenumbers(dncListId: string, body: Array<string>, opts?: OutboundApi.postOutboundDnclistPhonenumbersOptions): Promise<void>; 
   	postOutboundDnclists(body: Models.DncListCreate): Promise<Models.DncList>; 
+  	postOutboundImporttemplates(body: Models.ImportTemplate): Promise<Models.ImportTemplate>; 
+  	postOutboundImporttemplatesBulkAdd(body: Array<Models.ImportTemplate>): Promise<Models.ImportTemplateEntityListing>; 
   	postOutboundMessagingcampaigns(body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>; 
   	postOutboundMessagingcampaignsProgress(body: Array<string>): Promise<Array<Models.CampaignProgress>>; 
   	postOutboundRulesets(body: Models.RuleSet): Promise<Models.RuleSet>; 
@@ -3696,8 +3733,10 @@ declare class OutboundApi {
   	putOutboundContactlist(contactListId: string, body: Models.ContactList): Promise<Models.ContactList>; 
   	putOutboundContactlistContact(contactListId: string, contactId: string, body: Models.DialerContact): Promise<Models.DialerContact>; 
   	putOutboundContactlistfilter(contactListFilterId: string, body: Models.ContactListFilter): Promise<Models.ContactListFilter>; 
+  	putOutboundContactlisttemplate(contactListTemplateId: string, body: Models.ContactListTemplate): Promise<Models.ContactListTemplate>; 
   	putOutboundDigitalruleset(digitalRuleSetId: string, body: Models.DigitalRuleSet): Promise<Models.DigitalRuleSet>; 
   	putOutboundDnclist(dncListId: string, body: Models.DncList): Promise<Models.DncList>; 
+  	putOutboundImporttemplate(importTemplateId: string, body: Models.ImportTemplate): Promise<Models.ImportTemplate>; 
   	putOutboundMessagingcampaign(messagingCampaignId: string, body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>; 
   	putOutboundRuleset(ruleSetId: string, body: Models.RuleSet): Promise<Models.RuleSet>; 
   	putOutboundSchedulesCampaign(campaignId: string, body: Models.CampaignSchedule): Promise<Models.CampaignSchedule>; 
@@ -3841,6 +3880,15 @@ declare namespace OutboundApi {
 		"sortBy"?: string;
 		"sortOrder"?: string;
 	}
+	export interface getOutboundContactlisttemplatesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
+		"filterType"?: string;
+		"name"?: string;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+	}
 	export interface getOutboundDigitalrulesetsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
@@ -3893,6 +3941,19 @@ declare namespace OutboundApi {
 		"level"?: string;
 		"sortBy"?: string;
 		"sortOrder"?: string;
+	}
+	export interface getOutboundImporttemplateImportstatusOptions { 
+		"listNamePrefix"?: string;
+	}
+	export interface getOutboundImporttemplatesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
+		"filterType"?: string;
+		"name"?: string;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+		"contactListTemplateId"?: string;
 	}
 	export interface getOutboundMessagingcampaignsOptions { 
 		"pageSize"?: number;
@@ -4553,8 +4614,8 @@ declare class RoutingApi {
   	getRoutingSmsAvailablephonenumbers(countryCode: string, phoneNumberType: string, opts?: RoutingApi.getRoutingSmsAvailablephonenumbersOptions): Promise<Models.SMSAvailablePhoneNumberEntityListing>; 
   	getRoutingSmsPhonenumber(addressId: string, opts?: RoutingApi.getRoutingSmsPhonenumberOptions): Promise<Models.SmsPhoneNumber>; 
   	getRoutingSmsPhonenumbers(opts?: RoutingApi.getRoutingSmsPhonenumbersOptions): Promise<Models.SmsPhoneNumberEntityListing>; 
-  	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilization>; 
-  	getRoutingUtilization(): Promise<Models.Utilization>; 
+  	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilizationResponse>; 
+  	getRoutingUtilization(): Promise<Models.UtilizationResponse>; 
   	getRoutingUtilizationTag(tagId: string): Promise<Models.UtilizationTag>; 
   	getRoutingUtilizationTagAgents(tagId: string): Promise<Array<object>>; 
   	getRoutingUtilizationTags(opts?: RoutingApi.getRoutingUtilizationTagsOptions): Promise<Models.UtilizationTagEntityListing>; 
@@ -4611,8 +4672,8 @@ declare class RoutingApi {
   	putRoutingSettings(body: Models.RoutingSettings): Promise<Models.RoutingSettings>; 
   	putRoutingSettingsTranscription(body: Models.TranscriptionSettings): Promise<Models.TranscriptionSettings>; 
   	putRoutingSmsPhonenumber(addressId: string, body: Models.SmsPhoneNumber): Promise<Models.SmsPhoneNumber>; 
-  	putRoutingUserUtilization(userId: string, body: Models.Utilization): Promise<Models.AgentMaxUtilization>; 
-  	putRoutingUtilization(body: Models.Utilization): Promise<Models.Utilization>; 
+  	putRoutingUserUtilization(userId: string, body: Models.UtilizationRequest): Promise<Models.AgentMaxUtilizationResponse>; 
+  	putRoutingUtilization(body: Models.UtilizationRequest): Promise<Models.UtilizationResponse>; 
   	putRoutingWrapupcode(codeId: string, body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>; 
   	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>; 
   	putUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>;
@@ -5885,7 +5946,7 @@ declare class UsersApi {
   	getAuthorizationSubjectsMe(): Promise<Models.AuthzSubject>; 
   	getFieldconfig(type: string): Promise<Models.FieldConfig>; 
   	getProfilesUsers(opts?: UsersApi.getProfilesUsersOptions): Promise<Models.UserProfileEntityListing>; 
-  	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilization>; 
+  	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilizationResponse>; 
   	getUser(userId: string, opts?: UsersApi.getUserOptions): Promise<Models.User>; 
   	getUserAdjacents(userId: string, opts?: UsersApi.getUserAdjacentsOptions): Promise<Models.Adjacents>; 
   	getUserCallforwarding(userId: string): Promise<Models.CallForwarding>; 
@@ -5943,7 +6004,7 @@ declare class UsersApi {
   	postUsersSearchConversationTarget(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
   	postUsersSearchQueuemembersManage(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
   	postUsersSearchTeamsAssign(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
-  	putRoutingUserUtilization(userId: string, body: Models.Utilization): Promise<Models.AgentMaxUtilization>; 
+  	putRoutingUserUtilization(userId: string, body: Models.UtilizationRequest): Promise<Models.AgentMaxUtilizationResponse>; 
   	putUserCallforwarding(userId: string, body: Models.CallForwarding): Promise<Models.CallForwarding>; 
   	putUserOutofoffice(userId: string, body: Models.OutOfOffice): Promise<Models.OutOfOffice>; 
   	putUserProfileskills(userId: string, body: Array<string>): Promise<Array<string>>; 
@@ -7561,7 +7622,7 @@ declare namespace Models {
 		"businessUnit"?: Models.BusinessUnitReference;
 	}
 	
-	export interface AgentMaxUtilization { 
+	export interface AgentMaxUtilizationResponse { 
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
 		"level"?: string;
 	}
@@ -8196,7 +8257,6 @@ declare namespace Models {
 		"screenName"?: string;
 		"app"?: Models.JourneyApp;
 		"device"?: Models.Device;
-		"ipAddress"?: string;
 		"ipOrganization"?: string;
 		"geolocation"?: Models.JourneyGeolocation;
 		"sdkLibrary"?: Models.SdkLibrary;
@@ -8207,7 +8267,6 @@ declare namespace Models {
 		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
 		"traits"?: { [key: string]: Models.CustomEventAttribute; };
 		"createdDate"?: string;
-		"externalContact"?: Models.AddressableEntityRef;
 	}
 	
 	export interface AppEventResponseSession { 
@@ -12231,6 +12290,8 @@ declare namespace Models {
 		"dateModified"?: string;
 		"version"?: number;
 		"contactList"?: Models.DomainEntityRef;
+		"contactListTemplate"?: Models.DomainEntityRef;
+		"sourceType"?: string;
 		"clauses"?: Array<Models.ContactListFilterClause>;
 		"filterType"?: string;
 		"selfUri"?: string;
@@ -12269,6 +12330,38 @@ declare namespace Models {
 		"minInclusive"?: boolean;
 		"maxInclusive"?: boolean;
 		"inSet"?: Array<string>;
+	}
+	
+	export interface ContactListTemplate { 
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
+		"columnNames": Array<string>;
+		"phoneColumns"?: Array<Models.ContactPhoneNumberColumn>;
+		"emailColumns"?: Array<Models.EmailColumn>;
+		"previewModeColumnName"?: string;
+		"previewModeAcceptedValues"?: Array<string>;
+		"attemptLimits"?: Models.DomainEntityRef;
+		"automaticTimeZoneMapping"?: boolean;
+		"zipCodeColumnName"?: string;
+		"columnDataTypeSpecifications"?: Array<Models.ColumnDataTypeSpecification>;
+		"trimWhitespace"?: boolean;
+		"selfUri"?: string;
+	}
+	
+	export interface ContactListTemplateEntityListing { 
+		"entities"?: Array<Models.ContactListTemplate>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface ContactListing { 
@@ -17892,8 +17985,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -17907,8 +18000,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -17922,8 +18015,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -19489,6 +19582,7 @@ declare namespace Models {
 		"id"?: string;
 		"downloadUri"?: string;
 		"failed"?: boolean;
+		"statusCode"?: string;
 	}
 	
 	export interface ExecutionDataRequest { 
@@ -20564,6 +20658,71 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface FlowExecutionAggregateDataContainer { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatisticalResponse>;
+	}
+	
+	export interface FlowExecutionAggregateQueryClause { 
+		"type": string;
+		"predicates": Array<Models.FlowExecutionAggregateQueryPredicate>;
+	}
+	
+	export interface FlowExecutionAggregateQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.FlowExecutionAggregateQueryClause>;
+		"predicates"?: Array<Models.FlowExecutionAggregateQueryPredicate>;
+	}
+	
+	export interface FlowExecutionAggregateQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+		"range"?: Models.NumericRange;
+	}
+	
+	export interface FlowExecutionAggregateQueryResponse { 
+		"results"?: Array<Models.FlowExecutionAggregateDataContainer>;
+	}
+	
+	export interface FlowExecutionAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.FlowExecutionAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.FlowExecutionAggregationView>;
+		"alternateTimeDimension"?: string;
+	}
+	
+	export interface FlowExecutionAggregationView { 
+		"target": string;
+		"name": string;
+		"function": string;
+		"range"?: Models.AggregationRange;
+	}
+	
+	export interface FlowExecutionAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.FlowExecutionAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface FlowExecutionAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.FlowExecutionAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.FlowExecutionAggregationView>;
+		"alternateTimeDimension"?: string;
+		"pageSize"?: number;
 	}
 	
 	export interface FlowExecutionDataQueryResult { 
@@ -22130,10 +22289,40 @@ declare namespace Models {
 		"completedRecords": number;
 		"percentComplete": number;
 		"failureReason"?: string;
+		"targetContactListIds"?: Array<string>;
+		"listNamePrefix"?: string;
 	}
 	
 	export interface ImportStatusRequest { 
 		"status": string;
+	}
+	
+	export interface ImportTemplate { 
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
+		"contactListTemplate": Models.DomainEntityRef;
+		"contactListFilter"?: Models.DomainEntityRef;
+		"useSplittingCriteria"?: boolean;
+		"splittingInformation"?: Models.SplittingInformation;
+		"listNameFormat"?: string;
+		"customListNameFormatValue"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ImportTemplateEntityListing { 
+		"entities"?: Array<Models.ImportTemplate>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface InboundDomain { 
@@ -24664,9 +24853,15 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface LabelUtilization { 
+	export interface LabelUtilizationRequest { 
 		"maximumCapacity"?: number;
 		"interruptingLabelIds"?: Array<string>;
+	}
+	
+	export interface LabelUtilizationResponse { 
+		"maximumCapacity"?: number;
+		"interruptingLabelIds"?: Array<string>;
+		"labelName"?: string;
 	}
 	
 	export interface Language { 
@@ -25728,6 +25923,21 @@ declare namespace Models {
 		"action"?: string;
 	}
 	
+	export interface LogCaptureDownloadExecutionResponse { 
+		"id": string;
+		"state": string;
+		"dateStart": string;
+		"fileUrl": string;
+		"selfUri"?: string;
+		"user": Models.AddressableEntityRef;
+	}
+	
+	export interface LogCaptureQueryRequest { 
+		"interval": string;
+		"userId": string;
+		"sortOrder"?: string;
+	}
+	
 	export interface LogCaptureUserConfiguration { 
 		"id"?: string;
 		"dateExpired": string;
@@ -25886,6 +26096,7 @@ declare namespace Models {
 		"user"?: Models.NamedEntity;
 		"ice"?: Models.MediaIceStatistics;
 		"rtp"?: Models.MediaRtpStatistics;
+		"reconnectAttemptCount"?: number;
 	}
 	
 	export interface MediaIceSelectedCandidate { 
@@ -35177,6 +35388,13 @@ declare namespace Models {
 		"agentEmpathyEnabled"?: boolean;
 	}
 	
+	export interface SplittingInformation { 
+		"criteria"?: string;
+		"criteriaValue"?: string;
+		"createRemainderContactList"?: boolean;
+		"useWaterfallRule"?: boolean;
+	}
+	
 	export interface StarrableDivision { 
 		"id"?: string;
 		"name"?: string;
@@ -38236,9 +38454,23 @@ declare namespace Models {
 		"granularity"?: string;
 		"comparativePeriod"?: Models.WorkdayPeriod;
 		"primaryPeriod"?: Models.WorkdayPeriod;
-		"entities"?: Array<Models.InsightsTrendMetricItem>;
-		"total"?: Models.InsightsTrendTotalItem;
 		"user"?: Models.UserReference;
+		"entities"?: Array<Models.UserInsightsTrendMetricItem>;
+		"total"?: Models.UserInsightsTrendTotalItem;
+	}
+	
+	export interface UserInsightsTrendMetricItem { 
+		"metric"?: Models.AddressableEntityRef;
+		"trends"?: Models.UserInsightsTrends;
+	}
+	
+	export interface UserInsightsTrendTotalItem { 
+		"trends"?: Models.UserInsightsTrends;
+	}
+	
+	export interface UserInsightsTrends { 
+		"comparativePeriod"?: Array<Models.UserTrendData>;
+		"primaryPeriod"?: Array<Models.UserTrendData>;
 	}
 	
 	export interface UserLanguageEntityListing { 
@@ -38818,6 +39050,15 @@ declare namespace Models {
 		"destinationUserId": string;
 	}
 	
+	export interface UserTrendData { 
+		"dateStartWorkday"?: string;
+		"dateEndWorkday"?: string;
+		"percentOfGoal"?: number;
+		"averageValue"?: number;
+		"rankTotalPoints"?: number;
+		"rankPercentagePoints"?: number;
+	}
+	
 	export interface UsersSearchResponse { 
 		"total": number;
 		"pageCount": number;
@@ -38830,14 +39071,18 @@ declare namespace Models {
 		"results": Array<Models.User>;
 	}
 	
-	export interface Utilization { 
-		"utilization"?: { [key: string]: Models.MediaUtilization; };
-	}
-	
 	export interface UtilizationLabel { 
 		"id"?: string;
 		"name"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface UtilizationRequest { 
+		"utilization"?: { [key: string]: Models.MediaUtilization; };
+	}
+	
+	export interface UtilizationResponse { 
+		"utilization"?: { [key: string]: Models.MediaUtilization; };
 	}
 	
 	export interface UtilizationTag { 

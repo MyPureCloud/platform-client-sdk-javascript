@@ -3877,7 +3877,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 
 <a name="getRoutingUserUtilization"></a>
 
-# AgentMaxUtilization getRoutingUserUtilization(userId)
+# AgentMaxUtilizationResponse getRoutingUserUtilization(userId)
 
 
 GET /api/v2/routing/users/{userId}/utilization
@@ -3924,11 +3924,11 @@ apiInstance.getRoutingUserUtilization(userId)
 
 ### Return type
 
-**AgentMaxUtilization**
+**AgentMaxUtilizationResponse**
 
 <a name="getRoutingUtilization"></a>
 
-# Utilization getRoutingUtilization()
+# UtilizationResponse getRoutingUtilization()
 
 
 GET /api/v2/routing/utilization
@@ -3970,7 +3970,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Utilization**
+**UtilizationResponse**
 
 <a name="getRoutingUtilizationTag"></a>
 
@@ -6953,7 +6953,7 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 
 <a name="putRoutingUserUtilization"></a>
 
-# AgentMaxUtilization putRoutingUserUtilization(userId, body)
+# AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body)
 
 
 PUT /api/v2/routing/users/{userId}/utilization
@@ -7001,11 +7001,11 @@ apiInstance.putRoutingUserUtilization(userId, body)
 
 ### Return type
 
-**AgentMaxUtilization**
+**AgentMaxUtilizationResponse**
 
 <a name="putRoutingUtilization"></a>
 
-# Utilization putRoutingUtilization(body)
+# UtilizationResponse putRoutingUtilization(body)
 
 
 PUT /api/v2/routing/utilization
@@ -7051,7 +7051,7 @@ apiInstance.putRoutingUtilization(body)
 
 ### Return type
 
-**Utilization**
+**UtilizationResponse**
 
 <a name="putRoutingWrapupcode"></a>
 

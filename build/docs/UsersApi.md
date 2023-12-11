@@ -1197,7 +1197,7 @@ apiInstance.getProfilesUsers(opts)
 
 <a name="getRoutingUserUtilization"></a>
 
-# AgentMaxUtilization getRoutingUserUtilization(userId)
+# AgentMaxUtilizationResponse getRoutingUserUtilization(userId)
 
 
 GET /api/v2/routing/users/{userId}/utilization
@@ -1244,7 +1244,7 @@ apiInstance.getRoutingUserUtilization(userId)
 
 ### Return type
 
-**AgentMaxUtilization**
+**AgentMaxUtilizationResponse**
 
 <a name="getUser"></a>
 
@@ -4325,7 +4325,7 @@ apiInstance.postUsersSearchTeamsAssign(body)
 
 <a name="putRoutingUserUtilization"></a>
 
-# AgentMaxUtilization putRoutingUserUtilization(userId, body)
+# AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body)
 
 
 PUT /api/v2/routing/users/{userId}/utilization
@@ -4373,7 +4373,7 @@ apiInstance.putRoutingUserUtilization(userId, body)
 
 ### Return type
 
-**AgentMaxUtilization**
+**AgentMaxUtilizationResponse**
 
 <a name="putUserCallforwarding"></a>
 

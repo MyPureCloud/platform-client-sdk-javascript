@@ -66,6 +66,8 @@ docs/LicenseApi.json
 docs/LicenseApi.md
 docs/LocationsApi.json
 docs/LocationsApi.md
+docs/LogCaptureApi.json
+docs/LogCaptureApi.md
 docs/MessagingApi.json
 docs/MessagingApi.md
 docs/MobileDevicesApi.json
@@ -285,11 +287,15 @@ docs/deleteOutboundContactlistContact-example.txt
 docs/deleteOutboundContactlistContacts-example.txt
 docs/deleteOutboundContactlistfilter-example.txt
 docs/deleteOutboundContactlists-example.txt
+docs/deleteOutboundContactlisttemplate-example.txt
+docs/deleteOutboundContactlisttemplates-example.txt
 docs/deleteOutboundDigitalruleset-example.txt
 docs/deleteOutboundDnclist-example.txt
 docs/deleteOutboundDnclistCustomexclusioncolumns-example.txt
 docs/deleteOutboundDnclistEmailaddresses-example.txt
 docs/deleteOutboundDnclistPhonenumbers-example.txt
+docs/deleteOutboundImporttemplate-example.txt
+docs/deleteOutboundImporttemplates-example.txt
 docs/deleteOutboundMessagingcampaign-example.txt
 docs/deleteOutboundMessagingcampaignProgress-example.txt
 docs/deleteOutboundRuleset-example.txt
@@ -429,6 +435,8 @@ docs/getAnalyticsEvaluationsAggregatesJob-example.txt
 docs/getAnalyticsEvaluationsAggregatesJob-example.txt
 docs/getAnalyticsEvaluationsAggregatesJobResults-example.txt
 docs/getAnalyticsEvaluationsAggregatesJobResults-example.txt
+docs/getAnalyticsFlowexecutionsAggregatesJob-example.txt
+docs/getAnalyticsFlowexecutionsAggregatesJobResults-example.txt
 docs/getAnalyticsFlowsAggregatesJob-example.txt
 docs/getAnalyticsFlowsAggregatesJob-example.txt
 docs/getAnalyticsFlowsAggregatesJobResults-example.txt
@@ -666,6 +674,7 @@ docs/getDataextensionsCoretype-example.txt
 docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
 docs/getDate-example.txt
+docs/getDiagnosticsLogcaptureBrowserEntriesDownloadJob-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
 docs/getDownload-example.txt
@@ -1038,6 +1047,8 @@ docs/getOutboundContactlistfilters-example.txt
 docs/getOutboundContactlists-example.txt
 docs/getOutboundContactlistsDivisionview-example.txt
 docs/getOutboundContactlistsDivisionviews-example.txt
+docs/getOutboundContactlisttemplate-example.txt
+docs/getOutboundContactlisttemplates-example.txt
 docs/getOutboundDigitalruleset-example.txt
 docs/getOutboundDigitalrulesets-example.txt
 docs/getOutboundDnclist-example.txt
@@ -1048,6 +1059,9 @@ docs/getOutboundDnclistsDivisionview-example.txt
 docs/getOutboundDnclistsDivisionviews-example.txt
 docs/getOutboundEvent-example.txt
 docs/getOutboundEvents-example.txt
+docs/getOutboundImporttemplate-example.txt
+docs/getOutboundImporttemplateImportstatus-example.txt
+docs/getOutboundImporttemplates-example.txt
 docs/getOutboundMessagingcampaign-example.txt
 docs/getOutboundMessagingcampaignDiagnostics-example.txt
 docs/getOutboundMessagingcampaignProgress-example.txt
@@ -1695,6 +1709,8 @@ docs/postAnalyticsEvaluationsAggregatesJobs-example.txt
 docs/postAnalyticsEvaluationsAggregatesJobs-example.txt
 docs/postAnalyticsEvaluationsAggregatesQuery-example.txt
 docs/postAnalyticsEvaluationsAggregatesQuery-example.txt
+docs/postAnalyticsFlowexecutionsAggregatesJobs-example.txt
+docs/postAnalyticsFlowexecutionsAggregatesQuery-example.txt
 docs/postAnalyticsFlowsActivityQuery-example.txt
 docs/postAnalyticsFlowsActivityQuery-example.txt
 docs/postAnalyticsFlowsAggregatesJobs-example.txt
@@ -1868,6 +1884,7 @@ docs/postConversationsScreenshareParticipantCommunicationWrapup-example.txt
 docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideosMeetings-example.txt
+docs/postDiagnosticsLogcaptureBrowserEntriesDownloadJobs-example.txt
 docs/postDocumentationAllSearch-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
@@ -2052,12 +2069,16 @@ docs/postOutboundContactlistExport-example.txt
 docs/postOutboundContactlistfilters-example.txt
 docs/postOutboundContactlistfiltersPreview-example.txt
 docs/postOutboundContactlists-example.txt
+docs/postOutboundContactlisttemplates-example.txt
+docs/postOutboundContactlisttemplatesBulkAdd-example.txt
 docs/postOutboundConversationDnc-example.txt
 docs/postOutboundDigitalrulesets-example.txt
 docs/postOutboundDnclistEmailaddresses-example.txt
 docs/postOutboundDnclistExport-example.txt
 docs/postOutboundDnclistPhonenumbers-example.txt
 docs/postOutboundDnclists-example.txt
+docs/postOutboundImporttemplates-example.txt
+docs/postOutboundImporttemplatesBulkAdd-example.txt
 docs/postOutboundMessagingcampaigns-example.txt
 docs/postOutboundMessagingcampaignsProgress-example.txt
 docs/postOutboundRulesets-example.txt
@@ -2397,8 +2418,10 @@ docs/putOutboundCampaignrule-example.txt
 docs/putOutboundContactlist-example.txt
 docs/putOutboundContactlistContact-example.txt
 docs/putOutboundContactlistfilter-example.txt
+docs/putOutboundContactlisttemplate-example.txt
 docs/putOutboundDigitalruleset-example.txt
 docs/putOutboundDnclist-example.txt
+docs/putOutboundImporttemplate-example.txt
 docs/putOutboundMessagingcampaign-example.txt
 docs/putOutboundRuleset-example.txt
 docs/putOutboundSchedulesCampaign-example.txt
@@ -2532,6 +2555,7 @@ src/purecloud-platform-client-v2/api/LanguagesApi.js
 src/purecloud-platform-client-v2/api/LearningApi.js
 src/purecloud-platform-client-v2/api/LicenseApi.js
 src/purecloud-platform-client-v2/api/LocationsApi.js
+src/purecloud-platform-client-v2/api/LogCaptureApi.js
 src/purecloud-platform-client-v2/api/MessagingApi.js
 src/purecloud-platform-client-v2/api/MobileDevicesApi.js
 src/purecloud-platform-client-v2/api/NotificationsApi.js
