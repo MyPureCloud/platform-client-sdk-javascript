@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 184.0.0
+	 * @version 185.0.0
 	 */
 
 	/**
@@ -773,8 +773,9 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Get the list of available languages.
+	 * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
 	 * 
+	 * @deprecated
 	 */
 	getTelephonyProvidersEdgesAvailablelanguages() { 
 

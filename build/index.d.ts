@@ -14,6 +14,10 @@ declare class ApiClientClass {
 	loginImplicitGrant(clientId: string, redirectUri: string, opts?: LoginImplicitGrantOptions): Promise<AuthData>;
 	loginCodeAuthorizationGrant(clientId: string, clientSecret: string, authCode: string, redirectUri: string): Promise<AuthData>;
 	refreshCodeAuthorizationGrant(clientId: string, clientSecret: string, refreshToken: string): Promise<AuthData>;
+	loginPKCEGrant(clientId: string, redirectUri: string, opts?: LoginPKCEGrantOptions, codeVerifier?: string): Promise<AuthData>;
+	generatePKCECodeVerifier(nChar: number): string;
+	computePKCECodeChallenge(code: string): Promise<string>;
+	authorizePKCEGrant(clientId: string, codeVerifier: string, authCode: string, redirectUri: string): Promise<AuthData>;
 	logout(logoutRedirectUri: string): void;
 	setAccessToken(token: string): void;
 	setEnvironment(environment: string): void;
@@ -25,6 +29,12 @@ declare class ApiClientClass {
 
 declare class LoginImplicitGrantOptions {
 	state?: string;
+}
+
+declare class LoginPKCEGrantOptions {
+	state?: string;
+	org?: string;
+	provider?: string;
 }
 
 declare class AuthData {
@@ -4122,22 +4132,22 @@ declare class QualityApi {
   	getQualityConversationsAuditsQueryTransactionIdResults(transactionId: string, opts?: QualityApi.getQualityConversationsAuditsQueryTransactionIdResultsOptions): Promise<Models.QualityAuditQueryExecutionResultsResponse>; 
   	getQualityEvaluationsQuery(opts?: QualityApi.getQualityEvaluationsQueryOptions): Promise<Models.EvaluationEntityListing>; 
   	getQualityEvaluatorsActivity(opts?: QualityApi.getQualityEvaluatorsActivityOptions): Promise<Models.EvaluatorActivityEntityListing>; 
-  	getQualityForm(formId: string): Promise<Models.EvaluationForm>; 
-  	getQualityFormVersions(formId: string, opts?: QualityApi.getQualityFormVersionsOptions): Promise<Models.EvaluationFormEntityListing>; 
-  	getQualityForms(opts?: QualityApi.getQualityFormsOptions): Promise<Models.EvaluationFormEntityListing>; 
-  	getQualityFormsEvaluation(formId: string): Promise<Models.EvaluationForm>; 
-  	getQualityFormsEvaluationVersions(formId: string, opts?: QualityApi.getQualityFormsEvaluationVersionsOptions): Promise<Models.EvaluationFormEntityListing>; 
-  	getQualityFormsEvaluations(opts?: QualityApi.getQualityFormsEvaluationsOptions): Promise<Models.EvaluationFormEntityListing>; 
-  	getQualityFormsEvaluationsBulkContexts(contextId: Array<string>): Promise<Array<Models.EvaluationForm>>; 
+  	getQualityForm(formId: string): Promise<Models.EvaluationFormResponse>; 
+  	getQualityFormVersions(formId: string, opts?: QualityApi.getQualityFormVersionsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
+  	getQualityForms(opts?: QualityApi.getQualityFormsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
+  	getQualityFormsEvaluation(formId: string): Promise<Models.EvaluationFormResponse>; 
+  	getQualityFormsEvaluationVersions(formId: string, opts?: QualityApi.getQualityFormsEvaluationVersionsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
+  	getQualityFormsEvaluations(opts?: QualityApi.getQualityFormsEvaluationsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
+  	getQualityFormsEvaluationsBulkContexts(contextId: Array<string>): Promise<Array<Models.EvaluationFormResponse>>; 
   	getQualityFormsSurvey(formId: string): Promise<Models.SurveyForm>; 
   	getQualityFormsSurveyVersions(formId: string, opts?: QualityApi.getQualityFormsSurveyVersionsOptions): Promise<Models.SurveyFormEntityListing>; 
   	getQualityFormsSurveys(opts?: QualityApi.getQualityFormsSurveysOptions): Promise<Models.SurveyFormEntityListing>; 
   	getQualityFormsSurveysBulk(id: Array<string>): Promise<Models.SurveyFormEntityListing>; 
   	getQualityFormsSurveysBulkContexts(contextId: Array<string>, opts?: QualityApi.getQualityFormsSurveysBulkContextsOptions): Promise<Array<Models.SurveyForm>>; 
-  	getQualityPublishedform(formId: string): Promise<Models.EvaluationForm>; 
-  	getQualityPublishedforms(opts?: QualityApi.getQualityPublishedformsOptions): Promise<Models.EvaluationFormEntityListing>; 
-  	getQualityPublishedformsEvaluation(formId: string): Promise<Models.EvaluationForm>; 
-  	getQualityPublishedformsEvaluations(opts?: QualityApi.getQualityPublishedformsEvaluationsOptions): Promise<Models.EvaluationFormEntityListing>; 
+  	getQualityPublishedform(formId: string): Promise<Models.EvaluationFormResponse>; 
+  	getQualityPublishedforms(opts?: QualityApi.getQualityPublishedformsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
+  	getQualityPublishedformsEvaluation(formId: string): Promise<Models.EvaluationFormResponse>; 
+  	getQualityPublishedformsEvaluations(opts?: QualityApi.getQualityPublishedformsEvaluationsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
   	getQualityPublishedformsSurvey(formId: string): Promise<Models.SurveyForm>; 
   	getQualityPublishedformsSurveys(opts?: QualityApi.getQualityPublishedformsSurveysOptions): Promise<Models.SurveyFormEntityListing>; 
   	getQualitySurvey(surveyId: string): Promise<Models.Survey>; 
@@ -4152,17 +4162,17 @@ declare class QualityApi {
   	postQualityConversationsAuditsQuery(body: Models.QMAuditQueryRequest): Promise<Models.QualityAuditQueryExecutionStatusResponse>; 
   	postQualityEvaluationsAggregatesQueryMe(body: Models.EvaluationAggregationQueryMe): Promise<Models.EvaluationAggregateQueryResponse>; 
   	postQualityEvaluationsScoring(body: Models.EvaluationFormAndScoringSet): Promise<Models.EvaluationScoringSet>; 
-  	postQualityForms(body: Models.EvaluationForm): Promise<Models.EvaluationForm>; 
-  	postQualityFormsEvaluations(body: Models.EvaluationForm): Promise<Models.EvaluationForm>; 
+  	postQualityForms(body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
+  	postQualityFormsEvaluations(body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
   	postQualityFormsSurveys(body: Models.SurveyForm): Promise<Models.SurveyForm>; 
-  	postQualityPublishedforms(body: Models.PublishForm): Promise<Models.EvaluationForm>; 
-  	postQualityPublishedformsEvaluations(body: Models.PublishForm): Promise<Models.EvaluationForm>; 
+  	postQualityPublishedforms(body: Models.PublishForm): Promise<Models.EvaluationFormResponse>; 
+  	postQualityPublishedformsEvaluations(body: Models.PublishForm): Promise<Models.EvaluationFormResponse>; 
   	postQualityPublishedformsSurveys(body: Models.PublishForm): Promise<Models.SurveyForm>; 
   	postQualitySurveysScoring(body: Models.SurveyFormAndScoringSet): Promise<Models.SurveyScoringSet>; 
   	putQualityCalibration(calibrationId: string, body: Models.Calibration): Promise<Models.Calibration>; 
   	putQualityConversationEvaluation(conversationId: string, evaluationId: string, body: Models.Evaluation, opts?: QualityApi.putQualityConversationEvaluationOptions): Promise<Models.EvaluationResponse>; 
-  	putQualityForm(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationForm>; 
-  	putQualityFormsEvaluation(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationForm>; 
+  	putQualityForm(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
+  	putQualityFormsEvaluation(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
   	putQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>; 
   	putQualitySurveysScorable(customerSurveyUrl: string, body: Models.ScorableSurvey): Promise<Models.ScorableSurvey>;
 }
@@ -4561,6 +4571,7 @@ declare class RoutingApi {
   	deleteRoutingSmsPhonenumber(addressId: string): Promise<void>; 
   	deleteRoutingUserUtilization(userId: string): Promise<void>; 
   	deleteRoutingUtilization(): Promise<void>; 
+  	deleteRoutingUtilizationLabel(labelId: string, opts?: RoutingApi.deleteRoutingUtilizationLabelOptions): Promise<void>; 
   	deleteRoutingUtilizationTag(tagId: string, opts?: RoutingApi.deleteRoutingUtilizationTagOptions): Promise<void>; 
   	deleteRoutingWrapupcode(codeId: string): Promise<void>; 
   	deleteUserRoutinglanguage(userId: string, languageId: string): Promise<void>; 
@@ -4616,6 +4627,9 @@ declare class RoutingApi {
   	getRoutingSmsPhonenumbers(opts?: RoutingApi.getRoutingSmsPhonenumbersOptions): Promise<Models.SmsPhoneNumberEntityListing>; 
   	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilizationResponse>; 
   	getRoutingUtilization(): Promise<Models.UtilizationResponse>; 
+  	getRoutingUtilizationLabel(labelId: string): Promise<Models.UtilizationLabel>; 
+  	getRoutingUtilizationLabelAgents(labelId: string): Promise<Array<object>>; 
+  	getRoutingUtilizationLabels(opts?: RoutingApi.getRoutingUtilizationLabelsOptions): Promise<Models.UtilizationLabelEntityListing>; 
   	getRoutingUtilizationTag(tagId: string): Promise<Models.UtilizationTag>; 
   	getRoutingUtilizationTagAgents(tagId: string): Promise<Array<object>>; 
   	getRoutingUtilizationTags(opts?: RoutingApi.getRoutingUtilizationTagsOptions): Promise<Models.UtilizationTagEntityListing>; 
@@ -4661,6 +4675,7 @@ declare class RoutingApi {
   	postRoutingSmsAddresses(body: Models.SmsAddressProvision): Promise<Models.SmsAddress>; 
   	postRoutingSmsPhonenumbers(body: Models.SmsPhoneNumberProvision): Promise<Models.SmsPhoneNumber>; 
   	postRoutingSmsPhonenumbersImport(body: Models.SmsPhoneNumberImport): Promise<Models.SmsPhoneNumber>; 
+  	postRoutingUtilizationLabels(body: Models.CreateUtilizationLabelRequest): Promise<Models.UtilizationLabel>; 
   	postRoutingUtilizationTags(body: Models.CreateUtilizationTagRequest): Promise<Models.UtilizationTag>; 
   	postRoutingWrapupcodes(body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>; 
   	postUserRoutinglanguages(userId: string, body: Models.UserRoutingLanguagePost): Promise<Models.UserRoutingLanguage>; 
@@ -4674,6 +4689,7 @@ declare class RoutingApi {
   	putRoutingSmsPhonenumber(addressId: string, body: Models.SmsPhoneNumber): Promise<Models.SmsPhoneNumber>; 
   	putRoutingUserUtilization(userId: string, body: Models.UtilizationRequest): Promise<Models.AgentMaxUtilizationResponse>; 
   	putRoutingUtilization(body: Models.UtilizationRequest): Promise<Models.UtilizationResponse>; 
+  	putRoutingUtilizationLabel(labelId: string, body: Models.UpdateUtilizationLabelRequest): Promise<Models.UtilizationLabel>; 
   	putRoutingWrapupcode(codeId: string, body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>; 
   	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>; 
   	putUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>;
@@ -4681,6 +4697,9 @@ declare class RoutingApi {
 
 declare namespace RoutingApi { 
 	export interface deleteRoutingQueueOptions { 
+		"forceDelete"?: boolean;
+	}
+	export interface deleteRoutingUtilizationLabelOptions { 
 		"forceDelete"?: boolean;
 	}
 	export interface deleteRoutingUtilizationTagOptions { 
@@ -4844,6 +4863,12 @@ declare namespace RoutingApi {
 		"sortOrder"?: string;
 		"language"?: string;
 		"integrationId"?: string;
+	}
+	export interface getRoutingUtilizationLabelsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortOrder"?: string;
+		"name"?: string;
 	}
 	export interface getRoutingUtilizationTagsOptions { 
 		"pageSize"?: number;
@@ -6376,12 +6401,15 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.ScheduleGenerationResult>; 
   	getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastOptions): Promise<Models.BuHeadcountForecastResponse>; 
   	getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId: string, weekId: string, scheduleId: string, agentId: string): Promise<Models.BuAgentScheduleHistoryResponse>; 
+  	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.PerformancePredictionResponse>; 
+  	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId: string, weekId: string, scheduleId: string, recalculationId: string): Promise<Models.PerformancePredictionRecalculationResponse>; 
   	getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId: string, weekId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekSchedulesOptions): Promise<Models.BuScheduleListing>; 
   	getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastOptions): Promise<Models.BuShortTermForecast>; 
   	getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastDataOptions): Promise<Models.BuForecastResultResponse>; 
   	getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId: string, weekDateId: string, forecastId: string): Promise<Models.BuForecastGenerationResult>; 
   	getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataOptions): Promise<Models.LongTermForecastResultResponse>; 
   	getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId: string, weekDateId: string, forecastId: string): Promise<Models.ForecastPlanningGroupsResponse>; 
+  	getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementOptions): Promise<Models.BuForecastStaffingRequirementsResultResponse>; 
   	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId: string, weekDateId: string): Promise<Models.BuShortTermForecastListing>; 
   	getWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnitListing>; 
   	getWorkforcemanagementBusinessunitsDivisionviews(opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitsDivisionviewsOptions): Promise<Models.BusinessUnitListing>; 
@@ -6430,6 +6458,7 @@ declare class WorkforceManagementApi {
   	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitSchedulingRunOptions): Promise<void>; 
   	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>; 
   	patchWorkforcemanagementManagementunit(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitOptions): Promise<Models.ManagementUnit>; 
+  	patchWorkforcemanagementManagementunitAgents(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitAgentsOptions): Promise<void>; 
   	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeofflimitOptions): Promise<Models.TimeOffLimit>; 
   	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeoffplanOptions): Promise<Models.TimeOffPlan>; 
   	patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId: string, timeOffRequestId: string, userId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusOptions): Promise<Models.UserTimeOffIntegrationStatusResponse>; 
@@ -6456,6 +6485,8 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitServicegoaltemplatesOptions): Promise<Models.ServiceGoalTemplate>; 
   	postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuQueryAgentSchedulesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryOptions): Promise<Models.BuAsyncAgentSchedulesQueryResponse>; 
   	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuCopyScheduleRequest): Promise<Models.BuAsyncScheduleResponse>; 
+  	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsOptions): Promise<Models.PerformancePredictionRecalculationResponse>; 
+  	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlOptions): Promise<Models.PerformancePredictionRecalculationUploadResponse>; 
   	postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuRescheduleRequest): Promise<Models.BuAsyncScheduleRunResponse>; 
   	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId: string, weekId: string, scheduleId: string, body: Models.ProcessScheduleUpdateUploadRequest): Promise<Models.BuAsyncScheduleResponse>; 
   	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId: string, weekId: string, scheduleId: string, body: Models.UploadUrlRequestBody): Promise<Models.UpdateScheduleUploadResponse>; 
@@ -6547,6 +6578,9 @@ declare namespace WorkforceManagementApi {
 	export interface getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataOptions { 
 		"forceDownloadService"?: boolean;
 	}
+	export interface getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementOptions { 
+		"weekNumbers"?: Array<string>;
+	}
 	export interface getWorkforcemanagementBusinessunitsOptions { 
 		"feature"?: string;
 		"divisionId"?: string;
@@ -6619,6 +6653,9 @@ declare namespace WorkforceManagementApi {
 	export interface patchWorkforcemanagementManagementunitOptions { 
 		"body"?: Models.UpdateManagementUnitRequest;
 	}
+	export interface patchWorkforcemanagementManagementunitAgentsOptions { 
+		"body"?: Models.UpdateMuAgentsRequest;
+	}
 	export interface patchWorkforcemanagementManagementunitTimeofflimitOptions { 
 		"body"?: Models.UpdateTimeOffLimitRequest;
 	}
@@ -6689,6 +6726,12 @@ declare namespace WorkforceManagementApi {
 	export interface postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryOptions { 
 		"forceAsync"?: boolean;
 		"forceDownloadService"?: boolean;
+	}
+	export interface postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsOptions { 
+		"body"?: Models.WfmProcessUploadRequest;
+	}
+	export interface postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlOptions { 
+		"body"?: Models.UploadUrlRequestBody;
 	}
 	export interface postWorkforcemanagementBusinessunitWeekShorttermforecastCopyOptions { 
 		"forceAsync"?: boolean;
@@ -7668,6 +7711,12 @@ declare namespace Models {
 		"job"?: Models.AdherenceExplanationJobReference;
 		"result"?: Models.AdherenceExplanationListingAgentQueryResponse;
 		"downloadUrl"?: string;
+	}
+	
+	export interface AgentQueueTimeRequest { 
+		"agentId": string;
+		"startOffsetMinutes": Array<number>;
+		"onQueueLengthMinutesPerInterval": Array<number>;
 	}
 	
 	export interface AgentTimeOffRequestPatch { 
@@ -9718,6 +9767,23 @@ declare namespace Models {
 		"downloadUrl"?: string;
 	}
 	
+	export interface BuForecastStaffingRequirementsResult { 
+		"weekNumber": number;
+		"downloadUrl": string;
+		"downloadUrlExpirationDate": string;
+		"planningGroupStaffingRequirements"?: Array<Models.StaffingRequirementsPlanningGroupData>;
+	}
+	
+	export interface BuForecastStaffingRequirementsResultResponse { 
+		"businessUnitId": string;
+		"forecast": Models.BuShortTermForecastReference;
+		"referenceStartDate": string;
+		"weekCount": number;
+		"intervalLengthMinutes": number;
+		"state": string;
+		"results"?: Array<Models.BuForecastStaffingRequirementsResult>;
+	}
+	
 	export interface BuForecastTimeSeriesResult { 
 		"metric"?: string;
 		"forecastingMethod"?: string;
@@ -10457,6 +10523,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.AfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
+		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 		"disposition"?: Models.Disposition;
 	}
 	
@@ -10492,6 +10559,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.AfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
+		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 		"disposition"?: Models.Disposition;
 	}
 	
@@ -10769,6 +10837,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
+		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 	}
 	
 	export interface CallbackBasic { 
@@ -10800,6 +10869,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
+		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 	}
 	
 	export interface CallbackConversation { 
@@ -11412,6 +11482,7 @@ declare namespace Models {
 		"thread": Models.Entity;
 		"user"?: Models.AddressableEntityRef;
 		"toUser"?: Models.AddressableEntityRef;
+		"reactions"?: Array<Models.ChatReaction>;
 	}
 	
 	export interface ChatMessageUser { 
@@ -11420,6 +11491,11 @@ declare namespace Models {
 		"displayName"?: string;
 		"username"?: string;
 		"images"?: Array<Models.UserImage>;
+	}
+	
+	export interface ChatReaction { 
+		"emoji": string;
+		"users": Array<Models.AddressableEntityRef>;
 	}
 	
 	export interface ChatSendMessageResponse { 
@@ -12924,6 +13000,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationCallEventTopicQueueMediaSettings;
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"recording"?: boolean;
@@ -13006,6 +13083,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationCallEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface ConversationCallEventTopicScoredAgent { 
 		"agent"?: Models.ConversationCallEventTopicUriReference;
 		"score"?: number;
@@ -13068,6 +13152,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationCallbackEventTopicQueueMediaSettings;
 		"outboundPreview"?: Models.ConversationCallbackEventTopicDialerPreview;
 		"voicemail"?: Models.ConversationCallbackEventTopicVoicemail;
 		"callbackNumbers"?: Array<string>;
@@ -13146,6 +13231,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationCallbackEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface ConversationCallbackEventTopicScoredAgent { 
 		"agent"?: Models.ConversationCallbackEventTopicUriReference;
 		"score"?: number;
@@ -13200,6 +13292,7 @@ declare namespace Models {
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 	}
 	
 	export interface ConversationChatEventTopicChatConversation { 
@@ -13246,6 +13339,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationChatEventTopicQueueMediaSettings;
 		"roomId"?: string;
 		"avatarImageUrl"?: string;
 	}
@@ -13302,6 +13396,13 @@ declare namespace Models {
 	export interface ConversationChatEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface ConversationChatEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
 	}
 	
 	export interface ConversationChatEventTopicScoredAgent { 
@@ -13370,6 +13471,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationCobrowseEventTopicQueueMediaSettings;
 		"cobrowseSessionId"?: string;
 		"cobrowseRole"?: string;
 		"viewerUrl"?: string;
@@ -13429,6 +13531,13 @@ declare namespace Models {
 	export interface ConversationCobrowseEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface ConversationCobrowseEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
 	}
 	
 	export interface ConversationCobrowseEventTopicScoredAgent { 
@@ -13630,6 +13739,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationEmailEventTopicQueueMediaSettings;
 		"subject"?: string;
 		"messagesSent"?: number;
 		"autoGenerated"?: boolean;
@@ -13675,6 +13785,13 @@ declare namespace Models {
 	export interface ConversationEmailEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface ConversationEmailEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
 	}
 	
 	export interface ConversationEmailEventTopicScoredAgent { 
@@ -13784,6 +13901,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
+		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface ConversationEventTopicCallback { 
@@ -13813,6 +13931,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
+		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface ConversationEventTopicChat { 
@@ -13833,6 +13952,7 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface ConversationEventTopicCobrowse { 
@@ -13855,6 +13975,7 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface ConversationEventTopicConversation { 
@@ -13918,6 +14039,7 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface ConversationEventTopicErrorDetails { 
@@ -13998,6 +14120,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
 		"byoSmsIntegrationId"?: string;
+		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface ConversationEventTopicMessageDetails { 
@@ -14095,6 +14218,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface ConversationEventTopicRecentTransfer { 
 		"id"?: string;
 		"state"?: string;
@@ -14127,6 +14257,7 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface ConversationEventTopicSocialExpression { 
@@ -14176,6 +14307,7 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.ConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface ConversationEventTopicVoicemail { 
@@ -14348,6 +14480,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationMessageEventTopicQueueMediaSettings;
 		"messages"?: Array<Models.ConversationMessageEventTopicMessageDetails>;
 		"type"?: string;
 		"recipientCountry"?: string;
@@ -14375,6 +14508,13 @@ declare namespace Models {
 	export interface ConversationMessageEventTopicMessageSticker { 
 		"url"?: string;
 		"id"?: string;
+	}
+	
+	export interface ConversationMessageEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
 	}
 	
 	export interface ConversationMessageEventTopicScoredAgent { 
@@ -14634,6 +14774,13 @@ declare namespace Models {
 		"paging"?: Models.PagingSpec;
 	}
 	
+	export interface ConversationQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface ConversationReason { 
 		"code"?: string;
 		"message": string;
@@ -14655,6 +14802,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skills"?: Array<Models.AddressableEntityRef>;
 		"scoredAgents"?: Array<Models.ScoredAgent>;
+		"label"?: string;
 	}
 	
 	export interface ConversationScreenShareEventTopicConversationRoutingData { 
@@ -14711,6 +14859,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationScreenShareEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface ConversationScreenShareEventTopicScoredAgent { 
 		"agent"?: Models.ConversationScreenShareEventTopicUriReference;
 		"score"?: number;
@@ -14760,6 +14915,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationScreenShareEventTopicQueueMediaSettings;
 		"context"?: string;
 		"peerCount"?: number;
 		"sharing"?: boolean;
@@ -14837,6 +14993,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationSocialExpressionEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface ConversationSocialExpressionEventTopicScoredAgent { 
 		"agent"?: Models.ConversationSocialExpressionEventTopicUriReference;
 		"score"?: number;
@@ -14886,6 +15049,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationSocialExpressionEventTopicQueueMediaSettings;
 		"socialMediaId"?: string;
 		"socialMediaHub"?: string;
 		"socialUserName"?: string;
@@ -14984,6 +15148,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationVideoEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface ConversationVideoEventTopicScoredAgent { 
 		"agent"?: Models.ConversationVideoEventTopicUriReference;
 		"score"?: number;
@@ -15038,6 +15209,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.ConversationVideoEventTopicQueueMediaSettings;
 		"audioMuted"?: boolean;
 		"videoMuted"?: boolean;
 		"sharingScreen"?: boolean;
@@ -15174,6 +15346,7 @@ declare namespace Models {
 		"participants"?: Array<Models.Destination>;
 		"uuiData"?: string;
 		"externalContactId"?: string;
+		"label"?: string;
 	}
 	
 	export interface CreateCallResponse { 
@@ -15476,6 +15649,11 @@ declare namespace Models {
 		"password"?: string;
 		"divisionId": string;
 		"state"?: string;
+	}
+	
+	export interface CreateUtilizationLabelRequest { 
+		"name": string;
+		"utilization"?: Models.LabelUtilizationRequest;
 	}
 	
 	export interface CreateUtilizationTagRequest { 
@@ -18242,6 +18420,7 @@ declare namespace Models {
 		"physicalEdge"?: boolean;
 		"managed"?: boolean;
 		"edgeDeploymentType"?: string;
+		"certType"?: string;
 		"callDrainingState"?: string;
 		"conversationCount"?: number;
 		"proxy"?: string;
@@ -18609,6 +18788,7 @@ declare namespace Models {
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 	}
 	
 	export interface EmailAddress { 
@@ -19242,8 +19422,19 @@ declare namespace Models {
 		"answers"?: Models.EvaluationScoringSet;
 	}
 	
-	export interface EvaluationFormEntityListing { 
-		"entities"?: Array<Models.EvaluationForm>;
+	export interface EvaluationFormResponse { 
+		"id"?: string;
+		"name": string;
+		"modifiedDate"?: string;
+		"published"?: boolean;
+		"contextId"?: string;
+		"questionGroups"?: Array<Models.EvaluationQuestionGroup>;
+		"weightMode"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface EvaluationFormResponseEntityListing { 
+		"entities"?: Array<Models.EvaluationFormResponse>;
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
@@ -19253,17 +19444,6 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
-	}
-	
-	export interface EvaluationFormResponse { 
-		"id"?: string;
-		"name": string;
-		"modifiedDate"?: string;
-		"published"?: boolean;
-		"contextId"?: string;
-		"questionGroups"?: Array<Models.EvaluationQuestionGroup>;
-		"publishedVersions"?: Models.DomainEntityListingEvaluationForm;
-		"selfUri"?: string;
 	}
 	
 	export interface EvaluationQualityV2TopicCalibration { 
@@ -19407,7 +19587,6 @@ declare namespace Models {
 		"releaseDate"?: string;
 		"assignedDate"?: string;
 		"changedDate"?: string;
-		"revisionCreatedDate"?: string;
 		"queue"?: Models.Queue;
 		"mediaType"?: Array<string>;
 		"rescore"?: boolean;
@@ -19419,7 +19598,6 @@ declare namespace Models {
 		"resourceId"?: string;
 		"resourceType"?: string;
 		"redacted"?: boolean;
-		"agentTeam"?: Models.Team;
 		"isScoringIndex"?: boolean;
 		"authorizedActions"?: Array<string>;
 		"hasAssistanceFailed"?: boolean;
@@ -26284,6 +26462,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
 		"byoSmsIntegrationId"?: string;
+		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
 	}
 	
 	export interface MessageContent { 
@@ -26828,6 +27007,7 @@ declare namespace Models {
 		"defaultObjective"?: Models.DefaultObjective;
 		"lockTemplateId"?: string;
 		"mediaTypeFilteringAllowed"?: boolean;
+		"initialDirectionFilteringAllowed"?: boolean;
 		"queueFilteringAllowed"?: boolean;
 		"selfUri"?: string;
 	}
@@ -27004,6 +27184,11 @@ declare namespace Models {
 	export interface MoveManagementUnitResponse { 
 		"businessUnit"?: Models.BusinessUnitReference;
 		"status"?: string;
+	}
+	
+	export interface MuAgentQueueTimeRequest { 
+		"managementUnitId": string;
+		"agentOnQueueTimes": Array<Models.AgentQueueTimeRequest>;
 	}
 	
 	export interface MuRescheduleResultWrapper { 
@@ -28888,6 +29073,70 @@ declare namespace Models {
 		"architectFlow"?: Models.AddressableEntityRef;
 	}
 	
+	export interface PerformancePredictionCompleteEventTopicErrorBody { 
+		"status"?: number;
+		"code"?: string;
+		"message"?: string;
+		"messageParams"?: { [key: string]: string; };
+	}
+	
+	export interface PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification { 
+		"scheduleId"?: string;
+		"weekDate"?: string;
+		"downloadUrl"?: string;
+		"state"?: string;
+		"error"?: Models.PerformancePredictionCompleteEventTopicErrorBody;
+	}
+	
+	export interface PerformancePredictionOutputs { 
+		"calculationStartDate": string;
+		"calculationIntervalLengthMinutes": number;
+		"planningGroupResults": Array<Models.PlanningGroupOutputs>;
+	}
+	
+	export interface PerformancePredictionRecalculationCompleteEventTopicErrorBody { 
+		"status"?: number;
+		"code"?: string;
+		"message"?: string;
+		"messageParams"?: { [key: string]: string; };
+	}
+	
+	export interface PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification { 
+		"operationId"?: string;
+		"downloadUrl"?: string;
+		"state"?: string;
+		"error"?: Models.PerformancePredictionRecalculationCompleteEventTopicErrorBody;
+	}
+	
+	export interface PerformancePredictionRecalculationResponse { 
+		"operationId": string;
+		"downloadUrl"?: string;
+		"downloadResult"?: Models.PerformancePredictionOutputs;
+		"state": string;
+	}
+	
+	export interface PerformancePredictionRecalculationUploadResponse { 
+		"uploadKey"?: string;
+		"url"?: string;
+		"headers"?: { [key: string]: string; };
+		"uploadBodySchema"?: Models.PerformancePredictionUploadSchema;
+	}
+	
+	export interface PerformancePredictionResponse { 
+		"id"?: string;
+		"weekDate": string;
+		"scheduleId": string;
+		"downloadUrl"?: string;
+		"downloadResult"?: Models.PerformancePredictionOutputs;
+		"state": string;
+		"selfUri"?: string;
+	}
+	
+	export interface PerformancePredictionUploadSchema { 
+		"calculationStartDate": string;
+		"onQueueTimes": Array<Models.MuAgentQueueTimeRequest>;
+	}
+	
 	export interface PerformanceProfile { 
 		"id"?: string;
 		"name": string;
@@ -29194,6 +29443,14 @@ declare namespace Models {
 	export interface PlanningGroupList { 
 		"entities"?: Array<Models.PlanningGroup>;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface PlanningGroupOutputs { 
+		"planningGroupId": string;
+		"serviceLevelPerInterval": Array<number>;
+		"occupancyPerInterval": Array<number>;
+		"averageSpeedOfAnswerSecondsPerInterval": Array<number>;
+		"abandonRatePerInterval": Array<number>;
 	}
 	
 	export interface PlanningGroupReference { 
@@ -29990,6 +30247,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.QueueConversationCallEventTopicQueueMediaSettings;
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"recording"?: boolean;
@@ -30072,6 +30330,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationCallEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface QueueConversationCallEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationCallEventTopicUriReference;
 		"score"?: number;
@@ -30134,6 +30399,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.QueueConversationCallbackEventTopicQueueMediaSettings;
 		"outboundPreview"?: Models.QueueConversationCallbackEventTopicDialerPreview;
 		"voicemail"?: Models.QueueConversationCallbackEventTopicVoicemail;
 		"callbackNumbers"?: Array<string>;
@@ -30212,6 +30478,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationCallbackEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface QueueConversationCallbackEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationCallbackEventTopicUriReference;
 		"score"?: number;
@@ -30279,6 +30552,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.QueueConversationChatEventTopicQueueMediaSettings;
 		"roomId"?: string;
 		"avatarImageUrl"?: string;
 	}
@@ -30335,6 +30609,13 @@ declare namespace Models {
 	export interface QueueConversationChatEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface QueueConversationChatEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
 	}
 	
 	export interface QueueConversationChatEventTopicScoredAgent { 
@@ -30399,6 +30680,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.QueueConversationCobrowseEventTopicQueueMediaSettings;
 		"cobrowseSessionId"?: string;
 		"cobrowseRole"?: string;
 		"viewerUrl"?: string;
@@ -30458,6 +30740,13 @@ declare namespace Models {
 	export interface QueueConversationCobrowseEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface QueueConversationCobrowseEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
 	}
 	
 	export interface QueueConversationCobrowseEventTopicScoredAgent { 
@@ -30545,6 +30834,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.QueueConversationEmailEventTopicQueueMediaSettings;
 		"subject"?: string;
 		"messagesSent"?: number;
 		"autoGenerated"?: boolean;
@@ -30590,6 +30880,13 @@ declare namespace Models {
 	export interface QueueConversationEmailEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface QueueConversationEmailEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
 	}
 	
 	export interface QueueConversationEmailEventTopicScoredAgent { 
@@ -30662,6 +30959,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
+		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationEventTopicCallback { 
@@ -30691,6 +30989,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
+		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationEventTopicChat { 
@@ -30711,6 +31010,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationEventTopicCobrowse { 
@@ -30733,6 +31033,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationEventTopicConversation { 
@@ -30796,6 +31097,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationEventTopicErrorDetails { 
@@ -30876,6 +31178,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
 		"byoSmsIntegrationId"?: string;
+		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationEventTopicMessageDetails { 
@@ -30973,6 +31276,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface QueueConversationEventTopicRecentTransfer { 
 		"id"?: string;
 		"state"?: string;
@@ -31005,6 +31315,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationEventTopicSocialExpression { 
@@ -31054,6 +31365,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationEventTopicVoicemail { 
@@ -31200,6 +31512,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.QueueConversationMessageEventTopicQueueMediaSettings;
 		"messages"?: Array<Models.QueueConversationMessageEventTopicMessageDetails>;
 		"type"?: string;
 		"recipientCountry"?: string;
@@ -31227,6 +31540,13 @@ declare namespace Models {
 	export interface QueueConversationMessageEventTopicMessageSticker { 
 		"url"?: string;
 		"id"?: string;
+	}
+	
+	export interface QueueConversationMessageEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
 	}
 	
 	export interface QueueConversationMessageEventTopicScoredAgent { 
@@ -31301,6 +31621,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationScreenShareEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface QueueConversationScreenShareEventTopicScoredAgent { 
 		"agent"?: Models.QueueConversationScreenShareEventTopicUriReference;
 		"score"?: number;
@@ -31350,6 +31677,7 @@ declare namespace Models {
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
 		"mediaRoles"?: Array<string>;
+		"queueMediaSettings"?: Models.QueueConversationScreenShareEventTopicQueueMediaSettings;
 		"context"?: string;
 		"peerCount"?: number;
 		"sharing"?: boolean;
@@ -31420,6 +31748,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
+		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicCallback { 
@@ -31449,6 +31778,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
+		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicChat { 
@@ -31469,6 +31799,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicCobrowse { 
@@ -31491,6 +31822,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicConversation { 
@@ -31554,6 +31886,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicErrorDetails { 
@@ -31634,6 +31967,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
 		"byoSmsIntegrationId"?: string;
+		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicMessageDetails { 
@@ -31731,6 +32065,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationSocialExpressionEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface QueueConversationSocialExpressionEventTopicRecentTransfer { 
 		"id"?: string;
 		"state"?: string;
@@ -31763,6 +32104,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicSocialExpression { 
@@ -31812,6 +32154,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationSocialExpressionEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicVoicemail { 
@@ -31883,6 +32226,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
+		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationVideoEventTopicCallback { 
@@ -31912,6 +32256,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
+		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationVideoEventTopicChat { 
@@ -31932,6 +32277,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationVideoEventTopicCobrowse { 
@@ -31954,6 +32300,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationVideoEventTopicConversation { 
@@ -32017,6 +32364,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationVideoEventTopicErrorDetails { 
@@ -32097,6 +32445,7 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
 		"byoSmsIntegrationId"?: string;
+		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationVideoEventTopicMessageDetails { 
@@ -32194,6 +32543,13 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationVideoEventTopicQueueMediaSettings { 
+		"alertingTimeoutSeconds"?: number;
+		"autoAnswerAlertToneSeconds"?: number;
+		"manualAnswerAlertToneSeconds"?: number;
+		"enableAutoAnswer"?: boolean;
+	}
+	
 	export interface QueueConversationVideoEventTopicRecentTransfer { 
 		"id"?: string;
 		"state"?: string;
@@ -32226,6 +32582,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationVideoEventTopicSocialExpression { 
@@ -32275,6 +32632,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"queueMediaSettings"?: Models.QueueConversationVideoEventTopicQueueMediaSettings;
 	}
 	
 	export interface QueueConversationVideoEventTopicVoicemail { 
@@ -32708,7 +33066,7 @@ declare namespace Models {
 		"includeRecordingsWithSensitiveData"?: boolean;
 		"includeScreenRecordings"?: boolean;
 		"clearExport"?: boolean;
-		"conversationQuery": Models.AsyncConversationQuery;
+		"conversationQuery"?: Models.AsyncConversationQuery;
 	}
 	
 	export interface RecordingMessagingMessage { 
@@ -33600,6 +33958,7 @@ declare namespace Models {
 	export interface RoutingData { 
 		"queueId": string;
 		"languageId"?: string;
+		"label"?: string;
 		"priority"?: number;
 		"skillIds"?: Array<string>;
 		"preferredAgentIds"?: Array<string>;
@@ -35393,6 +35752,11 @@ declare namespace Models {
 		"criteriaValue"?: string;
 		"createRemainderContactList"?: boolean;
 		"useWaterfallRule"?: boolean;
+	}
+	
+	export interface StaffingRequirementsPlanningGroupData { 
+		"planningGroupId": string;
+		"staffingRequirementsPerInterval": Array<number>;
 	}
 	
 	export interface StarrableDivision { 
@@ -37885,6 +38249,15 @@ declare namespace Models {
 		"settings"?: Models.ManagementUnitSettingsRequest;
 	}
 	
+	export interface UpdateMuAgentRequest { 
+		"schedulable"?: boolean;
+		"userId": string;
+	}
+	
+	export interface UpdateMuAgentsRequest { 
+		"entities"?: Array<Models.UpdateMuAgentRequest>;
+	}
+	
 	export interface UpdateNotificationResponse { 
 		"mutableGroupId"?: string;
 		"id"?: string;
@@ -37980,6 +38353,10 @@ declare namespace Models {
 		"biography"?: Models.Biography;
 		"employerInfo"?: Models.EmployerInfo;
 		"selfUri"?: string;
+	}
+	
+	export interface UpdateUtilizationLabelRequest { 
+		"name": string;
 	}
 	
 	export interface UpdateVerifierRequest { 
@@ -39077,6 +39454,19 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface UtilizationLabelEntityListing { 
+		"entities"?: Array<Models.UtilizationLabel>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface UtilizationRequest { 
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
 	}
@@ -39470,6 +39860,70 @@ declare namespace Models {
 	export interface V2ConversationMessageTypingEventForWorkflowTopicMessageData { 
 		"conversationId"?: string;
 		"normalizedMessage"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicExecution { 
+		"objectType"?: string;
+		"objectId"?: string;
+		"outputPathId"?: string;
+		"executionId"?: string;
+		"startDateTime"?: string;
+		"error"?: Models.V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo;
+		"warning"?: Models.V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo;
+		"languageTag"?: string;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicFlow { 
+		"flowExecutionId"?: string;
+		"objectExecutionId"?: string;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo { 
+		"reason"?: string;
+		"executionId"?: string;
+		"objectId"?: string;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicFlowExecutionHistory { 
+		"executionId"?: string;
+		"conversationId"?: string;
+		"divisionId"?: string;
+		"endDateTime"?: string;
+		"endpoint"?: string;
+		"errors"?: Array<Models.V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>;
+		"execution"?: Array<Models.V2FlowExecutionDataFlowidTopicExecution>;
+		"flowExitReason"?: string;
+		"flowId"?: string;
+		"flowIsDebug"?: boolean;
+		"executionItemsTruncated"?: boolean;
+		"flowType"?: string;
+		"flowVersion"?: string;
+		"messageType"?: string;
+		"invokingContext"?: Models.V2FlowExecutionDataFlowidTopicInvokingContext;
+		"startDateTime"?: string;
+		"warnings"?: Array<Models.V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo>;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicInvokingContext { 
+		"flow"?: Models.V2FlowExecutionDataFlowidTopicFlow;
+		"journeyActionMap"?: Models.V2FlowExecutionDataFlowidTopicJourneyActionMap;
+		"processAutomation"?: Models.V2FlowExecutionDataFlowidTopicProcessAutomation;
+		"quality"?: Models.V2FlowExecutionDataFlowidTopicQuality;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicJourneyActionMap { 
+		"actionMapId"?: string;
+		"actionId"?: string;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicProcessAutomation { 
+		"triggerId"?: string;
+		"triggerName"?: string;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicQuality { 
+		"policyId"?: string;
+		"policyName"?: string;
 	}
 	
 	export interface V2MobiusAlertsTopicAddressableEntityRef { 
@@ -40943,6 +41397,28 @@ declare namespace Models {
 		"version"?: number;
 		"modifiedBy"?: Models.WfmBuShortTermForecastImportCompleteTopicUserReference;
 		"dateModified"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification { 
+		"businessUnitId"?: string;
+		"state"?: string;
+		"forecast"?: Models.WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference;
+		"weekCount"?: number;
+		"intervalLengthMinutes"?: number;
+		"referenceStartDate"?: string;
+		"results"?: Array<Models.WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults>;
+	}
+	
+	export interface WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults { 
+		"weekNumber"?: number;
+		"downloadUrl"?: string;
+		"downloadUrlExpirationDate"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference { 
+		"id"?: string;
+		"weekDate"?: string;
+		"description"?: string;
 	}
 	
 	export interface WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification { 
@@ -42502,6 +42978,12 @@ declare namespace Models {
 		"delta"?: Models.WorktypeDelta;
 	}
 	
+	export interface WorkitemsEventsNotificationAssignmentSegment { 
+		"startState"?: string;
+		"endState"?: string;
+		"durationMs"?: number;
+	}
+	
 	export interface WorkitemsEventsNotificationCustomAttribute { 
 		"dataType"?: string;
 		"value"?: string;
@@ -42512,6 +42994,15 @@ declare namespace Models {
 		"field"?: string;
 		"oldValue"?: string;
 		"newValue"?: string;
+	}
+	
+	export interface WorkitemsEventsNotificationSession { 
+		"type"?: string;
+		"id"?: string;
+		"status"?: string;
+		"dateSessionStart"?: string;
+		"dateSessionEnd"?: string;
+		"assignmentSegments"?: Array<Models.WorkitemsEventsNotificationAssignmentSegment>;
 	}
 	
 	export interface WorkitemsEventsNotificationWorkitem { 
@@ -42546,6 +43037,7 @@ declare namespace Models {
 		"queueId"?: string;
 		"customFields"?: { [key: string]: Models.WorkitemsEventsNotificationCustomAttribute; };
 		"wrapup"?: Models.WorkitemsEventsNotificationWrapup;
+		"sessions"?: Array<Models.WorkitemsEventsNotificationSession>;
 	}
 	
 	export interface WorkitemsEventsNotificationWrapup { 
@@ -42553,6 +43045,12 @@ declare namespace Models {
 		"userId"?: string;
 		"op"?: string;
 		"action"?: string;
+	}
+	
+	export interface WorkitemsQueueEventsNotificationAssignmentSegment { 
+		"startState"?: string;
+		"endState"?: string;
+		"durationMs"?: number;
 	}
 	
 	export interface WorkitemsQueueEventsNotificationCustomAttribute { 
@@ -42565,6 +43063,15 @@ declare namespace Models {
 		"field"?: string;
 		"oldValue"?: string;
 		"newValue"?: string;
+	}
+	
+	export interface WorkitemsQueueEventsNotificationSession { 
+		"type"?: string;
+		"id"?: string;
+		"status"?: string;
+		"dateSessionStart"?: string;
+		"dateSessionEnd"?: string;
+		"assignmentSegments"?: Array<Models.WorkitemsQueueEventsNotificationAssignmentSegment>;
 	}
 	
 	export interface WorkitemsQueueEventsNotificationWorkitem { 
@@ -42599,6 +43106,7 @@ declare namespace Models {
 		"queueId"?: string;
 		"customFields"?: { [key: string]: Models.WorkitemsQueueEventsNotificationCustomAttribute; };
 		"wrapup"?: Models.WorkitemsQueueEventsNotificationWrapup;
+		"sessions"?: Array<Models.WorkitemsQueueEventsNotificationSession>;
 	}
 	
 	export interface WorkitemsQueueEventsNotificationWrapup { 
@@ -42606,6 +43114,12 @@ declare namespace Models {
 		"userId"?: string;
 		"op"?: string;
 		"action"?: string;
+	}
+	
+	export interface WorkitemsUserEventsNotificationAssignmentSegment { 
+		"startState"?: string;
+		"endState"?: string;
+		"durationMs"?: number;
 	}
 	
 	export interface WorkitemsUserEventsNotificationCustomAttribute { 
@@ -42618,6 +43132,15 @@ declare namespace Models {
 		"field"?: string;
 		"oldValue"?: string;
 		"newValue"?: string;
+	}
+	
+	export interface WorkitemsUserEventsNotificationSession { 
+		"type"?: string;
+		"id"?: string;
+		"status"?: string;
+		"dateSessionStart"?: string;
+		"dateSessionEnd"?: string;
+		"assignmentSegments"?: Array<Models.WorkitemsUserEventsNotificationAssignmentSegment>;
 	}
 	
 	export interface WorkitemsUserEventsNotificationWorkitem { 
@@ -42652,6 +43175,7 @@ declare namespace Models {
 		"queueId"?: string;
 		"customFields"?: { [key: string]: Models.WorkitemsUserEventsNotificationCustomAttribute; };
 		"wrapup"?: Models.WorkitemsUserEventsNotificationWrapup;
+		"sessions"?: Array<Models.WorkitemsUserEventsNotificationSession>;
 	}
 	
 	export interface WorkitemsUserEventsNotificationWrapup { 

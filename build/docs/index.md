@@ -31,7 +31,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/184.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/185.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -48,7 +48,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/184.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/185.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -158,6 +158,72 @@ client.refreshCodeAuthorizationGrant(clientId,clientSecret,refreshToken)
     // Handle failure response
     console.log(err);
   });
+```
+
+**Node.js** [PKCE Grant](https://developer.genesys.cloud/authorization/platform-auth/use-pkce)
+
+```javascript
+const client = platformClient.ApiClient.instance;
+client.authorizePKCEGrant(clientId,codeVerifier,authCode,redirectUri)
+  .then(() => {
+    // Do authenticated things
+  })
+  .catch((err) => {
+    // Handle failure response
+    console.log(err);
+  });
+```
+
+The SDK also provides methods to generate a PKCE Code Verifier and to compute PKCE Code Challenge.  
+**This requires Node version 18 (or above). The generatePKCECodeVerifier and computePKCECodeChallenge methods will fail with older Node versions.**
+
+```javascript
+let codeVerifier = client.generatePKCECodeVerifier(128);
+let codeChallenge = await client.computePKCECodeChallenge(codeVerifier);
+```
+
+**Web** [PKCE Grant](https://developer.genesys.cloud/authorization/platform-auth/use-pkce)
+
+The _loginPKCEGrant_ only works when used in a browser. This is because a node.js application does not have a browser interface that can display the Genesys Cloud login window.
+
+Optional parameters may be specified in the optional third parameter for `loginPKCEGrant`. This parameter accepts an object with key/value pairs. Supported properties:
+
+* `state` - An arbitrary string used to associate a login request with a login response. This value will be provided in the `state` property on the object when the promise is resolved. The state in the resolved promise will be identical to what was passed into `loginPKCEGrant`, except when the state is retrieved from the auth query upon completing a login; in that case, the state from the auth query will override the passed in state.
+
+The _loginPKCEGrant_ supports an optional fourth parameter for `loginPKCEGrant`. This parameter accepts a string, used to provide a code verifier as input. When no code verifier is provider (Method 1), the SDK automatically generates a PKCE Code Verifier and saves it in _window sessionStorage_. If a code verifier is provided (Method 2), it is up to the custom application to store the code verifier value and pass it in _loginPKCEGrant_.
+
+```javascript
+const client = platformClient.ApiClient.instance;
+
+// Method1: Let loginPKCEGrant generate the code verifier
+client.loginPKCEGrant(clientId, redirectUri, { state: state })
+  .then((data) => {
+    console.log(data);
+    // Do authenticated things
+  })
+  .catch((err) => {
+    // Handle failure response
+    console.log(err);
+  });
+
+// Method2: code verifier as input parameter
+let codeVerifier = client.generatePKCECodeVerifier(128);
+client.loginPKCEGrant(clientId, redirectUri, { state: state }, codeVerifier)
+  .then((data) => {
+    console.log(data);
+    // Do authenticated things
+  })
+  .catch((err) => {
+    // Handle failure response
+    console.log(err);
+  });
+```
+
+The SDK also provides methods to generate a PKCE Code Verifier and to compute PKCE Code Challenge.
+
+```javascript
+let codeVerifier = client.generatePKCECodeVerifier(128);
+let codeChallenge = await client.computePKCECodeChallenge(codeVerifier);
 ```
 
 **Web** [Implicit grant](https://developer.genesys.cloud/authorization/platform-auth/use-implicit-grant)

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 184.0.0
+	 * @version 185.0.0
 	 */
 
 	/**
@@ -451,6 +451,36 @@ class RoutingApi {
 			'DELETE', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDelete Remove all label usages (if found) without warning (default to false)
+	 * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteRoutingUtilizationLabel(labelId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null) {
+			throw 'Missing the required parameter "labelId" when calling deleteRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'DELETE', 
+			{ 'labelId': labelId },
+			{ 'forceDelete': opts['forceDelete'] },
 			{  },
 			{  },
 			null, 
@@ -1951,6 +1981,86 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get details about this utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingUtilizationLabel(labelId) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null) {
+			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'GET', 
+			{ 'labelId': labelId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of agent ids associated with a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingUtilizationLabelAgents(labelId) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null) {
+			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabelAgents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}/agents', 
+			'GET', 
+			{ 'labelId': labelId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of utilization labels
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
+	 * @param {String} opts.name Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
+	 * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingUtilizationLabels(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about this utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
@@ -3247,6 +3357,32 @@ class RoutingApi {
 	}
 
 	/**
+	 * Create a utilization label
+	 * 
+	 * @param {Object} body UtilizationLabel
+	 * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postRoutingUtilizationLabels(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingUtilizationLabels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an utilization tag
 	 * 
 	 * @param {Object} body UtilizationTag
@@ -3602,6 +3738,37 @@ class RoutingApi {
 			'/api/v2/routing/utilization', 
 			'PUT', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 * @param {Object} body UtilizationLabel
+	 * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putRoutingUtilizationLabel(labelId, body) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null) {
+			throw 'Missing the required parameter "labelId" when calling putRoutingUtilizationLabel';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'PUT', 
+			{ 'labelId': labelId },
 			{  },
 			{  },
 			{  },

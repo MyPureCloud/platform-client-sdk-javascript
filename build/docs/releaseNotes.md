@@ -1,261 +1,329 @@
-Platform API version: 7567
+Platform API version: 7617
 
 
 
 
-# Major Changes (11 changes)
+# Major Changes (21 changes)
 
-**GET /api/v2/routing/utilization** (1 change)
+**GET /api/v2/quality/forms/evaluations/{formId}** (1 change)
 
-* Response 200 type was changed from Utilization to UtilizationResponse
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
 
-**PUT /api/v2/routing/utilization** (1 change)
+**PUT /api/v2/quality/forms/evaluations/{formId}** (1 change)
 
-* Response 200 type was changed from Utilization to UtilizationResponse
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
 
-**GET /api/v2/routing/users/{userId}/utilization** (1 change)
+**GET /api/v2/quality/forms/evaluations/{formId}/versions** (1 change)
 
-* Response 200 type was changed from AgentMaxUtilization to AgentMaxUtilizationResponse
+* Response 200 type was changed from EvaluationFormEntityListing to EvaluationFormResponseEntityListing
 
-**PUT /api/v2/routing/users/{userId}/utilization** (1 change)
+**GET /api/v2/quality/forms/evaluations** (1 change)
 
-* Response 200 type was changed from AgentMaxUtilization to AgentMaxUtilizationResponse
+* Response 200 type was changed from EvaluationFormEntityListing to EvaluationFormResponseEntityListing
 
-**LabelUtilization** (1 change)
+**POST /api/v2/quality/forms/evaluations** (1 change)
 
-* Model LabelUtilization was removed
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
 
-**Utilization** (1 change)
+**GET /api/v2/quality/publishedforms/evaluations/{formId}** (1 change)
 
-* Model Utilization was removed
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
 
-**AgentMaxUtilization** (1 change)
+**GET /api/v2/quality/publishedforms/evaluations** (1 change)
 
-* Model AgentMaxUtilization was removed
+* Response 200 type was changed from EvaluationFormEntityListing to EvaluationFormResponseEntityListing
 
-**UserInsightsTrend** (2 changes)
+**POST /api/v2/quality/publishedforms/evaluations** (1 change)
 
-* Property entities was changed from InsightsTrendMetricItem[] to UserInsightsTrendMetricItem[]
-* Property total was changed from InsightsTrendTotalItem to UserInsightsTrendTotalItem
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
 
-**AppEventResponse** (2 changes)
+**GET /api/v2/quality/forms/{formId}** (1 change)
 
-* Property ipAddress was removed
-* Property externalContact was removed
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
+
+**PUT /api/v2/quality/forms/{formId}** (1 change)
+
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
+
+**GET /api/v2/quality/forms/{formId}/versions** (1 change)
+
+* Response 200 type was changed from EvaluationFormEntityListing to EvaluationFormResponseEntityListing
+
+**GET /api/v2/quality/forms** (1 change)
+
+* Response 200 type was changed from EvaluationFormEntityListing to EvaluationFormResponseEntityListing
+
+**POST /api/v2/quality/forms** (1 change)
+
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
+
+**GET /api/v2/quality/publishedforms/{formId}** (1 change)
+
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
+
+**GET /api/v2/quality/publishedforms** (1 change)
+
+* Response 200 type was changed from EvaluationFormEntityListing to EvaluationFormResponseEntityListing
+
+**POST /api/v2/quality/publishedforms** (1 change)
+
+* Response 200 type was changed from EvaluationForm to EvaluationFormResponse
+
+**GET /api/v2/telephony/providers/edges/availablelanguages** (1 change)
+
+* Has been deprecated
+
+**EvaluationFormEntityListing** (1 change)
+
+* Model EvaluationFormEntityListing was removed
+
+**EvaluationFormResponse** (1 change)
+
+* Property publishedVersions was removed
+
+**EvaluationResponse** (2 changes)
+
+* Property revisionCreatedDate was removed
+* Property agentTeam was removed
 
 
-# Minor Changes (70 changes)
+# Minor Changes (73 changes)
 
-**POST /api/v2/authorization/divisions/{divisionId}/restore** (1 change)
+**DELETE /api/v2/speechandtextanalytics/topics/{topicId}** (1 change)
 
-* Parameter body was made optional
+* Response 409 was added
 
-**/api/v2/outbound/contactlisttemplates/{contactListTemplateId}** (4 changes)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/routing/utilization/labels/{labelId}** (4 changes)
 
 * Path was added
 * Operation GET was added
 * Operation PUT was added
 * Operation DELETE was added
 
-**/api/v2/outbound/contactlisttemplates** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-* Operation DELETE was added
-
-**/api/v2/outbound/contactlisttemplates/bulk/add** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/outbound/importtemplates/{importTemplateId}/importstatus** (2 changes)
+**/api/v2/routing/utilization/labels/{labelId}/agents** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/outbound/importtemplates/{importTemplateId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/outbound/importtemplates** (4 changes)
+**/api/v2/routing/utilization/labels** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
-* Operation DELETE was added
 
-**/api/v2/outbound/importtemplates/bulk/add** (2 changes)
+**ReportingExportJobResponse** (4 changes)
 
-* Path was added
-* Operation POST was added
+* Enum value AGENT_WORKITEM_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_WORKITEM_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value QUEUE_WORKITEM_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value QUEUE_WORKITEM_PERFORMANCE_DETAIL_VIEW was added to property viewType
 
-**/api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}** (2 changes)
+**ReportingExportMetadataJobResponse** (4 changes)
 
-* Path was added
-* Operation GET was added
+* Enum value AGENT_WORKITEM_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_WORKITEM_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value QUEUE_WORKITEM_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value QUEUE_WORKITEM_PERFORMANCE_DETAIL_VIEW was added to property viewType
 
-**/api/v2/diagnostics/logcapture/browser/entries/download/jobs** (2 changes)
+**ReportingExportJobRequest** (4 changes)
 
-* Path was added
-* Operation POST was added
+* Enum value AGENT_WORKITEM_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_WORKITEM_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value QUEUE_WORKITEM_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value QUEUE_WORKITEM_PERFORMANCE_DETAIL_VIEW was added to property viewType
 
-**/api/v2/analytics/flowexecutions/aggregates/query** (2 changes)
+**Call** (1 change)
 
-* Path was added
-* Operation POST was added
+* Optional property queueMediaSettings was added
 
-**/api/v2/analytics/flowexecutions/aggregates/jobs** (2 changes)
+**Callback** (1 change)
 
-* Path was added
-* Operation POST was added
+* Optional property queueMediaSettings was added
 
-**/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}** (2 changes)
+**ConversationChat** (1 change)
 
-* Path was added
-* Operation GET was added
+* Optional property queueMediaSettings was added
 
-**/api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**Limit** (1 change)
-
-* Enum value employee.engagement was added to property namespace
-
-**ImportStatus** (2 changes)
-
-* Optional property targetContactListIds was added
-* Optional property listNamePrefix was added
-
-**ContactListFilter** (2 changes)
-
-* Optional property contactListTemplate was added
-* Optional property sourceType was added
-
-**ContactListTemplate** (1 change)
+**ConversationQueueMediaSettings** (1 change)
 
 * Model was added
 
-**ContactListTemplateEntityListing** (1 change)
+**ConversationRoutingData** (1 change)
+
+* Optional property label was added
+
+**Email** (1 change)
+
+* Optional property queueMediaSettings was added
+
+**Message** (1 change)
+
+* Optional property queueMediaSettings was added
+
+**CreateCallRequest** (1 change)
+
+* Optional property label was added
+
+**RoutingData** (1 change)
+
+* Optional property label was added
+
+**CallBasic** (1 change)
+
+* Optional property queueMediaSettings was added
+
+**CallbackBasic** (1 change)
+
+* Optional property queueMediaSettings was added
+
+**MetricDefinition** (1 change)
+
+* Optional property initialDirectionFilteringAllowed was added
+
+**ClientApp** (1 change)
+
+* Enum value RESTORED was added to property intendedState
+
+**Integration** (1 change)
+
+* Enum value RESTORED was added to property intendedState
+
+**EvaluationFormResponse** (1 change)
+
+* Optional property weightMode was added
+
+**EvaluationFormResponseEntityListing** (1 change)
 
 * Model was added
 
-**ImportTemplate** (1 change)
+**OrphanRecording** (4 changes)
+
+* Enum value ap-northeast-3 was added to property region
+* Enum value ap-southeast-1 was added to property region
+* Enum value eu-central-2 was added to property region
+* Enum value me-central-1 was added to property region
+
+**Edge** (1 change)
+
+* Optional property certType was added
+
+**BuForecastStaffingRequirementsResult** (1 change)
 
 * Model was added
 
-**SplittingInformation** (1 change)
+**BuForecastStaffingRequirementsResultResponse** (1 change)
 
 * Model was added
 
-**ImportTemplateEntityListing** (1 change)
+**StaffingRequirementsPlanningGroupData** (1 change)
 
 * Model was added
 
-**UserInsightsTrendMetricItem** (1 change)
+**UpdateMuAgentRequest** (1 change)
 
 * Model was added
 
-**UserInsightsTrendTotalItem** (1 change)
+**UpdateMuAgentsRequest** (1 change)
 
 * Model was added
 
-**UserInsightsTrends** (1 change)
+**PerformancePredictionOutputs** (1 change)
 
 * Model was added
 
-**UserTrendData** (1 change)
+**PerformancePredictionResponse** (1 change)
 
 * Model was added
 
-**ApprovalNamespace** (1 change)
-
-* Enum value employee.engagement was added to property namespace
-
-**LimitChangeRequestDetails** (1 change)
-
-* Enum value employee.engagement was added to property namespace
-
-**StatusChange** (1 change)
-
-* Enum value employee.engagement was added to property namespace
-
-**LogCaptureDownloadExecutionResponse** (1 change)
+**PlanningGroupOutputs** (1 change)
 
 * Model was added
 
-**LogCaptureQueryRequest** (1 change)
+**AgentQueueTimeRequest** (1 change)
 
 * Model was added
 
-**LabelUtilizationRequest** (1 change)
+**MuAgentQueueTimeRequest** (1 change)
 
 * Model was added
 
-**LabelUtilizationResponse** (1 change)
+**PerformancePredictionRecalculationUploadResponse** (1 change)
 
 * Model was added
 
-**UtilizationResponse** (1 change)
+**PerformancePredictionUploadSchema** (1 change)
 
 * Model was added
 
-**UtilizationRequest** (1 change)
+**PerformancePredictionRecalculationResponse** (1 change)
 
 * Model was added
 
-**AgentMaxUtilizationResponse** (1 change)
+**ChatMessageResponse** (1 change)
+
+* Optional property reactions was added
+
+**ChatReaction** (1 change)
 
 * Model was added
 
-**FlowExecutionAggregateDataContainer** (1 change)
+**UpdateUtilizationLabelRequest** (1 change)
 
 * Model was added
 
-**FlowExecutionAggregateQueryResponse** (1 change)
+**UtilizationLabelEntityListing** (1 change)
 
 * Model was added
 
-**FlowExecutionAggregateQueryClause** (1 change)
+**CreateUtilizationLabelRequest** (1 change)
 
 * Model was added
 
-**FlowExecutionAggregateQueryFilter** (1 change)
 
-* Model was added
+# Point Changes (4 changes)
 
-**FlowExecutionAggregateQueryPredicate** (1 change)
+**GET /api/v2/authorization/roles/{roleId}** (1 change)
 
-* Model was added
+* Description was changed for parameter userCount
 
-**FlowExecutionAggregationQuery** (1 change)
+**PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}** (1 change)
 
-* Model was added
+* Description was changed
 
-**FlowExecutionAggregationView** (1 change)
+**POST /api/v2/flows/datatables/{datatableId}/rows** (1 change)
 
-* Model was added
+* Description was changed
 
-**FlowExecutionAsyncAggregationQuery** (1 change)
+**GET /api/v2/telephony/providers/edges/availablelanguages** (1 change)
 
-* Model was added
-
-**FlowExecutionAsyncAggregateQueryResponse** (1 change)
-
-* Model was added
-
-**ExecutionDataEntity** (1 change)
-
-* Optional property statusCode was added
-
-**MediaEndpointStatistics** (1 change)
-
-* Optional property reconnectAttemptCount was added
-
-
-# Point Changes (0 changes)
+* Summary was changed

@@ -149,6 +149,10 @@
       "class": "ExternalContactsUnresolvedContactChangedTopicContact"
     },
     {
+      "topic": "v2.flows.instances.flow.{id}",
+      "class": "V2FlowExecutionDataFlowidTopicFlowExecutionHistory"
+    },
+    {
       "topic": "v2.flows.outcomes.{id}",
       "class": "ArchitectFlowOutcomeNotificationFlowOutcomeNotification"
     },
@@ -561,6 +565,10 @@
       "class": "WfmUserNotificationTopicWfmUserNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.performanceprediction.schedules.recalculations",
+      "class": "PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.schedules",
       "class": "WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification"
     },
@@ -599,6 +607,10 @@
     {
       "topic": "v2.workforcemanagement.agents",
       "class": "WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.forecasts.staffingrequirement",
+      "class": "WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.schedules",
@@ -651,6 +663,10 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.shifttrades.state.bulk",
       "class": "WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.performanceprediction.schedules.{id}",
+      "class": "PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification"
     },
     {
       "topic": "v2.workforcemanagement.teams.{id}.adherence",
