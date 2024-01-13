@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 
 	/**
@@ -1598,7 +1598,7 @@ class QualityApi {
 
 	/**
 	 * Update an evaluation
-	 * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
+	 * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation. authorizedActions is not returned for this PUT request, and is only returned for GET requests to this endpoint.
 	 * @param {String} conversationId conversationId
 	 * @param {String} evaluationId evaluationId
 	 * @param {Object} body evaluation

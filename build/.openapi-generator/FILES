@@ -200,6 +200,7 @@ docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/deleteConversationsMessagingSetting-example.txt
 docs/deleteConversationsMessagingSettingsDefault-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/deleteDiagnosticsLogcaptureBrowserUser-example.txt
 docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/deleteExternalcontactsContact-example.txt
 docs/deleteExternalcontactsContactNote-example.txt
@@ -557,6 +558,7 @@ docs/getChatsSettings-example.txt
 docs/getChatsThreadMessages-example.txt
 docs/getChatsUserMessage-example.txt
 docs/getChatsUserMessages-example.txt
+docs/getChatsUserSettings-example.txt
 docs/getCoachingAppointment-example.txt
 docs/getCoachingAppointmentAnnotation-example.txt
 docs/getCoachingAppointmentAnnotations-example.txt
@@ -566,7 +568,6 @@ docs/getCoachingAppointmentsMe-example.txt
 docs/getCoachingNotification-example.txt
 docs/getCoachingNotifications-example.txt
 docs/getContentmanagementDocument-example.txt
-docs/getContentmanagementDocumentAudits-example.txt
 docs/getContentmanagementDocumentContent-example.txt
 docs/getContentmanagementDocuments-example.txt
 docs/getContentmanagementQuery-example.txt
@@ -676,6 +677,8 @@ docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
 docs/getDate-example.txt
 docs/getDiagnosticsLogcaptureBrowserEntriesDownloadJob-example.txt
+docs/getDiagnosticsLogcaptureBrowserUser-example.txt
+docs/getDiagnosticsLogcaptureBrowserUsers-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
 docs/getDownload-example.txt
@@ -840,6 +843,7 @@ docs/getIntegrationsActionSchema-example.txt
 docs/getIntegrationsActionTemplate-example.txt
 docs/getIntegrationsActions-example.txt
 docs/getIntegrationsActionsCategories-example.txt
+docs/getIntegrationsActionsCertificates-example.txt
 docs/getIntegrationsActionsDrafts-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBot-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBotVersions-example.txt
@@ -1207,6 +1211,8 @@ docs/getRoutingUtilizationTagAgents-example.txt
 docs/getRoutingUtilizationTags-example.txt
 docs/getRoutingWrapupcode-example.txt
 docs/getRoutingWrapupcodes-example.txt
+docs/getRoutingWrapupcodesDivisionview-example.txt
+docs/getRoutingWrapupcodesDivisionviews-example.txt
 docs/getScimGroup-example.txt
 docs/getScimGroups-example.txt
 docs/getScimResourcetype-example.txt
@@ -1540,6 +1546,7 @@ docs/patchChatsRoom-example.txt
 docs/patchChatsRoomMessage-example.txt
 docs/patchChatsSettings-example.txt
 docs/patchChatsUserMessage-example.txt
+docs/patchChatsUserSettings-example.txt
 docs/patchCoachingAppointment-example.txt
 docs/patchCoachingAppointmentAnnotation-example.txt
 docs/patchCoachingAppointmentStatus-example.txt
@@ -1637,6 +1644,7 @@ docs/patchRoutingQueueMembers-example.txt
 docs/patchRoutingQueueUser-example.txt
 docs/patchRoutingQueueUsers-example.txt
 docs/patchRoutingSettingsContactcenter-example.txt
+docs/patchRoutingSettingsTranscription-example.txt
 docs/patchRoutingSkillgroup-example.txt
 docs/patchScimGroup-example.txt
 docs/patchScimUser-example.txt
@@ -1809,7 +1817,6 @@ docs/postCoachingAppointmentConversations-example.txt
 docs/postCoachingAppointments-example.txt
 docs/postCoachingAppointmentsAggregatesQuery-example.txt
 docs/postCoachingScheduleslotsQuery-example.txt
-docs/postContentmanagementAuditquery-example.txt
 docs/postContentmanagementDocument-example.txt
 docs/postContentmanagementDocumentContent-example.txt
 docs/postContentmanagementDocuments-example.txt
@@ -1893,6 +1900,8 @@ docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideosMeetings-example.txt
 docs/postDiagnosticsLogcaptureBrowserEntriesDownloadJobs-example.txt
+docs/postDiagnosticsLogcaptureBrowserEntriesQuery-example.txt
+docs/postDiagnosticsLogcaptureBrowserUser-example.txt
 docs/postDocumentationAllSearch-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt

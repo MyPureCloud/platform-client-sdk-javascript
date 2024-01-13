@@ -683,7 +683,7 @@ let contactId = "contactId_example"; // String | ExternalContact Id
 let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-  'sortOrder': "sortOrder_example", // String | Sort order
+  'sortOrder': "sortOrder_example", // String | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
 
@@ -705,7 +705,7 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
  **contactId** | **String** | ExternalContact Id |  |
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
- **sortOrder** | **String** | Sort order | [optional]  |
+ **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
@@ -797,7 +797,7 @@ let opts = {
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
-  'sortOrder': "sortOrder_example", // String | Sort order
+  'sortOrder': "sortOrder_example", // String | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
 
@@ -819,7 +819,7 @@ apiInstance.getExternalcontactsContacts(opts)
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
- **sortOrder** | **String** | Sort order | [optional]  |
+ **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
@@ -1112,7 +1112,7 @@ let opts = {
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
-  'sortOrder': "sortOrder_example", // String | Sort order
+  'sortOrder': "sortOrder_example", // String | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
 
@@ -1135,7 +1135,7 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
- **sortOrder** | **String** | Sort order | [optional]  |
+ **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
@@ -1230,7 +1230,7 @@ let externalOrganizationId = "externalOrganizationId_example"; // String | Exter
 let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-  'sortOrder': "sortOrder_example", // String | Sort order
+  'sortOrder': "sortOrder_example", // String | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. createDate:asc, createDate:desc
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
 
@@ -1252,7 +1252,7 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
  **externalOrganizationId** | **String** | External Organization Id |  |
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
- **sortOrder** | **String** | Sort order | [optional]  |
+ **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. createDate:asc, createDate:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
@@ -1292,7 +1292,7 @@ let opts = {
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'expand': "expand_example", // String | which fields, if any, to expand
-  'sortOrder': "sortOrder_example" // String | Sort order
+  'sortOrder': "sortOrder_example" // String | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc
 };
 
 apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
@@ -1314,7 +1314,7 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
- **sortOrder** | **String** | Sort order | [optional]  |
+ **sortOrder** | **String** | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1353,7 +1353,7 @@ let opts = {
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | Search query
   'trustorId': ["trustorId_example"], // [String] | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
-  'sortOrder': "sortOrder_example", // String | Sort order
+  'sortOrder': "sortOrder_example", // String | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc
   'expand': ["expand_example"], // [String] | which fields, if any, to expand
   'includeTrustors': true // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 };
@@ -1377,7 +1377,7 @@ apiInstance.getExternalcontactsOrganizations(opts)
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | Search query | [optional]  |
  **trustorId** | **[String]** | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested | [optional]  |
- **sortOrder** | **String** | Sort order | [optional]  |
+ **sortOrder** | **String** | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 {: class="table table-striped"}

@@ -5,7 +5,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 
 	/**
@@ -208,41 +208,6 @@ class ContentManagementApi {
 			'GET', 
 			{ 'documentId': documentId },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of audits for a document.
-	 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-	 * @param {String} documentId Document ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.transactionFilter Transaction filter
-	 * @param {String} opts.level level (default to USER)
-	 * @param {String} opts.sortBy Sort by
-	 * @param {String} opts.sortOrder Sort order (default to ascending)
-	 * @deprecated
-	 */
-	getContentmanagementDocumentAudits(documentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getContentmanagementDocumentAudits';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/contentmanagement/documents/{documentId}/audits', 
-			'GET', 
-			{ 'documentId': documentId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'transactionFilter': opts['transactionFilter'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -767,32 +732,6 @@ class ContentManagementApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query audits
-	 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-	 * @param {Object} body Allows for a filtered query returning facet information
-	 * @deprecated
-	 */
-	postContentmanagementAuditquery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementAuditquery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/contentmanagement/auditquery', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

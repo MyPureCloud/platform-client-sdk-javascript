@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 
 	/**
@@ -1194,7 +1194,6 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Array.<String>} opts.id ID of the Extension Pools to filter by.
 	 * @param {String} opts.name Name of the Extension Pools to filter by.
 	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
-	 * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1966,6 +1965,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.locationId Location Id
 	 * @param {Boolean} opts.managed Filter by managed
+	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
 	 */
 	getTelephonyProvidersEdgesSites(opts) { 
 		opts = opts || {};
@@ -1975,7 +1975,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/sites', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'location.id': opts['locationId'],'managed': opts['managed'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'location.id': opts['locationId'],'managed': opts['managed'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

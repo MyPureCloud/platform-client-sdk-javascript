@@ -237,6 +237,10 @@
       "class": "DnclistImportStatusImportStatus"
     },
     {
+      "topic": "v2.outbound.importtemplates.{id}.importstatus",
+      "class": "ImportTemplateImportStatusImportStatus"
+    },
+    {
       "topic": "v2.outbound.messagingcampaigns.{id}",
       "class": "OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign"
     },

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 
 	/**
@@ -2196,6 +2196,60 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get a simplified wrap-up code.
+	 * 
+	 * @param {String} codeId Wrapup Code ID
+	 */
+	getRoutingWrapupcodesDivisionview(codeId) { 
+		// verify the required parameter 'codeId' is set
+		if (codeId === undefined || codeId === null) {
+			throw 'Missing the required parameter "codeId" when calling getRoutingWrapupcodesDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/wrapupcodes/divisionviews/{codeId}', 
+			'GET', 
+			{ 'codeId': codeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+	 * Specifying both name and ID parameters is not supported.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.name Name (trailing asterisks allowed)
+	 * @param {Array.<String>} opts.id Wrapup code ID(s)
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Object} opts.includeState Wrapup code state(s) to include
+	 */
+	getRoutingWrapupcodesDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/wrapupcodes/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'includeState': opts['includeState'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get queues for user
 	 * 
 	 * @param {String} userId User ID
@@ -2584,6 +2638,31 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/contactcenter', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch Transcription Settings
+	 * 
+	 * @param {Object} body Organization Settings
+	 */
+	patchRoutingSettingsTranscription(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSettingsTranscription';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings/transcription', 
 			'PATCH', 
 			{  },
 			{  },
@@ -3334,7 +3413,6 @@ class RoutingApi {
 	 * Imports a phone number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
-	 * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingSmsPhonenumbersImport(body) { 
 		// verify the required parameter 'body' is set

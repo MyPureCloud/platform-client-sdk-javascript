@@ -2434,8 +2434,6 @@ Get a pageable list of basic extension pool objects filterable by query paramete
 
 This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * telephony:extensionPool:search
@@ -4003,7 +4001,8 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example", // String | Name
   'locationId': "locationId_example", // String | Location Id
-  'managed': true // Boolean | Filter by managed
+  'managed': true, // Boolean | Filter by managed
+  'expand': ["expand_example"] // [String] | Fields to expand in the response, comma-separated
 };
 
 apiInstance.getTelephonyProvidersEdgesSites(opts)
@@ -4028,6 +4027,7 @@ apiInstance.getTelephonyProvidersEdgesSites(opts)
  **name** | **String** | Name | [optional]  |
  **locationId** | **String** | Location Id | [optional]  |
  **managed** | **Boolean** | Filter by managed | [optional]  |
+ **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: edges, location, primarySites, secondarySites |
 {: class="table table-striped"}
 
 ### Return type

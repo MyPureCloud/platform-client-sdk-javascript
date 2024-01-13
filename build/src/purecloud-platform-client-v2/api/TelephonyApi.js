@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 
 	/**
@@ -44,7 +44,6 @@ class TelephonyApi {
 	 * Get a SIP message.
 	 * Get the raw form of the SIP message
 	 * @param {String} conversationId Conversation id
-	 * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTelephonySipmessagesConversation(conversationId) { 
 		// verify the required parameter 'conversationId' is set
@@ -72,7 +71,6 @@ class TelephonyApi {
 	 * @param {String} conversationId Conversation id
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.keys comma-separated list of header identifiers to query. e.g. ruri,to,from
-	 * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTelephonySipmessagesConversationHeaders(conversationId, opts) { 
 		opts = opts || {};

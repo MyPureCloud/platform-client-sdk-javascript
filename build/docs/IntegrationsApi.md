@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsActionTemplate**](IntegrationsApi.html#getIntegrationsActionTemplate) | **GET** /api/v2/integrations/actions/{actionId}/templates/{fileName} | Retrieve text of templates for an action based on filename.
 [**getIntegrationsActions**](IntegrationsApi.html#getIntegrationsActions) | **GET** /api/v2/integrations/actions | Retrieves all actions associated with filters passed in via query param.
 [**getIntegrationsActionsCategories**](IntegrationsApi.html#getIntegrationsActionsCategories) | **GET** /api/v2/integrations/actions/categories | Retrieves all categories of available Actions
+[**getIntegrationsActionsCertificates**](IntegrationsApi.html#getIntegrationsActionsCertificates) | **GET** /api/v2/integrations/actions/certificates | Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
 [**getIntegrationsActionsDrafts**](IntegrationsApi.html#getIntegrationsActionsDrafts) | **GET** /api/v2/integrations/actions/drafts | Retrieves all action drafts associated with the filters passed in via query param.
 [**getIntegrationsBotconnectorIntegrationIdBot**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBot) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId} | Get a specific botConnector bot, plus versions, for this integration
 [**getIntegrationsBotconnectorIntegrationIdBotVersions**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotVersions) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions | Get a list of bot versions for a bot
@@ -963,6 +964,60 @@ apiInstance.getIntegrationsActionsCategories(opts)
 ### Return type
 
 **CategoryEntityListing**
+
+<a name="getIntegrationsActionsCertificates"></a>
+
+# ActionCertificateListing getIntegrationsActionsCertificates(opts)
+
+
+GET /api/v2/integrations/actions/certificates
+
+Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+
+Requires ANY permissions:
+
+* integrations:actionCertificate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'status': "status_example", // String | Indicates the validity of the certificate in question.
+  'type': "type_example" // String | Indicates the type of the certificate.
+};
+
+apiInstance.getIntegrationsActionsCertificates(opts)
+  .then((data) => {
+    console.log(`getIntegrationsActionsCertificates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionsCertificates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **status** | **String** | Indicates the validity of the certificate in question. | [optional] <br />**Values**: Current, Upcoming |
+ **type** | **String** | Indicates the type of the certificate. | [optional] <br />**Values**: Client |
+{: class="table table-striped"}
+
+### Return type
+
+**ActionCertificateListing**
 
 <a name="getIntegrationsActionsDrafts"></a>
 

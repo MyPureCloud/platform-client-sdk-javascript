@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 
 	/**
@@ -331,7 +331,7 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
-	 * @param {String} opts.sortOrder Sort order
+	 * @param {String} opts.sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
 	getExternalcontactsContactNotes(contactId, opts) { 
@@ -392,7 +392,7 @@ class ExternalContactsApi {
 	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
-	 * @param {String} opts.sortOrder Sort order
+	 * @param {String} opts.sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
 	getExternalcontactsContacts(opts) { 
@@ -551,7 +551,7 @@ class ExternalContactsApi {
 	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
-	 * @param {String} opts.sortOrder Sort order
+	 * @param {String} opts.sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
 	getExternalcontactsOrganizationContacts(externalOrganizationId, opts) { 
@@ -617,7 +617,7 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
-	 * @param {String} opts.sortOrder Sort order
+	 * @param {String} opts.sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. createDate:asc, createDate:desc
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
 	getExternalcontactsOrganizationNotes(externalOrganizationId, opts) { 
@@ -650,7 +650,7 @@ class ExternalContactsApi {
 	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {Object} opts.expand which fields, if any, to expand
-	 * @param {String} opts.sortOrder Sort order
+	 * @param {String} opts.sortOrder The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc
 	 */
 	getExternalcontactsOrganizationRelationships(externalOrganizationId, opts) { 
 		opts = opts || {};
@@ -682,7 +682,7 @@ class ExternalContactsApi {
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.q Search query
 	 * @param {Array.<String>} opts.trustorId Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
-	 * @param {String} opts.sortOrder Sort order
+	 * @param {String} opts.sortOrder The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
 	 */

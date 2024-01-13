@@ -2858,6 +2858,7 @@ Requires ANY permissions:
 * recording:recordingSegment:view
 * analytics:conversationDetail:view
 * analytics:conversationAggregate:view
+* analytics:reportingSettings:edit
 * analytics:dashboardConfigurations:view
 
 ### Example Usage

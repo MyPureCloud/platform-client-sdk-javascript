@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteContentmanagementWorkspaceMember**](ContentManagementApi.html#deleteContentmanagementWorkspaceMember) | **DELETE** /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} | Delete a member from a workspace
 [**deleteContentmanagementWorkspaceTagvalue**](ContentManagementApi.html#deleteContentmanagementWorkspaceTagvalue) | **DELETE** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} | Delete workspace tag
 [**getContentmanagementDocument**](ContentManagementApi.html#getContentmanagementDocument) | **GET** /api/v2/contentmanagement/documents/{documentId} | Get a document.
-[**getContentmanagementDocumentAudits**](ContentManagementApi.html#getContentmanagementDocumentAudits) | **GET** /api/v2/contentmanagement/documents/{documentId}/audits | Get a list of audits for a document.
 [**getContentmanagementDocumentContent**](ContentManagementApi.html#getContentmanagementDocumentContent) | **GET** /api/v2/contentmanagement/documents/{documentId}/content | Download a document.
 [**getContentmanagementDocuments**](ContentManagementApi.html#getContentmanagementDocuments) | **GET** /api/v2/contentmanagement/documents | Get a list of documents.
 [**getContentmanagementQuery**](ContentManagementApi.html#getContentmanagementQuery) | **GET** /api/v2/contentmanagement/query | Query content
@@ -33,7 +32,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getContentmanagementWorkspaceTagvalue**](ContentManagementApi.html#getContentmanagementWorkspaceTagvalue) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} | Get a workspace tag
 [**getContentmanagementWorkspaceTagvalues**](ContentManagementApi.html#getContentmanagementWorkspaceTagvalues) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues | Get a list of workspace tags
 [**getContentmanagementWorkspaces**](ContentManagementApi.html#getContentmanagementWorkspaces) | **GET** /api/v2/contentmanagement/workspaces | Get a list of workspaces.
-[**postContentmanagementAuditquery**](ContentManagementApi.html#postContentmanagementAuditquery) | **POST** /api/v2/contentmanagement/auditquery | Query audits
 [**postContentmanagementDocument**](ContentManagementApi.html#postContentmanagementDocument) | **POST** /api/v2/contentmanagement/documents/{documentId} | Update a document.
 [**postContentmanagementDocumentContent**](ContentManagementApi.html#postContentmanagementDocumentContent) | **POST** /api/v2/contentmanagement/documents/{documentId}/content | Replace the contents of a document.
 [**postContentmanagementDocuments**](ContentManagementApi.html#postContentmanagementDocuments) | **POST** /api/v2/contentmanagement/documents | Add a document.
@@ -402,71 +400,6 @@ apiInstance.getContentmanagementDocument(documentId, opts)
 ### Return type
 
 **Document**
-
-<a name="getContentmanagementDocumentAudits"></a>
-
-# DocumentAuditEntityListing getContentmanagementDocumentAudits(documentId, opts)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/contentmanagement/documents/{documentId}/audits
-
-Get a list of audits for a document.
-
-This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ContentManagementApi();
-
-let documentId = "documentId_example"; // String | Document ID
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'transactionFilter': "transactionFilter_example", // String | Transaction filter
-  'level': "USER", // String | level
-  'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "ascending" // String | Sort order
-};
-
-apiInstance.getContentmanagementDocumentAudits(documentId, opts)
-  .then((data) => {
-    console.log(`getContentmanagementDocumentAudits success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getContentmanagementDocumentAudits');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String** | Document ID |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **transactionFilter** | **String** | Transaction filter | [optional]  |
- **level** | **String** | level | [optional] [default to USER] |
- **sortBy** | **String** | Sort by | [optional]  |
- **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
-{: class="table table-striped"}
-
-### Return type
-
-**DocumentAuditEntityListing**
 
 <a name="getContentmanagementDocumentContent"></a>
 
@@ -1440,57 +1373,6 @@ apiInstance.getContentmanagementWorkspaces(opts)
 ### Return type
 
 **WorkspaceEntityListing**
-
-<a name="postContentmanagementAuditquery"></a>
-
-# QueryResults postContentmanagementAuditquery(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-POST /api/v2/contentmanagement/auditquery
-
-Query audits
-
-This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ContentManagementApi();
-
-let body = {}; // Object | Allows for a filtered query returning facet information
-
-apiInstance.postContentmanagementAuditquery(body)
-  .then((data) => {
-    console.log(`postContentmanagementAuditquery success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postContentmanagementAuditquery');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Allows for a filtered query returning facet information |  |
-{: class="table table-striped"}
-
-### Return type
-
-**QueryResults**
 
 <a name="postContentmanagementDocument"></a>
 

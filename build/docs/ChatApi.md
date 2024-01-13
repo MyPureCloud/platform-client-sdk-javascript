@@ -19,10 +19,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | **GET** /api/v2/chats/threads/{threadId}/messages | Get history by thread
 [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | **GET** /api/v2/chats/users/{userId}/messages/{messageIds} | Get messages by id(s) from a 1on1
 [**getChatsUserMessages**](ChatApi.html#getChatsUserMessages) | **GET** /api/v2/chats/users/{userId}/messages | Get 1on1 History between a user
+[**getChatsUserSettings**](ChatApi.html#getChatsUserSettings) | **GET** /api/v2/chats/users/{userId}/settings | Get a user's chat settings
 [**patchChatsRoom**](ChatApi.html#patchChatsRoom) | **PATCH** /api/v2/chats/rooms/{roomJid} | Set properties for a room
 [**patchChatsRoomMessage**](ChatApi.html#patchChatsRoomMessage) | **PATCH** /api/v2/chats/rooms/{roomJid}/messages/{messageId} | Edit a message in a room
 [**patchChatsSettings**](ChatApi.html#patchChatsSettings) | **PATCH** /api/v2/chats/settings | Patch Chat Settings.
 [**patchChatsUserMessage**](ChatApi.html#patchChatsUserMessage) | **PATCH** /api/v2/chats/users/{userId}/messages/{messageId} | Edit a message to a user
+[**patchChatsUserSettings**](ChatApi.html#patchChatsUserSettings) | **PATCH** /api/v2/chats/users/{userId}/settings | Update a user's chat settings
 [**postChatsRoomMessages**](ChatApi.html#postChatsRoomMessages) | **POST** /api/v2/chats/rooms/{roomJid}/messages | Send a message to a room
 [**postChatsRoomParticipant**](ChatApi.html#postChatsRoomParticipant) | **POST** /api/v2/chats/rooms/{roomJid}/participants/{userId} | Join a room
 [**postChatsRoomPinnedmessages**](ChatApi.html#postChatsRoomPinnedmessages) | **POST** /api/v2/chats/rooms/{roomJid}/pinnedmessages | Add pinned messages for a room, up to a maximum of 5 pinned messages
@@ -733,6 +735,59 @@ apiInstance.getChatsUserMessages(userId, opts)
 
 **ChatMessageResponse**
 
+<a name="getChatsUserSettings"></a>
+
+# ChatUserSettings getChatsUserSettings(userId)
+
+
+GET /api/v2/chats/users/{userId}/settings
+
+Get a user's chat settings
+
+getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* chat:usersettings:view
+* chat:setting:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ChatApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getChatsUserSettings(userId)
+  .then((data) => {
+    console.log(`getChatsUserSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getChatsUserSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ChatUserSettings**
+
 <a name="patchChatsRoom"></a>
 
 # void patchChatsRoom(roomJid, body)
@@ -951,6 +1006,61 @@ apiInstance.patchChatsUserMessage(userId, messageId, body)
 ### Return type
 
 **ChatSendMessageResponse**
+
+<a name="patchChatsUserSettings"></a>
+
+# ChatUserSettings patchChatsUserSettings(userId, body)
+
+
+PATCH /api/v2/chats/users/{userId}/settings
+
+Update a user's chat settings
+
+patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* chat:usersettings:edit
+* chat:setting:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ChatApi();
+
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | 
+
+apiInstance.patchChatsUserSettings(userId, body)
+  .then((data) => {
+    console.log(`patchChatsUserSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchChatsUserSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ChatUserSettings**
 
 <a name="postChatsRoomMessages"></a>
 

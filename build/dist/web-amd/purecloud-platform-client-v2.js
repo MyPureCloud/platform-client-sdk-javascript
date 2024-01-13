@@ -399,7 +399,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 	class ApiClient {
 		/**
@@ -1818,7 +1818,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -2479,7 +2479,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -5069,7 +5069,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -8904,7 +8904,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -9075,7 +9075,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -9249,7 +9249,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.nextPage next page token
 		 * @param {String} opts.previousPage Previous page token
 		 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
-		 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 		 * @param {String} opts.name Search term to filter by division name
 		 */
 		getAuthorizationDivisions(opts) { 
@@ -9260,7 +9259,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/authorization/divisions', 
 				'GET', 
 				{  },
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'name': opts['name'] },
 				{  },
 				{  },
 				null, 
@@ -10305,7 +10304,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -10385,7 +10384,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -10455,7 +10454,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -10843,6 +10842,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a user's chat settings
+		 * 
+		 * @param {String} userId User ID
+		 * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getChatsUserSettings(userId) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling getChatsUserSettings';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/chats/users/{userId}/settings', 
+				'GET', 
+				{ 'userId': userId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Set properties for a room
 		 * 
 		 * @param {String} roomJid roomJid
@@ -10960,6 +10985,37 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/chats/users/{userId}/messages/{messageId}', 
 				'PATCH', 
 				{ 'userId': userId,'messageId': messageId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a user's chat settings
+		 * 
+		 * @param {String} userId User ID
+		 * @param {Object} body 
+		 * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchChatsUserSettings(userId, body) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling patchChatsUserSettings';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchChatsUserSettings';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/chats/users/{userId}/settings', 
+				'PATCH', 
+				{ 'userId': userId },
 				{  },
 				{  },
 				{  },
@@ -11151,7 +11207,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -11728,7 +11784,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -11931,41 +11987,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'documentId': documentId },
 				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-				{  },
-				{  },
-				null, 
-				['PureCloud OAuth'], 
-				['application/json'],
-				['application/json']
-			);
-		}
-
-		/**
-		 * Get a list of audits for a document.
-		 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-		 * @param {String} documentId Document ID
-		 * @param {Object} opts Optional parameters
-		 * @param {Number} opts.pageSize Page size (default to 25)
-		 * @param {Number} opts.pageNumber Page number (default to 1)
-		 * @param {String} opts.transactionFilter Transaction filter
-		 * @param {String} opts.level level (default to USER)
-		 * @param {String} opts.sortBy Sort by
-		 * @param {String} opts.sortOrder Sort order (default to ascending)
-		 * @deprecated
-		 */
-		getContentmanagementDocumentAudits(documentId, opts) { 
-			opts = opts || {};
-			
-			// verify the required parameter 'documentId' is set
-			if (documentId === undefined || documentId === null) {
-				throw 'Missing the required parameter "documentId" when calling getContentmanagementDocumentAudits';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/contentmanagement/documents/{documentId}/audits', 
-				'GET', 
-				{ 'documentId': documentId },
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'transactionFilter': opts['transactionFilter'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 				{  },
 				{  },
 				null, 
@@ -12497,32 +12518,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
-		 * Query audits
-		 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-		 * @param {Object} body Allows for a filtered query returning facet information
-		 * @deprecated
-		 */
-		postContentmanagementAuditquery(body) { 
-			// verify the required parameter 'body' is set
-			if (body === undefined || body === null) {
-				throw 'Missing the required parameter "body" when calling postContentmanagementAuditquery';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/contentmanagement/auditquery', 
-				'POST', 
-				{  },
-				{  },
-				{  },
-				{  },
-				body, 
-				['PureCloud OAuth'], 
-				['application/json'],
-				['application/json']
-			);
-		}
-
-		/**
 		 * Update a document.
 		 * 
 		 * @param {String} documentId Document ID
@@ -12871,7 +12866,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -20011,7 +20006,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -20097,7 +20092,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -20149,7 +20144,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Emails service.
 		 * @module purecloud-platform-client-v2/api/EmailsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -20214,7 +20209,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -20310,7 +20305,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -20636,7 +20631,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 		 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
-		 * @param {String} opts.sortOrder Sort order
+		 * @param {String} opts.sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc
 		 * @param {Array.<String>} opts.expand which fields, if any, to expand
 		 */
 		getExternalcontactsContactNotes(contactId, opts) { 
@@ -20697,7 +20692,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 		 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 		 * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
-		 * @param {String} opts.sortOrder Sort order
+		 * @param {String} opts.sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
 		 * @param {Array.<String>} opts.expand which fields, if any, to expand
 		 */
 		getExternalcontactsContacts(opts) { 
@@ -20856,7 +20851,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 		 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 		 * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
-		 * @param {String} opts.sortOrder Sort order
+		 * @param {String} opts.sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
 		 * @param {Array.<String>} opts.expand which fields, if any, to expand
 		 */
 		getExternalcontactsOrganizationContacts(externalOrganizationId, opts) { 
@@ -20922,7 +20917,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 		 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
-		 * @param {String} opts.sortOrder Sort order
+		 * @param {String} opts.sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. createDate:asc, createDate:desc
 		 * @param {Array.<String>} opts.expand which fields, if any, to expand
 		 */
 		getExternalcontactsOrganizationNotes(externalOrganizationId, opts) { 
@@ -20955,7 +20950,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 		 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 		 * @param {Object} opts.expand which fields, if any, to expand
-		 * @param {String} opts.sortOrder Sort order
+		 * @param {String} opts.sortOrder The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc
 		 */
 		getExternalcontactsOrganizationRelationships(externalOrganizationId, opts) { 
 			opts = opts || {};
@@ -20987,7 +20982,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 		 * @param {String} opts.q Search query
 		 * @param {Array.<String>} opts.trustorId Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
-		 * @param {String} opts.sortOrder Sort order
+		 * @param {String} opts.sortOrder The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc
 		 * @param {Array.<String>} opts.expand which fields, if any, to expand
 		 * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
 		 */
@@ -22268,7 +22263,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -22439,7 +22434,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -22623,7 +22618,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -24709,7 +24704,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -24839,7 +24834,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -24970,7 +24965,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -25425,7 +25420,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -25944,7 +25939,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -26700,7 +26695,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -26867,7 +26862,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -27330,6 +27325,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'secure': opts['secure'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.status Indicates the validity of the certificate in question.
+		 * @param {Object} opts.type Indicates the type of the certificate.
+		 */
+		getIntegrationsActionsCertificates(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/integrations/actions/certificates', 
+				'GET', 
+				{  },
+				{ 'status': opts['status'],'type': opts['type'] },
 				{  },
 				{  },
 				null, 
@@ -28829,7 +28849,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -30060,7 +30080,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -32881,7 +32901,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -33894,7 +33914,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -34116,7 +34136,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -34972,7 +34992,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -35210,7 +35230,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -35446,7 +35466,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LogCapture service.
 		 * @module purecloud-platform-client-v2/api/LogCaptureApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -35460,6 +35480,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			this.apiClient = apiClient || ApiClient.instance;
 		}
 
+
+		/**
+		 * Disable browser log capture for the user
+		 * 
+		 * @param {String} userId The id of the user to disable browser log capture
+		 */
+		deleteDiagnosticsLogcaptureBrowserUser(userId) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling deleteDiagnosticsLogcaptureBrowserUser';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/diagnostics/logcapture/browser/users/{userId}', 
+				'DELETE', 
+				{ 'userId': userId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
 
 		/**
 		 * Gets status of async download execution
@@ -35477,6 +35522,55 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'jobId': jobId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get log capture configuration for the user
+		 * 
+		 * @param {String} userId The id of the user to get browser log capture configuration
+		 */
+		getDiagnosticsLogcaptureBrowserUser(userId) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling getDiagnosticsLogcaptureBrowserUser';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/diagnostics/logcapture/browser/users/{userId}', 
+				'GET', 
+				{ 'userId': userId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all log capture enabled users for an org
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeExpired Include expired users with log captures still available for search or download (default to false)
+		 */
+		getDiagnosticsLogcaptureBrowserUsers(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/diagnostics/logcapture/browser/users', 
+				'GET', 
+				{  },
+				{ 'includeExpired': opts['includeExpired'] },
 				{  },
 				{  },
 				null, 
@@ -35510,13 +35604,69 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			);
 		}
 
+		/**
+		 * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {Object} opts.body 
+		 */
+		postDiagnosticsLogcaptureBrowserEntriesQuery(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/diagnostics/logcapture/browser/entries/query', 
+				'POST', 
+				{  },
+				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Enable log capture for a user or update expiration
+		 * 
+		 * @param {String} userId The id of the user to enable browser log capture
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 */
+		postDiagnosticsLogcaptureBrowserUser(userId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling postDiagnosticsLogcaptureBrowserUser';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/diagnostics/logcapture/browser/users/{userId}', 
+				'POST', 
+				{ 'userId': userId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
 	}
 
 	class MessagingApi {
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -35875,7 +36025,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -36026,7 +36176,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -36259,7 +36409,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -36625,7 +36775,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -36709,7 +36859,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.nextPage next page token
 		 * @param {String} opts.previousPage Previous page token
 		 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
-		 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 		 * @param {String} opts.name Search term to filter by division name
 		 */
 		getAuthorizationDivisions(opts) { 
@@ -36720,7 +36869,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/authorization/divisions', 
 				'GET', 
 				{  },
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'name': opts['name'] },
 				{  },
 				{  },
 				null, 
@@ -36895,7 +37044,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OperationalEvents service.
 		 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -36961,7 +37110,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -37416,7 +37565,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -38763,7 +38912,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -42785,7 +42934,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -43524,7 +43673,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -43763,7 +43912,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -45356,7 +45505,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * Update an evaluation
-		 * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
+		 * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation. authorizedActions is not returned for this PUT request, and is only returned for GET requests to this endpoint.
 		 * @param {String} conversationId conversationId
 		 * @param {String} evaluationId evaluationId
 		 * @param {Object} body evaluation
@@ -45520,7 +45669,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -47157,7 +47306,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -47642,7 +47791,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -49833,6 +49982,60 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get a simplified wrap-up code.
+		 * 
+		 * @param {String} codeId Wrapup Code ID
+		 */
+		getRoutingWrapupcodesDivisionview(codeId) { 
+			// verify the required parameter 'codeId' is set
+			if (codeId === undefined || codeId === null) {
+				throw 'Missing the required parameter "codeId" when calling getRoutingWrapupcodesDivisionview';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/wrapupcodes/divisionviews/{codeId}', 
+				'GET', 
+				{ 'codeId': codeId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+		 * Specifying both name and ID parameters is not supported.
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {String} opts.name Name (trailing asterisks allowed)
+		 * @param {Array.<String>} opts.id Wrapup code ID(s)
+		 * @param {Array.<String>} opts.divisionId Division ID(s)
+		 * @param {Object} opts.includeState Wrapup code state(s) to include
+		 */
+		getRoutingWrapupcodesDivisionviews(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/wrapupcodes/divisionviews', 
+				'GET', 
+				{  },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'includeState': opts['includeState'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get queues for user
 		 * 
 		 * @param {String} userId User ID
@@ -50221,6 +50424,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 			return this.apiClient.callApi(
 				'/api/v2/routing/settings/contactcenter', 
+				'PATCH', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Patch Transcription Settings
+		 * 
+		 * @param {Object} body Organization Settings
+		 */
+		patchRoutingSettingsTranscription(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchRoutingSettingsTranscription';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/routing/settings/transcription', 
 				'PATCH', 
 				{  },
 				{  },
@@ -50971,7 +51199,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Imports a phone number for SMS
 		 * 
 		 * @param {Object} body SmsPhoneNumber
-		 * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		postRoutingSmsPhonenumbersImport(body) { 
 			// verify the required parameter 'body' is set
@@ -51517,7 +51744,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -52394,7 +52621,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -52838,7 +53065,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -53527,7 +53754,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Settings service.
 		 * @module purecloud-platform-client-v2/api/SettingsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -53592,7 +53819,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -54705,7 +54932,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -54807,7 +55034,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -54946,7 +55173,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TaskManagement service.
 		 * @module purecloud-platform-client-v2/api/TaskManagementApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -56227,7 +56454,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -56529,7 +56756,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -56568,7 +56795,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get a SIP message.
 		 * Get the raw form of the SIP message
 		 * @param {String} conversationId Conversation id
-		 * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getTelephonySipmessagesConversation(conversationId) { 
 			// verify the required parameter 'conversationId' is set
@@ -56596,7 +56822,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} conversationId Conversation id
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.keys comma-separated list of header identifiers to query. e.g. ruri,to,from
-		 * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getTelephonySipmessagesConversationHeaders(conversationId, opts) { 
 			opts = opts || {};
@@ -56713,7 +56938,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -57902,7 +58127,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Array.<String>} opts.id ID of the Extension Pools to filter by.
 		 * @param {String} opts.name Name of the Extension Pools to filter by.
 		 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
-		 * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts) { 
 			opts = opts || {};
@@ -58674,6 +58898,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.name Name
 		 * @param {String} opts.locationId Location Id
 		 * @param {Boolean} opts.managed Filter by managed
+		 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
 		 */
 		getTelephonyProvidersEdgesSites(opts) { 
 			opts = opts || {};
@@ -58683,7 +58908,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/telephony/providers/edges/sites', 
 				'GET', 
 				{  },
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'location.id': opts['locationId'],'managed': opts['managed'] },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'location.id': opts['locationId'],'managed': opts['managed'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -60088,7 +60313,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -60216,7 +60441,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -60372,7 +60597,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -60548,7 +60773,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -60758,7 +60983,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -60943,7 +61168,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -63594,7 +63819,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -63705,7 +63930,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -64372,7 +64597,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -64921,7 +65146,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -65448,7 +65673,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -65494,7 +65719,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -65640,7 +65865,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 185.0.0
+		 * @version 186.0.0
 		 */
 
 		/**
@@ -71035,7 +71260,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 	class platformClient {
 		constructor() {

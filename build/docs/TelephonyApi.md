@@ -71,8 +71,6 @@ Get a SIP message.
 
 Get the raw form of the SIP message
 
-getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * telephony:pcap:view
@@ -124,8 +122,6 @@ GET /api/v2/telephony/sipmessages/conversations/{conversationId}/headers
 Get SIP headers.
 
 Get parsed SIP headers. Returns specific headers if key query parameters are added.
-
-getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 

@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 
 	/**
@@ -393,6 +393,32 @@ class ChatApi {
 	}
 
 	/**
+	 * Get a user's chat settings
+	 * 
+	 * @param {String} userId User ID
+	 * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsUserSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getChatsUserSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/settings', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Set properties for a room
 	 * 
 	 * @param {String} roomJid roomJid
@@ -510,6 +536,37 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages/{messageId}', 
 			'PATCH', 
 			{ 'userId': userId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a user's chat settings
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body 
+	 * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchChatsUserSettings(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchChatsUserSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchChatsUserSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/settings', 
+			'PATCH', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },

@@ -158,7 +158,6 @@ let opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'objectCount': false, // Boolean | Include the count of objects contained in the division
-  'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
   'name': "name_example" // String | Search term to filter by division name
 };
 
@@ -184,7 +183,6 @@ apiInstance.getAuthorizationDivisions(opts)
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
- **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Search term to filter by division name | [optional]  |
 {: class="table table-striped"}
 

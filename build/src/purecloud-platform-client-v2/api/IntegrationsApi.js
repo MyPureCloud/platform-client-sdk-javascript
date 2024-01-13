@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 185.0.0
+	 * @version 186.0.0
 	 */
 
 	/**
@@ -468,6 +468,31 @@ class IntegrationsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'secure': opts['secure'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.status Indicates the validity of the certificate in question.
+	 * @param {Object} opts.type Indicates the type of the certificate.
+	 */
+	getIntegrationsActionsCertificates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/certificates', 
+			'GET', 
+			{  },
+			{ 'status': opts['status'],'type': opts['type'] },
 			{  },
 			{  },
 			null, 

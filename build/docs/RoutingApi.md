@@ -88,6 +88,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingUtilizationTags**](RoutingApi.html#getRoutingUtilizationTags) | **GET** /api/v2/routing/utilization/tags | Get list of utilization tags
 [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | **GET** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code.
 [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | **GET** /api/v2/routing/wrapupcodes | Get list of wrapup codes.
+[**getRoutingWrapupcodesDivisionview**](RoutingApi.html#getRoutingWrapupcodesDivisionview) | **GET** /api/v2/routing/wrapupcodes/divisionviews/{codeId} | Get a simplified wrap-up code.
+[**getRoutingWrapupcodesDivisionviews**](RoutingApi.html#getRoutingWrapupcodesDivisionviews) | **GET** /api/v2/routing/wrapupcodes/divisionviews | Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
 [**getUserQueues**](RoutingApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
 [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
@@ -101,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
+[**patchRoutingSettingsTranscription**](RoutingApi.html#patchRoutingSettingsTranscription) | **PATCH** /api/v2/routing/settings/transcription | Patch Transcription Settings
 [**patchRoutingSkillgroup**](RoutingApi.html#patchRoutingSkillgroup) | **PATCH** /api/v2/routing/skillgroups/{skillGroupId} | Update skill group definition
 [**patchUserQueue**](RoutingApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
 [**patchUserQueues**](RoutingApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
@@ -4476,6 +4479,120 @@ apiInstance.getRoutingWrapupcodes(opts)
 
 **WrapupCodeEntityListing**
 
+<a name="getRoutingWrapupcodesDivisionview"></a>
+
+# WrapupCode getRoutingWrapupcodesDivisionview(codeId)
+
+
+GET /api/v2/routing/wrapupcodes/divisionviews/{codeId}
+
+Get a simplified wrap-up code.
+
+Requires ALL permissions:
+
+* routing:wrapupCode:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let codeId = "codeId_example"; // String | Wrapup Code ID
+
+apiInstance.getRoutingWrapupcodesDivisionview(codeId)
+  .then((data) => {
+    console.log(`getRoutingWrapupcodesDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingWrapupcodesDivisionview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **codeId** | **String** | Wrapup Code ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WrapupCode**
+
+<a name="getRoutingWrapupcodesDivisionviews"></a>
+
+# WrapupCodeEntityListing getRoutingWrapupcodesDivisionviews(opts)
+
+
+GET /api/v2/routing/wrapupcodes/divisionviews
+
+Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+
+Specifying both name and ID parameters is not supported.
+
+Requires ALL permissions:
+
+* routing:wrapupCode:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'name': "name_example", // String | Name (trailing asterisks allowed)
+  'id': ["id_example"], // [String] | Wrapup code ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'includeState': "includeState_example" // String | Wrapup code state(s) to include
+};
+
+apiInstance.getRoutingWrapupcodesDivisionviews(opts)
+  .then((data) => {
+    console.log(`getRoutingWrapupcodesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingWrapupcodesDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name (trailing asterisks allowed) | [optional]  |
+ **id** | **[String]** | Wrapup code ID(s) | [optional]  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **includeState** | **String** | Wrapup code state(s) to include | [optional] <br />**Values**: Active, Deleted, ActiveAndDeleted |
+{: class="table table-striped"}
+
+### Return type
+
+**WrapupCodeEntityListing**
+
 <a name="getUserQueues"></a>
 
 # UserQueueEntityListing getUserQueues(userId, opts)
@@ -5188,6 +5305,56 @@ apiInstance.patchRoutingSettingsContactcenter(body)
 ### Return type
 
 void (no response body)
+
+<a name="patchRoutingSettingsTranscription"></a>
+
+# TranscriptionSettings patchRoutingSettingsTranscription(body)
+
+
+PATCH /api/v2/routing/settings/transcription
+
+Patch Transcription Settings
+
+Requires ANY permissions:
+
+* routing:transcriptionSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | Organization Settings
+
+apiInstance.patchRoutingSettingsTranscription(body)
+  .then((data) => {
+    console.log(`patchRoutingSettingsTranscription success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingSettingsTranscription');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Organization Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TranscriptionSettings**
 
 <a name="patchRoutingSkillgroup"></a>
 
@@ -6566,8 +6733,6 @@ apiInstance.postRoutingSmsPhonenumbers(body)
 POST /api/v2/routing/sms/phonenumbers/import
 
 Imports a phone number for SMS
-
-postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
