@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -1474,32 +1474,6 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  },
 			{ 'edgeIds': edgeIds },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get outbound route
-	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-	 * @param {String} outboundRouteId Outbound route ID
-	 * @deprecated
-	 */
-	getTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
-		// verify the required parameter 'outboundRouteId' is set
-		if (outboundRouteId === undefined || outboundRouteId === null) {
-			throw 'Missing the required parameter "outboundRouteId" when calling getTelephonyProvidersEdgesOutboundroute';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}', 
-			'GET', 
-			{ 'outboundRouteId': outboundRouteId },
-			{  },
 			{  },
 			{  },
 			null, 

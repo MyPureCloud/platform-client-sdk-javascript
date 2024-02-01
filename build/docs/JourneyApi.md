@@ -35,7 +35,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneySession**](JourneyApi.html#getJourneySession) | **GET** /api/v2/journey/sessions/{sessionId} | Retrieve a single session.
 [**getJourneySessionEvents**](JourneyApi.html#getJourneySessionEvents) | **GET** /api/v2/journey/sessions/{sessionId}/events | Retrieve all events for a given session.
 [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | **GET** /api/v2/journey/sessions/{sessionId}/outcomescores | Retrieve latest outcome score associated with a session for all outcomes.
-[**getJourneySessionSegments**](JourneyApi.html#getJourneySessionSegments) | **GET** /api/v2/journey/sessions/{sessionId}/segments | Retrieve segment assignments by session ID.
 [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
 [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
 [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
@@ -1550,68 +1549,6 @@ apiInstance.getJourneySessionOutcomescores(sessionId)
 ### Return type
 
 **OutcomeScoresResult**
-
-<a name="getJourneySessionSegments"></a>
-
-# SegmentAssignmentListing getJourneySessionSegments(sessionId, opts)
-
-
-GET /api/v2/journey/sessions/{sessionId}/segments
-
-Retrieve segment assignments by session ID.
-
-getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ANY permissions:
-
-* journey:segmentassignment:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.JourneyApi();
-
-let sessionId = "sessionId_example"; // String | ID of the session to query for segment assignments.
-let opts = { 
-  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'segmentScope': "segmentScope_example", // String | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-  'assignmentState': "assignmentState_example" // String | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-};
-
-apiInstance.getJourneySessionSegments(sessionId, opts)
-  .then((data) => {
-    console.log(`getJourneySessionSegments success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getJourneySessionSegments');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **sessionId** | **String** | ID of the session to query for segment assignments. |  |
- **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **segmentScope** | **String** | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. | [optional] <br />**Values**: Session, Customer |
- **assignmentState** | **String** | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. | [optional] <br />**Values**: Assigned, Unassigned |
-{: class="table table-striped"}
-
-### Return type
-
-**SegmentAssignmentListing**
 
 <a name="patchJourneyActionmap"></a>
 

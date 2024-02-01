@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -763,39 +763,6 @@ class JourneyApi {
 			'GET', 
 			{ 'sessionId': sessionId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve segment assignments by session ID.
-	 * 
-	 * @param {String} sessionId ID of the session to query for segment assignments.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getJourneySessionSegments(sessionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling getJourneySessionSegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/sessions/{sessionId}/segments', 
-			'GET', 
-			{ 'sessionId': sessionId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] },
 			{  },
 			{  },
 			null, 

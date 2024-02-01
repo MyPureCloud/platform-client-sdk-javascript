@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**

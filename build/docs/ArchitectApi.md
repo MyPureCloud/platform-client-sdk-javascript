@@ -2151,7 +2151,7 @@ apiInstance.getArchitectIvrsDivisionviews(opts)
 
 <a name="getArchitectPrompt"></a>
 
-# Prompt getArchitectPrompt(promptId)
+# Prompt getArchitectPrompt(promptId, opts)
 
 
 GET /api/v2/architect/prompts/{promptId}
@@ -2176,8 +2176,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
+let opts = { 
+  'includeMediaUris': true, // Boolean | Include the media URIs for each resource
+  'includeResources': true, // Boolean | Include the resources for each system prompt
+  'language': ["language_example"] // [String] | Filter the resources down to the provided languages
+};
 
-apiInstance.getArchitectPrompt(promptId)
+apiInstance.getArchitectPrompt(promptId, opts)
   .then((data) => {
     console.log(`getArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2193,6 +2198,9 @@ apiInstance.getArchitectPrompt(promptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
+ **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
+ **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
+ **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2408,7 +2416,10 @@ let opts = {
   'description': "description_example", // String | Description
   'nameOrDescription': "nameOrDescription_example", // String | Name or description
   'sortBy': "id", // String | Sort by
-  'sortOrder': "asc" // String | Sort order
+  'sortOrder': "asc", // String | Sort order
+  'includeMediaUris': true, // Boolean | Include the media URIs for each resource
+  'includeResources': true, // Boolean | Include the resources for each system prompt
+  'language': ["language_example"] // [String] | Filter the resources down to the provided languages
 };
 
 apiInstance.getArchitectPrompts(opts)
@@ -2433,6 +2444,9 @@ apiInstance.getArchitectPrompts(opts)
  **nameOrDescription** | **String** | Name or description | [optional]  |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
  **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
+ **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
+ **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2795,7 +2809,7 @@ apiInstance.getArchitectSchedulesDivisionviews(opts)
 
 <a name="getArchitectSystemprompt"></a>
 
-# SystemPrompt getArchitectSystemprompt(promptId)
+# SystemPrompt getArchitectSystemprompt(promptId, opts)
 
 
 GET /api/v2/architect/systemprompts/{promptId}
@@ -2820,8 +2834,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | promptId
+let opts = { 
+  'includeMediaUris': true, // Boolean | Include the media URIs for each resource
+  'includeResources': true, // Boolean | Include the resources for each system prompt
+  'language': ["language_example"] // [String] | Filter the resources down to the provided languages
+};
 
-apiInstance.getArchitectSystemprompt(promptId)
+apiInstance.getArchitectSystemprompt(promptId, opts)
   .then((data) => {
     console.log(`getArchitectSystemprompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2837,6 +2856,9 @@ apiInstance.getArchitectSystemprompt(promptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | promptId |  |
+ **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
+ **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
+ **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3052,7 +3074,10 @@ let opts = {
   'sortOrder': "asc", // String | Sort order
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
-  'nameOrDescription': "nameOrDescription_example" // String | Name or description
+  'nameOrDescription': "nameOrDescription_example", // String | Name or description
+  'includeMediaUris': true, // Boolean | Include the media URIs for each resource
+  'includeResources': true, // Boolean | Include the resources for each system prompt
+  'language': ["language_example"] // [String] | Filter the resources down to the provided languages
 };
 
 apiInstance.getArchitectSystemprompts(opts)
@@ -3077,6 +3102,9 @@ apiInstance.getArchitectSystemprompts(opts)
  **name** | **String** | Name | [optional]  |
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
+ **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
+ **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
+ **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**postIntegrationsActionDraftFunctionUpload**](UploadsApi.html#postIntegrationsActionDraftFunctionUpload) | **POST** /api/v2/integrations/actions/{actionId}/draft/function/upload | Create upload presigned URL for draft function package file.
 [**postKnowledgeDocumentuploads**](UploadsApi.html#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
 [**postLanguageunderstandingMinerUploads**](UploadsApi.html#postLanguageunderstandingMinerUploads) | **POST** /api/v2/languageunderstanding/miners/{minerId}/uploads | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
 [**postUploadsLearningCoverart**](UploadsApi.html#postUploadsLearningCoverart) | **POST** /api/v2/uploads/learning/coverart | Generates pre-signed URL to upload cover art for learning modules
@@ -14,6 +15,60 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | **POST** /api/v2/uploads/recordings | Creates presigned url for uploading a recording file
 [**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | **POST** /api/v2/uploads/workforcemanagement/historicaldata/csv | Creates presigned url for uploading WFM historical data file. Requires data in csv format.
 {: class="table table-striped"}
+
+<a name="postIntegrationsActionDraftFunctionUpload"></a>
+
+# FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(actionId, body)
+
+
+POST /api/v2/integrations/actions/{actionId}/draft/function/upload
+
+Create upload presigned URL for draft function package file.
+
+postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:actionFunction:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UploadsApi();
+
+let actionId = "actionId_example"; // String | actionId
+let body = {}; // Object | Input used to request URL upload.
+
+apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
+  .then((data) => {
+    console.log(`postIntegrationsActionDraftFunctionUpload success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActionDraftFunctionUpload');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **actionId** | **String** | actionId |  |
+ **body** | **Object** | Input used to request URL upload. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FunctionUploadResponse**
 
 <a name="postKnowledgeDocumentuploads"></a>
 

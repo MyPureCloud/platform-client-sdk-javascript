@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -71,9 +71,10 @@ class PresenceApi {
 	}
 
 	/**
-	 * Delete a Presence Definition
+	 * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
 	 * 
 	 * @param {String} presenceId Organization Presence ID
+	 * @deprecated
 	 */
 	deletePresencedefinition(presenceId) { 
 		// verify the required parameter 'presenceId' is set
@@ -245,11 +246,12 @@ class PresenceApi {
 	}
 
 	/**
-	 * Get a Presence Definition
+	 * Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
 	 * 
 	 * @param {String} presenceId Organization Presence ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
+	 * @deprecated
 	 */
 	getPresencedefinition(presenceId, opts) { 
 		opts = opts || {};
@@ -274,13 +276,14 @@ class PresenceApi {
 	}
 
 	/**
-	 * Get an Organization's list of Presence Definitions
+	 * Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.deleted Deleted query can be TRUE, FALSE or ALL (default to false)
 	 * @param {String} opts.localeCode The locale code to fetch for each presence definition. Use ALL to fetch everything.
+	 * @deprecated
 	 */
 	getPresencedefinitions(opts) { 
 		opts = opts || {};
@@ -544,9 +547,10 @@ class PresenceApi {
 	}
 
 	/**
-	 * Create a Presence Definition
+	 * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
 	 * 
 	 * @param {Object} body The Presence Definition to create
+	 * @deprecated
 	 */
 	postPresencedefinitions(body) { 
 		// verify the required parameter 'body' is set
@@ -684,10 +688,11 @@ class PresenceApi {
 	}
 
 	/**
-	 * Update a Presence Definition
+	 * Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
 	 * 
 	 * @param {String} presenceId Organization Presence ID
 	 * @param {Object} body The OrganizationPresence to update
+	 * @deprecated
 	 */
 	putPresencedefinition(presenceId, body) { 
 		// verify the required parameter 'presenceId' is set

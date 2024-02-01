@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -483,6 +483,56 @@ class OutboundApi {
 			'DELETE', 
 			{ 'dncListId': dncListId },
 			{ 'expiredOnly': opts['expiredOnly'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete File Specification Template
+	 * 
+	 * @param {String} fileSpecificationTemplateId File Specification Template ID
+	 */
+	deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId) { 
+		// verify the required parameter 'fileSpecificationTemplateId' is set
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null) {
+			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling deleteOutboundFilespecificationtemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}', 
+			'DELETE', 
+			{ 'fileSpecificationTemplateId': fileSpecificationTemplateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete multiple file specification templates.
+	 * 
+	 * @param {Array.<String>} id File Specification template id(s) to delete
+	 */
+	deleteOutboundFilespecificationtemplatesBulk(id) { 
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling deleteOutboundFilespecificationtemplatesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates/bulk', 
+			'DELETE', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1900,6 +1950,61 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get File Specification Template
+	 * 
+	 * @param {String} fileSpecificationTemplateId File Specification Template ID
+	 */
+	getOutboundFilespecificationtemplate(fileSpecificationTemplateId) { 
+		// verify the required parameter 'fileSpecificationTemplateId' is set
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null) {
+			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling getOutboundFilespecificationtemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}', 
+			'GET', 
+			{ 'fileSpecificationTemplateId': fileSpecificationTemplateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query File Specification Templates
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
+	 * @param {Object} opts.filterType Filter type (default to Prefix)
+	 * @param {String} opts.name Name
+	 * @param {String} opts.sortBy Sort by
+	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 */
+	getOutboundFilespecificationtemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Import Template
 	 * 
 	 * @param {String} importTemplateId Import Template ID
@@ -3073,6 +3178,31 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get multiple contact list templates
+	 * 
+	 * @param {Object} body contact list templates to get
+	 */
+	postOutboundContactlisttemplatesBulkRetrieve(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplatesBulkRetrieve';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates/bulk/retrieve', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Add phone numbers to a Dialer DNC list.
 	 * 
 	 * @param {String} conversationId Conversation ID
@@ -3224,6 +3354,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create File Specification Template
+	 * 
+	 * @param {Object} body FileSpecificationTemplate
+	 */
+	postOutboundFilespecificationtemplates(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundFilespecificationtemplates';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates', 
 			'POST', 
 			{  },
 			{  },
@@ -3746,6 +3901,36 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}', 
 			'PUT', 
 			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update File Specification Template
+	 * 
+	 * @param {String} fileSpecificationTemplateId File Specification Template ID
+	 * @param {Object} body fileSpecificationTemplate
+	 */
+	putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body) { 
+		// verify the required parameter 'fileSpecificationTemplateId' is set
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null) {
+			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling putOutboundFilespecificationtemplate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundFilespecificationtemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}', 
+			'PUT', 
+			{ 'fileSpecificationTemplateId': fileSpecificationTemplateId },
 			{  },
 			{  },
 			{  },

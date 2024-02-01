@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteIdentityprovider**](IdentityProviderApi.html#deleteIdentityprovider) | **DELETE** /api/v2/identityproviders/{providerId} | Delete Identity Provider
 [**deleteIdentityprovidersAdfs**](IdentityProviderApi.html#deleteIdentityprovidersAdfs) | **DELETE** /api/v2/identityproviders/adfs | Delete ADFS Identity Provider
 [**deleteIdentityprovidersCic**](IdentityProviderApi.html#deleteIdentityprovidersCic) | **DELETE** /api/v2/identityproviders/cic | Delete Customer Interaction Center (CIC) Identity Provider
 [**deleteIdentityprovidersGeneric**](IdentityProviderApi.html#deleteIdentityprovidersGeneric) | **DELETE** /api/v2/identityproviders/generic | Delete Generic SAML Identity Provider
@@ -18,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteIdentityprovidersPurecloud**](IdentityProviderApi.html#deleteIdentityprovidersPurecloud) | **DELETE** /api/v2/identityproviders/purecloud | Delete PureCloud Identity Provider
 [**deleteIdentityprovidersPureengage**](IdentityProviderApi.html#deleteIdentityprovidersPureengage) | **DELETE** /api/v2/identityproviders/pureengage | Delete PureEngage Identity Provider
 [**deleteIdentityprovidersSalesforce**](IdentityProviderApi.html#deleteIdentityprovidersSalesforce) | **DELETE** /api/v2/identityproviders/salesforce | Delete Salesforce Identity Provider
+[**getIdentityprovider**](IdentityProviderApi.html#getIdentityprovider) | **GET** /api/v2/identityproviders/{providerId} | Get Identity Provider
 [**getIdentityproviders**](IdentityProviderApi.html#getIdentityproviders) | **GET** /api/v2/identityproviders | The list of identity providers
 [**getIdentityprovidersAdfs**](IdentityProviderApi.html#getIdentityprovidersAdfs) | **GET** /api/v2/identityproviders/adfs | Get ADFS Identity Provider
 [**getIdentityprovidersCic**](IdentityProviderApi.html#getIdentityprovidersCic) | **GET** /api/v2/identityproviders/cic | Get Customer Interaction Center (CIC) Identity Provider
@@ -30,6 +32,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIdentityprovidersPurecloud**](IdentityProviderApi.html#getIdentityprovidersPurecloud) | **GET** /api/v2/identityproviders/purecloud | Get PureCloud Identity Provider
 [**getIdentityprovidersPureengage**](IdentityProviderApi.html#getIdentityprovidersPureengage) | **GET** /api/v2/identityproviders/pureengage | Get PureEngage Identity Provider
 [**getIdentityprovidersSalesforce**](IdentityProviderApi.html#getIdentityprovidersSalesforce) | **GET** /api/v2/identityproviders/salesforce | Get Salesforce Identity Provider
+[**postIdentityproviders**](IdentityProviderApi.html#postIdentityproviders) | **POST** /api/v2/identityproviders | Create Identity Provider
+[**putIdentityprovider**](IdentityProviderApi.html#putIdentityprovider) | **PUT** /api/v2/identityproviders/{providerId} | Update Identity Provider
 [**putIdentityprovidersAdfs**](IdentityProviderApi.html#putIdentityprovidersAdfs) | **PUT** /api/v2/identityproviders/adfs | Update/Create ADFS Identity Provider
 [**putIdentityprovidersCic**](IdentityProviderApi.html#putIdentityprovidersCic) | **PUT** /api/v2/identityproviders/cic | Update/Create Customer Interaction Center (CIC) Identity Provider
 [**putIdentityprovidersGeneric**](IdentityProviderApi.html#putIdentityprovidersGeneric) | **PUT** /api/v2/identityproviders/generic | Update/Create Generic SAML Identity Provider
@@ -42,6 +46,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putIdentityprovidersPureengage**](IdentityProviderApi.html#putIdentityprovidersPureengage) | **PUT** /api/v2/identityproviders/pureengage | Update/Create PureEngage Identity Provider
 [**putIdentityprovidersSalesforce**](IdentityProviderApi.html#putIdentityprovidersSalesforce) | **PUT** /api/v2/identityproviders/salesforce | Update/Create Salesforce Identity Provider
 {: class="table table-striped"}
+
+<a name="deleteIdentityprovider"></a>
+
+# void deleteIdentityprovider(providerId)
+
+
+DELETE /api/v2/identityproviders/{providerId}
+
+Delete Identity Provider
+
+Requires ANY permissions:
+
+* sso:provider:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let providerId = "providerId_example"; // String | Provider ID
+
+apiInstance.deleteIdentityprovider(providerId)
+  .then(() => {
+    console.log('deleteIdentityprovider returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovider');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **providerId** | **String** | Provider ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteIdentityprovidersAdfs"></a>
 
@@ -538,9 +592,59 @@ This endpoint does not need any parameter.
 
 **Object**
 
+<a name="getIdentityprovider"></a>
+
+# CustomProvider getIdentityprovider(providerId)
+
+
+GET /api/v2/identityproviders/{providerId}
+
+Get Identity Provider
+
+Requires ANY permissions:
+
+* sso:provider:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let providerId = "providerId_example"; // String | Provider ID
+
+apiInstance.getIdentityprovider(providerId)
+  .then((data) => {
+    console.log(`getIdentityprovider success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovider');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **providerId** | **String** | Provider ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CustomProvider**
+
 <a name="getIdentityproviders"></a>
 
-# OAuthProviderEntityListing getIdentityproviders()
+# IdentityProviderEntityListing getIdentityproviders()
 
 
 GET /api/v2/identityproviders
@@ -581,7 +685,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**OAuthProviderEntityListing**
+**IdentityProviderEntityListing**
 
 <a name="getIdentityprovidersAdfs"></a>
 
@@ -1078,9 +1182,111 @@ This endpoint does not need any parameter.
 
 **Salesforce**
 
+<a name="postIdentityproviders"></a>
+
+# CustomProvider postIdentityproviders(body)
+
+
+POST /api/v2/identityproviders
+
+Create Identity Provider
+
+Requires ANY permissions:
+
+* sso:provider:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let body = {}; // Object | Provider
+
+apiInstance.postIdentityproviders(body)
+  .then((data) => {
+    console.log(`postIdentityproviders success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIdentityproviders');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Provider |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CustomProvider**
+
+<a name="putIdentityprovider"></a>
+
+# CustomProvider putIdentityprovider(providerId, body)
+
+
+PUT /api/v2/identityproviders/{providerId}
+
+Update Identity Provider
+
+Requires ANY permissions:
+
+* sso:provider:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let providerId = "providerId_example"; // String | Provider ID
+let body = {}; // Object | Provider
+
+apiInstance.putIdentityprovider(providerId, body)
+  .then((data) => {
+    console.log(`putIdentityprovider success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovider');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **providerId** | **String** | Provider ID |  |
+ **body** | **Object** | Provider |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CustomProvider**
+
 <a name="putIdentityprovidersAdfs"></a>
 
-# OAuthProvider putIdentityprovidersAdfs(body)
+# IdentityProvider putIdentityprovidersAdfs(body)
 
 
 PUT /api/v2/identityproviders/adfs
@@ -1127,11 +1333,11 @@ apiInstance.putIdentityprovidersAdfs(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersCic"></a>
 
-# OAuthProvider putIdentityprovidersCic(body)
+# IdentityProvider putIdentityprovidersCic(body)
 
 
 PUT /api/v2/identityproviders/cic
@@ -1178,11 +1384,11 @@ apiInstance.putIdentityprovidersCic(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersGeneric"></a>
 
-# OAuthProvider putIdentityprovidersGeneric(body)
+# IdentityProvider putIdentityprovidersGeneric(body)
 
 
 PUT /api/v2/identityproviders/generic
@@ -1229,11 +1435,11 @@ apiInstance.putIdentityprovidersGeneric(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersGsuite"></a>
 
-# OAuthProvider putIdentityprovidersGsuite(body)
+# IdentityProvider putIdentityprovidersGsuite(body)
 
 
 PUT /api/v2/identityproviders/gsuite
@@ -1280,7 +1486,7 @@ apiInstance.putIdentityprovidersGsuite(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersIdentitynow"></a>
 
@@ -1335,7 +1541,7 @@ apiInstance.putIdentityprovidersIdentitynow(body)
 
 <a name="putIdentityprovidersOkta"></a>
 
-# OAuthProvider putIdentityprovidersOkta(body)
+# IdentityProvider putIdentityprovidersOkta(body)
 
 
 PUT /api/v2/identityproviders/okta
@@ -1382,11 +1588,11 @@ apiInstance.putIdentityprovidersOkta(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersOnelogin"></a>
 
-# OAuthProvider putIdentityprovidersOnelogin(body)
+# IdentityProvider putIdentityprovidersOnelogin(body)
 
 
 PUT /api/v2/identityproviders/onelogin
@@ -1433,11 +1639,11 @@ apiInstance.putIdentityprovidersOnelogin(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersPing"></a>
 
-# OAuthProvider putIdentityprovidersPing(body)
+# IdentityProvider putIdentityprovidersPing(body)
 
 
 PUT /api/v2/identityproviders/ping
@@ -1484,11 +1690,11 @@ apiInstance.putIdentityprovidersPing(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersPurecloud"></a>
 
-# OAuthProvider putIdentityprovidersPurecloud(body)
+# IdentityProvider putIdentityprovidersPurecloud(body)
 
 
 PUT /api/v2/identityproviders/purecloud
@@ -1535,11 +1741,11 @@ apiInstance.putIdentityprovidersPurecloud(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersPureengage"></a>
 
-# OAuthProvider putIdentityprovidersPureengage(body)
+# IdentityProvider putIdentityprovidersPureengage(body)
 
 
 PUT /api/v2/identityproviders/pureengage
@@ -1586,11 +1792,11 @@ apiInstance.putIdentityprovidersPureengage(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
 <a name="putIdentityprovidersSalesforce"></a>
 
-# OAuthProvider putIdentityprovidersSalesforce(body)
+# IdentityProvider putIdentityprovidersSalesforce(body)
 
 
 PUT /api/v2/identityproviders/salesforce
@@ -1637,5 +1843,5 @@ apiInstance.putIdentityprovidersSalesforce(body)
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 

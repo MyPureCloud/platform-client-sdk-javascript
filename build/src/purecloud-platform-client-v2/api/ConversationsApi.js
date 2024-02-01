@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -4709,6 +4709,40 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Submit feedback for the summary.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} summaryId Summary ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postConversationSummaryFeedback(conversationId, summaryId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationSummaryFeedback';
+		}
+		// verify the required parameter 'summaryId' is set
+		if (summaryId === undefined || summaryId === null) {
+			throw 'Missing the required parameter "summaryId" when calling postConversationSummaryFeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback', 
+			'POST', 
+			{ 'conversationId': conversationId,'summaryId': summaryId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Place a new call as part of a callback conversation.
 	 * 
 	 * @param {String} conversationId conversationId
@@ -6231,9 +6265,10 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a LINE messenger Integration
-	 * 
+	 * Create a LINE messenger Integration (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {Object} body LineIntegrationRequest
+	 * @deprecated
 	 */
 	postConversationsMessagingIntegrationsLine(body) { 
 		// verify the required parameter 'body' is set

@@ -553,6 +553,10 @@
       "class": "WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.adherence.explanations.jobs",
+      "class": "WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.adherence.historical.bulk",
       "class": "WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification"
     },
@@ -611,6 +615,14 @@
     {
       "topic": "v2.workforcemanagement.agents",
       "class": "WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete"
+    },
+    {
+      "topic": "v2.workforcemanagement.agents.{id}.adherence.explanations",
+      "class": "WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.adherence.explanations",
+      "class": "WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.forecasts.staffingrequirement",

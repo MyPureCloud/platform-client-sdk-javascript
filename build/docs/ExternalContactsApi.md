@@ -3499,6 +3499,7 @@ To associate, supply a value for the externalContactId.  To disassociate, do not
 
 Requires ANY permissions:
 
+* relate:conversation:associate
 * externalContacts:conversation:associate
 
 ### Example Usage

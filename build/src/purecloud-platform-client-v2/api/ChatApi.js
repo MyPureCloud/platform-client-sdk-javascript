@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -232,12 +232,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The total page size requested (default to 25)
-	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
-	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
@@ -255,7 +249,7 @@ class ChatApi {
 			'/api/v2/chats/rooms/{roomJid}/messages', 
 			'GET', 
 			{ 'roomJid': roomJid },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
 			{  },
 			{  },
 			null, 
@@ -290,12 +284,6 @@ class ChatApi {
 	 * 
 	 * @param {String} threadId threadId
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The total page size requested (default to 25)
-	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
-	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
@@ -313,7 +301,7 @@ class ChatApi {
 			'/api/v2/chats/threads/{threadId}/messages', 
 			'GET', 
 			{ 'threadId': threadId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
 			{  },
 			{  },
 			null, 
@@ -359,12 +347,6 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The total page size requested (default to 25)
-	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
-	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
@@ -382,7 +364,7 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages', 
 			'GET', 
 			{ 'userId': userId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
 			{  },
 			{  },
 			null, 

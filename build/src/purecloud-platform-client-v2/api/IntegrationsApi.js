@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -269,6 +269,32 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get draft function settings for Action
+	 * 
+	 * @param {String} actionId actionId
+	 * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsActionDraftFunction(actionId) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null) {
+			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftFunction';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/draft/function', 
+			'GET', 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve schema for a Draft based on filename.
 	 * 
 	 * @param {String} actionId actionId
@@ -341,6 +367,32 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft/validation', 
+			'GET', 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get published function settings for Action
+	 * 
+	 * @param {String} actionId actionId
+	 * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsActionFunction(actionId) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null) {
+			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionFunction';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/function', 
 			'GET', 
 			{ 'actionId': actionId },
 			{  },
@@ -527,6 +579,27 @@ class IntegrationsApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get action function settings for Action
+	 * 
+	 * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsActionsFunctionsRuntimes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/functions/runtimes', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1520,6 +1593,37 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Create upload presigned URL for draft function package file.
+	 * 
+	 * @param {String} actionId actionId
+	 * @param {Object} body Input used to request URL upload.
+	 * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntegrationsActionDraftFunctionUpload(actionId, body) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null) {
+			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftFunctionUpload';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsActionDraftFunctionUpload';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/draft/function/upload', 
+			'POST', 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Publish a Draft and make it the active Action configuration
 	 * 
 	 * @param {String} actionId actionId
@@ -1835,6 +1939,37 @@ class IntegrationsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update draft function settings.
+	 * 
+	 * @param {String} actionId actionId
+	 * @param {Object} body Input used to update function settings.
+	 * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putIntegrationsActionDraftFunction(actionId, body) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null) {
+			throw 'Missing the required parameter "actionId" when calling putIntegrationsActionDraftFunction';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIntegrationsActionDraftFunction';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/draft/function', 
+			'PUT', 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

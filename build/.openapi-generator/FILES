@@ -100,6 +100,8 @@ docs/RoutingApi.json
 docs/RoutingApi.md
 docs/SCIMApi.json
 docs/SCIMApi.md
+docs/ScreenRecordingApi.json
+docs/ScreenRecordingApi.md
 docs/ScriptsApi.json
 docs/ScriptsApi.md
 docs/SearchApi.json
@@ -219,6 +221,7 @@ docs/deleteGreeting-example.txt
 docs/deleteGroup-example.txt
 docs/deleteGroupDynamicsettings-example.txt
 docs/deleteGroupMembers-example.txt
+docs/deleteIdentityprovider-example.txt
 docs/deleteIdentityprovidersAdfs-example.txt
 docs/deleteIdentityprovidersCic-example.txt
 docs/deleteIdentityprovidersGeneric-example.txt
@@ -295,6 +298,8 @@ docs/deleteOutboundDnclist-example.txt
 docs/deleteOutboundDnclistCustomexclusioncolumns-example.txt
 docs/deleteOutboundDnclistEmailaddresses-example.txt
 docs/deleteOutboundDnclistPhonenumbers-example.txt
+docs/deleteOutboundFilespecificationtemplate-example.txt
+docs/deleteOutboundFilespecificationtemplatesBulk-example.txt
 docs/deleteOutboundImporttemplate-example.txt
 docs/deleteOutboundImporttemplates-example.txt
 docs/deleteOutboundMessagingcampaign-example.txt
@@ -815,6 +820,7 @@ docs/getGroupProfile-example.txt
 docs/getGroups-example.txt
 docs/getGroupsSearch-example.txt
 docs/getGroupsSearch-example.txt
+docs/getIdentityprovider-example.txt
 docs/getIdentityproviders-example.txt
 docs/getIdentityprovidersAdfs-example.txt
 docs/getIdentityprovidersCic-example.txt
@@ -836,15 +842,18 @@ docs/getIntegrationConfigCurrent-example.txt
 docs/getIntegrations-example.txt
 docs/getIntegrationsAction-example.txt
 docs/getIntegrationsActionDraft-example.txt
+docs/getIntegrationsActionDraftFunction-example.txt
 docs/getIntegrationsActionDraftSchema-example.txt
 docs/getIntegrationsActionDraftTemplate-example.txt
 docs/getIntegrationsActionDraftValidation-example.txt
+docs/getIntegrationsActionFunction-example.txt
 docs/getIntegrationsActionSchema-example.txt
 docs/getIntegrationsActionTemplate-example.txt
 docs/getIntegrationsActions-example.txt
 docs/getIntegrationsActionsCategories-example.txt
 docs/getIntegrationsActionsCertificates-example.txt
 docs/getIntegrationsActionsDrafts-example.txt
+docs/getIntegrationsActionsFunctionsRuntimes-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBot-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBotVersions-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBots-example.txt
@@ -895,7 +904,6 @@ docs/getJourneySegments-example.txt
 docs/getJourneySession-example.txt
 docs/getJourneySessionEvents-example.txt
 docs/getJourneySessionOutcomescores-example.txt
-docs/getJourneySessionSegments-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
@@ -924,6 +932,8 @@ docs/getKnowledgeKnowledgebaseLanguageDocuments-example.txt
 docs/getKnowledgeKnowledgebaseLanguageDocumentsImport-example.txt
 docs/getKnowledgeKnowledgebaseLanguageTraining-example.txt
 docs/getKnowledgeKnowledgebaseLanguageTrainings-example.txt
+docs/getKnowledgeKnowledgebaseOperations-example.txt
+docs/getKnowledgeKnowledgebaseOperationsUsersQuery-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroups-example.txt
@@ -1064,6 +1074,8 @@ docs/getOutboundDnclistsDivisionview-example.txt
 docs/getOutboundDnclistsDivisionviews-example.txt
 docs/getOutboundEvent-example.txt
 docs/getOutboundEvents-example.txt
+docs/getOutboundFilespecificationtemplate-example.txt
+docs/getOutboundFilespecificationtemplates-example.txt
 docs/getOutboundImporttemplate-example.txt
 docs/getOutboundImporttemplateImportstatus-example.txt
 docs/getOutboundImporttemplates-example.txt
@@ -1339,7 +1351,6 @@ docs/getTelephonyProvidersEdgesLogicalinterfaces-example.txt
 docs/getTelephonyProvidersEdgesMediastatisticsConversation-example.txt
 docs/getTelephonyProvidersEdgesMediastatisticsConversationCommunication-example.txt
 docs/getTelephonyProvidersEdgesMetrics-example.txt
-docs/getTelephonyProvidersEdgesOutboundroute-example.txt
 docs/getTelephonyProvidersEdgesOutboundroutes-example.txt
 docs/getTelephonyProvidersEdgesPhone-example.txt
 docs/getTelephonyProvidersEdgesPhonebasesetting-example.txt
@@ -1837,6 +1848,7 @@ docs/postConversationParticipantReplaceExternal-example.txt
 docs/postConversationParticipantReplaceQueue-example.txt
 docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationRecordingAnnotations-example.txt
+docs/postConversationSummaryFeedback-example.txt
 docs/postConversationsCall-example.txt
 docs/postConversationsCallParticipantBarge-example.txt
 docs/postConversationsCallParticipantCoach-example.txt
@@ -1973,9 +1985,12 @@ docs/postGroups-example.txt
 docs/postGroupsDynamicsettingsPreview-example.txt
 docs/postGroupsSearch-example.txt
 docs/postGroupsSearch-example.txt
+docs/postIdentityproviders-example.txt
 docs/postInfrastructureascodeJobs-example.txt
 docs/postIntegrations-example.txt
 docs/postIntegrationsActionDraft-example.txt
+docs/postIntegrationsActionDraftFunctionUpload-example.txt
+docs/postIntegrationsActionDraftFunctionUpload-example.txt
 docs/postIntegrationsActionDraftPublish-example.txt
 docs/postIntegrationsActionDraftTest-example.txt
 docs/postIntegrationsActionExecute-example.txt
@@ -2088,12 +2103,14 @@ docs/postOutboundContactlistfiltersPreview-example.txt
 docs/postOutboundContactlists-example.txt
 docs/postOutboundContactlisttemplates-example.txt
 docs/postOutboundContactlisttemplatesBulkAdd-example.txt
+docs/postOutboundContactlisttemplatesBulkRetrieve-example.txt
 docs/postOutboundConversationDnc-example.txt
 docs/postOutboundDigitalrulesets-example.txt
 docs/postOutboundDnclistEmailaddresses-example.txt
 docs/postOutboundDnclistExport-example.txt
 docs/postOutboundDnclistPhonenumbers-example.txt
 docs/postOutboundDnclists-example.txt
+docs/postOutboundFilespecificationtemplates-example.txt
 docs/postOutboundImporttemplates-example.txt
 docs/postOutboundImporttemplatesBulkAdd-example.txt
 docs/postOutboundMessagingcampaigns-example.txt
@@ -2159,6 +2176,7 @@ docs/postRoutingUtilizationTags-example.txt
 docs/postRoutingWrapupcodes-example.txt
 docs/postScimUsers-example.txt
 docs/postScimV2Users-example.txt
+docs/postScreenrecordingToken-example.txt
 docs/postScriptExport-example.txt
 docs/postScriptsPublished-example.txt
 docs/postSearch-example.txt
@@ -2392,6 +2410,7 @@ docs/putGreetingsDefaults-example.txt
 docs/putGroup-example.txt
 docs/putGroupDynamicsettings-example.txt
 docs/putGroupGreetingsDefaults-example.txt
+docs/putIdentityprovider-example.txt
 docs/putIdentityprovidersAdfs-example.txt
 docs/putIdentityprovidersCic-example.txt
 docs/putIdentityprovidersGeneric-example.txt
@@ -2404,6 +2423,7 @@ docs/putIdentityprovidersPurecloud-example.txt
 docs/putIdentityprovidersPureengage-example.txt
 docs/putIdentityprovidersSalesforce-example.txt
 docs/putIntegrationConfigCurrent-example.txt
+docs/putIntegrationsActionDraftFunction-example.txt
 docs/putIntegrationsBotconnectorIntegrationIdBots-example.txt
 docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
@@ -2441,6 +2461,7 @@ docs/putOutboundContactlistfilter-example.txt
 docs/putOutboundContactlisttemplate-example.txt
 docs/putOutboundDigitalruleset-example.txt
 docs/putOutboundDnclist-example.txt
+docs/putOutboundFilespecificationtemplate-example.txt
 docs/putOutboundImporttemplate-example.txt
 docs/putOutboundMessagingcampaign-example.txt
 docs/putOutboundRuleset-example.txt
@@ -2593,6 +2614,7 @@ src/purecloud-platform-client-v2/api/RecordingApi.js
 src/purecloud-platform-client-v2/api/ResponseManagementApi.js
 src/purecloud-platform-client-v2/api/RoutingApi.js
 src/purecloud-platform-client-v2/api/SCIMApi.js
+src/purecloud-platform-client-v2/api/ScreenRecordingApi.js
 src/purecloud-platform-client-v2/api/ScriptsApi.js
 src/purecloud-platform-client-v2/api/SearchApi.js
 src/purecloud-platform-client-v2/api/SettingsApi.js

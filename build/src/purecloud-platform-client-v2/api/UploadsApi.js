@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -19,6 +19,37 @@ class UploadsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Create upload presigned URL for draft function package file.
+	 * 
+	 * @param {String} actionId actionId
+	 * @param {Object} body Input used to request URL upload.
+	 * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntegrationsActionDraftFunctionUpload(actionId, body) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null) {
+			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftFunctionUpload';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsActionDraftFunctionUpload';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/draft/function/upload', 
+			'POST', 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Creates a presigned URL for uploading a knowledge import file with a set of documents

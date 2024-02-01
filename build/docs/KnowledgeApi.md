@@ -45,6 +45,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentsImport) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} | Get import operation report
 [**getKnowledgeKnowledgebaseLanguageTraining**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTraining) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId} | Get training detail
 [**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings | Get all trainings information for a knowledgebase
+[**getKnowledgeKnowledgebaseOperations**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperations) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations | Get operations
+[**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperationsUsersQuery) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query | Get ids of operation creator users and oauth clients
 [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroup) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId} | Get knowledge base unanswered group for a particular groupId
 [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Get knowledge base unanswered phrase group for a particular phraseGroupId
 [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroups) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups | Get knowledge base unanswered groups
@@ -2279,6 +2281,126 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, language
 ### Return type
 
 **TrainingListing**
+
+<a name="getKnowledgeKnowledgebaseOperations"></a>
+
+# OperationListing getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations
+
+Get operations
+
+getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:importExportOperationsList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'userId': ["userId_example"], // [String] | If specified, retrieves operations associated with user ids, comma separated values expected.
+  'type': ["type_example"], // [String] | If specified, retrieves operations with specified operation type, comma separated values expected.
+  'status': ["status_example"], // [String] | If specified, retrieves operations with specified operation status, comma separated values expected.
+  'interval': "interval_example" // String | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+};
+
+apiInstance.getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseOperations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseOperations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **userId** | **[String]** | If specified, retrieves operations associated with user ids, comma separated values expected. | [optional]  |
+ **type** | **[String]** | If specified, retrieves operations with specified operation type, comma separated values expected. | [optional] <br />**Values**: Export, Import, Parse, Sync |
+ **status** | **[String]** | If specified, retrieves operations with specified operation status, comma separated values expected. | [optional]  |
+ **interval** | **String** | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**OperationListing**
+
+<a name="getKnowledgeKnowledgebaseOperationsUsersQuery"></a>
+
+# OperationCreatorUserResponse getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query
+
+Get ids of operation creator users and oauth clients
+
+getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:importExportOperationsList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+
+apiInstance.getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseOperationsUsersQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseOperationsUsersQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OperationCreatorUserResponse**
 
 <a name="getKnowledgeKnowledgebaseUnansweredGroup"></a>
 

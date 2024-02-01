@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -1338,6 +1338,68 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
 			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'knowledgeDocumentsState': opts['knowledgeDocumentsState'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get operations
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Array.<String>} opts.userId If specified, retrieves operations associated with user ids, comma separated values expected.
+	 * @param {Array.<String>} opts.type If specified, retrieves operations with specified operation type, comma separated values expected.
+	 * @param {Array.<String>} opts.status If specified, retrieves operations with specified operation status, comma separated values expected.
+	 * @param {String} opts.interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+	 * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'interval': opts['interval'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get ids of operation creator users and oauth clients
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperationsUsersQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
 			{  },
 			{  },
 			null, 

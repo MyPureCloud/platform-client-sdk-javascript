@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -1061,8 +1061,14 @@ class ArchitectApi {
 	 * Get specified user prompt
 	 * 
 	 * @param {String} promptId Prompt ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
+	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
+	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
 	 */
-	getArchitectPrompt(promptId) { 
+	getArchitectPrompt(promptId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
 			throw 'Missing the required parameter "promptId" when calling getArchitectPrompt';
@@ -1072,7 +1078,7 @@ class ArchitectApi {
 			'/api/v2/architect/prompts/{promptId}', 
 			'GET', 
 			{ 'promptId': promptId },
-			{  },
+			{ 'includeMediaUris': opts['includeMediaUris'],'includeResources': opts['includeResources'],'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1191,6 +1197,9 @@ class ArchitectApi {
 	 * @param {String} opts.nameOrDescription Name or description
 	 * @param {String} opts.sortBy Sort by (default to id)
 	 * @param {String} opts.sortOrder Sort order (default to asc)
+	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
+	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
+	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
 	 */
 	getArchitectPrompts(opts) { 
 		opts = opts || {};
@@ -1200,7 +1209,7 @@ class ArchitectApi {
 			'/api/v2/architect/prompts', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': this.apiClient.buildCollectionParam(opts['name'], 'multi'),'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': this.apiClient.buildCollectionParam(opts['name'], 'multi'),'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'includeMediaUris': opts['includeMediaUris'],'includeResources': opts['includeResources'],'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1383,8 +1392,14 @@ class ArchitectApi {
 	 * Get a system prompt
 	 * 
 	 * @param {String} promptId promptId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
+	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
+	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
 	 */
-	getArchitectSystemprompt(promptId) { 
+	getArchitectSystemprompt(promptId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
 			throw 'Missing the required parameter "promptId" when calling getArchitectSystemprompt';
@@ -1394,7 +1409,7 @@ class ArchitectApi {
 			'/api/v2/architect/systemprompts/{promptId}', 
 			'GET', 
 			{ 'promptId': promptId },
-			{  },
+			{ 'includeMediaUris': opts['includeMediaUris'],'includeResources': opts['includeResources'],'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1515,6 +1530,9 @@ class ArchitectApi {
 	 * @param {String} opts.name Name
 	 * @param {String} opts.description Description
 	 * @param {String} opts.nameOrDescription Name or description
+	 * @param {Boolean} opts.includeMediaUris Include the media URIs for each resource (default to true)
+	 * @param {Boolean} opts.includeResources Include the resources for each system prompt (default to true)
+	 * @param {Array.<String>} opts.language Filter the resources down to the provided languages
 	 */
 	getArchitectSystemprompts(opts) { 
 		opts = opts || {};
@@ -1524,7 +1542,7 @@ class ArchitectApi {
 			'/api/v2/architect/systemprompts', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'includeMediaUris': opts['includeMediaUris'],'includeResources': opts['includeResources'],'language': this.apiClient.buildCollectionParam(opts['language'], 'multi') },
 			{  },
 			{  },
 			null, 

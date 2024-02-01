@@ -446,12 +446,6 @@ let apiInstance = new platformClient.ChatApi();
 
 let roomJid = "roomJid_example"; // String | roomJid
 let opts = { 
-  'pageSize': 25, // Number | The total page size requested
-  'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
-  'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example", // String | Previous page token
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
   'after': "after_example" // String | The beginning date for messages to retrieve
@@ -473,12 +467,6 @@ apiInstance.getChatsRoomMessages(roomJid, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
- **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
- **nextPage** | **String** | next page token | [optional]  |
- **previousPage** | **String** | Previous page token | [optional]  |
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
@@ -565,12 +553,6 @@ let apiInstance = new platformClient.ChatApi();
 
 let threadId = "threadId_example"; // String | threadId
 let opts = { 
-  'pageSize': 25, // Number | The total page size requested
-  'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
-  'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example", // String | Previous page token
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
   'after': "after_example" // String | The beginning date for messages to retrieve
@@ -592,12 +574,6 @@ apiInstance.getChatsThreadMessages(threadId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **threadId** | **String** | threadId |  |
- **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
- **nextPage** | **String** | next page token | [optional]  |
- **previousPage** | **String** | Previous page token | [optional]  |
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
@@ -693,12 +669,6 @@ let apiInstance = new platformClient.ChatApi();
 
 let userId = "userId_example"; // String | userId
 let opts = { 
-  'pageSize': 25, // Number | The total page size requested
-  'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
-  'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example", // String | Previous page token
   'limit': "limit_example", // String | The maximum number of messages to retrieve
   'before': "before_example", // String | The cutoff date for messages to retrieve
   'after': "after_example" // String | The beginning date for messages to retrieve
@@ -720,12 +690,6 @@ apiInstance.getChatsUserMessages(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
- **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
- **nextPage** | **String** | next page token | [optional]  |
- **previousPage** | **String** | Previous page token | [optional]  |
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |

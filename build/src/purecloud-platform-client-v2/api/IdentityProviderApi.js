@@ -5,7 +5,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 186.0.1
+	 * @version 187.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class IdentityProviderApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete Identity Provider
+	 * 
+	 * @param {String} providerId Provider ID
+	 */
+	deleteIdentityprovider(providerId) { 
+		// verify the required parameter 'providerId' is set
+		if (providerId === undefined || providerId === null) {
+			throw 'Missing the required parameter "providerId" when calling deleteIdentityprovider';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/{providerId}', 
+			'DELETE', 
+			{ 'providerId': providerId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete ADFS Identity Provider
@@ -230,6 +255,31 @@ class IdentityProviderApi {
 			'/api/v2/identityproviders/salesforce', 
 			'DELETE', 
 			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Identity Provider
+	 * 
+	 * @param {String} providerId Provider ID
+	 */
+	getIdentityprovider(providerId) { 
+		// verify the required parameter 'providerId' is set
+		if (providerId === undefined || providerId === null) {
+			throw 'Missing the required parameter "providerId" when calling getIdentityprovider';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/{providerId}', 
+			'GET', 
+			{ 'providerId': providerId },
 			{  },
 			{  },
 			{  },
@@ -474,6 +524,61 @@ class IdentityProviderApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Identity Provider
+	 * 
+	 * @param {Object} body Provider
+	 */
+	postIdentityproviders(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIdentityproviders';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Identity Provider
+	 * 
+	 * @param {String} providerId Provider ID
+	 * @param {Object} body Provider
+	 */
+	putIdentityprovider(providerId, body) { 
+		// verify the required parameter 'providerId' is set
+		if (providerId === undefined || providerId === null) {
+			throw 'Missing the required parameter "providerId" when calling putIdentityprovider';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIdentityprovider';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/{providerId}', 
+			'PUT', 
+			{ 'providerId': providerId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -16,15 +16,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrations**](IntegrationsApi.html#getIntegrations) | **GET** /api/v2/integrations | List integrations
 [**getIntegrationsAction**](IntegrationsApi.html#getIntegrationsAction) | **GET** /api/v2/integrations/actions/{actionId} | Retrieves a single Action matching id.
 [**getIntegrationsActionDraft**](IntegrationsApi.html#getIntegrationsActionDraft) | **GET** /api/v2/integrations/actions/{actionId}/draft | Retrieve a Draft
+[**getIntegrationsActionDraftFunction**](IntegrationsApi.html#getIntegrationsActionDraftFunction) | **GET** /api/v2/integrations/actions/{actionId}/draft/function | Get draft function settings for Action
 [**getIntegrationsActionDraftSchema**](IntegrationsApi.html#getIntegrationsActionDraftSchema) | **GET** /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName} | Retrieve schema for a Draft based on filename.
 [**getIntegrationsActionDraftTemplate**](IntegrationsApi.html#getIntegrationsActionDraftTemplate) | **GET** /api/v2/integrations/actions/{actionId}/draft/templates/{fileName} | Retrieve templates for a Draft based on filename.
 [**getIntegrationsActionDraftValidation**](IntegrationsApi.html#getIntegrationsActionDraftValidation) | **GET** /api/v2/integrations/actions/{actionId}/draft/validation | Validate current Draft configuration.
+[**getIntegrationsActionFunction**](IntegrationsApi.html#getIntegrationsActionFunction) | **GET** /api/v2/integrations/actions/{actionId}/function | Get published function settings for Action
 [**getIntegrationsActionSchema**](IntegrationsApi.html#getIntegrationsActionSchema) | **GET** /api/v2/integrations/actions/{actionId}/schemas/{fileName} | Retrieve schema for an action based on filename.
 [**getIntegrationsActionTemplate**](IntegrationsApi.html#getIntegrationsActionTemplate) | **GET** /api/v2/integrations/actions/{actionId}/templates/{fileName} | Retrieve text of templates for an action based on filename.
 [**getIntegrationsActions**](IntegrationsApi.html#getIntegrationsActions) | **GET** /api/v2/integrations/actions | Retrieves all actions associated with filters passed in via query param.
 [**getIntegrationsActionsCategories**](IntegrationsApi.html#getIntegrationsActionsCategories) | **GET** /api/v2/integrations/actions/categories | Retrieves all categories of available Actions
 [**getIntegrationsActionsCertificates**](IntegrationsApi.html#getIntegrationsActionsCertificates) | **GET** /api/v2/integrations/actions/certificates | Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
 [**getIntegrationsActionsDrafts**](IntegrationsApi.html#getIntegrationsActionsDrafts) | **GET** /api/v2/integrations/actions/drafts | Retrieves all action drafts associated with the filters passed in via query param.
+[**getIntegrationsActionsFunctionsRuntimes**](IntegrationsApi.html#getIntegrationsActionsFunctionsRuntimes) | **GET** /api/v2/integrations/actions/functions/runtimes | Get action function settings for Action
 [**getIntegrationsBotconnectorIntegrationIdBot**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBot) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId} | Get a specific botConnector bot, plus versions, for this integration
 [**getIntegrationsBotconnectorIntegrationIdBotVersions**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotVersions) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions | Get a list of bot versions for a bot
 [**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBots) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots | Get a list of botConnector bots for this integration
@@ -59,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchIntegrationsActionDraft**](IntegrationsApi.html#patchIntegrationsActionDraft) | **PATCH** /api/v2/integrations/actions/{actionId}/draft | Update an existing Draft
 [**postIntegrations**](IntegrationsApi.html#postIntegrations) | **POST** /api/v2/integrations | Create an integration.
 [**postIntegrationsActionDraft**](IntegrationsApi.html#postIntegrationsActionDraft) | **POST** /api/v2/integrations/actions/{actionId}/draft | Create a new Draft from existing Action
+[**postIntegrationsActionDraftFunctionUpload**](IntegrationsApi.html#postIntegrationsActionDraftFunctionUpload) | **POST** /api/v2/integrations/actions/{actionId}/draft/function/upload | Create upload presigned URL for draft function package file.
 [**postIntegrationsActionDraftPublish**](IntegrationsApi.html#postIntegrationsActionDraftPublish) | **POST** /api/v2/integrations/actions/{actionId}/draft/publish | Publish a Draft and make it the active Action configuration
 [**postIntegrationsActionDraftTest**](IntegrationsApi.html#postIntegrationsActionDraftTest) | **POST** /api/v2/integrations/actions/{actionId}/draft/test | Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 [**postIntegrationsActionExecute**](IntegrationsApi.html#postIntegrationsActionExecute) | **POST** /api/v2/integrations/actions/{actionId}/execute | Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
@@ -70,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs | Get a list of Nuance bots in the specified Integration asynchronously
 [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate | Try out a single credential for a Nuance bot to know if the secret is correct
 [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | **PUT** /api/v2/integrations/{integrationId}/config/current | Update integration configuration.
+[**putIntegrationsActionDraftFunction**](IntegrationsApi.html#putIntegrationsActionDraftFunction) | **PUT** /api/v2/integrations/actions/{actionId}/draft/function | Update draft function settings.
 [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | **PUT** /api/v2/integrations/botconnector/{integrationId}/bots | Set a list of botConnector bots plus versions for this integration
 [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | **PUT** /api/v2/integrations/credentials/{credentialId} | Update a set of credentials
 [**putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings**](IntegrationsApi.html#putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings) | **PUT** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
@@ -565,6 +570,58 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 
 **Action**
 
+<a name="getIntegrationsActionDraftFunction"></a>
+
+# FunctionConfig getIntegrationsActionDraftFunction(actionId)
+
+
+GET /api/v2/integrations/actions/{actionId}/draft/function
+
+Get draft function settings for Action
+
+getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:actionFunction:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let actionId = "actionId_example"; // String | actionId
+
+apiInstance.getIntegrationsActionDraftFunction(actionId)
+  .then((data) => {
+    console.log(`getIntegrationsActionDraftFunction success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionDraftFunction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **actionId** | **String** | actionId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FunctionConfig**
+
 <a name="getIntegrationsActionDraftSchema"></a>
 
 # JsonSchemaDocument getIntegrationsActionDraftSchema(actionId, fileName)
@@ -720,6 +777,58 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
 ### Return type
 
 **DraftValidationResult**
+
+<a name="getIntegrationsActionFunction"></a>
+
+# FunctionConfig getIntegrationsActionFunction(actionId)
+
+
+GET /api/v2/integrations/actions/{actionId}/function
+
+Get published function settings for Action
+
+getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:actionFunction:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let actionId = "actionId_example"; // String | actionId
+
+apiInstance.getIntegrationsActionFunction(actionId)
+  .then((data) => {
+    console.log(`getIntegrationsActionFunction success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionFunction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **actionId** | **String** | actionId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FunctionConfig**
 
 <a name="getIntegrationsActionSchema"></a>
 
@@ -1091,6 +1200,53 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 ### Return type
 
 **ActionEntityListing**
+
+<a name="getIntegrationsActionsFunctionsRuntimes"></a>
+
+# [FunctionRuntime] getIntegrationsActionsFunctionsRuntimes()
+
+
+GET /api/v2/integrations/actions/functions/runtimes
+
+Get action function settings for Action
+
+getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:actionFunction:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+apiInstance.getIntegrationsActionsFunctionsRuntimes()
+  .then((data) => {
+    console.log(`getIntegrationsActionsFunctionsRuntimes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionsFunctionsRuntimes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**[FunctionRuntime]**
 
 <a name="getIntegrationsBotconnectorIntegrationIdBot"></a>
 
@@ -2958,6 +3114,60 @@ apiInstance.postIntegrationsActionDraft(actionId)
 
 **Action**
 
+<a name="postIntegrationsActionDraftFunctionUpload"></a>
+
+# FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(actionId, body)
+
+
+POST /api/v2/integrations/actions/{actionId}/draft/function/upload
+
+Create upload presigned URL for draft function package file.
+
+postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:actionFunction:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let actionId = "actionId_example"; // String | actionId
+let body = {}; // Object | Input used to request URL upload.
+
+apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
+  .then((data) => {
+    console.log(`postIntegrationsActionDraftFunctionUpload success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActionDraftFunctionUpload');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **actionId** | **String** | actionId |  |
+ **body** | **Object** | Input used to request URL upload. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FunctionUploadResponse**
+
 <a name="postIntegrationsActionDraftPublish"></a>
 
 # Action postIntegrationsActionDraftPublish(actionId, body)
@@ -3545,6 +3755,60 @@ apiInstance.putIntegrationConfigCurrent(integrationId, opts)
 ### Return type
 
 **IntegrationConfiguration**
+
+<a name="putIntegrationsActionDraftFunction"></a>
+
+# FunctionConfig putIntegrationsActionDraftFunction(actionId, body)
+
+
+PUT /api/v2/integrations/actions/{actionId}/draft/function
+
+Update draft function settings.
+
+putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:actionFunction:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let actionId = "actionId_example"; // String | actionId
+let body = {}; // Object | Input used to update function settings.
+
+apiInstance.putIntegrationsActionDraftFunction(actionId, body)
+  .then((data) => {
+    console.log(`putIntegrationsActionDraftFunction success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIntegrationsActionDraftFunction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **actionId** | **String** | actionId |  |
+ **body** | **Object** | Input used to update function settings. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FunctionConfig**
 
 <a name="putIntegrationsBotconnectorIntegrationIdBots"></a>
 

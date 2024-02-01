@@ -62,7 +62,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesMediastatisticsConversation**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMediastatisticsConversation) | **GET** /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId} | Get media endpoint statistics events.
 [**getTelephonyProvidersEdgesMediastatisticsConversationCommunication**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMediastatisticsConversationCommunication) | **GET** /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId} | Get media endpoint statistics event.
 [**getTelephonyProvidersEdgesMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMetrics) | **GET** /api/v2/telephony/providers/edges/metrics | Get the metrics for a list of edges.
-[**getTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroute) | **GET** /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} | Get outbound route
 [**getTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroutes) | **GET** /api/v2/telephony/providers/edges/outboundroutes | Get outbound routes
 [**getTelephonyProvidersEdgesPhone**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhone) | **GET** /api/v2/telephony/providers/edges/phones/{phoneId} | Get a Phone by ID
 [**getTelephonyProvidersEdgesPhonebasesetting**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhonebasesetting) | **GET** /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} | Get a Phone Base Settings object by ID
@@ -3030,59 +3029,6 @@ apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
 ### Return type
 
 **[EdgeMetrics]**
-
-<a name="getTelephonyProvidersEdgesOutboundroute"></a>
-
-# OutboundRoute getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}
-
-Get outbound route
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-
-Requires ANY permissions:
-
-* telephony:plugin:all
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
-
-apiInstance.getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
-  .then((data) => {
-    console.log(`getTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroute');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **outboundRouteId** | **String** | Outbound route ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**OutboundRoute**
 
 <a name="getTelephonyProvidersEdgesOutboundroutes"></a>
 

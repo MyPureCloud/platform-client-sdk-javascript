@@ -25,6 +25,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#deleteOutboundDnclistCustomexclusioncolumns) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Deletes all or expired custom exclusion column entries from a DNC list.
 [**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Deletes all or expired email addresses from a DNC list.
 [**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Deletes all or expired phone numbers from a DNC list.
+[**deleteOutboundFilespecificationtemplate**](OutboundApi.html#deleteOutboundFilespecificationtemplate) | **DELETE** /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} | Delete File Specification Template
+[**deleteOutboundFilespecificationtemplatesBulk**](OutboundApi.html#deleteOutboundFilespecificationtemplatesBulk) | **DELETE** /api/v2/outbound/filespecificationtemplates/bulk | Delete multiple file specification templates.
 [**deleteOutboundImporttemplate**](OutboundApi.html#deleteOutboundImporttemplate) | **DELETE** /api/v2/outbound/importtemplates/{importTemplateId} | Delete Import Template
 [**deleteOutboundImporttemplates**](OutboundApi.html#deleteOutboundImporttemplates) | **DELETE** /api/v2/outbound/importtemplates | Delete multiple import templates.
 [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
@@ -76,6 +78,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | **GET** /api/v2/outbound/dnclists/divisionviews | Query a list of simplified dnc list objects.
 [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | **GET** /api/v2/outbound/events/{eventId} | Get Dialer Event
 [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | **GET** /api/v2/outbound/events | Query Event Logs
+[**getOutboundFilespecificationtemplate**](OutboundApi.html#getOutboundFilespecificationtemplate) | **GET** /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} | Get File Specification Template
+[**getOutboundFilespecificationtemplates**](OutboundApi.html#getOutboundFilespecificationtemplates) | **GET** /api/v2/outbound/filespecificationtemplates | Query File Specification Templates
 [**getOutboundImporttemplate**](OutboundApi.html#getOutboundImporttemplate) | **GET** /api/v2/outbound/importtemplates/{importTemplateId} | Get Import Template
 [**getOutboundImporttemplateImportstatus**](OutboundApi.html#getOutboundImporttemplateImportstatus) | **GET** /api/v2/outbound/importtemplates/{importTemplateId}/importstatus | Get the import status for an import template.
 [**getOutboundImporttemplates**](OutboundApi.html#getOutboundImporttemplates) | **GET** /api/v2/outbound/importtemplates | Query Import Templates
@@ -121,12 +125,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
 [**postOutboundContactlisttemplates**](OutboundApi.html#postOutboundContactlisttemplates) | **POST** /api/v2/outbound/contactlisttemplates | Create Contact List Template
 [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi.html#postOutboundContactlisttemplatesBulkAdd) | **POST** /api/v2/outbound/contactlisttemplates/bulk/add | Add multiple contact list templates
+[**postOutboundContactlisttemplatesBulkRetrieve**](OutboundApi.html#postOutboundContactlisttemplatesBulkRetrieve) | **POST** /api/v2/outbound/contactlisttemplates/bulk/retrieve | Get multiple contact list templates
 [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | **POST** /api/v2/outbound/conversations/{conversationId}/dnc | Add phone numbers to a Dialer DNC list.
 [**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | **POST** /api/v2/outbound/digitalrulesets | Create an Outbound Digital Rule Set
 [**postOutboundDnclistEmailaddresses**](OutboundApi.html#postOutboundDnclistEmailaddresses) | **POST** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add email addresses to a DNC list.
 [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
 [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a DNC list.
 [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
+[**postOutboundFilespecificationtemplates**](OutboundApi.html#postOutboundFilespecificationtemplates) | **POST** /api/v2/outbound/filespecificationtemplates | Create File Specification Template
 [**postOutboundImporttemplates**](OutboundApi.html#postOutboundImporttemplates) | **POST** /api/v2/outbound/importtemplates | Create Import Template
 [**postOutboundImporttemplatesBulkAdd**](OutboundApi.html#postOutboundImporttemplatesBulkAdd) | **POST** /api/v2/outbound/importtemplates/bulk/add | Add multiple import templates
 [**postOutboundMessagingcampaigns**](OutboundApi.html#postOutboundMessagingcampaigns) | **POST** /api/v2/outbound/messagingcampaigns | Create a Messaging Campaign
@@ -145,6 +151,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putOutboundContactlisttemplate**](OutboundApi.html#putOutboundContactlisttemplate) | **PUT** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Update a contact list template.
 [**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | **PUT** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Update an Outbound Digital Rule Set
 [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | **PUT** /api/v2/outbound/dnclists/{dncListId} | Update dialer DNC list
+[**putOutboundFilespecificationtemplate**](OutboundApi.html#putOutboundFilespecificationtemplate) | **PUT** /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} | Update File Specification Template
 [**putOutboundImporttemplate**](OutboundApi.html#putOutboundImporttemplate) | **PUT** /api/v2/outbound/importtemplates/{importTemplateId} | Update Import Template
 [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | **PUT** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Update an Outbound Messaging Campaign
 [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | **PUT** /api/v2/outbound/rulesets/{ruleSetId} | Update a Rule Set.
@@ -1072,6 +1079,106 @@ apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundFilespecificationtemplate"></a>
+
+# void deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+
+
+DELETE /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
+
+Delete File Specification Template
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+
+apiInstance.deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+  .then(() => {
+    console.log('deleteOutboundFilespecificationtemplate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundFilespecificationtemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundFilespecificationtemplatesBulk"></a>
+
+# void deleteOutboundFilespecificationtemplatesBulk(id)
+
+
+DELETE /api/v2/outbound/filespecificationtemplates/bulk
+
+Delete multiple file specification templates.
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let id = ["id_example"]; // [String] | File Specification template id(s) to delete
+
+apiInstance.deleteOutboundFilespecificationtemplatesBulk(id)
+  .then(() => {
+    console.log('deleteOutboundFilespecificationtemplatesBulk returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundFilespecificationtemplatesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | File Specification template id(s) to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3946,6 +4053,120 @@ apiInstance.getOutboundEvents(opts)
 
 **DialerEventEntityListing**
 
+<a name="getOutboundFilespecificationtemplate"></a>
+
+# FileSpecificationTemplate getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+
+
+GET /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
+
+Get File Specification Template
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+
+apiInstance.getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+  .then((data) => {
+    console.log(`getOutboundFilespecificationtemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundFilespecificationtemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FileSpecificationTemplate**
+
+<a name="getOutboundFilespecificationtemplates"></a>
+
+# FileSpecificationTemplateEntityListing getOutboundFilespecificationtemplates(opts)
+
+
+GET /api/v2/outbound/filespecificationtemplates
+
+Query File Specification Templates
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
+  'filterType': "Prefix", // String | Filter type
+  'name': "name_example", // String | Name
+  'sortBy': "sortBy_example", // String | Sort by
+  'sortOrder': "a" // String | Sort order
+};
+
+apiInstance.getOutboundFilespecificationtemplates(opts)
+  .then((data) => {
+    console.log(`getOutboundFilespecificationtemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundFilespecificationtemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**FileSpecificationTemplateEntityListing**
+
 <a name="getOutboundImporttemplate"></a>
 
 # ImportTemplate getOutboundImporttemplate(importTemplateId)
@@ -6302,6 +6523,56 @@ apiInstance.postOutboundContactlisttemplatesBulkAdd(body)
 
 **ContactListTemplateEntityListing**
 
+<a name="postOutboundContactlisttemplatesBulkRetrieve"></a>
+
+# ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkRetrieve(body)
+
+
+POST /api/v2/outbound/contactlisttemplates/bulk/retrieve
+
+Get multiple contact list templates
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | contact list templates to get
+
+apiInstance.postOutboundContactlisttemplatesBulkRetrieve(body)
+  .then((data) => {
+    console.log(`postOutboundContactlisttemplatesBulkRetrieve success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlisttemplatesBulkRetrieve');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | contact list templates to get |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListTemplateEntityListing**
+
 <a name="postOutboundConversationDnc"></a>
 
 # void postOutboundConversationDnc(conversationId)
@@ -6616,6 +6887,56 @@ apiInstance.postOutboundDnclists(body)
 ### Return type
 
 **DncList**
+
+<a name="postOutboundFilespecificationtemplates"></a>
+
+# FileSpecificationTemplate postOutboundFilespecificationtemplates(body)
+
+
+POST /api/v2/outbound/filespecificationtemplates
+
+Create File Specification Template
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | FileSpecificationTemplate
+
+apiInstance.postOutboundFilespecificationtemplates(body)
+  .then((data) => {
+    console.log(`postOutboundFilespecificationtemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundFilespecificationtemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | FileSpecificationTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FileSpecificationTemplate**
 
 <a name="postOutboundImporttemplates"></a>
 
@@ -7546,6 +7867,58 @@ apiInstance.putOutboundDnclist(dncListId, body)
 ### Return type
 
 **DncList**
+
+<a name="putOutboundFilespecificationtemplate"></a>
+
+# FileSpecificationTemplate putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
+
+
+PUT /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
+
+Update File Specification Template
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+let body = {}; // Object | fileSpecificationTemplate
+
+apiInstance.putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
+  .then((data) => {
+    console.log(`putOutboundFilespecificationtemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundFilespecificationtemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
+ **body** | **Object** | fileSpecificationTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FileSpecificationTemplate**
 
 <a name="putOutboundImporttemplate"></a>
 
