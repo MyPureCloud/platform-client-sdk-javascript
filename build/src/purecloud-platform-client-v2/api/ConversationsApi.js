@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 187.0.0
+	 * @version 188.0.0
 	 */
 
 	/**
@@ -4081,8 +4081,8 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Update or activate a WhatsApp messaging integration
-	 * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+	 * Update a WhatsApp messaging integration
+	 * 
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body WhatsAppIntegrationUpdateRequest
 	 */
@@ -4572,7 +4572,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
-	 * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantReplaceAgent(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4608,7 +4607,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
-	 * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantReplaceExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4644,7 +4642,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversation ID
 	 * @param {String} participantId participant ID
 	 * @param {Object} body Transfer request
-	 * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationParticipantReplaceQueue(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4913,7 +4910,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination agent and initial speak to
-	 * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantConsultAgent(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4949,7 +4945,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination address and initial speak to
-	 * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantConsultExternal(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -4985,7 +4980,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Destination queue and initial speak to
-	 * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantConsultQueue(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -6078,7 +6072,6 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
-	 * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsMessageParticipantMonitor(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set

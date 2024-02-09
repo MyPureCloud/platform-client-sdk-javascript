@@ -47,9 +47,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings | Get all trainings information for a knowledgebase
 [**getKnowledgeKnowledgebaseOperations**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperations) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations | Get operations
 [**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperationsUsersQuery) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query | Get ids of operation creator users and oauth clients
+[**getKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseParseJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} | Get parse job report
 [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroup) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId} | Get knowledge base unanswered group for a particular groupId
 [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Get knowledge base unanswered phrase group for a particular phraseGroupId
 [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroups) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups | Get knowledge base unanswered groups
+[**getKnowledgeKnowledgebaseUploadsUrlsJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseUploadsUrlsJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} | Get content upload from URL job status
 [**getKnowledgeKnowledgebases**](KnowledgeApi.html#getKnowledgeKnowledgebases) | **GET** /api/v2/knowledge/knowledgebases | Get knowledge bases
 [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi.html#patchKnowledgeGuestSessionDocumentsSearchSearchId) | **PATCH** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId} | Update search result.
 [**patchKnowledgeKnowledgebase**](KnowledgeApi.html#patchKnowledgeKnowledgebase) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Update knowledge base
@@ -63,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocument) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} | Update document
 [**patchKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocuments) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents | Update documents collection
 [**patchKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocumentsImport) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} | Start import operation
+[**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#patchKnowledgeKnowledgebaseParseJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} | Send update to the parse operation
 [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Update a Knowledge base unanswered phrase group
 [**postKnowledgeDocumentuploads**](KnowledgeApi.html#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
 [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentFeedback) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback | Give feedback on a document
@@ -89,7 +92,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseLanguageDocumentsImports**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentsImports) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports | Create import operation
 [**postKnowledgeKnowledgebaseLanguageTrainingPromote**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainingPromote) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote | Promote trained documents from draft state to active.
 [**postKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainings) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings | Trigger training
+[**postKnowledgeKnowledgebaseParseJobImport**](KnowledgeApi.html#postKnowledgeKnowledgebaseParseJobImport) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import | Import the parsed articles
+[**postKnowledgeKnowledgebaseParseJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseParseJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs | Create parse job
 [**postKnowledgeKnowledgebaseSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search | Search Documents
+[**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
 [**postKnowledgeKnowledgebases**](KnowledgeApi.html#postKnowledgeKnowledgebases) | **POST** /api/v2/knowledge/knowledgebases | Create new knowledge base
 {: class="table table-striped"}
 
@@ -2402,6 +2408,64 @@ apiInstance.getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
 
 **OperationCreatorUserResponse**
 
+<a name="getKnowledgeKnowledgebaseParseJob"></a>
+
+# KnowledgeParseJobResponse getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}
+
+Get parse job report
+
+getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:importJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let parseJobId = "parseJobId_example"; // String | Parse job ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+};
+
+apiInstance.getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseParseJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseParseJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **parseJobId** | **String** | Parse job ID |  |
+ **expand** | **[String]** | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeParseJobResponse**
+
 <a name="getKnowledgeKnowledgebaseUnansweredGroup"></a>
 
 # UnansweredGroup getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, opts)
@@ -2581,6 +2645,60 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
 ### Return type
 
 **UnansweredGroups**
+
+<a name="getKnowledgeKnowledgebaseUploadsUrlsJob"></a>
+
+# GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}
+
+Get content upload from URL job status
+
+getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:uploadSourceUrlJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let jobId = "jobId_example"; // String | Upload job ID
+
+apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseUploadsUrlsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseUploadsUrlsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **jobId** | **String** | Upload job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GetUploadSourceUrlJobStatusResponse**
 
 <a name="getKnowledgeKnowledgebases"></a>
 
@@ -3305,6 +3423,62 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, 
 ### Return type
 
 **KnowledgeImport**
+
+<a name="patchKnowledgeKnowledgebaseParseJob"></a>
+
+# void patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
+
+
+PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}
+
+Send update to the parse operation
+
+patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:importJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let parseJobId = "parseJobId_example"; // String | Parse job ID
+let body = {}; // Object | 
+
+apiInstance.patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
+  .then(() => {
+    console.log('patchKnowledgeKnowledgebaseParseJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeKnowledgebaseParseJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **parseJobId** | **String** | Parse job ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup"></a>
 
@@ -4694,6 +4868,116 @@ apiInstance.postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languag
 
 **KnowledgeTraining**
 
+<a name="postKnowledgeKnowledgebaseParseJobImport"></a>
+
+# void postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import
+
+Import the parsed articles
+
+postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:importJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let parseJobId = "parseJobId_example"; // String | Parse job ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
+  .then(() => {
+    console.log('postKnowledgeKnowledgebaseParseJobImport returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseParseJobImport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **parseJobId** | **String** | Parse job ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postKnowledgeKnowledgebaseParseJobs"></a>
+
+# KnowledgeParseJobResponse postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs
+
+Create parse job
+
+postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:importJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseParseJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseParseJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeParseJobResponse**
+
 <a name="postKnowledgeKnowledgebaseSearch"></a>
 
 # KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
@@ -4748,6 +5032,60 @@ apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 ### Return type
 
 **KnowledgeSearchResponse**
+
+<a name="postKnowledgeKnowledgebaseUploadsUrlsJobs"></a>
+
+# CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs
+
+Create content upload from URL job
+
+postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:uploadSourceUrlJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | uploadRequest
+
+apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseUploadsUrlsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseUploadsUrlsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** | uploadRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CreateUploadSourceUrlJobResponse**
 
 <a name="postKnowledgeKnowledgebases"></a>
 

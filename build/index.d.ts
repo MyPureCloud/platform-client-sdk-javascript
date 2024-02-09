@@ -219,6 +219,7 @@ declare class AnalyticsApi {
   	postAnalyticsKnowledgeAggregatesJobs(body: Models.KnowledgeAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsKnowledgeAggregatesQuery(body: Models.KnowledgeAggregationQuery): Promise<Models.KnowledgeAggregateQueryResponse>; 
   	postAnalyticsQueuesObservationsQuery(body: Models.QueueObservationQuery): Promise<Models.QueueObservationQueryResponse>; 
+  	postAnalyticsRatelimitsAggregatesQuery(body: Models.RateLimitAggregationQuery): Promise<Models.RateLimitAggregateQueryResponse>; 
   	postAnalyticsReportingExports(body: Models.ReportingExportJobRequest): Promise<Models.ReportingExportJobResponse>; 
   	postAnalyticsReportingScheduleRunreport(scheduleId: string): Promise<Models.RunNowResponse>; 
   	postAnalyticsReportingSchedules(body: Models.ReportSchedule): Promise<Models.ReportSchedule>; 
@@ -847,6 +848,7 @@ declare namespace ArchitectApi {
 	}
 	export interface postFlowsInstancesQueryOptions { 
 		"indexOnly"?: boolean;
+		"pageSize"?: number;
 	}
 	export interface postFlowsMilestonesOptions { 
 		"body"?: Models.FlowMilestone;
@@ -952,6 +954,7 @@ declare namespace AuthorizationApi {
 		"nextPage"?: string;
 		"previousPage"?: string;
 		"objectCount"?: boolean;
+		"id"?: Array<string>;
 		"name"?: string;
 	}
 	export interface getAuthorizationDivisionspermittedMeOptions { 
@@ -2763,7 +2766,7 @@ declare namespace JourneyApi {
 		"body"?: Models.AppEventRequest;
 	}
 	export interface postJourneyOutcomesOptions { 
-		"body"?: Models.Outcome;
+		"body"?: Models.OutcomeRequest;
 	}
 	export interface postJourneyOutcomesAttributionsJobsOptions { 
 		"body"?: Models.OutcomeAttributionListing;
@@ -2772,7 +2775,7 @@ declare namespace JourneyApi {
 		"body"?: Models.OutcomePredictorRequest;
 	}
 	export interface postJourneySegmentsOptions { 
-		"body"?: Models.JourneySegment;
+		"body"?: Models.JourneySegmentRequest;
 	}
 }
 
@@ -2817,9 +2820,11 @@ declare class KnowledgeApi {
   	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageTrainingsOptions): Promise<Models.TrainingListing>; 
   	getKnowledgeKnowledgebaseOperations(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseOperationsOptions): Promise<Models.OperationListing>; 
   	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId: string): Promise<Models.OperationCreatorUserResponse>; 
+  	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseParseJobOptions): Promise<Models.KnowledgeParseJobResponse>; 
   	getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId: string, groupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupOptions): Promise<Models.UnansweredGroup>; 
   	getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroupOptions): Promise<Models.UnansweredPhraseGroup>; 
   	getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupsOptions): Promise<Models.UnansweredGroups>; 
+  	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>; 
   	getKnowledgeKnowledgebases(opts?: KnowledgeApi.getKnowledgeKnowledgebasesOptions): Promise<Models.KnowledgeBaseListing>; 
   	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId: string, searchId: string, body: Models.SearchUpdateRequest): Promise<void>; 
   	patchKnowledgeKnowledgebase(knowledgeBaseId: string, body: Models.KnowledgeBaseUpdateRequest): Promise<Models.KnowledgeBase>; 
@@ -2833,6 +2838,7 @@ declare class KnowledgeApi {
   	patchKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>; 
   	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Array<Models.KnowledgeDocumentBulkRequest>): Promise<Models.DocumentListing>; 
   	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string, body: Models.ImportStatusRequest): Promise<Models.KnowledgeImport>; 
+  	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestPatch): Promise<void>; 
   	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, body: Models.UnansweredPhraseGroupPatchRequestBody): Promise<Models.UnansweredPhraseGroupUpdateResponse>; 
   	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
   	postKnowledgeGuestSessionDocumentFeedback(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentFeedbackOptions): Promise<Models.KnowledgeGuestDocumentFeedback>; 
@@ -2859,7 +2865,10 @@ declare class KnowledgeApi {
   	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeImport): Promise<Models.KnowledgeImport>; 
   	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId: string, languageCode: string, trainingId: string): Promise<Models.KnowledgeTraining>; 
   	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeTraining>; 
+  	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestImport): Promise<void>; 
+  	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId: string, body: Models.KnowledgeParseJobRequest): Promise<Models.KnowledgeParseJobResponse>; 
   	postKnowledgeKnowledgebaseSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseSearchOptions): Promise<Models.KnowledgeSearchResponse>; 
+  	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>; 
   	postKnowledgeKnowledgebases(body: Models.KnowledgeBaseCreateRequest): Promise<Models.KnowledgeBase>;
 }
 
@@ -2986,6 +2995,9 @@ declare namespace KnowledgeApi {
 		"type"?: Array<string>;
 		"status"?: Array<string>;
 		"interval"?: string;
+	}
+	export interface getKnowledgeKnowledgebaseParseJobOptions { 
+		"expand"?: Array<string>;
 	}
 	export interface getKnowledgeKnowledgebaseUnansweredGroupOptions { 
 		"app"?: string;
@@ -3489,6 +3501,7 @@ declare namespace ObjectsApi {
 		"nextPage"?: string;
 		"previousPage"?: string;
 		"objectCount"?: boolean;
+		"id"?: Array<string>;
 		"name"?: string;
 	}
 	export interface postAuthorizationDivisionRestoreOptions { 
@@ -3708,7 +3721,7 @@ declare class OutboundApi {
   	getOutboundEvents(opts?: OutboundApi.getOutboundEventsOptions): Promise<Models.DialerEventEntityListing>; 
   	getOutboundFilespecificationtemplate(fileSpecificationTemplateId: string): Promise<Models.FileSpecificationTemplate>; 
   	getOutboundFilespecificationtemplates(opts?: OutboundApi.getOutboundFilespecificationtemplatesOptions): Promise<Models.FileSpecificationTemplateEntityListing>; 
-  	getOutboundImporttemplate(importTemplateId: string): Promise<Models.ImportTemplate>; 
+  	getOutboundImporttemplate(importTemplateId: string, opts?: OutboundApi.getOutboundImporttemplateOptions): Promise<Models.ImportTemplate>; 
   	getOutboundImporttemplateImportstatus(importTemplateId: string, opts?: OutboundApi.getOutboundImporttemplateImportstatusOptions): Promise<Models.ImportStatus>; 
   	getOutboundImporttemplates(opts?: OutboundApi.getOutboundImporttemplatesOptions): Promise<Models.ImportTemplateEntityListing>; 
   	getOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>; 
@@ -3722,7 +3735,7 @@ declare class OutboundApi {
   	getOutboundSchedulesCampaign(campaignId: string): Promise<Models.CampaignSchedule>; 
   	getOutboundSchedulesCampaigns(): Promise<Array<Models.CampaignSchedule>>; 
   	getOutboundSchedulesEmailcampaign(emailCampaignId: string): Promise<Models.EmailCampaignSchedule>; 
-  	getOutboundSchedulesEmailcampaigns(): Promise<Models.MessagingCampaignScheduleEntityListing>; 
+  	getOutboundSchedulesEmailcampaigns(): Promise<Models.EmailCampaignScheduleEntityListing>; 
   	getOutboundSchedulesMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaignSchedule>; 
   	getOutboundSchedulesMessagingcampaigns(): Promise<Models.MessagingCampaignScheduleEntityListing>; 
   	getOutboundSchedulesSequence(sequenceId: string): Promise<Models.SequenceSchedule>; 
@@ -3749,6 +3762,7 @@ declare class OutboundApi {
   	postOutboundContactlistContactsBulk(contactListId: string, body: Array<string>): Promise<Array<Models.DialerContact>>; 
   	postOutboundContactlistExport(contactListId: string): Promise<Models.DomainEntityRef>; 
   	postOutboundContactlistfilters(body: Models.ContactListFilter): Promise<Models.ContactListFilter>; 
+  	postOutboundContactlistfiltersBulkRetrieve(body: Models.ContactListFilterBulkRetrieveBody): Promise<Models.ContactListFilterEntityListing>; 
   	postOutboundContactlistfiltersPreview(body: Models.ContactListFilter): Promise<Models.FilterPreviewResponse>; 
   	postOutboundContactlists(body: Models.ContactList): Promise<Models.ContactList>; 
   	postOutboundContactlisttemplates(body: Models.ContactListTemplate): Promise<Models.ContactListTemplate>; 
@@ -3995,10 +4009,14 @@ declare namespace OutboundApi {
 		"sortBy"?: string;
 		"sortOrder"?: string;
 	}
+	export interface getOutboundImporttemplateOptions { 
+		"includeImportStatus"?: boolean;
+	}
 	export interface getOutboundImporttemplateImportstatusOptions { 
 		"listNamePrefix"?: string;
 	}
 	export interface getOutboundImporttemplatesOptions { 
+		"includeImportStatus"?: boolean;
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"allowEmptyResult"?: boolean;
@@ -5372,6 +5390,7 @@ declare namespace SpeechTextAnalyticsApi {
 		"state"?: string;
 		"name"?: string;
 		"ids"?: Array<string>;
+		"dialects"?: Array<string>;
 		"sortBy"?: string;
 		"sortOrder"?: string;
 	}
@@ -5959,8 +5978,10 @@ declare namespace TokensApi {
 }
 
 declare class UploadsApi {  
+  	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>; 
   	postIntegrationsActionDraftFunctionUpload(actionId: string, body: Models.FunctionUploadRequest): Promise<Models.FunctionUploadResponse>; 
   	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
+  	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>; 
   	postLanguageunderstandingMinerUploads(minerId: string, body: object): Promise<Models.UploadUrlResponse>; 
   	postUploadsLearningCoverart(body: Models.LearningCoverArtUploadUrlRequest): Promise<Models.UploadUrlResponse>; 
   	postUploadsPublicassetsImages(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
@@ -7033,7 +7054,7 @@ declare namespace Models {
 	}
 	
 	export interface AchievedOutcome { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
@@ -7170,9 +7191,9 @@ declare namespace Models {
 	}
 	
 	export interface ActionEventActionMap { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
-		"version"?: number;
+		"version": number;
 		"displayName": string;
 	}
 	
@@ -8358,10 +8379,10 @@ declare namespace Models {
 	}
 	
 	export interface AppEvent { 
-		"eventName"?: string;
-		"screenName"?: string;
-		"app"?: Models.JourneyApp;
-		"device"?: Models.Device;
+		"eventName": string;
+		"screenName": string;
+		"app": Models.JourneyApp;
+		"device": Models.Device;
 		"ipAddress"?: string;
 		"ipOrganization"?: string;
 		"geolocation"?: Models.JourneyGeolocation;
@@ -8369,15 +8390,15 @@ declare namespace Models {
 		"networkConnectivity"?: Models.NetworkConnectivity;
 		"mktCampaign"?: Models.JourneyCampaign;
 		"searchQuery"?: string;
-		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
-		"traits"?: { [key: string]: Models.CustomEventAttribute; };
+		"attributes": { [key: string]: Models.CustomEventAttribute; };
+		"traits": { [key: string]: Models.CustomEventAttribute; };
 	}
 	
 	export interface AppEventRequest { 
 		"eventName": string;
 		"screenName": string;
 		"app": Models.JourneyApp;
-		"device": Models.Device;
+		"device": Models.RequestDevice;
 		"sdkLibrary"?: Models.SdkLibrary;
 		"networkConnectivity"?: Models.NetworkConnectivity;
 		"referrerUrl"?: string;
@@ -8389,33 +8410,33 @@ declare namespace Models {
 	}
 	
 	export interface AppEventResponse { 
-		"id"?: string;
-		"customerId"?: string;
-		"customerIdType"?: string;
-		"eventName"?: string;
-		"screenName"?: string;
-		"app"?: Models.JourneyApp;
-		"device"?: Models.Device;
+		"id": string;
+		"customerId": string;
+		"customerIdType": string;
+		"eventName": string;
+		"screenName": string;
+		"app": Models.JourneyApp;
+		"device": Models.Device;
 		"ipOrganization"?: string;
 		"geolocation"?: Models.JourneyGeolocation;
 		"sdkLibrary"?: Models.SdkLibrary;
 		"networkConnectivity"?: Models.NetworkConnectivity;
 		"mktCampaign"?: Models.JourneyCampaign;
-		"session"?: Models.AppEventResponseSession;
+		"session": Models.AppEventResponseSession;
 		"searchQuery"?: string;
-		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
-		"traits"?: { [key: string]: Models.CustomEventAttribute; };
-		"createdDate"?: string;
+		"attributes": { [key: string]: Models.CustomEventAttribute; };
+		"traits": { [key: string]: Models.CustomEventAttribute; };
+		"createdDate": string;
 	}
 	
 	export interface AppEventResponseSession { 
-		"id"?: string;
-		"durationInSeconds"?: number;
-		"eventCount"?: number;
-		"screenviewCount"?: number;
+		"id": string;
+		"durationInSeconds": number;
+		"eventCount": number;
+		"screenviewCount": number;
 		"referrer"?: Models.Referrer;
 		"selfUri"?: string;
-		"createdDate"?: string;
+		"createdDate": string;
 	}
 	
 	export interface AppendToDncActionSettings { 
@@ -8799,7 +8820,7 @@ declare namespace Models {
 	}
 	
 	export interface AssignedSegment { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
@@ -9646,10 +9667,10 @@ declare namespace Models {
 		"isMobile"?: boolean;
 		"viewHeight"?: number;
 		"viewWidth"?: number;
-		"featuresFlash"?: boolean;
-		"featuresJava"?: boolean;
-		"featuresPdf"?: boolean;
-		"featuresWebrtc"?: boolean;
+		"featuresFlash": boolean;
+		"featuresJava": boolean;
+		"featuresPdf": boolean;
+		"featuresWebrtc": boolean;
 	}
 	
 	export interface BuAbandonRate { 
@@ -11037,6 +11058,9 @@ declare namespace Models {
 		"autoAnswerAlertToneSeconds"?: number;
 		"manualAnswerAlertToneSeconds"?: number;
 		"subTypeSettings"?: { [key: string]: Models.BaseMediaSettings; };
+		"enableAutoDialAndEnd"?: boolean;
+		"autoDialDelaySeconds"?: number;
+		"autoEndDelaySeconds"?: number;
 	}
 	
 	export interface Callheader { 
@@ -12464,6 +12488,10 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ContactListFilterBulkRetrieveBody { 
+		"ids": Array<string>;
+	}
+	
 	export interface ContactListFilterClause { 
 		"filterType"?: string;
 		"predicates"?: Array<Models.ContactListFilterPredicate>;
@@ -13328,7 +13356,7 @@ declare namespace Models {
 	}
 	
 	export interface ConversationChannel { 
-		"type"?: string;
+		"type": string;
 		"messageType"?: string;
 		"platform"?: string;
 	}
@@ -15155,9 +15183,9 @@ declare namespace Models {
 	}
 	
 	export interface ConversationUserDisposition { 
-		"code"?: string;
+		"code": string;
 		"notes"?: string;
-		"user"?: Models.AddressableEntityRef;
+		"user": Models.AddressableEntityRef;
 	}
 	
 	export interface ConversationVideoEventTopicConversationRoutingData { 
@@ -15706,6 +15734,15 @@ declare namespace Models {
 		"description"?: string;
 	}
 	
+	export interface CreateUploadSourceUrlJobRequest { 
+		"uploadUrl": string;
+	}
+	
+	export interface CreateUploadSourceUrlJobResponse { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface CreateUser { 
 		"name": string;
 		"department"?: string;
@@ -15890,7 +15927,7 @@ declare namespace Models {
 		"key": string;
 		"values": Array<string>;
 		"shouldIgnoreCase": boolean;
-		"operator"?: string;
+		"operator": string;
 	}
 	
 	export interface CriteriaCategoryInfo { 
@@ -16617,7 +16654,7 @@ declare namespace Models {
 	export interface Device { 
 		"category": string;
 		"type": string;
-		"isMobile"?: boolean;
+		"isMobile": boolean;
 		"screenHeight"?: number;
 		"screenWidth"?: number;
 		"screenDensity"?: number;
@@ -18876,6 +18913,19 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface EmailCampaignScheduleEntityListing { 
+		"entities"?: Array<Models.EmailCampaignSchedule>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface EmailColumn { 
 		"columnName": string;
 		"type": string;
@@ -19374,8 +19424,8 @@ declare namespace Models {
 		"key": string;
 		"values": Array<string>;
 		"shouldIgnoreCase": boolean;
-		"operator"?: string;
-		"entityType"?: string;
+		"operator": string;
+		"entityType": string;
 	}
 	
 	export interface Entry { 
@@ -19867,28 +19917,27 @@ declare namespace Models {
 	}
 	
 	export interface Event { 
-		"id"?: string;
-		"correlationId"?: string;
+		"id": string;
+		"correlationId": string;
 		"customerId"?: string;
 		"customerIdType"?: string;
-		"session"?: Models.EventSession;
+		"session": Models.EventSession;
 		"eventType": string;
 		"genericActionEvent"?: Models.GenericActionEvent;
 		"outcomeAchievedEvent"?: Models.OutcomeAchievedEvent;
-		"segmentAssignedEvent"?: Models.SegmentAssignedEvent;
 		"segmentAssignmentEvent"?: Models.SegmentAssignmentEvent;
 		"webActionEvent"?: Models.WebActionEvent;
 		"webEvent"?: Models.WebEvent;
 		"appEvent"?: Models.AppEvent;
-		"createdDate"?: string;
+		"createdDate": string;
 	}
 	
 	export interface EventAction { 
 		"id": string;
-		"state"?: string;
-		"mediaType"?: string;
-		"prompt"?: string;
-		"createdDate"?: string;
+		"state": string;
+		"mediaType": string;
+		"prompt": string;
+		"createdDate": string;
 	}
 	
 	export interface EventCondition { 
@@ -19946,9 +19995,9 @@ declare namespace Models {
 	}
 	
 	export interface EventSession { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
-		"type"?: string;
+		"type": string;
 	}
 	
 	export interface EventSetting { 
@@ -21920,11 +21969,11 @@ declare namespace Models {
 	
 	export interface GenericEventAction { 
 		"id": string;
-		"state"?: string;
-		"mediaType"?: string;
-		"prompt"?: string;
+		"state": string;
+		"mediaType": string;
+		"prompt": string;
 		"mediaAddress"?: string;
-		"createdDate"?: string;
+		"createdDate": string;
 	}
 	
 	export interface GenericSAML { 
@@ -22044,6 +22093,14 @@ declare namespace Models {
 	export interface GetTemplatesResponse { 
 		"total"?: number;
 		"entities"?: Array<Models.ObjectiveTemplate>;
+		"selfUri"?: string;
+	}
+	
+	export interface GetUploadSourceUrlJobStatusResponse { 
+		"id"?: string;
+		"status"?: string;
+		"uploadKey"?: string;
+		"errorInformation"?: Models.ErrorBody;
 		"selfUri"?: string;
 	}
 	
@@ -22792,6 +22849,7 @@ declare namespace Models {
 		"splittingInformation"?: Models.SplittingInformation;
 		"listNameFormat"?: string;
 		"customListNameFormatValue"?: string;
+		"importStatus"?: Models.ImportStatus;
 		"selfUri"?: string;
 	}
 	
@@ -23823,33 +23881,47 @@ declare namespace Models {
 		"lang"?: string;
 		"pathname": string;
 		"queryString"?: string;
-		"breadcrumb"?: Array<string>;
+		"breadcrumb": Array<string>;
 	}
 	
 	export interface JourneyPattern { 
 		"criteria": Array<Models.Criteria>;
-		"count"?: number;
+		"count": number;
 		"streamType": string;
 		"sessionType": string;
 		"eventName"?: string;
 	}
 	
 	export interface JourneySegment { 
-		"id"?: string;
+		"id": string;
+		"isActive": boolean;
+		"displayName": string;
+		"version": number;
+		"description"?: string;
+		"color": string;
+		"scope": string;
+		"shouldDisplayToAgent": boolean;
+		"context": Models.Context;
+		"journey": Models.Journey;
+		"externalSegment"?: Models.ExternalSegment;
+		"assignmentExpirationDays"?: number;
+		"selfUri"?: string;
+		"createdDate": string;
+		"modifiedDate": string;
+	}
+	
+	export interface JourneySegmentRequest { 
 		"isActive"?: boolean;
 		"displayName": string;
 		"version"?: number;
 		"description"?: string;
-		"color"?: string;
+		"color": string;
 		"scope"?: string;
 		"shouldDisplayToAgent"?: boolean;
-		"context"?: Models.Context;
-		"journey"?: Models.Journey;
-		"externalSegment"?: Models.ExternalSegment;
+		"context": Models.RequestContext;
+		"journey": Models.RequestJourney;
+		"externalSegment"?: Models.RequestExternalSegment;
 		"assignmentExpirationDays"?: number;
-		"selfUri"?: string;
-		"createdDate"?: string;
-		"modifiedDate"?: string;
 	}
 	
 	export interface JourneySessionEventsNotificationApp { 
@@ -25026,12 +25098,14 @@ declare namespace Models {
 	export interface KnowledgeExportJobRequest { 
 		"exportFilter": Models.KnowledgeExportJobFilter;
 		"fileType": string;
+		"jsonFileVersion"?: number;
 	}
 	
 	export interface KnowledgeExportJobResponse { 
 		"id"?: string;
 		"downloadURL"?: string;
 		"fileType": string;
+		"jsonFileVersion"?: number;
 		"countDocumentProcessed"?: number;
 		"exportFilter"?: Models.KnowledgeExportJobFilter;
 		"status"?: string;
@@ -25251,6 +25325,45 @@ declare namespace Models {
 		"countLabelImportSuccess"?: number;
 		"countLabelImportFailure"?: number;
 		"migrationDetected"?: boolean;
+	}
+	
+	export interface KnowledgeParseImportResult { 
+		"success": number;
+		"failure": number;
+		"errors"?: Array<Models.ErrorBody>;
+	}
+	
+	export interface KnowledgeParseJobRequest { 
+		"uploadKey": string;
+		"hints"?: Array<string>;
+	}
+	
+	export interface KnowledgeParseJobRequestImport { 
+		"edits"?: Array<Models.KnowledgeParseRecord>;
+		"excludes"?: Array<string>;
+	}
+	
+	export interface KnowledgeParseJobRequestPatch { 
+		"hints"?: Array<string>;
+	}
+	
+	export interface KnowledgeParseJobResponse { 
+		"id"?: string;
+		"downloadURL"?: string;
+		"hints"?: Array<string>;
+		"status"?: string;
+		"parseResults"?: Array<Models.KnowledgeParseRecord>;
+		"importResult"?: Models.KnowledgeParseImportResult;
+		"createdBy"?: Models.UserReference;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeParseRecord { 
+		"id"?: string;
+		"title"?: string;
+		"body"?: Models.DocumentBody;
 	}
 	
 	export interface KnowledgeSearchClientApplication { 
@@ -28836,18 +28949,18 @@ declare namespace Models {
 	}
 	
 	export interface Outcome { 
-		"id"?: string;
-		"isActive"?: boolean;
+		"id": string;
+		"isActive": boolean;
 		"displayName": string;
-		"version"?: number;
+		"version": number;
 		"description"?: string;
-		"isPositive"?: boolean;
-		"context"?: Models.Context;
-		"journey"?: Models.Journey;
+		"isPositive": boolean;
+		"context": Models.Context;
+		"journey": Models.Journey;
 		"associatedValueField"?: Models.AssociatedValueField;
 		"selfUri"?: string;
-		"createdDate"?: string;
-		"modifiedDate"?: string;
+		"createdDate": string;
+		"modifiedDate": string;
 	}
 	
 	export interface OutcomeAchievedEvent { 
@@ -28864,15 +28977,15 @@ declare namespace Models {
 	}
 	
 	export interface OutcomeAchievedEventOutcome { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 		"displayName": string;
-		"version"?: number;
+		"version": number;
 	}
 	
 	export interface OutcomeAchievement { 
-		"outcome"?: Models.AchievedOutcome;
-		"achievedDate"?: string;
+		"outcome": Models.AchievedOutcome;
+		"achievedDate": string;
 	}
 	
 	export interface OutcomeAttributionAsyncResponse { 
@@ -28974,6 +29087,17 @@ declare namespace Models {
 	
 	export interface OutcomeRefRequest { 
 		"id": string;
+	}
+	
+	export interface OutcomeRequest { 
+		"isActive"?: boolean;
+		"displayName": string;
+		"version"?: number;
+		"description"?: string;
+		"isPositive"?: boolean;
+		"context"?: Models.RequestContext;
+		"journey"?: Models.RequestJourney;
+		"associatedValueField"?: Models.AssociatedValueField;
 	}
 	
 	export interface OutcomeScore { 
@@ -29257,6 +29381,11 @@ declare namespace Models {
 		"contentOffer"?: Models.PatchContentOffer;
 	}
 	
+	export interface PatchAssociatedValueField { 
+		"dataType"?: string;
+		"name"?: string;
+	}
+	
 	export interface PatchBuReschedulingOptionsManagementUnitRequest { 
 		"managementUnitId": string;
 		"applied"?: boolean;
@@ -29327,6 +29456,21 @@ declare namespace Models {
 		"right"?: string;
 	}
 	
+	export interface PatchContext { 
+		"patterns"?: Array<Models.PatchContextPattern>;
+	}
+	
+	export interface PatchContextPattern { 
+		"criteria"?: Array<Models.PatchEntityTypeCriteria>;
+	}
+	
+	export interface PatchCriteria { 
+		"key"?: string;
+		"values"?: Array<string>;
+		"shouldIgnoreCase"?: boolean;
+		"operator"?: string;
+	}
+	
 	export interface PatchCtaButtonStyleProperties { 
 		"color"?: string;
 		"font"?: string;
@@ -29335,8 +29479,16 @@ declare namespace Models {
 		"backgroundColor"?: string;
 	}
 	
+	export interface PatchEntityTypeCriteria { 
+		"key"?: string;
+		"values"?: Array<string>;
+		"shouldIgnoreCase"?: boolean;
+		"operator"?: string;
+		"entityType"?: string;
+	}
+	
 	export interface PatchExternalSegment { 
-		"name": string;
+		"name"?: string;
 	}
 	
 	export interface PatchIntegrationAction { 
@@ -29348,19 +29500,27 @@ declare namespace Models {
 		"requestMappings"?: Array<Models.RequestMapping>;
 	}
 	
+	export interface PatchJourney { 
+		"patterns"?: Array<Models.PatchJourneyPattern>;
+	}
+	
+	export interface PatchJourneyPattern { 
+		"criteria"?: Array<Models.PatchCriteria>;
+		"count"?: number;
+		"streamType"?: string;
+		"sessionType"?: string;
+		"eventName"?: string;
+	}
+	
 	export interface PatchOutcome { 
-		"id"?: string;
 		"isActive"?: boolean;
 		"displayName": string;
 		"version"?: number;
 		"description"?: string;
 		"isPositive"?: boolean;
-		"context"?: Models.Context;
-		"journey"?: Models.Journey;
-		"associatedValueField"?: Models.AssociatedValueField;
-		"selfUri"?: string;
-		"createdDate"?: string;
-		"modifiedDate"?: string;
+		"context"?: Models.PatchContext;
+		"journey"?: Models.PatchJourney;
+		"associatedValueField"?: Models.PatchAssociatedValueField;
 	}
 	
 	export interface PatchPredictorRequest { 
@@ -29370,20 +29530,16 @@ declare namespace Models {
 	}
 	
 	export interface PatchSegment { 
-		"id"?: string;
 		"isActive"?: boolean;
-		"displayName": string;
+		"displayName"?: string;
 		"version"?: number;
 		"description"?: string;
 		"color"?: string;
 		"shouldDisplayToAgent"?: boolean;
-		"context"?: Models.Context;
-		"journey"?: Models.Journey;
+		"context"?: Models.PatchContext;
+		"journey"?: Models.PatchJourney;
 		"externalSegment"?: Models.PatchExternalSegment;
 		"assignmentExpirationDays"?: number;
-		"selfUri"?: string;
-		"createdDate"?: string;
-		"modifiedDate"?: string;
 	}
 	
 	export interface PatchShiftTradeRequest { 
@@ -33189,6 +33345,53 @@ declare namespace Models {
 		"isSelected"?: boolean;
 	}
 	
+	export interface RateLimitAggregateDataContainer { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatisticalResponse>;
+	}
+	
+	export interface RateLimitAggregateQueryClause { 
+		"type": string;
+		"predicates": Array<Models.RateLimitAggregateQueryPredicate>;
+	}
+	
+	export interface RateLimitAggregateQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.RateLimitAggregateQueryClause>;
+		"predicates"?: Array<Models.RateLimitAggregateQueryPredicate>;
+	}
+	
+	export interface RateLimitAggregateQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+		"range"?: Models.NumericRange;
+	}
+	
+	export interface RateLimitAggregateQueryResponse { 
+		"results"?: Array<Models.RateLimitAggregateDataContainer>;
+	}
+	
+	export interface RateLimitAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.RateLimitAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.RateLimitAggregationView>;
+		"alternateTimeDimension"?: string;
+	}
+	
+	export interface RateLimitAggregationView { 
+		"target": string;
+		"name": string;
+		"function": string;
+		"range"?: Models.AggregationRange;
+	}
+	
 	export interface Reaction { 
 		"data"?: string;
 		"name"?: string;
@@ -33525,7 +33728,7 @@ declare namespace Models {
 		"queryString"?: string;
 		"fragment"?: string;
 		"name"?: string;
-		"medium"?: string;
+		"medium": string;
 	}
 	
 	export interface RegionTimeZone { 
@@ -33870,6 +34073,60 @@ declare namespace Models {
 		"requestTemplateUri"?: string;
 		"requestType"?: string;
 		"headers"?: { [key: string]: string; };
+	}
+	
+	export interface RequestContext { 
+		"patterns"?: Array<Models.RequestContextPattern>;
+	}
+	
+	export interface RequestContextPattern { 
+		"criteria": Array<Models.RequestEntityTypeCriteria>;
+	}
+	
+	export interface RequestCriteria { 
+		"key": string;
+		"values": Array<string>;
+		"shouldIgnoreCase"?: boolean;
+		"operator"?: string;
+	}
+	
+	export interface RequestDevice { 
+		"category": string;
+		"type": string;
+		"isMobile"?: boolean;
+		"screenHeight"?: number;
+		"screenWidth"?: number;
+		"screenDensity"?: number;
+		"fingerprint"?: string;
+		"osFamily": string;
+		"osVersion": string;
+		"manufacturer"?: string;
+	}
+	
+	export interface RequestEntityTypeCriteria { 
+		"key": string;
+		"values": Array<string>;
+		"shouldIgnoreCase"?: boolean;
+		"operator"?: string;
+		"entityType": string;
+	}
+	
+	export interface RequestExternalSegment { 
+		"id": string;
+		"name": string;
+		"source"?: string;
+	}
+	
+	export interface RequestJourney { 
+		"patterns"?: Array<Models.RequestJourneyPattern>;
+	}
+	
+	export interface RequestJourneyPattern { 
+		"criteria": Array<Models.RequestCriteria>;
+		"count": number;
+		"streamType": string;
+		"sessionType": string;
+		"eventName"?: string;
 	}
 	
 	export interface RequestMapping { 
@@ -35180,29 +35437,8 @@ declare namespace Models {
 		"disconnectType"?: string;
 	}
 	
-	export interface SegmentAssignedEvent { 
-		"segment": Models.SegmentAssignedEventSegment;
-		"userAgentString"?: string;
-		"browser"?: Models.Browser;
-		"device"?: Models.Device;
-		"geolocation"?: Models.JourneyGeolocation;
-		"ipAddress"?: string;
-		"ipOrganization"?: string;
-		"mktCampaign"?: Models.JourneyCampaign;
-		"visitReferrer"?: Models.Referrer;
-		"visitCreatedDate"?: string;
-	}
-	
-	export interface SegmentAssignedEventSegment { 
-		"id"?: string;
-		"selfUri"?: string;
-		"displayName": string;
-		"version"?: number;
-		"scope"?: string;
-	}
-	
 	export interface SegmentAssignmentEvent { 
-		"segment"?: Models.AddressableEntityRef;
+		"segment": Models.AddressableEntityRef;
 	}
 	
 	export interface SegmentDetailQueryClause { 
@@ -35359,10 +35595,10 @@ declare namespace Models {
 	}
 	
 	export interface Session { 
-		"id"?: string;
+		"id": string;
 		"customerId"?: string;
 		"customerIdType"?: string;
-		"type"?: string;
+		"type": string;
 		"externalId"?: string;
 		"externalUrl"?: string;
 		"shortId"?: string;
@@ -35384,10 +35620,10 @@ declare namespace Models {
 		"searchTerms"?: Array<string>;
 		"userAgentString"?: string;
 		"durationInSeconds"?: number;
-		"eventCount"?: number;
+		"eventCount": number;
 		"pageviewCount"?: number;
 		"screenviewCount"?: number;
-		"lastEvent"?: Models.SessionLastEvent;
+		"lastEvent": Models.SessionLastEvent;
 		"lastConnectedQueue"?: Models.ConnectedQueue;
 		"lastConnectedUser"?: Models.ConnectedUser;
 		"lastUserDisposition"?: Models.ConversationUserDisposition;
@@ -35396,9 +35632,9 @@ declare namespace Models {
 		"conversationSubject"?: string;
 		"lastUserDisconnectType"?: string;
 		"lastAcdOutcome"?: string;
-		"authenticated"?: boolean;
+		"authenticated": boolean;
 		"selfUri"?: string;
-		"createdDate"?: string;
+		"createdDate": string;
 		"endedDate"?: string;
 		"externalContact"?: Models.AddressableEntityRef;
 		"awayDate"?: string;
@@ -35412,9 +35648,9 @@ declare namespace Models {
 	}
 	
 	export interface SessionLastEvent { 
-		"id"?: string;
-		"eventName"?: string;
-		"createdDate"?: string;
+		"id": string;
+		"eventName": string;
+		"createdDate": string;
 	}
 	
 	export interface SessionListing { 
@@ -35425,8 +35661,8 @@ declare namespace Models {
 	}
 	
 	export interface SessionSegmentAssignment { 
-		"segment"?: Models.AssignedSegment;
-		"assignedDate"?: string;
+		"segment": Models.AssignedSegment;
+		"assignedDate": string;
 	}
 	
 	export interface SessionsResponse { 
@@ -40903,14 +41139,14 @@ declare namespace Models {
 	
 	export interface WebActionEvent { 
 		"action": Models.EventAction;
-		"actionMap"?: Models.ActionEventActionMap;
-		"actionTarget"?: Models.AddressableEntityRef;
+		"actionMap": Models.ActionEventActionMap;
+		"actionTarget": Models.AddressableEntityRef;
 		"timeToDisposition"?: number;
 		"errorCode"?: string;
 		"errorMessage"?: string;
-		"userAgentString"?: string;
-		"browser"?: Models.Browser;
-		"device"?: Models.Device;
+		"userAgentString": string;
+		"browser": Models.Browser;
+		"device": Models.Device;
 		"geolocation"?: Models.JourneyGeolocation;
 		"ipAddress"?: string;
 		"ipOrganization"?: string;
@@ -41169,21 +41405,21 @@ declare namespace Models {
 	
 	export interface WebEvent { 
 		"eventName": string;
-		"totalEventCount"?: number;
-		"totalPageviewCount"?: number;
-		"page"?: Models.JourneyPage;
-		"userAgentString"?: string;
-		"browser"?: Models.Browser;
-		"device"?: Models.Device;
+		"totalEventCount": number;
+		"totalPageviewCount": number;
+		"page": Models.JourneyPage;
+		"userAgentString": string;
+		"browser": Models.Browser;
+		"device": Models.Device;
 		"geolocation"?: Models.JourneyGeolocation;
 		"ipAddress"?: string;
 		"ipOrganization"?: string;
 		"mktCampaign"?: Models.JourneyCampaign;
 		"referrer"?: Models.Referrer;
-		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
-		"traits"?: { [key: string]: Models.CustomEventAttribute; };
+		"attributes": { [key: string]: Models.CustomEventAttribute; };
+		"traits": { [key: string]: Models.CustomEventAttribute; };
 		"searchQuery"?: string;
-		"authenticated"?: boolean;
+		"authenticated": boolean;
 	}
 	
 	export interface WebMessagingAttachment { 
@@ -42644,10 +42880,6 @@ declare namespace Models {
 		"name"?: string;
 		"supportedContent"?: Models.SupportedContentReference;
 		"messagingSetting"?: Models.MessagingSettingRequestReference;
-		"action"?: string;
-		"authenticationMethod"?: string;
-		"confirmationCode"?: string;
-		"phoneNumber"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -43909,6 +44141,7 @@ declare namespace Models {
 	export interface WrapupCodeRequest { 
 		"id"?: string;
 		"name": string;
+		"division"?: Models.WritableStarrableDivision;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"createdBy"?: string;

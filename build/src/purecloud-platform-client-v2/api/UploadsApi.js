@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 187.0.0
+	 * @version 188.0.0
 	 */
 
 	/**
@@ -19,6 +19,37 @@ class UploadsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Get content upload from URL job status
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} jobId Upload job ID
+	 * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Create upload presigned URL for draft function package file.
@@ -66,6 +97,37 @@ class UploadsApi {
 			'/api/v2/knowledge/documentuploads', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create content upload from URL job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body uploadRequest
+	 * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
 			{  },
 			{  },
 			{  },

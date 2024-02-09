@@ -84,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesJobs) | **POST** /api/v2/analytics/knowledge/aggregates/jobs | Query for knowledge aggregates asynchronously
 [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
 [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
+[**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
 [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
 [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | **POST** /api/v2/analytics/reporting/schedules/{scheduleId}/runreport | Place a scheduled report immediately into the reporting queue
 [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | **POST** /api/v2/analytics/reporting/schedules | Create a scheduled report job
@@ -3631,8 +3632,6 @@ POST /api/v2/analytics/flowexecutions/aggregates/query
 
 Query for flow execution aggregates
 
-postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:flowExecutionAggregate:view
@@ -4139,6 +4138,56 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 ### Return type
 
 **QueueObservationQueryResponse**
+
+<a name="postAnalyticsRatelimitsAggregatesQuery"></a>
+
+# RateLimitAggregateQueryResponse postAnalyticsRatelimitsAggregatesQuery(body)
+
+
+POST /api/v2/analytics/ratelimits/aggregates/query
+
+Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+
+Requires ANY permissions:
+
+* analytics:rateLimitAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsRatelimitsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsRatelimitsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsRatelimitsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RateLimitAggregateQueryResponse**
 
 <a name="postAnalyticsReportingExports"></a>
 

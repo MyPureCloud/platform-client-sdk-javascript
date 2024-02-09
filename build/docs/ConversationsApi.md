@@ -145,7 +145,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
 [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update Twitter messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-[**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update or activate a WhatsApp messaging integration
+[**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update a WhatsApp messaging integration
 [**patchConversationsMessagingSetting**](ConversationsApi.html#patchConversationsMessagingSetting) | **PATCH** /api/v2/conversations/messaging/settings/{messageSettingId} | Update a messaging setting
 [**patchConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#patchConversationsMessagingSupportedcontentSupportedContentId) | **PATCH** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Update a supported content profile
 [**patchConversationsSettings**](ConversationsApi.html#patchConversationsSettings) | **PATCH** /api/v2/conversations/settings | Update Settings
@@ -7443,9 +7443,7 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegra
 
 PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
 
-Update or activate a WhatsApp messaging integration
-
-The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+Update a WhatsApp messaging integration
 
 Requires ALL permissions:
 
@@ -8345,8 +8343,6 @@ POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified agent
 
-postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:communication:blindTransfer
@@ -8402,8 +8398,6 @@ POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the an external contact
 
-postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:communication:blindTransfer
@@ -8458,8 +8452,6 @@ void (no response body)
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue
 
 Replace this participant with the specified queue
-
-postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8894,8 +8886,6 @@ POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/c
 
 Initiate a consult transfer to an agent
 
-postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:communication:consultTransfer
@@ -8951,8 +8941,6 @@ POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/c
 
 Initiate a consult transfer to an external contact
 
-postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:communication:consultTransfer
@@ -9007,8 +8995,6 @@ apiInstance.postConversationsCallParticipantConsultExternal(conversationId, part
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue
 
 Initiate a consult transfer to a queue
-
-postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -10875,8 +10861,6 @@ void (no response body)
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor
 
 Listen in on the conversation from the point of view of a given participant.
-
-postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

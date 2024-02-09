@@ -1,611 +1,396 @@
-Platform API version: 7719
+Platform API version: 7756
 
 
 
 
-# Major Changes (64 changes)
+# Major Changes (33 changes)
 
-**/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}** (1 change)
+**GET /api/v2/authorization/divisions** (1 change)
 
-* Path /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} was removed
+* Parameter id was added
 
-**/api/v2/journey/sessions/{sessionId}/segments** (1 change)
+**GET /api/v2/outbound/importtemplates/{importTemplateId}** (1 change)
 
-* Path /api/v2/journey/sessions/{sessionId}/segments was removed
+* Parameter includeImportStatus was added
 
-**POST /api/v2/conversations/messaging/integrations/line** (1 change)
+**GET /api/v2/outbound/importtemplates** (1 change)
 
-* Has been deprecated
+* Parameter includeImportStatus was added
 
-**PUT /api/v2/identityproviders/adfs** (1 change)
+**GET /api/v2/outbound/schedules/emailcampaigns** (1 change)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Response 200 type was changed from MessagingCampaignScheduleEntityListing to EmailCampaignScheduleEntityListing
 
-**PUT /api/v2/identityproviders/cic** (1 change)
+**GET /api/v2/speechandtextanalytics/topics** (1 change)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Parameter dialects was added
 
-**PUT /api/v2/identityproviders/gsuite** (1 change)
+**POST /api/v2/flows/instances/query** (1 change)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Parameter pageSize was added
 
-**PUT /api/v2/identityproviders/generic** (1 change)
+**SegmentAssignedEvent** (1 change)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Model SegmentAssignedEvent was removed
 
-**GET /api/v2/identityproviders** (1 change)
+**SegmentAssignedEventSegment** (1 change)
 
-* Response 200 type was changed from OAuthProviderEntityListing to IdentityProviderEntityListing
+* Model SegmentAssignedEventSegment was removed
 
-**PUT /api/v2/identityproviders/okta** (1 change)
+**ConversationAggregateQueryPredicate** (1 change)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Enum value reoffered was removed from property dimension
 
-**PUT /api/v2/identityproviders/onelogin** (1 change)
+**ConversationAggregationQuery** (1 change)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Enum value reoffered was removed from property groupBy
 
-**PUT /api/v2/identityproviders/ping** (1 change)
+**FlowAggregateQueryPredicate** (1 change)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Enum value reoffered was removed from property dimension
 
-**PUT /api/v2/identityproviders/purecloud** (1 change)
+**FlowAggregationQuery** (1 change)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Enum value reoffered was removed from property groupBy
 
-**PUT /api/v2/identityproviders/pureengage** (1 change)
+**WhatsAppIntegrationUpdateRequest** (4 changes)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Property action was removed
+* Property authenticationMethod was removed
+* Property confirmationCode was removed
+* Property phoneNumber was removed
 
-**PUT /api/v2/identityproviders/salesforce** (1 change)
+**PatchOutcome** (7 changes)
 
-* Response 200 type was changed from OAuthProvider to IdentityProvider
+* Property id was removed
+* Property selfUri was removed
+* Property createdDate was removed
+* Property modifiedDate was removed
+* Property context was changed from Context to PatchContext
+* Property journey was changed from Journey to PatchJourney
+* Property associatedValueField was changed from AssociatedValueField to PatchAssociatedValueField
 
-**GET /api/v2/presencedefinitions/{presenceId}** (1 change)
+**PatchSegment** (6 changes)
 
-* Has been deprecated
+* Property id was removed
+* Property selfUri was removed
+* Property createdDate was removed
+* Property modifiedDate was removed
+* Property context was changed from Context to PatchContext
+* Property journey was changed from Journey to PatchJourney
 
-**PUT /api/v2/presencedefinitions/{presenceId}** (1 change)
+**AppEventRequest** (1 change)
 
-* Has been deprecated
+* Property device was changed from Device to RequestDevice
 
-**DELETE /api/v2/presencedefinitions/{presenceId}** (1 change)
+**ConversationAsyncAggregationQuery** (1 change)
 
-* Has been deprecated
+* Enum value reoffered was removed from property groupBy
 
-**GET /api/v2/presencedefinitions** (1 change)
+**FlowAsyncAggregationQuery** (1 change)
 
-* Has been deprecated
+* Enum value reoffered was removed from property groupBy
 
-**POST /api/v2/presencedefinitions** (1 change)
+**Event** (1 change)
 
-* Has been deprecated
+* Property segmentAssignedEvent was removed
 
-**GET /api/v2/architect/prompts/{promptId}** (3 changes)
 
-* Parameter includeMediaUris was added
-* Parameter includeResources was added
-* Parameter language was added
+# Minor Changes (80 changes)
 
-**GET /api/v2/architect/prompts** (3 changes)
-
-* Parameter includeMediaUris was added
-* Parameter includeResources was added
-* Parameter language was added
-
-**GET /api/v2/architect/systemprompts/{promptId}** (3 changes)
-
-* Parameter includeMediaUris was added
-* Parameter includeResources was added
-* Parameter language was added
-
-**GET /api/v2/architect/systemprompts** (3 changes)
-
-* Parameter includeMediaUris was added
-* Parameter includeResources was added
-* Parameter language was added
-
-**GET /api/v2/chats/rooms/{roomJid}/messages** (6 changes)
-
-* Parameter pageSize was removed
-* Parameter pageNumber was removed
-* Parameter sortBy was removed
-* Parameter expand was removed
-* Parameter nextPage was removed
-* Parameter previousPage was removed
-
-**GET /api/v2/chats/users/{userId}/messages** (6 changes)
-
-* Parameter pageSize was removed
-* Parameter pageNumber was removed
-* Parameter sortBy was removed
-* Parameter expand was removed
-* Parameter nextPage was removed
-* Parameter previousPage was removed
-
-**GET /api/v2/chats/threads/{threadId}/messages** (6 changes)
-
-* Parameter pageSize was removed
-* Parameter pageNumber was removed
-* Parameter sortBy was removed
-* Parameter expand was removed
-* Parameter nextPage was removed
-* Parameter previousPage was removed
-
-**OAuthProvider** (1 change)
-
-* Model OAuthProvider was removed
-
-**OAuthProviderEntityListing** (1 change)
-
-* Model OAuthProviderEntityListing was removed
-
-**SegmentAssignment** (1 change)
-
-* Model SegmentAssignment was removed
-
-**SegmentAssignmentListing** (1 change)
-
-* Model SegmentAssignmentListing was removed
-
-**SegmentAssignmentSegment** (1 change)
-
-* Model SegmentAssignmentSegment was removed
-
-**SegmentAssignmentSession** (1 change)
-
-* Model SegmentAssignmentSession was removed
-
-**ConversationAggregationQuery** (2 changes)
-
-* Enum value tCallback was removed from property metrics
-* Enum value tCallbackComplete was removed from property metrics
-
-**ConversationAggregationView** (2 changes)
-
-* Enum value tCallback was removed from property target
-* Enum value tCallbackComplete was removed from property target
-
-**ConversationDetailQueryPredicate** (2 changes)
-
-* Enum value tCallback was removed from property metric
-* Enum value tCallbackComplete was removed from property metric
-
-**GetAlertQuery** (1 change)
-
-* Property activeStatus was removed
-
-**ConversationAsyncAggregationQuery** (2 changes)
-
-* Enum value tCallback was removed from property metrics
-* Enum value tCallbackComplete was removed from property metrics
-
-
-# Minor Changes (168 changes)
-
-**/api/v2/screenrecording/token** (2 changes)
+**/api/v2/analytics/ratelimits/aggregates/query** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback** (2 changes)
+**/api/v2/outbound/contactlistfilters/bulk/retrieve** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/outbound/contactlisttemplates/bulk/retrieve** (2 changes)
+**PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}** (1 change)
+
+* Response 409 was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/outbound/filespecificationtemplates/bulk** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/outbound/filespecificationtemplates** (3 changes)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}** (3 changes)
 
 * Path was added
 * Operation GET was added
-* Operation POST was added
+* Operation PATCH was added
 
-**/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/identityproviders** (1 change)
-
-* Operation post was added. Summary: Create Identity Provider
-
-**/api/v2/identityproviders/{providerId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**GET /api/v2/architect/prompts/{promptId}** (1 change)
-
-* Response 206 was added
-
-**GET /api/v2/architect/prompts** (1 change)
-
-* Response 206 was added
-
-**GET /api/v2/architect/systemprompts/{promptId}** (1 change)
-
-* Response 206 was added
-
-**GET /api/v2/architect/systemprompts** (1 change)
-
-* Response 206 was added
-
-**/api/v2/integrations/actions/{actionId}/draft/function** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/integrations/actions/{actionId}/draft/function/upload** (2 changes)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/integrations/actions/{actionId}/function** (2 changes)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs** (2 changes)
 
 * Path was added
-* Operation GET was added
+* Operation POST was added
 
-**/api/v2/integrations/actions/functions/runtimes** (2 changes)
+**AnalyticsFlow** (1 change)
 
-* Path was added
-* Operation GET was added
+* Enum value VOICESURVEY was added to property flowType
 
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**EmailBeginTransmittingEvent** (1 change)
+**RateLimitAggregateDataContainer** (1 change)
 
 * Model was added
 
-**EmailCommunicationAnsweredEvent** (1 change)
+**RateLimitAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**EmailCommunicationDispositionAppliedEvent** (1 change)
+**RateLimitAggregateQueryClause** (1 change)
 
 * Model was added
 
-**EmailCommunicationEndedEvent** (1 change)
+**RateLimitAggregateQueryFilter** (1 change)
 
 * Model was added
 
-**EmailCommunicationRepliedEvent** (1 change)
+**RateLimitAggregateQueryPredicate** (1 change)
 
 * Model was added
 
-**EmailEndTransferEvent** (1 change)
+**RateLimitAggregationQuery** (1 change)
 
 * Model was added
 
-**EmailExternalEstablishedEvent** (1 change)
+**RateLimitAggregationView** (1 change)
 
 * Model was added
 
-**EmailFlowEstablishedEvent** (1 change)
+**ViewFilter** (1 change)
+
+* Enum value voicesurvey was added to property flowTypes
+
+**CallbackMediaSettings** (3 changes)
+
+* Optional property enableAutoDialAndEnd was added
+* Optional property autoDialDelaySeconds was added
+* Optional property autoEndDelaySeconds was added
+
+**AchievedOutcome** (1 change)
+
+* id is no longer readonly
+
+**AssignedSegment** (1 change)
+
+* id is no longer readonly
+
+**Session** (1 change)
+
+* id is no longer readonly
+
+**SessionLastEvent** (1 change)
+
+* id is no longer readonly
+
+**ContactListFilterBulkRetrieveBody** (1 change)
 
 * Model was added
 
-**EmailHoldUpdatedEvent** (1 change)
+**ImportTemplate** (1 change)
+
+* Optional property importStatus was added
+
+**EmailCampaignScheduleEntityListing** (1 change)
 
 * Model was added
 
-**EmailInitialConfiguration** (1 change)
+**Outcome** (1 change)
+
+* id is no longer readonly
+
+**PatchAssociatedValueField** (1 change)
 
 * Model was added
 
-**EmailProgressTransferEvent** (1 change)
+**PatchContext** (1 change)
 
 * Model was added
 
-**EmailRoutingEstablishedEvent** (1 change)
+**PatchContextPattern** (1 change)
 
 * Model was added
 
-**EmailRoutingTransferEvent** (1 change)
+**PatchCriteria** (1 change)
 
 * Model was added
 
-**EmailUserEstablishedEvent** (1 change)
+**PatchEntityTypeCriteria** (1 change)
 
 * Model was added
 
-**EmailUserTransferEvent** (1 change)
+**PatchJourney** (1 change)
 
 * Model was added
 
-**Group** (1 change)
-
-* Optional property rolesEnabled was added
-
-**UserPresence** (1 change)
-
-* Optional property sourceId was added
-
-**WorkPlanBidRanks** (1 change)
+**PatchJourneyPattern** (1 change)
 
 * Model was added
 
-**ReportingTurnAction** (4 changes)
-
-* Enum value ClearUtilizationLabelAction was added to property actionType
-* Enum value FindGrammarByIdAction was added to property actionType
-* Enum value FindUtilizationLabelAction was added to property actionType
-* Enum value SetUtilizationLabelAction was added to property actionType
-
-**ScreenRecordingUserAuthenticatedInfo** (1 change)
+**OutcomeRequest** (1 change)
 
 * Model was added
 
-**FeedbackAddRequest** (1 change)
+**RequestContext** (1 change)
 
 * Model was added
 
-**ContactListTemplateBulkRetrieveBody** (1 change)
+**RequestContextPattern** (1 change)
 
 * Model was added
 
-**Column** (1 change)
+**RequestCriteria** (1 change)
 
 * Model was added
 
-**FileSpecificationTemplate** (1 change)
+**RequestEntityTypeCriteria** (1 change)
 
 * Model was added
 
-**PreprocessingRule** (1 change)
+**RequestJourney** (1 change)
 
 * Model was added
 
-**FileSpecificationTemplateEntityListing** (1 change)
+**RequestJourneyPattern** (1 change)
 
 * Model was added
 
-**GroupUpdate** (1 change)
+**JourneySegment** (1 change)
 
-* Optional property rolesEnabled was added
+* id is no longer readonly
 
-**GroupCreate** (1 change)
-
-* Optional property rolesEnabled was added
-
-**IdentityProvider** (1 change)
+**JourneySegmentRequest** (1 change)
 
 * Model was added
 
-**IdentityProviderEntityListing** (1 change)
+**RequestExternalSegment** (1 change)
 
 * Model was added
 
-**CustomProvider** (1 change)
+**KnowledgeExportJobResponse** (1 change)
+
+* Optional property jsonFileVersion was added
+
+**KnowledgeExportJobRequest** (1 change)
+
+* Optional property jsonFileVersion was added
+
+**RequestDevice** (1 change)
 
 * Model was added
 
-**TrustGroup** (1 change)
+**AppEventResponseSession** (1 change)
 
-* Optional property rolesEnabled was added
+* id is no longer readonly
 
-**UcUserPresence** (1 change)
+**Flow** (2 changes)
 
-* Optional property sourceId was added
+* Enum value VOICESURVEY was added to property type
+* Enum value VOICESURVEY was added to property compatibleFlowTypes
 
-**MutableUserPresence** (1 change)
+**FlowVersion** (1 change)
 
-* Optional property sourceId was added
+* Enum value VOICESURVEY was added to property compatibleFlowTypes
 
-**GetAlertQuery** (1 change)
+**WrapupCodeRequest** (1 change)
 
-* Optional property alertStatus was added
+* Optional property division was added
 
-**PhoneBaseEntityListing** (1 change)
+**Dependency** (1 change)
 
-* Optional property totalNumberOfEntities was added
+* Enum value VOICESURVEYFLOW was added to property type
 
-**PhoneMetaBaseEntityListing** (1 change)
+**DependencyObject** (1 change)
 
-* Optional property totalNumberOfEntities was added
+* Enum value VOICESURVEYFLOW was added to property type
 
-**PhoneStatus** (1 change)
+**FlowDivisionView** (1 change)
 
-* selfUri is no longer readonly
+* Enum value VOICESURVEY was added to property type
 
-**TrunkMetabaseEntityListing** (1 change)
+**FlowActivityEntityData** (1 change)
 
-* Optional property totalNumberOfEntities was added
+* Enum value VOICESURVEY was added to property flowType
 
-**MetadataProperty** (1 change)
+**TaskManagementAggregationQuery** (1 change)
 
-* Optional property displayname was added
+* Enum value oWorkitemsServiceLevel was added to property metrics
 
-**AuthenticationSettings** (1 change)
+**TaskManagementAggregationView** (1 change)
 
-* Optional property allowSessionUpgrade was added
+* Enum value oWorkitemsServiceLevel was added to property target
 
-**TaskManagementAggregationQuery** (24 changes)
+**TaskManagementAsyncAggregationQuery** (1 change)
 
-* Enum value nWorkitemsAcdCancelled was added to property metrics
-* Enum value nWorkitemsAcdExpired was added to property metrics
-* Enum value nWorkitemsAcdStarted was added to property metrics
-* Enum value nWorkitemsAgentTransferred was added to property metrics
-* Enum value nWorkitemsDeclined was added to property metrics
-* Enum value nWorkitemsDisconnected was added to property metrics
-* Enum value nWorkitemsOverSla was added to property metrics
-* Enum value nWorkitemsQueueTransferred was added to property metrics
-* Enum value nWorkitemsTerminated was added to property metrics
-* Enum value nWorkitemsTimedout was added to property metrics
-* Enum value nWorkitemsTransferred was added to property metrics
-* Enum value nWorkitemsWrapupAdded was added to property metrics
-* Enum value nWorkitemsWrapupRemoved was added to property metrics
-* Enum value tWorkitemsAlert was added to property metrics
-* Enum value tWorkitemsAnswered was added to property metrics
-* Enum value tWorkitemsDirectAnswered was added to property metrics
-* Enum value tWorkitemsFocus was added to property metrics
-* Enum value tWorkitemsFocusComplete was added to property metrics
-* Enum value tWorkitemsHandled was added to property metrics
-* Enum value tWorkitemsHeld was added to property metrics
-* Enum value tWorkitemsHeldComplete was added to property metrics
-* Enum value tWorkitemsNotResponding was added to property metrics
-* Enum value tWorkitemsParked was added to property metrics
-* Enum value tWorkitemsQueueAnswered was added to property metrics
+* Enum value oWorkitemsServiceLevel was added to property metrics
 
-**TaskManagementAggregationView** (24 changes)
+**FlowsQueryCriteriaResponse** (1 change)
 
-* Enum value nWorkitemsAcdCancelled was added to property target
-* Enum value nWorkitemsAcdExpired was added to property target
-* Enum value nWorkitemsAcdStarted was added to property target
-* Enum value nWorkitemsAgentTransferred was added to property target
-* Enum value nWorkitemsDeclined was added to property target
-* Enum value nWorkitemsDisconnected was added to property target
-* Enum value nWorkitemsOverSla was added to property target
-* Enum value nWorkitemsQueueTransferred was added to property target
-* Enum value nWorkitemsTerminated was added to property target
-* Enum value nWorkitemsTimedout was added to property target
-* Enum value nWorkitemsTransferred was added to property target
-* Enum value nWorkitemsWrapupAdded was added to property target
-* Enum value nWorkitemsWrapupRemoved was added to property target
-* Enum value tWorkitemsAlert was added to property target
-* Enum value tWorkitemsAnswered was added to property target
-* Enum value tWorkitemsDirectAnswered was added to property target
-* Enum value tWorkitemsFocus was added to property target
-* Enum value tWorkitemsFocusComplete was added to property target
-* Enum value tWorkitemsHandled was added to property target
-* Enum value tWorkitemsHeld was added to property target
-* Enum value tWorkitemsHeldComplete was added to property target
-* Enum value tWorkitemsNotResponding was added to property target
-* Enum value tWorkitemsParked was added to property target
-* Enum value tWorkitemsQueueAnswered was added to property target
+* Enum value voicesurvey was added to property flowTypes
 
-**TaskManagementAsyncAggregationQuery** (24 changes)
+**FlowExecutionDataQueryResult** (1 change)
 
-* Enum value nWorkitemsAcdCancelled was added to property metrics
-* Enum value nWorkitemsAcdExpired was added to property metrics
-* Enum value nWorkitemsAcdStarted was added to property metrics
-* Enum value nWorkitemsAgentTransferred was added to property metrics
-* Enum value nWorkitemsDeclined was added to property metrics
-* Enum value nWorkitemsDisconnected was added to property metrics
-* Enum value nWorkitemsOverSla was added to property metrics
-* Enum value nWorkitemsQueueTransferred was added to property metrics
-* Enum value nWorkitemsTerminated was added to property metrics
-* Enum value nWorkitemsTimedout was added to property metrics
-* Enum value nWorkitemsTransferred was added to property metrics
-* Enum value nWorkitemsWrapupAdded was added to property metrics
-* Enum value nWorkitemsWrapupRemoved was added to property metrics
-* Enum value tWorkitemsAlert was added to property metrics
-* Enum value tWorkitemsAnswered was added to property metrics
-* Enum value tWorkitemsDirectAnswered was added to property metrics
-* Enum value tWorkitemsFocus was added to property metrics
-* Enum value tWorkitemsFocusComplete was added to property metrics
-* Enum value tWorkitemsHandled was added to property metrics
-* Enum value tWorkitemsHeld was added to property metrics
-* Enum value tWorkitemsHeldComplete was added to property metrics
-* Enum value tWorkitemsNotResponding was added to property metrics
-* Enum value tWorkitemsParked was added to property metrics
-* Enum value tWorkitemsQueueAnswered was added to property metrics
+* Enum value voicesurvey was added to property flowType
 
-**Function** (1 change)
+**Event** (1 change)
+
+* correlationId is no longer readonly
+
+**GetUploadSourceUrlJobStatusResponse** (1 change)
 
 * Model was added
 
-**FunctionConfig** (1 change)
+**CreateUploadSourceUrlJobResponse** (1 change)
 
 * Model was added
 
-**FunctionZipConfig** (1 change)
+**CreateUploadSourceUrlJobRequest** (1 change)
 
 * Model was added
 
-**FunctionUploadResponse** (1 change)
+**KnowledgeParseJobRequestPatch** (1 change)
 
 * Model was added
 
-**FunctionUploadRequest** (1 change)
+**KnowledgeParseJobRequestImport** (1 change)
 
 * Model was added
 
-**FunctionRuntime** (1 change)
+**KnowledgeParseRecord** (1 change)
 
 * Model was added
 
-**OperationListing** (1 change)
+**KnowledgeParseImportResult** (1 change)
 
 * Model was added
 
-**OperationResponse** (1 change)
+**KnowledgeParseJobResponse** (1 change)
 
 * Model was added
 
-**OperationCreatorUserResponse** (1 change)
+**KnowledgeParseJobRequest** (1 change)
 
 * Model was added
 
-**Workitem** (1 change)
 
-* Optional property utilizationLabel was added
+# Point Changes (3 changes)
 
-**WorkitemUtilizationLabelReference** (1 change)
-
-* Model was added
-
-**WorkitemCreate** (1 change)
-
-* Optional property utilizationLabelId was added
-
-**WorkitemUpdate** (1 change)
-
-* Optional property utilizationLabelId was added
-
-**WorkitemVersion** (1 change)
-
-* Optional property utilizationLabel was added
-
-**WorkitemDelta** (1 change)
-
-* Optional property utilizationLabelId was added
-
-
-# Point Changes (7 changes)
-
-**POST /api/v2/conversations/messaging/integrations/line** (2 changes)
+**PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}** (3 changes)
 
 * Description was changed
 * Summary was changed
-
-**GET /api/v2/presencedefinitions/{presenceId}** (1 change)
-
-* Summary was changed
-
-**PUT /api/v2/presencedefinitions/{presenceId}** (1 change)
-
-* Summary was changed
-
-**DELETE /api/v2/presencedefinitions/{presenceId}** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/presencedefinitions** (1 change)
-
-* Summary was changed
-
-**POST /api/v2/presencedefinitions** (1 change)
-
-* Summary was changed
+* Response 202 was changed from Processing Request - If request was to Activate, do a GET checking for activationStatus set to CodeSent. 
+If request was to Confirm, do a GET checking for the integration status set to Active to Processing Request

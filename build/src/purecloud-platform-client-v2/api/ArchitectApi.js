@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 187.0.0
+	 * @version 188.0.0
 	 */
 
 	/**
@@ -3384,6 +3384,7 @@ class ArchitectApi {
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.indexOnly indexes only
+	 * @param {Number} opts.pageSize number of results to return (default to 50)
 	 * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesQuery(body, opts) { 
@@ -3398,7 +3399,7 @@ class ArchitectApi {
 			'/api/v2/flows/instances/query', 
 			'POST', 
 			{  },
-			{ 'indexOnly': opts['indexOnly'] },
+			{ 'indexOnly': opts['indexOnly'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			body, 

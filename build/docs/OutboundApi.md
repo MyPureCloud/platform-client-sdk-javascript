@@ -121,6 +121,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk | Get contacts from a contact list.
 [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | **POST** /api/v2/outbound/contactlists/{contactListId}/export | Initiate the export of a contact list.
 [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | **POST** /api/v2/outbound/contactlistfilters | Create Contact List Filter
+[**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi.html#postOutboundContactlistfiltersBulkRetrieve) | **POST** /api/v2/outbound/contactlistfilters/bulk/retrieve | Retrieve multiple contact list filters
 [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
 [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
 [**postOutboundContactlisttemplates**](OutboundApi.html#postOutboundContactlisttemplates) | **POST** /api/v2/outbound/contactlisttemplates | Create Contact List Template
@@ -4169,7 +4170,7 @@ apiInstance.getOutboundFilespecificationtemplates(opts)
 
 <a name="getOutboundImporttemplate"></a>
 
-# ImportTemplate getOutboundImporttemplate(importTemplateId)
+# ImportTemplate getOutboundImporttemplate(importTemplateId, opts)
 
 
 GET /api/v2/outbound/importtemplates/{importTemplateId}
@@ -4194,8 +4195,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let importTemplateId = "importTemplateId_example"; // String | Import Template ID
+let opts = { 
+  'includeImportStatus': false // Boolean | Import status
+};
 
-apiInstance.getOutboundImporttemplate(importTemplateId)
+apiInstance.getOutboundImporttemplate(importTemplateId, opts)
   .then((data) => {
     console.log(`getOutboundImporttemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4211,6 +4215,7 @@ apiInstance.getOutboundImporttemplate(importTemplateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **importTemplateId** | **String** | Import Template ID |  |
+ **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4298,6 +4303,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let opts = { 
+  'includeImportStatus': false, // Boolean | Import status
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
@@ -4323,6 +4329,7 @@ apiInstance.getOutboundImporttemplates(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+ **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
@@ -4942,7 +4949,7 @@ apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId)
 
 <a name="getOutboundSchedulesEmailcampaigns"></a>
 
-# MessagingCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns()
+# EmailCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns()
 
 
 GET /api/v2/outbound/schedules/emailcampaigns
@@ -4983,7 +4990,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**MessagingCampaignScheduleEntityListing**
+**EmailCampaignScheduleEntityListing**
 
 <a name="getOutboundSchedulesMessagingcampaign"></a>
 
@@ -6322,6 +6329,56 @@ apiInstance.postOutboundContactlistfilters(body)
 ### Return type
 
 **ContactListFilter**
+
+<a name="postOutboundContactlistfiltersBulkRetrieve"></a>
+
+# ContactListFilterEntityListing postOutboundContactlistfiltersBulkRetrieve(body)
+
+
+POST /api/v2/outbound/contactlistfilters/bulk/retrieve
+
+Retrieve multiple contact list filters
+
+Requires ANY permissions:
+
+* outbound:contactListFilter:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | The contact list filters to retrieve
+
+apiInstance.postOutboundContactlistfiltersBulkRetrieve(body)
+  .then((data) => {
+    console.log(`postOutboundContactlistfiltersBulkRetrieve success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistfiltersBulkRetrieve');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The contact list filters to retrieve |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListFilterEntityListing**
 
 <a name="postOutboundContactlistfiltersPreview"></a>
 

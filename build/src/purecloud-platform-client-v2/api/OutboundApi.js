@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 187.0.0
+	 * @version 188.0.0
 	 */
 
 	/**
@@ -2008,8 +2008,12 @@ class OutboundApi {
 	 * Get Import Template
 	 * 
 	 * @param {String} importTemplateId Import Template ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeImportStatus Import status (default to false)
 	 */
-	getOutboundImporttemplate(importTemplateId) { 
+	getOutboundImporttemplate(importTemplateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'importTemplateId' is set
 		if (importTemplateId === undefined || importTemplateId === null) {
 			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplate';
@@ -2019,7 +2023,7 @@ class OutboundApi {
 			'/api/v2/outbound/importtemplates/{importTemplateId}', 
 			'GET', 
 			{ 'importTemplateId': importTemplateId },
-			{  },
+			{ 'includeImportStatus': opts['includeImportStatus'] },
 			{  },
 			{  },
 			null, 
@@ -2062,6 +2066,7 @@ class OutboundApi {
 	 * Query Import Templates
 	 * 
 	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeImportStatus Import status (default to false)
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
@@ -2079,7 +2084,7 @@ class OutboundApi {
 			'/api/v2/outbound/importtemplates', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListTemplateId': opts['contactListTemplateId'] },
+			{ 'includeImportStatus': opts['includeImportStatus'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListTemplateId': opts['contactListTemplateId'] },
 			{  },
 			{  },
 			null, 
@@ -3065,6 +3070,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlistfilters', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve multiple contact list filters
+	 * 
+	 * @param {Object} body The contact list filters to retrieve
+	 */
+	postOutboundContactlistfiltersBulkRetrieve(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistfiltersBulkRetrieve';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlistfilters/bulk/retrieve', 
 			'POST', 
 			{  },
 			{  },

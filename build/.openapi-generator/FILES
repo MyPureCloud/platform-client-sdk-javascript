@@ -934,9 +934,12 @@ docs/getKnowledgeKnowledgebaseLanguageTraining-example.txt
 docs/getKnowledgeKnowledgebaseLanguageTrainings-example.txt
 docs/getKnowledgeKnowledgebaseOperations-example.txt
 docs/getKnowledgeKnowledgebaseOperationsUsersQuery-example.txt
+docs/getKnowledgeKnowledgebaseParseJob-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroups-example.txt
+docs/getKnowledgeKnowledgebaseUploadsUrlsJob-example.txt
+docs/getKnowledgeKnowledgebaseUploadsUrlsJob-example.txt
 docs/getKnowledgeKnowledgebases-example.txt
 docs/getLanguage-example.txt
 docs/getLanguages-example.txt
@@ -1627,6 +1630,7 @@ docs/patchKnowledgeKnowledgebaseLanguageCategory-example.txt
 docs/patchKnowledgeKnowledgebaseLanguageDocument-example.txt
 docs/patchKnowledgeKnowledgebaseLanguageDocuments-example.txt
 docs/patchKnowledgeKnowledgebaseLanguageDocumentsImport-example.txt
+docs/patchKnowledgeKnowledgebaseParseJob-example.txt
 docs/patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/patchLanguageunderstandingDomain-example.txt
 docs/patchLanguageunderstandingMinerDraft-example.txt
@@ -1754,6 +1758,7 @@ docs/postAnalyticsKnowledgeAggregatesJobs-example.txt
 docs/postAnalyticsKnowledgeAggregatesQuery-example.txt
 docs/postAnalyticsQueuesObservationsQuery-example.txt
 docs/postAnalyticsQueuesObservationsQuery-example.txt
+docs/postAnalyticsRatelimitsAggregatesQuery-example.txt
 docs/postAnalyticsReportingExports-example.txt
 docs/postAnalyticsReportingScheduleRunreport-example.txt
 docs/postAnalyticsReportingSchedules-example.txt
@@ -2036,8 +2041,12 @@ docs/postKnowledgeKnowledgebaseLanguageDocuments-example.txt
 docs/postKnowledgeKnowledgebaseLanguageDocumentsImports-example.txt
 docs/postKnowledgeKnowledgebaseLanguageTrainingPromote-example.txt
 docs/postKnowledgeKnowledgebaseLanguageTrainings-example.txt
+docs/postKnowledgeKnowledgebaseParseJobImport-example.txt
+docs/postKnowledgeKnowledgebaseParseJobs-example.txt
 docs/postKnowledgeKnowledgebaseSearch-example.txt
 docs/postKnowledgeKnowledgebaseSearch-example.txt
+docs/postKnowledgeKnowledgebaseUploadsUrlsJobs-example.txt
+docs/postKnowledgeKnowledgebaseUploadsUrlsJobs-example.txt
 docs/postKnowledgeKnowledgebases-example.txt
 docs/postLanguages-example.txt
 docs/postLanguageunderstandingDomainFeedback-example.txt
@@ -2099,6 +2108,7 @@ docs/postOutboundContactlistContacts-example.txt
 docs/postOutboundContactlistContactsBulk-example.txt
 docs/postOutboundContactlistExport-example.txt
 docs/postOutboundContactlistfilters-example.txt
+docs/postOutboundContactlistfiltersBulkRetrieve-example.txt
 docs/postOutboundContactlistfiltersPreview-example.txt
 docs/postOutboundContactlists-example.txt
 docs/postOutboundContactlisttemplates-example.txt

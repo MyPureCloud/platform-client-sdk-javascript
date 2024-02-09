@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 187.0.0
+	 * @version 188.0.0
 	 */
 
 	/**
@@ -1800,7 +1800,6 @@ class AnalyticsApi {
 	 * Query for flow execution aggregates
 	 * 
 	 * @param {Object} body query
-	 * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowexecutionsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -2045,6 +2044,31 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/queues/observations/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsRatelimitsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsRatelimitsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/ratelimits/aggregates/query', 
 			'POST', 
 			{  },
 			{  },

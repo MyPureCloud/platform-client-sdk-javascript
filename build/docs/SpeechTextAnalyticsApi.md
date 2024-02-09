@@ -1246,6 +1246,7 @@ let opts = {
   'state': "state_example", // String | Topic state. Defaults to latest
   'name': "name_example", // String | Case insensitive partial name to filter by
   'ids': ["ids_example"], // [String] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+  'dialects': ["dialects_example"], // [String] | Comma separated dialect strings to filter by. Maximum of 15 dialects allowed.
   'sortBy': "sortBy_example", // String | Sort results by. Defaults to name
   'sortOrder': "sortOrder_example" // String | Sort order. Defaults to asc
 };
@@ -1270,6 +1271,7 @@ apiInstance.getSpeechandtextanalyticsTopics(opts)
  **state** | **String** | Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
  **name** | **String** | Case insensitive partial name to filter by | [optional]  |
  **ids** | **[String]** | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+ **dialects** | **[String]** | Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR |
  **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name |
  **sortOrder** | **String** | Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 {: class="table table-striped"}
