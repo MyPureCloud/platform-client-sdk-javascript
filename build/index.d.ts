@@ -63,6 +63,7 @@ declare class Configuration {
 	logger: Logger;
 	config: any;
 	setEnvironment(environment: string): void;
+	setConfigPath(path: string): void;
 }
 
 declare class Logger {

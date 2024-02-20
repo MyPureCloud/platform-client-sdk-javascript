@@ -1,3 +1,7 @@
+import ConfigParser from 'configparser';
+import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import Logger from './logger.js';
 
 class Configuration {
@@ -23,8 +27,6 @@ class Configuration {
 		if (typeof window !== 'undefined') {
 			this.configPath = '';
 		} else {
-			const os = require('os');
-			const path = require('path');
 			this.configPath = path.join(os.homedir(), '.genesyscloudjavascript', 'config');
 		}
 		this.refresh_access_token = true;
@@ -49,7 +51,6 @@ class Configuration {
 
 			if (this.live_reload_config && this.live_reload_config === true) {
 				try {
-					const fs = require('fs');
 					fs.watchFile(this.configPath, { persistent: false }, (eventType, filename) => {
 						this.updateConfigFromFile();
 						if (!this.live_reload_config) {
@@ -78,7 +79,6 @@ class Configuration {
 			// Please don't remove the typeof window === 'undefined' check here!
 			// This safeguards the browser environment from using `fs`, which is only
 			// available in node environment.
-			const ConfigParser = require('configparser');
 
 			try {
 				var configparser = new ConfigParser();
@@ -87,7 +87,6 @@ class Configuration {
 			} catch (error) {
 				if (error.name && error.name === 'MissingSectionHeaderError') {
 					// Not INI format, see if it's JSON format
-					const fs = require('fs');
 					var configData = fs.readFileSync(this.configPath, 'utf8');
 					this.config = {
 						_sections: JSON.parse(configData), // To match INI data format
