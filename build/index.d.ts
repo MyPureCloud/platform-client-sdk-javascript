@@ -8978,6 +8978,12 @@ declare namespace Models {
 		"attributes"?: { [key: string]: string; };
 		"conversationExternalContactIds"?: Array<string>;
 		"conversationExternalOrganizationIds"?: Array<string>;
+		"communications"?: Array<Models.AttributeDetailEventTopicCommunication>;
+	}
+	
+	export interface AttributeDetailEventTopicCommunication { 
+		"id"?: string;
+		"mediaType"?: string;
 	}
 	
 	export interface AttributeFilterItem { 
@@ -14749,7 +14755,6 @@ declare namespace Models {
 		"queueId"?: string;
 		"remote"?: string;
 		"removedSkillIds"?: Array<string>;
-		"reoffered"?: boolean;
 		"requestedLanguageId"?: string;
 		"requestedRoutingSkillIds"?: Array<string>;
 		"requestedRoutings"?: Array<string>;
@@ -20190,6 +20195,7 @@ declare namespace Models {
 	
 	export interface ExternalContactsContactChangedTopicContact { 
 		"id"?: string;
+		"division"?: Models.ExternalContactsContactChangedTopicDivision;
 		"externalOrganization"?: Models.ExternalContactsContactChangedTopicExternalOrganization;
 		"type"?: string;
 		"firstName"?: string;
@@ -20230,6 +20236,10 @@ declare namespace Models {
 	export interface ExternalContactsContactChangedTopicDataSchema { 
 		"id"?: string;
 		"version"?: number;
+	}
+	
+	export interface ExternalContactsContactChangedTopicDivision { 
+		"id"?: string;
 	}
 	
 	export interface ExternalContactsContactChangedTopicExternalOrganization { 
@@ -20291,6 +20301,7 @@ declare namespace Models {
 	
 	export interface ExternalContactsUnresolvedContactChangedTopicContact { 
 		"id"?: string;
+		"division"?: Models.ExternalContactsUnresolvedContactChangedTopicDivision;
 		"externalOrganization"?: Models.ExternalContactsUnresolvedContactChangedTopicExternalOrganization;
 		"type"?: string;
 		"firstName"?: string;
@@ -20331,6 +20342,10 @@ declare namespace Models {
 	export interface ExternalContactsUnresolvedContactChangedTopicDataSchema { 
 		"id"?: string;
 		"version"?: number;
+	}
+	
+	export interface ExternalContactsUnresolvedContactChangedTopicDivision { 
+		"id"?: string;
 	}
 	
 	export interface ExternalContactsUnresolvedContactChangedTopicExternalOrganization { 
@@ -21352,7 +21367,6 @@ declare namespace Models {
 		"recognitionFailureReason"?: string;
 		"remote"?: string;
 		"removedSkillIds"?: Array<string>;
-		"reoffered"?: boolean;
 		"requestedLanguageId"?: string;
 		"requestedRoutingSkillIds"?: Array<string>;
 		"requestedRoutings"?: Array<string>;
@@ -28770,6 +28784,90 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes { 
+		"emailSubject"?: string;
+		"configuredEmailAddress"?: string;
+		"contactEmailAddress"?: string;
+		"replyToAddress"?: string;
+		"contactEmailColumnName"?: string;
+	}
+	
+	export interface OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampaignPostContactEmailEvent { 
+		"eventTime"?: string;
+		"conversationId"?: string;
+		"outboundCampaignType"?: string;
+		"emailAttributes"?: Models.OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes;
+		"wrapupCode"?: string;
+		"outboundCampaignId"?: string;
+		"divisionId"?: string;
+		"contentTemplateId"?: string;
+		"outboundContactListId"?: string;
+		"outboundContactId"?: string;
+		"isCampaignAlwaysRunning"?: boolean;
+	}
+	
+	export interface OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent { 
+		"eventTime"?: string;
+		"conversationId"?: string;
+		"outboundCampaignType"?: string;
+		"smsAttributes"?: Models.OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes;
+		"wrapupCode"?: string;
+		"outboundCampaignId"?: string;
+		"divisionId"?: string;
+		"contentTemplateId"?: string;
+		"outboundContactListId"?: string;
+		"outboundContactId"?: string;
+		"isCampaignAlwaysRunning"?: boolean;
+	}
+	
+	export interface OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes { 
+		"contactPhoneNumber"?: string;
+		"contactPhoneNumberColumnName"?: string;
+		"configuredSenderPhoneNumber"?: string;
+		"senderPhoneNumber"?: string;
+	}
+	
+	export interface OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes { 
+		"emailSubject"?: string;
+		"configuredEmailAddress"?: string;
+		"contactEmailAddress"?: string;
+		"replyToAddress"?: string;
+		"contactEmailColumnName"?: string;
+	}
+	
+	export interface OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent { 
+		"eventTime"?: string;
+		"outboundCampaignType"?: string;
+		"emailAttributes"?: Models.OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes;
+		"wrapupCode"?: string;
+		"outboundCampaignId"?: string;
+		"divisionId"?: string;
+		"contentTemplateId"?: string;
+		"outboundContactListId"?: string;
+		"outboundContactId"?: string;
+		"isCampaignAlwaysRunning"?: boolean;
+	}
+	
+	export interface OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent { 
+		"eventTime"?: string;
+		"outboundCampaignType"?: string;
+		"smsAttributes"?: Models.OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes;
+		"wrapupCode"?: string;
+		"outboundCampaignId"?: string;
+		"divisionId"?: string;
+		"contentTemplateId"?: string;
+		"outboundContactListId"?: string;
+		"outboundContactId"?: string;
+		"isCampaignAlwaysRunning"?: boolean;
+	}
+	
+	export interface OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes { 
+		"contactPhoneNumber"?: string;
+		"contactPhoneNumberColumnName"?: string;
+		"configuredSenderPhoneNumber"?: string;
+		"senderPhoneNumber"?: string;
 	}
 	
 	export interface OutboundMessagingMessagingCampaignConfigChangeContactSort { 

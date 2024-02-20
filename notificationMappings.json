@@ -237,8 +237,24 @@
       "class": "DnclistImportStatusImportStatus"
     },
     {
+      "topic": "v2.outbound.email.campaigns.contact.postContact",
+      "class": "OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampaignPostContactEmailEvent"
+    },
+    {
+      "topic": "v2.outbound.email.campaigns.contact.preContact",
+      "class": "OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent"
+    },
+    {
       "topic": "v2.outbound.importtemplates.{id}.importstatus",
       "class": "ImportTemplateImportStatusImportStatus"
+    },
+    {
+      "topic": "v2.outbound.messaging.campaigns.contact.postContact",
+      "class": "OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent"
+    },
+    {
+      "topic": "v2.outbound.messaging.campaigns.contact.preContact",
+      "class": "OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent"
     },
     {
       "topic": "v2.outbound.messagingcampaigns.{id}",
