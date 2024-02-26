@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 188.0.1
+	 * @version 188.1.0
 	 */
 
 	/**
@@ -866,7 +866,7 @@ class ExternalContactsApi {
 	 * Scan for external contacts using paging
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.limit The number of contacts per page; must be between 10 and 200, default is 100)
+	 * @param {Number} opts.limit The number of contacts per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 	 */
 	getExternalcontactsScanContacts(opts) { 
@@ -891,7 +891,7 @@ class ExternalContactsApi {
 	 * Scan for notes using paging
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.limit The number of notes per page; must be between 10 and 200, default is 100)
+	 * @param {Number} opts.limit The number of notes per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 	 */
 	getExternalcontactsScanNotes(opts) { 
@@ -916,7 +916,7 @@ class ExternalContactsApi {
 	 * Scan for external organizations using paging
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.limit The number of organizations per page; must be between 10 and 200, default is 100)
+	 * @param {Number} opts.limit The number of organizations per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 	 */
 	getExternalcontactsScanOrganizations(opts) { 
@@ -941,7 +941,7 @@ class ExternalContactsApi {
 	 * Scan for relationships
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.limit The number of relationships per page; must be between 10 and 200, default is 100)
+	 * @param {Number} opts.limit The number of relationships per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 	 */
 	getExternalcontactsScanRelationships(opts) { 

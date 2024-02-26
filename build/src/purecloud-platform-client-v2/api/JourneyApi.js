@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 188.0.1
+	 * @version 188.1.0
 	 */
 
 	/**
@@ -139,6 +139,32 @@ class JourneyApi {
 			'/api/v2/journey/segments/{segmentId}', 
 			'DELETE', 
 			{ 'segmentId': segmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Journey View by ID
+	 * deletes all versions
+	 * @param {String} viewId viewId
+	 * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteJourneyView(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling deleteJourneyView';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}', 
+			'DELETE', 
+			{ 'viewId': viewId },
 			{  },
 			{  },
 			{  },
@@ -773,6 +799,84 @@ class JourneyApi {
 	}
 
 	/**
+	 * Get a Journey View by ID
+	 * returns the latest version
+	 * @param {String} viewId viewId
+	 * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyView(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyView';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}', 
+			'GET', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Journey View by ID and version
+	 * 
+	 * @param {String} viewId viewId
+	 * @param {String} versionId versionId
+	 * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyViewVersion(viewId, versionId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling getJourneyViewVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{versionId}', 
+			'GET', 
+			{ 'viewId': viewId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Journey Views
+	 * 
+	 * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyViews() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update single action map.
 	 * 
 	 * @param {String} actionMapId ID of the action map.
@@ -1101,6 +1205,31 @@ class JourneyApi {
 	}
 
 	/**
+	 * Query for flow paths.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * postJourneyFlowsPathsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postJourneyFlowsPathsQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/flows/paths/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an outcome.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1191,6 +1320,63 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Journey View by ID
+	 * creates a new version
+	 * @param {String} viewId viewId
+	 * @param {Object} body JourneyView
+	 * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postJourneyViewVersions(viewId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling postJourneyViewVersions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyViewVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions', 
+			'POST', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new Journey View
+	 * 
+	 * @param {Object} body JourneyView
+	 * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postJourneyViews(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyViews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -4046,8 +4046,6 @@ POST /api/v2/analytics/knowledge/aggregates/query
 
 Query for knowledge aggregates
 
-postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:knowledgeAggregate:view

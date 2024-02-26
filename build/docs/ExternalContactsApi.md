@@ -91,6 +91,7 @@ Delete an external contact
 
 Requires ANY permissions:
 
+* relate:contact:delete
 * externalContacts:contact:delete
 
 ### Example Usage
@@ -141,6 +142,7 @@ Delete a note for an external contact
 
 Requires ANY permissions:
 
+* relate:contact:edit
 * externalContacts:contact:edit
 
 ### Example Usage
@@ -294,6 +296,7 @@ Delete a note for an external organization
 
 Requires ANY permissions:
 
+* relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
 
 ### Example Usage
@@ -396,6 +399,7 @@ Delete a relationship
 
 Requires ANY permissions:
 
+* relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
 
 ### Example Usage
@@ -446,6 +450,7 @@ Fetch an external contact
 
 Requires ANY permissions:
 
+* relate:contact:view
 * externalContacts:contact:view
 
 ### Example Usage
@@ -608,6 +613,7 @@ Fetch a note for an external contact
 
 Requires ANY permissions:
 
+* relate:contact:view
 * externalContacts:contact:view
 
 ### Example Usage
@@ -664,6 +670,7 @@ List notes for an external contact
 
 Requires ANY permissions:
 
+* relate:contact:view
 * externalContacts:contact:view
 
 ### Example Usage
@@ -778,6 +785,7 @@ Search for external contacts
 
 Requires ANY permissions:
 
+* relate:contact:view
 * externalContacts:contact:view
 
 ### Example Usage
@@ -1092,6 +1100,7 @@ Search for external contacts in an external organization
 
 Requires ANY permissions:
 
+* relate:contact:view
 * externalContacts:contact:view
 
 ### Example Usage
@@ -1154,6 +1163,7 @@ Fetch a note for an external organization
 
 Requires ANY permissions:
 
+* relate:externalOrganization:view
 * externalContacts:externalOrganization:view
 
 ### Example Usage
@@ -1594,6 +1604,7 @@ Fetch a relationship
 
 Requires ANY permissions:
 
+* relate:externalOrganization:view
 * externalContacts:externalOrganization:view
 
 ### Example Usage
@@ -1702,6 +1713,7 @@ Scan for external contacts using paging
 
 Requires ANY permissions:
 
+* relate:contact:view
 * externalContacts:contact:view
 
 ### Example Usage
@@ -1718,7 +1730,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
-  'limit': 3.4, // Number | The number of contacts per page; must be between 10 and 200, default is 100)
+  'limit': 3.4, // Number | The number of contacts per page; must be between 10 and 200, default is 100
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 };
 
@@ -1737,7 +1749,7 @@ apiInstance.getExternalcontactsScanContacts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **limit** | **Number** | The number of contacts per page; must be between 10 and 200, default is 100) | [optional]  |
+ **limit** | **Number** | The number of contacts per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
 {: class="table table-striped"}
 
@@ -1756,6 +1768,7 @@ Scan for notes using paging
 
 Requires ANY permissions:
 
+* relate:contact:view
 * externalContacts:contact:view
 
 ### Example Usage
@@ -1772,7 +1785,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
-  'limit': 3.4, // Number | The number of notes per page; must be between 10 and 200, default is 100)
+  'limit': 3.4, // Number | The number of notes per page; must be between 10 and 200, default is 100
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 };
 
@@ -1791,7 +1804,7 @@ apiInstance.getExternalcontactsScanNotes(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **limit** | **Number** | The number of notes per page; must be between 10 and 200, default is 100) | [optional]  |
+ **limit** | **Number** | The number of notes per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
 {: class="table table-striped"}
 
@@ -1810,6 +1823,7 @@ Scan for external organizations using paging
 
 Requires ANY permissions:
 
+* relate:externalOrganization:view
 * externalContacts:externalOrganization:view
 
 ### Example Usage
@@ -1826,7 +1840,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
-  'limit': 3.4, // Number | The number of organizations per page; must be between 10 and 200, default is 100)
+  'limit': 3.4, // Number | The number of organizations per page; must be between 10 and 200, default is 100
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 };
 
@@ -1845,7 +1859,7 @@ apiInstance.getExternalcontactsScanOrganizations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **limit** | **Number** | The number of organizations per page; must be between 10 and 200, default is 100) | [optional]  |
+ **limit** | **Number** | The number of organizations per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
 {: class="table table-striped"}
 
@@ -1864,6 +1878,7 @@ Scan for relationships
 
 Requires ANY permissions:
 
+* relate:contact:view
 * externalContacts:contact:view
 
 ### Example Usage
@@ -1880,7 +1895,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
-  'limit': 3.4, // Number | The number of relationships per page; must be between 10 and 200, default is 100)
+  'limit': 3.4, // Number | The number of relationships per page; must be between 10 and 200, default is 100
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 };
 
@@ -1899,7 +1914,7 @@ apiInstance.getExternalcontactsScanRelationships(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **limit** | **Number** | The number of relationships per page; must be between 10 and 200, default is 100) | [optional]  |
+ **limit** | **Number** | The number of relationships per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
 {: class="table table-striped"}
 
@@ -2828,6 +2843,7 @@ Create a note for an external contact
 
 Requires ANY permissions:
 
+* relate:contact:edit
 * externalContacts:contact:edit
 
 ### Example Usage
@@ -2930,6 +2946,7 @@ Create an external contact
 
 Requires ANY permissions:
 
+* relate:contact:add
 * externalContacts:contact:add
 
 ### Example Usage
@@ -3289,6 +3306,7 @@ Create a relationship
 
 Requires ANY permissions:
 
+* relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
 
 ### Example Usage
@@ -3339,6 +3357,7 @@ Update an external contact
 
 Requires ANY permissions:
 
+* relate:contact:edit
 * externalContacts:contact:edit
 
 ### Example Usage
@@ -3391,6 +3410,7 @@ Update a note for an external contact
 
 Requires ANY permissions:
 
+* relate:contact:edit
 * externalContacts:contact:edit
 
 ### Example Usage
@@ -3605,6 +3625,7 @@ Update a note for an external organization
 
 Requires ANY permissions:
 
+* relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
 
 ### Example Usage
@@ -3763,6 +3784,7 @@ Update a relationship
 
 Requires ANY permissions:
 
+* relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
 
 ### Example Usage

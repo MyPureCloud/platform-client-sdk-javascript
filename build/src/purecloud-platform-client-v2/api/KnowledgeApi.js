@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 188.0.1
+	 * @version 188.1.0
 	 */
 
 	/**
@@ -2155,6 +2155,40 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Indicate that the document was copied by the user.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentCopies';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentCopies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies', 
+			'POST', 
+			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Give feedback on a document
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -2178,6 +2212,69 @@ class KnowledgeApi {
 			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback', 
 			'POST', 
 			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create view event for a document.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentViews';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentViews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views', 
+			'POST', 
+			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Indicate that documents were presented to the user.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsPresentations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations', 
+			'POST', 
+			{ 'sessionId': sessionId },
 			{  },
 			{  },
 			{  },
@@ -2296,6 +2393,40 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Indicate that the document was copied by the user.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} documentId Document ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentCopies';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null) {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentCopies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2526,6 +2657,35 @@ class KnowledgeApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Indicate that documents were presented to the user.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsPresentations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

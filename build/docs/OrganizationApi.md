@@ -379,9 +379,7 @@ GET /api/v2/organizations/limits/namespaces/{namespaceName}
 
 Get the effective limits in a namespace for an organization
 
-Requires ANY permissions:
-
-* limits:organization:view
+Requires NO permissions:
 
 ### Example Usage
 
@@ -477,9 +475,7 @@ GET /api/v2/organizations/limits/namespaces
 
 Get the available limit namespaces
 
-Requires ANY permissions:
-
-* limits:organization:view
+Requires NO permissions:
 
 ### Example Usage
 

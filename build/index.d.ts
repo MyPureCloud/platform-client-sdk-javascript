@@ -2637,6 +2637,7 @@ declare class JourneyApi {
   	deleteJourneyOutcome(outcomeId: string): Promise<void>; 
   	deleteJourneyOutcomesPredictor(predictorId: string): Promise<void>; 
   	deleteJourneySegment(segmentId: string): Promise<void>; 
+  	deleteJourneyView(viewId: string): Promise<void>; 
   	getAnalyticsJourneysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsJourneysAggregatesJobResults(jobId: string, opts?: JourneyApi.getAnalyticsJourneysAggregatesJobResultsOptions): Promise<Models.JourneyAsyncAggregateQueryResponse>; 
   	getExternalcontactsContactJourneySessions(contactId: string, opts?: JourneyApi.getExternalcontactsContactJourneySessionsOptions): Promise<Models.SessionListing>; 
@@ -2660,6 +2661,9 @@ declare class JourneyApi {
   	getJourneySession(sessionId: string): Promise<Models.Session>; 
   	getJourneySessionEvents(sessionId: string, opts?: JourneyApi.getJourneySessionEventsOptions): Promise<Models.EventListing>; 
   	getJourneySessionOutcomescores(sessionId: string): Promise<Models.OutcomeScoresResult>; 
+  	getJourneyView(viewId: string): Promise<Models.JourneyView>; 
+  	getJourneyViewVersion(viewId: string, versionId: string): Promise<Models.JourneyView>; 
+  	getJourneyViews(): Promise<Models.AddressableEntityListing>; 
   	patchJourneyActionmap(actionMapId: string, opts?: JourneyApi.patchJourneyActionmapOptions): Promise<Models.ActionMap>; 
   	patchJourneyActiontarget(actionTargetId: string, opts?: JourneyApi.patchJourneyActiontargetOptions): Promise<Models.ActionTarget>; 
   	patchJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.patchJourneyActiontemplateOptions): Promise<Models.ActionTemplate>; 
@@ -2672,10 +2676,13 @@ declare class JourneyApi {
   	postJourneyActiontemplates(opts?: JourneyApi.postJourneyActiontemplatesOptions): Promise<Models.ActionTemplate>; 
   	postJourneyDeploymentActionevent(deploymentId: string, body: Models.ActionEventRequest): Promise<void>; 
   	postJourneyDeploymentAppevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentAppeventsOptions): Promise<Models.AppEventResponse>; 
+  	postJourneyFlowsPathsQuery(opts?: JourneyApi.postJourneyFlowsPathsQueryOptions): Promise<Models.FlowPaths>; 
   	postJourneyOutcomes(opts?: JourneyApi.postJourneyOutcomesOptions): Promise<Models.Outcome>; 
   	postJourneyOutcomesAttributionsJobs(opts?: JourneyApi.postJourneyOutcomesAttributionsJobsOptions): Promise<Models.OutcomeAttributionAsyncResponse>; 
   	postJourneyOutcomesPredictors(opts?: JourneyApi.postJourneyOutcomesPredictorsOptions): Promise<Models.OutcomePredictor>; 
-  	postJourneySegments(opts?: JourneyApi.postJourneySegmentsOptions): Promise<Models.JourneySegment>;
+  	postJourneySegments(opts?: JourneyApi.postJourneySegmentsOptions): Promise<Models.JourneySegment>; 
+  	postJourneyViewVersions(viewId: string, body: Models.JourneyView): Promise<Models.JourneyView>; 
+  	postJourneyViews(body: Models.JourneyView): Promise<Models.JourneyView>;
 }
 
 declare namespace JourneyApi { 
@@ -2765,6 +2772,9 @@ declare namespace JourneyApi {
 	export interface postJourneyDeploymentAppeventsOptions { 
 		"body"?: Models.AppEventRequest;
 	}
+	export interface postJourneyFlowsPathsQueryOptions { 
+		"body"?: Models.FlowPathsQuery;
+	}
 	export interface postJourneyOutcomesOptions { 
 		"body"?: Models.OutcomeRequest;
 	}
@@ -2841,11 +2851,15 @@ declare class KnowledgeApi {
   	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestPatch): Promise<void>; 
   	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, body: Models.UnansweredPhraseGroupPatchRequestBody): Promise<Models.UnansweredPhraseGroupUpdateResponse>; 
   	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
+  	postKnowledgeGuestSessionDocumentCopies(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentCopiesOptions): Promise<void>; 
   	postKnowledgeGuestSessionDocumentFeedback(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentFeedbackOptions): Promise<Models.KnowledgeGuestDocumentFeedback>; 
+  	postKnowledgeGuestSessionDocumentViews(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentViewsOptions): Promise<void>; 
+  	postKnowledgeGuestSessionDocumentsPresentations(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsPresentationsOptions): Promise<void>; 
   	postKnowledgeGuestSessionDocumentsSearch(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsSearchOptions): Promise<Models.KnowledgeDocumentGuestSearch>; 
   	postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeGuestDocumentSuggestion>; 
   	postKnowledgeGuestSessions(body: Models.KnowledgeGuestSession): Promise<Models.KnowledgeGuestSession>; 
   	postKnowledgeKnowledgebaseCategories(knowledgeBaseId: string, body: Models.CategoryCreateRequest): Promise<Models.CategoryResponse>; 
+  	postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentCopiesOptions): Promise<void>; 
   	postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentFeedbackOptions): Promise<Models.KnowledgeDocumentFeedbackResponse>; 
   	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId: string, documentId: string, body: Models.DocumentVariation): Promise<Models.DocumentVariation>; 
   	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentVersion): Promise<Models.KnowledgeDocumentVersion>; 
@@ -2853,6 +2867,7 @@ declare class KnowledgeApi {
   	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId: string, body: Models.KnowledgeDocumentReq): Promise<Models.KnowledgeDocumentResponse>; 
   	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkRemoveRequest): Promise<Models.BulkResponse>; 
   	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkUpdateRequest): Promise<Models.BulkResponse>; 
+  	postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsPresentationsOptions): Promise<void>; 
   	postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchOptions): Promise<Models.KnowledgeDocumentSearch>; 
   	postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeDocumentSuggestion>; 
   	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkVersionAddRequest): Promise<Models.BulkResponse>; 
@@ -3028,8 +3043,17 @@ declare namespace KnowledgeApi {
 	export interface patchKnowledgeKnowledgebaseDocumentsSearchSearchIdOptions { 
 		"body"?: Models.SearchUpdateRequest;
 	}
+	export interface postKnowledgeGuestSessionDocumentCopiesOptions { 
+		"body"?: Models.KnowledgeGuestDocumentCopy;
+	}
 	export interface postKnowledgeGuestSessionDocumentFeedbackOptions { 
 		"body"?: Models.KnowledgeGuestDocumentFeedback;
+	}
+	export interface postKnowledgeGuestSessionDocumentViewsOptions { 
+		"body"?: Models.KnowledgeGuestDocumentView;
+	}
+	export interface postKnowledgeGuestSessionDocumentsPresentationsOptions { 
+		"body"?: Models.KnowledgeGuestDocumentPresentation;
 	}
 	export interface postKnowledgeGuestSessionDocumentsSearchOptions { 
 		"expand"?: Array<string>;
@@ -3038,11 +3062,17 @@ declare namespace KnowledgeApi {
 	export interface postKnowledgeGuestSessionDocumentsSearchSuggestionsOptions { 
 		"body"?: Models.KnowledgeGuestDocumentSuggestionRequest;
 	}
+	export interface postKnowledgeKnowledgebaseDocumentCopiesOptions { 
+		"body"?: Models.KnowledgeDocumentCopy;
+	}
 	export interface postKnowledgeKnowledgebaseDocumentFeedbackOptions { 
 		"body"?: Models.KnowledgeDocumentFeedback;
 	}
 	export interface postKnowledgeKnowledgebaseDocumentViewsOptions { 
 		"body"?: Models.KnowledgeDocumentView;
+	}
+	export interface postKnowledgeKnowledgebaseDocumentsPresentationsOptions { 
+		"body"?: Models.KnowledgeDocumentPresentation;
 	}
 	export interface postKnowledgeKnowledgebaseDocumentsSearchOptions { 
 		"expand"?: Array<string>;
@@ -7512,6 +7542,19 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface AddressableEntityListing { 
+		"entities"?: Array<Models.AddressableEntity>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface AddressableEntityRef { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -9446,6 +9489,7 @@ declare namespace Models {
 		"queues"?: Array<Models.AddressableEntityRef>;
 		"kpiAssessments"?: Array<Models.KeyPerformanceIndicatorAssessment>;
 		"state"?: string;
+		"jobId"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"selfUri"?: string;
@@ -10106,12 +10150,14 @@ declare namespace Models {
 		"messageSeverities"?: Array<Models.SchedulerMessageTypeSeverity>;
 		"syncTimeOffProperties"?: Models.SetWrapperSyncTimeOffProperty;
 		"serviceGoalImpact"?: Models.WfmServiceGoalImpactSettings;
+		"allowWorkPlanPerMinuteGranularity"?: boolean;
 	}
 	
 	export interface BuSchedulingSettingsResponse { 
 		"messageSeverities"?: Array<Models.SchedulerMessageTypeSeverity>;
 		"syncTimeOffProperties"?: Array<string>;
 		"serviceGoalImpact"?: Models.WfmServiceGoalImpactSettings;
+		"allowWorkPlanPerMinuteGranularity"?: boolean;
 	}
 	
 	export interface BuSearchAgentSchedulesRequest { 
@@ -11324,6 +11370,11 @@ declare namespace Models {
 		"day": number;
 	}
 	
+	export interface CannedResponseLibraries { 
+		"libraryIds"?: Array<string>;
+		"mode"?: string;
+	}
+	
 	export interface Card { 
 		"title"?: string;
 		"description"?: string;
@@ -11590,6 +11641,7 @@ declare namespace Models {
 		"attachmentDeleted"?: boolean;
 		"fileUri"?: string;
 		"thread": Models.Entity;
+		"parentThread"?: Models.Entity;
 		"user"?: Models.AddressableEntityRef;
 		"toUser"?: Models.AddressableEntityRef;
 		"reactions"?: Array<Models.ChatReaction>;
@@ -21560,6 +21612,37 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface FlowPaths { 
+		"category": string;
+		"elements": { [key: string]: Models.FlowPathsElement; };
+	}
+	
+	export interface FlowPathsElement { 
+		"parentId"?: string;
+		"type": string;
+		"count": number;
+		"flows": Array<Models.FlowPathsFlowDetails>;
+		"flowOutcomeValue"?: string;
+		"flowMilestone"?: Models.AddressableEntityRef;
+		"flowOutcome"?: Models.AddressableEntityRef;
+	}
+	
+	export interface FlowPathsFlowDetails { 
+		"version": string;
+		"type": string;
+		"count": number;
+		"flow": Models.AddressableEntityRef;
+	}
+	
+	export interface FlowPathsFlowFilter { 
+		"id": string;
+	}
+	
+	export interface FlowPathsQuery { 
+		"category": string;
+		"flows": Array<Models.FlowPathsFlowFilter>;
+	}
+	
 	export interface FlowResultEntityListing { 
 		"entities"?: Array<Models.FlowExecutionDataQueryResult>;
 		"pageSize"?: number;
@@ -24140,6 +24223,66 @@ declare namespace Models {
 		"isMandatory"?: boolean;
 	}
 	
+	export interface JourneyView { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"version"?: number;
+		"createdBy"?: Models.JourneyViewUser;
+		"modifiedBy"?: Models.JourneyViewUser;
+		"interval"?: string;
+		"duration"?: string;
+		"elements": Array<Models.JourneyViewElement>;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyViewElement { 
+		"id": string;
+		"name": string;
+		"attributes": Models.JourneyViewElementAttributes;
+		"filter"?: Models.JourneyViewElementFilter;
+		"followedBy"?: Array<Models.JourneyViewLink>;
+	}
+	
+	export interface JourneyViewElementAttributes { 
+		"type": string;
+		"id"?: string;
+		"source"?: string;
+	}
+	
+	export interface JourneyViewElementFilter { 
+		"type": string;
+		"predicates": Array<Models.JourneyViewElementFilterPredicate>;
+	}
+	
+	export interface JourneyViewElementFilterPredicate { 
+		"dimension": string;
+		"values": Array<string>;
+		"operator"?: string;
+		"noValue"?: boolean;
+	}
+	
+	export interface JourneyViewLink { 
+		"id": string;
+		"constraintWithin"?: Models.JourneyViewLinkTimeConstraint;
+		"constraintAfter"?: Models.JourneyViewLinkTimeConstraint;
+		"eventCountType"?: string;
+		"joinAttributes"?: Array<string>;
+	}
+	
+	export interface JourneyViewLinkTimeConstraint { 
+		"unit"?: string;
+		"value"?: number;
+	}
+	
+	export interface JourneyViewUser { 
+		"id"?: string;
+		"emailAddress"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface JourneyWebActionEventsNotificationActionMap { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -24861,6 +25004,16 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface KnowledgeDocumentCopy { 
+		"documentVariationId": string;
+		"documentVersionId": string;
+		"searchId"?: string;
+		"queryType"?: string;
+		"sessionId"?: string;
+		"conversationContext"?: Models.KnowledgeConversationContext;
+		"application": Models.KnowledgeSearchClientApplication;
+	}
+	
 	export interface KnowledgeDocumentFeedback { 
 		"id"?: string;
 		"documentVariation": Models.EntityReference;
@@ -24933,6 +25086,15 @@ declare namespace Models {
 		"document"?: Models.KnowledgeGuestDocument;
 	}
 	
+	export interface KnowledgeDocumentPresentation { 
+		"documents": Array<Models.KnowledgeDocumentVersionVariationReference>;
+		"searchId"?: string;
+		"queryType"?: string;
+		"sessionId"?: string;
+		"conversationContext"?: Models.KnowledgeConversationContext;
+		"application": Models.KnowledgeSearchClientApplication;
+	}
+	
 	export interface KnowledgeDocumentReference { 
 		"id": string;
 		"knowledgeBase": Models.KnowledgeBaseReference;
@@ -24998,6 +25160,7 @@ declare namespace Models {
 		"results"?: Array<Models.KnowledgeDocumentSearchResult>;
 		"application"?: Models.KnowledgeSearchClientApplication;
 		"conversationContext"?: Models.KnowledgeConversationContextResponse;
+		"confidenceThreshold"?: number;
 	}
 	
 	export interface KnowledgeDocumentSearchRequest { 
@@ -25015,6 +25178,7 @@ declare namespace Models {
 		"sortBy"?: string;
 		"application"?: Models.KnowledgeSearchClientApplication;
 		"conversationContext"?: Models.KnowledgeConversationContext;
+		"confidenceThreshold"?: number;
 	}
 	
 	export interface KnowledgeDocumentSearchResult { 
@@ -25087,6 +25251,12 @@ declare namespace Models {
 		"nextUri"?: string;
 		"selfUri"?: string;
 		"previousUri"?: string;
+	}
+	
+	export interface KnowledgeDocumentVersionVariationReference { 
+		"documentId": string;
+		"documentVariationId": string;
+		"documentVersionId": string;
 	}
 	
 	export interface KnowledgeDocumentView { 
@@ -25170,6 +25340,15 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface KnowledgeGuestDocumentCopy { 
+		"documentVariationId": string;
+		"documentVersionId": string;
+		"searchId"?: string;
+		"queryType"?: string;
+		"sessionId"?: string;
+		"application"?: Models.KnowledgeGuestSearchClientApplication;
+	}
+	
 	export interface KnowledgeGuestDocumentFeedback { 
 		"id"?: string;
 		"documentVariation": Models.EntityReference;
@@ -25182,6 +25361,14 @@ declare namespace Models {
 		"queryType"?: string;
 		"state"?: string;
 		"document": Models.KnowledgeGuestDocumentVersionReference;
+		"application"?: Models.KnowledgeGuestSearchClientApplication;
+	}
+	
+	export interface KnowledgeGuestDocumentPresentation { 
+		"documents": Array<Models.KnowledgeDocumentVersionVariationReference>;
+		"searchId"?: string;
+		"queryType"?: string;
+		"sessionId"?: string;
 		"application"?: Models.KnowledgeGuestSearchClientApplication;
 	}
 	
@@ -25228,6 +25415,13 @@ declare namespace Models {
 	export interface KnowledgeGuestDocumentVersionReference { 
 		"id"?: string;
 		"versionId": string;
+	}
+	
+	export interface KnowledgeGuestDocumentView { 
+		"documentVariationId": string;
+		"documentVersionId": string;
+		"searchId"?: string;
+		"queryType"?: string;
 	}
 	
 	export interface KnowledgeGuestSearchClientApplication { 
@@ -33723,6 +33917,7 @@ declare namespace Models {
 		"includeScreenRecordings"?: boolean;
 		"clearExport"?: boolean;
 		"conversationQuery"?: Models.AsyncConversationQuery;
+		"agedConversationInterval"?: string;
 	}
 	
 	export interface RecordingMessagingMessage { 
@@ -44052,6 +44247,7 @@ declare namespace Models {
 		"defaultSkills"?: Array<Models.RoutingSkillReference>;
 		"assignmentEnabled"?: boolean;
 		"schema"?: Models.WorkitemSchema;
+		"serviceLevelTarget"?: number;
 		"selfUri"?: string;
 	}
 	
@@ -44073,6 +44269,7 @@ declare namespace Models {
 		"defaultTtlSeconds"?: number;
 		"assignmentEnabled"?: boolean;
 		"schemaId"?: string;
+		"serviceLevelTarget"?: number;
 		"description"?: string;
 		"divisionId"?: string;
 		"disableDefaultStatusCreation"?: boolean;
@@ -44142,6 +44339,7 @@ declare namespace Models {
 		"defaultTtlSeconds"?: number;
 		"assignmentEnabled"?: boolean;
 		"schemaId"?: string;
+		"serviceLevelTarget"?: number;
 		"description"?: string;
 		"defaultStatusId"?: string;
 		"schemaVersion"?: number;
@@ -44171,6 +44369,7 @@ declare namespace Models {
 		"defaultSkills"?: Array<Models.RoutingSkillReference>;
 		"assignmentEnabled"?: boolean;
 		"schema"?: Models.WorkitemSchema;
+		"serviceLevelTarget"?: number;
 		"version"?: number;
 		"selfUri"?: string;
 	}

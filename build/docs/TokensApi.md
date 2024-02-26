@@ -167,8 +167,6 @@ GET /api/v2/tokens/timeout
 
 Get the current Idle Token Timeout Value
 
-getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * directory:organization:admin
@@ -256,8 +254,6 @@ void (no response body)
 PUT /api/v2/tokens/timeout
 
 Update or Enable/Disable the Idle Token Timeout
-
-putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

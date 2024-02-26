@@ -68,11 +68,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#patchKnowledgeKnowledgebaseParseJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} | Send update to the parse operation
 [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Update a Knowledge base unanswered phrase group
 [**postKnowledgeDocumentuploads**](KnowledgeApi.html#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
+[**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentCopies) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies | Indicate that the document was copied by the user.
 [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentFeedback) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback | Give feedback on a document
+[**postKnowledgeGuestSessionDocumentViews**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentViews) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views | Create view event for a document.
+[**postKnowledgeGuestSessionDocumentsPresentations**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsPresentations) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations | Indicate that documents were presented to the user.
 [**postKnowledgeGuestSessionDocumentsSearch**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsSearch) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search | Search the documents in a guest session.
 [**postKnowledgeGuestSessionDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsSearchSuggestions) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions | Query the knowledge documents to provide suggestions for auto completion.
 [**postKnowledgeGuestSessions**](KnowledgeApi.html#postKnowledgeGuestSessions) | **POST** /api/v2/knowledge/guest/sessions | Create guest session
 [**postKnowledgeKnowledgebaseCategories**](KnowledgeApi.html#postKnowledgeKnowledgebaseCategories) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories | Create new category
+[**postKnowledgeKnowledgebaseDocumentCopies**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentCopies) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies | Indicate that the document was copied by the user.
 [**postKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentFeedback) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback | Give feedback on a document
 [**postKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVariations) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations | Create a variation for a document.
 [**postKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVersions) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions | Creates or restores a document version.
@@ -80,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocuments) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents | Create document.
 [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkRemove) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove | Bulk remove documents.
 [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update | Bulk update documents.
+[**postKnowledgeKnowledgebaseDocumentsPresentations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsPresentations) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations | Indicate that documents were presented to the user.
 [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search | Search the documents in a knowledge base.
 [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions | Query the knowledge documents to provide suggestions for auto completion.
 [**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add | Bulk add document versions.
@@ -3587,6 +3592,57 @@ apiInstance.postKnowledgeDocumentuploads(body)
 
 **UploadUrlResponse**
 
+<a name="postKnowledgeGuestSessionDocumentCopies"></a>
+
+# void postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts)
+
+
+POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies
+
+Indicate that the document was copied by the user.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts)
+  .then(() => {
+    console.log('postKnowledgeGuestSessionDocumentCopies returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeGuestSessionDocumentCopies');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | Knowledge guest session ID. |  |
+ **documentId** | **String** | Document ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postKnowledgeGuestSessionDocumentFeedback"></a>
 
 # KnowledgeGuestDocumentFeedback postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, opts)
@@ -3637,6 +3693,106 @@ apiInstance.postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, opt
 ### Return type
 
 **KnowledgeGuestDocumentFeedback**
+
+<a name="postKnowledgeGuestSessionDocumentViews"></a>
+
+# void postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts)
+
+
+POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views
+
+Create view event for a document.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts)
+  .then(() => {
+    console.log('postKnowledgeGuestSessionDocumentViews returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeGuestSessionDocumentViews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | Knowledge guest session ID. |  |
+ **documentId** | **String** | Document ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postKnowledgeGuestSessionDocumentsPresentations"></a>
+
+# void postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts)
+
+
+POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations
+
+Indicate that documents were presented to the user.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts)
+  .then(() => {
+    console.log('postKnowledgeGuestSessionDocumentsPresentations returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeGuestSessionDocumentsPresentations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | Knowledge guest session ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postKnowledgeGuestSessionDocumentsSearch"></a>
 
@@ -3834,6 +3990,62 @@ apiInstance.postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
 ### Return type
 
 **CategoryResponse**
+
+<a name="postKnowledgeKnowledgebaseDocumentCopies"></a>
+
+# void postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies
+
+Indicate that the document was copied by the user.
+
+Requires ALL permissions:
+
+* knowledge:documentCopy:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let documentId = "documentId_example"; // String | Document ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts)
+  .then(() => {
+    console.log('postKnowledgeKnowledgebaseDocumentCopies returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentCopies');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **documentId** | **String** | Document ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postKnowledgeKnowledgebaseDocumentFeedback"></a>
 
@@ -4215,6 +4427,60 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
 ### Return type
 
 **BulkResponse**
+
+<a name="postKnowledgeKnowledgebaseDocumentsPresentations"></a>
+
+# void postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations
+
+Indicate that documents were presented to the user.
+
+Requires ALL permissions:
+
+* knowledge:documentPresentation:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts)
+  .then(() => {
+    console.log('postKnowledgeKnowledgebaseDocumentsPresentations returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentsPresentations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postKnowledgeKnowledgebaseDocumentsSearch"></a>
 
