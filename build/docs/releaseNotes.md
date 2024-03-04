@@ -1,248 +1,401 @@
-Platform API version: 7822
+Platform API version: 7854
 
 
 
 
-# Major Changes (0 changes)
+# Major Changes (8 changes)
+
+**GET /api/v2/conversations/messaging/integrations/line/{integrationId}** (1 change)
+
+* Has been deprecated
+
+**PUT /api/v2/conversations/messaging/integrations/line/{integrationId}** (1 change)
+
+* Has been deprecated
+
+**DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}** (1 change)
+
+* Has been deprecated
+
+**GET /api/v2/conversations/messaging/integrations/line** (1 change)
+
+* Has been deprecated
+
+**POST /api/v2/outbound/contactlists/{contactListId}/export** (1 change)
+
+* Parameter body was added
+
+**GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}** (1 change)
+
+* Has been deprecated
+
+**Miner** (2 changes)
+
+* Property errorInfo was changed from ErrorInfo to MinerErrorInfo
+* Property warningInfo was changed from ErrorInfo to MinerErrorInfo
 
 
-# Minor Changes (64 changes)
+# Minor Changes (98 changes)
 
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/journey/flows/paths/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/journey/views/{viewId}** (3 changes)
+**/api/v2/integrations/speech/dialogflowcx/agents/{agentId}** (2 changes)
 
 * Path was added
 * Operation GET was added
+
+**/api/v2/integrations/speech/dialogflowcx/agents** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/lexv2/bot/{botId}/aliases** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/lexv2/bots** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/stt/engines/{engineId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/speech/stt/engines** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/integrations/unifiedcommunications/clientapps** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/flows/instances/settings/executiondata** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**/api/v2/flows/instances/settings/loglevels/default** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
 * Operation DELETE was added
 
-**/api/v2/journey/views/{viewId}/versions/{versionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/views/{viewId}/versions** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/journey/views** (3 changes)
+**/api/v2/flows/{flowId}/instances/settings/loglevels** (5 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
+* Operation PUT was added
+* Operation DELETE was added
 
-**CannedResponseLibraries** (1 change)
+**/api/v2/flows/instances/settings/loglevels/characteristics** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**CobrowseWebMessagingSession** (1 change)
+**/api/v2/flows/instances/settings/loglevels** (2 changes)
 
-* Enum value Unknown was added to property communicationType
+* Path was added
+* Operation GET was added
 
-**Conversation** (1 change)
+**/api/v2/settings/executiondata** (3 changes)
 
-* Enum value parked was added to property state
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
 
-**CallMediaParticipant** (1 change)
+**/api/v2/taskmanagement/worktypes/{worktypeId}/statuses** (1 change)
 
-* Enum value parked was added to property state
+* Operation get was added. Summary: Get list of statuses for this worktype.
 
-**MediaParticipantRequest** (1 change)
-
-* Enum value parked was added to property state
-
-**CallbackMediaParticipant** (1 change)
-
-* Enum value parked was added to property state
-
-**ChatMediaParticipant** (1 change)
-
-* Enum value parked was added to property state
-
-**CobrowseMediaParticipant** (1 change)
-
-* Enum value parked was added to property state
-
-**EmailMediaParticipant** (1 change)
-
-* Enum value parked was added to property state
-
-**MessageMediaParticipant** (1 change)
-
-* Enum value parked was added to property state
-
-**KnowledgeDocumentCopy** (1 change)
+**MessagingCommunicationAnsweredEvent** (1 change)
 
 * Model was added
 
-**KnowledgeDocumentPresentation** (1 change)
+**MessagingCommunicationDispositionAppliedEvent** (1 change)
 
 * Model was added
 
-**KnowledgeDocumentVersionVariationReference** (1 change)
+**MessagingCommunicationEndedEvent** (1 change)
 
 * Model was added
 
-**KnowledgeDocumentSearch** (1 change)
-
-* Optional property confidenceThreshold was added
-
-**KnowledgeDocumentSearchRequest** (1 change)
-
-* Optional property confidenceThreshold was added
-
-**KnowledgeGuestDocumentView** (1 change)
+**MessagingEndTransferEvent** (1 change)
 
 * Model was added
 
-**KnowledgeGuestDocumentCopy** (1 change)
+**MessagingExternalEstablishedEvent** (1 change)
 
 * Model was added
 
-**KnowledgeGuestDocumentPresentation** (1 change)
+**MessagingFlowEstablishedEvent** (1 change)
 
 * Model was added
 
-**RecordingJobsQuery** (1 change)
-
-* Optional property agedConversationInterval was added
-
-**AlertNotification** (1 change)
-
-* Enum value Push was added to property notificationTypes
-
-**BenefitAssessment** (1 change)
-
-* Optional property jobId was added
-
-**BuSchedulingSettingsResponse** (1 change)
-
-* Optional property allowWorkPlanPerMinuteGranularity was added
-
-**BuSchedulingSettingsRequest** (1 change)
-
-* Optional property allowWorkPlanPerMinuteGranularity was added
-
-**ChatMessageResponse** (1 change)
-
-* Optional property parentThread was added
-
-**FlowPaths** (1 change)
+**MessagingHoldUpdatedEvent** (1 change)
 
 * Model was added
 
-**FlowPathsElement** (1 change)
+**MessagingInitialConfiguration** (1 change)
 
 * Model was added
 
-**FlowPathsFlowDetails** (1 change)
+**MessagingProgressTransferEvent** (1 change)
 
 * Model was added
 
-**FlowPathsFlowFilter** (1 change)
+**MessagingRoutingEstablishedEvent** (1 change)
 
 * Model was added
 
-**FlowPathsQuery** (1 change)
+**MessagingRoutingTransferEvent** (1 change)
 
 * Model was added
 
-**JourneyView** (1 change)
+**MessagingUserEstablishedEvent** (1 change)
 
 * Model was added
 
-**JourneyViewElement** (1 change)
+**MessagingUserTransferEvent** (1 change)
 
 * Model was added
 
-**JourneyViewElementAttributes** (1 change)
+**ConversationAggregationQuery** (1 change)
+
+* Enum value nBotInteractions was added to property metrics
+
+**ConversationAggregationView** (1 change)
+
+* Enum value nBotInteractions was added to property target
+
+**ConversationDetailQueryPredicate** (1 change)
+
+* Enum value nBotInteractions was added to property metric
+
+**ViewFilter** (1 change)
+
+* Optional property agentEmpathyScore was added
+
+**Campaign** (1 change)
+
+* Optional property maxCallsPerAgent was added
+
+**ContactBulkSearchCriteria** (1 change)
 
 * Model was added
 
-**JourneyViewElementFilter** (1 change)
+**ContactsExportRequest** (1 change)
 
 * Model was added
 
-**JourneyViewElementFilterPredicate** (1 change)
+**DialogflowCXAgent** (1 change)
 
 * Model was added
 
-**JourneyViewLink** (1 change)
+**DialogflowCXEnvironment** (1 change)
 
 * Model was added
 
-**JourneyViewLinkTimeConstraint** (1 change)
+**DialogflowCXProject** (1 change)
 
 * Model was added
 
-**JourneyViewUser** (1 change)
+**DialogflowCXAgentSummary** (1 change)
 
 * Model was added
 
-**AddressableEntityListing** (1 change)
+**DialogflowCXAgentSummaryEntityListing** (1 change)
 
 * Model was added
 
-**Worktype** (1 change)
+**LexV2Bot** (1 change)
 
-* Optional property serviceLevelTarget was added
+* Model was added
 
-**WorktypeUpdate** (1 change)
+**LexV2BotAlias** (1 change)
 
-* Optional property serviceLevelTarget was added
+* Model was added
 
-**WorktypeVersion** (1 change)
+**LexV2Intent** (1 change)
 
-* Optional property serviceLevelTarget was added
+* Model was added
 
-**WorktypeCreate** (1 change)
+**LexV2Slot** (1 change)
 
-* Optional property serviceLevelTarget was added
+* Model was added
+
+**LexV2BotAliasEntityListing** (1 change)
+
+* Model was added
+
+**LexV2BotEntityListing** (1 change)
+
+* Model was added
+
+**SttEngineEntity** (1 change)
+
+* Model was added
+
+**SttEngineEntityListing** (1 change)
+
+* Model was added
+
+**MinerErrorInfo** (1 change)
+
+* Model was added
+
+**EvaluationFormResponse** (1 change)
+
+* Optional property publishedVersions was added
+
+**EvaluationCreateBody** (1 change)
+
+* Model was added
+
+**EvaluationCreateCalibration** (1 change)
+
+* Model was added
+
+**EvaluationCreateConversation** (1 change)
+
+* Model was added
+
+**EvaluationCreateEvalForm** (1 change)
+
+* Model was added
+
+**EvaluationCreateQueue** (1 change)
+
+* Model was added
+
+**EvaluationCreateUser** (1 change)
+
+* Model was added
+
+**CommonRuleBulkUpdateNotificationsRequest** (2 changes)
+
+* Optional property typesToAdd was added
+* Optional property typesToRemove was added
+
+**UnifiedCommunicationsIntegration** (1 change)
+
+* Model was added
+
+**UnifiedCommunicationsIntegrationListing** (1 change)
+
+* Model was added
+
+**Dependency** (1 change)
+
+* Enum value SURVEYFORM was added to property type
+
+**DependencyObject** (1 change)
+
+* Enum value SURVEYFORM was added to property type
+
+**ConversationAsyncAggregationQuery** (1 change)
+
+* Enum value nBotInteractions was added to property metrics
+
+**MetadataItem** (1 change)
+
+* Model was added
+
+**ExecutionDataFlowSettingsResponse** (1 change)
+
+* Model was added
+
+**ExecutionDataSettingsRequest** (1 change)
+
+* Model was added
+
+**FlowCharacteristics** (1 change)
+
+* Model was added
+
+**FlowLogLevel** (1 change)
+
+* Model was added
+
+**FlowSettingsResponse** (1 change)
+
+* Model was added
+
+**FlowLogLevelRequest** (1 change)
+
+* Model was added
+
+**FlowLogLevelCharacteristicsDefinition** (1 change)
+
+* Model was added
+
+**FlowLogLevelCharacteristicsDefinitions** (1 change)
+
+* Model was added
+
+**FlowSettingsResponseEntityListing** (1 change)
+
+* Model was added
+
+**ExecutionDataGlobalSettingsResponse** (1 change)
+
+* Model was added
+
+**WorkitemStatusListing** (1 change)
+
+* Model was added
 
 
-# Point Changes (4 changes)
+# Point Changes (13 changes)
 
-**GET /api/v2/externalcontacts/scan/contacts** (1 change)
+**GET /api/v2/conversations/messaging/integrations/line/{integrationId}** (2 changes)
 
-* Description was changed for parameter limit
+* Description was changed
+* Summary was changed
 
-**GET /api/v2/externalcontacts/scan/organizations** (1 change)
+**PUT /api/v2/conversations/messaging/integrations/line/{integrationId}** (2 changes)
 
-* Description was changed for parameter limit
+* Description was changed
+* Summary was changed
 
-**GET /api/v2/externalcontacts/scan/notes** (1 change)
+**DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}** (2 changes)
 
-* Description was changed for parameter limit
+* Description was changed
+* Summary was changed
 
-**GET /api/v2/externalcontacts/scan/relationships** (1 change)
+**GET /api/v2/conversations/messaging/integrations/line** (2 changes)
 
-* Description was changed for parameter limit
+* Description was changed
+* Summary was changed
+
+**GET /api/v2/quality/forms/evaluations** (1 change)
+
+* Description was changed
+
+**GET /api/v2/quality/forms/surveys** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/quality/forms** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}** (2 changes)
+
+* Description was changed
+* Summary was changed

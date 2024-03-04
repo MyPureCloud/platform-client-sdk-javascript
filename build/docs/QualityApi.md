@@ -27,14 +27,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityEvaluatorsActivity**](QualityApi.html#getQualityEvaluatorsActivity) | **GET** /api/v2/quality/evaluators/activity | Get an evaluator activity
 [**getQualityForm**](QualityApi.html#getQualityForm) | **GET** /api/v2/quality/forms/{formId} | Get an evaluation form
 [**getQualityFormVersions**](QualityApi.html#getQualityFormVersions) | **GET** /api/v2/quality/forms/{formId}/versions | Gets all the revisions for a specific evaluation.
-[**getQualityForms**](QualityApi.html#getQualityForms) | **GET** /api/v2/quality/forms | Get the list of evaluation forms
+[**getQualityForms**](QualityApi.html#getQualityForms) | **GET** /api/v2/quality/forms | Get the list of evaluation forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding evaluation form.
 [**getQualityFormsEvaluation**](QualityApi.html#getQualityFormsEvaluation) | **GET** /api/v2/quality/forms/evaluations/{formId} | Get an evaluation form
 [**getQualityFormsEvaluationVersions**](QualityApi.html#getQualityFormsEvaluationVersions) | **GET** /api/v2/quality/forms/evaluations/{formId}/versions | Gets all the revisions for a specific evaluation.
 [**getQualityFormsEvaluations**](QualityApi.html#getQualityFormsEvaluations) | **GET** /api/v2/quality/forms/evaluations | Get the list of evaluation forms
 [**getQualityFormsEvaluationsBulkContexts**](QualityApi.html#getQualityFormsEvaluationsBulkContexts) | **GET** /api/v2/quality/forms/evaluations/bulk/contexts | Retrieve a list of the latest published evaluation form versions by context ids
 [**getQualityFormsSurvey**](QualityApi.html#getQualityFormsSurvey) | **GET** /api/v2/quality/forms/surveys/{formId} | Get a survey form
 [**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | **GET** /api/v2/quality/forms/surveys/{formId}/versions | Gets all the revisions for a specific survey.
-[**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | **GET** /api/v2/quality/forms/surveys | Get the list of survey forms
+[**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | **GET** /api/v2/quality/forms/surveys | Get the list of survey forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding survey form.
 [**getQualityFormsSurveysBulk**](QualityApi.html#getQualityFormsSurveysBulk) | **GET** /api/v2/quality/forms/surveys/bulk | Retrieve a list of survey forms by their ids
 [**getQualityFormsSurveysBulkContexts**](QualityApi.html#getQualityFormsSurveysBulkContexts) | **GET** /api/v2/quality/forms/surveys/bulk/contexts | Retrieve a list of the latest form versions by context ids
 [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | **GET** /api/v2/quality/publishedforms/{formId} | Get the published evaluation forms.
@@ -1251,7 +1251,7 @@ apiInstance.getQualityFormVersions(formId, opts)
 
 GET /api/v2/quality/forms
 
-Get the list of evaluation forms
+Get the list of evaluation forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding evaluation form.
 
 Requires ANY permissions:
 
@@ -1427,7 +1427,7 @@ GET /api/v2/quality/forms/evaluations
 
 Get the list of evaluation forms
 
-By default, "published" field is always returned as false for all evaluation forms. If you set "expand=publishHistory", then you will be able to get published versions for each corresponding evaluation form. In addition, "questionGroups", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+By default, "published" field is always returned as false for all evaluation forms. If you set "expand=publishHistory", then you will be able to get published versions for each corresponding evaluation form. In addition, "questionGroups", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
 
 Requires ANY permissions:
 
@@ -1649,7 +1649,7 @@ apiInstance.getQualityFormsSurveyVersions(formId, opts)
 
 GET /api/v2/quality/forms/surveys
 
-Get the list of survey forms
+Get the list of survey forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding survey form.
 
 Requires ALL permissions:
 

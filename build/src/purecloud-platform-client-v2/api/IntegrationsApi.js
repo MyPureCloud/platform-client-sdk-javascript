@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -913,6 +913,57 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get details about a Dialogflow CX agent
+	 * 
+	 * @param {String} agentId The agent ID
+	 */
+	getIntegrationsSpeechDialogflowcxAgent(agentId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowcxAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflowcx/agents/{agentId}', 
+			'GET', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Dialogflow CX agents in the customers' Google accounts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on agent name
+	 */
+	getIntegrationsSpeechDialogflowcxAgents(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflowcx/agents', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about a Lex bot alias
 	 * 
 	 * @param {String} aliasId The alias ID
@@ -996,6 +1047,89 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get details about a Lex V2 bot alias
+	 * 
+	 * @param {String} aliasId The Alias ID
+	 */
+	getIntegrationsSpeechLexv2BotAlias(aliasId) { 
+		// verify the required parameter 'aliasId' is set
+		if (aliasId === undefined || aliasId === null) {
+			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexv2BotAlias';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}', 
+			'GET', 
+			{ 'aliasId': aliasId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of aliases for a Lex V2 bot
+	 * 
+	 * @param {String} botId The Bot ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.status Filter on alias status
+	 * @param {String} opts.name Filter on alias name
+	 */
+	getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechLexv2BotBotIdAliases';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bot/{botId}/aliases', 
+			'GET', 
+			{ 'botId': botId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'status': opts['status'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Lex V2 bots
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on bot name
+	 */
+	getIntegrationsSpeechLexv2Bots(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bots', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Nuance bot in the specified Integration
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
@@ -1003,7 +1137,6 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {Object} opts.targetChannel targetChannel
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -1037,7 +1170,6 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1073,7 +1205,6 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1111,7 +1242,6 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -1140,7 +1270,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1171,7 +1300,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -1188,6 +1316,57 @@ class IntegrationsApi {
 			'GET', 
 			{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a STT engine
+	 * 
+	 * @param {String} engineId The engine ID
+	 */
+	getIntegrationsSpeechSttEngine(engineId) { 
+		// verify the required parameter 'engineId' is set
+		if (engineId === undefined || engineId === null) {
+			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechSttEngine';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/stt/engines/{engineId}', 
+			'GET', 
+			{ 'engineId': engineId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of STT engines enabled for org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on engine name
+	 */
+	getIntegrationsSpeechSttEngines(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/stt/engines', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -1406,6 +1585,60 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/types', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * UC integration client application configuration.
+	 * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+	 * @param {String} ucIntegrationId 3rd Party Service Type
+	 */
+	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationsClientapp';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}', 
+			'GET', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List UC integration client application configurations.
+	 * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 */
+	getIntegrationsUnifiedcommunicationsClientapps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/clientapps', 
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
@@ -1825,7 +2058,6 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {String} opts.body targetChannel
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -1861,7 +2093,6 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -1890,7 +2121,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -2040,7 +2270,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set

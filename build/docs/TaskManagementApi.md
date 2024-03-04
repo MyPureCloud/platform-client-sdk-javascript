@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTaskmanagementWorktype**](TaskManagementApi.html#getTaskmanagementWorktype) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId} | Get a worktype
 [**getTaskmanagementWorktypeHistory**](TaskManagementApi.html#getTaskmanagementWorktypeHistory) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/history | Get a listing of a worktype's attribute change history
 [**getTaskmanagementWorktypeStatus**](TaskManagementApi.html#getTaskmanagementWorktypeStatus) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Get a status
+[**getTaskmanagementWorktypeStatuses**](TaskManagementApi.html#getTaskmanagementWorktypeStatuses) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Get list of statuses for this worktype.
 [**getTaskmanagementWorktypeVersion**](TaskManagementApi.html#getTaskmanagementWorktypeVersion) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion} | Get a version of a worktype
 [**getTaskmanagementWorktypeVersions**](TaskManagementApi.html#getTaskmanagementWorktypeVersions) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/versions | Get all versions of a worktype
 [**patchTaskmanagementWorkbin**](TaskManagementApi.html#patchTaskmanagementWorkbin) | **PATCH** /api/v2/taskmanagement/workbins/{workbinId} | Update the attributes of a workbin
@@ -1270,6 +1271,58 @@ apiInstance.getTaskmanagementWorktypeStatus(worktypeId, statusId)
 ### Return type
 
 **WorkitemStatus**
+
+<a name="getTaskmanagementWorktypeStatuses"></a>
+
+# WorkitemStatusListing getTaskmanagementWorktypeStatuses(worktypeId)
+
+
+GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses
+
+Get list of statuses for this worktype.
+
+getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* workitems:status:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+
+apiInstance.getTaskmanagementWorktypeStatuses(worktypeId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorktypeStatuses success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorktypeStatuses');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkitemStatusListing**
 
 <a name="getTaskmanagementWorktypeVersion"></a>
 

@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -3036,8 +3036,12 @@ class OutboundApi {
 	 * Initiate the export of a contact list.
 	 * Returns 200 if received OK.
 	 * @param {String} contactListId ContactList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Export information to get
 	 */
-	postOutboundContactlistExport(contactListId) { 
+	postOutboundContactlistExport(contactListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistExport';
@@ -3050,7 +3054,7 @@ class OutboundApi {
 			{  },
 			{  },
 			{  },
-			null, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

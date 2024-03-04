@@ -5,7 +5,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -41,6 +41,27 @@ class SettingsApi {
 	}
 
 	/**
+	 * Get the execution history enabled setting.
+	 * Get the execution history enabled setting.
+	 * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSettingsExecutiondata() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/settings/executiondata', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Patch email Contact Center settings
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -58,6 +79,32 @@ class SettingsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Edit the execution history on off setting.
+	 * Edit the execution history on off setting.
+	 * @param {Object} body New Execution Data Setting
+	 * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchSettingsExecutiondata(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchSettingsExecutiondata';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/settings/executiondata', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

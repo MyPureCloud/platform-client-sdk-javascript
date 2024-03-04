@@ -213,9 +213,11 @@ docs/deleteExternalcontactsOrganizationTrustor-example.txt
 docs/deleteExternalcontactsRelationship-example.txt
 docs/deleteFaxDocument-example.txt
 docs/deleteFlow-example.txt
+docs/deleteFlowInstancesSettingsLoglevels-example.txt
 docs/deleteFlows-example.txt
 docs/deleteFlowsDatatable-example.txt
 docs/deleteFlowsDatatableRow-example.txt
+docs/deleteFlowsInstancesSettingsLoglevelsDefault-example.txt
 docs/deleteFlowsMilestone-example.txt
 docs/deleteGreeting-example.txt
 docs/deleteGroup-example.txt
@@ -729,6 +731,7 @@ docs/getFieldconfig-example.txt
 docs/getFieldconfig-example.txt
 docs/getFlow-example.txt
 docs/getFlowHistoryHistoryId-example.txt
+docs/getFlowInstancesSettingsLoglevels-example.txt
 docs/getFlowLatestconfiguration-example.txt
 docs/getFlowVersion-example.txt
 docs/getFlowVersionConfiguration-example.txt
@@ -751,6 +754,10 @@ docs/getFlowsExecution-example.txt
 docs/getFlowsInstance-example.txt
 docs/getFlowsInstancesJob-example.txt
 docs/getFlowsInstancesQuerycapabilities-example.txt
+docs/getFlowsInstancesSettingsExecutiondata-example.txt
+docs/getFlowsInstancesSettingsLoglevels-example.txt
+docs/getFlowsInstancesSettingsLoglevelsCharacteristics-example.txt
+docs/getFlowsInstancesSettingsLoglevelsDefault-example.txt
 docs/getFlowsJob-example.txt
 docs/getFlowsMilestone-example.txt
 docs/getFlowsMilestones-example.txt
@@ -866,15 +873,22 @@ docs/getIntegrationsCredentials-example.txt
 docs/getIntegrationsCredentialsTypes-example.txt
 docs/getIntegrationsSpeechDialogflowAgent-example.txt
 docs/getIntegrationsSpeechDialogflowAgents-example.txt
+docs/getIntegrationsSpeechDialogflowcxAgent-example.txt
+docs/getIntegrationsSpeechDialogflowcxAgents-example.txt
 docs/getIntegrationsSpeechLexBotAlias-example.txt
 docs/getIntegrationsSpeechLexBotBotIdAliases-example.txt
 docs/getIntegrationsSpeechLexBots-example.txt
+docs/getIntegrationsSpeechLexv2BotAlias-example.txt
+docs/getIntegrationsSpeechLexv2BotBotIdAliases-example.txt
+docs/getIntegrationsSpeechLexv2Bots-example.txt
 docs/getIntegrationsSpeechNuanceNuanceIntegrationIdBot-example.txt
 docs/getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob-example.txt
 docs/getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults-example.txt
 docs/getIntegrationsSpeechNuanceNuanceIntegrationIdBots-example.txt
 docs/getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob-example.txt
 docs/getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults-example.txt
+docs/getIntegrationsSpeechSttEngine-example.txt
+docs/getIntegrationsSpeechSttEngines-example.txt
 docs/getIntegrationsSpeechTtsEngine-example.txt
 docs/getIntegrationsSpeechTtsEngineVoice-example.txt
 docs/getIntegrationsSpeechTtsEngineVoices-example.txt
@@ -883,6 +897,8 @@ docs/getIntegrationsSpeechTtsSettings-example.txt
 docs/getIntegrationsType-example.txt
 docs/getIntegrationsTypeConfigschema-example.txt
 docs/getIntegrationsTypes-example.txt
+docs/getIntegrationsUnifiedcommunicationsClientapp-example.txt
+docs/getIntegrationsUnifiedcommunicationsClientapps-example.txt
 docs/getIntegrationsUserapps-example.txt
 docs/getIpranges-example.txt
 docs/getJourneyActionmap-example.txt
@@ -1266,6 +1282,7 @@ docs/getSearch-example.txt
 docs/getSearch-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSearchSuggest-example.txt
+docs/getSettingsExecutiondata-example.txt
 docs/getSpeechandtextanalyticsConversation-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturl-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturls-example.txt
@@ -1309,6 +1326,7 @@ docs/getTaskmanagementWorkitemsSchemas-example.txt
 docs/getTaskmanagementWorktype-example.txt
 docs/getTaskmanagementWorktypeHistory-example.txt
 docs/getTaskmanagementWorktypeStatus-example.txt
+docs/getTaskmanagementWorktypeStatuses-example.txt
 docs/getTaskmanagementWorktypeVersion-example.txt
 docs/getTaskmanagementWorktypeVersions-example.txt
 docs/getTeam-example.txt
@@ -1613,6 +1631,7 @@ docs/patchEmailsSettings-example.txt
 docs/patchEmailsSettings-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchExternalcontactsContactIdentifiers-example.txt
+docs/patchFlowsInstancesSettingsExecutiondata-example.txt
 docs/patchGeolocationsSettings-example.txt
 docs/patchIntegration-example.txt
 docs/patchIntegrationsAction-example.txt
@@ -1669,6 +1688,7 @@ docs/patchScimGroup-example.txt
 docs/patchScimUser-example.txt
 docs/patchScimV2Group-example.txt
 docs/patchScimV2User-example.txt
+docs/patchSettingsExecutiondata-example.txt
 docs/patchSpeechandtextanalyticsSettings-example.txt
 docs/patchTaskmanagementWorkbin-example.txt
 docs/patchTaskmanagementWorkitem-example.txt
@@ -1959,6 +1979,7 @@ docs/postExternalcontactsOrganizations-example.txt
 docs/postExternalcontactsOrganizationsSchemas-example.txt
 docs/postExternalcontactsRelationships-example.txt
 docs/postFlowHistory-example.txt
+docs/postFlowInstancesSettingsLoglevels-example.txt
 docs/postFlowVersions-example.txt
 docs/postFlows-example.txt
 docs/postFlowsActionsCheckin-example.txt
@@ -2420,8 +2441,10 @@ docs/putExternalcontactsOrganizationsSchema-example.txt
 docs/putExternalcontactsRelationship-example.txt
 docs/putFaxDocument-example.txt
 docs/putFlow-example.txt
+docs/putFlowInstancesSettingsLoglevels-example.txt
 docs/putFlowsDatatable-example.txt
 docs/putFlowsDatatableRow-example.txt
+docs/putFlowsInstancesSettingsLoglevelsDefault-example.txt
 docs/putFlowsMilestone-example.txt
 docs/putFlowsOutcome-example.txt
 docs/putGamificationProfile-example.txt

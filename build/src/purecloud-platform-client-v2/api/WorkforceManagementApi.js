@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -526,9 +526,10 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get status of the modeling job
-	 * 
+	 * To get status of the modeling job.
+	 * This Endpoint is Deprecated, and not recommended to be used.
 	 * @param {String} jobId The id of the modeling job
+	 * @deprecated
 	 */
 	getWorkforcemanagementAdhocmodelingjob(jobId) { 
 		// verify the required parameter 'jobId' is set

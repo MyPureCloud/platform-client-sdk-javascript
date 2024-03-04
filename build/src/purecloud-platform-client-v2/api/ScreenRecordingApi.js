@@ -5,7 +5,7 @@ class ScreenRecordingApi {
 	/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**

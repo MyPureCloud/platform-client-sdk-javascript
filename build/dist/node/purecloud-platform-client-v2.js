@@ -402,7 +402,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 188.1.0
+ * @version 189.0.0
  */
 class ApiClient {
 	/**
@@ -1821,7 +1821,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -2482,7 +2482,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -5095,7 +5095,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -5499,6 +5499,32 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Deletes a log level for a flow by flow id.
+	 * Deletes the associated log level for a flow by flow id
+	 * @param {String} flowId The flow id to delete the loglevel for
+	 * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteFlowInstancesSettingsLoglevels(flowId) { 
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling deleteFlowInstancesSettingsLoglevels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/instances/settings/loglevels', 
+			'DELETE', 
+			{ 'flowId': flowId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Batch-delete a list of flows
 	 * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 	 * @param {Array.<String>} id List of Flow IDs
@@ -5572,6 +5598,27 @@ class ArchitectApi {
 			'/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
 			'DELETE', 
 			{ 'datatableId': datatableId,'rowId': rowId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Resets the org log level to default, base
+	 * Resets the org log level to default, base
+	 * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteFlowsInstancesSettingsLoglevelsDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels/default', 
+			'DELETE', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -6710,6 +6757,36 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Retrieves the log level for a flow by flow id.
+	 * Retrieves the log level for a flow by flow id.
+	 * @param {String} flowId The flow id to get the loglevel for
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowInstancesSettingsLoglevels(flowId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling getFlowInstancesSettingsLoglevels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/instances/settings/loglevels', 
+			'GET', 
+			{ 'flowId': flowId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the latest configuration for flow
 	 * 
 	 * @param {String} flowId Flow ID
@@ -7338,7 +7415,6 @@ class ArchitectApi {
 	 * @param {String} instanceId Instance ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various details.
-	 * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstance(instanceId, opts) { 
 		opts = opts || {};
@@ -7366,7 +7442,6 @@ class ArchitectApi {
 	 * Get the status and/or results of an asynchronous flow execution data retrieval job
 	 * 
 	 * @param {String} jobId The asynchronous job ID
-	 * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -7393,7 +7468,6 @@ class ArchitectApi {
 	 * Returns the queryable parameters that can be used to build a query for execution data.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
-	 * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesQuerycapabilities(opts) { 
 		opts = opts || {};
@@ -7404,6 +7478,100 @@ class ArchitectApi {
 			'GET', 
 			{  },
 			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the execution history enabled setting.
+	 * Get the execution history enabled setting.
+	 * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesSettingsExecutiondata() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/executiondata', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of LogLevels for the organization.
+	 * Returns a paged set of LogLevels per flow id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesSettingsLoglevels(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels', 
+			'GET', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the available flow log level characteristics for this organization.
+	 * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+	 * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesSettingsLoglevelsCharacteristics() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels/characteristics', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns the flow default log level.
+	 * Returns the flow default log level which will be used if no specific flow id log level is found.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesSettingsLoglevelsDefault(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels/default', 
+			'GET', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -7675,6 +7843,32 @@ class ArchitectApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Edit the execution history enabled setting.
+	 * Edit the execution history enabled setting.
+	 * @param {Object} body New Execution Data Setting
+	 * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchFlowsInstancesSettingsExecutiondata(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchFlowsInstancesSettingsExecutiondata';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/executiondata', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -8091,6 +8285,41 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Set the logLevel for a particular flow id
+	 * Assigns a new loglevel to a flow id
+	 * @param {String} flowId The flow id to set the loglevel for
+	 * @param {Object} body New LogLevel settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postFlowInstancesSettingsLoglevels(flowId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling postFlowInstancesSettingsLoglevels';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowInstancesSettingsLoglevels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/instances/settings/loglevels', 
+			'POST', 
+			{ 'flowId': flowId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create flow version
 	 * 
 	 * @param {String} flowId Flow ID
@@ -8444,7 +8673,6 @@ class ArchitectApi {
 	 * @param {Object} body Requested Flow Ids
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
-	 * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesJobs(body, opts) { 
 		opts = opts || {};
@@ -8475,7 +8703,6 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.indexOnly indexes only
 	 * @param {Number} opts.pageSize number of results to return (default to 50)
-	 * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesQuery(body, opts) { 
 		opts = opts || {};
@@ -8818,6 +9045,41 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Edit the logLevel for a particular flow id
+	 * Updates the loglevel for a flow id
+	 * @param {String} flowId The flow id to edit the loglevel for
+	 * @param {Object} body New LogLevel settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putFlowInstancesSettingsLoglevels(flowId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling putFlowInstancesSettingsLoglevels';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putFlowInstancesSettingsLoglevels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/instances/settings/loglevels', 
+			'PUT', 
+			{ 'flowId': flowId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates a specific datatable by id
 	 * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 	 * @param {String} datatableId id of datatable
@@ -8879,6 +9141,36 @@ class ArchitectApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Edit the flow default log level.
+	 * Edit the flow default log level.
+	 * @param {Object} body New LogLevel settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putFlowsInstancesSettingsLoglevelsDefault(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putFlowsInstancesSettingsLoglevelsDefault';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels/default', 
+			'PUT', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -8949,7 +9241,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -9120,7 +9412,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -10350,7 +10642,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -10430,7 +10722,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -10500,7 +10792,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -11235,7 +11527,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -11812,7 +12104,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -12894,7 +13186,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -13135,9 +13427,10 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Delete a LINE messenger integration
-	 * 
+	 * Delete a LINE messenger integration (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {String} integrationId Integration ID
+	 * @deprecated
 	 */
 	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
@@ -15146,14 +15439,15 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get a list of LINE messenger Integrations
-	 * 
+	 * Get a list of LINE messenger Integrations (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @deprecated
 	 */
 	getConversationsMessagingIntegrationsLine(opts) { 
 		opts = opts || {};
@@ -15174,11 +15468,12 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get a LINE messenger integration
-	 * 
+	 * Get a LINE messenger integration (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @deprecated
 	 */
 	getConversationsMessagingIntegrationsLineIntegrationId(integrationId, opts) { 
 		opts = opts || {};
@@ -19862,10 +20157,11 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Update a LINE messenger integration
-	 * 
+	 * Update a LINE messenger integration (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body LineIntegrationRequest
+	 * @deprecated
 	 */
 	putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
@@ -20062,7 +20358,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -20148,7 +20444,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -20200,7 +20496,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -20265,7 +20561,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -20361,7 +20657,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -22319,7 +22615,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -22490,7 +22786,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -22674,7 +22970,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -24760,7 +25056,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -24890,7 +25186,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -25021,7 +25317,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -25476,7 +25772,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -25995,7 +26291,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -26856,7 +27152,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -27023,7 +27319,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -27931,6 +28227,57 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get details about a Dialogflow CX agent
+	 * 
+	 * @param {String} agentId The agent ID
+	 */
+	getIntegrationsSpeechDialogflowcxAgent(agentId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowcxAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflowcx/agents/{agentId}', 
+			'GET', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Dialogflow CX agents in the customers' Google accounts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on agent name
+	 */
+	getIntegrationsSpeechDialogflowcxAgents(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflowcx/agents', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about a Lex bot alias
 	 * 
 	 * @param {String} aliasId The alias ID
@@ -28014,6 +28361,89 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get details about a Lex V2 bot alias
+	 * 
+	 * @param {String} aliasId The Alias ID
+	 */
+	getIntegrationsSpeechLexv2BotAlias(aliasId) { 
+		// verify the required parameter 'aliasId' is set
+		if (aliasId === undefined || aliasId === null) {
+			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexv2BotAlias';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}', 
+			'GET', 
+			{ 'aliasId': aliasId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of aliases for a Lex V2 bot
+	 * 
+	 * @param {String} botId The Bot ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.status Filter on alias status
+	 * @param {String} opts.name Filter on alias name
+	 */
+	getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechLexv2BotBotIdAliases';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bot/{botId}/aliases', 
+			'GET', 
+			{ 'botId': botId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'status': opts['status'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Lex V2 bots
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on bot name
+	 */
+	getIntegrationsSpeechLexv2Bots(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bots', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Nuance bot in the specified Integration
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
@@ -28021,7 +28451,6 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {Object} opts.targetChannel targetChannel
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -28055,7 +28484,6 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -28091,7 +28519,6 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -28129,7 +28556,6 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -28158,7 +28584,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -28189,7 +28614,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -28206,6 +28630,57 @@ class IntegrationsApi {
 			'GET', 
 			{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a STT engine
+	 * 
+	 * @param {String} engineId The engine ID
+	 */
+	getIntegrationsSpeechSttEngine(engineId) { 
+		// verify the required parameter 'engineId' is set
+		if (engineId === undefined || engineId === null) {
+			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechSttEngine';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/stt/engines/{engineId}', 
+			'GET', 
+			{ 'engineId': engineId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of STT engines enabled for org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on engine name
+	 */
+	getIntegrationsSpeechSttEngines(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/stt/engines', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -28424,6 +28899,60 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/types', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * UC integration client application configuration.
+	 * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+	 * @param {String} ucIntegrationId 3rd Party Service Type
+	 */
+	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationsClientapp';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}', 
+			'GET', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List UC integration client application configurations.
+	 * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 */
+	getIntegrationsUnifiedcommunicationsClientapps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/clientapps', 
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
@@ -28843,7 +29372,6 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {String} opts.body targetChannel
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -28879,7 +29407,6 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -28908,7 +29435,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -29058,7 +29584,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
@@ -29145,7 +29670,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -30529,7 +31054,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -33772,7 +34297,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -34785,7 +35310,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -35007,7 +35532,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -35863,7 +36388,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -36101,7 +36626,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -36337,7 +36862,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -36537,7 +37062,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -36896,7 +37421,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -37047,7 +37572,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -37280,7 +37805,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -37646,7 +38171,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -37916,7 +38441,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -37982,7 +38507,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -38437,7 +38962,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -39784,7 +40309,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -42815,8 +43340,12 @@ class OutboundApi {
 	 * Initiate the export of a contact list.
 	 * Returns 200 if received OK.
 	 * @param {String} contactListId ContactList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Export information to get
 	 */
-	postOutboundContactlistExport(contactListId) { 
+	postOutboundContactlistExport(contactListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistExport';
@@ -42829,7 +43358,7 @@ class OutboundApi {
 			{  },
 			{  },
 			{  },
-			null, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -44021,7 +44550,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -44765,7 +45294,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -45004,7 +45533,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -45627,7 +46156,7 @@ class QualityApi {
 	}
 
 	/**
-	 * Get the list of evaluation forms
+	 * Get the list of evaluation forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding evaluation form.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
@@ -45716,7 +46245,7 @@ class QualityApi {
 
 	/**
 	 * Get the list of evaluation forms
-	 * By default, "published" field is always returned as false for all evaluation forms. If you set "expand=publishHistory", then you will be able to get published versions for each corresponding evaluation form. In addition, "questionGroups", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+	 * By default, "published" field is always returned as false for all evaluation forms. If you set "expand=publishHistory", then you will be able to get published versions for each corresponding evaluation form. In addition, "questionGroups", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -45826,7 +46355,7 @@ class QualityApi {
 	}
 
 	/**
-	 * Get the list of survey forms
+	 * Get the list of survey forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding survey form.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
@@ -46761,7 +47290,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -48398,7 +48927,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -48883,7 +49412,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -52836,7 +53365,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -53713,7 +54242,7 @@ class ScreenRecordingApi {
 	/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -53758,7 +54287,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -54202,7 +54731,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -54891,7 +55420,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -54914,6 +55443,27 @@ class SettingsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/emails/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the execution history enabled setting.
+	 * Get the execution history enabled setting.
+	 * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSettingsExecutiondata() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/settings/executiondata', 
 			'GET', 
 			{  },
 			{  },
@@ -54950,13 +55500,39 @@ class SettingsApi {
 		);
 	}
 
+	/**
+	 * Edit the execution history on off setting.
+	 * Edit the execution history on off setting.
+	 * @param {Object} body New Execution Data Setting
+	 * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchSettingsExecutiondata(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchSettingsExecutiondata';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/settings/executiondata', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
 }
 
 class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -56070,7 +56646,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -56172,7 +56748,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -56311,7 +56887,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -56976,6 +57552,32 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Get list of statuses for this worktype.
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTaskmanagementWorktypeStatuses(worktypeId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatuses';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/statuses', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a version of a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -57592,7 +58194,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -57894,7 +58496,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -58076,7 +58678,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -61425,7 +62027,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -61553,7 +62155,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -61707,7 +62309,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -61976,7 +62578,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -62186,7 +62788,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -62371,7 +62973,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -65022,7 +65624,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -65133,7 +65735,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -65800,7 +66402,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -66349,7 +66951,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -66876,7 +67478,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -66922,7 +67524,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -67068,7 +67670,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -67589,9 +68191,10 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get status of the modeling job
-	 * 
+	 * To get status of the modeling job.
+	 * This Endpoint is Deprecated, and not recommended to be used.
 	 * @param {String} jobId The id of the modeling job
+	 * @deprecated
 	 */
 	getWorkforcemanagementAdhocmodelingjob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -72463,7 +73066,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 188.1.0
+ * @version 189.0.0
  */
 class platformClient {
 	constructor() {

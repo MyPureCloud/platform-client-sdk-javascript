@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -246,9 +246,10 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Delete a LINE messenger integration
-	 * 
+	 * Delete a LINE messenger integration (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {String} integrationId Integration ID
+	 * @deprecated
 	 */
 	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
@@ -2257,14 +2258,15 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get a list of LINE messenger Integrations
-	 * 
+	 * Get a list of LINE messenger Integrations (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 * @deprecated
 	 */
 	getConversationsMessagingIntegrationsLine(opts) { 
 		opts = opts || {};
@@ -2285,11 +2287,12 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get a LINE messenger integration
-	 * 
+	 * Get a LINE messenger integration (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @deprecated
 	 */
 	getConversationsMessagingIntegrationsLineIntegrationId(integrationId, opts) { 
 		opts = opts || {};
@@ -6973,10 +6976,11 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Update a LINE messenger integration
-	 * 
+	 * Update a LINE messenger integration (Deprecated)
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body LineIntegrationRequest
+	 * @deprecated
 	 */
 	putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set

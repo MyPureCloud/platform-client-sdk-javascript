@@ -6229,7 +6229,7 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 
 <a name="postOutboundContactlistExport"></a>
 
-# DomainEntityRef postOutboundContactlistExport(contactListId)
+# DomainEntityRef postOutboundContactlistExport(contactListId, opts)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/export
@@ -6257,8 +6257,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | ContactList ID
+let opts = { 
+  'body': {} // Object | Export information to get
+};
 
-apiInstance.postOutboundContactlistExport(contactListId)
+apiInstance.postOutboundContactlistExport(contactListId, opts)
   .then((data) => {
     console.log(`postOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6274,6 +6277,7 @@ apiInstance.postOutboundContactlistExport(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
+ **body** | **Object** | Export information to get | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

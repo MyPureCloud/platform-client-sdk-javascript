@@ -39,15 +39,22 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsCredentialsTypes**](IntegrationsApi.html#getIntegrationsCredentialsTypes) | **GET** /api/v2/integrations/credentials/types | List all credential types
 [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | **GET** /api/v2/integrations/speech/dialogflow/agents/{agentId} | Get details about a Dialogflow agent
 [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | **GET** /api/v2/integrations/speech/dialogflow/agents | Get a list of Dialogflow agents in the customers' Google accounts
+[**getIntegrationsSpeechDialogflowcxAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowcxAgent) | **GET** /api/v2/integrations/speech/dialogflowcx/agents/{agentId} | Get details about a Dialogflow CX agent
+[**getIntegrationsSpeechDialogflowcxAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowcxAgents) | **GET** /api/v2/integrations/speech/dialogflowcx/agents | Get a list of Dialogflow CX agents in the customers' Google accounts
 [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | **GET** /api/v2/integrations/speech/lex/bot/alias/{aliasId} | Get details about a Lex bot alias
 [**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | **GET** /api/v2/integrations/speech/lex/bot/{botId}/aliases | Get a list of aliases for a bot in the customer's AWS accounts
 [**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | **GET** /api/v2/integrations/speech/lex/bots | Get a list of Lex bots in the customers' AWS accounts
+[**getIntegrationsSpeechLexv2BotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexv2BotAlias) | **GET** /api/v2/integrations/speech/lexv2/bot/alias/{aliasId} | Get details about a Lex V2 bot alias
+[**getIntegrationsSpeechLexv2BotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexv2BotBotIdAliases) | **GET** /api/v2/integrations/speech/lexv2/bot/{botId}/aliases | Get a list of aliases for a Lex V2 bot
+[**getIntegrationsSpeechLexv2Bots**](IntegrationsApi.html#getIntegrationsSpeechLexv2Bots) | **GET** /api/v2/integrations/speech/lexv2/bots | Get a list of Lex V2 bots
 [**getIntegrationsSpeechNuanceNuanceIntegrationIdBot**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBot) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId} | Get a Nuance bot in the specified Integration
 [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId} | Get the status of an asynchronous Nuance bot GET job
 [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results | Get the result of an asynchronous Nuance bot GET job
 [**getIntegrationsSpeechNuanceNuanceIntegrationIdBots**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBots) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots | Get a list of Nuance bots available in the specified Integration
 [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId} | Get the status of an asynchronous Nuance bots GET job
 [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results | Get the result of an asynchronous Nuance bots GET job
+[**getIntegrationsSpeechSttEngine**](IntegrationsApi.html#getIntegrationsSpeechSttEngine) | **GET** /api/v2/integrations/speech/stt/engines/{engineId} | Get details about a STT engine
+[**getIntegrationsSpeechSttEngines**](IntegrationsApi.html#getIntegrationsSpeechSttEngines) | **GET** /api/v2/integrations/speech/stt/engines | Get a list of STT engines enabled for org
 [**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | **GET** /api/v2/integrations/speech/tts/engines/{engineId} | Get details about a TTS engine
 [**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId} | Get details about a specific voice for a TTS engine
 [**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices | Get a list of voices for a TTS engine
@@ -56,6 +63,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsType**](IntegrationsApi.html#getIntegrationsType) | **GET** /api/v2/integrations/types/{typeId} | Get integration type.
 [**getIntegrationsTypeConfigschema**](IntegrationsApi.html#getIntegrationsTypeConfigschema) | **GET** /api/v2/integrations/types/{typeId}/configschemas/{configType} | Get properties config schema for an integration type.
 [**getIntegrationsTypes**](IntegrationsApi.html#getIntegrationsTypes) | **GET** /api/v2/integrations/types | List integration types
+[**getIntegrationsUnifiedcommunicationsClientapp**](IntegrationsApi.html#getIntegrationsUnifiedcommunicationsClientapp) | **GET** /api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId} | UC integration client application configuration.
+[**getIntegrationsUnifiedcommunicationsClientapps**](IntegrationsApi.html#getIntegrationsUnifiedcommunicationsClientapps) | **GET** /api/v2/integrations/unifiedcommunications/clientapps | List UC integration client application configurations.
 [**getIntegrationsUserapps**](IntegrationsApi.html#getIntegrationsUserapps) | **GET** /api/v2/integrations/userapps | List permitted user app integrations for the logged in user
 [**patchIntegration**](IntegrationsApi.html#patchIntegration) | **PATCH** /api/v2/integrations/{integrationId} | Update an integration.
 [**patchIntegrationsAction**](IntegrationsApi.html#patchIntegrationsAction) | **PATCH** /api/v2/integrations/actions/{actionId} | Patch an Action
@@ -1841,6 +1850,112 @@ apiInstance.getIntegrationsSpeechDialogflowAgents(opts)
 
 **DialogflowAgentSummaryEntityListing**
 
+<a name="getIntegrationsSpeechDialogflowcxAgent"></a>
+
+# DialogflowCXAgent getIntegrationsSpeechDialogflowcxAgent(agentId)
+
+
+GET /api/v2/integrations/speech/dialogflowcx/agents/{agentId}
+
+Get details about a Dialogflow CX agent
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let agentId = "agentId_example"; // String | The agent ID
+
+apiInstance.getIntegrationsSpeechDialogflowcxAgent(agentId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechDialogflowcxAgent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechDialogflowcxAgent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The agent ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DialogflowCXAgent**
+
+<a name="getIntegrationsSpeechDialogflowcxAgents"></a>
+
+# DialogflowCXAgentSummaryEntityListing getIntegrationsSpeechDialogflowcxAgents(opts)
+
+
+GET /api/v2/integrations/speech/dialogflowcx/agents
+
+Get a list of Dialogflow CX agents in the customers' Google accounts
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'name': "name_example" // String | Filter on agent name
+};
+
+apiInstance.getIntegrationsSpeechDialogflowcxAgents(opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechDialogflowcxAgents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechDialogflowcxAgents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **name** | **String** | Filter on agent name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**DialogflowCXAgentSummaryEntityListing**
+
 <a name="getIntegrationsSpeechLexBotAlias"></a>
 
 # LexBotAlias getIntegrationsSpeechLexBotAlias(aliasId)
@@ -2007,6 +2122,172 @@ apiInstance.getIntegrationsSpeechLexBots(opts)
 
 **LexBotEntityListing**
 
+<a name="getIntegrationsSpeechLexv2BotAlias"></a>
+
+# LexV2BotAlias getIntegrationsSpeechLexv2BotAlias(aliasId)
+
+
+GET /api/v2/integrations/speech/lexv2/bot/alias/{aliasId}
+
+Get details about a Lex V2 bot alias
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let aliasId = "aliasId_example"; // String | The Alias ID
+
+apiInstance.getIntegrationsSpeechLexv2BotAlias(aliasId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechLexv2BotAlias success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechLexv2BotAlias');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **aliasId** | **String** | The Alias ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LexV2BotAlias**
+
+<a name="getIntegrationsSpeechLexv2BotBotIdAliases"></a>
+
+# LexV2BotAliasEntityListing getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts)
+
+
+GET /api/v2/integrations/speech/lexv2/bot/{botId}/aliases
+
+Get a list of aliases for a Lex V2 bot
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let botId = "botId_example"; // String | The Bot ID
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'status': "status_example", // String | Filter on alias status
+  'name': "name_example" // String | Filter on alias name
+};
+
+apiInstance.getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechLexv2BotBotIdAliases success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechLexv2BotBotIdAliases');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **botId** | **String** | The Bot ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **status** | **String** | Filter on alias status | [optional] <br />**Values**: Creating, Available, Deleting, Failed |
+ **name** | **String** | Filter on alias name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LexV2BotAliasEntityListing**
+
+<a name="getIntegrationsSpeechLexv2Bots"></a>
+
+# LexV2BotEntityListing getIntegrationsSpeechLexv2Bots(opts)
+
+
+GET /api/v2/integrations/speech/lexv2/bots
+
+Get a list of Lex V2 bots
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'name': "name_example" // String | Filter on bot name
+};
+
+apiInstance.getIntegrationsSpeechLexv2Bots(opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechLexv2Bots success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechLexv2Bots');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **name** | **String** | Filter on bot name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LexV2BotEntityListing**
+
 <a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBot"></a>
 
 # NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts)
@@ -2015,8 +2296,6 @@ apiInstance.getIntegrationsSpeechLexBots(opts)
 GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}
 
 Get a Nuance bot in the specified Integration
-
-getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2076,8 +2355,6 @@ GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{
 
 Get the status of an asynchronous Nuance bot GET job
 
-getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:integration:view
@@ -2131,8 +2408,6 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrati
 GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results
 
 Get the result of an asynchronous Nuance bot GET job
-
-getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2189,8 +2464,6 @@ GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots
 Get a list of Nuance bots available in the specified Integration
 
 If the onlyRegisteredBots param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integrations configured discovery credentials are returned.
-
-getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2250,8 +2523,6 @@ GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}
 
 Get the status of an asynchronous Nuance bots GET job
 
-getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:integration:view
@@ -2304,8 +2575,6 @@ GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/r
 
 Get the result of an asynchronous Nuance bots GET job
 
-getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:integration:view
@@ -2348,6 +2617,112 @@ apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceI
 ### Return type
 
 **NuanceBotEntityListing**
+
+<a name="getIntegrationsSpeechSttEngine"></a>
+
+# SttEngineEntity getIntegrationsSpeechSttEngine(engineId)
+
+
+GET /api/v2/integrations/speech/stt/engines/{engineId}
+
+Get details about a STT engine
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let engineId = "engineId_example"; // String | The engine ID
+
+apiInstance.getIntegrationsSpeechSttEngine(engineId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechSttEngine success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechSttEngine');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **engineId** | **String** | The engine ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SttEngineEntity**
+
+<a name="getIntegrationsSpeechSttEngines"></a>
+
+# SttEngineEntityListing getIntegrationsSpeechSttEngines(opts)
+
+
+GET /api/v2/integrations/speech/stt/engines
+
+Get a list of STT engines enabled for org
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'name': "name_example" // String | Filter on engine name
+};
+
+apiInstance.getIntegrationsSpeechSttEngines(opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechSttEngines success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechSttEngines');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **name** | **String** | Filter on engine name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SttEngineEntityListing**
 
 <a name="getIntegrationsSpeechTtsEngine"></a>
 
@@ -2779,6 +3154,122 @@ apiInstance.getIntegrationsTypes(opts)
 ### Return type
 
 **IntegrationTypeEntityListing**
+
+<a name="getIntegrationsUnifiedcommunicationsClientapp"></a>
+
+# UnifiedCommunicationsIntegration getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId)
+
+
+GET /api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}
+
+UC integration client application configuration.
+
+This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+
+Requires ANY permissions:
+
+* integration:unifiedCommunications:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let ucIntegrationId = "ucIntegrationId_example"; // String | 3rd Party Service Type
+
+apiInstance.getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId)
+  .then((data) => {
+    console.log(`getIntegrationsUnifiedcommunicationsClientapp success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsUnifiedcommunicationsClientapp');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ucIntegrationId** | **String** | 3rd Party Service Type |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UnifiedCommunicationsIntegration**
+
+<a name="getIntegrationsUnifiedcommunicationsClientapps"></a>
+
+# UnifiedCommunicationsIntegrationListing getIntegrationsUnifiedcommunicationsClientapps(opts)
+
+
+GET /api/v2/integrations/unifiedcommunications/clientapps
+
+List UC integration client application configurations.
+
+This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+
+Requires ANY permissions:
+
+* integration:unifiedCommunications:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example" // String | Previous page token
+};
+
+apiInstance.getIntegrationsUnifiedcommunicationsClientapps(opts)
+  .then((data) => {
+    console.log(`getIntegrationsUnifiedcommunicationsClientapps success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsUnifiedcommunicationsClientapps');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UnifiedCommunicationsIntegrationListing**
 
 <a name="getIntegrationsUserapps"></a>
 
@@ -3537,8 +4028,6 @@ POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs
 
 Get a Nuance bot in the specified Integration asynchronously
 
-postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:integration:view
@@ -3597,8 +4086,6 @@ POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs
 
 Get a list of Nuance bots in the specified Integration asynchronously
 
-postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:integration:view
@@ -3656,8 +4143,6 @@ apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegr
 POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate
 
 Try out a single credential for a Nuance bot to know if the secret is correct
-
-postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3922,8 +4407,6 @@ apiInstance.putIntegrationsCredential(credentialId, opts)
 PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings
 
 Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
-
-putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

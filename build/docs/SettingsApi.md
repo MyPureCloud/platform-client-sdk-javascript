@@ -8,7 +8,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getEmailsSettings**](SettingsApi.html#getEmailsSettings) | **GET** /api/v2/emails/settings | Get email Contact Center settings
+[**getSettingsExecutiondata**](SettingsApi.html#getSettingsExecutiondata) | **GET** /api/v2/settings/executiondata | Get the execution history enabled setting.
 [**patchEmailsSettings**](SettingsApi.html#patchEmailsSettings) | **PATCH** /api/v2/emails/settings | Patch email Contact Center settings
+[**patchSettingsExecutiondata**](SettingsApi.html#patchSettingsExecutiondata) | **PATCH** /api/v2/settings/executiondata | Edit the execution history on off setting.
 {: class="table table-striped"}
 
 <a name="getEmailsSettings"></a>
@@ -55,6 +57,55 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EmailSettings**
+
+<a name="getSettingsExecutiondata"></a>
+
+# ExecutionDataGlobalSettingsResponse getSettingsExecutiondata()
+
+
+GET /api/v2/settings/executiondata
+
+Get the execution history enabled setting.
+
+Get the execution history enabled setting.
+
+getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* settings:executiondata:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+apiInstance.getSettingsExecutiondata()
+  .then((data) => {
+    console.log(`getSettingsExecutiondata success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSettingsExecutiondata');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**ExecutionDataGlobalSettingsResponse**
 
 <a name="patchEmailsSettings"></a>
 
@@ -107,4 +158,58 @@ apiInstance.patchEmailsSettings(opts)
 ### Return type
 
 **EmailSettings**
+
+<a name="patchSettingsExecutiondata"></a>
+
+# ExecutionDataGlobalSettingsResponse patchSettingsExecutiondata(body)
+
+
+PATCH /api/v2/settings/executiondata
+
+Edit the execution history on off setting.
+
+Edit the execution history on off setting.
+
+patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* settings:executiondata:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SettingsApi();
+
+let body = {}; // Object | New Execution Data Setting
+
+apiInstance.patchSettingsExecutiondata(body)
+  .then((data) => {
+    console.log(`patchSettingsExecutiondata success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchSettingsExecutiondata');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | New Execution Data Setting |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExecutionDataGlobalSettingsResponse**
 

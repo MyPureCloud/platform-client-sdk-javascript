@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -409,6 +409,32 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Deletes a log level for a flow by flow id.
+	 * Deletes the associated log level for a flow by flow id
+	 * @param {String} flowId The flow id to delete the loglevel for
+	 * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteFlowInstancesSettingsLoglevels(flowId) { 
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling deleteFlowInstancesSettingsLoglevels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/instances/settings/loglevels', 
+			'DELETE', 
+			{ 'flowId': flowId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Batch-delete a list of flows
 	 * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 	 * @param {Array.<String>} id List of Flow IDs
@@ -482,6 +508,27 @@ class ArchitectApi {
 			'/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
 			'DELETE', 
 			{ 'datatableId': datatableId,'rowId': rowId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Resets the org log level to default, base
+	 * Resets the org log level to default, base
+	 * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteFlowsInstancesSettingsLoglevelsDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels/default', 
+			'DELETE', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -1620,6 +1667,36 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Retrieves the log level for a flow by flow id.
+	 * Retrieves the log level for a flow by flow id.
+	 * @param {String} flowId The flow id to get the loglevel for
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowInstancesSettingsLoglevels(flowId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling getFlowInstancesSettingsLoglevels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/instances/settings/loglevels', 
+			'GET', 
+			{ 'flowId': flowId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the latest configuration for flow
 	 * 
 	 * @param {String} flowId Flow ID
@@ -2248,7 +2325,6 @@ class ArchitectApi {
 	 * @param {String} instanceId Instance ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various details.
-	 * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstance(instanceId, opts) { 
 		opts = opts || {};
@@ -2276,7 +2352,6 @@ class ArchitectApi {
 	 * Get the status and/or results of an asynchronous flow execution data retrieval job
 	 * 
 	 * @param {String} jobId The asynchronous job ID
-	 * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -2303,7 +2378,6 @@ class ArchitectApi {
 	 * Returns the queryable parameters that can be used to build a query for execution data.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
-	 * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesQuerycapabilities(opts) { 
 		opts = opts || {};
@@ -2314,6 +2388,100 @@ class ArchitectApi {
 			'GET', 
 			{  },
 			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the execution history enabled setting.
+	 * Get the execution history enabled setting.
+	 * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesSettingsExecutiondata() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/executiondata', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of LogLevels for the organization.
+	 * Returns a paged set of LogLevels per flow id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesSettingsLoglevels(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels', 
+			'GET', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the available flow log level characteristics for this organization.
+	 * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+	 * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesSettingsLoglevelsCharacteristics() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels/characteristics', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns the flow default log level.
+	 * Returns the flow default log level which will be used if no specific flow id log level is found.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesSettingsLoglevelsDefault(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels/default', 
+			'GET', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -2585,6 +2753,32 @@ class ArchitectApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Edit the execution history enabled setting.
+	 * Edit the execution history enabled setting.
+	 * @param {Object} body New Execution Data Setting
+	 * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchFlowsInstancesSettingsExecutiondata(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchFlowsInstancesSettingsExecutiondata';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/executiondata', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -3001,6 +3195,41 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Set the logLevel for a particular flow id
+	 * Assigns a new loglevel to a flow id
+	 * @param {String} flowId The flow id to set the loglevel for
+	 * @param {Object} body New LogLevel settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postFlowInstancesSettingsLoglevels(flowId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling postFlowInstancesSettingsLoglevels';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowInstancesSettingsLoglevels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/instances/settings/loglevels', 
+			'POST', 
+			{ 'flowId': flowId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create flow version
 	 * 
 	 * @param {String} flowId Flow ID
@@ -3354,7 +3583,6 @@ class ArchitectApi {
 	 * @param {Object} body Requested Flow Ids
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand various query types.
-	 * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesJobs(body, opts) { 
 		opts = opts || {};
@@ -3385,7 +3613,6 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.indexOnly indexes only
 	 * @param {Number} opts.pageSize number of results to return (default to 50)
-	 * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowsInstancesQuery(body, opts) { 
 		opts = opts || {};
@@ -3728,6 +3955,41 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Edit the logLevel for a particular flow id
+	 * Updates the loglevel for a flow id
+	 * @param {String} flowId The flow id to edit the loglevel for
+	 * @param {Object} body New LogLevel settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putFlowInstancesSettingsLoglevels(flowId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling putFlowInstancesSettingsLoglevels';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putFlowInstancesSettingsLoglevels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/instances/settings/loglevels', 
+			'PUT', 
+			{ 'flowId': flowId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates a specific datatable by id
 	 * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 	 * @param {String} datatableId id of datatable
@@ -3789,6 +4051,36 @@ class ArchitectApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Edit the flow default log level.
+	 * Edit the flow default log level.
+	 * @param {Object} body New LogLevel settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Expand instructions for the result
+	 * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putFlowsInstancesSettingsLoglevelsDefault(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putFlowsInstancesSettingsLoglevelsDefault';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/settings/loglevels/default', 
+			'PUT', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

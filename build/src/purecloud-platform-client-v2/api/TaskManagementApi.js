@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 188.1.0
+	 * @version 189.0.0
 	 */
 
 	/**
@@ -659,6 +659,32 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}', 
 			'GET', 
 			{ 'worktypeId': worktypeId,'statusId': statusId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of statuses for this worktype.
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTaskmanagementWorktypeStatuses(worktypeId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatuses';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/statuses', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
 			{  },
 			{  },
 			{  },
