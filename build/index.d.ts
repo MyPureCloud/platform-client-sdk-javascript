@@ -12550,9 +12550,11 @@ declare namespace Models {
 	}
 	
 	export interface ContactIdentifier { 
+		"id"?: string;
 		"type": string;
 		"value": string;
 		"dateCreated"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface ContactList { 
