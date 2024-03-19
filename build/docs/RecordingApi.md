@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingUploadsReport**](RecordingApi.html#getRecordingUploadsReport) | **GET** /api/v2/recording/uploads/reports/{reportId} | Get the status of a recording upload status report
 [**getRecordingsRetentionQuery**](RecordingApi.html#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
 [**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | **GET** /api/v2/recordings/screensessions | Retrieves a paged listing of screen recording sessions
+[**getRecordingsScreensessionsDetails**](RecordingApi.html#getRecordingsScreensessionsDetails) | **GET** /api/v2/recordings/screensessions/details | Retrieves an object containing the total number of concurrent active screen recordings
 [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
 [**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
 [**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | **PATCH** /api/v2/recordings/screensessions/{recordingSessionId} | Update a screen recording session
@@ -1829,6 +1830,53 @@ apiInstance.getRecordingsScreensessions(opts)
 ### Return type
 
 **ScreenRecordingSessionListing**
+
+<a name="getRecordingsScreensessionsDetails"></a>
+
+# ScreenRecordingActiveSessions getRecordingsScreensessionsDetails()
+
+
+GET /api/v2/recordings/screensessions/details
+
+Retrieves an object containing the total number of concurrent active screen recordings
+
+getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* recording:screenRecording:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+apiInstance.getRecordingsScreensessionsDetails()
+  .then((data) => {
+    console.log(`getRecordingsScreensessionsDetails success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRecordingsScreensessionsDetails');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**ScreenRecordingActiveSessions**
 
 <a name="patchRecordingCrossplatformMediaretentionpolicy"></a>
 

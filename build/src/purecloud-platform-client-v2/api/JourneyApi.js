@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 189.1.0
+	 * @version 190.0.0
 	 */
 
 	/**
@@ -856,6 +856,109 @@ class JourneyApi {
 	}
 
 	/**
+	 * Get the job for a journey view version.
+	 * used for long descriptions
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * @param {String} jobId JobId
+	 * getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyViewVersionJob(viewId, journeyVersionId, jobId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJob';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null) {
+			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the result of a job for a journey view version.
+	 * used for long descriptions
+	 * @param {String} viewId JourneyViewResult id
+	 * @param {String} journeyViewVersion Journey View Version
+	 * @param {String} jobId Id of the executing job
+	 * getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobResults';
+		}
+		// verify the required parameter 'journeyViewVersion' is set
+		if (journeyViewVersion === undefined || journeyViewVersion === null) {
+			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionJobResults';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results', 
+			'GET', 
+			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the latest job of a journey view version.
+	 * used for long descriptions
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyViewVersionJobsLatest(viewId, journeyVersionId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobsLatest';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null) {
+			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJobsLatest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest', 
+			'GET', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of Journey Views
 	 * 
 	 * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -864,6 +967,53 @@ class JourneyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/journey/views', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Event Definition
+	 * 
+	 * @param {String} eventDefinitionId Event Definition ID
+	 * getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyViewsEventdefinition(eventDefinitionId) { 
+		// verify the required parameter 'eventDefinitionId' is set
+		if (eventDefinitionId === undefined || eventDefinitionId === null) {
+			throw 'Missing the required parameter "eventDefinitionId" when calling getJourneyViewsEventdefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/eventdefinitions/{eventDefinitionId}', 
+			'GET', 
+			{ 'eventDefinitionId': eventDefinitionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Event Definitions
+	 * 
+	 * getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyViewsEventdefinitions() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/eventdefinitions', 
 			'GET', 
 			{  },
 			{  },
@@ -1327,6 +1477,37 @@ class JourneyApi {
 	}
 
 	/**
+	 * Submit a job request for a journey view version.
+	 * used for long descriptions
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postJourneyViewVersionJobs(viewId, journeyVersionId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling postJourneyViewVersionJobs';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null) {
+			throw 'Missing the required parameter "journeyVersionId" when calling postJourneyViewVersionJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs', 
+			'POST', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a Journey View by ID
 	 * creates a new version
 	 * @param {String} viewId viewId
@@ -1377,6 +1558,31 @@ class JourneyApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate whether an encoding exist for a label/value combination.
+	 * True indicates a valid encoding
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 * postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postJourneyViewsEncodingsValidate(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/encodings/validate', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

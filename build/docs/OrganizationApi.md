@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOrganizationsIpaddressauthentication**](OrganizationApi.html#getOrganizationsIpaddressauthentication) | **GET** /api/v2/organizations/ipaddressauthentication | Get organization IP address whitelist settings
 [**getOrganizationsLimitsChangerequest**](OrganizationApi.html#getOrganizationsLimitsChangerequest) | **GET** /api/v2/organizations/limits/changerequests/{requestId} | Get a limit change request
 [**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | **GET** /api/v2/organizations/limits/changerequests | Get the available limit change requests
-[**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | **GET** /api/v2/organizations/limits/docs | Get a link to the limit documentation
+[**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | **GET** /api/v2/organizations/limits/docs | Get limit documentation
 [**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName} | Get the effective limits in a namespace for an organization
 [**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi.html#getOrganizationsLimitsNamespaceDefaults) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName}/defaults | Get the default limits in a namespace for an organization
 [**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | **GET** /api/v2/organizations/limits/namespaces | Get the available limit namespaces
@@ -329,12 +329,12 @@ apiInstance.getOrganizationsLimitsChangerequests(opts)
 
 <a name="getOrganizationsLimitsDocs"></a>
 
-# UrlResponse getOrganizationsLimitsDocs()
+# LimitDocumentation getOrganizationsLimitsDocs()
 
 
 GET /api/v2/organizations/limits/docs
 
-Get a link to the limit documentation
+Get limit documentation
 
 Requires NO permissions:
 
@@ -368,7 +368,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**UrlResponse**
+**LimitDocumentation**
 
 <a name="getOrganizationsLimitsNamespace"></a>
 

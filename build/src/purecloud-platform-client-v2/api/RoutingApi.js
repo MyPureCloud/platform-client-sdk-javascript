@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 189.1.0
+	 * @version 190.0.0
 	 */
 
 	/**
@@ -1453,11 +1453,12 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
-	 * @param {String} opts.name Filter by queue name
-	 * @param {Array.<String>} opts.id Filter by queue ID(s)
-	 * @param {Array.<String>} opts.divisionId Filter by queue division ID(s)
-	 * @param {Array.<String>} opts.peerId Filter by queue peer ID(s)
-	 * @param {Boolean} opts.hasPeer Filter by queues associated with peer
+	 * @param {String} opts.name Include only queues with the given name (leading and trailing asterisks allowed)
+	 * @param {Array.<String>} opts.id Include only queues with the specified ID(s)
+	 * @param {Array.<String>} opts.divisionId Include only queues in the specified division ID(s)
+	 * @param {Array.<String>} opts.peerId Include only queues with the specified peer ID(s)
+	 * @param {String} opts.cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID
+	 * @param {Boolean} opts.hasPeer Include only queues with a peer ID
 	 */
 	getRoutingQueues(opts) { 
 		opts = opts || {};
@@ -1467,7 +1468,7 @@ class RoutingApi {
 			'/api/v2/routing/queues', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'hasPeer': opts['hasPeer'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'cannedResponseLibraryId': opts['cannedResponseLibraryId'],'hasPeer': opts['hasPeer'] },
 			{  },
 			{  },
 			null, 

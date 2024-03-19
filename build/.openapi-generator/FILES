@@ -404,6 +404,9 @@ docs/deleteWorkforcemanagementBusinessunitActivitycode-example.txt
 docs/deleteWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/deleteWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/deleteWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
+docs/deleteWorkforcemanagementBusinessunitStaffinggroup-example.txt
+docs/deleteWorkforcemanagementBusinessunitTimeofflimit-example.txt
+docs/deleteWorkforcemanagementBusinessunitTimeoffplan-example.txt
 docs/deleteWorkforcemanagementBusinessunitWeekSchedule-example.txt
 docs/deleteWorkforcemanagementBusinessunitWeekShorttermforecast-example.txt
 docs/deleteWorkforcemanagementCalendarUrlIcs-example.txt
@@ -562,6 +565,8 @@ docs/getChatsMessage-example.txt
 docs/getChatsRoom-example.txt
 docs/getChatsRoomMessage-example.txt
 docs/getChatsRoomMessages-example.txt
+docs/getChatsRoomParticipant-example.txt
+docs/getChatsRoomParticipants-example.txt
 docs/getChatsSettings-example.txt
 docs/getChatsThreadMessages-example.txt
 docs/getChatsUserMessage-example.txt
@@ -923,7 +928,12 @@ docs/getJourneySessionEvents-example.txt
 docs/getJourneySessionOutcomescores-example.txt
 docs/getJourneyView-example.txt
 docs/getJourneyViewVersion-example.txt
+docs/getJourneyViewVersionJob-example.txt
+docs/getJourneyViewVersionJobResults-example.txt
+docs/getJourneyViewVersionJobsLatest-example.txt
 docs/getJourneyViews-example.txt
+docs/getJourneyViewsEventdefinition-example.txt
+docs/getJourneyViewsEventdefinitions-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
@@ -1180,6 +1190,7 @@ docs/getRecordingSettings-example.txt
 docs/getRecordingUploadsReport-example.txt
 docs/getRecordingsRetentionQuery-example.txt
 docs/getRecordingsScreensessions-example.txt
+docs/getRecordingsScreensessionsDetails-example.txt
 docs/getResponsemanagementLibraries-example.txt
 docs/getResponsemanagementLibrary-example.txt
 docs/getResponsemanagementResponse-example.txt
@@ -1514,6 +1525,12 @@ docs/getWorkforcemanagementBusinessunitSchedulingRunResult-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulingRuns-example.txt
 docs/getWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
 docs/getWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
+docs/getWorkforcemanagementBusinessunitStaffinggroup-example.txt
+docs/getWorkforcemanagementBusinessunitStaffinggroups-example.txt
+docs/getWorkforcemanagementBusinessunitTimeofflimit-example.txt
+docs/getWorkforcemanagementBusinessunitTimeofflimits-example.txt
+docs/getWorkforcemanagementBusinessunitTimeoffplan-example.txt
+docs/getWorkforcemanagementBusinessunitTimeoffplans-example.txt
 docs/getWorkforcemanagementBusinessunitWeekSchedule-example.txt
 docs/getWorkforcemanagementBusinessunitWeekScheduleGenerationresults-example.txt
 docs/getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast-example.txt
@@ -1727,6 +1744,8 @@ docs/patchWorkforcemanagementBusinessunitActivitycode-example.txt
 docs/patchWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/patchWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/patchWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
+docs/patchWorkforcemanagementBusinessunitStaffinggroup-example.txt
+docs/patchWorkforcemanagementBusinessunitTimeoffplan-example.txt
 docs/patchWorkforcemanagementManagementunit-example.txt
 docs/patchWorkforcemanagementManagementunitAgents-example.txt
 docs/patchWorkforcemanagementManagementunitTimeofflimit-example.txt
@@ -2041,8 +2060,10 @@ docs/postJourneyOutcomes-example.txt
 docs/postJourneyOutcomesAttributionsJobs-example.txt
 docs/postJourneyOutcomesPredictors-example.txt
 docs/postJourneySegments-example.txt
+docs/postJourneyViewVersionJobs-example.txt
 docs/postJourneyViewVersions-example.txt
 docs/postJourneyViews-example.txt
+docs/postJourneyViewsEncodingsValidate-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeGuestSessionDocumentCopies-example.txt
@@ -2332,6 +2353,11 @@ docs/postWorkforcemanagementBusinessunitAgentschedulesSearch-example.txt
 docs/postWorkforcemanagementBusinessunitIntraday-example.txt
 docs/postWorkforcemanagementBusinessunitPlanninggroups-example.txt
 docs/postWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
+docs/postWorkforcemanagementBusinessunitStaffinggroups-example.txt
+docs/postWorkforcemanagementBusinessunitStaffinggroupsQuery-example.txt
+docs/postWorkforcemanagementBusinessunitTimeofflimits-example.txt
+docs/postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery-example.txt
+docs/postWorkforcemanagementBusinessunitTimeoffplans-example.txt
 docs/postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitWeekScheduleCopy-example.txt
 docs/postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations-example.txt
@@ -2405,6 +2431,7 @@ docs/putAuthorizationRole-example.txt
 docs/putAuthorizationRoleUsersAdd-example.txt
 docs/putAuthorizationRoleUsersRemove-example.txt
 docs/putAuthorizationRolesDefault-example.txt
+docs/putChatsMessageReactions-example.txt
 docs/putChatsSettings-example.txt
 docs/putContentmanagementWorkspace-example.txt
 docs/putContentmanagementWorkspaceMember-example.txt
@@ -2602,6 +2629,7 @@ docs/putWebdeploymentsConfigurationVersionsDraft-example.txt
 docs/putWebdeploymentsDeployment-example.txt
 docs/putWidgetsDeployment-example.txt
 docs/putWorkforcemanagementAgentIntegrationsHris-example.txt
+docs/putWorkforcemanagementBusinessunitTimeofflimitValues-example.txt
 docs/putWorkforcemanagementManagementunitTimeofflimitValues-example.txt
 index.d.ts
 package.json

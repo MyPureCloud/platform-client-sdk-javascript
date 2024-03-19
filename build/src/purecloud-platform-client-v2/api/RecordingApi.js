@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 189.1.0
+	 * @version 190.0.0
 	 */
 
 	/**
@@ -905,6 +905,27 @@ class RecordingApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves an object containing the total number of concurrent active screen recordings
+	 * 
+	 * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRecordingsScreensessionsDetails() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/screensessions/details', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 

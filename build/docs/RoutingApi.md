@@ -2800,7 +2800,7 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
  **name** | **String** | Filter by queue member name (contains-style search) | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill (contains-style search) | [optional]  |
  **skills** | **[String]** | Filter by skill (contains-style search) | [optional]  |
@@ -2877,7 +2877,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
  **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
@@ -2977,11 +2977,12 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortOrder': "asc", // String | Note: results are sorted by name.
-  'name': "name_example", // String | Filter by queue name
-  'id': ["id_example"], // [String] | Filter by queue ID(s)
-  'divisionId': ["divisionId_example"], // [String] | Filter by queue division ID(s)
-  'peerId': ["peerId_example"], // [String] | Filter by queue peer ID(s)
-  'hasPeer': true // Boolean | Filter by queues associated with peer
+  'name': "name_example", // String | Include only queues with the given name (leading and trailing asterisks allowed)
+  'id': ["id_example"], // [String] | Include only queues with the specified ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Include only queues in the specified division ID(s)
+  'peerId': ["peerId_example"], // [String] | Include only queues with the specified peer ID(s)
+  'cannedResponseLibraryId': "cannedResponseLibraryId_example", // String | Include only queues explicitly associated with the specified canned response library ID
+  'hasPeer': true // Boolean | Include only queues with a peer ID
 };
 
 apiInstance.getRoutingQueues(opts)
@@ -3002,11 +3003,12 @@ apiInstance.getRoutingQueues(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **name** | **String** | Filter by queue name | [optional]  |
- **id** | **[String]** | Filter by queue ID(s) | [optional]  |
- **divisionId** | **[String]** | Filter by queue division ID(s) | [optional]  |
- **peerId** | **[String]** | Filter by queue peer ID(s) | [optional]  |
- **hasPeer** | **Boolean** | Filter by queues associated with peer | [optional]  |
+ **name** | **String** | Include only queues with the given name (leading and trailing asterisks allowed) | [optional]  |
+ **id** | **[String]** | Include only queues with the specified ID(s) | [optional]  |
+ **divisionId** | **[String]** | Include only queues in the specified division ID(s) | [optional]  |
+ **peerId** | **[String]** | Include only queues with the specified peer ID(s) | [optional]  |
+ **cannedResponseLibraryId** | **String** | Include only queues explicitly associated with the specified canned response library ID | [optional]  |
+ **hasPeer** | **Boolean** | Include only queues with a peer ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

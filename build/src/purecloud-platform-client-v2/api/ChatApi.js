@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 189.1.0
+	 * @version 190.0.0
 	 */
 
 	/**
@@ -25,7 +25,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomId
 	 * @param {String} messageId messageId
-	 * deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteChatsRoomMessage(roomJid, messageId) { 
 		// verify the required parameter 'roomJid' is set
@@ -56,7 +55,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} userId userId
-	 * deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteChatsRoomParticipant(roomJid, userId) { 
 		// verify the required parameter 'roomJid' is set
@@ -87,7 +85,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} pinnedMessageId pinnedMessageId
-	 * deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteChatsRoomPinnedmessage(roomJid, pinnedMessageId) { 
 		// verify the required parameter 'roomJid' is set
@@ -118,7 +115,6 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {String} messageId messageId
-	 * deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteChatsUserMessage(userId, messageId) { 
 		// verify the required parameter 'userId' is set
@@ -148,7 +144,6 @@ class ChatApi {
 	 * Get a message
 	 * 
 	 * @param {String} messageId messageId
-	 * getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsMessage(messageId) { 
 		// verify the required parameter 'messageId' is set
@@ -174,7 +169,6 @@ class ChatApi {
 	 * Get a room
 	 * 
 	 * @param {String} roomJid roomJid
-	 * getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsRoom(roomJid) { 
 		// verify the required parameter 'roomJid' is set
@@ -201,7 +195,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} messageIds messageIds, comma separated
-	 * getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsRoomMessage(roomJid, messageIds) { 
 		// verify the required parameter 'roomJid' is set
@@ -235,7 +228,6 @@ class ChatApi {
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
-	 * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsRoomMessages(roomJid, opts) { 
 		opts = opts || {};
@@ -250,6 +242,61 @@ class ChatApi {
 			'GET', 
 			{ 'roomJid': roomJid },
 			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a room participant
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {String} participantJid participantJid
+	 */
+	getChatsRoomParticipant(roomJid, participantJid) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipant';
+		}
+		// verify the required parameter 'participantJid' is set
+		if (participantJid === undefined || participantJid === null) {
+			throw 'Missing the required parameter "participantJid" when calling getChatsRoomParticipant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/participants/{participantJid}', 
+			'GET', 
+			{ 'roomJid': roomJid,'participantJid': participantJid },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get room participants in a room
+	 * 
+	 * @param {String} roomJid roomJid
+	 */
+	getChatsRoomParticipants(roomJid) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling getChatsRoomParticipants';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/participants', 
+			'GET', 
+			{ 'roomJid': roomJid },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -287,7 +334,6 @@ class ChatApi {
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
-	 * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsThreadMessages(threadId, opts) { 
 		opts = opts || {};
@@ -316,7 +362,6 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {String} messageIds messageIds, comma separated
-	 * getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsUserMessage(userId, messageIds) { 
 		// verify the required parameter 'userId' is set
@@ -350,7 +395,6 @@ class ChatApi {
 	 * @param {String} opts.limit The maximum number of messages to retrieve
 	 * @param {String} opts.before The cutoff date for messages to retrieve
 	 * @param {String} opts.after The beginning date for messages to retrieve
-	 * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsUserMessages(userId, opts) { 
 		opts = opts || {};
@@ -405,7 +449,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {Object} body Room properties
-	 * patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchChatsRoom(roomJid, body) { 
 		// verify the required parameter 'roomJid' is set
@@ -437,7 +480,6 @@ class ChatApi {
 	 * @param {String} roomJid roomId
 	 * @param {String} messageId messageId
 	 * @param {Object} body messageBody
-	 * patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchChatsRoomMessage(roomJid, messageId, body) { 
 		// verify the required parameter 'roomJid' is set
@@ -498,7 +540,6 @@ class ChatApi {
 	 * @param {String} userId userId
 	 * @param {String} messageId messageId
 	 * @param {Object} body message body
-	 * patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchChatsUserMessage(userId, messageId, body) { 
 		// verify the required parameter 'userId' is set
@@ -564,7 +605,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomId
 	 * @param {Object} body messageBody
-	 * postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postChatsRoomMessages(roomJid, body) { 
 		// verify the required parameter 'roomJid' is set
@@ -595,7 +635,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {String} userId userId
-	 * postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postChatsRoomParticipant(roomJid, userId) { 
 		// verify the required parameter 'roomJid' is set
@@ -626,7 +665,6 @@ class ChatApi {
 	 * 
 	 * @param {String} roomJid roomJid
 	 * @param {Object} body Pinned Message Ids
-	 * postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postChatsRoomPinnedmessages(roomJid, body) { 
 		// verify the required parameter 'roomJid' is set
@@ -656,7 +694,6 @@ class ChatApi {
 	 * Create an adhoc room
 	 * 
 	 * @param {Object} body Room properties
-	 * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postChatsRooms(body) { 
 		// verify the required parameter 'body' is set
@@ -683,7 +720,6 @@ class ChatApi {
 	 * 
 	 * @param {String} userId userId
 	 * @param {Object} body message body
-	 * postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postChatsUserMessages(userId, body) { 
 		// verify the required parameter 'userId' is set
@@ -699,6 +735,36 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages', 
 			'POST', 
 			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update reactions to a message
+	 * 
+	 * @param {String} messageId messageId
+	 * @param {Object} body reactionUpdate
+	 */
+	putChatsMessageReactions(messageId, body) { 
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling putChatsMessageReactions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putChatsMessageReactions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/messages/{messageId}/reactions', 
+			'PUT', 
+			{ 'messageId': messageId },
 			{  },
 			{  },
 			{  },

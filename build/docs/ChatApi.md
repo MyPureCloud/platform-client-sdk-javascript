@@ -15,6 +15,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getChatsRoom**](ChatApi.html#getChatsRoom) | **GET** /api/v2/chats/rooms/{roomJid} | Get a room
 [**getChatsRoomMessage**](ChatApi.html#getChatsRoomMessage) | **GET** /api/v2/chats/rooms/{roomJid}/messages/{messageIds} | Get messages by id(s) from a room
 [**getChatsRoomMessages**](ChatApi.html#getChatsRoomMessages) | **GET** /api/v2/chats/rooms/{roomJid}/messages | Get a room's message history
+[**getChatsRoomParticipant**](ChatApi.html#getChatsRoomParticipant) | **GET** /api/v2/chats/rooms/{roomJid}/participants/{participantJid} | Get a room participant
+[**getChatsRoomParticipants**](ChatApi.html#getChatsRoomParticipants) | **GET** /api/v2/chats/rooms/{roomJid}/participants | Get room participants in a room
 [**getChatsSettings**](ChatApi.html#getChatsSettings) | **GET** /api/v2/chats/settings | Get Chat Settings.
 [**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | **GET** /api/v2/chats/threads/{threadId}/messages | Get history by thread
 [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | **GET** /api/v2/chats/users/{userId}/messages/{messageIds} | Get messages by id(s) from a 1on1
@@ -30,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postChatsRoomPinnedmessages**](ChatApi.html#postChatsRoomPinnedmessages) | **POST** /api/v2/chats/rooms/{roomJid}/pinnedmessages | Add pinned messages for a room, up to a maximum of 5 pinned messages
 [**postChatsRooms**](ChatApi.html#postChatsRooms) | **POST** /api/v2/chats/rooms | Create an adhoc room
 [**postChatsUserMessages**](ChatApi.html#postChatsUserMessages) | **POST** /api/v2/chats/users/{userId}/messages | Send a message to a user
+[**putChatsMessageReactions**](ChatApi.html#putChatsMessageReactions) | **PUT** /api/v2/chats/messages/{messageId}/reactions | Update reactions to a message
 [**putChatsSettings**](ChatApi.html#putChatsSettings) | **PUT** /api/v2/chats/settings | Update Chat Settings.
 {: class="table table-striped"}
 
@@ -41,8 +44,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 DELETE /api/v2/chats/rooms/{roomJid}/messages/{messageId}
 
 Delete a message in a room
-
-deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -97,8 +98,6 @@ DELETE /api/v2/chats/rooms/{roomJid}/participants/{userId}
 
 Remove a user from a room.
 
-deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -151,8 +150,6 @@ void (no response body)
 DELETE /api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}
 
 Remove a pinned message from a room
-
-deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -207,8 +204,6 @@ DELETE /api/v2/chats/users/{userId}/messages/{messageId}
 
 Delete a message to a user
 
-deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -262,8 +257,6 @@ GET /api/v2/chats/messages/{messageId}
 
 Get a message
 
-getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -316,8 +309,6 @@ GET /api/v2/chats/rooms/{roomJid}
 
 Get a room
 
-getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -368,8 +359,6 @@ apiInstance.getChatsRoom(roomJid)
 GET /api/v2/chats/rooms/{roomJid}/messages/{messageIds}
 
 Get messages by id(s) from a room
-
-getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -424,8 +413,6 @@ GET /api/v2/chats/rooms/{roomJid}/messages
 
 Get a room's message history
 
-getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -475,6 +462,107 @@ apiInstance.getChatsRoomMessages(roomJid, opts)
 ### Return type
 
 **ChatMessageEntityListing**
+
+<a name="getChatsRoomParticipant"></a>
+
+# RoomParticipant getChatsRoomParticipant(roomJid, participantJid)
+
+
+GET /api/v2/chats/rooms/{roomJid}/participants/{participantJid}
+
+Get a room participant
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ChatApi();
+
+let roomJid = "roomJid_example"; // String | roomJid
+let participantJid = "participantJid_example"; // String | participantJid
+
+apiInstance.getChatsRoomParticipant(roomJid, participantJid)
+  .then((data) => {
+    console.log(`getChatsRoomParticipant success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getChatsRoomParticipant');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **roomJid** | **String** | roomJid |  |
+ **participantJid** | **String** | participantJid |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RoomParticipant**
+
+<a name="getChatsRoomParticipants"></a>
+
+# RoomParticipantsResponse getChatsRoomParticipants(roomJid)
+
+
+GET /api/v2/chats/rooms/{roomJid}/participants
+
+Get room participants in a room
+
+Requires ANY permissions:
+
+* chat:chat:access
+* chat:room:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ChatApi();
+
+let roomJid = "roomJid_example"; // String | roomJid
+
+apiInstance.getChatsRoomParticipants(roomJid)
+  .then((data) => {
+    console.log(`getChatsRoomParticipants success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getChatsRoomParticipants');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **roomJid** | **String** | roomJid |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RoomParticipantsResponse**
 
 <a name="getChatsSettings"></a>
 
@@ -530,8 +618,6 @@ This endpoint does not need any parameter.
 GET /api/v2/chats/threads/{threadId}/messages
 
 Get history by thread
-
-getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -592,8 +678,6 @@ GET /api/v2/chats/users/{userId}/messages/{messageIds}
 
 Get messages by id(s) from a 1on1
 
-getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -646,8 +730,6 @@ apiInstance.getChatsUserMessage(userId, messageIds)
 GET /api/v2/chats/users/{userId}/messages
 
 Get 1on1 History between a user
-
-getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -761,8 +843,6 @@ PATCH /api/v2/chats/rooms/{roomJid}
 
 Set properties for a room
 
-patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -815,8 +895,6 @@ void (no response body)
 PATCH /api/v2/chats/rooms/{roomJid}/messages/{messageId}
 
 Edit a message in a room
-
-patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -922,8 +1000,6 @@ apiInstance.patchChatsSettings(body)
 PATCH /api/v2/chats/users/{userId}/messages/{messageId}
 
 Edit a message to a user
-
-patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1035,8 +1111,6 @@ POST /api/v2/chats/rooms/{roomJid}/messages
 
 Send a message to a room
 
-postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -1089,8 +1163,6 @@ apiInstance.postChatsRoomMessages(roomJid, body)
 POST /api/v2/chats/rooms/{roomJid}/participants/{userId}
 
 Join a room
-
-postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1145,8 +1217,6 @@ POST /api/v2/chats/rooms/{roomJid}/pinnedmessages
 
 Add pinned messages for a room, up to a maximum of 5 pinned messages
 
-postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -1200,8 +1270,6 @@ POST /api/v2/chats/rooms
 
 Create an adhoc room
 
-postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -1253,8 +1321,6 @@ POST /api/v2/chats/users/{userId}/messages
 
 Send a message to a user
 
-postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:chat:access
@@ -1298,6 +1364,59 @@ apiInstance.postChatsUserMessages(userId, body)
 ### Return type
 
 **ChatSendMessageResponse**
+
+<a name="putChatsMessageReactions"></a>
+
+# void putChatsMessageReactions(messageId, body)
+
+
+PUT /api/v2/chats/messages/{messageId}/reactions
+
+Update reactions to a message
+
+Requires ANY permissions:
+
+* chat:chat:access
+* chat:reactions:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ChatApi();
+
+let messageId = "messageId_example"; // String | messageId
+let body = {}; // Object | reactionUpdate
+
+apiInstance.putChatsMessageReactions(messageId, body)
+  .then(() => {
+    console.log('putChatsMessageReactions returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putChatsMessageReactions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messageId** | **String** | messageId |  |
+ **body** | **Object** | reactionUpdate |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="putChatsSettings"></a>
 

@@ -12,6 +12,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitPlanninggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Deletes the planning group
 [**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitSchedulingRun) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Cancel a scheduling run
 [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Delete a service goal template
+[**deleteWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitStaffinggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Deletes a staffing group
+[**deleteWorkforcemanagementBusinessunitTimeofflimit**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitTimeofflimit) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} | Deletes a time-off limit object
+[**deleteWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitTimeoffplan) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} | Deletes a time-off plan
 [**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekSchedule) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Delete a schedule
 [**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Delete a short term forecast
 [**deleteWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#deleteWorkforcemanagementCalendarUrlIcs) | **DELETE** /api/v2/workforcemanagement/calendar/url/ics | Disable generated calendar link for the current user
@@ -41,6 +44,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitSchedulingRuns**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitSchedulingRuns) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs | Get the list of scheduling runs
 [**getWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitServicegoaltemplate) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Get a service goal template
 [**getWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitServicegoaltemplates) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Gets list of service goal templates
+[**getWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitStaffinggroup) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Gets a staffing group
+[**getWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitStaffinggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups | Gets a list of staffing groups
+[**getWorkforcemanagementBusinessunitTimeofflimit**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitTimeofflimit) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} | Gets a time-off limit object
+[**getWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitTimeofflimits) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits | Gets a list of time-off limit objects
+[**getWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitTimeoffplan) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} | Gets a time-off plan
+[**getWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitTimeoffplans) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans | Gets a list of time-off plans
 [**getWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedule) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
 [**getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults | Get the generation results for a generated schedule
 [**getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast | Get the headcount forecast by planning group for the schedule
@@ -101,6 +110,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitPlanninggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group
 [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Mark a schedule run as applied
 [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitServicegoaltemplate) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Updates a service goal template
+[**patchWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitStaffinggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Updates a staffing group
+[**patchWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitTimeoffplan) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} | Updates a time-off plan
 [**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Update the requested management unit
 [**patchWorkforcemanagementManagementunitAgents**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitAgents) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents | Update agent configurations
 [**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeofflimit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Updates a time off limit object.
@@ -127,6 +138,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitIntraday) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds
 [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitPlanninggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Adds a new planning group
 [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitServicegoaltemplates) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Adds a new service goal template
+[**postWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitStaffinggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups | Creates a new staffing group
+[**postWorkforcemanagementBusinessunitStaffinggroupsQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitStaffinggroupsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query | Gets staffing group associations for a list of user IDs
+[**postWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitTimeofflimits) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits | Creates a new time-off limit object
+[**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query | Retrieves time-off limit related values based on a given set of filters.
+[**postWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitTimeoffplans) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans | Creates a new time-off plan
 [**postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query | Loads agent schedule data from the schedule. Used in combination with the metadata route
 [**postWorkforcemanagementBusinessunitWeekScheduleCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy | Copy a schedule
 [**postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations | Request a daily recalculation of the performance prediction for the associated schedule
@@ -182,6 +198,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementTimeoffrequestsEstimate**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequestsEstimate) | **POST** /api/v2/workforcemanagement/timeoffrequests/estimate | Estimates available time off for current user
 [**postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery) | **POST** /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query | Retrieves integration statuses for a list of current user time off requests
 [**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi.html#putWorkforcemanagementAgentIntegrationsHris) | **PUT** /api/v2/workforcemanagement/agents/{agentId}/integrations/hris | Update integrations for agent
+[**putWorkforcemanagementBusinessunitTimeofflimitValues**](WorkforceManagementApi.html#putWorkforcemanagementBusinessunitTimeofflimitValues) | **PUT** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values | Sets daily values for a date range of time-off limit object
 [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi.html#putWorkforcemanagementManagementunitTimeofflimitValues) | **PUT** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values | Sets daily values for a date range of time off limit object
 {: class="table table-striped"}
 
@@ -439,6 +456,162 @@ apiInstance.deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUni
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **serviceGoalTemplateId** | **String** | The ID of the service goal template to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteWorkforcemanagementBusinessunitStaffinggroup"></a>
+
+# void deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
+
+Deletes a staffing group
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to delete
+
+apiInstance.deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitStaffinggroup returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitStaffinggroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **staffingGroupId** | **String** | The ID of the staffing group to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteWorkforcemanagementBusinessunitTimeofflimit"></a>
+
+# void deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}
+
+Deletes a time-off limit object
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to delete
+
+apiInstance.deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitTimeofflimit returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitTimeofflimit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffLimitId** | **String** | The ID of the time-off limit object to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteWorkforcemanagementBusinessunitTimeoffplan"></a>
+
+# void deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
+
+Deletes a time-off plan
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to delete
+
+apiInstance.deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitTimeoffplan returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitTimeoffplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffPlanId** | **String** | The ID of the time-off plan to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2148,6 +2321,329 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitI
 ### Return type
 
 **ServiceGoalTemplateList**
+
+<a name="getWorkforcemanagementBusinessunitStaffinggroup"></a>
+
+# StaffingGroupResponse getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
+
+Gets a staffing group
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to fetch
+
+apiInstance.getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitStaffinggroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitStaffinggroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **staffingGroupId** | **String** | The ID of the staffing group to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+**StaffingGroupResponse**
+
+<a name="getWorkforcemanagementBusinessunitStaffinggroups"></a>
+
+# StaffingGroupListing getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups
+
+Gets a list of staffing groups
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'managementUnitId': "managementUnitId_example" // String | The ID of the management unit to get management unit specific staffing groups
+};
+
+apiInstance.getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitStaffinggroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitStaffinggroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **managementUnitId** | **String** | The ID of the management unit to get management unit specific staffing groups | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**StaffingGroupListing**
+
+<a name="getWorkforcemanagementBusinessunitTimeofflimit"></a>
+
+# BuTimeOffLimitResponse getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}
+
+Gets a time-off limit object
+
+Returns properties of time-off limit object, but not daily values
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit to fetch
+
+apiInstance.getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitTimeofflimit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitTimeofflimit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffLimitId** | **String** | The ID of the time-off limit to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffLimitResponse**
+
+<a name="getWorkforcemanagementBusinessunitTimeofflimits"></a>
+
+# BuTimeOffLimitListing getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits
+
+Gets a list of time-off limit objects
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'managementUnitId': "managementUnitId_example" // String | The ID of the management unit to get management unit specific time-off limit objects
+};
+
+apiInstance.getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitTimeofflimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **managementUnitId** | **String** | The ID of the management unit to get management unit specific time-off limit objects | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffLimitListing**
+
+<a name="getWorkforcemanagementBusinessunitTimeoffplan"></a>
+
+# BuTimeOffPlanResponse getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
+
+Gets a time-off plan
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to fetch
+
+apiInstance.getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitTimeoffplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffPlanId** | **String** | The ID of the time-off plan to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffPlanResponse**
+
+<a name="getWorkforcemanagementBusinessunitTimeoffplans"></a>
+
+# BuTimeOffPlanListing getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans
+
+Gets a list of time-off plans
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'managementUnitId': "managementUnitId_example", // String | The ID of the management unit to get management unit specific staffing groups
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
+
+apiInstance.getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitTimeoffplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **managementUnitId** | **String** | The ID of the management unit to get management unit specific staffing groups | [optional]  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffPlanListing**
 
 <a name="getWorkforcemanagementBusinessunitWeekSchedule"></a>
 
@@ -5481,6 +5977,118 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
 
 **ServiceGoalTemplate**
 
+<a name="patchWorkforcemanagementBusinessunitStaffinggroup"></a>
+
+# StaffingGroupResponse patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
+
+Updates a staffing group
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to update
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitStaffinggroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitStaffinggroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **staffingGroupId** | **String** | The ID of the staffing group to update |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**StaffingGroupResponse**
+
+<a name="patchWorkforcemanagementBusinessunitTimeoffplan"></a>
+
+# BuTimeOffPlanResponse patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
+
+Updates a time-off plan
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to update
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitTimeoffplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffPlanId** | **String** | The ID of the time-off plan to update |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffPlanResponse**
+
 <a name="patchWorkforcemanagementManagementunit"></a>
 
 # ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, opts)
@@ -6904,6 +7512,276 @@ apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnit
 ### Return type
 
 **ServiceGoalTemplate**
+
+<a name="postWorkforcemanagementBusinessunitStaffinggroups"></a>
+
+# StaffingGroupResponse postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups
+
+Creates a new staffing group
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitStaffinggroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitStaffinggroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**StaffingGroupResponse**
+
+<a name="postWorkforcemanagementBusinessunitStaffinggroupsQuery"></a>
+
+# UserStaffingGroupListing postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query
+
+Gets staffing group associations for a list of user IDs
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitStaffinggroupsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitStaffinggroupsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserStaffingGroupListing**
+
+<a name="postWorkforcemanagementBusinessunitTimeofflimits"></a>
+
+# BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits
+
+Creates a new time-off limit object
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitTimeofflimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffLimitResponse**
+
+<a name="postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery"></a>
+
+# BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
+
+Retrieves time-off limit related values based on a given set of filters.
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffLimitValuesResponse**
+
+<a name="postWorkforcemanagementBusinessunitTimeoffplans"></a>
+
+# BuTimeOffPlanResponse postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans
+
+Creates a new time-off plan
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitTimeoffplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffPlanResponse**
 
 <a name="postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery"></a>
 
@@ -9935,6 +10813,64 @@ apiInstance.putWorkforcemanagementAgentIntegrationsHris(agentId, body)
 ### Return type
 
 **AgentIntegrationsResponse**
+
+<a name="putWorkforcemanagementBusinessunitTimeofflimitValues"></a>
+
+# BuTimeOffLimitResponse putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, opts)
+
+
+PUT /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
+
+Sets daily values for a date range of time-off limit object
+
+Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to set values for
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, opts)
+  .then((data) => {
+    console.log(`putWorkforcemanagementBusinessunitTimeofflimitValues success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putWorkforcemanagementBusinessunitTimeofflimitValues');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffLimitId** | **String** | The ID of the time-off limit object to set values for |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuTimeOffLimitResponse**
 
 <a name="putWorkforcemanagementManagementunitTimeofflimitValues"></a>
 

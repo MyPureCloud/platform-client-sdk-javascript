@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 189.1.0
+	 * @version 190.0.0
 	 */
 
 	/**
@@ -162,7 +162,7 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Get a link to the limit documentation
+	 * Get limit documentation
 	 * 
 	 */
 	getOrganizationsLimitsDocs() { 

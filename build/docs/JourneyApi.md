@@ -38,7 +38,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | **GET** /api/v2/journey/sessions/{sessionId}/outcomescores | Retrieve latest outcome score associated with a session for all outcomes.
 [**getJourneyView**](JourneyApi.html#getJourneyView) | **GET** /api/v2/journey/views/{viewId} | Get a Journey View by ID
 [**getJourneyViewVersion**](JourneyApi.html#getJourneyViewVersion) | **GET** /api/v2/journey/views/{viewId}/versions/{versionId} | Get a Journey View by ID and version
+[**getJourneyViewVersionJob**](JourneyApi.html#getJourneyViewVersionJob) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} | Get the job for a journey view version.
+[**getJourneyViewVersionJobResults**](JourneyApi.html#getJourneyViewVersionJobResults) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results | Get the result of a job for a journey view version.
+[**getJourneyViewVersionJobsLatest**](JourneyApi.html#getJourneyViewVersionJobsLatest) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest | Get the latest job of a journey view version.
 [**getJourneyViews**](JourneyApi.html#getJourneyViews) | **GET** /api/v2/journey/views | Get a list of Journey Views
+[**getJourneyViewsEventdefinition**](JourneyApi.html#getJourneyViewsEventdefinition) | **GET** /api/v2/journey/views/eventdefinitions/{eventDefinitionId} | Get an Event Definition
+[**getJourneyViewsEventdefinitions**](JourneyApi.html#getJourneyViewsEventdefinitions) | **GET** /api/v2/journey/views/eventdefinitions | Get a list of Event Definitions
 [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
 [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
 [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
@@ -56,8 +61,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | **POST** /api/v2/journey/outcomes/attributions/jobs | Create Outcome Attributions
 [**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | **POST** /api/v2/journey/outcomes/predictors | Create an outcome predictor.
 [**postJourneySegments**](JourneyApi.html#postJourneySegments) | **POST** /api/v2/journey/segments | Create a segment.
+[**postJourneyViewVersionJobs**](JourneyApi.html#postJourneyViewVersionJobs) | **POST** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs | Submit a job request for a journey view version.
 [**postJourneyViewVersions**](JourneyApi.html#postJourneyViewVersions) | **POST** /api/v2/journey/views/{viewId}/versions | Update a Journey View by ID
 [**postJourneyViews**](JourneyApi.html#postJourneyViews) | **POST** /api/v2/journey/views | Create a new Journey View
+[**postJourneyViewsEncodingsValidate**](JourneyApi.html#postJourneyViewsEncodingsValidate) | **POST** /api/v2/journey/views/encodings/validate | Validate whether an encoding exist for a label/value combination.
 {: class="table table-striped"}
 
 <a name="deleteJourneyActionmap"></a>
@@ -1719,6 +1726,178 @@ apiInstance.getJourneyViewVersion(viewId, versionId)
 
 **JourneyView**
 
+<a name="getJourneyViewVersionJob"></a>
+
+# JourneyViewJob getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
+
+
+GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}
+
+Get the job for a journey view version.
+
+used for long descriptions
+
+getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* journey:viewsJobs:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let viewId = "viewId_example"; // String | Journey View Id
+let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+let jobId = "jobId_example"; // String | JobId
+
+apiInstance.getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
+  .then((data) => {
+    console.log(`getJourneyViewVersionJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewVersionJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **viewId** | **String** | Journey View Id |  |
+ **journeyVersionId** | **String** | Journey View Version |  |
+ **jobId** | **String** | JobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JourneyViewJob**
+
+<a name="getJourneyViewVersionJobResults"></a>
+
+# JourneyViewResult getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
+
+
+GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results
+
+Get the result of a job for a journey view version.
+
+used for long descriptions
+
+getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* journey:viewsResults:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let viewId = "viewId_example"; // String | JourneyViewResult id
+let journeyViewVersion = "journeyViewVersion_example"; // String | Journey View Version
+let jobId = "jobId_example"; // String | Id of the executing job
+
+apiInstance.getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
+  .then((data) => {
+    console.log(`getJourneyViewVersionJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewVersionJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **viewId** | **String** | JourneyViewResult id |  |
+ **journeyViewVersion** | **String** | Journey View Version |  |
+ **jobId** | **String** | Id of the executing job |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JourneyViewResult**
+
+<a name="getJourneyViewVersionJobsLatest"></a>
+
+# JourneyViewJob getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
+
+
+GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest
+
+Get the latest job of a journey view version.
+
+used for long descriptions
+
+getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* journey:viewsJobs:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let viewId = "viewId_example"; // String | Journey View Id
+let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+
+apiInstance.getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
+  .then((data) => {
+    console.log(`getJourneyViewVersionJobsLatest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewVersionJobsLatest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **viewId** | **String** | Journey View Id |  |
+ **journeyVersionId** | **String** | Journey View Version |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JourneyViewJob**
+
 <a name="getJourneyViews"></a>
 
 # AddressableEntityListing getJourneyViews()
@@ -1765,6 +1944,105 @@ This endpoint does not need any parameter.
 ### Return type
 
 **AddressableEntityListing**
+
+<a name="getJourneyViewsEventdefinition"></a>
+
+# JourneyEventDefinition getJourneyViewsEventdefinition(eventDefinitionId)
+
+
+GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId}
+
+Get an Event Definition
+
+getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* journey:eventDefinition:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let eventDefinitionId = "eventDefinitionId_example"; // String | Event Definition ID
+
+apiInstance.getJourneyViewsEventdefinition(eventDefinitionId)
+  .then((data) => {
+    console.log(`getJourneyViewsEventdefinition success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewsEventdefinition');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **eventDefinitionId** | **String** | Event Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JourneyEventDefinition**
+
+<a name="getJourneyViewsEventdefinitions"></a>
+
+# JourneyEventDefinitionListing getJourneyViewsEventdefinitions()
+
+
+GET /api/v2/journey/views/eventdefinitions
+
+Get a list of Event Definitions
+
+getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* journey:eventDefinition:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+apiInstance.getJourneyViewsEventdefinitions()
+  .then((data) => {
+    console.log(`getJourneyViewsEventdefinitions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewsEventdefinitions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**JourneyEventDefinitionListing**
 
 <a name="patchJourneyActionmap"></a>
 
@@ -2652,6 +2930,62 @@ apiInstance.postJourneySegments(opts)
 
 **JourneySegment**
 
+<a name="postJourneyViewVersionJobs"></a>
+
+# JourneyViewJob postJourneyViewVersionJobs(viewId, journeyVersionId)
+
+
+POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs
+
+Submit a job request for a journey view version.
+
+used for long descriptions
+
+postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* journey:viewsJobs:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let viewId = "viewId_example"; // String | Journey View Id
+let journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+
+apiInstance.postJourneyViewVersionJobs(viewId, journeyVersionId)
+  .then((data) => {
+    console.log(`postJourneyViewVersionJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyViewVersionJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **viewId** | **String** | Journey View Id |  |
+ **journeyVersionId** | **String** | Journey View Version |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JourneyViewJob**
+
 <a name="postJourneyViewVersions"></a>
 
 # JourneyView postJourneyViewVersions(viewId, body)
@@ -2759,4 +3093,60 @@ apiInstance.postJourneyViews(body)
 ### Return type
 
 **JourneyView**
+
+<a name="postJourneyViewsEncodingsValidate"></a>
+
+# EntityListing postJourneyViewsEncodingsValidate(opts)
+
+
+POST /api/v2/journey/views/encodings/validate
+
+Validate whether an encoding exist for a label/value combination.
+
+True indicates a valid encoding
+
+postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* journey:viewsEncodings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  'body': [{}] // Object | 
+};
+
+apiInstance.postJourneyViewsEncodingsValidate(opts)
+  .then((data) => {
+    console.log(`postJourneyViewsEncodingsValidate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyViewsEncodingsValidate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EntityListing**
 
