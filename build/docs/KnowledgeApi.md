@@ -701,7 +701,7 @@ apiInstance.getKnowledgeGuestSessionCategories(sessionId, opts)
 
 <a name="getKnowledgeGuestSessionDocument"></a>
 
-# KnowledgeGuestDocument getKnowledgeGuestSessionDocument(sessionId, documentId)
+# KnowledgeGuestDocumentResponse getKnowledgeGuestSessionDocument(sessionId, documentId)
 
 
 GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}
@@ -744,7 +744,7 @@ apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId)
 
 ### Return type
 
-**KnowledgeGuestDocument**
+**KnowledgeGuestDocumentResponse**
 
 <a name="getKnowledgeGuestSessionDocuments"></a>
 

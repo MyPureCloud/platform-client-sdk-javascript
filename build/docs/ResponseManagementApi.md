@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getResponsemanagementResponseassetsStatusStatusId**](ResponseManagementApi.html#getResponsemanagementResponseassetsStatusStatusId) | **GET** /api/v2/responsemanagement/responseassets/status/{statusId} | Get response asset upload status
 [**getResponsemanagementResponses**](ResponseManagementApi.html#getResponsemanagementResponses) | **GET** /api/v2/responsemanagement/responses | Gets a list of existing responses.
 [**postResponsemanagementLibraries**](ResponseManagementApi.html#postResponsemanagementLibraries) | **POST** /api/v2/responsemanagement/libraries | Create a response library.
+[**postResponsemanagementLibrariesBulk**](ResponseManagementApi.html#postResponsemanagementLibrariesBulk) | **POST** /api/v2/responsemanagement/libraries/bulk | Get response libraries.
 [**postResponsemanagementResponseassetsSearch**](ResponseManagementApi.html#postResponsemanagementResponseassetsSearch) | **POST** /api/v2/responsemanagement/responseassets/search | Search response assets
 [**postResponsemanagementResponseassetsUploads**](ResponseManagementApi.html#postResponsemanagementResponseassetsUploads) | **POST** /api/v2/responsemanagement/responseassets/uploads | Creates pre-signed url for uploading response asset
 [**postResponsemanagementResponses**](ResponseManagementApi.html#postResponsemanagementResponses) | **POST** /api/v2/responsemanagement/responses | Create a response.
@@ -549,6 +550,56 @@ apiInstance.postResponsemanagementLibraries(body)
 ### Return type
 
 **Library**
+
+<a name="postResponsemanagementLibrariesBulk"></a>
+
+# LibraryEntityListing postResponsemanagementLibrariesBulk(body)
+
+
+POST /api/v2/responsemanagement/libraries/bulk
+
+Get response libraries.
+
+Requires ANY permissions:
+
+* responses:library:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ResponseManagementApi();
+
+let body = {}; // Object | LibraryIDs (max allowed 50)
+
+apiInstance.postResponsemanagementLibrariesBulk(body)
+  .then((data) => {
+    console.log(`postResponsemanagementLibrariesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postResponsemanagementLibrariesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | LibraryIDs (max allowed 50) |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LibraryEntityListing**
 
 <a name="postResponsemanagementResponseassetsSearch"></a>
 

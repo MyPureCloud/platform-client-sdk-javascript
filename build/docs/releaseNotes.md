@@ -1,467 +1,299 @@
-Platform API version: 7915
+Platform API version: 7944
 
 
 
 
-# Major Changes (10 changes)
+# Major Changes (11 changes)
 
-**GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}** (1 change)
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}** (1 change)
 
-* Has been deprecated
+* Response 200 type was changed from KnowledgeGuestDocument to KnowledgeGuestDocumentResponse
 
-**DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}** (1 change)
-
-* Has been deprecated
-
-**PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}** (1 change)
+**GET /api/v2/recordings/screensessions** (1 change)
 
 * Has been deprecated
 
-**GET /api/v2/conversations/messaging/integrations/twitter** (1 change)
+**KnowledgeSearchDocument** (1 change)
 
-* Has been deprecated
+* Model KnowledgeSearchDocument was removed
 
-**POST /api/v2/conversations/messaging/integrations/twitter** (1 change)
+**KnowledgeGuestDocument** (1 change)
 
-* Has been deprecated
+* Model KnowledgeGuestDocument was removed
 
-**GET /api/v2/organizations/limits/docs** (1 change)
+**ContactsExportRequest** (1 change)
 
-* Response 200 type was changed from UrlResponse to LimitDocumentation
+* Property searchCriteria was removed
 
-**GET /api/v2/routing/queues** (1 change)
+**KnowledgeSearchResponse** (1 change)
 
-* Parameter cannedResponseLibraryId was added
+* Property results was changed from KnowledgeSearchDocument[] to KnowledgeSearchDocumentV1[]
 
-**AnalyticsConversationSegment** (2 changes)
+**KnowledgeDocumentSearchResult** (1 change)
 
-* Enum value endpointDnd was removed from property disconnectType
-* Enum value transferDnd was removed from property disconnectType
+* Property document was changed from KnowledgeDocumentResponse to KnowledgeSearchDocumentResponse
 
-**ConversationAppSettings** (1 change)
+**KnowledgeGuestDocumentResponseListing** (1 change)
 
-* Property autoStartType was removed
+* Property entities was changed from KnowledgeGuestDocument[] to KnowledgeGuestDocumentResponse[]
+
+**KnowledgeDocumentGuestSearchResult** (1 change)
+
+* Property document was changed from KnowledgeGuestDocument to KnowledgeGuestSearchDocumentResponse
+
+**FileUploadSettings** (1 change)
+
+* Property useSupportedContentProfile was removed
+
+**FlowLogLevelCharacteristicsDefinitions** (1 change)
+
+* characteristics has been made readonly
 
 
-# Minor Changes (132 changes)
+# Minor Changes (71 changes)
 
-**/api/v2/chats/messages/{messageId}/reactions** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/chats/rooms/{roomJid}/participants/{participantJid}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/chats/rooms/{roomJid}/participants** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**POST /api/v2/journey/deployments/{deploymentId}/appevents** (1 change)
-
-* Response 422 was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query** (2 changes)
+**/api/v2/analytics/reporting/settings/dashboards/bulk/remove** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query** (2 changes)
+**/api/v2/analytics/reporting/settings/dashboards/query** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans** (3 changes)
+**/api/v2/analytics/reporting/dashboards/users/{userId}** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation POST was added
 
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}** (4 changes)
+**/api/v2/analytics/reporting/dashboards/users** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
 
-**/api/v2/journey/views/encodings/validate** (2 changes)
+**/api/v2/analytics/reporting/dashboards/users/bulk/remove** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/journey/views/eventdefinitions/{eventDefinitionId}** (2 changes)
+**/api/v2/analytics/reporting/settings/users/{userId}/dashboards** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/journey/views/eventdefinitions** (2 changes)
+**/api/v2/conversations/messaging/facebook/permissions** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest** (2 changes)
+**POST /api/v2/outbound/campaigns** (1 change)
 
-* Path was added
-* Operation GET was added
+* Response 409 was added
 
-**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs** (2 changes)
+**/api/v2/responsemanagement/libraries/bulk** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results** (2 changes)
+**/api/v2/routing/sms/phonenumbers/alphanumeric** (2 changes)
 
 * Path was added
-* Operation GET was added
+* Operation POST was added
 
-**/api/v2/recordings/screensessions/details** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**AnalyticsConversationWithoutAttributes** (1 change)
-
-* Enum value voicesurveyflow was added to property conversationInitiator
-
-**AnalyticsParticipantWithoutAttributes** (1 change)
-
-* Enum value voicesurveyflow was added to property purpose
-
-**AnalyticsSurvey** (2 changes)
-
-* Optional property surveyPartialResponse was added
-* Optional property surveyType was added
-
-**SurveyDetailQueryPredicate** (2 changes)
-
-* Enum value surveyPartialResponse was added to property dimension
-* Enum value surveyType was added to property dimension
-
-**AnalyticsConversation** (1 change)
-
-* Enum value voicesurveyflow was added to property conversationInitiator
-
-**AnalyticsParticipant** (1 change)
-
-* Enum value voicesurveyflow was added to property purpose
-
-**SurveyAggregateQueryPredicate** (2 changes)
-
-* Enum value surveyPartialResponse was added to property dimension
-* Enum value surveyType was added to property dimension
-
-**SurveyAggregationQuery** (6 changes)
-
-* Enum value surveyPartialResponse was added to property groupBy
-* Enum value surveyType was added to property groupBy
-* Enum value nSurveyFullResponses was added to property metrics
-* Enum value nSurveyPartialResponses was added to property metrics
-* Enum value nVoiceSurveys was added to property metrics
-* Enum value nWebSurveys was added to property metrics
-
-**SurveyAggregationView** (4 changes)
-
-* Enum value nSurveyFullResponses was added to property target
-* Enum value nSurveyPartialResponses was added to property target
-* Enum value nVoiceSurveys was added to property target
-* Enum value nWebSurveys was added to property target
-
-**ChatReactionUpdate** (1 change)
+**DashboardConfiguration** (1 change)
 
 * Model was added
 
-**RoomParticipant** (1 change)
+**Warning** (1 change)
 
 * Model was added
 
-**RoomParticipantResponse** (1 change)
+**Widget** (1 change)
 
 * Model was added
 
-**RoomParticipantsResponse** (1 change)
+**DashboardConfigurationBulkRequest** (1 change)
 
 * Model was added
 
-**Email** (3 changes)
+**DashboardConfigurationListing** (1 change)
 
-* Enum value parked was added to property state
-* Enum value parked was added to property initialState
-* Optional property resumeTimestamp was added
+* Model was added
 
-**Campaign** (1 change)
+**DashboardConfigurationQueryRequest** (1 change)
+
+* Model was added
+
+**DashboardUser** (1 change)
+
+* Model was added
+
+**DashboardUserListing** (1 change)
+
+* Model was added
+
+**Limit** (2 changes)
+
+* Enum value workforce.management.forecast was added to property namespace
+* Enum value system was added to property namespace
+
+**DialerPreview** (1 change)
 
 * Optional property callbackAutoAnswer was added
 
-**Alteration** (1 change)
+**DynamicLineBalancingSettings** (1 change)
 
 * Model was added
 
-**Pattern** (1 change)
+**FacebookPermission** (1 change)
 
 * Model was added
 
-**Range** (1 change)
+**FacebookPermissionEntityListing** (1 change)
 
 * Model was added
 
-**Reoccurrence** (1 change)
+**ContactsExportRequest** (1 change)
+
+* Optional property criteria was added
+
+**KnowledgeSearchDocumentV1** (1 change)
 
 * Model was added
 
-**DocumentVariation** (2 changes)
-
-* Optional property priority was added
-* Optional property name was added
-
-**KnowledgeDocumentVersionVariation** (2 changes)
-
-* Optional property priority was added
-* Optional property name was added
-
-**DocumentQueryPredicate** (1 change)
-
-* Enum value variationId was added to property fields
-
-**LimitDocs** (1 change)
+**DocumentBodyBlockWithHighlight** (1 change)
 
 * Model was added
 
-**LimitDocumentation** (1 change)
+**DocumentBodyParagraphWithHighlight** (1 change)
 
 * Model was added
 
-**NamespaceDocs** (1 change)
+**DocumentBodyWithHighlight** (1 change)
 
 * Model was added
 
-**StaffingGroupListing** (1 change)
+**DocumentContentBlockWithHighlight** (1 change)
 
 * Model was added
 
-**StaffingGroupResponse** (1 change)
+**DocumentContentHighlightIndex** (1 change)
 
 * Model was added
 
-**CreateStaffingGroupRequest** (1 change)
+**DocumentVariationAnswer** (1 change)
 
 * Model was added
 
-**UpdateStaffingGroupRequest** (1 change)
+**KnowledgeSearchDocumentResponse** (1 change)
 
 * Model was added
 
-**StaffingGroupReference** (1 change)
+**KnowledgeDocumentSearchRequest** (1 change)
+
+* Optional property answerHighlightTopResults was added
+
+**ApprovalNamespace** (3 changes)
+
+* Enum value workforce.management.forecast was added to property namespace
+* Enum value system was added to property namespace
+* Enum value System was added to property type
+
+**LimitChangeRequestDetails** (2 changes)
+
+* Enum value workforce.management.forecast was added to property namespace
+* Enum value system was added to property namespace
+
+**StatusChange** (2 changes)
+
+* Enum value workforce.management.forecast was added to property namespace
+* Enum value system was added to property namespace
+
+**KnowledgeGuestDocumentVariationAnswer** (1 change)
 
 * Model was added
 
-**UserStaffingGroupListing** (1 change)
+**KnowledgeGuestDocumentResponse** (1 change)
 
 * Model was added
 
-**UserStaffingGroupResponse** (1 change)
+**KnowledgeGuestSearchDocumentResponse** (1 change)
 
 * Model was added
 
-**QueryUserStaffingGroupListRequest** (1 change)
+**KnowledgeDocumentGuestSearchRequest** (1 change)
+
+* Optional property answerHighlightTopResults was added
+
+**Recording** (2 changes)
+
+* Optional property mediaSubtype was added
+* Optional property mediaSubject was added
+
+**OrphanRecording** (2 changes)
+
+* Optional property mediaSubtype was added
+* Optional property mediaSubject was added
+
+**RecordingMetadata** (2 changes)
+
+* Optional property mediaSubtype was added
+* Optional property mediaSubject was added
+
+**LibraryBatchRequest** (1 change)
 
 * Model was added
 
-**BuTimeOffLimitListing** (1 change)
+**SmsPhoneNumber** (1 change)
+
+* Enum value alphanumeric was added to property phoneNumberType
+
+**SmsAvailablePhoneNumber** (1 change)
+
+* Enum value alphanumeric was added to property phoneNumberType
+
+**AlternativeShiftNotification** (1 change)
 
 * Model was added
 
-**BuTimeOffLimitResponse** (1 change)
+**WfmUserNotification** (2 changes)
+
+* Enum value AlternativeShift was added to property type
+* Optional property alternativeShift was added
+
+**FlowLogLevelCharacteristicsDefinitions** (1 change)
+
+* Optional property logLevels was added
+
+**JourneyViewChart** (1 change)
 
 * Model was added
 
-**BuCreateTimeOffLimitRequest** (1 change)
+**JourneyViewChartGroupByAttribute** (1 change)
 
 * Model was added
 
-**BuSetTimeOffLimitValuesRequest** (1 change)
+**JourneyViewChartMetric** (1 change)
 
 * Model was added
 
-**BuTimeOffLimitRange** (1 change)
-
-* Model was added
-
-**BuTimeOffLimitReference** (1 change)
-
-* Model was added
-
-**BuTimeOffLimitValueRange** (1 change)
-
-* Model was added
-
-**BuTimeOffLimitValuesResponse** (1 change)
-
-* Model was added
-
-**BuTimeOffPlanListing** (1 change)
-
-* Model was added
-
-**BuTimeOffPlanResponse** (1 change)
-
-* Model was added
-
-**TimeOffPlanBusinessUnitAssociation** (1 change)
-
-* Model was added
-
-**TimeOffPlanManagementUnitAssociation** (1 change)
-
-* Model was added
-
-**BuCreateTimeOffPlanRequest** (1 change)
-
-* Model was added
-
-**CreateTimeOffPlanBusinessUnitAssociation** (1 change)
-
-* Model was added
-
-**CreateTimeOffPlanManagementUnitAssociation** (1 change)
-
-* Model was added
-
-**BuUpdateTimeOffPlanRequest** (1 change)
-
-* Model was added
-
-**UpdateTimeOffPlanBusinessUnitAssociation** (1 change)
-
-* Model was added
-
-**UpdateTimeOffPlanManagementUnitAssociation** (1 change)
-
-* Model was added
-
-**SurveyAsyncAggregationQuery** (6 changes)
-
-* Enum value surveyPartialResponse was added to property groupBy
-* Enum value surveyType was added to property groupBy
-* Enum value nSurveyFullResponses was added to property metrics
-* Enum value nSurveyPartialResponses was added to property metrics
-* Enum value nVoiceSurveys was added to property metrics
-* Enum value nWebSurveys was added to property metrics
-
-**Label** (1 change)
-
-* Model was added
-
-**JourneyEventDefinition** (1 change)
-
-* Model was added
-
-**JourneyEventDefinitionListing** (1 change)
-
-* Model was added
-
-**JourneyViewJob** (1 change)
-
-* Model was added
-
-**JourneyViewResult** (1 change)
-
-* Model was added
-
-**JourneyViewResultElement** (1 change)
-
-* Model was added
-
-**JourneyViewResultLink** (1 change)
-
-* Model was added
-
-**JourneyViewResultMetrics** (1 change)
-
-* Model was added
-
-**ScreenRecordingActiveSessions** (1 change)
-
-* Model was added
-
-**AutoStatusTransitionDetail** (1 change)
-
-* Optional property errorDetails was added
-
-**TaskManagementErrorDetails** (1 change)
+**SmsAlphanumericProvision** (1 change)
 
 * Model was added
 
 
-# Point Changes (13 changes)
+# Point Changes (4 changes)
 
-**GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}** (2 changes)
+**GET /api/v2/recordings/screensessions** (1 change)
+
+* Description was changed
+
+**POST /api/v2/usage/simplesearch** (2 changes)
 
 * Description was changed
 * Summary was changed
 
-**DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}** (1 change)
-
-* Description was changed
-
-**PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}** (1 change)
-
-* Description was changed
-
-**GET /api/v2/conversations/messaging/integrations/twitter** (2 changes)
-
-* Description was changed
-* Summary was changed
-
-**POST /api/v2/conversations/messaging/integrations/twitter** (1 change)
-
-* Description was changed
-
-**GET /api/v2/organizations/limits/docs** (1 change)
+**GET /api/v2/usage/simplesearch/{executionId}/results** (1 change)
 
 * Summary was changed
-
-**GET /api/v2/routing/queues** (5 changes)
-
-* Description was changed for parameter name
-* Description was changed for parameter id
-* Description was changed for parameter divisionId
-* Description was changed for parameter peerId
-* Description was changed for parameter hasPeer

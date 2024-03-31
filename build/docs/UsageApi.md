@@ -10,10 +10,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOauthClientUsageQueryResult**](UsageApi.html#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
 [**getOauthClientUsageSummary**](UsageApi.html#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
 [**getUsageQueryExecutionIdResults**](UsageApi.html#getUsageQueryExecutionIdResults) | **GET** /api/v2/usage/query/{executionId}/results | Get the results of a usage query
-[**getUsageSimplesearchExecutionIdResults**](UsageApi.html#getUsageSimplesearchExecutionIdResults) | **GET** /api/v2/usage/simplesearch/{executionId}/results | Get the results of a usage search
+[**getUsageSimplesearchExecutionIdResults**](UsageApi.html#getUsageSimplesearchExecutionIdResults) | **GET** /api/v2/usage/simplesearch/{executionId}/results | Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
 [**postOauthClientUsageQuery**](UsageApi.html#postOauthClientUsageQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/query | Query for OAuth client API usage
 [**postUsageQuery**](UsageApi.html#postUsageQuery) | **POST** /api/v2/usage/query | Query organization API Usage - 
-[**postUsageSimplesearch**](UsageApi.html#postUsageSimplesearch) | **POST** /api/v2/usage/simplesearch | Search organization API Usage - 
+[**postUsageSimplesearch**](UsageApi.html#postUsageSimplesearch) | **POST** /api/v2/usage/simplesearch | Search organization API Usage
 {: class="table table-striped"}
 
 <a name="getOauthClientUsageQueryResult"></a>
@@ -184,7 +184,7 @@ apiInstance.getUsageQueryExecutionIdResults(executionId)
 
 GET /api/v2/usage/simplesearch/{executionId}/results
 
-Get the results of a usage search
+Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
 
 Requires ANY permissions:
 
@@ -343,9 +343,9 @@ apiInstance.postUsageQuery(body)
 
 POST /api/v2/usage/simplesearch
 
-Search organization API Usage - 
+Search organization API Usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 
 Requires ANY permissions:
 

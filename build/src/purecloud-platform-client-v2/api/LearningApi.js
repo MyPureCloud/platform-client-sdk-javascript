@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 190.0.0
+	 * @version 191.0.0
 	 */
 
 	/**
@@ -449,7 +449,6 @@ class LearningApi {
 	 * @param {String} moduleId Key identifier for the module
 	 * @param {String} userId Key identifier for the user
 	 * @param {Object} body The learning request for updating the assignment
-	 * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchLearningModuleUserAssignments(moduleId, userId, body) { 
 		// verify the required parameter 'moduleId' is set

@@ -460,6 +460,8 @@ docs/getAnalyticsJourneysAggregatesJobResults-example.txt
 docs/getAnalyticsJourneysAggregatesJobResults-example.txt
 docs/getAnalyticsKnowledgeAggregatesJob-example.txt
 docs/getAnalyticsKnowledgeAggregatesJobResults-example.txt
+docs/getAnalyticsReportingDashboardsUser-example.txt
+docs/getAnalyticsReportingDashboardsUsers-example.txt
 docs/getAnalyticsReportingExports-example.txt
 docs/getAnalyticsReportingExportsMetadata-example.txt
 docs/getAnalyticsReportingMetadata-example.txt
@@ -471,6 +473,7 @@ docs/getAnalyticsReportingScheduleHistoryLatest-example.txt
 docs/getAnalyticsReportingScheduleHistoryRunId-example.txt
 docs/getAnalyticsReportingSchedules-example.txt
 docs/getAnalyticsReportingSettings-example.txt
+docs/getAnalyticsReportingSettingsUserDashboards-example.txt
 docs/getAnalyticsReportingTimeperiods-example.txt
 docs/getAnalyticsResolutionsAggregatesJob-example.txt
 docs/getAnalyticsResolutionsAggregatesJobResults-example.txt
@@ -658,6 +661,7 @@ docs/getConversationsMessages-example.txt
 docs/getConversationsMessagesCachedmedia-example.txt
 docs/getConversationsMessagesCachedmediaCachedMediaItemId-example.txt
 docs/getConversationsMessagingFacebookApp-example.txt
+docs/getConversationsMessagingFacebookPermissions-example.txt
 docs/getConversationsMessagingIntegrations-example.txt
 docs/getConversationsMessagingIntegrationsFacebook-example.txt
 docs/getConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
@@ -1802,9 +1806,12 @@ docs/postAnalyticsKnowledgeAggregatesQuery-example.txt
 docs/postAnalyticsQueuesObservationsQuery-example.txt
 docs/postAnalyticsQueuesObservationsQuery-example.txt
 docs/postAnalyticsRatelimitsAggregatesQuery-example.txt
+docs/postAnalyticsReportingDashboardsUsersBulkRemove-example.txt
 docs/postAnalyticsReportingExports-example.txt
 docs/postAnalyticsReportingScheduleRunreport-example.txt
 docs/postAnalyticsReportingSchedules-example.txt
+docs/postAnalyticsReportingSettingsDashboardsBulkRemove-example.txt
+docs/postAnalyticsReportingSettingsDashboardsQuery-example.txt
 docs/postAnalyticsResolutionsAggregatesJobs-example.txt
 docs/postAnalyticsRoutingActivityQuery-example.txt
 docs/postAnalyticsRoutingActivityQuery-example.txt
@@ -2212,6 +2219,7 @@ docs/postRecordingsDeletionprotection-example.txt
 docs/postRecordingsScreensessionsAcknowledge-example.txt
 docs/postRecordingsScreensessionsMetadata-example.txt
 docs/postResponsemanagementLibraries-example.txt
+docs/postResponsemanagementLibrariesBulk-example.txt
 docs/postResponsemanagementResponseassetsSearch-example.txt
 docs/postResponsemanagementResponseassetsUploads-example.txt
 docs/postResponsemanagementResponses-example.txt
@@ -2234,6 +2242,7 @@ docs/postRoutingSkillgroups-example.txt
 docs/postRoutingSkills-example.txt
 docs/postRoutingSmsAddresses-example.txt
 docs/postRoutingSmsPhonenumbers-example.txt
+docs/postRoutingSmsPhonenumbersAlphanumeric-example.txt
 docs/postRoutingSmsPhonenumbersImport-example.txt
 docs/postRoutingUtilizationLabels-example.txt
 docs/postRoutingUtilizationTags-example.txt

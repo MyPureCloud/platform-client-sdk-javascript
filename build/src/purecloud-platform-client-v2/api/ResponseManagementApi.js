@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 190.0.0
+	 * @version 191.0.0
 	 */
 
 	/**
@@ -270,6 +270,31 @@ class ResponseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get response libraries.
+	 * 
+	 * @param {Object} body LibraryIDs (max allowed 50)
+	 */
+	postResponsemanagementLibrariesBulk(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementLibrariesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/libraries/bulk', 
 			'POST', 
 			{  },
 			{  },

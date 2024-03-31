@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 190.0.0
+	 * @version 191.0.0
 	 */
 
 	/**
@@ -105,7 +105,7 @@ class UsageApi {
 	}
 
 	/**
-	 * Get the results of a usage search
+	 * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
 	 * 
 	 * @param {String} executionId ID of the search execution
 	 */
@@ -185,8 +185,8 @@ class UsageApi {
 	}
 
 	/**
-	 * Search organization API Usage - 
-	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * Search organization API Usage
+	 * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 	 * @param {Object} body SimpleSearch
 	 */
 	postUsageSimplesearch(body) { 

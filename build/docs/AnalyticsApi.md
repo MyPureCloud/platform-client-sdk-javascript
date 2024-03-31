@@ -34,6 +34,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsJourneysAggregatesJobResults**](AnalyticsApi.html#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsKnowledgeAggregatesJob**](AnalyticsApi.html#getAnalyticsKnowledgeAggregatesJob) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Get status for async query for knowledge aggregates
 [**getAnalyticsKnowledgeAggregatesJobResults**](AnalyticsApi.html#getAnalyticsKnowledgeAggregatesJobResults) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsReportingDashboardsUser**](AnalyticsApi.html#getAnalyticsReportingDashboardsUser) | **GET** /api/v2/analytics/reporting/dashboards/users/{userId} | Get dashboards summary for a user
+[**getAnalyticsReportingDashboardsUsers**](AnalyticsApi.html#getAnalyticsReportingDashboardsUsers) | **GET** /api/v2/analytics/reporting/dashboards/users | Get dashboards summary for users in a org
 [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
 [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
 [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | **GET** /api/v2/analytics/reporting/metadata | Get list of reporting metadata.
@@ -45,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsReportingScheduleHistoryRunId**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryRunId) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId} | A completed scheduled report job
 [**getAnalyticsReportingSchedules**](AnalyticsApi.html#getAnalyticsReportingSchedules) | **GET** /api/v2/analytics/reporting/schedules | Get a list of scheduled report jobs
 [**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | **GET** /api/v2/analytics/reporting/settings | Get AnalyticsReportingSettings for an organization
+[**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi.html#getAnalyticsReportingSettingsUserDashboards) | **GET** /api/v2/analytics/reporting/settings/users/{userId}/dashboards | Get list of dashboards for an user
 [**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | **GET** /api/v2/analytics/reporting/timeperiods | Get a list of report time periods.
 [**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJob) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Get status for async query for resolution aggregates
 [**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJobResults) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
@@ -85,9 +88,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
 [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
 [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+[**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi.html#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk delete dashboards owned by other user(s)
 [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
 [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | **POST** /api/v2/analytics/reporting/schedules/{scheduleId}/runreport | Place a scheduled report immediately into the reporting queue
 [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | **POST** /api/v2/analytics/reporting/schedules | Create a scheduled report job
+[**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk remove dashboard configurations
+[**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsQuery) | **POST** /api/v2/analytics/reporting/settings/dashboards/query | Query dashboard configurations
 [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
 [**postAnalyticsRoutingActivityQuery**](AnalyticsApi.html#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
 [**postAnalyticsSurveysAggregatesJobs**](AnalyticsApi.html#postAnalyticsSurveysAggregatesJobs) | **POST** /api/v2/analytics/surveys/aggregates/jobs | Query for survey aggregates asynchronously
@@ -1556,6 +1562,116 @@ apiInstance.getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
 
 **KnowledgeAsyncAggregateQueryResponse**
 
+<a name="getAnalyticsReportingDashboardsUser"></a>
+
+# DashboardUser getAnalyticsReportingDashboardsUser(userId)
+
+
+GET /api/v2/analytics/reporting/dashboards/users/{userId}
+
+Get dashboards summary for a user
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getAnalyticsReportingDashboardsUser(userId)
+  .then((data) => {
+    console.log(`getAnalyticsReportingDashboardsUser success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingDashboardsUser');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DashboardUser**
+
+<a name="getAnalyticsReportingDashboardsUsers"></a>
+
+# DashboardUserListing getAnalyticsReportingDashboardsUsers(opts)
+
+
+GET /api/v2/analytics/reporting/dashboards/users
+
+Get dashboards summary for users in a org
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let opts = { 
+  'sortBy': "asc", // String | 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'id': ["id_example"], // [String] | A list of user IDs to fetch by bulk
+  'state': "state_example" // String | Only list users of this state
+};
+
+apiInstance.getAnalyticsReportingDashboardsUsers(opts)
+  .then((data) => {
+    console.log(`getAnalyticsReportingDashboardsUsers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingDashboardsUsers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sortBy** | **String** |  | [optional] [default to asc] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
+ **state** | **String** | Only list users of this state | [optional] <br />**Values**: active, inactive |
+{: class="table table-striped"}
+
+### Return type
+
+**DashboardUserListing**
+
 <a name="getAnalyticsReportingExports"></a>
 
 # ReportingExportJobListing getAnalyticsReportingExports(opts)
@@ -2110,6 +2226,68 @@ This endpoint does not need any parameter.
 ### Return type
 
 **AnalyticsReportingSettings**
+
+<a name="getAnalyticsReportingSettingsUserDashboards"></a>
+
+# DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(userId, opts)
+
+
+GET /api/v2/analytics/reporting/settings/users/{userId}/dashboards
+
+Get list of dashboards for an user
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:viewPrivate
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let userId = "userId_example"; // String | User ID
+let opts = { 
+  'sortBy': "asc", // String | 
+  'pageNumber': 1, // Number | 
+  'pageSize': 50, // Number | 
+  'publicOnly': true, // Boolean | If true, retrieve only public dashboards
+  'favoriteOnly': true // Boolean | If true, retrieve only favorite dashboards
+};
+
+apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsReportingSettingsUserDashboards success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingSettingsUserDashboards');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **sortBy** | **String** |  | [optional] [default to asc] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 50] |
+ **publicOnly** | **Boolean** | If true, retrieve only public dashboards | [optional]  |
+ **favoriteOnly** | **Boolean** | If true, retrieve only favorite dashboards | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**DashboardConfigurationListing**
 
 <a name="getAnalyticsReportingTimeperiods"></a>
 
@@ -2856,11 +3034,7 @@ Patch AnalyticsReportingSettings values for an organization
 
 Requires ANY permissions:
 
-* recording:recordingSegment:view
-* analytics:conversationDetail:view
-* analytics:conversationAggregate:view
 * analytics:reportingSettings:edit
-* analytics:dashboardConfigurations:view
 
 ### Example Usage
 
@@ -4187,6 +4361,57 @@ apiInstance.postAnalyticsRatelimitsAggregatesQuery(body)
 
 **RateLimitAggregateQueryResponse**
 
+<a name="postAnalyticsReportingDashboardsUsersBulkRemove"></a>
+
+# void postAnalyticsReportingDashboardsUsersBulkRemove(body)
+
+
+POST /api/v2/analytics/reporting/dashboards/users/bulk/remove
+
+Bulk delete dashboards owned by other user(s)
+
+Requires ANY permissions:
+
+* analytics:dashboardConfigurations:deleteActive
+* analytics:dashboardConfigurations:deleteInactive
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = ["body_example"]; // [String] | List of userIds
+
+apiInstance.postAnalyticsReportingDashboardsUsersBulkRemove(body)
+  .then(() => {
+    console.log('postAnalyticsReportingDashboardsUsersBulkRemove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsReportingDashboardsUsersBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **[String]** | List of userIds |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postAnalyticsReportingExports"></a>
 
 # ReportingExportJobResponse postAnalyticsReportingExports(body)
@@ -4344,6 +4569,106 @@ apiInstance.postAnalyticsReportingSchedules(body)
 ### Return type
 
 **ReportSchedule**
+
+<a name="postAnalyticsReportingSettingsDashboardsBulkRemove"></a>
+
+# void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
+
+
+POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove
+
+Bulk remove dashboard configurations
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | 
+
+apiInstance.postAnalyticsReportingSettingsDashboardsBulkRemove(body)
+  .then(() => {
+    console.log('postAnalyticsReportingSettingsDashboardsBulkRemove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsReportingSettingsDashboardsBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postAnalyticsReportingSettingsDashboardsQuery"></a>
+
+# DashboardConfigurationListing postAnalyticsReportingSettingsDashboardsQuery(body)
+
+
+POST /api/v2/analytics/reporting/settings/dashboards/query
+
+Query dashboard configurations
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | 
+
+apiInstance.postAnalyticsReportingSettingsDashboardsQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsReportingSettingsDashboardsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsReportingSettingsDashboardsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DashboardConfigurationListing**
 
 <a name="postAnalyticsResolutionsAggregatesJobs"></a>
 

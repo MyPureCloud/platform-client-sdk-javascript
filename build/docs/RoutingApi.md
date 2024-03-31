@@ -130,6 +130,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | **POST** /api/v2/routing/skills | Create Skill
 [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | **POST** /api/v2/routing/sms/addresses | Provision an Address for SMS
 [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | **POST** /api/v2/routing/sms/phonenumbers | Provision a phone number for SMS
+[**postRoutingSmsPhonenumbersAlphanumeric**](RoutingApi.html#postRoutingSmsPhonenumbersAlphanumeric) | **POST** /api/v2/routing/sms/phonenumbers/alphanumeric | Provision an alphanumeric number for SMS
 [**postRoutingSmsPhonenumbersImport**](RoutingApi.html#postRoutingSmsPhonenumbersImport) | **POST** /api/v2/routing/sms/phonenumbers/import | Imports a phone number for SMS
 [**postRoutingUtilizationLabels**](RoutingApi.html#postRoutingUtilizationLabels) | **POST** /api/v2/routing/utilization/labels | Create a utilization label
 [**postRoutingUtilizationTags**](RoutingApi.html#postRoutingUtilizationTags) | **POST** /api/v2/routing/utilization/tags | Create an utilization tag
@@ -3927,7 +3928,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneNumber** | **String** | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. | [optional]  |
- **phoneNumberType** | **[String]** | Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode |
+ **phoneNumberType** | **[String]** | Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode, alphanumeric |
  **phoneNumberStatus** | **[String]** | Filter on phone number status | [optional] <br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation |
  **countryCode** | **[String]** | Filter on country code | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
@@ -6711,6 +6712,58 @@ apiInstance.postRoutingSmsPhonenumbers(body)
   })
   .catch((err) => {
     console.log('There was a failure calling postRoutingSmsPhonenumbers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | SmsPhoneNumber |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsPhoneNumber**
+
+<a name="postRoutingSmsPhonenumbersAlphanumeric"></a>
+
+# SmsPhoneNumber postRoutingSmsPhonenumbersAlphanumeric(body)
+
+
+POST /api/v2/routing/sms/phonenumbers/alphanumeric
+
+Provision an alphanumeric number for SMS
+
+postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* sms:phoneNumber:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | SmsPhoneNumber
+
+apiInstance.postRoutingSmsPhonenumbersAlphanumeric(body)
+  .then((data) => {
+    console.log(`postRoutingSmsPhonenumbersAlphanumeric success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingSmsPhonenumbersAlphanumeric');
     console.error(err);
   });
 ```

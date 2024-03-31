@@ -82,6 +82,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagesCachedmedia**](ConversationsApi.html#getConversationsMessagesCachedmedia) | **GET** /api/v2/conversations/messages/cachedmedia | Get a list of cached media items
 [**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#getConversationsMessagesCachedmediaCachedMediaItemId) | **GET** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item
 [**getConversationsMessagingFacebookApp**](ConversationsApi.html#getConversationsMessagingFacebookApp) | **GET** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id
+[**getConversationsMessagingFacebookPermissions**](ConversationsApi.html#getConversationsMessagingFacebookPermissions) | **GET** /api/v2/conversations/messaging/facebook/permissions | Get a list of Facebook Permissions
 [**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
 [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
 [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
@@ -4053,6 +4054,53 @@ This endpoint does not need any parameter.
 ### Return type
 
 **FacebookAppCredentials**
+
+<a name="getConversationsMessagingFacebookPermissions"></a>
+
+# FacebookPermissionEntityListing getConversationsMessagingFacebookPermissions()
+
+
+GET /api/v2/conversations/messaging/facebook/permissions
+
+Get a list of Facebook Permissions
+
+Requires ANY permissions:
+
+* messaging:integration:add
+* messaging:integration:edit
+* messaging:conversationInstagramIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsMessagingFacebookPermissions()
+  .then((data) => {
+    console.log(`getConversationsMessagingFacebookPermissions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingFacebookPermissions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**FacebookPermissionEntityListing**
 
 <a name="getConversationsMessagingIntegrations"></a>
 

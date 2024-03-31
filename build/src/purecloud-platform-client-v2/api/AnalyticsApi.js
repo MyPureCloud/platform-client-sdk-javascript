@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 190.0.0
+	 * @version 191.0.0
 	 */
 
 	/**
@@ -756,6 +756,59 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Get dashboards summary for a user
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getAnalyticsReportingDashboardsUser(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getAnalyticsReportingDashboardsUser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/dashboards/users/{userId}', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get dashboards summary for users in a org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.sortBy  (default to asc)
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
+	 * @param {Object} opts.state Only list users of this state
+	 */
+	getAnalyticsReportingDashboardsUsers(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/dashboards/users', 
+			'GET', 
+			{  },
+			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'state': opts['state'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get all view export requests for a user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1021,6 +1074,39 @@ class AnalyticsApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of dashboards for an user
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.sortBy  (default to asc)
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 50)
+	 * @param {Boolean} opts.publicOnly If true, retrieve only public dashboards
+	 * @param {Boolean} opts.favoriteOnly If true, retrieve only favorite dashboards
+	 */
+	getAnalyticsReportingSettingsUserDashboards(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getAnalyticsReportingSettingsUserDashboards';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/users/{userId}/dashboards', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'publicOnly': opts['publicOnly'],'favoriteOnly': opts['favoriteOnly'] },
 			{  },
 			{  },
 			null, 
@@ -2081,6 +2167,31 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Bulk delete dashboards owned by other user(s)
+	 * 
+	 * @param {Array.<String>} body List of userIds
+	 */
+	postAnalyticsReportingDashboardsUsersBulkRemove(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingDashboardsUsersBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/dashboards/users/bulk/remove', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Generate a view export request
 	 * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 	 * @param {Object} body ReportingExportJobRequest
@@ -2145,6 +2256,56 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk remove dashboard configurations
+	 * 
+	 * @param {Object} body 
+	 */
+	postAnalyticsReportingSettingsDashboardsBulkRemove(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsDashboardsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/bulk/remove', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query dashboard configurations
+	 * 
+	 * @param {Object} body 
+	 */
+	postAnalyticsReportingSettingsDashboardsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSettingsDashboardsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/query', 
 			'POST', 
 			{  },
 			{  },

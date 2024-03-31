@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 190.0.0
+	 * @version 191.0.0
 	 */
 
 	/**
@@ -3398,6 +3398,32 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/phonenumbers', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Provision an alphanumeric number for SMS
+	 * 
+	 * @param {Object} body SmsPhoneNumber
+	 * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postRoutingSmsPhonenumbersAlphanumeric(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbersAlphanumeric';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/phonenumbers/alphanumeric', 
 			'POST', 
 			{  },
 			{  },

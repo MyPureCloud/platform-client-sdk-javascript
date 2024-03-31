@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 190.0.0
+	 * @version 191.0.0
 	 */
 
 	/**
@@ -2104,6 +2104,26 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/facebook/app', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Facebook Permissions
+	 * 
+	 */
+	getConversationsMessagingFacebookPermissions() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/facebook/permissions', 
 			'GET', 
 			{  },
 			{  },

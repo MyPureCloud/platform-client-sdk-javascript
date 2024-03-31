@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 190.0.0
+	 * @version 191.0.0
 	 */
 
 	/**
@@ -891,10 +891,11 @@ class RecordingApi {
 
 	/**
 	 * Retrieves a paged listing of screen recording sessions
-	 * 
+	 * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @deprecated
 	 */
 	getRecordingsScreensessions(opts) { 
 		opts = opts || {};
