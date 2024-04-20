@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -764,7 +764,7 @@ class IntegrationsApi {
 
 	/**
 	 * UC integration client application configuration.
-	 * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+	 * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -772,6 +772,7 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @deprecated
 	 */
 	getIntegrationsClientappsUnifiedcommunications(opts) { 
 		opts = opts || {};

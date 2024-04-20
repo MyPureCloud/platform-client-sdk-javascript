@@ -1100,7 +1100,7 @@ This endpoint does not need any parameter.
 
 <a name="getAuthorizationSubject"></a>
 
-# AuthzSubject getAuthorizationSubject(subjectId)
+# AuthzSubject getAuthorizationSubject(subjectId, opts)
 
 
 GET /api/v2/authorization/subjects/{subjectId}
@@ -1125,8 +1125,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let opts = { 
+  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+};
 
-apiInstance.getAuthorizationSubject(subjectId)
+apiInstance.getAuthorizationSubject(subjectId, opts)
   .then((data) => {
     console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1142,6 +1145,7 @@ apiInstance.getAuthorizationSubject(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
+ **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -1150,7 +1154,7 @@ apiInstance.getAuthorizationSubject(subjectId)
 
 <a name="getAuthorizationSubjectsMe"></a>
 
-# AuthzSubject getAuthorizationSubjectsMe()
+# AuthzSubject getAuthorizationSubjectsMe(opts)
 
 
 GET /api/v2/authorization/subjects/me
@@ -1172,7 +1176,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
 
-apiInstance.getAuthorizationSubjectsMe()
+let opts = { 
+  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+};
+
+apiInstance.getAuthorizationSubjectsMe(opts)
   .then((data) => {
     console.log(`getAuthorizationSubjectsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1184,8 +1192,11 @@ apiInstance.getAuthorizationSubjectsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
+{: class="table table-striped"}
 
 ### Return type
 

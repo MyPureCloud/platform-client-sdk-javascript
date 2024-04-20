@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -595,7 +595,7 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
-	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 500. (default to 20)
 	 * @param {Object} opts.state Topic state. Defaults to latest
 	 * @param {String} opts.name Case insensitive partial name to filter by
 	 * @param {Array.<String>} opts.ids Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.

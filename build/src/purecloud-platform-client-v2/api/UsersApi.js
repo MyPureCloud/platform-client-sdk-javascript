@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -501,8 +501,12 @@ class UsersApi {
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
 	 */
-	getAuthorizationSubject(subjectId) { 
+	getAuthorizationSubject(subjectId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
@@ -512,7 +516,7 @@ class UsersApi {
 			'/api/v2/authorization/subjects/{subjectId}', 
 			'GET', 
 			{ 'subjectId': subjectId },
-			{  },
+			{ 'includeDuplicates': opts['includeDuplicates'] },
 			{  },
 			{  },
 			null, 
@@ -525,14 +529,18 @@ class UsersApi {
 	/**
 	 * Returns a listing of roles and permissions for the currently authenticated user.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
 	 */
-	getAuthorizationSubjectsMe() { 
+	getAuthorizationSubjectsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/me', 
 			'GET', 
 			{  },
-			{  },
+			{ 'includeDuplicates': opts['includeDuplicates'] },
 			{  },
 			{  },
 			null, 

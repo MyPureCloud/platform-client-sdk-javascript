@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -763,27 +763,6 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'edgeGroup.id': opts['edgeGroupId'],'sortBy': opts['sortBy'],'managed': opts['managed'],'showCloudMedia': opts['showCloudMedia'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
-	 * 
-	 * @deprecated
-	 */
-	getTelephonyProvidersEdgesAvailablelanguages() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/availablelanguages', 
-			'GET', 
-			{  },
-			{  },
 			{  },
 			{  },
 			null, 

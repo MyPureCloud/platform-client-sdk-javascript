@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -51,6 +51,36 @@ class ChatApi {
 	}
 
 	/**
+	 * Remove a pinned message from a room
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {String} pinnedMessageId pinnedMessageId
+	 */
+	deleteChatsRoomMessagesPin(roomJid, pinnedMessageId) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomMessagesPin';
+		}
+		// verify the required parameter 'pinnedMessageId' is set
+		if (pinnedMessageId === undefined || pinnedMessageId === null) {
+			throw 'Missing the required parameter "pinnedMessageId" when calling deleteChatsRoomMessagesPin';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}', 
+			'DELETE', 
+			{ 'roomJid': roomJid,'pinnedMessageId': pinnedMessageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Remove a user from a room.
 	 * 
 	 * @param {String} roomJid roomJid
@@ -81,36 +111,6 @@ class ChatApi {
 	}
 
 	/**
-	 * Remove a pinned message from a room
-	 * 
-	 * @param {String} roomJid roomJid
-	 * @param {String} pinnedMessageId pinnedMessageId
-	 */
-	deleteChatsRoomPinnedmessage(roomJid, pinnedMessageId) { 
-		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
-			throw 'Missing the required parameter "roomJid" when calling deleteChatsRoomPinnedmessage';
-		}
-		// verify the required parameter 'pinnedMessageId' is set
-		if (pinnedMessageId === undefined || pinnedMessageId === null) {
-			throw 'Missing the required parameter "pinnedMessageId" when calling deleteChatsRoomPinnedmessage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}', 
-			'DELETE', 
-			{ 'roomJid': roomJid,'pinnedMessageId': pinnedMessageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete a message to a user
 	 * 
 	 * @param {String} userId userId
@@ -130,6 +130,37 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/messages/{messageId}', 
 			'DELETE', 
 			{ 'userId': userId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove a pinned message from a 1on1
+	 * 
+	 * @param {String} userId userId
+	 * @param {String} pinnedMessageId pinnedMessageId
+	 * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteChatsUserMessagesPin(userId, pinnedMessageId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteChatsUserMessagesPin';
+		}
+		// verify the required parameter 'pinnedMessageId' is set
+		if (pinnedMessageId === undefined || pinnedMessageId === null) {
+			throw 'Missing the required parameter "pinnedMessageId" when calling deleteChatsUserMessagesPin';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}', 
+			'DELETE', 
+			{ 'userId': userId,'pinnedMessageId': pinnedMessageId },
 			{  },
 			{  },
 			{  },
@@ -348,6 +379,32 @@ class ChatApi {
 			'GET', 
 			{ 'threadId': threadId },
 			{ 'limit': opts['limit'],'before': opts['before'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get information for a 1on1
+	 * 
+	 * @param {String} userId userId
+	 * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsUser(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getChatsUser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -631,6 +688,36 @@ class ChatApi {
 	}
 
 	/**
+	 * Add pinned messages for a room, up to a maximum of 5 pinned messages
+	 * 
+	 * @param {String} roomJid roomJid
+	 * @param {Object} body Pinned Message Ids
+	 */
+	postChatsRoomMessagesPins(roomJid, body) { 
+		// verify the required parameter 'roomJid' is set
+		if (roomJid === undefined || roomJid === null) {
+			throw 'Missing the required parameter "roomJid" when calling postChatsRoomMessagesPins';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postChatsRoomMessagesPins';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/rooms/{roomJid}/messages/pins', 
+			'POST', 
+			{ 'roomJid': roomJid },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Join a room
 	 * 
 	 * @param {String} roomJid roomJid
@@ -654,36 +741,6 @@ class ChatApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add pinned messages for a room, up to a maximum of 5 pinned messages
-	 * 
-	 * @param {String} roomJid roomJid
-	 * @param {Object} body Pinned Message Ids
-	 */
-	postChatsRoomPinnedmessages(roomJid, body) { 
-		// verify the required parameter 'roomJid' is set
-		if (roomJid === undefined || roomJid === null) {
-			throw 'Missing the required parameter "roomJid" when calling postChatsRoomPinnedmessages';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postChatsRoomPinnedmessages';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/chats/rooms/{roomJid}/pinnedmessages', 
-			'POST', 
-			{ 'roomJid': roomJid },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -733,6 +790,37 @@ class ChatApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/chats/users/{userId}/messages', 
+			'POST', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+	 * 
+	 * @param {String} userId userId
+	 * @param {Object} body Pinned Message Ids
+	 * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postChatsUserMessagesPins(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postChatsUserMessagesPins';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postChatsUserMessagesPins';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/{userId}/messages/pins', 
 			'POST', 
 			{ 'userId': userId },
 			{  },

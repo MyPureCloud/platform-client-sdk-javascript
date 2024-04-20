@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -636,6 +636,27 @@ class LanguageUnderstandingApi {
 			'GET', 
 			{  },
 			{ 'minerType': opts['minerType'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Organization Configuration
+	 * 
+	 * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getLanguageunderstandingSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/settings', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 

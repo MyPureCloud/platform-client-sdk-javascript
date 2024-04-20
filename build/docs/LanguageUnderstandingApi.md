@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLanguageunderstandingMinerTopicPhrase**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopicPhrase) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId} | Retrieves utterances related to a phrase in a topic.
 [**getLanguageunderstandingMinerTopics**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopics) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics | Retrieve a list of mined topics.
 [**getLanguageunderstandingMiners**](LanguageUnderstandingApi.html#getLanguageunderstandingMiners) | **GET** /api/v2/languageunderstanding/miners | Retrieve the list of miners created.
+[**getLanguageunderstandingSettings**](LanguageUnderstandingApi.html#getLanguageunderstandingSettings) | **GET** /api/v2/languageunderstanding/settings | Get Organization Configuration
 [**patchLanguageunderstandingDomain**](LanguageUnderstandingApi.html#patchLanguageunderstandingDomain) | **PATCH** /api/v2/languageunderstanding/domains/{domainId} | Update an NLU Domain.
 [**patchLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#patchLanguageunderstandingMinerDraft) | **PATCH** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Save information for the draft. Either topic draft or intent draft should be sent.
 [**postLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainFeedback) | **POST** /api/v2/languageunderstanding/domains/{domainId}/feedback | Create feedback for the NLU Domain Version.
@@ -1189,6 +1190,53 @@ apiInstance.getLanguageunderstandingMiners(opts)
 ### Return type
 
 **MinerListing**
+
+<a name="getLanguageunderstandingSettings"></a>
+
+# NluOrganization getLanguageunderstandingSettings()
+
+
+GET /api/v2/languageunderstanding/settings
+
+Get Organization Configuration
+
+getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* languageUnderstanding:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+apiInstance.getLanguageunderstandingSettings()
+  .then((data) => {
+    console.log(`getLanguageunderstandingSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**NluOrganization**
 
 <a name="patchLanguageunderstandingDomain"></a>
 

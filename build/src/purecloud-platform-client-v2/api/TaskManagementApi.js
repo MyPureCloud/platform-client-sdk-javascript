@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -463,6 +463,58 @@ class TaskManagementApi {
 			'GET', 
 			{ 'workitemId': workitemId },
 			{ 'expands': opts['expands'],'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the workitem query job associated with the job id.
+	 * 
+	 * @param {String} jobId jobId
+	 * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTaskmanagementWorkitemsQueryJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getTaskmanagementWorkitemsQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/query/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get results from for workitem query job 
+	 * 
+	 * @param {String} jobId jobId
+	 * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTaskmanagementWorkitemsQueryJobResults(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getTaskmanagementWorkitemsQueryJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1156,6 +1208,32 @@ class TaskManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workitems/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a workitem query job
+	 * 
+	 * @param {Object} body WorkitemQueryJobCreate
+	 * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postTaskmanagementWorkitemsQueryJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/query/jobs', 
 			'POST', 
 			{  },
 			{  },

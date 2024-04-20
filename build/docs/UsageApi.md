@@ -179,7 +179,7 @@ apiInstance.getUsageQueryExecutionIdResults(executionId)
 
 <a name="getUsageSimplesearchExecutionIdResults"></a>
 
-# ApiUsageQueryResult getUsageSimplesearchExecutionIdResults(executionId)
+# ApiUsageQueryResult getUsageSimplesearchExecutionIdResults(executionId, opts)
 
 
 GET /api/v2/usage/simplesearch/{executionId}/results
@@ -205,8 +205,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsageApi();
 
 let executionId = "executionId_example"; // String | ID of the search execution
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned
+  'pageSize': 3.4 // Number | The max number of entities to be returned per request. Maximum page size of 1000
+};
 
-apiInstance.getUsageSimplesearchExecutionIdResults(executionId)
+apiInstance.getUsageSimplesearchExecutionIdResults(executionId, opts)
   .then((data) => {
     console.log(`getUsageSimplesearchExecutionIdResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -222,6 +226,8 @@ apiInstance.getUsageSimplesearchExecutionIdResults(executionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **executionId** | **String** | ID of the search execution |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned | [optional]  |
+ **pageSize** | **Number** | The max number of entities to be returned per request. Maximum page size of 1000 | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

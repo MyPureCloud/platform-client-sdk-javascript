@@ -1242,7 +1242,7 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
-  'pageSize': 20, // Number | The page size for the listing
+  'pageSize': 20, // Number | The page size for the listing. The max that will be returned is 500.
   'state': "state_example", // String | Topic state. Defaults to latest
   'name': "name_example", // String | Case insensitive partial name to filter by
   'ids': ["ids_example"], // [String] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
@@ -1267,7 +1267,7 @@ apiInstance.getSpeechandtextanalyticsTopics(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
- **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
+ **pageSize** | **Number** | The page size for the listing. The max that will be returned is 500. | [optional] [default to 20] |
  **state** | **String** | Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
  **name** | **String** | Case insensitive partial name to filter by | [optional]  |
  **ids** | **[String]** | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |

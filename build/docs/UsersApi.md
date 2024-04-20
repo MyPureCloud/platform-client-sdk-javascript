@@ -990,7 +990,7 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
 
 <a name="getAuthorizationSubject"></a>
 
-# AuthzSubject getAuthorizationSubject(subjectId)
+# AuthzSubject getAuthorizationSubject(subjectId, opts)
 
 
 GET /api/v2/authorization/subjects/{subjectId}
@@ -1015,8 +1015,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let opts = { 
+  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+};
 
-apiInstance.getAuthorizationSubject(subjectId)
+apiInstance.getAuthorizationSubject(subjectId, opts)
   .then((data) => {
     console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1032,6 +1035,7 @@ apiInstance.getAuthorizationSubject(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
+ **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -1040,7 +1044,7 @@ apiInstance.getAuthorizationSubject(subjectId)
 
 <a name="getAuthorizationSubjectsMe"></a>
 
-# AuthzSubject getAuthorizationSubjectsMe()
+# AuthzSubject getAuthorizationSubjectsMe(opts)
 
 
 GET /api/v2/authorization/subjects/me
@@ -1062,7 +1066,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
-apiInstance.getAuthorizationSubjectsMe()
+let opts = { 
+  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+};
+
+apiInstance.getAuthorizationSubjectsMe(opts)
   .then((data) => {
     console.log(`getAuthorizationSubjectsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1074,8 +1082,11 @@ apiInstance.getAuthorizationSubjectsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
+{: class="table table-striped"}
 
 ### Return type
 
@@ -2437,7 +2448,7 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
- **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
+ **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
 
@@ -2509,7 +2520,7 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
- **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
+ **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
 

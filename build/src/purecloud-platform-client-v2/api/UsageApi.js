@@ -5,7 +5,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -108,8 +108,13 @@ class UsageApi {
 	 * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
 	 * 
 	 * @param {String} executionId ID of the search execution
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned
+	 * @param {Number} opts.pageSize The max number of entities to be returned per request. Maximum page size of 1000
 	 */
-	getUsageSimplesearchExecutionIdResults(executionId) { 
+	getUsageSimplesearchExecutionIdResults(executionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'executionId' is set
 		if (executionId === undefined || executionId === null) {
 			throw 'Missing the required parameter "executionId" when calling getUsageSimplesearchExecutionIdResults';
@@ -119,7 +124,7 @@ class UsageApi {
 			'/api/v2/usage/simplesearch/{executionId}/results', 
 			'GET', 
 			{ 'executionId': executionId },
-			{  },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 

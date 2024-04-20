@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -2728,8 +2728,8 @@ class OutboundApi {
 	}
 
 	/**
-	 * Retrieves audits for dialer.
-	 * 
+	 * Retrieves audits for dialer. (Deprecated)
+	 * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use "/api/v2/audits/query" instead.
 	 * @param {Object} body AuditSearch
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -2737,6 +2737,7 @@ class OutboundApi {
 	 * @param {String} opts.sortBy Sort by (default to entity.name)
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
 	 * @param {Boolean} opts.facetsOnly Facets only (default to false)
+	 * @deprecated
 	 */
 	postOutboundAudits(body, opts) { 
 		opts = opts || {};

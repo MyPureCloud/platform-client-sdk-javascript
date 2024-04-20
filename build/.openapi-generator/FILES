@@ -176,9 +176,10 @@ docs/deleteAuthorizationRole-example.txt
 docs/deleteAuthorizationSubjectDivisionRole-example.txt
 docs/deleteAuthorizationSubjectDivisionRole-example.txt
 docs/deleteChatsRoomMessage-example.txt
+docs/deleteChatsRoomMessagesPin-example.txt
 docs/deleteChatsRoomParticipant-example.txt
-docs/deleteChatsRoomPinnedmessage-example.txt
 docs/deleteChatsUserMessage-example.txt
+docs/deleteChatsUserMessagesPin-example.txt
 docs/deleteCoachingAppointment-example.txt
 docs/deleteCoachingAppointmentAnnotation-example.txt
 docs/deleteContentmanagementDocument-example.txt
@@ -572,6 +573,7 @@ docs/getChatsRoomParticipant-example.txt
 docs/getChatsRoomParticipants-example.txt
 docs/getChatsSettings-example.txt
 docs/getChatsThreadMessages-example.txt
+docs/getChatsUser-example.txt
 docs/getChatsUserMessage-example.txt
 docs/getChatsUserMessages-example.txt
 docs/getChatsUserSettings-example.txt
@@ -734,6 +736,7 @@ docs/getExternalcontactsScanRelationships-example.txt
 docs/getFaxDocument-example.txt
 docs/getFaxDocumentContent-example.txt
 docs/getFaxDocuments-example.txt
+docs/getFaxSettings-example.txt
 docs/getFaxSummary-example.txt
 docs/getFieldconfig-example.txt
 docs/getFieldconfig-example.txt
@@ -997,6 +1000,7 @@ docs/getLanguageunderstandingMinerTopic-example.txt
 docs/getLanguageunderstandingMinerTopicPhrase-example.txt
 docs/getLanguageunderstandingMinerTopics-example.txt
 docs/getLanguageunderstandingMiners-example.txt
+docs/getLanguageunderstandingSettings-example.txt
 docs/getLearningAssignment-example.txt
 docs/getLearningAssignments-example.txt
 docs/getLearningAssignmentsMe-example.txt
@@ -1334,6 +1338,8 @@ docs/getTaskmanagementWorkitemUserWrapups-example.txt
 docs/getTaskmanagementWorkitemVersion-example.txt
 docs/getTaskmanagementWorkitemVersions-example.txt
 docs/getTaskmanagementWorkitemWrapups-example.txt
+docs/getTaskmanagementWorkitemsQueryJob-example.txt
+docs/getTaskmanagementWorkitemsQueryJobResults-example.txt
 docs/getTaskmanagementWorkitemsSchema-example.txt
 docs/getTaskmanagementWorkitemsSchemaVersion-example.txt
 docs/getTaskmanagementWorkitemsSchemaVersions-example.txt
@@ -1364,7 +1370,6 @@ docs/getTelephonyProvidersEdgeSoftwareupdate-example.txt
 docs/getTelephonyProvidersEdgeSoftwareversions-example.txt
 docs/getTelephonyProvidersEdgeTrunks-example.txt
 docs/getTelephonyProvidersEdges-example.txt
-docs/getTelephonyProvidersEdgesAvailablelanguages-example.txt
 docs/getTelephonyProvidersEdgesCertificateauthorities-example.txt
 docs/getTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/getTelephonyProvidersEdgesDid-example.txt
@@ -1874,10 +1879,11 @@ docs/postAuthorizationSubjectDivisionRole-example.txt
 docs/postCarrierservicesIntegrationsEmergencylocationsMe-example.txt
 docs/postCertificateDetails-example.txt
 docs/postChatsRoomMessages-example.txt
+docs/postChatsRoomMessagesPins-example.txt
 docs/postChatsRoomParticipant-example.txt
-docs/postChatsRoomPinnedmessages-example.txt
 docs/postChatsRooms-example.txt
 docs/postChatsUserMessages-example.txt
+docs/postChatsUserMessagesPins-example.txt
 docs/postCoachingAppointmentAnnotations-example.txt
 docs/postCoachingAppointmentConversations-example.txt
 docs/postCoachingAppointments-example.txt
@@ -2272,6 +2278,7 @@ docs/postTaskmanagementWorkitemDisconnect-example.txt
 docs/postTaskmanagementWorkitemTerminate-example.txt
 docs/postTaskmanagementWorkitems-example.txt
 docs/postTaskmanagementWorkitemsQuery-example.txt
+docs/postTaskmanagementWorkitemsQueryJobs-example.txt
 docs/postTaskmanagementWorkitemsSchemas-example.txt
 docs/postTaskmanagementWorktypeStatuses-example.txt
 docs/postTaskmanagementWorktypes-example.txt
@@ -2476,6 +2483,7 @@ docs/putExternalcontactsOrganizationTrustorTrustorId-example.txt
 docs/putExternalcontactsOrganizationsSchema-example.txt
 docs/putExternalcontactsRelationship-example.txt
 docs/putFaxDocument-example.txt
+docs/putFaxSettings-example.txt
 docs/putFlow-example.txt
 docs/putFlowInstancesSettingsLoglevels-example.txt
 docs/putFlowsDatatable-example.txt

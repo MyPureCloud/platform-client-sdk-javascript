@@ -5,7 +5,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 191.0.0
+	 * @version 192.0.0
 	 */
 
 	/**
@@ -145,9 +145,10 @@ class WebChatApi {
 
 	/**
 	 * Get a media request in the conversation
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {String} mediaRequestId mediaRequestId
+	 * @deprecated
 	 */
 	getWebchatGuestConversationMediarequest(conversationId, mediaRequestId) { 
 		// verify the required parameter 'conversationId' is set
@@ -343,10 +344,11 @@ class WebChatApi {
 
 	/**
 	 * Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {String} mediaRequestId mediaRequestId
 	 * @param {Object} body Request
+	 * @deprecated
 	 */
 	patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body) { 
 		// verify the required parameter 'conversationId' is set

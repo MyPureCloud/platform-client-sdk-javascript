@@ -22,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTaskmanagementWorkitemVersion**](TaskManagementApi.html#getTaskmanagementWorkitemVersion) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion} | Get a version of a workitem
 [**getTaskmanagementWorkitemVersions**](TaskManagementApi.html#getTaskmanagementWorkitemVersions) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/versions | Get all versions of a workitem
 [**getTaskmanagementWorkitemWrapups**](TaskManagementApi.html#getTaskmanagementWorkitemWrapups) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/wrapups | Get all wrapup codes added for all users for a workitem.
+[**getTaskmanagementWorkitemsQueryJob**](TaskManagementApi.html#getTaskmanagementWorkitemsQueryJob) | **GET** /api/v2/taskmanagement/workitems/query/jobs/{jobId} | Get the workitem query job associated with the job id.
+[**getTaskmanagementWorkitemsQueryJobResults**](TaskManagementApi.html#getTaskmanagementWorkitemsQueryJobResults) | **GET** /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results | Get results from for workitem query job 
 [**getTaskmanagementWorkitemsSchema**](TaskManagementApi.html#getTaskmanagementWorkitemsSchema) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Get a schema
 [**getTaskmanagementWorkitemsSchemaVersion**](TaskManagementApi.html#getTaskmanagementWorkitemsSchemaVersion) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi.html#getTaskmanagementWorkitemsSchemaVersions) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions | Get all versions of a schema
@@ -46,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTaskmanagementWorkitemTerminate**](TaskManagementApi.html#postTaskmanagementWorkitemTerminate) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/terminate | Terminate a workitem
 [**postTaskmanagementWorkitems**](TaskManagementApi.html#postTaskmanagementWorkitems) | **POST** /api/v2/taskmanagement/workitems | Create a workitem
 [**postTaskmanagementWorkitemsQuery**](TaskManagementApi.html#postTaskmanagementWorkitemsQuery) | **POST** /api/v2/taskmanagement/workitems/query | Query for workitems
+[**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi.html#postTaskmanagementWorkitemsQueryJobs) | **POST** /api/v2/taskmanagement/workitems/query/jobs | Create a workitem query job
 [**postTaskmanagementWorkitemsSchemas**](TaskManagementApi.html#postTaskmanagementWorkitemsSchemas) | **POST** /api/v2/taskmanagement/workitems/schemas | Create a schema
 [**postTaskmanagementWorktypeStatuses**](TaskManagementApi.html#postTaskmanagementWorktypeStatuses) | **POST** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Add a status to a worktype
 [**postTaskmanagementWorktypes**](TaskManagementApi.html#postTaskmanagementWorktypes) | **POST** /api/v2/taskmanagement/worktypes | Create a worktype
@@ -896,6 +899,110 @@ apiInstance.getTaskmanagementWorkitemWrapups(workitemId, opts)
 ### Return type
 
 **WorkitemWrapupEntityListing**
+
+<a name="getTaskmanagementWorkitemsQueryJob"></a>
+
+# WorkitemQueryJobResponse getTaskmanagementWorkitemsQueryJob(jobId)
+
+
+GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}
+
+Get the workitem query job associated with the job id.
+
+getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* workitems:queryJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getTaskmanagementWorkitemsQueryJob(jobId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsQueryJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsQueryJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkitemQueryJobResponse**
+
+<a name="getTaskmanagementWorkitemsQueryJobResults"></a>
+
+# WorkitemPagedEntityListing getTaskmanagementWorkitemsQueryJobResults(jobId)
+
+
+GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results
+
+Get results from for workitem query job 
+
+getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* workitems:queryJobResults:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getTaskmanagementWorkitemsQueryJobResults(jobId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsQueryJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsQueryJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkitemPagedEntityListing**
 
 <a name="getTaskmanagementWorkitemsSchema"></a>
 
@@ -2197,6 +2304,58 @@ apiInstance.postTaskmanagementWorkitemsQuery(body)
 ### Return type
 
 **WorkitemPostQueryEntityListing**
+
+<a name="postTaskmanagementWorkitemsQueryJobs"></a>
+
+# WorkitemQueryJobResponse postTaskmanagementWorkitemsQueryJobs(body)
+
+
+POST /api/v2/taskmanagement/workitems/query/jobs
+
+Create a workitem query job
+
+postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* workitems:queryJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let body = {}; // Object | WorkitemQueryJobCreate
+
+apiInstance.postTaskmanagementWorkitemsQueryJobs(body)
+  .then((data) => {
+    console.log(`postTaskmanagementWorkitemsQueryJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTaskmanagementWorkitemsQueryJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | WorkitemQueryJobCreate |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkitemQueryJobResponse**
 
 <a name="postTaskmanagementWorkitemsSchemas"></a>
 
