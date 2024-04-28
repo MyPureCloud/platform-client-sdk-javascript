@@ -2675,8 +2675,6 @@ POST /api/v2/journey/flows/paths/query
 
 Query for flow paths.
 
-postJourneyFlowsPathsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:flowpaths:view

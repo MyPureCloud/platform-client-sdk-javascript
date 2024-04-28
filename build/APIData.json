@@ -10100,6 +10100,25 @@
     "return": "'String'",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversation ID\nlet body = {}; // Object | Conversation Secure Attributes\n\n// Update the secure attributes on a conversation.\napiInstance.patchConversationSecureattributes(conversationId, body)\n  .then((data) => {\n    console.log(`patchConversationSecureattributes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchConversationSecureattributes\");\n    console.error(err);\n  });"
   },
+  "patchconversationutilizationlabel": {
+    "operationId": "patchconversationutilizationlabel",
+    "functionName": "patchConversationUtilizationlabel",
+    "signature": "patchConversationUtilizationlabel(conversationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "'String'",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversation ID\nlet body = {}; // Object | Conversation Utilization Label\n\n// Update the utilization label on a conversation. When there is no value provided, the system default label is applied\napiInstance.patchConversationUtilizationlabel(conversationId, body)\n  .then((data) => {\n    console.log(`patchConversationUtilizationlabel success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchConversationUtilizationlabel\");\n    console.error(err);\n  });"
+  },
   "patchconversationsaftercallworkconversationidparticipantcommunication": {
     "operationId": "patchconversationsaftercallworkconversationidparticipantcommunication",
     "functionName": "patchConversationsAftercallworkConversationIdParticipantCommunication",

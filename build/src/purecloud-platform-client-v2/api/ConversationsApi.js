@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 192.0.0
+	 * @version 192.1.0
 	 */
 
 	/**
@@ -2982,6 +2982,37 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/secureattributes', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body Conversation Utilization Label
+	 * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchConversationUtilizationlabel(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationUtilizationlabel';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationUtilizationlabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/utilizationlabel', 
 			'PATCH', 
 			{ 'conversationId': conversationId },
 			{  },

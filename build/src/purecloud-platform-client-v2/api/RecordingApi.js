@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 192.0.0
+	 * @version 192.1.0
 	 */
 
 	/**
@@ -918,7 +918,6 @@ class RecordingApi {
 	/**
 	 * Retrieves an object containing the total number of concurrent active screen recordings
 	 * 
-	 * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRecordingsScreensessionsDetails() { 
 

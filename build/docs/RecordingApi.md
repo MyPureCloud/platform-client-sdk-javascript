@@ -1843,8 +1843,6 @@ GET /api/v2/recordings/screensessions/details
 
 Retrieves an object containing the total number of concurrent active screen recordings
 
-getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * recording:screenRecording:view

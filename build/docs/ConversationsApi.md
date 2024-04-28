@@ -113,6 +113,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationSecureattributes**](ConversationsApi.html#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
+[**patchConversationUtilizationlabel**](ConversationsApi.html#patchConversationUtilizationlabel) | **PATCH** /api/v2/conversations/{conversationId}/utilizationlabel | Update the utilization label on a conversation. When there is no value provided, the system default label is applied
 [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi.html#patchConversationsAftercallworkConversationIdParticipantCommunication) | **PATCH** /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} | Update after-call work for this conversation communication.
 [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 [**patchConversationsCallParticipant**](ConversationsApi.html#patchConversationsCallParticipant) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant
@@ -5753,6 +5754,60 @@ apiInstance.patchConversationSecureattributes(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Conversation Secure Attributes |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="patchConversationUtilizationlabel"></a>
+
+# **&#39;String&#39;** patchConversationUtilizationlabel(conversationId, body)
+
+
+PATCH /api/v2/conversations/{conversationId}/utilizationlabel
+
+Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+
+patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:utilizationLabel:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let body = {}; // Object | Conversation Utilization Label
+
+apiInstance.patchConversationUtilizationlabel(conversationId, body)
+  .then((data) => {
+    console.log(`patchConversationUtilizationlabel success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationUtilizationlabel');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** | Conversation Utilization Label |  |
 {: class="table table-striped"}
 
 ### Return type

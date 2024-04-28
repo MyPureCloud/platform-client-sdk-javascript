@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 192.0.0
+	 * @version 192.1.0
 	 */
 
 	/**
@@ -1359,7 +1359,6 @@ class JourneyApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postJourneyFlowsPathsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyFlowsPathsQuery(opts) { 
 		opts = opts || {};
