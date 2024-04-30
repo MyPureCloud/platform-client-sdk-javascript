@@ -5,7 +5,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 192.1.0
+	 * @version 192.2.0
 	 */
 
 	/**
