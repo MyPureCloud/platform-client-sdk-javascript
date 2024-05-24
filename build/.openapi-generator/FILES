@@ -154,7 +154,6 @@ docs/deleteAlertingInteractionstatsRule-example.txt
 docs/deleteAlertingRule-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
-docs/deleteAnalyticsReportingSchedule-example.txt
 docs/deleteAnalyticsUsersDetailsJob-example.txt
 docs/deleteAnalyticsUsersDetailsJob-example.txt
 docs/deleteArchitectEmergencygroup-example.txt
@@ -426,6 +425,7 @@ docs/getAlertingInteractionstatsRules-example.txt
 docs/getAlertingRule-example.txt
 docs/getAnalyticsActionsAggregatesJob-example.txt
 docs/getAnalyticsActionsAggregatesJobResults-example.txt
+docs/getAnalyticsBotflowDivisionsReportingturns-example.txt
 docs/getAnalyticsBotflowReportingturns-example.txt
 docs/getAnalyticsBotflowSessions-example.txt
 docs/getAnalyticsBotsAggregatesJob-example.txt
@@ -465,17 +465,8 @@ docs/getAnalyticsReportingDashboardsUser-example.txt
 docs/getAnalyticsReportingDashboardsUsers-example.txt
 docs/getAnalyticsReportingExports-example.txt
 docs/getAnalyticsReportingExportsMetadata-example.txt
-docs/getAnalyticsReportingMetadata-example.txt
-docs/getAnalyticsReportingReportIdMetadata-example.txt
-docs/getAnalyticsReportingReportformats-example.txt
-docs/getAnalyticsReportingSchedule-example.txt
-docs/getAnalyticsReportingScheduleHistory-example.txt
-docs/getAnalyticsReportingScheduleHistoryLatest-example.txt
-docs/getAnalyticsReportingScheduleHistoryRunId-example.txt
-docs/getAnalyticsReportingSchedules-example.txt
 docs/getAnalyticsReportingSettings-example.txt
 docs/getAnalyticsReportingSettingsUserDashboards-example.txt
-docs/getAnalyticsReportingTimeperiods-example.txt
 docs/getAnalyticsResolutionsAggregatesJob-example.txt
 docs/getAnalyticsResolutionsAggregatesJobResults-example.txt
 docs/getAnalyticsSurveysAggregatesJob-example.txt
@@ -577,6 +568,7 @@ docs/getChatsUser-example.txt
 docs/getChatsUserMessage-example.txt
 docs/getChatsUserMessages-example.txt
 docs/getChatsUserSettings-example.txt
+docs/getChatsUsersMeSettings-example.txt
 docs/getCoachingAppointment-example.txt
 docs/getCoachingAppointmentAnnotation-example.txt
 docs/getCoachingAppointmentAnnotations-example.txt
@@ -1047,6 +1039,7 @@ docs/getOrganizationsIpaddressauthentication-example.txt
 docs/getOrganizationsLimitsChangerequest-example.txt
 docs/getOrganizationsLimitsChangerequests-example.txt
 docs/getOrganizationsLimitsDocs-example.txt
+docs/getOrganizationsLimitsDocsFreetrial-example.txt
 docs/getOrganizationsLimitsNamespace-example.txt
 docs/getOrganizationsLimitsNamespaceDefaults-example.txt
 docs/getOrganizationsLimitsNamespaces-example.txt
@@ -1609,6 +1602,7 @@ docs/patchChatsRoomMessage-example.txt
 docs/patchChatsSettings-example.txt
 docs/patchChatsUserMessage-example.txt
 docs/patchChatsUserSettings-example.txt
+docs/patchChatsUsersMeSettings-example.txt
 docs/patchCoachingAppointment-example.txt
 docs/patchCoachingAppointmentAnnotation-example.txt
 docs/patchCoachingAppointmentStatus-example.txt
@@ -1814,8 +1808,6 @@ docs/postAnalyticsQueuesObservationsQuery-example.txt
 docs/postAnalyticsRatelimitsAggregatesQuery-example.txt
 docs/postAnalyticsReportingDashboardsUsersBulkRemove-example.txt
 docs/postAnalyticsReportingExports-example.txt
-docs/postAnalyticsReportingScheduleRunreport-example.txt
-docs/postAnalyticsReportingSchedules-example.txt
 docs/postAnalyticsReportingSettingsDashboardsBulkRemove-example.txt
 docs/postAnalyticsReportingSettingsDashboardsQuery-example.txt
 docs/postAnalyticsResolutionsAggregatesJobs-example.txt
@@ -2434,7 +2426,6 @@ docs/putAlertingInteractionstatsAlert-example.txt
 docs/putAlertingInteractionstatsRule-example.txt
 docs/putAlertingRule-example.txt
 docs/putAnalyticsDataretentionSettings-example.txt
-docs/putAnalyticsReportingSchedule-example.txt
 docs/putArchitectEmergencygroup-example.txt
 docs/putArchitectIvr-example.txt
 docs/putArchitectPrompt-example.txt

@@ -4122,7 +4122,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let agentId = "agentId_example"; // String | The agent id
 let opts = { 
-  'excludeCapabilities': true // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
+  'excludeCapabilities': true, // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
+  'expand': ["expand_example"] // [String] | 
 };
 
 apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts)
@@ -4143,6 +4144,7 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId,
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
  **excludeCapabilities** | **Boolean** | Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
+ **expand** | **[String]** |  | [optional] <br />**Values**: workPlanOverrides |
 {: class="table table-striped"}
 
 ### Return type
@@ -5117,7 +5119,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'expand': ["expand_example"] // [String] | Include to access additional data on the work plans
+  'expand': ["expand_example"], // [String] | Include to access additional data on the work plans
+  'exclude': ["exclude_example"] // [String] | Exclude specific data on the work plans from the response
 };
 
 apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
@@ -5137,6 +5140,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** | Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
+ **exclude** | **[String]** | Exclude specific data on the work plans from the response | [optional] <br />**Values**: shifts.activities |
 {: class="table table-striped"}
 
 ### Return type

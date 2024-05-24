@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 192.2.0
+	 * @version 193.0.0
 	 */
 
 	/**
@@ -502,6 +502,27 @@ class ChatApi {
 	}
 
 	/**
+	 * Get a user's chat settings
+	 * 
+	 * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getChatsUsersMeSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/me/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Set properties for a room
 	 * 
 	 * @param {String} roomJid roomJid
@@ -647,6 +668,32 @@ class ChatApi {
 			'/api/v2/chats/users/{userId}/settings', 
 			'PATCH', 
 			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a user's chat settings
+	 * 
+	 * @param {Object} body 
+	 * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchChatsUsersMeSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchChatsUsersMeSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chats/users/me/settings', 
+			'PATCH', 
+			{  },
 			{  },
 			{  },
 			{  },

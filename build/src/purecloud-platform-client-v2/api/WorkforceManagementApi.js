@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 192.2.0
+	 * @version 193.0.0
 	 */
 
 	/**
@@ -2045,6 +2045,7 @@ class WorkforceManagementApi {
 	 * @param {String} agentId The agent id
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
+	 * @param {Array.<String>} opts.expand 
 	 */
 	getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts) { 
 		opts = opts || {};
@@ -2062,7 +2063,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'agentId': agentId },
-			{ 'excludeCapabilities': opts['excludeCapabilities'] },
+			{ 'excludeCapabilities': opts['excludeCapabilities'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -2603,6 +2604,7 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Include to access additional data on the work plans
+	 * @param {Array.<String>} opts.exclude Exclude specific data on the work plans from the response
 	 */
 	getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts) { 
 		opts = opts || {};
@@ -2616,7 +2618,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'exclude': this.apiClient.buildCollectionParam(opts['exclude'], 'multi') },
 			{  },
 			{  },
 			null, 

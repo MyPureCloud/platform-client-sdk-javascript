@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 192.2.0
+	 * @version 193.0.0
 	 */
 
 	/**
@@ -24,7 +24,6 @@ class TaskManagementApi {
 	 * Delete a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
-	 * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
@@ -50,7 +49,6 @@ class TaskManagementApi {
 	 * Delete a workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkitem(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -76,7 +74,6 @@ class TaskManagementApi {
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -102,7 +99,6 @@ class TaskManagementApi {
 	 * Delete a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorktype(worktypeId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -129,7 +125,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -159,7 +154,6 @@ class TaskManagementApi {
 	 * Get a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
-	 * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
@@ -282,7 +276,6 @@ class TaskManagementApi {
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expands Which fields to expand. Comma separated if more than one.
-	 * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitem(workitemId, opts) { 
 		opts = opts || {};
@@ -348,7 +341,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts) { 
 		opts = opts || {};
@@ -448,7 +440,6 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemWrapups(workitemId, opts) { 
 		opts = opts || {};
@@ -476,7 +467,6 @@ class TaskManagementApi {
 	 * Get the workitem query job associated with the job id.
 	 * 
 	 * @param {String} jobId jobId
-	 * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsQueryJob(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -502,7 +492,6 @@ class TaskManagementApi {
 	 * Get results from for workitem query job 
 	 * 
 	 * @param {String} jobId jobId
-	 * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsQueryJobResults(jobId) { 
 		// verify the required parameter 'jobId' is set
@@ -528,7 +517,6 @@ class TaskManagementApi {
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -555,7 +543,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {String} versionId Schema version
-	 * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
@@ -585,7 +572,6 @@ class TaskManagementApi {
 	 * Get all versions of a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
@@ -610,7 +596,6 @@ class TaskManagementApi {
 	/**
 	 * Get a list of schemas.
 	 * 
-	 * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemas() { 
 
@@ -634,7 +619,6 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expands Which fields, if any, to expand.
-	 * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktype(worktypeId, opts) { 
 		opts = opts || {};
@@ -695,7 +679,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -725,7 +708,6 @@ class TaskManagementApi {
 	 * Get list of statuses for this worktype.
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeStatuses(worktypeId) { 
 		// verify the required parameter 'worktypeId' is set
@@ -815,7 +797,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Object} body Json with attributes and their new values: {description:new description, name:new name}.
-	 * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkbin(workbinId, body) { 
 		// verify the required parameter 'workbinId' is set
@@ -846,7 +827,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Workitem
-	 * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitem(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -877,7 +857,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Targeted user
-	 * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemAssignment(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -909,7 +888,6 @@ class TaskManagementApi {
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {String} userId The ID of the user
 	 * @param {Object} body Request body to add/remove a wrapup code for a workitem
-	 * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -944,7 +922,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {Object} body Request body to add/remove the wrapup code for workitem
-	 * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
@@ -976,7 +953,6 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorktype(worktypeId, opts) { 
 		opts = opts || {};
@@ -1007,7 +983,6 @@ class TaskManagementApi {
 	 * @param {String} statusId Status id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts) { 
 		opts = opts || {};
@@ -1040,7 +1015,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkbins(opts) { 
 		opts = opts || {};
@@ -1064,7 +1038,6 @@ class TaskManagementApi {
 	 * Query for workbins
 	 * 
 	 * @param {Object} body QueryPostRequest
-	 * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkbinsQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -1090,7 +1063,6 @@ class TaskManagementApi {
 	 * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemAcdCancel(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -1116,7 +1088,6 @@ class TaskManagementApi {
 	 * Disconnect the assignee of the workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemDisconnect(workitemId) { 
 		// verify the required parameter 'workitemId' is set
@@ -1144,7 +1115,6 @@ class TaskManagementApi {
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Terminated request
-	 * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemTerminate(workitemId, opts) { 
 		opts = opts || {};
@@ -1172,7 +1142,6 @@ class TaskManagementApi {
 	 * Create a workitem
 	 * 
 	 * @param {Object} body Workitem
-	 * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitems(body) { 
 		// verify the required parameter 'body' is set
@@ -1224,7 +1193,6 @@ class TaskManagementApi {
 	 * Create a workitem query job
 	 * 
 	 * @param {Object} body WorkitemQueryJobCreate
-	 * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemsQueryJobs(body) { 
 		// verify the required parameter 'body' is set
@@ -1250,7 +1218,6 @@ class TaskManagementApi {
 	 * Create a schema
 	 * 
 	 * @param {Object} body Schema
-	 * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemsSchemas(body) { 
 		// verify the required parameter 'body' is set
@@ -1278,7 +1245,6 @@ class TaskManagementApi {
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypeStatuses(worktypeId, opts) { 
 		opts = opts || {};
@@ -1307,7 +1273,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
-	 * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypes(opts) { 
 		opts = opts || {};
@@ -1331,7 +1296,6 @@ class TaskManagementApi {
 	 * Query for worktypes
 	 * 
 	 * @param {Object} body QueryPostRequest
-	 * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -1358,7 +1322,6 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Data Schema
-	 * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putTaskmanagementWorkitemsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set

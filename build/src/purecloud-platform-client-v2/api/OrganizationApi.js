@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 192.2.0
+	 * @version 193.0.0
 	 */
 
 	/**
@@ -169,6 +169,26 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/docs', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get free trial limit documentation
+	 * 
+	 */
+	getOrganizationsLimitsDocsFreetrial() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/docs/freetrial', 
 			'GET', 
 			{  },
 			{  },

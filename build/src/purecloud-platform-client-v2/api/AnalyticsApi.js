@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 192.2.0
+	 * @version 193.0.0
 	 */
 
 	/**
@@ -35,31 +35,6 @@ class AnalyticsApi {
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'DELETE', 
 			{ 'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a scheduled report job.
-	 * 
-	 * @param {String} scheduleId Schedule ID
-	 */
-	deleteAnalyticsReportingSchedule(scheduleId) { 
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling deleteAnalyticsReportingSchedule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
-			'DELETE', 
-			{ 'scheduleId': scheduleId },
 			{  },
 			{  },
 			{  },
@@ -152,8 +127,8 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Get Reporting Turns.
-	 * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+	 * Get Reporting Turns (division aware).
+	 * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 	 * @param {String} botFlowId ID of the bot flow.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
@@ -163,6 +138,42 @@ class AnalyticsApi {
 	 * @param {String} opts.sessionId Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
 	 * @param {String} opts.language Optional language code to get the reporting turns for a particular language
 	 * @param {Object} opts.askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+	 */
+	getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botFlowId' is set
+		if (botFlowId === undefined || botFlowId === null) {
+			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowDivisionsReportingturns';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns', 
+			'GET', 
+			{ 'botFlowId': botFlowId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'],'askActionResults': opts['askActionResults'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Reporting Turns.
+	 * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+	 * @param {String} botFlowId ID of the bot flow.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
+	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 250 (default to 50)
+	 * @param {String} opts.interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.actionId Optional action ID to get the reporting turns associated to a particular flow action
+	 * @param {String} opts.sessionId Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
+	 * @param {String} opts.language Optional language code to get the reporting turns for a particular language
+	 * @param {Object} opts.askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+	 * @deprecated
 	 */
 	getAnalyticsBotflowReportingturns(botFlowId, opts) { 
 		opts = opts || {};
@@ -854,216 +865,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Get list of reporting metadata.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.locale Locale
-	 */
-	getAnalyticsReportingMetadata(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/metadata', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'locale': opts['locale'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a reporting metadata.
-	 * 
-	 * @param {String} reportId Report ID
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.locale Locale
-	 */
-	getAnalyticsReportingReportIdMetadata(reportId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling getAnalyticsReportingReportIdMetadata';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/{reportId}/metadata', 
-			'GET', 
-			{ 'reportId': reportId },
-			{ 'locale': opts['locale'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of report formats
-	 * Get a list of report formats.
-	 */
-	getAnalyticsReportingReportformats() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/reportformats', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a scheduled report job.
-	 * 
-	 * @param {String} scheduleId Schedule ID
-	 */
-	getAnalyticsReportingSchedule(scheduleId) { 
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getAnalyticsReportingSchedule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
-			'GET', 
-			{ 'scheduleId': scheduleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of completed scheduled report jobs.
-	 * 
-	 * @param {String} scheduleId Schedule ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber  (default to 1)
-	 * @param {Number} opts.pageSize  (default to 25)
-	 */
-	getAnalyticsReportingScheduleHistory(scheduleId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistory';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules/{scheduleId}/history', 
-			'GET', 
-			{ 'scheduleId': scheduleId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get most recently completed scheduled report job.
-	 * 
-	 * @param {String} scheduleId Schedule ID
-	 */
-	getAnalyticsReportingScheduleHistoryLatest(scheduleId) { 
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistoryLatest';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules/{scheduleId}/history/latest', 
-			'GET', 
-			{ 'scheduleId': scheduleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * A completed scheduled report job
-	 * A completed scheduled report job.
-	 * @param {String} runId Run ID
-	 * @param {String} scheduleId Schedule ID
-	 */
-	getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId) { 
-		// verify the required parameter 'runId' is set
-		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling getAnalyticsReportingScheduleHistoryRunId';
-		}
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistoryRunId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}', 
-			'GET', 
-			{ 'runId': runId,'scheduleId': scheduleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of scheduled report jobs
-	 * Get a list of scheduled report jobs.
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 */
-	getAnalyticsReportingSchedules(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules', 
-			'GET', 
-			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get AnalyticsReportingSettings for an organization
 	 * 
 	 */
@@ -1093,6 +894,7 @@ class AnalyticsApi {
 	 * @param {Number} opts.pageSize  (default to 50)
 	 * @param {Boolean} opts.publicOnly If true, retrieve only public dashboards
 	 * @param {Boolean} opts.favoriteOnly If true, retrieve only favorite dashboards
+	 * @param {String} opts.name retrieve dashboards that match with given name
 	 */
 	getAnalyticsReportingSettingsUserDashboards(userId, opts) { 
 		opts = opts || {};
@@ -1106,27 +908,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/settings/users/{userId}/dashboards', 
 			'GET', 
 			{ 'userId': userId },
-			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'publicOnly': opts['publicOnly'],'favoriteOnly': opts['favoriteOnly'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of report time periods.
-	 * 
-	 */
-	getAnalyticsReportingTimeperiods() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/timeperiods', 
-			'GET', 
-			{  },
-			{  },
+			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'publicOnly': opts['publicOnly'],'favoriteOnly': opts['favoriteOnly'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -1655,7 +1437,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsConversationsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -1914,7 +1695,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2217,58 +1997,6 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Place a scheduled report immediately into the reporting queue
-	 * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-	 * @param {String} scheduleId Schedule ID
-	 * @deprecated
-	 */
-	postAnalyticsReportingScheduleRunreport(scheduleId) { 
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling postAnalyticsReportingScheduleRunreport';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules/{scheduleId}/runreport', 
-			'POST', 
-			{ 'scheduleId': scheduleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a scheduled report job
-	 * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-	 * @param {Object} body ReportSchedule
-	 * @deprecated
-	 */
-	postAnalyticsReportingSchedules(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSchedules';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Bulk remove dashboard configurations
 	 * 
 	 * @param {Object} body 
@@ -2351,7 +2079,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsRoutingActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2485,7 +2212,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTeamsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2567,7 +2293,6 @@ class AnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2732,37 +2457,6 @@ class AnalyticsApi {
 			'/api/v2/analytics/dataretention/settings', 
 			'PUT', 
 			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a scheduled report job.
-	 * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-	 * @param {String} scheduleId Schedule ID
-	 * @param {Object} body ReportSchedule
-	 * @deprecated
-	 */
-	putAnalyticsReportingSchedule(scheduleId, body) { 
-		// verify the required parameter 'scheduleId' is set
-		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling putAnalyticsReportingSchedule';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSchedule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
-			'PUT', 
-			{ 'scheduleId': scheduleId },
 			{  },
 			{  },
 			{  },

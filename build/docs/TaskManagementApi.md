@@ -65,8 +65,6 @@ DELETE /api/v2/taskmanagement/workbins/{workbinId}
 
 Delete a workbin
 
-deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workbin:delete
@@ -116,8 +114,6 @@ void (no response body)
 DELETE /api/v2/taskmanagement/workitems/{workitemId}
 
 Delete a workitem
-
-deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -169,8 +165,6 @@ DELETE /api/v2/taskmanagement/workitems/schemas/{schemaId}
 
 Delete a schema
 
-deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitemSchema:delete
@@ -221,8 +215,6 @@ DELETE /api/v2/taskmanagement/worktypes/{worktypeId}
 
 Delete a worktype
 
-deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:worktype:delete
@@ -272,8 +264,6 @@ void (no response body)
 DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
 
 Delete a status
-
-deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -326,8 +316,6 @@ void (no response body)
 GET /api/v2/taskmanagement/workbins/{workbinId}
 
 Get a workbin
-
-getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -553,8 +541,6 @@ GET /api/v2/taskmanagement/workitems/{workitemId}
 
 Get a workitem
 
-getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitem:view
@@ -668,8 +654,6 @@ apiInstance.getTaskmanagementWorkitemHistory(workitemId, opts)
 GET /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups
 
 Get all wrapup codes added for the given user for a workitem.
-
-getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -847,8 +831,6 @@ GET /api/v2/taskmanagement/workitems/{workitemId}/wrapups
 
 Get all wrapup codes added for all users for a workitem.
 
-getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:wrapup:view
@@ -909,8 +891,6 @@ GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}
 
 Get the workitem query job associated with the job id.
 
-getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * workitems:queryJob:view
@@ -960,8 +940,6 @@ apiInstance.getTaskmanagementWorkitemsQueryJob(jobId)
 GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results
 
 Get results from for workitem query job 
-
-getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1013,8 +991,6 @@ GET /api/v2/taskmanagement/workitems/schemas/{schemaId}
 
 Get a schema
 
-getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitemSchema:view
@@ -1064,8 +1040,6 @@ apiInstance.getTaskmanagementWorkitemsSchema(schemaId)
 GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId}
 
 Get a specific version of a schema
-
-getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1119,8 +1093,6 @@ GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions
 
 Get all versions of a schema
 
-getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitemSchema:view
@@ -1171,8 +1143,6 @@ GET /api/v2/taskmanagement/workitems/schemas
 
 Get a list of schemas.
 
-getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitemSchema:view
@@ -1217,8 +1187,6 @@ This endpoint does not need any parameter.
 GET /api/v2/taskmanagement/worktypes/{worktypeId}
 
 Get a worktype
-
-getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1334,8 +1302,6 @@ GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
 
 Get a status
 
-getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:status:view
@@ -1387,8 +1353,6 @@ apiInstance.getTaskmanagementWorktypeStatus(worktypeId, statusId)
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses
 
 Get list of statuses for this worktype.
-
-getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1554,8 +1518,6 @@ PATCH /api/v2/taskmanagement/workbins/{workbinId}
 
 Update the attributes of a workbin
 
-patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workbin:edit
@@ -1607,8 +1569,6 @@ apiInstance.patchTaskmanagementWorkbin(workbinId, body)
 PATCH /api/v2/taskmanagement/workitems/{workitemId}
 
 Update the attributes of a workitem
-
-patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1663,8 +1623,6 @@ PATCH /api/v2/taskmanagement/workitems/{workitemId}/assignment
 
 Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 
-patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitem:pull
@@ -1717,8 +1675,6 @@ void (no response body)
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups
 
 Add/Remove a wrapup code for a given user in a workitem.
-
-patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1774,8 +1730,6 @@ PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups
 
 Add/Remove a wrapup code for the current user in a workitem.
 
-patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:wrapupSelf:edit
@@ -1827,8 +1781,6 @@ apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}
 
 Update the attributes of a worktype
-
-patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1883,8 +1835,6 @@ apiInstance.patchTaskmanagementWorktype(worktypeId, opts)
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
 
 Update the attributes of a status
-
-patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1942,8 +1892,6 @@ POST /api/v2/taskmanagement/workbins
 
 Create a workbin
 
-postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workbin:add
@@ -1996,8 +1944,6 @@ POST /api/v2/taskmanagement/workbins/query
 
 Query for workbins
 
-postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * workitems:workbin:view
@@ -2047,8 +1993,6 @@ apiInstance.postTaskmanagementWorkbinsQuery(body)
 POST /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel
 
 Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
-
-postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2100,8 +2044,6 @@ POST /api/v2/taskmanagement/workitems/{workitemId}/disconnect
 
 Disconnect the assignee of the workitem
 
-postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitem:disconnect
@@ -2151,8 +2093,6 @@ apiInstance.postTaskmanagementWorkitemDisconnect(workitemId)
 POST /api/v2/taskmanagement/workitems/{workitemId}/terminate
 
 Terminate a workitem
-
-postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2207,8 +2147,6 @@ apiInstance.postTaskmanagementWorkitemTerminate(workitemId, opts)
 POST /api/v2/taskmanagement/workitems
 
 Create a workitem
-
-postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2314,8 +2252,6 @@ POST /api/v2/taskmanagement/workitems/query/jobs
 
 Create a workitem query job
 
-postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:queryJob:add
@@ -2366,8 +2302,6 @@ POST /api/v2/taskmanagement/workitems/schemas
 
 Create a schema
 
-postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:workitemSchema:add
@@ -2417,8 +2351,6 @@ apiInstance.postTaskmanagementWorkitemsSchemas(body)
 POST /api/v2/taskmanagement/worktypes/{worktypeId}/statuses
 
 Add a status to a worktype
-
-postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2474,8 +2406,6 @@ POST /api/v2/taskmanagement/worktypes
 
 Create a worktype
 
-postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * workitems:worktype:add
@@ -2528,8 +2458,6 @@ POST /api/v2/taskmanagement/worktypes/query
 
 Query for worktypes
 
-postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * workitems:worktype:view
@@ -2579,8 +2507,6 @@ apiInstance.postTaskmanagementWorktypesQuery(body)
 PUT /api/v2/taskmanagement/workitems/schemas/{schemaId}
 
 Update a schema
-
-putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

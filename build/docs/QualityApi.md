@@ -978,7 +978,7 @@ GET /api/v2/quality/evaluations/query
 
 Queries Evaluations and returns a paged list
 
-Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to Never Release are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch.
+Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to Never Release are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch. The evaluation entities contained in the response might only contain a subset of all the properties listed below. It is often because a given propertys value has not yet been populated or is not applicable in the current state of the evaluation. It might also be because the missing property in the response was not requested by the user.
 
 Requires ANY permissions:
 
@@ -1016,7 +1016,7 @@ let opts = {
   'evaluationState': ["evaluationState_example"], // [String] | 
   'isReleased': true, // Boolean | the evaluation has been released
   'agentHasRead': true, // Boolean | agent has the evaluation
-  'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations
+  'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
   'maximum': 3.4, // Number | the maximum number of results to return
   'sortOrder': "sortOrder_example" // String | NOTE: Does not work when conversationId is supplied.
 };
@@ -1054,7 +1054,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **evaluationState** | **[String]** |  | [optional]  |
  **isReleased** | **Boolean** | the evaluation has been released | [optional]  |
  **agentHasRead** | **Boolean** | agent has the evaluation | [optional]  |
- **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations | [optional]  |
+ **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. | [optional]  |
  **maximum** | **Number** | the maximum number of results to return | [optional]  |
  **sortOrder** | **String** | NOTE: Does not work when conversationId is supplied. | [optional]  |
 {: class="table table-striped"}

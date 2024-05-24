@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOrganizationsLimitsChangerequest**](OrganizationApi.html#getOrganizationsLimitsChangerequest) | **GET** /api/v2/organizations/limits/changerequests/{requestId} | Get a limit change request
 [**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | **GET** /api/v2/organizations/limits/changerequests | Get the available limit change requests
 [**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | **GET** /api/v2/organizations/limits/docs | Get limit documentation
+[**getOrganizationsLimitsDocsFreetrial**](OrganizationApi.html#getOrganizationsLimitsDocsFreetrial) | **GET** /api/v2/organizations/limits/docs/freetrial | Get free trial limit documentation
 [**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName} | Get the effective limits in a namespace for an organization
 [**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi.html#getOrganizationsLimitsNamespaceDefaults) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName}/defaults | Get the default limits in a namespace for an organization
 [**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | **GET** /api/v2/organizations/limits/namespaces | Get the available limit namespaces
@@ -369,6 +370,49 @@ This endpoint does not need any parameter.
 ### Return type
 
 **LimitDocumentation**
+
+<a name="getOrganizationsLimitsDocsFreetrial"></a>
+
+# FreeTrialLimitDocs getOrganizationsLimitsDocsFreetrial()
+
+
+GET /api/v2/organizations/limits/docs/freetrial
+
+Get free trial limit documentation
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+apiInstance.getOrganizationsLimitsDocsFreetrial()
+  .then((data) => {
+    console.log(`getOrganizationsLimitsDocsFreetrial success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsLimitsDocsFreetrial');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**FreeTrialLimitDocs**
 
 <a name="getOrganizationsLimitsNamespace"></a>
 

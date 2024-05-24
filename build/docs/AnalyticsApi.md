@@ -8,10 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
-[**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | **DELETE** /api/v2/analytics/reporting/schedules/{scheduleId} | Delete a scheduled report job.
 [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**getAnalyticsActionsAggregatesJob**](AnalyticsApi.html#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
 [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi.html#getAnalyticsBotflowDivisionsReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns | Get Reporting Turns (division aware).
 [**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
 [**getAnalyticsBotflowSessions**](AnalyticsApi.html#getAnalyticsBotflowSessions) | **GET** /api/v2/analytics/botflows/{botFlowId}/sessions | Get Bot Flow Sessions.
 [**getAnalyticsBotsAggregatesJob**](AnalyticsApi.html#getAnalyticsBotsAggregatesJob) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Get status for async query for bot aggregates
@@ -38,17 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsReportingDashboardsUsers**](AnalyticsApi.html#getAnalyticsReportingDashboardsUsers) | **GET** /api/v2/analytics/reporting/dashboards/users | Get dashboards summary for users in a org
 [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
 [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
-[**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | **GET** /api/v2/analytics/reporting/metadata | Get list of reporting metadata.
-[**getAnalyticsReportingReportIdMetadata**](AnalyticsApi.html#getAnalyticsReportingReportIdMetadata) | **GET** /api/v2/analytics/reporting/{reportId}/metadata | Get a reporting metadata.
-[**getAnalyticsReportingReportformats**](AnalyticsApi.html#getAnalyticsReportingReportformats) | **GET** /api/v2/analytics/reporting/reportformats | Get a list of report formats
-[**getAnalyticsReportingSchedule**](AnalyticsApi.html#getAnalyticsReportingSchedule) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId} | Get a scheduled report job.
-[**getAnalyticsReportingScheduleHistory**](AnalyticsApi.html#getAnalyticsReportingScheduleHistory) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId}/history | Get list of completed scheduled report jobs.
-[**getAnalyticsReportingScheduleHistoryLatest**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryLatest) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest | Get most recently completed scheduled report job.
-[**getAnalyticsReportingScheduleHistoryRunId**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryRunId) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId} | A completed scheduled report job
-[**getAnalyticsReportingSchedules**](AnalyticsApi.html#getAnalyticsReportingSchedules) | **GET** /api/v2/analytics/reporting/schedules | Get a list of scheduled report jobs
 [**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | **GET** /api/v2/analytics/reporting/settings | Get AnalyticsReportingSettings for an organization
 [**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi.html#getAnalyticsReportingSettingsUserDashboards) | **GET** /api/v2/analytics/reporting/settings/users/{userId}/dashboards | Get list of dashboards for an user
-[**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | **GET** /api/v2/analytics/reporting/timeperiods | Get a list of report time periods.
 [**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJob) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Get status for async query for resolution aggregates
 [**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJobResults) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsSurveysAggregatesJob**](AnalyticsApi.html#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
@@ -90,8 +81,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
 [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi.html#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk delete dashboards owned by other user(s)
 [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
-[**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | **POST** /api/v2/analytics/reporting/schedules/{scheduleId}/runreport | Place a scheduled report immediately into the reporting queue
-[**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | **POST** /api/v2/analytics/reporting/schedules | Create a scheduled report job
 [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk remove dashboard configurations
 [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsQuery) | **POST** /api/v2/analytics/reporting/settings/dashboards/query | Query dashboard configurations
 [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
@@ -110,7 +99,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
 [**putAnalyticsDataretentionSettings**](AnalyticsApi.html#putAnalyticsDataretentionSettings) | **PUT** /api/v2/analytics/dataretention/settings | Update analytics data retention setting
-[**putAnalyticsReportingSchedule**](AnalyticsApi.html#putAnalyticsReportingSchedule) | **PUT** /api/v2/analytics/reporting/schedules/{scheduleId} | Update a scheduled report job.
 {: class="table table-striped"}
 
 <a name="deleteAnalyticsConversationsDetailsJob"></a>
@@ -158,54 +146,6 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteAnalyticsReportingSchedule"></a>
-
-# void deleteAnalyticsReportingSchedule(scheduleId)
-
-
-DELETE /api/v2/analytics/reporting/schedules/{scheduleId}
-
-Delete a scheduled report job.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.deleteAnalyticsReportingSchedule(scheduleId)
-  .then(() => {
-    console.log('deleteAnalyticsReportingSchedule returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteAnalyticsReportingSchedule');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -372,16 +312,85 @@ apiInstance.getAnalyticsActionsAggregatesJobResults(jobId, opts)
 
 **ActionAsyncAggregateQueryResponse**
 
+<a name="getAnalyticsBotflowDivisionsReportingturns"></a>
+
+# ReportingTurnsResponse getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
+
+
+GET /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns
+
+Get Reporting Turns (division aware).
+
+Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+Requires ANY permissions:
+
+* analytics:botFlowDivisionAwareReportingTurn:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let botFlowId = "botFlowId_example"; // String | ID of the bot flow.
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
+  'pageSize': "50", // String | Max number of entities to return. Maximum of 250
+  'interval': 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z, // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+  'actionId': "actionId_example", // String | Optional action ID to get the reporting turns associated to a particular flow action
+  'sessionId': "sessionId_example", // String | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
+  'language': en-us, // String | Optional language code to get the reporting turns for a particular language
+  'askActionResults': "askActionResults_example" // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+};
+
+apiInstance.getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsBotflowDivisionsReportingturns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsBotflowDivisionsReportingturns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **botFlowId** | **String** | ID of the bot flow. |  |
+ **after** | **String** | The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
+ **interval** | **String** | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+ **actionId** | **String** | Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
+ **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
+ **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
+ **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
+{: class="table table-striped"}
+
+### Return type
+
+**ReportingTurnsResponse**
+
 <a name="getAnalyticsBotflowReportingturns"></a>
 
 # ReportingTurnsResponse getAnalyticsBotflowReportingturns(botFlowId, opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/analytics/botflows/{botFlowId}/reportingturns
 
 Get Reporting Turns.
 
-Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 
 Requires ANY permissions:
 
@@ -1771,419 +1780,6 @@ This endpoint does not need any parameter.
 
 **ReportingExportMetadataJobListing**
 
-<a name="getAnalyticsReportingMetadata"></a>
-
-# ReportMetaDataEntityListing getAnalyticsReportingMetadata(opts)
-
-
-GET /api/v2/analytics/reporting/metadata
-
-Get list of reporting metadata.
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let opts = { 
-  'pageNumber': 1, // Number | Page number
-  'pageSize': 25, // Number | Page size
-  'locale': "locale_example" // String | Locale
-};
-
-apiInstance.getAnalyticsReportingMetadata(opts)
-  .then((data) => {
-    console.log(`getAnalyticsReportingMetadata success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingMetadata');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **locale** | **String** | Locale | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportMetaDataEntityListing**
-
-<a name="getAnalyticsReportingReportIdMetadata"></a>
-
-# ReportMetaData getAnalyticsReportingReportIdMetadata(reportId, opts)
-
-
-GET /api/v2/analytics/reporting/{reportId}/metadata
-
-Get a reporting metadata.
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let reportId = "reportId_example"; // String | Report ID
-let opts = { 
-  'locale': "locale_example" // String | Locale
-};
-
-apiInstance.getAnalyticsReportingReportIdMetadata(reportId, opts)
-  .then((data) => {
-    console.log(`getAnalyticsReportingReportIdMetadata success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingReportIdMetadata');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **reportId** | **String** | Report ID |  |
- **locale** | **String** | Locale | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportMetaData**
-
-<a name="getAnalyticsReportingReportformats"></a>
-
-# **[&#39;String&#39;]** getAnalyticsReportingReportformats()
-
-
-GET /api/v2/analytics/reporting/reportformats
-
-Get a list of report formats
-
-Get a list of report formats.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-apiInstance.getAnalyticsReportingReportformats()
-  .then((data) => {
-    console.log(`getAnalyticsReportingReportformats success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingReportformats');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-
-### Return type
-
-**[&#39;String&#39;]**
-
-<a name="getAnalyticsReportingSchedule"></a>
-
-# ReportSchedule getAnalyticsReportingSchedule(scheduleId)
-
-
-GET /api/v2/analytics/reporting/schedules/{scheduleId}
-
-Get a scheduled report job.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.getAnalyticsReportingSchedule(scheduleId)
-  .then((data) => {
-    console.log(`getAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingSchedule');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportSchedule**
-
-<a name="getAnalyticsReportingScheduleHistory"></a>
-
-# ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(scheduleId, opts)
-
-
-GET /api/v2/analytics/reporting/schedules/{scheduleId}/history
-
-Get list of completed scheduled report jobs.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-let opts = { 
-  'pageNumber': 1, // Number | 
-  'pageSize': 25 // Number | 
-};
-
-apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, opts)
-  .then((data) => {
-    console.log(`getAnalyticsReportingScheduleHistory success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingScheduleHistory');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
- **pageNumber** | **Number** |  | [optional] [default to 1] |
- **pageSize** | **Number** |  | [optional] [default to 25] |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportRunEntryEntityDomainListing**
-
-<a name="getAnalyticsReportingScheduleHistoryLatest"></a>
-
-# ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(scheduleId)
-
-
-GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest
-
-Get most recently completed scheduled report job.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId)
-  .then((data) => {
-    console.log(`getAnalyticsReportingScheduleHistoryLatest success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingScheduleHistoryLatest');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportRunEntry**
-
-<a name="getAnalyticsReportingScheduleHistoryRunId"></a>
-
-# ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
-
-
-GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}
-
-A completed scheduled report job
-
-A completed scheduled report job.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let runId = "runId_example"; // String | Run ID
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
-  .then((data) => {
-    console.log(`getAnalyticsReportingScheduleHistoryRunId success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingScheduleHistoryRunId');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **runId** | **String** | Run ID |  |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportRunEntry**
-
-<a name="getAnalyticsReportingSchedules"></a>
-
-# ReportScheduleEntityListing getAnalyticsReportingSchedules(opts)
-
-
-GET /api/v2/analytics/reporting/schedules
-
-Get a list of scheduled report jobs
-
-Get a list of scheduled report jobs.
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let opts = { 
-  'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
-};
-
-apiInstance.getAnalyticsReportingSchedules(opts)
-  .then((data) => {
-    console.log(`getAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingSchedules');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportScheduleEntityListing**
-
 <a name="getAnalyticsReportingSettings"></a>
 
 # AnalyticsReportingSettings getAnalyticsReportingSettings()
@@ -2259,7 +1855,8 @@ let opts = {
   'pageNumber': 1, // Number | 
   'pageSize': 50, // Number | 
   'publicOnly': true, // Boolean | If true, retrieve only public dashboards
-  'favoriteOnly': true // Boolean | If true, retrieve only favorite dashboards
+  'favoriteOnly': true, // Boolean | If true, retrieve only favorite dashboards
+  'name': "name_example" // String | retrieve dashboards that match with given name
 };
 
 apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
@@ -2283,54 +1880,12 @@ apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
  **pageSize** | **Number** |  | [optional] [default to 50] |
  **publicOnly** | **Boolean** | If true, retrieve only public dashboards | [optional]  |
  **favoriteOnly** | **Boolean** | If true, retrieve only favorite dashboards | [optional]  |
+ **name** | **String** | retrieve dashboards that match with given name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
 **DashboardConfigurationListing**
-
-<a name="getAnalyticsReportingTimeperiods"></a>
-
-# **[&#39;String&#39;]** getAnalyticsReportingTimeperiods()
-
-
-GET /api/v2/analytics/reporting/timeperiods
-
-Get a list of report time periods.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-apiInstance.getAnalyticsReportingTimeperiods()
-  .then((data) => {
-    console.log(`getAnalyticsReportingTimeperiods success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingTimeperiods');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-
-### Return type
-
-**[&#39;String&#39;]**
 
 <a name="getAnalyticsResolutionsAggregatesJob"></a>
 
@@ -3340,8 +2895,6 @@ POST /api/v2/analytics/conversations/activity/query
 
 Query for conversation activity observations
 
-postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:queueObservation:view
@@ -3855,8 +3408,6 @@ apiInstance.postAnalyticsFlowexecutionsAggregatesQuery(body)
 POST /api/v2/analytics/flows/activity/query
 
 Query for flow activity observations
-
-postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4464,112 +4015,6 @@ apiInstance.postAnalyticsReportingExports(body)
 
 **ReportingExportJobResponse**
 
-<a name="postAnalyticsReportingScheduleRunreport"></a>
-
-# RunNowResponse postAnalyticsReportingScheduleRunreport(scheduleId)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport
-
-Place a scheduled report immediately into the reporting queue
-
-This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
-  .then((data) => {
-    console.log(`postAnalyticsReportingScheduleRunreport success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postAnalyticsReportingScheduleRunreport');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**RunNowResponse**
-
-<a name="postAnalyticsReportingSchedules"></a>
-
-# ReportSchedule postAnalyticsReportingSchedules(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-POST /api/v2/analytics/reporting/schedules
-
-Create a scheduled report job
-
-This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let body = {}; // Object | ReportSchedule
-
-apiInstance.postAnalyticsReportingSchedules(body)
-  .then((data) => {
-    console.log(`postAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postAnalyticsReportingSchedules');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | ReportSchedule |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportSchedule**
-
 <a name="postAnalyticsReportingSettingsDashboardsBulkRemove"></a>
 
 # void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
@@ -4730,8 +4175,6 @@ apiInstance.postAnalyticsResolutionsAggregatesJobs(body)
 POST /api/v2/analytics/routing/activity/query
 
 Query for user activity observations
-
-postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4995,8 +4438,6 @@ POST /api/v2/analytics/teams/activity/query
 
 Query for team activity observations
 
-postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:teamObservation:view
@@ -5154,8 +4595,6 @@ apiInstance.postAnalyticsTranscriptsAggregatesQuery(body)
 POST /api/v2/analytics/users/activity/query
 
 Query for user activity observations
-
-postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5505,59 +4944,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 ### Return type
 
 **AnalyticsDataRetentionResponse**
-
-<a name="putAnalyticsReportingSchedule"></a>
-
-# ReportSchedule putAnalyticsReportingSchedule(scheduleId, body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-PUT /api/v2/analytics/reporting/schedules/{scheduleId}
-
-Update a scheduled report job.
-
-This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-let body = {}; // Object | ReportSchedule
-
-apiInstance.putAnalyticsReportingSchedule(scheduleId, body)
-  .then((data) => {
-    console.log(`putAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putAnalyticsReportingSchedule');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
- **body** | **Object** | ReportSchedule |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportSchedule**
 
