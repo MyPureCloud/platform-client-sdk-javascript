@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -1048,6 +1048,40 @@ class OutboundApi {
 			'GET', 
 			{ 'campaignId': campaignId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get line distribution information for campaigns using same Edge Group or Site as given campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeOnlyActiveCampaigns If true will return only active Campaigns (default to true)
+	 * @param {String} opts.edgeGroupId Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+	 * @param {String} opts.siteId Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+	 * @param {Boolean} opts.useWeight Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+	 * @param {Number} opts.relativeWeight Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+	 * @param {Number} opts.outboundLineCount The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+	 */
+	getOutboundCampaignLinedistribution(campaignId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignLinedistribution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/linedistribution', 
+			'GET', 
+			{ 'campaignId': campaignId },
+			{ 'includeOnlyActiveCampaigns': opts['includeOnlyActiveCampaigns'],'edgeGroupId': opts['edgeGroupId'],'siteId': opts['siteId'],'useWeight': opts['useWeight'],'relativeWeight': opts['relativeWeight'],'outboundLineCount': opts['outboundLineCount'] },
 			{  },
 			{  },
 			null, 
@@ -3021,6 +3055,96 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start an async job to delete contacts using a filter.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact filter information.
+	 */
+	postOutboundContactlistContactsBulkRemove(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start an async job to bulk edit contacts.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact bulk edit request information.
+	 */
+	postOutboundContactlistContactsBulkUpdate(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query contacts from a contact list.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact search parameters.
+	 */
+	postOutboundContactlistContactsSearch(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsSearch';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/search', 
 			'POST', 
 			{ 'contactListId': contactListId },
 			{  },

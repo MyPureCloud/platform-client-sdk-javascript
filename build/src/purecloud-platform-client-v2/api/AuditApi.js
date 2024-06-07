@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -158,6 +158,35 @@ class AuditApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/realtime', 
+			'POST', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	postAuditsQueryRealtimeRelated(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuditsQueryRealtimeRelated';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/audits/query/realtime/related', 
 			'POST', 
 			{  },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },

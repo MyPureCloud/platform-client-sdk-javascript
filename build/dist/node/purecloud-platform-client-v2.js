@@ -405,7 +405,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 193.0.0
+ * @version 194.0.0
  */
 class ApiClient {
 	/**
@@ -1824,7 +1824,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -2485,7 +2485,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -4953,7 +4953,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -9099,7 +9099,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -9264,13 +9264,42 @@ class AuditApi {
 		);
 	}
 
+	/**
+	 * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	postAuditsQueryRealtimeRelated(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuditsQueryRealtimeRelated';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/audits/query/realtime/related', 
+			'POST', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
 }
 
 class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -10508,7 +10537,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -10588,7 +10617,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -10658,7 +10687,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -11594,7 +11623,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -12171,7 +12200,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -13253,7 +13282,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -13494,32 +13523,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Delete a LINE messenger integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
@@ -13532,32 +13535,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a Twitter messaging integration
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -15530,65 +15507,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get a list of LINE messenger Integrations (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
-	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
-	 * @deprecated
-	 */
-	getConversationsMessagingIntegrationsLine(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a LINE messenger integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getConversationsMessagingIntegrationsLineIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a list of Open messaging integrations
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {Object} opts Optional parameters
@@ -15633,65 +15551,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Twitter Integrations (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
-	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
-	 * @deprecated
-	 */
-	getConversationsMessagingIntegrationsTwitter(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Twitter messaging integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'GET', 
 			{ 'integrationId': integrationId },
 			{ 'expand': opts['expand'] },
@@ -17322,37 +17181,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update Twitter messaging integration
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body TwitterIntegrationRequest
-	 * @deprecated
-	 */
-	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'PATCH', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -19575,32 +19403,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a LINE messenger Integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {Object} body LineIntegrationRequest
-	 * @deprecated
-	 */
-	postConversationsMessagingIntegrationsLine(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsLine';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {Object} body OpenIntegrationRequest
@@ -19613,32 +19415,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Twitter Integration
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {Object} body TwitterIntegrationRequest
-	 * @deprecated
-	 */
-	postConversationsMessagingIntegrationsTwitter(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter', 
 			'POST', 
 			{  },
 			{  },
@@ -20292,37 +20068,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Update a LINE messenger integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body LineIntegrationRequest
-	 * @deprecated
-	 */
-	putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIntegrationsLineIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'PUT', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Set the organization's default setting that may be applied to to integrations without settings
 	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
 	 * @param {Object} body MessagingSetting
@@ -20494,7 +20239,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -20580,7 +20325,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -20632,7 +20377,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -20697,7 +20442,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -20793,7 +20538,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -21306,7 +21051,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand which fields, if any, to expand (externalDataSources)
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalDataSources)
 	 * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
 	 */
 	getExternalcontactsOrganization(externalOrganizationId, opts) { 
@@ -21321,7 +21066,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}', 
 			'GET', 
 			{ 'externalOrganizationId': externalOrganizationId },
-			{ 'expand': opts['expand'],'includeTrustors': opts['includeTrustors'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] },
 			{  },
 			{  },
 			null, 
@@ -21437,7 +21182,7 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
-	 * @param {Object} opts.expand which fields, if any, to expand
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {String} opts.sortOrder The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc
 	 */
 	getExternalcontactsOrganizationRelationships(externalOrganizationId, opts) { 
@@ -21452,7 +21197,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships', 
 			'GET', 
 			{ 'externalOrganizationId': externalOrganizationId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -21597,7 +21342,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} relationshipId Relationship Id
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand which fields, if any, to expand
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
 	getExternalcontactsRelationship(relationshipId, opts) { 
 		opts = opts || {};
@@ -21611,7 +21356,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/relationships/{relationshipId}', 
 			'GET', 
 			{ 'relationshipId': relationshipId },
-			{ 'expand': opts['expand'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -22751,7 +22496,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -22966,7 +22711,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -23149,7 +22894,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -25235,7 +24980,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -25365,7 +25110,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -25496,7 +25241,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -25951,7 +25696,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -26470,7 +26215,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -27331,7 +27076,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -27498,7 +27243,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -29850,7 +29595,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -31439,7 +31184,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -34682,7 +34427,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -35716,7 +35461,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -35938,7 +35683,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -36793,7 +36538,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -37031,7 +36776,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -37267,7 +37012,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -37467,7 +37212,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -37826,7 +37571,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -37977,7 +37722,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -38210,7 +37955,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -38576,7 +38321,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -38846,7 +38591,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -38912,7 +38657,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -39387,7 +39132,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -40734,7 +40479,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -41777,6 +41522,40 @@ class OutboundApi {
 			'GET', 
 			{ 'campaignId': campaignId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get line distribution information for campaigns using same Edge Group or Site as given campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeOnlyActiveCampaigns If true will return only active Campaigns (default to true)
+	 * @param {String} opts.edgeGroupId Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+	 * @param {String} opts.siteId Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+	 * @param {Boolean} opts.useWeight Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+	 * @param {Number} opts.relativeWeight Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+	 * @param {Number} opts.outboundLineCount The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+	 */
+	getOutboundCampaignLinedistribution(campaignId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignLinedistribution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/linedistribution', 
+			'GET', 
+			{ 'campaignId': campaignId },
+			{ 'includeOnlyActiveCampaigns': opts['includeOnlyActiveCampaigns'],'edgeGroupId': opts['edgeGroupId'],'siteId': opts['siteId'],'useWeight': opts['useWeight'],'relativeWeight': opts['relativeWeight'],'outboundLineCount': opts['outboundLineCount'] },
 			{  },
 			{  },
 			null, 
@@ -43763,6 +43542,96 @@ class OutboundApi {
 	}
 
 	/**
+	 * Start an async job to delete contacts using a filter.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact filter information.
+	 */
+	postOutboundContactlistContactsBulkRemove(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start an async job to bulk edit contacts.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact bulk edit request information.
+	 */
+	postOutboundContactlistContactsBulkUpdate(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query contacts from a contact list.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact search parameters.
+	 */
+	postOutboundContactlistContactsSearch(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsSearch';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/search', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Initiate the export of a contact list.
 	 * Returns 200 if received OK.
 	 * @param {String} contactListId ContactList ID
@@ -44976,7 +44845,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -45720,7 +45589,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -45959,7 +45828,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -47716,7 +47585,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -49374,7 +49243,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -49884,7 +49753,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -53863,7 +53732,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -54740,7 +54609,7 @@ class ScreenRecordingApi {
 	/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -54785,7 +54654,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -55229,7 +55098,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -55918,7 +55787,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -56030,7 +55899,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -57144,7 +57013,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -57246,7 +57115,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -57385,7 +57254,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -58733,7 +58602,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -59034,7 +58903,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -59216,7 +59085,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -62544,7 +62413,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -62672,7 +62541,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -62826,7 +62695,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -63095,7 +62964,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -63310,7 +63179,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -63495,7 +63364,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -66153,7 +66022,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -66264,7 +66133,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -66931,7 +66800,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -67482,7 +67351,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -68009,7 +67878,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -68055,7 +67924,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -68201,7 +68070,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -74114,7 +73983,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 193.0.0
+ * @version 194.0.0
  */
 class platformClient {
 	constructor() {

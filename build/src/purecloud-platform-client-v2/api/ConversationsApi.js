@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -246,32 +246,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Delete a LINE messenger integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {String} integrationId Integration ID
@@ -284,32 +258,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a Twitter messaging integration
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @deprecated
-	 */
-	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -2282,65 +2230,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Get a list of LINE messenger Integrations (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
-	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
-	 * @deprecated
-	 */
-	getConversationsMessagingIntegrationsLine(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a LINE messenger integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getConversationsMessagingIntegrationsLineIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a list of Open messaging integrations
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {Object} opts Optional parameters
@@ -2385,65 +2274,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId },
-			{ 'expand': opts['expand'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Twitter Integrations (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
-	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
-	 * @deprecated
-	 */
-	getConversationsMessagingIntegrationsTwitter(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Twitter messaging integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand instructions for the return value.
-	 * @deprecated
-	 */
-	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'GET', 
 			{ 'integrationId': integrationId },
 			{ 'expand': opts['expand'] },
@@ -4074,37 +3904,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
-			'PATCH', 
-			{ 'integrationId': integrationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update Twitter messaging integration
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body TwitterIntegrationRequest
-	 * @deprecated
-	 */
-	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'PATCH', 
 			{ 'integrationId': integrationId },
 			{  },
@@ -6327,32 +6126,6 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Create a LINE messenger Integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {Object} body LineIntegrationRequest
-	 * @deprecated
-	 */
-	postConversationsMessagingIntegrationsLine(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsLine';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create an Open messaging integration
 	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 	 * @param {Object} body OpenIntegrationRequest
@@ -6365,32 +6138,6 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Twitter Integration
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-	 * @param {Object} body TwitterIntegrationRequest
-	 * @deprecated
-	 */
-	postConversationsMessagingIntegrationsTwitter(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter', 
 			'POST', 
 			{  },
 			{  },
@@ -7033,37 +6780,6 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/recordingstate', 
 			'PUT', 
 			{ 'conversationId': conversationId },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a LINE messenger integration (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body LineIntegrationRequest
-	 * @deprecated
-	 */
-	putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIntegrationsLineIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'PUT', 
-			{ 'integrationId': integrationId },
 			{  },
 			{  },
 			{  },

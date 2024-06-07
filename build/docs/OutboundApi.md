@@ -47,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | **GET** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results | Get a preview of how agents will be mapped to this campaign's contact list.
 [**getOutboundCampaignDiagnostics**](OutboundApi.html#getOutboundCampaignDiagnostics) | **GET** /api/v2/outbound/campaigns/{campaignId}/diagnostics | Get campaign diagnostics
 [**getOutboundCampaignInteractions**](OutboundApi.html#getOutboundCampaignInteractions) | **GET** /api/v2/outbound/campaigns/{campaignId}/interactions | Get dialer campaign interactions.
+[**getOutboundCampaignLinedistribution**](OutboundApi.html#getOutboundCampaignLinedistribution) | **GET** /api/v2/outbound/campaigns/{campaignId}/linedistribution | Get line distribution information for campaigns using same Edge Group or Site as given campaign
 [**getOutboundCampaignProgress**](OutboundApi.html#getOutboundCampaignProgress) | **GET** /api/v2/outbound/campaigns/{campaignId}/progress | Get campaign progress
 [**getOutboundCampaignStats**](OutboundApi.html#getOutboundCampaignStats) | **GET** /api/v2/outbound/campaigns/{campaignId}/stats | Get statistics about a Dialer Campaign
 [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
@@ -119,6 +120,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlistClear**](OutboundApi.html#postOutboundContactlistClear) | **POST** /api/v2/outbound/contactlists/{contactListId}/clear | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
 [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list.
 [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk | Get contacts from a contact list.
+[**postOutboundContactlistContactsBulkRemove**](OutboundApi.html#postOutboundContactlistContactsBulkRemove) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove | Start an async job to delete contacts using a filter.
+[**postOutboundContactlistContactsBulkUpdate**](OutboundApi.html#postOutboundContactlistContactsBulkUpdate) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update | Start an async job to bulk edit contacts.
+[**postOutboundContactlistContactsSearch**](OutboundApi.html#postOutboundContactlistContactsSearch) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/search | Query contacts from a contact list.
 [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | **POST** /api/v2/outbound/contactlists/{contactListId}/export | Initiate the export of a contact list.
 [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | **POST** /api/v2/outbound/contactlistfilters | Create Contact List Filter
 [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi.html#postOutboundContactlistfiltersBulkRetrieve) | **POST** /api/v2/outbound/contactlistfilters/bulk/retrieve | Retrieve multiple contact list filters
@@ -2231,6 +2235,70 @@ apiInstance.getOutboundCampaignInteractions(campaignId)
 ### Return type
 
 **CampaignInteractions**
+
+<a name="getOutboundCampaignLinedistribution"></a>
+
+# CampaignOutboundLinesDistribution getOutboundCampaignLinedistribution(campaignId, opts)
+
+
+GET /api/v2/outbound/campaigns/{campaignId}/linedistribution
+
+Get line distribution information for campaigns using same Edge Group or Site as given campaign
+
+Requires ANY permissions:
+
+* outbound:lineDistribution:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'includeOnlyActiveCampaigns': true, // Boolean | If true will return only active Campaigns
+  'edgeGroupId': "edgeGroupId_example", // String | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+  'siteId': "siteId_example", // String | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+  'useWeight': true, // Boolean | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+  'relativeWeight': 3.4, // Number | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+  'outboundLineCount': 3.4 // Number | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+};
+
+apiInstance.getOutboundCampaignLinedistribution(campaignId, opts)
+  .then((data) => {
+    console.log(`getOutboundCampaignLinedistribution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaignLinedistribution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+ **includeOnlyActiveCampaigns** | **Boolean** | If true will return only active Campaigns | [optional] [default to true] |
+ **edgeGroupId** | **String** | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive. | [optional]  |
+ **siteId** | **String** | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive. | [optional]  |
+ **useWeight** | **Boolean** | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations | [optional]  |
+ **relativeWeight** | **Number** | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight | [optional]  |
+ **outboundLineCount** | **Number** | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CampaignOutboundLinesDistribution**
 
 <a name="getOutboundCampaignProgress"></a>
 
@@ -6229,6 +6297,162 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 ### Return type
 
 **[DialerContact]**
+
+<a name="postOutboundContactlistContactsBulkRemove"></a>
+
+# ContactsBulkOperationJob postOutboundContactlistContactsBulkRemove(contactListId, body)
+
+
+POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove
+
+Start an async job to delete contacts using a filter.
+
+Requires ANY permissions:
+
+* outbound:contact:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+let body = {}; // Object | Contact filter information.
+
+apiInstance.postOutboundContactlistContactsBulkRemove(contactListId, body)
+  .then((data) => {
+    console.log(`postOutboundContactlistContactsBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistContactsBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **body** | **Object** | Contact filter information. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactsBulkOperationJob**
+
+<a name="postOutboundContactlistContactsBulkUpdate"></a>
+
+# ContactsBulkOperationJob postOutboundContactlistContactsBulkUpdate(contactListId, body)
+
+
+POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update
+
+Start an async job to bulk edit contacts.
+
+Requires ANY permissions:
+
+* outbound:contact:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+let body = {}; // Object | Contact bulk edit request information.
+
+apiInstance.postOutboundContactlistContactsBulkUpdate(contactListId, body)
+  .then((data) => {
+    console.log(`postOutboundContactlistContactsBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistContactsBulkUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **body** | **Object** | Contact bulk edit request information. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactsBulkOperationJob**
+
+<a name="postOutboundContactlistContactsSearch"></a>
+
+# ContactListingResponse postOutboundContactlistContactsSearch(contactListId, body)
+
+
+POST /api/v2/outbound/contactlists/{contactListId}/contacts/search
+
+Query contacts from a contact list.
+
+Requires ANY permissions:
+
+* outbound:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+let body = {}; // Object | Contact search parameters.
+
+apiInstance.postOutboundContactlistContactsSearch(contactListId, body)
+  .then((data) => {
+    console.log(`postOutboundContactlistContactsSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistContactsSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **body** | **Object** | Contact search parameters. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListingResponse**
 
 <a name="postOutboundContactlistExport"></a>
 

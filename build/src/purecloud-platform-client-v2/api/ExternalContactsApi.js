@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 193.0.0
+	 * @version 194.0.0
 	 */
 
 	/**
@@ -518,7 +518,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand which fields, if any, to expand (externalDataSources)
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalDataSources)
 	 * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
 	 */
 	getExternalcontactsOrganization(externalOrganizationId, opts) { 
@@ -533,7 +533,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}', 
 			'GET', 
 			{ 'externalOrganizationId': externalOrganizationId },
-			{ 'expand': opts['expand'],'includeTrustors': opts['includeTrustors'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] },
 			{  },
 			{  },
 			null, 
@@ -649,7 +649,7 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
 	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
-	 * @param {Object} opts.expand which fields, if any, to expand
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {String} opts.sortOrder The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc
 	 */
 	getExternalcontactsOrganizationRelationships(externalOrganizationId, opts) { 
@@ -664,7 +664,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships', 
 			'GET', 
 			{ 'externalOrganizationId': externalOrganizationId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -809,7 +809,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} relationshipId Relationship Id
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand which fields, if any, to expand
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
 	getExternalcontactsRelationship(relationshipId, opts) { 
 		opts = opts || {};
@@ -823,7 +823,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/relationships/{relationshipId}', 
 			'GET', 
 			{ 'relationshipId': relationshipId },
-			{ 'expand': opts['expand'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

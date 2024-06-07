@@ -909,7 +909,8 @@ declare class AuditApi {
   	getAuditsQueryTransactionId(transactionId: string): Promise<Models.AuditQueryExecutionStatusResponse>; 
   	getAuditsQueryTransactionIdResults(transactionId: string, opts?: AuditApi.getAuditsQueryTransactionIdResultsOptions): Promise<Models.AuditQueryExecutionResultsResponse>; 
   	postAuditsQuery(body: Models.AuditQueryRequest): Promise<Models.AuditQueryExecutionStatusResponse>; 
-  	postAuditsQueryRealtime(body: Models.AuditRealtimeQueryRequest, opts?: AuditApi.postAuditsQueryRealtimeOptions): Promise<Models.AuditRealtimeQueryResultsResponse>;
+  	postAuditsQueryRealtime(body: Models.AuditRealtimeQueryRequest, opts?: AuditApi.postAuditsQueryRealtimeOptions): Promise<Models.AuditRealtimeQueryResultsResponse>; 
+  	postAuditsQueryRealtimeRelated(body: Models.AuditRealtimeRelatedRequest, opts?: AuditApi.postAuditsQueryRealtimeRelatedOptions): Promise<Models.AuditRealtimeRelatedResultsResponse>;
 }
 
 declare namespace AuditApi { 
@@ -919,6 +920,9 @@ declare namespace AuditApi {
 		"expand"?: Array<string>;
 	}
 	export interface postAuditsQueryRealtimeOptions { 
+		"expand"?: Array<string>;
+	}
+	export interface postAuditsQueryRealtimeRelatedOptions { 
 		"expand"?: Array<string>;
 	}
 }
@@ -1354,9 +1358,7 @@ declare class ConversationsApi {
   	deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId: string): Promise<void>; 
   	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string): Promise<void>; 
   	deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string): Promise<void>; 
-  	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId: string): Promise<void>; 
   	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string): Promise<void>; 
-  	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId: string): Promise<void>; 
   	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string): Promise<Models.WhatsAppIntegration>; 
   	deleteConversationsMessagingSetting(messageSettingId: string): Promise<void>; 
   	deleteConversationsMessagingSettingsDefault(): Promise<void>; 
@@ -1427,12 +1429,8 @@ declare class ConversationsApi {
   	getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsFacebookIntegrationIdOptions): Promise<Models.FacebookIntegration>; 
   	getConversationsMessagingIntegrationsInstagram(opts?: ConversationsApi.getConversationsMessagingIntegrationsInstagramOptions): Promise<Models.InstagramIntegrationEntityListing>; 
   	getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsInstagramIntegrationIdOptions): Promise<Models.InstagramIntegration>; 
-  	getConversationsMessagingIntegrationsLine(opts?: ConversationsApi.getConversationsMessagingIntegrationsLineOptions): Promise<Models.LineIntegrationEntityListing>; 
-  	getConversationsMessagingIntegrationsLineIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsLineIntegrationIdOptions): Promise<Models.LineIntegration>; 
   	getConversationsMessagingIntegrationsOpen(opts?: ConversationsApi.getConversationsMessagingIntegrationsOpenOptions): Promise<Models.OpenIntegrationEntityListing>; 
   	getConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsOpenIntegrationIdOptions): Promise<Models.OpenIntegration>; 
-  	getConversationsMessagingIntegrationsTwitter(opts?: ConversationsApi.getConversationsMessagingIntegrationsTwitterOptions): Promise<Models.TwitterIntegrationEntityListing>; 
-  	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsTwitterIntegrationIdOptions): Promise<Models.TwitterIntegration>; 
   	getConversationsMessagingIntegrationsWhatsapp(opts?: ConversationsApi.getConversationsMessagingIntegrationsWhatsappOptions): Promise<Models.WhatsAppIntegrationEntityListing>; 
   	getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsWhatsappIntegrationIdOptions): Promise<Models.WhatsAppIntegration>; 
   	getConversationsMessagingSetting(messageSettingId: string): Promise<Models.MessagingSetting>; 
@@ -1484,7 +1482,6 @@ declare class ConversationsApi {
   	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string, body: Models.FacebookIntegrationUpdateRequest): Promise<Models.FacebookIntegration>; 
   	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string, body: Models.InstagramIntegrationUpdateRequest): Promise<Models.InstagramIntegration>; 
   	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string, body: Models.OpenIntegrationUpdateRequest): Promise<Models.OpenIntegration>; 
-  	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId: string, body: Models.TwitterIntegrationRequest): Promise<Models.TwitterIntegration>; 
   	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId: string, body: Models.WhatsAppEmbeddedSignupIntegrationActivationRequest): Promise<Models.WhatsAppIntegration>; 
   	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, body: Models.WhatsAppIntegrationUpdateRequest): Promise<Models.WhatsAppIntegration>; 
   	patchConversationsMessagingSetting(messageSettingId: string, body: Models.MessagingSettingPatchRequest): Promise<Models.MessagingSetting>; 
@@ -1557,9 +1554,7 @@ declare class ConversationsApi {
   	postConversationsMessagesInboundOpen(body: Models.OpenNormalizedMessage): Promise<Models.OpenNormalizedMessage>; 
   	postConversationsMessagingIntegrationsFacebook(body: Models.FacebookIntegrationRequest): Promise<Models.FacebookIntegration>; 
   	postConversationsMessagingIntegrationsInstagram(body: Models.InstagramIntegrationRequest): Promise<Models.InstagramIntegration>; 
-  	postConversationsMessagingIntegrationsLine(body: Models.LineIntegrationRequest): Promise<Models.LineIntegration>; 
   	postConversationsMessagingIntegrationsOpen(body: Models.OpenIntegrationRequest): Promise<Models.OpenIntegration>; 
-  	postConversationsMessagingIntegrationsTwitter(body: Models.TwitterIntegrationRequest): Promise<Models.TwitterIntegration>; 
   	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
   	postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body: Models.WhatsAppEmbeddedSignupIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
   	postConversationsMessagingSettings(body: Models.MessagingSettingRequest): Promise<Models.MessagingSetting>; 
@@ -1581,7 +1576,6 @@ declare class ConversationsApi {
   	putConversationsEmailRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
   	putConversationsKeyconfiguration(keyconfigurationsId: string, body: Models.ConversationEncryptionConfiguration): Promise<Models.ConversationEncryptionConfiguration>; 
   	putConversationsMessageRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
-  	putConversationsMessagingIntegrationsLineIntegrationId(integrationId: string, body: Models.LineIntegrationRequest): Promise<Models.LineIntegration>; 
   	putConversationsMessagingSettingsDefault(body: Models.MessagingSettingDefaultRequest): Promise<Models.MessagingSetting>; 
   	putConversationsMessagingSupportedcontentDefault(body: Models.SupportedContentReference): Promise<Models.SupportedContent>; 
   	putConversationsMessagingThreadingtimeline(body: Models.ConversationThreadingWindow): Promise<Models.ConversationThreadingWindow>; 
@@ -1693,16 +1687,6 @@ declare namespace ConversationsApi {
 	export interface getConversationsMessagingIntegrationsInstagramIntegrationIdOptions { 
 		"expand"?: string;
 	}
-	export interface getConversationsMessagingIntegrationsLineOptions { 
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"expand"?: string;
-		"supportedContentId"?: string;
-		"messagingSettingId"?: string;
-	}
-	export interface getConversationsMessagingIntegrationsLineIntegrationIdOptions { 
-		"expand"?: string;
-	}
 	export interface getConversationsMessagingIntegrationsOpenOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
@@ -1711,16 +1695,6 @@ declare namespace ConversationsApi {
 		"messagingSettingId"?: string;
 	}
 	export interface getConversationsMessagingIntegrationsOpenIntegrationIdOptions { 
-		"expand"?: string;
-	}
-	export interface getConversationsMessagingIntegrationsTwitterOptions { 
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"expand"?: string;
-		"supportedContentId"?: string;
-		"messagingSettingId"?: string;
-	}
-	export interface getConversationsMessagingIntegrationsTwitterIntegrationIdOptions { 
 		"expand"?: string;
 	}
 	export interface getConversationsMessagingIntegrationsWhatsappOptions { 
@@ -1970,7 +1944,7 @@ declare namespace ExternalContactsApi {
 		"expand"?: Array<string>;
 	}
 	export interface getExternalcontactsOrganizationOptions { 
-		"expand"?: string;
+		"expand"?: Array<string>;
 		"includeTrustors"?: boolean;
 	}
 	export interface getExternalcontactsOrganizationContactsOptions { 
@@ -1992,7 +1966,7 @@ declare namespace ExternalContactsApi {
 	export interface getExternalcontactsOrganizationRelationshipsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
-		"expand"?: string;
+		"expand"?: Array<string>;
 		"sortOrder"?: string;
 	}
 	export interface getExternalcontactsOrganizationsOptions { 
@@ -2005,7 +1979,7 @@ declare namespace ExternalContactsApi {
 		"includeTrustors"?: boolean;
 	}
 	export interface getExternalcontactsRelationshipOptions { 
-		"expand"?: string;
+		"expand"?: Array<string>;
 	}
 	export interface getExternalcontactsReversewhitepageslookupOptions { 
 		"expand"?: Array<string>;
@@ -3822,6 +3796,7 @@ declare class OutboundApi {
   	getOutboundCampaignAgentownedmappingpreviewResults(campaignId: string): Promise<Models.AgentOwnedMappingPreviewListing>; 
   	getOutboundCampaignDiagnostics(campaignId: string): Promise<Models.CampaignDiagnostics>; 
   	getOutboundCampaignInteractions(campaignId: string): Promise<Models.CampaignInteractions>; 
+  	getOutboundCampaignLinedistribution(campaignId: string, opts?: OutboundApi.getOutboundCampaignLinedistributionOptions): Promise<Models.CampaignOutboundLinesDistribution>; 
   	getOutboundCampaignProgress(campaignId: string): Promise<Models.CampaignProgress>; 
   	getOutboundCampaignStats(campaignId: string): Promise<Models.CampaignStats>; 
   	getOutboundCampaignrule(campaignRuleId: string): Promise<Models.CampaignRule>; 
@@ -3894,6 +3869,9 @@ declare class OutboundApi {
   	postOutboundContactlistClear(contactListId: string): Promise<void>; 
   	postOutboundContactlistContacts(contactListId: string, body: Array<Models.WritableDialerContact>, opts?: OutboundApi.postOutboundContactlistContactsOptions): Promise<Array<Models.DialerContact>>; 
   	postOutboundContactlistContactsBulk(contactListId: string, body: Array<string>): Promise<Array<Models.DialerContact>>; 
+  	postOutboundContactlistContactsBulkRemove(contactListId: string, body: Models.ContactBulkSearchParameters): Promise<Models.ContactsBulkOperationJob>; 
+  	postOutboundContactlistContactsBulkUpdate(contactListId: string, body: Models.ContactBulkEditRequest): Promise<Models.ContactsBulkOperationJob>; 
+  	postOutboundContactlistContactsSearch(contactListId: string, body: Models.ContactListingRequest): Promise<Models.ContactListingResponse>; 
   	postOutboundContactlistExport(contactListId: string, opts?: OutboundApi.postOutboundContactlistExportOptions): Promise<Models.DomainEntityRef>; 
   	postOutboundContactlistfilters(body: Models.ContactListFilter): Promise<Models.ContactListFilter>; 
   	postOutboundContactlistfiltersBulkRetrieve(body: Models.ContactListFilterBulkRetrieveBody): Promise<Models.ContactListFilterEntityListing>; 
@@ -3975,6 +3953,14 @@ declare namespace OutboundApi {
 		"name"?: string;
 		"sortBy"?: string;
 		"sortOrder"?: string;
+	}
+	export interface getOutboundCampaignLinedistributionOptions { 
+		"includeOnlyActiveCampaigns"?: boolean;
+		"edgeGroupId"?: string;
+		"siteId"?: string;
+		"useWeight"?: boolean;
+		"relativeWeight"?: number;
+		"outboundLineCount"?: number;
 	}
 	export interface getOutboundCampaignrulesOptions { 
 		"pageSize"?: number;
@@ -8123,6 +8109,15 @@ declare namespace Models {
 		"lt"?: number;
 	}
 	
+	export interface AiAnswer { 
+		"answerId"?: string;
+		"explanation"?: string;
+		"failureType"?: string;
+	}
+	
+	export interface AiScoring { 
+	}
+	
 	export interface AiScoringSettings { 
 		"enabled"?: boolean;
 		"prompt"?: string;
@@ -9397,6 +9392,16 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"pageCount"?: number;
+	}
+	
+	export interface AuditRealtimeRelatedRequest { 
+		"auditId": string;
+		"trustorOrgId"?: string;
+		"sort"?: Array<Models.AuditQuerySort>;
+	}
+	
+	export interface AuditRealtimeRelatedResultsResponse { 
+		"entities"?: Array<Models.AuditLogMessage>;
 	}
 	
 	export interface AuditSearchResult { 
@@ -11475,6 +11480,7 @@ declare namespace Models {
 		"dynamicContactQueueingSettings"?: Models.DynamicContactQueueingSettings;
 		"maxCallsPerAgent"?: number;
 		"callbackAutoAnswer"?: boolean;
+		"dynamicLineBalancingSettings"?: Models.DynamicLineBalancingSettings;
 		"selfUri"?: string;
 	}
 	
@@ -11557,6 +11563,28 @@ declare namespace Models {
 	export interface CampaignLinesUtilization { 
 		"assignedOutboundLines"?: number;
 		"totalAvailableOutboundLines"?: number;
+	}
+	
+	export interface CampaignOutboundLinesAllocation { 
+		"campaign"?: Models.DomainEntityRef;
+		"campaignWeight"?: number;
+		"linesAssigned"?: number;
+		"legacyWeight"?: boolean;
+	}
+	
+	export interface CampaignOutboundLinesDistribution { 
+		"campaign"?: Models.AddressableEntityRef;
+		"maxOutboundLineCount"?: number;
+		"maxLineUtilization"?: number;
+		"availableOutboundLines"?: number;
+		"reservedLines"?: number;
+		"campaignsWithReservedLines"?: Array<Models.CampaignOutboundLinesReservation>;
+		"campaignsWithDynamicallyAllocatedLines"?: Array<Models.CampaignOutboundLinesAllocation>;
+	}
+	
+	export interface CampaignOutboundLinesReservation { 
+		"campaign"?: Models.DomainEntityRef;
+		"linesReserved"?: number;
 	}
 	
 	export interface CampaignProgress { 
@@ -11679,6 +11707,7 @@ declare namespace Models {
 		"outstandingCalls"?: number;
 		"scheduledCalls"?: number;
 		"timeZoneRescheduledCalls"?: number;
+		"linesUtilization"?: Models.CampaignLinesUtilization;
 	}
 	
 	export interface CampaignTimeSlot { 
@@ -12565,13 +12594,6 @@ declare namespace Models {
 		"rules"?: Array<Models.ConditionalGroupRoutingRule>;
 	}
 	
-	export interface ConditionalGroupRoutingCondition { 
-		"queue"?: Models.DomainEntityRef;
-		"metric"?: string;
-		"operator"?: string;
-		"value"?: number;
-	}
-	
 	export interface ConditionalGroupRoutingRule { 
 		"queue"?: Models.DomainEntityRef;
 		"metric"?: string;
@@ -12747,9 +12769,21 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ContactBulkEditRequest { 
+		"contactListFilterId"?: string;
+		"criteria"?: Models.ContactBulkSearchCriteria;
+		"contactIds"?: Array<string>;
+		"contact"?: Models.DialerContact;
+	}
+	
 	export interface ContactBulkSearchCriteria { 
 		"clauses"?: Array<Models.ContactListFilterClause>;
 		"filterType"?: string;
+	}
+	
+	export interface ContactBulkSearchParameters { 
+		"contactListFilterId"?: string;
+		"criteria"?: Models.ContactBulkSearchCriteria;
 	}
 	
 	export interface ContactCallbackRequest { 
@@ -12976,6 +13010,28 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface ContactListingRequest { 
+		"contactListFilterId"?: string;
+		"criteria"?: Models.ContactBulkSearchCriteria;
+		"pageNumber": number;
+		"pageSize": number;
+		"contactSorts"?: Array<Models.ContactSort>;
+	}
+	
+	export interface ContactListingResponse { 
+		"entities"?: Array<Models.DialerContact>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"contactsCount"?: number;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface ContactPhoneNumberColumn { 
 		"columnName": string;
 		"type": string;
@@ -13014,6 +13070,18 @@ declare namespace Models {
 	}
 	
 	export interface ContactlistImportStatusObject { 
+	}
+	
+	export interface ContactsBulkOperationJob { 
+		"id"?: string;
+		"state"?: string;
+		"type"?: string;
+		"totalRecords"?: number;
+		"completedRecords"?: number;
+		"percentComplete"?: number;
+		"failureReason"?: Models.ErrorInfo;
+		"downloadURI"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface ContactsExportRequest { 
@@ -15283,6 +15351,7 @@ declare namespace Models {
 		"isVoicemail"?: boolean;
 		"isFlagged"?: boolean;
 		"isMonitored"?: boolean;
+		"isScreenMonitored"?: boolean;
 		"filterWrapUpNotes"?: boolean;
 		"matchAll"?: boolean;
 	}
@@ -20643,7 +20712,6 @@ declare namespace Models {
 		"customerIdType"?: string;
 		"session": Models.EventSession;
 		"eventType": string;
-		"genericActionEvent"?: Models.GenericActionEvent;
 		"outcomeAchievedEvent"?: Models.OutcomeAchievedEvent;
 		"segmentAssignmentEvent"?: Models.SegmentAssignmentEvent;
 		"webActionEvent"?: Models.WebActionEvent;
@@ -22863,22 +22931,6 @@ declare namespace Models {
 		"conferenceId"?: string;
 		"ephemeral": boolean;
 		"expireTimeDays"?: number;
-	}
-	
-	export interface GenericActionEvent { 
-		"action": Models.GenericEventAction;
-		"actionMap"?: Models.ActionEventActionMap;
-		"errorCode"?: string;
-		"errorMessage"?: string;
-	}
-	
-	export interface GenericEventAction { 
-		"id": string;
-		"state": string;
-		"mediaType": string;
-		"prompt": string;
-		"mediaAddress"?: string;
-		"createdDate": string;
 	}
 	
 	export interface GenericSAML { 
@@ -27507,50 +27559,6 @@ declare namespace Models {
 		"displayName"?: string;
 	}
 	
-	export interface LineIntegration { 
-		"id": string;
-		"name": string;
-		"supportedContent"?: Models.SupportedContentReference;
-		"messagingSetting"?: Models.MessagingSettingReference;
-		"channelId": string;
-		"webhookUri": string;
-		"status"?: string;
-		"recipient"?: Models.DomainEntityRef;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"createdBy"?: Models.DomainEntityRef;
-		"modifiedBy"?: Models.DomainEntityRef;
-		"version": number;
-		"createStatus"?: string;
-		"createError"?: Models.ErrorBody;
-		"selfUri"?: string;
-	}
-	
-	export interface LineIntegrationEntityListing { 
-		"entities"?: Array<Models.LineIntegration>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"pageCount"?: number;
-	}
-	
-	export interface LineIntegrationRequest { 
-		"id"?: string;
-		"name": string;
-		"supportedContent"?: Models.SupportedContentReference;
-		"messagingSetting"?: Models.MessagingSettingRequestReference;
-		"channelId"?: string;
-		"channelSecret"?: string;
-		"switcherSecret"?: string;
-		"serviceCode"?: string;
-		"selfUri"?: string;
-	}
-	
 	export interface LineStatus { 
 		"id"?: string;
 		"reachable"?: boolean;
@@ -31405,7 +31413,6 @@ declare namespace Models {
 	
 	export interface PhoneStatus { 
 		"id"?: string;
-		"name"?: string;
 		"operationalStatus"?: string;
 		"edgesStatus"?: string;
 		"eventCreationTime"?: string;
@@ -35523,6 +35530,7 @@ declare namespace Models {
 		"askAction"?: Models.ReportingTurnAction;
 		"intent"?: Models.ReportingTurnIntent;
 		"knowledge"?: Models.ReportingTurnKnowledge;
+		"knowledgeBaseEvents"?: Models.ReportingTurnKnowledgeEvents;
 		"dateCreated"?: string;
 		"askActionResult"?: string;
 		"sessionEndDetails"?: Models.SessionEndDetails;
@@ -35562,16 +35570,38 @@ declare namespace Models {
 		"confidence"?: number;
 	}
 	
+	export interface ReportingTurnKnowledgeEvents { 
+		"search"?: Array<Models.ReportingTurnKnowledgeSearchEvent>;
+		"feedback"?: Array<Models.ReportingTurnKnowledgeFeedbackEvent>;
+	}
+	
 	export interface ReportingTurnKnowledgeFeedback { 
 		"searchId"?: string;
 		"rating"?: number;
 		"documents"?: Array<Models.ReportingTurnKnowledgeDocument>;
 	}
 	
+	export interface ReportingTurnKnowledgeFeedbackEvent { 
+		"searchId"?: string;
+		"knowledgeBaseId"?: string;
+		"documents"?: Array<Models.ReportingTurnKnowledgeDocument>;
+		"feedbackRating"?: number;
+		"documentVariationId"?: string;
+		"documentVersionId"?: string;
+	}
+	
 	export interface ReportingTurnKnowledgeSearch { 
 		"searchId"?: string;
 		"documents"?: Array<Models.ReportingTurnKnowledgeDocument>;
 		"query"?: string;
+	}
+	
+	export interface ReportingTurnKnowledgeSearchEvent { 
+		"searchId"?: string;
+		"knowledgeBaseId"?: string;
+		"documents"?: Array<Models.ReportingTurnKnowledgeDocument>;
+		"searchQuery"?: string;
+		"answerDocumentId"?: string;
 	}
 	
 	export interface ReportingTurnsResponse { 
@@ -40159,56 +40189,6 @@ declare namespace Models {
 		"profileUrl"?: string;
 	}
 	
-	export interface TwitterIntegration { 
-		"id": string;
-		"name": string;
-		"supportedContent"?: Models.SupportedContentReference;
-		"messagingSetting"?: Models.MessagingSettingReference;
-		"accessTokenKey": string;
-		"consumerKey": string;
-		"username"?: string;
-		"userId"?: string;
-		"status"?: string;
-		"tier": string;
-		"envName"?: string;
-		"recipient"?: Models.DomainEntityRef;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"createdBy"?: Models.DomainEntityRef;
-		"modifiedBy"?: Models.DomainEntityRef;
-		"version": number;
-		"createStatus"?: string;
-		"createError"?: Models.ErrorBody;
-		"selfUri"?: string;
-	}
-	
-	export interface TwitterIntegrationEntityListing { 
-		"entities"?: Array<Models.TwitterIntegration>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"pageCount"?: number;
-	}
-	
-	export interface TwitterIntegrationRequest { 
-		"id"?: string;
-		"name": string;
-		"supportedContent"?: Models.SupportedContentReference;
-		"messagingSetting"?: Models.MessagingSettingRequestReference;
-		"accessTokenKey": string;
-		"accessTokenSecret": string;
-		"consumerKey": string;
-		"consumerSecret": string;
-		"tier": string;
-		"envName"?: string;
-		"selfUri"?: string;
-	}
-	
 	export interface TypingSetting { 
 		"on"?: Models.SettingDirection;
 	}
@@ -42600,6 +42580,8 @@ declare namespace Models {
 		"surveyTypes"?: Array<string>;
 		"surveyResponseStatuses"?: Array<string>;
 		"botFlowTypes"?: Array<string>;
+		"isScreenRecorded"?: boolean;
+		"screenMonitorUserIds"?: Array<string>;
 	}
 	
 	export interface VisibilityCondition { 
@@ -44268,7 +44250,7 @@ declare namespace Models {
 	}
 	
 	export interface WfmUserEntityListing { 
-		"entities"?: Array<Models.User>;
+		"entities"?: Array<Models.UserReference>;
 	}
 	
 	export interface WfmUserNotification { 

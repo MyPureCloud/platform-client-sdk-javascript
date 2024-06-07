@@ -1061,7 +1061,7 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 let opts = { 
-  'expand': "expand_example", // String | which fields, if any, to expand (externalDataSources)
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand (externalDataSources)
   'includeTrustors': true // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 };
 
@@ -1081,7 +1081,7 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
- **expand** | **String** | which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 {: class="table table-striped"}
 
@@ -1301,7 +1301,7 @@ let externalOrganizationId = "externalOrganizationId_example"; // String | Exter
 let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-  'expand': "expand_example", // String | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
   'sortOrder': "sortOrder_example" // String | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc
 };
 
@@ -1323,7 +1323,7 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
  **externalOrganizationId** | **String** | External Organization ID |  |
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
- **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
  **sortOrder** | **String** | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc | [optional]  |
 {: class="table table-striped"}
 
@@ -1622,7 +1622,7 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let relationshipId = "relationshipId_example"; // String | Relationship Id
 let opts = { 
-  'expand': "expand_example" // String | which fields, if any, to expand
+  'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
 
 apiInstance.getExternalcontactsRelationship(relationshipId, opts)
@@ -1641,7 +1641,7 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
- **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type

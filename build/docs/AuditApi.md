@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuditsQueryTransactionIdResults**](AuditApi.html#getAuditsQueryTransactionIdResults) | **GET** /api/v2/audits/query/{transactionId}/results | Get results of audit query
 [**postAuditsQuery**](AuditApi.html#postAuditsQuery) | **POST** /api/v2/audits/query | Create audit query execution
 [**postAuditsQueryRealtime**](AuditApi.html#postAuditsQueryRealtime) | **POST** /api/v2/audits/query/realtime | This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
+[**postAuditsQueryRealtimeRelated**](AuditApi.html#postAuditsQueryRealtimeRelated) | **POST** /api/v2/audits/query/realtime/related | Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
 {: class="table table-striped"}
 
 <a name="getAuditsQueryRealtimeServicemapping"></a>
@@ -320,4 +321,58 @@ apiInstance.postAuditsQueryRealtime(body, opts)
 ### Return type
 
 **AuditRealtimeQueryResultsResponse**
+
+<a name="postAuditsQueryRealtimeRelated"></a>
+
+# AuditRealtimeRelatedResultsResponse postAuditsQueryRealtimeRelated(body, opts)
+
+
+POST /api/v2/audits/query/realtime/related
+
+Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+
+Requires ALL permissions:
+
+* audits:audit:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuditApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+apiInstance.postAuditsQueryRealtimeRelated(body, opts)
+  .then((data) => {
+    console.log(`postAuditsQueryRealtimeRelated success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuditsQueryRealtimeRelated');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
+{: class="table table-striped"}
+
+### Return type
+
+**AuditRealtimeRelatedResultsResponse**
 
