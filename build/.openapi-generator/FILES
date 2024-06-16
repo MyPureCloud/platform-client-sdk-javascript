@@ -351,6 +351,7 @@ docs/deleteRoutingUtilizationTag-example.txt
 docs/deleteRoutingWrapupcode-example.txt
 docs/deleteScimUser-example.txt
 docs/deleteScimV2User-example.txt
+docs/deleteSpeechandtextanalyticsCategory-example.txt
 docs/deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/deleteSpeechandtextanalyticsProgram-example.txt
 docs/deleteSpeechandtextanalyticsSentimentfeedback-example.txt
@@ -423,6 +424,8 @@ docs/getAlertingInteractionstatsRules-example.txt
 docs/getAlertingRule-example.txt
 docs/getAnalyticsActionsAggregatesJob-example.txt
 docs/getAnalyticsActionsAggregatesJobResults-example.txt
+docs/getAnalyticsAgentcopilotsAggregatesJob-example.txt
+docs/getAnalyticsAgentcopilotsAggregatesJobResults-example.txt
 docs/getAnalyticsBotflowDivisionsReportingturns-example.txt
 docs/getAnalyticsBotflowReportingturns-example.txt
 docs/getAnalyticsBotflowSessions-example.txt
@@ -464,6 +467,7 @@ docs/getAnalyticsReportingDashboardsUsers-example.txt
 docs/getAnalyticsReportingExports-example.txt
 docs/getAnalyticsReportingExportsMetadata-example.txt
 docs/getAnalyticsReportingSettings-example.txt
+docs/getAnalyticsReportingSettingsDashboardsQuery-example.txt
 docs/getAnalyticsReportingSettingsUserDashboards-example.txt
 docs/getAnalyticsResolutionsAggregatesJob-example.txt
 docs/getAnalyticsResolutionsAggregatesJobResults-example.txt
@@ -666,7 +670,6 @@ docs/getConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/getConversationsMessagingSetting-example.txt
 docs/getConversationsMessagingSettings-example.txt
 docs/getConversationsMessagingSettingsDefault-example.txt
-docs/getConversationsMessagingSticker-example.txt
 docs/getConversationsMessagingSupportedcontent-example.txt
 docs/getConversationsMessagingSupportedcontentDefault-example.txt
 docs/getConversationsMessagingSupportedcontentSupportedContentId-example.txt
@@ -988,15 +991,18 @@ docs/getLanguageunderstandingMinerTopics-example.txt
 docs/getLanguageunderstandingMiners-example.txt
 docs/getLanguageunderstandingSettings-example.txt
 docs/getLearningAssignment-example.txt
+docs/getLearningAssignmentStep-example.txt
 docs/getLearningAssignments-example.txt
 docs/getLearningAssignmentsMe-example.txt
 docs/getLearningModule-example.txt
 docs/getLearningModuleJob-example.txt
+docs/getLearningModulePreview-example.txt
 docs/getLearningModuleRule-example.txt
 docs/getLearningModuleVersion-example.txt
 docs/getLearningModules-example.txt
 docs/getLearningModulesAssignments-example.txt
 docs/getLearningModulesCoverartCoverArtId-example.txt
+docs/getLearningScormScormId-example.txt
 docs/getLicenseDefinition-example.txt
 docs/getLicenseDefinitions-example.txt
 docs/getLicenseToggle-example.txt
@@ -1290,7 +1296,10 @@ docs/getSearch-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSettingsExecutiondata-example.txt
+docs/getSpeechandtextanalyticsCategories-example.txt
+docs/getSpeechandtextanalyticsCategory-example.txt
 docs/getSpeechandtextanalyticsConversation-example.txt
+docs/getSpeechandtextanalyticsConversationCategories-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturl-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturls-example.txt
 docs/getSpeechandtextanalyticsDictionaryfeedback-example.txt
@@ -1674,6 +1683,7 @@ docs/patchLanguageunderstandingDomain-example.txt
 docs/patchLanguageunderstandingMinerDraft-example.txt
 docs/patchLearningAssignment-example.txt
 docs/patchLearningAssignmentReschedule-example.txt
+docs/patchLearningAssignmentStep-example.txt
 docs/patchLearningModuleUserAssignments-example.txt
 docs/patchLocation-example.txt
 docs/patchMessagingSetting-example.txt
@@ -1761,6 +1771,8 @@ docs/postAlertingRulesBulkRemove-example.txt
 docs/postAlertingRulesQuery-example.txt
 docs/postAnalyticsActionsAggregatesJobs-example.txt
 docs/postAnalyticsActionsAggregatesQuery-example.txt
+docs/postAnalyticsAgentcopilotsAggregatesJobs-example.txt
+docs/postAnalyticsAgentcopilotsAggregatesQuery-example.txt
 docs/postAnalyticsBotsAggregatesJobs-example.txt
 docs/postAnalyticsBotsAggregatesQuery-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
@@ -1927,6 +1939,7 @@ docs/postConversationsEmailMessages-example.txt
 docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
 docs/postConversationsEmailParticipantCommunicationWrapup-example.txt
 docs/postConversationsEmailParticipantReplace-example.txt
+docs/postConversationsEmailReconnect-example.txt
 docs/postConversationsEmails-example.txt
 docs/postConversationsEmailsAgentless-example.txt
 docs/postConversationsFaxes-example.txt
@@ -2124,6 +2137,7 @@ docs/postLearningModulePublish-example.txt
 docs/postLearningModules-example.txt
 docs/postLearningRulesQuery-example.txt
 docs/postLearningScheduleslotsQuery-example.txt
+docs/postLearningScorm-example.txt
 docs/postLicenseInfer-example.txt
 docs/postLicenseOrganization-example.txt
 docs/postLicenseToggle-example.txt
@@ -2251,6 +2265,7 @@ docs/postSearch-example.txt
 docs/postSearch-example.txt
 docs/postSearchSuggest-example.txt
 docs/postSearchSuggest-example.txt
+docs/postSpeechandtextanalyticsCategories-example.txt
 docs/postSpeechandtextanalyticsDictionaryfeedback-example.txt
 docs/postSpeechandtextanalyticsPrograms-example.txt
 docs/postSpeechandtextanalyticsProgramsGeneralJobs-example.txt
@@ -2507,6 +2522,7 @@ docs/putIntegrationsSpeechTtsSettings-example.txt
 docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt
 docs/putLearningModule-example.txt
+docs/putLearningModulePreview-example.txt
 docs/putLearningModuleRule-example.txt
 docs/putMessagingSettingsDefault-example.txt
 docs/putMobiledevice-example.txt
@@ -2585,6 +2601,7 @@ docs/putScimGroup-example.txt
 docs/putScimUser-example.txt
 docs/putScimV2Group-example.txt
 docs/putScimV2User-example.txt
+docs/putSpeechandtextanalyticsCategory-example.txt
 docs/putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/putSpeechandtextanalyticsProgram-example.txt
 docs/putSpeechandtextanalyticsProgramMappings-example.txt

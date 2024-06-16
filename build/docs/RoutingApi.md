@@ -1017,8 +1017,6 @@ DELETE /api/v2/routing/utilization/labels/{labelId}
 
 Delete a utilization label
 
-deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * routing:utilization:manage
@@ -4049,8 +4047,6 @@ GET /api/v2/routing/utilization/labels/{labelId}
 
 Get details about this utilization label
 
-getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * routing:utilization:view
@@ -4101,8 +4097,6 @@ GET /api/v2/routing/utilization/labels/{labelId}/agents
 
 Get list of agent ids associated with a utilization label
 
-getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * routing:utilization:view
@@ -4152,8 +4146,6 @@ apiInstance.getRoutingUtilizationLabelAgents(labelId)
 GET /api/v2/routing/utilization/labels
 
 Get list of utilization labels
-
-getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -6837,8 +6829,6 @@ POST /api/v2/routing/utilization/labels
 
 Create a utilization label
 
-postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * routing:utilization:manage
@@ -7557,8 +7547,6 @@ apiInstance.putRoutingUtilization(body)
 PUT /api/v2/routing/utilization/labels/{labelId}
 
 Update a utilization label
-
-putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 

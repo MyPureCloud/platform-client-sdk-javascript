@@ -7,12 +7,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsCategory) | **DELETE** /api/v2/speechandtextanalytics/categories/{categoryId} | Delete a Speech and Text Analytics category by ID
 [**deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | **DELETE** /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} | Delete a Speech and Text Analytics DictionaryFeedback by Id
 [**deleteSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsProgram) | **DELETE** /api/v2/speechandtextanalytics/programs/{programId} | Delete a Speech and Text Analytics program by id
 [**deleteSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsSentimentfeedback) | **DELETE** /api/v2/speechandtextanalytics/sentimentfeedback | Delete All Speech and Text Analytics SentimentFeedback
 [**deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId) | **DELETE** /api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId} | Delete a Speech and Text Analytics SentimentFeedback by Id
 [**deleteSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsTopic) | **DELETE** /api/v2/speechandtextanalytics/topics/{topicId} | Delete a Speech and Text Analytics topic by id
+[**getSpeechandtextanalyticsCategories**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsCategories) | **GET** /api/v2/speechandtextanalytics/categories | Get the list of Speech and Text Analytics categories
+[**getSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsCategory) | **GET** /api/v2/speechandtextanalytics/categories/{categoryId} | Get a Speech and Text Analytics Category by ID
 [**getSpeechandtextanalyticsConversation**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversation) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId} | Get Speech and Text Analytics for a specific conversation
+[**getSpeechandtextanalyticsConversationCategories**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCategories) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/categories | Get the list of detected Speech and Text Analytics categories of conversation
 [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
 [**getSpeechandtextanalyticsConversationCommunicationTranscripturls**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturls) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
 [**getSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsDictionaryfeedback) | **GET** /api/v2/speechandtextanalytics/dictionaryfeedback | Get the list of Speech and Text Analytics dictionary feedbacks
@@ -36,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsTopicsGeneralStatus**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopicsGeneralStatus) | **GET** /api/v2/speechandtextanalytics/topics/general/status | Get the list of general topics from the org and the system with their current status
 [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopicsPublishjob) | **GET** /api/v2/speechandtextanalytics/topics/publishjobs/{jobId} | Get a Speech and Text Analytics publish topics job by id
 [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#patchSpeechandtextanalyticsSettings) | **PATCH** /api/v2/speechandtextanalytics/settings | Patch Speech And Text Analytics Settings
+[**postSpeechandtextanalyticsCategories**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsCategories) | **POST** /api/v2/speechandtextanalytics/categories | Create new Speech and Text Analytics category
 [**postSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsDictionaryfeedback) | **POST** /api/v2/speechandtextanalytics/dictionaryfeedback | Create a Speech and Text Analytics DictionaryFeedback
 [**postSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsPrograms) | **POST** /api/v2/speechandtextanalytics/programs | Create new Speech and Text Analytics program
 [**postSpeechandtextanalyticsProgramsGeneralJobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsProgramsGeneralJobs) | **POST** /api/v2/speechandtextanalytics/programs/general/jobs | Create new Speech and Text Analytics general program job
@@ -44,6 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopics) | **POST** /api/v2/speechandtextanalytics/topics | Create new Speech and Text Analytics topic
 [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopicsPublishjobs) | **POST** /api/v2/speechandtextanalytics/topics/publishjobs | Create new Speech and Text Analytics publish topics job
 [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
+[**putSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsCategory) | **PUT** /api/v2/speechandtextanalytics/categories/{categoryId} | Update a Speech and Text Analytics category by ID
 [**putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | **PUT** /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} | Update existing Speech and Text Analytics dictionary feedback by id
 [**putSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgram) | **PUT** /api/v2/speechandtextanalytics/programs/{programId} | Update existing Speech and Text Analytics program
 [**putSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgramMappings) | **PUT** /api/v2/speechandtextanalytics/programs/{programId}/mappings | Set Speech and Text Analytics program mappings to queues and flows
@@ -51,6 +57,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsSettings) | **PUT** /api/v2/speechandtextanalytics/settings | Update Speech And Text Analytics Settings
 [**putSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsTopic) | **PUT** /api/v2/speechandtextanalytics/topics/{topicId} | Update existing Speech and Text Analytics topic
 {: class="table table-striped"}
+
+<a name="deleteSpeechandtextanalyticsCategory"></a>
+
+# void deleteSpeechandtextanalyticsCategory(categoryId)
+
+
+DELETE /api/v2/speechandtextanalytics/categories/{categoryId}
+
+Delete a Speech and Text Analytics category by ID
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:category:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let categoryId = "categoryId_example"; // String | The id of the category
+
+apiInstance.deleteSpeechandtextanalyticsCategory(categoryId)
+  .then(() => {
+    console.log('deleteSpeechandtextanalyticsCategory returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteSpeechandtextanalyticsCategory');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **categoryId** | **String** | The id of the category |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId"></a>
 
@@ -301,6 +357,118 @@ apiInstance.deleteSpeechandtextanalyticsTopic(topicId)
 
 void (no response body)
 
+<a name="getSpeechandtextanalyticsCategories"></a>
+
+# CategoriesEntityListing getSpeechandtextanalyticsCategories(opts)
+
+
+GET /api/v2/speechandtextanalytics/categories
+
+Get the list of Speech and Text Analytics categories
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:category:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | The page size for the listing. The max that will be returned is 50.
+  'pageNumber': 1, // Number | The page number for the listing
+  'name': "name_example", // String | The category name filter applied to the listing
+  'sortOrder': "asc", // String | The sort order for the listing
+  'sortBy': "name", // String | The field to sort by for the listing
+  'ids': ["ids_example"] // [String] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+};
+
+apiInstance.getSpeechandtextanalyticsCategories(opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsCategories success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsCategories');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
+ **name** | **String** | The category name filter applied to the listing | [optional]  |
+ **sortOrder** | **String** | The sort order for the listing | [optional] [default to asc]<br />**Values**: asc, desc |
+ **sortBy** | **String** | The field to sort by for the listing | [optional] [default to name]<br />**Values**: name, description |
+ **ids** | **[String]** | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CategoriesEntityListing**
+
+<a name="getSpeechandtextanalyticsCategory"></a>
+
+# StaCategory getSpeechandtextanalyticsCategory(categoryId)
+
+
+GET /api/v2/speechandtextanalytics/categories/{categoryId}
+
+Get a Speech and Text Analytics Category by ID
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:category:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let categoryId = "categoryId_example"; // String | The id of the category
+
+apiInstance.getSpeechandtextanalyticsCategory(categoryId)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsCategory success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsCategory');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **categoryId** | **String** | The id of the category |  |
+{: class="table table-striped"}
+
+### Return type
+
+**StaCategory**
+
 <a name="getSpeechandtextanalyticsConversation"></a>
 
 # ConversationMetrics getSpeechandtextanalyticsConversation(conversationId)
@@ -351,6 +519,62 @@ apiInstance.getSpeechandtextanalyticsConversation(conversationId)
 ### Return type
 
 **ConversationMetrics**
+
+<a name="getSpeechandtextanalyticsConversationCategories"></a>
+
+# ConversationCategoriesEntityListing getSpeechandtextanalyticsConversationCategories(conversationId, opts)
+
+
+GET /api/v2/speechandtextanalytics/conversations/{conversationId}/categories
+
+Get the list of detected Speech and Text Analytics categories of conversation
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:data:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let conversationId = "conversationId_example"; // String | The id of the conversation
+let opts = { 
+  'pageSize': 25, // Number | The page size for the listing. The max that will be returned is 50.
+  'pageNumber': 1 // Number | The page number for the listing
+};
+
+apiInstance.getSpeechandtextanalyticsConversationCategories(conversationId, opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsConversationCategories success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsConversationCategories');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | The id of the conversation |  |
+ **pageSize** | **Number** | The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**ConversationCategoriesEntityListing**
 
 <a name="getSpeechandtextanalyticsConversationCommunicationTranscripturl"></a>
 
@@ -1527,6 +1751,56 @@ apiInstance.patchSpeechandtextanalyticsSettings(body)
 
 **SpeechTextAnalyticsSettingsResponse**
 
+<a name="postSpeechandtextanalyticsCategories"></a>
+
+# StaCategory postSpeechandtextanalyticsCategories(body)
+
+
+POST /api/v2/speechandtextanalytics/categories
+
+Create new Speech and Text Analytics category
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:category:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let body = {}; // Object | The category to create
+
+apiInstance.postSpeechandtextanalyticsCategories(body)
+  .then((data) => {
+    console.log(`postSpeechandtextanalyticsCategories success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSpeechandtextanalyticsCategories');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The category to create |  |
+{: class="table table-striped"}
+
+### Return type
+
+**StaCategory**
+
 <a name="postSpeechandtextanalyticsDictionaryfeedback"></a>
 
 # DictionaryFeedback postSpeechandtextanalyticsDictionaryfeedback(body)
@@ -1930,6 +2204,58 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 ### Return type
 
 **JsonSearchResponse**
+
+<a name="putSpeechandtextanalyticsCategory"></a>
+
+# StaCategory putSpeechandtextanalyticsCategory(categoryId, body)
+
+
+PUT /api/v2/speechandtextanalytics/categories/{categoryId}
+
+Update a Speech and Text Analytics category by ID
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:category:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let categoryId = "categoryId_example"; // String | The id of the category
+let body = {}; // Object | The updated category
+
+apiInstance.putSpeechandtextanalyticsCategory(categoryId, body)
+  .then((data) => {
+    console.log(`putSpeechandtextanalyticsCategory success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putSpeechandtextanalyticsCategory');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **categoryId** | **String** | The id of the category |  |
+ **body** | **Object** | The updated category |  |
+{: class="table table-striped"}
+
+### Return type
+
+**StaCategory**
 
 <a name="putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId"></a>
 

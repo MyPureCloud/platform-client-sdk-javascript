@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 194.0.0
+	 * @version 195.0.0
 	 */
 
 	/**
@@ -2404,37 +2404,6 @@ class ConversationsApi {
 			'GET', 
 			{  },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Messaging Stickers (Deprecated)
-	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-	 * @param {Object} messengerType Messenger Type
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @deprecated
-	 */
-	getConversationsMessagingSticker(messengerType, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'messengerType' is set
-		if (messengerType === undefined || messengerType === null) {
-			throw 'Missing the required parameter "messengerType" when calling getConversationsMessagingSticker';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/stickers/{messengerType}', 
-			'GET', 
-			{ 'messengerType': messengerType },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 
@@ -5540,6 +5509,31 @@ class ConversationsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+	 * 
+	 * @param {String} conversationId conversationId
+	 */
+	postConversationsEmailReconnect(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailReconnect';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/reconnect', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

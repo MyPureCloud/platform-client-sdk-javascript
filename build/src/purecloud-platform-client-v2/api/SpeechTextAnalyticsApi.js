@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 194.0.0
+	 * @version 195.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class SpeechTextAnalyticsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a Speech and Text Analytics category by ID
+	 * 
+	 * @param {String} categoryId The id of the category
+	 */
+	deleteSpeechandtextanalyticsCategory(categoryId) { 
+		// verify the required parameter 'categoryId' is set
+		if (categoryId === undefined || categoryId === null) {
+			throw 'Missing the required parameter "categoryId" when calling deleteSpeechandtextanalyticsCategory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
+			'DELETE', 
+			{ 'categoryId': categoryId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a Speech and Text Analytics DictionaryFeedback by Id
@@ -145,6 +170,60 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get the list of Speech and Text Analytics categories
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 50. (default to 25)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {String} opts.name The category name filter applied to the listing
+	 * @param {Object} opts.sortOrder The sort order for the listing (default to asc)
+	 * @param {Object} opts.sortBy The field to sort by for the listing (default to name)
+	 * @param {Array.<String>} opts.ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+	 */
+	getSpeechandtextanalyticsCategories(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics Category by ID
+	 * 
+	 * @param {String} categoryId The id of the category
+	 */
+	getSpeechandtextanalyticsCategory(categoryId) { 
+		// verify the required parameter 'categoryId' is set
+		if (categoryId === undefined || categoryId === null) {
+			throw 'Missing the required parameter "categoryId" when calling getSpeechandtextanalyticsCategory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
+			'GET', 
+			{ 'categoryId': categoryId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Speech and Text Analytics for a specific conversation
 	 * 
 	 * @param {String} conversationId Conversation Id
@@ -160,6 +239,36 @@ class SpeechTextAnalyticsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of detected Speech and Text Analytics categories of conversation
+	 * 
+	 * @param {String} conversationId The id of the conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 50. (default to 25)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 */
+	getSpeechandtextanalyticsConversationCategories(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCategories';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/categories', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 
@@ -740,6 +849,31 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Create new Speech and Text Analytics category
+	 * 
+	 * @param {Object} body The category to create
+	 */
+	postSpeechandtextanalyticsCategories(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsCategories';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a Speech and Text Analytics DictionaryFeedback
 	 * 
 	 * @param {Object} body The DictionaryFeedback to create
@@ -929,6 +1063,36 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/transcripts/search', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Speech and Text Analytics category by ID
+	 * 
+	 * @param {String} categoryId The id of the category
+	 * @param {Object} body The updated category
+	 */
+	putSpeechandtextanalyticsCategory(categoryId, body) { 
+		// verify the required parameter 'categoryId' is set
+		if (categoryId === undefined || categoryId === null) {
+			throw 'Missing the required parameter "categoryId" when calling putSpeechandtextanalyticsCategory';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsCategory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
+			'PUT', 
+			{ 'categoryId': categoryId },
 			{  },
 			{  },
 			{  },

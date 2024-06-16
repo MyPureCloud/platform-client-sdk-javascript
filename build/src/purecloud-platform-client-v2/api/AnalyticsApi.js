@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 194.0.0
+	 * @version 195.0.0
 	 */
 
 	/**
@@ -114,6 +114,62 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/actions/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for agent copilot aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsAgentcopilotsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsAgentcopilotsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsAgentcopilotsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results', 
 			'GET', 
 			{ 'jobId': jobId },
 			{ 'cursor': opts['cursor'] },
@@ -885,6 +941,42 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Get list of dashboard configurations
+	 * 
+	 * @param {Object} dashboardType List dashboard of given type
+	 * @param {Object} dashboardAccessFilter Filter dashboard based on the owner of dashboard
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.sortBy  (default to desc)
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 9)
+	 */
+	getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dashboardType' is set
+		if (dashboardType === undefined || dashboardType === null) {
+			throw 'Missing the required parameter "dashboardType" when calling getAnalyticsReportingSettingsDashboardsQuery';
+		}
+		// verify the required parameter 'dashboardAccessFilter' is set
+		if (dashboardAccessFilter === undefined || dashboardAccessFilter === null) {
+			throw 'Missing the required parameter "dashboardAccessFilter" when calling getAnalyticsReportingSettingsDashboardsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings/dashboards/query', 
+			'GET', 
+			{  },
+			{ 'dashboardType': dashboardType,'dashboardAccessFilter': dashboardAccessFilter,'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get list of dashboards for an user
 	 * 
 	 * @param {String} userId User ID
@@ -1337,6 +1429,58 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/actions/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for agent copilot aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsAgentcopilotsAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsAgentcopilotsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agentcopilots/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for agent copilot aggregates
+	 * 
+	 * @param {Object} body query
+	 * postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsAgentcopilotsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsAgentcopilotsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agentcopilots/aggregates/query', 
 			'POST', 
 			{  },
 			{  },
@@ -1922,8 +2066,8 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
-	 * 
+	 * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
+	 * The max property can be used to determine estimated rate limit value hit.
 	 * @param {Object} body query
 	 */
 	postAnalyticsRatelimitsAggregatesQuery(body) { 

@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 194.0.0
+	 * @version 195.0.0
 	 */
 
 	/**
@@ -1359,6 +1359,7 @@ class KnowledgeApi {
 	 * @param {Array.<String>} opts.type If specified, retrieves operations with specified operation type, comma separated values expected.
 	 * @param {Array.<String>} opts.status If specified, retrieves operations with specified operation status, comma separated values expected.
 	 * @param {String} opts.interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+	 * @param {Array.<String>} opts.sourceId If specified, retrieves operations associated with source ids, comma separated values expected.
 	 * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts) { 
@@ -1373,7 +1374,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'interval': opts['interval'] },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'interval': opts['interval'],'sourceId': this.apiClient.buildCollectionParam(opts['sourceId'], 'multi') },
 			{  },
 			{  },
 			null, 

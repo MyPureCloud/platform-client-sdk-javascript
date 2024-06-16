@@ -1900,7 +1900,7 @@ apiInstance.getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
 
 <a name="getJourneyViews"></a>
 
-# AddressableEntityListing getJourneyViews()
+# JourneyViewListing getJourneyViews()
 
 
 GET /api/v2/journey/views
@@ -1943,7 +1943,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**AddressableEntityListing**
+**JourneyViewListing**
 
 <a name="getJourneyViewsEventdefinition"></a>
 

@@ -11,6 +11,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**getAnalyticsActionsAggregatesJob**](AnalyticsApi.html#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
 [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi.html#getAnalyticsAgentcopilotsAggregatesJob) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Get status for async query for agent copilot aggregates
+[**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsAgentcopilotsAggregatesJobResults) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi.html#getAnalyticsBotflowDivisionsReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns | Get Reporting Turns (division aware).
 [**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
 [**getAnalyticsBotflowSessions**](AnalyticsApi.html#getAnalyticsBotflowSessions) | **GET** /api/v2/analytics/botflows/{botFlowId}/sessions | Get Bot Flow Sessions.
@@ -39,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
 [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
 [**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | **GET** /api/v2/analytics/reporting/settings | Get AnalyticsReportingSettings for an organization
+[**getAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi.html#getAnalyticsReportingSettingsDashboardsQuery) | **GET** /api/v2/analytics/reporting/settings/dashboards/query | Get list of dashboard configurations
 [**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi.html#getAnalyticsReportingSettingsUserDashboards) | **GET** /api/v2/analytics/reporting/settings/users/{userId}/dashboards | Get list of dashboards for an user
 [**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJob) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Get status for async query for resolution aggregates
 [**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJobResults) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
@@ -56,6 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchAnalyticsReportingSettings**](AnalyticsApi.html#patchAnalyticsReportingSettings) | **PATCH** /api/v2/analytics/reporting/settings | Patch AnalyticsReportingSettings values for an organization
 [**postAnalyticsActionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsActionsAggregatesJobs) | **POST** /api/v2/analytics/actions/aggregates/jobs | Query for action aggregates asynchronously
 [**postAnalyticsActionsAggregatesQuery**](AnalyticsApi.html#postAnalyticsActionsAggregatesQuery) | **POST** /api/v2/analytics/actions/aggregates/query | Query for action aggregates
+[**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi.html#postAnalyticsAgentcopilotsAggregatesJobs) | **POST** /api/v2/analytics/agentcopilots/aggregates/jobs | Query for agent copilot aggregates asynchronously
+[**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsAgentcopilotsAggregatesQuery) | **POST** /api/v2/analytics/agentcopilots/aggregates/query | Query for agent copilot aggregates
 [**postAnalyticsBotsAggregatesJobs**](AnalyticsApi.html#postAnalyticsBotsAggregatesJobs) | **POST** /api/v2/analytics/bots/aggregates/jobs | Query for bot aggregates asynchronously
 [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
 [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
@@ -78,7 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesJobs) | **POST** /api/v2/analytics/knowledge/aggregates/jobs | Query for knowledge aggregates asynchronously
 [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
 [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
-[**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+[**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
 [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi.html#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk delete dashboards owned by other user(s)
 [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
 [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk remove dashboard configurations
@@ -311,6 +316,114 @@ apiInstance.getAnalyticsActionsAggregatesJobResults(jobId, opts)
 ### Return type
 
 **ActionAsyncAggregateQueryResponse**
+
+<a name="getAnalyticsAgentcopilotsAggregatesJob"></a>
+
+# AsyncQueryStatus getAnalyticsAgentcopilotsAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
+
+Get status for async query for agent copilot aggregates
+
+getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsAgentcopilotsAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsAgentcopilotsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgentcopilotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsAgentcopilotsAggregatesJobResults"></a>
+
+# AgentCopilotAsyncAggregateQueryResponse getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsAgentcopilotsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgentcopilotsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentCopilotAsyncAggregateQueryResponse**
 
 <a name="getAnalyticsBotflowDivisionsReportingturns"></a>
 
@@ -1823,6 +1936,66 @@ This endpoint does not need any parameter.
 
 **AnalyticsReportingSettings**
 
+<a name="getAnalyticsReportingSettingsDashboardsQuery"></a>
+
+# DashboardConfigurationListing getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)
+
+
+GET /api/v2/analytics/reporting/settings/dashboards/query
+
+Get list of dashboard configurations
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let dashboardType = "dashboardType_example"; // String | List dashboard of given type
+let dashboardAccessFilter = "dashboardAccessFilter_example"; // String | Filter dashboard based on the owner of dashboard
+let opts = { 
+  'sortBy': "desc", // String | 
+  'pageNumber': 1, // Number | 
+  'pageSize': 9 // Number | 
+};
+
+apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)
+  .then((data) => {
+    console.log(`getAnalyticsReportingSettingsDashboardsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingSettingsDashboardsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dashboardType** | **String** | List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
+ **dashboardAccessFilter** | **String** | Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
+ **sortBy** | **String** |  | [optional] [default to desc] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 9] |
+{: class="table table-striped"}
+
+### Return type
+
+**DashboardConfigurationListing**
+
 <a name="getAnalyticsReportingSettingsUserDashboards"></a>
 
 # DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(userId, opts)
@@ -2731,6 +2904,110 @@ apiInstance.postAnalyticsActionsAggregatesQuery(body)
 ### Return type
 
 **ActionAggregateQueryResponse**
+
+<a name="postAnalyticsAgentcopilotsAggregatesJobs"></a>
+
+# AsyncQueryResponse postAnalyticsAgentcopilotsAggregatesJobs(body)
+
+
+POST /api/v2/analytics/agentcopilots/aggregates/jobs
+
+Query for agent copilot aggregates asynchronously
+
+postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsAgentcopilotsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentcopilotsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
+
+<a name="postAnalyticsAgentcopilotsAggregatesQuery"></a>
+
+# AgentCopilotAggregateQueryResponse postAnalyticsAgentcopilotsAggregatesQuery(body)
+
+
+POST /api/v2/analytics/agentcopilots/aggregates/query
+
+Query for agent copilot aggregates
+
+postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsAgentcopilotsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentcopilotsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentCopilotAggregateQueryResponse**
 
 <a name="postAnalyticsBotsAggregatesJobs"></a>
 
@@ -3869,7 +4146,9 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 POST /api/v2/analytics/ratelimits/aggregates/query
 
-Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
+
+The max property can be used to determine estimated rate limit value hit.
 
 Requires ANY permissions:
 

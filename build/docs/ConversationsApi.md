@@ -93,7 +93,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingSetting**](ConversationsApi.html#getConversationsMessagingSetting) | **GET** /api/v2/conversations/messaging/settings/{messageSettingId} | Get a messaging setting
 [**getConversationsMessagingSettings**](ConversationsApi.html#getConversationsMessagingSettings) | **GET** /api/v2/conversations/messaging/settings | Get a list of messaging settings
 [**getConversationsMessagingSettingsDefault**](ConversationsApi.html#getConversationsMessagingSettingsDefault) | **GET** /api/v2/conversations/messaging/settings/default | Get the organization's default settings that will be used as the default when creating an integration.
-[**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | **GET** /api/v2/conversations/messaging/stickers/{messengerType} | Get a list of Messaging Stickers (Deprecated)
 [**getConversationsMessagingSupportedcontent**](ConversationsApi.html#getConversationsMessagingSupportedcontent) | **GET** /api/v2/conversations/messaging/supportedcontent | Get a list of Supported Content profiles
 [**getConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#getConversationsMessagingSupportedcontentDefault) | **GET** /api/v2/conversations/messaging/supportedcontent/default | Get the organization's default supported content profile that will be used as the default when creating an integration.
 [**getConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#getConversationsMessagingSupportedcontentSupportedContentId) | **GET** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Get a supported content profile
@@ -191,6 +190,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi.html#postConversationsEmailMessagesDraftAttachmentsCopy) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft.
 [**postConversationsEmailParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsEmailParticipantCommunicationWrapup) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsEmailReconnect**](ConversationsApi.html#postConversationsEmailReconnect) | **POST** /api/v2/conversations/emails/{conversationId}/reconnect | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
 [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | **POST** /api/v2/conversations/emails | Create an email conversation
 [**postConversationsEmailsAgentless**](ConversationsApi.html#postConversationsEmailsAgentless) | **POST** /api/v2/conversations/emails/agentless | Create an email conversation, per API
 [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | **POST** /api/v2/conversations/faxes | Create Fax Conversation
@@ -4666,65 +4666,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 **MessagingSetting**
-
-<a name="getConversationsMessagingSticker"></a>
-
-# MessagingStickerEntityListing getConversationsMessagingSticker(messengerType, opts)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/conversations/messaging/stickers/{messengerType}
-
-Get a list of Messaging Stickers (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-
-Requires ALL permissions:
-
-* conversation:message:create
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ConversationsApi();
-
-let messengerType = "messengerType_example"; // String | Messenger Type
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getConversationsMessagingSticker(messengerType, opts)
-  .then((data) => {
-    console.log(`getConversationsMessagingSticker success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getConversationsMessagingSticker');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **messengerType** | **String** | Messenger Type | <br />**Values**: line |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-**MessagingStickerEntityListing**
 
 <a name="getConversationsMessagingSupportedcontent"></a>
 
@@ -9888,6 +9829,56 @@ apiInstance.postConversationsEmailParticipantReplace(conversationId, participant
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postConversationsEmailReconnect"></a>
+
+# void postConversationsEmailReconnect(conversationId)
+
+
+POST /api/v2/conversations/emails/{conversationId}/reconnect
+
+Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+
+Requires ANY permissions:
+
+* conversation:communication:reconnect
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+
+apiInstance.postConversationsEmailReconnect(conversationId)
+  .then(() => {
+    console.log('postConversationsEmailReconnect returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailReconnect');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type

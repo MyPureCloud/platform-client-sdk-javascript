@@ -4,7 +4,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 194.0.0
+ * @version 195.0.0
  */
 class ApiClient {
 	/**
@@ -1078,6 +1078,9 @@ class ApiClient {
 		}
 		if (param instanceof Date) {
 			return param.toJSON();
+		}
+		if (param instanceof Boolean) {
+			return param.toString().toLowerCase();
 		}
 		return param.toString();
 	}

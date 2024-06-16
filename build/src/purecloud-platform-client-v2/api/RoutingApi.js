@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 194.0.0
+	 * @version 195.0.0
 	 */
 
 	/**
@@ -466,7 +466,6 @@ class RoutingApi {
 	 * @param {String} labelId Utilization Label ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDelete Remove all label usages (if found) without warning (default to false)
-	 * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteRoutingUtilizationLabel(labelId, opts) { 
 		opts = opts || {};
@@ -1985,7 +1984,6 @@ class RoutingApi {
 	 * Get details about this utilization label
 	 * 
 	 * @param {String} labelId Utilization Label ID
-	 * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationLabel(labelId) { 
 		// verify the required parameter 'labelId' is set
@@ -2011,7 +2009,6 @@ class RoutingApi {
 	 * Get list of agent ids associated with a utilization label
 	 * 
 	 * @param {String} labelId Utilization Label ID
-	 * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationLabelAgents(labelId) { 
 		// verify the required parameter 'labelId' is set
@@ -2041,7 +2038,6 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
 	 * @param {String} opts.name Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
-	 * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getRoutingUtilizationLabels(opts) { 
 		opts = opts || {};
@@ -3464,7 +3460,6 @@ class RoutingApi {
 	 * Create a utilization label
 	 * 
 	 * @param {Object} body UtilizationLabel
-	 * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingUtilizationLabels(body) { 
 		// verify the required parameter 'body' is set
@@ -3857,7 +3852,6 @@ class RoutingApi {
 	 * 
 	 * @param {String} labelId Utilization Label ID
 	 * @param {Object} body UtilizationLabel
-	 * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putRoutingUtilizationLabel(labelId, body) { 
 		// verify the required parameter 'labelId' is set

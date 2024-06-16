@@ -146,6 +146,8 @@ declare class AnalyticsApi {
   	deleteAnalyticsUsersDetailsJob(jobId: string): Promise<void>; 
   	getAnalyticsActionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsActionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsActionsAggregatesJobResultsOptions): Promise<Models.ActionAsyncAggregateQueryResponse>; 
+  	getAnalyticsAgentcopilotsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
+  	getAnalyticsAgentcopilotsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsAgentcopilotsAggregatesJobResultsOptions): Promise<Models.AgentCopilotAsyncAggregateQueryResponse>; 
   	getAnalyticsBotflowDivisionsReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowDivisionsReportingturnsOptions): Promise<Models.ReportingTurnsResponse>; 
   	getAnalyticsBotflowReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowReportingturnsOptions): Promise<Models.ReportingTurnsResponse>; 
   	getAnalyticsBotflowSessions(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowSessionsOptions): Promise<Models.SessionsResponse>; 
@@ -174,6 +176,7 @@ declare class AnalyticsApi {
   	getAnalyticsReportingExports(opts?: AnalyticsApi.getAnalyticsReportingExportsOptions): Promise<Models.ReportingExportJobListing>; 
   	getAnalyticsReportingExportsMetadata(): Promise<Models.ReportingExportMetadataJobListing>; 
   	getAnalyticsReportingSettings(): Promise<Models.AnalyticsReportingSettings>; 
+  	getAnalyticsReportingSettingsDashboardsQuery(dashboardType: string, dashboardAccessFilter: string, opts?: AnalyticsApi.getAnalyticsReportingSettingsDashboardsQueryOptions): Promise<Models.DashboardConfigurationListing>; 
   	getAnalyticsReportingSettingsUserDashboards(userId: string, opts?: AnalyticsApi.getAnalyticsReportingSettingsUserDashboardsOptions): Promise<Models.DashboardConfigurationListing>; 
   	getAnalyticsResolutionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsResolutionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsResolutionsAggregatesJobResultsOptions): Promise<Models.ResolutionAsyncAggregateQueryResponse>; 
@@ -191,6 +194,8 @@ declare class AnalyticsApi {
   	patchAnalyticsReportingSettings(body: Models.AnalyticsReportingSettings): Promise<Models.AnalyticsReportingSettings>; 
   	postAnalyticsActionsAggregatesJobs(body: Models.ActionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsActionsAggregatesQuery(body: Models.ActionAggregationQuery): Promise<Models.ActionAggregateQueryResponse>; 
+  	postAnalyticsAgentcopilotsAggregatesJobs(body: Models.AgentCopilotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
+  	postAnalyticsAgentcopilotsAggregatesQuery(body: Models.AgentCopilotAggregationQuery): Promise<Models.AgentCopilotAggregateQueryResponse>; 
   	postAnalyticsBotsAggregatesJobs(body: Models.BotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsBotsAggregatesQuery(body: Models.BotAggregationQuery): Promise<Models.BotAggregateQueryResponse>; 
   	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
@@ -238,6 +243,9 @@ declare class AnalyticsApi {
 
 declare namespace AnalyticsApi { 
 	export interface getAnalyticsActionsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsAgentcopilotsAggregatesJobResultsOptions { 
 		"cursor"?: string;
 	}
 	export interface getAnalyticsBotflowDivisionsReportingturnsOptions { 
@@ -301,6 +309,11 @@ declare namespace AnalyticsApi {
 		"state"?: string;
 	}
 	export interface getAnalyticsReportingExportsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	export interface getAnalyticsReportingSettingsDashboardsQueryOptions { 
+		"sortBy"?: string;
 		"pageNumber"?: number;
 		"pageSize"?: number;
 	}
@@ -1436,7 +1449,6 @@ declare class ConversationsApi {
   	getConversationsMessagingSetting(messageSettingId: string): Promise<Models.MessagingSetting>; 
   	getConversationsMessagingSettings(opts?: ConversationsApi.getConversationsMessagingSettingsOptions): Promise<Models.MessagingConfigListing>; 
   	getConversationsMessagingSettingsDefault(): Promise<Models.MessagingSetting>; 
-  	getConversationsMessagingSticker(messengerType: string, opts?: ConversationsApi.getConversationsMessagingStickerOptions): Promise<Models.MessagingStickerEntityListing>; 
   	getConversationsMessagingSupportedcontent(opts?: ConversationsApi.getConversationsMessagingSupportedcontentOptions): Promise<Models.SupportedContentListing>; 
   	getConversationsMessagingSupportedcontentDefault(): Promise<Models.SupportedContent>; 
   	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<Models.SupportedContent>; 
@@ -1534,6 +1546,7 @@ declare class ConversationsApi {
   	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId: string, body: Models.CopyAttachmentsRequest): Promise<Models.EmailMessage>; 
   	postConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsEmailParticipantCommunicationWrapupOptions): Promise<void>; 
   	postConversationsEmailParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
+  	postConversationsEmailReconnect(conversationId: string): Promise<void>; 
   	postConversationsEmails(body: Models.CreateEmailRequest): Promise<Models.EmailConversation>; 
   	postConversationsEmailsAgentless(body: Models.AgentlessEmailSendRequestDto): Promise<Models.AgentlessEmailSendResponseDto>; 
   	postConversationsFaxes(body: Models.FaxSendRequest): Promise<Models.FaxSendResponse>; 
@@ -1708,10 +1721,6 @@ declare namespace ConversationsApi {
 		"expand"?: string;
 	}
 	export interface getConversationsMessagingSettingsOptions { 
-		"pageSize"?: number;
-		"pageNumber"?: number;
-	}
-	export interface getConversationsMessagingStickerOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
 	}
@@ -2732,7 +2741,7 @@ declare class JourneyApi {
   	getJourneyViewVersionJob(viewId: string, journeyVersionId: string, jobId: string): Promise<Models.JourneyViewJob>; 
   	getJourneyViewVersionJobResults(viewId: string, journeyViewVersion: string, jobId: string): Promise<Models.JourneyViewResult>; 
   	getJourneyViewVersionJobsLatest(viewId: string, journeyVersionId: string): Promise<Models.JourneyViewJob>; 
-  	getJourneyViews(): Promise<Models.AddressableEntityListing>; 
+  	getJourneyViews(): Promise<Models.JourneyViewListing>; 
   	getJourneyViewsEventdefinition(eventDefinitionId: string): Promise<Models.JourneyEventDefinition>; 
   	getJourneyViewsEventdefinitions(): Promise<Models.JourneyEventDefinitionListing>; 
   	patchJourneyActionmap(actionMapId: string, opts?: JourneyApi.patchJourneyActionmapOptions): Promise<Models.ActionMap>; 
@@ -3086,6 +3095,7 @@ declare namespace KnowledgeApi {
 		"type"?: Array<string>;
 		"status"?: Array<string>;
 		"interval"?: string;
+		"sourceId"?: Array<string>;
 	}
 	export interface getKnowledgeKnowledgebaseParseJobOptions { 
 		"expand"?: Array<string>;
@@ -3280,17 +3290,21 @@ declare class LearningApi {
   	deleteLearningAssignment(assignmentId: string): Promise<void>; 
   	deleteLearningModule(moduleId: string): Promise<void>; 
   	getLearningAssignment(assignmentId: string, opts?: LearningApi.getLearningAssignmentOptions): Promise<Models.LearningAssignment>; 
+  	getLearningAssignmentStep(assignmentId: string, stepId: string, opts?: LearningApi.getLearningAssignmentStepOptions): Promise<Models.LearningAssignmentStep>; 
   	getLearningAssignments(opts?: LearningApi.getLearningAssignmentsOptions): Promise<Models.LearningAssignmentsDomainEntity>; 
   	getLearningAssignmentsMe(opts?: LearningApi.getLearningAssignmentsMeOptions): Promise<Models.LearningAssignmentsDomainEntity>; 
   	getLearningModule(moduleId: string, opts?: LearningApi.getLearningModuleOptions): Promise<Models.LearningModule>; 
   	getLearningModuleJob(moduleId: string, jobId: string): Promise<Models.LearningModuleJobResponse>; 
+  	getLearningModulePreview(moduleId: string): Promise<Models.LearningModulePreviewGetResponse>; 
   	getLearningModuleRule(moduleId: string): Promise<Models.LearningModuleRule>; 
   	getLearningModuleVersion(moduleId: string, versionId: string, opts?: LearningApi.getLearningModuleVersionOptions): Promise<Models.LearningModule>; 
   	getLearningModules(opts?: LearningApi.getLearningModulesOptions): Promise<Models.LearningModulesDomainEntityListing>; 
   	getLearningModulesAssignments(userIds: Array<string>, opts?: LearningApi.getLearningModulesAssignmentsOptions): Promise<Models.AssignedLearningModuleDomainEntityListing>; 
   	getLearningModulesCoverartCoverArtId(coverArtId: string): Promise<Models.LearningModuleCoverArtResponse>; 
+  	getLearningScormScormId(scormId: string): Promise<Models.LearningScormResponse>; 
   	patchLearningAssignment(assignmentId: string, opts?: LearningApi.patchLearningAssignmentOptions): Promise<Models.LearningAssignment>; 
   	patchLearningAssignmentReschedule(assignmentId: string, opts?: LearningApi.patchLearningAssignmentRescheduleOptions): Promise<Models.LearningAssignment>; 
+  	patchLearningAssignmentStep(assignmentId: string, stepId: string, opts?: LearningApi.patchLearningAssignmentStepOptions): Promise<Models.LearningAssignmentStep>; 
   	patchLearningModuleUserAssignments(moduleId: string, userId: string, body: Models.LearningAssignmentExternalUpdate): Promise<Models.LearningAssignment>; 
   	postLearningAssessmentsScoring(body: Models.LearningAssessmentScoringRequest): Promise<Models.AssessmentScoringSet>; 
   	postLearningAssignmentReassign(assignmentId: string): Promise<Models.LearningAssignment>; 
@@ -3304,12 +3318,18 @@ declare class LearningApi {
   	postLearningModules(body: Models.LearningModuleRequest): Promise<Models.LearningModule>; 
   	postLearningRulesQuery(pageSize: number, pageNumber: number, body: Models.LearningAssignmentUserQuery): Promise<Models.LearningAssignmentUserListing>; 
   	postLearningScheduleslotsQuery(body: Models.LearningScheduleSlotsQueryRequest): Promise<Models.LearningScheduleSlotsQueryResponse>; 
+  	postLearningScorm(opts?: LearningApi.postLearningScormOptions): Promise<Models.LearningScormUploadResponse>; 
   	putLearningModule(moduleId: string, body: Models.LearningModuleRequest): Promise<Models.LearningModule>; 
+  	putLearningModulePreview(moduleId: string, body: Models.LearningModulePreviewUpdateRequest): Promise<Models.LearningModulePreviewUpdateResponse>; 
   	putLearningModuleRule(moduleId: string, body: Models.LearningModuleRule): Promise<Models.LearningModuleRule>;
 }
 
 declare namespace LearningApi { 
 	export interface getLearningAssignmentOptions { 
+		"expand"?: Array<string>;
+	}
+	export interface getLearningAssignmentStepOptions { 
+		"shareableContentObjectId"?: string;
 		"expand"?: Array<string>;
 	}
 	export interface getLearningAssignmentsOptions { 
@@ -3378,6 +3398,9 @@ declare namespace LearningApi {
 	export interface patchLearningAssignmentRescheduleOptions { 
 		"body"?: Models.LearningAssignmentReschedule;
 	}
+	export interface patchLearningAssignmentStepOptions { 
+		"body"?: Models.LearningAssignmentStep;
+	}
 	export interface postLearningAssignmentsOptions { 
 		"body"?: Models.LearningAssignmentCreate;
 	}
@@ -3389,6 +3412,9 @@ declare namespace LearningApi {
 	}
 	export interface postLearningModulePublishOptions { 
 		"body"?: Models.LearningModulePublishRequest;
+	}
+	export interface postLearningScormOptions { 
+		"body"?: Models.LearningScormUploadRequest;
 	}
 }
 
@@ -5443,12 +5469,16 @@ declare namespace SettingsApi {
 }
 
 declare class SpeechTextAnalyticsApi {  
+  	deleteSpeechandtextanalyticsCategory(categoryId: string): Promise<void>; 
   	deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string): Promise<void>; 
   	deleteSpeechandtextanalyticsProgram(programId: string, opts?: SpeechTextAnalyticsApi.deleteSpeechandtextanalyticsProgramOptions): Promise<void>; 
   	deleteSpeechandtextanalyticsSentimentfeedback(): Promise<void>; 
   	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId: string): Promise<void>; 
   	deleteSpeechandtextanalyticsTopic(topicId: string): Promise<void>; 
+  	getSpeechandtextanalyticsCategories(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsCategoriesOptions): Promise<Models.CategoriesEntityListing>; 
+  	getSpeechandtextanalyticsCategory(categoryId: string): Promise<Models.StaCategory>; 
   	getSpeechandtextanalyticsConversation(conversationId: string): Promise<Models.ConversationMetrics>; 
+  	getSpeechandtextanalyticsConversationCategories(conversationId: string, opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsConversationCategoriesOptions): Promise<Models.ConversationCategoriesEntityListing>; 
   	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId: string, communicationId: string): Promise<Models.TranscriptUrl>; 
   	getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId: string, communicationId: string): Promise<Models.TranscriptUrls>; 
   	getSpeechandtextanalyticsDictionaryfeedback(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsDictionaryfeedbackOptions): Promise<Models.DictionaryFeedbackEntityListing>; 
@@ -5472,6 +5502,7 @@ declare class SpeechTextAnalyticsApi {
   	getSpeechandtextanalyticsTopicsGeneralStatus(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralStatusOptions): Promise<Models.UnifiedGeneralTopicEntityListing>; 
   	getSpeechandtextanalyticsTopicsPublishjob(jobId: string): Promise<Models.TopicJob>; 
   	patchSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
+  	postSpeechandtextanalyticsCategories(body: Models.CategoryRequest): Promise<Models.StaCategory>; 
   	postSpeechandtextanalyticsDictionaryfeedback(body: Models.DictionaryFeedback): Promise<Models.DictionaryFeedback>; 
   	postSpeechandtextanalyticsPrograms(body: Models.ProgramRequest): Promise<Models.Program>; 
   	postSpeechandtextanalyticsProgramsGeneralJobs(body: Models.GeneralProgramJobRequest): Promise<Models.GeneralProgramJob>; 
@@ -5480,6 +5511,7 @@ declare class SpeechTextAnalyticsApi {
   	postSpeechandtextanalyticsTopics(body: Models.TopicRequest): Promise<Models.Topic>; 
   	postSpeechandtextanalyticsTopicsPublishjobs(body: Models.TopicJobRequest): Promise<Models.TopicJob>; 
   	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>; 
+  	putSpeechandtextanalyticsCategory(categoryId: string, body: Models.CategoryRequest): Promise<Models.StaCategory>; 
   	putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string, opts?: SpeechTextAnalyticsApi.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdOptions): Promise<Models.DictionaryFeedback>; 
   	putSpeechandtextanalyticsProgram(programId: string, body: Models.ProgramRequest): Promise<Models.Program>; 
   	putSpeechandtextanalyticsProgramMappings(programId: string, body: Models.ProgramMappingsRequest): Promise<Models.ProgramMappings>; 
@@ -5491,6 +5523,18 @@ declare class SpeechTextAnalyticsApi {
 declare namespace SpeechTextAnalyticsApi { 
 	export interface deleteSpeechandtextanalyticsProgramOptions { 
 		"forceDelete"?: boolean;
+	}
+	export interface getSpeechandtextanalyticsCategoriesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"name"?: string;
+		"sortOrder"?: string;
+		"sortBy"?: string;
+		"ids"?: Array<string>;
+	}
+	export interface getSpeechandtextanalyticsConversationCategoriesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 	export interface getSpeechandtextanalyticsDictionaryfeedbackOptions { 
 		"dialect"?: string;
@@ -7707,19 +7751,6 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface AddressableEntityListing { 
-		"entities"?: Array<Models.AddressableEntity>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"pageCount"?: number;
-	}
-	
 	export interface AddressableEntityRef { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -7943,6 +7974,75 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface AgentCopilotAggregateDataContainer { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatisticalResponse>;
+	}
+	
+	export interface AgentCopilotAggregateQueryClause { 
+		"type": string;
+		"predicates": Array<Models.AgentCopilotAggregateQueryPredicate>;
+	}
+	
+	export interface AgentCopilotAggregateQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.AgentCopilotAggregateQueryClause>;
+		"predicates"?: Array<Models.AgentCopilotAggregateQueryPredicate>;
+	}
+	
+	export interface AgentCopilotAggregateQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+		"range"?: Models.NumericRange;
+	}
+	
+	export interface AgentCopilotAggregateQueryResponse { 
+		"results"?: Array<Models.AgentCopilotAggregateDataContainer>;
+	}
+	
+	export interface AgentCopilotAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.AgentCopilotAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.AgentCopilotAggregationView>;
+		"alternateTimeDimension"?: string;
+		"queryType"?: string;
+		"limit"?: number;
+	}
+	
+	export interface AgentCopilotAggregationView { 
+		"target": string;
+		"name": string;
+		"function": string;
+		"range"?: Models.AggregationRange;
+	}
+	
+	export interface AgentCopilotAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.AgentCopilotAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface AgentCopilotAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.AgentCopilotAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.AgentCopilotAggregationView>;
+		"alternateTimeDimension"?: string;
+		"queryType"?: string;
+		"limit"?: number;
+		"pageSize"?: number;
+	}
+	
 	export interface AgentEvaluatorActivity { 
 		"id"?: string;
 		"name"?: string;
@@ -7986,6 +8086,7 @@ declare namespace Models {
 	
 	export interface AgentMaxUtilizationResponse { 
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
+		"labelUtilizations"?: { [key: string]: Models.LabelUtilizationResponse; };
 		"level"?: string;
 	}
 	
@@ -8454,6 +8555,8 @@ declare namespace Models {
 		"deliveryStatus"?: string;
 		"deliveryStatusChangeDate"?: string;
 		"destinationAddresses"?: Array<string>;
+		"detectedSpeechEnd"?: string;
+		"detectedSpeechStart"?: string;
 		"direction"?: string;
 		"dispositionAnalyzer"?: string;
 		"dispositionName"?: string;
@@ -9040,6 +9143,8 @@ declare namespace Models {
 		"externalId"?: string;
 		"source"?: string;
 		"rule"?: Models.LearningModuleRule;
+		"enforceContentOrder"?: boolean;
+		"reviewAssessmentResults"?: Models.ReviewAssessmentResults;
 		"currentAssignments"?: Array<Models.LearningAssignment>;
 		"selfUri"?: string;
 		"isArchived"?: boolean;
@@ -11737,6 +11842,19 @@ declare namespace Models {
 		"isSelected"?: boolean;
 	}
 	
+	export interface CategoriesEntityListing { 
+		"entities"?: Array<Models.StaCategory>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface Category { 
 		"name"?: string;
 	}
@@ -11770,6 +11888,13 @@ declare namespace Models {
 		"name"?: string;
 		"parentCategory"?: Models.CategoryReference;
 		"selfUri"?: string;
+	}
+	
+	export interface CategoryRequest { 
+		"name": string;
+		"description"?: string;
+		"interactionType": string;
+		"criteria": Models.Operand;
 	}
 	
 	export interface CategoryResponse { 
@@ -11824,8 +11949,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -12298,6 +12423,7 @@ declare namespace Models {
 		"maskSelectors"?: Array<string>;
 		"channels"?: Array<string>;
 		"readonlySelectors"?: Array<string>;
+		"pauseCriteria"?: Array<Models.PauseCriteria>;
 	}
 	
 	export interface CobrowseWebMessagingSession { 
@@ -13837,6 +13963,27 @@ declare namespace Models {
 		"endTime"?: string;
 	}
 	
+	export interface ConversationCategoriesEntityListing { 
+		"entities"?: Array<Models.ConversationCategory>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface ConversationCategory { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"interactionType"?: string;
+		"criteria"?: Models.Operand;
+	}
+	
 	export interface ConversationChannel { 
 		"type": string;
 		"messageType"?: string;
@@ -14923,6 +15070,12 @@ declare namespace Models {
 		"duration"?: number;
 	}
 	
+	export interface ConversationEventVideo { 
+		"type": string;
+		"offeringId"?: string;
+		"jwt"?: string;
+	}
+	
 	export interface ConversationMessageContent { 
 		"contentType": string;
 		"location"?: Models.ConversationContentLocation;
@@ -14942,6 +15095,7 @@ declare namespace Models {
 		"coBrowse"?: Models.ConversationEventCoBrowse;
 		"typing"?: Models.ConversationEventTyping;
 		"presence"?: Models.ConversationEventPresence;
+		"video"?: Models.ConversationEventVideo;
 	}
 	
 	export interface ConversationMessageEventTopicConversationRoutingData { 
@@ -15267,6 +15421,7 @@ declare namespace Models {
 		"teamId"?: string;
 		"usedRouting"?: string;
 		"userId"?: string;
+		"videoPresent"?: boolean;
 		"waitingInteractionCounts"?: Array<number>;
 		"wrapUpCode"?: string;
 		"proposedAgents"?: Array<Models.ConversationMetricsTopicConversationProposedAgent>;
@@ -15951,6 +16106,7 @@ declare namespace Models {
 		"callQueueId"?: string;
 		"callUserId"?: string;
 		"priority"?: number;
+		"attributes"?: { [key: string]: string; };
 		"languageId"?: string;
 		"routingSkillsIds"?: Array<string>;
 		"conversationIds"?: Array<string>;
@@ -16833,6 +16989,8 @@ declare namespace Models {
 		"dateCreated": string;
 		"dateModified": string;
 		"createdBy"?: Models.AddressableEntityRef;
+		"shared"?: boolean;
+		"dashboardsSharedWith"?: Models.DashboardsSharedWith;
 		"selfUri"?: string;
 	}
 	
@@ -16880,6 +17038,11 @@ declare namespace Models {
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface DashboardsSharedWith { 
+		"userIds"?: Array<string>;
+		"teamIds"?: Array<string>;
 	}
 	
 	export interface DataActionConditionPredicate { 
@@ -20137,7 +20300,6 @@ declare namespace Models {
 	
 	export interface EngineIntegration { 
 		"id"?: string;
-		"name"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -21688,7 +21850,6 @@ declare namespace Models {
 		"org"?: Models.FieldConfig;
 		"person"?: Models.FieldConfig;
 		"group"?: Models.FieldConfig;
-		"externalContact"?: Models.FieldConfig;
 	}
 	
 	export interface FieldList { 
@@ -22276,6 +22437,7 @@ declare namespace Models {
 		"transferType"?: string;
 		"usedRouting"?: string;
 		"userId"?: string;
+		"videoPresent"?: boolean;
 		"waitingInteractionCounts"?: Array<number>;
 		"wrapUpCode"?: string;
 		"proposedAgents"?: Array<Models.FlowMetricsTopicFlowProposedAgent>;
@@ -23923,6 +24085,11 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface InfixOperator { 
+		"operatorType": string;
+		"operatorPosition"?: Models.OperatorPosition;
+	}
+	
 	export interface InfrastructureascodeJob { 
 		"id"?: string;
 		"dryRun": boolean;
@@ -25216,6 +25383,12 @@ declare namespace Models {
 		"value"?: number;
 	}
 	
+	export interface JourneyViewListing { 
+		"total"?: number;
+		"entities"?: Array<Models.JourneyView>;
+		"selfUri"?: string;
+	}
+	
 	export interface JourneyViewResult { 
 		"elements"?: Array<Models.JourneyViewResultElement>;
 	}
@@ -26108,6 +26281,8 @@ declare namespace Models {
 		"labels"?: Array<Models.LabelResponse>;
 		"knowledgeBase"?: Models.KnowledgeBaseReference;
 		"externalId"?: string;
+		"source"?: Models.AddressableEntityRef;
+		"readonly"?: boolean;
 		"variations"?: Array<Models.DocumentVariation>;
 		"selfUri"?: string;
 	}
@@ -26246,6 +26421,7 @@ declare namespace Models {
 	export interface KnowledgeExportJobDocumentsFilter { 
 		"interval"?: string;
 		"entities"?: Array<Models.Entity>;
+		"sourceId"?: string;
 	}
 	
 	export interface KnowledgeExportJobFilter { 
@@ -26256,6 +26432,7 @@ declare namespace Models {
 	export interface KnowledgeExportJobRequest { 
 		"exportFilter": Models.KnowledgeExportJobFilter;
 		"fileType": string;
+		"sourceId"?: string;
 		"jsonFileVersion"?: number;
 	}
 	
@@ -26272,6 +26449,7 @@ declare namespace Models {
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"errorInformation"?: Models.ErrorBody;
+		"source"?: Models.KnowledgeOperationSource;
 		"selfUri"?: string;
 	}
 	
@@ -26545,6 +26723,12 @@ declare namespace Models {
 		"migrationDetected"?: boolean;
 	}
 	
+	export interface KnowledgeOperationSource { 
+		"id"?: string;
+		"type"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface KnowledgeParseImportResult { 
 		"success": number;
 		"failure": number;
@@ -26609,6 +26793,8 @@ declare namespace Models {
 		"labels"?: Array<Models.LabelResponse>;
 		"knowledgeBase"?: Models.KnowledgeBaseReference;
 		"externalId"?: string;
+		"source"?: Models.AddressableEntityRef;
+		"readonly"?: boolean;
 		"variations"?: Array<Models.DocumentVariationAnswer>;
 		"answer"?: string;
 		"selfUri"?: string;
@@ -26824,10 +27010,15 @@ declare namespace Models {
 		"dateModified"?: string;
 		"isOverdue"?: boolean;
 		"percentageScore"?: number;
+		"assessmentPercentageScore"?: number;
 		"isRule"?: boolean;
 		"isManual"?: boolean;
 		"isPassed"?: boolean;
 		"isLatest"?: boolean;
+		"assessmentCompletionPercentage"?: number;
+		"completionPercentage"?: number;
+		"steps"?: Array<Models.LearningAssignmentStep>;
+		"nextStep"?: Models.LearningAssignmentStep;
 		"selfUri"?: string;
 		"state"?: string;
 		"dateRecommendedForCompletion"?: string;
@@ -27065,6 +27256,8 @@ declare namespace Models {
 		"externalId"?: string;
 		"source"?: string;
 		"rule"?: Models.LearningModuleRule;
+		"enforceContentOrder"?: boolean;
+		"reviewAssessmentResults"?: Models.ReviewAssessmentResults;
 		"selfUri"?: string;
 		"isArchived"?: boolean;
 		"isPublished"?: boolean;
@@ -27123,6 +27316,101 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface LearningModulePreviewGetResponse { 
+		"id"?: string;
+		"name": string;
+		"description"?: string;
+		"coverArt"?: Models.LearningModuleCoverArtResponse;
+		"enforceContentOrder"?: boolean;
+		"reviewAssessmentResults"?: Models.ReviewAssessmentResults;
+		"assessmentForm"?: Models.AssessmentForm;
+		"assignment"?: Models.LearningModulePreviewGetResponseAssignment;
+		"selfUri"?: string;
+	}
+	
+	export interface LearningModulePreviewGetResponseAssignment { 
+		"state"?: string;
+		"percentageScore"?: number;
+		"assessmentPercentageScore"?: number;
+		"isPassed"?: boolean;
+		"assessmentCompletionPercentage"?: number;
+		"completionPercentage"?: number;
+		"steps"?: Array<Models.LearningModulePreviewGetResponseStep>;
+	}
+	
+	export interface LearningModulePreviewGetResponseStep { 
+		"id"?: string;
+		"moduleStep"?: Models.LearningModuleInformStep;
+		"structure"?: Array<Models.LearningModulePreviewGetScoStructure>;
+		"successStatus"?: string;
+		"completionStatus"?: string;
+		"completionPercentage"?: number;
+		"percentageScore"?: number;
+		"signedCookie"?: Models.LearningAssignmentStepSignedCookie;
+	}
+	
+	export interface LearningModulePreviewGetScoStructure { 
+		"id"?: string;
+		"name"?: string;
+		"successStatus"?: string;
+		"completionStatus"?: string;
+		"percentageScore"?: number;
+		"shareableContentObject"?: Models.LearningShareableContentObject;
+		"children"?: Array<Models.LearningModulePreviewGetScoStructure>;
+	}
+	
+	export interface LearningModulePreviewUpdateRequest { 
+		"state"?: string;
+		"currentStep"?: Models.LearningModulePreviewUpdateRequestCurrentStep;
+		"steps"?: Array<Models.LearningModulePreviewUpdateStep>;
+		"assessment"?: Models.LearningAssessment;
+		"assessmentForm"?: Models.AssessmentForm;
+	}
+	
+	export interface LearningModulePreviewUpdateRequestCurrentStep { 
+		"id"?: string;
+		"completionPercentage"?: number;
+		"shareableContentObject"?: Models.LearningShareableContentObject;
+	}
+	
+	export interface LearningModulePreviewUpdateResponse { 
+		"id"?: string;
+		"assignment"?: Models.LearningModulePreviewUpdateResponseAssignment;
+	}
+	
+	export interface LearningModulePreviewUpdateResponseAssignment { 
+		"state"?: string;
+		"percentageScore"?: number;
+		"completionPercentage"?: number;
+		"assessmentPercentageScore"?: number;
+		"assessmentCompletionPercentage"?: number;
+		"isPassed"?: boolean;
+		"currentStep"?: Models.LearningModulePreviewUpdateResponseCurrentStep;
+		"steps"?: Array<Models.LearningModulePreviewUpdateStep>;
+	}
+	
+	export interface LearningModulePreviewUpdateResponseCurrentStep { 
+		"shareableContentObject"?: Models.LearningShareableContentObject;
+	}
+	
+	export interface LearningModulePreviewUpdateScoStructure { 
+		"id"?: string;
+		"name"?: string;
+		"successStatus"?: string;
+		"completionStatus"?: string;
+		"percentageScore"?: number;
+		"children"?: Array<Models.LearningModulePreviewUpdateScoStructure>;
+	}
+	
+	export interface LearningModulePreviewUpdateStep { 
+		"id"?: string;
+		"successStatus"?: string;
+		"completionStatus"?: string;
+		"completionPercentage"?: number;
+		"percentageScore"?: number;
+		"structure"?: Array<Models.LearningModulePreviewUpdateScoStructure>;
+	}
+	
 	export interface LearningModulePublishRequest { 
 		"termsAndConditionsAccepted"?: boolean;
 	}
@@ -27152,6 +27440,8 @@ declare namespace Models {
 		"lengthInMinutes"?: number;
 		"excludedFromCatalog"?: boolean;
 		"externalId"?: string;
+		"enforceContentOrder"?: boolean;
+		"reviewAssessmentResults"?: Models.ReviewAssessmentResults;
 	}
 	
 	export interface LearningModuleRule { 
@@ -27198,6 +27488,27 @@ declare namespace Models {
 	export interface LearningScheduleSlotsQueryResponse { 
 		"suggestedSlots"?: Array<Models.LearningSlot>;
 		"wfmScheduleActivities"?: Array<Models.LearningSlotWfmScheduleActivity>;
+	}
+	
+	export interface LearningScormResponse { 
+		"id"?: string;
+		"status"?: string;
+		"errorCode"?: string;
+		"errorMessage"?: string;
+		"percentageUnpacked"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface LearningScormUploadRequest { 
+		"contentMd5": string;
+	}
+	
+	export interface LearningScormUploadResponse { 
+		"id"?: string;
+		"status"?: string;
+		"uploadUrl"?: string;
+		"headers"?: { [key: string]: string; };
+		"selfUri"?: string;
 	}
 	
 	export interface LearningShareableContentObject { 
@@ -27893,9 +28204,9 @@ declare namespace Models {
 		"settings"?: Models.ManagementUnitSettingsResponse;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
 		"division"?: Models.DivisionReference;
+		"modifiedBy"?: Models.UserReference;
 		"version"?: number;
 		"dateModified"?: string;
-		"modifiedBy"?: Models.UserReference;
 		"selfUri"?: string;
 	}
 	
@@ -28678,32 +28989,6 @@ declare namespace Models {
 	
 	export interface MessagingSettingRequestReference { 
 		"id": string;
-	}
-	
-	export interface MessagingSticker { 
-		"id"?: string;
-		"name"?: string;
-		"providerStickerId": number;
-		"providerPackageId"?: number;
-		"packageName"?: string;
-		"messengerType": string;
-		"stickerType": string;
-		"providerVersion"?: number;
-		"uriLocation"?: string;
-		"selfUri"?: string;
-	}
-	
-	export interface MessagingStickerEntityListing { 
-		"entities"?: Array<Models.MessagingSticker>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"pageCount"?: number;
 	}
 	
 	export interface MessagingTemplate { 
@@ -29891,6 +30176,25 @@ declare namespace Models {
 		"direction": string;
 	}
 	
+	export interface Operand { 
+		"type": string;
+		"occurrence"?: number;
+		"inverted"?: boolean;
+		"term"?: Models.Term;
+		"topicId"?: string;
+		"voiceSecondsPosition"?: Models.OperandPosition;
+		"digitalWordsPosition"?: Models.OperandPosition;
+		"infixOperator"?: Models.InfixOperator;
+		"operands"?: Array<Models.Operand>;
+	}
+	
+	export interface OperandPosition { 
+		"startingPositionValue"?: number;
+		"startingPositionDirection"?: string;
+		"endingPositionValue"?: number;
+		"endingPositionDirection"?: string;
+	}
+	
 	export interface Operation { 
 		"id"?: string;
 		"complete"?: boolean;
@@ -29924,6 +30228,7 @@ declare namespace Models {
 		"createdBy"?: Models.UserReference;
 		"dateCreated"?: string;
 		"dateModified"?: string;
+		"source"?: Models.KnowledgeOperationSource;
 		"selfUri"?: string;
 	}
 	
@@ -29945,6 +30250,11 @@ declare namespace Models {
 		"entityType"?: string;
 		"conversationId"?: string;
 		"timestamp"?: number;
+	}
+	
+	export interface OperatorPosition { 
+		"voiceSecondsPosition"?: number;
+		"digitalWordsPosition"?: number;
 	}
 	
 	export interface OptInSettings { 
@@ -35227,6 +35537,10 @@ declare namespace Models {
 		"to"?: string;
 		"timestamp"?: string;
 		"id"?: string;
+		"purpose"?: string;
+		"participantId"?: string;
+		"queue"?: Models.AddressableEntityRef;
+		"workflow"?: Models.AddressableEntityRef;
 		"messageText"?: string;
 		"messageMediaAttachments"?: Array<Models.MessageMediaAttachment>;
 		"messageStickerAttachments"?: Array<Models.MessageStickerAttachment>;
@@ -35980,6 +36294,8 @@ declare namespace Models {
 	}
 	
 	export interface ReviewAssessmentResults { 
+		"byAssignees"?: boolean;
+		"byViewers"?: boolean;
 	}
 	
 	export interface Ring { 
@@ -37878,6 +38194,19 @@ declare namespace Models {
 		"useWaterfallRule"?: boolean;
 	}
 	
+	export interface StaCategory { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"interactionType": string;
+		"criteria": Models.Operand;
+		"createdBy"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"modifiedBy"?: Models.AddressableEntityRef;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface StaffingGroupListing { 
 		"entities"?: Array<Models.StaffingGroupResponse>;
 	}
@@ -38820,6 +39149,11 @@ declare namespace Models {
 	export interface TemplateParameter { 
 		"id"?: string;
 		"value"?: string;
+	}
+	
+	export interface Term { 
+		"word": string;
+		"participantType": string;
 	}
 	
 	export interface TermAttribute { 
@@ -41677,10 +42011,12 @@ declare namespace Models {
 	
 	export interface UtilizationRequest { 
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
+		"labelUtilizations"?: { [key: string]: Models.LabelUtilizationRequest; };
 	}
 	
 	export interface UtilizationResponse { 
 		"utilization"?: { [key: string]: Models.MediaUtilization; };
+		"labelUtilizations"?: { [key: string]: Models.LabelUtilizationResponse; };
 	}
 	
 	export interface UtilizationTag { 
@@ -41706,113 +42042,22 @@ declare namespace Models {
 		"utteranceText"?: string;
 	}
 	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationButtonComponent { 
-		"title"?: string;
-		"actions"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentActions;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationContentActions { 
-		"url"?: string;
-		"urlTarget"?: string;
-		"textback"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationContentAttachment { 
-		"id"?: string;
-		"mediaType"?: string;
-		"url"?: string;
-		"mime"?: string;
-		"text"?: string;
-		"sha256"?: string;
-		"filename"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse { 
-		"type"?: string;
-		"text"?: string;
-		"payload"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationContentGeneric { 
-		"title"?: string;
-		"description"?: string;
-		"image"?: string;
-		"video"?: string;
-		"actions"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentActions;
-		"components"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationButtonComponent>;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationContentLocation { 
-		"url"?: string;
-		"address"?: string;
-		"text"?: string;
-		"latitude"?: number;
-		"longitude"?: number;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate { 
-		"id"?: string;
-		"language"?: string;
-		"header"?: Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader;
-		"body"?: Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateBody;
-		"footer"?: Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateFooter;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply { 
-		"text"?: string;
-		"payload"?: string;
-		"image"?: string;
-		"action"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationContentStory { 
-		"type"?: string;
-		"url"?: string;
-		"replyToId"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse { 
-		"type"?: string;
-		"sessionId"?: string;
-		"sessionJoinToken"?: string;
-	}
-	
 	export interface V2ConversationMessageTypingEventForUserTopicConversationEventTyping { 
 		"type"?: string;
 		"duration"?: number;
 	}
 	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationMessageContent { 
-		"contentType"?: string;
-		"location"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentLocation;
-		"story"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentStory;
-		"attachment"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentAttachment;
-		"quickReply"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply;
-		"template"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate;
-		"buttonResponse"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse;
-		"generic"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentGeneric;
-	}
-	
 	export interface V2ConversationMessageTypingEventForUserTopicConversationMessageEvent { 
 		"eventType"?: string;
-		"coBrowse"?: Models.V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse;
 		"typing"?: Models.V2ConversationMessageTypingEventForUserTopicConversationEventTyping;
 	}
 	
 	export interface V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel { 
 		"id"?: string;
 		"platform"?: string;
-		"messageId"?: string;
 		"to"?: Models.V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient;
 		"from"?: Models.V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient;
 		"time"?: string;
-		"dateModified"?: string;
-		"dateDeleted"?: string;
-		"metadata"?: Models.V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata { 
-		"customAttributes"?: { [key: string]: string; };
 	}
 	
 	export interface V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient { 
@@ -41838,44 +42083,10 @@ declare namespace Models {
 	}
 	
 	export interface V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage { 
-		"id"?: string;
 		"channel"?: Models.V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel;
 		"type"?: string;
-		"text"?: string;
-		"content"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationMessageContent>;
 		"events"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationMessageEvent>;
-		"status"?: string;
-		"reasons"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationReason>;
-		"originatingEntity"?: string;
-		"isFinalReceipt"?: boolean;
 		"direction"?: string;
-		"metadata"?: { [key: string]: string; };
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateBody { 
-		"text"?: string;
-		"parameters"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter>;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateFooter { 
-		"text"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader { 
-		"type"?: string;
-		"text"?: string;
-		"media"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentAttachment;
-		"parameters"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter>;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter { 
-		"name"?: string;
-		"text"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForUserTopicConversationReason { 
-		"code"?: string;
-		"message"?: string;
 	}
 	
 	export interface V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier { 
@@ -41888,113 +42099,22 @@ declare namespace Models {
 		"normalizedMessage"?: Models.V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage;
 	}
 	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponent { 
-		"title"?: string;
-		"actions"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions { 
-		"url"?: string;
-		"urlTarget"?: string;
-		"textback"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment { 
-		"id"?: string;
-		"mediaType"?: string;
-		"url"?: string;
-		"mime"?: string;
-		"text"?: string;
-		"sha256"?: string;
-		"filename"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse { 
-		"type"?: string;
-		"text"?: string;
-		"payload"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentGeneric { 
-		"title"?: string;
-		"description"?: string;
-		"image"?: string;
-		"video"?: string;
-		"actions"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions;
-		"components"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponent>;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation { 
-		"url"?: string;
-		"address"?: string;
-		"text"?: string;
-		"latitude"?: number;
-		"longitude"?: number;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate { 
-		"id"?: string;
-		"language"?: string;
-		"header"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader;
-		"body"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody;
-		"footer"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateFooter;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply { 
-		"text"?: string;
-		"payload"?: string;
-		"image"?: string;
-		"action"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory { 
-		"type"?: string;
-		"url"?: string;
-		"replyToId"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse { 
-		"type"?: string;
-		"sessionId"?: string;
-		"sessionJoinToken"?: string;
-	}
-	
 	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping { 
 		"type"?: string;
 		"duration"?: number;
 	}
 	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent { 
-		"contentType"?: string;
-		"location"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation;
-		"story"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory;
-		"attachment"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment;
-		"quickReply"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply;
-		"template"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate;
-		"buttonResponse"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse;
-		"generic"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentGeneric;
-	}
-	
 	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent { 
 		"eventType"?: string;
-		"coBrowse"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse;
 		"typing"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping;
 	}
 	
 	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel { 
 		"id"?: string;
 		"platform"?: string;
-		"messageId"?: string;
 		"to"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient;
 		"from"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient;
 		"time"?: string;
-		"dateModified"?: string;
-		"dateDeleted"?: string;
-		"metadata"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata { 
-		"customAttributes"?: { [key: string]: string; };
 	}
 	
 	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient { 
@@ -42020,44 +42140,10 @@ declare namespace Models {
 	}
 	
 	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage { 
-		"id"?: string;
 		"channel"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel;
 		"type"?: string;
-		"text"?: string;
-		"content"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent>;
 		"events"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent>;
-		"status"?: string;
-		"reasons"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationReason>;
-		"originatingEntity"?: string;
-		"isFinalReceipt"?: boolean;
 		"direction"?: string;
-		"metadata"?: { [key: string]: string; };
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody { 
-		"text"?: string;
-		"parameters"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter>;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateFooter { 
-		"text"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader { 
-		"type"?: string;
-		"text"?: string;
-		"media"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment;
-		"parameters"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter>;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter { 
-		"name"?: string;
-		"text"?: string;
-	}
-	
-	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationReason { 
-		"code"?: string;
-		"message"?: string;
 	}
 	
 	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier { 
@@ -42580,6 +42666,21 @@ declare namespace Models {
 		"surveyTypes"?: Array<string>;
 		"surveyResponseStatuses"?: Array<string>;
 		"botFlowTypes"?: Array<string>;
+		"agentTalkDurationMilliseconds"?: Array<Models.NumericRange>;
+		"customerTalkDurationMilliseconds"?: Array<Models.NumericRange>;
+		"overtalkDurationMilliseconds"?: Array<Models.NumericRange>;
+		"silenceDurationMilliseconds"?: Array<Models.NumericRange>;
+		"acdDurationMilliseconds"?: Array<Models.NumericRange>;
+		"ivrDurationMilliseconds"?: Array<Models.NumericRange>;
+		"otherDurationMilliseconds"?: Array<Models.NumericRange>;
+		"agentTalkPercentage"?: Models.NumericRange;
+		"customerTalkPercentage"?: Models.NumericRange;
+		"overtalkPercentage"?: Models.NumericRange;
+		"silencePercentage"?: Models.NumericRange;
+		"acdPercentage"?: Models.NumericRange;
+		"ivrPercentage"?: Models.NumericRange;
+		"otherPercentage"?: Models.NumericRange;
+		"overtalkInstances"?: Models.NumericRange;
 		"isScreenRecorded"?: boolean;
 		"screenMonitorUserIds"?: Array<string>;
 	}
@@ -45786,6 +45887,7 @@ declare namespace Models {
 		"defaultQueueId"?: Models.WorkitemsAttributeChangeString;
 		"schemaId"?: Models.WorkitemsAttributeChangeString;
 		"schemaVersion"?: Models.WorkitemsAttributeChangeString;
+		"serviceLevelTarget"?: Models.WorkitemsAttributeChangeInteger;
 		"dateModified"?: Models.WorkitemsAttributeChangeInstant;
 		"modifiedBy"?: Models.WorkitemsAttributeChangeString;
 	}

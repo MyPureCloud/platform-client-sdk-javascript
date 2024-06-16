@@ -1,241 +1,520 @@
-Platform API version: 8117
+Platform API version: 8165
 
 
 
 
-# Major Changes (19 changes)
+# Major Changes (10 changes)
 
-**/api/v2/conversations/messaging/integrations/line/{integrationId}** (1 change)
+**/api/v2/conversations/messaging/stickers/{messengerType}** (1 change)
 
-* Path /api/v2/conversations/messaging/integrations/line/{integrationId} was removed
+* Path /api/v2/conversations/messaging/stickers/{messengerType} was removed
 
-**/api/v2/conversations/messaging/integrations/line** (1 change)
+**GET /api/v2/journey/views** (1 change)
 
-* Path /api/v2/conversations/messaging/integrations/line was removed
+* Response 200 type was changed from AddressableEntityListing to JourneyViewListing
 
-**/api/v2/conversations/messaging/integrations/twitter/{integrationId}** (1 change)
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations** (1 change)
 
-* Path /api/v2/conversations/messaging/integrations/twitter/{integrationId} was removed
+* Parameter sourceId was added
 
-**/api/v2/conversations/messaging/integrations/twitter** (1 change)
+**MessagingSticker** (1 change)
 
-* Path /api/v2/conversations/messaging/integrations/twitter was removed
+* Model MessagingSticker was removed
 
-**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships** (1 change)
+**MessagingStickerEntityListing** (1 change)
 
-* Parameter expand was changed from string to array
+* Model MessagingStickerEntityListing was removed
 
-**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
+**AddressableEntityListing** (1 change)
 
-* Parameter expand was changed from string to array
+* Model AddressableEntityListing was removed
 
-**GET /api/v2/externalcontacts/relationships/{relationshipId}** (1 change)
+**FieldConfig** (1 change)
 
-* Parameter expand was changed from string to array
+* Enum value externalContact was removed from property entityType
 
-**ConditionalGroupRoutingCondition** (1 change)
+**KeyPerformanceIndicator** (1 change)
 
-* Model ConditionalGroupRoutingCondition was removed
+* Enum value NumberOfTransfers was removed from property kpiType
 
-**LineIntegration** (1 change)
-
-* Model LineIntegration was removed
-
-**LineIntegrationRequest** (1 change)
-
-* Model LineIntegrationRequest was removed
-
-**LineIntegrationEntityListing** (1 change)
-
-* Model LineIntegrationEntityListing was removed
-
-**TwitterIntegration** (1 change)
-
-* Model TwitterIntegration was removed
-
-**TwitterIntegrationRequest** (1 change)
-
-* Model TwitterIntegrationRequest was removed
-
-**TwitterIntegrationEntityListing** (1 change)
-
-* Model TwitterIntegrationEntityListing was removed
-
-**GenericActionEvent** (1 change)
-
-* Model GenericActionEvent was removed
-
-**GenericEventAction** (1 change)
-
-* Model GenericEventAction was removed
-
-**PhoneStatus** (1 change)
+**EngineIntegration** (1 change)
 
 * Property name was removed
 
-**WfmUserEntityListing** (1 change)
+**FieldConfigs** (1 change)
 
-* Property entities was changed from User[] to UserReference[]
-
-**Event** (1 change)
-
-* Property genericActionEvent was removed
+* Property externalContact was removed
 
 
-# Minor Changes (45 changes)
+# Minor Changes (178 changes)
 
-**/api/v2/audits/query/realtime/related** (2 changes)
+**/api/v2/analytics/reporting/settings/dashboards/query** (1 change)
+
+* Operation get was added. Summary: Get list of dashboard configurations
+
+**/api/v2/conversations/emails/{conversationId}/reconnect** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/outbound/campaigns/{campaignId}/linedistribution** (2 changes)
+**/api/v2/speechandtextanalytics/categories** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/speechandtextanalytics/categories/{categoryId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/speechandtextanalytics/conversations/{conversationId}/categories** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update** (2 changes)
+**GET /api/v2/speechandtextanalytics/topics/general/status** (1 change)
+
+* Response 405 was added
+
+**/api/v2/learning/assignments/{assignmentId}/steps/{stepId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**/api/v2/learning/modules/{moduleId}/preview** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+
+**/api/v2/learning/scorm/{scormId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/learning/scorm** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove** (2 changes)
+**POST /api/v2/taskmanagement/workitems/{workitemId}/terminate** (1 change)
+
+* Response 409 was added
+
+**/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/agentcopilots/aggregates/query** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/outbound/contactlists/{contactListId}/contacts/search** (2 changes)
+**/api/v2/analytics/agentcopilots/aggregates/jobs** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**ConversationAggregateQueryPredicate** (1 change)
+**BotAggregationQuery** (2 changes)
 
-* Enum value videoPresent was added to property dimension
+* Enum value oBotSessionCollection was added to property metrics
+* Enum value oBotSessionCollectionSelfServed was added to property metrics
 
-**ConversationAggregationQuery** (1 change)
+**BotAggregationView** (2 changes)
 
-* Enum value videoPresent was added to property groupBy
+* Enum value oBotSessionCollection was added to property target
+* Enum value oBotSessionCollectionSelfServed was added to property target
 
-**FlowAggregateQueryPredicate** (1 change)
+**AnalyticsSession** (2 changes)
 
-* Enum value videoPresent was added to property dimension
+* Optional property detectedSpeechEnd was added
+* Optional property detectedSpeechStart was added
 
-**FlowAggregationQuery** (1 change)
+**SegmentDetailQueryPredicate** (2 changes)
 
-* Enum value videoPresent was added to property groupBy
+* Enum value detectedSpeechEnd was added to property dimension
+* Enum value detectedSpeechStart was added to property dimension
 
-**ReportingTurn** (1 change)
+**DashboardConfiguration** (2 changes)
 
-* Optional property knowledgeBaseEvents was added
+* Optional property shared was added
+* Optional property dashboardsSharedWith was added
 
-**ReportingTurnKnowledgeEvents** (1 change)
-
-* Model was added
-
-**ReportingTurnKnowledgeFeedbackEvent** (1 change)
-
-* Model was added
-
-**ReportingTurnKnowledgeSearchEvent** (1 change)
+**DashboardsSharedWith** (1 change)
 
 * Model was added
 
-**ConversationProperties** (1 change)
+**ViewFilter** (15 changes)
 
-* Optional property isScreenMonitored was added
+* Optional property agentTalkDurationMilliseconds was added
+* Optional property customerTalkDurationMilliseconds was added
+* Optional property overtalkDurationMilliseconds was added
+* Optional property silenceDurationMilliseconds was added
+* Optional property acdDurationMilliseconds was added
+* Optional property ivrDurationMilliseconds was added
+* Optional property otherDurationMilliseconds was added
+* Optional property agentTalkPercentage was added
+* Optional property customerTalkPercentage was added
+* Optional property overtalkPercentage was added
+* Optional property silencePercentage was added
+* Optional property acdPercentage was added
+* Optional property ivrPercentage was added
+* Optional property otherPercentage was added
+* Optional property overtalkInstances was added
 
-**ViewFilter** (2 changes)
+**KnowledgeBaseReference** (5 changes)
 
-* Optional property isScreenRecorded was added
-* Optional property screenMonitorUserIds was added
+* Enum value hi-IN was added to property languageCode
+* Enum value th-TH was added to property languageCode
+* Enum value hu-HU was added to property languageCode
+* Enum value vi-VN was added to property languageCode
+* Enum value uk-UA was added to property languageCode
 
-**AuditRealtimeRelatedResultsResponse** (1 change)
+**Limit** (1 change)
 
-* Model was added
+* Enum value social.media was added to property namespace
 
-**AuditRealtimeRelatedRequest** (1 change)
+**ContactIdentifier** (1 change)
 
-* Model was added
+* Enum value ExternalId was added to property type
 
-**AiAnswer** (1 change)
+**ConversationMessageMetadataEvent** (1 change)
 
-* Model was added
+* Enum value Video was added to property eventType
 
-**AiScoring** (1 change)
+**CreateCallRequest** (1 change)
 
-* Model was added
+* Optional property attributes was added
 
-**Campaign** (1 change)
-
-* Optional property dynamicLineBalancingSettings was added
-
-**CampaignOutboundLinesAllocation** (1 change)
-
-* Model was added
-
-**CampaignOutboundLinesDistribution** (1 change)
-
-* Model was added
-
-**CampaignOutboundLinesReservation** (1 change)
-
-* Model was added
-
-**CampaignStats** (1 change)
-
-* Optional property linesUtilization was added
-
-**ContactsBulkOperationJob** (1 change)
+**ConversationEventVideo** (1 change)
 
 * Model was added
 
-**ContactBulkEditRequest** (1 change)
+**ConversationMessageEvent** (2 changes)
+
+* Enum value Video was added to property eventType
+* Optional property video was added
+
+**KnowledgeBase** (5 changes)
+
+* Enum value hi-IN was added to property coreLanguage
+* Enum value th-TH was added to property coreLanguage
+* Enum value hu-HU was added to property coreLanguage
+* Enum value vi-VN was added to property coreLanguage
+* Enum value uk-UA was added to property coreLanguage
+
+**KnowledgeCategory** (5 changes)
+
+* Enum value hi-IN was added to property languageCode
+* Enum value th-TH was added to property languageCode
+* Enum value hu-HU was added to property languageCode
+* Enum value vi-VN was added to property languageCode
+* Enum value uk-UA was added to property languageCode
+
+**KnowledgeSearchDocumentV1** (5 changes)
+
+* Enum value hi-IN was added to property languageCode
+* Enum value th-TH was added to property languageCode
+* Enum value hu-HU was added to property languageCode
+* Enum value vi-VN was added to property languageCode
+* Enum value uk-UA was added to property languageCode
+
+**KnowledgeExtendedCategory** (5 changes)
+
+* Enum value hi-IN was added to property languageCode
+* Enum value th-TH was added to property languageCode
+* Enum value hu-HU was added to property languageCode
+* Enum value vi-VN was added to property languageCode
+* Enum value uk-UA was added to property languageCode
+
+**KnowledgeImport** (5 changes)
+
+* Enum value hi-IN was added to property languageCode
+* Enum value th-TH was added to property languageCode
+* Enum value hu-HU was added to property languageCode
+* Enum value vi-VN was added to property languageCode
+* Enum value uk-UA was added to property languageCode
+
+**KnowledgeDocument** (5 changes)
+
+* Enum value hi-IN was added to property languageCode
+* Enum value th-TH was added to property languageCode
+* Enum value hu-HU was added to property languageCode
+* Enum value vi-VN was added to property languageCode
+* Enum value uk-UA was added to property languageCode
+
+**KnowledgeBaseCreateRequest** (5 changes)
+
+* Enum value hi-IN was added to property coreLanguage
+* Enum value th-TH was added to property coreLanguage
+* Enum value hu-HU was added to property coreLanguage
+* Enum value vi-VN was added to property coreLanguage
+* Enum value uk-UA was added to property coreLanguage
+
+**KnowledgeOperationSource** (1 change)
 
 * Model was added
 
-**ContactBulkSearchParameters** (1 change)
+**KnowledgeDocumentResponse** (2 changes)
 
-* Model was added
+* Optional property source was added
+* Optional property readonly was added
 
-**ContactListingResponse** (1 change)
+**KnowledgeExportJobDocumentsFilter** (1 change)
 
-* Model was added
+* Optional property sourceId was added
 
-**ContactListingRequest** (1 change)
+**KnowledgeExportJobResponse** (1 change)
 
-* Model was added
+* Optional property source was added
 
-**EventMessage** (2 changes)
+**KnowledgeExportJobRequest** (1 change)
 
-* Enum value ACTION_EXECUTION_FAILED was added to property code
-* Enum value ACTION_EXECUTION_FAILED_INVALID_PARAMETER was added to property code
+* Optional property sourceId was added
 
-**FlowPathsFlowDetails** (3 changes)
+**KnowledgeSearchDocumentResponse** (2 changes)
 
-* Enum value InboundShortMessage was added to property type
-* Enum value InboundEmail was added to property type
-* Enum value OutboundCall was added to property type
+* Optional property source was added
+* Optional property readonly was added
 
-**IpAddressRange** (1 change)
+**ApprovalNamespace** (1 change)
 
-* Enum value open-messaging was added to property service
+* Enum value social.media was added to property namespace
 
-**Library** (1 change)
+**LimitChangeRequestDetails** (1 change)
 
-* version is no longer readonly
+* Enum value social.media was added to property namespace
 
-**PhoneStatus** (1 change)
+**StatusChange** (1 change)
+
+* Enum value social.media was added to property namespace
+
+**RecordingMessagingMessage** (4 changes)
+
+* Optional property purpose was added
+* Optional property participantId was added
+* Optional property queue was added
+* Optional property workflow was added
+
+**UserQueue** (1 change)
 
 * id is no longer readonly
 
-**ConversationAsyncAggregationQuery** (1 change)
+**UtilizationResponse** (1 change)
 
-* Enum value videoPresent was added to property groupBy
+* Optional property labelUtilizations was added
 
-**FlowAsyncAggregationQuery** (1 change)
+**UtilizationRequest** (1 change)
 
-* Enum value videoPresent was added to property groupBy
+* Optional property labelUtilizations was added
+
+**AgentMaxUtilizationResponse** (1 change)
+
+* Optional property labelUtilizations was added
+
+**CategoriesEntityListing** (1 change)
+
+* Model was added
+
+**InfixOperator** (1 change)
+
+* Model was added
+
+**Operand** (1 change)
+
+* Model was added
+
+**OperandPosition** (1 change)
+
+* Model was added
+
+**OperatorPosition** (1 change)
+
+* Model was added
+
+**StaCategory** (1 change)
+
+* Model was added
+
+**Term** (1 change)
+
+* Model was added
+
+**CategoryRequest** (1 change)
+
+* Model was added
+
+**EngineIntegration** (1 change)
+
+* id is no longer readonly
+
+**ConversationCategoriesEntityListing** (1 change)
+
+* Model was added
+
+**ConversationCategory** (1 change)
+
+* Model was added
+
+**VoicemailSearchCriteria** (1 change)
+
+* Enum value DATE_RANGE was added to property type
+
+**CobrowseSettings** (1 change)
+
+* Optional property pauseCriteria was added
+
+**LearningAssignment** (5 changes)
+
+* Optional property assessmentPercentageScore was added
+* Optional property assessmentCompletionPercentage was added
+* Optional property completionPercentage was added
+* Optional property steps was added
+* Optional property nextStep was added
+
+**LearningModule** (2 changes)
+
+* Optional property enforceContentOrder was added
+* Optional property reviewAssessmentResults was added
+
+**ReviewAssessmentResults** (2 changes)
+
+* Optional property byAssignees was added
+* Optional property byViewers was added
+
+**LearningModulePreviewGetResponse** (1 change)
+
+* Model was added
+
+**LearningModulePreviewGetResponseAssignment** (1 change)
+
+* Model was added
+
+**LearningModulePreviewGetResponseStep** (1 change)
+
+* Model was added
+
+**LearningModulePreviewGetScoStructure** (1 change)
+
+* Model was added
+
+**LearningModuleRequest** (2 changes)
+
+* Optional property enforceContentOrder was added
+* Optional property reviewAssessmentResults was added
+
+**LearningModulePreviewUpdateResponse** (1 change)
+
+* Model was added
+
+**LearningModulePreviewUpdateResponseAssignment** (1 change)
+
+* Model was added
+
+**LearningModulePreviewUpdateResponseCurrentStep** (1 change)
+
+* Model was added
+
+**LearningModulePreviewUpdateScoStructure** (1 change)
+
+* Model was added
+
+**LearningModulePreviewUpdateStep** (1 change)
+
+* Model was added
+
+**LearningModulePreviewUpdateRequest** (1 change)
+
+* Model was added
+
+**LearningModulePreviewUpdateRequestCurrentStep** (1 change)
+
+* Model was added
+
+**AssignedLearningModule** (2 changes)
+
+* Optional property enforceContentOrder was added
+* Optional property reviewAssessmentResults was added
+
+**LearningScormResponse** (1 change)
+
+* Model was added
+
+**LearningScormUploadResponse** (1 change)
+
+* Model was added
+
+**LearningScormUploadRequest** (1 change)
+
+* Model was added
+
+**AgentCopilotAggregateDataContainer** (1 change)
+
+* Model was added
+
+**AgentCopilotAsyncAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**AgentCopilotAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**AgentCopilotAggregateQueryClause** (1 change)
+
+* Model was added
+
+**AgentCopilotAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**AgentCopilotAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**AgentCopilotAggregationQuery** (1 change)
+
+* Model was added
+
+**AgentCopilotAggregationView** (1 change)
+
+* Model was added
+
+**AgentCopilotAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**BotAsyncAggregationQuery** (2 changes)
+
+* Enum value oBotSessionCollection was added to property metrics
+* Enum value oBotSessionCollectionSelfServed was added to property metrics
+
+**JourneyViewListing** (1 change)
+
+* Model was added
+
+**OperationResponse** (1 change)
+
+* Optional property source was added
+
+**WorktypeDelta** (1 change)
+
+* Optional property serviceLevelTarget was added
 
 
-# Point Changes (0 changes)
+# Point Changes (2 changes)
+
+**POST /api/v2/analytics/ratelimits/aggregates/query** (2 changes)
+
+* Description was changed
+* Summary was changed
