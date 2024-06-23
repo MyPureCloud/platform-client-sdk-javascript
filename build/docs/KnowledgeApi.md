@@ -3839,7 +3839,7 @@ apiInstance.postKnowledgeGuestSessionDocumentsSearch(sessionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | Knowledge guest session ID. |  |
- **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives |
+ **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
  **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -4532,7 +4532,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | The ID of knowledge base containing the documents to query. |  |
- **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives |
+ **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
  **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 

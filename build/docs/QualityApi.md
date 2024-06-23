@@ -1000,9 +1000,7 @@ let apiInstance = new platformClient.QualityApi();
 let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | NOTE: Does not work when querying evaluations
   'expand': ["expand_example"], // [String] | variable name requested by expand list
-  'nextPage': "nextPage_example", // String | NOTE: Does not work when querying evaluations
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversationId specified
   'agentUserId': "agentUserId_example", // String | user id of the agent
@@ -1038,9 +1036,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | NOTE: Does not work when querying evaluations | [optional]  |
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
- **nextPage** | **String** | NOTE: Does not work when querying evaluations | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **conversationId** | **String** | conversationId specified | [optional]  |
  **agentUserId** | **String** | user id of the agent | [optional]  |

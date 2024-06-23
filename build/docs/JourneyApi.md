@@ -44,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyViews**](JourneyApi.html#getJourneyViews) | **GET** /api/v2/journey/views | Get a list of Journey Views
 [**getJourneyViewsEventdefinition**](JourneyApi.html#getJourneyViewsEventdefinition) | **GET** /api/v2/journey/views/eventdefinitions/{eventDefinitionId} | Get an Event Definition
 [**getJourneyViewsEventdefinitions**](JourneyApi.html#getJourneyViewsEventdefinitions) | **GET** /api/v2/journey/views/eventdefinitions | Get a list of Event Definitions
+[**getJourneyViewsJobs**](JourneyApi.html#getJourneyViewsJobs) | **GET** /api/v2/journey/views/jobs | Get the jobs for an organization.
 [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
 [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
 [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
@@ -2043,6 +2044,66 @@ This endpoint does not need any parameter.
 ### Return type
 
 **JourneyEventDefinitionListing**
+
+<a name="getJourneyViewsJobs"></a>
+
+# JourneyViewJobListing getJourneyViewsJobs(opts)
+
+
+GET /api/v2/journey/views/jobs
+
+Get the jobs for an organization.
+
+getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* journey:viewsJobs:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | The number of the page to return
+  'pageSize': 25, // Number | Max number of entities to return
+  'interval': 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z, // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
+  'statuses': statuses=Accepted,Executing,Complete,Failed // String | Job statuses to filter for
+};
+
+apiInstance.getJourneyViewsJobs(opts)
+  .then((data) => {
+    console.log(`getJourneyViewsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | The number of the page to return | [optional] [default to 1] |
+ **pageSize** | **Number** | Max number of entities to return | [optional] [default to 25] |
+ **interval** | **String** | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional]  |
+ **statuses** | **String** | Job statuses to filter for | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**JourneyViewJobListing**
 
 <a name="patchJourneyActionmap"></a>
 

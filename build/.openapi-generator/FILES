@@ -930,6 +930,7 @@ docs/getJourneyViewVersionJobsLatest-example.txt
 docs/getJourneyViews-example.txt
 docs/getJourneyViewsEventdefinition-example.txt
 docs/getJourneyViewsEventdefinitions-example.txt
+docs/getJourneyViewsJobs-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
