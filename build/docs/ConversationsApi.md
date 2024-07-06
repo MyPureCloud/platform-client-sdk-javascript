@@ -33,6 +33,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationParticipantWrapup**](ConversationsApi.html#getConversationParticipantWrapup) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationParticipantWrapupcodes**](ConversationsApi.html#getConversationParticipantWrapupcodes) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationSecureattributes**](ConversationsApi.html#getConversationSecureattributes) | **GET** /api/v2/conversations/{conversationId}/secureattributes | Get the secure attributes on a conversation.
+[**getConversationSuggestion**](ConversationsApi.html#getConversationSuggestion) | **GET** /api/v2/conversations/{conversationId}/suggestions/{suggestionId} | Get Suggestion.
+[**getConversationSuggestions**](ConversationsApi.html#getConversationSuggestions) | **GET** /api/v2/conversations/{conversationId}/suggestions | Get all suggestions for a conversation.
 [**getConversations**](ConversationsApi.html#getConversations) | **GET** /api/v2/conversations | Get active conversations for the logged in user
 [**getConversationsCall**](ConversationsApi.html#getConversationsCall) | **GET** /api/v2/conversations/calls/{conversationId} | Get call conversation
 [**getConversationsCallParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsCallParticipantCommunicationWrapup) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
@@ -160,6 +162,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationParticipantReplaceExternal**](ConversationsApi.html#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact
 [**postConversationParticipantReplaceQueue**](ConversationsApi.html#postConversationParticipantReplaceQueue) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue
 [**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+[**postConversationSuggestionEngagement**](ConversationsApi.html#postConversationSuggestionEngagement) | **POST** /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement | Save an engagement on the suggestion.
+[**postConversationSuggestionsFeedback**](ConversationsApi.html#postConversationSuggestionsFeedback) | **POST** /api/v2/conversations/{conversationId}/suggestions/feedback | Suggestion feedback.
 [**postConversationSummaryFeedback**](ConversationsApi.html#postConversationSummaryFeedback) | **POST** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Submit feedback for the summary.
 [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
 [**postConversationsCallParticipantBarge**](ConversationsApi.html#postConversationsCallParticipantBarge) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge | Barge a given participant's call creating a barged in conference of connected participants.
@@ -1563,6 +1567,120 @@ apiInstance.getConversationSecureattributes(conversationId)
 ### Return type
 
 **ConversationSecureAttributes**
+
+<a name="getConversationSuggestion"></a>
+
+# Suggestion getConversationSuggestion(conversationId, suggestionId)
+
+
+GET /api/v2/conversations/{conversationId}/suggestions/{suggestionId}
+
+Get Suggestion.
+
+Requires ALL permissions:
+
+* conversation:suggestion:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let suggestionId = "suggestionId_example"; // String | Suggestion ID
+
+apiInstance.getConversationSuggestion(conversationId, suggestionId)
+  .then((data) => {
+    console.log(`getConversationSuggestion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationSuggestion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **suggestionId** | **String** | Suggestion ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Suggestion**
+
+<a name="getConversationSuggestions"></a>
+
+# SuggestionListing getConversationSuggestions(conversationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/suggestions
+
+Get all suggestions for a conversation.
+
+Requires ALL permissions:
+
+* conversation:suggestion:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'type': "type_example", // String | Suggestion type to filter by.
+  'state': "state_example" // String | Suggestion state to filter Copilot suggestions.
+};
+
+apiInstance.getConversationSuggestions(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationSuggestions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationSuggestions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script |
+ **state** | **String** | Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed |
+{: class="table table-striped"}
+
+### Return type
+
+**SuggestionListing**
 
 <a name="getConversations"></a>
 
@@ -8231,6 +8349,112 @@ apiInstance.postConversationParticipantSecureivrsessions(conversationId, partici
 ### Return type
 
 **SecureSession**
+
+<a name="postConversationSuggestionEngagement"></a>
+
+# SuggestionEngagement postConversationSuggestionEngagement(conversationId, suggestionId, body)
+
+
+POST /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement
+
+Save an engagement on the suggestion.
+
+Requires ALL permissions:
+
+* conversation:suggestionEngagement:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let suggestionId = "suggestionId_example"; // String | Suggestion ID
+let body = {}; // Object | 
+
+apiInstance.postConversationSuggestionEngagement(conversationId, suggestionId, body)
+  .then((data) => {
+    console.log(`postConversationSuggestionEngagement success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationSuggestionEngagement');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **suggestionId** | **String** | Suggestion ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SuggestionEngagement**
+
+<a name="postConversationSuggestionsFeedback"></a>
+
+# void postConversationSuggestionsFeedback(conversationId, body)
+
+
+POST /api/v2/conversations/{conversationId}/suggestions/feedback
+
+Suggestion feedback.
+
+Requires ANY permissions:
+
+* conversation:suggestionFeedback:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let body = {}; // Object | SuggestionFeedback
+
+apiInstance.postConversationSuggestionsFeedback(conversationId, body)
+  .then(() => {
+    console.log('postConversationSuggestionsFeedback returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationSuggestionsFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **body** | **Object** | SuggestionFeedback |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postConversationSummaryFeedback"></a>
 

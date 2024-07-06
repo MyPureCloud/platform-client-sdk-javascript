@@ -1,82 +1,304 @@
-Platform API version: 8189
+Platform API version: 8209
 
 
 
 
-# Major Changes (8 changes)
+# Major Changes (16 changes)
 
-**GET /api/v2/quality/evaluations/query** (2 changes)
+**/api/v2/outbound/audits** (1 change)
 
-* Parameter sortBy was removed
-* Parameter nextPage was removed
+* Path /api/v2/outbound/audits was removed
 
-**CreateCallRequest** (1 change)
+**POST /api/v2/externalcontacts/identifierlookup** (1 change)
 
-* Property attributes was removed
+* Parameter expand was added
 
-**MessageData** (1 change)
+**GET /api/v2/routing/sms/phonenumbers** (1 change)
 
-* Enum value line was removed from property messengerType
+* Parameter supportedContent.id was added
 
-**MessagingIntegration** (1 change)
+**GET /api/v2/learning/assignments/{assignmentId}/steps/{stepId}** (1 change)
 
-* Enum value line was removed from property messengerType
+* Parameter defaultShareableContentObject was added
 
-**ConversationThreadingWindowSetting** (1 change)
+**GET /api/v2/journey/sessions/{sessionId}/events** (1 change)
 
-* Enum value line was removed from property messengerType
+* Parameter eventType was added
 
-**Miner** (1 change)
+**AuditEntity** (1 change)
 
-* Enum value nl-nl was removed from property language
+* Model AuditEntity was removed
 
-**Recipient** (1 change)
+**AuditMessage** (1 change)
 
-* Enum value line was removed from property messengerType
+* Model AuditMessage was removed
+
+**AuditSearchResult** (1 change)
+
+* Model AuditSearchResult was removed
+
+**AuditUser** (1 change)
+
+* Model AuditUser was removed
+
+**Change** (1 change)
+
+* Model Change was removed
+
+**Entry** (1 change)
+
+* Model Entry was removed
+
+**FacetInfo** (1 change)
+
+* Model FacetInfo was removed
+
+**ServiceContext** (1 change)
+
+* Model ServiceContext was removed
+
+**AuditFacet** (1 change)
+
+* Model AuditFacet was removed
+
+**AuditFilter** (1 change)
+
+* Model AuditFilter was removed
+
+**DialerAuditRequest** (1 change)
+
+* Model DialerAuditRequest was removed
 
 
-# Minor Changes (14 changes)
+# Minor Changes (71 changes)
 
-**GET /api/v2/speechandtextanalytics/programs/unpublished** (1 change)
+**/api/v2/users/agentui/agents/autoanswer/{agentId}/settings** (5 changes)
 
-* Response 405 was added
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**/api/v2/journey/views/jobs** (2 changes)
+**POST /api/v2/conversations/calls** (1 change)
+
+* Response 202 was added
+
+**/api/v2/conversations/{conversationId}/suggestions/feedback** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/conversations/{conversationId}/suggestions** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**Room** (1 change)
+**/api/v2/conversations/{conversationId}/suggestions/{suggestionId}** (2 changes)
 
-* Optional property jid was added
+* Path was added
+* Operation GET was added
 
-**CampaignBusinessCategoryMetrics** (1 change)
+**/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/outbound/campaigns/{campaignId}** (1 change)
+
+* Operation patch was added. Summary: Update a campaign.
+
+**POST /api/v2/speechandtextanalytics/programs/publishjobs** (1 change)
+
+* Response 405 was added
+
+**PUT /api/v2/speechandtextanalytics/programs/{programId}** (1 change)
+
+* Response 202 was added
+
+**DELETE /api/v2/speechandtextanalytics/programs/{programId}** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/speechandtextanalytics/programs** (1 change)
+
+* Response 202 was added
+
+**/api/v2/employeeengagement/celebrations/{celebrationId}** (3 changes)
+
+* Path was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/employeeengagement/celebrations** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/employeeengagement/recognitions/{recognitionId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/employeeengagement/recognitions** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**AutoAnswerSetting** (1 change)
 
 * Model was added
 
-**FlowExecutionDataQueryResult** (1 change)
+**AutoAnswerSettings** (1 change)
 
-* Optional property flowWarningReason was added
+* Model was added
 
-**RecipientAdditionalIdentifier** (3 changes)
+**Feedback** (1 change)
 
-* Enum value Topic was added to property type
-* Enum value IngestionRule was added to property type
-* Enum value IngestionRuleVersion was added to property type
+* Model was added
 
-**EvaluationResponse** (1 change)
+**Article** (1 change)
 
-* Optional property revisionCreatedDate was added
+* Model was added
 
-**FunctionZipConfig** (3 changes)
+**Faq** (1 change)
 
-* Enum value Invalid was added to property status
-* Enum value InvalidFormat was added to property status
-* Enum value InvalidFile was added to property status
+* Model was added
 
-**JourneyViewJobListing** (1 change)
+**MetadataAttribute** (1 change)
+
+* Model was added
+
+**Suggestion** (1 change)
+
+* Model was added
+
+**SuggestionCannedResponse** (1 change)
+
+* Model was added
+
+**SuggestionContext** (1 change)
+
+* Model was added
+
+**SuggestionKnowledgeAnswer** (1 change)
+
+* Model was added
+
+**SuggestionKnowledgeArticle** (1 change)
+
+* Model was added
+
+**SuggestionKnowledgeSearch** (1 change)
+
+* Model was added
+
+**SuggestionListing** (1 change)
+
+* Model was added
+
+**SuggestionScript** (1 change)
+
+* Model was added
+
+**SuggestionEngagement** (1 change)
+
+* Model was added
+
+**SuggestionFeedback** (1 change)
+
+* Model was added
+
+**CampaignPatchRequest** (1 change)
+
+* Model was added
+
+**DynamicLineBalancingSettingsPatchRequest** (1 change)
+
+* Model was added
+
+**CampaignRuleParameters** (5 changes)
+
+* Optional property abandonRate was added
+* Optional property outboundLineCount was added
+* Optional property relativeWeight was added
+* Optional property maxCallsPerAgent was added
+* Optional property queue was added
+
+**ContactBulkSearchParameters** (1 change)
+
+* Optional property generateDownloadUri was added
+
+**ContactBulkEditRequest** (1 change)
+
+* Optional property generateDownloadUri was added
+
+**KnowledgeDocumentResponse** (1 change)
+
+* Optional property externalUrl was added
+
+**KnowledgeSearchDocumentResponse** (1 change)
+
+* Optional property externalUrl was added
+
+**ContentAttachment** (1 change)
+
+* Optional property contentSizeBytes was added
+
+**ContentReaction** (3 changes)
+
+* Enum value Share was added to property reactionType
+* Enum value Comment was added to property reactionType
+* Enum value View was added to property reactionType
+
+**MessagingRecipient** (1 change)
+
+* Enum value Topic was added to property idType
+
+**Program** (1 change)
+
+* Optional property topicLinksJob was added
+
+**DeleteProgramResponse** (1 change)
+
+* Model was added
+
+**BotSearchResponse** (2 changes)
+
+* Enum value GenesysDigitalBotFlow was added to property botType
+* Enum value GenesysVoiceSurveyFlow was added to property botType
+
+**CelebrationStateParam** (1 change)
+
+* Model was added
+
+**Celebration** (1 change)
+
+* Model was added
+
+**GetCelebrationListing** (1 change)
+
+* Model was added
+
+**SourceEntity** (1 change)
+
+* Model was added
+
+**Recognition** (1 change)
+
+* Model was added
+
+**RecognitionBase** (1 change)
+
+* Model was added
+
+**CreateRecognition** (1 change)
 
 * Model was added
 
 
-# Point Changes (0 changes)
+# Point Changes (1 change)
+
+**GET /api/v2/externalcontacts/contacts/{contactId}** (1 change)
+
+* Description was changed for parameter expand

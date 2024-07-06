@@ -234,6 +234,7 @@ let assignmentId = "assignmentId_example"; // String | The ID of Learning Assign
 let stepId = "stepId_example"; // String | The ID of Learning Assignment Step
 let opts = { 
   'shareableContentObjectId': "shareableContentObjectId_example", // String | The ID of SCO to load
+  'defaultShareableContentObject': "defaultShareableContentObject_example", // String | The default SCO to retrieve
   'expand': ["expand_example"] // [String] | Fields to expand in response
 };
 
@@ -255,6 +256,7 @@ apiInstance.getLearningAssignmentStep(assignmentId, stepId, opts)
  **assignmentId** | **String** | The ID of Learning Assignment |  |
  **stepId** | **String** | The ID of Learning Assignment Step |  |
  **shareableContentObjectId** | **String** | The ID of SCO to load | [optional]  |
+ **defaultShareableContentObject** | **String** | The default SCO to retrieve | [optional] <br />**Values**: First, Last, Next |
  **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: moduleStep |
 {: class="table table-striped"}
 

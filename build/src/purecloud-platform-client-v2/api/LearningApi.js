@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 196.0.0
+	 * @version 197.0.0
 	 */
 
 	/**
@@ -106,6 +106,7 @@ class LearningApi {
 	 * @param {String} stepId The ID of Learning Assignment Step
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.shareableContentObjectId The ID of SCO to load
+	 * @param {Object} opts.defaultShareableContentObject The default SCO to retrieve
 	 * @param {Array.<String>} opts.expand Fields to expand in response
 	 */
 	getLearningAssignmentStep(assignmentId, stepId, opts) { 
@@ -124,7 +125,7 @@ class LearningApi {
 			'/api/v2/learning/assignments/{assignmentId}/steps/{stepId}', 
 			'GET', 
 			{ 'assignmentId': assignmentId,'stepId': stepId },
-			{ 'shareableContentObjectId': opts['shareableContentObjectId'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'shareableContentObjectId': opts['shareableContentObjectId'],'defaultShareableContentObject': opts['defaultShareableContentObject'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

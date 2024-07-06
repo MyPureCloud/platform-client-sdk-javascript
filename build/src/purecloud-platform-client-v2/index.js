@@ -1,6 +1,7 @@
 
 import PureCloudRegionHosts from './PureCloudRegionHosts.js';
 import ApiClient from './ApiClient.js';
+import AgentUIApi from './api/AgentUIApi.js';
 import AlertingApi from './api/AlertingApi.js';
 import AnalyticsApi from './api/AnalyticsApi.js';
 import ArchitectApi from './api/ArchitectApi.js';
@@ -15,6 +16,7 @@ import ConversationsApi from './api/ConversationsApi.js';
 import DataExtensionsApi from './api/DataExtensionsApi.js';
 import DownloadsApi from './api/DownloadsApi.js';
 import EmailsApi from './api/EmailsApi.js';
+import EmployeeEngagementApi from './api/EmployeeEngagementApi.js';
 import EventsApi from './api/EventsApi.js';
 import ExternalContactsApi from './api/ExternalContactsApi.js';
 import FaxApi from './api/FaxApi.js';
@@ -107,7 +109,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 196.0.0
+ * @version 197.0.0
  */
 class platformClient {
 	constructor() {
@@ -121,6 +123,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/ApiClient}
 		 */
 		this.ApiClientClass = ApiClient;
+		/**
+		 * The AgentUIApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/AgentUIApi}
+		 */
+		this.AgentUIApi = AgentUIApi;
 		/**
 		 * The AlertingApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/AlertingApi}
@@ -191,6 +198,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/EmailsApi}
 		 */
 		this.EmailsApi = EmailsApi;
+		/**
+		 * The EmployeeEngagementApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/EmployeeEngagementApi}
+		 */
+		this.EmployeeEngagementApi = EmployeeEngagementApi;
 		/**
 		 * The EventsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/EventsApi}

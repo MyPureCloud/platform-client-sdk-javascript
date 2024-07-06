@@ -63,7 +63,7 @@ apiInstance.getTextbotsBotsSearch(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **botType** | **[String]** | Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow |
+ **botType** | **[String]** | Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow |
  **botName** | **String** | Bot name | [optional]  |
  **botId** | **[String]** | Bot IDs | [optional]  |
  **pageSize** | **Number** | The maximum results to return | [optional] [default to 25] |

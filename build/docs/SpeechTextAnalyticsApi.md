@@ -160,7 +160,7 @@ void (no response body)
 
 <a name="deleteSpeechandtextanalyticsProgram"></a>
 
-# void deleteSpeechandtextanalyticsProgram(programId, opts)
+# DeleteProgramResponse deleteSpeechandtextanalyticsProgram(programId, opts)
 
 
 DELETE /api/v2/speechandtextanalytics/programs/{programId}
@@ -190,8 +190,8 @@ let opts = {
 };
 
 apiInstance.deleteSpeechandtextanalyticsProgram(programId, opts)
-  .then(() => {
-    console.log('deleteSpeechandtextanalyticsProgram returned successfully.');
+  .then((data) => {
+    console.log(`deleteSpeechandtextanalyticsProgram success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling deleteSpeechandtextanalyticsProgram');
@@ -210,7 +210,7 @@ apiInstance.deleteSpeechandtextanalyticsProgram(programId, opts)
 
 ### Return type
 
-void (no response body)
+**DeleteProgramResponse**
 
 <a name="deleteSpeechandtextanalyticsSentimentfeedback"></a>
 

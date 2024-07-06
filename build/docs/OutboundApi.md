@@ -104,12 +104,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | **GET** /api/v2/outbound/sequences | Query a list of dialer campaign sequences.
 [**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | **GET** /api/v2/outbound/settings | Get the outbound settings for this organization
 [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | **GET** /api/v2/outbound/wrapupcodemappings | Get the Dialer wrap up code mapping.
+[**patchOutboundCampaign**](OutboundApi.html#patchOutboundCampaign) | **PATCH** /api/v2/outbound/campaigns/{campaignId} | Update a campaign.
 [**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#patchOutboundDnclistCustomexclusioncolumns) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Add entries to or delete entries from a DNC list.
 [**patchOutboundDnclistEmailaddresses**](OutboundApi.html#patchOutboundDnclistEmailaddresses) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add emails to or Delete emails from a DNC list.
 [**patchOutboundDnclistPhonenumbers**](OutboundApi.html#patchOutboundDnclistPhonenumbers) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add numbers to or delete numbers from a DNC list.
 [**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | **PATCH** /api/v2/outbound/settings | Update the outbound settings for this organization
 [**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | **POST** /api/v2/outbound/attemptlimits | Create attempt limits
-[**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | **POST** /api/v2/outbound/audits | Retrieves audits for dialer. (Deprecated)
 [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | **POST** /api/v2/outbound/callabletimesets | Create callable time set
 [**postOutboundCallanalysisresponsesets**](OutboundApi.html#postOutboundCallanalysisresponsesets) | **POST** /api/v2/outbound/callanalysisresponsesets | Create a dialer call analysis response set.
 [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | **POST** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview | Initiate request for a preview of how agents will be mapped to this campaign's contact list.
@@ -5454,6 +5454,58 @@ This endpoint does not need any parameter.
 
 **WrapUpCodeMapping**
 
+<a name="patchOutboundCampaign"></a>
+
+# void patchOutboundCampaign(campaignId, body)
+
+
+PATCH /api/v2/outbound/campaigns/{campaignId}
+
+Update a campaign.
+
+Requires ALL permissions:
+
+* outbound:campaign:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let body = {}; // Object | CampaignPatchRequest
+
+apiInstance.patchOutboundCampaign(campaignId, body)
+  .then(() => {
+    console.log('patchOutboundCampaign returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundCampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+ **body** | **Object** | CampaignPatchRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="patchOutboundDnclistCustomexclusioncolumns"></a>
 
 # void patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
@@ -5715,71 +5767,6 @@ apiInstance.postOutboundAttemptlimits(body)
 ### Return type
 
 **AttemptLimits**
-
-<a name="postOutboundAudits"></a>
-
-# AuditSearchResult postOutboundAudits(body, opts)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-POST /api/v2/outbound/audits
-
-Retrieves audits for dialer. (Deprecated)
-
-This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use "/api/v2/audits/query" instead.
-
-Requires ANY permissions:
-
-* outbound:audit:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.OutboundApi();
-
-let body = {}; // Object | AuditSearch
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'sortBy': "entity.name", // String | Sort by
-  'sortOrder': "ascending", // String | Sort order
-  'facetsOnly': false // Boolean | Facets only
-};
-
-apiInstance.postOutboundAudits(body, opts)
-  .then((data) => {
-    console.log(`postOutboundAudits success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postOutboundAudits');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | AuditSearch |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to entity.name] |
- **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
- **facetsOnly** | **Boolean** | Facets only | [optional] [default to false] |
-{: class="table table-striped"}
-
-### Return type
-
-**AuditSearchResult**
 
 <a name="postOutboundCallabletimesets"></a>
 

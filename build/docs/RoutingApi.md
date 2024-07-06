@@ -3864,7 +3864,7 @@ apiInstance.getRoutingSmsPhonenumber(addressId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
- **expand** | **String** | Expand response with additional information | [optional] <br />**Values**: compliance |
+ **expand** | **String** | Expand response with additional information | [optional] <br />**Values**: compliance, supportedContent |
 {: class="table table-striped"}
 
 ### Return type
@@ -3907,7 +3907,8 @@ let opts = {
   'sortBy': "sortBy_example", // String | Optional field to sort results
   'sortOrder': "sortOrder_example", // String | Sort order
   'language': en-US, // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations
-  'integrationId': "integrationId_example" // String | Filter on the Genesys Cloud integration id to which the phone number belongs to
+  'integrationId': "integrationId_example", // String | Filter on the Genesys Cloud integration id to which the phone number belongs to
+  'supportedContentId': "supportedContentId_example" // String | Filter based on the supported content ID
 };
 
 apiInstance.getRoutingSmsPhonenumbers(opts)
@@ -3935,6 +3936,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
  **sortOrder** | **String** | Sort order | [optional] <br />**Values**: ascending, descending |
  **language** | **String** | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations | [optional] [default to en-US] |
  **integrationId** | **String** | Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional]  |
+ **supportedContentId** | **String** | Filter based on the supported content ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

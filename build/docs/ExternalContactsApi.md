@@ -468,7 +468,7 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization,externalDataSources)
+  'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
 };
 
 apiInstance.getExternalcontactsContact(contactId, opts)
@@ -487,7 +487,7 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
- **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] <br />**Values**: externalOrganization, externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
 {: class="table table-striped"}
 
 ### Return type
@@ -3038,7 +3038,7 @@ apiInstance.postExternalcontactsContactsSchemas(body)
 
 <a name="postExternalcontactsIdentifierlookup"></a>
 
-# ExternalContact postExternalcontactsIdentifierlookup(identifier)
+# ExternalContact postExternalcontactsIdentifierlookup(identifier, opts)
 
 
 POST /api/v2/externalcontacts/identifierlookup
@@ -3066,8 +3066,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let identifier = {}; // Object | 
+let opts = { 
+  'expand': ["expand_example"] // [String] | which field, if any, to expand
+};
 
-apiInstance.postExternalcontactsIdentifierlookup(identifier)
+apiInstance.postExternalcontactsIdentifierlookup(identifier, opts)
   .then((data) => {
     console.log(`postExternalcontactsIdentifierlookup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3083,6 +3086,7 @@ apiInstance.postExternalcontactsIdentifierlookup(identifier)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **identifier** | **Object** |  |  |
+ **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers |
 {: class="table table-striped"}
 
 ### Return type

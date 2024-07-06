@@ -1,5 +1,7 @@
 .openapi-generator-ignore
 README.md
+docs/AgentUIApi.json
+docs/AgentUIApi.md
 docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AnalyticsApi.json
@@ -28,6 +30,8 @@ docs/DownloadsApi.json
 docs/DownloadsApi.md
 docs/EmailsApi.json
 docs/EmailsApi.md
+docs/EmployeeEngagementApi.json
+docs/EmployeeEngagementApi.md
 docs/EventsApi.json
 docs/EventsApi.md
 docs/ExternalContactsApi.json
@@ -201,6 +205,7 @@ docs/deleteConversationsMessagingSetting-example.txt
 docs/deleteConversationsMessagingSettingsDefault-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/deleteDiagnosticsLogcaptureBrowserUser-example.txt
+docs/deleteEmployeeengagementCelebration-example.txt
 docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/deleteExternalcontactsContact-example.txt
 docs/deleteExternalcontactsContactNote-example.txt
@@ -388,6 +393,8 @@ docs/deleteUserStationAssociatedstation-example.txt
 docs/deleteUserStationDefaultstation-example.txt
 docs/deleteUserVerifier-example.txt
 docs/deleteUserrecording-example.txt
+docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
+docs/deleteUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/deleteVoicemailMessage-example.txt
 docs/deleteVoicemailMessages-example.txt
 docs/deleteWebchatDeployment-example.txt
@@ -610,6 +617,8 @@ docs/getConversationRecordingmetadata-example.txt
 docs/getConversationRecordingmetadataRecordingId-example.txt
 docs/getConversationRecordings-example.txt
 docs/getConversationSecureattributes-example.txt
+docs/getConversationSuggestion-example.txt
+docs/getConversationSuggestions-example.txt
 docs/getConversations-example.txt
 docs/getConversationsCall-example.txt
 docs/getConversationsCallParticipantCommunicationWrapup-example.txt
@@ -692,6 +701,8 @@ docs/getDocumentationSearch-example.txt
 docs/getDownload-example.txt
 docs/getEmailsSettings-example.txt
 docs/getEmailsSettings-example.txt
+docs/getEmployeeengagementCelebrations-example.txt
+docs/getEmployeeengagementRecognition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
@@ -1468,6 +1479,8 @@ docs/getUserrecordingMedia-example.txt
 docs/getUserrecordings-example.txt
 docs/getUserrecordingsSummary-example.txt
 docs/getUsers-example.txt
+docs/getUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
+docs/getUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/getUsersDevelopmentActivities-example.txt
 docs/getUsersDevelopmentActivitiesMe-example.txt
 docs/getUsersDevelopmentActivity-example.txt
@@ -1654,6 +1667,7 @@ docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchConversationsSettings-example.txt
 docs/patchEmailsSettings-example.txt
 docs/patchEmailsSettings-example.txt
+docs/patchEmployeeengagementCelebration-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchExternalcontactsContactIdentifiers-example.txt
 docs/patchFlowsInstancesSettingsExecutiondata-example.txt
@@ -1691,6 +1705,7 @@ docs/patchMessagingSetting-example.txt
 docs/patchMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchOrganizationsAuthenticationSettings-example.txt
 docs/patchOrganizationsFeature-example.txt
+docs/patchOutboundCampaign-example.txt
 docs/patchOutboundDnclistCustomexclusioncolumns-example.txt
 docs/patchOutboundDnclistEmailaddresses-example.txt
 docs/patchOutboundDnclistPhonenumbers-example.txt
@@ -1741,6 +1756,8 @@ docs/patchUserRoutinglanguagesBulk-example.txt
 docs/patchUserRoutinglanguagesBulk-example.txt
 docs/patchUserRoutingskillsBulk-example.txt
 docs/patchUserRoutingskillsBulk-example.txt
+docs/patchUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
+docs/patchUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/patchUsersBulk-example.txt
 docs/patchVoicemailGroupPolicy-example.txt
 docs/patchVoicemailMePolicy-example.txt
@@ -1910,6 +1927,8 @@ docs/postConversationParticipantReplaceExternal-example.txt
 docs/postConversationParticipantReplaceQueue-example.txt
 docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationRecordingAnnotations-example.txt
+docs/postConversationSuggestionEngagement-example.txt
+docs/postConversationSuggestionsFeedback-example.txt
 docs/postConversationSummaryFeedback-example.txt
 docs/postConversationsCall-example.txt
 docs/postConversationsCallParticipantBarge-example.txt
@@ -1978,6 +1997,7 @@ docs/postDiagnosticsLogcaptureBrowserUser-example.txt
 docs/postDocumentationAllSearch-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
+docs/postEmployeeengagementRecognitions-example.txt
 docs/postEmployeeperformanceExternalmetricsData-example.txt
 docs/postEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/postEventsConversations-example.txt
@@ -2163,7 +2183,6 @@ docs/postOrgauthorizationTrusteesAudits-example.txt
 docs/postOrgauthorizationTrusteesDefault-example.txt
 docs/postOrgauthorizationTrustorAudits-example.txt
 docs/postOutboundAttemptlimits-example.txt
-docs/postOutboundAudits-example.txt
 docs/postOutboundCallabletimesets-example.txt
 docs/postOutboundCallanalysisresponsesets-example.txt
 docs/postOutboundCampaignAgentownedmappingpreview-example.txt
@@ -2641,6 +2660,8 @@ docs/putUserStationAssociatedstationStationId-example.txt
 docs/putUserStationDefaultstationStationId-example.txt
 docs/putUserVerifier-example.txt
 docs/putUserrecording-example.txt
+docs/putUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
+docs/putUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/putUsersPresencesBulk-example.txt
 docs/putVoicemailMessage-example.txt
 docs/putVoicemailPolicy-example.txt
@@ -2659,6 +2680,7 @@ rollup-amd.config.js
 rollup-cjs-for-browserify.config.js
 rollup-cjs-for-node.config.js
 src/purecloud-platform-client-v2/ApiClient.js
+src/purecloud-platform-client-v2/api/AgentUIApi.js
 src/purecloud-platform-client-v2/api/AlertingApi.js
 src/purecloud-platform-client-v2/api/AnalyticsApi.js
 src/purecloud-platform-client-v2/api/ArchitectApi.js
@@ -2673,6 +2695,7 @@ src/purecloud-platform-client-v2/api/ConversationsApi.js
 src/purecloud-platform-client-v2/api/DataExtensionsApi.js
 src/purecloud-platform-client-v2/api/DownloadsApi.js
 src/purecloud-platform-client-v2/api/EmailsApi.js
+src/purecloud-platform-client-v2/api/EmployeeEngagementApi.js
 src/purecloud-platform-client-v2/api/EventsApi.js
 src/purecloud-platform-client-v2/api/ExternalContactsApi.js
 src/purecloud-platform-client-v2/api/FaxApi.js

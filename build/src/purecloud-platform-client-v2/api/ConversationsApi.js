@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 196.0.0
+	 * @version 197.0.0
 	 */
 
 	/**
@@ -715,6 +715,69 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Suggestion.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} suggestionId Suggestion ID
+	 */
+	getConversationSuggestion(conversationId, suggestionId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestion';
+		}
+		// verify the required parameter 'suggestionId' is set
+		if (suggestionId === undefined || suggestionId === null) {
+			throw 'Missing the required parameter "suggestionId" when calling getConversationSuggestion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/suggestions/{suggestionId}', 
+			'GET', 
+			{ 'conversationId': conversationId,'suggestionId': suggestionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all suggestions for a conversation.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object} opts.type Suggestion type to filter by.
+	 * @param {Object} opts.state Suggestion state to filter Copilot suggestions.
+	 */
+	getConversationSuggestions(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationSuggestions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/suggestions', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'type': opts['type'],'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -4533,6 +4596,71 @@ class ConversationsApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Save an engagement on the suggestion.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} suggestionId Suggestion ID
+	 * @param {Object} body 
+	 */
+	postConversationSuggestionEngagement(conversationId, suggestionId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationSuggestionEngagement';
+		}
+		// verify the required parameter 'suggestionId' is set
+		if (suggestionId === undefined || suggestionId === null) {
+			throw 'Missing the required parameter "suggestionId" when calling postConversationSuggestionEngagement';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationSuggestionEngagement';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement', 
+			'POST', 
+			{ 'conversationId': conversationId,'suggestionId': suggestionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Suggestion feedback.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {Object} body SuggestionFeedback
+	 */
+	postConversationSuggestionsFeedback(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationSuggestionsFeedback';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationSuggestionsFeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/suggestions/feedback', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

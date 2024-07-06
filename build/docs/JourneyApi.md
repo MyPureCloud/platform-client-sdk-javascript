@@ -1542,7 +1542,8 @@ let apiInstance = new platformClient.JourneyApi();
 let sessionId = "sessionId_example"; // String | System-generated UUID that represents the session the event is a part of.
 let opts = { 
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'after': "after_example" // String | The cursor that points to the end of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'eventType': "eventType_example" // String | A comma separated list of journey event types to include in the results.
 };
 
 apiInstance.getJourneySessionEvents(sessionId, opts)
@@ -1563,6 +1564,7 @@ apiInstance.getJourneySessionEvents(sessionId, opts)
  **sessionId** | **String** | System-generated UUID that represents the session the event is a part of. |  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **eventType** | **String** | A comma separated list of journey event types to include in the results. | [optional] <br />**Values**: com.genesys.journey.OutcomeAchievedEvent, com.genesys.journey.SegmentAssignmentEvent, com.genesys.journey.WebActionEvent, com.genesys.journey.WebEvent, com.genesys.journey.AppEvent |
 {: class="table table-striped"}
 
 ### Return type

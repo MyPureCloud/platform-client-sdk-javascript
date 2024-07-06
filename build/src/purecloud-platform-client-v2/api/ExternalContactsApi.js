@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 196.0.0
+	 * @version 197.0.0
 	 */
 
 	/**
@@ -210,7 +210,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} contactId ExternalContact ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization,externalDataSources)
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
 	 */
 	getExternalcontactsContact(contactId, opts) { 
 		opts = opts || {};
@@ -1526,8 +1526,12 @@ class ExternalContactsApi {
 	 * Fetch a contact using an identifier type and value.
 	 * Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
 	 * @param {Object} identifier 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which field, if any, to expand
 	 */
-	postExternalcontactsIdentifierlookup(identifier) { 
+	postExternalcontactsIdentifierlookup(identifier, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'identifier' is set
 		if (identifier === undefined || identifier === null) {
 			throw 'Missing the required parameter "identifier" when calling postExternalcontactsIdentifierlookup';
@@ -1537,7 +1541,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/identifierlookup', 
 			'POST', 
 			{  },
-			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			identifier, 

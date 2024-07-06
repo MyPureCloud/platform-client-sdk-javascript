@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 196.0.0
+	 * @version 197.0.0
 	 */
 
 	/**
@@ -2622,6 +2622,36 @@ class OutboundApi {
 	}
 
 	/**
+	 * Update a campaign.
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 * @param {Object} body CampaignPatchRequest
+	 */
+	patchOutboundCampaign(campaignId, body) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling patchOutboundCampaign';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOutboundCampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}', 
+			'PATCH', 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Add entries to or delete entries from a DNC list.
 	 * Only Internal DNC lists may be deleted from
 	 * @param {String} dncListId DncList ID
@@ -2752,40 +2782,6 @@ class OutboundApi {
 			'POST', 
 			{  },
 			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves audits for dialer. (Deprecated)
-	 * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use "/api/v2/audits/query" instead.
-	 * @param {Object} body AuditSearch
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to entity.name)
-	 * @param {String} opts.sortOrder Sort order (default to ascending)
-	 * @param {Boolean} opts.facetsOnly Facets only (default to false)
-	 * @deprecated
-	 */
-	postOutboundAudits(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundAudits';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/audits', 
-			'POST', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'facetsOnly': opts['facetsOnly'] },
 			{  },
 			{  },
 			body, 

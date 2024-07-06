@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 196.0.0
+	 * @version 197.0.0
 	 */
 
 	/**
@@ -749,6 +749,7 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Object} opts.eventType A comma separated list of journey event types to include in the results.
 	 * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneySessionEvents(sessionId, opts) { 
@@ -763,7 +764,7 @@ class JourneyApi {
 			'/api/v2/journey/sessions/{sessionId}/events', 
 			'GET', 
 			{ 'sessionId': sessionId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'eventType': opts['eventType'] },
 			{  },
 			{  },
 			null, 
