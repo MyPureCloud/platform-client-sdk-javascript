@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 197.0.0
+	 * @version 198.0.0
 	 */
 
 	/**
@@ -616,32 +616,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * To get status of the modeling job.
-	 * This Endpoint is Deprecated, and not recommended to be used.
-	 * @param {String} jobId The id of the modeling job
-	 * @deprecated
-	 */
-	getWorkforcemanagementAdhocmodelingjob(jobId) { 
-		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdhocmodelingjob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}', 
-			'GET', 
-			{ 'jobId': jobId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get an adherence explanation
 	 * 
 	 * @param {String} agentId The ID of the agent to query
@@ -795,6 +769,129 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
 			{ 'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an activity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan to fetch
+	 * getWorkforcemanagementBusinessunitActivityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplan';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null) {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets an activity plan run job
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan associated with the run job
+	 * @param {String} jobId The ID of the activity plan run job
+	 * getWorkforcemanagementBusinessunitActivityplanRunsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null) {
+			throw 'Missing the required parameter "activityPlanId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitActivityplanRunsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get activity plans
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.state Optionally filter by activity plan state
+	 * getWorkforcemanagementBusinessunitActivityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'state': opts['state'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the latest job for all activity plans in the business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * getWorkforcemanagementBusinessunitActivityplansJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivityplansJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -2968,6 +3065,42 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Update an activity plan
+	 * If a job associated with the activity plan is in Processing state the activity plan cannot be updated
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan to update
+	 * @param {Object} body body
+	 * patchWorkforcemanagementBusinessunitActivityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivityplan';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null) {
+			throw 'Missing the required parameter "activityPlanId" when calling patchWorkforcemanagementBusinessunitActivityplan';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitActivityplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates the planning group
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
@@ -3768,6 +3901,68 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Run an activity plan manually
+	 * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} activityPlanId The ID of the activity plan to run
+	 * postWorkforcemanagementBusinessunitActivityplanRunsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplanRunsJobs';
+		}
+		// verify the required parameter 'activityPlanId' is set
+		if (activityPlanId === undefined || activityPlanId === null) {
+			throw 'Missing the required parameter "activityPlanId" when calling postWorkforcemanagementBusinessunitActivityplanRunsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'activityPlanId': activityPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an activity plan
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body body
+	 * postWorkforcemanagementBusinessunitActivityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivityplans';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitActivityplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

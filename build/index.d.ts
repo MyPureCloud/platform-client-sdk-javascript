@@ -1499,6 +1499,7 @@ declare class ConversationsApi {
   	patchConversationsEmailParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
   	patchConversationsEmailParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>; 
   	patchConversationsEmailParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>; 
+  	patchConversationsEmailParticipantParkingstate(conversationId: string, participantId: string, body: Models.ParkingStateRequest): Promise<void>; 
   	patchConversationsMessage(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
   	patchConversationsMessageParticipant(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsMessageParticipantOptions): Promise<void>; 
   	patchConversationsMessageParticipantAttributes(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsMessageParticipantAttributesOptions): Promise<Models.ParticipantAttributes>; 
@@ -1576,7 +1577,7 @@ declare class ConversationsApi {
   	postConversationsMessageParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsMessageParticipantCommunicationWrapupOptions): Promise<void>; 
   	postConversationsMessageParticipantMonitor(conversationId: string, participantId: string): Promise<void>; 
   	postConversationsMessageParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
-  	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.MessageConversation>; 
+  	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.CreateOutboundMessagingConversationResponse>; 
   	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest): Promise<Models.SendAgentlessOutboundMessageResponse>; 
   	postConversationsMessagesInboundOpen(body: Models.OpenNormalizedMessage): Promise<Models.OpenNormalizedMessage>; 
   	postConversationsMessagingIntegrationsFacebook(body: Models.FacebookIntegrationRequest): Promise<Models.FacebookIntegration>; 
@@ -2796,6 +2797,7 @@ declare class JourneyApi {
   	postJourneyActiontemplates(opts?: JourneyApi.postJourneyActiontemplatesOptions): Promise<Models.ActionTemplate>; 
   	postJourneyDeploymentActionevent(deploymentId: string, body: Models.ActionEventRequest): Promise<void>; 
   	postJourneyDeploymentAppevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentAppeventsOptions): Promise<Models.AppEventResponse>; 
+  	postJourneyDeploymentWebevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentWebeventsOptions): Promise<Models.WebEventResponse>; 
   	postJourneyFlowsPathsQuery(opts?: JourneyApi.postJourneyFlowsPathsQueryOptions): Promise<Models.FlowPaths>; 
   	postJourneyOutcomes(opts?: JourneyApi.postJourneyOutcomesOptions): Promise<Models.Outcome>; 
   	postJourneyOutcomesAttributionsJobs(opts?: JourneyApi.postJourneyOutcomesAttributionsJobsOptions): Promise<Models.OutcomeAttributionAsyncResponse>; 
@@ -2900,6 +2902,9 @@ declare namespace JourneyApi {
 	}
 	export interface postJourneyDeploymentAppeventsOptions { 
 		"body"?: Models.AppEventRequest;
+	}
+	export interface postJourneyDeploymentWebeventsOptions { 
+		"body"?: Models.WebEventRequest;
 	}
 	export interface postJourneyFlowsPathsQueryOptions { 
 		"body"?: Models.FlowPathsQuery;
@@ -4424,6 +4429,7 @@ declare class QualityApi {
   	putQualityConversationEvaluation(conversationId: string, evaluationId: string, body: Models.Evaluation, opts?: QualityApi.putQualityConversationEvaluationOptions): Promise<Models.EvaluationResponse>; 
   	putQualityForm(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
   	putQualityFormsEvaluation(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
+  	putQualityFormsEvaluationPredictivescoringSettings(formId: string, body: Models.PredictiveScoringSettings): Promise<Models.PredictiveScoringSettings>; 
   	putQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>; 
   	putQualitySurveysScorable(customerSurveyUrl: string, body: Models.ScorableSurvey): Promise<Models.ScorableSurvey>;
 }
@@ -5758,6 +5764,7 @@ declare namespace TaskManagementApi {
 		"after"?: string;
 		"pageSize"?: number;
 		"sortOrder"?: string;
+		"fields"?: Array<string>;
 	}
 	export interface getTaskmanagementWorktypeVersionsOptions { 
 		"after"?: string;
@@ -6700,13 +6707,16 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementAdherenceExplanationsJob(jobId: string): Promise<Models.AdherenceExplanationJob>; 
   	getWorkforcemanagementAdherenceHistoricalBulkJob(jobId: string): Promise<Models.WfmHistoricalAdherenceBulkResponse>; 
   	getWorkforcemanagementAdherenceHistoricalJob(jobId: string): Promise<Models.WfmHistoricalAdherenceResponse>; 
-  	getWorkforcemanagementAdhocmodelingjob(jobId: string): Promise<Models.ModelingStatusResponse>; 
   	getWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string): Promise<Models.AdherenceExplanationResponse>; 
   	getWorkforcemanagementAgentManagementunit(agentId: string): Promise<Models.AgentManagementUnitReference>; 
   	getWorkforcemanagementAgentsMeManagementunit(): Promise<Models.AgentManagementUnitReference>; 
   	getWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
   	getWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string): Promise<Models.BusinessUnitActivityCode>; 
   	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCodeListing>; 
+  	getWorkforcemanagementBusinessunitActivityplan(businessUnitId: string, activityPlanId: string): Promise<Models.ActivityPlanResponse>; 
+  	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId: string, activityPlanId: string, jobId: string): Promise<Models.ActivityPlanRunJobResponse>; 
+  	getWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplansOptions): Promise<Models.ActivityPlanListing>; 
+  	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId: string): Promise<Models.ActivityPlanJobListing>; 
   	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId: string, _date: string): Promise<Models.WfmIntradayPlanningGroupListing>; 
   	getWorkforcemanagementBusinessunitManagementunits(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitManagementunitsOptions): Promise<Models.ManagementUnitListing>; 
   	getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string): Promise<Models.PlanningGroup>; 
@@ -6779,6 +6789,7 @@ declare class WorkforceManagementApi {
   	patchWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string, body: Models.UpdateAdherenceExplanationStatusRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
   	patchWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
   	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitActivitycodeOptions): Promise<Models.BusinessUnitActivityCode>; 
+  	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId: string, activityPlanId: string, body: Models.UpdateActivityPlanRequest): Promise<Models.ActivityPlanResponse>; 
   	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitPlanninggroupOptions): Promise<Models.PlanningGroup>; 
   	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitSchedulingRunOptions): Promise<void>; 
   	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>; 
@@ -6805,6 +6816,8 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementAgentsMePossibleworkshifts(body: Models.AgentPossibleWorkShiftsRequest): Promise<Models.AgentPossibleWorkShiftsResponse>; 
   	postWorkforcemanagementAgentschedulesMine(opts?: WorkforceManagementApi.postWorkforcemanagementAgentschedulesMineOptions): Promise<Models.BuCurrentAgentScheduleSearchResponse>; 
   	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCode>; 
+  	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId: string, activityPlanId: string): Promise<Models.ActivityPlanJobResponse>; 
+  	postWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, body: Models.CreateActivityPlanRequest): Promise<Models.ActivityPlanResponse>; 
   	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId: string, body: Models.BuQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAdherenceExplanationsQueryOptions): Promise<Models.BuQueryAdherenceExplanationsResponse>; 
   	postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>; 
   	postWorkforcemanagementBusinessunitIntraday(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitIntradayOptions): Promise<Models.AsyncIntradayResponse>; 
@@ -6880,6 +6893,9 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface getWorkforcemanagementBusinessunitActivitycodesOptions { 
 		"forceDownloadService"?: boolean;
+	}
+	export interface getWorkforcemanagementBusinessunitActivityplansOptions { 
+		"state"?: string;
 	}
 	export interface getWorkforcemanagementBusinessunitManagementunitsOptions { 
 		"feature"?: string;
@@ -7685,9 +7701,123 @@ declare namespace Models {
 	
 	export interface ActivityCodeReference { 
 		"id": string;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityCodeSummary { 
+		"id": string;
 		"name"?: string;
 		"secondaryPresences"?: Array<Models.SecondaryPresence>;
 		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanAbandonRateImpactOverride { 
+		"increaseByPercent": number;
+	}
+	
+	export interface ActivityPlanAsaImpactOverride { 
+		"increaseByPercent": number;
+	}
+	
+	export interface ActivityPlanJobException { 
+		"exceptionType": string;
+		"occurrences": Array<Models.ActivityPlanOccurrenceReference>;
+	}
+	
+	export interface ActivityPlanJobListing { 
+		"entities"?: Array<Models.ActivityPlanJobResponse>;
+	}
+	
+	export interface ActivityPlanJobResponse { 
+		"id"?: string;
+		"activityPlan": Models.ActivityPlanReference;
+		"status": string;
+		"exceptions": Array<Models.ActivityPlanJobException>;
+		"error"?: Models.ErrorBody;
+		"occurrence"?: Models.ActivityPlanOccurrenceReference;
+		"type": string;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanListItem { 
+		"id"?: string;
+		"name": string;
+		"managementUnits"?: Array<Models.ManagementUnitReference>;
+		"description": string;
+		"activityCode": Models.ActivityCodeReference;
+		"type": string;
+		"optimizationObjective": string;
+		"recurrenceSettings"?: Models.RecurrenceSettings;
+		"state": string;
+		"lastRunDate"?: string;
+		"lastRunBy"?: Models.UserReference;
+		"createdDate": string;
+		"createdBy": Models.UserReference;
+		"modifiedDate": string;
+		"modifiedBy": Models.UserReference;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanListing { 
+		"entities"?: Array<Models.ActivityPlanListItem>;
+	}
+	
+	export interface ActivityPlanOccurrenceReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanResponse { 
+		"id"?: string;
+		"name": string;
+		"managementUnits"?: Array<Models.ManagementUnitReference>;
+		"description": string;
+		"activityCode": Models.ActivityCodeReference;
+		"type": string;
+		"initialSchedulePeriod": Models.SchedulingPeriod;
+		"lengthMinutes": number;
+		"groupSettings"?: Models.GroupSettings;
+		"recurrenceSettings"?: Models.RecurrenceSettings;
+		"attendeesSearchRule"?: Models.UserSearchRule;
+		"facilitated": boolean;
+		"facilitatorsSearchRule"?: Models.UserSearchRule;
+		"transitionTimeMinutes": number;
+		"serviceGoalImpactOverrides"?: Models.ActivityPlanServiceGoalImpactOverrides;
+		"optimizationObjective": string;
+		"fixedAvailability"?: Array<Models.FixedAvailability>;
+		"state": string;
+		"countsAsPaidTime": boolean;
+		"createdDate": string;
+		"createdBy": Models.UserReference;
+		"modifiedDate": string;
+		"modifiedBy": Models.UserReference;
+		"lastRunDate"?: string;
+		"lastRunBy"?: Models.UserReference;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanRunJobResponse { 
+		"id"?: string;
+		"activityPlan": Models.ActivityPlanReference;
+		"status": string;
+		"exceptions": Array<Models.ActivityPlanJobException>;
+		"error"?: Models.ErrorBody;
+		"selfUri"?: string;
+	}
+	
+	export interface ActivityPlanServiceGoalImpactOverrides { 
+		"abandonRate": Models.ActivityPlanAbandonRateImpactOverride;
+		"serviceLevel": Models.ActivityPlanServiceLevelImpactOverride;
+		"averageSpeedOfAnswer": Models.ActivityPlanAsaImpactOverride;
+	}
+	
+	export interface ActivityPlanServiceLevelImpactOverride { 
+		"decreaseByPercent": number;
 	}
 	
 	export interface AcwDetailEventTopicAfterCallWorkEvent { 
@@ -8254,20 +8384,6 @@ declare namespace Models {
 		"lt"?: number;
 	}
 	
-	export interface AiAnswer { 
-		"answerId"?: string;
-		"explanation"?: string;
-		"failureType"?: string;
-	}
-	
-	export interface AiScoring { 
-	}
-	
-	export interface AiScoringSettings { 
-		"enabled"?: boolean;
-		"prompt"?: string;
-	}
-	
 	export interface AlertListing { 
 		"entities"?: Array<Models.CommonAlert>;
 		"pageSize"?: number;
@@ -8512,6 +8628,7 @@ declare namespace Models {
 		"participantId"?: string;
 		"participantName"?: string;
 		"purpose"?: string;
+		"screenRecording"?: boolean;
 		"teamId"?: string;
 		"userId"?: string;
 		"sessions"?: Array<Models.AnalyticsSession>;
@@ -8525,6 +8642,7 @@ declare namespace Models {
 		"participantId"?: string;
 		"participantName"?: string;
 		"purpose"?: string;
+		"screenRecording"?: boolean;
 		"teamId"?: string;
 		"userId"?: string;
 		"sessions"?: Array<Models.AnalyticsSession>;
@@ -9667,6 +9785,11 @@ declare namespace Models {
 		"supportedCountries"?: Array<string>;
 	}
 	
+	export interface AvailabilityRange { 
+		"earliestStartMinutesFromMidnight": number;
+		"latestEndMinutesFromMidnight": number;
+	}
+	
 	export interface AvailableMediaType { 
 		"mediaType"?: string;
 		"availableSubTypes"?: Array<string>;
@@ -9992,6 +10115,7 @@ declare namespace Models {
 		"botResult"?: string;
 		"botResultCategory"?: string;
 		"dateCreated"?: string;
+		"dateCompleted"?: string;
 		"conversation"?: Models.AddressableEntityRef;
 	}
 	
@@ -11293,6 +11417,7 @@ declare namespace Models {
 		"conversationRoutingData"?: Models.ConversationRoutingData;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"parkTime"?: string;
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"recording"?: boolean;
@@ -11521,6 +11646,7 @@ declare namespace Models {
 		"conversationRoutingData"?: Models.ConversationRoutingData;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"parkTime"?: string;
 		"outboundPreview"?: Models.DialerPreview;
 		"voicemail"?: Models.Voicemail;
 		"callbackNumbers"?: Array<string>;
@@ -12099,6 +12225,7 @@ declare namespace Models {
 		"conversationRoutingData"?: Models.ConversationRoutingData;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"parkTime"?: string;
 		"roomId"?: string;
 		"avatarImageUrl"?: string;
 	}
@@ -12446,6 +12573,7 @@ declare namespace Models {
 		"conversationRoutingData"?: Models.ConversationRoutingData;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"parkTime"?: string;
 		"cobrowseSessionId"?: string;
 		"cobrowseRole"?: string;
 		"controlling"?: Array<string>;
@@ -15551,6 +15679,11 @@ declare namespace Models {
 		"matchAll"?: boolean;
 	}
 	
+	export interface ConversationPublicMetadata { 
+		"rootId"?: string;
+		"replyToId"?: string;
+	}
+	
 	export interface ConversationQuery { 
 		"conversationFilters"?: Array<Models.ConversationDetailQueryFilter>;
 		"segmentFilters"?: Array<Models.SegmentDetailQueryFilter>;
@@ -16094,6 +16227,27 @@ declare namespace Models {
 		"secondaryPresences"?: Array<Models.SecondaryPresence>;
 	}
 	
+	export interface CreateActivityPlanRequest { 
+		"name": string;
+		"managementUnitIds"?: Array<string>;
+		"description"?: string;
+		"activityCodeId": string;
+		"type": string;
+		"lengthMinutes": number;
+		"initialSchedulePeriod": Models.SchedulingPeriod;
+		"groupSettings"?: Models.GroupSettings;
+		"recurrenceSettings"?: Models.RecurrenceSettings;
+		"attendeesSearchRule"?: Models.UserSearchRule;
+		"facilitated"?: boolean;
+		"facilitatorsSearchRule"?: Models.UserSearchRule;
+		"transitionTimeMinutes": number;
+		"serviceGoalImpactOverrides"?: Models.ActivityPlanServiceGoalImpactOverrides;
+		"optimizationObjective": string;
+		"state": string;
+		"countsAsPaidTime": boolean;
+		"fixedAvailability"?: Array<Models.FixedAvailability>;
+	}
+	
 	export interface CreateAdminTimeOffRequest { 
 		"status": string;
 		"users": Array<Models.UserReference>;
@@ -16146,6 +16300,7 @@ declare namespace Models {
 		"callQueueId"?: string;
 		"callUserId"?: string;
 		"priority"?: number;
+		"attributes"?: { [key: string]: string; };
 		"languageId"?: string;
 		"routingSkillsIds"?: Array<string>;
 		"conversationIds"?: Array<string>;
@@ -16285,6 +16440,11 @@ declare namespace Models {
 		"toAddressMessengerType": string;
 		"useExistingConversation"?: boolean;
 		"externalContactId"?: string;
+	}
+	
+	export interface CreateOutboundMessagingConversationResponse { 
+		"id"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface CreatePerformanceProfile { 
@@ -18068,7 +18228,28 @@ declare namespace Models {
 		"name"?: string;
 	}
 	
+	export interface DialerSequenceScheduleConfigChangeAlteration { 
+		"type"?: string;
+		"start"?: string;
+		"end"?: string;
+		"additionalProperties"?: { [key: string]: object; };
+	}
+	
 	export interface DialerSequenceScheduleConfigChangeObject { 
+	}
+	
+	export interface DialerSequenceScheduleConfigChangeRecurrencePattern { 
+		"type"?: string;
+		"interval"?: number;
+		"daysOfWeek"?: Array<string>;
+		"additionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface DialerSequenceScheduleConfigChangeRecurrenceRange { 
+		"type"?: string;
+		"end"?: string;
+		"numberOfOccurrences"?: number;
+		"additionalProperties"?: { [key: string]: object; };
 	}
 	
 	export interface DialerSequenceScheduleConfigChangeScheduleInterval { 
@@ -18077,8 +18258,20 @@ declare namespace Models {
 		"additionalProperties"?: { [key: string]: object; };
 	}
 	
+	export interface DialerSequenceScheduleConfigChangeScheduleRecurrence { 
+		"id"?: string;
+		"start"?: string;
+		"end"?: string;
+		"timeZone"?: string;
+		"range"?: Models.DialerSequenceScheduleConfigChangeRecurrenceRange;
+		"pattern"?: Models.DialerSequenceScheduleConfigChangeRecurrencePattern;
+		"alterations"?: Array<Models.DialerSequenceScheduleConfigChangeAlteration>;
+		"additionalProperties"?: { [key: string]: object; };
+	}
+	
 	export interface DialerSequenceScheduleConfigChangeSequenceSchedule { 
 		"intervals"?: Array<Models.DialerSequenceScheduleConfigChangeScheduleInterval>;
+		"recurrences"?: Array<Models.DialerSequenceScheduleConfigChangeScheduleRecurrence>;
 		"timeZone"?: string;
 		"sequence"?: Models.DialerSequenceScheduleConfigChangeUriReference;
 		"additionalProperties"?: { [key: string]: object; };
@@ -18731,6 +18924,11 @@ declare namespace Models {
 	export interface DocumentContentHighlightIndex { 
 		"startIndex"?: number;
 		"endIndex"?: number;
+	}
+	
+	export interface DocumentElementLength { 
+		"value": number;
+		"unit": string;
 	}
 	
 	export interface DocumentEntityListing { 
@@ -19823,6 +20021,7 @@ declare namespace Models {
 		"afterCallWork"?: Models.AfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"queueMediaSettings"?: Models.ConversationQueueMediaSettings;
+		"parkTime"?: string;
 	}
 	
 	export interface EmailAddress { 
@@ -20029,6 +20228,7 @@ declare namespace Models {
 		"conversationRoutingData"?: Models.ConversationRoutingData;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"parkTime"?: string;
 		"subject"?: string;
 		"messagesSent"?: number;
 		"autoGenerated"?: boolean;
@@ -21977,6 +22177,12 @@ declare namespace Models {
 		"preview"?: Array<Models.DialerContact>;
 	}
 	
+	export interface FixedAvailability { 
+		"availabilityRange"?: Models.AvailabilityRange;
+		"dateRange"?: Models.RequiredLocalDateRange;
+		"daysOfWeek"?: Array<string>;
+	}
+	
 	export interface Flow { 
 		"id"?: string;
 		"name": string;
@@ -23171,6 +23377,14 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface GenericTemplate { 
+		"title"?: string;
+		"description"?: string;
+		"url"?: string;
+		"components"?: Array<Models.RecordingButtonComponent>;
+		"actions"?: Models.RecordingContentActions;
+	}
+	
 	export interface GenesysBotConnector { 
 		"queryParameters"?: { [key: string]: string; };
 	}
@@ -23515,6 +23729,13 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"sort"?: Array<Models.SearchSort>;
 		"query"?: Array<Models.GroupSearchCriteria>;
+	}
+	
+	export interface GroupSettings { 
+		"minimumGroupSize"?: number;
+		"maximumGroupSize"?: number;
+		"maximumTotalSessions"?: number;
+		"maximumConcurrentSessions"?: number;
 	}
 	
 	export interface GroupUpdate { 
@@ -27983,6 +28204,10 @@ declare namespace Models {
 		"actions"?: Models.ContentActions;
 	}
 	
+	export interface ListWrapperFixedAvailability { 
+		"values"?: Array<Models.FixedAvailability>;
+	}
+	
 	export interface ListWrapperInterval { 
 		"values"?: Array<string>;
 	}
@@ -28740,6 +28965,7 @@ declare namespace Models {
 		"conversationRoutingData"?: Models.ConversationRoutingData;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"parkTime"?: string;
 		"toAddress"?: Models.Address;
 		"fromAddress"?: Models.Address;
 		"messages"?: Array<Models.MessageDetails>;
@@ -29393,18 +29619,6 @@ declare namespace Models {
 		"notifications": Models.MobileNotificationSettings;
 	}
 	
-	export interface ModelingProcessingError { 
-		"internalErrorCode"?: string;
-		"description"?: string;
-	}
-	
-	export interface ModelingStatusResponse { 
-		"id"?: string;
-		"status"?: string;
-		"errorDetails"?: Array<Models.ModelingProcessingError>;
-		"modelingResultUri"?: string;
-	}
-	
 	export interface ModifiableRuleProperties { 
 		"id"?: string;
 		"name": string;
@@ -29740,6 +29954,10 @@ declare namespace Models {
 	
 	export interface NotificationsResponse { 
 		"entities"?: Array<Models.WfmUserNotification>;
+	}
+	
+	export interface NotificationsSettings { 
+		"enabled"?: boolean;
 	}
 	
 	export interface NuanceApplication { 
@@ -31116,6 +31334,10 @@ declare namespace Models {
 		"pageNumber": number;
 	}
 	
+	export interface ParkingStateRequest { 
+		"state": string;
+	}
+	
 	export interface ParsedCertificate { 
 		"certificateDetails"?: Array<Models.CertificateDetails>;
 	}
@@ -32068,6 +32290,15 @@ declare namespace Models {
 		"nuanceMixDlg"?: { [key: string]: object; };
 	}
 	
+	export interface PredictedAnswer { 
+		"answerId"?: string;
+		"explanation"?: string;
+		"failureType"?: string;
+	}
+	
+	export interface PredictedScoring { 
+	}
+	
 	export interface PredictionResults { 
 		"intent"?: string;
 		"formula": string;
@@ -32077,6 +32308,16 @@ declare namespace Models {
 	export interface PredictiveRouting { 
 		"respectSkills"?: boolean;
 		"enableConversationScoreBiasing"?: boolean;
+	}
+	
+	export interface PredictiveScoringSetting { 
+		"enabled"?: boolean;
+	}
+	
+	export interface PredictiveScoringSettings { 
+		"id"?: string;
+		"questionGroupSettings"?: Array<Models.QuestionGroupSettings>;
+		"selfUri"?: string;
 	}
 	
 	export interface Predictor { 
@@ -32264,6 +32505,11 @@ declare namespace Models {
 		"description"?: string;
 		"topicIds"?: Array<string>;
 		"tags"?: Array<string>;
+	}
+	
+	export interface ProgramTopicLinksTopicsDefinitionsJob { 
+		"id"?: string;
+		"state"?: string;
 	}
 	
 	export interface ProgramTranscriptionEngine { 
@@ -32629,6 +32875,16 @@ declare namespace Models {
 	
 	export interface QueryWaitlistPositionsRequest { 
 		"timeOffRequests": Array<Models.UserTimeOffRequestReference>;
+	}
+	
+	export interface QuestionGroupSettings { 
+		"questionGroupIndex"?: number;
+		"questionSettings"?: Array<Models.QuestionSettings>;
+	}
+	
+	export interface QuestionSettings { 
+		"questionIndex"?: number;
+		"settings"?: Models.PredictiveScoringSetting;
 	}
 	
 	export interface Queue { 
@@ -35550,6 +35806,18 @@ declare namespace Models {
 		"actualTranscodeTimeMs"?: number;
 	}
 	
+	export interface RecordingButtonComponent { 
+		"title"?: string;
+		"actions"?: Models.RecordingContentActions;
+		"isSelected"?: boolean;
+	}
+	
+	export interface RecordingContentActions { 
+		"url"?: string;
+		"urlTarget"?: string;
+		"textback"?: string;
+	}
+	
 	export interface RecordingContentStory { 
 		"type"?: string;
 		"url"?: string;
@@ -35746,6 +36014,22 @@ declare namespace Models {
 	export interface RecordingUploadReportRequest { 
 		"dateSince": string;
 		"uploadStatus"?: string;
+	}
+	
+	export interface RecurrenceEndSettings { 
+		"lastDate"?: string;
+		"noEndDate"?: boolean;
+	}
+	
+	export interface RecurrencePeriod { 
+		"magnitude": number;
+		"granularity": string;
+	}
+	
+	export interface RecurrenceSettings { 
+		"recurrencePeriod": Models.RecurrencePeriod;
+		"minimumTimeBetweenOccurrences": Models.RecurrencePeriod;
+		"endAfter": Models.RecurrenceEndSettings;
 	}
 	
 	export interface Referrer { 
@@ -35966,6 +36250,7 @@ declare namespace Models {
 		"knowledge"?: Models.ReportingTurnKnowledge;
 		"knowledgeBaseEvents"?: Models.ReportingTurnKnowledgeEvents;
 		"dateCreated"?: string;
+		"dateCompleted"?: string;
 		"askActionResult"?: string;
 		"sessionEndDetails"?: Models.SessionEndDetails;
 		"conversation"?: Models.AddressableEntityRef;
@@ -36114,9 +36399,21 @@ declare namespace Models {
 		"value"?: string;
 	}
 	
+	export interface RequestPage { 
+		"url": string;
+		"title": string;
+		"keywords"?: string;
+		"lang"?: string;
+	}
+	
 	export interface RequestScoredAgent { 
 		"id"?: string;
 		"score"?: number;
+	}
+	
+	export interface RequiredLocalDateRange { 
+		"startDate": string;
+		"endDate": string;
 	}
 	
 	export interface ReschedulingManagementUnitResponse { 
@@ -36339,6 +36636,18 @@ declare namespace Models {
 		"name": string;
 		"operator": string;
 		"values": Array<string>;
+	}
+	
+	export interface ResponsePage { 
+		"url": string;
+		"title": string;
+		"domain": string;
+		"fragment"?: string;
+		"hostname": string;
+		"keywords"?: string;
+		"lang"?: string;
+		"pathname": string;
+		"queryString"?: string;
 	}
 	
 	export interface ResponseQueryRequest { 
@@ -36891,6 +37200,11 @@ declare namespace Models {
 	
 	export interface SchedulingOptionsRequest { 
 		"noForecastOptions"?: Models.SchedulingNoForecastOptionsRequest;
+	}
+	
+	export interface SchedulingPeriod { 
+		"earliestStartDate": string;
+		"latestEndDate": string;
 	}
 	
 	export interface SchedulingProcessingError { 
@@ -40909,6 +41223,19 @@ declare namespace Models {
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
+	export interface UpdateActivityPlanRequest { 
+		"name"?: string;
+		"description"?: string;
+		"groupSettings"?: Models.ValueWrapperGroupSettings;
+		"attendeesSearchRule"?: Models.ValueWrapperUserSearchRule;
+		"facilitatorsSearchRule"?: Models.ValueWrapperUserSearchRule;
+		"transitionTimeMinutes"?: number;
+		"serviceGoalImpactOverrides"?: Models.ValueWrapperActivityPlanServiceGoalImpactOverrides;
+		"optimizationObjective"?: string;
+		"state"?: string;
+		"fixedAvailability"?: Models.ListWrapperFixedAvailability;
+	}
+	
 	export interface UpdateAdherenceExplanationStatusRequest { 
 		"status"?: string;
 	}
@@ -41963,7 +42290,7 @@ declare namespace Models {
 		"managementUnit"?: Models.ManagementUnitReference;
 		"team"?: Models.TeamReference;
 		"scheduledActivityCategory"?: string;
-		"scheduledActivityCode"?: Models.ActivityCodeReference;
+		"scheduledActivityCode"?: Models.ActivityCodeSummary;
 		"systemPresence"?: string;
 		"organizationSecondaryPresenceId"?: string;
 		"routingStatus"?: string;
@@ -42032,6 +42359,16 @@ declare namespace Models {
 		"query"?: Array<Models.UserSearchCriteria>;
 		"integrationPresenceSource"?: string;
 		"enforcePermissions"?: boolean;
+	}
+	
+	export interface UserSearchRule { 
+		"parts": Array<Models.UserSearchRulePart>;
+	}
+	
+	export interface UserSearchRulePart { 
+		"operation": string;
+		"selector": string;
+		"ids": Array<string>;
 	}
 	
 	export interface UserSkillEntityListing { 
@@ -42575,6 +42912,26 @@ declare namespace Models {
 		"waitBetweenNotificationMs"?: number;
 	}
 	
+	export interface V2WemEngagementCelebrationUpdatesTopicEngagementCelebration { 
+		"id"?: string;
+		"recipient"?: Models.V2WemEngagementCelebrationUpdatesTopicUserId;
+		"createdBy"?: Models.V2WemEngagementCelebrationUpdatesTopicUserId;
+		"dateCreated"?: string;
+		"type"?: string;
+		"title"?: string;
+		"note"?: string;
+		"sourceEntity"?: Models.V2WemEngagementCelebrationUpdatesTopicSourceEntity;
+	}
+	
+	export interface V2WemEngagementCelebrationUpdatesTopicSourceEntity { 
+		"id"?: string;
+		"type"?: string;
+	}
+	
+	export interface V2WemEngagementCelebrationUpdatesTopicUserId { 
+		"id"?: string;
+	}
+	
 	export interface ValidateAddressRequest { 
 		"address"?: Models.StreetAddress;
 	}
@@ -42613,8 +42970,16 @@ declare namespace Models {
 		"uploadKey": string;
 	}
 	
+	export interface ValueWrapperActivityPlanServiceGoalImpactOverrides { 
+		"value"?: Models.ActivityPlanServiceGoalImpactOverrides;
+	}
+	
 	export interface ValueWrapperDate { 
 		"value"?: string;
+	}
+	
+	export interface ValueWrapperGroupSettings { 
+		"value"?: Models.GroupSettings;
 	}
 	
 	export interface ValueWrapperHrisTimeOffType { 
@@ -42627,6 +42992,10 @@ declare namespace Models {
 	
 	export interface ValueWrapperString { 
 		"value"?: string;
+	}
+	
+	export interface ValueWrapperUserSearchRule { 
+		"value"?: Models.UserSearchRule;
 	}
 	
 	export interface VerificationResult { 
@@ -43415,6 +43784,69 @@ declare namespace Models {
 		"authenticated": boolean;
 	}
 	
+	export interface WebEventBrowser { 
+		"family": string;
+		"version": string;
+		"lang"?: string;
+	}
+	
+	export interface WebEventDevice { 
+		"category": string;
+		"type": string;
+		"isMobile"?: boolean;
+		"screenHeight"?: number;
+		"screenWidth"?: number;
+		"screenDensity"?: number;
+		"osFamily": string;
+		"osVersion": string;
+		"manufacturer"?: string;
+	}
+	
+	export interface WebEventRequest { 
+		"customerCookieId": string;
+		"eventName": string;
+		"page": Models.RequestPage;
+		"userAgentString"?: string;
+		"browser"?: Models.WebEventBrowser;
+		"device"?: Models.WebEventDevice;
+		"searchQuery"?: string;
+		"ipAddress"?: string;
+		"referrerUrl"?: string;
+		"attributes"?: { [key: string]: Models.CustomEventAttribute; };
+		"traits"?: { [key: string]: Models.CustomEventAttribute; };
+		"createdDate": string;
+	}
+	
+	export interface WebEventResponse { 
+		"customerId": string;
+		"eventName": string;
+		"customerIdType": string;
+		"page": Models.ResponsePage;
+		"userAgentString": string;
+		"browser": Models.WebEventBrowser;
+		"device": Models.WebEventDevice;
+		"searchQuery"?: string;
+		"ipOrganization"?: string;
+		"geolocation"?: Models.JourneyGeolocation;
+		"mktCampaign"?: Models.JourneyCampaign;
+		"session": Models.WebEventResponseSession;
+		"referrer"?: Models.Referrer;
+		"attributes": { [key: string]: Models.CustomEventAttribute; };
+		"traits": { [key: string]: Models.CustomEventAttribute; };
+		"authenticated": boolean;
+		"createdDate": string;
+	}
+	
+	export interface WebEventResponseSession { 
+		"id"?: string;
+		"durationInSeconds": number;
+		"eventCount": number;
+		"pageviewCount": number;
+		"referrer"?: Models.Referrer;
+		"selfUri"?: string;
+		"createdDate": string;
+	}
+	
 	export interface WebMessagingAttachment { 
 		"id"?: string;
 		"mediaType"?: string;
@@ -43594,6 +44026,65 @@ declare namespace Models {
 		"dateStart"?: string;
 		"lengthInMinutes"?: number;
 		"status"?: string;
+	}
+	
+	export interface WfmActivityPlanJobCompleteTopicActivityPlanJobException { 
+		"exceptionType"?: string;
+		"occurrences"?: Array<Models.WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference>;
+	}
+	
+	export interface WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification { 
+		"id"?: string;
+		"type"?: string;
+		"activityPlan"?: Models.WfmActivityPlanJobCompleteTopicActivityPlanReference;
+		"status"?: string;
+		"exceptions"?: Array<Models.WfmActivityPlanJobCompleteTopicActivityPlanJobException>;
+		"error"?: Models.WfmActivityPlanJobCompleteTopicErrorBody;
+		"occurrence"?: Models.WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference;
+	}
+	
+	export interface WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmActivityPlanJobCompleteTopicActivityPlanReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmActivityPlanJobCompleteTopicErrorBody { 
+		"status"?: number;
+		"code"?: string;
+		"message"?: string;
+		"messageParams"?: { [key: string]: string; };
+	}
+	
+	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanJobException { 
+		"exceptionType"?: string;
+		"occurrences"?: Array<Models.WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference>;
+	}
+	
+	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification { 
+		"id"?: string;
+		"type"?: string;
+		"activityPlan"?: Models.WfmActivityPlanRunJobCompleteTopicActivityPlanReference;
+		"status"?: string;
+		"exceptions"?: Array<Models.WfmActivityPlanRunJobCompleteTopicActivityPlanJobException>;
+		"error"?: Models.WfmActivityPlanRunJobCompleteTopicErrorBody;
+	}
+	
+	export interface WfmActivityPlanRunJobCompleteTopicErrorBody { 
+		"status"?: number;
+		"code"?: string;
+		"message"?: string;
+		"messageParams"?: { [key: string]: string; };
 	}
 	
 	export interface WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationChangedNotification { 

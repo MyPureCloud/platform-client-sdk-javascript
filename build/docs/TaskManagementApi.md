@@ -1265,7 +1265,8 @@ let worktypeId = "worktypeId_example"; // String | Worktype id
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
-  'sortOrder': "descending" // String | Ascending or descending sort order
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'fields': ["fields_example"] // [String] | Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
 };
 
 apiInstance.getTaskmanagementWorktypeHistory(worktypeId, opts)
@@ -1287,6 +1288,7 @@ apiInstance.getTaskmanagementWorktypeHistory(worktypeId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **fields** | **[String]** | Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. | [optional] <br />**Values**: name, serviceLevelTarget, defaultWorkbinId, defaultDueDurationSeconds, defaultExpirationSeconds, defaultPriority, defaultLanguageId, defaultSkillIds, defaultQueueId, assignmentEnabled, defaultStatusId, statuses |
 {: class="table table-striped"}
 
 ### Return type

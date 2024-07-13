@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 197.0.0
+	 * @version 198.0.0
 	 */
 
 	/**
@@ -361,7 +361,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} contactId ExternalContact ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization,externalDataSources)
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
 	 */
 	getExternalcontactsContactUnresolved(contactId, opts) { 
 		opts = opts || {};

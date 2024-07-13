@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | **POST** /api/v2/journey/actiontemplates | Create a single action template.
 [**postJourneyDeploymentActionevent**](JourneyApi.html#postJourneyDeploymentActionevent) | **POST** /api/v2/journey/deployments/{deploymentId}/actionevent | Sends an action event, which is used for changing the state of actions that have been offered to the user.
 [**postJourneyDeploymentAppevents**](JourneyApi.html#postJourneyDeploymentAppevents) | **POST** /api/v2/journey/deployments/{deploymentId}/appevents | Send a journey app event, used for tracking customer activity on an application.
+[**postJourneyDeploymentWebevents**](JourneyApi.html#postJourneyDeploymentWebevents) | **POST** /api/v2/journey/deployments/{deploymentId}/webevents | Send a journey web event, used for tracking customer activity on a website.
 [**postJourneyFlowsPathsQuery**](JourneyApi.html#postJourneyFlowsPathsQuery) | **POST** /api/v2/journey/flows/paths/query | Query for flow paths.
 [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | **POST** /api/v2/journey/outcomes | Create an outcome.
 [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | **POST** /api/v2/journey/outcomes/attributions/jobs | Create Outcome Attributions
@@ -1520,8 +1521,6 @@ GET /api/v2/journey/sessions/{sessionId}/events
 
 Retrieve all events for a given session.
 
-getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * journey:event:view
@@ -2728,6 +2727,55 @@ apiInstance.postJourneyDeploymentAppevents(deploymentId, opts)
 ### Return type
 
 **AppEventResponse**
+
+<a name="postJourneyDeploymentWebevents"></a>
+
+# WebEventResponse postJourneyDeploymentWebevents(deploymentId, opts)
+
+
+POST /api/v2/journey/deployments/{deploymentId}/webevents
+
+Send a journey web event, used for tracking customer activity on a website.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.JourneyApi();
+
+let deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the web event.
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postJourneyDeploymentWebevents(deploymentId, opts)
+  .then((data) => {
+    console.log(`postJourneyDeploymentWebevents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyDeploymentWebevents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deploymentId** | **String** | The ID of the deployment sending the web event. |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**WebEventResponse**
 
 <a name="postJourneyFlowsPathsQuery"></a>
 

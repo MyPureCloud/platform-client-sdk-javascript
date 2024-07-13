@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 197.0.0
+	 * @version 198.0.0
 	 */
 
 	/**
@@ -619,7 +619,7 @@ class OutboundApi {
 
 	/**
 	 * Reset messaging campaign progress and recycle the messaging campaign
-	 * 
+	 * Documented permissions are applicable based on campaign type.
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
 	 */
 	deleteOutboundMessagingcampaignProgress(messagingCampaignId) { 

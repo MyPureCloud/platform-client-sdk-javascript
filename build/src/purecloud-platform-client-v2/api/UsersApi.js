@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 197.0.0
+	 * @version 198.0.0
 	 */
 
 	/**
@@ -637,7 +637,7 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
 	 * @param {Object} opts.state Search for a user with this state (default to active)
 	 */
@@ -1208,7 +1208,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 */

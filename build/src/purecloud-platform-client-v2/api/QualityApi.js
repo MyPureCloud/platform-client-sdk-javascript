@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 197.0.0
+	 * @version 198.0.0
 	 */
 
 	/**
@@ -1682,6 +1682,37 @@ class QualityApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/evaluations/{formId}', 
+			'PUT', 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the Predictive Scoring settings of an evaluation form.
+	 * 
+	 * @param {String} formId Form ID
+	 * @param {Object} body Predictive Scoring Settings
+	 * putQualityFormsEvaluationPredictivescoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putQualityFormsEvaluationPredictivescoringSettings(formId, body) { 
+		// verify the required parameter 'formId' is set
+		if (formId === undefined || formId === null) {
+			throw 'Missing the required parameter "formId" when calling putQualityFormsEvaluationPredictivescoringSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putQualityFormsEvaluationPredictivescoringSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings', 
 			'PUT', 
 			{ 'formId': formId },
 			{  },

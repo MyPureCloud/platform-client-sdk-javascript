@@ -380,6 +380,7 @@ Reset campaign progress and recycle the campaign
 Requires ANY permissions:
 
 * outbound:campaign:edit
+* outbound:campaign:recycle
 
 ### Example Usage
 
@@ -1350,10 +1351,14 @@ DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
 
 Reset messaging campaign progress and recycle the messaging campaign
 
+Documented permissions are applicable based on campaign type.
+
 Requires ANY permissions:
 
 * outbound:messagingCampaign:edit
 * outbound:emailCampaign:edit
+* outbound:messagingCampaign:recycle
+* outbound:emailCampaign:recycle
 
 ### Example Usage
 

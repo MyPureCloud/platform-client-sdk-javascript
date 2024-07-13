@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 197.0.0
+	 * @version 198.0.0
 	 */
 
 	/**
@@ -750,7 +750,6 @@ class JourneyApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Object} opts.eventType A comma separated list of journey event types to include in the results.
-	 * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneySessionEvents(sessionId, opts) { 
 		opts = opts || {};
@@ -1371,6 +1370,35 @@ class JourneyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/journey/deployments/{deploymentId}/appevents', 
+			'POST', 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a journey web event, used for tracking customer activity on a website.
+	 * 
+	 * @param {String} deploymentId The ID of the deployment sending the web event.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyDeploymentWebevents(deploymentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentWebevents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/deployments/{deploymentId}/webevents', 
 			'POST', 
 			{ 'deploymentId': deploymentId },
 			{  },

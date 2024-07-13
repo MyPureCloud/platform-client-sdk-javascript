@@ -1,304 +1,475 @@
-Platform API version: 8209
+Platform API version: 8238
 
 
 
 
-# Major Changes (16 changes)
+# Major Changes (11 changes)
 
-**/api/v2/outbound/audits** (1 change)
+**/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}** (1 change)
 
-* Path /api/v2/outbound/audits was removed
+* Path /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} was removed
 
-**POST /api/v2/externalcontacts/identifierlookup** (1 change)
+**POST /api/v2/conversations/messages** (1 change)
 
-* Parameter expand was added
+* Response 200 type was changed from MessageConversation to CreateOutboundMessagingConversationResponse
 
-**GET /api/v2/routing/sms/phonenumbers** (1 change)
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/history** (1 change)
 
-* Parameter supportedContent.id was added
+* Parameter fields was added
 
-**GET /api/v2/learning/assignments/{assignmentId}/steps/{stepId}** (1 change)
+**AiScoringSettings** (1 change)
 
-* Parameter defaultShareableContentObject was added
+* Model AiScoringSettings was removed
 
-**GET /api/v2/journey/sessions/{sessionId}/events** (1 change)
+**AiAnswer** (1 change)
 
-* Parameter eventType was added
+* Model AiAnswer was removed
 
-**AuditEntity** (1 change)
+**AiScoring** (1 change)
 
-* Model AuditEntity was removed
+* Model AiScoring was removed
 
-**AuditMessage** (1 change)
+**ModelingProcessingError** (1 change)
 
-* Model AuditMessage was removed
+* Model ModelingProcessingError was removed
 
-**AuditSearchResult** (1 change)
+**ModelingStatusResponse** (1 change)
 
-* Model AuditSearchResult was removed
+* Model ModelingStatusResponse was removed
 
-**AuditUser** (1 change)
+**UserScheduleAdherence** (1 change)
 
-* Model AuditUser was removed
+* Property scheduledActivityCode was changed from ActivityCodeReference to ActivityCodeSummary
 
-**Change** (1 change)
+**ActivityCodeReference** (2 changes)
 
-* Model Change was removed
-
-**Entry** (1 change)
-
-* Model Entry was removed
-
-**FacetInfo** (1 change)
-
-* Model FacetInfo was removed
-
-**ServiceContext** (1 change)
-
-* Model ServiceContext was removed
-
-**AuditFacet** (1 change)
-
-* Model AuditFacet was removed
-
-**AuditFilter** (1 change)
-
-* Model AuditFilter was removed
-
-**DialerAuditRequest** (1 change)
-
-* Model DialerAuditRequest was removed
+* Property name was removed
+* Property secondaryPresences was removed
 
 
-# Minor Changes (71 changes)
+# Minor Changes (127 changes)
 
-**/api/v2/users/agentui/agents/autoanswer/{agentId}/settings** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**POST /api/v2/conversations/calls** (1 change)
-
-* Response 202 was added
-
-**/api/v2/conversations/{conversationId}/suggestions/feedback** (2 changes)
+**/api/v2/journey/deployments/{deploymentId}/webevents** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/conversations/{conversationId}/suggestions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/{conversationId}/suggestions/{suggestionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/outbound/campaigns/{campaignId}** (1 change)
-
-* Operation patch was added. Summary: Update a campaign.
-
-**POST /api/v2/speechandtextanalytics/programs/publishjobs** (1 change)
+**PUT /api/v2/speechandtextanalytics/topics/{topicId}** (1 change)
 
 * Response 405 was added
 
-**PUT /api/v2/speechandtextanalytics/programs/{programId}** (1 change)
+**POST /api/v2/speechandtextanalytics/topics** (1 change)
 
-* Response 202 was added
+* Response 405 was added
 
-**DELETE /api/v2/speechandtextanalytics/programs/{programId}** (1 change)
-
-* Response 202 was added
-
-**POST /api/v2/speechandtextanalytics/programs** (1 change)
-
-* Response 202 was added
-
-**/api/v2/employeeengagement/celebrations/{celebrationId}** (3 changes)
+**/api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate** (2 changes)
 
 * Path was added
-* Operation DELETE was added
 * Operation PATCH was added
 
-**/api/v2/employeeengagement/celebrations** (2 changes)
+**/api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings** (2 changes)
+
+* Path was added
+* Operation PUT was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/employeeengagement/recognitions/{recognitionId}** (2 changes)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans** (3 changes)
 
 * Path was added
 * Operation GET was added
+* Operation POST was added
 
-**/api/v2/employeeengagement/recognitions** (2 changes)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**AutoAnswerSetting** (1 change)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**ConversationAggregationQuery** (2 changes)
+
+* Enum value oMessageCount was added to property metrics
+* Enum value oMessageSegmentCount was added to property metrics
+
+**ConversationAggregationView** (2 changes)
+
+* Enum value oMessageCount was added to property target
+* Enum value oMessageSegmentCount was added to property target
+
+**AnalyticsParticipantWithoutAttributes** (1 change)
+
+* Optional property screenRecording was added
+
+**ConversationDetailQueryPredicate** (2 changes)
+
+* Enum value oMessageCount was added to property metric
+* Enum value oMessageSegmentCount was added to property metric
+
+**SegmentDetailQueryPredicate** (1 change)
+
+* Enum value screenRecording was added to property dimension
+
+**AnalyticsParticipant** (1 change)
+
+* Optional property screenRecording was added
+
+**EvaluationAggregateQueryPredicate** (1 change)
+
+* Enum value mediaType was added to property dimension
+
+**EvaluationAggregationQuery** (1 change)
+
+* Enum value mediaType was added to property groupBy
+
+**ReportingTurn** (1 change)
+
+* Optional property dateCompleted was added
+
+**BotFlowSession** (1 change)
+
+* Optional property dateCompleted was added
+
+**Email** (1 change)
+
+* Optional property parkTime was added
+
+**PredictedAnswer** (1 change)
 
 * Model was added
 
-**AutoAnswerSettings** (1 change)
+**PredictedScoring** (1 change)
 
 * Model was added
 
-**Feedback** (1 change)
+**CallMediaParticipant** (1 change)
+
+* Optional property parkTime was added
+
+**CreateCallRequest** (1 change)
+
+* Optional property attributes was added
+
+**CallbackMediaParticipant** (1 change)
+
+* Optional property parkTime was added
+
+**ChatMediaParticipant** (1 change)
+
+* Optional property parkTime was added
+
+**CobrowseMediaParticipant** (1 change)
+
+* Optional property parkTime was added
+
+**EmailMediaParticipant** (1 change)
+
+* Optional property parkTime was added
+
+**ConversationPublicMetadata** (1 change)
 
 * Model was added
 
-**Article** (1 change)
+**MessageMediaParticipant** (1 change)
+
+* Optional property parkTime was added
+
+**CreateOutboundMessagingConversationResponse** (1 change)
 
 * Model was added
 
-**Faq** (1 change)
+**EventMessage** (3 changes)
+
+* Enum value RECURRING_SCHEDULE_NEXT_OCCURRENCE_FAILURE was added to property code
+* Enum value RECURRING_SCHEDULE_ENDED was added to property code
+* Enum value RECURRING_SCHEDULE_MISSED_OCCURRENCES was added to property code
+
+**WrapUpCodeMapping** (3 changes)
+
+* Enum value BUSINESS_SUCCESS was added to property defaultSet
+* Enum value BUSINESS_FAILURE was added to property defaultSet
+* Enum value BUSINESS_NEUTRAL was added to property defaultSet
+
+**DocumentElementLength** (1 change)
 
 * Model was added
 
-**MetadataAttribute** (1 change)
+**ResponsePage** (1 change)
 
 * Model was added
 
-**Suggestion** (1 change)
+**WebEventBrowser** (1 change)
 
 * Model was added
 
-**SuggestionCannedResponse** (1 change)
+**WebEventDevice** (1 change)
 
 * Model was added
 
-**SuggestionContext** (1 change)
+**WebEventResponse** (1 change)
 
 * Model was added
 
-**SuggestionKnowledgeAnswer** (1 change)
+**WebEventResponseSession** (1 change)
 
 * Model was added
 
-**SuggestionKnowledgeArticle** (1 change)
+**RequestPage** (1 change)
 
 * Model was added
 
-**SuggestionKnowledgeSearch** (1 change)
+**WebEventRequest** (1 change)
 
 * Model was added
 
-**SuggestionListing** (1 change)
+**EvaluationAggregationQueryMe** (1 change)
+
+* Enum value mediaType was added to property groupBy
+
+**GenericTemplate** (1 change)
 
 * Model was added
 
-**SuggestionScript** (1 change)
+**RecordingButtonComponent** (1 change)
 
 * Model was added
 
-**SuggestionEngagement** (1 change)
+**RecordingContentActions** (1 change)
 
 * Model was added
 
-**SuggestionFeedback** (1 change)
+**Dependency** (1 change)
+
+* Enum value WORKTYPE was added to property type
+
+**DependencyObject** (1 change)
+
+* Enum value WORKTYPE was added to property type
+
+**NotificationsSettings** (1 change)
 
 * Model was added
 
-**CampaignPatchRequest** (1 change)
+**LearningModulePreviewUpdateScoStructure** (6 changes)
+
+* id is no longer readonly
+* name is no longer readonly
+* successStatus is no longer readonly
+* completionStatus is no longer readonly
+* percentageScore is no longer readonly
+* children is no longer readonly
+
+**LearningModulePreviewUpdateStep** (6 changes)
+
+* id is no longer readonly
+* successStatus is no longer readonly
+* completionStatus is no longer readonly
+* completionPercentage is no longer readonly
+* percentageScore is no longer readonly
+* structure is no longer readonly
+
+**ActivityCodeSummary** (1 change)
 
 * Model was added
 
-**DynamicLineBalancingSettingsPatchRequest** (1 change)
+**ConversationAsyncAggregationQuery** (2 changes)
+
+* Enum value oMessageCount was added to property metrics
+* Enum value oMessageSegmentCount was added to property metrics
+
+**EvaluationAsyncAggregationQuery** (1 change)
+
+* Enum value mediaType was added to property groupBy
+
+**ResolutionAggregateQueryPredicate** (4 changes)
+
+* Enum value conversationId was added to property dimension
+* Enum value mediaType was added to property dimension
+* Enum value requestedRouting was added to property dimension
+* Enum value usedRouting was added to property dimension
+
+**ResolutionAsyncAggregationQuery** (4 changes)
+
+* Enum value conversationId was added to property groupBy
+* Enum value mediaType was added to property groupBy
+* Enum value requestedRouting was added to property groupBy
+* Enum value usedRouting was added to property groupBy
+
+**TaskManagementAggregationQuery** (1 change)
+
+* Enum value nWorkitemsOffered was added to property metrics
+
+**TaskManagementAggregationView** (1 change)
+
+* Enum value nWorkitemsOffered was added to property target
+
+**TaskManagementAsyncAggregationQuery** (1 change)
+
+* Enum value nWorkitemsOffered was added to property metrics
+
+**ParkingStateRequest** (1 change)
 
 * Model was added
 
-**CampaignRuleParameters** (5 changes)
-
-* Optional property abandonRate was added
-* Optional property outboundLineCount was added
-* Optional property relativeWeight was added
-* Optional property maxCallsPerAgent was added
-* Optional property queue was added
-
-**ContactBulkSearchParameters** (1 change)
-
-* Optional property generateDownloadUri was added
-
-**ContactBulkEditRequest** (1 change)
-
-* Optional property generateDownloadUri was added
-
-**KnowledgeDocumentResponse** (1 change)
-
-* Optional property externalUrl was added
-
-**KnowledgeSearchDocumentResponse** (1 change)
-
-* Optional property externalUrl was added
-
-**ContentAttachment** (1 change)
-
-* Optional property contentSizeBytes was added
-
-**ContentReaction** (3 changes)
-
-* Enum value Share was added to property reactionType
-* Enum value Comment was added to property reactionType
-* Enum value View was added to property reactionType
-
-**MessagingRecipient** (1 change)
-
-* Enum value Topic was added to property idType
-
-**Program** (1 change)
-
-* Optional property topicLinksJob was added
-
-**DeleteProgramResponse** (1 change)
+**PredictiveScoringSetting** (1 change)
 
 * Model was added
 
-**BotSearchResponse** (2 changes)
-
-* Enum value GenesysDigitalBotFlow was added to property botType
-* Enum value GenesysVoiceSurveyFlow was added to property botType
-
-**CelebrationStateParam** (1 change)
+**PredictiveScoringSettings** (1 change)
 
 * Model was added
 
-**Celebration** (1 change)
+**QuestionGroupSettings** (1 change)
 
 * Model was added
 
-**GetCelebrationListing** (1 change)
+**QuestionSettings** (1 change)
 
 * Model was added
 
-**SourceEntity** (1 change)
+**ActivityPlanJobException** (1 change)
 
 * Model was added
 
-**Recognition** (1 change)
+**ActivityPlanJobListing** (1 change)
 
 * Model was added
 
-**RecognitionBase** (1 change)
+**ActivityPlanJobResponse** (1 change)
 
 * Model was added
 
-**CreateRecognition** (1 change)
+**ActivityPlanOccurrenceReference** (1 change)
+
+* Model was added
+
+**ActivityPlanReference** (1 change)
+
+* Model was added
+
+**ActivityPlanListItem** (1 change)
+
+* Model was added
+
+**ActivityPlanListing** (1 change)
+
+* Model was added
+
+**RecurrenceEndSettings** (1 change)
+
+* Model was added
+
+**RecurrencePeriod** (1 change)
+
+* Model was added
+
+**RecurrenceSettings** (1 change)
+
+* Model was added
+
+**ActivityPlanAbandonRateImpactOverride** (1 change)
+
+* Model was added
+
+**ActivityPlanAsaImpactOverride** (1 change)
+
+* Model was added
+
+**ActivityPlanResponse** (1 change)
+
+* Model was added
+
+**ActivityPlanServiceGoalImpactOverrides** (1 change)
+
+* Model was added
+
+**ActivityPlanServiceLevelImpactOverride** (1 change)
+
+* Model was added
+
+**AvailabilityRange** (1 change)
+
+* Model was added
+
+**FixedAvailability** (1 change)
+
+* Model was added
+
+**GroupSettings** (1 change)
+
+* Model was added
+
+**RequiredLocalDateRange** (1 change)
+
+* Model was added
+
+**SchedulingPeriod** (1 change)
+
+* Model was added
+
+**UserSearchRule** (1 change)
+
+* Model was added
+
+**UserSearchRulePart** (1 change)
+
+* Model was added
+
+**CreateActivityPlanRequest** (1 change)
+
+* Model was added
+
+**ListWrapperFixedAvailability** (1 change)
+
+* Model was added
+
+**UpdateActivityPlanRequest** (1 change)
+
+* Model was added
+
+**ValueWrapperActivityPlanServiceGoalImpactOverrides** (1 change)
+
+* Model was added
+
+**ValueWrapperGroupSettings** (1 change)
+
+* Model was added
+
+**ValueWrapperUserSearchRule** (1 change)
+
+* Model was added
+
+**ActivityPlanRunJobResponse** (1 change)
 
 * Model was added
 
 
-# Point Changes (1 change)
+# Point Changes (4 changes)
 
-**GET /api/v2/externalcontacts/contacts/{contactId}** (1 change)
+**GET /api/v2/externalcontacts/contacts/{contactId}/unresolved** (1 change)
+
+* Description was changed for parameter expand
+
+**DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress** (1 change)
+
+* Description was changed
+
+**GET /api/v2/users/{userId}** (1 change)
+
+* Description was changed for parameter expand
+
+**GET /api/v2/users** (1 change)
 
 * Description was changed for parameter expand

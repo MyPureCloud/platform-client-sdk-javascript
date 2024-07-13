@@ -748,7 +748,7 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization,externalDataSources)
+  'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
 };
 
 apiInstance.getExternalcontactsContactUnresolved(contactId, opts)
@@ -767,7 +767,7 @@ apiInstance.getExternalcontactsContactUnresolved(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
- **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] <br />**Values**: externalOrganization, externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
 {: class="table table-striped"}
 
 ### Return type
@@ -828,7 +828,7 @@ apiInstance.getExternalcontactsContacts(opts)
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1145,7 +1145,7 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
 {: class="table table-striped"}
 
 ### Return type

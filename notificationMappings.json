@@ -349,6 +349,10 @@
       "class": "PublishProgramTopicsDefinitionsJob"
     },
     {
+      "topic": "v2.speechandtextanalytics.programs.topiclinks.jobs.{id}",
+      "class": "ProgramTopicLinksTopicsDefinitionsJob"
+    },
+    {
       "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
       "class": "PublishTopicTopicsDefinitionsJob"
     },
@@ -505,6 +509,10 @@
       "class": "UserConversationsEventUserConversationSummary"
     },
     {
+      "topic": "v2.users.{id}.employeeengagement.celebrations",
+      "class": "V2WemEngagementCelebrationUpdatesTopicEngagementCelebration"
+    },
+    {
       "topic": "v2.users.{id}.fax.documents",
       "class": "FaxTopicFaxDataV2"
     },
@@ -635,6 +643,14 @@
     {
       "topic": "v2.workforcemanagement.agents.{id}.adherence.explanations",
       "class": "WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.activityplans.jobs",
+      "class": "WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.activityplans.runs.jobs",
+      "class": "WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.adherence.explanations",

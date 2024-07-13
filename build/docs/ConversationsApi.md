@@ -133,6 +133,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsEmailParticipant**](ConversationsApi.html#patchConversationsEmailParticipant) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsEmailParticipantAttributes**](ConversationsApi.html#patchConversationsEmailParticipantAttributes) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsEmailParticipantCommunication**](ConversationsApi.html#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
+[**patchConversationsEmailParticipantParkingstate**](ConversationsApi.html#patchConversationsEmailParticipantParkingstate) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate | Update conversation by setting its parking state
 [**patchConversationsMessage**](ConversationsApi.html#patchConversationsMessage) | **PATCH** /api/v2/conversations/messages/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsMessageParticipant**](ConversationsApi.html#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -6807,6 +6808,62 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
 
 **Object**
 
+<a name="patchConversationsEmailParticipantParkingstate"></a>
+
+# void patchConversationsEmailParticipantParkingstate(conversationId, participantId, body)
+
+
+PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate
+
+Update conversation by setting its parking state
+
+patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:email:park
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Parking update request
+
+apiInstance.patchConversationsEmailParticipantParkingstate(conversationId, participantId, body)
+  .then(() => {
+    console.log('patchConversationsEmailParticipantParkingstate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsEmailParticipantParkingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Parking update request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="patchConversationsMessage"></a>
 
 # Conversation patchConversationsMessage(conversationId, body)
@@ -10436,6 +10493,7 @@ Requires ANY permissions:
 
 * conversation:message:create
 * conversation:webmessaging:create
+* conversation:socialmedia:create
 
 ### Example Usage
 
@@ -10920,7 +10978,7 @@ void (no response body)
 
 <a name="postConversationsMessages"></a>
 
-# MessageConversation postConversationsMessages(body)
+# CreateOutboundMessagingConversationResponse postConversationsMessages(body)
 
 
 POST /api/v2/conversations/messages
@@ -10968,7 +11026,7 @@ apiInstance.postConversationsMessages(body)
 
 ### Return type
 
-**MessageConversation**
+**CreateOutboundMessagingConversationResponse**
 
 <a name="postConversationsMessagesAgentless"></a>
 
