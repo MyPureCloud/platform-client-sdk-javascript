@@ -2601,7 +2601,7 @@ docs/putQualityCalibration-example.txt
 docs/putQualityConversationEvaluation-example.txt
 docs/putQualityForm-example.txt
 docs/putQualityFormsEvaluation-example.txt
-docs/putQualityFormsEvaluationPredictivescoringSettings-example.txt
+docs/putQualityFormsEvaluationAiscoringSettings-example.txt
 docs/putQualityFormsSurvey-example.txt
 docs/putQualitySurveysScorable-example.txt
 docs/putRecordingCrossplatformMediaretentionpolicy-example.txt

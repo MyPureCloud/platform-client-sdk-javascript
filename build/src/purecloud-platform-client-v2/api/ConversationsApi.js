@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 198.0.0
+	 * @version 199.0.0
 	 */
 
 	/**
@@ -4324,7 +4324,6 @@ class ConversationsApi {
 	 * Barge a conversation creating a barged in conference of connected participants.
 	 * 
 	 * @param {String} conversationId conversation ID
-	 * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationBarge(conversationId) { 
 		// verify the required parameter 'conversationId' is set
@@ -4772,7 +4771,6 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
-	 * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postConversationsCallParticipantBarge(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set

@@ -66,7 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | **PUT** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Update an evaluation
 [**putQualityForm**](QualityApi.html#putQualityForm) | **PUT** /api/v2/quality/forms/{formId} | Update an evaluation form.
 [**putQualityFormsEvaluation**](QualityApi.html#putQualityFormsEvaluation) | **PUT** /api/v2/quality/forms/evaluations/{formId} | Update an evaluation form.
-[**putQualityFormsEvaluationPredictivescoringSettings**](QualityApi.html#putQualityFormsEvaluationPredictivescoringSettings) | **PUT** /api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings | Update the Predictive Scoring settings of an evaluation form.
+[**putQualityFormsEvaluationAiscoringSettings**](QualityApi.html#putQualityFormsEvaluationAiscoringSettings) | **PUT** /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings | Update the AI Scoring settings of an evaluation form.
 [**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | **PUT** /api/v2/quality/forms/surveys/{formId} | Update a survey form.
 [**putQualitySurveysScorable**](QualityApi.html#putQualitySurveysScorable) | **PUT** /api/v2/quality/surveys/scorable | Update a survey as an end-customer, for the purposes of scoring it.
 {: class="table table-striped"}
@@ -3313,20 +3313,20 @@ apiInstance.putQualityFormsEvaluation(formId, body)
 
 **EvaluationFormResponse**
 
-<a name="putQualityFormsEvaluationPredictivescoringSettings"></a>
+<a name="putQualityFormsEvaluationAiscoringSettings"></a>
 
-# PredictiveScoringSettings putQualityFormsEvaluationPredictivescoringSettings(formId, body)
+# AiScoringSettings putQualityFormsEvaluationAiscoringSettings(formId, body)
 
 
-PUT /api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings
+PUT /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings
 
-Update the Predictive Scoring settings of an evaluation form.
+Update the AI Scoring settings of an evaluation form.
 
-putQualityFormsEvaluationPredictivescoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
-* quality:evaluationForm:predictiveScoringEdit
+* quality:evaluationForm:aiScoringEdit
 
 ### Example Usage
 
@@ -3342,14 +3342,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.QualityApi();
 
 let formId = "formId_example"; // String | Form ID
-let body = {}; // Object | Predictive Scoring Settings
+let body = {}; // Object | AI Scoring Settings
 
-apiInstance.putQualityFormsEvaluationPredictivescoringSettings(formId, body)
+apiInstance.putQualityFormsEvaluationAiscoringSettings(formId, body)
   .then((data) => {
-    console.log(`putQualityFormsEvaluationPredictivescoringSettings success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`putQualityFormsEvaluationAiscoringSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling putQualityFormsEvaluationPredictivescoringSettings');
+    console.log('There was a failure calling putQualityFormsEvaluationAiscoringSettings');
     console.error(err);
   });
 ```
@@ -3360,12 +3360,12 @@ apiInstance.putQualityFormsEvaluationPredictivescoringSettings(formId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
- **body** | **Object** | Predictive Scoring Settings |  |
+ **body** | **Object** | AI Scoring Settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-**PredictiveScoringSettings**
+**AiScoringSettings**
 
 <a name="putQualityFormsSurvey"></a>
 

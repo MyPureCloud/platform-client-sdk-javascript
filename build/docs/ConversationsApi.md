@@ -7880,8 +7880,6 @@ POST /api/v2/conversations/{conversationId}/barge
 
 Barge a conversation creating a barged in conference of connected participants.
 
-postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:call:barge
@@ -8627,8 +8625,6 @@ apiInstance.postConversationsCall(conversationId, body)
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge
 
 Barge a given participant's call creating a barged in conference of connected participants.
-
-postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

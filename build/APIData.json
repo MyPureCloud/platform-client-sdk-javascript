@@ -31236,10 +31236,10 @@
     "return": "EvaluationFormResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet formId = \"formId_example\"; // String | Form ID\nlet body = {}; // Object | Evaluation form\n\n// Update an evaluation form.\napiInstance.putQualityFormsEvaluation(formId, body)\n  .then((data) => {\n    console.log(`putQualityFormsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putQualityFormsEvaluation\");\n    console.error(err);\n  });"
   },
-  "putqualityformsevaluationpredictivescoringsettings": {
-    "operationId": "putqualityformsevaluationpredictivescoringsettings",
-    "functionName": "putQualityFormsEvaluationPredictivescoringSettings",
-    "signature": "putQualityFormsEvaluationPredictivescoringSettings(formId, body)",
+  "putqualityformsevaluationaiscoringsettings": {
+    "operationId": "putqualityformsevaluationaiscoringsettings",
+    "functionName": "putQualityFormsEvaluationAiscoringSettings",
+    "signature": "putQualityFormsEvaluationAiscoringSettings(formId, body)",
     "parameters": [
       {
         "name": "formId",
@@ -31252,8 +31252,8 @@
         "required": "true"
       }
     ],
-    "return": "PredictiveScoringSettings",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet formId = \"formId_example\"; // String | Form ID\nlet body = {}; // Object | Predictive Scoring Settings\n\n// Update the Predictive Scoring settings of an evaluation form.\napiInstance.putQualityFormsEvaluationPredictivescoringSettings(formId, body)\n  .then((data) => {\n    console.log(`putQualityFormsEvaluationPredictivescoringSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putQualityFormsEvaluationPredictivescoringSettings\");\n    console.error(err);\n  });"
+    "return": "AiScoringSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet formId = \"formId_example\"; // String | Form ID\nlet body = {}; // Object | AI Scoring Settings\n\n// Update the AI Scoring settings of an evaluation form.\napiInstance.putQualityFormsEvaluationAiscoringSettings(formId, body)\n  .then((data) => {\n    console.log(`putQualityFormsEvaluationAiscoringSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putQualityFormsEvaluationAiscoringSettings\");\n    console.error(err);\n  });"
   },
   "putqualityformssurvey": {
     "operationId": "putqualityformssurvey",
