@@ -9,6 +9,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsUsersDetailsJob**](UsersApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
+[**deleteRoutingDirectroutingbackupSettingsMe**](UsersApi.html#deleteRoutingDirectroutingbackupSettingsMe) | **DELETE** /api/v2/routing/directroutingbackup/settings/me | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+[**deleteRoutingUserDirectroutingbackupSettings**](UsersApi.html#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteUser**](UsersApi.html#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
 [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
@@ -28,6 +30,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
 [**getFieldconfig**](UsersApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getProfilesUsers**](UsersApi.html#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
+[**getRoutingDirectroutingbackupSettingsMe**](UsersApi.html#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
+[**getRoutingUserDirectroutingbackupSettings**](UsersApi.html#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
 [**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 [**getUser**](UsersApi.html#getUser) | **GET** /api/v2/users/{userId} | Get user.
 [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
@@ -86,6 +90,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUsersSearchConversationTarget**](UsersApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
 [**postUsersSearchQueuemembersManage**](UsersApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
 [**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
+[**putRoutingDirectroutingbackupSettingsMe**](UsersApi.html#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
+[**putRoutingUserDirectroutingbackupSettings**](UsersApi.html#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
 [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
 [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
@@ -198,6 +204,101 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division of the grant |  |
  **roleId** | **String** | the id of the role of the grant |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingDirectroutingbackupSettingsMe"></a>
+
+# void deleteRoutingDirectroutingbackupSettingsMe()
+
+
+DELETE /api/v2/routing/directroutingbackup/settings/me
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfDelete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
+  .then(() => {
+    console.log('deleteRoutingDirectroutingbackupSettingsMe returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingUserDirectroutingbackupSettings"></a>
+
+# void deleteRoutingUserDirectroutingbackupSettings(userId)
+
+
+DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
+  .then(() => {
+    console.log('deleteRoutingUserDirectroutingbackupSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1205,6 +1306,101 @@ apiInstance.getProfilesUsers(opts)
 ### Return type
 
 **UserProfileEntityListing**
+
+<a name="getRoutingDirectroutingbackupSettingsMe"></a>
+
+# AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
+
+
+GET /api/v2/routing/directroutingbackup/settings/me
+
+Get the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.getRoutingDirectroutingbackupSettingsMe()
+  .then((data) => {
+    console.log(`getRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
+<a name="getRoutingUserDirectroutingbackupSettings"></a>
+
+# AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
+
+
+GET /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Get the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
+  .then((data) => {
+    console.log(`getRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
 
 <a name="getRoutingUserUtilization"></a>
 
@@ -4331,6 +4527,108 @@ apiInstance.postUsersSearchTeamsAssign(body)
 ### Return type
 
 **UsersSearchResponse**
+
+<a name="putRoutingDirectroutingbackupSettingsMe"></a>
+
+# AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
+
+
+PUT /api/v2/routing/directroutingbackup/settings/me
+
+Update the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfEdit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | directRoutingBackup
+
+apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
+  .then((data) => {
+    console.log(`putRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
+<a name="putRoutingUserDirectroutingbackupSettings"></a>
+
+# AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
+
+
+PUT /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Update the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | directRoutingBackup
+
+apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
+  .then((data) => {
+    console.log(`putRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
 
 <a name="putRoutingUserUtilization"></a>
 

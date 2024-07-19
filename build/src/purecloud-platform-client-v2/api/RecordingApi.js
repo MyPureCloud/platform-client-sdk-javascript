@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 199.0.0
+	 * @version 200.0.0
 	 */
 
 	/**
@@ -997,10 +997,11 @@ class RecordingApi {
 
 	/**
 	 * Update a screen recording session
-	 * 
+	 * This API is deprecated and the functionality to stop screen recording will be no longer supported.
 	 * @param {String} recordingSessionId Screen recording session ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @deprecated
 	 */
 	patchRecordingsScreensession(recordingSessionId, opts) { 
 		opts = opts || {};

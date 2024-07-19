@@ -1987,10 +1987,13 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 
 # void patchRecordingsScreensession(recordingSessionId, opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/recordings/screensessions/{recordingSessionId}
 
 Update a screen recording session
+
+This API is deprecated and the functionality to stop screen recording will be no longer supported.
 
 Requires ANY permissions:
 

@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 199.0.0
+	 * @version 200.0.0
 	 */
 
 	/**
@@ -93,6 +93,7 @@ class AuditApi {
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 * @param {Number} opts.pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (default to 25)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Boolean} opts.allowRedirect Result sets with large amounts of data will respond with a download url
 	 */
 	getAuditsQueryTransactionIdResults(transactionId, opts) { 
 		opts = opts || {};
@@ -106,7 +107,7 @@ class AuditApi {
 			'/api/v2/audits/query/{transactionId}/results', 
 			'GET', 
 			{ 'transactionId': transactionId },
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'allowRedirect': opts['allowRedirect'] },
 			{  },
 			{  },
 			null, 

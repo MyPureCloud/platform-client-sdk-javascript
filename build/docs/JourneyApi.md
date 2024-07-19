@@ -1902,7 +1902,7 @@ apiInstance.getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
 
 <a name="getJourneyViews"></a>
 
-# JourneyViewListing getJourneyViews()
+# JourneyViewListing getJourneyViews(opts)
 
 
 GET /api/v2/journey/views
@@ -1928,7 +1928,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.JourneyApi();
 
-apiInstance.getJourneyViews()
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'nameOrCreatedBy': "nameOrCreatedBy_example", // String | Journey View Name or Created By
+  'expand': "expand_example" // String | Parameter to request additional data to return in Journey payload
+};
+
+apiInstance.getJourneyViews(opts)
   .then((data) => {
     console.log(`getJourneyViews success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1940,8 +1947,14 @@ apiInstance.getJourneyViews()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **nameOrCreatedBy** | **String** | Journey View Name or Created By | [optional]  |
+ **expand** | **String** | Parameter to request additional data to return in Journey payload | [optional] <br />**Values**: charts |
+{: class="table table-striped"}
 
 ### Return type
 

@@ -1,97 +1,136 @@
-Platform API version: 8267
+Platform API version: 8289
 
 
 
 
 # Major Changes (6 changes)
 
-**/api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings** (1 change)
+**GET /api/v2/audits/query/{transactionId}/results** (1 change)
 
-* Path /api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings was removed
+* Parameter allowRedirect was added
 
-**PredictedAnswer** (1 change)
+**PATCH /api/v2/recordings/screensessions/{recordingSessionId}** (1 change)
 
-* Model PredictedAnswer was removed
+* Has been deprecated
 
-**PredictedScoring** (1 change)
+**GET /api/v2/journey/views** (4 changes)
 
-* Model PredictedScoring was removed
-
-**PredictiveScoringSetting** (1 change)
-
-* Model PredictiveScoringSetting was removed
-
-**PredictiveScoringSettings** (1 change)
-
-* Model PredictiveScoringSettings was removed
-
-**QuestionSettings** (1 change)
-
-* Property settings was changed from PredictiveScoringSetting to AiScoringSetting
+* Parameter pageNumber was added
+* Parameter pageSize was added
+* Parameter nameOrCreatedBy was added
+* Parameter expand was added
 
 
-# Minor Changes (19 changes)
+# Minor Changes (42 changes)
 
-**/api/v2/quality/forms/evaluations/{formId}/aiscoring/settings** (2 changes)
+**GET /api/v2/audits/query/{transactionId}/results** (1 change)
+
+* Response 302 was added
+
+**/api/v2/routing/directroutingbackup/settings/me** (4 changes)
 
 * Path was added
+* Operation GET was added
 * Operation PUT was added
+* Operation DELETE was added
 
-**BotAggregateQueryPredicate** (2 changes)
+**/api/v2/routing/users/{userId}/directroutingbackup/settings** (4 changes)
 
-* Enum value botFlowSubType was added to property dimension
-* Enum value previewMode was added to property dimension
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
 
-**BotAggregationQuery** (2 changes)
+**ReportingTurnAction** (1 change)
 
-* Enum value botFlowSubType was added to property groupBy
-* Enum value previewMode was added to property groupBy
+* Enum value SetWrapupCodeAction was added to property actionType
 
-**Widget** (1 change)
-
-* Optional property agentInteractionSortOrder was added
-
-**ReportingExportJobResponse** (1 change)
-
-* Enum value SOCIAL_LISTENING_VIEW was added to property viewType
-
-**ReportingExportMetadataJobResponse** (1 change)
-
-* Enum value SOCIAL_LISTENING_VIEW was added to property viewType
-
-**ReportingExportJobRequest** (1 change)
-
-* Enum value SOCIAL_LISTENING_VIEW was added to property viewType
-
-**AiScoringSetting** (1 change)
+**AuditQueryExecutionLargeResultsResponse** (1 change)
 
 * Model was added
 
-**AiScoringSettings** (1 change)
+**CreateOutboundMessagingConversationRequest** (1 change)
+
+* Optional property useUserFromAddress was added
+
+**EventMessage** (4 changes)
+
+* Enum value ANOTHER_CAMPAIGN_STARTING was added to property code
+* Enum value QUEUE_NOT_FOUND was added to property code
+* Enum value SMS_CONTENT_TEMPLATE_NOT_FOUND was added to property code
+* Enum value VERSION_CONFLICT was added to property code
+
+**AgentDirectRoutingBackupSettings** (1 change)
 
 * Model was added
 
-**AiAnswer** (1 change)
+**VoicemailMessage** (1 change)
+
+* Optional property transcription was added
+
+**IdentityResolutionConfig** (1 change)
 
 * Model was added
 
-**AiScoring** (1 change)
+**TimeOffPlan** (2 changes)
+
+* Enum value CheckActivityCodes was added to property autoApprovalRule
+* Enum value CheckLimitsAndActivityCodes was added to property autoApprovalRule
+
+**CreateTimeOffPlanRequest** (2 changes)
+
+* Enum value CheckActivityCodes was added to property autoApprovalRule
+* Enum value CheckLimitsAndActivityCodes was added to property autoApprovalRule
+
+**UpdateTimeOffPlanRequest** (2 changes)
+
+* Enum value CheckActivityCodes was added to property autoApprovalRule
+* Enum value CheckLimitsAndActivityCodes was added to property autoApprovalRule
+
+**TimeOffRequestResponse** (1 change)
+
+* Enum value OverlapsRestrictedActivityCode was added to property substatus
+
+**TimeOffRequest** (1 change)
+
+* Enum value OverlapsRestrictedActivityCode was added to property substatus
+
+**TimeOffRequestQueryBody** (1 change)
+
+* Enum value OverlapsRestrictedActivityCode was added to property substatuses
+
+**ActivityCodesReference** (1 change)
 
 * Model was added
 
-**Trustee** (2 changes)
+**BuTimeOffPlanResponse** (2 changes)
 
-* Optional property hasFullAccess was added
-* Optional property isTrustedUser was added
+* Enum value CheckActivityCodes was added to property autoApprovalRule
+* Enum value CheckLimitsAndActivityCodes was added to property autoApprovalRule
 
-**InfrastructureascodeJob** (1 change)
+**BuCreateTimeOffPlanRequest** (2 changes)
 
-* Optional property rollbackResults was added
+* Enum value CheckActivityCodes was added to property autoApprovalRule
+* Enum value CheckLimitsAndActivityCodes was added to property autoApprovalRule
 
-**BotAsyncAggregationQuery** (2 changes)
+**BuUpdateTimeOffPlanRequest** (2 changes)
 
-* Enum value botFlowSubType was added to property groupBy
-* Enum value previewMode was added to property groupBy
+* Enum value CheckActivityCodes was added to property autoApprovalRule
+* Enum value CheckLimitsAndActivityCodes was added to property autoApprovalRule
+
+**JourneyViewListing** (7 changes)
+
+* Optional property pageSize was added
+* Optional property pageNumber was added
+* Optional property lastUri was added
+* Optional property firstUri was added
+* Optional property nextUri was added
+* Optional property previousUri was added
+* Optional property pageCount was added
 
 
-# Point Changes (0 changes)
+# Point Changes (1 change)
+
+**PATCH /api/v2/recordings/screensessions/{recordingSessionId}** (1 change)
+
+* Description was changed

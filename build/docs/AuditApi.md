@@ -186,7 +186,8 @@ let transactionId = "transactionId_example"; // String | Transaction ID
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
   'pageSize': 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'allowRedirect': true // Boolean | Result sets with large amounts of data will respond with a download url
 };
 
 apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
@@ -208,6 +209,7 @@ apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
+ **allowRedirect** | **Boolean** | Result sets with large amounts of data will respond with a download url | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

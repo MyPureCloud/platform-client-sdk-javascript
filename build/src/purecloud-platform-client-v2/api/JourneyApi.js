@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 199.0.0
+	 * @version 200.0.0
 	 */
 
 	/**
@@ -961,15 +961,22 @@ class JourneyApi {
 	/**
 	 * Get a list of Journey Views
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.nameOrCreatedBy Journey View Name or Created By
+	 * @param {Object} opts.expand Parameter to request additional data to return in Journey payload
 	 * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	getJourneyViews() { 
+	getJourneyViews(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/journey/views', 
 			'GET', 
 			{  },
-			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'nameOrCreatedBy': opts['nameOrCreatedBy'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 

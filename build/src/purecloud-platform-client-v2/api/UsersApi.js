@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 199.0.0
+	 * @version 200.0.0
 	 */
 
 	/**
@@ -70,6 +70,51 @@ class UsersApi {
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'DELETE', 
 			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 */
+	deleteRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'DELETE', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },
@@ -598,6 +643,51 @@ class UsersApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 */
+	getRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -2277,6 +2367,61 @@ class UsersApi {
 			'/api/v2/users/search/teams/assign', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingDirectroutingbackupSettingsMe(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingUserDirectroutingbackupSettings(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'PUT', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },

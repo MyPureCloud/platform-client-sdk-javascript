@@ -5482,7 +5482,7 @@
   "getauditsquerytransactionidresults": {
     "operationId": "getauditsquerytransactionidresults",
     "functionName": "getAuditsQueryTransactionIdResults",
-    "signature": "getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand)",
+    "signature": "getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand, allowRedirect)",
     "parameters": [
       {
         "name": "transactionId",
@@ -5503,10 +5503,15 @@
         "name": "expand",
         "type": "[String]",
         "required": "false"
+      },
+      {
+        "name": "allowRedirect",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "AuditQueryExecutionResultsResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AuditApi();\n\nlet transactionId = \"transactionId_example\"; // String | Transaction ID\nlet opts = { \n  \"cursor\": \"cursor_example\", // String | Indicates where to resume query results (not required for first page)\n  \"pageSize\": 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.\n  \"expand\": [\"expand_example\"] // [String] | Which fields, if any, to expand\n};\n\n// Get results of audit query\napiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)\n  .then((data) => {\n    console.log(`getAuditsQueryTransactionIdResults success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuditsQueryTransactionIdResults\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AuditApi();\n\nlet transactionId = \"transactionId_example\"; // String | Transaction ID\nlet opts = { \n  \"cursor\": \"cursor_example\", // String | Indicates where to resume query results (not required for first page)\n  \"pageSize\": 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.\n  \"expand\": [\"expand_example\"], // [String] | Which fields, if any, to expand\n  \"allowRedirect\": true // Boolean | Result sets with large amounts of data will respond with a download url\n};\n\n// Get results of audit query\napiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)\n  .then((data) => {\n    console.log(`getAuditsQueryTransactionIdResults success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuditsQueryTransactionIdResults\");\n    console.error(err);\n  });"
   },
   "postauditsquery": {
     "operationId": "postauditsquery",
@@ -19490,9 +19495,31 @@
   "getjourneyviews": {
     "operationId": "getjourneyviews",
     "functionName": "getJourneyViews",
-    "signature": "getJourneyViews()",
+    "signature": "getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand)",
+    "parameters": [
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "nameOrCreatedBy",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "String",
+        "required": "false"
+      }
+    ],
     "return": "JourneyViewListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\n// Get a list of Journey Views\napiInstance.getJourneyViews()\n  .then((data) => {\n    console.log(`getJourneyViews success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getJourneyViews\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"nameOrCreatedBy\": \"nameOrCreatedBy_example\", // String | Journey View Name or Created By\n  \"expand\": \"expand_example\" // String | Parameter to request additional data to return in Journey payload\n};\n\n// Get a list of Journey Views\napiInstance.getJourneyViews(opts)\n  .then((data) => {\n    console.log(`getJourneyViews success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getJourneyViews\");\n    console.error(err);\n  });"
   },
   "getjourneyviewseventdefinition": {
     "operationId": "getjourneyviewseventdefinition",
@@ -32833,6 +32860,12 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet assessmentId = \"assessmentId_example\"; // String | Benefit Assessment ID\n\n// Delete single benefit assessment.\napiInstance.deleteRoutingAssessment(assessmentId)\n  .then(() => {\n    console.log(\"deleteRoutingAssessment returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteRoutingAssessment\");\n    console.error(err);\n  });"
   },
+  "deleteroutingdirectroutingbackupsettingsme": {
+    "operationId": "deleteroutingdirectroutingbackupsettingsme",
+    "functionName": "deleteRoutingDirectroutingbackupSettingsMe",
+    "signature": "deleteRoutingDirectroutingbackupSettingsMe()",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\n// Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.\napiInstance.deleteRoutingDirectroutingbackupSettingsMe()\n  .then(() => {\n    console.log(\"deleteRoutingDirectroutingbackupSettingsMe returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteRoutingDirectroutingbackupSettingsMe\");\n    console.error(err);\n  });"
+  },
   "deleteroutingemaildomain": {
     "operationId": "deleteroutingemaildomain",
     "functionName": "deleteRoutingEmailDomain",
@@ -33033,6 +33066,19 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet addressId = \"addressId_example\"; // String | Address ID\n\n// Delete a phone number provisioned for SMS.\napiInstance.deleteRoutingSmsPhonenumber(addressId)\n  .then(() => {\n    console.log(\"deleteRoutingSmsPhonenumber returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteRoutingSmsPhonenumber\");\n    console.error(err);\n  });"
   },
+  "deleteroutinguserdirectroutingbackupsettings": {
+    "operationId": "deleteroutinguserdirectroutingbackupsettings",
+    "functionName": "deleteRoutingUserDirectroutingbackupSettings",
+    "signature": "deleteRoutingUserDirectroutingbackupSettings(userId)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet userId = \"userId_example\"; // String | User ID\n\n// Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.\napiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)\n  .then(() => {\n    console.log(\"deleteRoutingUserDirectroutingbackupSettings returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteRoutingUserDirectroutingbackupSettings\");\n    console.error(err);\n  });"
+  },
   "deleteroutinguserutilization": {
     "operationId": "deleteroutinguserutilization",
     "functionName": "deleteRoutingUserUtilization",
@@ -33219,6 +33265,13 @@
     "signature": "getRoutingAvailablemediatypes()",
     "return": "AvailableMediaTypeEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\n// Get available media types\napiInstance.getRoutingAvailablemediatypes()\n  .then((data) => {\n    console.log(`getRoutingAvailablemediatypes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingAvailablemediatypes\");\n    console.error(err);\n  });"
+  },
+  "getroutingdirectroutingbackupsettingsme": {
+    "operationId": "getroutingdirectroutingbackupsettingsme",
+    "functionName": "getRoutingDirectroutingbackupSettingsMe",
+    "signature": "getRoutingDirectroutingbackupSettingsMe()",
+    "return": "AgentDirectRoutingBackupSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\n// Get the user's Direct Routing Backup settings.\napiInstance.getRoutingDirectroutingbackupSettingsMe()\n  .then((data) => {\n    console.log(`getRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingDirectroutingbackupSettingsMe\");\n    console.error(err);\n  });"
   },
   "getroutingemaildomain": {
     "operationId": "getroutingemaildomain",
@@ -34287,6 +34340,20 @@
     ],
     "return": "SmsPhoneNumberEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"phoneNumber\": \"phoneNumber_example\", // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.\n  \"phoneNumberType\": [\"phoneNumberType_example\"], // [String] | Filter on phone number type\n  \"phoneNumberStatus\": [\"phoneNumberStatus_example\"], // [String] | Filter on phone number status\n  \"countryCode\": [\"countryCode_example\"], // [String] | Filter on country code\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortBy\": \"sortBy_example\", // String | Optional field to sort results\n  \"sortOrder\": \"sortOrder_example\", // String | Sort order\n  \"language\": en-US, // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations\n  \"integrationId\": \"integrationId_example\", // String | Filter on the Genesys Cloud integration id to which the phone number belongs to\n  \"supportedContentId\": \"supportedContentId_example\" // String | Filter based on the supported content ID\n};\n\n// Get a list of provisioned phone numbers.\napiInstance.getRoutingSmsPhonenumbers(opts)\n  .then((data) => {\n    console.log(`getRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingSmsPhonenumbers\");\n    console.error(err);\n  });"
+  },
+  "getroutinguserdirectroutingbackupsettings": {
+    "operationId": "getroutinguserdirectroutingbackupsettings",
+    "functionName": "getRoutingUserDirectroutingbackupSettings",
+    "signature": "getRoutingUserDirectroutingbackupSettings(userId)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "AgentDirectRoutingBackupSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet userId = \"userId_example\"; // String | User ID\n\n// Get the user's Direct Routing Backup settings.\napiInstance.getRoutingUserDirectroutingbackupSettings(userId)\n  .then((data) => {\n    console.log(`getRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingUserDirectroutingbackupSettings\");\n    console.error(err);\n  });"
   },
   "getroutinguserutilization": {
     "operationId": "getroutinguserutilization",
@@ -35368,6 +35435,20 @@
     "return": "UserRoutingSkill",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet userId = \"userId_example\"; // String | User ID\nlet body = {}; // Object | Skill\n\n// Add routing skill to user\napiInstance.postUserRoutingskills(userId, body)\n  .then((data) => {\n    console.log(`postUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postUserRoutingskills\");\n    console.error(err);\n  });"
   },
+  "putroutingdirectroutingbackupsettingsme": {
+    "operationId": "putroutingdirectroutingbackupsettingsme",
+    "functionName": "putRoutingDirectroutingbackupSettingsMe",
+    "signature": "putRoutingDirectroutingbackupSettingsMe(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "AgentDirectRoutingBackupSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet body = {}; // Object | directRoutingBackup\n\n// Update the user's Direct Routing Backup settings.\napiInstance.putRoutingDirectroutingbackupSettingsMe(body)\n  .then((data) => {\n    console.log(`putRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putRoutingDirectroutingbackupSettingsMe\");\n    console.error(err);\n  });"
+  },
   "putroutingemaildomainroute": {
     "operationId": "putroutingemaildomainroute",
     "functionName": "putRoutingEmailDomainRoute",
@@ -35490,6 +35571,25 @@
     ],
     "return": "SmsPhoneNumber",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet addressId = \"addressId_example\"; // String | Address ID\nlet body = {}; // Object | SmsPhoneNumber\n\n// Update a phone number provisioned for SMS.\napiInstance.putRoutingSmsPhonenumber(addressId, body)\n  .then((data) => {\n    console.log(`putRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putRoutingSmsPhonenumber\");\n    console.error(err);\n  });"
+  },
+  "putroutinguserdirectroutingbackupsettings": {
+    "operationId": "putroutinguserdirectroutingbackupsettings",
+    "functionName": "putRoutingUserDirectroutingbackupSettings",
+    "signature": "putRoutingUserDirectroutingbackupSettings(userId, body)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "AgentDirectRoutingBackupSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet userId = \"userId_example\"; // String | User ID\nlet body = {}; // Object | directRoutingBackup\n\n// Update the user's Direct Routing Backup settings.\napiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)\n  .then((data) => {\n    console.log(`putRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putRoutingUserDirectroutingbackupSettings\");\n    console.error(err);\n  });"
   },
   "putroutinguserutilization": {
     "operationId": "putroutinguserutilization",

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 199.0.0
+	 * @version 200.0.0
 	 */
 
 	/**
@@ -35,6 +35,26 @@ class RoutingApi {
 			'/api/v2/routing/assessments/{assessmentId}', 
 			'DELETE', 
 			{ 'assessmentId': assessmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 */
+	deleteRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'DELETE', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -416,6 +436,31 @@ class RoutingApi {
 	}
 
 	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'DELETE', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
@@ -714,6 +759,26 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/availablemediatypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 */
+	getRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
 			'GET', 
 			{  },
 			{  },
@@ -1927,6 +1992,31 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'],'integration.id': opts['integrationId'],'supportedContent.id': opts['supportedContentId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -3594,6 +3684,31 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingDirectroutingbackupSettingsMe(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a route
 	 * 
 	 * @param {String} domainName email domain
@@ -3783,6 +3898,36 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'PUT', 
 			{ 'addressId': addressId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingUserDirectroutingbackupSettings(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'PUT', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },

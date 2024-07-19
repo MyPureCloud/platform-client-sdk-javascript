@@ -334,6 +334,8 @@ docs/deleteResponsemanagementLibrary-example.txt
 docs/deleteResponsemanagementResponse-example.txt
 docs/deleteResponsemanagementResponseasset-example.txt
 docs/deleteRoutingAssessment-example.txt
+docs/deleteRoutingDirectroutingbackupSettingsMe-example.txt
+docs/deleteRoutingDirectroutingbackupSettingsMe-example.txt
 docs/deleteRoutingEmailDomain-example.txt
 docs/deleteRoutingEmailDomainRoute-example.txt
 docs/deleteRoutingEmailOutboundDomain-example.txt
@@ -348,6 +350,8 @@ docs/deleteRoutingSkill-example.txt
 docs/deleteRoutingSkillgroup-example.txt
 docs/deleteRoutingSmsAddress-example.txt
 docs/deleteRoutingSmsPhonenumber-example.txt
+docs/deleteRoutingUserDirectroutingbackupSettings-example.txt
+docs/deleteRoutingUserDirectroutingbackupSettings-example.txt
 docs/deleteRoutingUserUtilization-example.txt
 docs/deleteRoutingUserUtilization-example.txt
 docs/deleteRoutingUtilization-example.txt
@@ -1216,6 +1220,8 @@ docs/getRoutingAssessments-example.txt
 docs/getRoutingAssessmentsJob-example.txt
 docs/getRoutingAssessmentsJobs-example.txt
 docs/getRoutingAvailablemediatypes-example.txt
+docs/getRoutingDirectroutingbackupSettingsMe-example.txt
+docs/getRoutingDirectroutingbackupSettingsMe-example.txt
 docs/getRoutingEmailDomain-example.txt
 docs/getRoutingEmailDomainRoute-example.txt
 docs/getRoutingEmailDomainRoutes-example.txt
@@ -1260,6 +1266,8 @@ docs/getRoutingSmsAddresses-example.txt
 docs/getRoutingSmsAvailablephonenumbers-example.txt
 docs/getRoutingSmsPhonenumber-example.txt
 docs/getRoutingSmsPhonenumbers-example.txt
+docs/getRoutingUserDirectroutingbackupSettings-example.txt
+docs/getRoutingUserDirectroutingbackupSettings-example.txt
 docs/getRoutingUserUtilization-example.txt
 docs/getRoutingUserUtilization-example.txt
 docs/getRoutingUtilization-example.txt
@@ -2614,6 +2622,8 @@ docs/putRecordingsDeletionprotection-example.txt
 docs/putResponsemanagementLibrary-example.txt
 docs/putResponsemanagementResponse-example.txt
 docs/putResponsemanagementResponseasset-example.txt
+docs/putRoutingDirectroutingbackupSettingsMe-example.txt
+docs/putRoutingDirectroutingbackupSettingsMe-example.txt
 docs/putRoutingEmailDomainRoute-example.txt
 docs/putRoutingEmailOutboundDomainActivation-example.txt
 docs/putRoutingMessageRecipient-example.txt
@@ -2621,6 +2631,8 @@ docs/putRoutingQueue-example.txt
 docs/putRoutingSettings-example.txt
 docs/putRoutingSettingsTranscription-example.txt
 docs/putRoutingSmsPhonenumber-example.txt
+docs/putRoutingUserDirectroutingbackupSettings-example.txt
+docs/putRoutingUserDirectroutingbackupSettings-example.txt
 docs/putRoutingUserUtilization-example.txt
 docs/putRoutingUserUtilization-example.txt
 docs/putRoutingUtilization-example.txt

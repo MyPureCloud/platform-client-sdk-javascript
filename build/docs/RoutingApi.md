@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteRoutingAssessment**](RoutingApi.html#deleteRoutingAssessment) | **DELETE** /api/v2/routing/assessments/{assessmentId} | Delete single benefit assessment.
+[**deleteRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#deleteRoutingDirectroutingbackupSettingsMe) | **DELETE** /api/v2/routing/directroutingbackup/settings/me | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | **DELETE** /api/v2/routing/email/domains/{domainId} | Delete a domain
 [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | **DELETE** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Delete a route
 [**deleteRoutingEmailOutboundDomain**](RoutingApi.html#deleteRoutingEmailOutboundDomain) | **DELETE** /api/v2/routing/email/outbound/domains/{domainId} | Delete an outbound domain
@@ -22,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingSkillgroup**](RoutingApi.html#deleteRoutingSkillgroup) | **DELETE** /api/v2/routing/skillgroups/{skillGroupId} | Remove skill group definition
 [**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | **DELETE** /api/v2/routing/sms/addresses/{addressId} | Delete an Address by Id for SMS
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
+[**deleteRoutingUserDirectroutingbackupSettings**](RoutingApi.html#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
 [**deleteRoutingUtilizationLabel**](RoutingApi.html#deleteRoutingUtilizationLabel) | **DELETE** /api/v2/routing/utilization/labels/{labelId} | Delete a utilization label
@@ -34,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingAssessmentsJob**](RoutingApi.html#getRoutingAssessmentsJob) | **GET** /api/v2/routing/assessments/jobs/{jobId} | Retrieve a single benefit assessments job.
 [**getRoutingAssessmentsJobs**](RoutingApi.html#getRoutingAssessmentsJobs) | **GET** /api/v2/routing/assessments/jobs | Retrieve all benefit assessment jobs.
 [**getRoutingAvailablemediatypes**](RoutingApi.html#getRoutingAvailablemediatypes) | **GET** /api/v2/routing/availablemediatypes | Get available media types
+[**getRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
 [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | **GET** /api/v2/routing/email/domains/{domainId} | Get domain
 [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Get a route
 [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | **GET** /api/v2/routing/email/domains/{domainName}/routes | Get routes
@@ -78,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
 [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{addressId} | Get a phone number provisioned for SMS.
 [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
+[**getRoutingUserDirectroutingbackupSettings**](RoutingApi.html#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
 [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | **GET** /api/v2/routing/utilization | Get the organization-wide max utilization settings.
 [**getRoutingUtilizationLabel**](RoutingApi.html#getRoutingUtilizationLabel) | **GET** /api/v2/routing/utilization/labels/{labelId} | Get details about this utilization label
@@ -137,6 +141,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | **POST** /api/v2/routing/wrapupcodes | Create a wrap-up code
 [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
 [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
+[**putRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
 [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Update a route
 [**putRoutingEmailOutboundDomainActivation**](RoutingApi.html#putRoutingEmailOutboundDomainActivation) | **PUT** /api/v2/routing/email/outbound/domains/{domainId}/activation | Request an activation status (cname + dkim) update of an outbound domain
 [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | **PUT** /api/v2/routing/message/recipients/{recipientId} | Update a recipient
@@ -144,6 +149,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | **PUT** /api/v2/routing/settings | Update an organization's routing settings
 [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
 [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{addressId} | Update a phone number provisioned for SMS.
+[**putRoutingUserDirectroutingbackupSettings**](RoutingApi.html#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
 [**putRoutingUserUtilization**](RoutingApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingUtilizationLabel**](RoutingApi.html#putRoutingUtilizationLabel) | **PUT** /api/v2/routing/utilization/labels/{labelId} | Update a utilization label
@@ -197,6 +203,51 @@ apiInstance.deleteRoutingAssessment(assessmentId)
 | ------------- | ------------- | ------------- | ------------- |
  **assessmentId** | **String** | Benefit Assessment ID |  |
 {: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingDirectroutingbackupSettingsMe"></a>
+
+# void deleteRoutingDirectroutingbackupSettingsMe()
+
+
+DELETE /api/v2/routing/directroutingbackup/settings/me
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfDelete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
+  .then(() => {
+    console.log('deleteRoutingDirectroutingbackupSettingsMe returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
 
 ### Return type
 
@@ -913,6 +964,56 @@ apiInstance.deleteRoutingSmsPhonenumber(addressId)
 
 void (no response body)
 
+<a name="deleteRoutingUserDirectroutingbackupSettings"></a>
+
+# void deleteRoutingUserDirectroutingbackupSettings(userId)
+
+
+DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
+  .then(() => {
+    console.log('deleteRoutingUserDirectroutingbackupSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteRoutingUserUtilization"></a>
 
 # void deleteRoutingUserUtilization(userId)
@@ -1528,6 +1629,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 **AvailableMediaTypeEntityListing**
+
+<a name="getRoutingDirectroutingbackupSettingsMe"></a>
+
+# AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
+
+
+GET /api/v2/routing/directroutingbackup/settings/me
+
+Get the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.getRoutingDirectroutingbackupSettingsMe()
+  .then((data) => {
+    console.log(`getRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
 
 <a name="getRoutingEmailDomain"></a>
 
@@ -3942,6 +4088,56 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 ### Return type
 
 **SmsPhoneNumberEntityListing**
+
+<a name="getRoutingUserDirectroutingbackupSettings"></a>
+
+# AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
+
+
+GET /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Get the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
+  .then((data) => {
+    console.log(`getRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
 
 <a name="getRoutingUserUtilization"></a>
 
@@ -7079,6 +7275,56 @@ apiInstance.postUserRoutingskills(userId, body)
 
 **UserRoutingSkill**
 
+<a name="putRoutingDirectroutingbackupSettingsMe"></a>
+
+# AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
+
+
+PUT /api/v2/routing/directroutingbackup/settings/me
+
+Update the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfEdit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | directRoutingBackup
+
+apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
+  .then((data) => {
+    console.log(`putRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
 <a name="putRoutingEmailDomainRoute"></a>
 
 # InboundRoute putRoutingEmailDomainRoute(domainName, routeId, body)
@@ -7438,6 +7684,58 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 ### Return type
 
 **SmsPhoneNumber**
+
+<a name="putRoutingUserDirectroutingbackupSettings"></a>
+
+# AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
+
+
+PUT /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Update the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | directRoutingBackup
+
+apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
+  .then((data) => {
+    console.log(`putRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
 
 <a name="putRoutingUserUtilization"></a>
 
