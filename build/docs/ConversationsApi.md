@@ -1676,7 +1676,7 @@ apiInstance.getConversationSuggestions(conversationId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script |
- **state** | **String** | Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed |
+ **state** | **String** | Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
 {: class="table table-striped"}
 
 ### Return type

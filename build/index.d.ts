@@ -2470,6 +2470,7 @@ declare class IntegrationsApi {
   	getIntegrationsActions(opts?: IntegrationsApi.getIntegrationsActionsOptions): Promise<Models.ActionEntityListing>; 
   	getIntegrationsActionsCategories(opts?: IntegrationsApi.getIntegrationsActionsCategoriesOptions): Promise<Models.CategoryEntityListing>; 
   	getIntegrationsActionsCertificates(opts?: IntegrationsApi.getIntegrationsActionsCertificatesOptions): Promise<Models.ActionCertificateListing>; 
+  	getIntegrationsActionsCertificatesTruststore(): Promise<Models.TrustedCertificates>; 
   	getIntegrationsActionsDrafts(opts?: IntegrationsApi.getIntegrationsActionsDraftsOptions): Promise<Models.ActionEntityListing>; 
   	getIntegrationsActionsFunctionsRuntimes(): Promise<Array<Models.FunctionRuntime>>; 
   	getIntegrationsBotconnectorIntegrationIdBot(integrationId: string, botId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotOptions): Promise<Models.BotConnectorBot>; 
@@ -3720,7 +3721,9 @@ declare class OrganizationApi {
   	getOrganizationsLimitsDocs(): Promise<Models.LimitDocumentation>; 
   	getOrganizationsLimitsDocsFreetrial(): Promise<Models.FreeTrialLimitDocs>; 
   	getOrganizationsLimitsNamespace(namespaceName: string): Promise<Models.LimitsEntityListing>; 
+  	getOrganizationsLimitsNamespaceCounts(namespaceName: string, opts?: OrganizationApi.getOrganizationsLimitsNamespaceCountsOptions): Promise<Models.LimitCountListing>; 
   	getOrganizationsLimitsNamespaceDefaults(namespaceName: string): Promise<Models.LimitsEntityListing>; 
+  	getOrganizationsLimitsNamespaceLimitCounts(namespaceName: string, limitName: string, opts?: OrganizationApi.getOrganizationsLimitsNamespaceLimitCountsOptions): Promise<Models.LimitCountListing>; 
   	getOrganizationsLimitsNamespaces(opts?: OrganizationApi.getOrganizationsLimitsNamespacesOptions): Promise<object>; 
   	getOrganizationsMe(): Promise<Models.Organization>; 
   	getOrganizationsWhitelist(): Promise<Models.OrgWhitelistSettings>; 
@@ -3739,6 +3742,16 @@ declare namespace OrganizationApi {
 		"status"?: string;
 		"pageSize"?: number;
 		"expand"?: Array<string>;
+	}
+	export interface getOrganizationsLimitsNamespaceCountsOptions { 
+		"cursor"?: string;
+		"entityId"?: string;
+		"userId"?: string;
+	}
+	export interface getOrganizationsLimitsNamespaceLimitCountsOptions { 
+		"entityId"?: string;
+		"userId"?: string;
+		"cursor"?: string;
 	}
 	export interface getOrganizationsLimitsNamespacesOptions { 
 		"pageSize"?: number;
@@ -5717,9 +5730,9 @@ declare class TaskManagementApi {
   	patchTaskmanagementWorkitemAssignment(workitemId: string, body: Models.WorkitemManualAssign): Promise<void>; 
   	patchTaskmanagementWorkitemUserWrapups(workitemId: string, userId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>; 
   	patchTaskmanagementWorkitemUsersMeWrapups(workitemId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>; 
-  	patchTaskmanagementWorktype(worktypeId: string, opts?: TaskManagementApi.patchTaskmanagementWorktypeOptions): Promise<Models.Worktype>; 
-  	patchTaskmanagementWorktypeStatus(worktypeId: string, statusId: string, opts?: TaskManagementApi.patchTaskmanagementWorktypeStatusOptions): Promise<Models.WorkitemStatus>; 
-  	postTaskmanagementWorkbins(opts?: TaskManagementApi.postTaskmanagementWorkbinsOptions): Promise<Models.Workbin>; 
+  	patchTaskmanagementWorktype(worktypeId: string, body: Models.WorktypeUpdate): Promise<Models.Worktype>; 
+  	patchTaskmanagementWorktypeStatus(worktypeId: string, statusId: string, body: Models.WorkitemStatusUpdate): Promise<Models.WorkitemStatus>; 
+  	postTaskmanagementWorkbins(body: Models.WorkbinCreate): Promise<Models.Workbin>; 
   	postTaskmanagementWorkbinsQuery(body: Models.WorkbinQueryRequest): Promise<Models.WorkbinQueryEntityListing>; 
   	postTaskmanagementWorkitemAcdCancel(workitemId: string): Promise<Models.Workitem>; 
   	postTaskmanagementWorkitemDisconnect(workitemId: string): Promise<Models.Workitem>; 
@@ -5728,8 +5741,8 @@ declare class TaskManagementApi {
   	postTaskmanagementWorkitemsQuery(body: Models.WorkitemQueryPostRequest): Promise<Models.WorkitemPostQueryEntityListing>; 
   	postTaskmanagementWorkitemsQueryJobs(body: Models.WorkitemQueryJobCreate): Promise<Models.WorkitemQueryJobResponse>; 
   	postTaskmanagementWorkitemsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>; 
-  	postTaskmanagementWorktypeStatuses(worktypeId: string, opts?: TaskManagementApi.postTaskmanagementWorktypeStatusesOptions): Promise<Models.WorkitemStatus>; 
-  	postTaskmanagementWorktypes(opts?: TaskManagementApi.postTaskmanagementWorktypesOptions): Promise<Models.Worktype>; 
+  	postTaskmanagementWorktypeStatuses(worktypeId: string, body: Models.WorkitemStatusCreate): Promise<Models.WorkitemStatus>; 
+  	postTaskmanagementWorktypes(body: Models.WorktypeCreate): Promise<Models.Worktype>; 
   	postTaskmanagementWorktypesQuery(body: Models.WorktypeQueryRequest): Promise<Models.WorktypeQueryEntityListing>; 
   	putTaskmanagementWorkitemsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>;
 }
@@ -5784,23 +5797,8 @@ declare namespace TaskManagementApi {
 		"pageSize"?: number;
 		"sortOrder"?: string;
 	}
-	export interface patchTaskmanagementWorktypeOptions { 
-		"body"?: Models.WorktypeUpdate;
-	}
-	export interface patchTaskmanagementWorktypeStatusOptions { 
-		"body"?: Models.WorkitemStatusUpdate;
-	}
-	export interface postTaskmanagementWorkbinsOptions { 
-		"body"?: Models.WorkbinCreate;
-	}
 	export interface postTaskmanagementWorkitemTerminateOptions { 
 		"body"?: Models.WorkitemTerminate;
-	}
-	export interface postTaskmanagementWorktypeStatusesOptions { 
-		"body"?: Models.WorkitemStatusCreate;
-	}
-	export interface postTaskmanagementWorktypesOptions { 
-		"body"?: Models.WorktypeCreate;
 	}
 }
 
@@ -6715,6 +6713,8 @@ declare class WorkforceManagementApi {
   	deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId: string, timeOffPlanId: string): Promise<void>; 
   	deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.BuAsyncScheduleResponse>; 
   	deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId: string, weekDateId: string, forecastId: string): Promise<void>; 
+  	deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string): Promise<void>; 
+  	deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string): Promise<void>; 
   	deleteWorkforcemanagementCalendarUrlIcs(): Promise<void>; 
   	deleteWorkforcemanagementManagementunit(managementUnitId: string): Promise<void>; 
   	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string): Promise<void>; 
@@ -6729,6 +6729,13 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string): Promise<Models.AdherenceExplanationResponse>; 
   	getWorkforcemanagementAgentManagementunit(agentId: string): Promise<Models.AgentManagementUnitReference>; 
   	getWorkforcemanagementAgentsMeManagementunit(): Promise<Models.AgentManagementUnitReference>; 
+  	getWorkforcemanagementAlternativeshiftsOffersJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>; 
+  	getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>; 
+  	getWorkforcemanagementAlternativeshiftsSettings(): Promise<Models.AlternativeShiftBuSettingsResponse>; 
+  	getWorkforcemanagementAlternativeshiftsTrade(tradeId: string): Promise<Models.AlternativeShiftTradeResponse>; 
+  	getWorkforcemanagementAlternativeshiftsTrades(opts?: WorkforceManagementApi.getWorkforcemanagementAlternativeshiftsTradesOptions): Promise<Models.ListAlternativeShiftTradesResponse>; 
+  	getWorkforcemanagementAlternativeshiftsTradesJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>; 
+  	getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>; 
   	getWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
   	getWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string): Promise<Models.BusinessUnitActivityCode>; 
   	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCodeListing>; 
@@ -6736,6 +6743,9 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId: string, activityPlanId: string, jobId: string): Promise<Models.ActivityPlanRunJobResponse>; 
   	getWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplansOptions): Promise<Models.ActivityPlanListing>; 
   	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId: string): Promise<Models.ActivityPlanJobListing>; 
+  	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId: string): Promise<Models.AlternativeShiftBuSettingsResponse>; 
+  	getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId: string, tradeId: string): Promise<Models.AlternativeShiftTradeResponse>; 
+  	getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId: string, jobId: string): Promise<Models.BuAlternativeShiftJobResponse>; 
   	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId: string, _date: string): Promise<Models.WfmIntradayPlanningGroupListing>; 
   	getWorkforcemanagementBusinessunitManagementunits(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitManagementunitsOptions): Promise<Models.ManagementUnitListing>; 
   	getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string): Promise<Models.PlanningGroup>; 
@@ -6765,6 +6775,11 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId: string, weekDateId: string, forecastId: string): Promise<Models.ForecastPlanningGroupsResponse>; 
   	getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementOptions): Promise<Models.BuForecastStaffingRequirementsResultResponse>; 
   	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId: string, weekDateId: string): Promise<Models.BuShortTermForecastListing>; 
+  	getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string): Promise<Models.WorkPlanBid>; 
+  	getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string): Promise<Models.WorkPlanBidGroupResponse>; 
+  	getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId: string, bidId: string, bidGroupId: string): Promise<Models.AdminAgentWorkPlanPreferenceResponse>; 
+  	getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId: string, bidId: string): Promise<Models.WorkPlanBidGroupSummaryList>; 
+  	getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId: string): Promise<Models.WorkPlanBidListResponse>; 
   	getWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnitListing>; 
   	getWorkforcemanagementBusinessunitsDivisionviews(opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitsDivisionviewsOptions): Promise<Models.BusinessUnitListing>; 
   	getWorkforcemanagementCalendarDataIcs(calendarId: string): Promise<string>; 
@@ -6805,15 +6820,25 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementTimeoffrequest(timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>; 
   	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId: string): Promise<Models.WaitlistPositionListing>; 
   	getWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.getWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
+  	getWorkforcemanagementUserWorkplanbidranks(userId: string): Promise<Models.WorkPlanBidRanks>; 
+  	getWorkforcemanagementWorkplanbidPreferences(bidId: string): Promise<Models.AgentWorkPlanBiddingPreferenceResponse>; 
+  	getWorkforcemanagementWorkplanbidWorkplans(bidId: string): Promise<Models.AgentWorkPlanListResponse>; 
+  	getWorkforcemanagementWorkplanbids(): Promise<Models.AgentWorkPlanBids>; 
   	patchWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string, body: Models.UpdateAdherenceExplanationStatusRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
+  	patchWorkforcemanagementAlternativeshiftsTrade(tradeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementAlternativeshiftsTradeOptions): Promise<Models.AlternativeShiftTradeResponse>; 
+  	patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body: Models.AdminBulkUpdateAlternativeShiftTradeStateRequest): Promise<Models.AlternativeShiftAsyncResponse>; 
   	patchWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
   	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitActivitycodeOptions): Promise<Models.BusinessUnitActivityCode>; 
   	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId: string, activityPlanId: string, body: Models.UpdateActivityPlanRequest): Promise<Models.ActivityPlanResponse>; 
+  	patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitAlternativeshiftsSettingsOptions): Promise<Models.AlternativeShiftBuSettingsResponse>; 
   	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitPlanninggroupOptions): Promise<Models.PlanningGroup>; 
   	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitSchedulingRunOptions): Promise<void>; 
   	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>; 
   	patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId: string, staffingGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitStaffinggroupOptions): Promise<Models.StaffingGroupResponse>; 
   	patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId: string, timeOffPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitTimeoffplanOptions): Promise<Models.BuTimeOffPlanResponse>; 
+  	patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string, body: Models.UpdateWorkPlanBid): Promise<Models.WorkPlanBid>; 
+  	patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitWorkplanbidGroupOptions): Promise<Models.WorkPlanBidGroupResponse>; 
+  	patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId: string, bidId: string, bidGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesOptions): Promise<Models.AdminAgentWorkPlanPreferenceResponse>; 
   	patchWorkforcemanagementManagementunit(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitOptions): Promise<Models.ManagementUnit>; 
   	patchWorkforcemanagementManagementunitAgents(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitAgentsOptions): Promise<void>; 
   	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeofflimitOptions): Promise<Models.TimeOffLimit>; 
@@ -6824,6 +6849,9 @@ declare class WorkforceManagementApi {
   	patchWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>; 
   	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanrotationOptions): Promise<Models.WorkPlanRotationResponse>; 
   	patchWorkforcemanagementTimeoffrequest(timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>; 
+  	patchWorkforcemanagementUserWorkplanbidranks(userId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementUserWorkplanbidranksOptions): Promise<Models.WorkPlanBidRanks>; 
+  	patchWorkforcemanagementUsersWorkplanbidranksBulk(body: Array<Models.WorkPlanBidRanks>): Promise<Models.EntityListing>; 
+  	patchWorkforcemanagementWorkplanbidPreferences(bidId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementWorkplanbidPreferencesOptions): Promise<Models.AgentWorkPlanBiddingPreferenceResponse>; 
   	postWorkforcemanagementAdherenceExplanations(body: Models.AddAdherenceExplanationAgentRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
   	postWorkforcemanagementAdherenceExplanationsQuery(body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceExplanationsQueryOptions): Promise<Models.QueryAdherenceExplanationsResponse>; 
   	postWorkforcemanagementAdherenceHistorical(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
@@ -6834,11 +6862,15 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementAgentsIntegrationsHrisQuery(opts?: WorkforceManagementApi.postWorkforcemanagementAgentsIntegrationsHrisQueryOptions): Promise<Models.AgentsIntegrationsListing>; 
   	postWorkforcemanagementAgentsMePossibleworkshifts(body: Models.AgentPossibleWorkShiftsRequest): Promise<Models.AgentPossibleWorkShiftsResponse>; 
   	postWorkforcemanagementAgentschedulesMine(opts?: WorkforceManagementApi.postWorkforcemanagementAgentschedulesMineOptions): Promise<Models.BuCurrentAgentScheduleSearchResponse>; 
+  	postWorkforcemanagementAlternativeshiftsOffersJobs(body: Models.AlternativeShiftOffersRequest): Promise<Models.AlternativeShiftAsyncResponse>; 
+  	postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body: Models.AlternativeShiftSearchOffersRequest): Promise<Models.AlternativeShiftAsyncResponse>; 
+  	postWorkforcemanagementAlternativeshiftsTrades(body: Models.CreateAlternativeShiftTradeRequest): Promise<Models.AlternativeShiftTradeResponse>; 
   	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCode>; 
   	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId: string, activityPlanId: string): Promise<Models.ActivityPlanJobResponse>; 
   	postWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, body: Models.CreateActivityPlanRequest): Promise<Models.ActivityPlanResponse>; 
   	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId: string, body: Models.BuQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAdherenceExplanationsQueryOptions): Promise<Models.BuQueryAdherenceExplanationsResponse>; 
   	postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>; 
+  	postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId: string, body: Models.SearchAlternativeShiftTradesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchOptions): Promise<Models.BuListAlternativeShiftTradesResponse>; 
   	postWorkforcemanagementBusinessunitIntraday(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitIntradayOptions): Promise<Models.AsyncIntradayResponse>; 
   	postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitPlanninggroupsOptions): Promise<Models.PlanningGroup>; 
   	postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitServicegoaltemplatesOptions): Promise<Models.ServiceGoalTemplate>; 
@@ -6862,6 +6894,9 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId: string, weekDateId: string, body: Models.GenerateBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateOptions): Promise<Models.AsyncForecastOperationResult>; 
   	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId: string, weekDateId: string, body: Models.WfmProcessUploadRequest): Promise<Models.ImportForecastResponse>; 
   	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId: string, weekDateId: string, body: Models.UploadUrlRequestBody): Promise<Models.ImportForecastUploadResponse>; 
+  	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId: string, bidId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidCopyOptions): Promise<Models.WorkPlanBid>; 
+  	postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId: string, bidId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidGroupsOptions): Promise<Models.WorkPlanBidGroupResponse>; 
+  	postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidsOptions): Promise<Models.WorkPlanBid>; 
   	postWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnitResponse>; 
   	postWorkforcemanagementCalendarUrlIcs(opts?: WorkforceManagementApi.postWorkforcemanagementCalendarUrlIcsOptions): Promise<Models.CalendarUrlResponse>; 
   	postWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>; 
@@ -6907,6 +6942,9 @@ declare class WorkforceManagementApi {
 }
 
 declare namespace WorkforceManagementApi { 
+	export interface getWorkforcemanagementAlternativeshiftsTradesOptions { 
+		"forceAsync"?: boolean;
+	}
 	export interface getWorkforcemanagementBusinessunitOptions { 
 		"expand"?: Array<string>;
 	}
@@ -7015,11 +7053,17 @@ declare namespace WorkforceManagementApi {
 	export interface getWorkforcemanagementTimeoffrequestsOptions { 
 		"recentlyReviewed"?: boolean;
 	}
+	export interface patchWorkforcemanagementAlternativeshiftsTradeOptions { 
+		"body"?: Models.AgentUpdateAlternativeShiftTradeRequest;
+	}
 	export interface patchWorkforcemanagementBusinessunitOptions { 
 		"body"?: Models.UpdateBusinessUnitRequest;
 	}
 	export interface patchWorkforcemanagementBusinessunitActivitycodeOptions { 
 		"body"?: Models.UpdateActivityCodeRequest;
+	}
+	export interface patchWorkforcemanagementBusinessunitAlternativeshiftsSettingsOptions { 
+		"body"?: Models.UpdateAlternativeShiftBuSettingsRequest;
 	}
 	export interface patchWorkforcemanagementBusinessunitPlanninggroupOptions { 
 		"body"?: Models.UpdatePlanningGroupRequest;
@@ -7035,6 +7079,12 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface patchWorkforcemanagementBusinessunitTimeoffplanOptions { 
 		"body"?: Models.BuUpdateTimeOffPlanRequest;
+	}
+	export interface patchWorkforcemanagementBusinessunitWorkplanbidGroupOptions { 
+		"body"?: Models.WorkPlanBidGroupUpdate;
+	}
+	export interface patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesOptions { 
+		"body"?: Models.AgentsBidAssignedWorkPlanOverrideRequest;
 	}
 	export interface patchWorkforcemanagementManagementunitOptions { 
 		"body"?: Models.UpdateManagementUnitRequest;
@@ -7063,6 +7113,12 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface patchWorkforcemanagementTimeoffrequestOptions { 
 		"body"?: Models.AgentTimeOffRequestPatch;
+	}
+	export interface patchWorkforcemanagementUserWorkplanbidranksOptions { 
+		"body"?: Models.WorkPlanBidRanks;
+	}
+	export interface patchWorkforcemanagementWorkplanbidPreferencesOptions { 
+		"body"?: Models.UpdateAgentWorkPlanBiddingPreference;
 	}
 	export interface postWorkforcemanagementAdherenceExplanationsQueryOptions { 
 		"forceAsync"?: boolean;
@@ -7098,6 +7154,9 @@ declare namespace WorkforceManagementApi {
 		"forceAsync"?: boolean;
 		"forceDownloadService"?: boolean;
 		"body"?: Models.BuSearchAgentSchedulesRequest;
+	}
+	export interface postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchOptions { 
+		"forceAsync"?: boolean;
 	}
 	export interface postWorkforcemanagementBusinessunitIntradayOptions { 
 		"forceAsync"?: boolean;
@@ -7139,6 +7198,15 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateOptions { 
 		"forceAsync"?: boolean;
+	}
+	export interface postWorkforcemanagementBusinessunitWorkplanbidCopyOptions { 
+		"body"?: Models.CopyWorkPlanBid;
+	}
+	export interface postWorkforcemanagementBusinessunitWorkplanbidGroupsOptions { 
+		"body"?: Models.WorkPlanBidGroupCreate;
+	}
+	export interface postWorkforcemanagementBusinessunitWorkplanbidsOptions { 
+		"body"?: Models.CreateWorkPlanBid;
 	}
 	export interface postWorkforcemanagementBusinessunitsOptions { 
 		"body"?: Models.CreateBusinessUnitRequest;
@@ -8086,6 +8154,33 @@ declare namespace Models {
 		"lineConnected"?: boolean;
 	}
 	
+	export interface AdminAgentWorkPlanBiddingPreference { 
+		"agent": Models.UserReference;
+		"submitted": boolean;
+		"assignedWorkPlan"?: Models.WorkPlanReference;
+		"overriddenWorkPlan"?: Models.WorkPlanReference;
+		"overrideReason"?: string;
+		"priorities"?: Array<number>;
+	}
+	
+	export interface AdminAgentWorkPlanPreferenceResponse { 
+		"id"?: string;
+		"workPlans": Array<Models.WorkPlanReference>;
+		"agentWorkPlanBidPreferences": Array<Models.AdminAgentWorkPlanBiddingPreference>;
+		"selfUri"?: string;
+	}
+	
+	export interface AdminBulkUpdateAlternativeShiftTradeState { 
+		"tradeId": string;
+		"state": string;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface AdminBulkUpdateAlternativeShiftTradeStateRequest { 
+		"entities"?: Array<Models.AdminBulkUpdateAlternativeShiftTradeState>;
+		"managementUnitId": string;
+	}
+	
 	export interface AdminTimeOffRequestPatch { 
 		"status"?: string;
 		"activityCodeId"?: string;
@@ -8173,6 +8268,12 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface AgentBidWorkPlanOverrideRequest { 
+		"agentId": string;
+		"overrideWorkPlanId"?: string;
+		"overrideReason"?: string;
+	}
+	
 	export interface AgentCopilotAggregateDataContainer { 
 		"group"?: { [key: string]: string; };
 		"data"?: Array<Models.StatisticalResponse>;
@@ -8240,6 +8341,11 @@ declare namespace Models {
 		"queryType"?: string;
 		"limit"?: number;
 		"pageSize"?: number;
+	}
+	
+	export interface AgentCountRange { 
+		"minimum": number;
+		"maximum": number;
 	}
 	
 	export interface AgentDirectRoutingBackupSettings { 
@@ -8352,11 +8458,93 @@ declare namespace Models {
 		"notes"?: string;
 	}
 	
+	export interface AgentUpdateAlternativeShiftTradeRequest { 
+		"state"?: string;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
 	export interface AgentVideoSettings { 
 		"allowCamera"?: boolean;
 		"allowScreenShare"?: boolean;
 		"background"?: string;
 		"backgroundImage"?: Models.BackgroundImageSettings;
+	}
+	
+	export interface AgentWorkPlan { 
+		"id"?: string;
+		"name"?: string;
+		"constrainWeeklyPaidTime": boolean;
+		"flexibleWeeklyPaidTime": boolean;
+		"weeklyExactPaidMinutes": number;
+		"weeklyMinimumPaidMinutes": number;
+		"weeklyMaximumPaidMinutes": number;
+		"optionalDays"?: Models.SetWrapperDayOfWeek;
+		"shifts": Array<Models.AgentWorkPlanShift>;
+		"selfUri"?: string;
+	}
+	
+	export interface AgentWorkPlanActivity { 
+		"lengthMinutes": number;
+		"countsAsPaidTime": boolean;
+	}
+	
+	export interface AgentWorkPlanBid { 
+		"id": string;
+		"name"?: string;
+		"bidWindowStartDate": string;
+		"bidWindowEndDate": string;
+		"effectiveDate": string;
+		"status": string;
+		"workPlanFieldsVisibleToAgents": Array<string>;
+		"selfUri"?: string;
+	}
+	
+	export interface AgentWorkPlanBiddingPreference { 
+		"workPlan": Models.WorkPlanReference;
+		"priority"?: number;
+	}
+	
+	export interface AgentWorkPlanBiddingPreferenceRequest { 
+		"workPlanId": string;
+		"priority"?: number;
+	}
+	
+	export interface AgentWorkPlanBiddingPreferenceResponse { 
+		"id"?: string;
+		"submitted": boolean;
+		"assignedWorkPlan"?: Models.WorkPlanReference;
+		"overriddenWorkPlan"?: Models.WorkPlanReference;
+		"overrideReason"?: string;
+		"agentWorkPlanBidPreferences": Array<Models.AgentWorkPlanBiddingPreference>;
+		"selfUri"?: string;
+	}
+	
+	export interface AgentWorkPlanBids { 
+		"id"?: string;
+		"businessUnit"?: Models.BusinessUnitReference;
+		"agentWorkPlanBids": Array<Models.AgentWorkPlanBid>;
+		"selfUri"?: string;
+	}
+	
+	export interface AgentWorkPlanListResponse { 
+		"entities"?: Array<Models.AgentWorkPlan>;
+		"managementUnit": Models.ManagementUnitReference;
+	}
+	
+	export interface AgentWorkPlanShift { 
+		"days": Models.SetWrapperDayOfWeek;
+		"flexibleStartTime": boolean;
+		"exactStartTimeMinutesFromMidnight": number;
+		"earliestStartTimeMinutesFromMidnight": number;
+		"latestStartTimeMinutesFromMidnight": number;
+		"earliestStopTimeMinutesFromMidnight": number;
+		"constrainLatestStopTime": boolean;
+		"latestStopTimeMinutesFromMidnight": number;
+		"flexiblePaidTime": boolean;
+		"exactPaidTimeMinutes": number;
+		"minimumPaidTimeMinutes": number;
+		"maximumPaidTimeMinutes": number;
+		"activities": Array<Models.AgentWorkPlanActivity>;
 	}
 	
 	export interface AgentlessEmailSendRequestDto { 
@@ -8380,6 +8568,10 @@ declare namespace Models {
 		"subject"?: string;
 		"dateCreated": string;
 		"selfUri"?: string;
+	}
+	
+	export interface AgentsBidAssignedWorkPlanOverrideRequest { 
+		"agentWorkPlanOverrides": Array<Models.AgentBidWorkPlanOverrideRequest>;
 	}
 	
 	export interface AgentsIntegrationsListing { 
@@ -8501,6 +8693,48 @@ declare namespace Models {
 		"end"?: string;
 	}
 	
+	export interface AlternativeShiftAgentScheduledShift { 
+		"dayIndex": number;
+		"referenceKey": string;
+		"startDate": string;
+		"lengthMinutes": number;
+		"activities": Array<Models.BuAgentScheduleActivity>;
+	}
+	
+	export interface AlternativeShiftAsyncResponse { 
+		"job": Models.AlternativeShiftJobReference;
+	}
+	
+	export interface AlternativeShiftBuSettingsResponse { 
+		"enabledGranularities": Array<string>;
+		"minMinutesBeforeStartTime": number;
+		"retainedActivityCategories": Array<string>;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface AlternativeShiftBulkUpdateTradesResponseTemplate { 
+		"entities"?: Array<Models.AlternativeShiftTradeBulkUpdateTemplateItem>;
+	}
+	
+	export interface AlternativeShiftJobReference { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"selfUri"?: string;
+	}
+	
+	export interface AlternativeShiftJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"viewOffersResults"?: Models.AlternativeShiftOffersViewResponseTemplate;
+		"viewTradesResults"?: Models.AlternativeShiftTradesViewResponseTemplate;
+		"bulkUpdateTradesResults"?: Models.AlternativeShiftBulkUpdateTradesResponseTemplate;
+		"selfUri"?: string;
+	}
+	
 	export interface AlternativeShiftNotification { 
 		"id"?: string;
 		"weekDate": string;
@@ -8511,6 +8745,71 @@ declare namespace Models {
 		"receivingUser"?: Models.UserReference;
 		"receivingShiftDate"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface AlternativeShiftOffersRequest { 
+		"schedule": Models.AlternativeShiftScheduleLookup;
+		"queryWeekDate": string;
+	}
+	
+	export interface AlternativeShiftOffersViewResponseTemplate { 
+		"jobId": string;
+		"businessUnitId": string;
+		"agentId": string;
+		"managementUnitId": string;
+		"schedule": Models.AlternativeShiftScheduleLookup;
+		"offerWeekDate": string;
+		"shifts": Array<Models.AlternativeShiftAgentScheduledShift>;
+		"alternativeDays": Array<Models.AlternativeShiftAgentScheduledShift>;
+	}
+	
+	export interface AlternativeShiftScheduleLookup { 
+		"id": string;
+		"weekDate": string;
+	}
+	
+	export interface AlternativeShiftSearchOffersRequest { 
+		"schedule": Models.AlternativeShiftScheduleLookup;
+		"queryWeekDate": string;
+		"initiatingShift": Models.InitiatingAlternativeShift;
+		"acceptableIntervals"?: Array<string>;
+	}
+	
+	export interface AlternativeShiftTradeBulkUpdateTemplateItem { 
+		"tradeId": string;
+		"state": string;
+		"failureReason"?: string;
+		"adminDateReviewed"?: string;
+		"adminReviewedBy"?: Models.UserReference;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface AlternativeShiftTradeListing { 
+		"entities"?: Array<Models.AlternativeShiftTradeResponse>;
+	}
+	
+	export interface AlternativeShiftTradeResponse { 
+		"id"?: string;
+		"shiftOfferJobId": string;
+		"existingShifts": Array<Models.AlternativeShiftAgentScheduledShift>;
+		"offeredShifts": Array<Models.AlternativeShiftAgentScheduledShift>;
+		"schedule": Models.AlternativeShiftScheduleLookup;
+		"managementUnit": Models.ManagementUnitReference;
+		"user": Models.UserReference;
+		"weekDate"?: string;
+		"expirationDate"?: string;
+		"state": string;
+		"processingStatus"?: string;
+		"systemDateReviewed"?: string;
+		"adminDateReviewed"?: string;
+		"adminReviewedBy"?: Models.UserReference;
+		"violations": Array<string>;
+		"metadata": Models.WfmVersionedEntityMetadata;
+		"selfUri"?: string;
+	}
+	
+	export interface AlternativeShiftTradesViewResponseTemplate { 
+		"entities"?: Array<Models.AlternativeShiftTradeResponse>;
 	}
 	
 	export interface AmazonLexRequest { 
@@ -8891,6 +9190,12 @@ declare namespace Models {
 		"reason"?: string;
 		"annotations"?: Array<Models.Annotation>;
 		"realtimeLocation"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface AnswerGenerationDocument { 
+		"id"?: string;
+		"title"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -10017,6 +10322,22 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface BidGroupWorkPlanRequest { 
+		"workPlanId": string;
+		"overrideAgentCount"?: number;
+		"suggestedAgentCount"?: number;
+		"agentCountRange"?: Models.AgentCountRange;
+	}
+	
+	export interface BidGroupWorkPlanResponse { 
+		"id"?: string;
+		"managementUnit"?: Models.ManagementUnitReference;
+		"overrideAgentCount"?: number;
+		"suggestedAgentCount"?: number;
+		"agentCountRange"?: Models.AgentCountRange;
+		"selfUri"?: string;
+	}
+	
 	export interface BillingUsage { 
 		"name": string;
 		"totalUsage": string;
@@ -10343,6 +10664,18 @@ declare namespace Models {
 		"publishedSchedules"?: Array<Models.BuAgentSchedulePublishedScheduleReference>;
 	}
 	
+	export interface BuAlternativeShiftJobResponse { 
+		"id"?: string;
+		"status": string;
+		"type": string;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"viewOffersResults"?: Models.AlternativeShiftOffersViewResponseTemplate;
+		"viewTradesResults"?: Models.AlternativeShiftTradesViewResponseTemplate;
+		"bulkUpdateTradesResults"?: Models.AlternativeShiftBulkUpdateTradesResponseTemplate;
+		"selfUri"?: string;
+	}
+	
 	export interface BuAsyncAgentSchedulesQueryResponse { 
 		"status"?: string;
 		"operationId"?: string;
@@ -10552,6 +10885,11 @@ declare namespace Models {
 		"onQueueTimeSeconds"?: number;
 	}
 	
+	export interface BuListAlternativeShiftTradesResponse { 
+		"job"?: Models.BuAlternativeShiftJobResponse;
+		"result"?: Models.AlternativeShiftTradeListing;
+	}
+	
 	export interface BuManagementUnitScheduleSummary { 
 		"managementUnit"?: Models.ManagementUnitReference;
 		"agentCount"?: number;
@@ -10748,6 +11086,14 @@ declare namespace Models {
 		"id"?: string;
 		"weekDate": string;
 		"description"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface BuShortTermForecastWeekReference { 
+		"id": string;
+		"weekDate": string;
+		"description"?: string;
+		"weekNumber": number;
 		"selfUri"?: string;
 	}
 	
@@ -16244,6 +16590,10 @@ declare namespace Models {
 		"name": string;
 	}
 	
+	export interface CopyWorkPlanBid { 
+		"name": string;
+	}
+	
 	export interface CopyWorkPlanRotationRequest { 
 		"name": string;
 	}
@@ -16328,6 +16678,14 @@ declare namespace Models {
 		"dailyDurationMinutes": number;
 		"durationMinutes"?: Array<number>;
 		"payableMinutes"?: Array<number>;
+	}
+	
+	export interface CreateAlternativeShiftTradeRequest { 
+		"jobId": string;
+		"dropShiftReferenceKeys"?: Array<string>;
+		"pickupShiftReferenceKeys"?: Array<string>;
+		"alternativeShiftTradeGranularity": string;
+		"expirationDate"?: string;
 	}
 	
 	export interface CreateBenefitAssessmentJobRequest { 
@@ -16797,6 +17155,17 @@ declare namespace Models {
 		"countsAsContiguousWorkTime"?: boolean;
 		"minimumLengthFromShiftStartMinutes"?: number;
 		"minimumLengthFromShiftEndMinutes"?: number;
+	}
+	
+	export interface CreateWorkPlanBid { 
+		"name": string;
+		"forecast"?: Models.BuShortTermForecastWeekReference;
+		"bidWindowStartDate": string;
+		"bidWindowEndDate": string;
+		"effectiveDate": string;
+		"agentRankingType": string;
+		"rankingTiebreakerType": string;
+		"workPlanFieldsVisibleToAgents": Array<string>;
 	}
 	
 	export interface CreateWorkPlanShift { 
@@ -22265,6 +22634,7 @@ declare namespace Models {
 		"nluInfo"?: Models.NluInfo;
 		"supportedLanguages"?: Array<Models.SupportedLanguage>;
 		"compatibleFlowTypes"?: Array<string>;
+		"worktypeId"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -24482,6 +24852,11 @@ declare namespace Models {
 		"actionContext"?: string;
 	}
 	
+	export interface InitiatingAlternativeShift { 
+		"id": string;
+		"startDate": string;
+	}
+	
 	export interface InsightsAgentItem { 
 		"id"?: string;
 		"name"?: string;
@@ -25711,7 +26086,14 @@ declare namespace Models {
 	
 	export interface JourneyViewElementFilter { 
 		"type": string;
-		"predicates": Array<Models.JourneyViewElementFilterPredicate>;
+		"predicates"?: Array<Models.JourneyViewElementFilterPredicate>;
+	}
+	
+	export interface JourneyViewElementFilterNumberPredicate { 
+		"dimension": string;
+		"operator"?: string;
+		"noValue"?: boolean;
+		"range": Models.JourneyViewElementFilterRange;
 	}
 	
 	export interface JourneyViewElementFilterPredicate { 
@@ -25719,6 +26101,20 @@ declare namespace Models {
 		"values": Array<string>;
 		"operator"?: string;
 		"noValue"?: boolean;
+	}
+	
+	export interface JourneyViewElementFilterRange { 
+		"lt"?: Models.JourneyViewElementFilterRangeData;
+		"lte"?: Models.JourneyViewElementFilterRangeData;
+		"gt"?: Models.JourneyViewElementFilterRangeData;
+		"gte"?: Models.JourneyViewElementFilterRangeData;
+		"eq"?: Models.JourneyViewElementFilterRangeData;
+		"neq"?: Models.JourneyViewElementFilterRangeData;
+	}
+	
+	export interface JourneyViewElementFilterRangeData { 
+		"duration"?: string;
+		"number"?: number;
 	}
 	
 	export interface JourneyViewJob { 
@@ -26355,6 +26751,11 @@ declare namespace Models {
 		"range"?: Models.AggregationRange;
 	}
 	
+	export interface KnowledgeAnswerGenerationResponse { 
+		"answer"?: string;
+		"documents"?: Array<Models.AnswerGenerationDocument>;
+	}
+	
 	export interface KnowledgeAsyncAggregateQueryResponse { 
 		"results"?: Array<Models.KnowledgeAggregateDataContainer>;
 		"cursor"?: string;
@@ -26687,6 +27088,7 @@ declare namespace Models {
 		"application"?: Models.KnowledgeSearchClientApplication;
 		"conversationContext"?: Models.KnowledgeConversationContextResponse;
 		"confidenceThreshold"?: number;
+		"answerGeneration"?: Models.KnowledgeAnswerGenerationResponse;
 	}
 	
 	export interface KnowledgeDocumentSearchRequest { 
@@ -26706,6 +27108,7 @@ declare namespace Models {
 		"conversationContext"?: Models.KnowledgeConversationContext;
 		"confidenceThreshold"?: number;
 		"answerHighlightTopResults"?: number;
+		"answerMode"?: Array<string>;
 	}
 	
 	export interface KnowledgeDocumentSearchResult { 
@@ -27559,6 +27962,9 @@ declare namespace Models {
 		"dateModified"?: string;
 		"isOverdue"?: boolean;
 		"lengthInMinutes"?: number;
+		"percentageScore"?: number;
+		"isPassed"?: boolean;
+		"type"?: string;
 	}
 	
 	export interface LearningAssignmentTopicLearningModuleReference { 
@@ -28160,6 +28566,20 @@ declare namespace Models {
 		"previousUri"?: string;
 	}
 	
+	export interface LimitCount { 
+		"name"?: string;
+		"estimatedCount"?: number;
+		"max"?: number;
+		"entityId"?: string;
+		"userId"?: string;
+	}
+	
+	export interface LimitCountListing { 
+		"entities"?: Array<Models.LimitCount>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface LimitDocs { 
 		"key"?: string;
 		"defaultValue"?: number;
@@ -28268,6 +28688,11 @@ declare namespace Models {
 		"uriTemplate"?: string;
 	}
 	
+	export interface ListAlternativeShiftTradesResponse { 
+		"job"?: Models.AlternativeShiftJobResponse;
+		"result"?: Models.AlternativeShiftTradeListing;
+	}
+	
 	export interface ListItemComponent { 
 		"id"?: string;
 		"rmid"?: string;
@@ -28276,6 +28701,22 @@ declare namespace Models {
 		"title"?: string;
 		"description"?: string;
 		"actions"?: Models.ContentActions;
+	}
+	
+	export interface ListWrapperAgentWorkPlanField { 
+		"values"?: Array<string>;
+	}
+	
+	export interface ListWrapperAlternativeShiftBuSettingsActivityCategory { 
+		"values"?: Array<string>;
+	}
+	
+	export interface ListWrapperAlternativeShiftBuSettingsGranularity { 
+		"values"?: Array<string>;
+	}
+	
+	export interface ListWrapperBidGroupWorkPlanRequest { 
+		"values"?: Array<Models.BidGroupWorkPlanRequest>;
 	}
 	
 	export interface ListWrapperFixedAvailability { 
@@ -29428,6 +29869,7 @@ declare namespace Models {
 		"fileUpload"?: Models.FileUploadSettings;
 		"apps"?: Models.MessengerApps;
 		"homeScreen"?: Models.MessengerHomeScreen;
+		"sessionPersistenceType"?: string;
 	}
 	
 	export interface MessengerStyles { 
@@ -30699,6 +31141,7 @@ declare namespace Models {
 		"locations"?: Array<Models.Location>;
 		"groups"?: Array<Models.Group>;
 		"team"?: Models.Team;
+		"workPlanBidRanks"?: Models.WorkPlanBidRanks;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
 		"acdAutoAnswer"?: boolean;
@@ -37692,6 +38135,11 @@ declare namespace Models {
 		"order"?: Array<string>;
 	}
 	
+	export interface SearchAlternativeShiftTradesRequest { 
+		"managementUnitIds"?: Array<string>;
+		"agentIds"?: Array<string>;
+	}
+	
 	export interface SearchCriteria { 
 		"endValue"?: string;
 		"values"?: Array<string>;
@@ -40477,7 +40925,9 @@ declare namespace Models {
 		"channel"?: string;
 		"alternatives"?: Array<Models.TranscriptionTopicTranscriptAlternative>;
 		"agentAssistantId"?: string;
+		"engineProvider"?: string;
 		"engineId"?: string;
+		"engineName"?: string;
 		"dialect"?: string;
 		"speechTextAnalyticsProgramId"?: string;
 		"agentAssistEnabled"?: boolean;
@@ -40932,6 +41382,7 @@ declare namespace Models {
 		"locations"?: Array<Models.Location>;
 		"groups"?: Array<Models.Group>;
 		"team"?: Models.Team;
+		"workPlanBidRanks"?: Models.WorkPlanBidRanks;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
 		"acdAutoAnswer"?: boolean;
@@ -40957,6 +41408,17 @@ declare namespace Models {
 		"nextUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface TrustedCertificateInfo { 
+		"description"?: string;
+		"serialNumber"?: string;
+		"signature"?: string;
+	}
+	
+	export interface TrustedCertificates { 
+		"entities"?: Array<Models.TrustedCertificateInfo>;
+		"total"?: number;
 	}
 	
 	export interface Trustee { 
@@ -41297,6 +41759,18 @@ declare namespace Models {
 		"status"?: string;
 	}
 	
+	export interface UpdateAgentWorkPlanBiddingPreference { 
+		"submitted": boolean;
+		"agentWorkPlanBidPreferences": Array<Models.AgentWorkPlanBiddingPreferenceRequest>;
+	}
+	
+	export interface UpdateAlternativeShiftBuSettingsRequest { 
+		"enabledGranularities"?: Models.ListWrapperAlternativeShiftBuSettingsGranularity;
+		"minMinutesBeforeStartTime"?: number;
+		"retainedActivityCategories"?: Models.ListWrapperAlternativeShiftBuSettingsActivityCategory;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
 	export interface UpdateAnalyticsDataRetentionRequest { 
 		"retentionDays": number;
 	}
@@ -41479,6 +41953,18 @@ declare namespace Models {
 		"default"?: boolean;
 	}
 	
+	export interface UpdateWorkPlanBid { 
+		"name"?: string;
+		"forecast"?: Models.BuShortTermForecastWeekReference;
+		"bidWindowStartDate"?: string;
+		"bidWindowEndDate"?: string;
+		"effectiveDate"?: string;
+		"agentRankingType"?: string;
+		"rankingTiebreakerType"?: string;
+		"workPlanFieldsVisibleToAgents"?: Models.ListWrapperAgentWorkPlanField;
+		"status"?: string;
+	}
+	
 	export interface UpdateWorkPlanRotationAgentRequest { 
 		"userId": string;
 		"dateRange"?: Models.DateRangeWithOptionalEnd;
@@ -41568,6 +42054,7 @@ declare namespace Models {
 		"locations"?: Array<Models.Location>;
 		"groups"?: Array<Models.Group>;
 		"team"?: Models.Team;
+		"workPlanBidRanks"?: Models.WorkPlanBidRanks;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
 		"acdAutoAnswer"?: boolean;
@@ -41866,6 +42353,7 @@ declare namespace Models {
 		"alertingDurationMs"?: number;
 		"contactingDurationMs"?: number;
 		"dialingDurationMs"?: number;
+		"callbackDurationMs"?: number;
 		"conversationExternalContactIds"?: Array<string>;
 		"conversationExternalOrganizationIds"?: Array<string>;
 	}
@@ -42030,6 +42518,7 @@ declare namespace Models {
 		"locations"?: Array<Models.Location>;
 		"groups"?: Array<Models.Group>;
 		"team"?: Models.Team;
+		"workPlanBidRanks"?: Models.WorkPlanBidRanks;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
 		"acdAutoAnswer"?: boolean;
@@ -43314,6 +43803,8 @@ declare namespace Models {
 		"overtalkInstances"?: Models.NumericRange;
 		"isScreenRecorded"?: boolean;
 		"screenMonitorUserIds"?: Array<string>;
+		"dashboardType"?: string;
+		"dashboardAccessFilter"?: string;
 	}
 	
 	export interface VisibilityCondition { 
@@ -45565,6 +46056,78 @@ declare namespace Models {
 		"id"?: string;
 		"delete"?: boolean;
 		"validationId"?: string;
+	}
+	
+	export interface WorkPlanBid { 
+		"id": string;
+		"name": string;
+		"forecast"?: Models.BuShortTermForecastWeekReference;
+		"bidWindowStartDate": string;
+		"bidWindowEndDate": string;
+		"effectiveDate": string;
+		"status": string;
+		"agentRankingType": string;
+		"rankingTiebreakerType": string;
+		"publishedDate"?: string;
+		"workPlanFieldsVisibleToAgents": Array<string>;
+		"metadata"?: Models.WorkPlanBidMetadata;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkPlanBidGroup { 
+		"name": string;
+		"managementUnit": Models.ManagementUnitReference;
+		"agents": Array<Models.UserReference>;
+		"workPlans": Array<Models.BidGroupWorkPlanResponse>;
+		"planningGroups": Array<Models.PlanningGroupReference>;
+	}
+	
+	export interface WorkPlanBidGroupCreate { 
+		"name": string;
+		"managementUnitId": string;
+		"agentIds": Array<string>;
+		"workPlans": Array<Models.BidGroupWorkPlanRequest>;
+		"planningGroupIds": Array<string>;
+	}
+	
+	export interface WorkPlanBidGroupResponse { 
+		"id"?: string;
+		"workPlanBidGroup"?: Models.WorkPlanBidGroup;
+		"metadata"?: Models.WorkPlanBidMetadata;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkPlanBidGroupSummary { 
+		"id"?: string;
+		"name": string;
+		"managementUnit": Models.ManagementUnitReference;
+		"agentCount": number;
+		"workPlanCount": number;
+		"planningGroupCount": number;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkPlanBidGroupSummaryList { 
+		"workPlanBidGroupSummaryList": Array<Models.WorkPlanBidGroupSummary>;
+	}
+	
+	export interface WorkPlanBidGroupUpdate { 
+		"name"?: string;
+		"managementUnitId"?: string;
+		"agentIds"?: Models.ListWrapperString;
+		"workPlans"?: Models.ListWrapperBidGroupWorkPlanRequest;
+		"planningGroupIds"?: Models.ListWrapperString;
+	}
+	
+	export interface WorkPlanBidListResponse { 
+		"entities"?: Array<Models.WorkPlanBid>;
+	}
+	
+	export interface WorkPlanBidMetadata { 
+		"createdBy": Models.UserReference;
+		"createdDate": string;
+		"modifiedBy"?: Models.UserReference;
+		"modifiedDate"?: string;
 	}
 	
 	export interface WorkPlanBidRanks { 

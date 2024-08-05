@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 200.0.0
+	 * @version 201.0.0
 	 */
 
 	/**
@@ -952,15 +952,16 @@ class TaskManagementApi {
 	 * Update the attributes of a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {Object} body Worktype
 	 */
-	patchTaskmanagementWorktype(worktypeId, opts) { 
-		opts = opts || {};
-		
+	patchTaskmanagementWorktype(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null) {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktype';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktype';
 		}
 
 		return this.apiClient.callApi(
@@ -970,7 +971,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -982,12 +983,9 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {Object} body Status
 	 */
-	patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts) { 
-		opts = opts || {};
-		
+	patchTaskmanagementWorktypeStatus(worktypeId, statusId, body) { 
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null) {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeStatus';
@@ -995,6 +993,10 @@ class TaskManagementApi {
 		// verify the required parameter 'statusId' is set
 		if (statusId === undefined || statusId === null) {
 			throw 'Missing the required parameter "statusId" when calling patchTaskmanagementWorktypeStatus';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeStatus';
 		}
 
 		return this.apiClient.callApi(
@@ -1004,7 +1006,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1014,12 +1016,13 @@ class TaskManagementApi {
 	/**
 	 * Create a workbin
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {Object} body Workbin
 	 */
-	postTaskmanagementWorkbins(opts) { 
-		opts = opts || {};
-		
+	postTaskmanagementWorkbins(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkbins';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workbins', 
@@ -1028,7 +1031,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1244,15 +1247,16 @@ class TaskManagementApi {
 	 * Add a status to a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {Object} body Status
 	 */
-	postTaskmanagementWorktypeStatuses(worktypeId, opts) { 
-		opts = opts || {};
-		
+	postTaskmanagementWorktypeStatuses(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
 		if (worktypeId === undefined || worktypeId === null) {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeStatuses';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeStatuses';
 		}
 
 		return this.apiClient.callApi(
@@ -1262,7 +1266,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1272,12 +1276,13 @@ class TaskManagementApi {
 	/**
 	 * Create a worktype
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {Object} body Worktype
 	 */
-	postTaskmanagementWorktypes(opts) { 
-		opts = opts || {};
-		
+	postTaskmanagementWorktypes(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypes';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/worktypes', 
@@ -1286,7 +1291,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -26,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsActions**](IntegrationsApi.html#getIntegrationsActions) | **GET** /api/v2/integrations/actions | Retrieves all actions associated with filters passed in via query param.
 [**getIntegrationsActionsCategories**](IntegrationsApi.html#getIntegrationsActionsCategories) | **GET** /api/v2/integrations/actions/categories | Retrieves all categories of available Actions
 [**getIntegrationsActionsCertificates**](IntegrationsApi.html#getIntegrationsActionsCertificates) | **GET** /api/v2/integrations/actions/certificates | Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+[**getIntegrationsActionsCertificatesTruststore**](IntegrationsApi.html#getIntegrationsActionsCertificatesTruststore) | **GET** /api/v2/integrations/actions/certificates/truststore | Retrieves basic info about trusted root CA certificates
 [**getIntegrationsActionsDrafts**](IntegrationsApi.html#getIntegrationsActionsDrafts) | **GET** /api/v2/integrations/actions/drafts | Retrieves all action drafts associated with the filters passed in via query param.
 [**getIntegrationsActionsFunctionsRuntimes**](IntegrationsApi.html#getIntegrationsActionsFunctionsRuntimes) | **GET** /api/v2/integrations/actions/functions/runtimes | Get action function settings for Action
 [**getIntegrationsBotconnectorIntegrationIdBot**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBot) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId} | Get a specific botConnector bot, plus versions, for this integration
@@ -1138,6 +1139,51 @@ apiInstance.getIntegrationsActionsCertificates(opts)
 ### Return type
 
 **ActionCertificateListing**
+
+<a name="getIntegrationsActionsCertificatesTruststore"></a>
+
+# TrustedCertificates getIntegrationsActionsCertificatesTruststore()
+
+
+GET /api/v2/integrations/actions/certificates/truststore
+
+Retrieves basic info about trusted root CA certificates
+
+Requires ANY permissions:
+
+* integrations:actionCertificate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+apiInstance.getIntegrationsActionsCertificatesTruststore()
+  .then((data) => {
+    console.log(`getIntegrationsActionsCertificatesTruststore success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionsCertificatesTruststore');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**TrustedCertificates**
 
 <a name="getIntegrationsActionsDrafts"></a>
 

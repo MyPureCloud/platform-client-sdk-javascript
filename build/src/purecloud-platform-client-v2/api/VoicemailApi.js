@@ -5,7 +5,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 200.0.0
+	 * @version 201.0.0
 	 */
 
 	/**

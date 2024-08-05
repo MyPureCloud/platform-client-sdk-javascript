@@ -305,7 +305,7 @@ let opts = {
   'sortOrder': "Desc", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
   'sortBy': "sortBy_example", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
   'userId': ["userId_example"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs.
-  'types': ["types_example"], // [String] | Specifies the module types to filter by
+  'types': ["types_example"], // [String] | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated
   'states': ["states_example"], // [String] | Specifies the assignment states to filter by
   'expand': ["expand_example"] // [String] | Specifies the expand option for returning additional information
 };
@@ -337,7 +337,7 @@ apiInstance.getLearningAssignments(opts)
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
  **userId** | **[String]** | Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
- **types** | **[String]** | Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External |
+ **types** | **[String]** | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
  **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
@@ -382,7 +382,7 @@ let opts = {
   'maxPercentageScore': 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
   'sortOrder': "Desc", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
   'sortBy': "sortBy_example", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-  'types': ["types_example"], // [String] | Specifies the module types to filter by
+  'types': ["types_example"], // [String] | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated
   'states': ["states_example"], // [String] | Specifies the assignment states to filter by
   'expand': ["expand_example"] // [String] | Specifies the expand option for returning additional information
 };
@@ -413,7 +413,7 @@ apiInstance.getLearningAssignmentsMe(opts)
  **maxPercentageScore** | **Number** | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
- **types** | **[String]** | Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External |
+ **types** | **[String]** | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
  **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
@@ -712,7 +712,7 @@ let apiInstance = new platformClient.LearningApi();
 
 let opts = { 
   'isArchived': false, // Boolean | Archive status
-  'types': ["types_example"], // [String] | Specifies the module types.
+  'types': ["types_example"], // [String] | Specifies the module types. Informational, AssessedContent and Assessment are deprecated
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ascending", // String | Sort order
@@ -740,7 +740,7 @@ apiInstance.getLearningModules(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **isArchived** | **Boolean** | Archive status | [optional] [default to false] |
- **types** | **[String]** | Specifies the module types. | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External |
+ **types** | **[String]** | Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |

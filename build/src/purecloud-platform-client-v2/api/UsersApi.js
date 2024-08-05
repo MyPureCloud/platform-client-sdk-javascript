@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 200.0.0
+	 * @version 201.0.0
 	 */
 
 	/**
@@ -1333,7 +1333,7 @@ class UsersApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (default to Desc)
-	 * @param {Array.<String>} opts.types Specifies the activity types.
+	 * @param {Array.<String>} opts.types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
 	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 	 */
@@ -1367,7 +1367,7 @@ class UsersApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (default to Desc)
-	 * @param {Array.<String>} opts.types Specifies the activity types.
+	 * @param {Array.<String>} opts.types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
 	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 	 */
@@ -1393,7 +1393,7 @@ class UsersApi {
 	 * Get a Development Activity
 	 * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
 	 * @param {String} activityId Specifies the activity ID, maps to either assignment or appointment ID
-	 * @param {Object} type Specifies the activity type.
+	 * @param {Object} type Specifies the activity type. Informational, AssessedContent and Assessment are deprecated
 	 */
 	getUsersDevelopmentActivity(activityId, type) { 
 		// verify the required parameter 'activityId' is set

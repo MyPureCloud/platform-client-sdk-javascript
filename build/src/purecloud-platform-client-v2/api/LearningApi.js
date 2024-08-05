@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 200.0.0
+	 * @version 201.0.0
 	 */
 
 	/**
@@ -151,7 +151,7 @@ class LearningApi {
 	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
 	 * @param {Object} opts.sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate
 	 * @param {Array.<String>} opts.userId Specifies the list of user IDs to be queried, up to 100 user IDs.
-	 * @param {Array.<String>} opts.types Specifies the module types to filter by
+	 * @param {Array.<String>} opts.types Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
 	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
 	 */
@@ -188,7 +188,7 @@ class LearningApi {
 	 * @param {Number} opts.maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
 	 * @param {Object} opts.sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-	 * @param {Array.<String>} opts.types Specifies the module types to filter by
+	 * @param {Array.<String>} opts.types Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
 	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
 	 */
@@ -358,7 +358,7 @@ class LearningApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.isArchived Archive status (default to false)
-	 * @param {Array.<String>} opts.types Specifies the module types.
+	 * @param {Array.<String>} opts.types Specifies the module types. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)

@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 200.0.0
+	 * @version 201.0.0
 	 */
 
 	/**
@@ -545,6 +545,26 @@ class IntegrationsApi {
 			'GET', 
 			{  },
 			{ 'status': opts['status'],'type': opts['type'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves basic info about trusted root CA certificates
+	 * 
+	 */
+	getIntegrationsActionsCertificatesTruststore() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/certificates/truststore', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 

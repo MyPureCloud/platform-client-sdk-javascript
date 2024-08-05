@@ -1777,7 +1777,7 @@ apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 
 <a name="patchTaskmanagementWorktype"></a>
 
-# Worktype patchTaskmanagementWorktype(worktypeId, opts)
+# Worktype patchTaskmanagementWorktype(worktypeId, body)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}
@@ -1802,11 +1802,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | Worktype
 
-apiInstance.patchTaskmanagementWorktype(worktypeId, opts)
+apiInstance.patchTaskmanagementWorktype(worktypeId, body)
   .then((data) => {
     console.log(`patchTaskmanagementWorktype success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1822,7 +1820,7 @@ apiInstance.patchTaskmanagementWorktype(worktypeId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | Worktype |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1831,7 +1829,7 @@ apiInstance.patchTaskmanagementWorktype(worktypeId, opts)
 
 <a name="patchTaskmanagementWorktypeStatus"></a>
 
-# WorkitemStatus patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts)
+# WorkitemStatus patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
@@ -1857,11 +1855,9 @@ let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
 let statusId = "statusId_example"; // String | Status id
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | Status
 
-apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts)
+apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
   .then((data) => {
     console.log(`patchTaskmanagementWorktypeStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1878,7 +1874,7 @@ apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **statusId** | **String** | Status id |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | Status |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1887,7 +1883,7 @@ apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts)
 
 <a name="postTaskmanagementWorkbins"></a>
 
-# Workbin postTaskmanagementWorkbins(opts)
+# Workbin postTaskmanagementWorkbins(body)
 
 
 POST /api/v2/taskmanagement/workbins
@@ -1911,11 +1907,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TaskManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | Workbin
 
-apiInstance.postTaskmanagementWorkbins(opts)
+apiInstance.postTaskmanagementWorkbins(body)
   .then((data) => {
     console.log(`postTaskmanagementWorkbins success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1930,7 +1924,7 @@ apiInstance.postTaskmanagementWorkbins(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | Workbin |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2347,7 +2341,7 @@ apiInstance.postTaskmanagementWorkitemsSchemas(body)
 
 <a name="postTaskmanagementWorktypeStatuses"></a>
 
-# WorkitemStatus postTaskmanagementWorktypeStatuses(worktypeId, opts)
+# WorkitemStatus postTaskmanagementWorktypeStatuses(worktypeId, body)
 
 
 POST /api/v2/taskmanagement/worktypes/{worktypeId}/statuses
@@ -2372,11 +2366,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TaskManagementApi();
 
 let worktypeId = "worktypeId_example"; // String | Worktype id
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | Status
 
-apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, opts)
+apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, body)
   .then((data) => {
     console.log(`postTaskmanagementWorktypeStatuses success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2392,7 +2384,7 @@ apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | Status |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2401,7 +2393,7 @@ apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, opts)
 
 <a name="postTaskmanagementWorktypes"></a>
 
-# Worktype postTaskmanagementWorktypes(opts)
+# Worktype postTaskmanagementWorktypes(body)
 
 
 POST /api/v2/taskmanagement/worktypes
@@ -2425,11 +2417,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TaskManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | Worktype
 
-apiInstance.postTaskmanagementWorktypes(opts)
+apiInstance.postTaskmanagementWorktypes(body)
   .then((data) => {
     console.log(`postTaskmanagementWorktypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2444,7 +2434,7 @@ apiInstance.postTaskmanagementWorktypes(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
+ **body** | **Object** | Worktype |  |
 {: class="table table-striped"}
 
 ### Return type

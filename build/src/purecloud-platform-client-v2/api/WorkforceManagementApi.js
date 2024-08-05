@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 200.0.0
+	 * @version 201.0.0
 	 */
 
 	/**
@@ -315,6 +315,71 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}', 
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the work plan bid
+	 */
+	deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWorkplanbid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitWorkplanbid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId Work Plan Bid Group id
+	 */
+	deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null) {
+			throw 'Missing the required parameter "bidGroupId" when calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}', 
+			'DELETE', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
 			{  },
 			{  },
 			{  },
@@ -691,6 +756,175 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 */
+	getWorkforcemanagementAlternativeshiftsOffersJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsOffersJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 */
+	getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsOffersSearchJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get alternative shifts settings from the current logged in agent’s business unit
+	 * 
+	 */
+	getWorkforcemanagementAlternativeshiftsSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get my alternative shift trade by trade ID
+	 * 
+	 * @param {String} tradeId The ID of the alternative shift trade
+	 */
+	getWorkforcemanagementAlternativeshiftsTrade(tradeId) { 
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null) {
+			throw 'Missing the required parameter "tradeId" when calling getWorkforcemanagementAlternativeshiftsTrade';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}', 
+			'GET', 
+			{ 'tradeId': tradeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of my alternative shifts trades
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 */
+	getWorkforcemanagementAlternativeshiftsTrades(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/trades', 
+			'GET', 
+			{  },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 */
+	getWorkforcemanagementAlternativeshiftsTradesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsTradesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 */
+	getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAlternativeshiftsTradesStateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get business unit
 	 * Expanding "settings" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
@@ -891,6 +1125,91 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get alternative shifts settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 */
+	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an alternative shifts trade in a business unit for a given trade ID
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} tradeId The ID of the alternative shift trade
+	 */
+	getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTrade';
+		}
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null) {
+			throw 'Missing the required parameter "tradeId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTrade';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'tradeId': tradeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} jobId The ID of the job
+	 */
+	getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'jobId': jobId },
 			{  },
 			{  },
 			{  },
@@ -1862,6 +2181,161 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The id of the workplanbid
+	 */
+	getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId Work Plan Bid Group id
+	 */
+	getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null) {
+			throw 'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the work plan preferences of all the agents in the work plan bid group
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId The ID of the work plan bid group
+	 */
+	getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null) {
+			throw 'Missing the required parameter "bidGroupId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get summary of bid groups that belong to a work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 */
+	getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of work plan bids
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 */
+	getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWorkplanbids';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId },
 			{  },
 			{  },
 			{  },
@@ -2967,6 +3441,101 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get work plan bid ranks for a user
+	 * 
+	 * @param {String} userId The userId to whom the work plan bid ranks apply.
+	 */
+	getWorkforcemanagementUserWorkplanbidranks(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementUserWorkplanbidranks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/users/{userId}/workplanbidranks', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets an agent's work plan bidding preference
+	 * 
+	 * @param {String} bidId The ID of the work plan bid
+	 */
+	getWorkforcemanagementWorkplanbidPreferences(bidId) { 
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementWorkplanbidPreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/workplanbids/{bidId}/preferences', 
+			'GET', 
+			{ 'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets an agent's work plans for a bid
+	 * 
+	 * @param {String} bidId The ID of the work plan bid
+	 */
+	getWorkforcemanagementWorkplanbidWorkplans(bidId) { 
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling getWorkforcemanagementWorkplanbidWorkplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/workplanbids/{bidId}/workplans', 
+			'GET', 
+			{ 'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the list of work plan bids that belong to an agent
+	 * 
+	 */
+	getWorkforcemanagementWorkplanbids() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/workplanbids', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an adherence explanation
 	 * 
 	 * @param {String} agentId The ID of the agent to query
@@ -2991,6 +3560,60 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}', 
 			'PATCH', 
 			{ 'agentId': agentId,'explanationId': explanationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update my alternative shifts trade by trade ID
+	 * 
+	 * @param {String} tradeId The ID of the alternative shift trade
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementAlternativeshiftsTrade(tradeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'tradeId' is set
+		if (tradeId === undefined || tradeId === null) {
+			throw 'Missing the required parameter "tradeId" when calling patchWorkforcemanagementAlternativeshiftsTrade';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}', 
+			'PATCH', 
+			{ 'tradeId': tradeId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk update alternative shift trade states
+	 * 
+	 * @param {Object} body The request body
+	 */
+	patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAlternativeshiftsTradesStateJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs', 
+			'PATCH', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -3094,6 +3717,35 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update alternative shifts settings for a business unit
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -3260,6 +3912,119 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId,'timeOffPlanId': timeOffPlanId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The id of the workplanbid
+	 * @param {Object} body The work plan bid to be updated
+	 */
+	patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbid';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbid';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementBusinessunitWorkplanbid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a bid group by bid group Id
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId Work Plan Bid Group id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null) {
+			throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Overrides the assigned work plan for the specified agents
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {String} bidGroupId The ID of the work plan bid group
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
+		}
+		// verify the required parameter 'bidGroupId' is set
+		if (bidGroupId === undefined || bidGroupId === null) {
+			throw 'Missing the required parameter "bidGroupId" when calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences', 
+			'PATCH', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId,'bidGroupId': bidGroupId },
 			{  },
 			{  },
 			{  },
@@ -3613,6 +4378,89 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Update work plan bid ranks for a user
+	 * 
+	 * @param {String} userId The userId to whom the work plan bid ranks apply.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementUserWorkplanbidranks(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementUserWorkplanbidranks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/users/{userId}/workplanbidranks', 
+			'PATCH', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+	 * 
+	 * @param {Array.<Object>} body Users
+	 */
+	patchWorkforcemanagementUsersWorkplanbidranksBulk(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementUsersWorkplanbidranksBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/users/workplanbidranks/bulk', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an agent's work plan bidding preference
+	 * 
+	 * @param {String} bidId The ID of the work plan bid
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementWorkplanbidPreferences(bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling patchWorkforcemanagementWorkplanbidPreferences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/workplanbids/{bidId}/preferences', 
+			'PATCH', 
+			{ 'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Submit an adherence explanation for the current user
 	 * 
 	 * @param {Object} body The request body
@@ -3879,6 +4727,81 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Request a list of alternative shift offers for a given schedule
+	 * 
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementAlternativeshiftsOffersJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsOffersJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/offers/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request a search of alternative shift offers for a given shift
+	 * 
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsOffersSearchJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/offers/search/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create my alternative shift trade using an existing offer's jobId
+	 * 
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementAlternativeshiftsTrades(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAlternativeshiftsTrades';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/alternativeshifts/trades', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a new activity code
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
@@ -4029,6 +4952,40 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List alternative shifts trades for a given management unit or agent
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 */
+	postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -4838,6 +5795,103 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Copy a work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The ID of the work plan bid to copy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidCopy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a bid group in a given work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} bidId The work plan bid id of the bid groups
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';
+		}
+		// verify the required parameter 'bidId' is set
+		if (bidId === undefined || bidId === null) {
+			throw 'Missing the required parameter "bidId" when calling postWorkforcemanagementBusinessunitWorkplanbidGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'bidId': bidId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new work plan bid
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The work plan bid to be created
+	 */
+	postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWorkplanbids';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

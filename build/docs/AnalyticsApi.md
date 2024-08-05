@@ -83,7 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesJobs) | **POST** /api/v2/analytics/knowledge/aggregates/jobs | Query for knowledge aggregates asynchronously
 [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
 [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
-[**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
+[**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
 [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi.html#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk delete dashboards owned by other user(s)
 [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
 [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk remove dashboard configurations
@@ -4146,9 +4146,9 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 POST /api/v2/analytics/ratelimits/aggregates/query
 
-Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
+Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
 
-The max property can be used to determine estimated rate limit value hit.
+The max property can be used to determine estimated rate limit value hit. See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
 
 Requires ANY permissions:
 

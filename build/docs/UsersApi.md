@@ -2614,7 +2614,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-  'types': ["types_example"], // [String] | Specifies the activity types.
+  'types': ["types_example"], // [String] | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
   'statuses': ["statuses_example"], // [String] | Specifies the activity statuses to filter by
   'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 };
@@ -2643,7 +2643,7 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
- **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
+ **types** | **[String]** | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2687,7 +2687,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-  'types': ["types_example"], // [String] | Specifies the activity types.
+  'types': ["types_example"], // [String] | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
   'statuses': ["statuses_example"], // [String] | Specifies the activity statuses to filter by
   'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 };
@@ -2715,7 +2715,7 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
- **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
+ **types** | **[String]** | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2754,7 +2754,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let activityId = "activityId_example"; // String | Specifies the activity ID, maps to either assignment or appointment ID
-let type = "type_example"; // String | Specifies the activity type.
+let type = "type_example"; // String | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated
 
 apiInstance.getUsersDevelopmentActivity(activityId, type)
   .then((data) => {
@@ -2772,7 +2772,7 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **activityId** | **String** | Specifies the activity ID, maps to either assignment or appointment ID |  |
- **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External |
+ **type** | **String** | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
 {: class="table table-striped"}
 
 ### Return type
