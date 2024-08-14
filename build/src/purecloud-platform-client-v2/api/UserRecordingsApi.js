@@ -5,7 +5,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -76,11 +76,12 @@ class UserRecordingsApi {
 
 	/**
 	 * Download a user recording.
-	 * 
+	 * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
 	 * @param {String} recordingId User Recording ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
 	 * @param {Boolean} opts.async When set to true, api will return 202 response until the recording is ready for download
+	 * @deprecated
 	 */
 	getUserrecordingMedia(recordingId, opts) { 
 		opts = opts || {};
@@ -95,6 +96,35 @@ class UserRecordingsApi {
 			'GET', 
 			{ 'recordingId': recordingId },
 			{ 'formatId': opts['formatId'],'async': opts['async'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Download a user recording.
+	 * 
+	 * @param {String} recordingId User Recording ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 */
+	getUserrecordingTranscoding(recordingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'recordingId' is set
+		if (recordingId === undefined || recordingId === null) {
+			throw 'Missing the required parameter "recordingId" when calling getUserrecordingTranscoding';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/userrecordings/{recordingId}/transcoding', 
+			'GET', 
+			{ 'recordingId': recordingId },
+			{ 'formatId': opts['formatId'] },
 			{  },
 			{  },
 			null, 

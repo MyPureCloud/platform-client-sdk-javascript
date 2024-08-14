@@ -145,8 +145,24 @@
       "class": "JourneySessionEventsNotificationSessionEvent"
     },
     {
+      "topic": "v2.externalcontacts.contacts.{id}.notes.{id}",
+      "class": "ExternalContactsContactNoteChangedTopicNote"
+    },
+    {
       "topic": "v2.externalcontacts.contacts.{id}.unresolved",
       "class": "ExternalContactsUnresolvedContactChangedTopicContact"
+    },
+    {
+      "topic": "v2.externalcontacts.organizations.{id}",
+      "class": "ExternalContactsOrganizationChangedTopicExternalOrganization"
+    },
+    {
+      "topic": "v2.externalcontacts.organizations.{id}.notes.{id}",
+      "class": "ExternalContactsOrganizationNoteChangedTopicNote"
+    },
+    {
+      "topic": "v2.externalcontacts.relationships.{id}",
+      "class": "ExternalContactsRelationshipChangedTopicRelationship"
     },
     {
       "topic": "v2.flows.instances.flow.{id}",
@@ -585,6 +601,10 @@
       "class": "WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.alternative.shift.jobs",
+      "class": "WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.historicaladherencequery",
       "class": "WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice"
     },
@@ -683,6 +703,10 @@
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.shorttermforecasts.import",
       "class": "WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.workplanbids.{id}",
+      "class": "WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification"
     },
     {
       "topic": "v2.workforcemanagement.historicaldata.deletejob",

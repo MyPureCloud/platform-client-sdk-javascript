@@ -27268,6 +27268,39 @@
     "return": "DialerContact",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet contactListId = \"contactListId_example\"; // String | Contact List ID\nlet contactId = \"contactId_example\"; // String | Contact ID\n\n// Get a contact.\napiInstance.getOutboundContactlistContact(contactListId, contactId)\n  .then((data) => {\n    console.log(`getOutboundContactlistContact success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundContactlistContact\");\n    console.error(err);\n  });"
   },
+  "getoutboundcontactlistcontactsbulkjob": {
+    "operationId": "getoutboundcontactlistcontactsbulkjob",
+    "functionName": "getOutboundContactlistContactsBulkJob",
+    "signature": "getOutboundContactlistContactsBulkJob(contactListId, jobId)",
+    "parameters": [
+      {
+        "name": "contactListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ContactsBulkOperationJob",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet contactListId = \"contactListId_example\"; // String | Contact List ID\nlet jobId = \"jobId_example\"; // String | Job ID\n\n// Get bulk operation job.\napiInstance.getOutboundContactlistContactsBulkJob(contactListId, jobId)\n  .then((data) => {\n    console.log(`getOutboundContactlistContactsBulkJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundContactlistContactsBulkJob\");\n    console.error(err);\n  });"
+  },
+  "getoutboundcontactlistcontactsbulkjobs": {
+    "operationId": "getoutboundcontactlistcontactsbulkjobs",
+    "functionName": "getOutboundContactlistContactsBulkJobs",
+    "signature": "getOutboundContactlistContactsBulkJobs(contactListId)",
+    "parameters": [
+      {
+        "name": "contactListId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ContactsBulkOperationJobListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet contactListId = \"contactListId_example\"; // String | Contact List ID\n\n// Get 10 most recent bulk operation jobs associated with contact list.\napiInstance.getOutboundContactlistContactsBulkJobs(contactListId)\n  .then((data) => {\n    console.log(`getOutboundContactlistContactsBulkJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundContactlistContactsBulkJobs\");\n    console.error(err);\n  });"
+  },
   "getoutboundcontactlistexport": {
     "operationId": "getoutboundcontactlistexport",
     "functionName": "getOutboundContactlistExport",
@@ -31785,7 +31818,7 @@
       }
     ],
     "return": "BatchDownloadJobStatusResult",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet jobId = \"jobId_example\"; // String | jobId\n\n// Get the status and results for a batch request job, only the user that submitted the job may retrieve results\napiInstance.getRecordingBatchrequest(jobId)\n  .then((data) => {\n    console.log(`getRecordingBatchrequest success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingBatchrequest\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet jobId = \"jobId_example\"; // String | jobId\n\n// Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.\napiInstance.getRecordingBatchrequest(jobId)\n  .then((data) => {\n    console.log(`getRecordingBatchrequest success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingBatchrequest\");\n    console.error(err);\n  });"
   },
   "getrecordingcrossplatformmediaretentionpolicies": {
     "operationId": "getrecordingcrossplatformmediaretentionpolicies",
@@ -41930,6 +41963,25 @@
     ],
     "return": "DownloadResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UserRecordingsApi();\n\nlet recordingId = \"recordingId_example\"; // String | User Recording ID\nlet opts = { \n  \"formatId\": \"WEBM\", // String | The desired media format.\n  \"async\": true // Boolean | When set to true, api will return 202 response until the recording is ready for download\n};\n\n// Download a user recording.\napiInstance.getUserrecordingMedia(recordingId, opts)\n  .then((data) => {\n    console.log(`getUserrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUserrecordingMedia\");\n    console.error(err);\n  });"
+  },
+  "getuserrecordingtranscoding": {
+    "operationId": "getuserrecordingtranscoding",
+    "functionName": "getUserrecordingTranscoding",
+    "signature": "getUserrecordingTranscoding(recordingId, formatId)",
+    "parameters": [
+      {
+        "name": "recordingId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "formatId",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "DownloadResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UserRecordingsApi();\n\nlet recordingId = \"recordingId_example\"; // String | User Recording ID\nlet opts = { \n  \"formatId\": \"WEBM\" // String | The desired media format.\n};\n\n// Download a user recording.\napiInstance.getUserrecordingTranscoding(recordingId, opts)\n  .then((data) => {\n    console.log(`getUserrecordingTranscoding success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUserrecordingTranscoding\");\n    console.error(err);\n  });"
   },
   "getuserrecordings": {
     "operationId": "getuserrecordings",

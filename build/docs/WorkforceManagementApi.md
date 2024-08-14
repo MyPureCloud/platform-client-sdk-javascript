@@ -2296,8 +2296,6 @@ GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{ac
 
 Get an activity plan
 
-getWorkforcemanagementBusinessunitActivityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * wfm:activityPlan:view
@@ -2349,8 +2347,6 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activ
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}
 
 Gets an activity plan run job
-
-getWorkforcemanagementBusinessunitActivityplanRunsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -2406,8 +2402,6 @@ GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans
 
 Get activity plans
 
-getWorkforcemanagementBusinessunitActivityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * wfm:activityPlan:view
@@ -2461,8 +2455,6 @@ apiInstance.getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
 
 Gets the latest job for all activity plans in the business unit
-
-getWorkforcemanagementBusinessunitActivityplansJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -7210,8 +7202,6 @@ Update an activity plan
 
 If a job associated with the activity plan is in Processing state the activity plan cannot be updated
 
-patchWorkforcemanagementBusinessunitActivityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * wfm:activityPlan:edit
@@ -9223,8 +9213,6 @@ Run an activity plan manually
 
 Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
 
-postWorkforcemanagementBusinessunitActivityplanRunsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * wfm:activityPlanRunJob:add
@@ -9276,8 +9264,6 @@ apiInstance.postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnit
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans
 
 Create an activity plan
-
-postWorkforcemanagementBusinessunitActivityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

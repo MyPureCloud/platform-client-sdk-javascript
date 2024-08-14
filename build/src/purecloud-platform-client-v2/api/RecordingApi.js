@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -490,7 +490,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+	 * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
 	 * 
 	 * @param {String} jobId jobId
 	 */

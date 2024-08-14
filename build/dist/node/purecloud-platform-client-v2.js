@@ -405,7 +405,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 201.0.0
+ * @version 202.0.0
  */
 class ApiClient {
 	/**
@@ -1827,7 +1827,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -1958,7 +1958,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -2619,7 +2619,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -5231,7 +5231,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -9377,7 +9377,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -9578,7 +9578,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -10816,7 +10816,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -10896,7 +10896,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -10966,7 +10966,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -11902,7 +11902,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -12479,7 +12479,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -13561,7 +13561,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -20674,7 +20674,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -20760,7 +20760,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -20812,7 +20812,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -20877,7 +20877,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -21028,7 +21028,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -21124,7 +21124,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -23086,7 +23086,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -23301,7 +23301,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -23484,7 +23484,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -25570,7 +25570,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -25700,7 +25700,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -25831,7 +25831,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -26286,7 +26286,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -26805,7 +26805,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -27666,7 +27666,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -27833,7 +27833,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -30205,7 +30205,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -31858,7 +31858,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -35102,7 +35102,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -36136,7 +36136,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -36358,7 +36358,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -37387,7 +37387,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -37625,7 +37625,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -37861,7 +37861,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -38061,7 +38061,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -38420,7 +38420,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -38571,7 +38571,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -38804,7 +38804,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -39170,7 +39170,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -39440,7 +39440,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -39506,7 +39506,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -40048,7 +40048,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -41395,7 +41395,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -42787,6 +42787,61 @@ class OutboundApi {
 			'/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}', 
 			'GET', 
 			{ 'contactListId': contactListId,'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk operation job.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {String} jobId Job ID
+	 */
+	getOutboundContactlistContactsBulkJob(contactListId, jobId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getOutboundContactlistContactsBulkJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}', 
+			'GET', 
+			{ 'contactListId': contactListId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get 10 most recent bulk operation jobs associated with contact list.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 */
+	getOutboundContactlistContactsBulkJobs(contactListId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs', 
+			'GET', 
+			{ 'contactListId': contactListId },
 			{  },
 			{  },
 			{  },
@@ -45757,7 +45812,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -46501,7 +46556,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -46740,7 +46795,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -48526,7 +48581,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -49011,7 +49066,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+	 * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
 	 * 
 	 * @param {String} jobId jobId
 	 */
@@ -50185,7 +50240,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -50695,7 +50750,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -54814,7 +54869,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -55691,7 +55746,7 @@ class ScreenRecordingApi {
 	/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -55736,7 +55791,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -56180,7 +56235,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -56869,7 +56924,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -57091,7 +57146,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -58369,7 +58424,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -58471,7 +58526,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -58610,7 +58665,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -59964,7 +60019,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -60265,7 +60320,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -60447,7 +60502,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -63775,7 +63830,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -63903,7 +63958,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -64057,7 +64112,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -64326,7 +64381,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -64541,7 +64596,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -64612,11 +64667,12 @@ class UserRecordingsApi {
 
 	/**
 	 * Download a user recording.
-	 * 
+	 * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
 	 * @param {String} recordingId User Recording ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
 	 * @param {Boolean} opts.async When set to true, api will return 202 response until the recording is ready for download
+	 * @deprecated
 	 */
 	getUserrecordingMedia(recordingId, opts) { 
 		opts = opts || {};
@@ -64631,6 +64687,35 @@ class UserRecordingsApi {
 			'GET', 
 			{ 'recordingId': recordingId },
 			{ 'formatId': opts['formatId'],'async': opts['async'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Download a user recording.
+	 * 
+	 * @param {String} recordingId User Recording ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 */
+	getUserrecordingTranscoding(recordingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'recordingId' is set
+		if (recordingId === undefined || recordingId === null) {
+			throw 'Missing the required parameter "recordingId" when calling getUserrecordingTranscoding';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/userrecordings/{recordingId}/transcoding', 
+			'GET', 
+			{ 'recordingId': recordingId },
+			{ 'formatId': opts['formatId'] },
 			{  },
 			{  },
 			null, 
@@ -64726,7 +64811,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -67529,7 +67614,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -67640,7 +67725,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -68307,7 +68392,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -68858,7 +68943,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -69385,7 +69470,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -69431,7 +69516,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -69577,7 +69662,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -70589,7 +70674,6 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to fetch
-	 * getWorkforcemanagementBusinessunitActivityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -70621,7 +70705,6 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan associated with the run job
 	 * @param {String} jobId The ID of the activity plan run job
-	 * getWorkforcemanagementBusinessunitActivityplanRunsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -70657,7 +70740,6 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.state Optionally filter by activity plan state
-	 * getWorkforcemanagementBusinessunitActivityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts) { 
 		opts = opts || {};
@@ -70685,7 +70767,6 @@ class WorkforceManagementApi {
 	 * Gets the latest job for all activity plans in the business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * getWorkforcemanagementBusinessunitActivityplansJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -73265,7 +73346,6 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to update
 	 * @param {Object} body body
-	 * patchWorkforcemanagementBusinessunitActivityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -74407,7 +74487,6 @@ class WorkforceManagementApi {
 	 * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to run
-	 * postWorkforcemanagementBusinessunitActivityplanRunsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -74438,7 +74517,6 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
-	 * postWorkforcemanagementBusinessunitActivityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -76739,7 +76817,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 201.0.0
+ * @version 202.0.0
  */
 class platformClient {
 	constructor() {

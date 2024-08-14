@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -1017,7 +1017,6 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to fetch
-	 * getWorkforcemanagementBusinessunitActivityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -1049,7 +1048,6 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan associated with the run job
 	 * @param {String} jobId The ID of the activity plan run job
-	 * getWorkforcemanagementBusinessunitActivityplanRunsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -1085,7 +1083,6 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.state Optionally filter by activity plan state
-	 * getWorkforcemanagementBusinessunitActivityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts) { 
 		opts = opts || {};
@@ -1113,7 +1110,6 @@ class WorkforceManagementApi {
 	 * Gets the latest job for all activity plans in the business unit
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
-	 * getWorkforcemanagementBusinessunitActivityplansJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -3693,7 +3689,6 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to update
 	 * @param {Object} body body
-	 * patchWorkforcemanagementBusinessunitActivityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -4835,7 +4830,6 @@ class WorkforceManagementApi {
 	 * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} activityPlanId The ID of the activity plan to run
-	 * postWorkforcemanagementBusinessunitActivityplanRunsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -4866,7 +4860,6 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} body body
-	 * postWorkforcemanagementBusinessunitActivityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body) { 
 		// verify the required parameter 'businessUnitId' is set

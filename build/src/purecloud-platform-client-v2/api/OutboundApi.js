@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 201.0.0
+	 * @version 202.0.0
 	 */
 
 	/**
@@ -1397,6 +1397,61 @@ class OutboundApi {
 			'/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}', 
 			'GET', 
 			{ 'contactListId': contactListId,'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk operation job.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {String} jobId Job ID
+	 */
+	getOutboundContactlistContactsBulkJob(contactListId, jobId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getOutboundContactlistContactsBulkJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}', 
+			'GET', 
+			{ 'contactListId': contactListId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get 10 most recent bulk operation jobs associated with contact list.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 */
+	getOutboundContactlistContactsBulkJobs(contactListId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs', 
+			'GET', 
+			{ 'contactListId': contactListId },
 			{  },
 			{  },
 			{  },

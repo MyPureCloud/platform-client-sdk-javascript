@@ -1110,6 +1110,8 @@ docs/getOutboundCampaignsDivisionview-example.txt
 docs/getOutboundCampaignsDivisionviews-example.txt
 docs/getOutboundContactlist-example.txt
 docs/getOutboundContactlistContact-example.txt
+docs/getOutboundContactlistContactsBulkJob-example.txt
+docs/getOutboundContactlistContactsBulkJobs-example.txt
 docs/getOutboundContactlistExport-example.txt
 docs/getOutboundContactlistImportstatus-example.txt
 docs/getOutboundContactlistTimezonemappingpreview-example.txt
@@ -1489,6 +1491,7 @@ docs/getUserTrustors-example.txt
 docs/getUserVerifiers-example.txt
 docs/getUserrecording-example.txt
 docs/getUserrecordingMedia-example.txt
+docs/getUserrecordingTranscoding-example.txt
 docs/getUserrecordings-example.txt
 docs/getUserrecordingsSummary-example.txt
 docs/getUsers-example.txt

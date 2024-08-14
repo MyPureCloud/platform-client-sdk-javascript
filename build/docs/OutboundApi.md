@@ -59,6 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | **GET** /api/v2/outbound/campaigns/divisionviews | Query a list of basic Campaign information objects
 [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | **GET** /api/v2/outbound/contactlists/{contactListId} | Get a dialer contact list.
 [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Get a contact.
+[**getOutboundContactlistContactsBulkJob**](OutboundApi.html#getOutboundContactlistContactsBulkJob) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId} | Get bulk operation job.
+[**getOutboundContactlistContactsBulkJobs**](OutboundApi.html#getOutboundContactlistContactsBulkJobs) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs | Get 10 most recent bulk operation jobs associated with contact list.
 [**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | **GET** /api/v2/outbound/contactlists/{contactListId}/export | Get the URI of a contact list export.
 [**getOutboundContactlistImportstatus**](OutboundApi.html#getOutboundContactlistImportstatus) | **GET** /api/v2/outbound/contactlists/{contactListId}/importstatus | Get dialer contactList import status.
 [**getOutboundContactlistTimezonemappingpreview**](OutboundApi.html#getOutboundContactlistTimezonemappingpreview) | **GET** /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview | Preview the result of applying Automatic Time Zone Mapping to a contact list
@@ -2952,6 +2954,108 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
 ### Return type
 
 **DialerContact**
+
+<a name="getOutboundContactlistContactsBulkJob"></a>
+
+# ContactsBulkOperationJob getOutboundContactlistContactsBulkJob(contactListId, jobId)
+
+
+GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}
+
+Get bulk operation job.
+
+Requires ANY permissions:
+
+* outbound:contactList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+let jobId = "jobId_example"; // String | Job ID
+
+apiInstance.getOutboundContactlistContactsBulkJob(contactListId, jobId)
+  .then((data) => {
+    console.log(`getOutboundContactlistContactsBulkJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlistContactsBulkJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **jobId** | **String** | Job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactsBulkOperationJob**
+
+<a name="getOutboundContactlistContactsBulkJobs"></a>
+
+# ContactsBulkOperationJobListing getOutboundContactlistContactsBulkJobs(contactListId)
+
+
+GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs
+
+Get 10 most recent bulk operation jobs associated with contact list.
+
+Requires ANY permissions:
+
+* outbound:contactList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+
+apiInstance.getOutboundContactlistContactsBulkJobs(contactListId)
+  .then((data) => {
+    console.log(`getOutboundContactlistContactsBulkJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlistContactsBulkJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactsBulkOperationJobListing**
 
 <a name="getOutboundContactlistExport"></a>
 
