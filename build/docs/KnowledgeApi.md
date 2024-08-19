@@ -85,6 +85,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkRemove) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove | Bulk remove documents.
 [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update | Bulk update documents.
 [**postKnowledgeKnowledgebaseDocumentsPresentations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsPresentations) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations | Indicate that documents were presented to the user.
+[**postKnowledgeKnowledgebaseDocumentsQuery**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsQuery) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query | Query for knowledge documents.
 [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search | Search the documents in a knowledge base.
 [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions | Query the knowledge documents to provide suggestions for auto completion.
 [**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add | Bulk add document versions.
@@ -4483,6 +4484,62 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, op
 ### Return type
 
 void (no response body)
+
+<a name="postKnowledgeKnowledgebaseDocumentsQuery"></a>
+
+# KnowledgeDocumentQueryResponse postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query
+
+Query for knowledge documents.
+
+Requires ALL permissions:
+
+* knowledge:document:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
+let opts = { 
+  'expand': ["expand_example"], // [String] | Fields, if any, to expand for each document in the search result matching the query.
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseDocumentsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseDocumentsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge Base ID |  |
+ **expand** | **[String]** | Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeDocumentQueryResponse**
 
 <a name="postKnowledgeKnowledgebaseDocumentsSearch"></a>
 

@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 202.1.0
+	 * @version 203.0.0
 	 */
 
 	/**

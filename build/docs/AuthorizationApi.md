@@ -25,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | **GET** /api/v2/authorization/roles/{roleId}/subjectgrants | Get the subjects' granted divisions in the specified role.
 [**getAuthorizationRoleUsers**](AuthorizationApi.html#getAuthorizationRoleUsers) | **GET** /api/v2/authorization/roles/{roleId}/users | Get a list of the users in a specified role.
 [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
+[**getAuthorizationRolesSettings**](AuthorizationApi.html#getAuthorizationRolesSettings) | **GET** /api/v2/authorization/roles/settings | Get authorization role settings
 [**getAuthorizationSettings**](AuthorizationApi.html#getAuthorizationSettings) | **GET** /api/v2/authorization/settings | Get authorization settings
 [**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
 [**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
@@ -48,6 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putAuthorizationRoleUsersAdd**](AuthorizationApi.html#putAuthorizationRoleUsersAdd) | **PUT** /api/v2/authorization/roles/{roleId}/users/add | Sets the users for the role
 [**putAuthorizationRoleUsersRemove**](AuthorizationApi.html#putAuthorizationRoleUsersRemove) | **PUT** /api/v2/authorization/roles/{roleId}/users/remove | Removes the users from the role
 [**putAuthorizationRolesDefault**](AuthorizationApi.html#putAuthorizationRolesDefault) | **PUT** /api/v2/authorization/roles/default | Restore specified default roles
+[**putAuthorizationRolesSettings**](AuthorizationApi.html#putAuthorizationRolesSettings) | **PUT** /api/v2/authorization/roles/settings | Change authorization role settings
 [**putUserRoles**](AuthorizationApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
 {: class="table table-striped"}
 
@@ -1051,6 +1053,52 @@ apiInstance.getAuthorizationRoles(opts)
 ### Return type
 
 **OrganizationRoleEntityListing**
+
+<a name="getAuthorizationRolesSettings"></a>
+
+# RoleSettings getAuthorizationRolesSettings()
+
+
+GET /api/v2/authorization/roles/settings
+
+Get authorization role settings
+
+Requires ANY permissions:
+
+* directory:organization:admin
+* authorization:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+apiInstance.getAuthorizationRolesSettings()
+  .then((data) => {
+    console.log(`getAuthorizationRolesSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationRolesSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**RoleSettings**
 
 <a name="getAuthorizationSettings"></a>
 
@@ -2270,6 +2318,59 @@ apiInstance.putAuthorizationRolesDefault(body)
 ### Return type
 
 **OrganizationRoleEntityListing**
+
+<a name="putAuthorizationRolesSettings"></a>
+
+# RoleSettings putAuthorizationRolesSettings(body)
+
+
+PUT /api/v2/authorization/roles/settings
+
+Change authorization role settings
+
+Change role settings
+
+Requires ANY permissions:
+
+* directory:organization:admin
+* authorization:settings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let body = {}; // Object | Authorization Role Settings
+
+apiInstance.putAuthorizationRolesSettings(body)
+  .then((data) => {
+    console.log(`putAuthorizationRolesSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putAuthorizationRolesSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Authorization Role Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RoleSettings**
 
 <a name="putUserRoles"></a>
 

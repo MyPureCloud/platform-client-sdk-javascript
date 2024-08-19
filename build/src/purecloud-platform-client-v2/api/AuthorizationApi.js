@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 202.1.0
+	 * @version 203.0.0
 	 */
 
 	/**
@@ -532,6 +532,26 @@ class AuthorizationApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'defaultRoleId': this.apiClient.buildCollectionParam(opts['defaultRoleId'], 'multi'),'userCount': opts['userCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get authorization role settings
+	 * 
+	 */
+	getAuthorizationRolesSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/roles/settings', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1195,6 +1215,31 @@ class AuthorizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/default', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Change authorization role settings
+	 * Change role settings
+	 * @param {Object} body Authorization Role Settings
+	 */
+	putAuthorizationRolesSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAuthorizationRolesSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/roles/settings', 
 			'PUT', 
 			{  },
 			{  },

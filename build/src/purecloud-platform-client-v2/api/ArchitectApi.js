@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 202.1.0
+	 * @version 203.0.0
 	 */
 
 	/**
@@ -412,7 +412,6 @@ class ArchitectApi {
 	 * Deletes a log level for a flow by flow id.
 	 * Deletes the associated log level for a flow by flow id
 	 * @param {String} flowId The flow id to delete the loglevel for
-	 * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteFlowInstancesSettingsLoglevels(flowId) { 
 		// verify the required parameter 'flowId' is set
@@ -521,7 +520,6 @@ class ArchitectApi {
 	/**
 	 * Resets the org log level to default, base
 	 * Resets the org log level to default, base
-	 * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteFlowsInstancesSettingsLoglevelsDefault() { 
 
@@ -1672,7 +1670,6 @@ class ArchitectApi {
 	 * @param {String} flowId The flow id to get the loglevel for
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
-	 * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowInstancesSettingsLoglevels(flowId, opts) { 
 		opts = opts || {};
@@ -2400,7 +2397,6 @@ class ArchitectApi {
 	/**
 	 * Get the execution history enabled setting.
 	 * Get the execution history enabled setting.
-	 * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesSettingsExecutiondata() { 
 
@@ -2425,7 +2421,6 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesSettingsLoglevels(opts) { 
 		opts = opts || {};
@@ -2448,7 +2443,6 @@ class ArchitectApi {
 	/**
 	 * Gets the available flow log level characteristics for this organization.
 	 * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
-	 * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesSettingsLoglevelsCharacteristics() { 
 
@@ -2471,7 +2465,6 @@ class ArchitectApi {
 	 * Returns the flow default log level which will be used if no specific flow id log level is found.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
-	 * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getFlowsInstancesSettingsLoglevelsDefault(opts) { 
 		opts = opts || {};
@@ -2763,7 +2756,6 @@ class ArchitectApi {
 	 * Edit the execution history enabled setting.
 	 * Edit the execution history enabled setting.
 	 * @param {Object} body New Execution Data Setting
-	 * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchFlowsInstancesSettingsExecutiondata(body) { 
 		// verify the required parameter 'body' is set
@@ -3201,7 +3193,6 @@ class ArchitectApi {
 	 * @param {Object} body New LogLevel settings
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
-	 * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postFlowInstancesSettingsLoglevels(flowId, body, opts) { 
 		opts = opts || {};
@@ -3961,7 +3952,6 @@ class ArchitectApi {
 	 * @param {Object} body New LogLevel settings
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
-	 * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putFlowInstancesSettingsLoglevels(flowId, body, opts) { 
 		opts = opts || {};
@@ -4063,7 +4053,6 @@ class ArchitectApi {
 	 * @param {Object} body New LogLevel settings
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Expand instructions for the result
-	 * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putFlowsInstancesSettingsLoglevelsDefault(body, opts) { 
 		opts = opts || {};

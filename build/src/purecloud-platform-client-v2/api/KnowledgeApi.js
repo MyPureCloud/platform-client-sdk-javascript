@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 202.1.0
+	 * @version 203.0.0
 	 */
 
 	/**
@@ -2684,6 +2684,36 @@ class KnowledgeApi {
 			'POST', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
 			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for knowledge documents.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge Base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Fields, if any, to expand for each document in the search result matching the query.
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			opts['body'], 

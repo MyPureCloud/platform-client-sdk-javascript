@@ -6013,6 +6013,13 @@
     "return": "OrganizationRoleEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AuthorizationApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"name\": \"name_example\", // String | \n  \"permission\": [\"permission_example\"], // [String] | \n  \"defaultRoleId\": [\"defaultRoleId_example\"], // [String] | \n  \"userCount\": true, // Boolean | \n  \"id\": [\"id_example\"] // [String] | id\n};\n\n// Retrieve a list of all roles defined for the organization\napiInstance.getAuthorizationRoles(opts)\n  .then((data) => {\n    console.log(`getAuthorizationRoles success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuthorizationRoles\");\n    console.error(err);\n  });"
   },
+  "getauthorizationrolessettings": {
+    "operationId": "getauthorizationrolessettings",
+    "functionName": "getAuthorizationRolesSettings",
+    "signature": "getAuthorizationRolesSettings()",
+    "return": "RoleSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AuthorizationApi();\n\n// Get authorization role settings\napiInstance.getAuthorizationRolesSettings()\n  .then((data) => {\n    console.log(`getAuthorizationRolesSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAuthorizationRolesSettings\");\n    console.error(err);\n  });"
+  },
   "getauthorizationsettings": {
     "operationId": "getauthorizationsettings",
     "functionName": "getAuthorizationSettings",
@@ -6426,6 +6433,20 @@
     ],
     "return": "OrganizationRoleEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AuthorizationApi();\n\nlet body = [{}]; // Object | Organization roles list\n\n// Restore specified default roles\napiInstance.putAuthorizationRolesDefault(body)\n  .then((data) => {\n    console.log(`putAuthorizationRolesDefault success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putAuthorizationRolesDefault\");\n    console.error(err);\n  });"
+  },
+  "putauthorizationrolessettings": {
+    "operationId": "putauthorizationrolessettings",
+    "functionName": "putAuthorizationRolesSettings",
+    "signature": "putAuthorizationRolesSettings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "RoleSettings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AuthorizationApi();\n\nlet body = {}; // Object | Authorization Role Settings\n\n// Change authorization role settings\napiInstance.putAuthorizationRolesSettings(body)\n  .then((data) => {\n    console.log(`putAuthorizationRolesSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putAuthorizationRolesSettings\");\n    console.error(err);\n  });"
   },
   "putuserroles": {
     "operationId": "putuserroles",
@@ -22069,6 +22090,30 @@
       }
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID.\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Indicate that documents were presented to the user.\napiInstance.postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts)\n  .then(() => {\n    console.log(\"postKnowledgeKnowledgebaseDocumentsPresentations returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseDocumentsPresentations\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebasedocumentsquery": {
+    "operationId": "postknowledgeknowledgebasedocumentsquery",
+    "functionName": "postKnowledgeKnowledgebaseDocumentsQuery",
+    "signature": "postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, expand, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentQueryResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge Base ID\nlet opts = { \n  \"expand\": [\"expand_example\"], // [String] | Fields, if any, to expand for each document in the search result matching the query.\n  \"body\": {} // Object | \n};\n\n// Query for knowledge documents.\napiInstance.postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseDocumentsQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseDocumentsQuery\");\n    console.error(err);\n  });"
   },
   "postknowledgeknowledgebasedocumentssearch": {
     "operationId": "postknowledgeknowledgebasedocumentssearch",
