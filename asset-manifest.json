@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/platform-client-sdk-javascript/static/css/main.def28ba4.css",
+    "main.js": "/platform-client-sdk-javascript/static/js/main.0b5adb6b.js",
+    "react-syntax-highlighter/refractor-import.js": "/platform-client-sdk-javascript/static/js/react-syntax-highlighter/refractor-import.252e9f8b.chunk.js",
+    "static/js/453.5565870f.chunk.js": "/platform-client-sdk-javascript/static/js/453.5565870f.chunk.js",
+    "static/media/genesys-dev-icons.eot?": "/platform-client-sdk-javascript/static/media/genesys-dev-icons.ac21bc53ac924798cc2f.eot",
+    "static/media/roboto-v29-latin-300italic.woff": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-300italic.dd07640d74d4485c4e4b.woff",
+    "static/media/roboto-v29-latin-italic.woff": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-italic.c8864b37568c1e60cc44.woff",
+    "static/media/roboto-v29-latin-700italic.woff": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-700italic.43c077649e51429fefb9.woff",
+    "static/media/roboto-v29-latin-300.woff": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-300.877b9231e5bb1f939daa.woff",
+    "static/media/roboto-v29-latin-700.woff": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-700.0344cc3c5cd0959f5f92.woff",
+    "static/media/roboto-v29-latin-regular.woff": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-regular.9b78ea3bc4f00e508f01.woff",
+    "static/media/genesys-dev-icons.woff?": "/platform-client-sdk-javascript/static/media/genesys-dev-icons.07a4e94cc610e84d6f37.woff",
+    "static/media/roboto-v29-latin-300italic.woff2": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-300italic.aa3d9e95817700a9a334.woff2",
+    "static/media/roboto-v29-latin-italic.woff2": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-italic.d52a565af9d2ae457512.woff2",
+    "static/media/roboto-v29-latin-700italic.woff2": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-700italic.c756cf083283e3aed420.woff2",
+    "static/media/roboto-v29-latin-700.woff2": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-700.0682ca7f74351d42bf73.woff2",
+    "static/media/roboto-v29-latin-300.woff2": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-300.0109a2ace896a506a0aa.woff2",
+    "static/media/roboto-v29-latin-regular.woff2": "/platform-client-sdk-javascript/static/media/roboto-v29-latin-regular.4673b4537a84c7f7a130.woff2",
+    "static/media/genesys-dev-icons.woff2?": "/platform-client-sdk-javascript/static/media/genesys-dev-icons.cfbabd4e3b26665b423e.woff2",
+    "static/media/logo-light.svg": "/platform-client-sdk-javascript/static/media/logo-light.389ff7a31ee6344dbd6d681c5b730273.svg",
+    "static/media/logo-dark.svg": "/platform-client-sdk-javascript/static/media/logo-dark.69cd32a4484f8e0b926aba88c6200252.svg",
+    "index.html": "/platform-client-sdk-javascript/index.html",
+    "main.def28ba4.css.map": "/platform-client-sdk-javascript/static/css/main.def28ba4.css.map",
+    "main.0b5adb6b.js.map": "/platform-client-sdk-javascript/static/js/main.0b5adb6b.js.map",
+    "refractor-import.252e9f8b.chunk.js.map": "/platform-client-sdk-javascript/static/js/react-syntax-highlighter/refractor-import.252e9f8b.chunk.js.map",
+    "453.5565870f.chunk.js.map": "/platform-client-sdk-javascript/static/js/453.5565870f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.def28ba4.css",
+    "static/js/main.0b5adb6b.js"
+  ]
+}
