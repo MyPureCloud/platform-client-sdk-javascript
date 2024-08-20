@@ -490,3 +490,5 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 
 **AuthzDivision**
 
+
+_purecloud-platform-client-v2@203.0.0_

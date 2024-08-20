@@ -265,3 +265,5 @@ apiInstance.putWidgetsDeployment(deploymentId, body)
 
 **WidgetDeployment**
 
+
+_purecloud-platform-client-v2@203.0.0_

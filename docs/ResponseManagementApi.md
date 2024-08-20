@@ -972,3 +972,5 @@ apiInstance.putResponsemanagementResponseasset(responseAssetId, body)
 
 **ResponseAsset**
 
+
+_purecloud-platform-client-v2@203.0.0_

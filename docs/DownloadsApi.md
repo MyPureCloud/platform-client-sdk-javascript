@@ -67,3 +67,5 @@ apiInstance.getDownload(downloadId, opts)
 
 **UrlResponse**
 
+
+_purecloud-platform-client-v2@203.0.0_

@@ -5223,3 +5223,5 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 
 **AnalyticsDataRetentionResponse**
 
+
+_purecloud-platform-client-v2@203.0.0_

@@ -222,3 +222,5 @@ apiInstance.postGdprRequests(body, opts)
 
 **GDPRRequest**
 
+
+_purecloud-platform-client-v2@203.0.0_
