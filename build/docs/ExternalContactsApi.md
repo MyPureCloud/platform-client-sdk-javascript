@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteExternalcontactsContact**](ExternalContactsApi.html#deleteExternalcontactsContact) | **DELETE** /api/v2/externalcontacts/contacts/{contactId} | Delete an external contact
 [**deleteExternalcontactsContactNote**](ExternalContactsApi.html#deleteExternalcontactsContactNote) | **DELETE** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Delete a note for an external contact
 [**deleteExternalcontactsContactsSchema**](ExternalContactsApi.html#deleteExternalcontactsContactsSchema) | **DELETE** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Delete a schema
+[**deleteExternalcontactsExternalsource**](ExternalContactsApi.html#deleteExternalcontactsExternalsource) | **DELETE** /api/v2/externalcontacts/externalsources/{externalSourceId} | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
 [**deleteExternalcontactsOrganization**](ExternalContactsApi.html#deleteExternalcontactsOrganization) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Delete an external organization
 [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi.html#deleteExternalcontactsOrganizationNote) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Delete a note for an external organization
 [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi.html#deleteExternalcontactsOrganizationTrustor) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor | Unlink the Trustor for this External Organization
@@ -25,6 +26,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
 [**getExternalcontactsContactsSchemas**](ExternalContactsApi.html#getExternalcontactsContactsSchemas) | **GET** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas.
+[**getExternalcontactsExternalsource**](ExternalContactsApi.html#getExternalcontactsExternalsource) | **GET** /api/v2/externalcontacts/externalsources/{externalSourceId} | Fetch an External Source
+[**getExternalcontactsExternalsources**](ExternalContactsApi.html#getExternalcontactsExternalsources) | **GET** /api/v2/externalcontacts/externalsources | Fetch a list of External Sources
 [**getExternalcontactsOrganization**](ExternalContactsApi.html#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
 [**getExternalcontactsOrganizationContacts**](ExternalContactsApi.html#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
 [**getExternalcontactsOrganizationNote**](ExternalContactsApi.html#getExternalcontactsOrganizationNote) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Fetch a note for an external organization
@@ -63,6 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsContactPromotion**](ExternalContactsApi.html#postExternalcontactsContactPromotion) | **POST** /api/v2/externalcontacts/contacts/{contactId}/promotion | Promote an observed contact (ephemeral or identified) to a curated contact
 [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
+[**postExternalcontactsExternalsources**](ExternalContactsApi.html#postExternalcontactsExternalsources) | **POST** /api/v2/externalcontacts/externalsources | Create an External Source
 [**postExternalcontactsIdentifierlookup**](ExternalContactsApi.html#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
 [**postExternalcontactsMergeContacts**](ExternalContactsApi.html#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
 [**postExternalcontactsOrganizationNotes**](ExternalContactsApi.html#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
@@ -73,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putExternalcontactsContactNote**](ExternalContactsApi.html#putExternalcontactsContactNote) | **PUT** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a note for an external contact
 [**putExternalcontactsContactsSchema**](ExternalContactsApi.html#putExternalcontactsContactsSchema) | **PUT** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Update a schema
 [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | **PUT** /api/v2/externalcontacts/conversations/{conversationId} | Associate/disassociate an external contact with a conversation
+[**putExternalcontactsExternalsource**](ExternalContactsApi.html#putExternalcontactsExternalsource) | **PUT** /api/v2/externalcontacts/externalsources/{externalSourceId} | Update an External Source
 [**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update an external organization
 [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update a note for an external organization
 [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} | Links a Trustor with an External Organization
@@ -233,6 +238,58 @@ apiInstance.deleteExternalcontactsContactsSchema(schemaId)
 ### Return type
 
 void (no response body)
+
+<a name="deleteExternalcontactsExternalsource"></a>
+
+# **Object** deleteExternalcontactsExternalsource(externalSourceId)
+
+
+DELETE /api/v2/externalcontacts/externalsources/{externalSourceId}
+
+Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+
+deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalSource:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalSourceId = "externalSourceId_example"; // String | External Source ID
+
+apiInstance.deleteExternalcontactsExternalsource(externalSourceId)
+  .then((data) => {
+    console.log(`deleteExternalcontactsExternalsource success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsExternalsource');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalSourceId** | **String** | External Source ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Object**
 
 <a name="deleteExternalcontactsOrganization"></a>
 
@@ -468,7 +525,7 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
+  'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
 
 apiInstance.getExternalcontactsContact(contactId, opts)
@@ -487,7 +544,7 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
- **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -828,7 +885,7 @@ apiInstance.getExternalcontactsContacts(opts)
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -1032,6 +1089,122 @@ This endpoint does not need any parameter.
 
 **DataSchemaListing**
 
+<a name="getExternalcontactsExternalsource"></a>
+
+# ExternalSource getExternalcontactsExternalsource(externalSourceId)
+
+
+GET /api/v2/externalcontacts/externalsources/{externalSourceId}
+
+Fetch an External Source
+
+getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalSource:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalSourceId = "externalSourceId_example"; // String | External Source ID
+
+apiInstance.getExternalcontactsExternalsource(externalSourceId)
+  .then((data) => {
+    console.log(`getExternalcontactsExternalsource success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsExternalsource');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalSourceId** | **String** | External Source ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalSource**
+
+<a name="getExternalcontactsExternalsources"></a>
+
+# CursorExternalSourceListing getExternalcontactsExternalsources(opts)
+
+
+GET /api/v2/externalcontacts/externalsources
+
+Fetch a list of External Sources
+
+getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalSource:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'limit': 3.4, // Number | The number of ExternalSources per page; must be between 10 and 200, default is 100
+  'name': "name_example", // String | Filter by external source name. Filtering is prefix filtering and not an exact match
+  'active': true // Boolean | Filter by active status of external source
+};
+
+apiInstance.getExternalcontactsExternalsources(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsExternalsources success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsExternalsources');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **limit** | **Number** | The number of ExternalSources per page; must be between 10 and 200, default is 100 | [optional]  |
+ **name** | **String** | Filter by external source name. Filtering is prefix filtering and not an exact match | [optional]  |
+ **active** | **Boolean** | Filter by active status of external source | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CursorExternalSourceListing**
+
 <a name="getExternalcontactsOrganization"></a>
 
 # ExternalOrganization getExternalcontactsOrganization(externalOrganizationId, opts)
@@ -1145,7 +1318,7 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -3036,6 +3209,58 @@ apiInstance.postExternalcontactsContactsSchemas(body)
 
 **DataSchema**
 
+<a name="postExternalcontactsExternalsources"></a>
+
+# ExternalSource postExternalcontactsExternalsources(body)
+
+
+POST /api/v2/externalcontacts/externalsources
+
+Create an External Source
+
+postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalSource:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | External Source
+
+apiInstance.postExternalcontactsExternalsources(body)
+  .then((data) => {
+    console.log(`postExternalcontactsExternalsources success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsExternalsources');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | External Source |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalSource**
+
 <a name="postExternalcontactsIdentifierlookup"></a>
 
 # ExternalContact postExternalcontactsIdentifierlookup(identifier, opts)
@@ -3086,7 +3311,7 @@ apiInstance.postExternalcontactsIdentifierlookup(identifier, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **identifier** | **Object** |  |  |
- **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers |
+ **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -3564,6 +3789,60 @@ apiInstance.putExternalcontactsConversation(conversationId, body)
 ### Return type
 
 void (no response body)
+
+<a name="putExternalcontactsExternalsource"></a>
+
+# ExternalSource putExternalcontactsExternalsource(externalSourceId, body)
+
+
+PUT /api/v2/externalcontacts/externalsources/{externalSourceId}
+
+Update an External Source
+
+putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalSource:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalSourceId = "externalSourceId_example"; // String | External Source ID
+let body = {}; // Object | External Source
+
+apiInstance.putExternalcontactsExternalsource(externalSourceId, body)
+  .then((data) => {
+    console.log(`putExternalcontactsExternalsource success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsExternalsource');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalSourceId** | **String** | External Source ID |  |
+ **body** | **Object** | External Source |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalSource**
 
 <a name="putExternalcontactsOrganization"></a>
 

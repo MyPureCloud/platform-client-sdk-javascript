@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 203.0.0
+	 * @version 204.0.0
 	 */
 
 	/**
@@ -153,7 +153,6 @@ class JourneyApi {
 	 * Delete a Journey View by ID
 	 * deletes all versions
 	 * @param {String} viewId viewId
-	 * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteJourneyView(viewId) { 
 		// verify the required parameter 'viewId' is set
@@ -802,7 +801,6 @@ class JourneyApi {
 	 * Get a Journey View by ID
 	 * returns the latest version
 	 * @param {String} viewId viewId
-	 * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyView(viewId) { 
 		// verify the required parameter 'viewId' is set
@@ -829,7 +827,6 @@ class JourneyApi {
 	 * 
 	 * @param {String} viewId viewId
 	 * @param {String} versionId versionId
-	 * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyViewVersion(viewId, versionId) { 
 		// verify the required parameter 'viewId' is set
@@ -861,7 +858,6 @@ class JourneyApi {
 	 * @param {String} viewId Journey View Id
 	 * @param {String} journeyVersionId Journey View Version
 	 * @param {String} jobId JobId
-	 * getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyViewVersionJob(viewId, journeyVersionId, jobId) { 
 		// verify the required parameter 'viewId' is set
@@ -897,7 +893,6 @@ class JourneyApi {
 	 * @param {String} viewId JourneyViewResult id
 	 * @param {String} journeyViewVersion Journey View Version
 	 * @param {String} jobId Id of the executing job
-	 * getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId) { 
 		// verify the required parameter 'viewId' is set
@@ -932,7 +927,6 @@ class JourneyApi {
 	 * used for long descriptions
 	 * @param {String} viewId Journey View Id
 	 * @param {String} journeyVersionId Journey View Version
-	 * getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyViewVersionJobsLatest(viewId, journeyVersionId) { 
 		// verify the required parameter 'viewId' is set
@@ -966,7 +960,7 @@ class JourneyApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.nameOrCreatedBy Journey View Name or Created By
 	 * @param {Object} opts.expand Parameter to request additional data to return in Journey payload
-	 * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {String} opts.id Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
 	 */
 	getJourneyViews(opts) { 
 		opts = opts || {};
@@ -976,7 +970,7 @@ class JourneyApi {
 			'/api/v2/journey/views', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'nameOrCreatedBy': opts['nameOrCreatedBy'],'expand': opts['expand'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'nameOrCreatedBy': opts['nameOrCreatedBy'],'expand': opts['expand'],'id': opts['id'] },
 			{  },
 			{  },
 			null, 
@@ -1041,7 +1035,6 @@ class JourneyApi {
 	 * @param {Number} opts.pageSize Max number of entities to return (default to 25)
 	 * @param {String} opts.interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
 	 * @param {String} opts.statuses Job statuses to filter for
-	 * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyViewsJobs(opts) { 
 		opts = opts || {};
@@ -1544,7 +1537,6 @@ class JourneyApi {
 	 * used for long descriptions
 	 * @param {String} viewId Journey View Id
 	 * @param {String} journeyVersionId Journey View Version
-	 * postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyViewVersionJobs(viewId, journeyVersionId) { 
 		// verify the required parameter 'viewId' is set
@@ -1575,7 +1567,6 @@ class JourneyApi {
 	 * creates a new version
 	 * @param {String} viewId viewId
 	 * @param {Object} body JourneyView
-	 * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyViewVersions(viewId, body) { 
 		// verify the required parameter 'viewId' is set
@@ -1605,7 +1596,6 @@ class JourneyApi {
 	 * Create a new Journey View
 	 * 
 	 * @param {Object} body JourneyView
-	 * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyViews(body) { 
 		// verify the required parameter 'body' is set

@@ -334,8 +334,6 @@ Delete a Journey View by ID
 
 deletes all versions
 
-deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:views:delete
@@ -1631,8 +1629,6 @@ Get a Journey View by ID
 
 returns the latest version
 
-getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:views:view
@@ -1682,8 +1678,6 @@ apiInstance.getJourneyView(viewId)
 GET /api/v2/journey/views/{viewId}/versions/{versionId}
 
 Get a Journey View by ID and version
-
-getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1738,8 +1732,6 @@ GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}
 Get the job for a journey view version.
 
 used for long descriptions
-
-getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1797,8 +1789,6 @@ Get the result of a job for a journey view version.
 
 used for long descriptions
 
-getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:viewsResults:view
@@ -1855,8 +1845,6 @@ Get the latest job of a journey view version.
 
 used for long descriptions
 
-getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:viewsJobs:view
@@ -1909,8 +1897,6 @@ GET /api/v2/journey/views
 
 Get a list of Journey Views
 
-getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:views:view
@@ -1932,7 +1918,8 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'nameOrCreatedBy': "nameOrCreatedBy_example", // String | Journey View Name or Created By
-  'expand': "expand_example" // String | Parameter to request additional data to return in Journey payload
+  'expand': "expand_example", // String | Parameter to request additional data to return in Journey payload
+  'id': "id_example" // String | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
 };
 
 apiInstance.getJourneyViews(opts)
@@ -1954,6 +1941,7 @@ apiInstance.getJourneyViews(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **nameOrCreatedBy** | **String** | Journey View Name or Created By | [optional]  |
  **expand** | **String** | Parameter to request additional data to return in Journey payload | [optional] <br />**Values**: charts |
+ **id** | **String** | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2067,8 +2055,6 @@ This endpoint does not need any parameter.
 GET /api/v2/journey/views/jobs
 
 Get the jobs for an organization.
-
-getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -3063,8 +3049,6 @@ Submit a job request for a journey view version.
 
 used for long descriptions
 
-postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:viewsJobs:add
@@ -3119,8 +3103,6 @@ Update a Journey View by ID
 
 creates a new version
 
-postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:views:edit
@@ -3172,8 +3154,6 @@ apiInstance.postJourneyViewVersions(viewId, body)
 POST /api/v2/journey/views
 
 Create a new Journey View
-
-postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 

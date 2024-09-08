@@ -1965,6 +1965,7 @@ let apiInstance = new platformClient.AnalyticsApi();
 let dashboardType = "dashboardType_example"; // String | List dashboard of given type
 let dashboardAccessFilter = "dashboardAccessFilter_example"; // String | Filter dashboard based on the owner of dashboard
 let opts = { 
+  'name': "name_example", // String | name of the dashboard
   'sortBy': "desc", // String | 
   'pageNumber': 1, // Number | 
   'pageSize': 9 // Number | 
@@ -1987,6 +1988,7 @@ apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboar
 | ------------- | ------------- | ------------- | ------------- |
  **dashboardType** | **String** | List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
  **dashboardAccessFilter** | **String** | Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
+ **name** | **String** | name of the dashboard | [optional]  |
  **sortBy** | **String** |  | [optional] [default to desc] |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** |  | [optional] [default to 9] |
@@ -2965,8 +2967,6 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body)
 POST /api/v2/analytics/agentcopilots/aggregates/query
 
 Query for agent copilot aggregates
-
-postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 203.0.0
+	 * @version 204.0.0
 	 */
 
 	/**
@@ -1277,6 +1277,35 @@ class RoutingApi {
 			'GET', 
 			{ 'queueId': queueId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an assistant associated with a queue.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 */
+	getRoutingQueueAssistant(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueAssistant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/assistant', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 

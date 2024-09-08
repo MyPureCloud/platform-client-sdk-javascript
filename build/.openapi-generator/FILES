@@ -1,5 +1,9 @@
 .openapi-generator-ignore
 README.md
+docs/AgentAssistantsApi.json
+docs/AgentAssistantsApi.md
+docs/AgentCopilotApi.json
+docs/AgentCopilotApi.md
 docs/AgentUIApi.json
 docs/AgentUIApi.md
 docs/AlertingApi.json
@@ -173,6 +177,9 @@ docs/deleteArchitectPrompts-example.txt
 docs/deleteArchitectSchedule-example.txt
 docs/deleteArchitectSchedulegroup-example.txt
 docs/deleteArchitectSystempromptResource-example.txt
+docs/deleteAssistant-example.txt
+docs/deleteAssistantQueue-example.txt
+docs/deleteAssistantQueues-example.txt
 docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationRole-example.txt
@@ -210,6 +217,7 @@ docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/deleteExternalcontactsContact-example.txt
 docs/deleteExternalcontactsContactNote-example.txt
 docs/deleteExternalcontactsContactsSchema-example.txt
+docs/deleteExternalcontactsExternalsource-example.txt
 docs/deleteExternalcontactsOrganization-example.txt
 docs/deleteExternalcontactsOrganizationNote-example.txt
 docs/deleteExternalcontactsOrganizationTrustor-example.txt
@@ -536,6 +544,12 @@ docs/getArchitectSystempromptHistoryHistoryId-example.txt
 docs/getArchitectSystempromptResource-example.txt
 docs/getArchitectSystempromptResources-example.txt
 docs/getArchitectSystemprompts-example.txt
+docs/getAssistant-example.txt
+docs/getAssistantCopilot-example.txt
+docs/getAssistantQueue-example.txt
+docs/getAssistantQueues-example.txt
+docs/getAssistants-example.txt
+docs/getAssistantsQueues-example.txt
 docs/getAuditsQueryRealtimeServicemapping-example.txt
 docs/getAuditsQueryServicemapping-example.txt
 docs/getAuditsQueryTransactionId-example.txt
@@ -724,6 +738,8 @@ docs/getExternalcontactsContactsSchema-example.txt
 docs/getExternalcontactsContactsSchemaVersion-example.txt
 docs/getExternalcontactsContactsSchemaVersions-example.txt
 docs/getExternalcontactsContactsSchemas-example.txt
+docs/getExternalcontactsExternalsource-example.txt
+docs/getExternalcontactsExternalsources-example.txt
 docs/getExternalcontactsOrganization-example.txt
 docs/getExternalcontactsOrganizationContacts-example.txt
 docs/getExternalcontactsOrganizationNote-example.txt
@@ -1249,6 +1265,7 @@ docs/getRoutingPredictorModels-example.txt
 docs/getRoutingPredictors-example.txt
 docs/getRoutingPredictorsKeyperformanceindicators-example.txt
 docs/getRoutingQueue-example.txt
+docs/getRoutingQueueAssistant-example.txt
 docs/getRoutingQueueComparisonperiod-example.txt
 docs/getRoutingQueueComparisonperiods-example.txt
 docs/getRoutingQueueEstimatedwaittime-example.txt
@@ -1652,6 +1669,8 @@ docs/patchAlertingRulesBulk-example.txt
 docs/patchAnalyticsReportingSettings-example.txt
 docs/patchArchitectGrammar-example.txt
 docs/patchArchitectGrammarLanguage-example.txt
+docs/patchAssistant-example.txt
+docs/patchAssistantQueues-example.txt
 docs/patchAuthorizationRole-example.txt
 docs/patchAuthorizationSettings-example.txt
 docs/patchChatsRoom-example.txt
@@ -1724,6 +1743,7 @@ docs/patchKnowledgeGuestSessionDocumentsSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebase-example.txt
 docs/patchKnowledgeKnowledgebaseCategory-example.txt
 docs/patchKnowledgeKnowledgebaseDocument-example.txt
+docs/patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId-example.txt
 docs/patchKnowledgeKnowledgebaseDocumentVariation-example.txt
 docs/patchKnowledgeKnowledgebaseDocumentsSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebaseImportJob-example.txt
@@ -1923,6 +1943,7 @@ docs/postArchitectSchedulegroups-example.txt
 docs/postArchitectSchedules-example.txt
 docs/postArchitectSystempromptHistory-example.txt
 docs/postArchitectSystempromptResources-example.txt
+docs/postAssistants-example.txt
 docs/postAuditsQuery-example.txt
 docs/postAuditsQueryRealtime-example.txt
 docs/postAuditsQueryRealtimeRelated-example.txt
@@ -2074,6 +2095,7 @@ docs/postExternalcontactsContactNotes-example.txt
 docs/postExternalcontactsContactPromotion-example.txt
 docs/postExternalcontactsContacts-example.txt
 docs/postExternalcontactsContactsSchemas-example.txt
+docs/postExternalcontactsExternalsources-example.txt
 docs/postExternalcontactsIdentifierlookup-example.txt
 docs/postExternalcontactsMergeContacts-example.txt
 docs/postExternalcontactsOrganizationNotes-example.txt
@@ -2153,6 +2175,7 @@ docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeGuestSessionDocumentCopies-example.txt
 docs/postKnowledgeGuestSessionDocumentFeedback-example.txt
 docs/postKnowledgeGuestSessionDocumentViews-example.txt
+docs/postKnowledgeGuestSessionDocumentsAnswers-example.txt
 docs/postKnowledgeGuestSessionDocumentsPresentations-example.txt
 docs/postKnowledgeGuestSessionDocumentsSearch-example.txt
 docs/postKnowledgeGuestSessionDocumentsSearchSuggestions-example.txt
@@ -2164,6 +2187,7 @@ docs/postKnowledgeKnowledgebaseDocumentVariations-example.txt
 docs/postKnowledgeKnowledgebaseDocumentVersions-example.txt
 docs/postKnowledgeKnowledgebaseDocumentViews-example.txt
 docs/postKnowledgeKnowledgebaseDocuments-example.txt
+docs/postKnowledgeKnowledgebaseDocumentsAnswers-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsBulkRemove-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsBulkUpdate-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsPresentations-example.txt
@@ -2525,6 +2549,8 @@ docs/putArchitectPromptResource-example.txt
 docs/putArchitectSchedule-example.txt
 docs/putArchitectSchedulegroup-example.txt
 docs/putArchitectSystempromptResource-example.txt
+docs/putAssistantCopilot-example.txt
+docs/putAssistantQueue-example.txt
 docs/putAuthorizationDivision-example.txt
 docs/putAuthorizationDivision-example.txt
 docs/putAuthorizationRole-example.txt
@@ -2561,6 +2587,7 @@ docs/putExternalcontactsContact-example.txt
 docs/putExternalcontactsContactNote-example.txt
 docs/putExternalcontactsContactsSchema-example.txt
 docs/putExternalcontactsConversation-example.txt
+docs/putExternalcontactsExternalsource-example.txt
 docs/putExternalcontactsOrganization-example.txt
 docs/putExternalcontactsOrganizationNote-example.txt
 docs/putExternalcontactsOrganizationTrustorTrustorId-example.txt
@@ -2747,6 +2774,8 @@ rollup-amd.config.js
 rollup-cjs-for-browserify.config.js
 rollup-cjs-for-node.config.js
 src/purecloud-platform-client-v2/ApiClient.js
+src/purecloud-platform-client-v2/api/AgentAssistantsApi.js
+src/purecloud-platform-client-v2/api/AgentCopilotApi.js
 src/purecloud-platform-client-v2/api/AgentUIApi.js
 src/purecloud-platform-client-v2/api/AlertingApi.js
 src/purecloud-platform-client-v2/api/AnalyticsApi.js

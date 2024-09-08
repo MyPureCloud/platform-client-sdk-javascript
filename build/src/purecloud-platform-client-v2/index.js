@@ -1,6 +1,8 @@
 
 import PureCloudRegionHosts from './PureCloudRegionHosts.js';
 import ApiClient from './ApiClient.js';
+import AgentAssistantsApi from './api/AgentAssistantsApi.js';
+import AgentCopilotApi from './api/AgentCopilotApi.js';
 import AgentUIApi from './api/AgentUIApi.js';
 import AlertingApi from './api/AlertingApi.js';
 import AnalyticsApi from './api/AnalyticsApi.js';
@@ -109,7 +111,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 203.0.0
+ * @version 204.0.0
  */
 class platformClient {
 	constructor() {
@@ -123,6 +125,16 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/ApiClient}
 		 */
 		this.ApiClientClass = ApiClient;
+		/**
+		 * The AgentAssistantsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/AgentAssistantsApi}
+		 */
+		this.AgentAssistantsApi = AgentAssistantsApi;
+		/**
+		 * The AgentCopilotApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/AgentCopilotApi}
+		 */
+		this.AgentCopilotApi = AgentCopilotApi;
 		/**
 		 * The AgentUIApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/AgentUIApi}

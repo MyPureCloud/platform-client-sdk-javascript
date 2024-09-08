@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 203.0.0
+	 * @version 204.0.0
 	 */
 
 	/**
@@ -90,6 +90,32 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
 			'DELETE', 
 			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+	 * 
+	 * @param {String} externalSourceId External Source ID
+	 * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteExternalcontactsExternalsource(externalSourceId) { 
+		// verify the required parameter 'externalSourceId' is set
+		if (externalSourceId === undefined || externalSourceId === null) {
+			throw 'Missing the required parameter "externalSourceId" when calling deleteExternalcontactsExternalsource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/externalsources/{externalSourceId}', 
+			'DELETE', 
+			{ 'externalSourceId': externalSourceId },
 			{  },
 			{  },
 			{  },
@@ -210,7 +236,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} contactId ExternalContact ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
 	getExternalcontactsContact(contactId, opts) { 
 		opts = opts || {};
@@ -504,6 +530,60 @@ class ExternalContactsApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch an External Source
+	 * 
+	 * @param {String} externalSourceId External Source ID
+	 * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsExternalsource(externalSourceId) { 
+		// verify the required parameter 'externalSourceId' is set
+		if (externalSourceId === undefined || externalSourceId === null) {
+			throw 'Missing the required parameter "externalSourceId" when calling getExternalcontactsExternalsource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/externalsources/{externalSourceId}', 
+			'GET', 
+			{ 'externalSourceId': externalSourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a list of External Sources
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * @param {Number} opts.limit The number of ExternalSources per page; must be between 10 and 200, default is 100
+	 * @param {String} opts.name Filter by external source name. Filtering is prefix filtering and not an exact match
+	 * @param {Boolean} opts.active Filter by active status of external source
+	 * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsExternalsources(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/externalsources', 
+			'GET', 
+			{  },
+			{ 'cursor': opts['cursor'],'limit': opts['limit'],'name': opts['name'],'active': opts['active'] },
 			{  },
 			{  },
 			null, 
@@ -1523,6 +1603,32 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Create an External Source
+	 * 
+	 * @param {Object} body External Source
+	 * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsExternalsources(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsExternalsources';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/externalsources', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch a contact using an identifier type and value.
 	 * Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
 	 * @param {Object} identifier 
@@ -1796,6 +1902,37 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/conversations/{conversationId}', 
 			'PUT', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an External Source
+	 * 
+	 * @param {String} externalSourceId External Source ID
+	 * @param {Object} body External Source
+	 * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putExternalcontactsExternalsource(externalSourceId, body) { 
+		// verify the required parameter 'externalSourceId' is set
+		if (externalSourceId === undefined || externalSourceId === null) {
+			throw 'Missing the required parameter "externalSourceId" when calling putExternalcontactsExternalsource';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putExternalcontactsExternalsource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/externalsources/{externalSourceId}', 
+			'PUT', 
+			{ 'externalSourceId': externalSourceId },
 			{  },
 			{  },
 			{  },

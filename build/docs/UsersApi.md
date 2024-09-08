@@ -366,6 +366,7 @@ Delete user
 
 Requires ANY permissions:
 
+* admin
 * directory:user:delete
 * directory:organization:admin
 
@@ -2900,6 +2901,7 @@ Update user
 
 Requires ANY permissions:
 
+* admin
 * directory:user:edit
 * directory:organization:admin
 
@@ -3969,6 +3971,7 @@ Send an activation email to the user
 
 Requires ANY permissions:
 
+* admin
 * directory:organization:admin
 * directory:userPassword:edit
 

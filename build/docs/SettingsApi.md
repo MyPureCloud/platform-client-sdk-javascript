@@ -123,8 +123,6 @@ Get the execution history enabled setting.
 
 Get the execution history enabled setting.
 
-getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * settings:executiondata:view
@@ -273,8 +271,6 @@ PATCH /api/v2/settings/executiondata
 Edit the execution history on off setting.
 
 Edit the execution history on off setting.
-
-patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 

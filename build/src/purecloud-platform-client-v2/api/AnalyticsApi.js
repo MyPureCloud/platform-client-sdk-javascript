@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 203.0.0
+	 * @version 204.0.0
 	 */
 
 	/**
@@ -946,6 +946,7 @@ class AnalyticsApi {
 	 * @param {Object} dashboardType List dashboard of given type
 	 * @param {Object} dashboardAccessFilter Filter dashboard based on the owner of dashboard
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.name name of the dashboard
 	 * @param {String} opts.sortBy  (default to desc)
 	 * @param {Number} opts.pageNumber  (default to 1)
 	 * @param {Number} opts.pageSize  (default to 9)
@@ -966,7 +967,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/settings/dashboards/query', 
 			'GET', 
 			{  },
-			{ 'dashboardType': dashboardType,'dashboardAccessFilter': dashboardAccessFilter,'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{ 'name': opts['name'],'dashboardType': dashboardType,'dashboardAccessFilter': dashboardAccessFilter,'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -1471,7 +1472,6 @@ class AnalyticsApi {
 	 * Query for agent copilot aggregates
 	 * 
 	 * @param {Object} body query
-	 * postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsAgentcopilotsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set

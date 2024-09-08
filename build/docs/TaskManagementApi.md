@@ -1226,7 +1226,7 @@ apiInstance.getTaskmanagementWorktype(worktypeId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
- **expands** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema |
+ **expands** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow |
 {: class="table table-striped"}
 
 ### Return type
