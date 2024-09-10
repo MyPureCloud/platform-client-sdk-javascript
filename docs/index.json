@@ -1,4 +1,6 @@
 [
+  "AgentAssistantsApi.md",
+  "AgentCopilotApi.md",
   "AgentUIApi.md",
   "AlertingApi.md",
   "AnalyticsApi.md",
@@ -25,6 +27,7 @@
   "GreetingsApi.md",
   "GroupsApi.md",
   "IdentityProviderApi.md",
+  "index.md",
   "InfrastructureAsCodeApi.md",
   "IntegrationsApi.md",
   "JourneyApi.md",
@@ -48,6 +51,7 @@
   "ProcessAutomationApi.md",
   "QualityApi.md",
   "RecordingApi.md",
+  "releaseNotes.md",
   "ResponseManagementApi.md",
   "RoutingApi.md",
   "SCIMApi.md",

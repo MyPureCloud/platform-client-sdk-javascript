@@ -1731,4 +1731,4 @@ apiInstance.putChatsSettings(body)
 **ChatSettings**
 
 
-_purecloud-platform-client-v2@203.0.0_
+_purecloud-platform-client-v2@204.0.0_

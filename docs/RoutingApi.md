@@ -55,6 +55,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | **GET** /api/v2/routing/predictors | Retrieve all predictors.
 [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | **GET** /api/v2/routing/predictors/keyperformanceindicators | Get a list of Key Performance Indicators
 [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | **GET** /api/v2/routing/queues/{queueId} | Get details about this queue.
+[**getRoutingQueueAssistant**](RoutingApi.html#getRoutingQueueAssistant) | **GET** /api/v2/routing/queues/{queueId}/assistant | Get an assistant associated with a queue.
 [**getRoutingQueueComparisonperiod**](RoutingApi.html#getRoutingQueueComparisonperiod) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId} | Get a Comparison Period.
 [**getRoutingQueueComparisonperiods**](RoutingApi.html#getRoutingQueueComparisonperiods) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods | Get list of comparison periods
 [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/estimatedwaittime | Get Estimated Wait Time
@@ -2669,6 +2670,60 @@ apiInstance.getRoutingQueue(queueId)
 ### Return type
 
 **Queue**
+
+<a name="getRoutingQueueAssistant"></a>
+
+# AssistantQueue getRoutingQueueAssistant(queueId, opts)
+
+
+GET /api/v2/routing/queues/{queueId}/assistant
+
+Get an assistant associated with a queue.
+
+Requires ALL permissions:
+
+* assistants:queue:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
+  'expand': "expand_example" // String | Which fields, if any, to expand.
+};
+
+apiInstance.getRoutingQueueAssistant(queueId, opts)
+  .then((data) => {
+    console.log(`getRoutingQueueAssistant success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueAssistant');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
+{: class="table table-striped"}
+
+### Return type
+
+**AssistantQueue**
 
 <a name="getRoutingQueueComparisonperiod"></a>
 
@@ -8049,4 +8104,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@203.0.0_
+_purecloud-platform-client-v2@204.0.0_

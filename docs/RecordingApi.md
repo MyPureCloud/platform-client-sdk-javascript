@@ -3237,4 +3237,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@203.0.0_
+_purecloud-platform-client-v2@204.0.0_

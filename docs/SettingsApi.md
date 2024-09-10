@@ -122,8 +122,6 @@ Get the execution history enabled setting.
 
 Get the execution history enabled setting.
 
-getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * settings:executiondata:view
@@ -273,8 +271,6 @@ Edit the execution history on off setting.
 
 Edit the execution history on off setting.
 
-patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * settings:executiondata:edit
@@ -421,4 +417,4 @@ apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 **AutoAnswerSettings**
 
 
-_purecloud-platform-client-v2@203.0.0_
+_purecloud-platform-client-v2@204.0.0_

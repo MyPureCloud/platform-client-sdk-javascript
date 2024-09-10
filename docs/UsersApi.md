@@ -365,6 +365,7 @@ Delete user
 
 Requires ANY permissions:
 
+* admin
 * directory:user:delete
 * directory:organization:admin
 
@@ -2899,6 +2900,7 @@ Update user
 
 Requires ANY permissions:
 
+* admin
 * directory:user:edit
 * directory:organization:admin
 
@@ -3968,6 +3970,7 @@ Send an activation email to the user
 
 Requires ANY permissions:
 
+* admin
 * directory:organization:admin
 * directory:userPassword:edit
 
@@ -5253,4 +5256,4 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 **Verifier**
 
 
-_purecloud-platform-client-v2@203.0.0_
+_purecloud-platform-client-v2@204.0.0_
