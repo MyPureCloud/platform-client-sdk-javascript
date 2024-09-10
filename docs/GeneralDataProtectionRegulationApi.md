@@ -6,15 +6,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getGdprRequest**](GeneralDataProtectionRegulationApi.html#getGdprRequest) | **GET** /api/v2/gdpr/requests/{requestId} | Get an existing GDPR request
-[**getGdprRequests**](GeneralDataProtectionRegulationApi.html#getGdprRequests) | **GET** /api/v2/gdpr/requests | Get all GDPR requests
-[**getGdprSubjects**](GeneralDataProtectionRegulationApi.html#getGdprSubjects) | **GET** /api/v2/gdpr/subjects | Get GDPR subjects
-[**postGdprRequests**](GeneralDataProtectionRegulationApi.html#postGdprRequests) | **POST** /api/v2/gdpr/requests | Submit a new GDPR request
-{: class="table table-striped"}
+[**getGdprRequest**](GeneralDataProtectionRegulationApi#getGdprRequest) | **GET** /api/v2/gdpr/requests/{requestId} | Get an existing GDPR request
+[**getGdprRequests**](GeneralDataProtectionRegulationApi#getGdprRequests) | **GET** /api/v2/gdpr/requests | Get all GDPR requests
+[**getGdprSubjects**](GeneralDataProtectionRegulationApi#getGdprSubjects) | **GET** /api/v2/gdpr/subjects | Get GDPR subjects
+[**postGdprRequests**](GeneralDataProtectionRegulationApi#postGdprRequests) | **POST** /api/v2/gdpr/requests | Submit a new GDPR request
 
-<a name="getGdprRequest"></a>
 
-# GDPRRequest getGdprRequest(requestId)
+
+## getGdprRequest
+
+> GDPRRequest getGdprRequest(requestId)
 
 
 GET /api/v2/gdpr/requests/{requestId}
@@ -56,15 +57,15 @@ apiInstance.getGdprRequest(requestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **requestId** | **String** | Request id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GDPRRequest**
 
-<a name="getGdprRequests"></a>
 
-# GDPRRequestEntityListing getGdprRequests(opts)
+## getGdprRequests
+
+> GDPRRequestEntityListing getGdprRequests(opts)
 
 
 GET /api/v2/gdpr/requests
@@ -110,15 +111,15 @@ apiInstance.getGdprRequests(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **GDPRRequestEntityListing**
 
-<a name="getGdprSubjects"></a>
 
-# GDPRSubjectEntityListing getGdprSubjects(searchType, searchValue)
+## getGdprSubjects
+
+> GDPRSubjectEntityListing getGdprSubjects(searchType, searchValue)
 
 
 GET /api/v2/gdpr/subjects
@@ -162,15 +163,15 @@ apiInstance.getGdprSubjects(searchType, searchValue)
 | ------------- | ------------- | ------------- | ------------- |
  **searchType** | **String** | Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER |
  **searchValue** | **String** | Search Value |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GDPRSubjectEntityListing**
 
-<a name="postGdprRequests"></a>
 
-# GDPRRequest postGdprRequests(body, opts)
+## postGdprRequests
+
+> GDPRRequest postGdprRequests(body, opts)
 
 
 POST /api/v2/gdpr/requests
@@ -216,7 +217,6 @@ apiInstance.postGdprRequests(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | GDPR request |  |
  **deleteConfirmed** | **Boolean** | Confirm delete | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 

@@ -6,20 +6,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getKnowledgeKnowledgebaseUploadsUrlsJob**](UploadsApi.html#getKnowledgeKnowledgebaseUploadsUrlsJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} | Get content upload from URL job status
-[**postIntegrationsActionDraftFunctionUpload**](UploadsApi.html#postIntegrationsActionDraftFunctionUpload) | **POST** /api/v2/integrations/actions/{actionId}/draft/function/upload | Create upload presigned URL for draft function package file.
-[**postKnowledgeDocumentuploads**](UploadsApi.html#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
-[**postKnowledgeKnowledgebaseUploadsUrlsJobs**](UploadsApi.html#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
-[**postLanguageunderstandingMinerUploads**](UploadsApi.html#postLanguageunderstandingMinerUploads) | **POST** /api/v2/languageunderstanding/miners/{minerId}/uploads | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
-[**postUploadsLearningCoverart**](UploadsApi.html#postUploadsLearningCoverart) | **POST** /api/v2/uploads/learning/coverart | Generates pre-signed URL to upload cover art for learning modules
-[**postUploadsPublicassetsImages**](UploadsApi.html#postUploadsPublicassetsImages) | **POST** /api/v2/uploads/publicassets/images | Creates presigned url for uploading a public asset image
-[**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | **POST** /api/v2/uploads/recordings | Creates presigned url for uploading a recording file
-[**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | **POST** /api/v2/uploads/workforcemanagement/historicaldata/csv | Creates presigned url for uploading WFM historical data file. Requires data in csv format.
-{: class="table table-striped"}
+[**getKnowledgeKnowledgebaseUploadsUrlsJob**](UploadsApi#getKnowledgeKnowledgebaseUploadsUrlsJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} | Get content upload from URL job status
+[**postIntegrationsActionDraftFunctionUpload**](UploadsApi#postIntegrationsActionDraftFunctionUpload) | **POST** /api/v2/integrations/actions/{actionId}/draft/function/upload | Create upload presigned URL for draft function package file.
+[**postKnowledgeDocumentuploads**](UploadsApi#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
+[**postKnowledgeKnowledgebaseUploadsUrlsJobs**](UploadsApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
+[**postLanguageunderstandingMinerUploads**](UploadsApi#postLanguageunderstandingMinerUploads) | **POST** /api/v2/languageunderstanding/miners/{minerId}/uploads | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+[**postUploadsLearningCoverart**](UploadsApi#postUploadsLearningCoverart) | **POST** /api/v2/uploads/learning/coverart | Generates pre-signed URL to upload cover art for learning modules
+[**postUploadsPublicassetsImages**](UploadsApi#postUploadsPublicassetsImages) | **POST** /api/v2/uploads/publicassets/images | Creates presigned url for uploading a public asset image
+[**postUploadsRecordings**](UploadsApi#postUploadsRecordings) | **POST** /api/v2/uploads/recordings | Creates presigned url for uploading a recording file
+[**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi#postUploadsWorkforcemanagementHistoricaldataCsv) | **POST** /api/v2/uploads/workforcemanagement/historicaldata/csv | Creates presigned url for uploading WFM historical data file. Requires data in csv format.
 
-<a name="getKnowledgeKnowledgebaseUploadsUrlsJob"></a>
 
-# GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+
+## getKnowledgeKnowledgebaseUploadsUrlsJob
+
+> GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}
@@ -65,15 +66,15 @@ apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **jobId** | **String** | Upload job ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GetUploadSourceUrlJobStatusResponse**
 
-<a name="postIntegrationsActionDraftFunctionUpload"></a>
 
-# FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(actionId, body)
+## postIntegrationsActionDraftFunctionUpload
+
+> FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(actionId, body)
 
 
 POST /api/v2/integrations/actions/{actionId}/draft/function/upload
@@ -119,15 +120,15 @@ apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **Object** | Input used to request URL upload. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FunctionUploadResponse**
 
-<a name="postKnowledgeDocumentuploads"></a>
 
-# UploadUrlResponse postKnowledgeDocumentuploads(body)
+## postKnowledgeDocumentuploads
+
+> UploadUrlResponse postKnowledgeDocumentuploads(body)
 
 
 POST /api/v2/knowledge/documentuploads
@@ -169,15 +170,15 @@ apiInstance.postKnowledgeDocumentuploads(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UploadUrlResponse**
 
-<a name="postKnowledgeKnowledgebaseUploadsUrlsJobs"></a>
 
-# CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+## postKnowledgeKnowledgebaseUploadsUrlsJobs
+
+> CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs
@@ -223,15 +224,15 @@ apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** | uploadRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CreateUploadSourceUrlJobResponse**
 
-<a name="postLanguageunderstandingMinerUploads"></a>
 
-# UploadUrlResponse postLanguageunderstandingMinerUploads(minerId, body)
+## postLanguageunderstandingMinerUploads
+
+> UploadUrlResponse postLanguageunderstandingMinerUploads(minerId, body)
 
 
 POST /api/v2/languageunderstanding/miners/{minerId}/uploads
@@ -275,15 +276,15 @@ apiInstance.postLanguageunderstandingMinerUploads(minerId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UploadUrlResponse**
 
-<a name="postUploadsLearningCoverart"></a>
 
-# UploadUrlResponse postUploadsLearningCoverart(body)
+## postUploadsLearningCoverart
+
+> UploadUrlResponse postUploadsLearningCoverart(body)
 
 
 POST /api/v2/uploads/learning/coverart
@@ -325,15 +326,15 @@ apiInstance.postUploadsLearningCoverart(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UploadUrlResponse**
 
-<a name="postUploadsPublicassetsImages"></a>
 
-# UploadUrlResponse postUploadsPublicassetsImages(body)
+## postUploadsPublicassetsImages
+
+> UploadUrlResponse postUploadsPublicassetsImages(body)
 
 
 POST /api/v2/uploads/publicassets/images
@@ -375,15 +376,15 @@ apiInstance.postUploadsPublicassetsImages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UploadUrlResponse**
 
-<a name="postUploadsRecordings"></a>
 
-# UploadUrlResponse postUploadsRecordings(body)
+## postUploadsRecordings
+
+> UploadUrlResponse postUploadsRecordings(body)
 
 
 POST /api/v2/uploads/recordings
@@ -425,15 +426,15 @@ apiInstance.postUploadsRecordings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UploadUrlResponse**
 
-<a name="postUploadsWorkforcemanagementHistoricaldataCsv"></a>
 
-# UploadUrlResponse postUploadsWorkforcemanagementHistoricaldataCsv(body)
+## postUploadsWorkforcemanagementHistoricaldataCsv
+
+> UploadUrlResponse postUploadsWorkforcemanagementHistoricaldataCsv(body)
 
 
 POST /api/v2/uploads/workforcemanagement/historicaldata/csv
@@ -475,7 +476,6 @@ apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 

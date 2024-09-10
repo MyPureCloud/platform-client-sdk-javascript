@@ -6,15 +6,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getGeolocationsSettings**](GeolocationApi.html#getGeolocationsSettings) | **GET** /api/v2/geolocations/settings | Get a organization's GeolocationSettings
-[**getUserGeolocation**](GeolocationApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
-[**patchGeolocationsSettings**](GeolocationApi.html#patchGeolocationsSettings) | **PATCH** /api/v2/geolocations/settings | Patch a organization's GeolocationSettings
-[**patchUserGeolocation**](GeolocationApi.html#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user's Geolocation
-{: class="table table-striped"}
+[**getGeolocationsSettings**](GeolocationApi#getGeolocationsSettings) | **GET** /api/v2/geolocations/settings | Get a organization's GeolocationSettings
+[**getUserGeolocation**](GeolocationApi#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
+[**patchGeolocationsSettings**](GeolocationApi#patchGeolocationsSettings) | **PATCH** /api/v2/geolocations/settings | Patch a organization's GeolocationSettings
+[**patchUserGeolocation**](GeolocationApi#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user's Geolocation
 
-<a name="getGeolocationsSettings"></a>
 
-# GeolocationSettings getGeolocationsSettings()
+
+## getGeolocationsSettings
+
+> GeolocationSettings getGeolocationsSettings()
 
 
 GET /api/v2/geolocations/settings
@@ -50,14 +51,14 @@ apiInstance.getGeolocationsSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **GeolocationSettings**
 
-<a name="getUserGeolocation"></a>
 
-# Geolocation getUserGeolocation(userId, clientId)
+## getUserGeolocation
+
+> Geolocation getUserGeolocation(userId, clientId)
 
 
 GET /api/v2/users/{userId}/geolocations/{clientId}
@@ -99,15 +100,15 @@ apiInstance.getUserGeolocation(userId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Geolocation**
 
-<a name="patchGeolocationsSettings"></a>
 
-# GeolocationSettings patchGeolocationsSettings(body)
+## patchGeolocationsSettings
+
+> GeolocationSettings patchGeolocationsSettings(body)
 
 
 PATCH /api/v2/geolocations/settings
@@ -149,15 +150,15 @@ apiInstance.patchGeolocationsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Geolocation settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GeolocationSettings**
 
-<a name="patchUserGeolocation"></a>
 
-# Geolocation patchUserGeolocation(userId, clientId, body)
+## patchUserGeolocation
+
+> Geolocation patchUserGeolocation(userId, clientId, body)
 
 
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
@@ -203,7 +204,6 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
  **body** | **Object** | Geolocation |  |
-{: class="table table-striped"}
 
 ### Return type
 

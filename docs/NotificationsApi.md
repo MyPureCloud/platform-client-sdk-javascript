@@ -6,19 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteNotificationsChannelSubscriptions**](NotificationsApi.html#deleteNotificationsChannelSubscriptions) | **DELETE** /api/v2/notifications/channels/{channelId}/subscriptions | Remove all subscriptions
-[**getNotificationsAvailabletopics**](NotificationsApi.html#getNotificationsAvailabletopics) | **GET** /api/v2/notifications/availabletopics | Get available notification topics.
-[**getNotificationsChannelSubscriptions**](NotificationsApi.html#getNotificationsChannelSubscriptions) | **GET** /api/v2/notifications/channels/{channelId}/subscriptions | The list of all subscriptions for this channel
-[**getNotificationsChannels**](NotificationsApi.html#getNotificationsChannels) | **GET** /api/v2/notifications/channels | The list of existing channels
-[**headNotificationsChannel**](NotificationsApi.html#headNotificationsChannel) | **HEAD** /api/v2/notifications/channels/{channelId} | Verify a channel still exists and is valid
-[**postNotificationsChannelSubscriptions**](NotificationsApi.html#postNotificationsChannelSubscriptions) | **POST** /api/v2/notifications/channels/{channelId}/subscriptions | Add a list of subscriptions to the existing list of subscriptions
-[**postNotificationsChannels**](NotificationsApi.html#postNotificationsChannels) | **POST** /api/v2/notifications/channels | Create a new channel
-[**putNotificationsChannelSubscriptions**](NotificationsApi.html#putNotificationsChannelSubscriptions) | **PUT** /api/v2/notifications/channels/{channelId}/subscriptions | Replace the current list of subscriptions with a new list.
-{: class="table table-striped"}
+[**deleteNotificationsChannelSubscriptions**](NotificationsApi#deleteNotificationsChannelSubscriptions) | **DELETE** /api/v2/notifications/channels/{channelId}/subscriptions | Remove all subscriptions
+[**getNotificationsAvailabletopics**](NotificationsApi#getNotificationsAvailabletopics) | **GET** /api/v2/notifications/availabletopics | Get available notification topics.
+[**getNotificationsChannelSubscriptions**](NotificationsApi#getNotificationsChannelSubscriptions) | **GET** /api/v2/notifications/channels/{channelId}/subscriptions | The list of all subscriptions for this channel
+[**getNotificationsChannels**](NotificationsApi#getNotificationsChannels) | **GET** /api/v2/notifications/channels | The list of existing channels
+[**headNotificationsChannel**](NotificationsApi#headNotificationsChannel) | **HEAD** /api/v2/notifications/channels/{channelId} | Verify a channel still exists and is valid
+[**postNotificationsChannelSubscriptions**](NotificationsApi#postNotificationsChannelSubscriptions) | **POST** /api/v2/notifications/channels/{channelId}/subscriptions | Add a list of subscriptions to the existing list of subscriptions
+[**postNotificationsChannels**](NotificationsApi#postNotificationsChannels) | **POST** /api/v2/notifications/channels | Create a new channel
+[**putNotificationsChannelSubscriptions**](NotificationsApi#putNotificationsChannelSubscriptions) | **PUT** /api/v2/notifications/channels/{channelId}/subscriptions | Replace the current list of subscriptions with a new list.
 
-<a name="deleteNotificationsChannelSubscriptions"></a>
 
-# void deleteNotificationsChannelSubscriptions(channelId)
+
+## deleteNotificationsChannelSubscriptions
+
+> void deleteNotificationsChannelSubscriptions(channelId)
 
 
 DELETE /api/v2/notifications/channels/{channelId}/subscriptions
@@ -58,15 +59,15 @@ apiInstance.deleteNotificationsChannelSubscriptions(channelId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getNotificationsAvailabletopics"></a>
 
-# AvailableTopicEntityListing getNotificationsAvailabletopics(opts)
+## getNotificationsAvailabletopics
+
+> AvailableTopicEntityListing getNotificationsAvailabletopics(opts)
 
 
 GET /api/v2/notifications/availabletopics
@@ -110,15 +111,15 @@ apiInstance.getNotificationsAvailabletopics(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails, topicParameters |
  **includePreview** | **Boolean** | Whether or not to include Preview topics | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **AvailableTopicEntityListing**
 
-<a name="getNotificationsChannelSubscriptions"></a>
 
-# ChannelTopicEntityListing getNotificationsChannelSubscriptions(channelId)
+## getNotificationsChannelSubscriptions
+
+> ChannelTopicEntityListing getNotificationsChannelSubscriptions(channelId)
 
 
 GET /api/v2/notifications/channels/{channelId}/subscriptions
@@ -158,15 +159,15 @@ apiInstance.getNotificationsChannelSubscriptions(channelId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChannelTopicEntityListing**
 
-<a name="getNotificationsChannels"></a>
 
-# ChannelEntityListing getNotificationsChannels(opts)
+## getNotificationsChannels
+
+> ChannelEntityListing getNotificationsChannels(opts)
 
 
 GET /api/v2/notifications/channels
@@ -208,15 +209,15 @@ apiInstance.getNotificationsChannels(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **includechannels** | **String** | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChannelEntityListing**
 
-<a name="headNotificationsChannel"></a>
 
-# void headNotificationsChannel(channelId)
+## headNotificationsChannel
+
+> void headNotificationsChannel(channelId)
 
 
 HEAD /api/v2/notifications/channels/{channelId}
@@ -258,15 +259,15 @@ apiInstance.headNotificationsChannel(channelId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postNotificationsChannelSubscriptions"></a>
 
-# ChannelTopicEntityListing postNotificationsChannelSubscriptions(channelId, body, opts)
+## postNotificationsChannelSubscriptions
+
+> ChannelTopicEntityListing postNotificationsChannelSubscriptions(channelId, body, opts)
 
 
 POST /api/v2/notifications/channels/{channelId}/subscriptions
@@ -312,15 +313,15 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body, opts)
  **channelId** | **String** | Channel ID |  |
  **body** | **Object** | Body |  |
  **ignoreErrors** | **Boolean** | Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChannelTopicEntityListing**
 
-<a name="postNotificationsChannels"></a>
 
-# Channel postNotificationsChannels()
+## postNotificationsChannels
+
+> Channel postNotificationsChannels()
 
 
 POST /api/v2/notifications/channels
@@ -358,14 +359,14 @@ apiInstance.postNotificationsChannels()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Channel**
 
-<a name="putNotificationsChannelSubscriptions"></a>
 
-# ChannelTopicEntityListing putNotificationsChannelSubscriptions(channelId, body, opts)
+## putNotificationsChannelSubscriptions
+
+> ChannelTopicEntityListing putNotificationsChannelSubscriptions(channelId, body, opts)
 
 
 PUT /api/v2/notifications/channels/{channelId}/subscriptions
@@ -411,7 +412,6 @@ apiInstance.putNotificationsChannelSubscriptions(channelId, body, opts)
  **channelId** | **String** | Channel ID |  |
  **body** | **Object** | Body |  |
  **ignoreErrors** | **Boolean** | Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 

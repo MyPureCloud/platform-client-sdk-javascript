@@ -6,20 +6,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getLicenseDefinition**](LicenseApi.html#getLicenseDefinition) | **GET** /api/v2/license/definitions/{licenseId} | Get PureCloud license definition.
-[**getLicenseDefinitions**](LicenseApi.html#getLicenseDefinitions) | **GET** /api/v2/license/definitions | Get all PureCloud license definitions available for the organization.
-[**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | **GET** /api/v2/license/toggles/{featureName} | Deprecated - no alternative required. This operation will always return 'true' for requested toggles
-[**getLicenseUser**](LicenseApi.html#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
-[**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | **GET** /api/v2/license/users | Get a page of users and their licenses
-[**postLicenseInfer**](LicenseApi.html#postLicenseInfer) | **POST** /api/v2/license/infer | Get a list of licenses inferred based on a list of roleIds
-[**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization's license assignments in a batch.
-[**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | **POST** /api/v2/license/toggles/{featureName} | Deprecated. No alternative required - this endpoint has no effect
-[**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | **POST** /api/v2/license/users | Fetch user licenses in a batch.
-{: class="table table-striped"}
+[**getLicenseDefinition**](LicenseApi#getLicenseDefinition) | **GET** /api/v2/license/definitions/{licenseId} | Get PureCloud license definition.
+[**getLicenseDefinitions**](LicenseApi#getLicenseDefinitions) | **GET** /api/v2/license/definitions | Get all PureCloud license definitions available for the organization.
+[**getLicenseToggle**](LicenseApi#getLicenseToggle) | **GET** /api/v2/license/toggles/{featureName} | Deprecated - no alternative required. This operation will always return 'true' for requested toggles
+[**getLicenseUser**](LicenseApi#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
+[**getLicenseUsers**](LicenseApi#getLicenseUsers) | **GET** /api/v2/license/users | Get a page of users and their licenses
+[**postLicenseInfer**](LicenseApi#postLicenseInfer) | **POST** /api/v2/license/infer | Get a list of licenses inferred based on a list of roleIds
+[**postLicenseOrganization**](LicenseApi#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization's license assignments in a batch.
+[**postLicenseToggle**](LicenseApi#postLicenseToggle) | **POST** /api/v2/license/toggles/{featureName} | Deprecated. No alternative required - this endpoint has no effect
+[**postLicenseUsers**](LicenseApi#postLicenseUsers) | **POST** /api/v2/license/users | Fetch user licenses in a batch.
 
-<a name="getLicenseDefinition"></a>
 
-# LicenseDefinition getLicenseDefinition(licenseId)
+
+## getLicenseDefinition
+
+> LicenseDefinition getLicenseDefinition(licenseId)
 
 
 GET /api/v2/license/definitions/{licenseId}
@@ -62,15 +63,15 @@ apiInstance.getLicenseDefinition(licenseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **licenseId** | **String** | ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LicenseDefinition**
 
-<a name="getLicenseDefinitions"></a>
 
-# [LicenseDefinition] getLicenseDefinitions()
+## getLicenseDefinitions
+
+> [LicenseDefinition] getLicenseDefinitions()
 
 
 GET /api/v2/license/definitions
@@ -109,14 +110,14 @@ apiInstance.getLicenseDefinitions()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **[LicenseDefinition]**
 
-<a name="getLicenseToggle"></a>
 
-# LicenseOrgToggle getLicenseToggle(featureName)
+## getLicenseToggle
+
+> LicenseOrgToggle getLicenseToggle(featureName)
 
 
 GET /api/v2/license/toggles/{featureName}
@@ -156,15 +157,15 @@ apiInstance.getLicenseToggle(featureName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **featureName** | **String** | featureName |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LicenseOrgToggle**
 
-<a name="getLicenseUser"></a>
 
-# LicenseUser getLicenseUser(userId)
+## getLicenseUser
+
+> LicenseUser getLicenseUser(userId)
 
 
 GET /api/v2/license/users/{userId}
@@ -207,15 +208,15 @@ apiInstance.getLicenseUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LicenseUser**
 
-<a name="getLicenseUsers"></a>
 
-# UserLicensesEntityListing getLicenseUsers(opts)
+## getLicenseUsers
+
+> UserLicensesEntityListing getLicenseUsers(opts)
 
 
 GET /api/v2/license/users
@@ -261,15 +262,15 @@ apiInstance.getLicenseUsers(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserLicensesEntityListing**
 
-<a name="postLicenseInfer"></a>
 
-# **[&#39;String&#39;]** postLicenseInfer(opts)
+## postLicenseInfer
+
+> **[&#39;String&#39;]** postLicenseInfer(opts)
 
 
 POST /api/v2/license/infer
@@ -311,15 +312,15 @@ apiInstance.postLicenseInfer(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | The roleIds to use while inferring licenses | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="postLicenseOrganization"></a>
 
-# [LicenseUpdateStatus] postLicenseOrganization(opts)
+## postLicenseOrganization
+
+> [LicenseUpdateStatus] postLicenseOrganization(opts)
 
 
 POST /api/v2/license/organization
@@ -363,15 +364,15 @@ apiInstance.postLicenseOrganization(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The license assignments to update. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[LicenseUpdateStatus]**
 
-<a name="postLicenseToggle"></a>
 
-# LicenseOrgToggle postLicenseToggle(featureName)
+## postLicenseToggle
+
+> LicenseOrgToggle postLicenseToggle(featureName)
 
 
 POST /api/v2/license/toggles/{featureName}
@@ -411,15 +412,15 @@ apiInstance.postLicenseToggle(featureName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **featureName** | **String** | featureName |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LicenseOrgToggle**
 
-<a name="postLicenseUsers"></a>
 
-# **{&#39;String&#39;: Object}** postLicenseUsers(opts)
+## postLicenseUsers
+
+> **{&#39;String&#39;: Object}** postLicenseUsers(opts)
 
 
 POST /api/v2/license/users
@@ -464,7 +465,6 @@ apiInstance.postLicenseUsers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | The user IDs to fetch. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 

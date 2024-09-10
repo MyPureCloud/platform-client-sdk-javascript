@@ -6,70 +6,71 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteConversationRecordingAnnotation**](RecordingApi.html#deleteConversationRecordingAnnotation) | **DELETE** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Delete annotation
-[**deleteOrphanrecording**](RecordingApi.html#deleteOrphanrecording) | **DELETE** /api/v2/orphanrecordings/{orphanId} | Deletes a single orphan recording
-[**deleteRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#deleteRecordingCrossplatformMediaretentionpolicies) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies | Delete media retention policies
-[**deleteRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#deleteRecordingCrossplatformMediaretentionpolicy) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Delete a media retention policy
-[**deleteRecordingJob**](RecordingApi.html#deleteRecordingJob) | **DELETE** /api/v2/recording/jobs/{jobId} | Delete the recording bulk job
-[**deleteRecordingMediaretentionpolicies**](RecordingApi.html#deleteRecordingMediaretentionpolicies) | **DELETE** /api/v2/recording/mediaretentionpolicies | Delete media retention policies
-[**deleteRecordingMediaretentionpolicy**](RecordingApi.html#deleteRecordingMediaretentionpolicy) | **DELETE** /api/v2/recording/mediaretentionpolicies/{policyId} | Delete a media retention policy
-[**getConversationRecording**](RecordingApi.html#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
-[**getConversationRecordingAnnotation**](RecordingApi.html#getConversationRecordingAnnotation) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation
-[**getConversationRecordingAnnotations**](RecordingApi.html#getConversationRecordingAnnotations) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording
-[**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
-[**getConversationRecordingmetadataRecordingId**](RecordingApi.html#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media.
-[**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation's Recordings.
-[**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
-[**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
-[**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings
-[**getRecordingBatchrequest**](RecordingApi.html#getRecordingBatchrequest) | **GET** /api/v2/recording/batchrequests/{jobId} | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
-[**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicies) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
-[**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicy) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Get a media retention policy
-[**getRecordingJob**](RecordingApi.html#getRecordingJob) | **GET** /api/v2/recording/jobs/{jobId} | Get the status of the job associated with the job id.
-[**getRecordingJobFailedrecordings**](RecordingApi.html#getRecordingJobFailedrecordings) | **GET** /api/v2/recording/jobs/{jobId}/failedrecordings | Get IDs of recordings that the bulk job failed for
-[**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user's organization
-[**getRecordingKeyconfiguration**](RecordingApi.html#getRecordingKeyconfiguration) | **GET** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Get the encryption key configurations
-[**getRecordingKeyconfigurations**](RecordingApi.html#getRecordingKeyconfigurations) | **GET** /api/v2/recording/keyconfigurations | Get a list of key configurations data
-[**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | **GET** /api/v2/recording/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
-[**getRecordingMediaretentionpolicy**](RecordingApi.html#getRecordingMediaretentionpolicy) | **GET** /api/v2/recording/mediaretentionpolicies/{policyId} | Get a media retention policy
-[**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | **GET** /api/v2/recording/recordingkeys | Get encryption key list
-[**getRecordingRecordingkeysRotationschedule**](RecordingApi.html#getRecordingRecordingkeysRotationschedule) | **GET** /api/v2/recording/recordingkeys/rotationschedule | Get key rotation schedule
-[**getRecordingSettings**](RecordingApi.html#getRecordingSettings) | **GET** /api/v2/recording/settings | Get the Recording Settings for the Organization
-[**getRecordingUploadsReport**](RecordingApi.html#getRecordingUploadsReport) | **GET** /api/v2/recording/uploads/reports/{reportId} | Get the status of a recording upload status report
-[**getRecordingsRetentionQuery**](RecordingApi.html#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
-[**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | **GET** /api/v2/recordings/screensessions | Retrieves a paged listing of screen recording sessions
-[**getRecordingsScreensessionsDetails**](RecordingApi.html#getRecordingsScreensessionsDetails) | **GET** /api/v2/recordings/screensessions/details | Retrieves an object containing the total number of concurrent active screen recordings
-[**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
-[**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
-[**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | **PATCH** /api/v2/recordings/screensessions/{recordingSessionId} | Update a screen recording session
-[**postConversationRecordingAnnotations**](RecordingApi.html#postConversationRecordingAnnotations) | **POST** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation
-[**postRecordingBatchrequests**](RecordingApi.html#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
-[**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#postRecordingCrossplatformMediaretentionpolicies) | **POST** /api/v2/recording/crossplatform/mediaretentionpolicies | Create media retention policy
-[**postRecordingJobs**](RecordingApi.html#postRecordingJobs) | **POST** /api/v2/recording/jobs | Create a recording bulk job.
-[**postRecordingKeyconfigurations**](RecordingApi.html#postRecordingKeyconfigurations) | **POST** /api/v2/recording/keyconfigurations | Setup configurations for encryption key creation
-[**postRecordingKeyconfigurationsValidate**](RecordingApi.html#postRecordingKeyconfigurationsValidate) | **POST** /api/v2/recording/keyconfigurations/validate | Validate encryption key configurations without saving it
-[**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | **POST** /api/v2/recording/localkeys | create a local key management recording key
-[**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
-[**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | **POST** /api/v2/recording/recordingkeys | Create encryption key
-[**postRecordingUploadsReports**](RecordingApi.html#postRecordingUploadsReports) | **POST** /api/v2/recording/uploads/reports | Creates a recording upload status report
-[**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | **POST** /api/v2/recordings/deletionprotection | Get a list of conversations with protected recordings
-[**postRecordingsScreensessionsAcknowledge**](RecordingApi.html#postRecordingsScreensessionsAcknowledge) | **POST** /api/v2/recordings/screensessions/acknowledge | Acknowledge a screen recording.
-[**postRecordingsScreensessionsMetadata**](RecordingApi.html#postRecordingsScreensessionsMetadata) | **POST** /api/v2/recordings/screensessions/metadata | Provide meta-data a screen recording.
-[**putConversationRecording**](RecordingApi.html#putConversationRecording) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Updates the retention records on a recording.
-[**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Update annotation
-[**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | **PUT** /api/v2/orphanrecordings/{orphanId} | Updates an orphan recording to a regular recording with retention values
-[**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#putRecordingCrossplatformMediaretentionpolicy) | **PUT** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Update a media retention policy
-[**putRecordingJob**](RecordingApi.html#putRecordingJob) | **PUT** /api/v2/recording/jobs/{jobId} | Execute the recording bulk job.
-[**putRecordingKeyconfiguration**](RecordingApi.html#putRecordingKeyconfiguration) | **PUT** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Update the encryption key configurations
-[**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | **PUT** /api/v2/recording/mediaretentionpolicies/{policyId} | Update a media retention policy
-[**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | **PUT** /api/v2/recording/recordingkeys/rotationschedule | Update key rotation schedule
-[**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | **PUT** /api/v2/recording/settings | Update the Recording Settings for the Organization
-[**putRecordingsDeletionprotection**](RecordingApi.html#putRecordingsDeletionprotection) | **PUT** /api/v2/recordings/deletionprotection | Apply or revoke recording protection for conversations
-{: class="table table-striped"}
+[**deleteConversationRecordingAnnotation**](RecordingApi#deleteConversationRecordingAnnotation) | **DELETE** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Delete annotation
+[**deleteOrphanrecording**](RecordingApi#deleteOrphanrecording) | **DELETE** /api/v2/orphanrecordings/{orphanId} | Deletes a single orphan recording
+[**deleteRecordingCrossplatformMediaretentionpolicies**](RecordingApi#deleteRecordingCrossplatformMediaretentionpolicies) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies | Delete media retention policies
+[**deleteRecordingCrossplatformMediaretentionpolicy**](RecordingApi#deleteRecordingCrossplatformMediaretentionpolicy) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Delete a media retention policy
+[**deleteRecordingJob**](RecordingApi#deleteRecordingJob) | **DELETE** /api/v2/recording/jobs/{jobId} | Delete the recording bulk job
+[**deleteRecordingMediaretentionpolicies**](RecordingApi#deleteRecordingMediaretentionpolicies) | **DELETE** /api/v2/recording/mediaretentionpolicies | Delete media retention policies
+[**deleteRecordingMediaretentionpolicy**](RecordingApi#deleteRecordingMediaretentionpolicy) | **DELETE** /api/v2/recording/mediaretentionpolicies/{policyId} | Delete a media retention policy
+[**getConversationRecording**](RecordingApi#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
+[**getConversationRecordingAnnotation**](RecordingApi#getConversationRecordingAnnotation) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation
+[**getConversationRecordingAnnotations**](RecordingApi#getConversationRecordingAnnotations) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording
+[**getConversationRecordingmetadata**](RecordingApi#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+[**getConversationRecordingmetadataRecordingId**](RecordingApi#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media.
+[**getConversationRecordings**](RecordingApi#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation's Recordings.
+[**getOrphanrecording**](RecordingApi#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
+[**getOrphanrecordingMedia**](RecordingApi#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
+[**getOrphanrecordings**](RecordingApi#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings
+[**getRecordingBatchrequest**](RecordingApi#getRecordingBatchrequest) | **GET** /api/v2/recording/batchrequests/{jobId} | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
+[**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi#getRecordingCrossplatformMediaretentionpolicies) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
+[**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi#getRecordingCrossplatformMediaretentionpolicy) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Get a media retention policy
+[**getRecordingJob**](RecordingApi#getRecordingJob) | **GET** /api/v2/recording/jobs/{jobId} | Get the status of the job associated with the job id.
+[**getRecordingJobFailedrecordings**](RecordingApi#getRecordingJobFailedrecordings) | **GET** /api/v2/recording/jobs/{jobId}/failedrecordings | Get IDs of recordings that the bulk job failed for
+[**getRecordingJobs**](RecordingApi#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user's organization
+[**getRecordingKeyconfiguration**](RecordingApi#getRecordingKeyconfiguration) | **GET** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Get the encryption key configurations
+[**getRecordingKeyconfigurations**](RecordingApi#getRecordingKeyconfigurations) | **GET** /api/v2/recording/keyconfigurations | Get a list of key configurations data
+[**getRecordingMediaretentionpolicies**](RecordingApi#getRecordingMediaretentionpolicies) | **GET** /api/v2/recording/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
+[**getRecordingMediaretentionpolicy**](RecordingApi#getRecordingMediaretentionpolicy) | **GET** /api/v2/recording/mediaretentionpolicies/{policyId} | Get a media retention policy
+[**getRecordingRecordingkeys**](RecordingApi#getRecordingRecordingkeys) | **GET** /api/v2/recording/recordingkeys | Get encryption key list
+[**getRecordingRecordingkeysRotationschedule**](RecordingApi#getRecordingRecordingkeysRotationschedule) | **GET** /api/v2/recording/recordingkeys/rotationschedule | Get key rotation schedule
+[**getRecordingSettings**](RecordingApi#getRecordingSettings) | **GET** /api/v2/recording/settings | Get the Recording Settings for the Organization
+[**getRecordingUploadsReport**](RecordingApi#getRecordingUploadsReport) | **GET** /api/v2/recording/uploads/reports/{reportId} | Get the status of a recording upload status report
+[**getRecordingsRetentionQuery**](RecordingApi#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
+[**getRecordingsScreensessions**](RecordingApi#getRecordingsScreensessions) | **GET** /api/v2/recordings/screensessions | Retrieves a paged listing of screen recording sessions
+[**getRecordingsScreensessionsDetails**](RecordingApi#getRecordingsScreensessionsDetails) | **GET** /api/v2/recordings/screensessions/details | Retrieves an object containing the total number of concurrent active screen recordings
+[**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
+[**patchRecordingMediaretentionpolicy**](RecordingApi#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
+[**patchRecordingsScreensession**](RecordingApi#patchRecordingsScreensession) | **PATCH** /api/v2/recordings/screensessions/{recordingSessionId} | Update a screen recording session
+[**postConversationRecordingAnnotations**](RecordingApi#postConversationRecordingAnnotations) | **POST** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation
+[**postRecordingBatchrequests**](RecordingApi#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+[**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi#postRecordingCrossplatformMediaretentionpolicies) | **POST** /api/v2/recording/crossplatform/mediaretentionpolicies | Create media retention policy
+[**postRecordingJobs**](RecordingApi#postRecordingJobs) | **POST** /api/v2/recording/jobs | Create a recording bulk job.
+[**postRecordingKeyconfigurations**](RecordingApi#postRecordingKeyconfigurations) | **POST** /api/v2/recording/keyconfigurations | Setup configurations for encryption key creation
+[**postRecordingKeyconfigurationsValidate**](RecordingApi#postRecordingKeyconfigurationsValidate) | **POST** /api/v2/recording/keyconfigurations/validate | Validate encryption key configurations without saving it
+[**postRecordingLocalkeys**](RecordingApi#postRecordingLocalkeys) | **POST** /api/v2/recording/localkeys | create a local key management recording key
+[**postRecordingMediaretentionpolicies**](RecordingApi#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
+[**postRecordingRecordingkeys**](RecordingApi#postRecordingRecordingkeys) | **POST** /api/v2/recording/recordingkeys | Create encryption key
+[**postRecordingUploadsReports**](RecordingApi#postRecordingUploadsReports) | **POST** /api/v2/recording/uploads/reports | Creates a recording upload status report
+[**postRecordingsDeletionprotection**](RecordingApi#postRecordingsDeletionprotection) | **POST** /api/v2/recordings/deletionprotection | Get a list of conversations with protected recordings
+[**postRecordingsScreensessionsAcknowledge**](RecordingApi#postRecordingsScreensessionsAcknowledge) | **POST** /api/v2/recordings/screensessions/acknowledge | Acknowledge a screen recording.
+[**postRecordingsScreensessionsMetadata**](RecordingApi#postRecordingsScreensessionsMetadata) | **POST** /api/v2/recordings/screensessions/metadata | Provide meta-data a screen recording.
+[**putConversationRecording**](RecordingApi#putConversationRecording) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Updates the retention records on a recording.
+[**putConversationRecordingAnnotation**](RecordingApi#putConversationRecordingAnnotation) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Update annotation
+[**putOrphanrecording**](RecordingApi#putOrphanrecording) | **PUT** /api/v2/orphanrecordings/{orphanId} | Updates an orphan recording to a regular recording with retention values
+[**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi#putRecordingCrossplatformMediaretentionpolicy) | **PUT** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Update a media retention policy
+[**putRecordingJob**](RecordingApi#putRecordingJob) | **PUT** /api/v2/recording/jobs/{jobId} | Execute the recording bulk job.
+[**putRecordingKeyconfiguration**](RecordingApi#putRecordingKeyconfiguration) | **PUT** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Update the encryption key configurations
+[**putRecordingMediaretentionpolicy**](RecordingApi#putRecordingMediaretentionpolicy) | **PUT** /api/v2/recording/mediaretentionpolicies/{policyId} | Update a media retention policy
+[**putRecordingRecordingkeysRotationschedule**](RecordingApi#putRecordingRecordingkeysRotationschedule) | **PUT** /api/v2/recording/recordingkeys/rotationschedule | Update key rotation schedule
+[**putRecordingSettings**](RecordingApi#putRecordingSettings) | **PUT** /api/v2/recording/settings | Update the Recording Settings for the Organization
+[**putRecordingsDeletionprotection**](RecordingApi#putRecordingsDeletionprotection) | **PUT** /api/v2/recordings/deletionprotection | Apply or revoke recording protection for conversations
 
-<a name="deleteConversationRecordingAnnotation"></a>
 
-# void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+
+## deleteConversationRecordingAnnotation
+
+> void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 
 DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
@@ -115,15 +116,15 @@ apiInstance.deleteConversationRecordingAnnotation(conversationId, recordingId, a
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOrphanrecording"></a>
 
-# OrphanRecording deleteOrphanrecording(orphanId)
+## deleteOrphanrecording
+
+> OrphanRecording deleteOrphanrecording(orphanId)
 
 
 DELETE /api/v2/orphanrecordings/{orphanId}
@@ -165,15 +166,15 @@ apiInstance.deleteOrphanrecording(orphanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrphanRecording**
 
-<a name="deleteRecordingCrossplatformMediaretentionpolicies"></a>
 
-# void deleteRecordingCrossplatformMediaretentionpolicies(ids)
+## deleteRecordingCrossplatformMediaretentionpolicies
+
+> void deleteRecordingCrossplatformMediaretentionpolicies(ids)
 
 
 DELETE /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -217,15 +218,15 @@ apiInstance.deleteRecordingCrossplatformMediaretentionpolicies(ids)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ids** | **String** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRecordingCrossplatformMediaretentionpolicy"></a>
 
-# void deleteRecordingCrossplatformMediaretentionpolicy(policyId)
+## deleteRecordingCrossplatformMediaretentionpolicy
+
+> void deleteRecordingCrossplatformMediaretentionpolicy(policyId)
 
 
 DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -267,15 +268,15 @@ apiInstance.deleteRecordingCrossplatformMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRecordingJob"></a>
 
-# void deleteRecordingJob(jobId)
+## deleteRecordingJob
+
+> void deleteRecordingJob(jobId)
 
 
 DELETE /api/v2/recording/jobs/{jobId}
@@ -317,15 +318,15 @@ apiInstance.deleteRecordingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRecordingMediaretentionpolicies"></a>
 
-# void deleteRecordingMediaretentionpolicies(ids)
+## deleteRecordingMediaretentionpolicies
+
+> void deleteRecordingMediaretentionpolicies(ids)
 
 
 DELETE /api/v2/recording/mediaretentionpolicies
@@ -369,15 +370,15 @@ apiInstance.deleteRecordingMediaretentionpolicies(ids)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ids** | **String** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRecordingMediaretentionpolicy"></a>
 
-# void deleteRecordingMediaretentionpolicy(policyId)
+## deleteRecordingMediaretentionpolicy
+
+> void deleteRecordingMediaretentionpolicy(policyId)
 
 
 DELETE /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -419,15 +420,15 @@ apiInstance.deleteRecordingMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getConversationRecording"></a>
 
-# Recording getConversationRecording(conversationId, recordingId, opts)
+## getConversationRecording
+
+> Recording getConversationRecording(conversationId, recordingId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}
@@ -490,15 +491,15 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recording**
 
-<a name="getConversationRecordingAnnotation"></a>
 
-# Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+## getConversationRecordingAnnotation
+
+> Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
@@ -544,15 +545,15 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Annotation**
 
-<a name="getConversationRecordingAnnotations"></a>
 
-# [Annotation] getConversationRecordingAnnotations(conversationId, recordingId)
+## getConversationRecordingAnnotations
+
+> [Annotation] getConversationRecordingAnnotations(conversationId, recordingId)
 
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
@@ -596,15 +597,15 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[Annotation]**
 
-<a name="getConversationRecordingmetadata"></a>
 
-# [RecordingMetadata] getConversationRecordingmetadata(conversationId)
+## getConversationRecordingmetadata
+
+> [RecordingMetadata] getConversationRecordingmetadata(conversationId)
 
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata
@@ -647,15 +648,15 @@ apiInstance.getConversationRecordingmetadata(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[RecordingMetadata]**
 
-<a name="getConversationRecordingmetadataRecordingId"></a>
 
-# RecordingMetadata getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+## getConversationRecordingmetadataRecordingId
+
+> RecordingMetadata getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}
@@ -700,15 +701,15 @@ apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordin
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingMetadata**
 
-<a name="getConversationRecordings"></a>
 
-# [Recording] getConversationRecordings(conversationId, opts)
+## getConversationRecordings
+
+> [Recording] getConversationRecordings(conversationId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/recordings
@@ -759,15 +760,15 @@ apiInstance.getConversationRecordings(conversationId, opts)
  **maxWaitMs** | **Number** | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
  **formatId** | **String** | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[Recording]**
 
-<a name="getOrphanrecording"></a>
 
-# OrphanRecording getOrphanrecording(orphanId)
+## getOrphanrecording
+
+> OrphanRecording getOrphanrecording(orphanId)
 
 
 GET /api/v2/orphanrecordings/{orphanId}
@@ -809,15 +810,15 @@ apiInstance.getOrphanrecording(orphanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrphanRecording**
 
-<a name="getOrphanrecordingMedia"></a>
 
-# Recording getOrphanrecordingMedia(orphanId, opts)
+## getOrphanrecordingMedia
+
+> Recording getOrphanrecordingMedia(orphanId, opts)
 
 
 GET /api/v2/orphanrecordings/{orphanId}/media
@@ -879,15 +880,15 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recording**
 
-<a name="getOrphanrecordings"></a>
 
-# OrphanRecordingListing getOrphanrecordings(opts)
+## getOrphanrecordings
+
+> OrphanRecordingListing getOrphanrecordings(opts)
 
 
 GET /api/v2/orphanrecordings
@@ -945,15 +946,15 @@ apiInstance.getOrphanrecordings(opts)
  **previousPage** | **String** | Previous page token | [optional]  |
  **hasConversation** | **Boolean** | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
  **media** | **String** | Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrphanRecordingListing**
 
-<a name="getRecordingBatchrequest"></a>
 
-# BatchDownloadJobStatusResult getRecordingBatchrequest(jobId)
+## getRecordingBatchrequest
+
+> BatchDownloadJobStatusResult getRecordingBatchrequest(jobId)
 
 
 GET /api/v2/recording/batchrequests/{jobId}
@@ -993,15 +994,15 @@ apiInstance.getRecordingBatchrequest(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BatchDownloadJobStatusResult**
 
-<a name="getRecordingCrossplatformMediaretentionpolicies"></a>
 
-# PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(opts)
+## getRecordingCrossplatformMediaretentionpolicies
+
+> PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(opts)
 
 
 GET /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -1067,15 +1068,15 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
  **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
  **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
  **deleteDaysThreshold** | **Number** | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PolicyEntityListing**
 
-<a name="getRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId)
+## getRecordingCrossplatformMediaretentionpolicy
+
+> CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId)
 
 
 GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -1117,15 +1118,15 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CrossPlatformPolicy**
 
-<a name="getRecordingJob"></a>
 
-# RecordingJob getRecordingJob(jobId)
+## getRecordingJob
+
+> RecordingJob getRecordingJob(jobId)
 
 
 GET /api/v2/recording/jobs/{jobId}
@@ -1167,15 +1168,15 @@ apiInstance.getRecordingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingJob**
 
-<a name="getRecordingJobFailedrecordings"></a>
 
-# FailedRecordingEntityListing getRecordingJobFailedrecordings(jobId, opts)
+## getRecordingJobFailedrecordings
+
+> FailedRecordingEntityListing getRecordingJobFailedrecordings(jobId, opts)
 
 
 GET /api/v2/recording/jobs/{jobId}/failedrecordings
@@ -1227,15 +1228,15 @@ apiInstance.getRecordingJobFailedrecordings(jobId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FailedRecordingEntityListing**
 
-<a name="getRecordingJobs"></a>
 
-# RecordingJobEntityListing getRecordingJobs(opts)
+## getRecordingJobs
+
+> RecordingJobEntityListing getRecordingJobs(opts)
 
 
 GET /api/v2/recording/jobs
@@ -1293,15 +1294,15 @@ apiInstance.getRecordingJobs(opts)
  **jobType** | **String** | Job Type (Can be left empty for both) | [optional] <br />**Values**: ARCHIVE, DELETE, EXPORT |
  **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingJobEntityListing**
 
-<a name="getRecordingKeyconfiguration"></a>
 
-# RecordingEncryptionConfiguration getRecordingKeyconfiguration(keyConfigurationId)
+## getRecordingKeyconfiguration
+
+> RecordingEncryptionConfiguration getRecordingKeyconfiguration(keyConfigurationId)
 
 
 GET /api/v2/recording/keyconfigurations/{keyConfigurationId}
@@ -1343,15 +1344,15 @@ apiInstance.getRecordingKeyconfiguration(keyConfigurationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **keyConfigurationId** | **String** | Key Configurations Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingEncryptionConfiguration**
 
-<a name="getRecordingKeyconfigurations"></a>
 
-# RecordingEncryptionConfigurationListing getRecordingKeyconfigurations()
+## getRecordingKeyconfigurations
+
+> RecordingEncryptionConfigurationListing getRecordingKeyconfigurations()
 
 
 GET /api/v2/recording/keyconfigurations
@@ -1389,14 +1390,14 @@ apiInstance.getRecordingKeyconfigurations()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **RecordingEncryptionConfigurationListing**
 
-<a name="getRecordingMediaretentionpolicies"></a>
 
-# PolicyEntityListing getRecordingMediaretentionpolicies(opts)
+## getRecordingMediaretentionpolicies
+
+> PolicyEntityListing getRecordingMediaretentionpolicies(opts)
 
 
 GET /api/v2/recording/mediaretentionpolicies
@@ -1462,15 +1463,15 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
  **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
  **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
  **deleteDaysThreshold** | **Number** | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PolicyEntityListing**
 
-<a name="getRecordingMediaretentionpolicy"></a>
 
-# Policy getRecordingMediaretentionpolicy(policyId)
+## getRecordingMediaretentionpolicy
+
+> Policy getRecordingMediaretentionpolicy(policyId)
 
 
 GET /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -1512,15 +1513,15 @@ apiInstance.getRecordingMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Policy**
 
-<a name="getRecordingRecordingkeys"></a>
 
-# EncryptionKeyEntityListing getRecordingRecordingkeys(opts)
+## getRecordingRecordingkeys
+
+> EncryptionKeyEntityListing getRecordingRecordingkeys(opts)
 
 
 GET /api/v2/recording/recordingkeys
@@ -1566,15 +1567,15 @@ apiInstance.getRecordingRecordingkeys(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **EncryptionKeyEntityListing**
 
-<a name="getRecordingRecordingkeysRotationschedule"></a>
 
-# KeyRotationSchedule getRecordingRecordingkeysRotationschedule()
+## getRecordingRecordingkeysRotationschedule
+
+> KeyRotationSchedule getRecordingRecordingkeysRotationschedule()
 
 
 GET /api/v2/recording/recordingkeys/rotationschedule
@@ -1612,14 +1613,14 @@ apiInstance.getRecordingRecordingkeysRotationschedule()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **KeyRotationSchedule**
 
-<a name="getRecordingSettings"></a>
 
-# RecordingSettings getRecordingSettings(opts)
+## getRecordingSettings
+
+> RecordingSettings getRecordingSettings(opts)
 
 
 GET /api/v2/recording/settings
@@ -1664,15 +1665,15 @@ apiInstance.getRecordingSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **createDefault** | **Boolean** | If no settings are found, a new one is created with default values | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingSettings**
 
-<a name="getRecordingUploadsReport"></a>
 
-# RecordingUploadReport getRecordingUploadsReport(reportId)
+## getRecordingUploadsReport
+
+> RecordingUploadReport getRecordingUploadsReport(reportId)
 
 
 GET /api/v2/recording/uploads/reports/{reportId}
@@ -1714,15 +1715,15 @@ apiInstance.getRecordingUploadsReport(reportId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **reportId** | **String** | reportId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingUploadReport**
 
-<a name="getRecordingsRetentionQuery"></a>
 
-# RecordingRetentionCursorEntityListing getRecordingsRetentionQuery(retentionThresholdDays, opts)
+## getRecordingsRetentionQuery
+
+> RecordingRetentionCursorEntityListing getRecordingsRetentionQuery(retentionThresholdDays, opts)
 
 
 GET /api/v2/recordings/retention/query
@@ -1770,15 +1771,15 @@ apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, opts)
  **retentionThresholdDays** | **Number** | Fetch retention data for recordings retained for more days than the provided value. |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | Page size. Maximum is 500. | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingRetentionCursorEntityListing**
 
-<a name="getRecordingsScreensessions"></a>
 
-# ScreenRecordingSessionListing getRecordingsScreensessions(opts)
+## getRecordingsScreensessions
+
+> ScreenRecordingSessionListing getRecordingsScreensessions(opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1827,15 +1828,15 @@ apiInstance.getRecordingsScreensessions(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ScreenRecordingSessionListing**
 
-<a name="getRecordingsScreensessionsDetails"></a>
 
-# ScreenRecordingActiveSessions getRecordingsScreensessionsDetails()
+## getRecordingsScreensessionsDetails
+
+> ScreenRecordingActiveSessions getRecordingsScreensessionsDetails()
 
 
 GET /api/v2/recordings/screensessions/details
@@ -1873,14 +1874,14 @@ apiInstance.getRecordingsScreensessionsDetails()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ScreenRecordingActiveSessions**
 
-<a name="patchRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
+## patchRecordingCrossplatformMediaretentionpolicy
+
+> CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 
 PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -1924,15 +1925,15 @@ apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CrossPlatformPolicy**
 
-<a name="patchRecordingMediaretentionpolicy"></a>
 
-# Policy patchRecordingMediaretentionpolicy(policyId, body)
+## patchRecordingMediaretentionpolicy
+
+> Policy patchRecordingMediaretentionpolicy(policyId, body)
 
 
 PATCH /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -1976,15 +1977,15 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Policy**
 
-<a name="patchRecordingsScreensession"></a>
 
-# void patchRecordingsScreensession(recordingSessionId, opts)
+## patchRecordingsScreensession
+
+> void patchRecordingsScreensession(recordingSessionId, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -2033,15 +2034,15 @@ apiInstance.patchRecordingsScreensession(recordingSessionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **recordingSessionId** | **String** | Screen recording session ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationRecordingAnnotations"></a>
 
-# Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
+## postConversationRecordingAnnotations
+
+> Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
 
 
 POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
@@ -2087,15 +2088,15 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **body** | **Object** | annotation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Annotation**
 
-<a name="postRecordingBatchrequests"></a>
 
-# BatchDownloadJobSubmissionResult postRecordingBatchrequests(body)
+## postRecordingBatchrequests
+
+> BatchDownloadJobSubmissionResult postRecordingBatchrequests(body)
 
 
 POST /api/v2/recording/batchrequests
@@ -2138,15 +2139,15 @@ apiInstance.postRecordingBatchrequests(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Job submission criteria |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BatchDownloadJobSubmissionResult**
 
-<a name="postRecordingCrossplatformMediaretentionpolicies"></a>
 
-# CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body)
+## postRecordingCrossplatformMediaretentionpolicies
+
+> CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body)
 
 
 POST /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -2190,15 +2191,15 @@ apiInstance.postRecordingCrossplatformMediaretentionpolicies(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CrossPlatformPolicy**
 
-<a name="postRecordingJobs"></a>
 
-# RecordingJob postRecordingJobs(body)
+## postRecordingJobs
+
+> RecordingJob postRecordingJobs(body)
 
 
 POST /api/v2/recording/jobs
@@ -2242,15 +2243,15 @@ apiInstance.postRecordingJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingJob**
 
-<a name="postRecordingKeyconfigurations"></a>
 
-# RecordingEncryptionConfiguration postRecordingKeyconfigurations(body)
+## postRecordingKeyconfigurations
+
+> RecordingEncryptionConfiguration postRecordingKeyconfigurations(body)
 
 
 POST /api/v2/recording/keyconfigurations
@@ -2292,15 +2293,15 @@ apiInstance.postRecordingKeyconfigurations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingEncryptionConfiguration**
 
-<a name="postRecordingKeyconfigurationsValidate"></a>
 
-# RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(body)
+## postRecordingKeyconfigurationsValidate
+
+> RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(body)
 
 
 POST /api/v2/recording/keyconfigurations/validate
@@ -2342,15 +2343,15 @@ apiInstance.postRecordingKeyconfigurationsValidate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingEncryptionConfiguration**
 
-<a name="postRecordingLocalkeys"></a>
 
-# EncryptionKey postRecordingLocalkeys(body)
+## postRecordingLocalkeys
+
+> EncryptionKey postRecordingLocalkeys(body)
 
 
 POST /api/v2/recording/localkeys
@@ -2392,15 +2393,15 @@ apiInstance.postRecordingLocalkeys(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Local Encryption body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EncryptionKey**
 
-<a name="postRecordingMediaretentionpolicies"></a>
 
-# Policy postRecordingMediaretentionpolicies(body)
+## postRecordingMediaretentionpolicies
+
+> Policy postRecordingMediaretentionpolicies(body)
 
 
 POST /api/v2/recording/mediaretentionpolicies
@@ -2444,15 +2445,15 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Policy**
 
-<a name="postRecordingRecordingkeys"></a>
 
-# EncryptionKey postRecordingRecordingkeys()
+## postRecordingRecordingkeys
+
+> EncryptionKey postRecordingRecordingkeys()
 
 
 POST /api/v2/recording/recordingkeys
@@ -2490,14 +2491,14 @@ apiInstance.postRecordingRecordingkeys()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **EncryptionKey**
 
-<a name="postRecordingUploadsReports"></a>
 
-# RecordingUploadReport postRecordingUploadsReports(body)
+## postRecordingUploadsReports
+
+> RecordingUploadReport postRecordingUploadsReports(body)
 
 
 POST /api/v2/recording/uploads/reports
@@ -2539,15 +2540,15 @@ apiInstance.postRecordingUploadsReports(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Report parameters |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingUploadReport**
 
-<a name="postRecordingsDeletionprotection"></a>
 
-# [AddressableEntityRef] postRecordingsDeletionprotection(body)
+## postRecordingsDeletionprotection
+
+> [AddressableEntityRef] postRecordingsDeletionprotection(body)
 
 
 POST /api/v2/recordings/deletionprotection
@@ -2587,15 +2588,15 @@ apiInstance.postRecordingsDeletionprotection(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | conversationIds |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[AddressableEntityRef]**
 
-<a name="postRecordingsScreensessionsAcknowledge"></a>
 
-# void postRecordingsScreensessionsAcknowledge(body)
+## postRecordingsScreensessionsAcknowledge
+
+> void postRecordingsScreensessionsAcknowledge(body)
 
 
 POST /api/v2/recordings/screensessions/acknowledge
@@ -2635,15 +2636,15 @@ apiInstance.postRecordingsScreensessionsAcknowledge(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | AcknowledgeScreenRecordingRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postRecordingsScreensessionsMetadata"></a>
 
-# void postRecordingsScreensessionsMetadata(body)
+## postRecordingsScreensessionsMetadata
+
+> void postRecordingsScreensessionsMetadata(body)
 
 
 POST /api/v2/recordings/screensessions/metadata
@@ -2683,15 +2684,15 @@ apiInstance.postRecordingsScreensessionsMetadata(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ScreenRecordingMetaDataRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putConversationRecording"></a>
 
-# Recording putConversationRecording(conversationId, recordingId, body, opts)
+## putConversationRecording
+
+> Recording putConversationRecording(conversationId, recordingId, body, opts)
 
 
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}
@@ -2745,15 +2746,15 @@ apiInstance.putConversationRecording(conversationId, recordingId, body, opts)
  **recordingId** | **String** | Recording ID |  |
  **body** | **Object** | recording |  |
  **clearExport** | **Boolean** | Whether to clear the pending export for the recording | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recording**
 
-<a name="putConversationRecordingAnnotation"></a>
 
-# Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
+## putConversationRecordingAnnotation
+
+> Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
 
 
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
@@ -2803,15 +2804,15 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
  **body** | **Object** | annotation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Annotation**
 
-<a name="putOrphanrecording"></a>
 
-# Recording putOrphanrecording(orphanId, opts)
+## putOrphanrecording
+
+> Recording putOrphanrecording(orphanId, opts)
 
 
 PUT /api/v2/orphanrecordings/{orphanId}
@@ -2859,15 +2860,15 @@ apiInstance.putOrphanrecording(orphanId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recording**
 
-<a name="putRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body)
+## putRecordingCrossplatformMediaretentionpolicy
+
+> CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 
 PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -2913,15 +2914,15 @@ apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CrossPlatformPolicy**
 
-<a name="putRecordingJob"></a>
 
-# RecordingJob putRecordingJob(jobId, body)
+## putRecordingJob
+
+> RecordingJob putRecordingJob(jobId, body)
 
 
 PUT /api/v2/recording/jobs/{jobId}
@@ -2969,15 +2970,15 @@ apiInstance.putRecordingJob(jobId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingJob**
 
-<a name="putRecordingKeyconfiguration"></a>
 
-# RecordingEncryptionConfiguration putRecordingKeyconfiguration(keyConfigurationId, body)
+## putRecordingKeyconfiguration
+
+> RecordingEncryptionConfiguration putRecordingKeyconfiguration(keyConfigurationId, body)
 
 
 PUT /api/v2/recording/keyconfigurations/{keyConfigurationId}
@@ -3021,15 +3022,15 @@ apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **keyConfigurationId** | **String** | Key Configurations Id |  |
  **body** | **Object** | Encryption key configuration metadata |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingEncryptionConfiguration**
 
-<a name="putRecordingMediaretentionpolicy"></a>
 
-# Policy putRecordingMediaretentionpolicy(policyId, body)
+## putRecordingMediaretentionpolicy
+
+> Policy putRecordingMediaretentionpolicy(policyId, body)
 
 
 PUT /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -3075,15 +3076,15 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Policy**
 
-<a name="putRecordingRecordingkeysRotationschedule"></a>
 
-# KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body)
+## putRecordingRecordingkeysRotationschedule
+
+> KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body)
 
 
 PUT /api/v2/recording/recordingkeys/rotationschedule
@@ -3125,15 +3126,15 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | KeyRotationSchedule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **KeyRotationSchedule**
 
-<a name="putRecordingSettings"></a>
 
-# RecordingSettings putRecordingSettings(body)
+## putRecordingSettings
+
+> RecordingSettings putRecordingSettings(body)
 
 
 PUT /api/v2/recording/settings
@@ -3175,15 +3176,15 @@ apiInstance.putRecordingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Recording settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingSettings**
 
-<a name="putRecordingsDeletionprotection"></a>
 
-# void putRecordingsDeletionprotection(opts)
+## putRecordingsDeletionprotection
+
+> void putRecordingsDeletionprotection(opts)
 
 
 PUT /api/v2/recordings/deletionprotection
@@ -3230,7 +3231,6 @@ apiInstance.putRecordingsDeletionprotection(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **protect** | **Boolean** | Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to true] |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 

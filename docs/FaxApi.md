@@ -6,19 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteFaxDocument**](FaxApi.html#deleteFaxDocument) | **DELETE** /api/v2/fax/documents/{documentId} | Delete a fax document.
-[**getFaxDocument**](FaxApi.html#getFaxDocument) | **GET** /api/v2/fax/documents/{documentId} | Get a document.
-[**getFaxDocumentContent**](FaxApi.html#getFaxDocumentContent) | **GET** /api/v2/fax/documents/{documentId}/content | Download a fax document.
-[**getFaxDocuments**](FaxApi.html#getFaxDocuments) | **GET** /api/v2/fax/documents | Get a list of fax documents.
-[**getFaxSettings**](FaxApi.html#getFaxSettings) | **GET** /api/v2/fax/settings | Get organization config for given organization
-[**getFaxSummary**](FaxApi.html#getFaxSummary) | **GET** /api/v2/fax/summary | Get fax summary
-[**putFaxDocument**](FaxApi.html#putFaxDocument) | **PUT** /api/v2/fax/documents/{documentId} | Update a fax document.
-[**putFaxSettings**](FaxApi.html#putFaxSettings) | **PUT** /api/v2/fax/settings | Update/write organization config for given organization
-{: class="table table-striped"}
+[**deleteFaxDocument**](FaxApi#deleteFaxDocument) | **DELETE** /api/v2/fax/documents/{documentId} | Delete a fax document.
+[**getFaxDocument**](FaxApi#getFaxDocument) | **GET** /api/v2/fax/documents/{documentId} | Get a document.
+[**getFaxDocumentContent**](FaxApi#getFaxDocumentContent) | **GET** /api/v2/fax/documents/{documentId}/content | Download a fax document.
+[**getFaxDocuments**](FaxApi#getFaxDocuments) | **GET** /api/v2/fax/documents | Get a list of fax documents.
+[**getFaxSettings**](FaxApi#getFaxSettings) | **GET** /api/v2/fax/settings | Get organization config for given organization
+[**getFaxSummary**](FaxApi#getFaxSummary) | **GET** /api/v2/fax/summary | Get fax summary
+[**putFaxDocument**](FaxApi#putFaxDocument) | **PUT** /api/v2/fax/documents/{documentId} | Update a fax document.
+[**putFaxSettings**](FaxApi#putFaxSettings) | **PUT** /api/v2/fax/settings | Update/write organization config for given organization
 
-<a name="deleteFaxDocument"></a>
 
-# void deleteFaxDocument(documentId)
+
+## deleteFaxDocument
+
+> void deleteFaxDocument(documentId)
 
 
 DELETE /api/v2/fax/documents/{documentId}
@@ -58,15 +59,15 @@ apiInstance.deleteFaxDocument(documentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getFaxDocument"></a>
 
-# FaxDocument getFaxDocument(documentId)
+## getFaxDocument
+
+> FaxDocument getFaxDocument(documentId)
 
 
 GET /api/v2/fax/documents/{documentId}
@@ -106,15 +107,15 @@ apiInstance.getFaxDocument(documentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FaxDocument**
 
-<a name="getFaxDocumentContent"></a>
 
-# DownloadResponse getFaxDocumentContent(documentId)
+## getFaxDocumentContent
+
+> DownloadResponse getFaxDocumentContent(documentId)
 
 
 GET /api/v2/fax/documents/{documentId}/content
@@ -154,15 +155,15 @@ apiInstance.getFaxDocumentContent(documentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DownloadResponse**
 
-<a name="getFaxDocuments"></a>
 
-# FaxDocumentEntityListing getFaxDocuments(opts)
+## getFaxDocuments
+
+> FaxDocumentEntityListing getFaxDocuments(opts)
 
 
 GET /api/v2/fax/documents
@@ -206,15 +207,15 @@ apiInstance.getFaxDocuments(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **FaxDocumentEntityListing**
 
-<a name="getFaxSettings"></a>
 
-# FaxConfig getFaxSettings()
+## getFaxSettings
+
+> FaxConfig getFaxSettings()
 
 
 GET /api/v2/fax/settings
@@ -250,14 +251,14 @@ apiInstance.getFaxSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **FaxConfig**
 
-<a name="getFaxSummary"></a>
 
-# FaxSummary getFaxSummary()
+## getFaxSummary
+
+> FaxSummary getFaxSummary()
 
 
 GET /api/v2/fax/summary
@@ -293,14 +294,14 @@ apiInstance.getFaxSummary()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **FaxSummary**
 
-<a name="putFaxDocument"></a>
 
-# FaxDocument putFaxDocument(documentId, body)
+## putFaxDocument
+
+> FaxDocument putFaxDocument(documentId, body)
 
 
 PUT /api/v2/fax/documents/{documentId}
@@ -342,15 +343,15 @@ apiInstance.putFaxDocument(documentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **body** | **Object** | Document |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FaxDocument**
 
-<a name="putFaxSettings"></a>
 
-# FaxConfig putFaxSettings(opts)
+## putFaxSettings
+
+> FaxConfig putFaxSettings(opts)
 
 
 PUT /api/v2/fax/settings
@@ -394,7 +395,6 @@ apiInstance.putFaxSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 

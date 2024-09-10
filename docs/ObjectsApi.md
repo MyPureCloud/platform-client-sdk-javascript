@@ -6,20 +6,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAuthorizationDivision**](ObjectsApi.html#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
-[**getAuthorizationDivision**](ObjectsApi.html#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
-[**getAuthorizationDivisions**](ObjectsApi.html#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
-[**getAuthorizationDivisionsHome**](ObjectsApi.html#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
-[**getAuthorizationDivisionsLimit**](ObjectsApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
-[**postAuthorizationDivisionObject**](ObjectsApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
-[**postAuthorizationDivisionRestore**](ObjectsApi.html#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
-[**postAuthorizationDivisions**](ObjectsApi.html#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
-[**putAuthorizationDivision**](ObjectsApi.html#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
-{: class="table table-striped"}
+[**deleteAuthorizationDivision**](ObjectsApi#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
+[**getAuthorizationDivision**](ObjectsApi#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
+[**getAuthorizationDivisions**](ObjectsApi#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
+[**getAuthorizationDivisionsHome**](ObjectsApi#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
+[**getAuthorizationDivisionsLimit**](ObjectsApi#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
+[**postAuthorizationDivisionObject**](ObjectsApi#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
+[**postAuthorizationDivisionRestore**](ObjectsApi#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
+[**postAuthorizationDivisions**](ObjectsApi#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
+[**putAuthorizationDivision**](ObjectsApi#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
 
-<a name="deleteAuthorizationDivision"></a>
 
-# void deleteAuthorizationDivision(divisionId, opts)
+
+## deleteAuthorizationDivision
+
+> void deleteAuthorizationDivision(divisionId, opts)
 
 
 DELETE /api/v2/authorization/divisions/{divisionId}
@@ -65,15 +66,15 @@ apiInstance.deleteAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **force** | **Boolean** | Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAuthorizationDivision"></a>
 
-# AuthzDivision getAuthorizationDivision(divisionId, opts)
+## getAuthorizationDivision
+
+> AuthzDivision getAuthorizationDivision(divisionId, opts)
 
 
 GET /api/v2/authorization/divisions/{divisionId}
@@ -117,15 +118,15 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="getAuthorizationDivisions"></a>
 
-# AuthzDivisionEntityListing getAuthorizationDivisions(opts)
+## getAuthorizationDivisions
+
+> AuthzDivisionEntityListing getAuthorizationDivisions(opts)
 
 
 GET /api/v2/authorization/divisions
@@ -185,15 +186,15 @@ apiInstance.getAuthorizationDivisions(opts)
  **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivisionEntityListing**
 
-<a name="getAuthorizationDivisionsHome"></a>
 
-# AuthzDivision getAuthorizationDivisionsHome()
+## getAuthorizationDivisionsHome
+
+> AuthzDivision getAuthorizationDivisionsHome()
 
 
 GET /api/v2/authorization/divisions/home
@@ -231,14 +232,14 @@ apiInstance.getAuthorizationDivisionsHome()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AuthzDivision**
 
-<a name="getAuthorizationDivisionsLimit"></a>
 
-# **&#39;Number&#39;** getAuthorizationDivisionsLimit()
+## getAuthorizationDivisionsLimit
+
+> **&#39;Number&#39;** getAuthorizationDivisionsLimit()
 
 
 GET /api/v2/authorization/divisions/limit
@@ -274,14 +275,14 @@ apiInstance.getAuthorizationDivisionsLimit()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **&#39;Number&#39;**
 
-<a name="postAuthorizationDivisionObject"></a>
 
-# void postAuthorizationDivisionObject(divisionId, objectType, body)
+## postAuthorizationDivisionObject
+
+> void postAuthorizationDivisionObject(divisionId, objectType, body)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
@@ -327,15 +328,15 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
  **divisionId** | **String** | Division ID |  |
  **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
  **body** | **[String]** | Object Id List |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationDivisionRestore"></a>
 
-# AuthzDivision postAuthorizationDivisionRestore(divisionId, opts)
+## postAuthorizationDivisionRestore
+
+> AuthzDivision postAuthorizationDivisionRestore(divisionId, opts)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/restore
@@ -381,15 +382,15 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Recreated division data | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="postAuthorizationDivisions"></a>
 
-# AuthzDivision postAuthorizationDivisions(body)
+## postAuthorizationDivisions
+
+> AuthzDivision postAuthorizationDivisions(body)
 
 
 POST /api/v2/authorization/divisions
@@ -432,15 +433,15 @@ apiInstance.postAuthorizationDivisions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Division |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="putAuthorizationDivision"></a>
 
-# AuthzDivision putAuthorizationDivision(divisionId, body)
+## putAuthorizationDivision
+
+> AuthzDivision putAuthorizationDivision(divisionId, body)
 
 
 PUT /api/v2/authorization/divisions/{divisionId}
@@ -484,7 +485,6 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Updated division data |  |
-{: class="table table-striped"}
 
 ### Return type
 

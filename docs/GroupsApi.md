@@ -6,29 +6,30 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteGroup**](GroupsApi.html#deleteGroup) | **DELETE** /api/v2/groups/{groupId} | Delete group
-[**deleteGroupDynamicsettings**](GroupsApi.html#deleteGroupDynamicsettings) | **DELETE** /api/v2/groups/{groupId}/dynamicsettings | Remove dynamic group definition
-[**deleteGroupMembers**](GroupsApi.html#deleteGroupMembers) | **DELETE** /api/v2/groups/{groupId}/members | Remove members
-[**getFieldconfig**](GroupsApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
-[**getGroup**](GroupsApi.html#getGroup) | **GET** /api/v2/groups/{groupId} | Get group
-[**getGroupDynamicsettings**](GroupsApi.html#getGroupDynamicsettings) | **GET** /api/v2/groups/{groupId}/dynamicsettings | Get dynamic group definition
-[**getGroupIndividuals**](GroupsApi.html#getGroupIndividuals) | **GET** /api/v2/groups/{groupId}/individuals | Get all individuals associated with the group
-[**getGroupMembers**](GroupsApi.html#getGroupMembers) | **GET** /api/v2/groups/{groupId}/members | Get group members, includes individuals, owners, and dynamically included people
-[**getGroupProfile**](GroupsApi.html#getGroupProfile) | **GET** /api/v2/groups/{groupId}/profile | Get group profile
-[**getGroups**](GroupsApi.html#getGroups) | **GET** /api/v2/groups | Get a group list
-[**getGroupsSearch**](GroupsApi.html#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
-[**getProfilesGroups**](GroupsApi.html#getProfilesGroups) | **GET** /api/v2/profiles/groups | Get group profile listing
-[**postGroupMembers**](GroupsApi.html#postGroupMembers) | **POST** /api/v2/groups/{groupId}/members | Add members
-[**postGroups**](GroupsApi.html#postGroups) | **POST** /api/v2/groups | Create a group
-[**postGroupsDynamicsettingsPreview**](GroupsApi.html#postGroupsDynamicsettingsPreview) | **POST** /api/v2/groups/dynamicsettings/preview | Preview the number of users selected for a dynamic group definition query
-[**postGroupsSearch**](GroupsApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
-[**putGroup**](GroupsApi.html#putGroup) | **PUT** /api/v2/groups/{groupId} | Update group
-[**putGroupDynamicsettings**](GroupsApi.html#putGroupDynamicsettings) | **PUT** /api/v2/groups/{groupId}/dynamicsettings | Create / Update dynamic group definition
-{: class="table table-striped"}
+[**deleteGroup**](GroupsApi#deleteGroup) | **DELETE** /api/v2/groups/{groupId} | Delete group
+[**deleteGroupDynamicsettings**](GroupsApi#deleteGroupDynamicsettings) | **DELETE** /api/v2/groups/{groupId}/dynamicsettings | Remove dynamic group definition
+[**deleteGroupMembers**](GroupsApi#deleteGroupMembers) | **DELETE** /api/v2/groups/{groupId}/members | Remove members
+[**getFieldconfig**](GroupsApi#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
+[**getGroup**](GroupsApi#getGroup) | **GET** /api/v2/groups/{groupId} | Get group
+[**getGroupDynamicsettings**](GroupsApi#getGroupDynamicsettings) | **GET** /api/v2/groups/{groupId}/dynamicsettings | Get dynamic group definition
+[**getGroupIndividuals**](GroupsApi#getGroupIndividuals) | **GET** /api/v2/groups/{groupId}/individuals | Get all individuals associated with the group
+[**getGroupMembers**](GroupsApi#getGroupMembers) | **GET** /api/v2/groups/{groupId}/members | Get group members, includes individuals, owners, and dynamically included people
+[**getGroupProfile**](GroupsApi#getGroupProfile) | **GET** /api/v2/groups/{groupId}/profile | Get group profile
+[**getGroups**](GroupsApi#getGroups) | **GET** /api/v2/groups | Get a group list
+[**getGroupsSearch**](GroupsApi#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
+[**getProfilesGroups**](GroupsApi#getProfilesGroups) | **GET** /api/v2/profiles/groups | Get group profile listing
+[**postGroupMembers**](GroupsApi#postGroupMembers) | **POST** /api/v2/groups/{groupId}/members | Add members
+[**postGroups**](GroupsApi#postGroups) | **POST** /api/v2/groups | Create a group
+[**postGroupsDynamicsettingsPreview**](GroupsApi#postGroupsDynamicsettingsPreview) | **POST** /api/v2/groups/dynamicsettings/preview | Preview the number of users selected for a dynamic group definition query
+[**postGroupsSearch**](GroupsApi#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
+[**putGroup**](GroupsApi#putGroup) | **PUT** /api/v2/groups/{groupId} | Update group
+[**putGroupDynamicsettings**](GroupsApi#putGroupDynamicsettings) | **PUT** /api/v2/groups/{groupId}/dynamicsettings | Create / Update dynamic group definition
 
-<a name="deleteGroup"></a>
 
-# void deleteGroup(groupId)
+
+## deleteGroup
+
+> void deleteGroup(groupId)
 
 
 DELETE /api/v2/groups/{groupId}
@@ -70,15 +71,15 @@ apiInstance.deleteGroup(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteGroupDynamicsettings"></a>
 
-# void deleteGroupDynamicsettings(groupId)
+## deleteGroupDynamicsettings
+
+> void deleteGroupDynamicsettings(groupId)
 
 
 DELETE /api/v2/groups/{groupId}/dynamicsettings
@@ -122,15 +123,15 @@ apiInstance.deleteGroupDynamicsettings(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteGroupMembers"></a>
 
-# **Object** deleteGroupMembers(groupId, ids)
+## deleteGroupMembers
+
+> **Object** deleteGroupMembers(groupId, ids)
 
 
 DELETE /api/v2/groups/{groupId}/members
@@ -172,15 +173,15 @@ apiInstance.deleteGroupMembers(groupId, ids)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **ids** | **String** | Comma separated list of userIds to remove |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="getFieldconfig"></a>
 
-# FieldConfig getFieldconfig(type)
+## getFieldconfig
+
+> FieldConfig getFieldconfig(type)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -221,15 +222,15 @@ apiInstance.getFieldconfig(type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **type** | **String** | Field type | <br />**Values**: person, group, org |
-{: class="table table-striped"}
 
 ### Return type
 
 **FieldConfig**
 
-<a name="getGroup"></a>
 
-# Group getGroup(groupId)
+## getGroup
+
+> Group getGroup(groupId)
 
 
 GET /api/v2/groups/{groupId}
@@ -269,15 +270,15 @@ apiInstance.getGroup(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Group**
 
-<a name="getGroupDynamicsettings"></a>
 
-# DynamicGroupDefinition getGroupDynamicsettings(groupId)
+## getGroupDynamicsettings
+
+> DynamicGroupDefinition getGroupDynamicsettings(groupId)
 
 
 GET /api/v2/groups/{groupId}/dynamicsettings
@@ -321,15 +322,15 @@ apiInstance.getGroupDynamicsettings(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DynamicGroupDefinition**
 
-<a name="getGroupIndividuals"></a>
 
-# UserEntityListing getGroupIndividuals(groupId)
+## getGroupIndividuals
+
+> UserEntityListing getGroupIndividuals(groupId)
 
 
 GET /api/v2/groups/{groupId}/individuals
@@ -369,15 +370,15 @@ apiInstance.getGroupIndividuals(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="getGroupMembers"></a>
 
-# UserEntityListing getGroupMembers(groupId, opts)
+## getGroupMembers
+
+> UserEntityListing getGroupMembers(groupId, opts)
 
 
 GET /api/v2/groups/{groupId}/members
@@ -427,15 +428,15 @@ apiInstance.getGroupMembers(groupId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="getGroupProfile"></a>
 
-# GroupProfile getGroupProfile(groupId, opts)
+## getGroupProfile
+
+> GroupProfile getGroupProfile(groupId, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -482,15 +483,15 @@ apiInstance.getGroupProfile(groupId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | groupId |  |
  **fields** | **String** | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GroupProfile**
 
-<a name="getGroups"></a>
 
-# GroupEntityListing getGroups(opts)
+## getGroups
+
+> GroupEntityListing getGroups(opts)
 
 
 GET /api/v2/groups
@@ -540,15 +541,15 @@ apiInstance.getGroups(opts)
  **id** | **[String]** | id | [optional]  |
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the id parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **GroupEntityListing**
 
-<a name="getGroupsSearch"></a>
 
-# GroupsSearchResponse getGroupsSearch(q64, opts)
+## getGroupsSearch
+
+> GroupsSearchResponse getGroupsSearch(q64, opts)
 
 
 GET /api/v2/groups/search
@@ -592,15 +593,15 @@ apiInstance.getGroupsSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GroupsSearchResponse**
 
-<a name="getProfilesGroups"></a>
 
-# GroupProfileEntityListing getProfilesGroups(opts)
+## getProfilesGroups
+
+> GroupProfileEntityListing getProfilesGroups(opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -653,15 +654,15 @@ apiInstance.getProfilesGroups(opts)
  **id** | **[String]** | id | [optional]  |
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the id parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **GroupProfileEntityListing**
 
-<a name="postGroupMembers"></a>
 
-# **Object** postGroupMembers(groupId, body)
+## postGroupMembers
+
+> **Object** postGroupMembers(groupId, body)
 
 
 POST /api/v2/groups/{groupId}/members
@@ -703,15 +704,15 @@ apiInstance.postGroupMembers(groupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | Add members |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="postGroups"></a>
 
-# Group postGroups(body)
+## postGroups
+
+> Group postGroups(body)
 
 
 POST /api/v2/groups
@@ -753,15 +754,15 @@ apiInstance.postGroups(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Group |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Group**
 
-<a name="postGroupsDynamicsettingsPreview"></a>
 
-# DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(body)
+## postGroupsDynamicsettingsPreview
+
+> DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -806,15 +807,15 @@ apiInstance.postGroupsDynamicsettingsPreview(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Group query to preview |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DynamicGroupQueryPreview**
 
-<a name="postGroupsSearch"></a>
 
-# GroupsSearchResponse postGroupsSearch(body)
+## postGroupsSearch
+
+> GroupsSearchResponse postGroupsSearch(body)
 
 
 POST /api/v2/groups/search
@@ -854,15 +855,15 @@ apiInstance.postGroupsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GroupsSearchResponse**
 
-<a name="putGroup"></a>
 
-# Group putGroup(groupId, opts)
+## putGroup
+
+> Group putGroup(groupId, opts)
 
 
 PUT /api/v2/groups/{groupId}
@@ -908,15 +909,15 @@ apiInstance.putGroup(groupId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | Group | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Group**
 
-<a name="putGroupDynamicsettings"></a>
 
-# void putGroupDynamicsettings(groupId, body)
+## putGroupDynamicsettings
+
+> void putGroupDynamicsettings(groupId, body)
 
 
 PUT /api/v2/groups/{groupId}/dynamicsettings
@@ -962,7 +963,6 @@ apiInstance.putGroupDynamicsettings(groupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | Create/Update dynamic groups |  |
-{: class="table table-striped"}
 
 ### Return type
 

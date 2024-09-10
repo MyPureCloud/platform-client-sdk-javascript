@@ -6,71 +6,72 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteJourneyActionmap**](JourneyApi.html#deleteJourneyActionmap) | **DELETE** /api/v2/journey/actionmaps/{actionMapId} | Delete single action map.
-[**deleteJourneyActiontemplate**](JourneyApi.html#deleteJourneyActiontemplate) | **DELETE** /api/v2/journey/actiontemplates/{actionTemplateId} | Delete a single action template.
-[**deleteJourneyOutcome**](JourneyApi.html#deleteJourneyOutcome) | **DELETE** /api/v2/journey/outcomes/{outcomeId} | Delete an outcome.
-[**deleteJourneyOutcomesPredictor**](JourneyApi.html#deleteJourneyOutcomesPredictor) | **DELETE** /api/v2/journey/outcomes/predictors/{predictorId} | Delete an outcome predictor.
-[**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | **DELETE** /api/v2/journey/segments/{segmentId} | Delete a segment.
-[**deleteJourneyView**](JourneyApi.html#deleteJourneyView) | **DELETE** /api/v2/journey/views/{viewId} | Delete a Journey View by ID
-[**getAnalyticsJourneysAggregatesJob**](JourneyApi.html#getAnalyticsJourneysAggregatesJob) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Get status for async query for journey aggregates
-[**getAnalyticsJourneysAggregatesJobResults**](JourneyApi.html#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getExternalcontactsContactJourneySessions**](JourneyApi.html#getExternalcontactsContactJourneySessions) | **GET** /api/v2/externalcontacts/contacts/{contactId}/journey/sessions | Retrieve all sessions for a given external contact.
-[**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | **GET** /api/v2/journey/actionmaps/{actionMapId} | Retrieve a single action map.
-[**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | **GET** /api/v2/journey/actionmaps | Retrieve all action maps.
-[**getJourneyActionmapsEstimatesJob**](JourneyApi.html#getJourneyActionmapsEstimatesJob) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId} | Get status of job.
-[**getJourneyActionmapsEstimatesJobResults**](JourneyApi.html#getJourneyActionmapsEstimatesJobResults) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results | Get estimates from completed job.
-[**getJourneyActiontarget**](JourneyApi.html#getJourneyActiontarget) | **GET** /api/v2/journey/actiontargets/{actionTargetId} | Retrieve a single action target.
-[**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | **GET** /api/v2/journey/actiontargets | Retrieve all action targets.
-[**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | **GET** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template.
-[**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | **GET** /api/v2/journey/actiontemplates | Retrieve all action templates.
-[**getJourneyDeploymentCustomerPing**](JourneyApi.html#getJourneyDeploymentCustomerPing) | **GET** /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping | Send a ping.
-[**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | **GET** /api/v2/journey/outcomes/{outcomeId} | Retrieve a single outcome.
-[**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | **GET** /api/v2/journey/outcomes | Retrieve all outcomes.
-[**getJourneyOutcomesAttributionsJob**](JourneyApi.html#getJourneyOutcomesAttributionsJob) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId} | Get job status.
-[**getJourneyOutcomesAttributionsJobResults**](JourneyApi.html#getJourneyOutcomesAttributionsJobResults) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId}/results | Get outcome attribution entities from completed job.
-[**getJourneyOutcomesPredictor**](JourneyApi.html#getJourneyOutcomesPredictor) | **GET** /api/v2/journey/outcomes/predictors/{predictorId} | Retrieve a single outcome predictor.
-[**getJourneyOutcomesPredictors**](JourneyApi.html#getJourneyOutcomesPredictors) | **GET** /api/v2/journey/outcomes/predictors | Retrieve all outcome predictors.
-[**getJourneySegment**](JourneyApi.html#getJourneySegment) | **GET** /api/v2/journey/segments/{segmentId} | Retrieve a single segment.
-[**getJourneySegments**](JourneyApi.html#getJourneySegments) | **GET** /api/v2/journey/segments | Retrieve all segments.
-[**getJourneySession**](JourneyApi.html#getJourneySession) | **GET** /api/v2/journey/sessions/{sessionId} | Retrieve a single session.
-[**getJourneySessionEvents**](JourneyApi.html#getJourneySessionEvents) | **GET** /api/v2/journey/sessions/{sessionId}/events | Retrieve all events for a given session.
-[**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | **GET** /api/v2/journey/sessions/{sessionId}/outcomescores | Retrieve latest outcome score associated with a session for all outcomes.
-[**getJourneyView**](JourneyApi.html#getJourneyView) | **GET** /api/v2/journey/views/{viewId} | Get a Journey View by ID
-[**getJourneyViewVersion**](JourneyApi.html#getJourneyViewVersion) | **GET** /api/v2/journey/views/{viewId}/versions/{versionId} | Get a Journey View by ID and version
-[**getJourneyViewVersionJob**](JourneyApi.html#getJourneyViewVersionJob) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} | Get the job for a journey view version.
-[**getJourneyViewVersionJobResults**](JourneyApi.html#getJourneyViewVersionJobResults) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results | Get the result of a job for a journey view version.
-[**getJourneyViewVersionJobsLatest**](JourneyApi.html#getJourneyViewVersionJobsLatest) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest | Get the latest job of a journey view version.
-[**getJourneyViews**](JourneyApi.html#getJourneyViews) | **GET** /api/v2/journey/views | Get a list of Journey Views
-[**getJourneyViewsEventdefinition**](JourneyApi.html#getJourneyViewsEventdefinition) | **GET** /api/v2/journey/views/eventdefinitions/{eventDefinitionId} | Get an Event Definition
-[**getJourneyViewsEventdefinitions**](JourneyApi.html#getJourneyViewsEventdefinitions) | **GET** /api/v2/journey/views/eventdefinitions | Get a list of Event Definitions
-[**getJourneyViewsJobs**](JourneyApi.html#getJourneyViewsJobs) | **GET** /api/v2/journey/views/jobs | Get the jobs for an organization.
-[**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
-[**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
-[**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
-[**patchJourneyOutcome**](JourneyApi.html#patchJourneyOutcome) | **PATCH** /api/v2/journey/outcomes/{outcomeId} | Update an outcome.
-[**patchJourneySegment**](JourneyApi.html#patchJourneySegment) | **PATCH** /api/v2/journey/segments/{segmentId} | Update a segment.
-[**postAnalyticsJourneysAggregatesJobs**](JourneyApi.html#postAnalyticsJourneysAggregatesJobs) | **POST** /api/v2/analytics/journeys/aggregates/jobs | Query for journey aggregates asynchronously
-[**postAnalyticsJourneysAggregatesQuery**](JourneyApi.html#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
-[**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | **POST** /api/v2/journey/actionmaps | Create an action map.
-[**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | **POST** /api/v2/journey/actionmaps/estimates/jobs | Query for estimates
-[**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | **POST** /api/v2/journey/actiontemplates | Create a single action template.
-[**postJourneyDeploymentActionevent**](JourneyApi.html#postJourneyDeploymentActionevent) | **POST** /api/v2/journey/deployments/{deploymentId}/actionevent | Sends an action event, which is used for changing the state of actions that have been offered to the user.
-[**postJourneyDeploymentAppevents**](JourneyApi.html#postJourneyDeploymentAppevents) | **POST** /api/v2/journey/deployments/{deploymentId}/appevents | Send a journey app event, used for tracking customer activity on an application.
-[**postJourneyDeploymentWebevents**](JourneyApi.html#postJourneyDeploymentWebevents) | **POST** /api/v2/journey/deployments/{deploymentId}/webevents | Send a journey web event, used for tracking customer activity on a website.
-[**postJourneyFlowsPathsQuery**](JourneyApi.html#postJourneyFlowsPathsQuery) | **POST** /api/v2/journey/flows/paths/query | Query for flow paths.
-[**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | **POST** /api/v2/journey/outcomes | Create an outcome.
-[**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | **POST** /api/v2/journey/outcomes/attributions/jobs | Create Outcome Attributions
-[**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | **POST** /api/v2/journey/outcomes/predictors | Create an outcome predictor.
-[**postJourneySegments**](JourneyApi.html#postJourneySegments) | **POST** /api/v2/journey/segments | Create a segment.
-[**postJourneyViewVersionJobs**](JourneyApi.html#postJourneyViewVersionJobs) | **POST** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs | Submit a job request for a journey view version.
-[**postJourneyViewVersions**](JourneyApi.html#postJourneyViewVersions) | **POST** /api/v2/journey/views/{viewId}/versions | Update a Journey View by ID
-[**postJourneyViews**](JourneyApi.html#postJourneyViews) | **POST** /api/v2/journey/views | Create a new Journey View
-[**postJourneyViewsEncodingsValidate**](JourneyApi.html#postJourneyViewsEncodingsValidate) | **POST** /api/v2/journey/views/encodings/validate | Validate whether an encoding exist for a label/value combination.
-{: class="table table-striped"}
+[**deleteJourneyActionmap**](JourneyApi#deleteJourneyActionmap) | **DELETE** /api/v2/journey/actionmaps/{actionMapId} | Delete single action map.
+[**deleteJourneyActiontemplate**](JourneyApi#deleteJourneyActiontemplate) | **DELETE** /api/v2/journey/actiontemplates/{actionTemplateId} | Delete a single action template.
+[**deleteJourneyOutcome**](JourneyApi#deleteJourneyOutcome) | **DELETE** /api/v2/journey/outcomes/{outcomeId} | Delete an outcome.
+[**deleteJourneyOutcomesPredictor**](JourneyApi#deleteJourneyOutcomesPredictor) | **DELETE** /api/v2/journey/outcomes/predictors/{predictorId} | Delete an outcome predictor.
+[**deleteJourneySegment**](JourneyApi#deleteJourneySegment) | **DELETE** /api/v2/journey/segments/{segmentId} | Delete a segment.
+[**deleteJourneyView**](JourneyApi#deleteJourneyView) | **DELETE** /api/v2/journey/views/{viewId} | Delete a Journey View by ID
+[**getAnalyticsJourneysAggregatesJob**](JourneyApi#getAnalyticsJourneysAggregatesJob) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Get status for async query for journey aggregates
+[**getAnalyticsJourneysAggregatesJobResults**](JourneyApi#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getExternalcontactsContactJourneySessions**](JourneyApi#getExternalcontactsContactJourneySessions) | **GET** /api/v2/externalcontacts/contacts/{contactId}/journey/sessions | Retrieve all sessions for a given external contact.
+[**getJourneyActionmap**](JourneyApi#getJourneyActionmap) | **GET** /api/v2/journey/actionmaps/{actionMapId} | Retrieve a single action map.
+[**getJourneyActionmaps**](JourneyApi#getJourneyActionmaps) | **GET** /api/v2/journey/actionmaps | Retrieve all action maps.
+[**getJourneyActionmapsEstimatesJob**](JourneyApi#getJourneyActionmapsEstimatesJob) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId} | Get status of job.
+[**getJourneyActionmapsEstimatesJobResults**](JourneyApi#getJourneyActionmapsEstimatesJobResults) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results | Get estimates from completed job.
+[**getJourneyActiontarget**](JourneyApi#getJourneyActiontarget) | **GET** /api/v2/journey/actiontargets/{actionTargetId} | Retrieve a single action target.
+[**getJourneyActiontargets**](JourneyApi#getJourneyActiontargets) | **GET** /api/v2/journey/actiontargets | Retrieve all action targets.
+[**getJourneyActiontemplate**](JourneyApi#getJourneyActiontemplate) | **GET** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template.
+[**getJourneyActiontemplates**](JourneyApi#getJourneyActiontemplates) | **GET** /api/v2/journey/actiontemplates | Retrieve all action templates.
+[**getJourneyDeploymentCustomerPing**](JourneyApi#getJourneyDeploymentCustomerPing) | **GET** /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping | Send a ping.
+[**getJourneyOutcome**](JourneyApi#getJourneyOutcome) | **GET** /api/v2/journey/outcomes/{outcomeId} | Retrieve a single outcome.
+[**getJourneyOutcomes**](JourneyApi#getJourneyOutcomes) | **GET** /api/v2/journey/outcomes | Retrieve all outcomes.
+[**getJourneyOutcomesAttributionsJob**](JourneyApi#getJourneyOutcomesAttributionsJob) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId} | Get job status.
+[**getJourneyOutcomesAttributionsJobResults**](JourneyApi#getJourneyOutcomesAttributionsJobResults) | **GET** /api/v2/journey/outcomes/attributions/jobs/{jobId}/results | Get outcome attribution entities from completed job.
+[**getJourneyOutcomesPredictor**](JourneyApi#getJourneyOutcomesPredictor) | **GET** /api/v2/journey/outcomes/predictors/{predictorId} | Retrieve a single outcome predictor.
+[**getJourneyOutcomesPredictors**](JourneyApi#getJourneyOutcomesPredictors) | **GET** /api/v2/journey/outcomes/predictors | Retrieve all outcome predictors.
+[**getJourneySegment**](JourneyApi#getJourneySegment) | **GET** /api/v2/journey/segments/{segmentId} | Retrieve a single segment.
+[**getJourneySegments**](JourneyApi#getJourneySegments) | **GET** /api/v2/journey/segments | Retrieve all segments.
+[**getJourneySession**](JourneyApi#getJourneySession) | **GET** /api/v2/journey/sessions/{sessionId} | Retrieve a single session.
+[**getJourneySessionEvents**](JourneyApi#getJourneySessionEvents) | **GET** /api/v2/journey/sessions/{sessionId}/events | Retrieve all events for a given session.
+[**getJourneySessionOutcomescores**](JourneyApi#getJourneySessionOutcomescores) | **GET** /api/v2/journey/sessions/{sessionId}/outcomescores | Retrieve latest outcome score associated with a session for all outcomes.
+[**getJourneyView**](JourneyApi#getJourneyView) | **GET** /api/v2/journey/views/{viewId} | Get a Journey View by ID
+[**getJourneyViewVersion**](JourneyApi#getJourneyViewVersion) | **GET** /api/v2/journey/views/{viewId}/versions/{versionId} | Get a Journey View by ID and version
+[**getJourneyViewVersionJob**](JourneyApi#getJourneyViewVersionJob) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} | Get the job for a journey view version.
+[**getJourneyViewVersionJobResults**](JourneyApi#getJourneyViewVersionJobResults) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results | Get the result of a job for a journey view version.
+[**getJourneyViewVersionJobsLatest**](JourneyApi#getJourneyViewVersionJobsLatest) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest | Get the latest job of a journey view version.
+[**getJourneyViews**](JourneyApi#getJourneyViews) | **GET** /api/v2/journey/views | Get a list of Journey Views
+[**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | **GET** /api/v2/journey/views/eventdefinitions/{eventDefinitionId} | Get an Event Definition
+[**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | **GET** /api/v2/journey/views/eventdefinitions | Get a list of Event Definitions
+[**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | **GET** /api/v2/journey/views/jobs | Get the jobs for an organization.
+[**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
+[**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
+[**patchJourneyActiontemplate**](JourneyApi#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
+[**patchJourneyOutcome**](JourneyApi#patchJourneyOutcome) | **PATCH** /api/v2/journey/outcomes/{outcomeId} | Update an outcome.
+[**patchJourneySegment**](JourneyApi#patchJourneySegment) | **PATCH** /api/v2/journey/segments/{segmentId} | Update a segment.
+[**postAnalyticsJourneysAggregatesJobs**](JourneyApi#postAnalyticsJourneysAggregatesJobs) | **POST** /api/v2/analytics/journeys/aggregates/jobs | Query for journey aggregates asynchronously
+[**postAnalyticsJourneysAggregatesQuery**](JourneyApi#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
+[**postJourneyActionmaps**](JourneyApi#postJourneyActionmaps) | **POST** /api/v2/journey/actionmaps | Create an action map.
+[**postJourneyActionmapsEstimatesJobs**](JourneyApi#postJourneyActionmapsEstimatesJobs) | **POST** /api/v2/journey/actionmaps/estimates/jobs | Query for estimates
+[**postJourneyActiontemplates**](JourneyApi#postJourneyActiontemplates) | **POST** /api/v2/journey/actiontemplates | Create a single action template.
+[**postJourneyDeploymentActionevent**](JourneyApi#postJourneyDeploymentActionevent) | **POST** /api/v2/journey/deployments/{deploymentId}/actionevent | Sends an action event, which is used for changing the state of actions that have been offered to the user.
+[**postJourneyDeploymentAppevents**](JourneyApi#postJourneyDeploymentAppevents) | **POST** /api/v2/journey/deployments/{deploymentId}/appevents | Send a journey app event, used for tracking customer activity on an application.
+[**postJourneyDeploymentWebevents**](JourneyApi#postJourneyDeploymentWebevents) | **POST** /api/v2/journey/deployments/{deploymentId}/webevents | Send a journey web event, used for tracking customer activity on a website.
+[**postJourneyFlowsPathsQuery**](JourneyApi#postJourneyFlowsPathsQuery) | **POST** /api/v2/journey/flows/paths/query | Query for flow paths.
+[**postJourneyOutcomes**](JourneyApi#postJourneyOutcomes) | **POST** /api/v2/journey/outcomes | Create an outcome.
+[**postJourneyOutcomesAttributionsJobs**](JourneyApi#postJourneyOutcomesAttributionsJobs) | **POST** /api/v2/journey/outcomes/attributions/jobs | Create Outcome Attributions
+[**postJourneyOutcomesPredictors**](JourneyApi#postJourneyOutcomesPredictors) | **POST** /api/v2/journey/outcomes/predictors | Create an outcome predictor.
+[**postJourneySegments**](JourneyApi#postJourneySegments) | **POST** /api/v2/journey/segments | Create a segment.
+[**postJourneyViewVersionJobs**](JourneyApi#postJourneyViewVersionJobs) | **POST** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs | Submit a job request for a journey view version.
+[**postJourneyViewVersions**](JourneyApi#postJourneyViewVersions) | **POST** /api/v2/journey/views/{viewId}/versions | Update a Journey View by ID
+[**postJourneyViews**](JourneyApi#postJourneyViews) | **POST** /api/v2/journey/views | Create a new Journey View
+[**postJourneyViewsEncodingsValidate**](JourneyApi#postJourneyViewsEncodingsValidate) | **POST** /api/v2/journey/views/encodings/validate | Validate whether an encoding exist for a label/value combination.
 
-<a name="deleteJourneyActionmap"></a>
 
-# void deleteJourneyActionmap(actionMapId)
+
+## deleteJourneyActionmap
+
+> void deleteJourneyActionmap(actionMapId)
 
 
 DELETE /api/v2/journey/actionmaps/{actionMapId}
@@ -112,15 +113,15 @@ apiInstance.deleteJourneyActionmap(actionMapId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionMapId** | **String** | ID of the action map. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteJourneyActiontemplate"></a>
 
-# void deleteJourneyActiontemplate(actionTemplateId, opts)
+## deleteJourneyActiontemplate
+
+> void deleteJourneyActiontemplate(actionTemplateId, opts)
 
 
 DELETE /api/v2/journey/actiontemplates/{actionTemplateId}
@@ -166,15 +167,15 @@ apiInstance.deleteJourneyActiontemplate(actionTemplateId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionTemplateId** | **String** | ID of the action template. |  |
  **hardDelete** | **Boolean** | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteJourneyOutcome"></a>
 
-# void deleteJourneyOutcome(outcomeId)
+## deleteJourneyOutcome
+
+> void deleteJourneyOutcome(outcomeId)
 
 
 DELETE /api/v2/journey/outcomes/{outcomeId}
@@ -216,15 +217,15 @@ apiInstance.deleteJourneyOutcome(outcomeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **outcomeId** | **String** | ID of the outcome. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteJourneyOutcomesPredictor"></a>
 
-# void deleteJourneyOutcomesPredictor(predictorId)
+## deleteJourneyOutcomesPredictor
+
+> void deleteJourneyOutcomesPredictor(predictorId)
 
 
 DELETE /api/v2/journey/outcomes/predictors/{predictorId}
@@ -266,15 +267,15 @@ apiInstance.deleteJourneyOutcomesPredictor(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | ID of predictor |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteJourneySegment"></a>
 
-# void deleteJourneySegment(segmentId)
+## deleteJourneySegment
+
+> void deleteJourneySegment(segmentId)
 
 
 DELETE /api/v2/journey/segments/{segmentId}
@@ -316,15 +317,15 @@ apiInstance.deleteJourneySegment(segmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **segmentId** | **String** | ID of the segment. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteJourneyView"></a>
 
-# void deleteJourneyView(viewId)
+## deleteJourneyView
+
+> void deleteJourneyView(viewId)
 
 
 DELETE /api/v2/journey/views/{viewId}
@@ -368,15 +369,15 @@ apiInstance.deleteJourneyView(viewId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | viewId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAnalyticsJourneysAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
+## getAnalyticsJourneysAggregatesJob
+
+> AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
@@ -420,15 +421,15 @@ apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsJourneysAggregatesJobResults"></a>
 
-# JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(jobId, opts)
+## getAnalyticsJourneysAggregatesJobResults
+
+> JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results
@@ -476,15 +477,15 @@ apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyAsyncAggregateQueryResponse**
 
-<a name="getExternalcontactsContactJourneySessions"></a>
 
-# SessionListing getExternalcontactsContactJourneySessions(contactId, opts)
+## getExternalcontactsContactJourneySessions
+
+> SessionListing getExternalcontactsContactJourneySessions(contactId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions
@@ -534,15 +535,15 @@ apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **includeMerged** | **Boolean** | Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SessionListing**
 
-<a name="getJourneyActionmap"></a>
 
-# ActionMap getJourneyActionmap(actionMapId)
+## getJourneyActionmap
+
+> ActionMap getJourneyActionmap(actionMapId)
 
 
 GET /api/v2/journey/actionmaps/{actionMapId}
@@ -584,15 +585,15 @@ apiInstance.getJourneyActionmap(actionMapId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionMapId** | **String** | ID of the action map. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionMap**
 
-<a name="getJourneyActionmaps"></a>
 
-# ActionMapListing getJourneyActionmaps(opts)
+## getJourneyActionmaps
+
+> ActionMapListing getJourneyActionmaps(opts)
 
 
 GET /api/v2/journey/actionmaps
@@ -650,15 +651,15 @@ apiInstance.getJourneyActionmaps(opts)
  **actionMapIds** | **[String]** | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Action Map field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionMapListing**
 
-<a name="getJourneyActionmapsEstimatesJob"></a>
 
-# **&#39;String&#39;** getJourneyActionmapsEstimatesJob(jobId)
+## getJourneyActionmapsEstimatesJob
+
+> **&#39;String&#39;** getJourneyActionmapsEstimatesJob(jobId)
 
 
 GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}
@@ -700,15 +701,15 @@ apiInstance.getJourneyActionmapsEstimatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="getJourneyActionmapsEstimatesJobResults"></a>
 
-# ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(jobId)
+## getJourneyActionmapsEstimatesJobResults
+
+> ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(jobId)
 
 
 GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results
@@ -750,15 +751,15 @@ apiInstance.getJourneyActionmapsEstimatesJobResults(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionMapEstimateResult**
 
-<a name="getJourneyActiontarget"></a>
 
-# ActionTarget getJourneyActiontarget(actionTargetId)
+## getJourneyActiontarget
+
+> ActionTarget getJourneyActiontarget(actionTargetId)
 
 
 GET /api/v2/journey/actiontargets/{actionTargetId}
@@ -800,15 +801,15 @@ apiInstance.getJourneyActiontarget(actionTargetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionTargetId** | **String** | ID of the action target. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionTarget**
 
-<a name="getJourneyActiontargets"></a>
 
-# ActionTargetListing getJourneyActiontargets(opts)
+## getJourneyActiontargets
+
+> ActionTargetListing getJourneyActiontargets(opts)
 
 
 GET /api/v2/journey/actiontargets
@@ -854,15 +855,15 @@ apiInstance.getJourneyActiontargets(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionTargetListing**
 
-<a name="getJourneyActiontemplate"></a>
 
-# ActionTemplate getJourneyActiontemplate(actionTemplateId)
+## getJourneyActiontemplate
+
+> ActionTemplate getJourneyActiontemplate(actionTemplateId)
 
 
 GET /api/v2/journey/actiontemplates/{actionTemplateId}
@@ -904,15 +905,15 @@ apiInstance.getJourneyActiontemplate(actionTemplateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionTemplateId** | **String** | ID of the action template. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionTemplate**
 
-<a name="getJourneyActiontemplates"></a>
 
-# ActionTemplateListing getJourneyActiontemplates(opts)
+## getJourneyActiontemplates
+
+> ActionTemplateListing getJourneyActiontemplates(opts)
 
 
 GET /api/v2/journey/actiontemplates
@@ -968,15 +969,15 @@ apiInstance.getJourneyActiontemplates(opts)
  **state** | **String** | Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
  **queryFields** | **[String]** | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionTemplateListing**
 
-<a name="getJourneyDeploymentCustomerPing"></a>
 
-# DeploymentPing getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opts)
+## getJourneyDeploymentCustomerPing
+
+> DeploymentPing getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opts)
 
 
 GET /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping
@@ -1027,15 +1028,15 @@ apiInstance.getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opt
  **appNamespace** | **String** | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions | [optional]  |
  **sessionId** | **String** | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session | [optional]  |
  **sinceLastBeaconMilliseconds** | **Number** | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DeploymentPing**
 
-<a name="getJourneyOutcome"></a>
 
-# Outcome getJourneyOutcome(outcomeId)
+## getJourneyOutcome
+
+> Outcome getJourneyOutcome(outcomeId)
 
 
 GET /api/v2/journey/outcomes/{outcomeId}
@@ -1077,15 +1078,15 @@ apiInstance.getJourneyOutcome(outcomeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **outcomeId** | **String** | ID of the outcome. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Outcome**
 
-<a name="getJourneyOutcomes"></a>
 
-# OutcomeListing getJourneyOutcomes(opts)
+## getJourneyOutcomes
+
+> OutcomeListing getJourneyOutcomes(opts)
 
 
 GET /api/v2/journey/outcomes
@@ -1139,15 +1140,15 @@ apiInstance.getJourneyOutcomes(opts)
  **outcomeIds** | **[String]** | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Outcome field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutcomeListing**
 
-<a name="getJourneyOutcomesAttributionsJob"></a>
 
-# OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(jobId)
+## getJourneyOutcomesAttributionsJob
+
+> OutcomeAttributionJobStateResponse getJourneyOutcomesAttributionsJob(jobId)
 
 
 GET /api/v2/journey/outcomes/attributions/jobs/{jobId}
@@ -1191,15 +1192,15 @@ apiInstance.getJourneyOutcomesAttributionsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutcomeAttributionJobStateResponse**
 
-<a name="getJourneyOutcomesAttributionsJobResults"></a>
 
-# OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(jobId)
+## getJourneyOutcomesAttributionsJobResults
+
+> OutcomeAttributionResponseListing getJourneyOutcomesAttributionsJobResults(jobId)
 
 
 GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results
@@ -1243,15 +1244,15 @@ apiInstance.getJourneyOutcomesAttributionsJobResults(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutcomeAttributionResponseListing**
 
-<a name="getJourneyOutcomesPredictor"></a>
 
-# OutcomePredictor getJourneyOutcomesPredictor(predictorId)
+## getJourneyOutcomesPredictor
+
+> OutcomePredictor getJourneyOutcomesPredictor(predictorId)
 
 
 GET /api/v2/journey/outcomes/predictors/{predictorId}
@@ -1293,15 +1294,15 @@ apiInstance.getJourneyOutcomesPredictor(predictorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **predictorId** | **String** | ID of predictor |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutcomePredictor**
 
-<a name="getJourneyOutcomesPredictors"></a>
 
-# OutcomePredictorListing getJourneyOutcomesPredictors()
+## getJourneyOutcomesPredictors
+
+> OutcomePredictorListing getJourneyOutcomesPredictors()
 
 
 GET /api/v2/journey/outcomes/predictors
@@ -1339,14 +1340,14 @@ apiInstance.getJourneyOutcomesPredictors()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OutcomePredictorListing**
 
-<a name="getJourneySegment"></a>
 
-# JourneySegment getJourneySegment(segmentId)
+## getJourneySegment
+
+> JourneySegment getJourneySegment(segmentId)
 
 
 GET /api/v2/journey/segments/{segmentId}
@@ -1388,15 +1389,15 @@ apiInstance.getJourneySegment(segmentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **segmentId** | **String** | ID of the segment. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneySegment**
 
-<a name="getJourneySegments"></a>
 
-# SegmentListing getJourneySegments(opts)
+## getJourneySegments
+
+> SegmentListing getJourneySegments(opts)
 
 
 GET /api/v2/journey/segments
@@ -1452,15 +1453,15 @@ apiInstance.getJourneySegments(opts)
  **segmentIds** | **[String]** | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
  **queryFields** | **[String]** | Segment field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
  **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SegmentListing**
 
-<a name="getJourneySession"></a>
 
-# Session getJourneySession(sessionId)
+## getJourneySession
+
+> Session getJourneySession(sessionId)
 
 
 GET /api/v2/journey/sessions/{sessionId}
@@ -1503,15 +1504,15 @@ apiInstance.getJourneySession(sessionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | ID of the session. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Session**
 
-<a name="getJourneySessionEvents"></a>
 
-# EventListing getJourneySessionEvents(sessionId, opts)
+## getJourneySessionEvents
+
+> EventListing getJourneySessionEvents(sessionId, opts)
 
 
 GET /api/v2/journey/sessions/{sessionId}/events
@@ -1561,15 +1562,15 @@ apiInstance.getJourneySessionEvents(sessionId, opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **eventType** | **String** | A comma separated list of journey event types to include in the results. | [optional] <br />**Values**: com.genesys.journey.OutcomeAchievedEvent, com.genesys.journey.SegmentAssignmentEvent, com.genesys.journey.WebActionEvent, com.genesys.journey.WebEvent, com.genesys.journey.AppEvent |
-{: class="table table-striped"}
 
 ### Return type
 
 **EventListing**
 
-<a name="getJourneySessionOutcomescores"></a>
 
-# OutcomeScoresResult getJourneySessionOutcomescores(sessionId)
+## getJourneySessionOutcomescores
+
+> OutcomeScoresResult getJourneySessionOutcomescores(sessionId)
 
 
 GET /api/v2/journey/sessions/{sessionId}/outcomescores
@@ -1611,15 +1612,15 @@ apiInstance.getJourneySessionOutcomescores(sessionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | ID of the session. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutcomeScoresResult**
 
-<a name="getJourneyView"></a>
 
-# JourneyView getJourneyView(viewId)
+## getJourneyView
+
+> JourneyView getJourneyView(viewId)
 
 
 GET /api/v2/journey/views/{viewId}
@@ -1663,15 +1664,15 @@ apiInstance.getJourneyView(viewId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | viewId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyView**
 
-<a name="getJourneyViewVersion"></a>
 
-# JourneyView getJourneyViewVersion(viewId, versionId)
+## getJourneyViewVersion
+
+> JourneyView getJourneyViewVersion(viewId, versionId)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{versionId}
@@ -1715,15 +1716,15 @@ apiInstance.getJourneyViewVersion(viewId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | viewId |  |
  **versionId** | **String** | versionId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyView**
 
-<a name="getJourneyViewVersionJob"></a>
 
-# JourneyViewJob getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
+## getJourneyViewVersionJob
+
+> JourneyViewJob getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}
@@ -1771,15 +1772,15 @@ apiInstance.getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
  **viewId** | **String** | Journey View Id |  |
  **journeyVersionId** | **String** | Journey View Version |  |
  **jobId** | **String** | JobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyViewJob**
 
-<a name="getJourneyViewVersionJobResults"></a>
 
-# JourneyViewResult getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
+## getJourneyViewVersionJobResults
+
+> JourneyViewResult getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results
@@ -1827,15 +1828,15 @@ apiInstance.getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
  **viewId** | **String** | JourneyViewResult id |  |
  **journeyViewVersion** | **String** | Journey View Version |  |
  **jobId** | **String** | Id of the executing job |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyViewResult**
 
-<a name="getJourneyViewVersionJobsLatest"></a>
 
-# JourneyViewJob getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
+## getJourneyViewVersionJobsLatest
+
+> JourneyViewJob getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
 
 
 GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest
@@ -1881,15 +1882,15 @@ apiInstance.getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | Journey View Id |  |
  **journeyVersionId** | **String** | Journey View Version |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyViewJob**
 
-<a name="getJourneyViews"></a>
 
-# JourneyViewListing getJourneyViews(opts)
+## getJourneyViews
+
+> JourneyViewListing getJourneyViews(opts)
 
 
 GET /api/v2/journey/views
@@ -1941,15 +1942,15 @@ apiInstance.getJourneyViews(opts)
  **nameOrCreatedBy** | **String** | Journey View Name or Created By | [optional]  |
  **expand** | **String** | Parameter to request additional data to return in Journey payload | [optional] <br />**Values**: charts |
  **id** | **String** | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyViewListing**
 
-<a name="getJourneyViewsEventdefinition"></a>
 
-# JourneyEventDefinition getJourneyViewsEventdefinition(eventDefinitionId)
+## getJourneyViewsEventdefinition
+
+> JourneyEventDefinition getJourneyViewsEventdefinition(eventDefinitionId)
 
 
 GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId}
@@ -1993,15 +1994,15 @@ apiInstance.getJourneyViewsEventdefinition(eventDefinitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **eventDefinitionId** | **String** | Event Definition ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyEventDefinition**
 
-<a name="getJourneyViewsEventdefinitions"></a>
 
-# JourneyEventDefinitionListing getJourneyViewsEventdefinitions()
+## getJourneyViewsEventdefinitions
+
+> JourneyEventDefinitionListing getJourneyViewsEventdefinitions()
 
 
 GET /api/v2/journey/views/eventdefinitions
@@ -2041,14 +2042,14 @@ apiInstance.getJourneyViewsEventdefinitions()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **JourneyEventDefinitionListing**
 
-<a name="getJourneyViewsJobs"></a>
 
-# JourneyViewJobListing getJourneyViewsJobs(opts)
+## getJourneyViewsJobs
+
+> JourneyViewJobListing getJourneyViewsJobs(opts)
 
 
 GET /api/v2/journey/views/jobs
@@ -2098,15 +2099,15 @@ apiInstance.getJourneyViewsJobs(opts)
  **pageSize** | **Number** | Max number of entities to return | [optional] [default to 25] |
  **interval** | **String** | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional]  |
  **statuses** | **String** | Job statuses to filter for | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyViewJobListing**
 
-<a name="patchJourneyActionmap"></a>
 
-# ActionMap patchJourneyActionmap(actionMapId, opts)
+## patchJourneyActionmap
+
+> ActionMap patchJourneyActionmap(actionMapId, opts)
 
 
 PATCH /api/v2/journey/actionmaps/{actionMapId}
@@ -2152,15 +2153,15 @@ apiInstance.patchJourneyActionmap(actionMapId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionMapId** | **String** | ID of the action map. |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionMap**
 
-<a name="patchJourneyActiontarget"></a>
 
-# ActionTarget patchJourneyActiontarget(actionTargetId, opts)
+## patchJourneyActiontarget
+
+> ActionTarget patchJourneyActiontarget(actionTargetId, opts)
 
 
 PATCH /api/v2/journey/actiontargets/{actionTargetId}
@@ -2206,15 +2207,15 @@ apiInstance.patchJourneyActiontarget(actionTargetId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionTargetId** | **String** | ID of the action target. |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionTarget**
 
-<a name="patchJourneyActiontemplate"></a>
 
-# ActionTemplate patchJourneyActiontemplate(actionTemplateId, opts)
+## patchJourneyActiontemplate
+
+> ActionTemplate patchJourneyActiontemplate(actionTemplateId, opts)
 
 
 PATCH /api/v2/journey/actiontemplates/{actionTemplateId}
@@ -2260,15 +2261,15 @@ apiInstance.patchJourneyActiontemplate(actionTemplateId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionTemplateId** | **String** | ID of the action template. |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionTemplate**
 
-<a name="patchJourneyOutcome"></a>
 
-# Outcome patchJourneyOutcome(outcomeId, opts)
+## patchJourneyOutcome
+
+> Outcome patchJourneyOutcome(outcomeId, opts)
 
 
 PATCH /api/v2/journey/outcomes/{outcomeId}
@@ -2314,15 +2315,15 @@ apiInstance.patchJourneyOutcome(outcomeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **outcomeId** | **String** | ID of the outcome. |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Outcome**
 
-<a name="patchJourneySegment"></a>
 
-# JourneySegment patchJourneySegment(segmentId, opts)
+## patchJourneySegment
+
+> JourneySegment patchJourneySegment(segmentId, opts)
 
 
 PATCH /api/v2/journey/segments/{segmentId}
@@ -2368,15 +2369,15 @@ apiInstance.patchJourneySegment(segmentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **segmentId** | **String** | ID of the segment. |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneySegment**
 
-<a name="postAnalyticsJourneysAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
+## postAnalyticsJourneysAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
 
 
 POST /api/v2/analytics/journeys/aggregates/jobs
@@ -2420,15 +2421,15 @@ apiInstance.postAnalyticsJourneysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsJourneysAggregatesQuery"></a>
 
-# JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
+## postAnalyticsJourneysAggregatesQuery
+
+> JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
 
 
 POST /api/v2/analytics/journeys/aggregates/query
@@ -2470,15 +2471,15 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyAggregateQueryResponse**
 
-<a name="postJourneyActionmaps"></a>
 
-# ActionMap postJourneyActionmaps(opts)
+## postJourneyActionmaps
+
+> ActionMap postJourneyActionmaps(opts)
 
 
 POST /api/v2/journey/actionmaps
@@ -2522,15 +2523,15 @@ apiInstance.postJourneyActionmaps(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionMap**
 
-<a name="postJourneyActionmapsEstimatesJobs"></a>
 
-# EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(body)
+## postJourneyActionmapsEstimatesJobs
+
+> EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(body)
 
 
 POST /api/v2/journey/actionmaps/estimates/jobs
@@ -2572,15 +2573,15 @@ apiInstance.postJourneyActionmapsEstimatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | audience estimator request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EstimateJobAsyncResponse**
 
-<a name="postJourneyActiontemplates"></a>
 
-# ActionTemplate postJourneyActiontemplates(opts)
+## postJourneyActiontemplates
+
+> ActionTemplate postJourneyActiontemplates(opts)
 
 
 POST /api/v2/journey/actiontemplates
@@ -2624,15 +2625,15 @@ apiInstance.postJourneyActiontemplates(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionTemplate**
 
-<a name="postJourneyDeploymentActionevent"></a>
 
-# void postJourneyDeploymentActionevent(deploymentId, body)
+## postJourneyDeploymentActionevent
+
+> void postJourneyDeploymentActionevent(deploymentId, body)
 
 
 POST /api/v2/journey/deployments/{deploymentId}/actionevent
@@ -2671,15 +2672,15 @@ apiInstance.postJourneyDeploymentActionevent(deploymentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The ID of the deployment sending the beacon. |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postJourneyDeploymentAppevents"></a>
 
-# AppEventResponse postJourneyDeploymentAppevents(deploymentId, opts)
+## postJourneyDeploymentAppevents
+
+> AppEventResponse postJourneyDeploymentAppevents(deploymentId, opts)
 
 
 POST /api/v2/journey/deployments/{deploymentId}/appevents
@@ -2720,15 +2721,15 @@ apiInstance.postJourneyDeploymentAppevents(deploymentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The ID of the deployment sending the app event. |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AppEventResponse**
 
-<a name="postJourneyDeploymentWebevents"></a>
 
-# WebEventResponse postJourneyDeploymentWebevents(deploymentId, opts)
+## postJourneyDeploymentWebevents
+
+> WebEventResponse postJourneyDeploymentWebevents(deploymentId, opts)
 
 
 POST /api/v2/journey/deployments/{deploymentId}/webevents
@@ -2769,15 +2770,15 @@ apiInstance.postJourneyDeploymentWebevents(deploymentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The ID of the deployment sending the web event. |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebEventResponse**
 
-<a name="postJourneyFlowsPathsQuery"></a>
 
-# FlowPaths postJourneyFlowsPathsQuery(opts)
+## postJourneyFlowsPathsQuery
+
+> FlowPaths postJourneyFlowsPathsQuery(opts)
 
 
 POST /api/v2/journey/flows/paths/query
@@ -2821,15 +2822,15 @@ apiInstance.postJourneyFlowsPathsQuery(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowPaths**
 
-<a name="postJourneyOutcomes"></a>
 
-# Outcome postJourneyOutcomes(opts)
+## postJourneyOutcomes
+
+> Outcome postJourneyOutcomes(opts)
 
 
 POST /api/v2/journey/outcomes
@@ -2873,15 +2874,15 @@ apiInstance.postJourneyOutcomes(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Outcome**
 
-<a name="postJourneyOutcomesAttributionsJobs"></a>
 
-# OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(opts)
+## postJourneyOutcomesAttributionsJobs
+
+> OutcomeAttributionAsyncResponse postJourneyOutcomesAttributionsJobs(opts)
 
 
 POST /api/v2/journey/outcomes/attributions/jobs
@@ -2927,15 +2928,15 @@ apiInstance.postJourneyOutcomesAttributionsJobs(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | outcome attribution request | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutcomeAttributionAsyncResponse**
 
-<a name="postJourneyOutcomesPredictors"></a>
 
-# OutcomePredictor postJourneyOutcomesPredictors(opts)
+## postJourneyOutcomesPredictors
+
+> OutcomePredictor postJourneyOutcomesPredictors(opts)
 
 
 POST /api/v2/journey/outcomes/predictors
@@ -2979,15 +2980,15 @@ apiInstance.postJourneyOutcomesPredictors(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutcomePredictor**
 
-<a name="postJourneySegments"></a>
 
-# JourneySegment postJourneySegments(opts)
+## postJourneySegments
+
+> JourneySegment postJourneySegments(opts)
 
 
 POST /api/v2/journey/segments
@@ -3031,15 +3032,15 @@ apiInstance.postJourneySegments(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneySegment**
 
-<a name="postJourneyViewVersionJobs"></a>
 
-# JourneyViewJob postJourneyViewVersionJobs(viewId, journeyVersionId)
+## postJourneyViewVersionJobs
+
+> JourneyViewJob postJourneyViewVersionJobs(viewId, journeyVersionId)
 
 
 POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs
@@ -3085,15 +3086,15 @@ apiInstance.postJourneyViewVersionJobs(viewId, journeyVersionId)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | Journey View Id |  |
  **journeyVersionId** | **String** | Journey View Version |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyViewJob**
 
-<a name="postJourneyViewVersions"></a>
 
-# JourneyView postJourneyViewVersions(viewId, body)
+## postJourneyViewVersions
+
+> JourneyView postJourneyViewVersions(viewId, body)
 
 
 POST /api/v2/journey/views/{viewId}/versions
@@ -3139,15 +3140,15 @@ apiInstance.postJourneyViewVersions(viewId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **viewId** | **String** | viewId |  |
  **body** | **Object** | JourneyView |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyView**
 
-<a name="postJourneyViews"></a>
 
-# JourneyView postJourneyViews(body)
+## postJourneyViews
+
+> JourneyView postJourneyViews(body)
 
 
 POST /api/v2/journey/views
@@ -3189,15 +3190,15 @@ apiInstance.postJourneyViews(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | JourneyView |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyView**
 
-<a name="postJourneyViewsEncodingsValidate"></a>
 
-# EntityListing postJourneyViewsEncodingsValidate(opts)
+## postJourneyViewsEncodingsValidate
+
+> EntityListing postJourneyViewsEncodingsValidate(opts)
 
 
 POST /api/v2/journey/views/encodings/validate
@@ -3245,7 +3246,6 @@ apiInstance.postJourneyViewsEncodingsValidate(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 

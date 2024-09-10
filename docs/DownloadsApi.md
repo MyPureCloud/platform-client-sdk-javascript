@@ -6,12 +6,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getDownload**](DownloadsApi.html#getDownload) | **GET** /api/v2/downloads/{downloadId} | Issues a redirect to a signed secure download URL for specified download
-{: class="table table-striped"}
+[**getDownload**](DownloadsApi#getDownload) | **GET** /api/v2/downloads/{downloadId} | Issues a redirect to a signed secure download URL for specified download
 
-<a name="getDownload"></a>
 
-# UrlResponse getDownload(downloadId, opts)
+
+## getDownload
+
+> UrlResponse getDownload(downloadId, opts)
 
 
 GET /api/v2/downloads/{downloadId}
@@ -61,7 +62,6 @@ apiInstance.getDownload(downloadId, opts)
  **contentDisposition** | **String** |  | [optional]  |
  **issueRedirect** | **Boolean** |  | [optional] [default to true] |
  **redirectToAuth** | **Boolean** |  | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 

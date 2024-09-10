@@ -6,24 +6,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteOauthClient**](OAuthApi.html#deleteOauthClient) | **DELETE** /api/v2/oauth/clients/{clientId} | Delete OAuth Client
-[**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | **GET** /api/v2/oauth/authorizations/{clientId} | Get a client that is authorized by the resource owner
-[**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that have been authorized, requested, or revoked by the resource owner
-[**getOauthClient**](OAuthApi.html#getOauthClient) | **GET** /api/v2/oauth/clients/{clientId} | Get OAuth Client
-[**getOauthClientUsageQueryResult**](OAuthApi.html#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
-[**getOauthClientUsageSummary**](OAuthApi.html#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
-[**getOauthClients**](OAuthApi.html#getOauthClients) | **GET** /api/v2/oauth/clients | The list of OAuth clients
-[**getOauthScope**](OAuthApi.html#getOauthScope) | **GET** /api/v2/oauth/scopes/{scopeId} | An OAuth scope
-[**getOauthScopes**](OAuthApi.html#getOauthScopes) | **GET** /api/v2/oauth/scopes | The list of OAuth scopes
-[**postOauthClientSecret**](OAuthApi.html#postOauthClientSecret) | **POST** /api/v2/oauth/clients/{clientId}/secret | Regenerate Client Secret
-[**postOauthClientUsageQuery**](OAuthApi.html#postOauthClientUsageQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/query | Query for OAuth client API usage
-[**postOauthClients**](OAuthApi.html#postOauthClients) | **POST** /api/v2/oauth/clients | Create OAuth client
-[**putOauthClient**](OAuthApi.html#putOauthClient) | **PUT** /api/v2/oauth/clients/{clientId} | Update OAuth Client
-{: class="table table-striped"}
+[**deleteOauthClient**](OAuthApi#deleteOauthClient) | **DELETE** /api/v2/oauth/clients/{clientId} | Delete OAuth Client
+[**getOauthAuthorization**](OAuthApi#getOauthAuthorization) | **GET** /api/v2/oauth/authorizations/{clientId} | Get a client that is authorized by the resource owner
+[**getOauthAuthorizations**](OAuthApi#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that have been authorized, requested, or revoked by the resource owner
+[**getOauthClient**](OAuthApi#getOauthClient) | **GET** /api/v2/oauth/clients/{clientId} | Get OAuth Client
+[**getOauthClientUsageQueryResult**](OAuthApi#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
+[**getOauthClientUsageSummary**](OAuthApi#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
+[**getOauthClients**](OAuthApi#getOauthClients) | **GET** /api/v2/oauth/clients | The list of OAuth clients
+[**getOauthScope**](OAuthApi#getOauthScope) | **GET** /api/v2/oauth/scopes/{scopeId} | An OAuth scope
+[**getOauthScopes**](OAuthApi#getOauthScopes) | **GET** /api/v2/oauth/scopes | The list of OAuth scopes
+[**postOauthClientSecret**](OAuthApi#postOauthClientSecret) | **POST** /api/v2/oauth/clients/{clientId}/secret | Regenerate Client Secret
+[**postOauthClientUsageQuery**](OAuthApi#postOauthClientUsageQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/query | Query for OAuth client API usage
+[**postOauthClients**](OAuthApi#postOauthClients) | **POST** /api/v2/oauth/clients | Create OAuth client
+[**putOauthClient**](OAuthApi#putOauthClient) | **PUT** /api/v2/oauth/clients/{clientId} | Update OAuth Client
 
-<a name="deleteOauthClient"></a>
 
-# void deleteOauthClient(clientId)
+
+## deleteOauthClient
+
+> void deleteOauthClient(clientId)
 
 
 DELETE /api/v2/oauth/clients/{clientId}
@@ -65,15 +66,15 @@ apiInstance.deleteOauthClient(clientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getOauthAuthorization"></a>
 
-# OAuthAuthorization getOauthAuthorization(clientId, opts)
+## getOauthAuthorization
+
+> OAuthAuthorization getOauthAuthorization(clientId, opts)
 
 
 GET /api/v2/oauth/authorizations/{clientId}
@@ -119,15 +120,15 @@ apiInstance.getOauthAuthorization(clientId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | The ID of client |  |
  **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
-{: class="table table-striped"}
 
 ### Return type
 
 **OAuthAuthorization**
 
-<a name="getOauthAuthorizations"></a>
 
-# OAuthAuthorizationListing getOauthAuthorizations(opts)
+## getOauthAuthorizations
+
+> OAuthAuthorizationListing getOauthAuthorizations(opts)
 
 
 GET /api/v2/oauth/authorizations
@@ -171,15 +172,15 @@ apiInstance.getOauthAuthorizations(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
-{: class="table table-striped"}
 
 ### Return type
 
 **OAuthAuthorizationListing**
 
-<a name="getOauthClient"></a>
 
-# OAuthClient getOauthClient(clientId)
+## getOauthClient
+
+> OAuthClient getOauthClient(clientId)
 
 
 GET /api/v2/oauth/clients/{clientId}
@@ -221,15 +222,15 @@ apiInstance.getOauthClient(clientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OAuthClient**
 
-<a name="getOauthClientUsageQueryResult"></a>
 
-# ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
+## getOauthClientUsageQueryResult
+
+> ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
 
 
 GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
@@ -274,15 +275,15 @@ apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **executionId** | **String** | ID of the query execution |  |
  **clientId** | **String** | Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ApiUsageQueryResult**
 
-<a name="getOauthClientUsageSummary"></a>
 
-# UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
+## getOauthClientUsageSummary
+
+> UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
 
 
 GET /api/v2/oauth/clients/{clientId}/usage/summary
@@ -331,15 +332,15 @@ apiInstance.getOauthClientUsageSummary(clientId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **days** | **String** | Previous number of days to query | [optional] [default to 7] |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsageExecutionResult**
 
-<a name="getOauthClients"></a>
 
-# OAuthClientEntityListing getOauthClients()
+## getOauthClients
+
+> OAuthClientEntityListing getOauthClients()
 
 
 GET /api/v2/oauth/clients
@@ -377,14 +378,14 @@ apiInstance.getOauthClients()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OAuthClientEntityListing**
 
-<a name="getOauthScope"></a>
 
-# OAuthScope getOauthScope(scopeId, opts)
+## getOauthScope
+
+> OAuthScope getOauthScope(scopeId, opts)
 
 
 GET /api/v2/oauth/scopes/{scopeId}
@@ -428,15 +429,15 @@ apiInstance.getOauthScope(scopeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scopeId** | **String** | Scope ID |  |
  **acceptLanguage** | **String** | The language with which to display the scope description. | [optional] [default to en-us] |
-{: class="table table-striped"}
 
 ### Return type
 
 **OAuthScope**
 
-<a name="getOauthScopes"></a>
 
-# OAuthScopeListing getOauthScopes(opts)
+## getOauthScopes
+
+> OAuthScopeListing getOauthScopes(opts)
 
 
 GET /api/v2/oauth/scopes
@@ -478,15 +479,15 @@ apiInstance.getOauthScopes(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **acceptLanguage** | **String** | The language with which to display the scope descriptions. | [optional] [default to en-us] |
-{: class="table table-striped"}
 
 ### Return type
 
 **OAuthScopeListing**
 
-<a name="postOauthClientSecret"></a>
 
-# OAuthClient postOauthClientSecret(clientId)
+## postOauthClientSecret
+
+> OAuthClient postOauthClientSecret(clientId)
 
 
 POST /api/v2/oauth/clients/{clientId}/secret
@@ -530,15 +531,15 @@ apiInstance.postOauthClientSecret(clientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OAuthClient**
 
-<a name="postOauthClientUsageQuery"></a>
 
-# UsageExecutionResult postOauthClientUsageQuery(clientId, body)
+## postOauthClientUsageQuery
+
+> UsageExecutionResult postOauthClientUsageQuery(clientId, body)
 
 
 POST /api/v2/oauth/clients/{clientId}/usage/query
@@ -585,15 +586,15 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **body** | **Object** | Query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsageExecutionResult**
 
-<a name="postOauthClients"></a>
 
-# OAuthClient postOauthClients(body)
+## postOauthClients
+
+> OAuthClient postOauthClients(body)
 
 
 POST /api/v2/oauth/clients
@@ -637,15 +638,15 @@ apiInstance.postOauthClients(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Client |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OAuthClient**
 
-<a name="putOauthClient"></a>
 
-# OAuthClient putOauthClient(clientId, body)
+## putOauthClient
+
+> OAuthClient putOauthClient(clientId, body)
 
 
 PUT /api/v2/oauth/clients/{clientId}
@@ -689,7 +690,6 @@ apiInstance.putOauthClient(clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **body** | **Object** | Client |  |
-{: class="table table-striped"}
 
 ### Return type
 

@@ -6,108 +6,109 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAnalyticsUsersDetailsJob**](UsersApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
-[**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
-[**deleteRoutingDirectroutingbackupSettingsMe**](UsersApi.html#deleteRoutingDirectroutingbackupSettingsMe) | **DELETE** /api/v2/routing/directroutingbackup/settings/me | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
-[**deleteRoutingUserDirectroutingbackupSettings**](UsersApi.html#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
-[**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
-[**deleteUser**](UsersApi.html#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
-[**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
-[**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
-[**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
-[**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
-[**deleteUserVerifier**](UsersApi.html#deleteUserVerifier) | **DELETE** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier
-[**getAnalyticsUsersAggregatesJob**](UsersApi.html#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
-[**getAnalyticsUsersAggregatesJobResults**](UsersApi.html#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
-[**getAnalyticsUsersDetailsJobResults**](UsersApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
-[**getAnalyticsUsersDetailsJobsAvailability**](UsersApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
-[**getAuthorizationDivisionspermittedMe**](UsersApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
-[**getAuthorizationDivisionspermittedPagedMe**](UsersApi.html#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
-[**getAuthorizationDivisionspermittedPagedSubjectId**](UsersApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
-[**getAuthorizationSubject**](UsersApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
-[**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
-[**getFieldconfig**](UsersApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
-[**getProfilesUsers**](UsersApi.html#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
-[**getRoutingDirectroutingbackupSettingsMe**](UsersApi.html#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
-[**getRoutingUserDirectroutingbackupSettings**](UsersApi.html#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
-[**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
-[**getUser**](UsersApi.html#getUser) | **GET** /api/v2/users/{userId} | Get user.
-[**getUserAdjacents**](UsersApi.html#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
-[**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user's CallForwarding
-[**getUserDirectreports**](UsersApi.html#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
-[**getUserFavorites**](UsersApi.html#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Deprecated; will be revived with new contract
-[**getUserGeolocation**](UsersApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
-[**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
-[**getUserProfile**](UsersApi.html#getUserProfile) | **GET** /api/v2/users/{userId}/profile | Get user profile
-[**getUserProfileskills**](UsersApi.html#getUserProfileskills) | **GET** /api/v2/users/{userId}/profileskills | List profile skills for a user
-[**getUserQueues**](UsersApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
-[**getUserRoles**](UsersApi.html#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
-[**getUserRoutinglanguages**](UsersApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
-[**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
-[**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
-[**getUserSkillgroups**](UsersApi.html#getUserSkillgroups) | **GET** /api/v2/users/{userId}/skillgroups | Get skill groups for a user
-[**getUserState**](UsersApi.html#getUserState) | **GET** /api/v2/users/{userId}/state | Get user state information.
-[**getUserStation**](UsersApi.html#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
-[**getUserSuperiors**](UsersApi.html#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
-[**getUserTrustors**](UsersApi.html#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
-[**getUserVerifiers**](UsersApi.html#getUserVerifiers) | **GET** /api/v2/users/{userId}/verifiers | Get a list of verifiers
-[**getUsers**](UsersApi.html#getUsers) | **GET** /api/v2/users | Get the list of available users.
-[**getUsersDevelopmentActivities**](UsersApi.html#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
-[**getUsersDevelopmentActivitiesMe**](UsersApi.html#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
-[**getUsersDevelopmentActivity**](UsersApi.html#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
-[**getUsersMe**](UsersApi.html#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
-[**getUsersSearch**](UsersApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
-[**patchUser**](UsersApi.html#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
-[**patchUserCallforwarding**](UsersApi.html#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user's CallForwarding
-[**patchUserGeolocation**](UsersApi.html#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user's Geolocation
-[**patchUserQueue**](UsersApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
-[**patchUserQueues**](UsersApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
-[**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
-[**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
-[**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
-[**patchUsersBulk**](UsersApi.html#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
-[**postAnalyticsUsersActivityQuery**](UsersApi.html#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
-[**postAnalyticsUsersAggregatesJobs**](UsersApi.html#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
-[**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
-[**postAnalyticsUsersDetailsJobs**](UsersApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
-[**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
-[**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
-[**postAuthorizationSubjectBulkadd**](UsersApi.html#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
-[**postAuthorizationSubjectBulkremove**](UsersApi.html#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
-[**postAuthorizationSubjectBulkreplace**](UsersApi.html#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
-[**postAuthorizationSubjectDivisionRole**](UsersApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
-[**postUserExternalid**](UsersApi.html#postUserExternalid) | **POST** /api/v2/users/{userId}/externalid | Create mapping between external identifier and user. Limit 100 per entity.
-[**postUserInvite**](UsersApi.html#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
-[**postUserPassword**](UsersApi.html#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
-[**postUserRoutinglanguages**](UsersApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
-[**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
-[**postUsers**](UsersApi.html#postUsers) | **POST** /api/v2/users | Create user
-[**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi.html#postUsersDevelopmentActivitiesAggregatesQuery) | **POST** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data
-[**postUsersMePassword**](UsersApi.html#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
-[**postUsersSearch**](UsersApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
-[**postUsersSearchConversationTarget**](UsersApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
-[**postUsersSearchQueuemembersManage**](UsersApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
-[**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
-[**putRoutingDirectroutingbackupSettingsMe**](UsersApi.html#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
-[**putRoutingUserDirectroutingbackupSettings**](UsersApi.html#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
-[**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
-[**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
-[**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
-[**putUserProfileskills**](UsersApi.html#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
-[**putUserRoles**](UsersApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
-[**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
-[**putUserRoutingskillsBulk**](UsersApi.html#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
-[**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | **PUT** /api/v2/users/{userId}/routingstatus | Update the routing status of a user
-[**putUserState**](UsersApi.html#putUserState) | **PUT** /api/v2/users/{userId}/state | Update user state information.
-[**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
-[**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
-[**putUserVerifier**](UsersApi.html#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
-{: class="table table-striped"}
+[**deleteAnalyticsUsersDetailsJob**](UsersApi#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
+[**deleteAuthorizationSubjectDivisionRole**](UsersApi#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
+[**deleteRoutingDirectroutingbackupSettingsMe**](UsersApi#deleteRoutingDirectroutingbackupSettingsMe) | **DELETE** /api/v2/routing/directroutingbackup/settings/me | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+[**deleteRoutingUserDirectroutingbackupSettings**](UsersApi#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+[**deleteRoutingUserUtilization**](UsersApi#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
+[**deleteUser**](UsersApi#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
+[**deleteUserRoutinglanguage**](UsersApi#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
+[**deleteUserRoutingskill**](UsersApi#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
+[**deleteUserStationAssociatedstation**](UsersApi#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
+[**deleteUserStationDefaultstation**](UsersApi#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
+[**deleteUserVerifier**](UsersApi#deleteUserVerifier) | **DELETE** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier
+[**getAnalyticsUsersAggregatesJob**](UsersApi#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
+[**getAnalyticsUsersAggregatesJobResults**](UsersApi#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsUsersDetailsJob**](UsersApi#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
+[**getAnalyticsUsersDetailsJobResults**](UsersApi#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
+[**getAnalyticsUsersDetailsJobsAvailability**](UsersApi#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
+[**getAuthorizationDivisionspermittedMe**](UsersApi#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedMe**](UsersApi#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedSubjectId**](UsersApi#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
+[**getAuthorizationSubject**](UsersApi#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
+[**getAuthorizationSubjectsMe**](UsersApi#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
+[**getFieldconfig**](UsersApi#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
+[**getProfilesUsers**](UsersApi#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
+[**getRoutingDirectroutingbackupSettingsMe**](UsersApi#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
+[**getRoutingUserDirectroutingbackupSettings**](UsersApi#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
+[**getRoutingUserUtilization**](UsersApi#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
+[**getUser**](UsersApi#getUser) | **GET** /api/v2/users/{userId} | Get user.
+[**getUserAdjacents**](UsersApi#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
+[**getUserCallforwarding**](UsersApi#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user's CallForwarding
+[**getUserDirectreports**](UsersApi#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
+[**getUserFavorites**](UsersApi#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Deprecated; will be revived with new contract
+[**getUserGeolocation**](UsersApi#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
+[**getUserOutofoffice**](UsersApi#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
+[**getUserProfile**](UsersApi#getUserProfile) | **GET** /api/v2/users/{userId}/profile | Get user profile
+[**getUserProfileskills**](UsersApi#getUserProfileskills) | **GET** /api/v2/users/{userId}/profileskills | List profile skills for a user
+[**getUserQueues**](UsersApi#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
+[**getUserRoles**](UsersApi#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
+[**getUserRoutinglanguages**](UsersApi#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
+[**getUserRoutingskills**](UsersApi#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
+[**getUserRoutingstatus**](UsersApi#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
+[**getUserSkillgroups**](UsersApi#getUserSkillgroups) | **GET** /api/v2/users/{userId}/skillgroups | Get skill groups for a user
+[**getUserState**](UsersApi#getUserState) | **GET** /api/v2/users/{userId}/state | Get user state information.
+[**getUserStation**](UsersApi#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
+[**getUserSuperiors**](UsersApi#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
+[**getUserTrustors**](UsersApi#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
+[**getUserVerifiers**](UsersApi#getUserVerifiers) | **GET** /api/v2/users/{userId}/verifiers | Get a list of verifiers
+[**getUsers**](UsersApi#getUsers) | **GET** /api/v2/users | Get the list of available users.
+[**getUsersDevelopmentActivities**](UsersApi#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
+[**getUsersDevelopmentActivitiesMe**](UsersApi#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
+[**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
+[**getUsersMe**](UsersApi#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
+[**getUsersSearch**](UsersApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
+[**patchUser**](UsersApi#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
+[**patchUserCallforwarding**](UsersApi#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user's CallForwarding
+[**patchUserGeolocation**](UsersApi#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user's Geolocation
+[**patchUserQueue**](UsersApi#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
+[**patchUserQueues**](UsersApi#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
+[**patchUserRoutinglanguage**](UsersApi#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
+[**patchUserRoutinglanguagesBulk**](UsersApi#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
+[**patchUserRoutingskillsBulk**](UsersApi#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
+[**patchUsersBulk**](UsersApi#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
+[**postAnalyticsUsersActivityQuery**](UsersApi#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
+[**postAnalyticsUsersAggregatesJobs**](UsersApi#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
+[**postAnalyticsUsersAggregatesQuery**](UsersApi#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
+[**postAnalyticsUsersDetailsJobs**](UsersApi#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
+[**postAnalyticsUsersDetailsQuery**](UsersApi#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
+[**postAnalyticsUsersObservationsQuery**](UsersApi#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
+[**postAuthorizationSubjectBulkadd**](UsersApi#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
+[**postAuthorizationSubjectBulkremove**](UsersApi#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
+[**postAuthorizationSubjectBulkreplace**](UsersApi#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
+[**postAuthorizationSubjectDivisionRole**](UsersApi#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
+[**postUserExternalid**](UsersApi#postUserExternalid) | **POST** /api/v2/users/{userId}/externalid | Create mapping between external identifier and user. Limit 100 per entity.
+[**postUserInvite**](UsersApi#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
+[**postUserPassword**](UsersApi#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
+[**postUserRoutinglanguages**](UsersApi#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
+[**postUserRoutingskills**](UsersApi#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
+[**postUsers**](UsersApi#postUsers) | **POST** /api/v2/users | Create user
+[**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi#postUsersDevelopmentActivitiesAggregatesQuery) | **POST** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data
+[**postUsersMePassword**](UsersApi#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
+[**postUsersSearch**](UsersApi#postUsersSearch) | **POST** /api/v2/users/search | Search users
+[**postUsersSearchConversationTarget**](UsersApi#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
+[**postUsersSearchQueuemembersManage**](UsersApi#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
+[**postUsersSearchTeamsAssign**](UsersApi#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
+[**putRoutingDirectroutingbackupSettingsMe**](UsersApi#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
+[**putRoutingUserDirectroutingbackupSettings**](UsersApi#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
+[**putRoutingUserUtilization**](UsersApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+[**putUserCallforwarding**](UsersApi#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
+[**putUserOutofoffice**](UsersApi#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
+[**putUserProfileskills**](UsersApi#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
+[**putUserRoles**](UsersApi#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
+[**putUserRoutingskill**](UsersApi#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
+[**putUserRoutingskillsBulk**](UsersApi#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
+[**putUserRoutingstatus**](UsersApi#putUserRoutingstatus) | **PUT** /api/v2/users/{userId}/routingstatus | Update the routing status of a user
+[**putUserState**](UsersApi#putUserState) | **PUT** /api/v2/users/{userId}/state | Update user state information.
+[**putUserStationAssociatedstationStationId**](UsersApi#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
+[**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
+[**putUserVerifier**](UsersApi#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
 
-<a name="deleteAnalyticsUsersDetailsJob"></a>
 
-# void deleteAnalyticsUsersDetailsJob(jobId)
+
+## deleteAnalyticsUsersDetailsJob
+
+> void deleteAnalyticsUsersDetailsJob(jobId)
 
 
 DELETE /api/v2/analytics/users/details/jobs/{jobId}
@@ -149,15 +150,15 @@ apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAuthorizationSubjectDivisionRole"></a>
 
-# void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+## deleteAuthorizationSubjectDivisionRole
+
+> void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
 
 
 DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -203,15 +204,15 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division of the grant |  |
  **roleId** | **String** | the id of the role of the grant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRoutingDirectroutingbackupSettingsMe"></a>
 
-# void deleteRoutingDirectroutingbackupSettingsMe()
+## deleteRoutingDirectroutingbackupSettingsMe
+
+> void deleteRoutingDirectroutingbackupSettingsMe()
 
 
 DELETE /api/v2/routing/directroutingbackup/settings/me
@@ -249,14 +250,14 @@ apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 void (no response body)
 
-<a name="deleteRoutingUserDirectroutingbackupSettings"></a>
 
-# void deleteRoutingUserDirectroutingbackupSettings(userId)
+## deleteRoutingUserDirectroutingbackupSettings
+
+> void deleteRoutingUserDirectroutingbackupSettings(userId)
 
 
 DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -298,15 +299,15 @@ apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRoutingUserUtilization"></a>
 
-# void deleteRoutingUserUtilization(userId)
+## deleteRoutingUserUtilization
+
+> void deleteRoutingUserUtilization(userId)
 
 
 DELETE /api/v2/routing/users/{userId}/utilization
@@ -348,15 +349,15 @@ apiInstance.deleteRoutingUserUtilization(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUser"></a>
 
-# **Object** deleteUser(userId)
+## deleteUser
+
+> **Object** deleteUser(userId)
 
 
 DELETE /api/v2/users/{userId}
@@ -400,15 +401,15 @@ apiInstance.deleteUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="deleteUserRoutinglanguage"></a>
 
-# void deleteUserRoutinglanguage(userId, languageId)
+## deleteUserRoutinglanguage
+
+> void deleteUserRoutinglanguage(userId, languageId)
 
 
 DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
@@ -453,15 +454,15 @@ apiInstance.deleteUserRoutinglanguage(userId, languageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **languageId** | **String** | languageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUserRoutingskill"></a>
 
-# void deleteUserRoutingskill(userId, skillId)
+## deleteUserRoutingskill
+
+> void deleteUserRoutingskill(userId, skillId)
 
 
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
@@ -505,15 +506,15 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUserStationAssociatedstation"></a>
 
-# void deleteUserStationAssociatedstation(userId)
+## deleteUserStationAssociatedstation
+
+> void deleteUserStationAssociatedstation(userId)
 
 
 DELETE /api/v2/users/{userId}/station/associatedstation
@@ -553,15 +554,15 @@ apiInstance.deleteUserStationAssociatedstation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUserStationDefaultstation"></a>
 
-# void deleteUserStationDefaultstation(userId)
+## deleteUserStationDefaultstation
+
+> void deleteUserStationDefaultstation(userId)
 
 
 DELETE /api/v2/users/{userId}/station/defaultstation
@@ -604,15 +605,15 @@ apiInstance.deleteUserStationDefaultstation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUserVerifier"></a>
 
-# void deleteUserVerifier(userId, verifierId)
+## deleteUserVerifier
+
+> void deleteUserVerifier(userId, verifierId)
 
 
 DELETE /api/v2/users/{userId}/verifiers/{verifierId}
@@ -656,15 +657,15 @@ apiInstance.deleteUserVerifier(userId, verifierId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **verifierId** | **String** | Verifier ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAnalyticsUsersAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
+## getAnalyticsUsersAggregatesJob
+
+> AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}
@@ -708,15 +709,15 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsUsersAggregatesJobResults"></a>
 
-# UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
+## getAnalyticsUsersAggregatesJobResults
+
+> UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
@@ -764,15 +765,15 @@ apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsUsersDetailsJob"></a>
 
-# AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
+## getAnalyticsUsersDetailsJob
+
+> AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}
@@ -814,15 +815,15 @@ apiInstance.getAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsUsersDetailsJobResults"></a>
 
-# AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
+## getAnalyticsUsersDetailsJobResults
+
+> AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}/results
@@ -870,15 +871,15 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsUserDetailsAsyncQueryResponse**
 
-<a name="getAnalyticsUsersDetailsJobsAvailability"></a>
 
-# DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
+## getAnalyticsUsersDetailsJobsAvailability
+
+> DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
 
 
 GET /api/v2/analytics/users/details/jobs/availability
@@ -916,14 +917,14 @@ apiInstance.getAnalyticsUsersDetailsJobsAvailability()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataAvailabilityResponse**
 
-<a name="getAuthorizationDivisionspermittedMe"></a>
 
-# [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+## getAuthorizationDivisionspermittedMe
+
+> [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -970,15 +971,15 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[AuthzDivision]**
 
-<a name="getAuthorizationDivisionspermittedPagedMe"></a>
 
-# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
+## getAuthorizationDivisionspermittedPagedMe
+
+> DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
 
 
 GET /api/v2/authorization/divisionspermitted/paged/me
@@ -1024,15 +1025,15 @@ apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DivsPermittedEntityListing**
 
-<a name="getAuthorizationDivisionspermittedPagedSubjectId"></a>
 
-# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+## getAuthorizationDivisionspermittedPagedSubjectId
+
+> DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1083,15 +1084,15 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DivsPermittedEntityListing**
 
-<a name="getAuthorizationSubject"></a>
 
-# AuthzSubject getAuthorizationSubject(subjectId, opts)
+## getAuthorizationSubject
+
+> AuthzSubject getAuthorizationSubject(subjectId, opts)
 
 
 GET /api/v2/authorization/subjects/{subjectId}
@@ -1137,15 +1138,15 @@ apiInstance.getAuthorizationSubject(subjectId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzSubject**
 
-<a name="getAuthorizationSubjectsMe"></a>
 
-# AuthzSubject getAuthorizationSubjectsMe(opts)
+## getAuthorizationSubjectsMe
+
+> AuthzSubject getAuthorizationSubjectsMe(opts)
 
 
 GET /api/v2/authorization/subjects/me
@@ -1187,15 +1188,15 @@ apiInstance.getAuthorizationSubjectsMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzSubject**
 
-<a name="getFieldconfig"></a>
 
-# FieldConfig getFieldconfig(type)
+## getFieldconfig
+
+> FieldConfig getFieldconfig(type)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1236,15 +1237,15 @@ apiInstance.getFieldconfig(type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **type** | **String** | Field type | <br />**Values**: person, group, org |
-{: class="table table-striped"}
 
 ### Return type
 
 **FieldConfig**
 
-<a name="getProfilesUsers"></a>
 
-# UserProfileEntityListing getProfilesUsers(opts)
+## getProfilesUsers
+
+> UserProfileEntityListing getProfilesUsers(opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1301,15 +1302,15 @@ apiInstance.getProfilesUsers(opts)
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserProfileEntityListing**
 
-<a name="getRoutingDirectroutingbackupSettingsMe"></a>
 
-# AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
+## getRoutingDirectroutingbackupSettingsMe
+
+> AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
 
 
 GET /api/v2/routing/directroutingbackup/settings/me
@@ -1347,14 +1348,14 @@ apiInstance.getRoutingDirectroutingbackupSettingsMe()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AgentDirectRoutingBackupSettings**
 
-<a name="getRoutingUserDirectroutingbackupSettings"></a>
 
-# AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
+## getRoutingUserDirectroutingbackupSettings
+
+> AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
 
 
 GET /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -1396,15 +1397,15 @@ apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentDirectRoutingBackupSettings**
 
-<a name="getRoutingUserUtilization"></a>
 
-# AgentMaxUtilizationResponse getRoutingUserUtilization(userId)
+## getRoutingUserUtilization
+
+> AgentMaxUtilizationResponse getRoutingUserUtilization(userId)
 
 
 GET /api/v2/routing/users/{userId}/utilization
@@ -1447,15 +1448,15 @@ apiInstance.getRoutingUserUtilization(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentMaxUtilizationResponse**
 
-<a name="getUser"></a>
 
-# User getUser(userId, opts)
+## getUser
+
+> User getUser(userId, opts)
 
 
 GET /api/v2/users/{userId}
@@ -1503,15 +1504,15 @@ apiInstance.getUser(userId, opts)
  **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
  **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
-{: class="table table-striped"}
 
 ### Return type
 
 **User**
 
-<a name="getUserAdjacents"></a>
 
-# Adjacents getUserAdjacents(userId, opts)
+## getUserAdjacents
+
+> Adjacents getUserAdjacents(userId, opts)
 
 
 GET /api/v2/users/{userId}/adjacents
@@ -1555,15 +1556,15 @@ apiInstance.getUserAdjacents(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
-{: class="table table-striped"}
 
 ### Return type
 
 **Adjacents**
 
-<a name="getUserCallforwarding"></a>
 
-# CallForwarding getUserCallforwarding(userId)
+## getUserCallforwarding
+
+> CallForwarding getUserCallforwarding(userId)
 
 
 GET /api/v2/users/{userId}/callforwarding
@@ -1603,15 +1604,15 @@ apiInstance.getUserCallforwarding(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallForwarding**
 
-<a name="getUserDirectreports"></a>
 
-# [User] getUserDirectreports(userId, opts)
+## getUserDirectreports
+
+> [User] getUserDirectreports(userId, opts)
 
 
 GET /api/v2/users/{userId}/directreports
@@ -1655,15 +1656,15 @@ apiInstance.getUserDirectreports(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
-{: class="table table-striped"}
 
 ### Return type
 
 **[User]**
 
-<a name="getUserFavorites"></a>
 
-# UserEntityListing getUserFavorites(userId, opts)
+## getUserFavorites
+
+> UserEntityListing getUserFavorites(userId, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1714,15 +1715,15 @@ apiInstance.getUserFavorites(userId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="getUserGeolocation"></a>
 
-# Geolocation getUserGeolocation(userId, clientId)
+## getUserGeolocation
+
+> Geolocation getUserGeolocation(userId, clientId)
 
 
 GET /api/v2/users/{userId}/geolocations/{clientId}
@@ -1764,15 +1765,15 @@ apiInstance.getUserGeolocation(userId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Geolocation**
 
-<a name="getUserOutofoffice"></a>
 
-# OutOfOffice getUserOutofoffice(userId)
+## getUserOutofoffice
+
+> OutOfOffice getUserOutofoffice(userId)
 
 
 GET /api/v2/users/{userId}/outofoffice
@@ -1812,15 +1813,15 @@ apiInstance.getUserOutofoffice(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutOfOffice**
 
-<a name="getUserProfile"></a>
 
-# UserProfile getUserProfile(userId, opts)
+## getUserProfile
+
+> UserProfile getUserProfile(userId, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1869,15 +1870,15 @@ apiInstance.getUserProfile(userId, opts)
  **userId** | **String** | userId |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks |
  **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserProfile**
 
-<a name="getUserProfileskills"></a>
 
-# **[&#39;String&#39;]** getUserProfileskills(userId)
+## getUserProfileskills
+
+> **[&#39;String&#39;]** getUserProfileskills(userId)
 
 
 GET /api/v2/users/{userId}/profileskills
@@ -1919,15 +1920,15 @@ apiInstance.getUserProfileskills(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="getUserQueues"></a>
 
-# UserQueueEntityListing getUserQueues(userId, opts)
+## getUserQueues
+
+> UserQueueEntityListing getUserQueues(userId, opts)
 
 
 GET /api/v2/users/{userId}/queues
@@ -1981,15 +1982,15 @@ apiInstance.getUserQueues(userId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **joined** | **Boolean** | Is joined to the queue | [optional] [default to true] |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserQueueEntityListing**
 
-<a name="getUserRoles"></a>
 
-# UserAuthorization getUserRoles(subjectId)
+## getUserRoles
+
+> UserAuthorization getUserRoles(subjectId)
 
 
 GET /api/v2/users/{subjectId}/roles
@@ -2031,15 +2032,15 @@ apiInstance.getUserRoles(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAuthorization**
 
-<a name="getUserRoutinglanguages"></a>
 
-# UserLanguageEntityListing getUserRoutinglanguages(userId, opts)
+## getUserRoutinglanguages
+
+> UserLanguageEntityListing getUserRoutinglanguages(userId, opts)
 
 
 GET /api/v2/users/{userId}/routinglanguages
@@ -2087,15 +2088,15 @@ apiInstance.getUserRoutinglanguages(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserLanguageEntityListing**
 
-<a name="getUserRoutingskills"></a>
 
-# UserSkillEntityListing getUserRoutingskills(userId, opts)
+## getUserRoutingskills
+
+> UserSkillEntityListing getUserRoutingskills(userId, opts)
 
 
 GET /api/v2/users/{userId}/routingskills
@@ -2143,15 +2144,15 @@ apiInstance.getUserRoutingskills(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserSkillEntityListing**
 
-<a name="getUserRoutingstatus"></a>
 
-# RoutingStatus getUserRoutingstatus(userId)
+## getUserRoutingstatus
+
+> RoutingStatus getUserRoutingstatus(userId)
 
 
 GET /api/v2/users/{userId}/routingstatus
@@ -2191,15 +2192,15 @@ apiInstance.getUserRoutingstatus(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoutingStatus**
 
-<a name="getUserSkillgroups"></a>
 
-# UserSkillGroupEntityListing getUserSkillgroups(userId, opts)
+## getUserSkillgroups
+
+> UserSkillGroupEntityListing getUserSkillgroups(userId, opts)
 
 
 GET /api/v2/users/{userId}/skillgroups
@@ -2249,15 +2250,15 @@ apiInstance.getUserSkillgroups(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **after** | **String** | The cursor that points to the next page | [optional]  |
  **before** | **String** | The cursor that points to the previous page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserSkillGroupEntityListing**
 
-<a name="getUserState"></a>
 
-# UserState getUserState(userId)
+## getUserState
+
+> UserState getUserState(userId)
 
 
 GET /api/v2/users/{userId}/state
@@ -2299,15 +2300,15 @@ apiInstance.getUserState(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserState**
 
-<a name="getUserStation"></a>
 
-# UserStations getUserStation(userId)
+## getUserStation
+
+> UserStations getUserStation(userId)
 
 
 GET /api/v2/users/{userId}/station
@@ -2347,15 +2348,15 @@ apiInstance.getUserStation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserStations**
 
-<a name="getUserSuperiors"></a>
 
-# [User] getUserSuperiors(userId, opts)
+## getUserSuperiors
+
+> [User] getUserSuperiors(userId, opts)
 
 
 GET /api/v2/users/{userId}/superiors
@@ -2399,15 +2400,15 @@ apiInstance.getUserSuperiors(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
-{: class="table table-striped"}
 
 ### Return type
 
 **[User]**
 
-<a name="getUserTrustors"></a>
 
-# TrustorEntityListing getUserTrustors(userId, opts)
+## getUserTrustors
+
+> TrustorEntityListing getUserTrustors(userId, opts)
 
 
 GET /api/v2/users/{userId}/trustors
@@ -2455,15 +2456,15 @@ apiInstance.getUserTrustors(userId, opts)
  **userId** | **String** | User ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **TrustorEntityListing**
 
-<a name="getUserVerifiers"></a>
 
-# VerifierEntityListing getUserVerifiers(userId)
+## getUserVerifiers
+
+> VerifierEntityListing getUserVerifiers(userId)
 
 
 GET /api/v2/users/{userId}/verifiers
@@ -2505,15 +2506,15 @@ apiInstance.getUserVerifiers(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VerifierEntityListing**
 
-<a name="getUsers"></a>
 
-# UserEntityListing getUsers(opts)
+## getUsers
+
+> UserEntityListing getUsers(opts)
 
 
 GET /api/v2/users
@@ -2569,15 +2570,15 @@ apiInstance.getUsers(opts)
  **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="getUsersDevelopmentActivities"></a>
 
-# DevelopmentActivityListing getUsersDevelopmentActivities(opts)
+## getUsersDevelopmentActivities
+
+> DevelopmentActivityListing getUsersDevelopmentActivities(opts)
 
 
 GET /api/v2/users/development/activities
@@ -2646,15 +2647,15 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **types** | **[String]** | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
-{: class="table table-striped"}
 
 ### Return type
 
 **DevelopmentActivityListing**
 
-<a name="getUsersDevelopmentActivitiesMe"></a>
 
-# DevelopmentActivityListing getUsersDevelopmentActivitiesMe(opts)
+## getUsersDevelopmentActivitiesMe
+
+> DevelopmentActivityListing getUsersDevelopmentActivitiesMe(opts)
 
 
 GET /api/v2/users/development/activities/me
@@ -2718,15 +2719,15 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **types** | **[String]** | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
-{: class="table table-striped"}
 
 ### Return type
 
 **DevelopmentActivityListing**
 
-<a name="getUsersDevelopmentActivity"></a>
 
-# DevelopmentActivity getUsersDevelopmentActivity(activityId, type)
+## getUsersDevelopmentActivity
+
+> DevelopmentActivity getUsersDevelopmentActivity(activityId, type)
 
 
 GET /api/v2/users/development/activities/{activityId}
@@ -2773,15 +2774,15 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 | ------------- | ------------- | ------------- | ------------- |
  **activityId** | **String** | Specifies the activity ID, maps to either assignment or appointment ID |  |
  **type** | **String** | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
-{: class="table table-striped"}
 
 ### Return type
 
 **DevelopmentActivity**
 
-<a name="getUsersMe"></a>
 
-# UserMe getUsersMe(opts)
+## getUsersMe
+
+> UserMe getUsersMe(opts)
 
 
 GET /api/v2/users/me
@@ -2827,15 +2828,15 @@ apiInstance.getUsersMe(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture |
  **integrationPresenceSource** | **String** | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserMe**
 
-<a name="getUsersSearch"></a>
 
-# UsersSearchResponse getUsersSearch(q64, opts)
+## getUsersSearch
+
+> UsersSearchResponse getUsersSearch(q64, opts)
 
 
 GET /api/v2/users/search
@@ -2883,15 +2884,15 @@ apiInstance.getUsersSearch(q64, opts)
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
  **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="patchUser"></a>
 
-# User patchUser(userId, body)
+## patchUser
+
+> User patchUser(userId, body)
 
 
 PATCH /api/v2/users/{userId}
@@ -2937,15 +2938,15 @@ apiInstance.patchUser(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | User |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **User**
 
-<a name="patchUserCallforwarding"></a>
 
-# CallForwarding patchUserCallforwarding(userId, body)
+## patchUserCallforwarding
+
+> CallForwarding patchUserCallforwarding(userId, body)
 
 
 PATCH /api/v2/users/{userId}/callforwarding
@@ -2989,15 +2990,15 @@ apiInstance.patchUserCallforwarding(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Call forwarding |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallForwarding**
 
-<a name="patchUserGeolocation"></a>
 
-# Geolocation patchUserGeolocation(userId, clientId, body)
+## patchUserGeolocation
+
+> Geolocation patchUserGeolocation(userId, clientId, body)
 
 
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
@@ -3043,15 +3044,15 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
  **body** | **Object** | Geolocation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Geolocation**
 
-<a name="patchUserQueue"></a>
 
-# UserQueue patchUserQueue(queueId, userId, body)
+## patchUserQueue
+
+> UserQueue patchUserQueue(queueId, userId, body)
 
 
 PATCH /api/v2/users/{userId}/queues/{queueId}
@@ -3098,15 +3099,15 @@ apiInstance.patchUserQueue(queueId, userId, body)
  **queueId** | **String** | Queue ID |  |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Queue Member |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserQueue**
 
-<a name="patchUserQueues"></a>
 
-# UserQueueEntityListing patchUserQueues(userId, body, opts)
+## patchUserQueues
+
+> UserQueueEntityListing patchUserQueues(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/queues
@@ -3155,15 +3156,15 @@ apiInstance.patchUserQueues(userId, body, opts)
  **userId** | **String** | User ID |  |
  **body** | **Object** | User Queues |  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserQueueEntityListing**
 
-<a name="patchUserRoutinglanguage"></a>
 
-# UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
+## patchUserRoutinglanguage
+
+> UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
 
 
 PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
@@ -3210,15 +3211,15 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
  **userId** | **String** | User ID |  |
  **languageId** | **String** | languageId |  |
  **body** | **Object** | Language |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRoutingLanguage**
 
-<a name="patchUserRoutinglanguagesBulk"></a>
 
-# UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
+## patchUserRoutinglanguagesBulk
+
+> UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
 
 
 PATCH /api/v2/users/{userId}/routinglanguages/bulk
@@ -3263,15 +3264,15 @@ apiInstance.patchUserRoutinglanguagesBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Language |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserLanguageEntityListing**
 
-<a name="patchUserRoutingskillsBulk"></a>
 
-# UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
+## patchUserRoutingskillsBulk
+
+> UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
 
 
 PATCH /api/v2/users/{userId}/routingskills/bulk
@@ -3315,15 +3316,15 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserSkillEntityListing**
 
-<a name="patchUsersBulk"></a>
 
-# UserEntityListing patchUsersBulk(body)
+## patchUsersBulk
+
+> UserEntityListing patchUsersBulk(body)
 
 
 PATCH /api/v2/users/bulk
@@ -3366,15 +3367,15 @@ apiInstance.patchUsersBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Users |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="postAnalyticsUsersActivityQuery"></a>
 
-# UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
+## postAnalyticsUsersActivityQuery
+
+> UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/users/activity/query
@@ -3422,15 +3423,15 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserActivityResponse**
 
-<a name="postAnalyticsUsersAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
+## postAnalyticsUsersAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
 
 
 POST /api/v2/analytics/users/aggregates/jobs
@@ -3474,15 +3475,15 @@ apiInstance.postAnalyticsUsersAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsUsersAggregatesQuery"></a>
 
-# UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
+## postAnalyticsUsersAggregatesQuery
+
+> UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 
 POST /api/v2/analytics/users/aggregates/query
@@ -3524,15 +3525,15 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAggregateQueryResponse**
 
-<a name="postAnalyticsUsersDetailsJobs"></a>
 
-# AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
+## postAnalyticsUsersDetailsJobs
+
+> AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
 
 
 POST /api/v2/analytics/users/details/jobs
@@ -3574,15 +3575,15 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsUsersDetailsQuery"></a>
 
-# AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
+## postAnalyticsUsersDetailsQuery
+
+> AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
 
 POST /api/v2/analytics/users/details/query
@@ -3624,15 +3625,15 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsUserDetailsQueryResponse**
 
-<a name="postAnalyticsUsersObservationsQuery"></a>
 
-# UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
+## postAnalyticsUsersObservationsQuery
+
+> UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 
 POST /api/v2/analytics/users/observations/query
@@ -3674,15 +3675,15 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserObservationQueryResponse**
 
-<a name="postAuthorizationSubjectBulkadd"></a>
 
-# void postAuthorizationSubjectBulkadd(subjectId, body, opts)
+## postAuthorizationSubjectBulkadd
+
+> void postAuthorizationSubjectBulkadd(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkadd
@@ -3730,15 +3731,15 @@ apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectBulkremove"></a>
 
-# void postAuthorizationSubjectBulkremove(subjectId, body)
+## postAuthorizationSubjectBulkremove
+
+> void postAuthorizationSubjectBulkremove(subjectId, body)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkremove
@@ -3782,15 +3783,15 @@ apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectBulkreplace"></a>
 
-# void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
+## postAuthorizationSubjectBulkreplace
+
+> void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkreplace
@@ -3841,15 +3842,15 @@ apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectDivisionRole"></a>
 
-# void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
+## postAuthorizationSubjectDivisionRole
+
+> void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -3899,15 +3900,15 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
  **divisionId** | **String** | the id of the division to which to make the grant |  |
  **roleId** | **String** | the id of the role to grant |  |
  **subjectType** | **String** | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postUserExternalid"></a>
 
-# [UserExternalIdentifier] postUserExternalid(userId, body)
+## postUserExternalid
+
+> [UserExternalIdentifier] postUserExternalid(userId, body)
 
 
 POST /api/v2/users/{userId}/externalid
@@ -3953,15 +3954,15 @@ apiInstance.postUserExternalid(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[UserExternalIdentifier]**
 
-<a name="postUserInvite"></a>
 
-# void postUserInvite(userId, opts)
+## postUserInvite
+
+> void postUserInvite(userId, opts)
 
 
 POST /api/v2/users/{userId}/invite
@@ -4009,15 +4010,15 @@ apiInstance.postUserInvite(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **force** | **Boolean** | Resend the invitation even if one is already outstanding | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postUserPassword"></a>
 
-# void postUserPassword(userId, body)
+## postUserPassword
+
+> void postUserPassword(userId, body)
 
 
 POST /api/v2/users/{userId}/password
@@ -4061,15 +4062,15 @@ apiInstance.postUserPassword(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Password |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postUserRoutinglanguages"></a>
 
-# UserRoutingLanguage postUserRoutinglanguages(userId, body)
+## postUserRoutinglanguages
+
+> UserRoutingLanguage postUserRoutinglanguages(userId, body)
 
 
 POST /api/v2/users/{userId}/routinglanguages
@@ -4114,15 +4115,15 @@ apiInstance.postUserRoutinglanguages(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Language |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRoutingLanguage**
 
-<a name="postUserRoutingskills"></a>
 
-# UserRoutingSkill postUserRoutingskills(userId, body)
+## postUserRoutingskills
+
+> UserRoutingSkill postUserRoutingskills(userId, body)
 
 
 POST /api/v2/users/{userId}/routingskills
@@ -4166,15 +4167,15 @@ apiInstance.postUserRoutingskills(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRoutingSkill**
 
-<a name="postUsers"></a>
 
-# User postUsers(body)
+## postUsers
+
+> User postUsers(body)
 
 
 POST /api/v2/users
@@ -4218,15 +4219,15 @@ apiInstance.postUsers(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | User |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **User**
 
-<a name="postUsersDevelopmentActivitiesAggregatesQuery"></a>
 
-# DevelopmentActivityAggregateResponse postUsersDevelopmentActivitiesAggregatesQuery(body)
+## postUsersDevelopmentActivitiesAggregatesQuery
+
+> DevelopmentActivityAggregateResponse postUsersDevelopmentActivitiesAggregatesQuery(body)
 
 
 POST /api/v2/users/development/activities/aggregates/query
@@ -4271,15 +4272,15 @@ apiInstance.postUsersDevelopmentActivitiesAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Aggregate Request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DevelopmentActivityAggregateResponse**
 
-<a name="postUsersMePassword"></a>
 
-# void postUsersMePassword(body)
+## postUsersMePassword
+
+> void postUsersMePassword(body)
 
 
 POST /api/v2/users/me/password
@@ -4319,15 +4320,15 @@ apiInstance.postUsersMePassword(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Password |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postUsersSearch"></a>
 
-# UsersSearchResponse postUsersSearch(body)
+## postUsersSearch
+
+> UsersSearchResponse postUsersSearch(body)
 
 
 POST /api/v2/users/search
@@ -4369,15 +4370,15 @@ apiInstance.postUsersSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchConversationTarget"></a>
 
-# UsersSearchResponse postUsersSearchConversationTarget(body)
+## postUsersSearchConversationTarget
+
+> UsersSearchResponse postUsersSearchConversationTarget(body)
 
 
 POST /api/v2/users/search/conversation/target
@@ -4421,15 +4422,15 @@ apiInstance.postUsersSearchConversationTarget(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchQueuemembersManage"></a>
 
-# UsersSearchResponse postUsersSearchQueuemembersManage(body)
+## postUsersSearchQueuemembersManage
+
+> UsersSearchResponse postUsersSearchQueuemembersManage(body)
 
 
 POST /api/v2/users/search/queuemembers/manage
@@ -4474,15 +4475,15 @@ apiInstance.postUsersSearchQueuemembersManage(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchTeamsAssign"></a>
 
-# UsersSearchResponse postUsersSearchTeamsAssign(body)
+## postUsersSearchTeamsAssign
+
+> UsersSearchResponse postUsersSearchTeamsAssign(body)
 
 
 POST /api/v2/users/search/teams/assign
@@ -4524,15 +4525,15 @@ apiInstance.postUsersSearchTeamsAssign(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="putRoutingDirectroutingbackupSettingsMe"></a>
 
-# AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
+## putRoutingDirectroutingbackupSettingsMe
+
+> AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
 
 
 PUT /api/v2/routing/directroutingbackup/settings/me
@@ -4574,15 +4575,15 @@ apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | directRoutingBackup |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentDirectRoutingBackupSettings**
 
-<a name="putRoutingUserDirectroutingbackupSettings"></a>
 
-# AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
+## putRoutingUserDirectroutingbackupSettings
+
+> AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
 
 
 PUT /api/v2/routing/users/{userId}/directroutingbackup/settings
@@ -4626,15 +4627,15 @@ apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | directRoutingBackup |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentDirectRoutingBackupSettings**
 
-<a name="putRoutingUserUtilization"></a>
 
-# AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body)
+## putRoutingUserUtilization
+
+> AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body)
 
 
 PUT /api/v2/routing/users/{userId}/utilization
@@ -4678,15 +4679,15 @@ apiInstance.putRoutingUserUtilization(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | utilization |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentMaxUtilizationResponse**
 
-<a name="putUserCallforwarding"></a>
 
-# CallForwarding putUserCallforwarding(userId, body)
+## putUserCallforwarding
+
+> CallForwarding putUserCallforwarding(userId, body)
 
 
 PUT /api/v2/users/{userId}/callforwarding
@@ -4730,15 +4731,15 @@ apiInstance.putUserCallforwarding(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Call forwarding |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallForwarding**
 
-<a name="putUserOutofoffice"></a>
 
-# OutOfOffice putUserOutofoffice(userId, body)
+## putUserOutofoffice
+
+> OutOfOffice putUserOutofoffice(userId, body)
 
 
 PUT /api/v2/users/{userId}/outofoffice
@@ -4780,15 +4781,15 @@ apiInstance.putUserOutofoffice(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The updated OutOffOffice |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutOfOffice**
 
-<a name="putUserProfileskills"></a>
 
-# **[&#39;String&#39;]** putUserProfileskills(userId, body)
+## putUserProfileskills
+
+> **[&#39;String&#39;]** putUserProfileskills(userId, body)
 
 
 PUT /api/v2/users/{userId}/profileskills
@@ -4832,15 +4833,15 @@ apiInstance.putUserProfileskills(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **[String]** | Skills |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="putUserRoles"></a>
 
-# UserAuthorization putUserRoles(subjectId, body)
+## putUserRoles
+
+> UserAuthorization putUserRoles(subjectId, body)
 
 
 PUT /api/v2/users/{subjectId}/roles
@@ -4884,15 +4885,15 @@ apiInstance.putUserRoles(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
  **body** | **[String]** | List of roles |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAuthorization**
 
-<a name="putUserRoutingskill"></a>
 
-# UserRoutingSkill putUserRoutingskill(userId, skillId, body)
+## putUserRoutingskill
+
+> UserRoutingSkill putUserRoutingskill(userId, skillId, body)
 
 
 PUT /api/v2/users/{userId}/routingskills/{skillId}
@@ -4938,15 +4939,15 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
  **body** | **Object** | Skill |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRoutingSkill**
 
-<a name="putUserRoutingskillsBulk"></a>
 
-# UserSkillEntityListing putUserRoutingskillsBulk(userId, body)
+## putUserRoutingskillsBulk
+
+> UserSkillEntityListing putUserRoutingskillsBulk(userId, body)
 
 
 PUT /api/v2/users/{userId}/routingskills/bulk
@@ -4990,15 +4991,15 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserSkillEntityListing**
 
-<a name="putUserRoutingstatus"></a>
 
-# RoutingStatus putUserRoutingstatus(userId, body)
+## putUserRoutingstatus
+
+> RoutingStatus putUserRoutingstatus(userId, body)
 
 
 PUT /api/v2/users/{userId}/routingstatus
@@ -5040,15 +5041,15 @@ apiInstance.putUserRoutingstatus(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Routing Status |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoutingStatus**
 
-<a name="putUserState"></a>
 
-# UserState putUserState(userId, body)
+## putUserState
+
+> UserState putUserState(userId, body)
 
 
 PUT /api/v2/users/{userId}/state
@@ -5092,15 +5093,15 @@ apiInstance.putUserState(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | User |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserState**
 
-<a name="putUserStationAssociatedstationStationId"></a>
 
-# void putUserStationAssociatedstationStationId(userId, stationId)
+## putUserStationAssociatedstationStationId
+
+> void putUserStationAssociatedstationStationId(userId, stationId)
 
 
 PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
@@ -5142,15 +5143,15 @@ apiInstance.putUserStationAssociatedstationStationId(userId, stationId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **stationId** | **String** | stationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putUserStationDefaultstationStationId"></a>
 
-# void putUserStationDefaultstationStationId(userId, stationId)
+## putUserStationDefaultstationStationId
+
+> void putUserStationDefaultstationStationId(userId, stationId)
 
 
 PUT /api/v2/users/{userId}/station/defaultstation/{stationId}
@@ -5195,15 +5196,15 @@ apiInstance.putUserStationDefaultstationStationId(userId, stationId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **stationId** | **String** | stationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putUserVerifier"></a>
 
-# Verifier putUserVerifier(userId, verifierId, body)
+## putUserVerifier
+
+> Verifier putUserVerifier(userId, verifierId, body)
 
 
 PUT /api/v2/users/{userId}/verifiers/{verifierId}
@@ -5249,7 +5250,6 @@ apiInstance.putUserVerifier(userId, verifierId, body)
  **userId** | **String** | User ID |  |
  **verifierId** | **String** | Verifier ID |  |
  **body** | **Object** | Verifier Update |  |
-{: class="table table-striped"}
 
 ### Return type
 

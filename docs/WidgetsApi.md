@@ -6,16 +6,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteWidgetsDeployment**](WidgetsApi.html#deleteWidgetsDeployment) | **DELETE** /api/v2/widgets/deployments/{deploymentId} | Delete a Widget deployment
-[**getWidgetsDeployment**](WidgetsApi.html#getWidgetsDeployment) | **GET** /api/v2/widgets/deployments/{deploymentId} | Get a Widget deployment
-[**getWidgetsDeployments**](WidgetsApi.html#getWidgetsDeployments) | **GET** /api/v2/widgets/deployments | List Widget deployments
-[**postWidgetsDeployments**](WidgetsApi.html#postWidgetsDeployments) | **POST** /api/v2/widgets/deployments | Create Widget deployment
-[**putWidgetsDeployment**](WidgetsApi.html#putWidgetsDeployment) | **PUT** /api/v2/widgets/deployments/{deploymentId} | Update a Widget deployment
-{: class="table table-striped"}
+[**deleteWidgetsDeployment**](WidgetsApi#deleteWidgetsDeployment) | **DELETE** /api/v2/widgets/deployments/{deploymentId} | Delete a Widget deployment
+[**getWidgetsDeployment**](WidgetsApi#getWidgetsDeployment) | **GET** /api/v2/widgets/deployments/{deploymentId} | Get a Widget deployment
+[**getWidgetsDeployments**](WidgetsApi#getWidgetsDeployments) | **GET** /api/v2/widgets/deployments | List Widget deployments
+[**postWidgetsDeployments**](WidgetsApi#postWidgetsDeployments) | **POST** /api/v2/widgets/deployments | Create Widget deployment
+[**putWidgetsDeployment**](WidgetsApi#putWidgetsDeployment) | **PUT** /api/v2/widgets/deployments/{deploymentId} | Update a Widget deployment
 
-<a name="deleteWidgetsDeployment"></a>
 
-# void deleteWidgetsDeployment(deploymentId)
+
+## deleteWidgetsDeployment
+
+> void deleteWidgetsDeployment(deploymentId)
 
 
 DELETE /api/v2/widgets/deployments/{deploymentId}
@@ -58,15 +59,15 @@ apiInstance.deleteWidgetsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getWidgetsDeployment"></a>
 
-# WidgetDeployment getWidgetsDeployment(deploymentId)
+## getWidgetsDeployment
+
+> WidgetDeployment getWidgetsDeployment(deploymentId)
 
 
 GET /api/v2/widgets/deployments/{deploymentId}
@@ -109,15 +110,15 @@ apiInstance.getWidgetsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WidgetDeployment**
 
-<a name="getWidgetsDeployments"></a>
 
-# WidgetDeploymentEntityListing getWidgetsDeployments()
+## getWidgetsDeployments
+
+> WidgetDeploymentEntityListing getWidgetsDeployments()
 
 
 GET /api/v2/widgets/deployments
@@ -156,14 +157,14 @@ apiInstance.getWidgetsDeployments()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **WidgetDeploymentEntityListing**
 
-<a name="postWidgetsDeployments"></a>
 
-# WidgetDeployment postWidgetsDeployments(body)
+## postWidgetsDeployments
+
+> WidgetDeployment postWidgetsDeployments(body)
 
 
 POST /api/v2/widgets/deployments
@@ -206,15 +207,15 @@ apiInstance.postWidgetsDeployments(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Deployment |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WidgetDeployment**
 
-<a name="putWidgetsDeployment"></a>
 
-# WidgetDeployment putWidgetsDeployment(deploymentId, body)
+## putWidgetsDeployment
+
+> WidgetDeployment putWidgetsDeployment(deploymentId, body)
 
 
 PUT /api/v2/widgets/deployments/{deploymentId}
@@ -259,7 +260,6 @@ apiInstance.putWidgetsDeployment(deploymentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
  **body** | **Object** | Deployment |  |
-{: class="table table-striped"}
 
 ### Return type
 

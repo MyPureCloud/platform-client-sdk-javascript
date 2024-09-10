@@ -6,23 +6,24 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAssistant**](AgentAssistantsApi.html#deleteAssistant) | **DELETE** /api/v2/assistants/{assistantId} | Delete an assistant.
-[**deleteAssistantQueue**](AgentAssistantsApi.html#deleteAssistantQueue) | **DELETE** /api/v2/assistants/{assistantId}/queues/{queueId} | Disassociate a queue from an assistant.
-[**deleteAssistantQueues**](AgentAssistantsApi.html#deleteAssistantQueues) | **DELETE** /api/v2/assistants/{assistantId}/queues | Disassociate the queues from an assistant for the given assistant ID and queue IDs.
-[**getAssistant**](AgentAssistantsApi.html#getAssistant) | **GET** /api/v2/assistants/{assistantId} | Get an assistant.
-[**getAssistantQueue**](AgentAssistantsApi.html#getAssistantQueue) | **GET** /api/v2/assistants/{assistantId}/queues/{queueId} | Get queue Information for an assistant.
-[**getAssistantQueues**](AgentAssistantsApi.html#getAssistantQueues) | **GET** /api/v2/assistants/{assistantId}/queues | Get all the queues associated with an assistant.
-[**getAssistants**](AgentAssistantsApi.html#getAssistants) | **GET** /api/v2/assistants | Get all assistants.
-[**getAssistantsQueues**](AgentAssistantsApi.html#getAssistantsQueues) | **GET** /api/v2/assistants/queues | Get all queues assigned to any assistant.
-[**patchAssistant**](AgentAssistantsApi.html#patchAssistant) | **PATCH** /api/v2/assistants/{assistantId} | Update an assistant.
-[**patchAssistantQueues**](AgentAssistantsApi.html#patchAssistantQueues) | **PATCH** /api/v2/assistants/{assistantId}/queues | Update Queues for an Assistant.
-[**postAssistants**](AgentAssistantsApi.html#postAssistants) | **POST** /api/v2/assistants | Create an Assistant.
-[**putAssistantQueue**](AgentAssistantsApi.html#putAssistantQueue) | **PUT** /api/v2/assistants/{assistantId}/queues/{queueId} | Create a queue assistant association.
-{: class="table table-striped"}
+[**deleteAssistant**](AgentAssistantsApi#deleteAssistant) | **DELETE** /api/v2/assistants/{assistantId} | Delete an assistant.
+[**deleteAssistantQueue**](AgentAssistantsApi#deleteAssistantQueue) | **DELETE** /api/v2/assistants/{assistantId}/queues/{queueId} | Disassociate a queue from an assistant.
+[**deleteAssistantQueues**](AgentAssistantsApi#deleteAssistantQueues) | **DELETE** /api/v2/assistants/{assistantId}/queues | Disassociate the queues from an assistant for the given assistant ID and queue IDs.
+[**getAssistant**](AgentAssistantsApi#getAssistant) | **GET** /api/v2/assistants/{assistantId} | Get an assistant.
+[**getAssistantQueue**](AgentAssistantsApi#getAssistantQueue) | **GET** /api/v2/assistants/{assistantId}/queues/{queueId} | Get queue Information for an assistant.
+[**getAssistantQueues**](AgentAssistantsApi#getAssistantQueues) | **GET** /api/v2/assistants/{assistantId}/queues | Get all the queues associated with an assistant.
+[**getAssistants**](AgentAssistantsApi#getAssistants) | **GET** /api/v2/assistants | Get all assistants.
+[**getAssistantsQueues**](AgentAssistantsApi#getAssistantsQueues) | **GET** /api/v2/assistants/queues | Get all queues assigned to any assistant.
+[**patchAssistant**](AgentAssistantsApi#patchAssistant) | **PATCH** /api/v2/assistants/{assistantId} | Update an assistant.
+[**patchAssistantQueues**](AgentAssistantsApi#patchAssistantQueues) | **PATCH** /api/v2/assistants/{assistantId}/queues | Update Queues for an Assistant.
+[**postAssistants**](AgentAssistantsApi#postAssistants) | **POST** /api/v2/assistants | Create an Assistant.
+[**putAssistantQueue**](AgentAssistantsApi#putAssistantQueue) | **PUT** /api/v2/assistants/{assistantId}/queues/{queueId} | Create a queue assistant association.
 
-<a name="deleteAssistant"></a>
 
-# void deleteAssistant(assistantId)
+
+## deleteAssistant
+
+> void deleteAssistant(assistantId)
 
 
 DELETE /api/v2/assistants/{assistantId}
@@ -64,15 +65,15 @@ apiInstance.deleteAssistant(assistantId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAssistantQueue"></a>
 
-# void deleteAssistantQueue(assistantId, queueId)
+## deleteAssistantQueue
+
+> void deleteAssistantQueue(assistantId, queueId)
 
 
 DELETE /api/v2/assistants/{assistantId}/queues/{queueId}
@@ -116,15 +117,15 @@ apiInstance.deleteAssistantQueue(assistantId, queueId)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAssistantQueues"></a>
 
-# void deleteAssistantQueues(assistantId, opts)
+## deleteAssistantQueues
+
+> void deleteAssistantQueues(assistantId, opts)
 
 
 DELETE /api/v2/assistants/{assistantId}/queues
@@ -170,15 +171,15 @@ apiInstance.deleteAssistantQueues(assistantId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **queueIds** | **String** | Comma-separated identifiers of the queues that need to be deleted. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAssistant"></a>
 
-# Assistant getAssistant(assistantId, opts)
+## getAssistant
+
+> Assistant getAssistant(assistantId, opts)
 
 
 GET /api/v2/assistants/{assistantId}
@@ -224,15 +225,15 @@ apiInstance.getAssistant(assistantId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: copilot |
-{: class="table table-striped"}
 
 ### Return type
 
 **Assistant**
 
-<a name="getAssistantQueue"></a>
 
-# AssistantQueue getAssistantQueue(assistantId, queueId, opts)
+## getAssistantQueue
+
+> AssistantQueue getAssistantQueue(assistantId, queueId, opts)
 
 
 GET /api/v2/assistants/{assistantId}/queues/{queueId}
@@ -280,15 +281,15 @@ apiInstance.getAssistantQueue(assistantId, queueId, opts)
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
-{: class="table table-striped"}
 
 ### Return type
 
 **AssistantQueue**
 
-<a name="getAssistantQueues"></a>
 
-# AssistantQueueListing getAssistantQueues(assistantId, opts)
+## getAssistantQueues
+
+> AssistantQueueListing getAssistantQueues(assistantId, opts)
 
 
 GET /api/v2/assistants/{assistantId}/queues
@@ -340,15 +341,15 @@ apiInstance.getAssistantQueues(assistantId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
-{: class="table table-striped"}
 
 ### Return type
 
 **AssistantQueueListing**
 
-<a name="getAssistants"></a>
 
-# AssistantListing getAssistants(opts)
+## getAssistants
+
+> AssistantListing getAssistants(opts)
 
 
 GET /api/v2/assistants
@@ -400,15 +401,15 @@ apiInstance.getAssistants(opts)
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Return the assistant by the given name. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AssistantListing**
 
-<a name="getAssistantsQueues"></a>
 
-# AssistantQueueListing getAssistantsQueues(opts)
+## getAssistantsQueues
+
+> AssistantQueueListing getAssistantsQueues(opts)
 
 
 GET /api/v2/assistants/queues
@@ -460,15 +461,15 @@ apiInstance.getAssistantsQueues(opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **queueIds** | **String** | Comma-separated identifiers of the queues that need to be retrieved. | [optional]  |
  **expand** | **String** | Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
-{: class="table table-striped"}
 
 ### Return type
 
 **AssistantQueueListing**
 
-<a name="patchAssistant"></a>
 
-# Assistant patchAssistant(assistantId, body)
+## patchAssistant
+
+> Assistant patchAssistant(assistantId, body)
 
 
 PATCH /api/v2/assistants/{assistantId}
@@ -512,15 +513,15 @@ apiInstance.patchAssistant(assistantId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Assistant**
 
-<a name="patchAssistantQueues"></a>
 
-# AssistantQueueListing patchAssistantQueues(assistantId, body)
+## patchAssistantQueues
+
+> AssistantQueueListing patchAssistantQueues(assistantId, body)
 
 
 PATCH /api/v2/assistants/{assistantId}/queues
@@ -564,15 +565,15 @@ apiInstance.patchAssistantQueues(assistantId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AssistantQueueListing**
 
-<a name="postAssistants"></a>
 
-# Assistant postAssistants(body)
+## postAssistants
+
+> Assistant postAssistants(body)
 
 
 POST /api/v2/assistants
@@ -614,15 +615,15 @@ apiInstance.postAssistants(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Assistant**
 
-<a name="putAssistantQueue"></a>
 
-# AssistantQueue putAssistantQueue(assistantId, queueId, body)
+## putAssistantQueue
+
+> AssistantQueue putAssistantQueue(assistantId, queueId, body)
 
 
 PUT /api/v2/assistants/{assistantId}/queues/{queueId}
@@ -668,7 +669,6 @@ apiInstance.putAssistantQueue(assistantId, queueId, body)
  **assistantId** | **String** | Assistant ID |  |
  **queueId** | **String** | Queue ID |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 

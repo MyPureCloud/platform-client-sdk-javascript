@@ -6,12 +6,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getWebmessagingMessages**](WebMessagingApi.html#getWebmessagingMessages) | **GET** /api/v2/webmessaging/messages | Get the messages for a web messaging session.
-{: class="table table-striped"}
+[**getWebmessagingMessages**](WebMessagingApi#getWebmessagingMessages) | **GET** /api/v2/webmessaging/messages | Get the messages for a web messaging session.
 
-<a name="getWebmessagingMessages"></a>
 
-# WebMessagingMessageEntityList getWebmessagingMessages(opts)
+
+## getWebmessagingMessages
+
+> WebMessagingMessageEntityList getWebmessagingMessages(opts)
 
 
 GET /api/v2/webmessaging/messages
@@ -52,7 +53,6 @@ apiInstance.getWebmessagingMessages(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 

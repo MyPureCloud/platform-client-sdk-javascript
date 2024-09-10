@@ -6,24 +6,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteMessagingSetting**](MessagingApi.html#deleteMessagingSetting) | **DELETE** /api/v2/messaging/settings/{messageSettingId} | Delete a messaging setting
-[**deleteMessagingSettingsDefault**](MessagingApi.html#deleteMessagingSettingsDefault) | **DELETE** /api/v2/messaging/settings/default | Delete the organization's default setting, a global default will be applied to integrations without settings
-[**deleteMessagingSupportedcontentSupportedContentId**](MessagingApi.html#deleteMessagingSupportedcontentSupportedContentId) | **DELETE** /api/v2/messaging/supportedcontent/{supportedContentId} | Delete a supported content profile
-[**getMessagingSetting**](MessagingApi.html#getMessagingSetting) | **GET** /api/v2/messaging/settings/{messageSettingId} | Get a messaging setting
-[**getMessagingSettings**](MessagingApi.html#getMessagingSettings) | **GET** /api/v2/messaging/settings | Get a list of messaging settings
-[**getMessagingSettingsDefault**](MessagingApi.html#getMessagingSettingsDefault) | **GET** /api/v2/messaging/settings/default | Get the organization's default settings that will be used as the default when creating an integration.
-[**getMessagingSupportedcontent**](MessagingApi.html#getMessagingSupportedcontent) | **GET** /api/v2/messaging/supportedcontent | Get a list of Supported Content profiles
-[**getMessagingSupportedcontentSupportedContentId**](MessagingApi.html#getMessagingSupportedcontentSupportedContentId) | **GET** /api/v2/messaging/supportedcontent/{supportedContentId} | Get a supported content profile
-[**patchMessagingSetting**](MessagingApi.html#patchMessagingSetting) | **PATCH** /api/v2/messaging/settings/{messageSettingId} | Update a messaging setting
-[**patchMessagingSupportedcontentSupportedContentId**](MessagingApi.html#patchMessagingSupportedcontentSupportedContentId) | **PATCH** /api/v2/messaging/supportedcontent/{supportedContentId} | Update a supported content profile
-[**postMessagingSettings**](MessagingApi.html#postMessagingSettings) | **POST** /api/v2/messaging/settings | Create a messaging setting
-[**postMessagingSupportedcontent**](MessagingApi.html#postMessagingSupportedcontent) | **POST** /api/v2/messaging/supportedcontent | Create a Supported Content profile
-[**putMessagingSettingsDefault**](MessagingApi.html#putMessagingSettingsDefault) | **PUT** /api/v2/messaging/settings/default | Set the organization's default settings that may be applied to an integration when it is created.
-{: class="table table-striped"}
+[**deleteMessagingSetting**](MessagingApi#deleteMessagingSetting) | **DELETE** /api/v2/messaging/settings/{messageSettingId} | Delete a messaging setting
+[**deleteMessagingSettingsDefault**](MessagingApi#deleteMessagingSettingsDefault) | **DELETE** /api/v2/messaging/settings/default | Delete the organization's default setting, a global default will be applied to integrations without settings
+[**deleteMessagingSupportedcontentSupportedContentId**](MessagingApi#deleteMessagingSupportedcontentSupportedContentId) | **DELETE** /api/v2/messaging/supportedcontent/{supportedContentId} | Delete a supported content profile
+[**getMessagingSetting**](MessagingApi#getMessagingSetting) | **GET** /api/v2/messaging/settings/{messageSettingId} | Get a messaging setting
+[**getMessagingSettings**](MessagingApi#getMessagingSettings) | **GET** /api/v2/messaging/settings | Get a list of messaging settings
+[**getMessagingSettingsDefault**](MessagingApi#getMessagingSettingsDefault) | **GET** /api/v2/messaging/settings/default | Get the organization's default settings that will be used as the default when creating an integration.
+[**getMessagingSupportedcontent**](MessagingApi#getMessagingSupportedcontent) | **GET** /api/v2/messaging/supportedcontent | Get a list of Supported Content profiles
+[**getMessagingSupportedcontentSupportedContentId**](MessagingApi#getMessagingSupportedcontentSupportedContentId) | **GET** /api/v2/messaging/supportedcontent/{supportedContentId} | Get a supported content profile
+[**patchMessagingSetting**](MessagingApi#patchMessagingSetting) | **PATCH** /api/v2/messaging/settings/{messageSettingId} | Update a messaging setting
+[**patchMessagingSupportedcontentSupportedContentId**](MessagingApi#patchMessagingSupportedcontentSupportedContentId) | **PATCH** /api/v2/messaging/supportedcontent/{supportedContentId} | Update a supported content profile
+[**postMessagingSettings**](MessagingApi#postMessagingSettings) | **POST** /api/v2/messaging/settings | Create a messaging setting
+[**postMessagingSupportedcontent**](MessagingApi#postMessagingSupportedcontent) | **POST** /api/v2/messaging/supportedcontent | Create a Supported Content profile
+[**putMessagingSettingsDefault**](MessagingApi#putMessagingSettingsDefault) | **PUT** /api/v2/messaging/settings/default | Set the organization's default settings that may be applied to an integration when it is created.
 
-<a name="deleteMessagingSetting"></a>
 
-# void deleteMessagingSetting(messageSettingId)
+
+## deleteMessagingSetting
+
+> void deleteMessagingSetting(messageSettingId)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -66,15 +67,15 @@ apiInstance.deleteMessagingSetting(messageSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Settings ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteMessagingSettingsDefault"></a>
 
-# void deleteMessagingSettingsDefault()
+## deleteMessagingSettingsDefault
+
+> void deleteMessagingSettingsDefault()
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -115,14 +116,14 @@ apiInstance.deleteMessagingSettingsDefault()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 void (no response body)
 
-<a name="deleteMessagingSupportedcontentSupportedContentId"></a>
 
-# void deleteMessagingSupportedcontentSupportedContentId(supportedContentId)
+## deleteMessagingSupportedcontentSupportedContentId
+
+> void deleteMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -167,15 +168,15 @@ apiInstance.deleteMessagingSupportedcontentSupportedContentId(supportedContentId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getMessagingSetting"></a>
 
-# MessagingSetting getMessagingSetting(messageSettingId)
+## getMessagingSetting
+
+> MessagingSetting getMessagingSetting(messageSettingId)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -218,15 +219,15 @@ apiInstance.getMessagingSetting(messageSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Settings ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingSetting**
 
-<a name="getMessagingSettings"></a>
 
-# MessagingConfigListing getMessagingSettings(opts)
+## getMessagingSettings
+
+> MessagingConfigListing getMessagingSettings(opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -273,15 +274,15 @@ apiInstance.getMessagingSettings(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingConfigListing**
 
-<a name="getMessagingSettingsDefault"></a>
 
-# MessagingSetting getMessagingSettingsDefault()
+## getMessagingSettingsDefault
+
+> MessagingSetting getMessagingSettingsDefault()
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -322,14 +323,14 @@ apiInstance.getMessagingSettingsDefault()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **MessagingSetting**
 
-<a name="getMessagingSupportedcontent"></a>
 
-# SupportedContentListing getMessagingSupportedcontent(opts)
+## getMessagingSupportedcontent
+
+> SupportedContentListing getMessagingSupportedcontent(opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -378,15 +379,15 @@ apiInstance.getMessagingSupportedcontent(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContentListing**
 
-<a name="getMessagingSupportedcontentSupportedContentId"></a>
 
-# SupportedContent getMessagingSupportedcontentSupportedContentId(supportedContentId)
+## getMessagingSupportedcontentSupportedContentId
+
+> SupportedContent getMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -431,15 +432,15 @@ apiInstance.getMessagingSupportedcontentSupportedContentId(supportedContentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContent**
 
-<a name="patchMessagingSetting"></a>
 
-# MessagingSetting patchMessagingSetting(messageSettingId, body)
+## patchMessagingSetting
+
+> MessagingSetting patchMessagingSetting(messageSettingId, body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -484,15 +485,15 @@ apiInstance.patchMessagingSetting(messageSettingId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Settings ID |  |
  **body** | **Object** | MessagingSetting |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingSetting**
 
-<a name="patchMessagingSupportedcontentSupportedContentId"></a>
 
-# SupportedContent patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
+## patchMessagingSupportedcontentSupportedContentId
+
+> SupportedContent patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -539,15 +540,15 @@ apiInstance.patchMessagingSupportedcontentSupportedContentId(supportedContentId,
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
  **body** | **Object** | SupportedContent |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContent**
 
-<a name="postMessagingSettings"></a>
 
-# MessagingSetting postMessagingSettings(body)
+## postMessagingSettings
+
+> MessagingSetting postMessagingSettings(body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -590,15 +591,15 @@ apiInstance.postMessagingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MessagingSetting |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingSetting**
 
-<a name="postMessagingSupportedcontent"></a>
 
-# SupportedContent postMessagingSupportedcontent(body)
+## postMessagingSupportedcontent
+
+> SupportedContent postMessagingSupportedcontent(body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -643,15 +644,15 @@ apiInstance.postMessagingSupportedcontent(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SupportedContent |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContent**
 
-<a name="putMessagingSettingsDefault"></a>
 
-# MessagingSetting putMessagingSettingsDefault(body)
+## putMessagingSettingsDefault
+
+> MessagingSetting putMessagingSettingsDefault(body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -696,7 +697,6 @@ apiInstance.putMessagingSettingsDefault(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Messaging Setting ID |  |
-{: class="table table-striped"}
 
 ### Return type
 

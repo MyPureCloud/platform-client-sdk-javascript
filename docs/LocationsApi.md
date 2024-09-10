@@ -6,19 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteLocation**](LocationsApi.html#deleteLocation) | **DELETE** /api/v2/locations/{locationId} | Delete a location
-[**getLocation**](LocationsApi.html#getLocation) | **GET** /api/v2/locations/{locationId} | Get Location by ID.
-[**getLocationSublocations**](LocationsApi.html#getLocationSublocations) | **GET** /api/v2/locations/{locationId}/sublocations | Get sublocations for location ID.
-[**getLocations**](LocationsApi.html#getLocations) | **GET** /api/v2/locations | Get a list of all locations.
-[**getLocationsSearch**](LocationsApi.html#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
-[**patchLocation**](LocationsApi.html#patchLocation) | **PATCH** /api/v2/locations/{locationId} | Update a location
-[**postLocations**](LocationsApi.html#postLocations) | **POST** /api/v2/locations | Create a location
-[**postLocationsSearch**](LocationsApi.html#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
-{: class="table table-striped"}
+[**deleteLocation**](LocationsApi#deleteLocation) | **DELETE** /api/v2/locations/{locationId} | Delete a location
+[**getLocation**](LocationsApi#getLocation) | **GET** /api/v2/locations/{locationId} | Get Location by ID.
+[**getLocationSublocations**](LocationsApi#getLocationSublocations) | **GET** /api/v2/locations/{locationId}/sublocations | Get sublocations for location ID.
+[**getLocations**](LocationsApi#getLocations) | **GET** /api/v2/locations | Get a list of all locations.
+[**getLocationsSearch**](LocationsApi#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
+[**patchLocation**](LocationsApi#patchLocation) | **PATCH** /api/v2/locations/{locationId} | Update a location
+[**postLocations**](LocationsApi#postLocations) | **POST** /api/v2/locations | Create a location
+[**postLocationsSearch**](LocationsApi#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
 
-<a name="deleteLocation"></a>
 
-# void deleteLocation(locationId)
+
+## deleteLocation
+
+> void deleteLocation(locationId)
 
 
 DELETE /api/v2/locations/{locationId}
@@ -60,15 +61,15 @@ apiInstance.deleteLocation(locationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getLocation"></a>
 
-# LocationDefinition getLocation(locationId, opts)
+## getLocation
+
+> LocationDefinition getLocation(locationId, opts)
 
 
 GET /api/v2/locations/{locationId}
@@ -112,15 +113,15 @@ apiInstance.getLocation(locationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: images, addressVerificationDetails |
-{: class="table table-striped"}
 
 ### Return type
 
 **LocationDefinition**
 
-<a name="getLocationSublocations"></a>
 
-# LocationEntityListing getLocationSublocations(locationId)
+## getLocationSublocations
+
+> LocationEntityListing getLocationSublocations(locationId)
 
 
 GET /api/v2/locations/{locationId}/sublocations
@@ -160,15 +161,15 @@ apiInstance.getLocationSublocations(locationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LocationEntityListing**
 
-<a name="getLocations"></a>
 
-# LocationEntityListing getLocations(opts)
+## getLocations
+
+> LocationEntityListing getLocations(opts)
 
 
 GET /api/v2/locations
@@ -216,15 +217,15 @@ apiInstance.getLocations(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **id** | **[String]** | id | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] <br />**Values**: asc, desc |
-{: class="table table-striped"}
 
 ### Return type
 
 **LocationEntityListing**
 
-<a name="getLocationsSearch"></a>
 
-# LocationsSearchResponse getLocationsSearch(q64, opts)
+## getLocationsSearch
+
+> LocationsSearchResponse getLocationsSearch(q64, opts)
 
 
 GET /api/v2/locations/search
@@ -268,15 +269,15 @@ apiInstance.getLocationsSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
-{: class="table table-striped"}
 
 ### Return type
 
 **LocationsSearchResponse**
 
-<a name="patchLocation"></a>
 
-# LocationDefinition patchLocation(locationId, body)
+## patchLocation
+
+> LocationDefinition patchLocation(locationId, body)
 
 
 PATCH /api/v2/locations/{locationId}
@@ -320,15 +321,15 @@ apiInstance.patchLocation(locationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
  **body** | **Object** | Location |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LocationDefinition**
 
-<a name="postLocations"></a>
 
-# LocationDefinition postLocations(body)
+## postLocations
+
+> LocationDefinition postLocations(body)
 
 
 POST /api/v2/locations
@@ -370,15 +371,15 @@ apiInstance.postLocations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Location |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LocationDefinition**
 
-<a name="postLocationsSearch"></a>
 
-# LocationsSearchResponse postLocationsSearch(body)
+## postLocationsSearch
+
+> LocationsSearchResponse postLocationsSearch(body)
 
 
 POST /api/v2/locations/search
@@ -418,7 +419,6 @@ apiInstance.postLocationsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 

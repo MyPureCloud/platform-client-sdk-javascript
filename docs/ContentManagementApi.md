@@ -6,47 +6,48 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteContentmanagementDocument**](ContentManagementApi.html#deleteContentmanagementDocument) | **DELETE** /api/v2/contentmanagement/documents/{documentId} | Delete a document.
-[**deleteContentmanagementShare**](ContentManagementApi.html#deleteContentmanagementShare) | **DELETE** /api/v2/contentmanagement/shares/{shareId} | Deletes an existing share.
-[**deleteContentmanagementStatusStatusId**](ContentManagementApi.html#deleteContentmanagementStatusStatusId) | **DELETE** /api/v2/contentmanagement/status/{statusId} | Cancel the command for this status
-[**deleteContentmanagementWorkspace**](ContentManagementApi.html#deleteContentmanagementWorkspace) | **DELETE** /api/v2/contentmanagement/workspaces/{workspaceId} | Delete a workspace
-[**deleteContentmanagementWorkspaceMember**](ContentManagementApi.html#deleteContentmanagementWorkspaceMember) | **DELETE** /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} | Delete a member from a workspace
-[**deleteContentmanagementWorkspaceTagvalue**](ContentManagementApi.html#deleteContentmanagementWorkspaceTagvalue) | **DELETE** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} | Delete workspace tag
-[**getContentmanagementDocument**](ContentManagementApi.html#getContentmanagementDocument) | **GET** /api/v2/contentmanagement/documents/{documentId} | Get a document.
-[**getContentmanagementDocumentContent**](ContentManagementApi.html#getContentmanagementDocumentContent) | **GET** /api/v2/contentmanagement/documents/{documentId}/content | Download a document.
-[**getContentmanagementDocuments**](ContentManagementApi.html#getContentmanagementDocuments) | **GET** /api/v2/contentmanagement/documents | Get a list of documents.
-[**getContentmanagementQuery**](ContentManagementApi.html#getContentmanagementQuery) | **GET** /api/v2/contentmanagement/query | Query content
-[**getContentmanagementSecurityprofile**](ContentManagementApi.html#getContentmanagementSecurityprofile) | **GET** /api/v2/contentmanagement/securityprofiles/{securityProfileId} | Get a Security Profile
-[**getContentmanagementSecurityprofiles**](ContentManagementApi.html#getContentmanagementSecurityprofiles) | **GET** /api/v2/contentmanagement/securityprofiles | Get a List of Security Profiles
-[**getContentmanagementShare**](ContentManagementApi.html#getContentmanagementShare) | **GET** /api/v2/contentmanagement/shares/{shareId} | Retrieve details about an existing share.
-[**getContentmanagementSharedSharedId**](ContentManagementApi.html#getContentmanagementSharedSharedId) | **GET** /api/v2/contentmanagement/shared/{sharedId} | Get shared documents. Securely download a shared document.
-[**getContentmanagementShares**](ContentManagementApi.html#getContentmanagementShares) | **GET** /api/v2/contentmanagement/shares | Gets a list of shares.  You must specify at least one filter (e.g. entityId).
-[**getContentmanagementStatus**](ContentManagementApi.html#getContentmanagementStatus) | **GET** /api/v2/contentmanagement/status | Get a list of statuses for pending operations
-[**getContentmanagementStatusStatusId**](ContentManagementApi.html#getContentmanagementStatusStatusId) | **GET** /api/v2/contentmanagement/status/{statusId} | Get a status.
-[**getContentmanagementUsage**](ContentManagementApi.html#getContentmanagementUsage) | **GET** /api/v2/contentmanagement/usage | Get usage details.
-[**getContentmanagementWorkspace**](ContentManagementApi.html#getContentmanagementWorkspace) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId} | Get a workspace.
-[**getContentmanagementWorkspaceDocuments**](ContentManagementApi.html#getContentmanagementWorkspaceDocuments) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/documents | Get a list of documents.
-[**getContentmanagementWorkspaceMember**](ContentManagementApi.html#getContentmanagementWorkspaceMember) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} | Get a workspace member
-[**getContentmanagementWorkspaceMembers**](ContentManagementApi.html#getContentmanagementWorkspaceMembers) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/members | Get a list workspace members
-[**getContentmanagementWorkspaceTagvalue**](ContentManagementApi.html#getContentmanagementWorkspaceTagvalue) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} | Get a workspace tag
-[**getContentmanagementWorkspaceTagvalues**](ContentManagementApi.html#getContentmanagementWorkspaceTagvalues) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues | Get a list of workspace tags
-[**getContentmanagementWorkspaces**](ContentManagementApi.html#getContentmanagementWorkspaces) | **GET** /api/v2/contentmanagement/workspaces | Get a list of workspaces.
-[**postContentmanagementDocument**](ContentManagementApi.html#postContentmanagementDocument) | **POST** /api/v2/contentmanagement/documents/{documentId} | Update a document.
-[**postContentmanagementDocumentContent**](ContentManagementApi.html#postContentmanagementDocumentContent) | **POST** /api/v2/contentmanagement/documents/{documentId}/content | Replace the contents of a document.
-[**postContentmanagementDocuments**](ContentManagementApi.html#postContentmanagementDocuments) | **POST** /api/v2/contentmanagement/documents | Add a document.
-[**postContentmanagementQuery**](ContentManagementApi.html#postContentmanagementQuery) | **POST** /api/v2/contentmanagement/query | Query content
-[**postContentmanagementShares**](ContentManagementApi.html#postContentmanagementShares) | **POST** /api/v2/contentmanagement/shares | Creates a new share or updates an existing share if the entity has already been shared
-[**postContentmanagementWorkspaceTagvalues**](ContentManagementApi.html#postContentmanagementWorkspaceTagvalues) | **POST** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues | Create a workspace tag
-[**postContentmanagementWorkspaceTagvaluesQuery**](ContentManagementApi.html#postContentmanagementWorkspaceTagvaluesQuery) | **POST** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query | Perform a prefix query on tags in the workspace
-[**postContentmanagementWorkspaces**](ContentManagementApi.html#postContentmanagementWorkspaces) | **POST** /api/v2/contentmanagement/workspaces | Create a group workspace
-[**putContentmanagementWorkspace**](ContentManagementApi.html#putContentmanagementWorkspace) | **PUT** /api/v2/contentmanagement/workspaces/{workspaceId} | Update a workspace
-[**putContentmanagementWorkspaceMember**](ContentManagementApi.html#putContentmanagementWorkspaceMember) | **PUT** /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} | Add a member to a workspace
-[**putContentmanagementWorkspaceTagvalue**](ContentManagementApi.html#putContentmanagementWorkspaceTagvalue) | **PUT** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} | Update a workspace tag. Will update all documents with the new tag value.
-{: class="table table-striped"}
+[**deleteContentmanagementDocument**](ContentManagementApi#deleteContentmanagementDocument) | **DELETE** /api/v2/contentmanagement/documents/{documentId} | Delete a document.
+[**deleteContentmanagementShare**](ContentManagementApi#deleteContentmanagementShare) | **DELETE** /api/v2/contentmanagement/shares/{shareId} | Deletes an existing share.
+[**deleteContentmanagementStatusStatusId**](ContentManagementApi#deleteContentmanagementStatusStatusId) | **DELETE** /api/v2/contentmanagement/status/{statusId} | Cancel the command for this status
+[**deleteContentmanagementWorkspace**](ContentManagementApi#deleteContentmanagementWorkspace) | **DELETE** /api/v2/contentmanagement/workspaces/{workspaceId} | Delete a workspace
+[**deleteContentmanagementWorkspaceMember**](ContentManagementApi#deleteContentmanagementWorkspaceMember) | **DELETE** /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} | Delete a member from a workspace
+[**deleteContentmanagementWorkspaceTagvalue**](ContentManagementApi#deleteContentmanagementWorkspaceTagvalue) | **DELETE** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} | Delete workspace tag
+[**getContentmanagementDocument**](ContentManagementApi#getContentmanagementDocument) | **GET** /api/v2/contentmanagement/documents/{documentId} | Get a document.
+[**getContentmanagementDocumentContent**](ContentManagementApi#getContentmanagementDocumentContent) | **GET** /api/v2/contentmanagement/documents/{documentId}/content | Download a document.
+[**getContentmanagementDocuments**](ContentManagementApi#getContentmanagementDocuments) | **GET** /api/v2/contentmanagement/documents | Get a list of documents.
+[**getContentmanagementQuery**](ContentManagementApi#getContentmanagementQuery) | **GET** /api/v2/contentmanagement/query | Query content
+[**getContentmanagementSecurityprofile**](ContentManagementApi#getContentmanagementSecurityprofile) | **GET** /api/v2/contentmanagement/securityprofiles/{securityProfileId} | Get a Security Profile
+[**getContentmanagementSecurityprofiles**](ContentManagementApi#getContentmanagementSecurityprofiles) | **GET** /api/v2/contentmanagement/securityprofiles | Get a List of Security Profiles
+[**getContentmanagementShare**](ContentManagementApi#getContentmanagementShare) | **GET** /api/v2/contentmanagement/shares/{shareId} | Retrieve details about an existing share.
+[**getContentmanagementSharedSharedId**](ContentManagementApi#getContentmanagementSharedSharedId) | **GET** /api/v2/contentmanagement/shared/{sharedId} | Get shared documents. Securely download a shared document.
+[**getContentmanagementShares**](ContentManagementApi#getContentmanagementShares) | **GET** /api/v2/contentmanagement/shares | Gets a list of shares.  You must specify at least one filter (e.g. entityId).
+[**getContentmanagementStatus**](ContentManagementApi#getContentmanagementStatus) | **GET** /api/v2/contentmanagement/status | Get a list of statuses for pending operations
+[**getContentmanagementStatusStatusId**](ContentManagementApi#getContentmanagementStatusStatusId) | **GET** /api/v2/contentmanagement/status/{statusId} | Get a status.
+[**getContentmanagementUsage**](ContentManagementApi#getContentmanagementUsage) | **GET** /api/v2/contentmanagement/usage | Get usage details.
+[**getContentmanagementWorkspace**](ContentManagementApi#getContentmanagementWorkspace) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId} | Get a workspace.
+[**getContentmanagementWorkspaceDocuments**](ContentManagementApi#getContentmanagementWorkspaceDocuments) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/documents | Get a list of documents.
+[**getContentmanagementWorkspaceMember**](ContentManagementApi#getContentmanagementWorkspaceMember) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} | Get a workspace member
+[**getContentmanagementWorkspaceMembers**](ContentManagementApi#getContentmanagementWorkspaceMembers) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/members | Get a list workspace members
+[**getContentmanagementWorkspaceTagvalue**](ContentManagementApi#getContentmanagementWorkspaceTagvalue) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} | Get a workspace tag
+[**getContentmanagementWorkspaceTagvalues**](ContentManagementApi#getContentmanagementWorkspaceTagvalues) | **GET** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues | Get a list of workspace tags
+[**getContentmanagementWorkspaces**](ContentManagementApi#getContentmanagementWorkspaces) | **GET** /api/v2/contentmanagement/workspaces | Get a list of workspaces.
+[**postContentmanagementDocument**](ContentManagementApi#postContentmanagementDocument) | **POST** /api/v2/contentmanagement/documents/{documentId} | Update a document.
+[**postContentmanagementDocumentContent**](ContentManagementApi#postContentmanagementDocumentContent) | **POST** /api/v2/contentmanagement/documents/{documentId}/content | Replace the contents of a document.
+[**postContentmanagementDocuments**](ContentManagementApi#postContentmanagementDocuments) | **POST** /api/v2/contentmanagement/documents | Add a document.
+[**postContentmanagementQuery**](ContentManagementApi#postContentmanagementQuery) | **POST** /api/v2/contentmanagement/query | Query content
+[**postContentmanagementShares**](ContentManagementApi#postContentmanagementShares) | **POST** /api/v2/contentmanagement/shares | Creates a new share or updates an existing share if the entity has already been shared
+[**postContentmanagementWorkspaceTagvalues**](ContentManagementApi#postContentmanagementWorkspaceTagvalues) | **POST** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues | Create a workspace tag
+[**postContentmanagementWorkspaceTagvaluesQuery**](ContentManagementApi#postContentmanagementWorkspaceTagvaluesQuery) | **POST** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query | Perform a prefix query on tags in the workspace
+[**postContentmanagementWorkspaces**](ContentManagementApi#postContentmanagementWorkspaces) | **POST** /api/v2/contentmanagement/workspaces | Create a group workspace
+[**putContentmanagementWorkspace**](ContentManagementApi#putContentmanagementWorkspace) | **PUT** /api/v2/contentmanagement/workspaces/{workspaceId} | Update a workspace
+[**putContentmanagementWorkspaceMember**](ContentManagementApi#putContentmanagementWorkspaceMember) | **PUT** /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} | Add a member to a workspace
+[**putContentmanagementWorkspaceTagvalue**](ContentManagementApi#putContentmanagementWorkspaceTagvalue) | **PUT** /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} | Update a workspace tag. Will update all documents with the new tag value.
 
-<a name="deleteContentmanagementDocument"></a>
 
-# void deleteContentmanagementDocument(documentId, opts)
+
+## deleteContentmanagementDocument
+
+> void deleteContentmanagementDocument(documentId, opts)
 
 
 DELETE /api/v2/contentmanagement/documents/{documentId}
@@ -90,15 +91,15 @@ apiInstance.deleteContentmanagementDocument(documentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **override** | **Boolean** | Override any lock on the document | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteContentmanagementShare"></a>
 
-# void deleteContentmanagementShare(shareId)
+## deleteContentmanagementShare
+
+> void deleteContentmanagementShare(shareId)
 
 
 DELETE /api/v2/contentmanagement/shares/{shareId}
@@ -140,15 +141,15 @@ apiInstance.deleteContentmanagementShare(shareId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **shareId** | **String** | Share ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteContentmanagementStatusStatusId"></a>
 
-# void deleteContentmanagementStatusStatusId(statusId)
+## deleteContentmanagementStatusStatusId
+
+> void deleteContentmanagementStatusStatusId(statusId)
 
 
 DELETE /api/v2/contentmanagement/status/{statusId}
@@ -188,15 +189,15 @@ apiInstance.deleteContentmanagementStatusStatusId(statusId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **statusId** | **String** | Status ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteContentmanagementWorkspace"></a>
 
-# void deleteContentmanagementWorkspace(workspaceId, opts)
+## deleteContentmanagementWorkspace
+
+> void deleteContentmanagementWorkspace(workspaceId, opts)
 
 
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}
@@ -240,15 +241,15 @@ apiInstance.deleteContentmanagementWorkspace(workspaceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **moveChildrenToWorkspaceId** | **String** | New location for objects in deleted workspace. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteContentmanagementWorkspaceMember"></a>
 
-# void deleteContentmanagementWorkspaceMember(workspaceId, memberId)
+## deleteContentmanagementWorkspaceMember
+
+> void deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 
 
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
@@ -290,15 +291,15 @@ apiInstance.deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **memberId** | **String** | Member ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteContentmanagementWorkspaceTagvalue"></a>
 
-# void deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
+## deleteContentmanagementWorkspaceTagvalue
+
+> void deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
 
 
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
@@ -342,15 +343,15 @@ apiInstance.deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **tagId** | **String** | Tag ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getContentmanagementDocument"></a>
 
-# Document getContentmanagementDocument(documentId, opts)
+## getContentmanagementDocument
+
+> Document getContentmanagementDocument(documentId, opts)
 
 
 GET /api/v2/contentmanagement/documents/{documentId}
@@ -394,15 +395,15 @@ apiInstance.getContentmanagementDocument(documentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: lockInfo, acl, workspace |
-{: class="table table-striped"}
 
 ### Return type
 
 **Document**
 
-<a name="getContentmanagementDocumentContent"></a>
 
-# DownloadResponse getContentmanagementDocumentContent(documentId, opts)
+## getContentmanagementDocumentContent
+
+> DownloadResponse getContentmanagementDocumentContent(documentId, opts)
 
 
 GET /api/v2/contentmanagement/documents/{documentId}/content
@@ -448,15 +449,15 @@ apiInstance.getContentmanagementDocumentContent(documentId, opts)
  **documentId** | **String** | Document ID |  |
  **disposition** | **String** | Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional] <br />**Values**: attachment, inline |
  **contentType** | **String** | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DownloadResponse**
 
-<a name="getContentmanagementDocuments"></a>
 
-# DocumentEntityListing getContentmanagementDocuments(workspaceId, opts)
+## getContentmanagementDocuments
+
+> DocumentEntityListing getContentmanagementDocuments(workspaceId, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -511,15 +512,15 @@ apiInstance.getContentmanagementDocuments(workspaceId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | name or dateCreated | [optional]  |
  **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DocumentEntityListing**
 
-<a name="getContentmanagementQuery"></a>
 
-# QueryResults getContentmanagementQuery(queryPhrase, opts)
+## getContentmanagementQuery
+
+> QueryResults getContentmanagementQuery(queryPhrase, opts)
 
 
 GET /api/v2/contentmanagement/query
@@ -571,15 +572,15 @@ apiInstance.getContentmanagementQuery(queryPhrase, opts)
  **sortBy** | **String** | name or dateCreated | [optional] [default to name] |
  **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
-{: class="table table-striped"}
 
 ### Return type
 
 **QueryResults**
 
-<a name="getContentmanagementSecurityprofile"></a>
 
-# SecurityProfile getContentmanagementSecurityprofile(securityProfileId)
+## getContentmanagementSecurityprofile
+
+> SecurityProfile getContentmanagementSecurityprofile(securityProfileId)
 
 
 GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}
@@ -619,15 +620,15 @@ apiInstance.getContentmanagementSecurityprofile(securityProfileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **securityProfileId** | **String** | Security Profile Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SecurityProfile**
 
-<a name="getContentmanagementSecurityprofiles"></a>
 
-# SecurityProfileEntityListing getContentmanagementSecurityprofiles()
+## getContentmanagementSecurityprofiles
+
+> SecurityProfileEntityListing getContentmanagementSecurityprofiles()
 
 
 GET /api/v2/contentmanagement/securityprofiles
@@ -663,14 +664,14 @@ apiInstance.getContentmanagementSecurityprofiles()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **SecurityProfileEntityListing**
 
-<a name="getContentmanagementShare"></a>
 
-# Share getContentmanagementShare(shareId, opts)
+## getContentmanagementShare
+
+> Share getContentmanagementShare(shareId, opts)
 
 
 GET /api/v2/contentmanagement/shares/{shareId}
@@ -714,15 +715,15 @@ apiInstance.getContentmanagementShare(shareId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **shareId** | **String** | Share ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
-{: class="table table-striped"}
 
 ### Return type
 
 **Share**
 
-<a name="getContentmanagementSharedSharedId"></a>
 
-# SharedResponse getContentmanagementSharedSharedId(sharedId, opts)
+## getContentmanagementSharedSharedId
+
+> SharedResponse getContentmanagementSharedSharedId(sharedId, opts)
 
 
 GET /api/v2/contentmanagement/shared/{sharedId}
@@ -774,15 +775,15 @@ apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
  **disposition** | **String** | Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none |
  **contentType** | **String** | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: document.acl |
-{: class="table table-striped"}
 
 ### Return type
 
 **SharedResponse**
 
-<a name="getContentmanagementShares"></a>
 
-# ShareEntityListing getContentmanagementShares(opts)
+## getContentmanagementShares
+
+> ShareEntityListing getContentmanagementShares(opts)
 
 
 GET /api/v2/contentmanagement/shares
@@ -832,15 +833,15 @@ apiInstance.getContentmanagementShares(opts)
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ShareEntityListing**
 
-<a name="getContentmanagementStatus"></a>
 
-# CommandStatusEntityListing getContentmanagementStatus(opts)
+## getContentmanagementStatus
+
+> CommandStatusEntityListing getContentmanagementStatus(opts)
 
 
 GET /api/v2/contentmanagement/status
@@ -884,15 +885,15 @@ apiInstance.getContentmanagementStatus(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **CommandStatusEntityListing**
 
-<a name="getContentmanagementStatusStatusId"></a>
 
-# CommandStatus getContentmanagementStatusStatusId(statusId)
+## getContentmanagementStatusStatusId
+
+> CommandStatus getContentmanagementStatusStatusId(statusId)
 
 
 GET /api/v2/contentmanagement/status/{statusId}
@@ -932,15 +933,15 @@ apiInstance.getContentmanagementStatusStatusId(statusId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **statusId** | **String** | Status ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CommandStatus**
 
-<a name="getContentmanagementUsage"></a>
 
-# Usage getContentmanagementUsage()
+## getContentmanagementUsage
+
+> Usage getContentmanagementUsage()
 
 
 GET /api/v2/contentmanagement/usage
@@ -976,14 +977,14 @@ apiInstance.getContentmanagementUsage()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Usage**
 
-<a name="getContentmanagementWorkspace"></a>
 
-# Workspace getContentmanagementWorkspace(workspaceId, opts)
+## getContentmanagementWorkspace
+
+> Workspace getContentmanagementWorkspace(workspaceId, opts)
 
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}
@@ -1027,15 +1028,15 @@ apiInstance.getContentmanagementWorkspace(workspaceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workspace**
 
-<a name="getContentmanagementWorkspaceDocuments"></a>
 
-# DocumentEntityListing getContentmanagementWorkspaceDocuments(workspaceId, opts)
+## getContentmanagementWorkspaceDocuments
+
+> DocumentEntityListing getContentmanagementWorkspaceDocuments(workspaceId, opts)
 
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents
@@ -1087,15 +1088,15 @@ apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | name or dateCreated | [optional]  |
  **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DocumentEntityListing**
 
-<a name="getContentmanagementWorkspaceMember"></a>
 
-# WorkspaceMember getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
+## getContentmanagementWorkspaceMember
+
+> WorkspaceMember getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
 
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
@@ -1141,15 +1142,15 @@ apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
  **workspaceId** | **String** | Workspace ID |  |
  **memberId** | **String** | Member ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkspaceMember**
 
-<a name="getContentmanagementWorkspaceMembers"></a>
 
-# WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(workspaceId, opts)
+## getContentmanagementWorkspaceMembers
+
+> WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(workspaceId, opts)
 
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/members
@@ -1197,15 +1198,15 @@ apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkspaceMemberEntityListing**
 
-<a name="getContentmanagementWorkspaceTagvalue"></a>
 
-# TagValue getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
+## getContentmanagementWorkspaceTagvalue
+
+> TagValue getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
 
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
@@ -1251,15 +1252,15 @@ apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
  **workspaceId** | **String** | Workspace ID |  |
  **tagId** | **String** | Tag ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
-{: class="table table-striped"}
 
 ### Return type
 
 **TagValue**
 
-<a name="getContentmanagementWorkspaceTagvalues"></a>
 
-# TagValueEntityListing getContentmanagementWorkspaceTagvalues(workspaceId, opts)
+## getContentmanagementWorkspaceTagvalues
+
+> TagValueEntityListing getContentmanagementWorkspaceTagvalues(workspaceId, opts)
 
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues
@@ -1309,15 +1310,15 @@ apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
-{: class="table table-striped"}
 
 ### Return type
 
 **TagValueEntityListing**
 
-<a name="getContentmanagementWorkspaces"></a>
 
-# WorkspaceEntityListing getContentmanagementWorkspaces(opts)
+## getContentmanagementWorkspaces
+
+> WorkspaceEntityListing getContentmanagementWorkspaces(opts)
 
 
 GET /api/v2/contentmanagement/workspaces
@@ -1367,15 +1368,15 @@ apiInstance.getContentmanagementWorkspaces(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **access** | **[String]** | Requested access level. | [optional] <br />**Values**: content, admin, document:create, document:viewContent, document:viewMetadata, document:download, document:delete, document:update, document:share, document:shareView, document:email, document:print, document:auditView, document:replace, document:tag, tag:create, tag:view, tag:update, tag:apply, tag:remove, tag:delete |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkspaceEntityListing**
 
-<a name="postContentmanagementDocument"></a>
 
-# Document postContentmanagementDocument(documentId, body, opts)
+## postContentmanagementDocument
+
+> Document postContentmanagementDocument(documentId, body, opts)
 
 
 POST /api/v2/contentmanagement/documents/{documentId}
@@ -1423,15 +1424,15 @@ apiInstance.postContentmanagementDocument(documentId, body, opts)
  **body** | **Object** | Document |  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: acl |
  **override** | **Boolean** | Override any lock on the document | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Document**
 
-<a name="postContentmanagementDocumentContent"></a>
 
-# ReplaceResponse postContentmanagementDocumentContent(documentId, body, opts)
+## postContentmanagementDocumentContent
+
+> ReplaceResponse postContentmanagementDocumentContent(documentId, body, opts)
 
 
 POST /api/v2/contentmanagement/documents/{documentId}/content
@@ -1477,15 +1478,15 @@ apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
  **documentId** | **String** | Document ID |  |
  **body** | **Object** | Replace Request |  |
  **override** | **Boolean** | Override any lock on the document | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ReplaceResponse**
 
-<a name="postContentmanagementDocuments"></a>
 
-# Document postContentmanagementDocuments(body, opts)
+## postContentmanagementDocuments
+
+> Document postContentmanagementDocuments(body, opts)
 
 
 POST /api/v2/contentmanagement/documents
@@ -1533,15 +1534,15 @@ apiInstance.postContentmanagementDocuments(body, opts)
  **copySource** | **String** | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source. | [optional]  |
  **moveSource** | **String** | Move a document to a new workspace. Provide a document ID as the move source. | [optional]  |
  **override** | **Boolean** | Override any lock on the source document | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Document**
 
-<a name="postContentmanagementQuery"></a>
 
-# QueryResults postContentmanagementQuery(body, opts)
+## postContentmanagementQuery
+
+> QueryResults postContentmanagementQuery(body, opts)
 
 
 POST /api/v2/contentmanagement/query
@@ -1585,15 +1586,15 @@ apiInstance.postContentmanagementQuery(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Allows for a filtered query returning facet information |  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: acl, workspace |
-{: class="table table-striped"}
 
 ### Return type
 
 **QueryResults**
 
-<a name="postContentmanagementShares"></a>
 
-# CreateShareResponse postContentmanagementShares(body)
+## postContentmanagementShares
+
+> CreateShareResponse postContentmanagementShares(body)
 
 
 POST /api/v2/contentmanagement/shares
@@ -1633,15 +1634,15 @@ apiInstance.postContentmanagementShares(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | CreateShareRequest - entity id and type and a single member or list of members are required |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CreateShareResponse**
 
-<a name="postContentmanagementWorkspaceTagvalues"></a>
 
-# TagValue postContentmanagementWorkspaceTagvalues(workspaceId, body)
+## postContentmanagementWorkspaceTagvalues
+
+> TagValue postContentmanagementWorkspaceTagvalues(workspaceId, body)
 
 
 POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues
@@ -1683,15 +1684,15 @@ apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **body** | **Object** | tag |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TagValue**
 
-<a name="postContentmanagementWorkspaceTagvaluesQuery"></a>
 
-# TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts)
+## postContentmanagementWorkspaceTagvaluesQuery
+
+> TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts)
 
 
 POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query
@@ -1737,15 +1738,15 @@ apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts
  **workspaceId** | **String** | Workspace ID |  |
  **body** | **Object** | query |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
-{: class="table table-striped"}
 
 ### Return type
 
 **TagValueEntityListing**
 
-<a name="postContentmanagementWorkspaces"></a>
 
-# Workspace postContentmanagementWorkspaces(body)
+## postContentmanagementWorkspaces
+
+> Workspace postContentmanagementWorkspaces(body)
 
 
 POST /api/v2/contentmanagement/workspaces
@@ -1785,15 +1786,15 @@ apiInstance.postContentmanagementWorkspaces(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Workspace |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workspace**
 
-<a name="putContentmanagementWorkspace"></a>
 
-# Workspace putContentmanagementWorkspace(workspaceId, body)
+## putContentmanagementWorkspace
+
+> Workspace putContentmanagementWorkspace(workspaceId, body)
 
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}
@@ -1835,15 +1836,15 @@ apiInstance.putContentmanagementWorkspace(workspaceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **body** | **Object** | Workspace |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workspace**
 
-<a name="putContentmanagementWorkspaceMember"></a>
 
-# WorkspaceMember putContentmanagementWorkspaceMember(workspaceId, memberId, body)
+## putContentmanagementWorkspaceMember
+
+> WorkspaceMember putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
@@ -1887,15 +1888,15 @@ apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
  **workspaceId** | **String** | Workspace ID |  |
  **memberId** | **String** | Member ID |  |
  **body** | **Object** | Workspace Member |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkspaceMember**
 
-<a name="putContentmanagementWorkspaceTagvalue"></a>
 
-# TagValue putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
+## putContentmanagementWorkspaceTagvalue
+
+> TagValue putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
@@ -1939,7 +1940,6 @@ apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
  **workspaceId** | **String** | Workspace ID |  |
  **tagId** | **String** | Tag ID |  |
  **body** | **Object** | Workspace |  |
-{: class="table table-striped"}
 
 ### Return type
 

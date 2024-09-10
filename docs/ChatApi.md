@@ -6,43 +6,44 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteChatsRoomMessage**](ChatApi.html#deleteChatsRoomMessage) | **DELETE** /api/v2/chats/rooms/{roomJid}/messages/{messageId} | Delete a message in a room
-[**deleteChatsRoomMessagesPin**](ChatApi.html#deleteChatsRoomMessagesPin) | **DELETE** /api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId} | Remove a pinned message from a room
-[**deleteChatsRoomParticipant**](ChatApi.html#deleteChatsRoomParticipant) | **DELETE** /api/v2/chats/rooms/{roomJid}/participants/{userId} | Remove a user from a room.
-[**deleteChatsUserMessage**](ChatApi.html#deleteChatsUserMessage) | **DELETE** /api/v2/chats/users/{userId}/messages/{messageId} | Delete a message to a user
-[**deleteChatsUserMessagesPin**](ChatApi.html#deleteChatsUserMessagesPin) | **DELETE** /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId} | Remove a pinned message from a 1on1
-[**getChatsMessage**](ChatApi.html#getChatsMessage) | **GET** /api/v2/chats/messages/{messageId} | Get a message
-[**getChatsRoom**](ChatApi.html#getChatsRoom) | **GET** /api/v2/chats/rooms/{roomJid} | Get a room
-[**getChatsRoomMessage**](ChatApi.html#getChatsRoomMessage) | **GET** /api/v2/chats/rooms/{roomJid}/messages/{messageIds} | Get messages by id(s) from a room
-[**getChatsRoomMessages**](ChatApi.html#getChatsRoomMessages) | **GET** /api/v2/chats/rooms/{roomJid}/messages | Get a room's message history
-[**getChatsRoomParticipant**](ChatApi.html#getChatsRoomParticipant) | **GET** /api/v2/chats/rooms/{roomJid}/participants/{participantJid} | Get a room participant
-[**getChatsRoomParticipants**](ChatApi.html#getChatsRoomParticipants) | **GET** /api/v2/chats/rooms/{roomJid}/participants | Get room participants in a room
-[**getChatsSettings**](ChatApi.html#getChatsSettings) | **GET** /api/v2/chats/settings | Get Chat Settings.
-[**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | **GET** /api/v2/chats/threads/{threadId}/messages | Get history by thread
-[**getChatsUser**](ChatApi.html#getChatsUser) | **GET** /api/v2/chats/users/{userId} | Get information for a 1on1
-[**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | **GET** /api/v2/chats/users/{userId}/messages/{messageIds} | Get messages by id(s) from a 1on1
-[**getChatsUserMessages**](ChatApi.html#getChatsUserMessages) | **GET** /api/v2/chats/users/{userId}/messages | Get 1on1 History between a user
-[**getChatsUserSettings**](ChatApi.html#getChatsUserSettings) | **GET** /api/v2/chats/users/{userId}/settings | Get a user's chat settings
-[**getChatsUsersMeSettings**](ChatApi.html#getChatsUsersMeSettings) | **GET** /api/v2/chats/users/me/settings | Get a user's chat settings
-[**patchChatsRoom**](ChatApi.html#patchChatsRoom) | **PATCH** /api/v2/chats/rooms/{roomJid} | Set properties for a room
-[**patchChatsRoomMessage**](ChatApi.html#patchChatsRoomMessage) | **PATCH** /api/v2/chats/rooms/{roomJid}/messages/{messageId} | Edit a message in a room
-[**patchChatsSettings**](ChatApi.html#patchChatsSettings) | **PATCH** /api/v2/chats/settings | Patch Chat Settings.
-[**patchChatsUserMessage**](ChatApi.html#patchChatsUserMessage) | **PATCH** /api/v2/chats/users/{userId}/messages/{messageId} | Edit a message to a user
-[**patchChatsUserSettings**](ChatApi.html#patchChatsUserSettings) | **PATCH** /api/v2/chats/users/{userId}/settings | Update a user's chat settings
-[**patchChatsUsersMeSettings**](ChatApi.html#patchChatsUsersMeSettings) | **PATCH** /api/v2/chats/users/me/settings | Update a user's chat settings
-[**postChatsRoomMessages**](ChatApi.html#postChatsRoomMessages) | **POST** /api/v2/chats/rooms/{roomJid}/messages | Send a message to a room
-[**postChatsRoomMessagesPins**](ChatApi.html#postChatsRoomMessagesPins) | **POST** /api/v2/chats/rooms/{roomJid}/messages/pins | Add pinned messages for a room, up to a maximum of 5 pinned messages
-[**postChatsRoomParticipant**](ChatApi.html#postChatsRoomParticipant) | **POST** /api/v2/chats/rooms/{roomJid}/participants/{userId} | Join a room
-[**postChatsRooms**](ChatApi.html#postChatsRooms) | **POST** /api/v2/chats/rooms | Create an adhoc room
-[**postChatsUserMessages**](ChatApi.html#postChatsUserMessages) | **POST** /api/v2/chats/users/{userId}/messages | Send a message to a user
-[**postChatsUserMessagesPins**](ChatApi.html#postChatsUserMessagesPins) | **POST** /api/v2/chats/users/{userId}/messages/pins | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
-[**putChatsMessageReactions**](ChatApi.html#putChatsMessageReactions) | **PUT** /api/v2/chats/messages/{messageId}/reactions | Update reactions to a message
-[**putChatsSettings**](ChatApi.html#putChatsSettings) | **PUT** /api/v2/chats/settings | Update Chat Settings.
-{: class="table table-striped"}
+[**deleteChatsRoomMessage**](ChatApi#deleteChatsRoomMessage) | **DELETE** /api/v2/chats/rooms/{roomJid}/messages/{messageId} | Delete a message in a room
+[**deleteChatsRoomMessagesPin**](ChatApi#deleteChatsRoomMessagesPin) | **DELETE** /api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId} | Remove a pinned message from a room
+[**deleteChatsRoomParticipant**](ChatApi#deleteChatsRoomParticipant) | **DELETE** /api/v2/chats/rooms/{roomJid}/participants/{userId} | Remove a user from a room.
+[**deleteChatsUserMessage**](ChatApi#deleteChatsUserMessage) | **DELETE** /api/v2/chats/users/{userId}/messages/{messageId} | Delete a message to a user
+[**deleteChatsUserMessagesPin**](ChatApi#deleteChatsUserMessagesPin) | **DELETE** /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId} | Remove a pinned message from a 1on1
+[**getChatsMessage**](ChatApi#getChatsMessage) | **GET** /api/v2/chats/messages/{messageId} | Get a message
+[**getChatsRoom**](ChatApi#getChatsRoom) | **GET** /api/v2/chats/rooms/{roomJid} | Get a room
+[**getChatsRoomMessage**](ChatApi#getChatsRoomMessage) | **GET** /api/v2/chats/rooms/{roomJid}/messages/{messageIds} | Get messages by id(s) from a room
+[**getChatsRoomMessages**](ChatApi#getChatsRoomMessages) | **GET** /api/v2/chats/rooms/{roomJid}/messages | Get a room's message history
+[**getChatsRoomParticipant**](ChatApi#getChatsRoomParticipant) | **GET** /api/v2/chats/rooms/{roomJid}/participants/{participantJid} | Get a room participant
+[**getChatsRoomParticipants**](ChatApi#getChatsRoomParticipants) | **GET** /api/v2/chats/rooms/{roomJid}/participants | Get room participants in a room
+[**getChatsSettings**](ChatApi#getChatsSettings) | **GET** /api/v2/chats/settings | Get Chat Settings.
+[**getChatsThreadMessages**](ChatApi#getChatsThreadMessages) | **GET** /api/v2/chats/threads/{threadId}/messages | Get history by thread
+[**getChatsUser**](ChatApi#getChatsUser) | **GET** /api/v2/chats/users/{userId} | Get information for a 1on1
+[**getChatsUserMessage**](ChatApi#getChatsUserMessage) | **GET** /api/v2/chats/users/{userId}/messages/{messageIds} | Get messages by id(s) from a 1on1
+[**getChatsUserMessages**](ChatApi#getChatsUserMessages) | **GET** /api/v2/chats/users/{userId}/messages | Get 1on1 History between a user
+[**getChatsUserSettings**](ChatApi#getChatsUserSettings) | **GET** /api/v2/chats/users/{userId}/settings | Get a user's chat settings
+[**getChatsUsersMeSettings**](ChatApi#getChatsUsersMeSettings) | **GET** /api/v2/chats/users/me/settings | Get a user's chat settings
+[**patchChatsRoom**](ChatApi#patchChatsRoom) | **PATCH** /api/v2/chats/rooms/{roomJid} | Set properties for a room
+[**patchChatsRoomMessage**](ChatApi#patchChatsRoomMessage) | **PATCH** /api/v2/chats/rooms/{roomJid}/messages/{messageId} | Edit a message in a room
+[**patchChatsSettings**](ChatApi#patchChatsSettings) | **PATCH** /api/v2/chats/settings | Patch Chat Settings.
+[**patchChatsUserMessage**](ChatApi#patchChatsUserMessage) | **PATCH** /api/v2/chats/users/{userId}/messages/{messageId} | Edit a message to a user
+[**patchChatsUserSettings**](ChatApi#patchChatsUserSettings) | **PATCH** /api/v2/chats/users/{userId}/settings | Update a user's chat settings
+[**patchChatsUsersMeSettings**](ChatApi#patchChatsUsersMeSettings) | **PATCH** /api/v2/chats/users/me/settings | Update a user's chat settings
+[**postChatsRoomMessages**](ChatApi#postChatsRoomMessages) | **POST** /api/v2/chats/rooms/{roomJid}/messages | Send a message to a room
+[**postChatsRoomMessagesPins**](ChatApi#postChatsRoomMessagesPins) | **POST** /api/v2/chats/rooms/{roomJid}/messages/pins | Add pinned messages for a room, up to a maximum of 5 pinned messages
+[**postChatsRoomParticipant**](ChatApi#postChatsRoomParticipant) | **POST** /api/v2/chats/rooms/{roomJid}/participants/{userId} | Join a room
+[**postChatsRooms**](ChatApi#postChatsRooms) | **POST** /api/v2/chats/rooms | Create an adhoc room
+[**postChatsUserMessages**](ChatApi#postChatsUserMessages) | **POST** /api/v2/chats/users/{userId}/messages | Send a message to a user
+[**postChatsUserMessagesPins**](ChatApi#postChatsUserMessagesPins) | **POST** /api/v2/chats/users/{userId}/messages/pins | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+[**putChatsMessageReactions**](ChatApi#putChatsMessageReactions) | **PUT** /api/v2/chats/messages/{messageId}/reactions | Update reactions to a message
+[**putChatsSettings**](ChatApi#putChatsSettings) | **PUT** /api/v2/chats/settings | Update Chat Settings.
 
-<a name="deleteChatsRoomMessage"></a>
 
-# void deleteChatsRoomMessage(roomJid, messageId)
+
+## deleteChatsRoomMessage
+
+> void deleteChatsRoomMessage(roomJid, messageId)
 
 
 DELETE /api/v2/chats/rooms/{roomJid}/messages/{messageId}
@@ -87,15 +88,15 @@ apiInstance.deleteChatsRoomMessage(roomJid, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomId |  |
  **messageId** | **String** | messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteChatsRoomMessagesPin"></a>
 
-# void deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
+## deleteChatsRoomMessagesPin
+
+> void deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
 
 
 DELETE /api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}
@@ -140,15 +141,15 @@ apiInstance.deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **pinnedMessageId** | **String** | pinnedMessageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteChatsRoomParticipant"></a>
 
-# void deleteChatsRoomParticipant(roomJid, userId)
+## deleteChatsRoomParticipant
+
+> void deleteChatsRoomParticipant(roomJid, userId)
 
 
 DELETE /api/v2/chats/rooms/{roomJid}/participants/{userId}
@@ -193,15 +194,15 @@ apiInstance.deleteChatsRoomParticipant(roomJid, userId)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **userId** | **String** | userId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteChatsUserMessage"></a>
 
-# void deleteChatsUserMessage(userId, messageId)
+## deleteChatsUserMessage
+
+> void deleteChatsUserMessage(userId, messageId)
 
 
 DELETE /api/v2/chats/users/{userId}/messages/{messageId}
@@ -246,15 +247,15 @@ apiInstance.deleteChatsUserMessage(userId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **messageId** | **String** | messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteChatsUserMessagesPin"></a>
 
-# void deleteChatsUserMessagesPin(userId, pinnedMessageId)
+## deleteChatsUserMessagesPin
+
+> void deleteChatsUserMessagesPin(userId, pinnedMessageId)
 
 
 DELETE /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}
@@ -301,15 +302,15 @@ apiInstance.deleteChatsUserMessagesPin(userId, pinnedMessageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **pinnedMessageId** | **String** | pinnedMessageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getChatsMessage"></a>
 
-# ChatMessageResponse getChatsMessage(messageId)
+## getChatsMessage
+
+> ChatMessageResponse getChatsMessage(messageId)
 
 
 GET /api/v2/chats/messages/{messageId}
@@ -353,15 +354,15 @@ apiInstance.getChatsMessage(messageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatMessageResponse**
 
-<a name="getChatsRoom"></a>
 
-# Room getChatsRoom(roomJid)
+## getChatsRoom
+
+> Room getChatsRoom(roomJid)
 
 
 GET /api/v2/chats/rooms/{roomJid}
@@ -404,15 +405,15 @@ apiInstance.getChatsRoom(roomJid)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Room**
 
-<a name="getChatsRoomMessage"></a>
 
-# ChatMessageEntityListing getChatsRoomMessage(roomJid, messageIds)
+## getChatsRoomMessage
+
+> ChatMessageEntityListing getChatsRoomMessage(roomJid, messageIds)
 
 
 GET /api/v2/chats/rooms/{roomJid}/messages/{messageIds}
@@ -457,15 +458,15 @@ apiInstance.getChatsRoomMessage(roomJid, messageIds)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **messageIds** | **String** | messageIds, comma separated |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatMessageEntityListing**
 
-<a name="getChatsRoomMessages"></a>
 
-# ChatMessageEntityListing getChatsRoomMessages(roomJid, opts)
+## getChatsRoomMessages
+
+> ChatMessageEntityListing getChatsRoomMessages(roomJid, opts)
 
 
 GET /api/v2/chats/rooms/{roomJid}/messages
@@ -516,15 +517,15 @@ apiInstance.getChatsRoomMessages(roomJid, opts)
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatMessageEntityListing**
 
-<a name="getChatsRoomParticipant"></a>
 
-# RoomParticipant getChatsRoomParticipant(roomJid, participantJid)
+## getChatsRoomParticipant
+
+> RoomParticipant getChatsRoomParticipant(roomJid, participantJid)
 
 
 GET /api/v2/chats/rooms/{roomJid}/participants/{participantJid}
@@ -566,15 +567,15 @@ apiInstance.getChatsRoomParticipant(roomJid, participantJid)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **participantJid** | **String** | participantJid |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoomParticipant**
 
-<a name="getChatsRoomParticipants"></a>
 
-# RoomParticipantsResponse getChatsRoomParticipants(roomJid)
+## getChatsRoomParticipants
+
+> RoomParticipantsResponse getChatsRoomParticipants(roomJid)
 
 
 GET /api/v2/chats/rooms/{roomJid}/participants
@@ -617,15 +618,15 @@ apiInstance.getChatsRoomParticipants(roomJid)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoomParticipantsResponse**
 
-<a name="getChatsSettings"></a>
 
-# ChatSettings getChatsSettings()
+## getChatsSettings
+
+> ChatSettings getChatsSettings()
 
 
 GET /api/v2/chats/settings
@@ -664,14 +665,14 @@ apiInstance.getChatsSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ChatSettings**
 
-<a name="getChatsThreadMessages"></a>
 
-# ChatMessageEntityListing getChatsThreadMessages(threadId, opts)
+## getChatsThreadMessages
+
+> ChatMessageEntityListing getChatsThreadMessages(threadId, opts)
 
 
 GET /api/v2/chats/threads/{threadId}/messages
@@ -722,15 +723,15 @@ apiInstance.getChatsThreadMessages(threadId, opts)
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatMessageEntityListing**
 
-<a name="getChatsUser"></a>
 
-# OneOnOne getChatsUser(userId)
+## getChatsUser
+
+> OneOnOne getChatsUser(userId)
 
 
 GET /api/v2/chats/users/{userId}
@@ -775,15 +776,15 @@ apiInstance.getChatsUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OneOnOne**
 
-<a name="getChatsUserMessage"></a>
 
-# ChatMessageEntityListing getChatsUserMessage(userId, messageIds)
+## getChatsUserMessage
+
+> ChatMessageEntityListing getChatsUserMessage(userId, messageIds)
 
 
 GET /api/v2/chats/users/{userId}/messages/{messageIds}
@@ -828,15 +829,15 @@ apiInstance.getChatsUserMessage(userId, messageIds)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **messageIds** | **String** | messageIds, comma separated |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatMessageEntityListing**
 
-<a name="getChatsUserMessages"></a>
 
-# ChatMessageResponse getChatsUserMessages(userId, opts)
+## getChatsUserMessages
+
+> ChatMessageResponse getChatsUserMessages(userId, opts)
 
 
 GET /api/v2/chats/users/{userId}/messages
@@ -887,15 +888,15 @@ apiInstance.getChatsUserMessages(userId, opts)
  **limit** | **String** | The maximum number of messages to retrieve | [optional]  |
  **before** | **String** | The cutoff date for messages to retrieve | [optional]  |
  **after** | **String** | The beginning date for messages to retrieve | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatMessageResponse**
 
-<a name="getChatsUserSettings"></a>
 
-# ChatUserSettings getChatsUserSettings(userId)
+## getChatsUserSettings
+
+> ChatUserSettings getChatsUserSettings(userId)
 
 
 GET /api/v2/chats/users/{userId}/settings
@@ -940,15 +941,15 @@ apiInstance.getChatsUserSettings(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatUserSettings**
 
-<a name="getChatsUsersMeSettings"></a>
 
-# ChatUserSettings getChatsUsersMeSettings()
+## getChatsUsersMeSettings
+
+> ChatUserSettings getChatsUsersMeSettings()
 
 
 GET /api/v2/chats/users/me/settings
@@ -986,14 +987,14 @@ apiInstance.getChatsUsersMeSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ChatUserSettings**
 
-<a name="patchChatsRoom"></a>
 
-# void patchChatsRoom(roomJid, body)
+## patchChatsRoom
+
+> void patchChatsRoom(roomJid, body)
 
 
 PATCH /api/v2/chats/rooms/{roomJid}
@@ -1038,15 +1039,15 @@ apiInstance.patchChatsRoom(roomJid, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **body** | **Object** | Room properties |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchChatsRoomMessage"></a>
 
-# ChatSendMessageResponse patchChatsRoomMessage(roomJid, messageId, body)
+## patchChatsRoomMessage
+
+> ChatSendMessageResponse patchChatsRoomMessage(roomJid, messageId, body)
 
 
 PATCH /api/v2/chats/rooms/{roomJid}/messages/{messageId}
@@ -1093,15 +1094,15 @@ apiInstance.patchChatsRoomMessage(roomJid, messageId, body)
  **roomJid** | **String** | roomId |  |
  **messageId** | **String** | messageId |  |
  **body** | **Object** | messageBody |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatSendMessageResponse**
 
-<a name="patchChatsSettings"></a>
 
-# ChatSettings patchChatsSettings(body)
+## patchChatsSettings
+
+> ChatSettings patchChatsSettings(body)
 
 
 PATCH /api/v2/chats/settings
@@ -1143,15 +1144,15 @@ apiInstance.patchChatsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Chat |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatSettings**
 
-<a name="patchChatsUserMessage"></a>
 
-# ChatSendMessageResponse patchChatsUserMessage(userId, messageId, body)
+## patchChatsUserMessage
+
+> ChatSendMessageResponse patchChatsUserMessage(userId, messageId, body)
 
 
 PATCH /api/v2/chats/users/{userId}/messages/{messageId}
@@ -1198,15 +1199,15 @@ apiInstance.patchChatsUserMessage(userId, messageId, body)
  **userId** | **String** | userId |  |
  **messageId** | **String** | messageId |  |
  **body** | **Object** | message body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatSendMessageResponse**
 
-<a name="patchChatsUserSettings"></a>
 
-# ChatUserSettings patchChatsUserSettings(userId, body)
+## patchChatsUserSettings
+
+> ChatUserSettings patchChatsUserSettings(userId, body)
 
 
 PATCH /api/v2/chats/users/{userId}/settings
@@ -1253,15 +1254,15 @@ apiInstance.patchChatsUserSettings(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatUserSettings**
 
-<a name="patchChatsUsersMeSettings"></a>
 
-# ChatUserSettings patchChatsUsersMeSettings(body)
+## patchChatsUsersMeSettings
+
+> ChatUserSettings patchChatsUsersMeSettings(body)
 
 
 PATCH /api/v2/chats/users/me/settings
@@ -1303,15 +1304,15 @@ apiInstance.patchChatsUsersMeSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatUserSettings**
 
-<a name="postChatsRoomMessages"></a>
 
-# ChatSendMessageResponse postChatsRoomMessages(roomJid, body)
+## postChatsRoomMessages
+
+> ChatSendMessageResponse postChatsRoomMessages(roomJid, body)
 
 
 POST /api/v2/chats/rooms/{roomJid}/messages
@@ -1356,15 +1357,15 @@ apiInstance.postChatsRoomMessages(roomJid, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomId |  |
  **body** | **Object** | messageBody |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatSendMessageResponse**
 
-<a name="postChatsRoomMessagesPins"></a>
 
-# void postChatsRoomMessagesPins(roomJid, body)
+## postChatsRoomMessagesPins
+
+> void postChatsRoomMessagesPins(roomJid, body)
 
 
 POST /api/v2/chats/rooms/{roomJid}/messages/pins
@@ -1409,15 +1410,15 @@ apiInstance.postChatsRoomMessagesPins(roomJid, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **body** | **Object** | Pinned Message Ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postChatsRoomParticipant"></a>
 
-# void postChatsRoomParticipant(roomJid, userId)
+## postChatsRoomParticipant
+
+> void postChatsRoomParticipant(roomJid, userId)
 
 
 POST /api/v2/chats/rooms/{roomJid}/participants/{userId}
@@ -1462,15 +1463,15 @@ apiInstance.postChatsRoomParticipant(roomJid, userId)
 | ------------- | ------------- | ------------- | ------------- |
  **roomJid** | **String** | roomJid |  |
  **userId** | **String** | userId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postChatsRooms"></a>
 
-# CreateRoomResponse postChatsRooms(body)
+## postChatsRooms
+
+> CreateRoomResponse postChatsRooms(body)
 
 
 POST /api/v2/chats/rooms
@@ -1513,15 +1514,15 @@ apiInstance.postChatsRooms(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Room properties |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CreateRoomResponse**
 
-<a name="postChatsUserMessages"></a>
 
-# ChatSendMessageResponse postChatsUserMessages(userId, body)
+## postChatsUserMessages
+
+> ChatSendMessageResponse postChatsUserMessages(userId, body)
 
 
 POST /api/v2/chats/users/{userId}/messages
@@ -1566,15 +1567,15 @@ apiInstance.postChatsUserMessages(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **body** | **Object** | message body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatSendMessageResponse**
 
-<a name="postChatsUserMessagesPins"></a>
 
-# void postChatsUserMessagesPins(userId, body)
+## postChatsUserMessagesPins
+
+> void postChatsUserMessagesPins(userId, body)
 
 
 POST /api/v2/chats/users/{userId}/messages/pins
@@ -1621,15 +1622,15 @@ apiInstance.postChatsUserMessagesPins(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **body** | **Object** | Pinned Message Ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putChatsMessageReactions"></a>
 
-# void putChatsMessageReactions(messageId, body)
+## putChatsMessageReactions
+
+> void putChatsMessageReactions(messageId, body)
 
 
 PUT /api/v2/chats/messages/{messageId}/reactions
@@ -1674,15 +1675,15 @@ apiInstance.putChatsMessageReactions(messageId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
  **body** | **Object** | reactionUpdate |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putChatsSettings"></a>
 
-# ChatSettings putChatsSettings(body)
+## putChatsSettings
+
+> ChatSettings putChatsSettings(body)
 
 
 PUT /api/v2/chats/settings
@@ -1724,7 +1725,6 @@ apiInstance.putChatsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Chat |  |
-{: class="table table-striped"}
 
 ### Return type
 

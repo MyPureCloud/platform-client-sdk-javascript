@@ -6,18 +6,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getOauthClientUsageQueryResult**](UsageApi.html#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
-[**getOauthClientUsageSummary**](UsageApi.html#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
-[**getUsageQueryExecutionIdResults**](UsageApi.html#getUsageQueryExecutionIdResults) | **GET** /api/v2/usage/query/{executionId}/results | Get the results of a usage query
-[**getUsageSimplesearchExecutionIdResults**](UsageApi.html#getUsageSimplesearchExecutionIdResults) | **GET** /api/v2/usage/simplesearch/{executionId}/results | Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
-[**postOauthClientUsageQuery**](UsageApi.html#postOauthClientUsageQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/query | Query for OAuth client API usage
-[**postUsageQuery**](UsageApi.html#postUsageQuery) | **POST** /api/v2/usage/query | Query organization API Usage - 
-[**postUsageSimplesearch**](UsageApi.html#postUsageSimplesearch) | **POST** /api/v2/usage/simplesearch | Search organization API Usage
-{: class="table table-striped"}
+[**getOauthClientUsageQueryResult**](UsageApi#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
+[**getOauthClientUsageSummary**](UsageApi#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
+[**getUsageQueryExecutionIdResults**](UsageApi#getUsageQueryExecutionIdResults) | **GET** /api/v2/usage/query/{executionId}/results | Get the results of a usage query
+[**getUsageSimplesearchExecutionIdResults**](UsageApi#getUsageSimplesearchExecutionIdResults) | **GET** /api/v2/usage/simplesearch/{executionId}/results | Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
+[**postOauthClientUsageQuery**](UsageApi#postOauthClientUsageQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/query | Query for OAuth client API usage
+[**postUsageQuery**](UsageApi#postUsageQuery) | **POST** /api/v2/usage/query | Query organization API Usage - 
+[**postUsageSimplesearch**](UsageApi#postUsageSimplesearch) | **POST** /api/v2/usage/simplesearch | Search organization API Usage
 
-<a name="getOauthClientUsageQueryResult"></a>
 
-# ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
+
+## getOauthClientUsageQueryResult
+
+> ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
 
 
 GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
@@ -62,15 +63,15 @@ apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **executionId** | **String** | ID of the query execution |  |
  **clientId** | **String** | Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ApiUsageQueryResult**
 
-<a name="getOauthClientUsageSummary"></a>
 
-# UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
+## getOauthClientUsageSummary
+
+> UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
 
 
 GET /api/v2/oauth/clients/{clientId}/usage/summary
@@ -119,15 +120,15 @@ apiInstance.getOauthClientUsageSummary(clientId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **days** | **String** | Previous number of days to query | [optional] [default to 7] |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsageExecutionResult**
 
-<a name="getUsageQueryExecutionIdResults"></a>
 
-# ApiUsageQueryResult getUsageQueryExecutionIdResults(executionId)
+## getUsageQueryExecutionIdResults
+
+> ApiUsageQueryResult getUsageQueryExecutionIdResults(executionId)
 
 
 GET /api/v2/usage/query/{executionId}/results
@@ -170,15 +171,15 @@ apiInstance.getUsageQueryExecutionIdResults(executionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **executionId** | **String** | ID of the query execution |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ApiUsageQueryResult**
 
-<a name="getUsageSimplesearchExecutionIdResults"></a>
 
-# ApiUsageQueryResult getUsageSimplesearchExecutionIdResults(executionId, opts)
+## getUsageSimplesearchExecutionIdResults
+
+> ApiUsageQueryResult getUsageSimplesearchExecutionIdResults(executionId, opts)
 
 
 GET /api/v2/usage/simplesearch/{executionId}/results
@@ -227,15 +228,15 @@ apiInstance.getUsageSimplesearchExecutionIdResults(executionId, opts)
  **executionId** | **String** | ID of the search execution |  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned | [optional]  |
  **pageSize** | **Number** | The max number of entities to be returned per request. Maximum page size of 1000 | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ApiUsageQueryResult**
 
-<a name="postOauthClientUsageQuery"></a>
 
-# UsageExecutionResult postOauthClientUsageQuery(clientId, body)
+## postOauthClientUsageQuery
+
+> UsageExecutionResult postOauthClientUsageQuery(clientId, body)
 
 
 POST /api/v2/oauth/clients/{clientId}/usage/query
@@ -282,15 +283,15 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
  **body** | **Object** | Query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsageExecutionResult**
 
-<a name="postUsageQuery"></a>
 
-# UsageExecutionResult postUsageQuery(body)
+## postUsageQuery
+
+> UsageExecutionResult postUsageQuery(body)
 
 
 POST /api/v2/usage/query
@@ -335,15 +336,15 @@ apiInstance.postUsageQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsageExecutionResult**
 
-<a name="postUsageSimplesearch"></a>
 
-# UsageExecutionResult postUsageSimplesearch(body)
+## postUsageSimplesearch
+
+> UsageExecutionResult postUsageSimplesearch(body)
 
 
 POST /api/v2/usage/simplesearch
@@ -388,7 +389,6 @@ apiInstance.postUsageSimplesearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SimpleSearch |  |
-{: class="table table-striped"}
 
 ### Return type
 

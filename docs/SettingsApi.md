@@ -6,19 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi.html#deleteUsersAgentuiAgentsAutoanswerAgentIdSettings) | **DELETE** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Delete agent auto answer settings
-[**getEmailsSettings**](SettingsApi.html#getEmailsSettings) | **GET** /api/v2/emails/settings | Get email Contact Center settings
-[**getSettingsExecutiondata**](SettingsApi.html#getSettingsExecutiondata) | **GET** /api/v2/settings/executiondata | Get the execution history enabled setting.
-[**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi.html#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | **GET** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Get agent auto answer settings
-[**patchEmailsSettings**](SettingsApi.html#patchEmailsSettings) | **PATCH** /api/v2/emails/settings | Patch email Contact Center settings
-[**patchSettingsExecutiondata**](SettingsApi.html#patchSettingsExecutiondata) | **PATCH** /api/v2/settings/executiondata | Edit the execution history on off setting.
-[**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi.html#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PATCH** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Update agent auto answer settings
-[**putUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi.html#putUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PUT** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Set agent auto answer settings
-{: class="table table-striped"}
+[**deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#deleteUsersAgentuiAgentsAutoanswerAgentIdSettings) | **DELETE** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Delete agent auto answer settings
+[**getEmailsSettings**](SettingsApi#getEmailsSettings) | **GET** /api/v2/emails/settings | Get email Contact Center settings
+[**getSettingsExecutiondata**](SettingsApi#getSettingsExecutiondata) | **GET** /api/v2/settings/executiondata | Get the execution history enabled setting.
+[**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | **GET** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Get agent auto answer settings
+[**patchEmailsSettings**](SettingsApi#patchEmailsSettings) | **PATCH** /api/v2/emails/settings | Patch email Contact Center settings
+[**patchSettingsExecutiondata**](SettingsApi#patchSettingsExecutiondata) | **PATCH** /api/v2/settings/executiondata | Edit the execution history on off setting.
+[**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PATCH** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Update agent auto answer settings
+[**putUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#putUsersAgentuiAgentsAutoanswerAgentIdSettings) | **PUT** /api/v2/users/agentui/agents/autoanswer/{agentId}/settings | Set agent auto answer settings
 
-<a name="deleteUsersAgentuiAgentsAutoanswerAgentIdSettings"></a>
 
-# void deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+
+## deleteUsersAgentuiAgentsAutoanswerAgentIdSettings
+
+> void deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 
 
 DELETE /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -60,15 +61,15 @@ apiInstance.deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getEmailsSettings"></a>
 
-# EmailSettings getEmailsSettings()
+## getEmailsSettings
+
+> EmailSettings getEmailsSettings()
 
 
 GET /api/v2/emails/settings
@@ -106,14 +107,14 @@ apiInstance.getEmailsSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **EmailSettings**
 
-<a name="getSettingsExecutiondata"></a>
 
-# ExecutionDataGlobalSettingsResponse getSettingsExecutiondata()
+## getSettingsExecutiondata
+
+> ExecutionDataGlobalSettingsResponse getSettingsExecutiondata()
 
 
 GET /api/v2/settings/executiondata
@@ -153,14 +154,14 @@ apiInstance.getSettingsExecutiondata()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ExecutionDataGlobalSettingsResponse**
 
-<a name="getUsersAgentuiAgentsAutoanswerAgentIdSettings"></a>
 
-# AutoAnswerSettings getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+## getUsersAgentuiAgentsAutoanswerAgentIdSettings
+
+> AutoAnswerSettings getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 
 
 GET /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -202,15 +203,15 @@ apiInstance.getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AutoAnswerSettings**
 
-<a name="patchEmailsSettings"></a>
 
-# EmailSettings patchEmailsSettings(opts)
+## patchEmailsSettings
+
+> EmailSettings patchEmailsSettings(opts)
 
 
 PATCH /api/v2/emails/settings
@@ -254,15 +255,15 @@ apiInstance.patchEmailsSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailSettings**
 
-<a name="patchSettingsExecutiondata"></a>
 
-# ExecutionDataGlobalSettingsResponse patchSettingsExecutiondata(body)
+## patchSettingsExecutiondata
+
+> ExecutionDataGlobalSettingsResponse patchSettingsExecutiondata(body)
 
 
 PATCH /api/v2/settings/executiondata
@@ -306,15 +307,15 @@ apiInstance.patchSettingsExecutiondata(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | New Execution Data Setting |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExecutionDataGlobalSettingsResponse**
 
-<a name="patchUsersAgentuiAgentsAutoanswerAgentIdSettings"></a>
 
-# AutoAnswerSettings patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+## patchUsersAgentuiAgentsAutoanswerAgentIdSettings
+
+> AutoAnswerSettings patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 
 
 PATCH /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -358,15 +359,15 @@ apiInstance.patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
  **body** | **Object** | AutoAnswerSettings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AutoAnswerSettings**
 
-<a name="putUsersAgentuiAgentsAutoanswerAgentIdSettings"></a>
 
-# AutoAnswerSettings putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+## putUsersAgentuiAgentsAutoanswerAgentIdSettings
+
+> AutoAnswerSettings putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 
 
 PUT /api/v2/users/agentui/agents/autoanswer/{agentId}/settings
@@ -410,7 +411,6 @@ apiInstance.putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The agent to apply the auto answer settings to |  |
  **body** | **Object** | AutoAnswerSettings |  |
-{: class="table table-striped"}
 
 ### Return type
 
