@@ -1,22 +1,22 @@
----
-title: InfrastructureAsCodeApi
----
+# InfrastructureAsCodeApi
+
 # platformClient.InfrastructureAsCodeApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getInfrastructureascodeAccelerator**](InfrastructureAsCodeApi.html#getInfrastructureascodeAccelerator) | **GET** /api/v2/infrastructureascode/accelerators/{acceleratorId} | Get information about an accelerator
-[**getInfrastructureascodeAccelerators**](InfrastructureAsCodeApi.html#getInfrastructureascodeAccelerators) | **GET** /api/v2/infrastructureascode/accelerators | Get a list of available accelerators
-[**getInfrastructureascodeJob**](InfrastructureAsCodeApi.html#getInfrastructureascodeJob) | **GET** /api/v2/infrastructureascode/jobs/{jobId} | Get job status and results
-[**getInfrastructureascodeJobs**](InfrastructureAsCodeApi.html#getInfrastructureascodeJobs) | **GET** /api/v2/infrastructureascode/jobs | Get job history
-[**postInfrastructureascodeJobs**](InfrastructureAsCodeApi.html#postInfrastructureascodeJobs) | **POST** /api/v2/infrastructureascode/jobs | Create a Job
-{: class="table table-striped"}
+[**getInfrastructureascodeAccelerator**](InfrastructureAsCodeApi#getInfrastructureascodeAccelerator) | **GET** /api/v2/infrastructureascode/accelerators/{acceleratorId} | Get information about an accelerator
+[**getInfrastructureascodeAccelerators**](InfrastructureAsCodeApi#getInfrastructureascodeAccelerators) | **GET** /api/v2/infrastructureascode/accelerators | Get a list of available accelerators
+[**getInfrastructureascodeJob**](InfrastructureAsCodeApi#getInfrastructureascodeJob) | **GET** /api/v2/infrastructureascode/jobs/{jobId} | Get job status and results
+[**getInfrastructureascodeJobs**](InfrastructureAsCodeApi#getInfrastructureascodeJobs) | **GET** /api/v2/infrastructureascode/jobs | Get job history
+[**postInfrastructureascodeJobs**](InfrastructureAsCodeApi#postInfrastructureascodeJobs) | **POST** /api/v2/infrastructureascode/jobs | Create a Job
 
-<a name="getInfrastructureascodeAccelerator"></a>
 
-# AcceleratorSpecification getInfrastructureascodeAccelerator(acceleratorId, opts)
+
+## getInfrastructureascodeAccelerator
+
+> AcceleratorSpecification getInfrastructureascodeAccelerator(acceleratorId, opts)
 
 
 GET /api/v2/infrastructureascode/accelerators/{acceleratorId}
@@ -64,15 +64,15 @@ apiInstance.getInfrastructureascodeAccelerator(acceleratorId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **acceleratorId** | **String** | Accelerator ID |  |
  **preferredLanguage** | **String** | Preferred Language | [optional] [default to en-US]<br />**Values**: ar, cs, da, de, en-US, es, fi, fr, it, iw, ko, ja, nl, no, pl, pt-BR, pt-PT, sv, th, tr, zh-CN, zh-TW |
-{: class="table table-striped"}
 
 ### Return type
 
 **AcceleratorSpecification**
 
-<a name="getInfrastructureascodeAccelerators"></a>
 
-# AcceleratorList getInfrastructureascodeAccelerators(opts)
+## getInfrastructureascodeAccelerators
+
+> AcceleratorList getInfrastructureascodeAccelerators(opts)
 
 
 GET /api/v2/infrastructureascode/accelerators
@@ -136,15 +136,15 @@ apiInstance.getInfrastructureascodeAccelerators(opts)
  **type** | **String** | Filter by type | [optional] <br />**Values**: module, accelerator, blueprint |
  **classification** | **String** | Filter by classification | [optional]  |
  **tags** | **String** | Filter by tags | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AcceleratorList**
 
-<a name="getInfrastructureascodeJob"></a>
 
-# InfrastructureascodeJob getInfrastructureascodeJob(jobId, opts)
+## getInfrastructureascodeJob
+
+> InfrastructureascodeJob getInfrastructureascodeJob(jobId, opts)
 
 
 GET /api/v2/infrastructureascode/jobs/{jobId}
@@ -192,15 +192,15 @@ apiInstance.getInfrastructureascodeJob(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Job ID |  |
  **details** | **Boolean** | Include details of execution, including job results or error information | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **InfrastructureascodeJob**
 
-<a name="getInfrastructureascodeJobs"></a>
 
-# InfrastructureascodeJob getInfrastructureascodeJobs(opts)
+## getInfrastructureascodeJobs
+
+> InfrastructureascodeJob getInfrastructureascodeJobs(opts)
 
 
 GET /api/v2/infrastructureascode/jobs
@@ -258,15 +258,15 @@ apiInstance.getInfrastructureascodeJobs(opts)
  **acceleratorId** | **String** | Find only jobs associated with this accelerator | [optional]  |
  **submittedBy** | **String** | Find only jobs submitted by this user | [optional]  |
  **status** | **String** | Find only jobs in this state | [optional] <br />**Values**: Created, Queued, Running, Complete, Failed, Incomplete |
-{: class="table table-striped"}
 
 ### Return type
 
 **InfrastructureascodeJob**
 
-<a name="postInfrastructureascodeJobs"></a>
 
-# InfrastructureascodeJob postInfrastructureascodeJobs(body)
+## postInfrastructureascodeJobs
+
+> InfrastructureascodeJob postInfrastructureascodeJobs(body)
 
 
 POST /api/v2/infrastructureascode/jobs
@@ -310,9 +310,10 @@ apiInstance.postInfrastructureascodeJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InfrastructureascodeJob**
 
+
+_purecloud-platform-client-v2@204.0.1_

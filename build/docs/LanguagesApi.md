@@ -1,27 +1,29 @@
----
-title: LanguagesApi
----
+# LanguagesApi
+
 # platformClient.LanguagesApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteLanguage**](LanguagesApi.html#deleteLanguage) | **DELETE** /api/v2/languages/{languageId} | Delete Language (Deprecated)
-[**getLanguage**](LanguagesApi.html#getLanguage) | **GET** /api/v2/languages/{languageId} | Get Language (Deprecated)
-[**getLanguages**](LanguagesApi.html#getLanguages) | **GET** /api/v2/languages | Get the list of supported languages. (Deprecated)
-[**getLanguagesTranslations**](LanguagesApi.html#getLanguagesTranslations) | **GET** /api/v2/languages/translations | Get all available languages for translation
-[**getLanguagesTranslationsBuiltin**](LanguagesApi.html#getLanguagesTranslationsBuiltin) | **GET** /api/v2/languages/translations/builtin | Get the builtin translation for a language
-[**getLanguagesTranslationsOrganization**](LanguagesApi.html#getLanguagesTranslationsOrganization) | **GET** /api/v2/languages/translations/organization | Get effective translation for an organization by language
-[**getLanguagesTranslationsUser**](LanguagesApi.html#getLanguagesTranslationsUser) | **GET** /api/v2/languages/translations/users/{userId} | Get effective language translation for a user
-[**postLanguages**](LanguagesApi.html#postLanguages) | **POST** /api/v2/languages | Create Language (Deprecated)
-{: class="table table-striped"}
+[**deleteLanguage**](LanguagesApi#deleteLanguage) | **DELETE** /api/v2/languages/{languageId} | Delete Language (Deprecated)
+[**getLanguage**](LanguagesApi#getLanguage) | **GET** /api/v2/languages/{languageId} | Get Language (Deprecated)
+[**getLanguages**](LanguagesApi#getLanguages) | **GET** /api/v2/languages | Get the list of supported languages. (Deprecated)
+[**getLanguagesTranslations**](LanguagesApi#getLanguagesTranslations) | **GET** /api/v2/languages/translations | Get all available languages for translation
+[**getLanguagesTranslationsBuiltin**](LanguagesApi#getLanguagesTranslationsBuiltin) | **GET** /api/v2/languages/translations/builtin | Get the builtin translation for a language
+[**getLanguagesTranslationsOrganization**](LanguagesApi#getLanguagesTranslationsOrganization) | **GET** /api/v2/languages/translations/organization | Get effective translation for an organization by language
+[**getLanguagesTranslationsUser**](LanguagesApi#getLanguagesTranslationsUser) | **GET** /api/v2/languages/translations/users/{userId} | Get effective language translation for a user
+[**postLanguages**](LanguagesApi#postLanguages) | **POST** /api/v2/languages | Create Language (Deprecated)
 
-<a name="deleteLanguage"></a>
 
-# void deleteLanguage(languageId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+## deleteLanguage
+
+> void deleteLanguage(languageId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/languages/{languageId}
 
@@ -64,17 +66,19 @@ apiInstance.deleteLanguage(languageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **languageId** | **String** | Language ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getLanguage"></a>
 
-# Language getLanguage(languageId)
+## getLanguage
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> Language getLanguage(languageId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/languages/{languageId}
 
@@ -117,17 +121,19 @@ apiInstance.getLanguage(languageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **languageId** | **String** | Language ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Language**
 
-<a name="getLanguages"></a>
 
-# LanguageEntityListing getLanguages(opts)
+## getLanguages
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> LanguageEntityListing getLanguages(opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/languages
 
@@ -178,15 +184,15 @@ apiInstance.getLanguages(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LanguageEntityListing**
 
-<a name="getLanguagesTranslations"></a>
 
-# AvailableTranslations getLanguagesTranslations()
+## getLanguagesTranslations
+
+> AvailableTranslations getLanguagesTranslations()
 
 
 GET /api/v2/languages/translations
@@ -222,14 +228,14 @@ apiInstance.getLanguagesTranslations()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AvailableTranslations**
 
-<a name="getLanguagesTranslationsBuiltin"></a>
 
-# **{&#39;String&#39;: Object}** getLanguagesTranslationsBuiltin(language)
+## getLanguagesTranslationsBuiltin
+
+> **{&#39;String&#39;: Object}** getLanguagesTranslationsBuiltin(language)
 
 
 GET /api/v2/languages/translations/builtin
@@ -269,15 +275,15 @@ apiInstance.getLanguagesTranslationsBuiltin(language)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **language** | **String** | The language of the builtin translation to retrieve |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **{&#39;String&#39;: Object}**
 
-<a name="getLanguagesTranslationsOrganization"></a>
 
-# **{&#39;String&#39;: Object}** getLanguagesTranslationsOrganization(language)
+## getLanguagesTranslationsOrganization
+
+> **{&#39;String&#39;: Object}** getLanguagesTranslationsOrganization(language)
 
 
 GET /api/v2/languages/translations/organization
@@ -317,15 +323,15 @@ apiInstance.getLanguagesTranslationsOrganization(language)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **language** | **String** | The language of the translation to retrieve for the organization |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **{&#39;String&#39;: Object}**
 
-<a name="getLanguagesTranslationsUser"></a>
 
-# **{&#39;String&#39;: Object}** getLanguagesTranslationsUser(userId)
+## getLanguagesTranslationsUser
+
+> **{&#39;String&#39;: Object}** getLanguagesTranslationsUser(userId)
 
 
 GET /api/v2/languages/translations/users/{userId}
@@ -365,17 +371,19 @@ apiInstance.getLanguagesTranslationsUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The user id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **{&#39;String&#39;: Object}**
 
-<a name="postLanguages"></a>
 
-# Language postLanguages(body)
+## postLanguages
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> Language postLanguages(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/languages
 
@@ -418,9 +426,10 @@ apiInstance.postLanguages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Language |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Language**
 
+
+_purecloud-platform-client-v2@204.0.1_

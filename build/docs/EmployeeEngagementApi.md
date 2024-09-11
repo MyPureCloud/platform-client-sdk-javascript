@@ -1,22 +1,22 @@
----
-title: EmployeeEngagementApi
----
+# EmployeeEngagementApi
+
 # platformClient.EmployeeEngagementApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteEmployeeengagementCelebration**](EmployeeEngagementApi.html#deleteEmployeeengagementCelebration) | **DELETE** /api/v2/employeeengagement/celebrations/{celebrationId} | Deletes a celebration
-[**getEmployeeengagementCelebrations**](EmployeeEngagementApi.html#getEmployeeengagementCelebrations) | **GET** /api/v2/employeeengagement/celebrations | Get all celebrations
-[**getEmployeeengagementRecognition**](EmployeeEngagementApi.html#getEmployeeengagementRecognition) | **GET** /api/v2/employeeengagement/recognitions/{recognitionId} | Gets a single recognition
-[**patchEmployeeengagementCelebration**](EmployeeEngagementApi.html#patchEmployeeengagementCelebration) | **PATCH** /api/v2/employeeengagement/celebrations/{celebrationId} | Set a state for a celebration
-[**postEmployeeengagementRecognitions**](EmployeeEngagementApi.html#postEmployeeengagementRecognitions) | **POST** /api/v2/employeeengagement/recognitions | Creates a recognition
-{: class="table table-striped"}
+[**deleteEmployeeengagementCelebration**](EmployeeEngagementApi#deleteEmployeeengagementCelebration) | **DELETE** /api/v2/employeeengagement/celebrations/{celebrationId} | Deletes a celebration
+[**getEmployeeengagementCelebrations**](EmployeeEngagementApi#getEmployeeengagementCelebrations) | **GET** /api/v2/employeeengagement/celebrations | Get all celebrations
+[**getEmployeeengagementRecognition**](EmployeeEngagementApi#getEmployeeengagementRecognition) | **GET** /api/v2/employeeengagement/recognitions/{recognitionId} | Gets a single recognition
+[**patchEmployeeengagementCelebration**](EmployeeEngagementApi#patchEmployeeengagementCelebration) | **PATCH** /api/v2/employeeengagement/celebrations/{celebrationId} | Set a state for a celebration
+[**postEmployeeengagementRecognitions**](EmployeeEngagementApi#postEmployeeengagementRecognitions) | **POST** /api/v2/employeeengagement/recognitions | Creates a recognition
 
-<a name="deleteEmployeeengagementCelebration"></a>
 
-# void deleteEmployeeengagementCelebration(celebrationId)
+
+## deleteEmployeeengagementCelebration
+
+> void deleteEmployeeengagementCelebration(celebrationId)
 
 
 DELETE /api/v2/employeeengagement/celebrations/{celebrationId}
@@ -58,15 +58,15 @@ apiInstance.deleteEmployeeengagementCelebration(celebrationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **celebrationId** | **String** | The ID of the celebration |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getEmployeeengagementCelebrations"></a>
 
-# GetCelebrationListing getEmployeeengagementCelebrations(opts)
+## getEmployeeengagementCelebrations
+
+> GetCelebrationListing getEmployeeengagementCelebrations(opts)
 
 
 GET /api/v2/employeeengagement/celebrations
@@ -112,15 +112,15 @@ apiInstance.getEmployeeengagementCelebrations(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** |  | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **GetCelebrationListing**
 
-<a name="getEmployeeengagementRecognition"></a>
 
-# Recognition getEmployeeengagementRecognition(recognitionId)
+## getEmployeeengagementRecognition
+
+> Recognition getEmployeeengagementRecognition(recognitionId)
 
 
 GET /api/v2/employeeengagement/recognitions/{recognitionId}
@@ -162,15 +162,15 @@ apiInstance.getEmployeeengagementRecognition(recognitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **recognitionId** | **String** | The Recognition ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recognition**
 
-<a name="patchEmployeeengagementCelebration"></a>
 
-# void patchEmployeeengagementCelebration(celebrationId, body)
+## patchEmployeeengagementCelebration
+
+> void patchEmployeeengagementCelebration(celebrationId, body)
 
 
 PATCH /api/v2/employeeengagement/celebrations/{celebrationId}
@@ -214,15 +214,15 @@ apiInstance.patchEmployeeengagementCelebration(celebrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **celebrationId** | **String** | The ID of the celebration |  |
  **body** | **Object** | Patch Celebration state |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postEmployeeengagementRecognitions"></a>
 
-# RecognitionBase postEmployeeengagementRecognitions(body)
+## postEmployeeengagementRecognitions
+
+> RecognitionBase postEmployeeengagementRecognitions(body)
 
 
 POST /api/v2/employeeengagement/recognitions
@@ -264,9 +264,10 @@ apiInstance.postEmployeeengagementRecognitions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create Recognition |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecognitionBase**
 
+
+_purecloud-platform-client-v2@204.0.1_

@@ -1,24 +1,24 @@
----
-title: UserRecordingsApi
----
+# UserRecordingsApi
+
 # platformClient.UserRecordingsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteUserrecording**](UserRecordingsApi.html#deleteUserrecording) | **DELETE** /api/v2/userrecordings/{recordingId} | Delete a user recording.
-[**getUserrecording**](UserRecordingsApi.html#getUserrecording) | **GET** /api/v2/userrecordings/{recordingId} | Get a user recording.
-[**getUserrecordingMedia**](UserRecordingsApi.html#getUserrecordingMedia) | **GET** /api/v2/userrecordings/{recordingId}/media | Download a user recording.
-[**getUserrecordingTranscoding**](UserRecordingsApi.html#getUserrecordingTranscoding) | **GET** /api/v2/userrecordings/{recordingId}/transcoding | Download a user recording.
-[**getUserrecordings**](UserRecordingsApi.html#getUserrecordings) | **GET** /api/v2/userrecordings | Get a list of user recordings.
-[**getUserrecordingsSummary**](UserRecordingsApi.html#getUserrecordingsSummary) | **GET** /api/v2/userrecordings/summary | Get user recording summary
-[**putUserrecording**](UserRecordingsApi.html#putUserrecording) | **PUT** /api/v2/userrecordings/{recordingId} | Update a user recording.
-{: class="table table-striped"}
+[**deleteUserrecording**](UserRecordingsApi#deleteUserrecording) | **DELETE** /api/v2/userrecordings/{recordingId} | Delete a user recording.
+[**getUserrecording**](UserRecordingsApi#getUserrecording) | **GET** /api/v2/userrecordings/{recordingId} | Get a user recording.
+[**getUserrecordingMedia**](UserRecordingsApi#getUserrecordingMedia) | **GET** /api/v2/userrecordings/{recordingId}/media | Download a user recording.
+[**getUserrecordingTranscoding**](UserRecordingsApi#getUserrecordingTranscoding) | **GET** /api/v2/userrecordings/{recordingId}/transcoding | Download a user recording.
+[**getUserrecordings**](UserRecordingsApi#getUserrecordings) | **GET** /api/v2/userrecordings | Get a list of user recordings.
+[**getUserrecordingsSummary**](UserRecordingsApi#getUserrecordingsSummary) | **GET** /api/v2/userrecordings/summary | Get user recording summary
+[**putUserrecording**](UserRecordingsApi#putUserrecording) | **PUT** /api/v2/userrecordings/{recordingId} | Update a user recording.
 
-<a name="deleteUserrecording"></a>
 
-# void deleteUserrecording(recordingId)
+
+## deleteUserrecording
+
+> void deleteUserrecording(recordingId)
 
 
 DELETE /api/v2/userrecordings/{recordingId}
@@ -58,15 +58,15 @@ apiInstance.deleteUserrecording(recordingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String** | User Recording ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getUserrecording"></a>
 
-# UserRecording getUserrecording(recordingId, opts)
+## getUserrecording
+
+> UserRecording getUserrecording(recordingId, opts)
 
 
 GET /api/v2/userrecordings/{recordingId}
@@ -110,17 +110,19 @@ apiInstance.getUserrecording(recordingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String** | User Recording ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRecording**
 
-<a name="getUserrecordingMedia"></a>
 
-# DownloadResponse getUserrecordingMedia(recordingId, opts)
+## getUserrecordingMedia
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> DownloadResponse getUserrecordingMedia(recordingId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/userrecordings/{recordingId}/media
 
@@ -167,15 +169,15 @@ apiInstance.getUserrecordingMedia(recordingId, opts)
  **recordingId** | **String** | User Recording ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
  **async** | **Boolean** | When set to true, api will return 202 response until the recording is ready for download | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DownloadResponse**
 
-<a name="getUserrecordingTranscoding"></a>
 
-# DownloadResponse getUserrecordingTranscoding(recordingId, opts)
+## getUserrecordingTranscoding
+
+> DownloadResponse getUserrecordingTranscoding(recordingId, opts)
 
 
 GET /api/v2/userrecordings/{recordingId}/transcoding
@@ -221,15 +223,15 @@ apiInstance.getUserrecordingTranscoding(recordingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String** | User Recording ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-{: class="table table-striped"}
 
 ### Return type
 
 **DownloadResponse**
 
-<a name="getUserrecordings"></a>
 
-# UserRecordingEntityListing getUserrecordings(opts)
+## getUserrecordings
+
+> UserRecordingEntityListing getUserrecordings(opts)
 
 
 GET /api/v2/userrecordings
@@ -275,15 +277,15 @@ apiInstance.getUserrecordings(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRecordingEntityListing**
 
-<a name="getUserrecordingsSummary"></a>
 
-# FaxSummary getUserrecordingsSummary()
+## getUserrecordingsSummary
+
+> FaxSummary getUserrecordingsSummary()
 
 
 GET /api/v2/userrecordings/summary
@@ -319,14 +321,14 @@ apiInstance.getUserrecordingsSummary()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **FaxSummary**
 
-<a name="putUserrecording"></a>
 
-# UserRecording putUserrecording(recordingId, body, opts)
+## putUserrecording
+
+> UserRecording putUserrecording(recordingId, body, opts)
 
 
 PUT /api/v2/userrecordings/{recordingId}
@@ -372,9 +374,10 @@ apiInstance.putUserrecording(recordingId, body, opts)
  **recordingId** | **String** | User Recording ID |  |
  **body** | **Object** | UserRecording |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRecording**
 
+
+_purecloud-platform-client-v2@204.0.1_

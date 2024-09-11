@@ -1,19 +1,19 @@
----
-title: AgentCopilotApi
----
+# AgentCopilotApi
+
 # platformClient.AgentCopilotApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getAssistantCopilot**](AgentCopilotApi.html#getAssistantCopilot) | **GET** /api/v2/assistants/{assistantId}/copilot | Get copilot configuration of an assistant.
-[**putAssistantCopilot**](AgentCopilotApi.html#putAssistantCopilot) | **PUT** /api/v2/assistants/{assistantId}/copilot | Update agent copilot configuration
-{: class="table table-striped"}
+[**getAssistantCopilot**](AgentCopilotApi#getAssistantCopilot) | **GET** /api/v2/assistants/{assistantId}/copilot | Get copilot configuration of an assistant.
+[**putAssistantCopilot**](AgentCopilotApi#putAssistantCopilot) | **PUT** /api/v2/assistants/{assistantId}/copilot | Update agent copilot configuration
 
-<a name="getAssistantCopilot"></a>
 
-# Copilot getAssistantCopilot(assistantId)
+
+## getAssistantCopilot
+
+> Copilot getAssistantCopilot(assistantId)
 
 
 GET /api/v2/assistants/{assistantId}/copilot
@@ -55,15 +55,15 @@ apiInstance.getAssistantCopilot(assistantId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Copilot**
 
-<a name="putAssistantCopilot"></a>
 
-# Copilot putAssistantCopilot(assistantId, body)
+## putAssistantCopilot
+
+> Copilot putAssistantCopilot(assistantId, body)
 
 
 PUT /api/v2/assistants/{assistantId}/copilot
@@ -107,9 +107,10 @@ apiInstance.putAssistantCopilot(assistantId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **assistantId** | **String** | Assistant ID |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Copilot**
 
+
+_purecloud-platform-client-v2@204.0.1_

@@ -1,51 +1,51 @@
----
-title: LanguageUnderstandingApi
----
+# LanguageUnderstandingApi
+
 # platformClient.LanguageUnderstandingApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteLanguageunderstandingDomain**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomain) | **DELETE** /api/v2/languageunderstanding/domains/{domainId} | Delete an NLU Domain.
-[**deleteLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainFeedbackFeedbackId) | **DELETE** /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} | Delete the feedback on the NLU Domain Version.
-[**deleteLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainVersion) | **DELETE** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Delete an NLU Domain Version
-[**deleteLanguageunderstandingMiner**](LanguageUnderstandingApi.html#deleteLanguageunderstandingMiner) | **DELETE** /api/v2/languageunderstanding/miners/{minerId} | Delete a miner.
-[**deleteLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#deleteLanguageunderstandingMinerDraft) | **DELETE** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Delete a draft
-[**getLanguageunderstandingDomain**](LanguageUnderstandingApi.html#getLanguageunderstandingDomain) | **GET** /api/v2/languageunderstanding/domains/{domainId} | Find an NLU Domain.
-[**getLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedback) | **GET** /api/v2/languageunderstanding/domains/{domainId}/feedback | Get all feedback in the given NLU Domain Version.
-[**getLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedbackFeedbackId) | **GET** /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} | Find a Feedback
-[**getLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainVersion) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Find an NLU Domain Version.
-[**getLanguageunderstandingDomainVersionReport**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainVersionReport) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report | Retrieved quality report for the specified NLU Domain Version
-[**getLanguageunderstandingDomainVersions**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainVersions) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions | Get all NLU Domain Versions for a given Domain.
-[**getLanguageunderstandingDomains**](LanguageUnderstandingApi.html#getLanguageunderstandingDomains) | **GET** /api/v2/languageunderstanding/domains | Get all NLU Domains.
-[**getLanguageunderstandingMiner**](LanguageUnderstandingApi.html#getLanguageunderstandingMiner) | **GET** /api/v2/languageunderstanding/miners/{minerId} | Get information about a miner.
-[**getLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerDraft) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Get information about a draft.
-[**getLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerDrafts) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts | Retrieve the list of drafts created.
-[**getLanguageunderstandingMinerIntent**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntent) | **GET** /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId} | Get information about a mined intent
-[**getLanguageunderstandingMinerIntents**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntents) | **GET** /api/v2/languageunderstanding/miners/{minerId}/intents | Retrieve a list of mined intents.
-[**getLanguageunderstandingMinerTopic**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopic) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId} | Retrieves details of a particular topic.
-[**getLanguageunderstandingMinerTopicPhrase**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopicPhrase) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId} | Retrieves utterances related to a phrase in a topic.
-[**getLanguageunderstandingMinerTopics**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopics) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics | Retrieve a list of mined topics.
-[**getLanguageunderstandingMiners**](LanguageUnderstandingApi.html#getLanguageunderstandingMiners) | **GET** /api/v2/languageunderstanding/miners | Retrieve the list of miners created.
-[**getLanguageunderstandingSettings**](LanguageUnderstandingApi.html#getLanguageunderstandingSettings) | **GET** /api/v2/languageunderstanding/settings | Get Organization Configuration
-[**patchLanguageunderstandingDomain**](LanguageUnderstandingApi.html#patchLanguageunderstandingDomain) | **PATCH** /api/v2/languageunderstanding/domains/{domainId} | Update an NLU Domain.
-[**patchLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#patchLanguageunderstandingMinerDraft) | **PATCH** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Save information for the draft. Either topic draft or intent draft should be sent.
-[**postLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainFeedback) | **POST** /api/v2/languageunderstanding/domains/{domainId}/feedback | Create feedback for the NLU Domain Version.
-[**postLanguageunderstandingDomainVersionDetect**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionDetect) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
-[**postLanguageunderstandingDomainVersionPublish**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionPublish) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish | Publish the draft NLU Domain Version.
-[**postLanguageunderstandingDomainVersionTrain**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionTrain) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train | Train the draft NLU Domain Version.
-[**postLanguageunderstandingDomainVersions**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersions) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions | Create an NLU Domain Version.
-[**postLanguageunderstandingDomains**](LanguageUnderstandingApi.html#postLanguageunderstandingDomains) | **POST** /api/v2/languageunderstanding/domains | Create an NLU Domain.
-[**postLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi.html#postLanguageunderstandingMinerDrafts) | **POST** /api/v2/languageunderstanding/miners/{minerId}/drafts | Create a new draft resource.
-[**postLanguageunderstandingMinerExecute**](LanguageUnderstandingApi.html#postLanguageunderstandingMinerExecute) | **POST** /api/v2/languageunderstanding/miners/{minerId}/execute | Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
-[**postLanguageunderstandingMiners**](LanguageUnderstandingApi.html#postLanguageunderstandingMiners) | **POST** /api/v2/languageunderstanding/miners | Create a unique miner.
-[**putLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#putLanguageunderstandingDomainVersion) | **PUT** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Update an NLU Domain Version.
-{: class="table table-striped"}
+[**deleteLanguageunderstandingDomain**](LanguageUnderstandingApi#deleteLanguageunderstandingDomain) | **DELETE** /api/v2/languageunderstanding/domains/{domainId} | Delete an NLU Domain.
+[**deleteLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi#deleteLanguageunderstandingDomainFeedbackFeedbackId) | **DELETE** /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} | Delete the feedback on the NLU Domain Version.
+[**deleteLanguageunderstandingDomainVersion**](LanguageUnderstandingApi#deleteLanguageunderstandingDomainVersion) | **DELETE** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Delete an NLU Domain Version
+[**deleteLanguageunderstandingMiner**](LanguageUnderstandingApi#deleteLanguageunderstandingMiner) | **DELETE** /api/v2/languageunderstanding/miners/{minerId} | Delete a miner.
+[**deleteLanguageunderstandingMinerDraft**](LanguageUnderstandingApi#deleteLanguageunderstandingMinerDraft) | **DELETE** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Delete a draft
+[**getLanguageunderstandingDomain**](LanguageUnderstandingApi#getLanguageunderstandingDomain) | **GET** /api/v2/languageunderstanding/domains/{domainId} | Find an NLU Domain.
+[**getLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi#getLanguageunderstandingDomainFeedback) | **GET** /api/v2/languageunderstanding/domains/{domainId}/feedback | Get all feedback in the given NLU Domain Version.
+[**getLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi#getLanguageunderstandingDomainFeedbackFeedbackId) | **GET** /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} | Find a Feedback
+[**getLanguageunderstandingDomainVersion**](LanguageUnderstandingApi#getLanguageunderstandingDomainVersion) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Find an NLU Domain Version.
+[**getLanguageunderstandingDomainVersionReport**](LanguageUnderstandingApi#getLanguageunderstandingDomainVersionReport) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report | Retrieved quality report for the specified NLU Domain Version
+[**getLanguageunderstandingDomainVersions**](LanguageUnderstandingApi#getLanguageunderstandingDomainVersions) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions | Get all NLU Domain Versions for a given Domain.
+[**getLanguageunderstandingDomains**](LanguageUnderstandingApi#getLanguageunderstandingDomains) | **GET** /api/v2/languageunderstanding/domains | Get all NLU Domains.
+[**getLanguageunderstandingMiner**](LanguageUnderstandingApi#getLanguageunderstandingMiner) | **GET** /api/v2/languageunderstanding/miners/{minerId} | Get information about a miner.
+[**getLanguageunderstandingMinerDraft**](LanguageUnderstandingApi#getLanguageunderstandingMinerDraft) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Get information about a draft.
+[**getLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi#getLanguageunderstandingMinerDrafts) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts | Retrieve the list of drafts created.
+[**getLanguageunderstandingMinerIntent**](LanguageUnderstandingApi#getLanguageunderstandingMinerIntent) | **GET** /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId} | Get information about a mined intent
+[**getLanguageunderstandingMinerIntents**](LanguageUnderstandingApi#getLanguageunderstandingMinerIntents) | **GET** /api/v2/languageunderstanding/miners/{minerId}/intents | Retrieve a list of mined intents.
+[**getLanguageunderstandingMinerTopic**](LanguageUnderstandingApi#getLanguageunderstandingMinerTopic) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId} | Retrieves details of a particular topic.
+[**getLanguageunderstandingMinerTopicPhrase**](LanguageUnderstandingApi#getLanguageunderstandingMinerTopicPhrase) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId} | Retrieves utterances related to a phrase in a topic.
+[**getLanguageunderstandingMinerTopics**](LanguageUnderstandingApi#getLanguageunderstandingMinerTopics) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics | Retrieve a list of mined topics.
+[**getLanguageunderstandingMiners**](LanguageUnderstandingApi#getLanguageunderstandingMiners) | **GET** /api/v2/languageunderstanding/miners | Retrieve the list of miners created.
+[**getLanguageunderstandingSettings**](LanguageUnderstandingApi#getLanguageunderstandingSettings) | **GET** /api/v2/languageunderstanding/settings | Get Organization Configuration
+[**patchLanguageunderstandingDomain**](LanguageUnderstandingApi#patchLanguageunderstandingDomain) | **PATCH** /api/v2/languageunderstanding/domains/{domainId} | Update an NLU Domain.
+[**patchLanguageunderstandingMinerDraft**](LanguageUnderstandingApi#patchLanguageunderstandingMinerDraft) | **PATCH** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Save information for the draft. Either topic draft or intent draft should be sent.
+[**postLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi#postLanguageunderstandingDomainFeedback) | **POST** /api/v2/languageunderstanding/domains/{domainId}/feedback | Create feedback for the NLU Domain Version.
+[**postLanguageunderstandingDomainVersionDetect**](LanguageUnderstandingApi#postLanguageunderstandingDomainVersionDetect) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
+[**postLanguageunderstandingDomainVersionPublish**](LanguageUnderstandingApi#postLanguageunderstandingDomainVersionPublish) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish | Publish the draft NLU Domain Version.
+[**postLanguageunderstandingDomainVersionTrain**](LanguageUnderstandingApi#postLanguageunderstandingDomainVersionTrain) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train | Train the draft NLU Domain Version.
+[**postLanguageunderstandingDomainVersions**](LanguageUnderstandingApi#postLanguageunderstandingDomainVersions) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions | Create an NLU Domain Version.
+[**postLanguageunderstandingDomains**](LanguageUnderstandingApi#postLanguageunderstandingDomains) | **POST** /api/v2/languageunderstanding/domains | Create an NLU Domain.
+[**postLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi#postLanguageunderstandingMinerDrafts) | **POST** /api/v2/languageunderstanding/miners/{minerId}/drafts | Create a new draft resource.
+[**postLanguageunderstandingMinerExecute**](LanguageUnderstandingApi#postLanguageunderstandingMinerExecute) | **POST** /api/v2/languageunderstanding/miners/{minerId}/execute | Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+[**postLanguageunderstandingMiners**](LanguageUnderstandingApi#postLanguageunderstandingMiners) | **POST** /api/v2/languageunderstanding/miners | Create a unique miner.
+[**putLanguageunderstandingDomainVersion**](LanguageUnderstandingApi#putLanguageunderstandingDomainVersion) | **PUT** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Update an NLU Domain Version.
 
-<a name="deleteLanguageunderstandingDomain"></a>
 
-# void deleteLanguageunderstandingDomain(domainId)
+
+## deleteLanguageunderstandingDomain
+
+> void deleteLanguageunderstandingDomain(domainId)
 
 
 DELETE /api/v2/languageunderstanding/domains/{domainId}
@@ -88,15 +88,15 @@ apiInstance.deleteLanguageunderstandingDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteLanguageunderstandingDomainFeedbackFeedbackId"></a>
 
-# void deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId)
+## deleteLanguageunderstandingDomainFeedbackFeedbackId
+
+> void deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId)
 
 
 DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}
@@ -141,15 +141,15 @@ apiInstance.deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedba
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **feedbackId** | **String** | ID of the Feedback |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteLanguageunderstandingDomainVersion"></a>
 
-# void deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
+## deleteLanguageunderstandingDomainVersion
+
+> void deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
 
 
 DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
@@ -194,15 +194,15 @@ apiInstance.deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteLanguageunderstandingMiner"></a>
 
-# void deleteLanguageunderstandingMiner(minerId)
+## deleteLanguageunderstandingMiner
+
+> void deleteLanguageunderstandingMiner(minerId)
 
 
 DELETE /api/v2/languageunderstanding/miners/{minerId}
@@ -244,15 +244,15 @@ apiInstance.deleteLanguageunderstandingMiner(minerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteLanguageunderstandingMinerDraft"></a>
 
-# void deleteLanguageunderstandingMinerDraft(minerId, draftId)
+## deleteLanguageunderstandingMinerDraft
+
+> void deleteLanguageunderstandingMinerDraft(minerId, draftId)
 
 
 DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
@@ -296,15 +296,15 @@ apiInstance.deleteLanguageunderstandingMinerDraft(minerId, draftId)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **draftId** | **String** | Draft ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getLanguageunderstandingDomain"></a>
 
-# NluDomain getLanguageunderstandingDomain(domainId)
+## getLanguageunderstandingDomain
+
+> NluDomain getLanguageunderstandingDomain(domainId)
 
 
 GET /api/v2/languageunderstanding/domains/{domainId}
@@ -347,15 +347,15 @@ apiInstance.getLanguageunderstandingDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomain**
 
-<a name="getLanguageunderstandingDomainFeedback"></a>
 
-# NluFeedbackListing getLanguageunderstandingDomainFeedback(domainId, opts)
+## getLanguageunderstandingDomainFeedback
+
+> NluFeedbackListing getLanguageunderstandingDomainFeedback(domainId, opts)
 
 
 GET /api/v2/languageunderstanding/domains/{domainId}/feedback
@@ -424,15 +424,15 @@ apiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)
  **includeTrainingUtterances** | **Boolean** | Include Training Utterances. By default they're included. | [optional] [default to true] |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true | [optional]  |
  **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluFeedbackListing**
 
-<a name="getLanguageunderstandingDomainFeedbackFeedbackId"></a>
 
-# NluFeedbackResponse getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts)
+## getLanguageunderstandingDomainFeedbackFeedbackId
+
+> NluFeedbackResponse getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts)
 
 
 GET /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}
@@ -481,15 +481,15 @@ apiInstance.getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackI
  **domainId** | **String** | ID of the NLU domain. |  |
  **feedbackId** | **String** | ID of the Feedback |  |
  **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluFeedbackResponse**
 
-<a name="getLanguageunderstandingDomainVersion"></a>
 
-# NluDomainVersion getLanguageunderstandingDomainVersion(domainId, domainVersionId, opts)
+## getLanguageunderstandingDomainVersion
+
+> NluDomainVersion getLanguageunderstandingDomainVersion(domainId, domainVersionId, opts)
 
 
 GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
@@ -538,15 +538,15 @@ apiInstance.getLanguageunderstandingDomainVersion(domainId, domainVersionId, opt
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
  **includeUtterances** | **Boolean** | Whether utterances for intent definition should be included when marshalling response. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomainVersion**
 
-<a name="getLanguageunderstandingDomainVersionReport"></a>
 
-# NluDomainVersionQualityReport getLanguageunderstandingDomainVersionReport(domainId, domainVersionId)
+## getLanguageunderstandingDomainVersionReport
+
+> NluDomainVersionQualityReport getLanguageunderstandingDomainVersionReport(domainId, domainVersionId)
 
 
 GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report
@@ -591,15 +591,15 @@ apiInstance.getLanguageunderstandingDomainVersionReport(domainId, domainVersionI
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomainVersionQualityReport**
 
-<a name="getLanguageunderstandingDomainVersions"></a>
 
-# NluDomainVersionListing getLanguageunderstandingDomainVersions(domainId, opts)
+## getLanguageunderstandingDomainVersions
+
+> NluDomainVersionListing getLanguageunderstandingDomainVersions(domainId, opts)
 
 
 GET /api/v2/languageunderstanding/domains/{domainId}/versions
@@ -650,15 +650,15 @@ apiInstance.getLanguageunderstandingDomainVersions(domainId, opts)
  **includeUtterances** | **Boolean** | Whether utterances for intent definition should be included when marshalling response. | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomainVersionListing**
 
-<a name="getLanguageunderstandingDomains"></a>
 
-# NluDomainListing getLanguageunderstandingDomains(opts)
+## getLanguageunderstandingDomains
+
+> NluDomainListing getLanguageunderstandingDomains(opts)
 
 
 GET /api/v2/languageunderstanding/domains
@@ -705,15 +705,15 @@ apiInstance.getLanguageunderstandingDomains(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomainListing**
 
-<a name="getLanguageunderstandingMiner"></a>
 
-# Miner getLanguageunderstandingMiner(minerId)
+## getLanguageunderstandingMiner
+
+> Miner getLanguageunderstandingMiner(minerId)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}
@@ -755,15 +755,15 @@ apiInstance.getLanguageunderstandingMiner(minerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Miner**
 
-<a name="getLanguageunderstandingMinerDraft"></a>
 
-# Draft getLanguageunderstandingMinerDraft(minerId, draftId, opts)
+## getLanguageunderstandingMinerDraft
+
+> Draft getLanguageunderstandingMinerDraft(minerId, draftId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
@@ -813,15 +813,15 @@ apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId, opts)
  **draftId** | **String** | Draft ID |  |
  **draftIntentId** | **String** | Parameter to filter a specific intent. | [optional]  |
  **draftTopicId** | **String** | Parameter to filter a specific topic. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Draft**
 
-<a name="getLanguageunderstandingMinerDrafts"></a>
 
-# DraftListing getLanguageunderstandingMinerDrafts(minerId)
+## getLanguageunderstandingMinerDrafts
+
+> DraftListing getLanguageunderstandingMinerDrafts(minerId)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/drafts
@@ -863,15 +863,15 @@ apiInstance.getLanguageunderstandingMinerDrafts(minerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DraftListing**
 
-<a name="getLanguageunderstandingMinerIntent"></a>
 
-# MinerIntent getLanguageunderstandingMinerIntent(minerId, intentId, opts)
+## getLanguageunderstandingMinerIntent
+
+> MinerIntent getLanguageunderstandingMinerIntent(minerId, intentId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}
@@ -919,15 +919,15 @@ apiInstance.getLanguageunderstandingMinerIntent(minerId, intentId, opts)
  **minerId** | **String** | Miner ID |  |
  **intentId** | **String** | The ID of the intent to be retrieved. |  |
  **expand** | **String** | Option to fetch utterances | [optional] <br />**Values**: phrases, utterances |
-{: class="table table-striped"}
 
 ### Return type
 
 **MinerIntent**
 
-<a name="getLanguageunderstandingMinerIntents"></a>
 
-# MinedIntentsListing getLanguageunderstandingMinerIntents(minerId, opts)
+## getLanguageunderstandingMinerIntents
+
+> MinedIntentsListing getLanguageunderstandingMinerIntents(minerId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/intents
@@ -973,15 +973,15 @@ apiInstance.getLanguageunderstandingMinerIntents(minerId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **expand** | **String** | Option to fetch utterances. | [optional] <br />**Values**: phrases, utterances |
-{: class="table table-striped"}
 
 ### Return type
 
 **MinedIntentsListing**
 
-<a name="getLanguageunderstandingMinerTopic"></a>
 
-# MinerTopic getLanguageunderstandingMinerTopic(minerId, topicId, opts)
+## getLanguageunderstandingMinerTopic
+
+> MinerTopic getLanguageunderstandingMinerTopic(minerId, topicId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}
@@ -1029,15 +1029,15 @@ apiInstance.getLanguageunderstandingMinerTopic(minerId, topicId, opts)
  **minerId** | **String** | Miner ID |  |
  **topicId** | **String** | The ID of the topic to be retrieved. |  |
  **expand** | **String** | Option to fetch phrases | [optional] <br />**Values**: phrases, utterances |
-{: class="table table-striped"}
 
 ### Return type
 
 **MinerTopic**
 
-<a name="getLanguageunderstandingMinerTopicPhrase"></a>
 
-# MinerTopicPhrase getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
+## getLanguageunderstandingMinerTopicPhrase
+
+> MinerTopicPhrase getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId}
@@ -1083,15 +1083,15 @@ apiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
  **minerId** | **String** | Miner ID |  |
  **topicId** | **String** | The ID of the topic to be retrieved. |  |
  **phraseId** | **String** | The ID of the phrase to be retrieved. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MinerTopicPhrase**
 
-<a name="getLanguageunderstandingMinerTopics"></a>
 
-# MinerTopicsListing getLanguageunderstandingMinerTopics(minerId)
+## getLanguageunderstandingMinerTopics
+
+> MinerTopicsListing getLanguageunderstandingMinerTopics(minerId)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/topics
@@ -1133,15 +1133,15 @@ apiInstance.getLanguageunderstandingMinerTopics(minerId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MinerTopicsListing**
 
-<a name="getLanguageunderstandingMiners"></a>
 
-# MinerListing getLanguageunderstandingMiners(opts)
+## getLanguageunderstandingMiners
+
+> MinerListing getLanguageunderstandingMiners(opts)
 
 
 GET /api/v2/languageunderstanding/miners
@@ -1185,15 +1185,15 @@ apiInstance.getLanguageunderstandingMiners(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerType** | **String** | Type of miner, either intent or topic | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MinerListing**
 
-<a name="getLanguageunderstandingSettings"></a>
 
-# NluOrganization getLanguageunderstandingSettings()
+## getLanguageunderstandingSettings
+
+> NluOrganization getLanguageunderstandingSettings()
 
 
 GET /api/v2/languageunderstanding/settings
@@ -1233,14 +1233,14 @@ apiInstance.getLanguageunderstandingSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **NluOrganization**
 
-<a name="patchLanguageunderstandingDomain"></a>
 
-# NluDomain patchLanguageunderstandingDomain(domainId, body)
+## patchLanguageunderstandingDomain
+
+> NluDomain patchLanguageunderstandingDomain(domainId, body)
 
 
 PATCH /api/v2/languageunderstanding/domains/{domainId}
@@ -1285,15 +1285,15 @@ apiInstance.patchLanguageunderstandingDomain(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **body** | **Object** | The updated NLU Domain. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomain**
 
-<a name="patchLanguageunderstandingMinerDraft"></a>
 
-# Draft patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
+## patchLanguageunderstandingMinerDraft
+
+> Draft patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
 
 
 PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
@@ -1341,15 +1341,15 @@ apiInstance.patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
  **minerId** | **String** | Miner ID |  |
  **draftId** | **String** | Draft ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Draft**
 
-<a name="postLanguageunderstandingDomainFeedback"></a>
 
-# NluFeedbackResponse postLanguageunderstandingDomainFeedback(domainId, body)
+## postLanguageunderstandingDomainFeedback
+
+> NluFeedbackResponse postLanguageunderstandingDomainFeedback(domainId, body)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/feedback
@@ -1394,15 +1394,15 @@ apiInstance.postLanguageunderstandingDomainFeedback(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **body** | **Object** | The Feedback to create. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluFeedbackResponse**
 
-<a name="postLanguageunderstandingDomainVersionDetect"></a>
 
-# NluDetectionResponse postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
+## postLanguageunderstandingDomainVersionDetect
+
+> NluDetectionResponse postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect
@@ -1449,15 +1449,15 @@ apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersion
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
  **body** | **Object** | The input data to perform detection on. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDetectionResponse**
 
-<a name="postLanguageunderstandingDomainVersionPublish"></a>
 
-# NluDomainVersion postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId)
+## postLanguageunderstandingDomainVersionPublish
+
+> NluDomainVersion postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish
@@ -1502,15 +1502,15 @@ apiInstance.postLanguageunderstandingDomainVersionPublish(domainId, domainVersio
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomainVersion**
 
-<a name="postLanguageunderstandingDomainVersionTrain"></a>
 
-# NluDomainVersionTrainingResponse postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId)
+## postLanguageunderstandingDomainVersionTrain
+
+> NluDomainVersionTrainingResponse postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train
@@ -1555,15 +1555,15 @@ apiInstance.postLanguageunderstandingDomainVersionTrain(domainId, domainVersionI
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomainVersionTrainingResponse**
 
-<a name="postLanguageunderstandingDomainVersions"></a>
 
-# NluDomainVersion postLanguageunderstandingDomainVersions(domainId, body, opts)
+## postLanguageunderstandingDomainVersions
+
+> NluDomainVersion postLanguageunderstandingDomainVersions(domainId, body, opts)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/versions
@@ -1612,15 +1612,15 @@ apiInstance.postLanguageunderstandingDomainVersions(domainId, body, opts)
  **domainId** | **String** | ID of the NLU domain. |  |
  **body** | **Object** | The NLU Domain Version to create. |  |
  **includeUtterances** | **Boolean** | Whether utterances for intent definition should be included when marshalling response. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomainVersion**
 
-<a name="postLanguageunderstandingDomains"></a>
 
-# NluDomain postLanguageunderstandingDomains(body)
+## postLanguageunderstandingDomains
+
+> NluDomain postLanguageunderstandingDomains(body)
 
 
 POST /api/v2/languageunderstanding/domains
@@ -1663,15 +1663,15 @@ apiInstance.postLanguageunderstandingDomains(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The NLU Domain to create. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomain**
 
-<a name="postLanguageunderstandingMinerDrafts"></a>
 
-# Draft postLanguageunderstandingMinerDrafts(minerId, body)
+## postLanguageunderstandingMinerDrafts
+
+> Draft postLanguageunderstandingMinerDrafts(minerId, body)
 
 
 POST /api/v2/languageunderstanding/miners/{minerId}/drafts
@@ -1715,15 +1715,15 @@ apiInstance.postLanguageunderstandingMinerDrafts(minerId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **body** | **Object** | Details for creating draft resource |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Draft**
 
-<a name="postLanguageunderstandingMinerExecute"></a>
 
-# Miner postLanguageunderstandingMinerExecute(minerId, opts)
+## postLanguageunderstandingMinerExecute
+
+> Miner postLanguageunderstandingMinerExecute(minerId, opts)
 
 
 POST /api/v2/languageunderstanding/miners/{minerId}/execute
@@ -1769,15 +1769,15 @@ apiInstance.postLanguageunderstandingMinerExecute(minerId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Miner**
 
-<a name="postLanguageunderstandingMiners"></a>
 
-# Miner postLanguageunderstandingMiners(body)
+## postLanguageunderstandingMiners
+
+> Miner postLanguageunderstandingMiners(body)
 
 
 POST /api/v2/languageunderstanding/miners
@@ -1819,15 +1819,15 @@ apiInstance.postLanguageunderstandingMiners(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Details for creating a new miner resource. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Miner**
 
-<a name="putLanguageunderstandingDomainVersion"></a>
 
-# NluDomainVersion putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
+## putLanguageunderstandingDomainVersion
+
+> NluDomainVersion putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
 
 
 PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
@@ -1874,9 +1874,10 @@ apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, bod
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
  **body** | **Object** | The updated NLU Domain Version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **NluDomainVersion**
 
+
+_purecloud-platform-client-v2@204.0.1_

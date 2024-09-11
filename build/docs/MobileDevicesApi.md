@@ -1,22 +1,22 @@
----
-title: MobileDevicesApi
----
+# MobileDevicesApi
+
 # platformClient.MobileDevicesApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteMobiledevice**](MobileDevicesApi.html#deleteMobiledevice) | **DELETE** /api/v2/mobiledevices/{deviceId} | Delete device
-[**getMobiledevice**](MobileDevicesApi.html#getMobiledevice) | **GET** /api/v2/mobiledevices/{deviceId} | Get device
-[**getMobiledevices**](MobileDevicesApi.html#getMobiledevices) | **GET** /api/v2/mobiledevices | Get a list of all devices.
-[**postMobiledevices**](MobileDevicesApi.html#postMobiledevices) | **POST** /api/v2/mobiledevices | Create User device
-[**putMobiledevice**](MobileDevicesApi.html#putMobiledevice) | **PUT** /api/v2/mobiledevices/{deviceId} | Update device
-{: class="table table-striped"}
+[**deleteMobiledevice**](MobileDevicesApi#deleteMobiledevice) | **DELETE** /api/v2/mobiledevices/{deviceId} | Delete device
+[**getMobiledevice**](MobileDevicesApi#getMobiledevice) | **GET** /api/v2/mobiledevices/{deviceId} | Get device
+[**getMobiledevices**](MobileDevicesApi#getMobiledevices) | **GET** /api/v2/mobiledevices | Get a list of all devices.
+[**postMobiledevices**](MobileDevicesApi#postMobiledevices) | **POST** /api/v2/mobiledevices | Create User device
+[**putMobiledevice**](MobileDevicesApi#putMobiledevice) | **PUT** /api/v2/mobiledevices/{deviceId} | Update device
 
-<a name="deleteMobiledevice"></a>
 
-# void deleteMobiledevice(deviceId)
+
+## deleteMobiledevice
+
+> void deleteMobiledevice(deviceId)
 
 
 DELETE /api/v2/mobiledevices/{deviceId}
@@ -56,15 +56,15 @@ apiInstance.deleteMobiledevice(deviceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deviceId** | **String** | Device ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getMobiledevice"></a>
 
-# UserDevice getMobiledevice(deviceId)
+## getMobiledevice
+
+> UserDevice getMobiledevice(deviceId)
 
 
 GET /api/v2/mobiledevices/{deviceId}
@@ -104,15 +104,15 @@ apiInstance.getMobiledevice(deviceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deviceId** | **String** | Device ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserDevice**
 
-<a name="getMobiledevices"></a>
 
-# DirectoryUserDevicesListing getMobiledevices(opts)
+## getMobiledevices
+
+> DirectoryUserDevicesListing getMobiledevices(opts)
 
 
 GET /api/v2/mobiledevices
@@ -158,15 +158,15 @@ apiInstance.getMobiledevices(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **DirectoryUserDevicesListing**
 
-<a name="postMobiledevices"></a>
 
-# UserDevice postMobiledevices(body)
+## postMobiledevices
+
+> UserDevice postMobiledevices(body)
 
 
 POST /api/v2/mobiledevices
@@ -206,15 +206,15 @@ apiInstance.postMobiledevices(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Device |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserDevice**
 
-<a name="putMobiledevice"></a>
 
-# UserDevice putMobiledevice(deviceId, opts)
+## putMobiledevice
+
+> UserDevice putMobiledevice(deviceId, opts)
 
 
 PUT /api/v2/mobiledevices/{deviceId}
@@ -258,9 +258,10 @@ apiInstance.putMobiledevice(deviceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deviceId** | **String** | Device ID |  |
  **body** | **Object** | Device | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserDevice**
 
+
+_purecloud-platform-client-v2@204.0.1_

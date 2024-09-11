@@ -1,20 +1,20 @@
----
-title: EventsApi
----
+# EventsApi
+
 # platformClient.EventsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**postEventsConversations**](EventsApi.html#postEventsConversations) | **POST** /api/v2/events/conversations | Publish Conversation Batch Events
-[**postEventsUsersPresence**](EventsApi.html#postEventsUsersPresence) | **POST** /api/v2/events/users/presence | Publish User Presence Status Batch Events
-[**postEventsUsersRoutingstatus**](EventsApi.html#postEventsUsersRoutingstatus) | **POST** /api/v2/events/users/routingstatus | Publish Agent Routing Status Batch Events
-{: class="table table-striped"}
+[**postEventsConversations**](EventsApi#postEventsConversations) | **POST** /api/v2/events/conversations | Publish Conversation Batch Events
+[**postEventsUsersPresence**](EventsApi#postEventsUsersPresence) | **POST** /api/v2/events/users/presence | Publish User Presence Status Batch Events
+[**postEventsUsersRoutingstatus**](EventsApi#postEventsUsersRoutingstatus) | **POST** /api/v2/events/users/routingstatus | Publish Agent Routing Status Batch Events
 
-<a name="postEventsConversations"></a>
 
-# BatchEventResponse postEventsConversations(body)
+
+## postEventsConversations
+
+> BatchEventResponse postEventsConversations(body)
 
 
 POST /api/v2/events/conversations
@@ -56,15 +56,15 @@ apiInstance.postEventsConversations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BatchEventResponse**
 
-<a name="postEventsUsersPresence"></a>
 
-# BatchEventResponse postEventsUsersPresence(body)
+## postEventsUsersPresence
+
+> BatchEventResponse postEventsUsersPresence(body)
 
 
 POST /api/v2/events/users/presence
@@ -106,15 +106,15 @@ apiInstance.postEventsUsersPresence(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BatchEventResponse**
 
-<a name="postEventsUsersRoutingstatus"></a>
 
-# BatchEventResponse postEventsUsersRoutingstatus(body)
+## postEventsUsersRoutingstatus
+
+> BatchEventResponse postEventsUsersRoutingstatus(body)
 
 
 POST /api/v2/events/users/routingstatus
@@ -156,9 +156,10 @@ apiInstance.postEventsUsersRoutingstatus(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BatchEventResponse**
 
+
+_purecloud-platform-client-v2@204.0.1_

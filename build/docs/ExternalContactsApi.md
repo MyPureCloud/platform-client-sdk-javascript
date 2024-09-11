@@ -1,93 +1,93 @@
----
-title: ExternalContactsApi
----
+# ExternalContactsApi
+
 # platformClient.ExternalContactsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteExternalcontactsContact**](ExternalContactsApi.html#deleteExternalcontactsContact) | **DELETE** /api/v2/externalcontacts/contacts/{contactId} | Delete an external contact
-[**deleteExternalcontactsContactNote**](ExternalContactsApi.html#deleteExternalcontactsContactNote) | **DELETE** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Delete a note for an external contact
-[**deleteExternalcontactsContactsSchema**](ExternalContactsApi.html#deleteExternalcontactsContactsSchema) | **DELETE** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Delete a schema
-[**deleteExternalcontactsExternalsource**](ExternalContactsApi.html#deleteExternalcontactsExternalsource) | **DELETE** /api/v2/externalcontacts/externalsources/{externalSourceId} | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
-[**deleteExternalcontactsOrganization**](ExternalContactsApi.html#deleteExternalcontactsOrganization) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Delete an external organization
-[**deleteExternalcontactsOrganizationNote**](ExternalContactsApi.html#deleteExternalcontactsOrganizationNote) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Delete a note for an external organization
-[**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi.html#deleteExternalcontactsOrganizationTrustor) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor | Unlink the Trustor for this External Organization
-[**deleteExternalcontactsRelationship**](ExternalContactsApi.html#deleteExternalcontactsRelationship) | **DELETE** /api/v2/externalcontacts/relationships/{relationshipId} | Delete a relationship
-[**getExternalcontactsContact**](ExternalContactsApi.html#getExternalcontactsContact) | **GET** /api/v2/externalcontacts/contacts/{contactId} | Fetch an external contact
-[**getExternalcontactsContactIdentifiers**](ExternalContactsApi.html#getExternalcontactsContactIdentifiers) | **GET** /api/v2/externalcontacts/contacts/{contactId}/identifiers | List the identifiers for a contact
-[**getExternalcontactsContactJourneySessions**](ExternalContactsApi.html#getExternalcontactsContactJourneySessions) | **GET** /api/v2/externalcontacts/contacts/{contactId}/journey/sessions | Retrieve all sessions for a given external contact.
-[**getExternalcontactsContactNote**](ExternalContactsApi.html#getExternalcontactsContactNote) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Fetch a note for an external contact
-[**getExternalcontactsContactNotes**](ExternalContactsApi.html#getExternalcontactsContactNotes) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes | List notes for an external contact
-[**getExternalcontactsContactUnresolved**](ExternalContactsApi.html#getExternalcontactsContactUnresolved) | **GET** /api/v2/externalcontacts/contacts/{contactId}/unresolved | Fetch an unresolved external contact
-[**getExternalcontactsContacts**](ExternalContactsApi.html#getExternalcontactsContacts) | **GET** /api/v2/externalcontacts/contacts | Search for external contacts
-[**getExternalcontactsContactsSchema**](ExternalContactsApi.html#getExternalcontactsContactsSchema) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Get a schema
-[**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
-[**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
-[**getExternalcontactsContactsSchemas**](ExternalContactsApi.html#getExternalcontactsContactsSchemas) | **GET** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas.
-[**getExternalcontactsExternalsource**](ExternalContactsApi.html#getExternalcontactsExternalsource) | **GET** /api/v2/externalcontacts/externalsources/{externalSourceId} | Fetch an External Source
-[**getExternalcontactsExternalsources**](ExternalContactsApi.html#getExternalcontactsExternalsources) | **GET** /api/v2/externalcontacts/externalsources | Fetch a list of External Sources
-[**getExternalcontactsOrganization**](ExternalContactsApi.html#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
-[**getExternalcontactsOrganizationContacts**](ExternalContactsApi.html#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
-[**getExternalcontactsOrganizationNote**](ExternalContactsApi.html#getExternalcontactsOrganizationNote) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Fetch a note for an external organization
-[**getExternalcontactsOrganizationNotes**](ExternalContactsApi.html#getExternalcontactsOrganizationNotes) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | List notes for an external organization
-[**getExternalcontactsOrganizationRelationships**](ExternalContactsApi.html#getExternalcontactsOrganizationRelationships) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships | Fetch a relationship for an external organization
-[**getExternalcontactsOrganizations**](ExternalContactsApi.html#getExternalcontactsOrganizations) | **GET** /api/v2/externalcontacts/organizations | Search for external organizations
-[**getExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchema) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Get a schema
-[**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersion) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
-[**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersions) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization's schema
-[**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemas) | **GET** /api/v2/externalcontacts/organizations/schemas | Get a list of schemas.
-[**getExternalcontactsRelationship**](ExternalContactsApi.html#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
-[**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi.html#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
-[**getExternalcontactsScanContacts**](ExternalContactsApi.html#getExternalcontactsScanContacts) | **GET** /api/v2/externalcontacts/scan/contacts | Scan for external contacts using paging
-[**getExternalcontactsScanNotes**](ExternalContactsApi.html#getExternalcontactsScanNotes) | **GET** /api/v2/externalcontacts/scan/notes | Scan for notes using paging
-[**getExternalcontactsScanOrganizations**](ExternalContactsApi.html#getExternalcontactsScanOrganizations) | **GET** /api/v2/externalcontacts/scan/organizations | Scan for external organizations using paging
-[**getExternalcontactsScanRelationships**](ExternalContactsApi.html#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
-[**patchExternalcontactsContactIdentifiers**](ExternalContactsApi.html#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
-[**postExternalcontactsBulkContacts**](ExternalContactsApi.html#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
-[**postExternalcontactsBulkContactsAdd**](ExternalContactsApi.html#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
-[**postExternalcontactsBulkContactsRemove**](ExternalContactsApi.html#postExternalcontactsBulkContactsRemove) | **POST** /api/v2/externalcontacts/bulk/contacts/remove | Bulk remove contacts
-[**postExternalcontactsBulkContactsUnresolved**](ExternalContactsApi.html#postExternalcontactsBulkContactsUnresolved) | **POST** /api/v2/externalcontacts/bulk/contacts/unresolved | Bulk fetch unresolved ancestor contacts
-[**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkContactsUpdate) | **POST** /api/v2/externalcontacts/bulk/contacts/update | Bulk update contacts
-[**postExternalcontactsBulkNotes**](ExternalContactsApi.html#postExternalcontactsBulkNotes) | **POST** /api/v2/externalcontacts/bulk/notes | Bulk fetch notes
-[**postExternalcontactsBulkNotesAdd**](ExternalContactsApi.html#postExternalcontactsBulkNotesAdd) | **POST** /api/v2/externalcontacts/bulk/notes/add | Bulk add notes
-[**postExternalcontactsBulkNotesRemove**](ExternalContactsApi.html#postExternalcontactsBulkNotesRemove) | **POST** /api/v2/externalcontacts/bulk/notes/remove | Bulk remove notes
-[**postExternalcontactsBulkNotesUpdate**](ExternalContactsApi.html#postExternalcontactsBulkNotesUpdate) | **POST** /api/v2/externalcontacts/bulk/notes/update | Bulk update notes
-[**postExternalcontactsBulkOrganizations**](ExternalContactsApi.html#postExternalcontactsBulkOrganizations) | **POST** /api/v2/externalcontacts/bulk/organizations | Bulk fetch organizations
-[**postExternalcontactsBulkOrganizationsAdd**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsAdd) | **POST** /api/v2/externalcontacts/bulk/organizations/add | Bulk add organizations
-[**postExternalcontactsBulkOrganizationsRemove**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsRemove) | **POST** /api/v2/externalcontacts/bulk/organizations/remove | Bulk remove organizations
-[**postExternalcontactsBulkOrganizationsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsUpdate) | **POST** /api/v2/externalcontacts/bulk/organizations/update | Bulk update organizations
-[**postExternalcontactsBulkRelationships**](ExternalContactsApi.html#postExternalcontactsBulkRelationships) | **POST** /api/v2/externalcontacts/bulk/relationships | Bulk fetch relationships
-[**postExternalcontactsBulkRelationshipsAdd**](ExternalContactsApi.html#postExternalcontactsBulkRelationshipsAdd) | **POST** /api/v2/externalcontacts/bulk/relationships/add | Bulk add relationships
-[**postExternalcontactsBulkRelationshipsRemove**](ExternalContactsApi.html#postExternalcontactsBulkRelationshipsRemove) | **POST** /api/v2/externalcontacts/bulk/relationships/remove | Bulk remove relationships
-[**postExternalcontactsBulkRelationshipsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkRelationshipsUpdate) | **POST** /api/v2/externalcontacts/bulk/relationships/update | Bulk update relationships
-[**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
-[**postExternalcontactsContactPromotion**](ExternalContactsApi.html#postExternalcontactsContactPromotion) | **POST** /api/v2/externalcontacts/contacts/{contactId}/promotion | Promote an observed contact (ephemeral or identified) to a curated contact
-[**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
-[**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
-[**postExternalcontactsExternalsources**](ExternalContactsApi.html#postExternalcontactsExternalsources) | **POST** /api/v2/externalcontacts/externalsources | Create an External Source
-[**postExternalcontactsIdentifierlookup**](ExternalContactsApi.html#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
-[**postExternalcontactsMergeContacts**](ExternalContactsApi.html#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
-[**postExternalcontactsOrganizationNotes**](ExternalContactsApi.html#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
-[**postExternalcontactsOrganizations**](ExternalContactsApi.html#postExternalcontactsOrganizations) | **POST** /api/v2/externalcontacts/organizations | Create an external organization
-[**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#postExternalcontactsOrganizationsSchemas) | **POST** /api/v2/externalcontacts/organizations/schemas | Create a schema
-[**postExternalcontactsRelationships**](ExternalContactsApi.html#postExternalcontactsRelationships) | **POST** /api/v2/externalcontacts/relationships | Create a relationship
-[**putExternalcontactsContact**](ExternalContactsApi.html#putExternalcontactsContact) | **PUT** /api/v2/externalcontacts/contacts/{contactId} | Update an external contact
-[**putExternalcontactsContactNote**](ExternalContactsApi.html#putExternalcontactsContactNote) | **PUT** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a note for an external contact
-[**putExternalcontactsContactsSchema**](ExternalContactsApi.html#putExternalcontactsContactsSchema) | **PUT** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Update a schema
-[**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | **PUT** /api/v2/externalcontacts/conversations/{conversationId} | Associate/disassociate an external contact with a conversation
-[**putExternalcontactsExternalsource**](ExternalContactsApi.html#putExternalcontactsExternalsource) | **PUT** /api/v2/externalcontacts/externalsources/{externalSourceId} | Update an External Source
-[**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update an external organization
-[**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update a note for an external organization
-[**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} | Links a Trustor with an External Organization
-[**putExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#putExternalcontactsOrganizationsSchema) | **PUT** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Update a schema
-[**putExternalcontactsRelationship**](ExternalContactsApi.html#putExternalcontactsRelationship) | **PUT** /api/v2/externalcontacts/relationships/{relationshipId} | Update a relationship
-{: class="table table-striped"}
+[**deleteExternalcontactsContact**](ExternalContactsApi#deleteExternalcontactsContact) | **DELETE** /api/v2/externalcontacts/contacts/{contactId} | Delete an external contact
+[**deleteExternalcontactsContactNote**](ExternalContactsApi#deleteExternalcontactsContactNote) | **DELETE** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Delete a note for an external contact
+[**deleteExternalcontactsContactsSchema**](ExternalContactsApi#deleteExternalcontactsContactsSchema) | **DELETE** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Delete a schema
+[**deleteExternalcontactsExternalsource**](ExternalContactsApi#deleteExternalcontactsExternalsource) | **DELETE** /api/v2/externalcontacts/externalsources/{externalSourceId} | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+[**deleteExternalcontactsOrganization**](ExternalContactsApi#deleteExternalcontactsOrganization) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Delete an external organization
+[**deleteExternalcontactsOrganizationNote**](ExternalContactsApi#deleteExternalcontactsOrganizationNote) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Delete a note for an external organization
+[**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi#deleteExternalcontactsOrganizationTrustor) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor | Unlink the Trustor for this External Organization
+[**deleteExternalcontactsRelationship**](ExternalContactsApi#deleteExternalcontactsRelationship) | **DELETE** /api/v2/externalcontacts/relationships/{relationshipId} | Delete a relationship
+[**getExternalcontactsContact**](ExternalContactsApi#getExternalcontactsContact) | **GET** /api/v2/externalcontacts/contacts/{contactId} | Fetch an external contact
+[**getExternalcontactsContactIdentifiers**](ExternalContactsApi#getExternalcontactsContactIdentifiers) | **GET** /api/v2/externalcontacts/contacts/{contactId}/identifiers | List the identifiers for a contact
+[**getExternalcontactsContactJourneySessions**](ExternalContactsApi#getExternalcontactsContactJourneySessions) | **GET** /api/v2/externalcontacts/contacts/{contactId}/journey/sessions | Retrieve all sessions for a given external contact.
+[**getExternalcontactsContactNote**](ExternalContactsApi#getExternalcontactsContactNote) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Fetch a note for an external contact
+[**getExternalcontactsContactNotes**](ExternalContactsApi#getExternalcontactsContactNotes) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes | List notes for an external contact
+[**getExternalcontactsContactUnresolved**](ExternalContactsApi#getExternalcontactsContactUnresolved) | **GET** /api/v2/externalcontacts/contacts/{contactId}/unresolved | Fetch an unresolved external contact
+[**getExternalcontactsContacts**](ExternalContactsApi#getExternalcontactsContacts) | **GET** /api/v2/externalcontacts/contacts | Search for external contacts
+[**getExternalcontactsContactsSchema**](ExternalContactsApi#getExternalcontactsContactsSchema) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Get a schema
+[**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
+[**getExternalcontactsContactsSchemas**](ExternalContactsApi#getExternalcontactsContactsSchemas) | **GET** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas.
+[**getExternalcontactsExternalsource**](ExternalContactsApi#getExternalcontactsExternalsource) | **GET** /api/v2/externalcontacts/externalsources/{externalSourceId} | Fetch an External Source
+[**getExternalcontactsExternalsources**](ExternalContactsApi#getExternalcontactsExternalsources) | **GET** /api/v2/externalcontacts/externalsources | Fetch a list of External Sources
+[**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
+[**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
+[**getExternalcontactsOrganizationNote**](ExternalContactsApi#getExternalcontactsOrganizationNote) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Fetch a note for an external organization
+[**getExternalcontactsOrganizationNotes**](ExternalContactsApi#getExternalcontactsOrganizationNotes) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | List notes for an external organization
+[**getExternalcontactsOrganizationRelationships**](ExternalContactsApi#getExternalcontactsOrganizationRelationships) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships | Fetch a relationship for an external organization
+[**getExternalcontactsOrganizations**](ExternalContactsApi#getExternalcontactsOrganizations) | **GET** /api/v2/externalcontacts/organizations | Search for external organizations
+[**getExternalcontactsOrganizationsSchema**](ExternalContactsApi#getExternalcontactsOrganizationsSchema) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Get a schema
+[**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersion) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersions) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization's schema
+[**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi#getExternalcontactsOrganizationsSchemas) | **GET** /api/v2/externalcontacts/organizations/schemas | Get a list of schemas.
+[**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
+[**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+[**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | **GET** /api/v2/externalcontacts/scan/contacts | Scan for external contacts using paging
+[**getExternalcontactsScanNotes**](ExternalContactsApi#getExternalcontactsScanNotes) | **GET** /api/v2/externalcontacts/scan/notes | Scan for notes using paging
+[**getExternalcontactsScanOrganizations**](ExternalContactsApi#getExternalcontactsScanOrganizations) | **GET** /api/v2/externalcontacts/scan/organizations | Scan for external organizations using paging
+[**getExternalcontactsScanRelationships**](ExternalContactsApi#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
+[**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
+[**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
+[**postExternalcontactsBulkContactsAdd**](ExternalContactsApi#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
+[**postExternalcontactsBulkContactsRemove**](ExternalContactsApi#postExternalcontactsBulkContactsRemove) | **POST** /api/v2/externalcontacts/bulk/contacts/remove | Bulk remove contacts
+[**postExternalcontactsBulkContactsUnresolved**](ExternalContactsApi#postExternalcontactsBulkContactsUnresolved) | **POST** /api/v2/externalcontacts/bulk/contacts/unresolved | Bulk fetch unresolved ancestor contacts
+[**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi#postExternalcontactsBulkContactsUpdate) | **POST** /api/v2/externalcontacts/bulk/contacts/update | Bulk update contacts
+[**postExternalcontactsBulkNotes**](ExternalContactsApi#postExternalcontactsBulkNotes) | **POST** /api/v2/externalcontacts/bulk/notes | Bulk fetch notes
+[**postExternalcontactsBulkNotesAdd**](ExternalContactsApi#postExternalcontactsBulkNotesAdd) | **POST** /api/v2/externalcontacts/bulk/notes/add | Bulk add notes
+[**postExternalcontactsBulkNotesRemove**](ExternalContactsApi#postExternalcontactsBulkNotesRemove) | **POST** /api/v2/externalcontacts/bulk/notes/remove | Bulk remove notes
+[**postExternalcontactsBulkNotesUpdate**](ExternalContactsApi#postExternalcontactsBulkNotesUpdate) | **POST** /api/v2/externalcontacts/bulk/notes/update | Bulk update notes
+[**postExternalcontactsBulkOrganizations**](ExternalContactsApi#postExternalcontactsBulkOrganizations) | **POST** /api/v2/externalcontacts/bulk/organizations | Bulk fetch organizations
+[**postExternalcontactsBulkOrganizationsAdd**](ExternalContactsApi#postExternalcontactsBulkOrganizationsAdd) | **POST** /api/v2/externalcontacts/bulk/organizations/add | Bulk add organizations
+[**postExternalcontactsBulkOrganizationsRemove**](ExternalContactsApi#postExternalcontactsBulkOrganizationsRemove) | **POST** /api/v2/externalcontacts/bulk/organizations/remove | Bulk remove organizations
+[**postExternalcontactsBulkOrganizationsUpdate**](ExternalContactsApi#postExternalcontactsBulkOrganizationsUpdate) | **POST** /api/v2/externalcontacts/bulk/organizations/update | Bulk update organizations
+[**postExternalcontactsBulkRelationships**](ExternalContactsApi#postExternalcontactsBulkRelationships) | **POST** /api/v2/externalcontacts/bulk/relationships | Bulk fetch relationships
+[**postExternalcontactsBulkRelationshipsAdd**](ExternalContactsApi#postExternalcontactsBulkRelationshipsAdd) | **POST** /api/v2/externalcontacts/bulk/relationships/add | Bulk add relationships
+[**postExternalcontactsBulkRelationshipsRemove**](ExternalContactsApi#postExternalcontactsBulkRelationshipsRemove) | **POST** /api/v2/externalcontacts/bulk/relationships/remove | Bulk remove relationships
+[**postExternalcontactsBulkRelationshipsUpdate**](ExternalContactsApi#postExternalcontactsBulkRelationshipsUpdate) | **POST** /api/v2/externalcontacts/bulk/relationships/update | Bulk update relationships
+[**postExternalcontactsContactNotes**](ExternalContactsApi#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
+[**postExternalcontactsContactPromotion**](ExternalContactsApi#postExternalcontactsContactPromotion) | **POST** /api/v2/externalcontacts/contacts/{contactId}/promotion | Promote an observed contact (ephemeral or identified) to a curated contact
+[**postExternalcontactsContacts**](ExternalContactsApi#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
+[**postExternalcontactsContactsSchemas**](ExternalContactsApi#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
+[**postExternalcontactsExternalsources**](ExternalContactsApi#postExternalcontactsExternalsources) | **POST** /api/v2/externalcontacts/externalsources | Create an External Source
+[**postExternalcontactsIdentifierlookup**](ExternalContactsApi#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
+[**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
+[**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
+[**postExternalcontactsOrganizations**](ExternalContactsApi#postExternalcontactsOrganizations) | **POST** /api/v2/externalcontacts/organizations | Create an external organization
+[**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi#postExternalcontactsOrganizationsSchemas) | **POST** /api/v2/externalcontacts/organizations/schemas | Create a schema
+[**postExternalcontactsRelationships**](ExternalContactsApi#postExternalcontactsRelationships) | **POST** /api/v2/externalcontacts/relationships | Create a relationship
+[**putExternalcontactsContact**](ExternalContactsApi#putExternalcontactsContact) | **PUT** /api/v2/externalcontacts/contacts/{contactId} | Update an external contact
+[**putExternalcontactsContactNote**](ExternalContactsApi#putExternalcontactsContactNote) | **PUT** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a note for an external contact
+[**putExternalcontactsContactsSchema**](ExternalContactsApi#putExternalcontactsContactsSchema) | **PUT** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Update a schema
+[**putExternalcontactsConversation**](ExternalContactsApi#putExternalcontactsConversation) | **PUT** /api/v2/externalcontacts/conversations/{conversationId} | Associate/disassociate an external contact with a conversation
+[**putExternalcontactsExternalsource**](ExternalContactsApi#putExternalcontactsExternalsource) | **PUT** /api/v2/externalcontacts/externalsources/{externalSourceId} | Update an External Source
+[**putExternalcontactsOrganization**](ExternalContactsApi#putExternalcontactsOrganization) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update an external organization
+[**putExternalcontactsOrganizationNote**](ExternalContactsApi#putExternalcontactsOrganizationNote) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update a note for an external organization
+[**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi#putExternalcontactsOrganizationTrustorTrustorId) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} | Links a Trustor with an External Organization
+[**putExternalcontactsOrganizationsSchema**](ExternalContactsApi#putExternalcontactsOrganizationsSchema) | **PUT** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Update a schema
+[**putExternalcontactsRelationship**](ExternalContactsApi#putExternalcontactsRelationship) | **PUT** /api/v2/externalcontacts/relationships/{relationshipId} | Update a relationship
 
-<a name="deleteExternalcontactsContact"></a>
 
-# **Object** deleteExternalcontactsContact(contactId)
+
+## deleteExternalcontactsContact
+
+> **Object** deleteExternalcontactsContact(contactId)
 
 
 DELETE /api/v2/externalcontacts/contacts/{contactId}
@@ -130,15 +130,15 @@ apiInstance.deleteExternalcontactsContact(contactId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="deleteExternalcontactsContactNote"></a>
 
-# **Object** deleteExternalcontactsContactNote(contactId, noteId)
+## deleteExternalcontactsContactNote
+
+> **Object** deleteExternalcontactsContactNote(contactId, noteId)
 
 
 DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
@@ -183,15 +183,15 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="deleteExternalcontactsContactsSchema"></a>
 
-# void deleteExternalcontactsContactsSchema(schemaId)
+## deleteExternalcontactsContactsSchema
+
+> void deleteExternalcontactsContactsSchema(schemaId)
 
 
 DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}
@@ -233,15 +233,15 @@ apiInstance.deleteExternalcontactsContactsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteExternalcontactsExternalsource"></a>
 
-# **Object** deleteExternalcontactsExternalsource(externalSourceId)
+## deleteExternalcontactsExternalsource
+
+> **Object** deleteExternalcontactsExternalsource(externalSourceId)
 
 
 DELETE /api/v2/externalcontacts/externalsources/{externalSourceId}
@@ -285,15 +285,15 @@ apiInstance.deleteExternalcontactsExternalsource(externalSourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalSourceId** | **String** | External Source ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="deleteExternalcontactsOrganization"></a>
 
-# **Object** deleteExternalcontactsOrganization(externalOrganizationId)
+## deleteExternalcontactsOrganization
+
+> **Object** deleteExternalcontactsOrganization(externalOrganizationId)
 
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}
@@ -336,15 +336,15 @@ apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="deleteExternalcontactsOrganizationNote"></a>
 
-# **Object** deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
+## deleteExternalcontactsOrganizationNote
+
+> **Object** deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
 
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
@@ -389,15 +389,15 @@ apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteI
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="deleteExternalcontactsOrganizationTrustor"></a>
 
-# void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
+## deleteExternalcontactsOrganizationTrustor
+
+> void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor
@@ -439,15 +439,15 @@ apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteExternalcontactsRelationship"></a>
 
-# **Object** deleteExternalcontactsRelationship(relationshipId)
+## deleteExternalcontactsRelationship
+
+> **Object** deleteExternalcontactsRelationship(relationshipId)
 
 
 DELETE /api/v2/externalcontacts/relationships/{relationshipId}
@@ -490,15 +490,15 @@ apiInstance.deleteExternalcontactsRelationship(relationshipId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="getExternalcontactsContact"></a>
 
-# ExternalContact getExternalcontactsContact(contactId, opts)
+## getExternalcontactsContact
+
+> ExternalContact getExternalcontactsContact(contactId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}
@@ -545,15 +545,15 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalContact**
 
-<a name="getExternalcontactsContactIdentifiers"></a>
 
-# EntityListing getExternalcontactsContactIdentifiers(contactId)
+## getExternalcontactsContactIdentifiers
+
+> EntityListing getExternalcontactsContactIdentifiers(contactId)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/identifiers
@@ -595,15 +595,15 @@ apiInstance.getExternalcontactsContactIdentifiers(contactId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EntityListing**
 
-<a name="getExternalcontactsContactJourneySessions"></a>
 
-# SessionListing getExternalcontactsContactJourneySessions(contactId, opts)
+## getExternalcontactsContactJourneySessions
+
+> SessionListing getExternalcontactsContactJourneySessions(contactId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions
@@ -653,15 +653,15 @@ apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **includeMerged** | **Boolean** | Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SessionListing**
 
-<a name="getExternalcontactsContactNote"></a>
 
-# Note getExternalcontactsContactNote(contactId, noteId, opts)
+## getExternalcontactsContactNote
+
+> Note getExternalcontactsContactNote(contactId, noteId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
@@ -710,15 +710,15 @@ apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **Note**
 
-<a name="getExternalcontactsContactNotes"></a>
 
-# NoteListing getExternalcontactsContactNotes(contactId, opts)
+## getExternalcontactsContactNotes
+
+> NoteListing getExternalcontactsContactNotes(contactId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/notes
@@ -771,15 +771,15 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **NoteListing**
 
-<a name="getExternalcontactsContactUnresolved"></a>
 
-# ExternalContact getExternalcontactsContactUnresolved(contactId, opts)
+## getExternalcontactsContactUnresolved
+
+> ExternalContact getExternalcontactsContactUnresolved(contactId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/unresolved
@@ -825,15 +825,15 @@ apiInstance.getExternalcontactsContactUnresolved(contactId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalContact**
 
-<a name="getExternalcontactsContacts"></a>
 
-# ContactListing getExternalcontactsContacts(opts)
+## getExternalcontactsContacts
+
+> ContactListing getExternalcontactsContacts(opts)
 
 
 GET /api/v2/externalcontacts/contacts
@@ -886,15 +886,15 @@ apiInstance.getExternalcontactsContacts(opts)
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListing**
 
-<a name="getExternalcontactsContactsSchema"></a>
 
-# DataSchema getExternalcontactsContactsSchema(schemaId)
+## getExternalcontactsContactsSchema
+
+> DataSchema getExternalcontactsContactsSchema(schemaId)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}
@@ -936,15 +936,15 @@ apiInstance.getExternalcontactsContactsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getExternalcontactsContactsSchemaVersion"></a>
 
-# DataSchema getExternalcontactsContactsSchemaVersion(schemaId, versionId)
+## getExternalcontactsContactsSchemaVersion
+
+> DataSchema getExternalcontactsContactsSchemaVersion(schemaId, versionId)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}
@@ -988,15 +988,15 @@ apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **versionId** | **String** | Schema version |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getExternalcontactsContactsSchemaVersions"></a>
 
-# DataSchema getExternalcontactsContactsSchemaVersions(schemaId)
+## getExternalcontactsContactsSchemaVersions
+
+> DataSchema getExternalcontactsContactsSchemaVersions(schemaId)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions
@@ -1038,15 +1038,15 @@ apiInstance.getExternalcontactsContactsSchemaVersions(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getExternalcontactsContactsSchemas"></a>
 
-# DataSchemaListing getExternalcontactsContactsSchemas()
+## getExternalcontactsContactsSchemas
+
+> DataSchemaListing getExternalcontactsContactsSchemas()
 
 
 GET /api/v2/externalcontacts/contacts/schemas
@@ -1084,14 +1084,14 @@ apiInstance.getExternalcontactsContactsSchemas()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataSchemaListing**
 
-<a name="getExternalcontactsExternalsource"></a>
 
-# ExternalSource getExternalcontactsExternalsource(externalSourceId)
+## getExternalcontactsExternalsource
+
+> ExternalSource getExternalcontactsExternalsource(externalSourceId)
 
 
 GET /api/v2/externalcontacts/externalsources/{externalSourceId}
@@ -1137,15 +1137,15 @@ apiInstance.getExternalcontactsExternalsource(externalSourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalSourceId** | **String** | External Source ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalSource**
 
-<a name="getExternalcontactsExternalsources"></a>
 
-# CursorExternalSourceListing getExternalcontactsExternalsources(opts)
+## getExternalcontactsExternalsources
+
+> CursorExternalSourceListing getExternalcontactsExternalsources(opts)
 
 
 GET /api/v2/externalcontacts/externalsources
@@ -1199,15 +1199,15 @@ apiInstance.getExternalcontactsExternalsources(opts)
  **limit** | **Number** | The number of ExternalSources per page; must be between 10 and 200, default is 100 | [optional]  |
  **name** | **String** | Filter by external source name. Filtering is prefix filtering and not an exact match | [optional]  |
  **active** | **Boolean** | Filter by active status of external source | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CursorExternalSourceListing**
 
-<a name="getExternalcontactsOrganization"></a>
 
-# ExternalOrganization getExternalcontactsOrganization(externalOrganizationId, opts)
+## getExternalcontactsOrganization
+
+> ExternalOrganization getExternalcontactsOrganization(externalOrganizationId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}
@@ -1256,15 +1256,15 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
  **externalOrganizationId** | **String** | External Organization ID |  |
  **expand** | **[String]** | which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalOrganization**
 
-<a name="getExternalcontactsOrganizationContacts"></a>
 
-# ContactListing getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
+## getExternalcontactsOrganizationContacts
+
+> ContactListing getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts
@@ -1319,15 +1319,15 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListing**
 
-<a name="getExternalcontactsOrganizationNote"></a>
 
-# Note getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
+## getExternalcontactsOrganizationNote
+
+> Note getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
@@ -1376,15 +1376,15 @@ apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **Note**
 
-<a name="getExternalcontactsOrganizationNotes"></a>
 
-# NoteListing getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
+## getExternalcontactsOrganizationNotes
+
+> NoteListing getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
@@ -1437,15 +1437,15 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. createDate:asc, createDate:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **NoteListing**
 
-<a name="getExternalcontactsOrganizationRelationships"></a>
 
-# RelationshipListing getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
+## getExternalcontactsOrganizationRelationships
+
+> RelationshipListing getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships
@@ -1498,15 +1498,15 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
  **sortOrder** | **String** | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RelationshipListing**
 
-<a name="getExternalcontactsOrganizations"></a>
 
-# ExternalOrganizationListing getExternalcontactsOrganizations(opts)
+## getExternalcontactsOrganizations
+
+> ExternalOrganizationListing getExternalcontactsOrganizations(opts)
 
 
 GET /api/v2/externalcontacts/organizations
@@ -1563,15 +1563,15 @@ apiInstance.getExternalcontactsOrganizations(opts)
  **sortOrder** | **String** | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalOrganizationListing**
 
-<a name="getExternalcontactsOrganizationsSchema"></a>
 
-# DataSchema getExternalcontactsOrganizationsSchema(schemaId)
+## getExternalcontactsOrganizationsSchema
+
+> DataSchema getExternalcontactsOrganizationsSchema(schemaId)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}
@@ -1613,15 +1613,15 @@ apiInstance.getExternalcontactsOrganizationsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getExternalcontactsOrganizationsSchemaVersion"></a>
 
-# DataSchema getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
+## getExternalcontactsOrganizationsSchemaVersion
+
+> DataSchema getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}
@@ -1665,15 +1665,15 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **versionId** | **String** | Schema version |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getExternalcontactsOrganizationsSchemaVersions"></a>
 
-# DataSchema getExternalcontactsOrganizationsSchemaVersions(schemaId)
+## getExternalcontactsOrganizationsSchemaVersions
+
+> DataSchema getExternalcontactsOrganizationsSchemaVersions(schemaId)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions
@@ -1715,15 +1715,15 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getExternalcontactsOrganizationsSchemas"></a>
 
-# DataSchemaListing getExternalcontactsOrganizationsSchemas()
+## getExternalcontactsOrganizationsSchemas
+
+> DataSchemaListing getExternalcontactsOrganizationsSchemas()
 
 
 GET /api/v2/externalcontacts/organizations/schemas
@@ -1761,14 +1761,14 @@ apiInstance.getExternalcontactsOrganizationsSchemas()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataSchemaListing**
 
-<a name="getExternalcontactsRelationship"></a>
 
-# Relationship getExternalcontactsRelationship(relationshipId, opts)
+## getExternalcontactsRelationship
+
+> Relationship getExternalcontactsRelationship(relationshipId, opts)
 
 
 GET /api/v2/externalcontacts/relationships/{relationshipId}
@@ -1815,15 +1815,15 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **Relationship**
 
-<a name="getExternalcontactsReversewhitepageslookup"></a>
 
-# ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(lookupVal, opts)
+## getExternalcontactsReversewhitepageslookup
+
+> ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
 
 GET /api/v2/externalcontacts/reversewhitepageslookup
@@ -1869,15 +1869,15 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **lookupVal** | **String** | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
  **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **ReverseWhitepagesLookupResult**
 
-<a name="getExternalcontactsScanContacts"></a>
 
-# CursorContactListing getExternalcontactsScanContacts(opts)
+## getExternalcontactsScanContacts
+
+> CursorContactListing getExternalcontactsScanContacts(opts)
 
 
 GET /api/v2/externalcontacts/scan/contacts
@@ -1924,15 +1924,15 @@ apiInstance.getExternalcontactsScanContacts(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **limit** | **Number** | The number of contacts per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CursorContactListing**
 
-<a name="getExternalcontactsScanNotes"></a>
 
-# CursorNoteListing getExternalcontactsScanNotes(opts)
+## getExternalcontactsScanNotes
+
+> CursorNoteListing getExternalcontactsScanNotes(opts)
 
 
 GET /api/v2/externalcontacts/scan/notes
@@ -1979,15 +1979,15 @@ apiInstance.getExternalcontactsScanNotes(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **limit** | **Number** | The number of notes per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CursorNoteListing**
 
-<a name="getExternalcontactsScanOrganizations"></a>
 
-# CursorOrganizationListing getExternalcontactsScanOrganizations(opts)
+## getExternalcontactsScanOrganizations
+
+> CursorOrganizationListing getExternalcontactsScanOrganizations(opts)
 
 
 GET /api/v2/externalcontacts/scan/organizations
@@ -2034,15 +2034,15 @@ apiInstance.getExternalcontactsScanOrganizations(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **limit** | **Number** | The number of organizations per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CursorOrganizationListing**
 
-<a name="getExternalcontactsScanRelationships"></a>
 
-# CursorRelationshipListing getExternalcontactsScanRelationships(opts)
+## getExternalcontactsScanRelationships
+
+> CursorRelationshipListing getExternalcontactsScanRelationships(opts)
 
 
 GET /api/v2/externalcontacts/scan/relationships
@@ -2089,15 +2089,15 @@ apiInstance.getExternalcontactsScanRelationships(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **limit** | **Number** | The number of relationships per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CursorRelationshipListing**
 
-<a name="patchExternalcontactsContactIdentifiers"></a>
 
-# ContactIdentifier patchExternalcontactsContactIdentifiers(contactId, body)
+## patchExternalcontactsContactIdentifiers
+
+> ContactIdentifier patchExternalcontactsContactIdentifiers(contactId, body)
 
 
 PATCH /api/v2/externalcontacts/contacts/{contactId}/identifiers
@@ -2141,15 +2141,15 @@ apiInstance.patchExternalcontactsContactIdentifiers(contactId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **body** | **Object** | ClaimRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactIdentifier**
 
-<a name="postExternalcontactsBulkContacts"></a>
 
-# BulkFetchContactsResponse postExternalcontactsBulkContacts(body)
+## postExternalcontactsBulkContacts
+
+> BulkFetchContactsResponse postExternalcontactsBulkContacts(body)
 
 
 POST /api/v2/externalcontacts/bulk/contacts
@@ -2191,15 +2191,15 @@ apiInstance.postExternalcontactsBulkContacts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkFetchContactsResponse**
 
-<a name="postExternalcontactsBulkContactsAdd"></a>
 
-# BulkContactsResponse postExternalcontactsBulkContactsAdd(body)
+## postExternalcontactsBulkContactsAdd
+
+> BulkContactsResponse postExternalcontactsBulkContactsAdd(body)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/add
@@ -2241,15 +2241,15 @@ apiInstance.postExternalcontactsBulkContactsAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contacts |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkContactsResponse**
 
-<a name="postExternalcontactsBulkContactsRemove"></a>
 
-# BulkDeleteResponse postExternalcontactsBulkContactsRemove(body)
+## postExternalcontactsBulkContactsRemove
+
+> BulkDeleteResponse postExternalcontactsBulkContactsRemove(body)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/remove
@@ -2291,15 +2291,15 @@ apiInstance.postExternalcontactsBulkContactsRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkDeleteResponse**
 
-<a name="postExternalcontactsBulkContactsUnresolved"></a>
 
-# BulkFetchContactsResponse postExternalcontactsBulkContactsUnresolved(body)
+## postExternalcontactsBulkContactsUnresolved
+
+> BulkFetchContactsResponse postExternalcontactsBulkContactsUnresolved(body)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/unresolved
@@ -2341,15 +2341,15 @@ apiInstance.postExternalcontactsBulkContactsUnresolved(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkFetchContactsResponse**
 
-<a name="postExternalcontactsBulkContactsUpdate"></a>
 
-# BulkContactsResponse postExternalcontactsBulkContactsUpdate(body)
+## postExternalcontactsBulkContactsUpdate
+
+> BulkContactsResponse postExternalcontactsBulkContactsUpdate(body)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/update
@@ -2391,15 +2391,15 @@ apiInstance.postExternalcontactsBulkContactsUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contacts |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkContactsResponse**
 
-<a name="postExternalcontactsBulkNotes"></a>
 
-# BulkFetchNotesResponse postExternalcontactsBulkNotes(body)
+## postExternalcontactsBulkNotes
+
+> BulkFetchNotesResponse postExternalcontactsBulkNotes(body)
 
 
 POST /api/v2/externalcontacts/bulk/notes
@@ -2442,15 +2442,15 @@ apiInstance.postExternalcontactsBulkNotes(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Note ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkFetchNotesResponse**
 
-<a name="postExternalcontactsBulkNotesAdd"></a>
 
-# BulkNotesResponse postExternalcontactsBulkNotesAdd(body)
+## postExternalcontactsBulkNotesAdd
+
+> BulkNotesResponse postExternalcontactsBulkNotesAdd(body)
 
 
 POST /api/v2/externalcontacts/bulk/notes/add
@@ -2493,15 +2493,15 @@ apiInstance.postExternalcontactsBulkNotesAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Notes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkNotesResponse**
 
-<a name="postExternalcontactsBulkNotesRemove"></a>
 
-# BulkDeleteResponse postExternalcontactsBulkNotesRemove(body)
+## postExternalcontactsBulkNotesRemove
+
+> BulkDeleteResponse postExternalcontactsBulkNotesRemove(body)
 
 
 POST /api/v2/externalcontacts/bulk/notes/remove
@@ -2544,15 +2544,15 @@ apiInstance.postExternalcontactsBulkNotesRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Note ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkDeleteResponse**
 
-<a name="postExternalcontactsBulkNotesUpdate"></a>
 
-# BulkNotesResponse postExternalcontactsBulkNotesUpdate(body)
+## postExternalcontactsBulkNotesUpdate
+
+> BulkNotesResponse postExternalcontactsBulkNotesUpdate(body)
 
 
 POST /api/v2/externalcontacts/bulk/notes/update
@@ -2595,15 +2595,15 @@ apiInstance.postExternalcontactsBulkNotesUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Notes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkNotesResponse**
 
-<a name="postExternalcontactsBulkOrganizations"></a>
 
-# BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizations(body)
+## postExternalcontactsBulkOrganizations
+
+> BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizations(body)
 
 
 POST /api/v2/externalcontacts/bulk/organizations
@@ -2645,15 +2645,15 @@ apiInstance.postExternalcontactsBulkOrganizations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organizations ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkFetchOrganizationsResponse**
 
-<a name="postExternalcontactsBulkOrganizationsAdd"></a>
 
-# BulkOrganizationsResponse postExternalcontactsBulkOrganizationsAdd(body)
+## postExternalcontactsBulkOrganizationsAdd
+
+> BulkOrganizationsResponse postExternalcontactsBulkOrganizationsAdd(body)
 
 
 POST /api/v2/externalcontacts/bulk/organizations/add
@@ -2695,15 +2695,15 @@ apiInstance.postExternalcontactsBulkOrganizationsAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organizations |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkOrganizationsResponse**
 
-<a name="postExternalcontactsBulkOrganizationsRemove"></a>
 
-# BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(body)
+## postExternalcontactsBulkOrganizationsRemove
+
+> BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(body)
 
 
 POST /api/v2/externalcontacts/bulk/organizations/remove
@@ -2745,15 +2745,15 @@ apiInstance.postExternalcontactsBulkOrganizationsRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkDeleteResponse**
 
-<a name="postExternalcontactsBulkOrganizationsUpdate"></a>
 
-# BulkOrganizationsResponse postExternalcontactsBulkOrganizationsUpdate(body)
+## postExternalcontactsBulkOrganizationsUpdate
+
+> BulkOrganizationsResponse postExternalcontactsBulkOrganizationsUpdate(body)
 
 
 POST /api/v2/externalcontacts/bulk/organizations/update
@@ -2795,15 +2795,15 @@ apiInstance.postExternalcontactsBulkOrganizationsUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organizations |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkOrganizationsResponse**
 
-<a name="postExternalcontactsBulkRelationships"></a>
 
-# BulkFetchRelationshipsResponse postExternalcontactsBulkRelationships(body)
+## postExternalcontactsBulkRelationships
+
+> BulkFetchRelationshipsResponse postExternalcontactsBulkRelationships(body)
 
 
 POST /api/v2/externalcontacts/bulk/relationships
@@ -2846,15 +2846,15 @@ apiInstance.postExternalcontactsBulkRelationships(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationships ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkFetchRelationshipsResponse**
 
-<a name="postExternalcontactsBulkRelationshipsAdd"></a>
 
-# BulkRelationshipsResponse postExternalcontactsBulkRelationshipsAdd(body)
+## postExternalcontactsBulkRelationshipsAdd
+
+> BulkRelationshipsResponse postExternalcontactsBulkRelationshipsAdd(body)
 
 
 POST /api/v2/externalcontacts/bulk/relationships/add
@@ -2897,15 +2897,15 @@ apiInstance.postExternalcontactsBulkRelationshipsAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationships |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkRelationshipsResponse**
 
-<a name="postExternalcontactsBulkRelationshipsRemove"></a>
 
-# BulkDeleteResponse postExternalcontactsBulkRelationshipsRemove(body)
+## postExternalcontactsBulkRelationshipsRemove
+
+> BulkDeleteResponse postExternalcontactsBulkRelationshipsRemove(body)
 
 
 POST /api/v2/externalcontacts/bulk/relationships/remove
@@ -2948,15 +2948,15 @@ apiInstance.postExternalcontactsBulkRelationshipsRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationships ids |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkDeleteResponse**
 
-<a name="postExternalcontactsBulkRelationshipsUpdate"></a>
 
-# BulkRelationshipsResponse postExternalcontactsBulkRelationshipsUpdate(body)
+## postExternalcontactsBulkRelationshipsUpdate
+
+> BulkRelationshipsResponse postExternalcontactsBulkRelationshipsUpdate(body)
 
 
 POST /api/v2/externalcontacts/bulk/relationships/update
@@ -2999,15 +2999,15 @@ apiInstance.postExternalcontactsBulkRelationshipsUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationships |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkRelationshipsResponse**
 
-<a name="postExternalcontactsContactNotes"></a>
 
-# Note postExternalcontactsContactNotes(contactId, body)
+## postExternalcontactsContactNotes
+
+> Note postExternalcontactsContactNotes(contactId, body)
 
 
 POST /api/v2/externalcontacts/contacts/{contactId}/notes
@@ -3052,15 +3052,15 @@ apiInstance.postExternalcontactsContactNotes(contactId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
  **body** | **Object** | ExternalContact |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Note**
 
-<a name="postExternalcontactsContactPromotion"></a>
 
-# ExternalContact postExternalcontactsContactPromotion(contactId)
+## postExternalcontactsContactPromotion
+
+> ExternalContact postExternalcontactsContactPromotion(contactId)
 
 
 POST /api/v2/externalcontacts/contacts/{contactId}/promotion
@@ -3102,15 +3102,15 @@ apiInstance.postExternalcontactsContactPromotion(contactId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalContact**
 
-<a name="postExternalcontactsContacts"></a>
 
-# ExternalContact postExternalcontactsContacts(body)
+## postExternalcontactsContacts
+
+> ExternalContact postExternalcontactsContacts(body)
 
 
 POST /api/v2/externalcontacts/contacts
@@ -3153,15 +3153,15 @@ apiInstance.postExternalcontactsContacts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ExternalContact |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalContact**
 
-<a name="postExternalcontactsContactsSchemas"></a>
 
-# DataSchema postExternalcontactsContactsSchemas(body)
+## postExternalcontactsContactsSchemas
+
+> DataSchema postExternalcontactsContactsSchemas(body)
 
 
 POST /api/v2/externalcontacts/contacts/schemas
@@ -3203,15 +3203,15 @@ apiInstance.postExternalcontactsContactsSchemas(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Schema |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="postExternalcontactsExternalsources"></a>
 
-# ExternalSource postExternalcontactsExternalsources(body)
+## postExternalcontactsExternalsources
+
+> ExternalSource postExternalcontactsExternalsources(body)
 
 
 POST /api/v2/externalcontacts/externalsources
@@ -3255,15 +3255,15 @@ apiInstance.postExternalcontactsExternalsources(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | External Source |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalSource**
 
-<a name="postExternalcontactsIdentifierlookup"></a>
 
-# ExternalContact postExternalcontactsIdentifierlookup(identifier, opts)
+## postExternalcontactsIdentifierlookup
+
+> ExternalContact postExternalcontactsIdentifierlookup(identifier, opts)
 
 
 POST /api/v2/externalcontacts/identifierlookup
@@ -3312,15 +3312,15 @@ apiInstance.postExternalcontactsIdentifierlookup(identifier, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **identifier** | **Object** |  |  |
  **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalContact**
 
-<a name="postExternalcontactsMergeContacts"></a>
 
-# ExternalContact postExternalcontactsMergeContacts(body)
+## postExternalcontactsMergeContacts
+
+> ExternalContact postExternalcontactsMergeContacts(body)
 
 
 POST /api/v2/externalcontacts/merge/contacts
@@ -3364,15 +3364,15 @@ apiInstance.postExternalcontactsMergeContacts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MergeRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalContact**
 
-<a name="postExternalcontactsOrganizationNotes"></a>
 
-# Note postExternalcontactsOrganizationNotes(externalOrganizationId, body)
+## postExternalcontactsOrganizationNotes
+
+> Note postExternalcontactsOrganizationNotes(externalOrganizationId, body)
 
 
 POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
@@ -3417,15 +3417,15 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
  **body** | **Object** | ExternalContact |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Note**
 
-<a name="postExternalcontactsOrganizations"></a>
 
-# ExternalOrganization postExternalcontactsOrganizations(body)
+## postExternalcontactsOrganizations
+
+> ExternalOrganization postExternalcontactsOrganizations(body)
 
 
 POST /api/v2/externalcontacts/organizations
@@ -3468,15 +3468,15 @@ apiInstance.postExternalcontactsOrganizations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ExternalOrganization |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalOrganization**
 
-<a name="postExternalcontactsOrganizationsSchemas"></a>
 
-# DataSchema postExternalcontactsOrganizationsSchemas(body)
+## postExternalcontactsOrganizationsSchemas
+
+> DataSchema postExternalcontactsOrganizationsSchemas(body)
 
 
 POST /api/v2/externalcontacts/organizations/schemas
@@ -3518,15 +3518,15 @@ apiInstance.postExternalcontactsOrganizationsSchemas(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Schema |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="postExternalcontactsRelationships"></a>
 
-# Relationship postExternalcontactsRelationships(body)
+## postExternalcontactsRelationships
+
+> Relationship postExternalcontactsRelationships(body)
 
 
 POST /api/v2/externalcontacts/relationships
@@ -3569,15 +3569,15 @@ apiInstance.postExternalcontactsRelationships(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationship |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Relationship**
 
-<a name="putExternalcontactsContact"></a>
 
-# ExternalContact putExternalcontactsContact(contactId, body)
+## putExternalcontactsContact
+
+> ExternalContact putExternalcontactsContact(contactId, body)
 
 
 PUT /api/v2/externalcontacts/contacts/{contactId}
@@ -3622,15 +3622,15 @@ apiInstance.putExternalcontactsContact(contactId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **body** | **Object** | ExternalContact |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalContact**
 
-<a name="putExternalcontactsContactNote"></a>
 
-# Note putExternalcontactsContactNote(contactId, noteId, body)
+## putExternalcontactsContactNote
+
+> Note putExternalcontactsContactNote(contactId, noteId, body)
 
 
 PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
@@ -3677,15 +3677,15 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, body)
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
  **body** | **Object** | Note |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Note**
 
-<a name="putExternalcontactsContactsSchema"></a>
 
-# DataSchema putExternalcontactsContactsSchema(schemaId, body)
+## putExternalcontactsContactsSchema
+
+> DataSchema putExternalcontactsContactsSchema(schemaId, body)
 
 
 PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}
@@ -3729,15 +3729,15 @@ apiInstance.putExternalcontactsContactsSchema(schemaId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **body** | **Object** | Data Schema |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="putExternalcontactsConversation"></a>
 
-# void putExternalcontactsConversation(conversationId, body)
+## putExternalcontactsConversation
+
+> void putExternalcontactsConversation(conversationId, body)
 
 
 PUT /api/v2/externalcontacts/conversations/{conversationId}
@@ -3784,15 +3784,15 @@ apiInstance.putExternalcontactsConversation(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **body** | **Object** | ConversationAssociation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putExternalcontactsExternalsource"></a>
 
-# ExternalSource putExternalcontactsExternalsource(externalSourceId, body)
+## putExternalcontactsExternalsource
+
+> ExternalSource putExternalcontactsExternalsource(externalSourceId, body)
 
 
 PUT /api/v2/externalcontacts/externalsources/{externalSourceId}
@@ -3838,15 +3838,15 @@ apiInstance.putExternalcontactsExternalsource(externalSourceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **externalSourceId** | **String** | External Source ID |  |
  **body** | **Object** | External Source |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalSource**
 
-<a name="putExternalcontactsOrganization"></a>
 
-# ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, body)
+## putExternalcontactsOrganization
+
+> ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, body)
 
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}
@@ -3891,15 +3891,15 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
  **body** | **Object** | ExternalOrganization |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalOrganization**
 
-<a name="putExternalcontactsOrganizationNote"></a>
 
-# Note putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
+## putExternalcontactsOrganizationNote
+
+> Note putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
 
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
@@ -3946,15 +3946,15 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
  **body** | **Object** | Note |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Note**
 
-<a name="putExternalcontactsOrganizationTrustorTrustorId"></a>
 
-# ExternalOrganizationTrustorLink putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
+## putExternalcontactsOrganizationTrustorTrustorId
+
+> ExternalOrganizationTrustorLink putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
 
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}
@@ -3998,15 +3998,15 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
  **trustorId** | **String** | Trustor ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalOrganizationTrustorLink**
 
-<a name="putExternalcontactsOrganizationsSchema"></a>
 
-# DataSchema putExternalcontactsOrganizationsSchema(schemaId, body)
+## putExternalcontactsOrganizationsSchema
+
+> DataSchema putExternalcontactsOrganizationsSchema(schemaId, body)
 
 
 PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}
@@ -4050,15 +4050,15 @@ apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **body** | **Object** | Data Schema |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="putExternalcontactsRelationship"></a>
 
-# Relationship putExternalcontactsRelationship(relationshipId, body)
+## putExternalcontactsRelationship
+
+> Relationship putExternalcontactsRelationship(relationshipId, body)
 
 
 PUT /api/v2/externalcontacts/relationships/{relationshipId}
@@ -4103,9 +4103,10 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
  **body** | **Object** | Relationship |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Relationship**
 
+
+_purecloud-platform-client-v2@204.0.1_

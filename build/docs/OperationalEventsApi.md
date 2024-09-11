@@ -1,19 +1,19 @@
----
-title: OperationalEventsApi
----
+# OperationalEventsApi
+
 # platformClient.OperationalEventsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getUsageEventsDefinition**](OperationalEventsApi.html#getUsageEventsDefinition) | **GET** /api/v2/usage/events/definitions/{eventDefinitionId} | Get an operational event definition by its id
-[**getUsageEventsDefinitions**](OperationalEventsApi.html#getUsageEventsDefinitions) | **GET** /api/v2/usage/events/definitions | Get all operational event definitions
-{: class="table table-striped"}
+[**getUsageEventsDefinition**](OperationalEventsApi#getUsageEventsDefinition) | **GET** /api/v2/usage/events/definitions/{eventDefinitionId} | Get an operational event definition by its id
+[**getUsageEventsDefinitions**](OperationalEventsApi#getUsageEventsDefinitions) | **GET** /api/v2/usage/events/definitions | Get all operational event definitions
 
-<a name="getUsageEventsDefinition"></a>
 
-# EventDefinition getUsageEventsDefinition(eventDefinitionId)
+
+## getUsageEventsDefinition
+
+> EventDefinition getUsageEventsDefinition(eventDefinitionId)
 
 
 GET /api/v2/usage/events/definitions/{eventDefinitionId}
@@ -55,15 +55,15 @@ apiInstance.getUsageEventsDefinition(eventDefinitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **eventDefinitionId** | **String** | EventDefinition id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EventDefinition**
 
-<a name="getUsageEventsDefinitions"></a>
 
-# EventDefinitionListing getUsageEventsDefinitions()
+## getUsageEventsDefinitions
+
+> EventDefinitionListing getUsageEventsDefinitions()
 
 
 GET /api/v2/usage/events/definitions
@@ -101,8 +101,9 @@ apiInstance.getUsageEventsDefinitions()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **EventDefinitionListing**
 
+
+_purecloud-platform-client-v2@204.0.1_

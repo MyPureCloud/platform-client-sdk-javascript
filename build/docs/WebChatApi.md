@@ -1,38 +1,40 @@
----
-title: WebChatApi
----
+# WebChatApi
+
 # platformClient.WebChatApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteWebchatDeployment**](WebChatApi.html#deleteWebchatDeployment) | **DELETE** /api/v2/webchat/deployments/{deploymentId} | Delete a WebChat deployment
-[**deleteWebchatGuestConversationMember**](WebChatApi.html#deleteWebchatGuestConversationMember) | **DELETE** /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId} | Remove a member from a chat conversation
-[**deleteWebchatSettings**](WebChatApi.html#deleteWebchatSettings) | **DELETE** /api/v2/webchat/settings | Remove WebChat deployment settings
-[**getWebchatDeployment**](WebChatApi.html#getWebchatDeployment) | **GET** /api/v2/webchat/deployments/{deploymentId} | Get a WebChat deployment
-[**getWebchatDeployments**](WebChatApi.html#getWebchatDeployments) | **GET** /api/v2/webchat/deployments | List WebChat deployments
-[**getWebchatGuestConversationMediarequest**](WebChatApi.html#getWebchatGuestConversationMediarequest) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId} | Get a media request in the conversation
-[**getWebchatGuestConversationMediarequests**](WebChatApi.html#getWebchatGuestConversationMediarequests) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/mediarequests | Get all media requests to the guest in the conversation
-[**getWebchatGuestConversationMember**](WebChatApi.html#getWebchatGuestConversationMember) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId} | Get a web chat conversation member
-[**getWebchatGuestConversationMembers**](WebChatApi.html#getWebchatGuestConversationMembers) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/members | Get the members of a chat conversation.
-[**getWebchatGuestConversationMessage**](WebChatApi.html#getWebchatGuestConversationMessage) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId} | Get a web chat conversation message
-[**getWebchatGuestConversationMessages**](WebChatApi.html#getWebchatGuestConversationMessages) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/messages | Get the messages of a chat conversation.
-[**getWebchatSettings**](WebChatApi.html#getWebchatSettings) | **GET** /api/v2/webchat/settings | Get WebChat deployment settings
-[**patchWebchatGuestConversationMediarequest**](WebChatApi.html#patchWebchatGuestConversationMediarequest) | **PATCH** /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId} | Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
-[**postWebchatDeployments**](WebChatApi.html#postWebchatDeployments) | **POST** /api/v2/webchat/deployments | Create WebChat deployment
-[**postWebchatGuestConversationMemberMessages**](WebChatApi.html#postWebchatGuestConversationMemberMessages) | **POST** /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages | Send a message in a chat conversation.
-[**postWebchatGuestConversationMemberTyping**](WebChatApi.html#postWebchatGuestConversationMemberTyping) | **POST** /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing | Send a typing-indicator in a chat conversation.
-[**postWebchatGuestConversations**](WebChatApi.html#postWebchatGuestConversations) | **POST** /api/v2/webchat/guest/conversations | Create an ACD chat conversation from an external customer.
-[**putWebchatDeployment**](WebChatApi.html#putWebchatDeployment) | **PUT** /api/v2/webchat/deployments/{deploymentId} | Update a WebChat deployment
-[**putWebchatSettings**](WebChatApi.html#putWebchatSettings) | **PUT** /api/v2/webchat/settings | Update WebChat deployment settings
-{: class="table table-striped"}
+[**deleteWebchatDeployment**](WebChatApi#deleteWebchatDeployment) | **DELETE** /api/v2/webchat/deployments/{deploymentId} | Delete a WebChat deployment
+[**deleteWebchatGuestConversationMember**](WebChatApi#deleteWebchatGuestConversationMember) | **DELETE** /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId} | Remove a member from a chat conversation
+[**deleteWebchatSettings**](WebChatApi#deleteWebchatSettings) | **DELETE** /api/v2/webchat/settings | Remove WebChat deployment settings
+[**getWebchatDeployment**](WebChatApi#getWebchatDeployment) | **GET** /api/v2/webchat/deployments/{deploymentId} | Get a WebChat deployment
+[**getWebchatDeployments**](WebChatApi#getWebchatDeployments) | **GET** /api/v2/webchat/deployments | List WebChat deployments
+[**getWebchatGuestConversationMediarequest**](WebChatApi#getWebchatGuestConversationMediarequest) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId} | Get a media request in the conversation
+[**getWebchatGuestConversationMediarequests**](WebChatApi#getWebchatGuestConversationMediarequests) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/mediarequests | Get all media requests to the guest in the conversation
+[**getWebchatGuestConversationMember**](WebChatApi#getWebchatGuestConversationMember) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId} | Get a web chat conversation member
+[**getWebchatGuestConversationMembers**](WebChatApi#getWebchatGuestConversationMembers) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/members | Get the members of a chat conversation.
+[**getWebchatGuestConversationMessage**](WebChatApi#getWebchatGuestConversationMessage) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId} | Get a web chat conversation message
+[**getWebchatGuestConversationMessages**](WebChatApi#getWebchatGuestConversationMessages) | **GET** /api/v2/webchat/guest/conversations/{conversationId}/messages | Get the messages of a chat conversation.
+[**getWebchatSettings**](WebChatApi#getWebchatSettings) | **GET** /api/v2/webchat/settings | Get WebChat deployment settings
+[**patchWebchatGuestConversationMediarequest**](WebChatApi#patchWebchatGuestConversationMediarequest) | **PATCH** /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId} | Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
+[**postWebchatDeployments**](WebChatApi#postWebchatDeployments) | **POST** /api/v2/webchat/deployments | Create WebChat deployment
+[**postWebchatGuestConversationMemberMessages**](WebChatApi#postWebchatGuestConversationMemberMessages) | **POST** /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages | Send a message in a chat conversation.
+[**postWebchatGuestConversationMemberTyping**](WebChatApi#postWebchatGuestConversationMemberTyping) | **POST** /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing | Send a typing-indicator in a chat conversation.
+[**postWebchatGuestConversations**](WebChatApi#postWebchatGuestConversations) | **POST** /api/v2/webchat/guest/conversations | Create an ACD chat conversation from an external customer.
+[**putWebchatDeployment**](WebChatApi#putWebchatDeployment) | **PUT** /api/v2/webchat/deployments/{deploymentId} | Update a WebChat deployment
+[**putWebchatSettings**](WebChatApi#putWebchatSettings) | **PUT** /api/v2/webchat/settings | Update WebChat deployment settings
 
-<a name="deleteWebchatDeployment"></a>
 
-# void deleteWebchatDeployment(deploymentId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+## deleteWebchatDeployment
+
+> void deleteWebchatDeployment(deploymentId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/webchat/deployments/{deploymentId}
 
@@ -73,15 +75,15 @@ apiInstance.deleteWebchatDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Deployment Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWebchatGuestConversationMember"></a>
 
-# void deleteWebchatGuestConversationMember(conversationId, memberId)
+## deleteWebchatGuestConversationMember
+
+> void deleteWebchatGuestConversationMember(conversationId, memberId)
 
 
 DELETE /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}
@@ -126,15 +128,15 @@ apiInstance.deleteWebchatGuestConversationMember(conversationId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **memberId** | **String** | memberId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWebchatSettings"></a>
 
-# void deleteWebchatSettings()
+## deleteWebchatSettings
+
+> void deleteWebchatSettings()
 
 
 DELETE /api/v2/webchat/settings
@@ -172,16 +174,18 @@ apiInstance.deleteWebchatSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 void (no response body)
 
-<a name="getWebchatDeployment"></a>
 
-# WebChatDeployment getWebchatDeployment(deploymentId)
+## getWebchatDeployment
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WebChatDeployment getWebchatDeployment(deploymentId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/webchat/deployments/{deploymentId}
 
@@ -222,17 +226,19 @@ apiInstance.getWebchatDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Deployment Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatDeployment**
 
-<a name="getWebchatDeployments"></a>
 
-# WebChatDeploymentEntityListing getWebchatDeployments()
+## getWebchatDeployments
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WebChatDeploymentEntityListing getWebchatDeployments()
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/webchat/deployments
 
@@ -269,16 +275,18 @@ apiInstance.getWebchatDeployments()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **WebChatDeploymentEntityListing**
 
-<a name="getWebchatGuestConversationMediarequest"></a>
 
-# WebChatGuestMediaRequest getWebchatGuestConversationMediarequest(conversationId, mediaRequestId)
+## getWebchatGuestConversationMediarequest
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WebChatGuestMediaRequest getWebchatGuestConversationMediarequest(conversationId, mediaRequestId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}
 
@@ -324,15 +332,15 @@ apiInstance.getWebchatGuestConversationMediarequest(conversationId, mediaRequest
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **mediaRequestId** | **String** | mediaRequestId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatGuestMediaRequest**
 
-<a name="getWebchatGuestConversationMediarequests"></a>
 
-# WebChatGuestMediaRequestEntityList getWebchatGuestConversationMediarequests(conversationId)
+## getWebchatGuestConversationMediarequests
+
+> WebChatGuestMediaRequestEntityList getWebchatGuestConversationMediarequests(conversationId)
 
 
 GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests
@@ -375,15 +383,15 @@ apiInstance.getWebchatGuestConversationMediarequests(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatGuestMediaRequestEntityList**
 
-<a name="getWebchatGuestConversationMember"></a>
 
-# WebChatMemberInfo getWebchatGuestConversationMember(conversationId, memberId)
+## getWebchatGuestConversationMember
+
+> WebChatMemberInfo getWebchatGuestConversationMember(conversationId, memberId)
 
 
 GET /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}
@@ -428,15 +436,15 @@ apiInstance.getWebchatGuestConversationMember(conversationId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **memberId** | **String** | memberId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatMemberInfo**
 
-<a name="getWebchatGuestConversationMembers"></a>
 
-# WebChatMemberInfoEntityList getWebchatGuestConversationMembers(conversationId, opts)
+## getWebchatGuestConversationMembers
+
+> WebChatMemberInfoEntityList getWebchatGuestConversationMembers(conversationId, opts)
 
 
 GET /api/v2/webchat/guest/conversations/{conversationId}/members
@@ -487,15 +495,15 @@ apiInstance.getWebchatGuestConversationMembers(conversationId, opts)
  **pageSize** | **Number** | The number of entries to return per page, or omitted for the default. | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number to return, or omitted for the first page. | [optional] [default to 1] |
  **excludeDisconnectedMembers** | **Boolean** | If true, the results will not contain members who have a DISCONNECTED state. | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatMemberInfoEntityList**
 
-<a name="getWebchatGuestConversationMessage"></a>
 
-# WebChatMessage getWebchatGuestConversationMessage(conversationId, messageId)
+## getWebchatGuestConversationMessage
+
+> WebChatMessage getWebchatGuestConversationMessage(conversationId, messageId)
 
 
 GET /api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}
@@ -540,15 +548,15 @@ apiInstance.getWebchatGuestConversationMessage(conversationId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatMessage**
 
-<a name="getWebchatGuestConversationMessages"></a>
 
-# WebChatMessageEntityList getWebchatGuestConversationMessages(conversationId, opts)
+## getWebchatGuestConversationMessages
+
+> WebChatMessageEntityList getWebchatGuestConversationMessages(conversationId, opts)
 
 
 GET /api/v2/webchat/guest/conversations/{conversationId}/messages
@@ -601,15 +609,15 @@ apiInstance.getWebchatGuestConversationMessages(conversationId, opts)
  **before** | **String** | If available, get the messages chronologically before the id of this message | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **maxResults** | **Number** | Limit the returned number of messages, up to a maximum of 100 | [optional] [default to 100] |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatMessageEntityList**
 
-<a name="getWebchatSettings"></a>
 
-# WebChatSettings getWebchatSettings()
+## getWebchatSettings
+
+> WebChatSettings getWebchatSettings()
 
 
 GET /api/v2/webchat/settings
@@ -647,16 +655,18 @@ apiInstance.getWebchatSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **WebChatSettings**
 
-<a name="patchWebchatGuestConversationMediarequest"></a>
 
-# WebChatGuestMediaRequest patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
+## patchWebchatGuestConversationMediarequest
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WebChatGuestMediaRequest patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}
 
@@ -704,17 +714,19 @@ apiInstance.patchWebchatGuestConversationMediarequest(conversationId, mediaReque
  **conversationId** | **String** | conversationId |  |
  **mediaRequestId** | **String** | mediaRequestId |  |
  **body** | **Object** | Request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatGuestMediaRequest**
 
-<a name="postWebchatDeployments"></a>
 
-# WebChatDeployment postWebchatDeployments(body)
+## postWebchatDeployments
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WebChatDeployment postWebchatDeployments(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/webchat/deployments
 
@@ -755,15 +767,15 @@ apiInstance.postWebchatDeployments(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Deployment |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatDeployment**
 
-<a name="postWebchatGuestConversationMemberMessages"></a>
 
-# WebChatMessage postWebchatGuestConversationMemberMessages(conversationId, memberId, body)
+## postWebchatGuestConversationMemberMessages
+
+> WebChatMessage postWebchatGuestConversationMemberMessages(conversationId, memberId, body)
 
 
 POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages
@@ -810,15 +822,15 @@ apiInstance.postWebchatGuestConversationMemberMessages(conversationId, memberId,
  **conversationId** | **String** | conversationId |  |
  **memberId** | **String** | memberId |  |
  **body** | **Object** | Message |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatMessage**
 
-<a name="postWebchatGuestConversationMemberTyping"></a>
 
-# WebChatTyping postWebchatGuestConversationMemberTyping(conversationId, memberId)
+## postWebchatGuestConversationMemberTyping
+
+> WebChatTyping postWebchatGuestConversationMemberTyping(conversationId, memberId)
 
 
 POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing
@@ -863,15 +875,15 @@ apiInstance.postWebchatGuestConversationMemberTyping(conversationId, memberId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **memberId** | **String** | memberId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatTyping**
 
-<a name="postWebchatGuestConversations"></a>
 
-# CreateWebChatConversationResponse postWebchatGuestConversations(body)
+## postWebchatGuestConversations
+
+> CreateWebChatConversationResponse postWebchatGuestConversations(body)
 
 
 POST /api/v2/webchat/guest/conversations
@@ -910,17 +922,19 @@ apiInstance.postWebchatGuestConversations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | CreateConversationRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CreateWebChatConversationResponse**
 
-<a name="putWebchatDeployment"></a>
 
-# WebChatDeployment putWebchatDeployment(deploymentId, body)
+## putWebchatDeployment
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WebChatDeployment putWebchatDeployment(deploymentId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/webchat/deployments/{deploymentId}
 
@@ -963,15 +977,15 @@ apiInstance.putWebchatDeployment(deploymentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Deployment Id |  |
  **body** | **Object** | Deployment |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatDeployment**
 
-<a name="putWebchatSettings"></a>
 
-# WebChatSettings putWebchatSettings(body)
+## putWebchatSettings
+
+> WebChatSettings putWebchatSettings(body)
 
 
 PUT /api/v2/webchat/settings
@@ -1013,9 +1027,10 @@ apiInstance.putWebchatSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | webChatSettings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatSettings**
 
+
+_purecloud-platform-client-v2@204.0.1_

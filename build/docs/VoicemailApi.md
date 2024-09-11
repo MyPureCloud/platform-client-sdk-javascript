@@ -1,42 +1,42 @@
----
-title: VoicemailApi
----
+# VoicemailApi
+
 # platformClient.VoicemailApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteVoicemailMessage**](VoicemailApi.html#deleteVoicemailMessage) | **DELETE** /api/v2/voicemail/messages/{messageId} | Delete a voicemail message.
-[**deleteVoicemailMessages**](VoicemailApi.html#deleteVoicemailMessages) | **DELETE** /api/v2/voicemail/messages | Delete all voicemail messages
-[**getVoicemailGroupMailbox**](VoicemailApi.html#getVoicemailGroupMailbox) | **GET** /api/v2/voicemail/groups/{groupId}/mailbox | Get the group's mailbox information
-[**getVoicemailGroupMessages**](VoicemailApi.html#getVoicemailGroupMessages) | **GET** /api/v2/voicemail/groups/{groupId}/messages | List voicemail messages
-[**getVoicemailGroupPolicy**](VoicemailApi.html#getVoicemailGroupPolicy) | **GET** /api/v2/voicemail/groups/{groupId}/policy | Get a group's voicemail policy
-[**getVoicemailMailbox**](VoicemailApi.html#getVoicemailMailbox) | **GET** /api/v2/voicemail/mailbox | Get the current user's mailbox information
-[**getVoicemailMeMailbox**](VoicemailApi.html#getVoicemailMeMailbox) | **GET** /api/v2/voicemail/me/mailbox | Get the current user's mailbox information
-[**getVoicemailMeMessages**](VoicemailApi.html#getVoicemailMeMessages) | **GET** /api/v2/voicemail/me/messages | List voicemail messages
-[**getVoicemailMePolicy**](VoicemailApi.html#getVoicemailMePolicy) | **GET** /api/v2/voicemail/me/policy | Get the current user's voicemail policy
-[**getVoicemailMessage**](VoicemailApi.html#getVoicemailMessage) | **GET** /api/v2/voicemail/messages/{messageId} | Get a voicemail message
-[**getVoicemailMessageMedia**](VoicemailApi.html#getVoicemailMessageMedia) | **GET** /api/v2/voicemail/messages/{messageId}/media | Get media playback URI for this voicemail message
-[**getVoicemailMessages**](VoicemailApi.html#getVoicemailMessages) | **GET** /api/v2/voicemail/messages | List voicemail messages
-[**getVoicemailPolicy**](VoicemailApi.html#getVoicemailPolicy) | **GET** /api/v2/voicemail/policy | Get a policy
-[**getVoicemailQueueMessages**](VoicemailApi.html#getVoicemailQueueMessages) | **GET** /api/v2/voicemail/queues/{queueId}/messages | List voicemail messages
-[**getVoicemailSearch**](VoicemailApi.html#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
-[**getVoicemailUserpolicy**](VoicemailApi.html#getVoicemailUserpolicy) | **GET** /api/v2/voicemail/userpolicies/{userId} | Get a user's voicemail policy
-[**patchVoicemailGroupPolicy**](VoicemailApi.html#patchVoicemailGroupPolicy) | **PATCH** /api/v2/voicemail/groups/{groupId}/policy | Update a group's voicemail policy
-[**patchVoicemailMePolicy**](VoicemailApi.html#patchVoicemailMePolicy) | **PATCH** /api/v2/voicemail/me/policy | Update the current user's voicemail policy
-[**patchVoicemailMessage**](VoicemailApi.html#patchVoicemailMessage) | **PATCH** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
-[**patchVoicemailUserpolicy**](VoicemailApi.html#patchVoicemailUserpolicy) | **PATCH** /api/v2/voicemail/userpolicies/{userId} | Update a user's voicemail policy
-[**postVoicemailMessages**](VoicemailApi.html#postVoicemailMessages) | **POST** /api/v2/voicemail/messages | Copy a voicemail message to a user or group
-[**postVoicemailSearch**](VoicemailApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
-[**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | **PUT** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
-[**putVoicemailPolicy**](VoicemailApi.html#putVoicemailPolicy) | **PUT** /api/v2/voicemail/policy | Update a policy
-[**putVoicemailUserpolicy**](VoicemailApi.html#putVoicemailUserpolicy) | **PUT** /api/v2/voicemail/userpolicies/{userId} | Update a user's voicemail policy
-{: class="table table-striped"}
+[**deleteVoicemailMessage**](VoicemailApi#deleteVoicemailMessage) | **DELETE** /api/v2/voicemail/messages/{messageId} | Delete a voicemail message.
+[**deleteVoicemailMessages**](VoicemailApi#deleteVoicemailMessages) | **DELETE** /api/v2/voicemail/messages | Delete all voicemail messages
+[**getVoicemailGroupMailbox**](VoicemailApi#getVoicemailGroupMailbox) | **GET** /api/v2/voicemail/groups/{groupId}/mailbox | Get the group's mailbox information
+[**getVoicemailGroupMessages**](VoicemailApi#getVoicemailGroupMessages) | **GET** /api/v2/voicemail/groups/{groupId}/messages | List voicemail messages
+[**getVoicemailGroupPolicy**](VoicemailApi#getVoicemailGroupPolicy) | **GET** /api/v2/voicemail/groups/{groupId}/policy | Get a group's voicemail policy
+[**getVoicemailMailbox**](VoicemailApi#getVoicemailMailbox) | **GET** /api/v2/voicemail/mailbox | Get the current user's mailbox information
+[**getVoicemailMeMailbox**](VoicemailApi#getVoicemailMeMailbox) | **GET** /api/v2/voicemail/me/mailbox | Get the current user's mailbox information
+[**getVoicemailMeMessages**](VoicemailApi#getVoicemailMeMessages) | **GET** /api/v2/voicemail/me/messages | List voicemail messages
+[**getVoicemailMePolicy**](VoicemailApi#getVoicemailMePolicy) | **GET** /api/v2/voicemail/me/policy | Get the current user's voicemail policy
+[**getVoicemailMessage**](VoicemailApi#getVoicemailMessage) | **GET** /api/v2/voicemail/messages/{messageId} | Get a voicemail message
+[**getVoicemailMessageMedia**](VoicemailApi#getVoicemailMessageMedia) | **GET** /api/v2/voicemail/messages/{messageId}/media | Get media playback URI for this voicemail message
+[**getVoicemailMessages**](VoicemailApi#getVoicemailMessages) | **GET** /api/v2/voicemail/messages | List voicemail messages
+[**getVoicemailPolicy**](VoicemailApi#getVoicemailPolicy) | **GET** /api/v2/voicemail/policy | Get a policy
+[**getVoicemailQueueMessages**](VoicemailApi#getVoicemailQueueMessages) | **GET** /api/v2/voicemail/queues/{queueId}/messages | List voicemail messages
+[**getVoicemailSearch**](VoicemailApi#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
+[**getVoicemailUserpolicy**](VoicemailApi#getVoicemailUserpolicy) | **GET** /api/v2/voicemail/userpolicies/{userId} | Get a user's voicemail policy
+[**patchVoicemailGroupPolicy**](VoicemailApi#patchVoicemailGroupPolicy) | **PATCH** /api/v2/voicemail/groups/{groupId}/policy | Update a group's voicemail policy
+[**patchVoicemailMePolicy**](VoicemailApi#patchVoicemailMePolicy) | **PATCH** /api/v2/voicemail/me/policy | Update the current user's voicemail policy
+[**patchVoicemailMessage**](VoicemailApi#patchVoicemailMessage) | **PATCH** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
+[**patchVoicemailUserpolicy**](VoicemailApi#patchVoicemailUserpolicy) | **PATCH** /api/v2/voicemail/userpolicies/{userId} | Update a user's voicemail policy
+[**postVoicemailMessages**](VoicemailApi#postVoicemailMessages) | **POST** /api/v2/voicemail/messages | Copy a voicemail message to a user or group
+[**postVoicemailSearch**](VoicemailApi#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
+[**putVoicemailMessage**](VoicemailApi#putVoicemailMessage) | **PUT** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
+[**putVoicemailPolicy**](VoicemailApi#putVoicemailPolicy) | **PUT** /api/v2/voicemail/policy | Update a policy
+[**putVoicemailUserpolicy**](VoicemailApi#putVoicemailUserpolicy) | **PUT** /api/v2/voicemail/userpolicies/{userId} | Update a user's voicemail policy
 
-<a name="deleteVoicemailMessage"></a>
 
-# void deleteVoicemailMessage(messageId)
+
+## deleteVoicemailMessage
+
+> void deleteVoicemailMessage(messageId)
 
 
 DELETE /api/v2/voicemail/messages/{messageId}
@@ -78,15 +78,15 @@ apiInstance.deleteVoicemailMessage(messageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteVoicemailMessages"></a>
 
-# void deleteVoicemailMessages()
+## deleteVoicemailMessages
+
+> void deleteVoicemailMessages()
 
 
 DELETE /api/v2/voicemail/messages
@@ -122,14 +122,14 @@ apiInstance.deleteVoicemailMessages()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 void (no response body)
 
-<a name="getVoicemailGroupMailbox"></a>
 
-# VoicemailMailboxInfo getVoicemailGroupMailbox(groupId)
+## getVoicemailGroupMailbox
+
+> VoicemailMailboxInfo getVoicemailGroupMailbox(groupId)
 
 
 GET /api/v2/voicemail/groups/{groupId}/mailbox
@@ -169,15 +169,15 @@ apiInstance.getVoicemailGroupMailbox(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | groupId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMailboxInfo**
 
-<a name="getVoicemailGroupMessages"></a>
 
-# VoicemailMessageEntityListing getVoicemailGroupMessages(groupId, opts)
+## getVoicemailGroupMessages
+
+> VoicemailMessageEntityListing getVoicemailGroupMessages(groupId, opts)
 
 
 GET /api/v2/voicemail/groups/{groupId}/messages
@@ -223,15 +223,15 @@ apiInstance.getVoicemailGroupMessages(groupId, opts)
  **groupId** | **String** | Group ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMessageEntityListing**
 
-<a name="getVoicemailGroupPolicy"></a>
 
-# VoicemailGroupPolicy getVoicemailGroupPolicy(groupId)
+## getVoicemailGroupPolicy
+
+> VoicemailGroupPolicy getVoicemailGroupPolicy(groupId)
 
 
 GET /api/v2/voicemail/groups/{groupId}/policy
@@ -274,15 +274,15 @@ apiInstance.getVoicemailGroupPolicy(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailGroupPolicy**
 
-<a name="getVoicemailMailbox"></a>
 
-# VoicemailMailboxInfo getVoicemailMailbox()
+## getVoicemailMailbox
+
+> VoicemailMailboxInfo getVoicemailMailbox()
 
 
 GET /api/v2/voicemail/mailbox
@@ -318,14 +318,14 @@ apiInstance.getVoicemailMailbox()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **VoicemailMailboxInfo**
 
-<a name="getVoicemailMeMailbox"></a>
 
-# VoicemailMailboxInfo getVoicemailMeMailbox()
+## getVoicemailMeMailbox
+
+> VoicemailMailboxInfo getVoicemailMeMailbox()
 
 
 GET /api/v2/voicemail/me/mailbox
@@ -361,14 +361,14 @@ apiInstance.getVoicemailMeMailbox()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **VoicemailMailboxInfo**
 
-<a name="getVoicemailMeMessages"></a>
 
-# VoicemailMessageEntityListing getVoicemailMeMessages(opts)
+## getVoicemailMeMessages
+
+> VoicemailMessageEntityListing getVoicemailMeMessages(opts)
 
 
 GET /api/v2/voicemail/me/messages
@@ -412,15 +412,15 @@ apiInstance.getVoicemailMeMessages(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMessageEntityListing**
 
-<a name="getVoicemailMePolicy"></a>
 
-# VoicemailUserPolicy getVoicemailMePolicy()
+## getVoicemailMePolicy
+
+> VoicemailUserPolicy getVoicemailMePolicy()
 
 
 GET /api/v2/voicemail/me/policy
@@ -456,14 +456,14 @@ apiInstance.getVoicemailMePolicy()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **VoicemailUserPolicy**
 
-<a name="getVoicemailMessage"></a>
 
-# VoicemailMessage getVoicemailMessage(messageId, opts)
+## getVoicemailMessage
+
+> VoicemailMessage getVoicemailMessage(messageId, opts)
 
 
 GET /api/v2/voicemail/messages/{messageId}
@@ -507,15 +507,15 @@ apiInstance.getVoicemailMessage(messageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
  **expand** | **[String]** | If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMessage**
 
-<a name="getVoicemailMessageMedia"></a>
 
-# VoicemailMediaInfo getVoicemailMessageMedia(messageId, opts)
+## getVoicemailMessageMedia
+
+> VoicemailMediaInfo getVoicemailMessageMedia(messageId, opts)
 
 
 GET /api/v2/voicemail/messages/{messageId}/media
@@ -559,15 +559,15 @@ apiInstance.getVoicemailMessageMedia(messageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMediaInfo**
 
-<a name="getVoicemailMessages"></a>
 
-# VoicemailMessageEntityListing getVoicemailMessages(opts)
+## getVoicemailMessages
+
+> VoicemailMessageEntityListing getVoicemailMessages(opts)
 
 
 GET /api/v2/voicemail/messages
@@ -611,15 +611,15 @@ apiInstance.getVoicemailMessages(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **ids** | **String** | An optional comma separated list of VoicemailMessage ids | [optional]  |
  **expand** | **[String]** | If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMessageEntityListing**
 
-<a name="getVoicemailPolicy"></a>
 
-# VoicemailOrganizationPolicy getVoicemailPolicy()
+## getVoicemailPolicy
+
+> VoicemailOrganizationPolicy getVoicemailPolicy()
 
 
 GET /api/v2/voicemail/policy
@@ -657,14 +657,14 @@ apiInstance.getVoicemailPolicy()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **VoicemailOrganizationPolicy**
 
-<a name="getVoicemailQueueMessages"></a>
 
-# VoicemailMessageEntityListing getVoicemailQueueMessages(queueId, opts)
+## getVoicemailQueueMessages
+
+> VoicemailMessageEntityListing getVoicemailQueueMessages(queueId, opts)
 
 
 GET /api/v2/voicemail/queues/{queueId}/messages
@@ -712,15 +712,15 @@ apiInstance.getVoicemailQueueMessages(queueId, opts)
  **queueId** | **String** | Queue ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMessageEntityListing**
 
-<a name="getVoicemailSearch"></a>
 
-# VoicemailsSearchResponse getVoicemailSearch(q64, opts)
+## getVoicemailSearch
+
+> VoicemailsSearchResponse getVoicemailSearch(q64, opts)
 
 
 GET /api/v2/voicemail/search
@@ -764,15 +764,15 @@ apiInstance.getVoicemailSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailsSearchResponse**
 
-<a name="getVoicemailUserpolicy"></a>
 
-# VoicemailUserPolicy getVoicemailUserpolicy(userId)
+## getVoicemailUserpolicy
+
+> VoicemailUserPolicy getVoicemailUserpolicy(userId)
 
 
 GET /api/v2/voicemail/userpolicies/{userId}
@@ -812,15 +812,15 @@ apiInstance.getVoicemailUserpolicy(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailUserPolicy**
 
-<a name="patchVoicemailGroupPolicy"></a>
 
-# VoicemailGroupPolicy patchVoicemailGroupPolicy(groupId, body)
+## patchVoicemailGroupPolicy
+
+> VoicemailGroupPolicy patchVoicemailGroupPolicy(groupId, body)
 
 
 PATCH /api/v2/voicemail/groups/{groupId}/policy
@@ -865,15 +865,15 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
  **body** | **Object** | The group's voicemail policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailGroupPolicy**
 
-<a name="patchVoicemailMePolicy"></a>
 
-# VoicemailUserPolicy patchVoicemailMePolicy(body)
+## patchVoicemailMePolicy
+
+> VoicemailUserPolicy patchVoicemailMePolicy(body)
 
 
 PATCH /api/v2/voicemail/me/policy
@@ -913,15 +913,15 @@ apiInstance.patchVoicemailMePolicy(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The user's voicemail policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailUserPolicy**
 
-<a name="patchVoicemailMessage"></a>
 
-# VoicemailMessage patchVoicemailMessage(messageId, body)
+## patchVoicemailMessage
+
+> VoicemailMessage patchVoicemailMessage(messageId, body)
 
 
 PATCH /api/v2/voicemail/messages/{messageId}
@@ -965,15 +965,15 @@ apiInstance.patchVoicemailMessage(messageId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
  **body** | **Object** | VoicemailMessage |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMessage**
 
-<a name="patchVoicemailUserpolicy"></a>
 
-# VoicemailUserPolicy patchVoicemailUserpolicy(userId, body)
+## patchVoicemailUserpolicy
+
+> VoicemailUserPolicy patchVoicemailUserpolicy(userId, body)
 
 
 PATCH /api/v2/voicemail/userpolicies/{userId}
@@ -1015,15 +1015,15 @@ apiInstance.patchVoicemailUserpolicy(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The user's voicemail policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailUserPolicy**
 
-<a name="postVoicemailMessages"></a>
 
-# VoicemailMessage postVoicemailMessages(opts)
+## postVoicemailMessages
+
+> VoicemailMessage postVoicemailMessages(opts)
 
 
 POST /api/v2/voicemail/messages
@@ -1065,15 +1065,15 @@ apiInstance.postVoicemailMessages(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMessage**
 
-<a name="postVoicemailSearch"></a>
 
-# VoicemailsSearchResponse postVoicemailSearch(body)
+## postVoicemailSearch
+
+> VoicemailsSearchResponse postVoicemailSearch(body)
 
 
 POST /api/v2/voicemail/search
@@ -1113,15 +1113,15 @@ apiInstance.postVoicemailSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailsSearchResponse**
 
-<a name="putVoicemailMessage"></a>
 
-# VoicemailMessage putVoicemailMessage(messageId, body)
+## putVoicemailMessage
+
+> VoicemailMessage putVoicemailMessage(messageId, body)
 
 
 PUT /api/v2/voicemail/messages/{messageId}
@@ -1165,15 +1165,15 @@ apiInstance.putVoicemailMessage(messageId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
  **body** | **Object** | VoicemailMessage |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailMessage**
 
-<a name="putVoicemailPolicy"></a>
 
-# VoicemailOrganizationPolicy putVoicemailPolicy(body)
+## putVoicemailPolicy
+
+> VoicemailOrganizationPolicy putVoicemailPolicy(body)
 
 
 PUT /api/v2/voicemail/policy
@@ -1215,15 +1215,15 @@ apiInstance.putVoicemailPolicy(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailOrganizationPolicy**
 
-<a name="putVoicemailUserpolicy"></a>
 
-# VoicemailUserPolicy putVoicemailUserpolicy(userId, body)
+## putVoicemailUserpolicy
+
+> VoicemailUserPolicy putVoicemailUserpolicy(userId, body)
 
 
 PUT /api/v2/voicemail/userpolicies/{userId}
@@ -1267,9 +1267,10 @@ apiInstance.putVoicemailUserpolicy(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The user's voicemail policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailUserPolicy**
 
+
+_purecloud-platform-client-v2@204.0.1_

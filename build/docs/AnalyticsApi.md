@@ -1,114 +1,114 @@
----
-title: AnalyticsApi
----
+# AnalyticsApi
+
 # platformClient.AnalyticsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
-[**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
-[**getAnalyticsActionsAggregatesJob**](AnalyticsApi.html#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
-[**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi.html#getAnalyticsAgentcopilotsAggregatesJob) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Get status for async query for agent copilot aggregates
-[**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsAgentcopilotsAggregatesJobResults) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi.html#getAnalyticsBotflowDivisionsReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns | Get Reporting Turns (division aware).
-[**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
-[**getAnalyticsBotflowSessions**](AnalyticsApi.html#getAnalyticsBotflowSessions) | **GET** /api/v2/analytics/botflows/{botFlowId}/sessions | Get Bot Flow Sessions.
-[**getAnalyticsBotsAggregatesJob**](AnalyticsApi.html#getAnalyticsBotsAggregatesJob) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Get status for async query for bot aggregates
-[**getAnalyticsBotsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsBotsAggregatesJobResults) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
-[**getAnalyticsConversationsAggregatesJob**](AnalyticsApi.html#getAnalyticsConversationsAggregatesJob) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Get status for async query for conversation aggregates
-[**getAnalyticsConversationsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsConversationsAggregatesJobResults) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
-[**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
-[**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
-[**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
-[**getAnalyticsDataretentionSettings**](AnalyticsApi.html#getAnalyticsDataretentionSettings) | **GET** /api/v2/analytics/dataretention/settings | Get analytics data retention setting
-[**getAnalyticsEvaluationsAggregatesJob**](AnalyticsApi.html#getAnalyticsEvaluationsAggregatesJob) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Get status for async query for evaluation aggregates
-[**getAnalyticsEvaluationsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsEvaluationsAggregatesJobResults) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsFlowexecutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsFlowexecutionsAggregatesJob) | **GET** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} | Get status for async query for flow execution aggregates
-[**getAnalyticsFlowexecutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsFlowexecutionsAggregatesJobResults) | **GET** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsFlowsAggregatesJob**](AnalyticsApi.html#getAnalyticsFlowsAggregatesJob) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Get status for async query for Flow aggregates
-[**getAnalyticsFlowsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsFlowsAggregatesJobResults) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsJourneysAggregatesJob**](AnalyticsApi.html#getAnalyticsJourneysAggregatesJob) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Get status for async query for journey aggregates
-[**getAnalyticsJourneysAggregatesJobResults**](AnalyticsApi.html#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsKnowledgeAggregatesJob**](AnalyticsApi.html#getAnalyticsKnowledgeAggregatesJob) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Get status for async query for knowledge aggregates
-[**getAnalyticsKnowledgeAggregatesJobResults**](AnalyticsApi.html#getAnalyticsKnowledgeAggregatesJobResults) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsReportingDashboardsUser**](AnalyticsApi.html#getAnalyticsReportingDashboardsUser) | **GET** /api/v2/analytics/reporting/dashboards/users/{userId} | Get dashboards summary for a user
-[**getAnalyticsReportingDashboardsUsers**](AnalyticsApi.html#getAnalyticsReportingDashboardsUsers) | **GET** /api/v2/analytics/reporting/dashboards/users | Get dashboards summary for users in a org
-[**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
-[**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
-[**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | **GET** /api/v2/analytics/reporting/settings | Get AnalyticsReportingSettings for an organization
-[**getAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi.html#getAnalyticsReportingSettingsDashboardsQuery) | **GET** /api/v2/analytics/reporting/settings/dashboards/query | Get list of dashboard configurations
-[**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi.html#getAnalyticsReportingSettingsUserDashboards) | **GET** /api/v2/analytics/reporting/settings/users/{userId}/dashboards | Get list of dashboards for an user
-[**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJob) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Get status for async query for resolution aggregates
-[**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJobResults) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsSurveysAggregatesJob**](AnalyticsApi.html#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
-[**getAnalyticsSurveysAggregatesJobResults**](AnalyticsApi.html#getAnalyticsSurveysAggregatesJobResults) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi.html#getAnalyticsTaskmanagementAggregatesJob) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} | Get status for async query for task management aggregates
-[**getAnalyticsTaskmanagementAggregatesJobResults**](AnalyticsApi.html#getAnalyticsTaskmanagementAggregatesJobResults) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results | Fetch a page of results for an async task management query
-[**getAnalyticsTranscriptsAggregatesJob**](AnalyticsApi.html#getAnalyticsTranscriptsAggregatesJob) | **GET** /api/v2/analytics/transcripts/aggregates/jobs/{jobId} | Get status for async query for transcript aggregates
-[**getAnalyticsTranscriptsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsTranscriptsAggregatesJobResults) | **GET** /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsUsersAggregatesJob**](AnalyticsApi.html#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
-[**getAnalyticsUsersAggregatesJobResults**](AnalyticsApi.html#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsUsersDetailsJob**](AnalyticsApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
-[**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
-[**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
-[**patchAnalyticsReportingSettings**](AnalyticsApi.html#patchAnalyticsReportingSettings) | **PATCH** /api/v2/analytics/reporting/settings | Patch AnalyticsReportingSettings values for an organization
-[**postAnalyticsActionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsActionsAggregatesJobs) | **POST** /api/v2/analytics/actions/aggregates/jobs | Query for action aggregates asynchronously
-[**postAnalyticsActionsAggregatesQuery**](AnalyticsApi.html#postAnalyticsActionsAggregatesQuery) | **POST** /api/v2/analytics/actions/aggregates/query | Query for action aggregates
-[**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi.html#postAnalyticsAgentcopilotsAggregatesJobs) | **POST** /api/v2/analytics/agentcopilots/aggregates/jobs | Query for agent copilot aggregates asynchronously
-[**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsAgentcopilotsAggregatesQuery) | **POST** /api/v2/analytics/agentcopilots/aggregates/query | Query for agent copilot aggregates
-[**postAnalyticsBotsAggregatesJobs**](AnalyticsApi.html#postAnalyticsBotsAggregatesJobs) | **POST** /api/v2/analytics/bots/aggregates/jobs | Query for bot aggregates asynchronously
-[**postAnalyticsBotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
-[**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
-[**postAnalyticsConversationsActivityQuery**](AnalyticsApi.html#postAnalyticsConversationsActivityQuery) | **POST** /api/v2/analytics/conversations/activity/query | Query for conversation activity observations
-[**postAnalyticsConversationsAggregatesJobs**](AnalyticsApi.html#postAnalyticsConversationsAggregatesJobs) | **POST** /api/v2/analytics/conversations/aggregates/jobs | Query for conversation aggregates asynchronously
-[**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
-[**postAnalyticsConversationsDetailsJobs**](AnalyticsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
-[**postAnalyticsConversationsDetailsQuery**](AnalyticsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
-[**postAnalyticsConversationsTranscriptsQuery**](AnalyticsApi.html#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
-[**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesJobs) | **POST** /api/v2/analytics/evaluations/aggregates/jobs | Query for evaluation aggregates asynchronously
-[**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
-[**postAnalyticsFlowexecutionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsFlowexecutionsAggregatesJobs) | **POST** /api/v2/analytics/flowexecutions/aggregates/jobs | Query for flow execution aggregates asynchronously
-[**postAnalyticsFlowexecutionsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowexecutionsAggregatesQuery) | **POST** /api/v2/analytics/flowexecutions/aggregates/query | Query for flow execution aggregates
-[**postAnalyticsFlowsActivityQuery**](AnalyticsApi.html#postAnalyticsFlowsActivityQuery) | **POST** /api/v2/analytics/flows/activity/query | Query for flow activity observations
-[**postAnalyticsFlowsAggregatesJobs**](AnalyticsApi.html#postAnalyticsFlowsAggregatesJobs) | **POST** /api/v2/analytics/flows/aggregates/jobs | Query for flow aggregates asynchronously
-[**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
-[**postAnalyticsFlowsObservationsQuery**](AnalyticsApi.html#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
-[**postAnalyticsJourneysAggregatesJobs**](AnalyticsApi.html#postAnalyticsJourneysAggregatesJobs) | **POST** /api/v2/analytics/journeys/aggregates/jobs | Query for journey aggregates asynchronously
-[**postAnalyticsJourneysAggregatesQuery**](AnalyticsApi.html#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
-[**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesJobs) | **POST** /api/v2/analytics/knowledge/aggregates/jobs | Query for knowledge aggregates asynchronously
-[**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
-[**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
-[**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
-[**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi.html#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk delete dashboards owned by other user(s)
-[**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
-[**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk remove dashboard configurations
-[**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsQuery) | **POST** /api/v2/analytics/reporting/settings/dashboards/query | Query dashboard configurations
-[**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
-[**postAnalyticsRoutingActivityQuery**](AnalyticsApi.html#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
-[**postAnalyticsSurveysAggregatesJobs**](AnalyticsApi.html#postAnalyticsSurveysAggregatesJobs) | **POST** /api/v2/analytics/surveys/aggregates/jobs | Query for survey aggregates asynchronously
-[**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
-[**postAnalyticsTaskmanagementAggregatesJobs**](AnalyticsApi.html#postAnalyticsTaskmanagementAggregatesJobs) | **POST** /api/v2/analytics/taskmanagement/aggregates/jobs | Query for task management aggregates asynchronously
-[**postAnalyticsTaskmanagementAggregatesQuery**](AnalyticsApi.html#postAnalyticsTaskmanagementAggregatesQuery) | **POST** /api/v2/analytics/taskmanagement/aggregates/query | Query for task management aggregates
-[**postAnalyticsTeamsActivityQuery**](AnalyticsApi.html#postAnalyticsTeamsActivityQuery) | **POST** /api/v2/analytics/teams/activity/query | Query for team activity observations
-[**postAnalyticsTranscriptsAggregatesJobs**](AnalyticsApi.html#postAnalyticsTranscriptsAggregatesJobs) | **POST** /api/v2/analytics/transcripts/aggregates/jobs | Query for transcript aggregates asynchronously
-[**postAnalyticsTranscriptsAggregatesQuery**](AnalyticsApi.html#postAnalyticsTranscriptsAggregatesQuery) | **POST** /api/v2/analytics/transcripts/aggregates/query | Query for transcript aggregates
-[**postAnalyticsUsersActivityQuery**](AnalyticsApi.html#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
-[**postAnalyticsUsersAggregatesJobs**](AnalyticsApi.html#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
-[**postAnalyticsUsersAggregatesQuery**](AnalyticsApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
-[**postAnalyticsUsersDetailsJobs**](AnalyticsApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
-[**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
-[**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
-[**putAnalyticsDataretentionSettings**](AnalyticsApi.html#putAnalyticsDataretentionSettings) | **PUT** /api/v2/analytics/dataretention/settings | Update analytics data retention setting
-{: class="table table-striped"}
+[**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
+[**deleteAnalyticsUsersDetailsJob**](AnalyticsApi#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
+[**getAnalyticsActionsAggregatesJob**](AnalyticsApi#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
+[**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJob) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Get status for async query for agent copilot aggregates
+[**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJobResults) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi#getAnalyticsBotflowDivisionsReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns | Get Reporting Turns (division aware).
+[**getAnalyticsBotflowReportingturns**](AnalyticsApi#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
+[**getAnalyticsBotflowSessions**](AnalyticsApi#getAnalyticsBotflowSessions) | **GET** /api/v2/analytics/botflows/{botFlowId}/sessions | Get Bot Flow Sessions.
+[**getAnalyticsBotsAggregatesJob**](AnalyticsApi#getAnalyticsBotsAggregatesJob) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Get status for async query for bot aggregates
+[**getAnalyticsBotsAggregatesJobResults**](AnalyticsApi#getAnalyticsBotsAggregatesJobResults) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsConversationDetails**](AnalyticsApi#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
+[**getAnalyticsConversationsAggregatesJob**](AnalyticsApi#getAnalyticsConversationsAggregatesJob) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Get status for async query for conversation aggregates
+[**getAnalyticsConversationsAggregatesJobResults**](AnalyticsApi#getAnalyticsConversationsAggregatesJobResults) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsConversationsDetails**](AnalyticsApi#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
+[**getAnalyticsConversationsDetailsJob**](AnalyticsApi#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
+[**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
+[**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
+[**getAnalyticsDataretentionSettings**](AnalyticsApi#getAnalyticsDataretentionSettings) | **GET** /api/v2/analytics/dataretention/settings | Get analytics data retention setting
+[**getAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#getAnalyticsEvaluationsAggregatesJob) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Get status for async query for evaluation aggregates
+[**getAnalyticsEvaluationsAggregatesJobResults**](AnalyticsApi#getAnalyticsEvaluationsAggregatesJobResults) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsFlowexecutionsAggregatesJob**](AnalyticsApi#getAnalyticsFlowexecutionsAggregatesJob) | **GET** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} | Get status for async query for flow execution aggregates
+[**getAnalyticsFlowexecutionsAggregatesJobResults**](AnalyticsApi#getAnalyticsFlowexecutionsAggregatesJobResults) | **GET** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsFlowsAggregatesJob**](AnalyticsApi#getAnalyticsFlowsAggregatesJob) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Get status for async query for Flow aggregates
+[**getAnalyticsFlowsAggregatesJobResults**](AnalyticsApi#getAnalyticsFlowsAggregatesJobResults) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsJourneysAggregatesJob**](AnalyticsApi#getAnalyticsJourneysAggregatesJob) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Get status for async query for journey aggregates
+[**getAnalyticsJourneysAggregatesJobResults**](AnalyticsApi#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsKnowledgeAggregatesJob**](AnalyticsApi#getAnalyticsKnowledgeAggregatesJob) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Get status for async query for knowledge aggregates
+[**getAnalyticsKnowledgeAggregatesJobResults**](AnalyticsApi#getAnalyticsKnowledgeAggregatesJobResults) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsReportingDashboardsUser**](AnalyticsApi#getAnalyticsReportingDashboardsUser) | **GET** /api/v2/analytics/reporting/dashboards/users/{userId} | Get dashboards summary for a user
+[**getAnalyticsReportingDashboardsUsers**](AnalyticsApi#getAnalyticsReportingDashboardsUsers) | **GET** /api/v2/analytics/reporting/dashboards/users | Get dashboards summary for users in a org
+[**getAnalyticsReportingExports**](AnalyticsApi#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
+[**getAnalyticsReportingExportsMetadata**](AnalyticsApi#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
+[**getAnalyticsReportingSettings**](AnalyticsApi#getAnalyticsReportingSettings) | **GET** /api/v2/analytics/reporting/settings | Get AnalyticsReportingSettings for an organization
+[**getAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#getAnalyticsReportingSettingsDashboardsQuery) | **GET** /api/v2/analytics/reporting/settings/dashboards/query | Get list of dashboard configurations
+[**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi#getAnalyticsReportingSettingsUserDashboards) | **GET** /api/v2/analytics/reporting/settings/users/{userId}/dashboards | Get list of dashboards for an user
+[**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi#getAnalyticsResolutionsAggregatesJob) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Get status for async query for resolution aggregates
+[**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi#getAnalyticsResolutionsAggregatesJobResults) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsSurveysAggregatesJob**](AnalyticsApi#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
+[**getAnalyticsSurveysAggregatesJobResults**](AnalyticsApi#getAnalyticsSurveysAggregatesJobResults) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi#getAnalyticsTaskmanagementAggregatesJob) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} | Get status for async query for task management aggregates
+[**getAnalyticsTaskmanagementAggregatesJobResults**](AnalyticsApi#getAnalyticsTaskmanagementAggregatesJobResults) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results | Fetch a page of results for an async task management query
+[**getAnalyticsTranscriptsAggregatesJob**](AnalyticsApi#getAnalyticsTranscriptsAggregatesJob) | **GET** /api/v2/analytics/transcripts/aggregates/jobs/{jobId} | Get status for async query for transcript aggregates
+[**getAnalyticsTranscriptsAggregatesJobResults**](AnalyticsApi#getAnalyticsTranscriptsAggregatesJobResults) | **GET** /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsUsersAggregatesJob**](AnalyticsApi#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
+[**getAnalyticsUsersAggregatesJobResults**](AnalyticsApi#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsUsersDetailsJob**](AnalyticsApi#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
+[**getAnalyticsUsersDetailsJobResults**](AnalyticsApi#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
+[**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
+[**patchAnalyticsReportingSettings**](AnalyticsApi#patchAnalyticsReportingSettings) | **PATCH** /api/v2/analytics/reporting/settings | Patch AnalyticsReportingSettings values for an organization
+[**postAnalyticsActionsAggregatesJobs**](AnalyticsApi#postAnalyticsActionsAggregatesJobs) | **POST** /api/v2/analytics/actions/aggregates/jobs | Query for action aggregates asynchronously
+[**postAnalyticsActionsAggregatesQuery**](AnalyticsApi#postAnalyticsActionsAggregatesQuery) | **POST** /api/v2/analytics/actions/aggregates/query | Query for action aggregates
+[**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesJobs) | **POST** /api/v2/analytics/agentcopilots/aggregates/jobs | Query for agent copilot aggregates asynchronously
+[**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesQuery) | **POST** /api/v2/analytics/agentcopilots/aggregates/query | Query for agent copilot aggregates
+[**postAnalyticsBotsAggregatesJobs**](AnalyticsApi#postAnalyticsBotsAggregatesJobs) | **POST** /api/v2/analytics/bots/aggregates/jobs | Query for bot aggregates asynchronously
+[**postAnalyticsBotsAggregatesQuery**](AnalyticsApi#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
+[**postAnalyticsConversationDetailsProperties**](AnalyticsApi#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
+[**postAnalyticsConversationsActivityQuery**](AnalyticsApi#postAnalyticsConversationsActivityQuery) | **POST** /api/v2/analytics/conversations/activity/query | Query for conversation activity observations
+[**postAnalyticsConversationsAggregatesJobs**](AnalyticsApi#postAnalyticsConversationsAggregatesJobs) | **POST** /api/v2/analytics/conversations/aggregates/jobs | Query for conversation aggregates asynchronously
+[**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
+[**postAnalyticsConversationsDetailsJobs**](AnalyticsApi#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
+[**postAnalyticsConversationsDetailsQuery**](AnalyticsApi#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
+[**postAnalyticsConversationsTranscriptsQuery**](AnalyticsApi#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
+[**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi#postAnalyticsEvaluationsAggregatesJobs) | **POST** /api/v2/analytics/evaluations/aggregates/jobs | Query for evaluation aggregates asynchronously
+[**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
+[**postAnalyticsFlowexecutionsAggregatesJobs**](AnalyticsApi#postAnalyticsFlowexecutionsAggregatesJobs) | **POST** /api/v2/analytics/flowexecutions/aggregates/jobs | Query for flow execution aggregates asynchronously
+[**postAnalyticsFlowexecutionsAggregatesQuery**](AnalyticsApi#postAnalyticsFlowexecutionsAggregatesQuery) | **POST** /api/v2/analytics/flowexecutions/aggregates/query | Query for flow execution aggregates
+[**postAnalyticsFlowsActivityQuery**](AnalyticsApi#postAnalyticsFlowsActivityQuery) | **POST** /api/v2/analytics/flows/activity/query | Query for flow activity observations
+[**postAnalyticsFlowsAggregatesJobs**](AnalyticsApi#postAnalyticsFlowsAggregatesJobs) | **POST** /api/v2/analytics/flows/aggregates/jobs | Query for flow aggregates asynchronously
+[**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
+[**postAnalyticsFlowsObservationsQuery**](AnalyticsApi#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
+[**postAnalyticsJourneysAggregatesJobs**](AnalyticsApi#postAnalyticsJourneysAggregatesJobs) | **POST** /api/v2/analytics/journeys/aggregates/jobs | Query for journey aggregates asynchronously
+[**postAnalyticsJourneysAggregatesQuery**](AnalyticsApi#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
+[**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi#postAnalyticsKnowledgeAggregatesJobs) | **POST** /api/v2/analytics/knowledge/aggregates/jobs | Query for knowledge aggregates asynchronously
+[**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
+[**postAnalyticsQueuesObservationsQuery**](AnalyticsApi#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
+[**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
+[**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk delete dashboards owned by other user(s)
+[**postAnalyticsReportingExports**](AnalyticsApi#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
+[**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk remove dashboard configurations
+[**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery) | **POST** /api/v2/analytics/reporting/settings/dashboards/query | Query dashboard configurations
+[**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
+[**postAnalyticsRoutingActivityQuery**](AnalyticsApi#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
+[**postAnalyticsSurveysAggregatesJobs**](AnalyticsApi#postAnalyticsSurveysAggregatesJobs) | **POST** /api/v2/analytics/surveys/aggregates/jobs | Query for survey aggregates asynchronously
+[**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
+[**postAnalyticsTaskmanagementAggregatesJobs**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesJobs) | **POST** /api/v2/analytics/taskmanagement/aggregates/jobs | Query for task management aggregates asynchronously
+[**postAnalyticsTaskmanagementAggregatesQuery**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesQuery) | **POST** /api/v2/analytics/taskmanagement/aggregates/query | Query for task management aggregates
+[**postAnalyticsTeamsActivityQuery**](AnalyticsApi#postAnalyticsTeamsActivityQuery) | **POST** /api/v2/analytics/teams/activity/query | Query for team activity observations
+[**postAnalyticsTranscriptsAggregatesJobs**](AnalyticsApi#postAnalyticsTranscriptsAggregatesJobs) | **POST** /api/v2/analytics/transcripts/aggregates/jobs | Query for transcript aggregates asynchronously
+[**postAnalyticsTranscriptsAggregatesQuery**](AnalyticsApi#postAnalyticsTranscriptsAggregatesQuery) | **POST** /api/v2/analytics/transcripts/aggregates/query | Query for transcript aggregates
+[**postAnalyticsUsersActivityQuery**](AnalyticsApi#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
+[**postAnalyticsUsersAggregatesJobs**](AnalyticsApi#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
+[**postAnalyticsUsersAggregatesQuery**](AnalyticsApi#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
+[**postAnalyticsUsersDetailsJobs**](AnalyticsApi#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
+[**postAnalyticsUsersDetailsQuery**](AnalyticsApi#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
+[**postAnalyticsUsersObservationsQuery**](AnalyticsApi#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
+[**putAnalyticsDataretentionSettings**](AnalyticsApi#putAnalyticsDataretentionSettings) | **PUT** /api/v2/analytics/dataretention/settings | Update analytics data retention setting
 
-<a name="deleteAnalyticsConversationsDetailsJob"></a>
 
-# void deleteAnalyticsConversationsDetailsJob(jobId)
+
+## deleteAnalyticsConversationsDetailsJob
+
+> void deleteAnalyticsConversationsDetailsJob(jobId)
 
 
 DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -151,15 +151,15 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAnalyticsUsersDetailsJob"></a>
 
-# void deleteAnalyticsUsersDetailsJob(jobId)
+## deleteAnalyticsUsersDetailsJob
+
+> void deleteAnalyticsUsersDetailsJob(jobId)
 
 
 DELETE /api/v2/analytics/users/details/jobs/{jobId}
@@ -201,15 +201,15 @@ apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAnalyticsActionsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsActionsAggregatesJob(jobId)
+## getAnalyticsActionsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsActionsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/actions/aggregates/jobs/{jobId}
@@ -254,15 +254,15 @@ apiInstance.getAnalyticsActionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsActionsAggregatesJobResults"></a>
 
-# ActionAsyncAggregateQueryResponse getAnalyticsActionsAggregatesJobResults(jobId, opts)
+## getAnalyticsActionsAggregatesJobResults
+
+> ActionAsyncAggregateQueryResponse getAnalyticsActionsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/actions/aggregates/jobs/{jobId}/results
@@ -311,15 +311,15 @@ apiInstance.getAnalyticsActionsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsAgentcopilotsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsAgentcopilotsAggregatesJob(jobId)
+## getAnalyticsAgentcopilotsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsAgentcopilotsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
@@ -363,15 +363,15 @@ apiInstance.getAnalyticsAgentcopilotsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsAgentcopilotsAggregatesJobResults"></a>
 
-# AgentCopilotAsyncAggregateQueryResponse getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
+## getAnalyticsAgentcopilotsAggregatesJobResults
+
+> AgentCopilotAsyncAggregateQueryResponse getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results
@@ -419,15 +419,15 @@ apiInstance.getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentCopilotAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsBotflowDivisionsReportingturns"></a>
 
-# ReportingTurnsResponse getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
+## getAnalyticsBotflowDivisionsReportingturns
+
+> ReportingTurnsResponse getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
 
 
 GET /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns
@@ -487,17 +487,19 @@ apiInstance.getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
  **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
  **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
  **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
-{: class="table table-striped"}
 
 ### Return type
 
 **ReportingTurnsResponse**
 
-<a name="getAnalyticsBotflowReportingturns"></a>
 
-# ReportingTurnsResponse getAnalyticsBotflowReportingturns(botFlowId, opts)
+## getAnalyticsBotflowReportingturns
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> ReportingTurnsResponse getAnalyticsBotflowReportingturns(botFlowId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/analytics/botflows/{botFlowId}/reportingturns
 
@@ -556,15 +558,15 @@ apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
  **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
  **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
  **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
-{: class="table table-striped"}
 
 ### Return type
 
 **ReportingTurnsResponse**
 
-<a name="getAnalyticsBotflowSessions"></a>
 
-# SessionsResponse getAnalyticsBotflowSessions(botFlowId, opts)
+## getAnalyticsBotflowSessions
+
+> SessionsResponse getAnalyticsBotflowSessions(botFlowId, opts)
 
 
 GET /api/v2/analytics/botflows/{botFlowId}/sessions
@@ -620,15 +622,15 @@ apiInstance.getAnalyticsBotflowSessions(botFlowId, opts)
  **interval** | **String** | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **botResultCategories** | **String** | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. | [optional] <br />**Values**: Unknown, UserExit, BotExit, Error, RecognitionFailure, UserDisconnect, BotDisconnect, SessionExpired, Transfer |
  **endLanguage** | **String** | Optional case-insensitive language code to filter sessions by the language the sessions ended in. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SessionsResponse**
 
-<a name="getAnalyticsBotsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsBotsAggregatesJob(jobId)
+## getAnalyticsBotsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsBotsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/bots/aggregates/jobs/{jobId}
@@ -672,15 +674,15 @@ apiInstance.getAnalyticsBotsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsBotsAggregatesJobResults"></a>
 
-# BotAsyncAggregateQueryResponse getAnalyticsBotsAggregatesJobResults(jobId, opts)
+## getAnalyticsBotsAggregatesJobResults
+
+> BotAsyncAggregateQueryResponse getAnalyticsBotsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/bots/aggregates/jobs/{jobId}/results
@@ -728,15 +730,15 @@ apiInstance.getAnalyticsBotsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BotAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsConversationDetails"></a>
 
-# AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
+## getAnalyticsConversationDetails
+
+> AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
 
 
 GET /api/v2/analytics/conversations/{conversationId}/details
@@ -779,15 +781,15 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationWithoutAttributes**
 
-<a name="getAnalyticsConversationsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
+## getAnalyticsConversationsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
@@ -831,15 +833,15 @@ apiInstance.getAnalyticsConversationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsConversationsAggregatesJobResults"></a>
 
-# ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
+## getAnalyticsConversationsAggregatesJobResults
+
+> ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
@@ -887,15 +889,15 @@ apiInstance.getAnalyticsConversationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsConversationsDetails"></a>
 
-# AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
+## getAnalyticsConversationsDetails
+
+> AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
 
 
 GET /api/v2/analytics/conversations/details
@@ -940,15 +942,15 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | Comma-separated conversation ids | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationWithoutAttributesMultiGetResponse**
 
-<a name="getAnalyticsConversationsDetailsJob"></a>
 
-# AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
+## getAnalyticsConversationsDetailsJob
+
+> AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
 
 
 GET /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -991,15 +993,15 @@ apiInstance.getAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsConversationsDetailsJobResults"></a>
 
-# AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
+## getAnalyticsConversationsDetailsJobResults
+
+> AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/details/jobs/{jobId}/results
@@ -1048,15 +1050,15 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationAsyncQueryResponse**
 
-<a name="getAnalyticsConversationsDetailsJobsAvailability"></a>
 
-# DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
+## getAnalyticsConversationsDetailsJobsAvailability
+
+> DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
 
 
 GET /api/v2/analytics/conversations/details/jobs/availability
@@ -1094,14 +1096,14 @@ apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataAvailabilityResponse**
 
-<a name="getAnalyticsDataretentionSettings"></a>
 
-# AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings()
+## getAnalyticsDataretentionSettings
+
+> AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings()
 
 
 GET /api/v2/analytics/dataretention/settings
@@ -1139,14 +1141,14 @@ apiInstance.getAnalyticsDataretentionSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AnalyticsDataRetentionResponse**
 
-<a name="getAnalyticsEvaluationsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId)
+## getAnalyticsEvaluationsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
@@ -1190,15 +1192,15 @@ apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsEvaluationsAggregatesJobResults"></a>
 
-# EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
+## getAnalyticsEvaluationsAggregatesJobResults
+
+> EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results
@@ -1246,15 +1248,15 @@ apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EvaluationAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsFlowexecutionsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsFlowexecutionsAggregatesJob(jobId)
+## getAnalyticsFlowexecutionsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsFlowexecutionsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}
@@ -1298,15 +1300,15 @@ apiInstance.getAnalyticsFlowexecutionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsFlowexecutionsAggregatesJobResults"></a>
 
-# FlowExecutionAsyncAggregateQueryResponse getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts)
+## getAnalyticsFlowexecutionsAggregatesJobResults
+
+> FlowExecutionAsyncAggregateQueryResponse getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results
@@ -1354,15 +1356,15 @@ apiInstance.getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowExecutionAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsFlowsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsFlowsAggregatesJob(jobId)
+## getAnalyticsFlowsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsFlowsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}
@@ -1406,15 +1408,15 @@ apiInstance.getAnalyticsFlowsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsFlowsAggregatesJobResults"></a>
 
-# FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(jobId, opts)
+## getAnalyticsFlowsAggregatesJobResults
+
+> FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results
@@ -1462,15 +1464,15 @@ apiInstance.getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsJourneysAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
+## getAnalyticsJourneysAggregatesJob
+
+> AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
@@ -1514,15 +1516,15 @@ apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsJourneysAggregatesJobResults"></a>
 
-# JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(jobId, opts)
+## getAnalyticsJourneysAggregatesJobResults
+
+> JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results
@@ -1570,15 +1572,15 @@ apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsKnowledgeAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsKnowledgeAggregatesJob(jobId)
+## getAnalyticsKnowledgeAggregatesJob
+
+> AsyncQueryStatus getAnalyticsKnowledgeAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}
@@ -1622,15 +1624,15 @@ apiInstance.getAnalyticsKnowledgeAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsKnowledgeAggregatesJobResults"></a>
 
-# KnowledgeAsyncAggregateQueryResponse getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
+## getAnalyticsKnowledgeAggregatesJobResults
+
+> KnowledgeAsyncAggregateQueryResponse getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results
@@ -1678,15 +1680,15 @@ apiInstance.getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **KnowledgeAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsReportingDashboardsUser"></a>
 
-# DashboardUser getAnalyticsReportingDashboardsUser(userId)
+## getAnalyticsReportingDashboardsUser
+
+> DashboardUser getAnalyticsReportingDashboardsUser(userId)
 
 
 GET /api/v2/analytics/reporting/dashboards/users/{userId}
@@ -1728,15 +1730,15 @@ apiInstance.getAnalyticsReportingDashboardsUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DashboardUser**
 
-<a name="getAnalyticsReportingDashboardsUsers"></a>
 
-# DashboardUserListing getAnalyticsReportingDashboardsUsers(opts)
+## getAnalyticsReportingDashboardsUsers
+
+> DashboardUserListing getAnalyticsReportingDashboardsUsers(opts)
 
 
 GET /api/v2/analytics/reporting/dashboards/users
@@ -1788,15 +1790,15 @@ apiInstance.getAnalyticsReportingDashboardsUsers(opts)
  **pageSize** | **Number** |  | [optional] [default to 25] |
  **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
  **state** | **String** | Only list users of this state | [optional] <br />**Values**: active, inactive |
-{: class="table table-striped"}
 
 ### Return type
 
 **DashboardUserListing**
 
-<a name="getAnalyticsReportingExports"></a>
 
-# ReportingExportJobListing getAnalyticsReportingExports(opts)
+## getAnalyticsReportingExports
+
+> ReportingExportJobListing getAnalyticsReportingExports(opts)
 
 
 GET /api/v2/analytics/reporting/exports
@@ -1842,15 +1844,15 @@ apiInstance.getAnalyticsReportingExports(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ReportingExportJobListing**
 
-<a name="getAnalyticsReportingExportsMetadata"></a>
 
-# ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata()
+## getAnalyticsReportingExportsMetadata
+
+> ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata()
 
 
 GET /api/v2/analytics/reporting/exports/metadata
@@ -1888,14 +1890,14 @@ apiInstance.getAnalyticsReportingExportsMetadata()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ReportingExportMetadataJobListing**
 
-<a name="getAnalyticsReportingSettings"></a>
 
-# AnalyticsReportingSettings getAnalyticsReportingSettings()
+## getAnalyticsReportingSettings
+
+> AnalyticsReportingSettings getAnalyticsReportingSettings()
 
 
 GET /api/v2/analytics/reporting/settings
@@ -1931,14 +1933,14 @@ apiInstance.getAnalyticsReportingSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AnalyticsReportingSettings**
 
-<a name="getAnalyticsReportingSettingsDashboardsQuery"></a>
 
-# DashboardConfigurationListing getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)
+## getAnalyticsReportingSettingsDashboardsQuery
+
+> DashboardConfigurationListing getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)
 
 
 GET /api/v2/analytics/reporting/settings/dashboards/query
@@ -1992,15 +1994,15 @@ apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboar
  **sortBy** | **String** |  | [optional] [default to desc] |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** |  | [optional] [default to 9] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DashboardConfigurationListing**
 
-<a name="getAnalyticsReportingSettingsUserDashboards"></a>
 
-# DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(userId, opts)
+## getAnalyticsReportingSettingsUserDashboards
+
+> DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(userId, opts)
 
 
 GET /api/v2/analytics/reporting/settings/users/{userId}/dashboards
@@ -2056,15 +2058,15 @@ apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
  **publicOnly** | **Boolean** | If true, retrieve only public dashboards | [optional]  |
  **favoriteOnly** | **Boolean** | If true, retrieve only favorite dashboards | [optional]  |
  **name** | **String** | retrieve dashboards that match with given name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DashboardConfigurationListing**
 
-<a name="getAnalyticsResolutionsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsResolutionsAggregatesJob(jobId)
+## getAnalyticsResolutionsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsResolutionsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}
@@ -2108,15 +2110,15 @@ apiInstance.getAnalyticsResolutionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsResolutionsAggregatesJobResults"></a>
 
-# ResolutionAsyncAggregateQueryResponse getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
+## getAnalyticsResolutionsAggregatesJobResults
+
+> ResolutionAsyncAggregateQueryResponse getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results
@@ -2164,15 +2166,15 @@ apiInstance.getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResolutionAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsSurveysAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId)
+## getAnalyticsSurveysAggregatesJob
+
+> AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}
@@ -2216,15 +2218,15 @@ apiInstance.getAnalyticsSurveysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsSurveysAggregatesJobResults"></a>
 
-# SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(jobId, opts)
+## getAnalyticsSurveysAggregatesJobResults
+
+> SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results
@@ -2272,15 +2274,15 @@ apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SurveyAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsTaskmanagementAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsTaskmanagementAggregatesJob(jobId)
+## getAnalyticsTaskmanagementAggregatesJob
+
+> AsyncQueryStatus getAnalyticsTaskmanagementAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}
@@ -2324,15 +2326,15 @@ apiInstance.getAnalyticsTaskmanagementAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsTaskmanagementAggregatesJobResults"></a>
 
-# TaskManagementAsyncAggregateQueryResponse getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
+## getAnalyticsTaskmanagementAggregatesJobResults
+
+> TaskManagementAsyncAggregateQueryResponse getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results
@@ -2380,15 +2382,15 @@ apiInstance.getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TaskManagementAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsTranscriptsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsTranscriptsAggregatesJob(jobId)
+## getAnalyticsTranscriptsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsTranscriptsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}
@@ -2432,15 +2434,15 @@ apiInstance.getAnalyticsTranscriptsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsTranscriptsAggregatesJobResults"></a>
 
-# TranscriptAsyncAggregateQueryResponse getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
+## getAnalyticsTranscriptsAggregatesJobResults
+
+> TranscriptAsyncAggregateQueryResponse getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results
@@ -2488,15 +2490,15 @@ apiInstance.getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TranscriptAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsUsersAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
+## getAnalyticsUsersAggregatesJob
+
+> AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}
@@ -2540,15 +2542,15 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsUsersAggregatesJobResults"></a>
 
-# UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
+## getAnalyticsUsersAggregatesJobResults
+
+> UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
@@ -2596,15 +2598,15 @@ apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsUsersDetailsJob"></a>
 
-# AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
+## getAnalyticsUsersDetailsJob
+
+> AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}
@@ -2646,15 +2648,15 @@ apiInstance.getAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsUsersDetailsJobResults"></a>
 
-# AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
+## getAnalyticsUsersDetailsJobResults
+
+> AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}/results
@@ -2702,15 +2704,15 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsUserDetailsAsyncQueryResponse**
 
-<a name="getAnalyticsUsersDetailsJobsAvailability"></a>
 
-# DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
+## getAnalyticsUsersDetailsJobsAvailability
+
+> DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
 
 
 GET /api/v2/analytics/users/details/jobs/availability
@@ -2748,14 +2750,14 @@ apiInstance.getAnalyticsUsersDetailsJobsAvailability()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataAvailabilityResponse**
 
-<a name="patchAnalyticsReportingSettings"></a>
 
-# AnalyticsReportingSettings patchAnalyticsReportingSettings(body)
+## patchAnalyticsReportingSettings
+
+> AnalyticsReportingSettings patchAnalyticsReportingSettings(body)
 
 
 PATCH /api/v2/analytics/reporting/settings
@@ -2797,15 +2799,15 @@ apiInstance.patchAnalyticsReportingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | AnalyticsReportingSettingsRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsReportingSettings**
 
-<a name="postAnalyticsActionsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsActionsAggregatesJobs(body)
+## postAnalyticsActionsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsActionsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/actions/aggregates/jobs
@@ -2850,15 +2852,15 @@ apiInstance.postAnalyticsActionsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsActionsAggregatesQuery"></a>
 
-# ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(body)
+## postAnalyticsActionsAggregatesQuery
+
+> ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/actions/aggregates/query
@@ -2901,15 +2903,15 @@ apiInstance.postAnalyticsActionsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionAggregateQueryResponse**
 
-<a name="postAnalyticsAgentcopilotsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsAgentcopilotsAggregatesJobs(body)
+## postAnalyticsAgentcopilotsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsAgentcopilotsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/agentcopilots/aggregates/jobs
@@ -2953,15 +2955,15 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsAgentcopilotsAggregatesQuery"></a>
 
-# AgentCopilotAggregateQueryResponse postAnalyticsAgentcopilotsAggregatesQuery(body)
+## postAnalyticsAgentcopilotsAggregatesQuery
+
+> AgentCopilotAggregateQueryResponse postAnalyticsAgentcopilotsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/agentcopilots/aggregates/query
@@ -3003,15 +3005,15 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentCopilotAggregateQueryResponse**
 
-<a name="postAnalyticsBotsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsBotsAggregatesJobs(body)
+## postAnalyticsBotsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsBotsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/bots/aggregates/jobs
@@ -3055,15 +3057,15 @@ apiInstance.postAnalyticsBotsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsBotsAggregatesQuery"></a>
 
-# BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(body)
+## postAnalyticsBotsAggregatesQuery
+
+> BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/bots/aggregates/query
@@ -3105,15 +3107,15 @@ apiInstance.postAnalyticsBotsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BotAggregateQueryResponse**
 
-<a name="postAnalyticsConversationDetailsProperties"></a>
 
-# PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
+## postAnalyticsConversationDetailsProperties
+
+> PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
 
 
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
@@ -3157,15 +3159,15 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PropertyIndexRequest**
 
-<a name="postAnalyticsConversationsActivityQuery"></a>
 
-# ConversationActivityResponse postAnalyticsConversationsActivityQuery(body, opts)
+## postAnalyticsConversationsActivityQuery
+
+> ConversationActivityResponse postAnalyticsConversationsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/conversations/activity/query
@@ -3213,15 +3215,15 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationActivityResponse**
 
-<a name="postAnalyticsConversationsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
+## postAnalyticsConversationsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/conversations/aggregates/jobs
@@ -3265,15 +3267,15 @@ apiInstance.postAnalyticsConversationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsConversationsAggregatesQuery"></a>
 
-# ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
+## postAnalyticsConversationsAggregatesQuery
+
+> ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/conversations/aggregates/query
@@ -3315,15 +3317,15 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationAggregateQueryResponse**
 
-<a name="postAnalyticsConversationsDetailsJobs"></a>
 
-# AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
+## postAnalyticsConversationsDetailsJobs
+
+> AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
 
 
 POST /api/v2/analytics/conversations/details/jobs
@@ -3366,15 +3368,15 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsConversationsDetailsQuery"></a>
 
-# AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
+## postAnalyticsConversationsDetailsQuery
+
+> AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
 
 
 POST /api/v2/analytics/conversations/details/query
@@ -3417,15 +3419,15 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationQueryResponse**
 
-<a name="postAnalyticsConversationsTranscriptsQuery"></a>
 
-# AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
+## postAnalyticsConversationsTranscriptsQuery
+
+> AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
 
 
 POST /api/v2/analytics/conversations/transcripts/query
@@ -3467,15 +3469,15 @@ apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationWithoutAttributesMultiGetResponse**
 
-<a name="postAnalyticsEvaluationsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
+## postAnalyticsEvaluationsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/evaluations/aggregates/jobs
@@ -3519,15 +3521,15 @@ apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
-# EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
+## postAnalyticsEvaluationsAggregatesQuery
+
+> EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/evaluations/aggregates/query
@@ -3569,15 +3571,15 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EvaluationAggregateQueryResponse**
 
-<a name="postAnalyticsFlowexecutionsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsFlowexecutionsAggregatesJobs(body)
+## postAnalyticsFlowexecutionsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsFlowexecutionsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/flowexecutions/aggregates/jobs
@@ -3621,15 +3623,15 @@ apiInstance.postAnalyticsFlowexecutionsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsFlowexecutionsAggregatesQuery"></a>
 
-# FlowExecutionAggregateQueryResponse postAnalyticsFlowexecutionsAggregatesQuery(body)
+## postAnalyticsFlowexecutionsAggregatesQuery
+
+> FlowExecutionAggregateQueryResponse postAnalyticsFlowexecutionsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/flowexecutions/aggregates/query
@@ -3671,15 +3673,15 @@ apiInstance.postAnalyticsFlowexecutionsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowExecutionAggregateQueryResponse**
 
-<a name="postAnalyticsFlowsActivityQuery"></a>
 
-# FlowActivityResponse postAnalyticsFlowsActivityQuery(body, opts)
+## postAnalyticsFlowsActivityQuery
+
+> FlowActivityResponse postAnalyticsFlowsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/flows/activity/query
@@ -3727,15 +3729,15 @@ apiInstance.postAnalyticsFlowsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowActivityResponse**
 
-<a name="postAnalyticsFlowsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(body)
+## postAnalyticsFlowsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/flows/aggregates/jobs
@@ -3779,15 +3781,15 @@ apiInstance.postAnalyticsFlowsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsFlowsAggregatesQuery"></a>
 
-# FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
+## postAnalyticsFlowsAggregatesQuery
+
+> FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/flows/aggregates/query
@@ -3829,15 +3831,15 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowAggregateQueryResponse**
 
-<a name="postAnalyticsFlowsObservationsQuery"></a>
 
-# FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
+## postAnalyticsFlowsObservationsQuery
+
+> FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
 
 
 POST /api/v2/analytics/flows/observations/query
@@ -3879,15 +3881,15 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowObservationQueryResponse**
 
-<a name="postAnalyticsJourneysAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
+## postAnalyticsJourneysAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
 
 
 POST /api/v2/analytics/journeys/aggregates/jobs
@@ -3931,15 +3933,15 @@ apiInstance.postAnalyticsJourneysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsJourneysAggregatesQuery"></a>
 
-# JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
+## postAnalyticsJourneysAggregatesQuery
+
+> JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
 
 
 POST /api/v2/analytics/journeys/aggregates/query
@@ -3981,15 +3983,15 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyAggregateQueryResponse**
 
-<a name="postAnalyticsKnowledgeAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsKnowledgeAggregatesJobs(body)
+## postAnalyticsKnowledgeAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsKnowledgeAggregatesJobs(body)
 
 
 POST /api/v2/analytics/knowledge/aggregates/jobs
@@ -4033,15 +4035,15 @@ apiInstance.postAnalyticsKnowledgeAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsKnowledgeAggregatesQuery"></a>
 
-# KnowledgeAggregateQueryResponse postAnalyticsKnowledgeAggregatesQuery(body)
+## postAnalyticsKnowledgeAggregatesQuery
+
+> KnowledgeAggregateQueryResponse postAnalyticsKnowledgeAggregatesQuery(body)
 
 
 POST /api/v2/analytics/knowledge/aggregates/query
@@ -4083,15 +4085,15 @@ apiInstance.postAnalyticsKnowledgeAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **KnowledgeAggregateQueryResponse**
 
-<a name="postAnalyticsQueuesObservationsQuery"></a>
 
-# QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
+## postAnalyticsQueuesObservationsQuery
+
+> QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
 
 
 POST /api/v2/analytics/queues/observations/query
@@ -4133,15 +4135,15 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **QueueObservationQueryResponse**
 
-<a name="postAnalyticsRatelimitsAggregatesQuery"></a>
 
-# RateLimitAggregateQueryResponse postAnalyticsRatelimitsAggregatesQuery(body)
+## postAnalyticsRatelimitsAggregatesQuery
+
+> RateLimitAggregateQueryResponse postAnalyticsRatelimitsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/ratelimits/aggregates/query
@@ -4185,15 +4187,15 @@ apiInstance.postAnalyticsRatelimitsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RateLimitAggregateQueryResponse**
 
-<a name="postAnalyticsReportingDashboardsUsersBulkRemove"></a>
 
-# void postAnalyticsReportingDashboardsUsersBulkRemove(body)
+## postAnalyticsReportingDashboardsUsersBulkRemove
+
+> void postAnalyticsReportingDashboardsUsersBulkRemove(body)
 
 
 POST /api/v2/analytics/reporting/dashboards/users/bulk/remove
@@ -4236,15 +4238,15 @@ apiInstance.postAnalyticsReportingDashboardsUsersBulkRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | List of userIds |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAnalyticsReportingExports"></a>
 
-# ReportingExportJobResponse postAnalyticsReportingExports(body)
+## postAnalyticsReportingExports
+
+> ReportingExportJobResponse postAnalyticsReportingExports(body)
 
 
 POST /api/v2/analytics/reporting/exports
@@ -4288,15 +4290,15 @@ apiInstance.postAnalyticsReportingExports(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ReportingExportJobRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ReportingExportJobResponse**
 
-<a name="postAnalyticsReportingSettingsDashboardsBulkRemove"></a>
 
-# void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
+## postAnalyticsReportingSettingsDashboardsBulkRemove
+
+> void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
 
 
 POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove
@@ -4338,15 +4340,15 @@ apiInstance.postAnalyticsReportingSettingsDashboardsBulkRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAnalyticsReportingSettingsDashboardsQuery"></a>
 
-# DashboardConfigurationListing postAnalyticsReportingSettingsDashboardsQuery(body)
+## postAnalyticsReportingSettingsDashboardsQuery
+
+> DashboardConfigurationListing postAnalyticsReportingSettingsDashboardsQuery(body)
 
 
 POST /api/v2/analytics/reporting/settings/dashboards/query
@@ -4388,15 +4390,15 @@ apiInstance.postAnalyticsReportingSettingsDashboardsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DashboardConfigurationListing**
 
-<a name="postAnalyticsResolutionsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsResolutionsAggregatesJobs(body)
+## postAnalyticsResolutionsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsResolutionsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/resolutions/aggregates/jobs
@@ -4440,15 +4442,15 @@ apiInstance.postAnalyticsResolutionsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsRoutingActivityQuery"></a>
 
-# RoutingActivityResponse postAnalyticsRoutingActivityQuery(body, opts)
+## postAnalyticsRoutingActivityQuery
+
+> RoutingActivityResponse postAnalyticsRoutingActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/routing/activity/query
@@ -4496,15 +4498,15 @@ apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoutingActivityResponse**
 
-<a name="postAnalyticsSurveysAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body)
+## postAnalyticsSurveysAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body)
 
 
 POST /api/v2/analytics/surveys/aggregates/jobs
@@ -4548,15 +4550,15 @@ apiInstance.postAnalyticsSurveysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsSurveysAggregatesQuery"></a>
 
-# SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
+## postAnalyticsSurveysAggregatesQuery
+
+> SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
 
 
 POST /api/v2/analytics/surveys/aggregates/query
@@ -4598,15 +4600,15 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SurveyAggregateQueryResponse**
 
-<a name="postAnalyticsTaskmanagementAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsTaskmanagementAggregatesJobs(body)
+## postAnalyticsTaskmanagementAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsTaskmanagementAggregatesJobs(body)
 
 
 POST /api/v2/analytics/taskmanagement/aggregates/jobs
@@ -4650,15 +4652,15 @@ apiInstance.postAnalyticsTaskmanagementAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsTaskmanagementAggregatesQuery"></a>
 
-# TaskManagementAggregateQueryResponse postAnalyticsTaskmanagementAggregatesQuery(body)
+## postAnalyticsTaskmanagementAggregatesQuery
+
+> TaskManagementAggregateQueryResponse postAnalyticsTaskmanagementAggregatesQuery(body)
 
 
 POST /api/v2/analytics/taskmanagement/aggregates/query
@@ -4702,15 +4704,15 @@ apiInstance.postAnalyticsTaskmanagementAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TaskManagementAggregateQueryResponse**
 
-<a name="postAnalyticsTeamsActivityQuery"></a>
 
-# TeamActivityResponse postAnalyticsTeamsActivityQuery(body, opts)
+## postAnalyticsTeamsActivityQuery
+
+> TeamActivityResponse postAnalyticsTeamsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/teams/activity/query
@@ -4758,15 +4760,15 @@ apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TeamActivityResponse**
 
-<a name="postAnalyticsTranscriptsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsTranscriptsAggregatesJobs(body)
+## postAnalyticsTranscriptsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsTranscriptsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/transcripts/aggregates/jobs
@@ -4810,15 +4812,15 @@ apiInstance.postAnalyticsTranscriptsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsTranscriptsAggregatesQuery"></a>
 
-# TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body)
+## postAnalyticsTranscriptsAggregatesQuery
+
+> TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/transcripts/aggregates/query
@@ -4860,15 +4862,15 @@ apiInstance.postAnalyticsTranscriptsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TranscriptAggregateQueryResponse**
 
-<a name="postAnalyticsUsersActivityQuery"></a>
 
-# UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
+## postAnalyticsUsersActivityQuery
+
+> UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/users/activity/query
@@ -4916,15 +4918,15 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserActivityResponse**
 
-<a name="postAnalyticsUsersAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
+## postAnalyticsUsersAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
 
 
 POST /api/v2/analytics/users/aggregates/jobs
@@ -4968,15 +4970,15 @@ apiInstance.postAnalyticsUsersAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsUsersAggregatesQuery"></a>
 
-# UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
+## postAnalyticsUsersAggregatesQuery
+
+> UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 
 POST /api/v2/analytics/users/aggregates/query
@@ -5018,15 +5020,15 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAggregateQueryResponse**
 
-<a name="postAnalyticsUsersDetailsJobs"></a>
 
-# AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
+## postAnalyticsUsersDetailsJobs
+
+> AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
 
 
 POST /api/v2/analytics/users/details/jobs
@@ -5068,15 +5070,15 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsUsersDetailsQuery"></a>
 
-# AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
+## postAnalyticsUsersDetailsQuery
+
+> AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
 
 POST /api/v2/analytics/users/details/query
@@ -5118,15 +5120,15 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsUserDetailsQueryResponse**
 
-<a name="postAnalyticsUsersObservationsQuery"></a>
 
-# UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
+## postAnalyticsUsersObservationsQuery
+
+> UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 
 POST /api/v2/analytics/users/observations/query
@@ -5168,15 +5170,15 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserObservationQueryResponse**
 
-<a name="putAnalyticsDataretentionSettings"></a>
 
-# AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(body)
+## putAnalyticsDataretentionSettings
+
+> AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(body)
 
 
 PUT /api/v2/analytics/dataretention/settings
@@ -5218,9 +5220,10 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | retentionDays |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsDataRetentionResponse**
 
+
+_purecloud-platform-client-v2@204.0.1_

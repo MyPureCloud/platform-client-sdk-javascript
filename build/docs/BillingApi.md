@@ -1,19 +1,19 @@
----
-title: BillingApi
----
+# BillingApi
+
 # platformClient.BillingApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getBillingReportsBillableusage**](BillingApi.html#getBillingReportsBillableusage) | **GET** /api/v2/billing/reports/billableusage | Get a report of the billable license usages
-[**getBillingTrusteebillingoverviewTrustorOrgId**](BillingApi.html#getBillingTrusteebillingoverviewTrustorOrgId) | **GET** /api/v2/billing/trusteebillingoverview/{trustorOrgId} | Get the billing overview for an organization that is managed by a partner.
-{: class="table table-striped"}
+[**getBillingReportsBillableusage**](BillingApi#getBillingReportsBillableusage) | **GET** /api/v2/billing/reports/billableusage | Get a report of the billable license usages
+[**getBillingTrusteebillingoverviewTrustorOrgId**](BillingApi#getBillingTrusteebillingoverviewTrustorOrgId) | **GET** /api/v2/billing/trusteebillingoverview/{trustorOrgId} | Get the billing overview for an organization that is managed by a partner.
 
-<a name="getBillingReportsBillableusage"></a>
 
-# BillingUsageReport getBillingReportsBillableusage(startDate, endDate)
+
+## getBillingReportsBillableusage
+
+> BillingUsageReport getBillingReportsBillableusage(startDate, endDate)
 
 
 GET /api/v2/billing/reports/billableusage
@@ -60,15 +60,15 @@ apiInstance.getBillingReportsBillableusage(startDate, endDate)
 | ------------- | ------------- | ------------- | ------------- |
  **startDate** | **Date** | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
  **endDate** | **Date** | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BillingUsageReport**
 
-<a name="getBillingTrusteebillingoverviewTrustorOrgId"></a>
 
-# TrusteeBillingOverview getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
+## getBillingTrusteebillingoverviewTrustorOrgId
+
+> TrusteeBillingOverview getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
 
 
 GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}
@@ -116,9 +116,10 @@ apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **trustorOrgId** | **String** | The organization ID of the trustor (customer) organization. |  |
  **billingPeriodIndex** | **Number** | 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. | [optional] [default to 0] |
-{: class="table table-striped"}
 
 ### Return type
 
 **TrusteeBillingOverview**
 
+
+_purecloud-platform-client-v2@204.0.1_

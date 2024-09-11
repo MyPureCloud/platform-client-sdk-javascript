@@ -1,61 +1,61 @@
----
-title: AuthorizationApi
----
+# AuthorizationApi
+
 # platformClient.AuthorizationApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAuthorizationDivision**](AuthorizationApi.html#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
-[**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
-[**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
-[**getAuthorizationDivision**](AuthorizationApi.html#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
-[**getAuthorizationDivisionGrants**](AuthorizationApi.html#getAuthorizationDivisionGrants) | **GET** /api/v2/authorization/divisions/{divisionId}/grants | Gets all grants for a given division.
-[**getAuthorizationDivisions**](AuthorizationApi.html#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
-[**getAuthorizationDivisionsHome**](AuthorizationApi.html#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
-[**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
-[**getAuthorizationDivisionspermittedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
-[**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
-[**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
-[**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
-[**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
-[**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
-[**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#getAuthorizationRoleComparedefaultRightRoleId) | **GET** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an org role to default role comparison
-[**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | **GET** /api/v2/authorization/roles/{roleId}/subjectgrants | Get the subjects' granted divisions in the specified role.
-[**getAuthorizationRoleUsers**](AuthorizationApi.html#getAuthorizationRoleUsers) | **GET** /api/v2/authorization/roles/{roleId}/users | Get a list of the users in a specified role.
-[**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
-[**getAuthorizationRolesSettings**](AuthorizationApi.html#getAuthorizationRolesSettings) | **GET** /api/v2/authorization/roles/settings | Get authorization role settings
-[**getAuthorizationSettings**](AuthorizationApi.html#getAuthorizationSettings) | **GET** /api/v2/authorization/settings | Get authorization settings
-[**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
-[**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
-[**getAuthorizationSubjectsRolecounts**](AuthorizationApi.html#getAuthorizationSubjectsRolecounts) | **GET** /api/v2/authorization/subjects/rolecounts | Get the count of roles granted to a list of subjects
-[**getUserRoles**](AuthorizationApi.html#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
-[**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
-[**patchAuthorizationSettings**](AuthorizationApi.html#patchAuthorizationSettings) | **PATCH** /api/v2/authorization/settings | Change authorization settings
-[**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
-[**postAuthorizationDivisionRestore**](AuthorizationApi.html#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
-[**postAuthorizationDivisions**](AuthorizationApi.html#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
-[**postAuthorizationRole**](AuthorizationApi.html#postAuthorizationRole) | **POST** /api/v2/authorization/roles/{roleId} | Bulk-grant subjects and divisions with an organization role.
-[**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#postAuthorizationRoleComparedefaultRightRoleId) | **POST** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an unsaved org role to default role comparison
-[**postAuthorizationRoles**](AuthorizationApi.html#postAuthorizationRoles) | **POST** /api/v2/authorization/roles | Create an organization role.
-[**postAuthorizationRolesDefault**](AuthorizationApi.html#postAuthorizationRolesDefault) | **POST** /api/v2/authorization/roles/default | Restores all default roles
-[**postAuthorizationSubjectBulkadd**](AuthorizationApi.html#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
-[**postAuthorizationSubjectBulkremove**](AuthorizationApi.html#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
-[**postAuthorizationSubjectBulkreplace**](AuthorizationApi.html#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
-[**postAuthorizationSubjectDivisionRole**](AuthorizationApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
-[**putAuthorizationDivision**](AuthorizationApi.html#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
-[**putAuthorizationRole**](AuthorizationApi.html#putAuthorizationRole) | **PUT** /api/v2/authorization/roles/{roleId} | Update an organization role.
-[**putAuthorizationRoleUsersAdd**](AuthorizationApi.html#putAuthorizationRoleUsersAdd) | **PUT** /api/v2/authorization/roles/{roleId}/users/add | Sets the users for the role
-[**putAuthorizationRoleUsersRemove**](AuthorizationApi.html#putAuthorizationRoleUsersRemove) | **PUT** /api/v2/authorization/roles/{roleId}/users/remove | Removes the users from the role
-[**putAuthorizationRolesDefault**](AuthorizationApi.html#putAuthorizationRolesDefault) | **PUT** /api/v2/authorization/roles/default | Restore specified default roles
-[**putAuthorizationRolesSettings**](AuthorizationApi.html#putAuthorizationRolesSettings) | **PUT** /api/v2/authorization/roles/settings | Change authorization role settings
-[**putUserRoles**](AuthorizationApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
-{: class="table table-striped"}
+[**deleteAuthorizationDivision**](AuthorizationApi#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
+[**deleteAuthorizationRole**](AuthorizationApi#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
+[**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
+[**getAuthorizationDivision**](AuthorizationApi#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
+[**getAuthorizationDivisionGrants**](AuthorizationApi#getAuthorizationDivisionGrants) | **GET** /api/v2/authorization/divisions/{divisionId}/grants | Gets all grants for a given division.
+[**getAuthorizationDivisions**](AuthorizationApi#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
+[**getAuthorizationDivisionsHome**](AuthorizationApi#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
+[**getAuthorizationDivisionsLimit**](AuthorizationApi#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
+[**getAuthorizationDivisionspermittedMe**](AuthorizationApi#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
+[**getAuthorizationPermissions**](AuthorizationApi#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
+[**getAuthorizationProducts**](AuthorizationApi#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
+[**getAuthorizationRole**](AuthorizationApi#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
+[**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi#getAuthorizationRoleComparedefaultRightRoleId) | **GET** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an org role to default role comparison
+[**getAuthorizationRoleSubjectgrants**](AuthorizationApi#getAuthorizationRoleSubjectgrants) | **GET** /api/v2/authorization/roles/{roleId}/subjectgrants | Get the subjects' granted divisions in the specified role.
+[**getAuthorizationRoleUsers**](AuthorizationApi#getAuthorizationRoleUsers) | **GET** /api/v2/authorization/roles/{roleId}/users | Get a list of the users in a specified role.
+[**getAuthorizationRoles**](AuthorizationApi#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
+[**getAuthorizationRolesSettings**](AuthorizationApi#getAuthorizationRolesSettings) | **GET** /api/v2/authorization/roles/settings | Get authorization role settings
+[**getAuthorizationSettings**](AuthorizationApi#getAuthorizationSettings) | **GET** /api/v2/authorization/settings | Get authorization settings
+[**getAuthorizationSubject**](AuthorizationApi#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
+[**getAuthorizationSubjectsMe**](AuthorizationApi#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
+[**getAuthorizationSubjectsRolecounts**](AuthorizationApi#getAuthorizationSubjectsRolecounts) | **GET** /api/v2/authorization/subjects/rolecounts | Get the count of roles granted to a list of subjects
+[**getUserRoles**](AuthorizationApi#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
+[**patchAuthorizationRole**](AuthorizationApi#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
+[**patchAuthorizationSettings**](AuthorizationApi#patchAuthorizationSettings) | **PATCH** /api/v2/authorization/settings | Change authorization settings
+[**postAuthorizationDivisionObject**](AuthorizationApi#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
+[**postAuthorizationDivisionRestore**](AuthorizationApi#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
+[**postAuthorizationDivisions**](AuthorizationApi#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
+[**postAuthorizationRole**](AuthorizationApi#postAuthorizationRole) | **POST** /api/v2/authorization/roles/{roleId} | Bulk-grant subjects and divisions with an organization role.
+[**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi#postAuthorizationRoleComparedefaultRightRoleId) | **POST** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an unsaved org role to default role comparison
+[**postAuthorizationRoles**](AuthorizationApi#postAuthorizationRoles) | **POST** /api/v2/authorization/roles | Create an organization role.
+[**postAuthorizationRolesDefault**](AuthorizationApi#postAuthorizationRolesDefault) | **POST** /api/v2/authorization/roles/default | Restores all default roles
+[**postAuthorizationSubjectBulkadd**](AuthorizationApi#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
+[**postAuthorizationSubjectBulkremove**](AuthorizationApi#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
+[**postAuthorizationSubjectBulkreplace**](AuthorizationApi#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
+[**postAuthorizationSubjectDivisionRole**](AuthorizationApi#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
+[**putAuthorizationDivision**](AuthorizationApi#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
+[**putAuthorizationRole**](AuthorizationApi#putAuthorizationRole) | **PUT** /api/v2/authorization/roles/{roleId} | Update an organization role.
+[**putAuthorizationRoleUsersAdd**](AuthorizationApi#putAuthorizationRoleUsersAdd) | **PUT** /api/v2/authorization/roles/{roleId}/users/add | Sets the users for the role
+[**putAuthorizationRoleUsersRemove**](AuthorizationApi#putAuthorizationRoleUsersRemove) | **PUT** /api/v2/authorization/roles/{roleId}/users/remove | Removes the users from the role
+[**putAuthorizationRolesDefault**](AuthorizationApi#putAuthorizationRolesDefault) | **PUT** /api/v2/authorization/roles/default | Restore specified default roles
+[**putAuthorizationRolesSettings**](AuthorizationApi#putAuthorizationRolesSettings) | **PUT** /api/v2/authorization/roles/settings | Change authorization role settings
+[**putUserRoles**](AuthorizationApi#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
 
-<a name="deleteAuthorizationDivision"></a>
 
-# void deleteAuthorizationDivision(divisionId, opts)
+
+## deleteAuthorizationDivision
+
+> void deleteAuthorizationDivision(divisionId, opts)
 
 
 DELETE /api/v2/authorization/divisions/{divisionId}
@@ -101,15 +101,15 @@ apiInstance.deleteAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **force** | **Boolean** | Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAuthorizationRole"></a>
 
-# void deleteAuthorizationRole(roleId)
+## deleteAuthorizationRole
+
+> void deleteAuthorizationRole(roleId)
 
 
 DELETE /api/v2/authorization/roles/{roleId}
@@ -151,15 +151,15 @@ apiInstance.deleteAuthorizationRole(roleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAuthorizationSubjectDivisionRole"></a>
 
-# void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+## deleteAuthorizationSubjectDivisionRole
+
+> void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
 
 
 DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -205,15 +205,15 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division of the grant |  |
  **roleId** | **String** | the id of the role of the grant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAuthorizationDivision"></a>
 
-# AuthzDivision getAuthorizationDivision(divisionId, opts)
+## getAuthorizationDivision
+
+> AuthzDivision getAuthorizationDivision(divisionId, opts)
 
 
 GET /api/v2/authorization/divisions/{divisionId}
@@ -257,15 +257,15 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="getAuthorizationDivisionGrants"></a>
 
-# AuthzDivisionGrantEntityListing getAuthorizationDivisionGrants(divisionId, opts)
+## getAuthorizationDivisionGrants
+
+> AuthzDivisionGrantEntityListing getAuthorizationDivisionGrants(divisionId, opts)
 
 
 GET /api/v2/authorization/divisions/{divisionId}/grants
@@ -315,15 +315,15 @@ apiInstance.getAuthorizationDivisionGrants(divisionId, opts)
  **divisionId** | **String** | Division ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivisionGrantEntityListing**
 
-<a name="getAuthorizationDivisions"></a>
 
-# AuthzDivisionEntityListing getAuthorizationDivisions(opts)
+## getAuthorizationDivisions
+
+> AuthzDivisionEntityListing getAuthorizationDivisions(opts)
 
 
 GET /api/v2/authorization/divisions
@@ -383,15 +383,15 @@ apiInstance.getAuthorizationDivisions(opts)
  **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivisionEntityListing**
 
-<a name="getAuthorizationDivisionsHome"></a>
 
-# AuthzDivision getAuthorizationDivisionsHome()
+## getAuthorizationDivisionsHome
+
+> AuthzDivision getAuthorizationDivisionsHome()
 
 
 GET /api/v2/authorization/divisions/home
@@ -429,14 +429,14 @@ apiInstance.getAuthorizationDivisionsHome()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AuthzDivision**
 
-<a name="getAuthorizationDivisionsLimit"></a>
 
-# **&#39;Number&#39;** getAuthorizationDivisionsLimit()
+## getAuthorizationDivisionsLimit
+
+> **&#39;Number&#39;** getAuthorizationDivisionsLimit()
 
 
 GET /api/v2/authorization/divisions/limit
@@ -472,16 +472,18 @@ apiInstance.getAuthorizationDivisionsLimit()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **&#39;Number&#39;**
 
-<a name="getAuthorizationDivisionspermittedMe"></a>
 
-# [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+## getAuthorizationDivisionspermittedMe
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/authorization/divisionspermitted/me
 
@@ -526,15 +528,15 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[AuthzDivision]**
 
-<a name="getAuthorizationDivisionspermittedPagedMe"></a>
 
-# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
+## getAuthorizationDivisionspermittedPagedMe
+
+> DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
 
 
 GET /api/v2/authorization/divisionspermitted/paged/me
@@ -580,17 +582,19 @@ apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DivsPermittedEntityListing**
 
-<a name="getAuthorizationDivisionspermittedPagedSubjectId"></a>
 
-# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+## getAuthorizationDivisionspermittedPagedSubjectId
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/authorization/divisionspermitted/paged/{subjectId}
 
@@ -639,15 +643,15 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DivsPermittedEntityListing**
 
-<a name="getAuthorizationPermissions"></a>
 
-# PermissionCollectionEntityListing getAuthorizationPermissions(opts)
+## getAuthorizationPermissions
+
+> PermissionCollectionEntityListing getAuthorizationPermissions(opts)
 
 
 GET /api/v2/authorization/permissions
@@ -697,15 +701,15 @@ apiInstance.getAuthorizationPermissions(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **queryType** | **String** | Query filter type | [optional] <br />**Values**: domain, permission |
  **query** | **String** | Comma-separated list of permissions or domains to query | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PermissionCollectionEntityListing**
 
-<a name="getAuthorizationProducts"></a>
 
-# OrganizationProductEntityListing getAuthorizationProducts()
+## getAuthorizationProducts
+
+> OrganizationProductEntityListing getAuthorizationProducts()
 
 
 GET /api/v2/authorization/products
@@ -743,14 +747,14 @@ apiInstance.getAuthorizationProducts()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OrganizationProductEntityListing**
 
-<a name="getAuthorizationRole"></a>
 
-# DomainOrganizationRole getAuthorizationRole(roleId, opts)
+## getAuthorizationRole
+
+> DomainOrganizationRole getAuthorizationRole(roleId, opts)
 
 
 GET /api/v2/authorization/roles/{roleId}
@@ -800,15 +804,15 @@ apiInstance.getAuthorizationRole(roleId, opts)
  **roleId** | **String** | Role ID |  |
  **userCount** | **Boolean** | Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts. | [optional] [default to true]<br />**Values**: true, false |
  **expand** | **[String]** | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role | [optional] <br />**Values**: unusedPermissions |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrganizationRole**
 
-<a name="getAuthorizationRoleComparedefaultRightRoleId"></a>
 
-# DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
+## getAuthorizationRoleComparedefaultRightRoleId
+
+> DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
 
 
 GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
@@ -854,15 +858,15 @@ apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleI
 | ------------- | ------------- | ------------- | ------------- |
  **leftRoleId** | **String** | Left Role ID |  |
  **rightRoleId** | **String** | Right Role id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrgRoleDifference**
 
-<a name="getAuthorizationRoleSubjectgrants"></a>
 
-# SubjectDivisionGrantsEntityListing getAuthorizationRoleSubjectgrants(roleId, opts)
+## getAuthorizationRoleSubjectgrants
+
+> SubjectDivisionGrantsEntityListing getAuthorizationRoleSubjectgrants(roleId, opts)
 
 
 GET /api/v2/authorization/roles/{roleId}/subjectgrants
@@ -920,15 +924,15 @@ apiInstance.getAuthorizationRoleSubjectgrants(roleId, opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SubjectDivisionGrantsEntityListing**
 
-<a name="getAuthorizationRoleUsers"></a>
 
-# UserEntityListing getAuthorizationRoleUsers(roleId, opts)
+## getAuthorizationRoleUsers
+
+> UserEntityListing getAuthorizationRoleUsers(roleId, opts)
 
 
 GET /api/v2/authorization/roles/{roleId}/users
@@ -976,15 +980,15 @@ apiInstance.getAuthorizationRoleUsers(roleId, opts)
  **roleId** | **String** | Role ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="getAuthorizationRoles"></a>
 
-# OrganizationRoleEntityListing getAuthorizationRoles(opts)
+## getAuthorizationRoles
+
+> OrganizationRoleEntityListing getAuthorizationRoles(opts)
 
 
 GET /api/v2/authorization/roles
@@ -1048,15 +1052,15 @@ apiInstance.getAuthorizationRoles(opts)
  **defaultRoleId** | **[String]** |  | [optional]  |
  **userCount** | **Boolean** |  | [optional] [default to true] |
  **id** | **[String]** | id | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationRoleEntityListing**
 
-<a name="getAuthorizationRolesSettings"></a>
 
-# RoleSettings getAuthorizationRolesSettings()
+## getAuthorizationRolesSettings
+
+> RoleSettings getAuthorizationRolesSettings()
 
 
 GET /api/v2/authorization/roles/settings
@@ -1095,14 +1099,14 @@ apiInstance.getAuthorizationRolesSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **RoleSettings**
 
-<a name="getAuthorizationSettings"></a>
 
-# AuthorizationSettings getAuthorizationSettings()
+## getAuthorizationSettings
+
+> AuthorizationSettings getAuthorizationSettings()
 
 
 GET /api/v2/authorization/settings
@@ -1141,14 +1145,14 @@ apiInstance.getAuthorizationSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AuthorizationSettings**
 
-<a name="getAuthorizationSubject"></a>
 
-# AuthzSubject getAuthorizationSubject(subjectId, opts)
+## getAuthorizationSubject
+
+> AuthzSubject getAuthorizationSubject(subjectId, opts)
 
 
 GET /api/v2/authorization/subjects/{subjectId}
@@ -1194,15 +1198,15 @@ apiInstance.getAuthorizationSubject(subjectId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzSubject**
 
-<a name="getAuthorizationSubjectsMe"></a>
 
-# AuthzSubject getAuthorizationSubjectsMe(opts)
+## getAuthorizationSubjectsMe
+
+> AuthzSubject getAuthorizationSubjectsMe(opts)
 
 
 GET /api/v2/authorization/subjects/me
@@ -1244,15 +1248,15 @@ apiInstance.getAuthorizationSubjectsMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzSubject**
 
-<a name="getAuthorizationSubjectsRolecounts"></a>
 
-# **{&#39;String&#39;: Object}** getAuthorizationSubjectsRolecounts(opts)
+## getAuthorizationSubjectsRolecounts
+
+> **{&#39;String&#39;: Object}** getAuthorizationSubjectsRolecounts(opts)
 
 
 GET /api/v2/authorization/subjects/rolecounts
@@ -1296,15 +1300,15 @@ apiInstance.getAuthorizationSubjectsRolecounts(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | id | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **{&#39;String&#39;: Object}**
 
-<a name="getUserRoles"></a>
 
-# UserAuthorization getUserRoles(subjectId)
+## getUserRoles
+
+> UserAuthorization getUserRoles(subjectId)
 
 
 GET /api/v2/users/{subjectId}/roles
@@ -1346,15 +1350,15 @@ apiInstance.getUserRoles(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAuthorization**
 
-<a name="patchAuthorizationRole"></a>
 
-# DomainOrganizationRole patchAuthorizationRole(roleId, body)
+## patchAuthorizationRole
+
+> DomainOrganizationRole patchAuthorizationRole(roleId, body)
 
 
 PATCH /api/v2/authorization/roles/{roleId}
@@ -1400,15 +1404,15 @@ apiInstance.patchAuthorizationRole(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Organization role |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrganizationRole**
 
-<a name="patchAuthorizationSettings"></a>
 
-# AuthorizationSettings patchAuthorizationSettings(body)
+## patchAuthorizationSettings
+
+> AuthorizationSettings patchAuthorizationSettings(body)
 
 
 PATCH /api/v2/authorization/settings
@@ -1453,15 +1457,15 @@ apiInstance.patchAuthorizationSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Authorization Settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthorizationSettings**
 
-<a name="postAuthorizationDivisionObject"></a>
 
-# void postAuthorizationDivisionObject(divisionId, objectType, body)
+## postAuthorizationDivisionObject
+
+> void postAuthorizationDivisionObject(divisionId, objectType, body)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
@@ -1507,15 +1511,15 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
  **divisionId** | **String** | Division ID |  |
  **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
  **body** | **[String]** | Object Id List |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationDivisionRestore"></a>
 
-# AuthzDivision postAuthorizationDivisionRestore(divisionId, opts)
+## postAuthorizationDivisionRestore
+
+> AuthzDivision postAuthorizationDivisionRestore(divisionId, opts)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/restore
@@ -1561,15 +1565,15 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Recreated division data | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="postAuthorizationDivisions"></a>
 
-# AuthzDivision postAuthorizationDivisions(body)
+## postAuthorizationDivisions
+
+> AuthzDivision postAuthorizationDivisions(body)
 
 
 POST /api/v2/authorization/divisions
@@ -1612,15 +1616,15 @@ apiInstance.postAuthorizationDivisions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Division |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="postAuthorizationRole"></a>
 
-# void postAuthorizationRole(roleId, body, opts)
+## postAuthorizationRole
+
+> void postAuthorizationRole(roleId, body, opts)
 
 
 POST /api/v2/authorization/roles/{roleId}
@@ -1668,15 +1672,15 @@ apiInstance.postAuthorizationRole(roleId, body, opts)
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Subjects and Divisions |  |
  **subjectType** | **String** | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationRoleComparedefaultRightRoleId"></a>
 
-# DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
+## postAuthorizationRoleComparedefaultRightRoleId
+
+> DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
 
 
 POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
@@ -1724,15 +1728,15 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
  **leftRoleId** | **String** | Left Role ID |  |
  **rightRoleId** | **String** | Right Role id |  |
  **body** | **Object** | Organization role |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrgRoleDifference**
 
-<a name="postAuthorizationRoles"></a>
 
-# DomainOrganizationRole postAuthorizationRoles(body)
+## postAuthorizationRoles
+
+> DomainOrganizationRole postAuthorizationRoles(body)
 
 
 POST /api/v2/authorization/roles
@@ -1774,15 +1778,15 @@ apiInstance.postAuthorizationRoles(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization role |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrganizationRole**
 
-<a name="postAuthorizationRolesDefault"></a>
 
-# OrganizationRoleEntityListing postAuthorizationRolesDefault(opts)
+## postAuthorizationRolesDefault
+
+> OrganizationRoleEntityListing postAuthorizationRolesDefault(opts)
 
 
 POST /api/v2/authorization/roles/default
@@ -1828,15 +1832,15 @@ apiInstance.postAuthorizationRolesDefault(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **force** | **Boolean** | Restore default roles | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationRoleEntityListing**
 
-<a name="postAuthorizationSubjectBulkadd"></a>
 
-# void postAuthorizationSubjectBulkadd(subjectId, body, opts)
+## postAuthorizationSubjectBulkadd
+
+> void postAuthorizationSubjectBulkadd(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkadd
@@ -1884,15 +1888,15 @@ apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectBulkremove"></a>
 
-# void postAuthorizationSubjectBulkremove(subjectId, body)
+## postAuthorizationSubjectBulkremove
+
+> void postAuthorizationSubjectBulkremove(subjectId, body)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkremove
@@ -1936,15 +1940,15 @@ apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectBulkreplace"></a>
 
-# void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
+## postAuthorizationSubjectBulkreplace
+
+> void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkreplace
@@ -1995,15 +1999,15 @@ apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectDivisionRole"></a>
 
-# void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
+## postAuthorizationSubjectDivisionRole
+
+> void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -2053,15 +2057,15 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
  **divisionId** | **String** | the id of the division to which to make the grant |  |
  **roleId** | **String** | the id of the role to grant |  |
  **subjectType** | **String** | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putAuthorizationDivision"></a>
 
-# AuthzDivision putAuthorizationDivision(divisionId, body)
+## putAuthorizationDivision
+
+> AuthzDivision putAuthorizationDivision(divisionId, body)
 
 
 PUT /api/v2/authorization/divisions/{divisionId}
@@ -2105,15 +2109,15 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Updated division data |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="putAuthorizationRole"></a>
 
-# DomainOrganizationRole putAuthorizationRole(roleId, body)
+## putAuthorizationRole
+
+> DomainOrganizationRole putAuthorizationRole(roleId, body)
 
 
 PUT /api/v2/authorization/roles/{roleId}
@@ -2159,15 +2163,15 @@ apiInstance.putAuthorizationRole(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Organization role |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrganizationRole**
 
-<a name="putAuthorizationRoleUsersAdd"></a>
 
-# **[&#39;String&#39;]** putAuthorizationRoleUsersAdd(roleId, body)
+## putAuthorizationRoleUsersAdd
+
+> **[&#39;String&#39;]** putAuthorizationRoleUsersAdd(roleId, body)
 
 
 PUT /api/v2/authorization/roles/{roleId}/users/add
@@ -2211,15 +2215,15 @@ apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **[String]** | List of user IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="putAuthorizationRoleUsersRemove"></a>
 
-# **[&#39;String&#39;]** putAuthorizationRoleUsersRemove(roleId, body)
+## putAuthorizationRoleUsersRemove
+
+> **[&#39;String&#39;]** putAuthorizationRoleUsersRemove(roleId, body)
 
 
 PUT /api/v2/authorization/roles/{roleId}/users/remove
@@ -2263,15 +2267,15 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **[String]** | List of user IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="putAuthorizationRolesDefault"></a>
 
-# OrganizationRoleEntityListing putAuthorizationRolesDefault(body)
+## putAuthorizationRolesDefault
+
+> OrganizationRoleEntityListing putAuthorizationRolesDefault(body)
 
 
 PUT /api/v2/authorization/roles/default
@@ -2313,15 +2317,15 @@ apiInstance.putAuthorizationRolesDefault(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization roles list |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationRoleEntityListing**
 
-<a name="putAuthorizationRolesSettings"></a>
 
-# RoleSettings putAuthorizationRolesSettings(body)
+## putAuthorizationRolesSettings
+
+> RoleSettings putAuthorizationRolesSettings(body)
 
 
 PUT /api/v2/authorization/roles/settings
@@ -2366,15 +2370,15 @@ apiInstance.putAuthorizationRolesSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Authorization Role Settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoleSettings**
 
-<a name="putUserRoles"></a>
 
-# UserAuthorization putUserRoles(subjectId, body)
+## putUserRoles
+
+> UserAuthorization putUserRoles(subjectId, body)
 
 
 PUT /api/v2/users/{subjectId}/roles
@@ -2418,9 +2422,10 @@ apiInstance.putUserRoles(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
  **body** | **[String]** | List of roles |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAuthorization**
 
+
+_purecloud-platform-client-v2@204.0.1_

@@ -1,6 +1,6 @@
 {
   "name": "purecloud-platform-client-v2",
-  "version": "204.0.0",
+  "version": "204.0.1",
   "description": "A JavaScript library to interface with the PureCloud Platform API",
   "license": "MIT",
   "main": "dist/node/purecloud-platform-client-v2.js",
@@ -41,6 +41,9 @@
     "expect.js": "~0.3.1",
     "@babel/core": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
+    "rollup": "^2.79.1",
+    "uglify-es": "^3.3.9",
+    "browserify": "^17.0.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-json": "^6.0.1",

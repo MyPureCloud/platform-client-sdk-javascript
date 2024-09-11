@@ -1,64 +1,64 @@
----
-title: TaskManagementApi
----
+# TaskManagementApi
+
 # platformClient.TaskManagementApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteTaskmanagementWorkbin**](TaskManagementApi.html#deleteTaskmanagementWorkbin) | **DELETE** /api/v2/taskmanagement/workbins/{workbinId} | Delete a workbin
-[**deleteTaskmanagementWorkitem**](TaskManagementApi.html#deleteTaskmanagementWorkitem) | **DELETE** /api/v2/taskmanagement/workitems/{workitemId} | Delete a workitem
-[**deleteTaskmanagementWorkitemsSchema**](TaskManagementApi.html#deleteTaskmanagementWorkitemsSchema) | **DELETE** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Delete a schema
-[**deleteTaskmanagementWorktype**](TaskManagementApi.html#deleteTaskmanagementWorktype) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId} | Delete a worktype
-[**deleteTaskmanagementWorktypeStatus**](TaskManagementApi.html#deleteTaskmanagementWorktypeStatus) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Delete a status
-[**getTaskmanagementWorkbin**](TaskManagementApi.html#getTaskmanagementWorkbin) | **GET** /api/v2/taskmanagement/workbins/{workbinId} | Get a workbin
-[**getTaskmanagementWorkbinHistory**](TaskManagementApi.html#getTaskmanagementWorkbinHistory) | **GET** /api/v2/taskmanagement/workbins/{workbinId}/history | Get a listing of a workbin's attribute change history
-[**getTaskmanagementWorkbinVersion**](TaskManagementApi.html#getTaskmanagementWorkbinVersion) | **GET** /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion} | Get a version of a workbin
-[**getTaskmanagementWorkbinVersions**](TaskManagementApi.html#getTaskmanagementWorkbinVersions) | **GET** /api/v2/taskmanagement/workbins/{workbinId}/versions | Get all versions of a workbin
-[**getTaskmanagementWorkitem**](TaskManagementApi.html#getTaskmanagementWorkitem) | **GET** /api/v2/taskmanagement/workitems/{workitemId} | Get a workitem
-[**getTaskmanagementWorkitemHistory**](TaskManagementApi.html#getTaskmanagementWorkitemHistory) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/history | Get a listing of a workitem's attribute change history
-[**getTaskmanagementWorkitemUserWrapups**](TaskManagementApi.html#getTaskmanagementWorkitemUserWrapups) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups | Get all wrapup codes added for the given user for a workitem.
-[**getTaskmanagementWorkitemVersion**](TaskManagementApi.html#getTaskmanagementWorkitemVersion) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion} | Get a version of a workitem
-[**getTaskmanagementWorkitemVersions**](TaskManagementApi.html#getTaskmanagementWorkitemVersions) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/versions | Get all versions of a workitem
-[**getTaskmanagementWorkitemWrapups**](TaskManagementApi.html#getTaskmanagementWorkitemWrapups) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/wrapups | Get all wrapup codes added for all users for a workitem.
-[**getTaskmanagementWorkitemsQueryJob**](TaskManagementApi.html#getTaskmanagementWorkitemsQueryJob) | **GET** /api/v2/taskmanagement/workitems/query/jobs/{jobId} | Get the workitem query job associated with the job id.
-[**getTaskmanagementWorkitemsQueryJobResults**](TaskManagementApi.html#getTaskmanagementWorkitemsQueryJobResults) | **GET** /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results | Get results from for workitem query job 
-[**getTaskmanagementWorkitemsSchema**](TaskManagementApi.html#getTaskmanagementWorkitemsSchema) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Get a schema
-[**getTaskmanagementWorkitemsSchemaVersion**](TaskManagementApi.html#getTaskmanagementWorkitemsSchemaVersion) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
-[**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi.html#getTaskmanagementWorkitemsSchemaVersions) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions | Get all versions of a schema
-[**getTaskmanagementWorkitemsSchemas**](TaskManagementApi.html#getTaskmanagementWorkitemsSchemas) | **GET** /api/v2/taskmanagement/workitems/schemas | Get a list of schemas.
-[**getTaskmanagementWorktype**](TaskManagementApi.html#getTaskmanagementWorktype) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId} | Get a worktype
-[**getTaskmanagementWorktypeHistory**](TaskManagementApi.html#getTaskmanagementWorktypeHistory) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/history | Get a listing of a worktype's attribute change history
-[**getTaskmanagementWorktypeStatus**](TaskManagementApi.html#getTaskmanagementWorktypeStatus) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Get a status
-[**getTaskmanagementWorktypeStatuses**](TaskManagementApi.html#getTaskmanagementWorktypeStatuses) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Get list of statuses for this worktype.
-[**getTaskmanagementWorktypeVersion**](TaskManagementApi.html#getTaskmanagementWorktypeVersion) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion} | Get a version of a worktype
-[**getTaskmanagementWorktypeVersions**](TaskManagementApi.html#getTaskmanagementWorktypeVersions) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/versions | Get all versions of a worktype
-[**patchTaskmanagementWorkbin**](TaskManagementApi.html#patchTaskmanagementWorkbin) | **PATCH** /api/v2/taskmanagement/workbins/{workbinId} | Update the attributes of a workbin
-[**patchTaskmanagementWorkitem**](TaskManagementApi.html#patchTaskmanagementWorkitem) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId} | Update the attributes of a workitem
-[**patchTaskmanagementWorkitemAssignment**](TaskManagementApi.html#patchTaskmanagementWorkitemAssignment) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/assignment | Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
-[**patchTaskmanagementWorkitemUserWrapups**](TaskManagementApi.html#patchTaskmanagementWorkitemUserWrapups) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups | Add/Remove a wrapup code for a given user in a workitem.
-[**patchTaskmanagementWorkitemUsersMeWrapups**](TaskManagementApi.html#patchTaskmanagementWorkitemUsersMeWrapups) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups | Add/Remove a wrapup code for the current user in a workitem.
-[**patchTaskmanagementWorktype**](TaskManagementApi.html#patchTaskmanagementWorktype) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId} | Update the attributes of a worktype
-[**patchTaskmanagementWorktypeStatus**](TaskManagementApi.html#patchTaskmanagementWorktypeStatus) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Update the attributes of a status
-[**postTaskmanagementWorkbins**](TaskManagementApi.html#postTaskmanagementWorkbins) | **POST** /api/v2/taskmanagement/workbins | Create a workbin
-[**postTaskmanagementWorkbinsQuery**](TaskManagementApi.html#postTaskmanagementWorkbinsQuery) | **POST** /api/v2/taskmanagement/workbins/query | Query for workbins
-[**postTaskmanagementWorkitemAcdCancel**](TaskManagementApi.html#postTaskmanagementWorkitemAcdCancel) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel | Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
-[**postTaskmanagementWorkitemDisconnect**](TaskManagementApi.html#postTaskmanagementWorkitemDisconnect) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/disconnect | Disconnect the assignee of the workitem
-[**postTaskmanagementWorkitemTerminate**](TaskManagementApi.html#postTaskmanagementWorkitemTerminate) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/terminate | Terminate a workitem
-[**postTaskmanagementWorkitems**](TaskManagementApi.html#postTaskmanagementWorkitems) | **POST** /api/v2/taskmanagement/workitems | Create a workitem
-[**postTaskmanagementWorkitemsQuery**](TaskManagementApi.html#postTaskmanagementWorkitemsQuery) | **POST** /api/v2/taskmanagement/workitems/query | Query for workitems
-[**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi.html#postTaskmanagementWorkitemsQueryJobs) | **POST** /api/v2/taskmanagement/workitems/query/jobs | Create a workitem query job
-[**postTaskmanagementWorkitemsSchemas**](TaskManagementApi.html#postTaskmanagementWorkitemsSchemas) | **POST** /api/v2/taskmanagement/workitems/schemas | Create a schema
-[**postTaskmanagementWorktypeStatuses**](TaskManagementApi.html#postTaskmanagementWorktypeStatuses) | **POST** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Add a status to a worktype
-[**postTaskmanagementWorktypes**](TaskManagementApi.html#postTaskmanagementWorktypes) | **POST** /api/v2/taskmanagement/worktypes | Create a worktype
-[**postTaskmanagementWorktypesQuery**](TaskManagementApi.html#postTaskmanagementWorktypesQuery) | **POST** /api/v2/taskmanagement/worktypes/query | Query for worktypes
-[**putTaskmanagementWorkitemsSchema**](TaskManagementApi.html#putTaskmanagementWorkitemsSchema) | **PUT** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Update a schema
-{: class="table table-striped"}
+[**deleteTaskmanagementWorkbin**](TaskManagementApi#deleteTaskmanagementWorkbin) | **DELETE** /api/v2/taskmanagement/workbins/{workbinId} | Delete a workbin
+[**deleteTaskmanagementWorkitem**](TaskManagementApi#deleteTaskmanagementWorkitem) | **DELETE** /api/v2/taskmanagement/workitems/{workitemId} | Delete a workitem
+[**deleteTaskmanagementWorkitemsSchema**](TaskManagementApi#deleteTaskmanagementWorkitemsSchema) | **DELETE** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Delete a schema
+[**deleteTaskmanagementWorktype**](TaskManagementApi#deleteTaskmanagementWorktype) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId} | Delete a worktype
+[**deleteTaskmanagementWorktypeStatus**](TaskManagementApi#deleteTaskmanagementWorktypeStatus) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Delete a status
+[**getTaskmanagementWorkbin**](TaskManagementApi#getTaskmanagementWorkbin) | **GET** /api/v2/taskmanagement/workbins/{workbinId} | Get a workbin
+[**getTaskmanagementWorkbinHistory**](TaskManagementApi#getTaskmanagementWorkbinHistory) | **GET** /api/v2/taskmanagement/workbins/{workbinId}/history | Get a listing of a workbin's attribute change history
+[**getTaskmanagementWorkbinVersion**](TaskManagementApi#getTaskmanagementWorkbinVersion) | **GET** /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion} | Get a version of a workbin
+[**getTaskmanagementWorkbinVersions**](TaskManagementApi#getTaskmanagementWorkbinVersions) | **GET** /api/v2/taskmanagement/workbins/{workbinId}/versions | Get all versions of a workbin
+[**getTaskmanagementWorkitem**](TaskManagementApi#getTaskmanagementWorkitem) | **GET** /api/v2/taskmanagement/workitems/{workitemId} | Get a workitem
+[**getTaskmanagementWorkitemHistory**](TaskManagementApi#getTaskmanagementWorkitemHistory) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/history | Get a listing of a workitem's attribute change history
+[**getTaskmanagementWorkitemUserWrapups**](TaskManagementApi#getTaskmanagementWorkitemUserWrapups) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups | Get all wrapup codes added for the given user for a workitem.
+[**getTaskmanagementWorkitemVersion**](TaskManagementApi#getTaskmanagementWorkitemVersion) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion} | Get a version of a workitem
+[**getTaskmanagementWorkitemVersions**](TaskManagementApi#getTaskmanagementWorkitemVersions) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/versions | Get all versions of a workitem
+[**getTaskmanagementWorkitemWrapups**](TaskManagementApi#getTaskmanagementWorkitemWrapups) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/wrapups | Get all wrapup codes added for all users for a workitem.
+[**getTaskmanagementWorkitemsQueryJob**](TaskManagementApi#getTaskmanagementWorkitemsQueryJob) | **GET** /api/v2/taskmanagement/workitems/query/jobs/{jobId} | Get the workitem query job associated with the job id.
+[**getTaskmanagementWorkitemsQueryJobResults**](TaskManagementApi#getTaskmanagementWorkitemsQueryJobResults) | **GET** /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results | Get results from for workitem query job 
+[**getTaskmanagementWorkitemsSchema**](TaskManagementApi#getTaskmanagementWorkitemsSchema) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Get a schema
+[**getTaskmanagementWorkitemsSchemaVersion**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersion) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions | Get all versions of a schema
+[**getTaskmanagementWorkitemsSchemas**](TaskManagementApi#getTaskmanagementWorkitemsSchemas) | **GET** /api/v2/taskmanagement/workitems/schemas | Get a list of schemas.
+[**getTaskmanagementWorktype**](TaskManagementApi#getTaskmanagementWorktype) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId} | Get a worktype
+[**getTaskmanagementWorktypeHistory**](TaskManagementApi#getTaskmanagementWorktypeHistory) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/history | Get a listing of a worktype's attribute change history
+[**getTaskmanagementWorktypeStatus**](TaskManagementApi#getTaskmanagementWorktypeStatus) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Get a status
+[**getTaskmanagementWorktypeStatuses**](TaskManagementApi#getTaskmanagementWorktypeStatuses) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Get list of statuses for this worktype.
+[**getTaskmanagementWorktypeVersion**](TaskManagementApi#getTaskmanagementWorktypeVersion) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion} | Get a version of a worktype
+[**getTaskmanagementWorktypeVersions**](TaskManagementApi#getTaskmanagementWorktypeVersions) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/versions | Get all versions of a worktype
+[**patchTaskmanagementWorkbin**](TaskManagementApi#patchTaskmanagementWorkbin) | **PATCH** /api/v2/taskmanagement/workbins/{workbinId} | Update the attributes of a workbin
+[**patchTaskmanagementWorkitem**](TaskManagementApi#patchTaskmanagementWorkitem) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId} | Update the attributes of a workitem
+[**patchTaskmanagementWorkitemAssignment**](TaskManagementApi#patchTaskmanagementWorkitemAssignment) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/assignment | Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
+[**patchTaskmanagementWorkitemUserWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUserWrapups) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups | Add/Remove a wrapup code for a given user in a workitem.
+[**patchTaskmanagementWorkitemUsersMeWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUsersMeWrapups) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups | Add/Remove a wrapup code for the current user in a workitem.
+[**patchTaskmanagementWorktype**](TaskManagementApi#patchTaskmanagementWorktype) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId} | Update the attributes of a worktype
+[**patchTaskmanagementWorktypeStatus**](TaskManagementApi#patchTaskmanagementWorktypeStatus) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Update the attributes of a status
+[**postTaskmanagementWorkbins**](TaskManagementApi#postTaskmanagementWorkbins) | **POST** /api/v2/taskmanagement/workbins | Create a workbin
+[**postTaskmanagementWorkbinsQuery**](TaskManagementApi#postTaskmanagementWorkbinsQuery) | **POST** /api/v2/taskmanagement/workbins/query | Query for workbins
+[**postTaskmanagementWorkitemAcdCancel**](TaskManagementApi#postTaskmanagementWorkitemAcdCancel) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel | Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
+[**postTaskmanagementWorkitemDisconnect**](TaskManagementApi#postTaskmanagementWorkitemDisconnect) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/disconnect | Disconnect the assignee of the workitem
+[**postTaskmanagementWorkitemTerminate**](TaskManagementApi#postTaskmanagementWorkitemTerminate) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/terminate | Terminate a workitem
+[**postTaskmanagementWorkitems**](TaskManagementApi#postTaskmanagementWorkitems) | **POST** /api/v2/taskmanagement/workitems | Create a workitem
+[**postTaskmanagementWorkitemsQuery**](TaskManagementApi#postTaskmanagementWorkitemsQuery) | **POST** /api/v2/taskmanagement/workitems/query | Query for workitems
+[**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi#postTaskmanagementWorkitemsQueryJobs) | **POST** /api/v2/taskmanagement/workitems/query/jobs | Create a workitem query job
+[**postTaskmanagementWorkitemsSchemas**](TaskManagementApi#postTaskmanagementWorkitemsSchemas) | **POST** /api/v2/taskmanagement/workitems/schemas | Create a schema
+[**postTaskmanagementWorktypeStatuses**](TaskManagementApi#postTaskmanagementWorktypeStatuses) | **POST** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Add a status to a worktype
+[**postTaskmanagementWorktypes**](TaskManagementApi#postTaskmanagementWorktypes) | **POST** /api/v2/taskmanagement/worktypes | Create a worktype
+[**postTaskmanagementWorktypesQuery**](TaskManagementApi#postTaskmanagementWorktypesQuery) | **POST** /api/v2/taskmanagement/worktypes/query | Query for worktypes
+[**putTaskmanagementWorkitemsSchema**](TaskManagementApi#putTaskmanagementWorkitemsSchema) | **PUT** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Update a schema
 
-<a name="deleteTaskmanagementWorkbin"></a>
 
-# void deleteTaskmanagementWorkbin(workbinId)
+
+## deleteTaskmanagementWorkbin
+
+> void deleteTaskmanagementWorkbin(workbinId)
 
 
 DELETE /api/v2/taskmanagement/workbins/{workbinId}
@@ -100,15 +100,15 @@ apiInstance.deleteTaskmanagementWorkbin(workbinId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workbinId** | **String** | Workbin ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteTaskmanagementWorkitem"></a>
 
-# void deleteTaskmanagementWorkitem(workitemId)
+## deleteTaskmanagementWorkitem
+
+> void deleteTaskmanagementWorkitem(workitemId)
 
 
 DELETE /api/v2/taskmanagement/workitems/{workitemId}
@@ -150,15 +150,15 @@ apiInstance.deleteTaskmanagementWorkitem(workitemId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteTaskmanagementWorkitemsSchema"></a>
 
-# void deleteTaskmanagementWorkitemsSchema(schemaId)
+## deleteTaskmanagementWorkitemsSchema
+
+> void deleteTaskmanagementWorkitemsSchema(schemaId)
 
 
 DELETE /api/v2/taskmanagement/workitems/schemas/{schemaId}
@@ -200,15 +200,15 @@ apiInstance.deleteTaskmanagementWorkitemsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteTaskmanagementWorktype"></a>
 
-# void deleteTaskmanagementWorktype(worktypeId)
+## deleteTaskmanagementWorktype
+
+> void deleteTaskmanagementWorktype(worktypeId)
 
 
 DELETE /api/v2/taskmanagement/worktypes/{worktypeId}
@@ -250,15 +250,15 @@ apiInstance.deleteTaskmanagementWorktype(worktypeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteTaskmanagementWorktypeStatus"></a>
 
-# void deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
+## deleteTaskmanagementWorktypeStatus
+
+> void deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
 
 
 DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
@@ -302,15 +302,15 @@ apiInstance.deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **statusId** | **String** | Status id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getTaskmanagementWorkbin"></a>
 
-# Workbin getTaskmanagementWorkbin(workbinId)
+## getTaskmanagementWorkbin
+
+> Workbin getTaskmanagementWorkbin(workbinId)
 
 
 GET /api/v2/taskmanagement/workbins/{workbinId}
@@ -352,15 +352,15 @@ apiInstance.getTaskmanagementWorkbin(workbinId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workbinId** | **String** | Workbin ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workbin**
 
-<a name="getTaskmanagementWorkbinHistory"></a>
 
-# WorkbinChangeListing getTaskmanagementWorkbinHistory(workbinId, opts)
+## getTaskmanagementWorkbinHistory
+
+> WorkbinChangeListing getTaskmanagementWorkbinHistory(workbinId, opts)
 
 
 GET /api/v2/taskmanagement/workbins/{workbinId}/history
@@ -412,15 +412,15 @@ apiInstance.getTaskmanagementWorkbinHistory(workbinId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkbinChangeListing**
 
-<a name="getTaskmanagementWorkbinVersion"></a>
 
-# WorkbinVersion getTaskmanagementWorkbinVersion(workbinId, entityVersion)
+## getTaskmanagementWorkbinVersion
+
+> WorkbinVersion getTaskmanagementWorkbinVersion(workbinId, entityVersion)
 
 
 GET /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}
@@ -466,15 +466,15 @@ apiInstance.getTaskmanagementWorkbinVersion(workbinId, entityVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **workbinId** | **String** | Workbin ID |  |
  **entityVersion** | **Number** | Workbin version |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkbinVersion**
 
-<a name="getTaskmanagementWorkbinVersions"></a>
 
-# WorkbinVersionListing getTaskmanagementWorkbinVersions(workbinId, opts)
+## getTaskmanagementWorkbinVersions
+
+> WorkbinVersionListing getTaskmanagementWorkbinVersions(workbinId, opts)
 
 
 GET /api/v2/taskmanagement/workbins/{workbinId}/versions
@@ -526,15 +526,15 @@ apiInstance.getTaskmanagementWorkbinVersions(workbinId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkbinVersionListing**
 
-<a name="getTaskmanagementWorkitem"></a>
 
-# Workitem getTaskmanagementWorkitem(workitemId, opts)
+## getTaskmanagementWorkitem
+
+> Workitem getTaskmanagementWorkitem(workitemId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/{workitemId}
@@ -580,15 +580,15 @@ apiInstance.getTaskmanagementWorkitem(workitemId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **expands** | **String** | Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workitem**
 
-<a name="getTaskmanagementWorkitemHistory"></a>
 
-# WorkitemChangeListing getTaskmanagementWorkitemHistory(workitemId, opts)
+## getTaskmanagementWorkitemHistory
+
+> WorkitemChangeListing getTaskmanagementWorkitemHistory(workitemId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/{workitemId}/history
@@ -640,15 +640,15 @@ apiInstance.getTaskmanagementWorkitemHistory(workitemId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemChangeListing**
 
-<a name="getTaskmanagementWorkitemUserWrapups"></a>
 
-# WorkitemWrapup getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
+## getTaskmanagementWorkitemUserWrapups
+
+> WorkitemWrapup getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups
@@ -702,15 +702,15 @@ apiInstance.getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemWrapup**
 
-<a name="getTaskmanagementWorkitemVersion"></a>
 
-# WorkitemVersion getTaskmanagementWorkitemVersion(workitemId, entityVersion)
+## getTaskmanagementWorkitemVersion
+
+> WorkitemVersion getTaskmanagementWorkitemVersion(workitemId, entityVersion)
 
 
 GET /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}
@@ -756,15 +756,15 @@ apiInstance.getTaskmanagementWorkitemVersion(workitemId, entityVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **entityVersion** | **Number** | Workitem version |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemVersion**
 
-<a name="getTaskmanagementWorkitemVersions"></a>
 
-# WorkitemVersionListing getTaskmanagementWorkitemVersions(workitemId, opts)
+## getTaskmanagementWorkitemVersions
+
+> WorkitemVersionListing getTaskmanagementWorkitemVersions(workitemId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/{workitemId}/versions
@@ -816,15 +816,15 @@ apiInstance.getTaskmanagementWorkitemVersions(workitemId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemVersionListing**
 
-<a name="getTaskmanagementWorkitemWrapups"></a>
 
-# WorkitemWrapupEntityListing getTaskmanagementWorkitemWrapups(workitemId, opts)
+## getTaskmanagementWorkitemWrapups
+
+> WorkitemWrapupEntityListing getTaskmanagementWorkitemWrapups(workitemId, opts)
 
 
 GET /api/v2/taskmanagement/workitems/{workitemId}/wrapups
@@ -876,15 +876,15 @@ apiInstance.getTaskmanagementWorkitemWrapups(workitemId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemWrapupEntityListing**
 
-<a name="getTaskmanagementWorkitemsQueryJob"></a>
 
-# WorkitemQueryJobResponse getTaskmanagementWorkitemsQueryJob(jobId)
+## getTaskmanagementWorkitemsQueryJob
+
+> WorkitemQueryJobResponse getTaskmanagementWorkitemsQueryJob(jobId)
 
 
 GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}
@@ -926,15 +926,15 @@ apiInstance.getTaskmanagementWorkitemsQueryJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemQueryJobResponse**
 
-<a name="getTaskmanagementWorkitemsQueryJobResults"></a>
 
-# WorkitemPagedEntityListing getTaskmanagementWorkitemsQueryJobResults(jobId)
+## getTaskmanagementWorkitemsQueryJobResults
+
+> WorkitemPagedEntityListing getTaskmanagementWorkitemsQueryJobResults(jobId)
 
 
 GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results
@@ -976,15 +976,15 @@ apiInstance.getTaskmanagementWorkitemsQueryJobResults(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemPagedEntityListing**
 
-<a name="getTaskmanagementWorkitemsSchema"></a>
 
-# DataSchema getTaskmanagementWorkitemsSchema(schemaId)
+## getTaskmanagementWorkitemsSchema
+
+> DataSchema getTaskmanagementWorkitemsSchema(schemaId)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/{schemaId}
@@ -1026,15 +1026,15 @@ apiInstance.getTaskmanagementWorkitemsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getTaskmanagementWorkitemsSchemaVersion"></a>
 
-# DataSchema getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
+## getTaskmanagementWorkitemsSchemaVersion
+
+> DataSchema getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId}
@@ -1078,15 +1078,15 @@ apiInstance.getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **versionId** | **String** | Schema version |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getTaskmanagementWorkitemsSchemaVersions"></a>
 
-# DataSchema getTaskmanagementWorkitemsSchemaVersions(schemaId)
+## getTaskmanagementWorkitemsSchemaVersions
+
+> DataSchema getTaskmanagementWorkitemsSchemaVersions(schemaId)
 
 
 GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions
@@ -1128,15 +1128,15 @@ apiInstance.getTaskmanagementWorkitemsSchemaVersions(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="getTaskmanagementWorkitemsSchemas"></a>
 
-# DataSchemaListing getTaskmanagementWorkitemsSchemas()
+## getTaskmanagementWorkitemsSchemas
+
+> DataSchemaListing getTaskmanagementWorkitemsSchemas()
 
 
 GET /api/v2/taskmanagement/workitems/schemas
@@ -1174,14 +1174,14 @@ apiInstance.getTaskmanagementWorkitemsSchemas()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataSchemaListing**
 
-<a name="getTaskmanagementWorktype"></a>
 
-# Worktype getTaskmanagementWorktype(worktypeId, opts)
+## getTaskmanagementWorktype
+
+> Worktype getTaskmanagementWorktype(worktypeId, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}
@@ -1227,15 +1227,15 @@ apiInstance.getTaskmanagementWorktype(worktypeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **expands** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow |
-{: class="table table-striped"}
 
 ### Return type
 
 **Worktype**
 
-<a name="getTaskmanagementWorktypeHistory"></a>
 
-# WorktypeChangeListing getTaskmanagementWorktypeHistory(worktypeId, opts)
+## getTaskmanagementWorktypeHistory
+
+> WorktypeChangeListing getTaskmanagementWorktypeHistory(worktypeId, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/history
@@ -1289,15 +1289,15 @@ apiInstance.getTaskmanagementWorktypeHistory(worktypeId, opts)
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
  **fields** | **[String]** | Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. | [optional] <br />**Values**: name, serviceLevelTarget, defaultWorkbinId, defaultDueDurationSeconds, defaultExpirationSeconds, defaultPriority, defaultLanguageId, defaultSkillIds, defaultQueueId, assignmentEnabled, defaultStatusId, statuses |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorktypeChangeListing**
 
-<a name="getTaskmanagementWorktypeStatus"></a>
 
-# WorkitemStatus getTaskmanagementWorktypeStatus(worktypeId, statusId)
+## getTaskmanagementWorktypeStatus
+
+> WorkitemStatus getTaskmanagementWorktypeStatus(worktypeId, statusId)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
@@ -1341,15 +1341,15 @@ apiInstance.getTaskmanagementWorktypeStatus(worktypeId, statusId)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **statusId** | **String** | Status id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemStatus**
 
-<a name="getTaskmanagementWorktypeStatuses"></a>
 
-# WorkitemStatusListing getTaskmanagementWorktypeStatuses(worktypeId)
+## getTaskmanagementWorktypeStatuses
+
+> WorkitemStatusListing getTaskmanagementWorktypeStatuses(worktypeId)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses
@@ -1391,15 +1391,15 @@ apiInstance.getTaskmanagementWorktypeStatuses(worktypeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemStatusListing**
 
-<a name="getTaskmanagementWorktypeVersion"></a>
 
-# WorktypeVersion getTaskmanagementWorktypeVersion(worktypeId, entityVersion)
+## getTaskmanagementWorktypeVersion
+
+> WorktypeVersion getTaskmanagementWorktypeVersion(worktypeId, entityVersion)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}
@@ -1445,15 +1445,15 @@ apiInstance.getTaskmanagementWorktypeVersion(worktypeId, entityVersion)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **entityVersion** | **Number** | Worktype version |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorktypeVersion**
 
-<a name="getTaskmanagementWorktypeVersions"></a>
 
-# WorktypeVersionListing getTaskmanagementWorktypeVersions(worktypeId, opts)
+## getTaskmanagementWorktypeVersions
+
+> WorktypeVersionListing getTaskmanagementWorktypeVersions(worktypeId, opts)
 
 
 GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions
@@ -1505,15 +1505,15 @@ apiInstance.getTaskmanagementWorktypeVersions(worktypeId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorktypeVersionListing**
 
-<a name="patchTaskmanagementWorkbin"></a>
 
-# Workbin patchTaskmanagementWorkbin(workbinId, body)
+## patchTaskmanagementWorkbin
+
+> Workbin patchTaskmanagementWorkbin(workbinId, body)
 
 
 PATCH /api/v2/taskmanagement/workbins/{workbinId}
@@ -1557,15 +1557,15 @@ apiInstance.patchTaskmanagementWorkbin(workbinId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workbinId** | **String** | Workbin ID |  |
  **body** | **Object** | Json with attributes and their new values: {description:new description, name:new name}. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workbin**
 
-<a name="patchTaskmanagementWorkitem"></a>
 
-# Workitem patchTaskmanagementWorkitem(workitemId, body)
+## patchTaskmanagementWorkitem
+
+> Workitem patchTaskmanagementWorkitem(workitemId, body)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}
@@ -1610,15 +1610,15 @@ apiInstance.patchTaskmanagementWorkitem(workitemId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **body** | **Object** | Workitem |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workitem**
 
-<a name="patchTaskmanagementWorkitemAssignment"></a>
 
-# void patchTaskmanagementWorkitemAssignment(workitemId, body)
+## patchTaskmanagementWorkitemAssignment
+
+> void patchTaskmanagementWorkitemAssignment(workitemId, body)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/assignment
@@ -1663,15 +1663,15 @@ apiInstance.patchTaskmanagementWorkitemAssignment(workitemId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **body** | **Object** | Targeted user |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchTaskmanagementWorkitemUserWrapups"></a>
 
-# WorkitemWrapup patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
+## patchTaskmanagementWorkitemUserWrapups
+
+> WorkitemWrapup patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups
@@ -1717,15 +1717,15 @@ apiInstance.patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
  **workitemId** | **String** | The ID of the Workitem. |  |
  **userId** | **String** | The ID of the user |  |
  **body** | **Object** | Request body to add/remove a wrapup code for a workitem |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemWrapup**
 
-<a name="patchTaskmanagementWorkitemUsersMeWrapups"></a>
 
-# WorkitemWrapup patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
+## patchTaskmanagementWorkitemUsersMeWrapups
+
+> WorkitemWrapup patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 
 
 PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups
@@ -1769,15 +1769,15 @@ apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | The ID of the Workitem. |  |
  **body** | **Object** | Request body to add/remove the wrapup code for workitem |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemWrapup**
 
-<a name="patchTaskmanagementWorktype"></a>
 
-# Worktype patchTaskmanagementWorktype(worktypeId, body)
+## patchTaskmanagementWorktype
+
+> Worktype patchTaskmanagementWorktype(worktypeId, body)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}
@@ -1821,15 +1821,15 @@ apiInstance.patchTaskmanagementWorktype(worktypeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **body** | **Object** | Worktype |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Worktype**
 
-<a name="patchTaskmanagementWorktypeStatus"></a>
 
-# WorkitemStatus patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
+## patchTaskmanagementWorktypeStatus
+
+> WorkitemStatus patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
 
 
 PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}
@@ -1875,15 +1875,15 @@ apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
  **worktypeId** | **String** | Worktype id |  |
  **statusId** | **String** | Status id |  |
  **body** | **Object** | Status |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemStatus**
 
-<a name="postTaskmanagementWorkbins"></a>
 
-# Workbin postTaskmanagementWorkbins(body)
+## postTaskmanagementWorkbins
+
+> Workbin postTaskmanagementWorkbins(body)
 
 
 POST /api/v2/taskmanagement/workbins
@@ -1925,15 +1925,15 @@ apiInstance.postTaskmanagementWorkbins(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Workbin |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workbin**
 
-<a name="postTaskmanagementWorkbinsQuery"></a>
 
-# WorkbinQueryEntityListing postTaskmanagementWorkbinsQuery(body)
+## postTaskmanagementWorkbinsQuery
+
+> WorkbinQueryEntityListing postTaskmanagementWorkbinsQuery(body)
 
 
 POST /api/v2/taskmanagement/workbins/query
@@ -1975,15 +1975,15 @@ apiInstance.postTaskmanagementWorkbinsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | QueryPostRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkbinQueryEntityListing**
 
-<a name="postTaskmanagementWorkitemAcdCancel"></a>
 
-# Workitem postTaskmanagementWorkitemAcdCancel(workitemId)
+## postTaskmanagementWorkitemAcdCancel
+
+> Workitem postTaskmanagementWorkitemAcdCancel(workitemId)
 
 
 POST /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel
@@ -2025,15 +2025,15 @@ apiInstance.postTaskmanagementWorkitemAcdCancel(workitemId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workitem**
 
-<a name="postTaskmanagementWorkitemDisconnect"></a>
 
-# Workitem postTaskmanagementWorkitemDisconnect(workitemId)
+## postTaskmanagementWorkitemDisconnect
+
+> Workitem postTaskmanagementWorkitemDisconnect(workitemId)
 
 
 POST /api/v2/taskmanagement/workitems/{workitemId}/disconnect
@@ -2075,15 +2075,15 @@ apiInstance.postTaskmanagementWorkitemDisconnect(workitemId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workitem**
 
-<a name="postTaskmanagementWorkitemTerminate"></a>
 
-# Workitem postTaskmanagementWorkitemTerminate(workitemId, opts)
+## postTaskmanagementWorkitemTerminate
+
+> Workitem postTaskmanagementWorkitemTerminate(workitemId, opts)
 
 
 POST /api/v2/taskmanagement/workitems/{workitemId}/terminate
@@ -2129,15 +2129,15 @@ apiInstance.postTaskmanagementWorkitemTerminate(workitemId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
  **body** | **Object** | Terminated request | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workitem**
 
-<a name="postTaskmanagementWorkitems"></a>
 
-# Workitem postTaskmanagementWorkitems(body)
+## postTaskmanagementWorkitems
+
+> Workitem postTaskmanagementWorkitems(body)
 
 
 POST /api/v2/taskmanagement/workitems
@@ -2179,15 +2179,15 @@ apiInstance.postTaskmanagementWorkitems(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Workitem |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Workitem**
 
-<a name="postTaskmanagementWorkitemsQuery"></a>
 
-# WorkitemPostQueryEntityListing postTaskmanagementWorkitemsQuery(body)
+## postTaskmanagementWorkitemsQuery
+
+> WorkitemPostQueryEntityListing postTaskmanagementWorkitemsQuery(body)
 
 
 POST /api/v2/taskmanagement/workitems/query
@@ -2233,15 +2233,15 @@ apiInstance.postTaskmanagementWorkitemsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WorkitemQueryPostRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemPostQueryEntityListing**
 
-<a name="postTaskmanagementWorkitemsQueryJobs"></a>
 
-# WorkitemQueryJobResponse postTaskmanagementWorkitemsQueryJobs(body)
+## postTaskmanagementWorkitemsQueryJobs
+
+> WorkitemQueryJobResponse postTaskmanagementWorkitemsQueryJobs(body)
 
 
 POST /api/v2/taskmanagement/workitems/query/jobs
@@ -2283,15 +2283,15 @@ apiInstance.postTaskmanagementWorkitemsQueryJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WorkitemQueryJobCreate |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemQueryJobResponse**
 
-<a name="postTaskmanagementWorkitemsSchemas"></a>
 
-# DataSchema postTaskmanagementWorkitemsSchemas(body)
+## postTaskmanagementWorkitemsSchemas
+
+> DataSchema postTaskmanagementWorkitemsSchemas(body)
 
 
 POST /api/v2/taskmanagement/workitems/schemas
@@ -2333,15 +2333,15 @@ apiInstance.postTaskmanagementWorkitemsSchemas(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Schema |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
-<a name="postTaskmanagementWorktypeStatuses"></a>
 
-# WorkitemStatus postTaskmanagementWorktypeStatuses(worktypeId, body)
+## postTaskmanagementWorktypeStatuses
+
+> WorkitemStatus postTaskmanagementWorktypeStatuses(worktypeId, body)
 
 
 POST /api/v2/taskmanagement/worktypes/{worktypeId}/statuses
@@ -2385,15 +2385,15 @@ apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
  **body** | **Object** | Status |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkitemStatus**
 
-<a name="postTaskmanagementWorktypes"></a>
 
-# Worktype postTaskmanagementWorktypes(body)
+## postTaskmanagementWorktypes
+
+> Worktype postTaskmanagementWorktypes(body)
 
 
 POST /api/v2/taskmanagement/worktypes
@@ -2435,15 +2435,15 @@ apiInstance.postTaskmanagementWorktypes(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Worktype |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Worktype**
 
-<a name="postTaskmanagementWorktypesQuery"></a>
 
-# WorktypeQueryEntityListing postTaskmanagementWorktypesQuery(body)
+## postTaskmanagementWorktypesQuery
+
+> WorktypeQueryEntityListing postTaskmanagementWorktypesQuery(body)
 
 
 POST /api/v2/taskmanagement/worktypes/query
@@ -2485,15 +2485,15 @@ apiInstance.postTaskmanagementWorktypesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | QueryPostRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorktypeQueryEntityListing**
 
-<a name="putTaskmanagementWorkitemsSchema"></a>
 
-# DataSchema putTaskmanagementWorkitemsSchema(schemaId, body)
+## putTaskmanagementWorkitemsSchema
+
+> DataSchema putTaskmanagementWorkitemsSchema(schemaId, body)
 
 
 PUT /api/v2/taskmanagement/workitems/schemas/{schemaId}
@@ -2537,9 +2537,10 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **body** | **Object** | Data Schema |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DataSchema**
 
+
+_purecloud-platform-client-v2@204.0.1_

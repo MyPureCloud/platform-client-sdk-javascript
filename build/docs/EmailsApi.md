@@ -1,19 +1,19 @@
----
-title: EmailsApi
----
+# EmailsApi
+
 # platformClient.EmailsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getEmailsSettings**](EmailsApi.html#getEmailsSettings) | **GET** /api/v2/emails/settings | Get email Contact Center settings
-[**patchEmailsSettings**](EmailsApi.html#patchEmailsSettings) | **PATCH** /api/v2/emails/settings | Patch email Contact Center settings
-{: class="table table-striped"}
+[**getEmailsSettings**](EmailsApi#getEmailsSettings) | **GET** /api/v2/emails/settings | Get email Contact Center settings
+[**patchEmailsSettings**](EmailsApi#patchEmailsSettings) | **PATCH** /api/v2/emails/settings | Patch email Contact Center settings
 
-<a name="getEmailsSettings"></a>
 
-# EmailSettings getEmailsSettings()
+
+## getEmailsSettings
+
+> EmailSettings getEmailsSettings()
 
 
 GET /api/v2/emails/settings
@@ -51,14 +51,14 @@ apiInstance.getEmailsSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **EmailSettings**
 
-<a name="patchEmailsSettings"></a>
 
-# EmailSettings patchEmailsSettings(opts)
+## patchEmailsSettings
+
+> EmailSettings patchEmailsSettings(opts)
 
 
 PATCH /api/v2/emails/settings
@@ -102,9 +102,10 @@ apiInstance.patchEmailsSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailSettings**
 
+
+_purecloud-platform-client-v2@204.0.1_

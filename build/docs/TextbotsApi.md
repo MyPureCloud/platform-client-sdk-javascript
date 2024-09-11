@@ -1,21 +1,21 @@
----
-title: TextbotsApi
----
+# TextbotsApi
+
 # platformClient.TextbotsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getTextbotsBotsSearch**](TextbotsApi.html#getTextbotsBotsSearch) | **GET** /api/v2/textbots/bots/search | Find bots using the currently configured friendly name or ID.
-[**postTextbotsBotflowsSessionTurns**](TextbotsApi.html#postTextbotsBotflowsSessionTurns) | **POST** /api/v2/textbots/botflows/sessions/{sessionId}/turns | Issue a bot flow turn event
-[**postTextbotsBotflowsSessions**](TextbotsApi.html#postTextbotsBotflowsSessions) | **POST** /api/v2/textbots/botflows/sessions | Create an execution instance of a bot flow definition.
-[**postTextbotsBotsExecute**](TextbotsApi.html#postTextbotsBotsExecute) | **POST** /api/v2/textbots/bots/execute | Send an intent to a bot to start a dialog/interact with it via text
-{: class="table table-striped"}
+[**getTextbotsBotsSearch**](TextbotsApi#getTextbotsBotsSearch) | **GET** /api/v2/textbots/bots/search | Find bots using the currently configured friendly name or ID.
+[**postTextbotsBotflowsSessionTurns**](TextbotsApi#postTextbotsBotflowsSessionTurns) | **POST** /api/v2/textbots/botflows/sessions/{sessionId}/turns | Issue a bot flow turn event
+[**postTextbotsBotflowsSessions**](TextbotsApi#postTextbotsBotflowsSessions) | **POST** /api/v2/textbots/botflows/sessions | Create an execution instance of a bot flow definition.
+[**postTextbotsBotsExecute**](TextbotsApi#postTextbotsBotsExecute) | **POST** /api/v2/textbots/bots/execute | Send an intent to a bot to start a dialog/interact with it via text
 
-<a name="getTextbotsBotsSearch"></a>
 
-# BotSearchResponseEntityListing getTextbotsBotsSearch(opts)
+
+## getTextbotsBotsSearch
+
+> BotSearchResponseEntityListing getTextbotsBotsSearch(opts)
 
 
 GET /api/v2/textbots/bots/search
@@ -67,15 +67,15 @@ apiInstance.getTextbotsBotsSearch(opts)
  **botName** | **String** | Bot name | [optional]  |
  **botId** | **[String]** | Bot IDs | [optional]  |
  **pageSize** | **Number** | The maximum results to return | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **BotSearchResponseEntityListing**
 
-<a name="postTextbotsBotflowsSessionTurns"></a>
 
-# TextBotFlowTurnResponse postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
+## postTextbotsBotflowsSessionTurns
+
+> TextBotFlowTurnResponse postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 
 
 POST /api/v2/textbots/botflows/sessions/{sessionId}/turns
@@ -121,15 +121,15 @@ apiInstance.postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | The bot flow session ID, typically obtained from 'POST /api/v2/textbots/botflows/sessions' |  |
  **turnRequest** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TextBotFlowTurnResponse**
 
-<a name="postTextbotsBotflowsSessions"></a>
 
-# TextBotFlowLaunchResponse postTextbotsBotflowsSessions(launchRequest)
+## postTextbotsBotflowsSessions
+
+> TextBotFlowLaunchResponse postTextbotsBotflowsSessions(launchRequest)
 
 
 POST /api/v2/textbots/botflows/sessions
@@ -173,15 +173,15 @@ apiInstance.postTextbotsBotflowsSessions(launchRequest)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **launchRequest** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TextBotFlowLaunchResponse**
 
-<a name="postTextbotsBotsExecute"></a>
 
-# PostTextResponse postTextbotsBotsExecute(postTextRequest)
+## postTextbotsBotsExecute
+
+> PostTextResponse postTextbotsBotsExecute(postTextRequest)
 
 
 POST /api/v2/textbots/bots/execute
@@ -225,9 +225,10 @@ apiInstance.postTextbotsBotsExecute(postTextRequest)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **postTextRequest** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PostTextResponse**
 
+
+_purecloud-platform-client-v2@204.0.1_
