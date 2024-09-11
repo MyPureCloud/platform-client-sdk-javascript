@@ -142,7 +142,9 @@ void (no response body)
 
 > void deletePresencedefinition(presenceId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/presencedefinitions/{presenceId}
 
@@ -500,7 +502,9 @@ apiInstance.getPresenceUserPrimarysource(userId)
 
 > OrganizationPresence getPresencedefinition(presenceId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/presencedefinitions/{presenceId}
 
@@ -555,7 +559,9 @@ apiInstance.getPresencedefinition(presenceId, opts)
 
 > OrganizationPresenceEntityListing getPresencedefinitions(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/presencedefinitions
 
@@ -1065,7 +1071,9 @@ apiInstance.postPresenceSources(body)
 
 > OrganizationPresence postPresencedefinitions(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/presencedefinitions
 
@@ -1322,7 +1330,9 @@ apiInstance.putPresenceUserPrimarysource(userId, body)
 
 > OrganizationPresence putPresencedefinition(presenceId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/presencedefinitions/{presenceId}
 
@@ -1421,4 +1431,4 @@ apiInstance.putUsersPresencesBulk(body)
 **[UserPresence]**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

@@ -618,7 +618,9 @@ void (no response body)
 
 > void deleteRoutingQueueUser(queueId, memberId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/routing/queues/{queueId}/users/{memberId}
 
@@ -3019,7 +3021,9 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
 
 > QueueMemberEntityListingV1 getRoutingQueueUsers(queueId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/routing/queues/{queueId}/users
 
@@ -5398,7 +5402,9 @@ apiInstance.patchRoutingQueueMembers(queueId, body)
 
 > void patchRoutingQueueUser(queueId, memberId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/routing/queues/{queueId}/users/{memberId}
 
@@ -5454,7 +5460,9 @@ void (no response body)
 
 > QueueMemberEntityListingV1 patchRoutingQueueUsers(queueId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/routing/queues/{queueId}/users
 
@@ -6561,7 +6569,9 @@ void (no response body)
 
 > void postRoutingQueueUsers(queueId, body, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/routing/queues/{queueId}/users
 
@@ -8104,4 +8114,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

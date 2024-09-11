@@ -21,7 +21,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > void deleteLanguage(languageId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/languages/{languageId}
 
@@ -74,7 +76,9 @@ void (no response body)
 
 > Language getLanguage(languageId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/languages/{languageId}
 
@@ -127,7 +131,9 @@ apiInstance.getLanguage(languageId)
 
 > LanguageEntityListing getLanguages(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/languages
 
@@ -375,7 +381,9 @@ apiInstance.getLanguagesTranslationsUser(userId)
 
 > Language postLanguages(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/languages
 
@@ -424,4 +432,4 @@ apiInstance.postLanguages(body)
 **Language**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

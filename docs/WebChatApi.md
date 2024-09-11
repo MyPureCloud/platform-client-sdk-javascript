@@ -32,7 +32,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > void deleteWebchatDeployment(deploymentId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/webchat/deployments/{deploymentId}
 
@@ -181,7 +183,9 @@ void (no response body)
 
 > WebChatDeployment getWebchatDeployment(deploymentId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/webchat/deployments/{deploymentId}
 
@@ -232,7 +236,9 @@ apiInstance.getWebchatDeployment(deploymentId)
 
 > WebChatDeploymentEntityListing getWebchatDeployments()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/webchat/deployments
 
@@ -278,7 +284,9 @@ This endpoint does not need any parameter.
 
 > WebChatGuestMediaRequest getWebchatGuestConversationMediarequest(conversationId, mediaRequestId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}
 
@@ -656,7 +664,9 @@ This endpoint does not need any parameter.
 
 > WebChatGuestMediaRequest patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}
 
@@ -714,7 +724,9 @@ apiInstance.patchWebchatGuestConversationMediarequest(conversationId, mediaReque
 
 > WebChatDeployment postWebchatDeployments(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/webchat/deployments
 
@@ -920,7 +932,9 @@ apiInstance.postWebchatGuestConversations(body)
 
 > WebChatDeployment putWebchatDeployment(deploymentId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/webchat/deployments/{deploymentId}
 
@@ -1019,4 +1033,4 @@ apiInstance.putWebchatSettings(body)
 **WebChatSettings**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

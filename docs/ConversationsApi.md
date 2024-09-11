@@ -2749,7 +2749,9 @@ apiInstance.getConversationsCobrowsesession(conversationId)
 
 > AssignedWrapupCode getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
@@ -2808,7 +2810,9 @@ apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conver
 
 > AssignedWrapupCode getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup
 
@@ -2865,7 +2869,9 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
 
 > [WrapupCode] getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes
 
@@ -4988,7 +4994,9 @@ This endpoint does not need any parameter.
 
 > AssignedWrapupCode getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
@@ -6316,7 +6324,9 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
 
 > Conversation patchConversationsCobrowsesession(conversationId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}
 
@@ -6371,7 +6381,9 @@ apiInstance.patchConversationsCobrowsesession(conversationId, body)
 
 > void patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}
 
@@ -6430,7 +6442,9 @@ void (no response body)
 
 > ParticipantAttributes patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes
 
@@ -6487,7 +6501,9 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
 
 > **Object** patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}
 
@@ -9734,7 +9750,9 @@ apiInstance.postConversationsChats(body)
 
 > void postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
@@ -9795,7 +9813,9 @@ void (no response body)
 
 > void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace
 
@@ -11080,7 +11100,9 @@ apiInstance.postConversationsMessagesAgentless(body)
 
 > OpenNormalizedMessage postConversationsMessagesInboundOpen(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/messages/inbound/open
 
@@ -11285,7 +11307,9 @@ apiInstance.postConversationsMessagingIntegrationsOpen(body)
 
 > WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/messaging/integrations/whatsapp
 
@@ -11540,7 +11564,9 @@ apiInstance.postConversationsParticipantsAttributesSearch(body)
 
 > void postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
@@ -12547,7 +12573,9 @@ apiInstance.putConversationsMessagingThreadingtimeline(body)
 
 > **&#39;String&#39;** putConversationsScreenshareRecordingstate(conversationId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate
 
@@ -12702,4 +12730,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

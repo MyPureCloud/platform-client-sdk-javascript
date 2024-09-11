@@ -5031,7 +5031,9 @@ apiInstance.getWorkforcemanagementManagementunit(managementUnitId, opts)
 
 > ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes
 
@@ -5820,7 +5822,9 @@ apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId)
 
 > WeekScheduleResponse getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}
 
@@ -5882,7 +5886,9 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, w
 
 > WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules
 
@@ -8581,7 +8587,9 @@ apiInstance.postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
 
 > WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/adherence/historical
 
@@ -11367,7 +11375,9 @@ apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, opts)
 
 > UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search
 
@@ -12641,7 +12651,9 @@ apiInstance.postWorkforcemanagementNotificationsUpdate(opts)
 
 > UserScheduleContainer postWorkforcemanagementSchedules(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/schedules
 
@@ -13228,4 +13240,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

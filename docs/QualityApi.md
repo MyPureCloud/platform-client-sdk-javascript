@@ -183,7 +183,9 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
 
 > void deleteQualityForm(formId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/quality/forms/{formId}
 
@@ -1138,7 +1140,9 @@ apiInstance.getQualityEvaluatorsActivity(opts)
 
 > EvaluationFormResponse getQualityForm(formId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/quality/forms/{formId}
 
@@ -1189,7 +1193,9 @@ apiInstance.getQualityForm(formId)
 
 > EvaluationFormResponseEntityListing getQualityFormVersions(formId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/quality/forms/{formId}/versions
 
@@ -1246,7 +1252,9 @@ apiInstance.getQualityFormVersions(formId, opts)
 
 > EvaluationFormResponseEntityListing getQualityForms(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/quality/forms
 
@@ -1815,7 +1823,9 @@ apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
 
 > EvaluationFormResponse getQualityPublishedform(formId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/quality/publishedforms/{formId}
 
@@ -1866,7 +1876,9 @@ apiInstance.getQualityPublishedform(formId)
 
 > EvaluationFormResponseEntityListing getQualityPublishedforms(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/quality/publishedforms
 
@@ -2748,7 +2760,9 @@ apiInstance.postQualityEvaluationsScoring(body)
 
 > EvaluationFormResponse postQualityForms(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/quality/forms
 
@@ -2899,7 +2913,9 @@ apiInstance.postQualityFormsSurveys(body)
 
 > EvaluationFormResponse postQualityPublishedforms(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/quality/publishedforms
 
@@ -3212,7 +3228,9 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
 
 > EvaluationFormResponse putQualityForm(formId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/quality/forms/{formId}
 
@@ -3466,4 +3484,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

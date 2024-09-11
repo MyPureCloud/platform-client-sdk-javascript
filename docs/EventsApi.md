@@ -162,4 +162,4 @@ apiInstance.postEventsUsersRoutingstatus(body)
 **BatchEventResponse**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

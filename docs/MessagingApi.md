@@ -26,7 +26,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > void deleteMessagingSetting(messageSettingId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/messaging/settings/{messageSettingId}
 
@@ -77,7 +79,9 @@ void (no response body)
 
 > void deleteMessagingSettingsDefault()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/messaging/settings/default
 
@@ -125,7 +129,9 @@ void (no response body)
 
 > void deleteMessagingSupportedcontentSupportedContentId(supportedContentId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/messaging/supportedcontent/{supportedContentId}
 
@@ -178,7 +184,9 @@ void (no response body)
 
 > MessagingSetting getMessagingSetting(messageSettingId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/messaging/settings/{messageSettingId}
 
@@ -229,7 +237,9 @@ apiInstance.getMessagingSetting(messageSettingId)
 
 > MessagingConfigListing getMessagingSettings(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/messaging/settings
 
@@ -284,7 +294,9 @@ apiInstance.getMessagingSettings(opts)
 
 > MessagingSetting getMessagingSettingsDefault()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/messaging/settings/default
 
@@ -332,7 +344,9 @@ This endpoint does not need any parameter.
 
 > SupportedContentListing getMessagingSupportedcontent(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/messaging/supportedcontent
 
@@ -389,7 +403,9 @@ apiInstance.getMessagingSupportedcontent(opts)
 
 > SupportedContent getMessagingSupportedcontentSupportedContentId(supportedContentId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/messaging/supportedcontent/{supportedContentId}
 
@@ -442,7 +458,9 @@ apiInstance.getMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 > MessagingSetting patchMessagingSetting(messageSettingId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/messaging/settings/{messageSettingId}
 
@@ -495,7 +513,9 @@ apiInstance.patchMessagingSetting(messageSettingId, body)
 
 > SupportedContent patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/messaging/supportedcontent/{supportedContentId}
 
@@ -550,7 +570,9 @@ apiInstance.patchMessagingSupportedcontentSupportedContentId(supportedContentId,
 
 > MessagingSetting postMessagingSettings(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/messaging/settings
 
@@ -601,7 +623,9 @@ apiInstance.postMessagingSettings(body)
 
 > SupportedContent postMessagingSupportedcontent(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/messaging/supportedcontent
 
@@ -654,7 +678,9 @@ apiInstance.postMessagingSupportedcontent(body)
 
 > MessagingSetting putMessagingSettingsDefault(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/messaging/settings/default
 
@@ -703,4 +729,4 @@ apiInstance.putMessagingSettingsDefault(body)
 **MessagingSetting**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

@@ -87,7 +87,9 @@ void (no response body)
 
 > void deleteAlertingInteractionstatsAlert(alertId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/alerting/interactionstats/alerts/{alertId}
 
@@ -140,7 +142,9 @@ void (no response body)
 
 > void deleteAlertingInteractionstatsRule(ruleId)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/alerting/interactionstats/rules/{ruleId}
 
@@ -293,7 +297,9 @@ apiInstance.getAlertingAlert(alertId)
 
 > ActiveAlertCount getAlertingAlertsActive()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/alerting/alerts/active
 
@@ -339,7 +345,9 @@ This endpoint does not need any parameter.
 
 > InteractionStatsAlert getAlertingInteractionstatsAlert(alertId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/alerting/interactionstats/alerts/{alertId}
 
@@ -396,7 +404,9 @@ apiInstance.getAlertingInteractionstatsAlert(alertId, opts)
 
 > InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/alerting/interactionstats/alerts
 
@@ -451,7 +461,9 @@ apiInstance.getAlertingInteractionstatsAlerts(opts)
 
 > UnreadMetric getAlertingInteractionstatsAlertsUnread()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/alerting/interactionstats/alerts/unread
 
@@ -497,7 +509,9 @@ This endpoint does not need any parameter.
 
 > InteractionStatsRule getAlertingInteractionstatsRule(ruleId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/alerting/interactionstats/rules/{ruleId}
 
@@ -554,7 +568,9 @@ apiInstance.getAlertingInteractionstatsRule(ruleId, opts)
 
 > InteractionStatsRuleContainer getAlertingInteractionstatsRules(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/alerting/interactionstats/rules
 
@@ -867,7 +883,9 @@ apiInstance.postAlertingAlertsQuery(opts)
 
 > InteractionStatsRule postAlertingInteractionstatsRules(body, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/alerting/interactionstats/rules
 
@@ -1130,7 +1148,9 @@ apiInstance.putAlertingAlert(alertId, opts)
 
 > UnreadStatus putAlertingInteractionstatsAlert(alertId, body, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/alerting/interactionstats/alerts/{alertId}
 
@@ -1189,7 +1209,9 @@ apiInstance.putAlertingInteractionstatsAlert(alertId, body, opts)
 
 > InteractionStatsRule putAlertingInteractionstatsRule(ruleId, body, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/alerting/interactionstats/rules/{ruleId}
 
@@ -1296,4 +1318,4 @@ apiInstance.putAlertingRule(ruleId, body)
 **CommonRule**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

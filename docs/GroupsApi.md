@@ -183,7 +183,9 @@ apiInstance.deleteGroupMembers(groupId, ids)
 
 > FieldConfig getFieldconfig(type)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/fieldconfig
 
@@ -438,7 +440,9 @@ apiInstance.getGroupMembers(groupId, opts)
 
 > GroupProfile getGroupProfile(groupId, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/groups/{groupId}/profile
 
@@ -603,7 +607,9 @@ apiInstance.getGroupsSearch(q64, opts)
 
 > GroupProfileEntityListing getProfilesGroups(opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/profiles/groups
 
@@ -764,7 +770,9 @@ apiInstance.postGroups(body)
 
 > DynamicGroupQueryPreview postGroupsDynamicsettingsPreview(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/groups/dynamicsettings/preview
 
@@ -969,4 +977,4 @@ apiInstance.putGroupDynamicsettings(groupId, body)
 void (no response body)
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_

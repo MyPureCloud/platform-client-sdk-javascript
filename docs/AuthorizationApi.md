@@ -481,7 +481,9 @@ This endpoint does not need any parameter.
 
 > [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/authorization/divisionspermitted/me
 
@@ -590,7 +592,9 @@ apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
 
 > DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/authorization/divisionspermitted/paged/{subjectId}
 
@@ -2424,4 +2428,4 @@ apiInstance.putUserRoles(subjectId, body)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@204.0.0_
+_purecloud-platform-client-v2@204.0.1_
