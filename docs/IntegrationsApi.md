@@ -37,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsCredential**](IntegrationsApi#getIntegrationsCredential) | **GET** /api/v2/integrations/credentials/{credentialId} | Get a single credential with sensitive fields redacted
 [**getIntegrationsCredentials**](IntegrationsApi#getIntegrationsCredentials) | **GET** /api/v2/integrations/credentials | List multiple sets of credentials
 [**getIntegrationsCredentialsTypes**](IntegrationsApi#getIntegrationsCredentialsTypes) | **GET** /api/v2/integrations/credentials/types | List all credential types
+[**getIntegrationsSpeechAudioconnector**](IntegrationsApi#getIntegrationsSpeechAudioconnector) | **GET** /api/v2/integrations/speech/audioconnector | Get a list of Audio Connector integrations
+[**getIntegrationsSpeechAudioconnectorIntegrationId**](IntegrationsApi#getIntegrationsSpeechAudioconnectorIntegrationId) | **GET** /api/v2/integrations/speech/audioconnector/{integrationId} | Get an Audio Connector integration
 [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi#getIntegrationsSpeechDialogflowAgent) | **GET** /api/v2/integrations/speech/dialogflow/agents/{agentId} | Get details about a Dialogflow agent
 [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi#getIntegrationsSpeechDialogflowAgents) | **GET** /api/v2/integrations/speech/dialogflow/agents | Get a list of Dialogflow agents in the customers' Google accounts
 [**getIntegrationsSpeechDialogflowcxAgent**](IntegrationsApi#getIntegrationsSpeechDialogflowcxAgent) | **GET** /api/v2/integrations/speech/dialogflowcx/agents/{agentId} | Get details about a Dialogflow CX agent
@@ -1799,6 +1801,110 @@ This endpoint does not need any parameter.
 ### Return type
 
 **CredentialTypeListing**
+
+
+## getIntegrationsSpeechAudioconnector
+
+> AudioConnectorIntegrationEntityListing getIntegrationsSpeechAudioconnector(opts)
+
+
+GET /api/v2/integrations/speech/audioconnector
+
+Get a list of Audio Connector integrations
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getIntegrationsSpeechAudioconnector(opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechAudioconnector success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechAudioconnector');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**AudioConnectorIntegrationEntityListing**
+
+
+## getIntegrationsSpeechAudioconnectorIntegrationId
+
+> AudioConnectorIntegration getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)
+
+
+GET /api/v2/integrations/speech/audioconnector/{integrationId}
+
+Get an Audio Connector integration
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID
+
+apiInstance.getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechAudioconnectorIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechAudioconnectorIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID |  |
+
+### Return type
+
+**AudioConnectorIntegration**
 
 
 ## getIntegrationsSpeechDialogflowAgent
@@ -4616,4 +4722,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@204.0.1_
+_purecloud-platform-client-v2@204.1.0_

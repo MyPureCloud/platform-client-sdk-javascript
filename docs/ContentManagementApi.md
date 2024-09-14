@@ -54,7 +54,9 @@ DELETE /api/v2/contentmanagement/documents/{documentId}
 
 Delete a document.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* content_management_user
 
 ### Example Usage
 
@@ -358,7 +360,9 @@ GET /api/v2/contentmanagement/documents/{documentId}
 
 Get a document.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* content_management_user
 
 ### Example Usage
 
@@ -410,7 +414,9 @@ GET /api/v2/contentmanagement/documents/{documentId}/content
 
 Download a document.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* content_management_user
 
 ### Example Usage
 
@@ -1385,7 +1391,9 @@ POST /api/v2/contentmanagement/documents/{documentId}
 
 Update a document.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* content_management_user
 
 ### Example Usage
 
@@ -1441,7 +1449,9 @@ POST /api/v2/contentmanagement/documents/{documentId}/content
 
 Replace the contents of a document.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* content_management_user
 
 ### Example Usage
 
@@ -1948,4 +1958,4 @@ apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 **TagValue**
 
 
-_purecloud-platform-client-v2@204.0.1_
+_purecloud-platform-client-v2@204.1.0_

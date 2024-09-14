@@ -5481,8 +5481,6 @@ PATCH /api/v2/conversations/{conversationId}/utilizationlabel
 
 Update the utilization label on a conversation. When there is no value provided, the system default label is applied
 
-patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:utilizationLabel:edit
@@ -12730,4 +12728,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@204.0.1_
+_purecloud-platform-client-v2@204.1.0_
