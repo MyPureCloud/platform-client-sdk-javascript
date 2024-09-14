@@ -209,8 +209,6 @@ DELETE /api/v2/architect/grammars/{grammarId}
 
 Delete a grammar.
 
-deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * architect:grammar:delete
@@ -260,8 +258,6 @@ apiInstance.deleteArchitectGrammar(grammarId)
 DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}
 
 Delete specified grammar language
-
-deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -315,8 +311,6 @@ DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtm
 
 Clear the DTMF mode file for the grammar language if there is one
 
-deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * architect:grammar:edit
@@ -368,8 +362,6 @@ void (no response body)
 DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice
 
 Clear the voice mode file for the grammar language if there is one
-
-deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1908,8 +1900,6 @@ Get a grammar
 
 Returns a specified grammar
 
-getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * architect:grammar:view
@@ -1964,8 +1954,6 @@ GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode}
 
 Get a grammar language.
 
-getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * architect:grammar:view
@@ -2019,8 +2007,6 @@ GET /api/v2/architect/grammars
 Get a pageable list of grammars, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-
-getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -5347,8 +5333,6 @@ PATCH /api/v2/architect/grammars/{grammarId}
 
 Updates a grammar
 
-patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * architect:grammar:edit
@@ -5402,8 +5386,6 @@ apiInstance.patchArchitectGrammar(grammarId, opts)
 PATCH /api/v2/architect/grammars/{grammarId}/languages/{languageCode}
 
 Updates a grammar language
-
-patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -5610,8 +5592,6 @@ POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf
 
 Creates a presigned URL for uploading a grammar DTMF mode file
 
-postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * architect:grammar:edit
@@ -5665,8 +5645,6 @@ apiInstance.postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
 POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice
 
 Creates a presigned URL for uploading a grammar voice mode file
-
-postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -5722,8 +5700,6 @@ POST /api/v2/architect/grammars/{grammarId}/languages
 
 Create a new language for a given grammar
 
-postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * architect:grammar:edit
@@ -5775,8 +5751,6 @@ apiInstance.postArchitectGrammarLanguages(grammarId, body)
 POST /api/v2/architect/grammars
 
 Create a new grammar
-
-postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -8048,4 +8022,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@204.0.1_
+_purecloud-platform-client-v2@204.1.0_

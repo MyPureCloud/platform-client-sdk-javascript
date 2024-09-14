@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**
@@ -872,6 +872,56 @@ class IntegrationsApi {
 			'/api/v2/integrations/credentials/types', 
 			'GET', 
 			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Audio Connector integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getIntegrationsSpeechAudioconnector(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/audioconnector', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Audio Connector integration
+	 * 
+	 * @param {String} integrationId The integration ID
+	 */
+	getIntegrationsSpeechAudioconnectorIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsSpeechAudioconnectorIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/audioconnector/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
 			{  },
 			{  },
 			{  },

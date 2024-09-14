@@ -5,7 +5,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**

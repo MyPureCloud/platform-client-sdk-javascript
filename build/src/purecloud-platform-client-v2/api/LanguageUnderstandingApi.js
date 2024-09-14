@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**

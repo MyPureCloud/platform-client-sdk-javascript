@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**
@@ -2861,7 +2861,6 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} body Conversation Utilization Label
-	 * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchConversationUtilizationlabel(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set

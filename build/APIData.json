@@ -18164,6 +18164,39 @@
     "return": "CredentialTypeListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\n// List all credential types\napiInstance.getIntegrationsCredentialsTypes()\n  .then((data) => {\n    console.log(`getIntegrationsCredentialsTypes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrationsCredentialsTypes\");\n    console.error(err);\n  });"
   },
+  "getintegrationsspeechaudioconnector": {
+    "operationId": "getintegrationsspeechaudioconnector",
+    "functionName": "getIntegrationsSpeechAudioconnector",
+    "signature": "getIntegrationsSpeechAudioconnector(pageNumber, pageSize)",
+    "parameters": [
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      }
+    ],
+    "return": "AudioConnectorIntegrationEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25 // Number | Page size\n};\n\n// Get a list of Audio Connector integrations\napiInstance.getIntegrationsSpeechAudioconnector(opts)\n  .then((data) => {\n    console.log(`getIntegrationsSpeechAudioconnector success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrationsSpeechAudioconnector\");\n    console.error(err);\n  });"
+  },
+  "getintegrationsspeechaudioconnectorintegrationid": {
+    "operationId": "getintegrationsspeechaudioconnectorintegrationid",
+    "functionName": "getIntegrationsSpeechAudioconnectorIntegrationId",
+    "signature": "getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)",
+    "parameters": [
+      {
+        "name": "integrationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "AudioConnectorIntegration",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\nlet integrationId = \"integrationId_example\"; // String | The integration ID\n\n// Get an Audio Connector integration\napiInstance.getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)\n  .then((data) => {\n    console.log(`getIntegrationsSpeechAudioconnectorIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrationsSpeechAudioconnectorIntegrationId\");\n    console.error(err);\n  });"
+  },
   "getintegrationsspeechdialogflowagent": {
     "operationId": "getintegrationsspeechdialogflowagent",
     "functionName": "getIntegrationsSpeechDialogflowAgent",

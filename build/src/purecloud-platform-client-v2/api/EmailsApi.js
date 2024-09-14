@@ -5,7 +5,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**

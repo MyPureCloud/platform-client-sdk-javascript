@@ -5,7 +5,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**

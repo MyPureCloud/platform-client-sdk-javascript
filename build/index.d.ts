@@ -2551,6 +2551,8 @@ declare class IntegrationsApi {
   	getIntegrationsCredential(credentialId: string): Promise<Models.Credential>; 
   	getIntegrationsCredentials(opts?: IntegrationsApi.getIntegrationsCredentialsOptions): Promise<Models.CredentialInfoListing>; 
   	getIntegrationsCredentialsTypes(): Promise<Models.CredentialTypeListing>; 
+  	getIntegrationsSpeechAudioconnector(opts?: IntegrationsApi.getIntegrationsSpeechAudioconnectorOptions): Promise<Models.AudioConnectorIntegrationEntityListing>; 
+  	getIntegrationsSpeechAudioconnectorIntegrationId(integrationId: string): Promise<Models.AudioConnectorIntegration>; 
   	getIntegrationsSpeechDialogflowAgent(agentId: string): Promise<Models.DialogflowAgent>; 
   	getIntegrationsSpeechDialogflowAgents(opts?: IntegrationsApi.getIntegrationsSpeechDialogflowAgentsOptions): Promise<Models.DialogflowAgentSummaryEntityListing>; 
   	getIntegrationsSpeechDialogflowcxAgent(agentId: string): Promise<Models.DialogflowCXAgent>; 
@@ -2697,6 +2699,10 @@ declare namespace IntegrationsApi {
 		"previousPage"?: string;
 	}
 	export interface getIntegrationsCredentialsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	export interface getIntegrationsSpeechAudioconnectorOptions { 
 		"pageNumber"?: number;
 		"pageSize"?: number;
 	}
@@ -10024,6 +10030,25 @@ declare namespace Models {
 		"timeZoneId"?: string;
 	}
 	
+	export interface AudioConnectorIntegration { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface AudioConnectorIntegrationEntityListing { 
+		"entities"?: Array<Models.AudioConnectorIntegration>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface AudioState { 
 		"canHear"?: boolean;
 		"canSpeak"?: boolean;
@@ -15108,6 +15133,11 @@ declare namespace Models {
 		"actions": Array<Models.ConversationContentQuickReply>;
 	}
 	
+	export interface ConversationContentReaction { 
+		"reactionType"?: string;
+		"count": number;
+	}
+	
 	export interface ConversationContentStory { 
 		"type"?: string;
 		"url"?: string;
@@ -15313,6 +15343,19 @@ declare namespace Models {
 		"total"?: number;
 		"entities"?: Array<Models.ConversationEncryptionConfiguration>;
 		"selfUri"?: string;
+	}
+	
+	export interface ConversationEnrichment { 
+		"language"?: Models.ConversationEnrichmentLanguage;
+		"sentimentV2"?: Models.ConversationEnrichmentSentimentV2;
+	}
+	
+	export interface ConversationEnrichmentLanguage { 
+		"language": string;
+	}
+	
+	export interface ConversationEnrichmentSentimentV2 { 
+		"tag": string;
 	}
 	
 	export interface ConversationEntityListing { 
@@ -19885,8 +19928,8 @@ declare namespace Models {
 		"edgeVersion"?: string;
 		"publishDate"?: string;
 		"edgeUri"?: string;
-		"latestRelease"?: boolean;
 		"current"?: boolean;
+		"latestRelease"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -37083,6 +37126,8 @@ declare namespace Models {
 		"maxSimultaneousStreams"?: number;
 		"maxConfigurableScreenRecordingStreams"?: number;
 		"regionalRecordingStorageEnabled"?: boolean;
+		"recordingPlaybackUrlTtl"?: number;
+		"recordingBatchDownloadUrlTtl"?: number;
 	}
 	
 	export interface RecordingTranscodeCompleteTopicMediaResult { 

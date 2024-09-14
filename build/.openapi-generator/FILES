@@ -907,6 +907,8 @@ docs/getIntegrationsClientappsUnifiedcommunications-example.txt
 docs/getIntegrationsCredential-example.txt
 docs/getIntegrationsCredentials-example.txt
 docs/getIntegrationsCredentialsTypes-example.txt
+docs/getIntegrationsSpeechAudioconnector-example.txt
+docs/getIntegrationsSpeechAudioconnectorIntegrationId-example.txt
 docs/getIntegrationsSpeechDialogflowAgent-example.txt
 docs/getIntegrationsSpeechDialogflowAgents-example.txt
 docs/getIntegrationsSpeechDialogflowcxAgent-example.txt

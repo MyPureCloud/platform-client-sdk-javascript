@@ -5,7 +5,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**

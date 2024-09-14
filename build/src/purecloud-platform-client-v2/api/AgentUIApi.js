@@ -5,7 +5,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**

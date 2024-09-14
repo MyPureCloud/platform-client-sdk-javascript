@@ -690,7 +690,7 @@ Get the upload status of an imported script
 
 Requires ANY permissions:
 
-* scripter:script:search
+* scripter:script:view
 
 ### Example Usage
 
@@ -841,4 +841,4 @@ apiInstance.postScriptsPublished(opts)
 **Script**
 
 
-_purecloud-platform-client-v2@204.0.1_
+_purecloud-platform-client-v2@204.1.0_

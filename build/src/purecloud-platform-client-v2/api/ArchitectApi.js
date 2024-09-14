@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 204.0.1
+	 * @version 204.1.0
 	 */
 
 	/**
@@ -49,7 +49,6 @@ class ArchitectApi {
 	 * Delete a grammar.
 	 * 
 	 * @param {String} grammarId grammar ID
-	 * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteArchitectGrammar(grammarId) { 
 		// verify the required parameter 'grammarId' is set
@@ -76,7 +75,6 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
-	 * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteArchitectGrammarLanguage(grammarId, languageCode) { 
 		// verify the required parameter 'grammarId' is set
@@ -107,7 +105,6 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
-	 * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode) { 
 		// verify the required parameter 'grammarId' is set
@@ -138,7 +135,6 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
-	 * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode) { 
 		// verify the required parameter 'grammarId' is set
@@ -929,7 +925,6 @@ class ArchitectApi {
 	 * @param {String} grammarId grammar ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeFileUrls Include grammar language file URLs
-	 * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getArchitectGrammar(grammarId, opts) { 
 		opts = opts || {};
@@ -958,7 +953,6 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
-	 * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getArchitectGrammarLanguage(grammarId, languageCode) { 
 		// verify the required parameter 'grammarId' is set
@@ -997,7 +991,6 @@ class ArchitectApi {
 	 * @param {String} opts.description Description
 	 * @param {String} opts.nameOrDescription Name or description
 	 * @param {Boolean} opts.includeFileUrls Include grammar language file URLs
-	 * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getArchitectGrammars(opts) { 
 		opts = opts || {};
@@ -2693,7 +2686,6 @@ class ArchitectApi {
 	 * @param {String} grammarId grammar ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchArchitectGrammar(grammarId, opts) { 
 		opts = opts || {};
@@ -2724,7 +2716,6 @@ class ArchitectApi {
 	 * @param {String} languageCode Language
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchArchitectGrammarLanguage(grammarId, languageCode, opts) { 
 		opts = opts || {};
@@ -2828,7 +2819,6 @@ class ArchitectApi {
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
 	 * @param {Object} body query
-	 * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body) { 
 		// verify the required parameter 'grammarId' is set
@@ -2864,7 +2854,6 @@ class ArchitectApi {
 	 * @param {String} grammarId Grammar ID
 	 * @param {String} languageCode Language
 	 * @param {Object} body query
-	 * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body) { 
 		// verify the required parameter 'grammarId' is set
@@ -2899,7 +2888,6 @@ class ArchitectApi {
 	 * 
 	 * @param {String} grammarId Grammar ID
 	 * @param {Object} body 
-	 * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postArchitectGrammarLanguages(grammarId, body) { 
 		// verify the required parameter 'grammarId' is set
@@ -2929,7 +2917,6 @@ class ArchitectApi {
 	 * Create a new grammar
 	 * 
 	 * @param {Object} body 
-	 * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postArchitectGrammars(body) { 
 		// verify the required parameter 'body' is set
