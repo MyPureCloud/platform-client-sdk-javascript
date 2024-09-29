@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsTopicsGeneral**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneral) | **GET** /api/v2/speechandtextanalytics/topics/general | Get the Speech and Text Analytics general topics for a given dialect
 [**getSpeechandtextanalyticsTopicsGeneralStatus**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneralStatus) | **GET** /api/v2/speechandtextanalytics/topics/general/status | Get the list of general topics from the org and the system with their current status
 [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsPublishjob) | **GET** /api/v2/speechandtextanalytics/topics/publishjobs/{jobId} | Get a Speech and Text Analytics publish topics job by id
+[**getSpeechandtextanalyticsTranslationsLanguageConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguageConversation) | **GET** /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId} | Translate all communication(s) for an interaction.
+[**getSpeechandtextanalyticsTranslationsLanguages**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguages) | **GET** /api/v2/speechandtextanalytics/translations/languages | Get supported translation languages
 [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi#patchSpeechandtextanalyticsSettings) | **PATCH** /api/v2/speechandtextanalytics/settings | Patch Speech And Text Analytics Settings
 [**postSpeechandtextanalyticsCategories**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsCategories) | **POST** /api/v2/speechandtextanalytics/categories | Create new Speech and Text Analytics category
 [**postSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsDictionaryfeedback) | **POST** /api/v2/speechandtextanalytics/dictionaryfeedback | Create a Speech and Text Analytics DictionaryFeedback
@@ -1701,6 +1703,113 @@ apiInstance.getSpeechandtextanalyticsTopicsPublishjob(jobId)
 **TopicJob**
 
 
+## getSpeechandtextanalyticsTranslationsLanguageConversation
+
+> CommunicationTranslationList getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts)
+
+
+GET /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}
+
+Translate all communication(s) for an interaction.
+
+getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:translation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let languageId = "languageId_example"; // String | Target translation language
+let conversationId = "conversationId_example"; // String | Conversation id
+let opts = { 
+  'communicationId': "communicationId_example", // String | Communication id associated with the conversation
+  'recordingId': "recordingId_example" // String | Recording id associated with the communication
+};
+
+apiInstance.getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsTranslationsLanguageConversation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsTranslationsLanguageConversation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageId** | **String** | Target translation language |  |
+ **conversationId** | **String** | Conversation id |  |
+ **communicationId** | **String** | Communication id associated with the conversation | [optional]  |
+ **recordingId** | **String** | Recording id associated with the communication | [optional]  |
+
+### Return type
+
+**CommunicationTranslationList**
+
+
+## getSpeechandtextanalyticsTranslationsLanguages
+
+> TranslateSupportedLanguageList getSpeechandtextanalyticsTranslationsLanguages()
+
+
+GET /api/v2/speechandtextanalytics/translations/languages
+
+Get supported translation languages
+
+getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:translation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+apiInstance.getSpeechandtextanalyticsTranslationsLanguages()
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsTranslationsLanguages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsTranslationsLanguages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**TranslateSupportedLanguageList**
+
+
 ## patchSpeechandtextanalyticsSettings
 
 > SpeechTextAnalyticsSettingsResponse patchSpeechandtextanalyticsSettings(body)
@@ -2569,4 +2678,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@204.1.0_
+_purecloud-platform-client-v2@205.0.0_

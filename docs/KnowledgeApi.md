@@ -16,9 +16,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageCategory) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId} | Delete category
 [**deleteKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageDocument) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} | Delete document
 [**deleteKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageDocumentsImport) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} | Delete import operation
+[**deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} | Delete Salesforce Knowledge integration source
+[**deleteKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesServicenowSourceId) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} | Delete ServiceNow Knowledge integration source
+[**deleteKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob) | **DELETE** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Delete synchronization job
 [**getKnowledgeGuestSessionCategories**](KnowledgeApi#getKnowledgeGuestSessionCategories) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/categories | Get categories
 [**getKnowledgeGuestSessionDocument**](KnowledgeApi#getKnowledgeGuestSessionDocument) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId} | Get a knowledge document by ID.
 [**getKnowledgeGuestSessionDocuments**](KnowledgeApi#getKnowledgeGuestSessionDocuments) | **GET** /api/v2/knowledge/guest/sessions/{sessionId}/documents | Get documents.
+[**getKnowledgeIntegrationOptions**](KnowledgeApi#getKnowledgeIntegrationOptions) | **GET** /api/v2/knowledge/integrations/{integrationId}/options | Get sync options available for a knowledge-connect integration
 [**getKnowledgeKnowledgebase**](KnowledgeApi#getKnowledgeKnowledgebase) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Get knowledge base
 [**getKnowledgeKnowledgebaseCategories**](KnowledgeApi#getKnowledgeKnowledgebaseCategories) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories | Get categories
 [**getKnowledgeKnowledgebaseCategory**](KnowledgeApi#getKnowledgeKnowledgebaseCategory) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} | Get category
@@ -47,6 +51,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseOperations**](KnowledgeApi#getKnowledgeKnowledgebaseOperations) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations | Get operations
 [**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi#getKnowledgeKnowledgebaseOperationsUsersQuery) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query | Get ids of operation creator users and oauth clients
 [**getKnowledgeKnowledgebaseParseJob**](KnowledgeApi#getKnowledgeKnowledgebaseParseJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} | Get parse job report
+[**getKnowledgeKnowledgebaseSources**](KnowledgeApi#getKnowledgeKnowledgebaseSources) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources | Get Knowledge integration sources
+[**getKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#getKnowledgeKnowledgebaseSourcesSalesforceSourceId) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} | Get Salesforce Knowledge integration source
+[**getKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#getKnowledgeKnowledgebaseSourcesServicenowSourceId) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} | Get ServiceNow Knowledge integration source
+[**getKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#getKnowledgeKnowledgebaseSynchronizeJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Get synchronization job report
 [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroup) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId} | Get knowledge base unanswered group for a particular groupId
 [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Get knowledge base unanswered phrase group for a particular phraseGroupId
 [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroups) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups | Get knowledge base unanswered groups
@@ -66,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi#patchKnowledgeKnowledgebaseLanguageDocuments) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents | Update documents collection
 [**patchKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi#patchKnowledgeKnowledgebaseLanguageDocumentsImport) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} | Start import operation
 [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi#patchKnowledgeKnowledgebaseParseJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} | Send update to the parse operation
+[**patchKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#patchKnowledgeKnowledgebaseSynchronizeJob) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} | Update synchronization job
 [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} | Update a Knowledge base unanswered phrase group
 [**postKnowledgeDocumentuploads**](KnowledgeApi#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
 [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi#postKnowledgeGuestSessionDocumentCopies) | **POST** /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies | Indicate that the document was copied by the user.
@@ -103,8 +112,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postKnowledgeKnowledgebaseParseJobImport**](KnowledgeApi#postKnowledgeKnowledgebaseParseJobImport) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import | Import the parsed articles
 [**postKnowledgeKnowledgebaseParseJobs**](KnowledgeApi#postKnowledgeKnowledgebaseParseJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs | Create parse job
 [**postKnowledgeKnowledgebaseSearch**](KnowledgeApi#postKnowledgeKnowledgebaseSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search | Search Documents
+[**postKnowledgeKnowledgebaseSourcesSalesforce**](KnowledgeApi#postKnowledgeKnowledgebaseSourcesSalesforce) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce | Create Salesforce Knowledge integration source
+[**postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync**](KnowledgeApi#postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync | Start sync on Salesforce Knowledge integration source
+[**postKnowledgeKnowledgebaseSourcesServicenow**](KnowledgeApi#postKnowledgeKnowledgebaseSourcesServicenow) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow | Create ServiceNow Knowledge integration source
+[**postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync**](KnowledgeApi#postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync | Start synchronization on ServiceNow Knowledge integration source
+[**postKnowledgeKnowledgebaseSynchronizeJobs**](KnowledgeApi#postKnowledgeKnowledgebaseSynchronizeJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs | Create synchronization job
 [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
 [**postKnowledgeKnowledgebases**](KnowledgeApi#postKnowledgeKnowledgebases) | **POST** /api/v2/knowledge/knowledgebases | Create new knowledge base
+[**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} | Update Salesforce Knowledge integration source
+[**putKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId) | **PUT** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} | Update ServiceNow Knowledge integration source
 
 
 
@@ -644,6 +660,168 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId,
 void (no response body)
 
 
+## deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId
+
+> void deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId)
+
+
+DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}
+
+Delete Salesforce Knowledge integration source
+
+deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let sourceId = "sourceId_example"; // String | Source ID
+
+apiInstance.deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId)
+  .then(() => {
+    console.log('deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **sourceId** | **String** | Source ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteKnowledgeKnowledgebaseSourcesServicenowSourceId
+
+> void deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId)
+
+
+DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}
+
+Delete ServiceNow Knowledge integration source
+
+deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let sourceId = "sourceId_example"; // String | Source ID
+
+apiInstance.deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId)
+  .then(() => {
+    console.log('deleteKnowledgeKnowledgebaseSourcesServicenowSourceId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **sourceId** | **String** | Source ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteKnowledgeKnowledgebaseSynchronizeJob
+
+> void deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+
+
+DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
+
+Delete synchronization job
+
+deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:syncJob:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let syncJobId = "syncJobId_example"; // String | Synchronization job ID
+
+apiInstance.deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+  .then(() => {
+    console.log('deleteKnowledgeKnowledgebaseSynchronizeJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteKnowledgeKnowledgebaseSynchronizeJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **syncJobId** | **String** | Synchronization job ID |  |
+
+### Return type
+
+void (no response body)
+
+
 ## getKnowledgeGuestSessionCategories
 
 > GuestCategoryResponseListing getKnowledgeGuestSessionCategories(sessionId, opts)
@@ -805,6 +983,58 @@ apiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)
 ### Return type
 
 **KnowledgeGuestDocumentResponseListing**
+
+
+## getKnowledgeIntegrationOptions
+
+> KnowledgeIntegrationOptionsResponse getKnowledgeIntegrationOptions(integrationId)
+
+
+GET /api/v2/knowledge/integrations/{integrationId}/options
+
+Get sync options available for a knowledge-connect integration
+
+getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationOptions:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getKnowledgeIntegrationOptions(integrationId)
+  .then((data) => {
+    console.log(`getKnowledgeIntegrationOptions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeIntegrationOptions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**KnowledgeIntegrationOptionsResponse**
 
 
 ## getKnowledgeKnowledgebase
@@ -2499,6 +2729,236 @@ apiInstance.getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts)
 **KnowledgeParseJobResponse**
 
 
+## getKnowledgeKnowledgebaseSources
+
+> [SourceBaseResponse] getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources
+
+Get Knowledge integration sources
+
+getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'type': "type_example", // String | If specified, retrieves integration sources with specified integration type.
+  'expand': ["expand_example"], // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'ids': ["ids_example"] // [String] | If specified, retrieves integration sources with specified IDs.
+};
+
+apiInstance.getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseSources success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseSources');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **type** | **String** | If specified, retrieves integration sources with specified integration type. | [optional] <br />**Values**: Salesforce, ServiceNow |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
+ **ids** | **[String]** | If specified, retrieves integration sources with specified IDs. | [optional]  |
+
+### Return type
+
+**[SourceBaseResponse]**
+
+
+## getKnowledgeKnowledgebaseSourcesSalesforceSourceId
+
+> SalesforceSourceResponse getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}
+
+Get Salesforce Knowledge integration source
+
+getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+};
+
+apiInstance.getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseSourcesSalesforceSourceId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **sourceId** | **String** | Source ID |  |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
+
+### Return type
+
+**SalesforceSourceResponse**
+
+
+## getKnowledgeKnowledgebaseSourcesServicenowSourceId
+
+> ServiceNowSourceResponse getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}
+
+Get ServiceNow Knowledge integration source
+
+getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+};
+
+apiInstance.getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseSourcesServicenowSourceId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseSourcesServicenowSourceId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **sourceId** | **String** | Source ID |  |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
+
+### Return type
+
+**ServiceNowSourceResponse**
+
+
+## getKnowledgeKnowledgebaseSynchronizeJob
+
+> KnowledgeSyncJobResponse getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+
+
+GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
+
+Get synchronization job report
+
+getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:syncJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let syncJobId = "syncJobId_example"; // String | Synchronization job ID
+
+apiInstance.getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+  .then((data) => {
+    console.log(`getKnowledgeKnowledgebaseSynchronizeJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getKnowledgeKnowledgebaseSynchronizeJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **syncJobId** | **String** | Synchronization job ID |  |
+
+### Return type
+
+**KnowledgeSyncJobResponse**
+
+
 ## getKnowledgeKnowledgebaseUnansweredGroup
 
 > UnansweredGroup getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, opts)
@@ -3577,6 +4037,62 @@ apiInstance.patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, bod
 ### Return type
 
 void (no response body)
+
+
+## patchKnowledgeKnowledgebaseSynchronizeJob
+
+> KnowledgeSyncJobResponse patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body)
+
+
+PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
+
+Update synchronization job
+
+patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:syncJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let syncJobId = "syncJobId_example"; // String | Synchronization job ID
+let body = {}; // Object | 
+
+apiInstance.patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body)
+  .then((data) => {
+    console.log(`patchKnowledgeKnowledgebaseSynchronizeJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchKnowledgeKnowledgebaseSynchronizeJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **syncJobId** | **String** | Synchronization job ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**KnowledgeSyncJobResponse**
 
 
 ## patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup
@@ -5563,6 +6079,276 @@ apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 **KnowledgeSearchResponse**
 
 
+## postKnowledgeKnowledgebaseSourcesSalesforce
+
+> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce
+
+Create Salesforce Knowledge integration source
+
+postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseSourcesSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseSourcesSalesforce');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**KnowledgeSyncJobResponse**
+
+
+## postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync
+
+> SourceSyncResponse postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync
+
+Start sync on Salesforce Knowledge integration source
+
+postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let sourceId = "sourceId_example"; // String | Source ID
+
+apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **sourceId** | **String** | Source ID |  |
+
+### Return type
+
+**SourceSyncResponse**
+
+
+## postKnowledgeKnowledgebaseSourcesServicenow
+
+> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow
+
+Create ServiceNow Knowledge integration source
+
+postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseSourcesServicenow success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseSourcesServicenow');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**KnowledgeSyncJobResponse**
+
+
+## postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync
+
+> SourceSyncResponse postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync
+
+Start synchronization on ServiceNow Knowledge integration source
+
+postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let sourceId = "sourceId_example"; // String | Source ID
+
+apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **sourceId** | **String** | Source ID |  |
+
+### Return type
+
+**SourceSyncResponse**
+
+
+## postKnowledgeKnowledgebaseSynchronizeJobs
+
+> KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs
+
+Create synchronization job
+
+postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:syncJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let body = {}; // Object | 
+
+apiInstance.postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseSynchronizeJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseSynchronizeJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**KnowledgeSyncJobResponse**
+
+
 ## postKnowledgeKnowledgebaseUploadsUrlsJobs
 
 > CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
@@ -5667,4 +6453,116 @@ apiInstance.postKnowledgeKnowledgebases(body)
 **KnowledgeBase**
 
 
-_purecloud-platform-client-v2@204.1.0_
+## putKnowledgeKnowledgebaseSourcesSalesforceSourceId
+
+> SalesforceSourceResponse putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body)
+
+
+PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}
+
+Update Salesforce Knowledge integration source
+
+putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let sourceId = "sourceId_example"; // String | Source ID
+let body = {}; // Object | 
+
+apiInstance.putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body)
+  .then((data) => {
+    console.log(`putKnowledgeKnowledgebaseSourcesSalesforceSourceId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **sourceId** | **String** | Source ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**SalesforceSourceResponse**
+
+
+## putKnowledgeKnowledgebaseSourcesServicenowSourceId
+
+> ServiceNowSourceResponse putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body)
+
+
+PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}
+
+Update ServiceNow Knowledge integration source
+
+putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* knowledge:integrationSource:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.KnowledgeApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let sourceId = "sourceId_example"; // String | Source ID
+let body = {}; // Object | 
+
+apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body)
+  .then((data) => {
+    console.log(`putKnowledgeKnowledgebaseSourcesServicenowSourceId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putKnowledgeKnowledgebaseSourcesServicenowSourceId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **sourceId** | **String** | Source ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**ServiceNowSourceResponse**
+
+
+_purecloud-platform-client-v2@205.0.0_

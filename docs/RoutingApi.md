@@ -2347,7 +2347,7 @@ apiInstance.getRoutingMessageRecipients(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, whatsapp, open, instagram |
+ **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, whatsapp, open, instagram, apple |
  **name** | **String** | Recipient Name | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
@@ -8114,4 +8114,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@204.1.0_
+_purecloud-platform-client-v2@205.0.0_
