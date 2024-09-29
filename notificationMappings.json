@@ -73,6 +73,14 @@
       "class": "TranscriptionTopicTranscriptionMessage"
     },
     {
+      "topic": "v2.detail.events.collaboratechat.adhoc.{id}.messages",
+      "class": "CollaborateChatAdhocMessageEventTopicCollaborateChatMessage"
+    },
+    {
+      "topic": "v2.detail.events.collaboratechat.group.{id}.messages",
+      "class": "CollaborateChatGroupMessageEventTopicCollaborateChatMessage"
+    },
+    {
       "topic": "v2.detail.events.conversation.{id}.acd.end",
       "class": "AcdEndDetailEventTopicAcdEndEvent"
     },
@@ -259,6 +267,14 @@
     {
       "topic": "v2.outbound.email.campaigns.contact.preContact",
       "class": "OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent"
+    },
+    {
+      "topic": "v2.outbound.emailcampaigns.{id}",
+      "class": "OutboundMessagingEmailCampaignConfigChangeMessagingCampaign"
+    },
+    {
+      "topic": "v2.outbound.emailcampaigns.{id}.progress",
+      "class": "OutboundMessagingEmailCampaignProgressEventCampaignProgress"
     },
     {
       "topic": "v2.outbound.importtemplates.{id}.importstatus",
@@ -539,6 +555,10 @@
     {
       "topic": "v2.users.{id}.greetings",
       "class": "UserGreetingEventGreeting"
+    },
+    {
+      "topic": "v2.users.{id}.integrationpresence",
+      "class": "V2IntegrationPresenceEventPresenceActivityEvent"
     },
     {
       "topic": "v2.users.{id}.outbound.contactlists.{id}.export",

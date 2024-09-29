@@ -612,7 +612,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let opts = { 
-  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected. 
 };
 
 apiInstance.getWebdeploymentsDeployments(opts)
@@ -630,7 +630,7 @@ apiInstance.getWebdeploymentsDeployments(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: Configuration, SupportedContent |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent |
 
 ### Return type
 
@@ -984,4 +984,4 @@ apiInstance.putWebdeploymentsDeployment(deploymentId, deployment)
 **WebDeployment**
 
 
-_purecloud-platform-client-v2@204.1.0_
+_purecloud-platform-client-v2@205.0.0_

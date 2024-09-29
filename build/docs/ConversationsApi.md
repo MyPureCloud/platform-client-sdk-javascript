@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationSecureattributes**](ConversationsApi#getConversationSecureattributes) | **GET** /api/v2/conversations/{conversationId}/secureattributes | Get the secure attributes on a conversation.
 [**getConversationSuggestion**](ConversationsApi#getConversationSuggestion) | **GET** /api/v2/conversations/{conversationId}/suggestions/{suggestionId} | Get Suggestion.
 [**getConversationSuggestions**](ConversationsApi#getConversationSuggestions) | **GET** /api/v2/conversations/{conversationId}/suggestions | Get all suggestions for a conversation.
+[**getConversationSummaries**](ConversationsApi#getConversationSummaries) | **GET** /api/v2/conversations/{conversationId}/summaries | Get the summaries of the conversation.
 [**getConversations**](ConversationsApi#getConversations) | **GET** /api/v2/conversations | Get active conversations for the logged in user
 [**getConversationsCall**](ConversationsApi#getConversationsCall) | **GET** /api/v2/conversations/calls/{conversationId} | Get call conversation
 [**getConversationsCallParticipantCommunicationWrapup**](ConversationsApi#getConversationsCallParticipantCommunicationWrapup) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
@@ -1681,6 +1682,58 @@ apiInstance.getConversationSuggestions(conversationId, opts)
 ### Return type
 
 **SuggestionListing**
+
+
+## getConversationSummaries
+
+> ConversationSummariesGetResponse getConversationSummaries(conversationId)
+
+
+GET /api/v2/conversations/{conversationId}/summaries
+
+Get the summaries of the conversation.
+
+getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* conversation:summary:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+
+apiInstance.getConversationSummaries(conversationId)
+  .then((data) => {
+    console.log(`getConversationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+
+### Return type
+
+**ConversationSummariesGetResponse**
 
 
 ## getConversations
@@ -12728,4 +12781,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@204.1.0_
+_purecloud-platform-client-v2@205.0.0_

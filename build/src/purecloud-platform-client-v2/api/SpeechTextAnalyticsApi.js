@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 204.1.0
+	 * @version 205.0.0
 	 */
 
 	/**
@@ -813,6 +813,63 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}', 
 			'GET', 
 			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Translate all communication(s) for an interaction.
+	 * 
+	 * @param {String} languageId Target translation language
+	 * @param {String} conversationId Conversation id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.communicationId Communication id associated with the conversation
+	 * @param {String} opts.recordingId Recording id associated with the communication
+	 * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'languageId' is set
+		if (languageId === undefined || languageId === null) {
+			throw 'Missing the required parameter "languageId" when calling getSpeechandtextanalyticsTranslationsLanguageConversation';
+		}
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsTranslationsLanguageConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}', 
+			'GET', 
+			{ 'languageId': languageId,'conversationId': conversationId },
+			{ 'communicationId': opts['communicationId'],'recordingId': opts['recordingId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get supported translation languages
+	 * 
+	 * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSpeechandtextanalyticsTranslationsLanguages() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/translations/languages', 
+			'GET', 
+			{  },
 			{  },
 			{  },
 			{  },

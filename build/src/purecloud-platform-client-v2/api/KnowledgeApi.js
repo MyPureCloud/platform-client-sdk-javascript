@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 204.1.0
+	 * @version 205.0.0
 	 */
 
 	/**
@@ -339,6 +339,99 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Delete Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete synchronization job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} syncJobId Synchronization job ID
+	 * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
+		}
+		// verify the required parameter 'syncJobId' is set
+		if (syncJobId === undefined || syncJobId === null) {
+			throw 'Missing the required parameter "syncJobId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get categories
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -426,6 +519,32 @@ class KnowledgeApi {
 			'GET', 
 			{ 'sessionId': sessionId },
 			{ 'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get sync options available for a knowledge-connect integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getKnowledgeIntegrationOptions(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getKnowledgeIntegrationOptions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/integrations/{integrationId}/options', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1446,6 +1565,139 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Get Knowledge integration sources
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.type If specified, retrieves integration sources with specified integration type.
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Array.<String>} opts.ids If specified, retrieves integration sources with specified IDs.
+	 * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSources';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'type': opts['type'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get synchronization job report
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} syncJobId Synchronization job ID
+	 * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
+		}
+		// verify the required parameter 'syncJobId' is set
+		if (syncJobId === undefined || syncJobId === null) {
+			throw 'Missing the required parameter "syncJobId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get knowledge base unanswered group for a particular groupId
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -2119,6 +2371,42 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}', 
 			'PATCH', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update synchronization job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} syncJobId Synchronization job ID
+	 * @param {Object} body 
+	 * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+		}
+		// verify the required parameter 'syncJobId' is set
+		if (syncJobId === undefined || syncJobId === null) {
+			throw 'Missing the required parameter "syncJobId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
 			{  },
 			{  },
 			{  },
@@ -3317,6 +3605,161 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Create Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforce';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSourcesSalesforce';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start sync on Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenow';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSourcesServicenow';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start synchronization on ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create synchronization job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSynchronizeJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSynchronizeJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create content upload from URL job
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -3362,6 +3805,78 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} body 
+	 * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+			'PUT', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} body 
+	 * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+			'PUT', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
 			{  },
 			{  },
 			{  },

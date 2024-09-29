@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 204.1.0
+	 * @version 205.0.0
 	 */
 
 	/**
@@ -1107,6 +1107,36 @@ class OutboundApi {
 			'GET', 
 			{ 'campaignId': campaignId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the remaining and total contact count for each skill combination in a skills campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getOutboundCampaignSkillcombinations(campaignId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignSkillcombinations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/skillcombinations', 
+			'GET', 
+			{ 'campaignId': campaignId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 

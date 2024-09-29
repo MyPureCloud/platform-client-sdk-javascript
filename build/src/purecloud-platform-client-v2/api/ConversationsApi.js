@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 204.1.0
+	 * @version 205.0.0
 	 */
 
 	/**
@@ -778,6 +778,32 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId },
 			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'type': opts['type'],'state': opts['state'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the summaries of the conversation.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationSummaries(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationSummaries';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/summaries', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
 			{  },
 			{  },
 			null, 

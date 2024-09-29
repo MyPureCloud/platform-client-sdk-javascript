@@ -167,9 +167,7 @@ GET /api/v2/tokens/timeout
 
 Get the current Idle Token Timeout Value
 
-Requires ANY permissions:
-
-* directory:organization:admin
+Requires NO permissions:
 
 ### Example Usage
 
@@ -298,4 +296,4 @@ apiInstance.putTokensTimeout(opts)
 **IdleTokenTimeout**
 
 
-_purecloud-platform-client-v2@204.1.0_
+_purecloud-platform-client-v2@205.0.0_

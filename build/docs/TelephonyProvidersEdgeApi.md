@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteTelephonyProvidersEdge**](TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdge) | **DELETE** /api/v2/telephony/providers/edges/{edgeId} | Delete a edge.
 [**deleteTelephonyProvidersEdgeLogicalinterface**](TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgeLogicalinterface) | **DELETE** /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} | Delete an edge logical interface
 [**deleteTelephonyProvidersEdgeSoftwareupdate**](TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgeSoftwareupdate) | **DELETE** /api/v2/telephony/providers/edges/{edgeId}/softwareupdate | Cancels any in-progress update for this edge.
+[**deleteTelephonyProvidersEdgesAlertablepresences**](TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesAlertablepresences) | **DELETE** /api/v2/telephony/providers/edges/alertablepresences | Deletes alertable presences overrides.
 [**deleteTelephonyProvidersEdgesCertificateauthority**](TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesCertificateauthority) | **DELETE** /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} | Delete a certificate authority.
 [**deleteTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesDidpool) | **DELETE** /api/v2/telephony/providers/edges/didpools/{didPoolId} | Delete a DID Pool by ID.
 [**deleteTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesEdgegroup) | **DELETE** /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} | Delete an edge group.
@@ -34,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgeSoftwareversions**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgeSoftwareversions) | **GET** /api/v2/telephony/providers/edges/{edgeId}/softwareversions | Gets all the available software versions for this edge.
 [**getTelephonyProvidersEdgeTrunks**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgeTrunks) | **GET** /api/v2/telephony/providers/edges/{edgeId}/trunks | Get the list of available trunks for the given Edge.
 [**getTelephonyProvidersEdges**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdges) | **GET** /api/v2/telephony/providers/edges | Get the list of edges.
+[**getTelephonyProvidersEdgesAlertablepresences**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesAlertablepresences) | **GET** /api/v2/telephony/providers/edges/alertablepresences | Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
 [**getTelephonyProvidersEdgesCertificateauthorities**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesCertificateauthorities) | **GET** /api/v2/telephony/providers/edges/certificateauthorities | Get the list of certificate authorities.
 [**getTelephonyProvidersEdgesCertificateauthority**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesCertificateauthority) | **GET** /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} | Get a certificate authority.
 [**getTelephonyProvidersEdgesDid**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesDid) | **GET** /api/v2/telephony/providers/edges/dids/{didId} | Get a DID by ID.
@@ -114,6 +116,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTelephonyProvidersEdgesTrunkbasesettings**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesTrunkbasesettings) | **POST** /api/v2/telephony/providers/edges/trunkbasesettings | Create a Trunk Base Settings object
 [**putTelephonyProvidersEdge**](TelephonyProvidersEdgeApi#putTelephonyProvidersEdge) | **PUT** /api/v2/telephony/providers/edges/{edgeId} | Update a edge.
 [**putTelephonyProvidersEdgeLogicalinterface**](TelephonyProvidersEdgeApi#putTelephonyProvidersEdgeLogicalinterface) | **PUT** /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} | Update an edge logical interface.
+[**putTelephonyProvidersEdgesAlertablepresences**](TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesAlertablepresences) | **PUT** /api/v2/telephony/providers/edges/alertablepresences | Creates or updates alertable presences overrides.
 [**putTelephonyProvidersEdgesCertificateauthority**](TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesCertificateauthority) | **PUT** /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} | Update a certificate authority.
 [**putTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesDidpool) | **PUT** /api/v2/telephony/providers/edges/didpools/{didPoolId} | Update a DID Pool by ID.
 [**putTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesEdgegroup) | **PUT** /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} | Update an edge group.
@@ -273,6 +276,51 @@ apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteTelephonyProvidersEdgesAlertablepresences
+
+> void deleteTelephonyProvidersEdgesAlertablepresences()
+
+
+DELETE /api/v2/telephony/providers/edges/alertablepresences
+
+Deletes alertable presences overrides.
+
+Requires ANY permissions:
+
+* telephony:alertablePresences:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+apiInstance.deleteTelephonyProvidersEdgesAlertablepresences()
+  .then(() => {
+    console.log('deleteTelephonyProvidersEdgesAlertablepresences returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesAlertablepresences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1579,6 +1627,58 @@ apiInstance.getTelephonyProvidersEdges(opts)
 ### Return type
 
 **EdgeEntityListing**
+
+
+## getTelephonyProvidersEdgesAlertablepresences
+
+> AlertablePresences getTelephonyProvidersEdgesAlertablepresences(opts)
+
+
+GET /api/v2/telephony/providers/edges/alertablepresences
+
+Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+
+Requires ANY permissions:
+
+* telephony:alertablePresences:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let opts = { 
+  'type': "type_example" // String | 
+};
+
+apiInstance.getTelephonyProvidersEdgesAlertablepresences(opts)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesAlertablepresences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesAlertablepresences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **type** | **String** |  | [optional] <br />**Values**: defaults, overrides |
+
+### Return type
+
+**AlertablePresences**
 
 
 ## getTelephonyProvidersEdgesCertificateauthorities
@@ -5872,6 +5972,56 @@ apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 **DomainLogicalInterface**
 
 
+## putTelephonyProvidersEdgesAlertablepresences
+
+> void putTelephonyProvidersEdgesAlertablepresences(body)
+
+
+PUT /api/v2/telephony/providers/edges/alertablepresences
+
+Creates or updates alertable presences overrides.
+
+Requires ANY permissions:
+
+* telephony:alertablePresences:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let body = {}; // Object | Alertable Presences Overrides
+
+apiInstance.putTelephonyProvidersEdgesAlertablepresences(body)
+  .then(() => {
+    console.log('putTelephonyProvidersEdgesAlertablepresences returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesAlertablepresences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Alertable Presences Overrides |  |
+
+### Return type
+
+void (no response body)
+
+
 ## putTelephonyProvidersEdgesCertificateauthority
 
 > DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
@@ -6500,4 +6650,4 @@ apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body
 **TrunkBase**
 
 
-_purecloud-platform-client-v2@204.1.0_
+_purecloud-platform-client-v2@205.0.0_

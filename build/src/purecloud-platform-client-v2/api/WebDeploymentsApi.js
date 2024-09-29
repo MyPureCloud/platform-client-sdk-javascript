@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 204.1.0
+	 * @version 205.0.0
 	 */
 
 	/**
@@ -322,7 +322,7 @@ class WebDeploymentsApi {
 	 * Get deployments
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
 	 */
 	getWebdeploymentsDeployments(opts) { 
 		opts = opts || {};

@@ -1460,6 +1460,7 @@ declare class ConversationsApi {
   	getConversationSecureattributes(conversationId: string): Promise<Models.ConversationSecureAttributes>; 
   	getConversationSuggestion(conversationId: string, suggestionId: string): Promise<Models.Suggestion>; 
   	getConversationSuggestions(conversationId: string, opts?: ConversationsApi.getConversationSuggestionsOptions): Promise<Models.SuggestionListing>; 
+  	getConversationSummaries(conversationId: string): Promise<Models.ConversationSummariesGetResponse>; 
   	getConversations(opts?: ConversationsApi.getConversationsOptions): Promise<Models.ConversationEntityListing>; 
   	getConversationsCall(conversationId: string): Promise<Models.CallConversation>; 
   	getConversationsCallParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCallParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
@@ -3021,9 +3022,13 @@ declare class KnowledgeApi {
   	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeCategory>; 
   	deleteKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeDocument>; 
   	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string): Promise<void>; 
+  	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string): Promise<void>; 
+  	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string): Promise<void>; 
+  	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string): Promise<void>; 
   	getKnowledgeGuestSessionCategories(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionCategoriesOptions): Promise<Models.GuestCategoryResponseListing>; 
   	getKnowledgeGuestSessionDocument(sessionId: string, documentId: string): Promise<Models.KnowledgeGuestDocumentResponse>; 
   	getKnowledgeGuestSessionDocuments(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionDocumentsOptions): Promise<Models.KnowledgeGuestDocumentResponseListing>; 
+  	getKnowledgeIntegrationOptions(integrationId: string): Promise<Models.KnowledgeIntegrationOptionsResponse>; 
   	getKnowledgeKnowledgebase(knowledgeBaseId: string): Promise<Models.KnowledgeBase>; 
   	getKnowledgeKnowledgebaseCategories(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseCategoriesOptions): Promise<Models.CategoryResponseListing>; 
   	getKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string): Promise<Models.CategoryResponse>; 
@@ -3052,6 +3057,10 @@ declare class KnowledgeApi {
   	getKnowledgeKnowledgebaseOperations(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseOperationsOptions): Promise<Models.OperationListing>; 
   	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId: string): Promise<Models.OperationCreatorUserResponse>; 
   	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseParseJobOptions): Promise<Models.KnowledgeParseJobResponse>; 
+  	getKnowledgeKnowledgebaseSources(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesOptions): Promise<Array<Models.SourceBaseResponse>>; 
+  	getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesSalesforceSourceIdOptions): Promise<Models.SalesforceSourceResponse>; 
+  	getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesServicenowSourceIdOptions): Promise<Models.ServiceNowSourceResponse>; 
+  	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string): Promise<Models.KnowledgeSyncJobResponse>; 
   	getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId: string, groupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupOptions): Promise<Models.UnansweredGroup>; 
   	getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroupOptions): Promise<Models.UnansweredPhraseGroup>; 
   	getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupsOptions): Promise<Models.UnansweredGroups>; 
@@ -3071,6 +3080,7 @@ declare class KnowledgeApi {
   	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Array<Models.KnowledgeDocumentBulkRequest>): Promise<Models.DocumentListing>; 
   	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string, body: Models.ImportStatusRequest): Promise<Models.KnowledgeImport>; 
   	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestPatch): Promise<void>; 
+  	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string, body: Models.SyncStatusRequest): Promise<Models.KnowledgeSyncJobResponse>; 
   	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, body: Models.UnansweredPhraseGroupPatchRequestBody): Promise<Models.UnansweredPhraseGroupUpdateResponse>; 
   	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
   	postKnowledgeGuestSessionDocumentCopies(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentCopiesOptions): Promise<void>; 
@@ -3108,8 +3118,15 @@ declare class KnowledgeApi {
   	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestImport): Promise<void>; 
   	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId: string, body: Models.KnowledgeParseJobRequest): Promise<Models.KnowledgeParseJobResponse>; 
   	postKnowledgeKnowledgebaseSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseSearchOptions): Promise<Models.KnowledgeSearchResponse>; 
+  	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId: string, body: Models.SalesforceSourceRequest): Promise<Models.KnowledgeSyncJobResponse>; 
+  	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId: string, sourceId: string): Promise<Models.SourceSyncResponse>; 
+  	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId: string, body: Models.ServiceNowSourceRequest): Promise<Models.KnowledgeSyncJobResponse>; 
+  	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId: string, sourceId: string): Promise<Models.SourceSyncResponse>; 
+  	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId: string, body: Models.KnowledgeSyncJobRequest): Promise<Models.KnowledgeSyncJobResponse>; 
   	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>; 
-  	postKnowledgeKnowledgebases(body: Models.KnowledgeBaseCreateRequest): Promise<Models.KnowledgeBase>;
+  	postKnowledgeKnowledgebases(body: Models.KnowledgeBaseCreateRequest): Promise<Models.KnowledgeBase>; 
+  	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string, body: Models.SalesforceSourceRequest): Promise<Models.SalesforceSourceResponse>; 
+  	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string, body: Models.ServiceNowSourceRequest): Promise<Models.ServiceNowSourceResponse>;
 }
 
 declare namespace KnowledgeApi { 
@@ -3238,6 +3255,17 @@ declare namespace KnowledgeApi {
 		"sourceId"?: Array<string>;
 	}
 	export interface getKnowledgeKnowledgebaseParseJobOptions { 
+		"expand"?: Array<string>;
+	}
+	export interface getKnowledgeKnowledgebaseSourcesOptions { 
+		"type"?: string;
+		"expand"?: Array<string>;
+		"ids"?: Array<string>;
+	}
+	export interface getKnowledgeKnowledgebaseSourcesSalesforceSourceIdOptions { 
+		"expand"?: Array<string>;
+	}
+	export interface getKnowledgeKnowledgebaseSourcesServicenowSourceIdOptions { 
 		"expand"?: Array<string>;
 	}
 	export interface getKnowledgeKnowledgebaseUnansweredGroupOptions { 
@@ -3984,6 +4012,7 @@ declare class OutboundApi {
   	getOutboundCampaignInteractions(campaignId: string): Promise<Models.CampaignInteractions>; 
   	getOutboundCampaignLinedistribution(campaignId: string, opts?: OutboundApi.getOutboundCampaignLinedistributionOptions): Promise<Models.CampaignOutboundLinesDistribution>; 
   	getOutboundCampaignProgress(campaignId: string): Promise<Models.CampaignProgress>; 
+  	getOutboundCampaignSkillcombinations(campaignId: string, opts?: OutboundApi.getOutboundCampaignSkillcombinationsOptions): Promise<Models.PagedSkillCombinationListing>; 
   	getOutboundCampaignStats(campaignId: string): Promise<Models.CampaignStats>; 
   	getOutboundCampaignrule(campaignRuleId: string): Promise<Models.CampaignRule>; 
   	getOutboundCampaignrules(opts?: OutboundApi.getOutboundCampaignrulesOptions): Promise<Models.CampaignRuleEntityListing>; 
@@ -4149,6 +4178,10 @@ declare namespace OutboundApi {
 		"useWeight"?: boolean;
 		"relativeWeight"?: number;
 		"outboundLineCount"?: number;
+	}
+	export interface getOutboundCampaignSkillcombinationsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
 	}
 	export interface getOutboundCampaignrulesOptions { 
 		"pageSize"?: number;
@@ -5670,6 +5703,8 @@ declare class SpeechTextAnalyticsApi {
   	getSpeechandtextanalyticsTopicsGeneral(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralOptions): Promise<Models.GeneralTopicsEntityListing>; 
   	getSpeechandtextanalyticsTopicsGeneralStatus(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralStatusOptions): Promise<Models.UnifiedGeneralTopicEntityListing>; 
   	getSpeechandtextanalyticsTopicsPublishjob(jobId: string): Promise<Models.TopicJob>; 
+  	getSpeechandtextanalyticsTranslationsLanguageConversation(languageId: string, conversationId: string, opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTranslationsLanguageConversationOptions): Promise<Models.CommunicationTranslationList>; 
+  	getSpeechandtextanalyticsTranslationsLanguages(): Promise<Models.TranslateSupportedLanguageList>; 
   	patchSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
   	postSpeechandtextanalyticsCategories(body: Models.CategoryRequest): Promise<Models.StaCategory>; 
   	postSpeechandtextanalyticsDictionaryfeedback(body: Models.DictionaryFeedback): Promise<Models.DictionaryFeedback>; 
@@ -5741,6 +5776,10 @@ declare namespace SpeechTextAnalyticsApi {
 	}
 	export interface getSpeechandtextanalyticsTopicsGeneralStatusOptions { 
 		"dialect"?: string;
+	}
+	export interface getSpeechandtextanalyticsTranslationsLanguageConversationOptions { 
+		"communicationId"?: string;
+		"recordingId"?: string;
 	}
 	export interface putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdOptions { 
 		"body"?: Models.DictionaryFeedback;
@@ -5953,6 +5992,7 @@ declare class TelephonyProvidersEdgeApi {
   	deleteTelephonyProvidersEdge(edgeId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgeLogicalinterface(edgeId: string, interfaceId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgeSoftwareupdate(edgeId: string): Promise<void>; 
+  	deleteTelephonyProvidersEdgesAlertablepresences(): Promise<void>; 
   	deleteTelephonyProvidersEdgesCertificateauthority(certificateId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgesDidpool(didPoolId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId: string): Promise<void>; 
@@ -5978,6 +6018,7 @@ declare class TelephonyProvidersEdgeApi {
   	getTelephonyProvidersEdgeSoftwareversions(edgeId: string): Promise<Models.DomainEdgeSoftwareVersionDtoEntityListing>; 
   	getTelephonyProvidersEdgeTrunks(edgeId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeTrunksOptions): Promise<Models.TrunkEntityListing>; 
   	getTelephonyProvidersEdges(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesOptions): Promise<Models.EdgeEntityListing>; 
+  	getTelephonyProvidersEdgesAlertablepresences(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesAlertablepresencesOptions): Promise<Models.AlertablePresences>; 
   	getTelephonyProvidersEdgesCertificateauthorities(): Promise<Models.CertificateAuthorityEntityListing>; 
   	getTelephonyProvidersEdgesCertificateauthority(certificateId: string): Promise<Models.DomainCertificateAuthority>; 
   	getTelephonyProvidersEdgesDid(didId: string): Promise<Models.DID>; 
@@ -6058,6 +6099,7 @@ declare class TelephonyProvidersEdgeApi {
   	postTelephonyProvidersEdgesTrunkbasesettings(body: Models.TrunkBase): Promise<Models.TrunkBase>; 
   	putTelephonyProvidersEdge(edgeId: string, body: Models.Edge): Promise<Models.Edge>; 
   	putTelephonyProvidersEdgeLogicalinterface(edgeId: string, interfaceId: string, body: Models.DomainLogicalInterface): Promise<Models.DomainLogicalInterface>; 
+  	putTelephonyProvidersEdgesAlertablepresences(body: Models.AlertablePresences): Promise<void>; 
   	putTelephonyProvidersEdgesCertificateauthority(certificateId: string, body: Models.DomainCertificateAuthority): Promise<Models.DomainCertificateAuthority>; 
   	putTelephonyProvidersEdgesDidpool(didPoolId: string, body: Models.DIDPool): Promise<Models.DIDPool>; 
   	putTelephonyProvidersEdgesEdgegroup(edgeGroupId: string, body: Models.EdgeGroup): Promise<Models.EdgeGroup>; 
@@ -6099,6 +6141,9 @@ declare namespace TelephonyProvidersEdgeApi {
 		"sortBy"?: string;
 		"managed"?: boolean;
 		"showCloudMedia"?: boolean;
+	}
+	export interface getTelephonyProvidersEdgesAlertablepresencesOptions { 
+		"type"?: string;
 	}
 	export interface getTelephonyProvidersEdgesDidpoolsOptions { 
 		"pageSize"?: number;
@@ -8776,6 +8821,10 @@ declare namespace Models {
 		"queue"?: Models.AddressableEntityRef;
 		"team"?: Models.AddressableEntityRef;
 		"alerting": boolean;
+	}
+	
+	export interface AlertablePresences { 
+		"alertablePresences": Array<string>;
 	}
 	
 	export interface AlertingUnreadStatus { 
@@ -12507,6 +12556,9 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface CampaignRuleExecutionSettings { 
+	}
+	
 	export interface CampaignRuleParameters { 
 		"operator"?: string;
 		"value"?: string;
@@ -13229,6 +13281,38 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 	}
 	
+	export interface CollaborateChatAdhocMessageEventTopicCollaborateChatEntity { 
+		"entityJid"?: string;
+		"entityId"?: string;
+		"entityType"?: string;
+	}
+	
+	export interface CollaborateChatAdhocMessageEventTopicCollaborateChatMessage { 
+		"messageId"?: string;
+		"created"?: string;
+		"actionType"?: string;
+		"body"?: string;
+		"from"?: Models.CollaborateChatAdhocMessageEventTopicCollaborateChatEntity;
+		"to"?: Models.CollaborateChatAdhocMessageEventTopicCollaborateChatEntity;
+		"mentions"?: Array<Models.CollaborateChatAdhocMessageEventTopicCollaborateChatEntity>;
+	}
+	
+	export interface CollaborateChatGroupMessageEventTopicCollaborateChatEntity { 
+		"entityJid"?: string;
+		"entityId"?: string;
+		"entityType"?: string;
+	}
+	
+	export interface CollaborateChatGroupMessageEventTopicCollaborateChatMessage { 
+		"messageId"?: string;
+		"created"?: string;
+		"actionType"?: string;
+		"body"?: string;
+		"from"?: Models.CollaborateChatGroupMessageEventTopicCollaborateChatEntity;
+		"to"?: Models.CollaborateChatGroupMessageEventTopicCollaborateChatEntity;
+		"mentions"?: Array<Models.CollaborateChatGroupMessageEventTopicCollaborateChatEntity>;
+	}
+	
 	export interface Column { 
 		"columnName"?: string;
 		"columnNumber"?: number;
@@ -13435,6 +13519,15 @@ declare namespace Models {
 		"communicationId": string;
 		"disconnectType": string;
 		"destinationConversationId"?: string;
+	}
+	
+	export interface CommunicationTranslation { 
+		"communicationId": string;
+		"transcripts": Array<Models.TranscriptTranslation>;
+	}
+	
+	export interface CommunicationTranslationList { 
+		"entities"?: Array<Models.CommunicationTranslation>;
 	}
 	
 	export interface ComparisonPeriod { 
@@ -15187,6 +15280,11 @@ declare namespace Models {
 		"entities"?: Array<Models.DomainEntityRef>;
 	}
 	
+	export interface ConversationEditedSummary { 
+		"text"?: string;
+		"dateModified"?: string;
+	}
+	
 	export interface ConversationEmailEventTopicAttachment { 
 		"attachmentId"?: string;
 		"name"?: string;
@@ -16191,6 +16289,7 @@ declare namespace Models {
 		"mediaType"?: string;
 		"messageType"?: string;
 		"originatingDirection"?: string;
+		"originatingSocialMediaPublic"?: boolean;
 		"outboundCampaignId"?: string;
 		"outboundContactId"?: string;
 		"outboundContactListId"?: string;
@@ -16500,6 +16599,23 @@ declare namespace Models {
 		"version"?: number;
 	}
 	
+	export interface ConversationSessionSummary { 
+		"text"?: string;
+		"status"?: string;
+		"mediaType"?: string;
+		"language"?: string;
+		"predictedWrapupCodes"?: Array<Models.ConversationSummaryWrapupCode>;
+		"editedSummary"?: Models.ConversationEditedSummary;
+		"reason"?: Models.ConversationSummaryReason;
+		"followup"?: Models.ConversationSummaryFollowup;
+		"resolution"?: Models.ConversationSummaryResolution;
+		"dateCreated"?: string;
+		"id"?: string;
+		"confidence"?: number;
+		"participants"?: Array<Models.AddressableEntityRef>;
+		"communication"?: Models.Entity;
+	}
+	
 	export interface ConversationSocialExpressionEventTopicConversationRoutingData { 
 		"queue"?: Models.ConversationSocialExpressionEventTopicUriReference;
 		"language"?: Models.ConversationSocialExpressionEventTopicUriReference;
@@ -16632,6 +16748,55 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
+	}
+	
+	export interface ConversationSummariesGetResponse { 
+		"conversation"?: Models.AddressableEntityRef;
+		"summary"?: Models.ConversationSummary;
+		"sessionSummaries"?: Array<Models.ConversationSessionSummary>;
+	}
+	
+	export interface ConversationSummary { 
+		"text"?: string;
+		"status"?: string;
+		"mediaType"?: string;
+		"language"?: string;
+		"predictedWrapupCodes"?: Array<Models.ConversationSummaryWrapupCode>;
+		"editedSummary"?: Models.ConversationEditedSummary;
+		"reason"?: Models.ConversationSummaryReason;
+		"followup"?: Models.ConversationSummaryFollowup;
+		"resolution"?: Models.ConversationSummaryResolution;
+		"dateCreated"?: string;
+		"id"?: string;
+		"confidence"?: number;
+		"participants"?: Array<Models.AddressableEntityRef>;
+	}
+	
+	export interface ConversationSummaryFollowup { 
+		"text"?: string;
+		"description"?: string;
+		"confidence"?: number;
+	}
+	
+	export interface ConversationSummaryReason { 
+		"text"?: string;
+		"description"?: string;
+		"confidence"?: number;
+	}
+	
+	export interface ConversationSummaryResolution { 
+		"text"?: string;
+		"description"?: string;
+		"confidence"?: number;
+		"outcome"?: string;
+	}
+	
+	export interface ConversationSummaryWrapupCode { 
+		"name"?: string;
+		"description"?: string;
+		"selfUri"?: string;
+		"id"?: string;
+		"confidence"?: number;
 	}
 	
 	export interface ConversationTagsUpdate { 
@@ -16843,6 +17008,10 @@ declare namespace Models {
 	export interface CopilotRule { 
 		"conditions": Array<Models.CopilotCondition>;
 		"actions": Array<Models.CopilotAction>;
+	}
+	
+	export interface CopilotTranscriptionConfig { 
+		"engine": string;
 	}
 	
 	export interface CopyAttachmentsRequest { 
@@ -17194,6 +17363,7 @@ declare namespace Models {
 		"whisperPrompt"?: Models.DomainEntityRef;
 		"onHoldPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
+		"cannedResponseLibraries"?: Models.CannedResponseLibraries;
 		"enableTranscription"?: boolean;
 		"enableAudioMonitoring"?: boolean;
 		"enableManualAssignment"?: boolean;
@@ -19928,8 +20098,8 @@ declare namespace Models {
 		"edgeVersion"?: string;
 		"publishDate"?: string;
 		"edgeUri"?: string;
-		"current"?: boolean;
 		"latestRelease"?: boolean;
+		"current"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -23481,6 +23651,7 @@ declare namespace Models {
 		"flowId"?: string;
 		"flowVersion"?: string;
 		"conversationId"?: string;
+		"workitemId"?: string;
 		"flowType"?: string;
 		"flowErrorReason"?: string;
 		"flowWarningReason"?: string;
@@ -23628,6 +23799,7 @@ declare namespace Models {
 		"flowMilestoneIds"?: Array<string>;
 		"flowName"?: string;
 		"flowOutType"?: string;
+		"flowSubType"?: string;
 		"flowType"?: string;
 		"flowVersion"?: string;
 		"groupId"?: string;
@@ -24539,6 +24711,12 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface GraphApiSettings { 
+		"integration"?: Models.DomainEntityRef;
+		"status"?: string;
+		"errorInfo"?: Models.EmailErrorInfo;
+	}
+	
 	export interface Greeting { 
 		"id"?: string;
 		"name"?: string;
@@ -24599,6 +24777,7 @@ declare namespace Models {
 		"rulesVisible": boolean;
 		"visibility": string;
 		"rolesEnabled"?: boolean;
+		"includeOwners"?: boolean;
 		"owners"?: Array<Models.User>;
 		"selfUri"?: string;
 	}
@@ -24630,6 +24809,7 @@ declare namespace Models {
 		"rulesVisible": boolean;
 		"visibility": string;
 		"rolesEnabled"?: boolean;
+		"includeOwners"?: boolean;
 		"ownerIds"?: Array<string>;
 		"selfUri"?: string;
 	}
@@ -24732,6 +24912,7 @@ declare namespace Models {
 		"rulesVisible"?: boolean;
 		"visibility"?: string;
 		"rolesEnabled"?: boolean;
+		"includeOwners"?: boolean;
 		"ownerIds"?: Array<string>;
 		"selfUri"?: string;
 	}
@@ -25716,6 +25897,7 @@ declare namespace Models {
 	
 	export interface Intent { 
 		"name"?: string;
+		"description"?: string;
 	}
 	
 	export interface IntentDefinition { 
@@ -25795,6 +25977,28 @@ declare namespace Models {
 		"nextUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface InternalMessage { 
+		"state"?: string;
+		"initialState"?: string;
+		"id"?: string;
+		"segments"?: Array<Models.Segment>;
+		"disconnectType"?: string;
+		"connectedTime"?: string;
+		"disconnectedTime"?: string;
+		"provider"?: string;
+		"peerId"?: string;
+		"targetUserId"?: string;
+		"sourceUserId"?: string;
+		"toAddress"?: Models.Address;
+		"fromAddress"?: Models.Address;
+		"messages"?: Array<Models.InternalMessageDetails>;
+	}
+	
+	export interface InternalMessageDetails { 
+		"messageId"?: string;
+		"messageTime"?: string;
 	}
 	
 	export interface IntradayPerformancePredictionData { 
@@ -28131,6 +28335,26 @@ declare namespace Models {
 		"migrationDetected"?: boolean;
 	}
 	
+	export interface KnowledgeIntegrationFilter { 
+		"name"?: string;
+		"type"?: string;
+		"values"?: Array<Models.KnowledgeIntegrationFilterValue>;
+	}
+	
+	export interface KnowledgeIntegrationFilterValue { 
+		"key"?: string;
+		"value"?: string;
+	}
+	
+	export interface KnowledgeIntegrationOptionsResponse { 
+		"filters"?: Array<Models.KnowledgeIntegrationFilter>;
+	}
+	
+	export interface KnowledgeIntegrationReference { 
+		"id": string;
+		"selfUri"?: string;
+	}
+	
 	export interface KnowledgeOperationSource { 
 		"id"?: string;
 		"type"?: string;
@@ -28247,6 +28471,50 @@ declare namespace Models {
 		"vendorName": string;
 		"knowledgeBase"?: Models.KnowledgeBaseReference;
 		"knowledgeBases"?: Array<Models.KnowledgeBaseWithDialectReference>;
+	}
+	
+	export interface KnowledgeSyncJobReport { 
+		"errors"?: Array<Models.ErrorBody>;
+		"statistics"?: Models.KnowledgeSyncJobStatistics;
+	}
+	
+	export interface KnowledgeSyncJobRequest { 
+		"uploadKey": string;
+		"sourceId"?: string;
+	}
+	
+	export interface KnowledgeSyncJobResponse { 
+		"id"?: string;
+		"uploadKey"?: string;
+		"status"?: string;
+		"report"?: Models.KnowledgeSyncJobReport;
+		"knowledgeBase"?: Models.KnowledgeBaseReference;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"createdBy"?: Models.UserReference;
+		"downloadURL"?: string;
+		"failedEntitiesURL"?: string;
+		"source"?: Models.KnowledgeOperationSource;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeSyncJobStatistics { 
+		"countDocumentImportActivityCreate"?: number;
+		"countDocumentImportActivityUpdate"?: number;
+		"countDocumentStateDraft"?: number;
+		"countDocumentStatePublished"?: number;
+		"countDocumentImportSuccess"?: number;
+		"countDocumentImportFailure"?: number;
+		"countCategoryImportSuccess"?: number;
+		"countCategoryImportFailure"?: number;
+		"countLabelImportSuccess"?: number;
+		"countLabelImportFailure"?: number;
+		"countDocumentDeleteSuccess"?: number;
+		"countDocumentDeleteFailure"?: number;
+		"countCategoryDeleteSuccess"?: number;
+		"countCategoryDeleteFailure"?: number;
+		"countLabelDeleteSuccess"?: number;
+		"countLabelDeleteFailure"?: number;
 	}
 	
 	export interface KnowledgeTraining { 
@@ -29608,6 +29876,7 @@ declare namespace Models {
 	
 	export interface LogCaptureUserConfiguration { 
 		"id"?: string;
+		"dateStarted"?: string;
 		"dateExpired": string;
 		"selfUri"?: string;
 	}
@@ -30032,6 +30301,7 @@ declare namespace Models {
 		"media"?: Array<Models.MessageMedia>;
 		"stickers"?: Array<Models.MessageSticker>;
 		"messageMetadata"?: Models.ConversationMessageMetadata;
+		"socialVisibility"?: string;
 		"errorInfo"?: Models.ErrorBody;
 	}
 	
@@ -32090,6 +32360,98 @@ declare namespace Models {
 		"senderPhoneNumber"?: string;
 	}
 	
+	export interface OutboundMessagingEmailCampaignConfigChangeContactSort { 
+		"fieldName"?: string;
+		"direction"?: string;
+		"numeric"?: boolean;
+		"additionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeEmailConfig { 
+		"emailColumns"?: Array<string>;
+		"contentTemplate"?: Models.OutboundMessagingEmailCampaignConfigChangeResponseRef;
+		"fromAddress"?: Models.OutboundMessagingEmailCampaignConfigChangeFromEmailAddress;
+		"replyToAddress"?: Models.OutboundMessagingEmailCampaignConfigChangeReplyToEmailAddress;
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeErrorDetail { 
+		"error"?: string;
+		"details"?: string;
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeFromEmailAddress { 
+		"friendlyName"?: string;
+		"localPart"?: string;
+		"domain"?: Models.OutboundMessagingEmailCampaignConfigChangeUriReference;
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeMessagingCampaign { 
+		"campaignStatus"?: string;
+		"callableTimeSet"?: Models.OutboundMessagingEmailCampaignConfigChangeUriReference;
+		"contactList"?: Models.OutboundMessagingEmailCampaignConfigChangeUriReference;
+		"dncLists"?: Array<Models.OutboundMessagingEmailCampaignConfigChangeUriReference>;
+		"contactListFilters"?: Array<Models.OutboundMessagingEmailCampaignConfigChangeUriReference>;
+		"alwaysRunning"?: boolean;
+		"contactSorts"?: Array<Models.OutboundMessagingEmailCampaignConfigChangeContactSort>;
+		"messagesPerMinute"?: number;
+		"ruleSets"?: Array<Models.OutboundMessagingEmailCampaignConfigChangeUriReference>;
+		"smsConfig"?: Models.OutboundMessagingEmailCampaignConfigChangeSmsConfig;
+		"emailConfig"?: Models.OutboundMessagingEmailCampaignConfigChangeEmailConfig;
+		"errors"?: Array<Models.OutboundMessagingEmailCampaignConfigChangeErrorDetail>;
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
+		"division"?: Models.OutboundMessagingEmailCampaignConfigChangeUriReference;
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeObject { 
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeReplyToEmailAddress { 
+		"domain"?: Models.OutboundMessagingEmailCampaignConfigChangeUriReference;
+		"route"?: Models.OutboundMessagingEmailCampaignConfigChangeUriReference;
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeResponseRef { 
+		"id"?: string;
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeSmsConfig { 
+		"messageColumn"?: string;
+		"phoneColumn"?: string;
+		"senderSmsPhoneNumber"?: Models.OutboundMessagingEmailCampaignConfigChangeSmsPhoneNumberRef;
+		"contentTemplate"?: Models.OutboundMessagingEmailCampaignConfigChangeResponseRef;
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeSmsPhoneNumberRef { 
+		"phoneNumber"?: string;
+	}
+	
+	export interface OutboundMessagingEmailCampaignConfigChangeUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
+	export interface OutboundMessagingEmailCampaignProgressEventCampaignProgress { 
+		"campaign"?: Models.OutboundMessagingEmailCampaignProgressEventUriReference;
+		"numberOfContactsCalled"?: number;
+		"numberOfContactsMessaged"?: number;
+		"totalNumberOfContacts"?: number;
+		"percentage"?: number;
+		"numberOfContactsSkipped"?: { [key: string]: number; };
+		"additionalProperties"?: { [key: string]: object; };
+	}
+	
+	export interface OutboundMessagingEmailCampaignProgressEventObject { 
+	}
+	
+	export interface OutboundMessagingEmailCampaignProgressEventUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
 	export interface OutboundMessagingMessagingCampaignConfigChangeContactSort { 
 		"fieldName"?: string;
 		"direction"?: string;
@@ -32474,6 +32836,14 @@ declare namespace Models {
 	export interface PagedNamespaceListing { 
 	}
 	
+	export interface PagedSkillCombinationListing { 
+		"entities"?: Array<Models.SkillCombinationInfo>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"pageCount"?: number;
+	}
+	
 	export interface PagelessDomainEntityListingEvaluationVersion { 
 		"total"?: number;
 		"entities"?: Array<Models.EvaluationVersion>;
@@ -32546,6 +32916,7 @@ declare namespace Models {
 		"flaggedReason"?: string;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"internalMessages"?: Array<Models.InternalMessage>;
 		"bargedParticipantId"?: string;
 	}
 	
@@ -32600,6 +32971,7 @@ declare namespace Models {
 		"flaggedReason"?: string;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"internalMessages"?: Array<Models.InternalMessage>;
 		"bargedParticipantId"?: string;
 	}
 	
@@ -33230,6 +33602,12 @@ declare namespace Models {
 	export interface PhraseAssociations { 
 		"phraseId": string;
 		"documentId": string;
+	}
+	
+	export interface PhraseTranslation { 
+		"startTimeMs": number;
+		"participantPurpose": string;
+		"translatedText": string;
 	}
 	
 	export interface PhysicalInterfaceEntityListing { 
@@ -34054,6 +34432,7 @@ declare namespace Models {
 		"whisperPrompt"?: Models.DomainEntityRef;
 		"onHoldPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
+		"cannedResponseLibraries"?: Models.CannedResponseLibraries;
 		"enableTranscription"?: boolean;
 		"enableAudioMonitoring"?: boolean;
 		"enableManualAssignment"?: boolean;
@@ -36690,6 +37069,7 @@ declare namespace Models {
 		"whisperPrompt"?: Models.DomainEntityRef;
 		"onHoldPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
+		"cannedResponseLibraries"?: Models.CannedResponseLibraries;
 		"enableTranscription"?: boolean;
 		"enableAudioMonitoring"?: boolean;
 		"enableManualAssignment"?: boolean;
@@ -38185,6 +38565,34 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface SalesforceSettings { 
+		"channel"?: string;
+		"language"?: string;
+		"categories"?: Array<string>;
+	}
+	
+	export interface SalesforceSourceRequest { 
+		"id"?: string;
+		"name": string;
+		"integrationId"?: string;
+		"schedulePeriod"?: number;
+		"settings"?: Models.SalesforceSettings;
+		"selfUri"?: string;
+	}
+	
+	export interface SalesforceSourceResponse { 
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"type"?: string;
+		"integration"?: Models.KnowledgeIntegrationReference;
+		"schedulePeriod"?: number;
+		"lastSync"?: Models.SourceLastSync;
+		"settings"?: Models.SalesforceSettings;
+		"selfUri"?: string;
+	}
+	
 	export interface Schedule { 
 		"id"?: string;
 		"name": string;
@@ -39070,6 +39478,34 @@ declare namespace Models {
 		"durationMs"?: number;
 	}
 	
+	export interface ServiceNowSettings { 
+		"knowledgeBaseIds"?: Array<string>;
+		"language"?: string;
+		"categories"?: Array<string>;
+	}
+	
+	export interface ServiceNowSourceRequest { 
+		"id"?: string;
+		"name": string;
+		"integrationId"?: string;
+		"schedulePeriod"?: number;
+		"settings"?: Models.ServiceNowSettings;
+		"selfUri"?: string;
+	}
+	
+	export interface ServiceNowSourceResponse { 
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"type"?: string;
+		"integration"?: Models.KnowledgeIntegrationReference;
+		"schedulePeriod"?: number;
+		"lastSync"?: Models.SourceLastSync;
+		"settings"?: Models.ServiceNowSettings;
+		"selfUri"?: string;
+	}
+	
 	export interface Session { 
 		"id": string;
 		"customerId"?: string;
@@ -39482,6 +39918,12 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface SkillCombinationInfo { 
+		"skillCombination"?: Array<string>;
+		"totalCount"?: number;
+		"remainingCount"?: number;
+	}
+	
 	export interface SkillEntityListing { 
 		"entities"?: Array<Models.RoutingSkill>;
 		"pageSize"?: number;
@@ -39762,6 +40204,18 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface SourceBaseResponse { 
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"type"?: string;
+		"integration"?: Models.KnowledgeIntegrationReference;
+		"schedulePeriod"?: number;
+		"lastSync"?: Models.SourceLastSync;
+		"selfUri"?: string;
+	}
+	
 	export interface SourceConfiguration { 
 		"sourceId": string;
 		"interactionId": string;
@@ -39780,9 +40234,25 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface SourceLastSync { 
+		"state"?: string;
+		"dateStarted"?: string;
+		"dateEnded"?: string;
+		"error"?: Models.ErrorBody;
+	}
+	
 	export interface SourcePlanningGroupRequest { 
 		"id": string;
 		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface SourceSyncResponse { 
+		"state"?: string;
+		"error"?: Models.ErrorBody;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"knowledgeBase"?: Models.AddressableEntityRef;
+		"source"?: Models.AddressableEntityRef;
 	}
 	
 	export interface SpeechTextAnalyticsSettingsRequest { 
@@ -40533,6 +41003,10 @@ declare namespace Models {
 		"totalScore"?: number;
 		"npsScore"?: number;
 		"questionGroupScores"?: Array<Models.SurveyQuestionGroupScore>;
+	}
+	
+	export interface SyncStatusRequest { 
+		"status": string;
 	}
 	
 	export interface SystemMessageObject { 
@@ -41563,6 +42037,12 @@ declare namespace Models {
 		"excludes"?: Array<string>;
 	}
 	
+	export interface TranscriptTranslation { 
+		"id": string;
+		"phrases"?: Array<Models.PhraseTranslation>;
+		"translateError"?: string;
+	}
+	
 	export interface TranscriptUrl { 
 		"url"?: string;
 	}
@@ -41699,6 +42179,15 @@ declare namespace Models {
 		"keepInternalMessageAlive"?: boolean;
 		"queueId"?: string;
 		"queueName"?: string;
+	}
+	
+	export interface TranslateSupportedLanguage { 
+		"languageName": string;
+		"languageCode": string;
+	}
+	
+	export interface TranslateSupportedLanguageList { 
+		"entities"?: Array<Models.TranslateSupportedLanguage>;
 	}
 	
 	export interface TrendData { 
@@ -41994,6 +42483,7 @@ declare namespace Models {
 		"rulesVisible": boolean;
 		"visibility": string;
 		"rolesEnabled"?: boolean;
+		"includeOwners"?: boolean;
 		"owners"?: Array<Models.User>;
 		"dateCreated"?: string;
 		"createdBy"?: Models.OrgUser;
@@ -43359,6 +43849,7 @@ declare namespace Models {
 		"messageInQueueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
 		"onHoldPrompt"?: Models.DomainEntityRef;
+		"cannedResponseLibraries"?: Models.CannedResponseLibraries;
 		"enableTranscription"?: boolean;
 		"enableAudioMonitoring"?: boolean;
 		"enableManualAssignment"?: boolean;
@@ -43978,6 +44469,7 @@ declare namespace Models {
 		"journeyActionMap"?: Models.V2FlowExecutionDataFlowidTopicJourneyActionMap;
 		"processAutomation"?: Models.V2FlowExecutionDataFlowidTopicProcessAutomation;
 		"quality"?: Models.V2FlowExecutionDataFlowidTopicQuality;
+		"workitem"?: Models.V2FlowExecutionDataFlowidTopicWorkitem;
 	}
 	
 	export interface V2FlowExecutionDataFlowidTopicJourneyActionMap { 
@@ -43993,6 +44485,27 @@ declare namespace Models {
 	export interface V2FlowExecutionDataFlowidTopicQuality { 
 		"policyId"?: string;
 		"policyName"?: string;
+	}
+	
+	export interface V2FlowExecutionDataFlowidTopicWorkitem { 
+		"workitemId"?: string;
+		"workitemName"?: string;
+	}
+	
+	export interface V2IntegrationPresenceEventOrganizationPresence { 
+		"id"?: string;
+		"systemPresence"?: string;
+	}
+	
+	export interface V2IntegrationPresenceEventPresenceActivityEvent { 
+		"userId"?: string;
+		"eventType"?: string;
+		"source"?: string;
+		"modifiedDate"?: string;
+		"presenceDefinition"?: Models.V2IntegrationPresenceEventOrganizationPresence;
+		"message"?: string;
+		"currentDisplaySourceId"?: string;
+		"previousDisplaySourceId"?: string;
 	}
 	
 	export interface V2MobiusAlertsTopicAddressableEntityRef { 
@@ -44201,6 +44714,7 @@ declare namespace Models {
 	export interface ValidationServiceRequest { 
 		"dateImportEnded": string;
 		"uploadKey": string;
+		"fileName"?: string;
 	}
 	
 	export interface ValueWrapperActivityPlanServiceGoalImpactOverrides { 
@@ -44492,6 +45006,7 @@ declare namespace Models {
 		"screenMonitorUserIds"?: Array<string>;
 		"dashboardType"?: string;
 		"dashboardAccessFilter"?: string;
+		"transcriptDurationMilliseconds"?: Array<Models.NumericRange>;
 	}
 	
 	export interface VisibilityCondition { 
@@ -47292,6 +47807,8 @@ declare namespace Models {
 		"entities"?: Array<Models.Workitem>;
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"total"?: number;
+		"pageCount"?: number;
 	}
 	
 	export interface WorkitemPostQueryEntityListing { 

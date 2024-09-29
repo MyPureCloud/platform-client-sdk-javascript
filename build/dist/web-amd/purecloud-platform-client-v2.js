@@ -402,7 +402,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 204.1.0
+	 * @version 205.0.0
 	 */
 	class ApiClient {
 		/**
@@ -1824,7 +1824,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentAssistants service.
 		 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -2200,7 +2200,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentCopilot service.
 		 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -2276,7 +2276,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentUI service.
 		 * @module purecloud-platform-client-v2/api/AgentUIApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -2407,7 +2407,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -3068,7 +3068,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -5680,7 +5680,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -9802,7 +9802,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -10003,7 +10003,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -11286,7 +11286,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -11366,7 +11366,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -11436,7 +11436,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -12372,7 +12372,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -12949,7 +12949,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -14031,7 +14031,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -14804,6 +14804,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'conversationId': conversationId },
 				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'type': opts['type'],'state': opts['state'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the summaries of the conversation.
+		 * 
+		 * @param {String} conversationId Conversation ID
+		 * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getConversationSummaries(conversationId) { 
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getConversationSummaries';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/conversations/{conversationId}/summaries', 
+				'GET', 
+				{ 'conversationId': conversationId },
+				{  },
 				{  },
 				{  },
 				null, 
@@ -21143,7 +21169,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -21229,7 +21255,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -21281,7 +21307,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Emails service.
 		 * @module purecloud-platform-client-v2/api/EmailsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -21346,7 +21372,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * EmployeeEngagement service.
 		 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -21497,7 +21523,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -21593,7 +21619,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -23692,7 +23718,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -23907,7 +23933,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -24090,7 +24116,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -26176,7 +26202,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -26306,7 +26332,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -26437,7 +26463,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -26892,7 +26918,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -27411,7 +27437,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -28272,7 +28298,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -28439,7 +28465,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -30861,7 +30887,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -32504,7 +32530,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -32838,6 +32864,99 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Delete Salesforce Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} sourceId Source ID
+		 * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+			}
+			// verify the required parameter 'sourceId' is set
+			if (sourceId === undefined || sourceId === null) {
+				throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+				'DELETE', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete ServiceNow Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} sourceId Source ID
+		 * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
+			}
+			// verify the required parameter 'sourceId' is set
+			if (sourceId === undefined || sourceId === null) {
+				throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+				'DELETE', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete synchronization job
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} syncJobId Synchronization job ID
+		 * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
+			}
+			// verify the required parameter 'syncJobId' is set
+			if (syncJobId === undefined || syncJobId === null) {
+				throw 'Missing the required parameter "syncJobId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+				'DELETE', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get categories
 		 * 
 		 * @param {String} sessionId Knowledge guest session ID.
@@ -32925,6 +33044,32 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'sessionId': sessionId },
 				{ 'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'pageSize': opts['pageSize'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get sync options available for a knowledge-connect integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getKnowledgeIntegrationOptions(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling getKnowledgeIntegrationOptions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/integrations/{integrationId}/options', 
+				'GET', 
+				{ 'integrationId': integrationId },
+				{  },
 				{  },
 				{  },
 				null, 
@@ -33945,6 +34090,139 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Get Knowledge integration sources
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.type If specified, retrieves integration sources with specified integration type.
+		 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+		 * @param {Array.<String>} opts.ids If specified, retrieves integration sources with specified IDs.
+		 * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSources';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources', 
+				'GET', 
+				{ 'knowledgeBaseId': knowledgeBaseId },
+				{ 'type': opts['type'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get Salesforce Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} sourceId Source ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+		 * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+			}
+			// verify the required parameter 'sourceId' is set
+			if (sourceId === undefined || sourceId === null) {
+				throw 'Missing the required parameter "sourceId" when calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+				'GET', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get ServiceNow Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} sourceId Source ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+		 * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSourcesServicenowSourceId';
+			}
+			// verify the required parameter 'sourceId' is set
+			if (sourceId === undefined || sourceId === null) {
+				throw 'Missing the required parameter "sourceId" when calling getKnowledgeKnowledgebaseSourcesServicenowSourceId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+				'GET', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+				{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get synchronization job report
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} syncJobId Synchronization job ID
+		 * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
+			}
+			// verify the required parameter 'syncJobId' is set
+			if (syncJobId === undefined || syncJobId === null) {
+				throw 'Missing the required parameter "syncJobId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+				'GET', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get knowledge base unanswered group for a particular groupId
 		 * 
 		 * @param {String} knowledgeBaseId Knowledge base ID
@@ -34618,6 +34896,42 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}', 
 				'PATCH', 
 				{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update synchronization job
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} syncJobId Synchronization job ID
+		 * @param {Object} body 
+		 * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+			}
+			// verify the required parameter 'syncJobId' is set
+			if (syncJobId === undefined || syncJobId === null) {
+				throw 'Missing the required parameter "syncJobId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+				'PATCH', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
 				{  },
 				{  },
 				{  },
@@ -35816,6 +36130,161 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Create Salesforce Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} body 
+		 * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforce';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSourcesSalesforce';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce', 
+				'POST', 
+				{ 'knowledgeBaseId': knowledgeBaseId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Start sync on Salesforce Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} sourceId Source ID
+		 * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
+			}
+			// verify the required parameter 'sourceId' is set
+			if (sourceId === undefined || sourceId === null) {
+				throw 'Missing the required parameter "sourceId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync', 
+				'POST', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create ServiceNow Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} body 
+		 * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenow';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSourcesServicenow';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow', 
+				'POST', 
+				{ 'knowledgeBaseId': knowledgeBaseId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Start synchronization on ServiceNow Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} sourceId Source ID
+		 * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
+			}
+			// verify the required parameter 'sourceId' is set
+			if (sourceId === undefined || sourceId === null) {
+				throw 'Missing the required parameter "sourceId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync', 
+				'POST', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create synchronization job
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {Object} body 
+		 * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSynchronizeJobs';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSynchronizeJobs';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs', 
+				'POST', 
+				{ 'knowledgeBaseId': knowledgeBaseId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Create content upload from URL job
 		 * 
 		 * @param {String} knowledgeBaseId Knowledge base ID
@@ -35871,13 +36340,85 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			);
 		}
 
+		/**
+		 * Update Salesforce Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} sourceId Source ID
+		 * @param {Object} body 
+		 * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+			}
+			// verify the required parameter 'sourceId' is set
+			if (sourceId === undefined || sourceId === null) {
+				throw 'Missing the required parameter "sourceId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+				'PUT', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update ServiceNow Knowledge integration source
+		 * 
+		 * @param {String} knowledgeBaseId Knowledge base ID
+		 * @param {String} sourceId Source ID
+		 * @param {Object} body 
+		 * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body) { 
+			// verify the required parameter 'knowledgeBaseId' is set
+			if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+				throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+			}
+			// verify the required parameter 'sourceId' is set
+			if (sourceId === undefined || sourceId === null) {
+				throw 'Missing the required parameter "sourceId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+				'PUT', 
+				{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
 	}
 
 	class LanguageUnderstandingApi {
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -36911,7 +37452,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -37133,7 +37674,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -38162,7 +38703,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -38400,7 +38941,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -38636,7 +39177,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LogCapture service.
 		 * @module purecloud-platform-client-v2/api/LogCaptureApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -38836,7 +39377,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -39195,7 +39736,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -39346,7 +39887,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -39579,7 +40120,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -39945,7 +40486,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -40215,7 +40756,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OperationalEvents service.
 		 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -40281,7 +40822,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -40823,7 +41364,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -42170,7 +42711,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -43272,6 +43813,36 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{ 'campaignId': campaignId },
 				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the remaining and total contact count for each skill combination in a skills campaign
+		 * 
+		 * @param {String} campaignId Campaign ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 */
+		getOutboundCampaignSkillcombinations(campaignId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'campaignId' is set
+			if (campaignId === undefined || campaignId === null) {
+				throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignSkillcombinations';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/outbound/campaigns/{campaignId}/skillcombinations', 
+				'GET', 
+				{ 'campaignId': campaignId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 				{  },
 				{  },
 				null, 
@@ -46587,7 +47158,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -47331,7 +47902,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -47570,7 +48141,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -49356,7 +49927,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -51015,7 +51586,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -51525,7 +52096,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -55673,7 +56244,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -56550,7 +57121,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ScreenRecording service.
 		 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -56595,7 +57166,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -57039,7 +57610,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -57728,7 +58299,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Settings service.
 		 * @module purecloud-platform-client-v2/api/SettingsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -57948,7 +58519,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -58767,6 +59338,63 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Translate all communication(s) for an interaction.
+		 * 
+		 * @param {String} languageId Target translation language
+		 * @param {String} conversationId Conversation id
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.communicationId Communication id associated with the conversation
+		 * @param {String} opts.recordingId Recording id associated with the communication
+		 * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'languageId' is set
+			if (languageId === undefined || languageId === null) {
+				throw 'Missing the required parameter "languageId" when calling getSpeechandtextanalyticsTranslationsLanguageConversation';
+			}
+			// verify the required parameter 'conversationId' is set
+			if (conversationId === undefined || conversationId === null) {
+				throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsTranslationsLanguageConversation';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}', 
+				'GET', 
+				{ 'languageId': languageId,'conversationId': conversationId },
+				{ 'communicationId': opts['communicationId'],'recordingId': opts['recordingId'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get supported translation languages
+		 * 
+		 * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSpeechandtextanalyticsTranslationsLanguages() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/speechandtextanalytics/translations/languages', 
+				'GET', 
+				{  },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Patch Speech And Text Analytics Settings
 		 * 
 		 * @param {Object} body Speech And Text Analytics Settings
@@ -59226,7 +59854,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -59328,7 +59956,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -59467,7 +60095,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TaskManagement service.
 		 * @module purecloud-platform-client-v2/api/TaskManagementApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -60821,7 +61449,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -61122,7 +61750,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -61304,7 +61932,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -61389,6 +62017,26 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/telephony/providers/edges/{edgeId}/softwareupdate', 
 				'DELETE', 
 				{ 'edgeId': edgeId },
+				{  },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Deletes alertable presences overrides.
+		 * 
+		 */
+		deleteTelephonyProvidersEdgesAlertablepresences() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/telephony/providers/edges/alertablepresences', 
+				'DELETE', 
+				{  },
 				{  },
 				{  },
 				{  },
@@ -62062,6 +62710,30 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'edgeGroup.id': opts['edgeGroupId'],'sortBy': opts['sortBy'],'managed': opts['managed'],'showCloudMedia': opts['showCloudMedia'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.type 
+		 */
+		getTelephonyProvidersEdgesAlertablepresences(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/telephony/providers/edges/alertablepresences', 
+				'GET', 
+				{  },
+				{ 'type': opts['type'] },
 				{  },
 				{  },
 				null, 
@@ -64257,6 +64929,31 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
+		 * Creates or updates alertable presences overrides.
+		 * 
+		 * @param {Object} body Alertable Presences Overrides
+		 */
+		putTelephonyProvidersEdgesAlertablepresences(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesAlertablepresences';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/telephony/providers/edges/alertablepresences', 
+				'PUT', 
+				{  },
+				{  },
+				{  },
+				{  },
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update a certificate authority.
 		 * 
 		 * @param {String} certificateId Certificate ID
@@ -64632,7 +65329,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -64760,7 +65457,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -64914,7 +65611,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -65183,7 +65880,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -65398,7 +66095,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -65613,7 +66310,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -68416,7 +69113,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -68527,7 +69224,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -69194,7 +69891,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -69745,7 +70442,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -70062,7 +70759,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get deployments
 		 * 
 		 * @param {Object} opts Optional parameters
-		 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+		 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
 		 */
 		getWebdeploymentsDeployments(opts) { 
 			opts = opts || {};
@@ -70272,7 +70969,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -70318,7 +71015,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -70464,7 +71161,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 204.1.0
+		 * @version 205.0.0
 		 */
 
 		/**
@@ -77619,7 +78316,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 204.1.0
+	 * @version 205.0.0
 	 */
 	class platformClient {
 		constructor() {

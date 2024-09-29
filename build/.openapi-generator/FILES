@@ -266,6 +266,9 @@ docs/deleteKnowledgeKnowledgebaseLabel-example.txt
 docs/deleteKnowledgeKnowledgebaseLanguageCategory-example.txt
 docs/deleteKnowledgeKnowledgebaseLanguageDocument-example.txt
 docs/deleteKnowledgeKnowledgebaseLanguageDocumentsImport-example.txt
+docs/deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
+docs/deleteKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
+docs/deleteKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/deleteLanguage-example.txt
 docs/deleteLanguageunderstandingDomain-example.txt
 docs/deleteLanguageunderstandingDomainFeedbackFeedbackId-example.txt
@@ -385,6 +388,7 @@ docs/deleteTeamMembers-example.txt
 docs/deleteTelephonyProvidersEdge-example.txt
 docs/deleteTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/deleteTelephonyProvidersEdgeSoftwareupdate-example.txt
+docs/deleteTelephonyProvidersEdgesAlertablepresences-example.txt
 docs/deleteTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/deleteTelephonyProvidersEdgesDidpool-example.txt
 docs/deleteTelephonyProvidersEdgesEdgegroup-example.txt
@@ -640,6 +644,7 @@ docs/getConversationRecordings-example.txt
 docs/getConversationSecureattributes-example.txt
 docs/getConversationSuggestion-example.txt
 docs/getConversationSuggestions-example.txt
+docs/getConversationSummaries-example.txt
 docs/getConversations-example.txt
 docs/getConversationsCall-example.txt
 docs/getConversationsCallParticipantCommunicationWrapup-example.txt
@@ -971,6 +976,7 @@ docs/getJourneyViewsJobs-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
+docs/getKnowledgeIntegrationOptions-example.txt
 docs/getKnowledgeKnowledgebase-example.txt
 docs/getKnowledgeKnowledgebaseCategories-example.txt
 docs/getKnowledgeKnowledgebaseCategory-example.txt
@@ -999,6 +1005,10 @@ docs/getKnowledgeKnowledgebaseLanguageTrainings-example.txt
 docs/getKnowledgeKnowledgebaseOperations-example.txt
 docs/getKnowledgeKnowledgebaseOperationsUsersQuery-example.txt
 docs/getKnowledgeKnowledgebaseParseJob-example.txt
+docs/getKnowledgeKnowledgebaseSources-example.txt
+docs/getKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
+docs/getKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
+docs/getKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroups-example.txt
@@ -1119,6 +1129,7 @@ docs/getOutboundCampaignDiagnostics-example.txt
 docs/getOutboundCampaignInteractions-example.txt
 docs/getOutboundCampaignLinedistribution-example.txt
 docs/getOutboundCampaignProgress-example.txt
+docs/getOutboundCampaignSkillcombinations-example.txt
 docs/getOutboundCampaignStats-example.txt
 docs/getOutboundCampaignrule-example.txt
 docs/getOutboundCampaignrules-example.txt
@@ -1369,6 +1380,8 @@ docs/getSpeechandtextanalyticsTopicsDialects-example.txt
 docs/getSpeechandtextanalyticsTopicsGeneral-example.txt
 docs/getSpeechandtextanalyticsTopicsGeneralStatus-example.txt
 docs/getSpeechandtextanalyticsTopicsPublishjob-example.txt
+docs/getSpeechandtextanalyticsTranslationsLanguageConversation-example.txt
+docs/getSpeechandtextanalyticsTranslationsLanguages-example.txt
 docs/getStation-example.txt
 docs/getStations-example.txt
 docs/getSystempresences-example.txt
@@ -1414,6 +1427,7 @@ docs/getTelephonyProvidersEdgeSoftwareupdate-example.txt
 docs/getTelephonyProvidersEdgeSoftwareversions-example.txt
 docs/getTelephonyProvidersEdgeTrunks-example.txt
 docs/getTelephonyProvidersEdges-example.txt
+docs/getTelephonyProvidersEdgesAlertablepresences-example.txt
 docs/getTelephonyProvidersEdgesCertificateauthorities-example.txt
 docs/getTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/getTelephonyProvidersEdgesDid-example.txt
@@ -1755,6 +1769,7 @@ docs/patchKnowledgeKnowledgebaseLanguageDocument-example.txt
 docs/patchKnowledgeKnowledgebaseLanguageDocuments-example.txt
 docs/patchKnowledgeKnowledgebaseLanguageDocumentsImport-example.txt
 docs/patchKnowledgeKnowledgebaseParseJob-example.txt
+docs/patchKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/patchLanguageunderstandingDomain-example.txt
 docs/patchLanguageunderstandingMinerDraft-example.txt
@@ -2210,6 +2225,11 @@ docs/postKnowledgeKnowledgebaseParseJobImport-example.txt
 docs/postKnowledgeKnowledgebaseParseJobs-example.txt
 docs/postKnowledgeKnowledgebaseSearch-example.txt
 docs/postKnowledgeKnowledgebaseSearch-example.txt
+docs/postKnowledgeKnowledgebaseSourcesSalesforce-example.txt
+docs/postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync-example.txt
+docs/postKnowledgeKnowledgebaseSourcesServicenow-example.txt
+docs/postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync-example.txt
+docs/postKnowledgeKnowledgebaseSynchronizeJobs-example.txt
 docs/postKnowledgeKnowledgebaseUploadsUrlsJobs-example.txt
 docs/postKnowledgeKnowledgebaseUploadsUrlsJobs-example.txt
 docs/postKnowledgeKnowledgebases-example.txt
@@ -2631,6 +2651,8 @@ docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
 docs/putIntegrationsSpeechTtsSettings-example.txt
 docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
+docs/putKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
+docs/putKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt
 docs/putLearningModule-example.txt
 docs/putLearningModulePreview-example.txt
@@ -2727,6 +2749,7 @@ docs/putSpeechandtextanalyticsTopic-example.txt
 docs/putTaskmanagementWorkitemsSchema-example.txt
 docs/putTelephonyProvidersEdge-example.txt
 docs/putTelephonyProvidersEdgeLogicalinterface-example.txt
+docs/putTelephonyProvidersEdgesAlertablepresences-example.txt
 docs/putTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/putTelephonyProvidersEdgesDidpool-example.txt
 docs/putTelephonyProvidersEdgesEdgegroup-example.txt

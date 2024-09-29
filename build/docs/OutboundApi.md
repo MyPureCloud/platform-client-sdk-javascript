@@ -48,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCampaignInteractions**](OutboundApi#getOutboundCampaignInteractions) | **GET** /api/v2/outbound/campaigns/{campaignId}/interactions | Get dialer campaign interactions.
 [**getOutboundCampaignLinedistribution**](OutboundApi#getOutboundCampaignLinedistribution) | **GET** /api/v2/outbound/campaigns/{campaignId}/linedistribution | Get line distribution information for campaigns using same Edge Group or Site as given campaign
 [**getOutboundCampaignProgress**](OutboundApi#getOutboundCampaignProgress) | **GET** /api/v2/outbound/campaigns/{campaignId}/progress | Get campaign progress
+[**getOutboundCampaignSkillcombinations**](OutboundApi#getOutboundCampaignSkillcombinations) | **GET** /api/v2/outbound/campaigns/{campaignId}/skillcombinations | Get the remaining and total contact count for each skill combination in a skills campaign
 [**getOutboundCampaignStats**](OutboundApi#getOutboundCampaignStats) | **GET** /api/v2/outbound/campaigns/{campaignId}/stats | Get statistics about a Dialer Campaign
 [**getOutboundCampaignrule**](OutboundApi#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
 [**getOutboundCampaignrules**](OutboundApi#getOutboundCampaignrules) | **GET** /api/v2/outbound/campaignrules | Query Campaign Rule list
@@ -2355,6 +2356,62 @@ apiInstance.getOutboundCampaignProgress(campaignId)
 ### Return type
 
 **CampaignProgress**
+
+
+## getOutboundCampaignSkillcombinations
+
+> PagedSkillCombinationListing getOutboundCampaignSkillcombinations(campaignId, opts)
+
+
+GET /api/v2/outbound/campaigns/{campaignId}/skillcombinations
+
+Get the remaining and total contact count for each skill combination in a skills campaign
+
+Requires ANY permissions:
+
+* outbound:campaign:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getOutboundCampaignSkillcombinations(campaignId, opts)
+  .then((data) => {
+    console.log(`getOutboundCampaignSkillcombinations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaignSkillcombinations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**PagedSkillCombinationListing**
 
 
 ## getOutboundCampaignStats
@@ -8773,4 +8830,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@204.1.0_
+_purecloud-platform-client-v2@205.0.0_

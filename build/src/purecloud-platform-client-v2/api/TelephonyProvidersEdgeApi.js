@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 204.1.0
+	 * @version 205.0.0
 	 */
 
 	/**
@@ -90,6 +90,26 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/{edgeId}/softwareupdate', 
 			'DELETE', 
 			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes alertable presences overrides.
+	 * 
+	 */
+	deleteTelephonyProvidersEdgesAlertablepresences() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/alertablepresences', 
+			'DELETE', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -763,6 +783,30 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'edgeGroup.id': opts['edgeGroupId'],'sortBy': opts['sortBy'],'managed': opts['managed'],'showCloudMedia': opts['showCloudMedia'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.type 
+	 */
+	getTelephonyProvidersEdgesAlertablepresences(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/alertablepresences', 
+			'GET', 
+			{  },
+			{ 'type': opts['type'] },
 			{  },
 			{  },
 			null, 
@@ -2947,6 +2991,31 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}', 
 			'PUT', 
 			{ 'edgeId': edgeId,'interfaceId': interfaceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates or updates alertable presences overrides.
+	 * 
+	 * @param {Object} body Alertable Presences Overrides
+	 */
+	putTelephonyProvidersEdgesAlertablepresences(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesAlertablepresences';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/alertablepresences', 
+			'PUT', 
+			{  },
 			{  },
 			{  },
 			{  },
