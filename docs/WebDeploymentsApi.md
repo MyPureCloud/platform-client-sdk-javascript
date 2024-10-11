@@ -405,7 +405,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WebDeploymentsApi();
 
 let opts = { 
-  'showOnlyPublished': false // Boolean | Get only configuration drafts with published versions
+  'showOnlyPublished': true // Boolean | Filter by published status.
 };
 
 apiInstance.getWebdeploymentsConfigurations(opts)
@@ -423,7 +423,7 @@ apiInstance.getWebdeploymentsConfigurations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **showOnlyPublished** | **Boolean** | Get only configuration drafts with published versions | [optional] [default to false] |
+ **showOnlyPublished** | **Boolean** | Filter by published status. | [optional]  |
 
 ### Return type
 
@@ -984,4 +984,4 @@ apiInstance.putWebdeploymentsDeployment(deploymentId, deployment)
 **WebDeployment**
 
 
-_purecloud-platform-client-v2@205.0.0_
+_purecloud-platform-client-v2@206.0.0_
