@@ -382,6 +382,8 @@ docs/deleteTaskmanagementWorkbin-example.txt
 docs/deleteTaskmanagementWorkitem-example.txt
 docs/deleteTaskmanagementWorkitemsSchema-example.txt
 docs/deleteTaskmanagementWorktype-example.txt
+docs/deleteTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
+docs/deleteTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/deleteTaskmanagementWorktypeStatus-example.txt
 docs/deleteTeam-example.txt
 docs/deleteTeamMembers-example.txt
@@ -966,8 +968,11 @@ docs/getJourneySessionEvents-example.txt
 docs/getJourneySessionOutcomescores-example.txt
 docs/getJourneyView-example.txt
 docs/getJourneyViewVersion-example.txt
+docs/getJourneyViewVersionChart-example.txt
+docs/getJourneyViewVersionChartVersion-example.txt
 docs/getJourneyViewVersionJob-example.txt
 docs/getJourneyViewVersionJobResults-example.txt
+docs/getJourneyViewVersionJobResultsChart-example.txt
 docs/getJourneyViewVersionJobsLatest-example.txt
 docs/getJourneyViews-example.txt
 docs/getJourneyViewsEventdefinition-example.txt
@@ -1402,6 +1407,10 @@ docs/getTaskmanagementWorkitemsSchemaVersion-example.txt
 docs/getTaskmanagementWorkitemsSchemaVersions-example.txt
 docs/getTaskmanagementWorkitemsSchemas-example.txt
 docs/getTaskmanagementWorktype-example.txt
+docs/getTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
+docs/getTaskmanagementWorktypeFlowsOnattributechangeRules-example.txt
+docs/getTaskmanagementWorktypeFlowsOncreateRule-example.txt
+docs/getTaskmanagementWorktypeFlowsOncreateRules-example.txt
 docs/getTaskmanagementWorktypeHistory-example.txt
 docs/getTaskmanagementWorktypeStatus-example.txt
 docs/getTaskmanagementWorktypeStatuses-example.txt
@@ -1755,6 +1764,7 @@ docs/patchJourneyActiontarget-example.txt
 docs/patchJourneyActiontemplate-example.txt
 docs/patchJourneyOutcome-example.txt
 docs/patchJourneySegment-example.txt
+docs/patchJourneyViewVersionJob-example.txt
 docs/patchKnowledgeGuestSessionDocumentsSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebase-example.txt
 docs/patchKnowledgeKnowledgebaseCategory-example.txt
@@ -1814,6 +1824,8 @@ docs/patchTaskmanagementWorkitemAssignment-example.txt
 docs/patchTaskmanagementWorkitemUserWrapups-example.txt
 docs/patchTaskmanagementWorkitemUsersMeWrapups-example.txt
 docs/patchTaskmanagementWorktype-example.txt
+docs/patchTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
+docs/patchTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/patchTaskmanagementWorktypeStatus-example.txt
 docs/patchTeam-example.txt
 docs/patchTelephonyProvidersEdgesSiteSiteconnections-example.txt
@@ -1858,6 +1870,7 @@ docs/patchWorkforcemanagementBusinessunitWorkplanbidGroup-example.txt
 docs/patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences-example.txt
 docs/patchWorkforcemanagementManagementunit-example.txt
 docs/patchWorkforcemanagementManagementunitAgents-example.txt
+docs/patchWorkforcemanagementManagementunitAgentsWorkplansBulk-example.txt
 docs/patchWorkforcemanagementManagementunitTimeofflimit-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffplan-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus-example.txt
@@ -2402,6 +2415,8 @@ docs/postTaskmanagementWorkitems-example.txt
 docs/postTaskmanagementWorkitemsQuery-example.txt
 docs/postTaskmanagementWorkitemsQueryJobs-example.txt
 docs/postTaskmanagementWorkitemsSchemas-example.txt
+docs/postTaskmanagementWorktypeFlowsOnattributechangeRules-example.txt
+docs/postTaskmanagementWorktypeFlowsOncreateRules-example.txt
 docs/postTaskmanagementWorktypeStatuses-example.txt
 docs/postTaskmanagementWorktypes-example.txt
 docs/postTaskmanagementWorktypesQuery-example.txt
@@ -2525,6 +2540,7 @@ docs/postWorkforcemanagementCalendarUrlIcs-example.txt
 docs/postWorkforcemanagementHistoricaldataDeletejob-example.txt
 docs/postWorkforcemanagementHistoricaldataValidate-example.txt
 docs/postWorkforcemanagementIntegrationsHriTimeofftypesJobs-example.txt
+docs/postWorkforcemanagementManagementunitAgentsWorkplansQuery-example.txt
 docs/postWorkforcemanagementManagementunitAgentschedulesSearch-example.txt
 docs/postWorkforcemanagementManagementunitHistoricaladherencequery-example.txt
 docs/postWorkforcemanagementManagementunitMove-example.txt
@@ -2651,6 +2667,7 @@ docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
 docs/putIntegrationsSpeechTtsSettings-example.txt
 docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
+docs/putJourneyViewVersion-example.txt
 docs/putKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
 docs/putKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt

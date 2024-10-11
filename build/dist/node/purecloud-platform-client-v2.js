@@ -405,7 +405,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 205.0.0
+ * @version 206.0.0
  */
 class ApiClient {
 	/**
@@ -1827,7 +1827,7 @@ class AgentAssistantsApi {
 	/**
 	 * AgentAssistants service.
 	 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -2203,7 +2203,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -2279,7 +2279,7 @@ class AgentUIApi {
 	/**
 	 * AgentUI service.
 	 * @module purecloud-platform-client-v2/api/AgentUIApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -2410,7 +2410,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -3071,7 +3071,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -5683,7 +5683,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -9805,7 +9805,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -10006,7 +10006,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -11289,7 +11289,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -11369,7 +11369,7 @@ class CarrierServicesApi {
 	/**
 	 * CarrierServices service.
 	 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -11439,7 +11439,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -12375,7 +12375,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -12952,7 +12952,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -14034,7 +14034,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -17780,7 +17780,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Parking update request
-	 * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchConversationsEmailParticipantParkingstate(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -20020,8 +20019,12 @@ class ConversationsApi {
 	 * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 	 * @param {String} integrationId integrationId
 	 * @param {Object} body NormalizedMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.prefetchConversationId Indicates whether or not to prefetch conversationId (default to false)
 	 */
-	postConversationsMessageInboundOpenMessage(integrationId, body) { 
+	postConversationsMessageInboundOpenMessage(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenMessage';
@@ -20035,7 +20038,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{integrationId}/inbound/open/message', 
 			'POST', 
 			{ 'integrationId': integrationId },
-			{  },
+			{ 'prefetchConversationId': opts['prefetchConversationId'] },
 			{  },
 			{  },
 			body, 
@@ -21172,7 +21175,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -21258,7 +21261,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -21310,7 +21313,7 @@ class EmailsApi {
 	/**
 	 * Emails service.
 	 * @module purecloud-platform-client-v2/api/EmailsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -21375,7 +21378,7 @@ class EmployeeEngagementApi {
 	/**
 	 * EmployeeEngagement service.
 	 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -21526,7 +21529,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -21622,7 +21625,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -23721,7 +23724,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -23936,7 +23939,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -24119,7 +24122,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -26205,7 +26208,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -26335,7 +26338,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -26466,7 +26469,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -26921,7 +26924,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -27440,7 +27443,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -28301,7 +28304,7 @@ class InfrastructureAsCodeApi {
 	/**
 	 * InfrastructureAsCode service.
 	 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -28468,7 +28471,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -30890,7 +30893,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -31738,6 +31741,81 @@ class JourneyApi {
 	}
 
 	/**
+	 * Get a Chart by ID
+	 * returns the latest version
+	 * @param {String} viewId viewId
+	 * @param {String} journeyViewVersion Journey View Version
+	 * @param {String} chartId chartId
+	 */
+	getJourneyViewVersionChart(viewId, journeyViewVersion, chartId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionChart';
+		}
+		// verify the required parameter 'journeyViewVersion' is set
+		if (journeyViewVersion === undefined || journeyViewVersion === null) {
+			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionChart';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null) {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionChart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'chartId': chartId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Chart by ID and version
+	 * 
+	 * @param {String} viewId viewId
+	 * @param {String} journeyViewVersion Journey View Version
+	 * @param {String} chartId chartId
+	 * @param {String} chartVersion chartVersion
+	 */
+	getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'journeyViewVersion' is set
+		if (journeyViewVersion === undefined || journeyViewVersion === null) {
+			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null) {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'chartVersion' is set
+		if (chartVersion === undefined || chartVersion === null) {
+			throw 'Missing the required parameter "chartVersion" when calling getJourneyViewVersionChartVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'chartId': chartId,'chartVersion': chartVersion },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the job for a journey view version.
 	 * used for long descriptions
 	 * @param {String} viewId Journey View Id
@@ -31797,6 +31875,46 @@ class JourneyApi {
 			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results', 
 			'GET', 
 			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the chart result associated with a journey view job.
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * @param {String} jobId JobId
+	 * @param {String} chartId ChartId
+	 */
+	getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null) {
+			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null) {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionJobResultsChart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId,'chartId': chartId },
 			{  },
 			{  },
 			{  },
@@ -32078,6 +32196,46 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+	 * used for long descriptions
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * @param {String} jobId JobId
+	 * @param {Object} body journeyViewJob
+	 */
+	patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null) {
+			throw 'Missing the required parameter "journeyVersionId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchJourneyViewVersionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}', 
+			'PATCH', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -32527,13 +32685,48 @@ class JourneyApi {
 		);
 	}
 
+	/**
+	 * Update a Journey View by ID and version
+	 * does not create a new version
+	 * @param {String} viewId viewId
+	 * @param {String} versionId versionId
+	 * @param {Object} body JourneyView
+	 */
+	putJourneyViewVersion(viewId, versionId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling putJourneyViewVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling putJourneyViewVersion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putJourneyViewVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{versionId}', 
+			'PUT', 
+			{ 'viewId': viewId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
 }
 
 class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -36421,7 +36614,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -37455,7 +37648,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -37677,7 +37870,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -38706,7 +38899,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -38944,7 +39137,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -39180,7 +39373,7 @@ class LogCaptureApi {
 	/**
 	 * LogCapture service.
 	 * @module purecloud-platform-client-v2/api/LogCaptureApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -39380,7 +39573,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -39739,7 +39932,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -39890,7 +40083,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -40123,7 +40316,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -40489,7 +40682,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -40759,7 +40952,7 @@ class OperationalEventsApi {
 	/**
 	 * OperationalEvents service.
 	 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -40825,7 +41018,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -41367,7 +41560,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -42714,7 +42907,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -47161,7 +47354,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -47905,7 +48098,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -48144,7 +48337,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -49930,7 +50123,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -51589,7 +51782,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -52099,7 +52292,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -56247,7 +56440,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -57124,7 +57317,7 @@ class ScreenRecordingApi {
 	/**
 	 * ScreenRecording service.
 	 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -57169,7 +57362,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -57613,7 +57806,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -58302,7 +58495,7 @@ class SettingsApi {
 	/**
 	 * Settings service.
 	 * @module purecloud-platform-client-v2/api/SettingsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -58522,7 +58715,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -59857,7 +60050,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -59959,7 +60152,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -60098,7 +60291,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -60203,6 +60396,66 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/worktypes/{worktypeId}', 
 			'DELETE', 
 			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'DELETE', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'DELETE', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
 			{  },
 			{  },
 			{  },
@@ -60736,6 +60989,126 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Get an attribute change rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'GET', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all attribute-change rules for a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 */
+	getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an on-create rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'GET', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all on-create rules for a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 */
+	getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a listing of a worktype's attribute change history
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -61072,6 +61445,76 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Update the attributes of a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 * @param {Object} body Rule
+	 */
+	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'PATCH', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the attributes of a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 * @param {Object} body Rule
+	 */
+	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'PATCH', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the attributes of a status
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -61337,6 +61780,66 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Add an attribute-change rule to a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} body Rule
+	 */
+	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules', 
+			'POST', 
+			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add an on-create rule to a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} body Rule
+	 */
+	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOncreateRules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeFlowsOncreateRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules', 
+			'POST', 
+			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Add a status to a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -61452,7 +61955,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -61753,7 +62256,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -61935,7 +62438,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -65332,7 +65835,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -65460,7 +65963,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -65614,7 +66117,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -65883,7 +66386,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -66098,7 +66601,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -66313,7 +66816,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -69116,7 +69619,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -69227,7 +69730,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -69894,7 +70397,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -70445,7 +70948,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -70649,7 +71152,7 @@ class WebDeploymentsApi {
 	 * View configuration drafts
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.showOnlyPublished Get only configuration drafts with published versions (default to false)
+	 * @param {Boolean} opts.showOnlyPublished Filter by published status.
 	 */
 	getWebdeploymentsConfigurations(opts) { 
 		opts = opts || {};
@@ -70972,7 +71475,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -71018,7 +71521,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -71164,7 +71667,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -75248,6 +75751,35 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Updates agent work plan configuration
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates a time off limit object.
 	 * Updates time off limit object properties, but not daily values.
 	 * @param {String} managementUnitId The ID of the management unit.
@@ -77168,6 +77700,36 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get agents work plans configuration
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentsWorkplansQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{ 'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -78319,7 +78881,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 205.0.0
+ * @version 206.0.0
  */
 class platformClient {
 	constructor() {

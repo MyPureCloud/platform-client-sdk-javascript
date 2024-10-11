@@ -6884,8 +6884,6 @@ PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}
 
 Update conversation by setting its parking state
 
-patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * conversation:email:park
@@ -10714,7 +10712,7 @@ apiInstance.postConversationsMessageInboundOpenEvent(integrationId, body)
 
 ## postConversationsMessageInboundOpenMessage
 
-> OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(integrationId, body)
+> OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(integrationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{integrationId}/inbound/open/message
@@ -10742,8 +10740,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | integrationId
 let body = {}; // Object | NormalizedMessage
+let opts = { 
+  'prefetchConversationId': false // Boolean | Indicates whether or not to prefetch conversationId
+};
 
-apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body)
+apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body, opts)
   .then((data) => {
     console.log(`postConversationsMessageInboundOpenMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10760,6 +10761,7 @@ apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | integrationId |  |
  **body** | **Object** | NormalizedMessage |  |
+ **prefetchConversationId** | **Boolean** | Indicates whether or not to prefetch conversationId | [optional] [default to false] |
 
 ### Return type
 
@@ -12781,4 +12783,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@205.0.0_
+_purecloud-platform-client-v2@206.0.0_

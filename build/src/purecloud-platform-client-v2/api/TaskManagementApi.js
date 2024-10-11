@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -110,6 +110,66 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/worktypes/{worktypeId}', 
 			'DELETE', 
 			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'DELETE', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'DELETE', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
 			{  },
 			{  },
 			{  },
@@ -643,6 +703,126 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Get an attribute change rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'GET', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all attribute-change rules for a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 */
+	getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an on-create rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'GET', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all on-create rules for a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 */
+	getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a listing of a worktype's attribute change history
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -979,6 +1159,76 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Update the attributes of a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 * @param {Object} body Rule
+	 */
+	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'PATCH', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the attributes of a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 * @param {Object} body Rule
+	 */
+	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'PATCH', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the attributes of a status
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -1233,6 +1483,66 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/workitems/schemas', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add an attribute-change rule to a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} body Rule
+	 */
+	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules', 
+			'POST', 
+			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add an on-create rule to a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} body Rule
+	 */
+	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOncreateRules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeFlowsOncreateRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules', 
+			'POST', 
+			{ 'worktypeId': worktypeId },
 			{  },
 			{  },
 			{  },

@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -209,7 +209,7 @@ class WebDeploymentsApi {
 	 * View configuration drafts
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.showOnlyPublished Get only configuration drafts with published versions (default to false)
+	 * @param {Boolean} opts.showOnlyPublished Filter by published status.
 	 */
 	getWebdeploymentsConfigurations(opts) { 
 		opts = opts || {};

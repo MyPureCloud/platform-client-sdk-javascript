@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -3751,7 +3751,6 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Parking update request
-	 * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchConversationsEmailParticipantParkingstate(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5991,8 +5990,12 @@ class ConversationsApi {
 	 * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 	 * @param {String} integrationId integrationId
 	 * @param {Object} body NormalizedMessage
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.prefetchConversationId Indicates whether or not to prefetch conversationId (default to false)
 	 */
-	postConversationsMessageInboundOpenMessage(integrationId, body) { 
+	postConversationsMessageInboundOpenMessage(integrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
 			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenMessage';
@@ -6006,7 +6009,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{integrationId}/inbound/open/message', 
 			'POST', 
 			{ 'integrationId': integrationId },
-			{  },
+			{ 'prefetchConversationId': opts['prefetchConversationId'] },
 			{  },
 			{  },
 			body, 

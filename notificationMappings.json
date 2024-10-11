@@ -669,6 +669,10 @@
       "class": "WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody"
     },
     {
+      "topic": "v2.webmessaging.deployments.{id}.undelivered.messages",
+      "class": "V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody"
+    },
+    {
       "topic": "v2.wem.learning.assignments.modules.{id}",
       "class": "LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification"
     },

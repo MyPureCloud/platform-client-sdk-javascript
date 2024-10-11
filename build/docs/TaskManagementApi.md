@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteTaskmanagementWorkitem**](TaskManagementApi#deleteTaskmanagementWorkitem) | **DELETE** /api/v2/taskmanagement/workitems/{workitemId} | Delete a workitem
 [**deleteTaskmanagementWorkitemsSchema**](TaskManagementApi#deleteTaskmanagementWorkitemsSchema) | **DELETE** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Delete a schema
 [**deleteTaskmanagementWorktype**](TaskManagementApi#deleteTaskmanagementWorktype) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId} | Delete a worktype
+[**deleteTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsOnattributechangeRule) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId} | Delete a rule
+[**deleteTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsOncreateRule) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId} | Delete a rule
 [**deleteTaskmanagementWorktypeStatus**](TaskManagementApi#deleteTaskmanagementWorktypeStatus) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Delete a status
 [**getTaskmanagementWorkbin**](TaskManagementApi#getTaskmanagementWorkbin) | **GET** /api/v2/taskmanagement/workbins/{workbinId} | Get a workbin
 [**getTaskmanagementWorkbinHistory**](TaskManagementApi#getTaskmanagementWorkbinHistory) | **GET** /api/v2/taskmanagement/workbins/{workbinId}/history | Get a listing of a workbin's attribute change history
@@ -28,6 +30,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions | Get all versions of a schema
 [**getTaskmanagementWorkitemsSchemas**](TaskManagementApi#getTaskmanagementWorkitemsSchemas) | **GET** /api/v2/taskmanagement/workitems/schemas | Get a list of schemas.
 [**getTaskmanagementWorktype**](TaskManagementApi#getTaskmanagementWorktype) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId} | Get a worktype
+[**getTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsOnattributechangeRule) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId} | Get an attribute change rule
+[**getTaskmanagementWorktypeFlowsOnattributechangeRules**](TaskManagementApi#getTaskmanagementWorktypeFlowsOnattributechangeRules) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules | Get all attribute-change rules for a worktype
+[**getTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsOncreateRule) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId} | Get an on-create rule
+[**getTaskmanagementWorktypeFlowsOncreateRules**](TaskManagementApi#getTaskmanagementWorktypeFlowsOncreateRules) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules | Get all on-create rules for a worktype
 [**getTaskmanagementWorktypeHistory**](TaskManagementApi#getTaskmanagementWorktypeHistory) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/history | Get a listing of a worktype's attribute change history
 [**getTaskmanagementWorktypeStatus**](TaskManagementApi#getTaskmanagementWorktypeStatus) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Get a status
 [**getTaskmanagementWorktypeStatuses**](TaskManagementApi#getTaskmanagementWorktypeStatuses) | **GET** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Get list of statuses for this worktype.
@@ -39,6 +45,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchTaskmanagementWorkitemUserWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUserWrapups) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups | Add/Remove a wrapup code for a given user in a workitem.
 [**patchTaskmanagementWorkitemUsersMeWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUsersMeWrapups) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups | Add/Remove a wrapup code for the current user in a workitem.
 [**patchTaskmanagementWorktype**](TaskManagementApi#patchTaskmanagementWorktype) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId} | Update the attributes of a worktype
+[**patchTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsOnattributechangeRule) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId} | Update the attributes of a rule
+[**patchTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsOncreateRule) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId} | Update the attributes of a rule
 [**patchTaskmanagementWorktypeStatus**](TaskManagementApi#patchTaskmanagementWorktypeStatus) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} | Update the attributes of a status
 [**postTaskmanagementWorkbins**](TaskManagementApi#postTaskmanagementWorkbins) | **POST** /api/v2/taskmanagement/workbins | Create a workbin
 [**postTaskmanagementWorkbinsQuery**](TaskManagementApi#postTaskmanagementWorkbinsQuery) | **POST** /api/v2/taskmanagement/workbins/query | Query for workbins
@@ -49,6 +57,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTaskmanagementWorkitemsQuery**](TaskManagementApi#postTaskmanagementWorkitemsQuery) | **POST** /api/v2/taskmanagement/workitems/query | Query for workitems
 [**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi#postTaskmanagementWorkitemsQueryJobs) | **POST** /api/v2/taskmanagement/workitems/query/jobs | Create a workitem query job
 [**postTaskmanagementWorkitemsSchemas**](TaskManagementApi#postTaskmanagementWorkitemsSchemas) | **POST** /api/v2/taskmanagement/workitems/schemas | Create a schema
+[**postTaskmanagementWorktypeFlowsOnattributechangeRules**](TaskManagementApi#postTaskmanagementWorktypeFlowsOnattributechangeRules) | **POST** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules | Add an attribute-change rule to a worktype
+[**postTaskmanagementWorktypeFlowsOncreateRules**](TaskManagementApi#postTaskmanagementWorktypeFlowsOncreateRules) | **POST** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules | Add an on-create rule to a worktype
 [**postTaskmanagementWorktypeStatuses**](TaskManagementApi#postTaskmanagementWorktypeStatuses) | **POST** /api/v2/taskmanagement/worktypes/{worktypeId}/statuses | Add a status to a worktype
 [**postTaskmanagementWorktypes**](TaskManagementApi#postTaskmanagementWorktypes) | **POST** /api/v2/taskmanagement/worktypes | Create a worktype
 [**postTaskmanagementWorktypesQuery**](TaskManagementApi#postTaskmanagementWorktypesQuery) | **POST** /api/v2/taskmanagement/worktypes/query | Query for worktypes
@@ -250,6 +260,110 @@ apiInstance.deleteTaskmanagementWorktype(worktypeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteTaskmanagementWorktypeFlowsOnattributechangeRule
+
+> void deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+
+
+DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}
+
+Delete a rule
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnAttributeChange:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let ruleId = "ruleId_example"; // String | ruleId
+
+apiInstance.deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+  .then(() => {
+    console.log('deleteTaskmanagementWorktypeFlowsOnattributechangeRule returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **ruleId** | **String** | ruleId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteTaskmanagementWorktypeFlowsOncreateRule
+
+> void deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+
+
+DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}
+
+Delete a rule
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnCreate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let ruleId = "ruleId_example"; // String | ruleId
+
+apiInstance.deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+  .then(() => {
+    console.log('deleteTaskmanagementWorktypeFlowsOncreateRule returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteTaskmanagementWorktypeFlowsOncreateRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **ruleId** | **String** | ruleId |  |
 
 ### Return type
 
@@ -1233,6 +1347,222 @@ apiInstance.getTaskmanagementWorktype(worktypeId, opts)
 **Worktype**
 
 
+## getTaskmanagementWorktypeFlowsOnattributechangeRule
+
+> WorkitemOnAttributeChangeRule getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+
+
+GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}
+
+Get an attribute change rule
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnAttributeChange:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let ruleId = "ruleId_example"; // String | ruleId
+
+apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorktypeFlowsOnattributechangeRule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorktypeFlowsOnattributechangeRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **ruleId** | **String** | ruleId |  |
+
+### Return type
+
+**WorkitemOnAttributeChangeRule**
+
+
+## getTaskmanagementWorktypeFlowsOnattributechangeRules
+
+> WorkitemOnAttributeChangeRuleListing getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opts)
+
+
+GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules
+
+Get all attribute-change rules for a worktype
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnAttributeChange:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': 25 // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+};
+
+apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opts)
+  .then((data) => {
+    console.log(`getTaskmanagementWorktypeFlowsOnattributechangeRules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorktypeFlowsOnattributechangeRules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+**WorkitemOnAttributeChangeRuleListing**
+
+
+## getTaskmanagementWorktypeFlowsOncreateRule
+
+> WorkitemOnCreateRule getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+
+
+GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}
+
+Get an on-create rule
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnCreate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let ruleId = "ruleId_example"; // String | ruleId
+
+apiInstance.getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorktypeFlowsOncreateRule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorktypeFlowsOncreateRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **ruleId** | **String** | ruleId |  |
+
+### Return type
+
+**WorkitemOnCreateRule**
+
+
+## getTaskmanagementWorktypeFlowsOncreateRules
+
+> WorkitemOnCreateRuleListing getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, opts)
+
+
+GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules
+
+Get all on-create rules for a worktype
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnCreate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': 25 // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+};
+
+apiInstance.getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, opts)
+  .then((data) => {
+    console.log(`getTaskmanagementWorktypeFlowsOncreateRules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorktypeFlowsOncreateRules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+**WorkitemOnCreateRuleListing**
+
+
 ## getTaskmanagementWorktypeHistory
 
 > WorktypeChangeListing getTaskmanagementWorktypeHistory(worktypeId, opts)
@@ -1827,6 +2157,114 @@ apiInstance.patchTaskmanagementWorktype(worktypeId, body)
 **Worktype**
 
 
+## patchTaskmanagementWorktypeFlowsOnattributechangeRule
+
+> WorkitemOnAttributeChangeRule patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body)
+
+
+PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}
+
+Update the attributes of a rule
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnAttributeChange:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let ruleId = "ruleId_example"; // String | ruleId
+let body = {}; // Object | Rule
+
+apiInstance.patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body)
+  .then((data) => {
+    console.log(`patchTaskmanagementWorktypeFlowsOnattributechangeRule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchTaskmanagementWorktypeFlowsOnattributechangeRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **ruleId** | **String** | ruleId |  |
+ **body** | **Object** | Rule |  |
+
+### Return type
+
+**WorkitemOnAttributeChangeRule**
+
+
+## patchTaskmanagementWorktypeFlowsOncreateRule
+
+> WorkitemOnCreateRule patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body)
+
+
+PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}
+
+Update the attributes of a rule
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnCreate:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let ruleId = "ruleId_example"; // String | ruleId
+let body = {}; // Object | Rule
+
+apiInstance.patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body)
+  .then((data) => {
+    console.log(`patchTaskmanagementWorktypeFlowsOncreateRule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchTaskmanagementWorktypeFlowsOncreateRule');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **ruleId** | **String** | ruleId |  |
+ **body** | **Object** | Rule |  |
+
+### Return type
+
+**WorkitemOnCreateRule**
+
+
 ## patchTaskmanagementWorktypeStatus
 
 > WorkitemStatus patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
@@ -2339,6 +2777,110 @@ apiInstance.postTaskmanagementWorkitemsSchemas(body)
 **DataSchema**
 
 
+## postTaskmanagementWorktypeFlowsOnattributechangeRules
+
+> WorkitemOnAttributeChangeRule postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body)
+
+
+POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules
+
+Add an attribute-change rule to a worktype
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnAttributeChange:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let body = {}; // Object | Rule
+
+apiInstance.postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body)
+  .then((data) => {
+    console.log(`postTaskmanagementWorktypeFlowsOnattributechangeRules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTaskmanagementWorktypeFlowsOnattributechangeRules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **body** | **Object** | Rule |  |
+
+### Return type
+
+**WorkitemOnAttributeChangeRule**
+
+
+## postTaskmanagementWorktypeFlowsOncreateRules
+
+> WorkitemOnCreateRule postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body)
+
+
+POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules
+
+Add an on-create rule to a worktype
+
+Requires ANY permissions:
+
+* workitems:flowRuleOnCreate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let worktypeId = "worktypeId_example"; // String | Worktype id
+let body = {}; // Object | Rule
+
+apiInstance.postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body)
+  .then((data) => {
+    console.log(`postTaskmanagementWorktypeFlowsOncreateRules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTaskmanagementWorktypeFlowsOncreateRules');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **worktypeId** | **String** | Worktype id |  |
+ **body** | **Object** | Rule |  |
+
+### Return type
+
+**WorkitemOnCreateRule**
+
+
 ## postTaskmanagementWorktypeStatuses
 
 > WorkitemStatus postTaskmanagementWorktypeStatuses(worktypeId, body)
@@ -2543,4 +3085,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@205.0.0_
+_purecloud-platform-client-v2@206.0.0_

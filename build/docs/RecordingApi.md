@@ -1627,10 +1627,7 @@ GET /api/v2/recording/settings
 
 Get the Recording Settings for the Organization
 
-Requires ANY permissions:
-
-* recording:screenRecording:view
-* recording:settings:editScreenRecordings
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3148,6 +3145,8 @@ Update the Recording Settings for the Organization
 Requires ANY permissions:
 
 * recording:settings:editScreenRecordings
+* recording:settings:editRegionalStorage
+* recording:settings:editUrlExpiration
 
 ### Example Usage
 
@@ -3241,4 +3240,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@205.0.0_
+_purecloud-platform-client-v2@206.0.0_

@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 205.0.0
+	 * @version 206.0.0
 	 */
 
 	/**
@@ -853,6 +853,81 @@ class JourneyApi {
 	}
 
 	/**
+	 * Get a Chart by ID
+	 * returns the latest version
+	 * @param {String} viewId viewId
+	 * @param {String} journeyViewVersion Journey View Version
+	 * @param {String} chartId chartId
+	 */
+	getJourneyViewVersionChart(viewId, journeyViewVersion, chartId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionChart';
+		}
+		// verify the required parameter 'journeyViewVersion' is set
+		if (journeyViewVersion === undefined || journeyViewVersion === null) {
+			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionChart';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null) {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionChart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'chartId': chartId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Chart by ID and version
+	 * 
+	 * @param {String} viewId viewId
+	 * @param {String} journeyViewVersion Journey View Version
+	 * @param {String} chartId chartId
+	 * @param {String} chartVersion chartVersion
+	 */
+	getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'journeyViewVersion' is set
+		if (journeyViewVersion === undefined || journeyViewVersion === null) {
+			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null) {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'chartVersion' is set
+		if (chartVersion === undefined || chartVersion === null) {
+			throw 'Missing the required parameter "chartVersion" when calling getJourneyViewVersionChartVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'chartId': chartId,'chartVersion': chartVersion },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the job for a journey view version.
 	 * used for long descriptions
 	 * @param {String} viewId Journey View Id
@@ -912,6 +987,46 @@ class JourneyApi {
 			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results', 
 			'GET', 
 			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the chart result associated with a journey view job.
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * @param {String} jobId JobId
+	 * @param {String} chartId ChartId
+	 */
+	getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null) {
+			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null) {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionJobResultsChart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId,'chartId': chartId },
 			{  },
 			{  },
 			{  },
@@ -1193,6 +1308,46 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+	 * used for long descriptions
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * @param {String} jobId JobId
+	 * @param {Object} body journeyViewJob
+	 */
+	patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null) {
+			throw 'Missing the required parameter "journeyVersionId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchJourneyViewVersionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}', 
+			'PATCH', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1636,6 +1791,41 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Journey View by ID and version
+	 * does not create a new version
+	 * @param {String} viewId viewId
+	 * @param {String} versionId versionId
+	 * @param {Object} body JourneyView
+	 */
+	putJourneyViewVersion(viewId, versionId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling putJourneyViewVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling putJourneyViewVersion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putJourneyViewVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{versionId}', 
+			'PUT', 
+			{ 'viewId': viewId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
