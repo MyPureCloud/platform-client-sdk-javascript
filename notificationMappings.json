@@ -57,6 +57,10 @@
       "class": "AuditTopicAuditLogMessage"
     },
     {
+      "topic": "v2.bot.conversation.{id}.conversations.summaries",
+      "class": "ConversationSummaryTopicVirtualAgentsConversationSummaryEvent"
+    },
+    {
       "topic": "v2.businessunits.{id}.workforcemanagement.intraday",
       "class": "WfmBuIntradayDataUpdateTopicBuIntradayNotification"
     },

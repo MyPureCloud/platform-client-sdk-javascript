@@ -35,6 +35,7 @@ class Configuration {
 		this.basePath;
 		this.authUrl;
 		this.config;
+		this.gateway = undefined;
 		this.logger = new Logger();
 		this.setEnvironment();
 		this.liveLoadConfig();
@@ -132,10 +133,70 @@ class Configuration {
 				: this.live_reload_config;
 		this.host = this.getConfigString('general', 'host') !== undefined ? this.getConfigString('general', 'host') : this.host;
 
+		if (this.getConfigString('gateway', 'host') !== undefined) {
+			let gateway = {
+				host: this.getConfigString('gateway', 'host')
+			};
+			if (this.getConfigString('gateway', 'protocol') !== undefined) gateway.protocol = this.getConfigString('gateway', 'protocol');
+			if (this.getConfigInt('gateway', 'port') !== undefined) gateway.port = this.getConfigInt('gateway', 'port');
+			if (this.getConfigString('gateway', 'path_params_login') !== undefined) gateway.path_params_login = this.getConfigString('gateway', 'path_params_login');
+			if (this.getConfigString('gateway', 'path_params_api') !== undefined) gateway.path_params_api = this.getConfigString('gateway', 'path_params_api');
+			if (this.getConfigString('gateway', 'username') !== undefined) gateway.username = this.getConfigString('gateway', 'username');
+			if (this.getConfigString('gateway', 'password') !== undefined) gateway.password = this.getConfigString('gateway', 'password');
+			this.setGateway(gateway);
+		} else {
+			this.setGateway();
+		}
+
 		this.setEnvironment();
 
 		// Update logging configs
 		this.logger.setLogger();
+	}
+
+	/**
+	 * @description Sets the gateway used by the session
+	 * @param {object} gateway - Gateway Configuration interface
+	 * @param {string} gateway.host - The address of the gateway.
+	 * @param {string} gateway.protocol - (optional) The protocol to use. It will default to "https" if the parameter is not defined or empty.
+	 * @param {number} gateway.port - (optional) The port to target. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater or equal to 0).
+	 * @param {string} gateway.path_params_login - (optional) An arbitrary string to be appended to the gateway url path for Login requests.
+	 * @param {string} gateway.path_params_api - (optional) An arbitrary string to be appended to the gateway url path for API requests.
+	 * @param {string} gateway.username - (optional) Not used at this stage (for a possible future use).
+	 * @param {string} gateway.password - (optional) Not used at this stage (for a possible future use).
+	 */
+	setGateway(gateway) {
+		if (gateway) {
+			this.gateway = {
+				host: ''
+			};
+
+			if (gateway.protocol) this.gateway.protocol = gateway.protocol;
+			else this.gateway.protocol = 'https';
+			
+			if (gateway.host) this.gateway.host = gateway.host;
+			else this.gateway.host = '';
+
+			if (gateway.port && gateway.port > -1) this.gateway.port = gateway.port;
+			else this.gateway.port = -1;
+
+			if (gateway.path_params_login) {
+				this.gateway.path_params_login = gateway.path_params_login;
+				// Strip trailing slash
+				this.gateway.path_params_login = this.gateway.path_params_login.replace(/\/+$/, '');
+			} else this.gateway.path_params_login = '';
+
+			if (gateway.path_params_api) {
+				this.gateway.path_params_api = gateway.path_params_api;
+				// Strip trailing slash
+				this.gateway.path_params_api = this.gateway.path_params_api.replace(/\/+$/, '');
+			} else this.gateway.path_params_api = '';
+
+			if (gateway.username) this.gateway.username = gateway.username;
+			if (gateway.password) this.gateway.password = gateway.password;
+		} else {
+			this.gateway = undefined;
+		}
 	}
 
 	setEnvironment(env) {
@@ -153,6 +214,26 @@ class Configuration {
 
 		this.basePath = `https://api.${this.environment}`;
 		this.authUrl = `https://login.${this.environment}`;
+	}
+
+	getConfUrl(pathType, regionUrl) {
+		if (!this.gateway) return regionUrl;
+		if (!this.gateway.host) return regionUrl;
+		
+		var url = this.gateway.protocol + '://' + this.gateway.host;
+		if (this.gateway.port > -1) url = url + ':' + this.gateway.port.toString();
+		if (pathType === 'login') {
+			if (this.gateway.path_params_login) {
+				if (this.gateway.path_params_login.startsWith('/')) url = url + this.gateway.path_params_login;
+				else url = url + '/' + this.gateway.path_params_login;
+			}
+		} else {
+			if (this.gateway.path_params_api) {
+				if (this.gateway.path_params_api.startsWith('/')) url = url + this.gateway.path_params_api;
+				else url = url + '/' + this.gateway.path_params_api;
+			}
+		}
+		return url;
 	}
 
 	getConfigString(section, key) {

@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -343,7 +343,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
-	 * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -374,7 +373,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
-	 * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -405,7 +403,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} syncJobId Synchronization job ID
-	 * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -532,7 +529,6 @@ class KnowledgeApi {
 	 * Get sync options available for a knowledge-connect integration
 	 * 
 	 * @param {String} integrationId Integration ID
-	 * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeIntegrationOptions(integrationId) { 
 		// verify the required parameter 'integrationId' is set
@@ -1479,7 +1475,6 @@ class KnowledgeApi {
 	 * @param {Array.<String>} opts.status If specified, retrieves operations with specified operation status, comma separated values expected.
 	 * @param {String} opts.interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
 	 * @param {Array.<String>} opts.sourceId If specified, retrieves operations associated with source ids, comma separated values expected.
-	 * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -1507,7 +1502,6 @@ class KnowledgeApi {
 	 * Get ids of operation creator users and oauth clients
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
-	 * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -1572,7 +1566,6 @@ class KnowledgeApi {
 	 * @param {Object} opts.type If specified, retrieves integration sources with specified integration type.
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 * @param {Array.<String>} opts.ids If specified, retrieves integration sources with specified IDs.
-	 * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -1603,7 +1596,6 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
-	 * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts) { 
 		opts = opts || {};
@@ -1638,7 +1630,6 @@ class KnowledgeApi {
 	 * @param {String} sourceId Source ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
-	 * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts) { 
 		opts = opts || {};
@@ -1671,7 +1662,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} syncJobId Synchronization job ID
-	 * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2387,7 +2377,6 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} syncJobId Synchronization job ID
 	 * @param {Object} body 
-	 * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3609,7 +3598,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3640,7 +3628,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
-	 * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3671,7 +3658,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3702,7 +3688,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
-	 * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3733,7 +3718,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3821,7 +3805,6 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
 	 * @param {Object} body 
-	 * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3857,7 +3840,6 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
 	 * @param {Object} body 
-	 * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set

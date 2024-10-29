@@ -4,7 +4,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 206.0.0
+ * @version 207.0.0
  */
 class ApiClient {
 	/**
@@ -203,6 +203,21 @@ class ApiClient {
 	}
 
 	/**
+	 * @description Sets the gateway used by the session
+	 * @param {object} gateway - Gateway Configuration interface
+	 * @param {string} gateway.host - The address of the gateway.
+	 * @param {string} gateway.protocol - (optional) The protocol to use. It will default to "https" if the parameter is not defined or empty.
+	 * @param {string} gateway.port - (optional) The port to target. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater than 0).
+	 * @param {string} gateway.path_params_login - (optional) An arbitrary string to be appended to the gateway url path for Login requests.
+	 * @param {string} gateway.path_params_api - (optional) An arbitrary string to be appended to the gateway url path for API requests.
+	 * @param {string} gateway.username - (optional) Not used at this stage (for a possible future use).
+	 * @param {string} gateway.password - (optional) Not used at this stage (for a possible future use).
+	 */
+	setGateway(gateway) {
+		this.config.setGateway(gateway);
+	}
+
+	/**
 	 * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
 	 * @param {string} clientId - The client ID of an OAuth Implicit Grant client
 	 * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
@@ -266,6 +281,7 @@ class ApiClient {
 	loginClientCredentialsGrant(clientId, clientSecret) {
 		this.clientId = clientId;
 		var authHeader = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
 
 		return new Promise((resolve, reject) => {
 			// Block browsers from using client credentials
@@ -278,7 +294,7 @@ class ApiClient {
 			}
 			axios({
 				method: `POST`,
-				url: `https://login.${this.config.environment}/oauth/token`,
+				url: `${loginBasePath}/oauth/token`,
 				headers: headers,
 				data: 'grant_type=client_credentials',
 				httpsAgent: this.proxyAgent
@@ -289,7 +305,7 @@ class ApiClient {
 						'trace',
 						response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						headers,
 						response.headers,
 						{ grant_type: 'client_credentials' },
@@ -299,7 +315,7 @@ class ApiClient {
 						'debug',
 						response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						headers,
 						undefined,
 						{ grant_type: 'client_credentials' },
@@ -323,7 +339,7 @@ class ApiClient {
 							'error',
 							error.response.status,
 							'POST',
-							`https://login.${this.config.environment}/oauth/token`,
+							`${loginBasePath}/oauth/token`,
 							headers,
 							error.response.headers,
 							{ grant_type: 'client_credentials' },
@@ -344,6 +360,7 @@ class ApiClient {
 	 */
     loginSaml2BearerGrant(clientId, clientSecret, orgName, assertion) {
 		this.clientId = clientId;
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
 		return new Promise((resolve, reject) => {
 			if (typeof window !== 'undefined') {
 				reject(new Error('The saml2bearer grant is not supported in a browser.'));
@@ -369,7 +386,7 @@ class ApiClient {
 						'trace',
 						response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						request.headers,
 						response.headers,
 						bodyParam,
@@ -379,7 +396,7 @@ class ApiClient {
 						'debug',
 						response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						request.headers,
 						undefined,
 						bodyParam,
@@ -403,7 +420,7 @@ class ApiClient {
 							'error',
 							error.response.status,
 							'POST',
-							`https://login.${this.config.environment}/oauth/token`,
+							`${loginBasePath}/oauth/token`,
 							request.headers,
 							error.response.headers,
 							bodyParam,
@@ -424,10 +441,11 @@ class ApiClient {
 	 */
     authorizePKCEGrant(clientId, codeVerifier, authCode, redirectUri) {
 		this.clientId = clientId;
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
 		return new Promise((resolve, reject) => {
 			var request = axios({
 				method: `POST`,
-				url: `https://login.${this.config.environment}/oauth/token`,
+				url: `${loginBasePath}/oauth/token`,
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
@@ -454,7 +472,7 @@ class ApiClient {
 					'trace',
 					response.status,
 					'POST',
-					`https://login.${this.config.environment}/oauth/token`,
+					`${loginBasePath}/oauth/token`,
 					request.headers,
 					response.headers,
 					bodyParam,
@@ -464,7 +482,7 @@ class ApiClient {
 					'debug',
 					response.status,
 					'POST',
-					`https://login.${this.config.environment}/oauth/token`,
+					`${loginBasePath}/oauth/token`,
 					request.headers,
 					undefined,
 					bodyParam,
@@ -488,7 +506,7 @@ class ApiClient {
 						'error',
 						error.response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						request.headers,
 						error.response.headers,
 						bodyParam,
@@ -812,6 +830,8 @@ class ApiClient {
 	 * @param {function} reject - Promise reject callback
 	 */
 	_handleCodeAuthorizationResponse(request, bodyParam, resolve, reject) {
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
+
 		request
 			.then((response) => {
 				// Logging
@@ -819,7 +839,7 @@ class ApiClient {
 					'trace',
 					response.status,
 					'POST',
-					`https://login.${this.config.environment}/oauth/token`,
+					`${loginBasePath}/oauth/token`,
 					request.headers,
 					response.headers,
 					bodyParam,
@@ -829,7 +849,7 @@ class ApiClient {
 					'debug',
 					response.status,
 					'POST',
-					`https://login.${this.config.environment}/oauth/token`,
+					`${loginBasePath}/oauth/token`,
 					request.headers,
 					undefined,
 					bodyParam,
@@ -855,7 +875,7 @@ class ApiClient {
 						'error',
 						error.response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						request.headers,
 						error.response.headers,
 						bodyParam,
@@ -873,9 +893,10 @@ class ApiClient {
 	 * @param {object} data - data to url form encode
 	 */
 	_formAuthRequest(encodedData, data) {
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
 		var request = axios({
 			method: `POST`,
-			url: `https://login.${this.config.environment}/oauth/token`,
+			url: `${loginBasePath}/oauth/token`,
 			headers: {
 				'Authorization': 'Basic ' + encodedData,
 				'Content-Type': 'application/x-www-form-urlencoded'
@@ -1064,7 +1085,8 @@ class ApiClient {
 	 */
 	_buildAuthUrl(path, query) {
 		if (!query) query = {};
-		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.config.authUrl}/${path}?`);
+		var loginBasePath = this.config.getConfUrl('login', this.config.authUrl);
+		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${loginBasePath}/${path}?`);
 	}
 
 	/**
@@ -1126,7 +1148,7 @@ class ApiClient {
 		if (!path.match(/^\//)) {
 			path = `/${path}`;
 		}
-		var url = this.config.basePath + path;
+		var url = this.config.getConfUrl('api', this.config.basePath) + path;
 		url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
 			var value;
 			if (pathParams.hasOwnProperty(key)) {

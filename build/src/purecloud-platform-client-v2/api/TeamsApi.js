@@ -5,7 +5,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -79,8 +79,12 @@ class TeamsApi {
 	 * Get team
 	 * 
 	 * @param {String} teamId Team ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand the division name
 	 */
-	getTeam(teamId) { 
+	getTeam(teamId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
 		if (teamId === undefined || teamId === null) {
 			throw 'Missing the required parameter "teamId" when calling getTeam';
@@ -90,7 +94,7 @@ class TeamsApi {
 			'/api/v2/teams/{teamId}', 
 			'GET', 
 			{ 'teamId': teamId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 

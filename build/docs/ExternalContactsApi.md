@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteExternalcontactsContactNote**](ExternalContactsApi#deleteExternalcontactsContactNote) | **DELETE** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Delete a note for an external contact
 [**deleteExternalcontactsContactsSchema**](ExternalContactsApi#deleteExternalcontactsContactsSchema) | **DELETE** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Delete a schema
 [**deleteExternalcontactsExternalsource**](ExternalContactsApi#deleteExternalcontactsExternalsource) | **DELETE** /api/v2/externalcontacts/externalsources/{externalSourceId} | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+[**deleteExternalcontactsImportCsvSetting**](ExternalContactsApi#deleteExternalcontactsImportCsvSetting) | **DELETE** /api/v2/externalcontacts/import/csv/settings/{settingsId} | Delete settings for CSV import
 [**deleteExternalcontactsOrganization**](ExternalContactsApi#deleteExternalcontactsOrganization) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Delete an external organization
 [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi#deleteExternalcontactsOrganizationNote) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Delete a note for an external organization
 [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi#deleteExternalcontactsOrganizationTrustor) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor | Unlink the Trustor for this External Organization
@@ -27,6 +28,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactsSchemas**](ExternalContactsApi#getExternalcontactsContactsSchemas) | **GET** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas.
 [**getExternalcontactsExternalsource**](ExternalContactsApi#getExternalcontactsExternalsource) | **GET** /api/v2/externalcontacts/externalsources/{externalSourceId} | Fetch an External Source
 [**getExternalcontactsExternalsources**](ExternalContactsApi#getExternalcontactsExternalsources) | **GET** /api/v2/externalcontacts/externalsources | Fetch a list of External Sources
+[**getExternalcontactsImportCsvSetting**](ExternalContactsApi#getExternalcontactsImportCsvSetting) | **GET** /api/v2/externalcontacts/import/csv/settings/{settingsId} | Get settings for CSV import
+[**getExternalcontactsImportCsvSettings**](ExternalContactsApi#getExternalcontactsImportCsvSettings) | **GET** /api/v2/externalcontacts/import/csv/settings | Retrieve all settings for organization filtered by externalSettingsId if provided
+[**getExternalcontactsImportCsvUploadDetails**](ExternalContactsApi#getExternalcontactsImportCsvUploadDetails) | **GET** /api/v2/externalcontacts/import/csv/uploads/{uploadId}/details | Get details for CSV upload
+[**getExternalcontactsImportCsvUploadPreview**](ExternalContactsApi#getExternalcontactsImportCsvUploadPreview) | **GET** /api/v2/externalcontacts/import/csv/uploads/{uploadId}/preview | Get preview for CSV upload
 [**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
 [**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
 [**getExternalcontactsOrganizationNote**](ExternalContactsApi#getExternalcontactsOrganizationNote) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Fetch a note for an external organization
@@ -67,6 +72,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
 [**postExternalcontactsExternalsources**](ExternalContactsApi#postExternalcontactsExternalsources) | **POST** /api/v2/externalcontacts/externalsources | Create an External Source
 [**postExternalcontactsIdentifierlookup**](ExternalContactsApi#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
+[**postExternalcontactsImportCsvJobs**](ExternalContactsApi#postExternalcontactsImportCsvJobs) | **POST** /api/v2/externalcontacts/import/csv/jobs | Create CSV import job
+[**postExternalcontactsImportCsvSettings**](ExternalContactsApi#postExternalcontactsImportCsvSettings) | **POST** /api/v2/externalcontacts/import/csv/settings | Create settings for CSV import
+[**postExternalcontactsImportCsvUploads**](ExternalContactsApi#postExternalcontactsImportCsvUploads) | **POST** /api/v2/externalcontacts/import/csv/uploads | Get url for CSV upload
 [**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
 [**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
 [**postExternalcontactsOrganizations**](ExternalContactsApi#postExternalcontactsOrganizations) | **POST** /api/v2/externalcontacts/organizations | Create an external organization
@@ -77,6 +85,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putExternalcontactsContactsSchema**](ExternalContactsApi#putExternalcontactsContactsSchema) | **PUT** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Update a schema
 [**putExternalcontactsConversation**](ExternalContactsApi#putExternalcontactsConversation) | **PUT** /api/v2/externalcontacts/conversations/{conversationId} | Associate/disassociate an external contact with a conversation
 [**putExternalcontactsExternalsource**](ExternalContactsApi#putExternalcontactsExternalsource) | **PUT** /api/v2/externalcontacts/externalsources/{externalSourceId} | Update an External Source
+[**putExternalcontactsImportCsvSetting**](ExternalContactsApi#putExternalcontactsImportCsvSetting) | **PUT** /api/v2/externalcontacts/import/csv/settings/{settingsId} | Update settings for CSV import
 [**putExternalcontactsOrganization**](ExternalContactsApi#putExternalcontactsOrganization) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update an external organization
 [**putExternalcontactsOrganizationNote**](ExternalContactsApi#putExternalcontactsOrganizationNote) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update a note for an external organization
 [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi#putExternalcontactsOrganizationTrustorTrustorId) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} | Links a Trustor with an External Organization
@@ -289,6 +298,56 @@ apiInstance.deleteExternalcontactsExternalsource(externalSourceId)
 ### Return type
 
 **Object**
+
+
+## deleteExternalcontactsImportCsvSetting
+
+> void deleteExternalcontactsImportCsvSetting(settingsId)
+
+
+DELETE /api/v2/externalcontacts/import/csv/settings/{settingsId}
+
+Delete settings for CSV import
+
+Requires ANY permissions:
+
+* externalContacts:importCsvSettings:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let settingsId = "settingsId_example"; // String | Settings id
+
+apiInstance.deleteExternalcontactsImportCsvSetting(settingsId)
+  .then(() => {
+    console.log('deleteExternalcontactsImportCsvSetting returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsImportCsvSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **settingsId** | **String** | Settings id |  |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteExternalcontactsOrganization
@@ -1203,6 +1262,212 @@ apiInstance.getExternalcontactsExternalsources(opts)
 ### Return type
 
 **CursorExternalSourceListing**
+
+
+## getExternalcontactsImportCsvSetting
+
+> CsvSettings getExternalcontactsImportCsvSetting(settingsId)
+
+
+GET /api/v2/externalcontacts/import/csv/settings/{settingsId}
+
+Get settings for CSV import
+
+Requires ANY permissions:
+
+* externalContacts:importCsvSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let settingsId = "settingsId_example"; // String | Settings id
+
+apiInstance.getExternalcontactsImportCsvSetting(settingsId)
+  .then((data) => {
+    console.log(`getExternalcontactsImportCsvSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsImportCsvSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **settingsId** | **String** | Settings id |  |
+
+### Return type
+
+**CsvSettings**
+
+
+## getExternalcontactsImportCsvSettings
+
+> Listing getExternalcontactsImportCsvSettings(opts)
+
+
+GET /api/v2/externalcontacts/import/csv/settings
+
+Retrieve all settings for organization filtered by externalSettingsId if provided
+
+Requires ANY permissions:
+
+* externalContacts:importCsvSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'externalSettingsId': "externalSettingsId_example" // String | External Settings Id to filter the list.
+};
+
+apiInstance.getExternalcontactsImportCsvSettings(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsImportCsvSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsImportCsvSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **externalSettingsId** | **String** | External Settings Id to filter the list. | [optional]  |
+
+### Return type
+
+**Listing**
+
+
+## getExternalcontactsImportCsvUploadDetails
+
+> CsvUploadDetailsResponse getExternalcontactsImportCsvUploadDetails(uploadId)
+
+
+GET /api/v2/externalcontacts/import/csv/uploads/{uploadId}/details
+
+Get details for CSV upload
+
+Requires ANY permissions:
+
+* externalContacts:importCsvUpload:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let uploadId = "uploadId_example"; // String | Upload id
+
+apiInstance.getExternalcontactsImportCsvUploadDetails(uploadId)
+  .then((data) => {
+    console.log(`getExternalcontactsImportCsvUploadDetails success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsImportCsvUploadDetails');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **uploadId** | **String** | Upload id |  |
+
+### Return type
+
+**CsvUploadDetailsResponse**
+
+
+## getExternalcontactsImportCsvUploadPreview
+
+> CsvUploadPreviewResponse getExternalcontactsImportCsvUploadPreview(uploadId)
+
+
+GET /api/v2/externalcontacts/import/csv/uploads/{uploadId}/preview
+
+Get preview for CSV upload
+
+Requires ANY permissions:
+
+* externalContacts:importCsvUpload:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let uploadId = "uploadId_example"; // String | Upload id
+
+apiInstance.getExternalcontactsImportCsvUploadPreview(uploadId)
+  .then((data) => {
+    console.log(`getExternalcontactsImportCsvUploadPreview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsImportCsvUploadPreview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **uploadId** | **String** | Upload id |  |
+
+### Return type
+
+**CsvUploadPreviewResponse**
 
 
 ## getExternalcontactsOrganization
@@ -3318,6 +3583,156 @@ apiInstance.postExternalcontactsIdentifierlookup(identifier, opts)
 **ExternalContact**
 
 
+## postExternalcontactsImportCsvJobs
+
+> CsvJobResponse postExternalcontactsImportCsvJobs(body)
+
+
+POST /api/v2/externalcontacts/import/csv/jobs
+
+Create CSV import job
+
+Requires ANY permissions:
+
+* externalContacts:importCsvJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | ImportRequest
+
+apiInstance.postExternalcontactsImportCsvJobs(body)
+  .then((data) => {
+    console.log(`postExternalcontactsImportCsvJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsImportCsvJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | ImportRequest |  |
+
+### Return type
+
+**CsvJobResponse**
+
+
+## postExternalcontactsImportCsvSettings
+
+> CsvSettings postExternalcontactsImportCsvSettings(body)
+
+
+POST /api/v2/externalcontacts/import/csv/settings
+
+Create settings for CSV import
+
+Requires ANY permissions:
+
+* externalContacts:importCsvSettings:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Settings
+
+apiInstance.postExternalcontactsImportCsvSettings(body)
+  .then((data) => {
+    console.log(`postExternalcontactsImportCsvSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsImportCsvSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Settings |  |
+
+### Return type
+
+**CsvSettings**
+
+
+## postExternalcontactsImportCsvUploads
+
+> CsvUploadResponse postExternalcontactsImportCsvUploads(body)
+
+
+POST /api/v2/externalcontacts/import/csv/uploads
+
+Get url for CSV upload
+
+Requires ANY permissions:
+
+* externalContacts:importCsvUpload:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | UploadRequest
+
+apiInstance.postExternalcontactsImportCsvUploads(body)
+  .then((data) => {
+    console.log(`postExternalcontactsImportCsvUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsImportCsvUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | UploadRequest |  |
+
+### Return type
+
+**CsvUploadResponse**
+
+
 ## postExternalcontactsMergeContacts
 
 > ExternalContact postExternalcontactsMergeContacts(body)
@@ -3844,6 +4259,58 @@ apiInstance.putExternalcontactsExternalsource(externalSourceId, body)
 **ExternalSource**
 
 
+## putExternalcontactsImportCsvSetting
+
+> CsvSettings putExternalcontactsImportCsvSetting(settingsId, body)
+
+
+PUT /api/v2/externalcontacts/import/csv/settings/{settingsId}
+
+Update settings for CSV import
+
+Requires ANY permissions:
+
+* externalContacts:importCsvSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let settingsId = "settingsId_example"; // String | Settings id
+let body = {}; // Object | Settings
+
+apiInstance.putExternalcontactsImportCsvSetting(settingsId, body)
+  .then((data) => {
+    console.log(`putExternalcontactsImportCsvSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsImportCsvSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **settingsId** | **String** | Settings id |  |
+ **body** | **Object** | Settings |  |
+
+### Return type
+
+**CsvSettings**
+
+
 ## putExternalcontactsOrganization
 
 > ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, body)
@@ -4109,4 +4576,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

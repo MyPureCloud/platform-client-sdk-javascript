@@ -2130,8 +2130,6 @@ GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId}
 
 Get an Event Definition
 
-getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:eventDefinition:view
@@ -2181,8 +2179,6 @@ apiInstance.getJourneyViewsEventdefinition(eventDefinitionId)
 GET /api/v2/journey/views/eventdefinitions
 
 Get a list of Event Definitions
-
-getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -3438,8 +3434,6 @@ Validate whether an encoding exist for a label/value combination.
 
 True indicates a valid encoding
 
-postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * journey:viewsEncodings:view
@@ -3539,4 +3533,4 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body)
 **JourneyView**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

@@ -53,6 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserTrustors**](UsersApi#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
 [**getUserVerifiers**](UsersApi#getUserVerifiers) | **GET** /api/v2/users/{userId}/verifiers | Get a list of verifiers
 [**getUsers**](UsersApi#getUsers) | **GET** /api/v2/users | Get the list of available users.
+[**getUsersChatsMe**](UsersApi#getUsersChatsMe) | **GET** /api/v2/users/chats/me | Get chats for a user
 [**getUsersDevelopmentActivities**](UsersApi#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
 [**getUsersDevelopmentActivitiesMe**](UsersApi#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
 [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
@@ -2586,6 +2587,63 @@ apiInstance.getUsers(opts)
 ### Return type
 
 **UserEntityListing**
+
+
+## getUsersChatsMe
+
+> ChatItemCursorListing getUsersChatsMe(opts)
+
+
+GET /api/v2/users/chats/me
+
+Get chats for a user
+
+Requires ANY permissions:
+
+* chat:chat:access
+* user:chats:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let opts = { 
+  'excludeClosed': true, // Boolean | Whether or not to exclude closed chats
+  'includePresence': true, // Boolean | Whether or not to include user presence
+  'after': "after_example" // String | The key to start after
+};
+
+apiInstance.getUsersChatsMe(opts)
+  .then((data) => {
+    console.log(`getUsersChatsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersChatsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **excludeClosed** | **Boolean** | Whether or not to exclude closed chats | [optional]  |
+ **includePresence** | **Boolean** | Whether or not to include user presence | [optional]  |
+ **after** | **String** | The key to start after | [optional]  |
+
+### Return type
+
+**ChatItemCursorListing**
 
 
 ## getUsersDevelopmentActivities
@@ -5268,4 +5326,4 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 **Verifier**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

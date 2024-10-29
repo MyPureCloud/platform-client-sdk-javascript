@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -1099,7 +1099,6 @@ class JourneyApi {
 	 * Get an Event Definition
 	 * 
 	 * @param {String} eventDefinitionId Event Definition ID
-	 * getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyViewsEventdefinition(eventDefinitionId) { 
 		// verify the required parameter 'eventDefinitionId' is set
@@ -1124,7 +1123,6 @@ class JourneyApi {
 	/**
 	 * Get a list of Event Definitions
 	 * 
-	 * getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getJourneyViewsEventdefinitions() { 
 
@@ -1777,7 +1775,6 @@ class JourneyApi {
 	 * True indicates a valid encoding
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<Object>} opts.body 
-	 * postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyViewsEncodingsValidate(opts) { 
 		opts = opts || {};

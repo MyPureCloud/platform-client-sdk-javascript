@@ -932,7 +932,7 @@ apiInstance.getAuthorizationRoleSubjectgrants(roleId, opts)
 
 ## getAuthorizationRoleUsers
 
-> UserEntityListing getAuthorizationRoleUsers(roleId, opts)
+> UserReferenceEntityListing getAuthorizationRoleUsers(roleId, opts)
 
 
 GET /api/v2/authorization/roles/{roleId}/users
@@ -983,7 +983,7 @@ apiInstance.getAuthorizationRoleUsers(roleId, opts)
 
 ### Return type
 
-**UserEntityListing**
+**UserReferenceEntityListing**
 
 
 ## getAuthorizationRoles
@@ -2428,4 +2428,4 @@ apiInstance.putUserRoles(subjectId, body)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

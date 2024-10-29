@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -643,6 +643,26 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Get Customer Care organization ids.
+	 * 
+	 */
+	getOrgauthorizationTrusteesCare() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/care', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get organization authorization trust with Customer Care, if one exists.
 	 * 
 	 */
@@ -1023,6 +1043,33 @@ class OrganizationAuthorizationApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.assignDefaultRole Assign Admin role to default pairing with Customer Care
+	 * @param {Boolean} opts.autoExpire Automatically expire pairing after 30 days
+	 * @param {Boolean} opts.assignFullAccess Grant Customer Care full access to the organization
+	 * @param {Boolean} opts.allowTrustedUserAccess Make Customer Care a Trusted User
+	 */
+	postOrgauthorizationTrusteesCare(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/care', 
+			'POST', 
+			{  },
+			{ 'assignDefaultRole': opts['assignDefaultRole'],'autoExpire': opts['autoExpire'],'assignFullAccess': opts['assignFullAccess'],'allowTrustedUserAccess': opts['allowTrustedUserAccess'] },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

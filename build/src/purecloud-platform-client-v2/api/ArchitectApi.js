@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -1750,7 +1750,7 @@ class ArchitectApi {
 	}
 
 	/**
-	 * Create flow version configuration
+	 * Get flow version configuration
 	 * 
 	 * @param {String} flowId Flow ID
 	 * @param {String} versionId Version ID

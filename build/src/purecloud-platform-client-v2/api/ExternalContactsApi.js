@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -116,6 +116,31 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/externalsources/{externalSourceId}', 
 			'DELETE', 
 			{ 'externalSourceId': externalSourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete settings for CSV import
+	 * 
+	 * @param {String} settingsId Settings id
+	 */
+	deleteExternalcontactsImportCsvSetting(settingsId) { 
+		// verify the required parameter 'settingsId' is set
+		if (settingsId === undefined || settingsId === null) {
+			throw 'Missing the required parameter "settingsId" when calling deleteExternalcontactsImportCsvSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/settings/{settingsId}', 
+			'DELETE', 
+			{ 'settingsId': settingsId },
 			{  },
 			{  },
 			{  },
@@ -584,6 +609,107 @@ class ExternalContactsApi {
 			'GET', 
 			{  },
 			{ 'cursor': opts['cursor'],'limit': opts['limit'],'name': opts['name'],'active': opts['active'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get settings for CSV import
+	 * 
+	 * @param {String} settingsId Settings id
+	 */
+	getExternalcontactsImportCsvSetting(settingsId) { 
+		// verify the required parameter 'settingsId' is set
+		if (settingsId === undefined || settingsId === null) {
+			throw 'Missing the required parameter "settingsId" when calling getExternalcontactsImportCsvSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/settings/{settingsId}', 
+			'GET', 
+			{ 'settingsId': settingsId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all settings for organization filtered by externalSettingsId if provided
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.externalSettingsId External Settings Id to filter the list.
+	 */
+	getExternalcontactsImportCsvSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/settings', 
+			'GET', 
+			{  },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'externalSettingsId': opts['externalSettingsId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details for CSV upload
+	 * 
+	 * @param {String} uploadId Upload id
+	 */
+	getExternalcontactsImportCsvUploadDetails(uploadId) { 
+		// verify the required parameter 'uploadId' is set
+		if (uploadId === undefined || uploadId === null) {
+			throw 'Missing the required parameter "uploadId" when calling getExternalcontactsImportCsvUploadDetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/uploads/{uploadId}/details', 
+			'GET', 
+			{ 'uploadId': uploadId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get preview for CSV upload
+	 * 
+	 * @param {String} uploadId Upload id
+	 */
+	getExternalcontactsImportCsvUploadPreview(uploadId) { 
+		// verify the required parameter 'uploadId' is set
+		if (uploadId === undefined || uploadId === null) {
+			throw 'Missing the required parameter "uploadId" when calling getExternalcontactsImportCsvUploadPreview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/uploads/{uploadId}/preview', 
+			'GET', 
+			{ 'uploadId': uploadId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1658,6 +1784,81 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Create CSV import job
+	 * 
+	 * @param {Object} body ImportRequest
+	 */
+	postExternalcontactsImportCsvJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsImportCsvJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create settings for CSV import
+	 * 
+	 * @param {Object} body Settings
+	 */
+	postExternalcontactsImportCsvSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsImportCsvSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/settings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get url for CSV upload
+	 * 
+	 * @param {Object} body UploadRequest
+	 */
+	postExternalcontactsImportCsvUploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsImportCsvUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/uploads', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Merge two contacts into a new contact record
 	 * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
 	 * @param {Object} body MergeRequest
@@ -1933,6 +2134,36 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/externalsources/{externalSourceId}', 
 			'PUT', 
 			{ 'externalSourceId': externalSourceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update settings for CSV import
+	 * 
+	 * @param {String} settingsId Settings id
+	 * @param {Object} body Settings
+	 */
+	putExternalcontactsImportCsvSetting(settingsId, body) { 
+		// verify the required parameter 'settingsId' is set
+		if (settingsId === undefined || settingsId === null) {
+			throw 'Missing the required parameter "settingsId" when calling putExternalcontactsImportCsvSetting';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putExternalcontactsImportCsvSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/csv/settings/{settingsId}', 
+			'PUT', 
+			{ 'settingsId': settingsId },
 			{  },
 			{  },
 			{  },

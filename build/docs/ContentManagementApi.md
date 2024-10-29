@@ -757,7 +757,6 @@ let apiInstance = new platformClient.ContentManagementApi();
 
 let sharedId = "sharedId_example"; // String | Shared ID
 let opts = { 
-  'redirect': true, // Boolean | Turn on or off redirect
   'disposition': "attachment", // String | Request how the share content will be downloaded: attached as a file or inline. Default is attachment.
   'contentType': "contentType_example", // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
   'expand': "expand_example" // String | Expand some document fields
@@ -779,7 +778,6 @@ apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sharedId** | **String** | Shared ID |  |
- **redirect** | **Boolean** | Turn on or off redirect | [optional] [default to true] |
  **disposition** | **String** | Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none |
  **contentType** | **String** | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: document.acl |
@@ -1958,4 +1956,4 @@ apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 **TagValue**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

@@ -123,7 +123,7 @@ void (no response body)
 
 ## getTeam
 
-> Team getTeam(teamId)
+> Team getTeam(teamId, opts)
 
 
 GET /api/v2/teams/{teamId}
@@ -148,8 +148,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TeamsApi();
 
 let teamId = "teamId_example"; // String | Team ID
+let opts = { 
+  'expand': "expand_example" // String | Expand the division name
+};
 
-apiInstance.getTeam(teamId)
+apiInstance.getTeam(teamId, opts)
   .then((data) => {
     console.log(`getTeam success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -165,6 +168,7 @@ apiInstance.getTeam(teamId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
+ **expand** | **String** | Expand the division name | [optional] <br />**Values**: entities.division |
 
 ### Return type
 
@@ -551,4 +555,4 @@ apiInstance.postTeamsSearch(body)
 **TeamsSearchResponse**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

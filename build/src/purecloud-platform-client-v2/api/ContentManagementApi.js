@@ -5,7 +5,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -394,7 +394,6 @@ class ContentManagementApi {
 	 * This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
 	 * @param {String} sharedId Shared ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.redirect Turn on or off redirect (default to true)
 	 * @param {Object} opts.disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (default to attachment)
 	 * @param {String} opts.contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
 	 * @param {Object} opts.expand Expand some document fields
@@ -411,7 +410,7 @@ class ContentManagementApi {
 			'/api/v2/contentmanagement/shared/{sharedId}', 
 			'GET', 
 			{ 'sharedId': sharedId },
-			{ 'redirect': opts['redirect'],'disposition': opts['disposition'],'contentType': opts['contentType'],'expand': opts['expand'] },
+			{ 'disposition': opts['disposition'],'contentType': opts['contentType'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 

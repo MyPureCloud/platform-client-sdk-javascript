@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -2983,6 +2983,56 @@ class OutboundApi {
 	}
 
 	/**
+	 * Start the campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 */
+	postOutboundCampaignStart(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignStart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/start', 
+			'POST', 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Stop the campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 */
+	postOutboundCampaignStop(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignStop';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/stop', 
+			'POST', 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create Campaign Rule
 	 * 
 	 * @param {Object} body CampaignRule
@@ -3675,6 +3725,56 @@ class OutboundApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start the campaign
+	 * Documented permissions are applicable based on campaign type.
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	postOutboundMessagingcampaignStart(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling postOutboundMessagingcampaignStart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start', 
+			'POST', 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Stop the campaign
+	 * Documented permissions are applicable based on campaign type.
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	postOutboundMessagingcampaignStop(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling postOutboundMessagingcampaignStop';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop', 
+			'POST', 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -218,6 +218,7 @@ docs/deleteExternalcontactsContact-example.txt
 docs/deleteExternalcontactsContactNote-example.txt
 docs/deleteExternalcontactsContactsSchema-example.txt
 docs/deleteExternalcontactsExternalsource-example.txt
+docs/deleteExternalcontactsImportCsvSetting-example.txt
 docs/deleteExternalcontactsOrganization-example.txt
 docs/deleteExternalcontactsOrganizationNote-example.txt
 docs/deleteExternalcontactsOrganizationTrustor-example.txt
@@ -747,6 +748,10 @@ docs/getExternalcontactsContactsSchemaVersions-example.txt
 docs/getExternalcontactsContactsSchemas-example.txt
 docs/getExternalcontactsExternalsource-example.txt
 docs/getExternalcontactsExternalsources-example.txt
+docs/getExternalcontactsImportCsvSetting-example.txt
+docs/getExternalcontactsImportCsvSettings-example.txt
+docs/getExternalcontactsImportCsvUploadDetails-example.txt
+docs/getExternalcontactsImportCsvUploadPreview-example.txt
 docs/getExternalcontactsOrganization-example.txt
 docs/getExternalcontactsOrganizationContacts-example.txt
 docs/getExternalcontactsOrganizationNote-example.txt
@@ -1110,6 +1115,7 @@ docs/getOrgauthorizationTrusteeUser-example.txt
 docs/getOrgauthorizationTrusteeUserRoles-example.txt
 docs/getOrgauthorizationTrusteeUsers-example.txt
 docs/getOrgauthorizationTrustees-example.txt
+docs/getOrgauthorizationTrusteesCare-example.txt
 docs/getOrgauthorizationTrusteesDefault-example.txt
 docs/getOrgauthorizationTrustor-example.txt
 docs/getOrgauthorizationTrustorCloneduser-example.txt
@@ -1540,6 +1546,7 @@ docs/getUserrecordingsSummary-example.txt
 docs/getUsers-example.txt
 docs/getUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
 docs/getUsersAgentuiAgentsAutoanswerAgentIdSettings-example.txt
+docs/getUsersChatsMe-example.txt
 docs/getUsersDevelopmentActivities-example.txt
 docs/getUsersDevelopmentActivitiesMe-example.txt
 docs/getUsersDevelopmentActivity-example.txt
@@ -1562,6 +1569,8 @@ docs/getVoicemailPolicy-example.txt
 docs/getVoicemailQueueMessages-example.txt
 docs/getVoicemailSearch-example.txt
 docs/getVoicemailSearch-example.txt
+docs/getVoicemailUserMailbox-example.txt
+docs/getVoicemailUserMessages-example.txt
 docs/getVoicemailUserpolicy-example.txt
 docs/getWebchatDeployment-example.txt
 docs/getWebchatDeployments-example.txt
@@ -2127,6 +2136,9 @@ docs/postExternalcontactsContacts-example.txt
 docs/postExternalcontactsContactsSchemas-example.txt
 docs/postExternalcontactsExternalsources-example.txt
 docs/postExternalcontactsIdentifierlookup-example.txt
+docs/postExternalcontactsImportCsvJobs-example.txt
+docs/postExternalcontactsImportCsvSettings-example.txt
+docs/postExternalcontactsImportCsvUploads-example.txt
 docs/postExternalcontactsMergeContacts-example.txt
 docs/postExternalcontactsOrganizationNotes-example.txt
 docs/postExternalcontactsOrganizations-example.txt
@@ -2291,6 +2303,7 @@ docs/postOrgauthorizationTrusteeGroups-example.txt
 docs/postOrgauthorizationTrusteeUsers-example.txt
 docs/postOrgauthorizationTrustees-example.txt
 docs/postOrgauthorizationTrusteesAudits-example.txt
+docs/postOrgauthorizationTrusteesCare-example.txt
 docs/postOrgauthorizationTrusteesDefault-example.txt
 docs/postOrgauthorizationTrustorAudits-example.txt
 docs/postOutboundAttemptlimits-example.txt
@@ -2298,6 +2311,8 @@ docs/postOutboundCallabletimesets-example.txt
 docs/postOutboundCallanalysisresponsesets-example.txt
 docs/postOutboundCampaignAgentownedmappingpreview-example.txt
 docs/postOutboundCampaignCallbackSchedule-example.txt
+docs/postOutboundCampaignStart-example.txt
+docs/postOutboundCampaignStop-example.txt
 docs/postOutboundCampaignrules-example.txt
 docs/postOutboundCampaigns-example.txt
 docs/postOutboundCampaignsProgress-example.txt
@@ -2324,6 +2339,8 @@ docs/postOutboundDnclists-example.txt
 docs/postOutboundFilespecificationtemplates-example.txt
 docs/postOutboundImporttemplates-example.txt
 docs/postOutboundImporttemplatesBulkAdd-example.txt
+docs/postOutboundMessagingcampaignStart-example.txt
+docs/postOutboundMessagingcampaignStop-example.txt
 docs/postOutboundMessagingcampaigns-example.txt
 docs/postOutboundMessagingcampaignsProgress-example.txt
 docs/postOutboundRulesets-example.txt
@@ -2626,6 +2643,7 @@ docs/putExternalcontactsContactNote-example.txt
 docs/putExternalcontactsContactsSchema-example.txt
 docs/putExternalcontactsConversation-example.txt
 docs/putExternalcontactsExternalsource-example.txt
+docs/putExternalcontactsImportCsvSetting-example.txt
 docs/putExternalcontactsOrganization-example.txt
 docs/putExternalcontactsOrganizationNote-example.txt
 docs/putExternalcontactsOrganizationTrustorTrustorId-example.txt

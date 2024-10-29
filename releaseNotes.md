@@ -1,339 +1,10569 @@
-Platform API version: 8525
+Platform API version: 8583
 
 
 
 
-# Major Changes (5 changes)
+# Major Changes (35 changes)
 
-**POST /api/v2/conversations/messages/{integrationId}/inbound/open/message** (1 change)
+**GET /api/v2/analytics/reporting/dashboards/users** (1 change)
 
-* Parameter prefetchConversationId was added
+* Parameter deletedOnly was added
 
-**GET /api/v2/users/{userId}/station** (1 change)
+**GET /api/v2/analytics/reporting/settings/users/{userId}/dashboards** (1 change)
 
-* Response 424 was removed
+* Parameter deletedOnly was added
 
-**PUT /api/v2/users/{userId}/station/associatedstation/{stationId}** (1 change)
+**GET /api/v2/authorization/roles/{roleId}/users** (1 change)
 
-* Response 424 was removed
+* Response 200 type was changed from UserEntityListing to UserReferenceEntityListing
 
-**ConversationDivisionMembership** (1 change)
+**GET /api/v2/contentmanagement/shared/{sharedId}** (2 changes)
 
-* Property entities was changed from DomainEntityRef[] to DivisionEntityRef[]
+* Parameter redirect was removed
+* Response 307 was removed
 
-**CampaignRuleExecutionSettings** (1 change)
+**POST /api/v2/conversations/{conversationId}/suggestions/feedback** (1 change)
 
-* Required property frequency was added
+* Has been deprecated
 
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}** (1 change)
 
-# Minor Changes (102 changes)
+* Response 200 type was changed from DocumentVariation to DocumentVariationResponse
 
-**/api/v2/journey/views/{viewId}/versions/{versionId}** (1 change)
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}** (1 change)
 
-* Operation put was added. Summary: Update a Journey View by ID and version
+* Response 200 type was changed from DocumentVariation to DocumentVariationResponse
 
-**/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}** (2 changes)
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations** (1 change)
 
-* Path was added
-* Operation GET was added
+* Response 200 type was changed from DocumentVariationListing to DocumentVariationResponseListing
 
-**/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}** (2 changes)
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations** (1 change)
 
-* Path was added
-* Operation GET was added
+* Response 200 type was changed from DocumentVariation to DocumentVariationResponse
 
-**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}** (1 change)
+**GET /api/v2/teams/{teamId}** (1 change)
 
-* Operation patch was added. Summary: Update the job for a journey view version. Only the status can be changed and only to Cancelled
+* Parameter expand was added
 
-**/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId}** (2 changes)
+**UserImage** (1 change)
 
-* Path was added
-* Operation GET was added
+* Model UserImage was removed
 
-**POST /api/v2/knowledge/documentuploads** (1 change)
+**DocumentVariation** (1 change)
 
-* Response 409 was added
+* Model DocumentVariation was removed
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query** (2 changes)
+**DocumentVariationListing** (1 change)
 
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**ExternalContactsSettings** (1 change)
-
-* Model was added
+* Model DocumentVariationListing was removed
 
 **Group** (1 change)
 
-* Optional property callsEnabled was added
+* Property images was changed from UserImage[] to Image[]
 
-**ConversationDetailQueryPredicate** (1 change)
+**User** (1 change)
 
-* Enum value originatingSocialMediaPublic was added to property dimension
+* Property images was changed from UserImage[] to Image[]
 
-**SocialKeyword** (1 change)
+**DashboardConfiguration** (1 change)
 
-* Model was added
+* Required property dateDeleted was added
 
-**ViewFilter** (12 changes)
+**QueueMediaSettings** (1 change)
 
-* Optional property socialCountries was added
-* Optional property socialLanguages was added
-* Optional property socialChannels was added
-* Optional property socialSentimentCategory was added
-* Optional property socialTopicIds was added
-* Optional property socialIngestionRuleIds was added
-* Optional property socialConversationCreated was added
-* Optional property socialContentType was added
-* Optional property socialKeywords was added
-* Optional property socialPostEscalated was added
-* Optional property socialClassifications was added
-* Optional property filterUsersByManagerIds was added
+* Property email was changed from MediaSettings to EmailMediaSettings
 
-**ReportingExportJobResponse** (1 change)
+**OrgUser** (1 change)
 
-* Enum value BAD_REQUEST_SCHEDULED_RUN was added to property exportErrorMessagesType
-
-**IdentityResolutionQueueConfig** (1 change)
-
-* Model was added
-
-**DivisionEntityRef** (1 change)
-
-* Model was added
-
-**Participant** (1 change)
-
-* Optional property externalContactInitialDivisionId was added
-
-**ConversationEnrichmentSentimentV2** (1 change)
-
-* Enum value Unknown was added to property tag
-
-**ConversationMessagingFromRecipient** (1 change)
-
-* Optional property externalContactId was added
-
-**ConversationMessagingToRecipient** (1 change)
-
-* Optional property externalContactId was added
-
-**OpenMessageNormalizedMessage** (1 change)
-
-* Optional property conversationId was added
-
-**ParticipantBasic** (1 change)
-
-* Optional property externalContactInitialDivisionId was added
-
-**CampaignRule** (3 changes)
-
-* Optional property campaignRuleProcessing was added
-* Optional property conditionGroups was added
-* Optional property executionSettings was added
-
-**CampaignRuleExecutionSettings** (1 change)
-
-* Optional property timeZoneId was added
-
-**CampaignStats** (3 changes)
-
-* Optional property rightPartyContactsCount was added
-* Optional property validAttempts was added
-* Optional property businessCategoryMetrics was added
+* Property images was changed from UserImage[] to Image[]
 
 **GroupUpdate** (1 change)
 
-* Optional property callsEnabled was added
+* Property images was changed from UserImage[] to Image[]
 
 **GroupCreate** (1 change)
 
-* Optional property callsEnabled was added
+* Property images was changed from UserImage[] to Image[]
 
-**JourneyView** (1 change)
+**ReplacementTerm** (1 change)
 
-* Optional property charts was added
+* Enum value FACEBOOK was removed from property type
 
-**JourneyViewJob** (1 change)
+**IntegrationType** (1 change)
 
-* Enum value Cancelled was added to property status
+* Property images was changed from UserImage[] to Image[]
 
-**IntentDefinition** (1 change)
+**DocumentBodyBlockWithHighlight** (2 changes)
 
-* Optional property description was added
+* Property list was changed from DocumentBodyList to DocumentBodyListWithHighlight
+* Property table was changed from DocumentBodyTable to DocumentBodyTableWithHighlight
 
-**NluUtterance** (1 change)
+**KnowledgeDocumentResponse** (1 change)
 
-* Optional property source was added
+* Property variations was changed from DocumentVariation[] to DocumentVariationResponse[]
 
-**NamespaceDocs** (1 change)
+**KnowledgeDocumentVersionVariation** (1 change)
 
-* Optional property name was added
+* Property body was changed from DocumentBody to DocumentBodyResponse
 
-**FreeTrialNamespace** (1 change)
+**KnowledgeGuestDocumentVariation** (1 change)
 
-* Optional property name was added
-
-**MessagingRecipient** (1 change)
-
-* Optional property externalContactId was added
-
-**IpAddressRange** (2 changes)
-
-* Enum value byot-stt was added to property service
-* Enum value bot-connector was added to property service
+* Property body was changed from DocumentBody to DocumentBodyResponse
 
 **TrustGroup** (1 change)
 
-* Optional property callsEnabled was added
+* Property images was changed from UserImage[] to Image[]
 
-**Annotation** (1 change)
+**TrustUser** (1 change)
 
-* Enum value Pause was added to property reason
+* Property images was changed from UserImage[] to Image[]
 
-**InfrastructureascodeJob** (3 changes)
+**ChatMessageUser** (1 change)
 
-* Enum value InternalError was added to property status
-* Enum value RollbackFailed was added to property status
-* Enum value RollbackComplete was added to property status
+* Property images was changed from UserImage[] to Image[]
 
-**UnifiedCommunicationsIntegration** (1 change)
+**UserMe** (1 change)
 
-* Optional property includeBadge was added
+* Property images was changed from UserImage[] to Image[]
 
-**WebDeploymentConfigurationVersionEntityListing** (2 changes)
+**UpdateUser** (1 change)
 
-* Optional property nextUri was added
-* Optional property previousUri was added
+* Property images was changed from UserImage[] to Image[]
 
-**ExpandableWebDeploymentEntityListing** (2 changes)
+**WebDeployment** (1 change)
 
-* Optional property nextUri was added
-* Optional property previousUri was added
+* Property flow was changed from DomainEntityRef to WebDeploymentFlowEntityRef
 
-**AgentWorkPlans** (1 change)
+**ExpandableWebDeployment** (1 change)
 
-* Model was added
-
-**AgentsWorkPlansResponse** (1 change)
-
-* Model was added
-
-**MuAgentsWorkPlansResult** (1 change)
-
-* Model was added
-
-**GetAgentsWorkPlansRequest** (1 change)
-
-* Model was added
-
-**UpdateMuAgentWorkPlanFailureResponse** (1 change)
-
-* Model was added
-
-**UpdateMuAgentWorkPlansBatchResponse** (1 change)
-
-* Model was added
-
-**UpdateMuAgentWorkPlanRequest** (1 change)
-
-* Model was added
-
-**UpdateMuAgentWorkPlansBatchRequest** (1 change)
-
-* Model was added
-
-**WorkPlanOverrideListWrapperWorkPlanOverrideRequest** (1 change)
-
-* Model was added
-
-**WorkPlanOverrideRequest** (1 change)
-
-* Model was added
-
-**UserNextActivityReminder** (1 change)
-
-* Model was added
-
-**WorkitemOnAttributeChangeCondition** (1 change)
-
-* Model was added
-
-**WorkitemOnAttributeChangeRule** (1 change)
-
-* Model was added
-
-**WorkitemRuleAction** (1 change)
-
-* Model was added
-
-**WorkitemOnAttributeChangeConditionUpdate** (1 change)
-
-* Model was added
-
-**WorkitemOnAttributeChangeRuleUpdate** (1 change)
-
-* Model was added
-
-**WorkitemOnAttributeChangeRuleCreate** (1 change)
-
-* Model was added
-
-**WorkitemOnAttributeChangeRuleListing** (1 change)
-
-* Model was added
-
-**WorkitemOnCreateRule** (1 change)
-
-* Model was added
-
-**WorkitemOnCreateRuleUpdate** (1 change)
-
-* Model was added
-
-**WorkitemOnCreateRuleCreate** (1 change)
-
-* Model was added
-
-**WorkitemOnCreateRuleListing** (1 change)
-
-* Model was added
+* Property flow was changed from DomainEntityRef to WebDeploymentFlowEntityRef
 
 
-# Point Changes (1 change)
+# Minor Changes (2363 changes)
+
+**POST /api/v2/events/users/routingstatus** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/events/users/presence** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/events/conversations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/divisions/home** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/divisions/limit** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/divisions/{divisionId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/authorization/divisions/{divisionId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/authorization/divisions/{divisionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/divisions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/divisionspermitted/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/divisionspermitted/paged/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/divisionspermitted/paged/{subjectId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/permissions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/products** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/verifiers** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/{userId}/verifiers/{verifierId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/users/{userId}/verifiers/{verifierId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/adfs** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/adfs** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/adfs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/cic** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/cic** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/cic** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/gsuite** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/gsuite** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/gsuite** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/generic** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/generic** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/generic** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/identitynow** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/identitynow** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/identitynow** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/{providerId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/{providerId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/{providerId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/identityproviders** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/oauth/authorizations/{clientId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/oauth/authorizations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/oauth/scopes/{scopeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/oauth/scopes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/okta** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/okta** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/okta** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/onelogin** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/onelogin** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/onelogin** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/ping** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/ping** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/ping** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/purecloud** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/purecloud** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/purecloud** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/pureengage** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/pureengage** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/pureengage** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/identityproviders/salesforce** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/identityproviders/salesforce** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/identityproviders/salesforce** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/embeddedintegration** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/organizations/embeddedintegration** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/ipaddressauthentication** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/organizations/ipaddressauthentication** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/whitelist** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/organizations/whitelist** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/authentication/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/organizations/authentication/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/tokens/me** (1 change)
+
+* Response 409 was added
+
+**HEAD /api/v2/tokens/me** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/tokens/me** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/tokens/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/agentui/agents/autoanswer/{agentId}/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/agentui/agents/autoanswer/{agentId}/settings** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/users/agentui/agents/autoanswer/{agentId}/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/users/agentui/agents/autoanswer/{agentId}/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/alerting/alerts/active** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/alerting/interactionstats/alerts/{alertId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/alerting/interactionstats/alerts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/alerting/interactionstats/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/alerting/interactionstats/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/alerting/interactionstats/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/alerting/interactionstats/rules** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/alerting/interactionstats/rules** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/alerting/interactionstats/alerts/unread** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/actions/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/agentcopilots/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/bots/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/conversations/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/conversations/activity/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/conversations/details/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/conversations/{conversationId}/details** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/conversations/details** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/conversations/{conversationId}/details/properties** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/conversations/details/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/conversations/details/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/analytics/conversations/details/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/conversations/details/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/conversations/details/jobs/availability** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/evaluations/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/flowexecutions/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/flows/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/flows/observations/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/flows/activity/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/journeys/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/knowledge/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/queues/observations/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/ratelimits/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/routing/activity/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/surveys/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/taskmanagement/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/teams/activity/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/transcripts/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/users/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/users/details/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/users/observations/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/users/activity/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/users/details/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/users/details/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/analytics/users/details/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/users/details/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/users/details/jobs/availability** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/botflows/{botFlowId}/reportingturns** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/botflows/{botFlowId}/sessions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/dataretention/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/reporting/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/analytics/reporting/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/reporting/settings/dashboards/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/reporting/settings/dashboards/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/reporting/dashboards/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/reporting/dashboards/users** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/reporting/dashboards/users/bulk/remove** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/reporting/settings/users/{userId}/dashboards** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/reporting/exports/metadata** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/reporting/exports** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/reporting/exports** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/assistants/{assistantId}/copilot** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/assistants/{assistantId}/copilot** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/assistants/{assistantId}/queues/{queueId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/assistants/{assistantId}/queues/{queueId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/assistants/{assistantId}/queues/{queueId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/assistants/{assistantId}/queues** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/assistants/{assistantId}/queues** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/assistants/{assistantId}/queues** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/assistants/{assistantId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/assistants/{assistantId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/assistants/{assistantId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/assistants** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/assistants** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/assistants/queues** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/audits/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/audits/query/{transactionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/audits/query/{transactionId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/audits/query/realtime** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/audits/query/realtime/related** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/audits/query/servicemapping** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/audits/query/realtime/servicemapping** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/subjects/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/subjects/{subjectId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/authorization/subjects/{subjectId}/bulkadd** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/authorization/subjects/{subjectId}/bulkreplace** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/authorization/subjects/{subjectId}/bulkremove** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/roles/{roleId}/users** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/authorization/roles/{roleId}/users/add** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/authorization/roles/{roleId}/users/remove** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/divisions/{divisionId}/grants** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/authorization/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/roles/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/authorization/roles/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/roles/{roleId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/authorization/roles/{roleId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/authorization/roles/{roleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/authorization/roles/{roleId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/authorization/roles/{roleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/roles** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/authorization/roles** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/authorization/roles/default** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/authorization/roles/default** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/roles/{roleId}/subjectgrants** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/authorization/subjects/rolecounts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{subjectId}/roles** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/{subjectId}/roles** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/screenrecording/token** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/billing/reports/billableusage** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/callforwarding** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/carrierservices/integrations/emergencylocations/me** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/certificate/details** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/chats/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/chats/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/rooms/{roomJid}/messages/{messageIds}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/users/{userId}/messages/{messageIds}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/chats/messages/{messageId}/reactions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/rooms/{roomJid}/messages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/chats/rooms/{roomJid}/messages** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/chats/rooms/{roomJid}/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/chats/rooms/{roomJid}/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/users/{userId}/messages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/chats/users/{userId}/messages** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/chats/users/{userId}/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/chats/users/{userId}/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/rooms/{roomJid}/participants/{participantJid}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/chats/rooms/{roomJid}/participants/{userId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/chats/rooms/{roomJid}/participants/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/rooms/{roomJid}/participants** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/rooms/{roomJid}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/chats/rooms/{roomJid}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/chats/rooms** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/chats/rooms/{roomJid}/messages/pins** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/threads/{threadId}/messages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/cobrowse** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/scripts/{scriptId}/export** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/uploads/{uploadId}/status** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/{scriptId}/pages/{pageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/{scriptId}/pages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/published/{scriptId}/pages/{pageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/published/{scriptId}/pages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/published/{scriptId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/published/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/published** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/scripts/published** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/published/{scriptId}/variables** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/{scriptId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scripts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/keyconfigurations/{keyconfigurationsId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/keyconfigurations/{keyconfigurationsId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/keyconfigurations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/keyconfigurations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/keyconfigurations/validate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/crossplatform/mediaretentionpolicies** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/crossplatform/mediaretentionpolicies** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/recording/crossplatform/mediaretentionpolicies** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/mediaretentionpolicies** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/mediaretentionpolicies** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/recording/mediaretentionpolicies** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/recordingkeys** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/recordingkeys** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/recordingkeys/rotationschedule** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/recording/recordingkeys/rotationschedule** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/localkeys** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/keyconfigurations/{keyConfigurationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/recording/keyconfigurations/{keyConfigurationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/keyconfigurations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/keyconfigurations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/keyconfigurations/validate** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/contacts/remove** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/contacts/add** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/contacts** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/contacts/update** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/contacts/unresolved** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/notes/add** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/notes/remove** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/notes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/notes/update** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/organizations/add** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/organizations/remove** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/organizations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/organizations/update** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/relationships** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/relationships/update** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/relationships/add** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/bulk/relationships/remove** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/{contactId}/notes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/contacts/{contactId}/notes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/{contactId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/externalcontacts/contacts/{contactId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/externalcontacts/contacts/{contactId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/{contactId}/identifiers** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/contacts/{contactId}/promotion** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/schemas/{schemaId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/schemas** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/contacts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/scan/contacts** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/externalcontacts/conversations/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/schemas/{schemaId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations/schemas** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/organizations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/organizations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/scan/organizations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/identifierlookup** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/scan/notes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/relationships/{relationshipId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/externalcontacts/relationships/{relationshipId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/externalcontacts/relationships/{relationshipId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/externalcontacts/relationships** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/scan/relationships** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/reversewhitepageslookup** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/contacts/{contactId}/unresolved** (1 change)
+
+* Response 409 was added
+
+**/api/v2/externalcontacts/import/csv/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/externalcontacts/import/csv/settings/{settingsId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+
+**/api/v2/externalcontacts/import/csv/settings** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/externalcontacts/import/csv/uploads/{uploadId}/details** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/externalcontacts/import/csv/uploads/{uploadId}/preview** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/externalcontacts/import/csv/uploads** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**GET /api/v2/contentmanagement/documents/{documentId}/content** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/contentmanagement/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/documents** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/contentmanagement/documents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/contentmanagement/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/securityprofiles** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/shares/{shareId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/contentmanagement/shares/{shareId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/shared/{sharedId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/shares** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/contentmanagement/shares** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/status/{statusId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/contentmanagement/status/{statusId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/status** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/usage** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/workspaces/{workspaceId}/members** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/workspaces/{workspaceId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/contentmanagement/workspaces/{workspaceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/contentmanagement/workspaces/{workspaceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/contentmanagement/workspaces** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/contentmanagement/workspaces** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/participants/attributes/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/barge** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/disconnect** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/assign** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/{conversationId}/tags** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/{conversationId}/utilizationlabel** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/secureattributes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/faxes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/callbacks/bulk/update** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/callbacks/bulk/disconnect** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/calls** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/calls/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/calls/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/calls/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/calls/maximumconferenceparties** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/calls/{conversationId}/participants** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/calls/history** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/callbacks** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/callbacks** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/callbacks** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/callbacks/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/callbacks/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/chats/{conversationId}/messages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/chats** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/chats** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/chats/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/chats/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/chats/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/cobrowsesessions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/cobrowsesessions/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/cobrowsesessions/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/emails** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails/{conversationId}/messages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/emails/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/emails/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails/{conversationId}/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/emails/{conversationId}/reconnect** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/emails/{conversationId}/messages/draft** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/emails/{conversationId}/messages/draft** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/emails/{conversationId}/inboundmessages** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/emails/agentless** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/emails/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/emails/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/cachedmedia** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/{messageId}/details** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{conversationId}/messages/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messages/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/messages/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/inbound/open** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{integrationId}/inbound/open/event** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{integrationId}/inbound/open/message** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/socials/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/videos/{conversationId}/recordingstate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/threadingtimeline** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/messaging/threadingtimeline** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/facebook/app** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations/facebook** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/facebook/permissions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations/instagram/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messaging/integrations/instagram/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations/instagram** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations/open/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations/open** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messaging/integrations/open** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/settings/default** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/messaging/settings/default** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/messaging/settings/default** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messaging/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/settings/{messageSettingId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/messaging/settings/{messageSettingId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messaging/settings/{messageSettingId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/supportedcontent/default** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/messaging/supportedcontent/default** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/supportedcontent** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/messaging/supportedcontent** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/{conversationId}/participants/{participantId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/suggestions/feedback** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/suggestions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/suggestions/{suggestionId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/credentials/{credentialId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/integrations/credentials/{credentialId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/integrations/credentials/{credentialId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/credentials/types** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/credentials** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/credentials** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/uploads/learning/coverart** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/uploads/workforcemanagement/historicaldata/csv** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/uploads/publicassets/images** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/uploads/recordings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/dataextensions/coretypes/{coretypeName}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/dataextensions/coretypes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/dataextensions/limits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables/divisionviews/{datatableId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/datatables/{datatableId}/export/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables/{datatableId}/import/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/datatables/{datatableId}/import/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables/{datatableId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/datatables/{datatableId}/rows** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/date** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/attemptlimits/{attemptLimitsId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/attemptlimits** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/attemptlimits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/callanalysisresponsesets** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/callanalysisresponsesets** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/callabletimesets/{callableTimeSetId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/callabletimesets** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/callabletimesets** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/divisionviews/{campaignId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/{campaignId}/interactions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/{campaignId}/linedistribution** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/{campaignId}/progress** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/campaigns/{campaignId}/progress** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/{campaignId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/campaigns/{campaignId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/{campaignId}/diagnostics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/{campaignId}/skillcombinations** (1 change)
+
+* Response 409 was added
+
+**/api/v2/outbound/campaigns/{campaignId}/start** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/outbound/campaigns/{campaignId}/stop** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**GET /api/v2/outbound/campaignrules/{campaignRuleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/campaignrules/{campaignRuleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaignrules** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/campaignrules** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/schedules/campaigns/{campaignId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/outbound/schedules/campaigns/{campaignId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/schedules/campaigns/{campaignId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/schedules/campaigns** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/{campaignId}/stats** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/campaigns/progress** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/all/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/campaigns/all** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/divisionviews/{contactListId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/{contactListId}/export** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlists/{contactListId}/export** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlistfilters/preview** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlistfilters/{contactListFilterId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlistfilters/bulk/retrieve** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlistfilters** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlistfilters** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/{contactListId}/importstatus** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/{contactListId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/contactlists/{contactListId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlisttemplates/{contactListTemplateId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/contactlisttemplates/{contactListTemplateId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlisttemplates** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/contactlisttemplates** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlisttemplates/bulk/add** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlisttemplates/bulk/retrieve** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlists** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlists/{contactListId}/clear** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlists/{contactListId}/contacts/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/contactlists/{contactListId}/contacts** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/contactlists/{contactListId}/contacts** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/conversations/{conversationId}/dnc** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/dnclists/divisionviews/{dncListId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/dnclists/divisionviews** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/dnclists/{dncListId}/emailaddresses** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/outbound/dnclists/{dncListId}/emailaddresses** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/dnclists/{dncListId}/export** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/dnclists/{dncListId}/export** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/dnclists/{dncListId}/importstatus** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/dnclists/{dncListId}/phonenumbers** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/outbound/dnclists/{dncListId}/phonenumbers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/dnclists/{dncListId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/dnclists/{dncListId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/dnclists** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/dnclists** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/events/{eventId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/events** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/filespecificationtemplates** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/importtemplates/{importTemplateId}/importstatus** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/importtemplates/{importTemplateId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/importtemplates/{importTemplateId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/importtemplates** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/importtemplates/bulk/add** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/messagingcampaigns/progress** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/rulesets/{ruleSetId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/rulesets/{ruleSetId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/rulesets** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/rulesets** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/sequences/{sequenceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/sequences/{sequenceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/schedules/sequences/{sequenceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/schedules/sequences/{sequenceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/schedules/sequences** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/sequences** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/sequences** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/wrapupcodemappings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/digitalrulesets** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/digitalrulesets** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/messagingcampaigns/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics** (1 change)
+
+* Response 409 was added
+
+**/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**GET /api/v2/outbound/messagingcampaigns** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/outbound/messagingcampaigns** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/schedules/emailcampaigns** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/outbound/schedules/messagingcampaigns** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/mobiledevices/{deviceId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/mobiledevices/{deviceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/mobiledevices/{deviceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/mobiledevices** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/mobiledevices** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/fieldconfig** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups/{groupId}/individuals** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups/{groupId}/members** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/groups/{groupId}/members** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups/{groupId}/profile** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/profiles/groups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups/{groupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/groups/{groupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/groups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/groups/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languages/{languageId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/languages/{languageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/locations/{locationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/locations/{locationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/locations/{locationId}/sublocations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/locations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/locations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/locations/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/locations/search** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/organizations/features/{featureName}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/adjacents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/superiors** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/directreports** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/favorites** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languages/translations/builtin** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languages/translations/organization** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languages/translations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languages/translations/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/profile** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/profiles/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/downloads/{downloadId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/employeeperformance/externalmetrics/data** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/employeeperformance/externalmetrics/definitions/{metricId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/employeeperformance/externalmetrics/definitions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/employeeperformance/externalmetrics/definitions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/instances/{instanceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/instances/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/instances/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/instances/querycapabilities** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/instances/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/instances/settings/executiondata** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/flows/instances/settings/executiondata** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/instances/settings/loglevels/default** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/flows/instances/settings/loglevels/default** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/flows/instances/settings/loglevels/default** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/instances/settings/loglevels** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/{flowId}/instances/settings/loglevels** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/flows/{flowId}/instances/settings/loglevels** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/flows/{flowId}/instances/settings/loglevels** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/instances/settings/loglevels/characteristics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/instances/settings/loglevels** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/fax/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/fax/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/fax/documents/{documentId}/content** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/fax/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/fax/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/fax/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/fax/documents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/fax/summary** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/status** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/gamification/status** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/leaderboard** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/leaderboard/bestpoints** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/leaderboard/all** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/leaderboard/all/bestpoints** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/metricdefinitions/{metricDefinitionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/metricdefinitions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/templates/{templateId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/templates** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles/users/me/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles/users/{userId}/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/profiles/{profileId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/gamification/profiles/{profileId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles/{profileId}/activate** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles/{profileId}/deactivate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/profiles/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/profiles/users/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/profiles** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/profiles/{profileId}/metrics** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles/{profileId}/metrics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/insights/users/{userId}/details** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/insights/details** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/insights/members** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/insights/groups/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/insights/groups/trends/all** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/insights** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/insights/users/{userId}/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/insights/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/profiles/{profileId}/members** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles/{profileId}/members** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gamification/profiles/{profileId}/members/validate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/bestpoints** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/attendance** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/points/alltime** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/points/average** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/points/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/values/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/values/average** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/{userId}/bestpoints** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/{userId}/attendance** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/{userId}/points/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/{userId}/points/alltime** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/{userId}/values/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/points/average** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/values/average** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gamification/scorecards/users/values/trends** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gdpr/requests/{requestId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gdpr/requests** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/gdpr/requests** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/gdpr/subjects** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/geolocations/{clientId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/users/{userId}/geolocations/{clientId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/geolocations/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/geolocations/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/greetings/{greetingId}/media** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/greetings/{greetingId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/greetings/{greetingId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/greetings/{greetingId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups/{groupId}/greetings/defaults** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/groups/{groupId}/greetings/defaults** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups/{groupId}/greetings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/groups/{groupId}/greetings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/greetings/defaults** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/greetings/defaults** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/greetings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/greetings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/greetings/defaults** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/{userId}/greetings/defaults** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/greetings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/{userId}/greetings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/clientapps** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/{integrationId}/config/current** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/integrations/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/integrations/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/types/{typeId}/configschemas/{configType}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/types/{typeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/types** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/userapps** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/categories** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/certificates/truststore** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/certificates** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}/draft** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/actions/{actionId}/draft** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/integrations/actions/{actionId}/draft** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/integrations/actions/{actionId}/draft** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/actions/{actionId}/draft/test** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/actions/{actionId}/draft/publish** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}/draft/validation** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/actions/{actionId}/execute** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/integrations/actions/{actionId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/integrations/actions/{actionId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/actions/{actionId}/test** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}/templates/{fileName}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/drafts** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/actions/drafts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/actions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/botconnector/{integrationId}/bots** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/integrations/botconnector/{integrationId}/bots** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/audioconnector/{integrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/audioconnector** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/dialogflow/agents/{agentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/dialogflow/agents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/dialogflowcx/agents/{agentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/dialogflowcx/agents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/lex/bot/{botId}/aliases** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/lex/bots** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/lexv2/bot/alias/{aliasId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/lexv2/bot/{botId}/aliases** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/lexv2/bots** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/stt/engines/{engineId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/stt/engines** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/tts/engines/{engineId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/tts/engines** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/tts/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/integrations/speech/tts/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/speech/tts/engines/{engineId}/voices** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/actionmaps/{actionMapId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/journey/actionmaps/{actionMapId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/actionmaps** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/actiontargets/{actionTargetId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/journey/actiontargets/{actionTargetId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/actiontargets** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/actiontemplates/{actionTemplateId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/journey/actiontemplates/{actionTemplateId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/actiontemplates** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/journey/actionmaps/estimates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/sessions/{sessionId}/events** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/journey/flows/paths/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/outcomes/{outcomeId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/journey/outcomes/{outcomeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/outcomes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/sessions/{sessionId}/outcomescores** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/outcomes/predictors/{predictorId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/journey/outcomes/predictors/{predictorId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/outcomes/predictors** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/segments/{segmentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/journey/segments/{segmentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/segments** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/sessions/{sessionId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/journey/views/encodings/validate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/views/eventdefinitions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/views/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/integrations/{integrationId}/options** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/answers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations/{variationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/views** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/domains/{domainId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/languageunderstanding/domains/{domainId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/domains** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languageunderstanding/domains** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/domains/{domainId}/feedback** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languageunderstanding/domains/{domainId}/feedback** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners/{minerId}/drafts** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languageunderstanding/miners/{minerId}/drafts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners/{minerId}/intents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners/{minerId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/languageunderstanding/miners/{minerId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languageunderstanding/miners/{minerId}/execute** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languageunderstanding/miners** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners/{minerId}/topics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languageunderstanding/miners/{minerId}/uploads** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/domains/{domainId}/versions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/languageunderstanding/domains/{domainId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/license/definitions/{licenseId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/license/definitions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/license/infer** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/license/toggles/{featureName}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/license/toggles/{featureName}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/license/organization** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/license/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/license/users** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/license/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/namespaces/{namespaceName}/counts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/changerequests/{requestId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/changerequests** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/docs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/docs/freetrial** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/namespaces** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/namespaces/{namespaceName}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/diagnostics/logcapture/browser/entries/download/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/diagnostics/logcapture/browser/entries/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/diagnostics/logcapture/browser/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/diagnostics/logcapture/browser/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/diagnostics/logcapture/browser/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/diagnostics/logcapture/browser/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/messaging/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/messaging/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/messaging/settings/default** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/messaging/settings/default** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/messaging/settings/default** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/messaging/settings/{messageSettingId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/messaging/settings/{messageSettingId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/messaging/settings/{messageSettingId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/messaging/supportedcontent/{supportedContentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/messaging/supportedcontent** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/messaging/supportedcontent** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/ipranges** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/answers** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/categories** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/guest/sessions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/surveys/scorable** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/quality/surveys/scorable** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/documentation/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/documentation/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/documentation/gkn/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/documentation/gkn/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/webchat/guest/conversations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/webdeployments/token/refresh** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/calendar/data/ics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/notifications/availabletopics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/notifications/channels** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/notifications/channels** (1 change)
+
+* Response 409 was added
+
+**HEAD /api/v2/notifications/channels/{channelId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/notifications/channels/{channelId}/subscriptions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/notifications/channels/{channelId}/subscriptions** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/notifications/channels/{channelId}/subscriptions** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/notifications/channels/{channelId}/subscriptions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/oauth/clients/{clientId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/oauth/clients/{clientId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/oauth/clients/{clientId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/oauth/clients/{clientId}/secret** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/oauth/clients/{clientId}/usage/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/oauth/clients/{clientId}/usage/summary** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/oauth/clients** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/oauth/clients** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/usage/events/definitions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/usage/events/definitions/{eventDefinitionId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/orgauthorization/trustees/audits** (1 change)
+
+* Response 409 was added
+
+**/api/v2/orgauthorization/trustees/care** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/default** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/orgauthorization/trustees/default** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/pairings/{pairingId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/orgauthorization/pairings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/{trusteeOrgId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/orgauthorization/trustor/audits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustors/{trustorOrgId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustors** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustors** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orgauthorization/trustees** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/orgauthorization/trustees** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orgauthorization/trustees** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/outofoffice** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/{userId}/outofoffice** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}/estimatedwaittime** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/presences/purecloud/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/presences/{sourceId}/bulk** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/presences/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/presencedefinitions/{presenceId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/presencedefinitions/{presenceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/presencedefinitions/{presenceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/presencedefinitions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/presencedefinitions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/presence/definitions/{definitionId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/presence/definitions/{definitionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/presence/definitions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/presence/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/presence/sources/{sourceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/presence/sources** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/systempresences** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/presences/purecloud** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/presences/{sourceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/presence/users/{userId}/primarysource** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/presence/users/{userId}/primarysource** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/processautomation/triggers/topics/{topicName}/test** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/processautomation/triggers/topics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/processautomation/triggers/{triggerId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/processautomation/triggers/{triggerId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/processautomation/triggers/{triggerId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/processautomation/triggers/{triggerId}/test** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/processautomation/triggers** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/processautomation/triggers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/agents/activity** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/batchrequests** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/batchrequests/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/calibrations/{calibrationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/quality/calibrations/{calibrationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/quality/calibrations/{calibrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/calibrations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/calibrations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/conversations/audits/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/conversations/audits/query/{transactionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/conversations/audits/query/{transactionId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recordings/deletionprotection** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/recordings/deletionprotection** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/conversations/{conversationId}/evaluations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/conversations/{conversationId}/surveys** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/evaluations/aggregates/query/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/evaluations/{formId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/evaluations/{formId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/evaluations/bulk/contexts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/evaluations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/evaluations/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/evaluations/scoring** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/evaluators/activity** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orphanrecordings/{orphanId}/media** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orphanrecordings/{orphanId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/orphanrecordings/{orphanId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/orphanrecordings/{orphanId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/orphanrecordings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/publishedforms/evaluations/{formId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/publishedforms/evaluations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/publishedforms/evaluations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/publishedforms/surveys/{formId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/publishedforms/surveys** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/publishedforms/surveys** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/recordings/{recordingId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/recordingmetadata** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/recordings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recordings/retention/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/jobs/{jobId}/failedrecordings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/recording/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/recording/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/recording/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recording/uploads/reports/{reportId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recording/uploads/reports** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recordings/screensessions/metadata** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recordings/screensessions/details** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/recordings/screensessions/{recordingSessionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/recordings/screensessions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/recordings/screensessions/acknowledge** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/surveys/{formId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/quality/forms/surveys/{formId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/surveys/{formId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/surveys/bulk/contexts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/surveys/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/surveys** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/surveys/{surveyId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/surveys/scoring** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/{formId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms/{formId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/forms** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/publishedforms/{formId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/quality/publishedforms** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/alerting/alerts/{alertId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/alerting/alerts/{alertId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/alerting/alerts/{alertId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/alerting/alerts/{alertId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/alerting/alerts/bulk** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/alerting/alerts/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/alerting/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/alerting/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/alerting/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/alerting/rules/bulk** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/alerting/rules/bulk/remove** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/alerting/rules/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/alerting/rules** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/responsemanagement/libraries/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/responsemanagement/libraries** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/responsemanagement/libraries** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/responsemanagement/libraries/{libraryId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/responsemanagement/libraries/{libraryId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/responsemanagement/responses/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/responsemanagement/responses/{responseId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/responsemanagement/responses/{responseId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/responsemanagement/responses** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/responsemanagement/responses** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/responsemanagement/responseassets/{responseAssetId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/responsemanagement/responseassets/{responseAssetId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/responsemanagement/responseassets/status/{statusId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/responsemanagement/responseassets/uploads** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/responsemanagement/responseassets/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/availablemediatypes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/languages/{languageId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/languages/{languageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/languages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/languages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/divisionviews/all** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/queues/{queueId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/queues/{queueId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/queues/{queueId}/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/queues** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/settings/transcription** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/settings/transcription** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/settings/transcription** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/settings/contactcenter** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/settings/contactcenter** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/settings** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/skills/{skillId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/skills/{skillId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/skills** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/utilization/labels/{labelId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/utilization/labels/{labelId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/utilization/labels/{labelId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/utilization/labels/{labelId}/agents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/utilization/labels** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/utilization/labels** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/utilization** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/assessments/{assessmentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/assessments/{assessmentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/assessments** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/assessments** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/assessments/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/assessments/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/assessments/jobs** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/conversations/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/domains/{domainId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/email/domains/{domainId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/email/domains/{domainId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/email/domains/{domainId}/validate** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/email/domains/{domainId}/testconnection** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/domains** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/email/domains** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/setup** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/outbound/domains/{domainId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/email/outbound/domains/{domainId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/outbound/domains/{domainId}/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/outbound/domains/{domainId}/activation** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/email/outbound/domains/{domainId}/activation** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/outbound/domains** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/email/outbound/domains** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/email/domains/{domainName}/routes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/email/domains/{domainName}/routes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/email/outbound/domains/simulated** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/message/recipients/{recipientId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/message/recipients/{recipientId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/message/recipients** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/sms/addresses/{addressId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/sms/addresses/{addressId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/sms/addresses** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/sms/addresses** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/sms/availablephonenumbers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/sms/phonenumbers/{addressId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/sms/phonenumbers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/predictors/{predictorId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/predictors/{predictorId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/predictors/{predictorId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/predictors** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/predictors** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/predictors/keyperformanceindicators** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/predictors/{predictorId}/models/{modelId}/features** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/predictors/{predictorId}/models** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/queues/{queueId}/members/{memberId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/queues/{queueId}/members/{memberId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}/members** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/queues/{queueId}/members** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/queues/{queueId}/members** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/queues/{queueId}/users/{memberId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/queues/{queueId}/users/{memberId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}/users** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/queues/{queueId}/users** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/queues/{queueId}/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}/assistant** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/queues/{queueId}/comparisonperiods** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/skillgroups/{skillGroupId}/members/divisions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/skillgroups/{skillGroupId}/members/divisions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/skillgroups/{skillGroupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/skillgroups/{skillGroupId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/routing/skillgroups/{skillGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/skillgroups/{skillGroupId}/members** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/skillgroups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/skillgroups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/directroutingbackup/settings/me** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/directroutingbackup/settings/me** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/directroutingbackup/settings/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/users/{userId}/directroutingbackup/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/users/{userId}/directroutingbackup/settings** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/users/{userId}/utilization** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/wrapupcodes/divisionviews/{codeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/wrapupcodes/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/wrapupcodes/{codeId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/routing/wrapupcodes/{codeId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/wrapupcodes/{codeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/wrapupcodes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/resourcetypes/{resourceType}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/resourcetypes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/schemas** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/schemas/{schemaId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/groups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/groups/{groupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/serviceproviderconfig** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/resourcetypes/{resourceType}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/resourcetypes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/schemas** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/schemas/{schemaId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/groups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/groups/{groupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/serviceproviderconfig** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/search/suggest** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/search/suggest** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/conversations/transcripts/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/settings/executiondata** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/settings/executiondata** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/categories** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/categories/{categoryId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/speechandtextanalytics/categories/{categoryId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/conversations/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/dictionaryfeedback** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/speechandtextanalytics/dictionaryfeedback** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/sentimentfeedback** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/speechandtextanalytics/sentimentfeedback** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/speechandtextanalytics/sentimentfeedback** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/sentiment/dialects** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/speechandtextanalytics/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/speechandtextanalytics/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/conversations/{conversationId}/categories** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs/general/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/topics/general** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs/{programId}/mappings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs/publishjobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/speechandtextanalytics/programs/publishjobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs/{programId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/speechandtextanalytics/programs/{programId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs/mappings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/topics/publishjobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/speechandtextanalytics/topics/publishjobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/topics/{topicId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/topics/dialects** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/topics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/topics/general/status** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/programs/unpublished** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/speechandtextanalytics/transcripts/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/teams/{teamId}/members** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/teams/{teamId}/members** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/teams/{teamId}/members** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/teams/{teamId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/teams/{teamId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/teams/{teamId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/teams** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/teams** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/teams/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/mediaregions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/stations/{stationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/stations/{stationId}/associateduser** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/stations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/sipmessages/conversations/{conversationId}/headers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/sipmessages/conversations/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/addressvalidation** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/certificateauthorities** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/certificateauthorities** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/reboot** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/{edgeId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/statuscode** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/timezones** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/edgeversionreport** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/logicalinterfaces** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/physicalinterfaces** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/alertablepresences** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/telephony/providers/edges/alertablepresences** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/alertablepresences** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/didpools/{didPoolId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/didpools/dids** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/didpools** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/dids/{didId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/dids** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/edgegroups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/edgegroups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/extensionpools/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/extensionpools** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/extensions/{extensionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/extensions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/linebasesettings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/lines/{lineId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/lines** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/lines/template** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/metrics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/metrics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/outboundroutes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/phonebasesettings/template** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/phonebasesettings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/phonebasesettings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/phonebasesettings/availablemetabases** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/phones/template** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/phones/{phoneId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/phones/{phoneId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/phones** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/phones** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/phones/reboot** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/expired** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/sites/{siteId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/sites** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/sites** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunks/metrics** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunkbasesettings/template** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunkbasesettings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunkswithrecording** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/trunks** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunks/{trunkId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/trunks** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/siptraces** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/telephony/siptraces/download** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/siptraces/download/{downloadId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/infrastructureascode/accelerators/{acceleratorId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/infrastructureascode/accelerators** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/infrastructureascode/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/infrastructureascode/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/infrastructureascode/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/textbots/botflows/sessions/{sessionId}/turns** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/textbots/botflows/sessions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/textbots/bots/execute** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/textbots/bots/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/timezones** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/tokens/timeout** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/tokens/timeout** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/unifiedcommunications/clientapps** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/clientapps/unifiedcommunications** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/usage/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/usage/query/{executionId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/usage/simplesearch** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/usage/simplesearch/{executionId}/results** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/userrecordings/{recordingId}/media** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/userrecordings/{recordingId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/userrecordings/{recordingId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/userrecordings/{recordingId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/userrecordings/{recordingId}/transcoding** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/userrecordings/summary** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/userrecordings** (1 change)
+
+* Response 409 was added
+
+**/api/v2/users/chats/me** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**POST /api/v2/users/me/password** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/me** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/{userId}/password** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/profileskills** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/{userId}/profileskills** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/users/{userId}/queues/{queueId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/queues** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/users/{userId}/queues** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/{userId}/invite** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/users/{userId}/routinglanguages/{languageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/routinglanguages** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/{userId}/routinglanguages** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/users/{userId}/routinglanguages/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/routingskills** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/{userId}/routingskills** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/{userId}/routingskills/bulk** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/users/{userId}/routingskills/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/routingstatus** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/{userId}/routingstatus** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/skillgroups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/state** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/users/{userId}/state** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/station** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/users/{userId}/station/defaultstation** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/users/{userId}/station/associatedstation** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/{userId}/trustors** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/users/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/search/teams/assign** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/groups/{groupId}/messages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/queues/{queueId}/messages** (1 change)
+
+* Response 409 was added
+
+**/api/v2/voicemail/users/{userId}/messages** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**GET /api/v2/voicemail/groups/{groupId}/policy** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/voicemail/groups/{groupId}/policy** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/mailbox** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/me/mailbox** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/groups/{groupId}/mailbox** (1 change)
+
+* Response 409 was added
+
+**/api/v2/voicemail/users/{userId}/mailbox** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**GET /api/v2/voicemail/me/messages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/me/policy** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/voicemail/me/policy** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/voicemail/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/messages/{messageId}/media** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/messages** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/voicemail/messages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/policy** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/userpolicies/{userId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/voicemail/userpolicies/{userId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/voicemail/userpolicies/{userId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/voicemail/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/voicemail/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking/consumedresources** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking/consumingresources** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking/deletedresourceconsumers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking/build** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking/object** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking/types/{typeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking/types** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/emergencygroups/{emergencyGroupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/emergencygroups/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/emergencygroups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/architect/emergencygroups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/actions/unlock** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/actions/checkin** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/executions/{flowExecutionId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/executions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/versions/{versionId}/health** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/milestones/{milestoneId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/milestones/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/milestones** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/outcomes/{flowOutcomeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/outcomes/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/outcomes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/flows/{flowId}/history** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/history/{historyId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/latestconfiguration** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/versions/{versionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/versions/{versionId}/configuration** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/{flowId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/flows** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/architect/grammars/{grammarId}/languages/{languageCode}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/grammars/{grammarId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/grammars** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/ivrs/{ivrId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/ivrs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/architect/ivrs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/ivrs/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/prompts/{promptId}/resources** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/architect/prompts/{promptId}/history** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/prompts/{promptId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/prompts/{promptId}/history/{historyId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/prompts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/schedulegroups/{scheduleGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/schedulegroups/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/schedulegroups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/architect/schedulegroups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/schedules/{scheduleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/schedules/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/schedules** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/architect/schedules** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/systemprompts/{promptId}/resources** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/architect/systemprompts/{promptId}/history** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/systemprompts/{promptId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/systemprompts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/architect/dependencytracking/updatedresourceconsumers** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/webchat/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/webchat/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/deployments** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/settings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/webchat/settings** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/webchat/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/guest/conversations/{conversationId}/members** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webchat/guest/conversations/{conversationId}/messages** (1 change)
+
+* Response 409 was added
 
 **GET /api/v2/webdeployments/configurations** (1 change)
 
-* Description was changed for parameter showOnlyPublished
+* Response 409 was added
+
+**POST /api/v2/webdeployments/configurations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webdeployments/configurations/{configurationId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webdeployments/configurations/{configurationId}/versions/draft** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/webdeployments/configurations/{configurationId}/versions/draft** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webdeployments/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/webdeployments/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/webdeployments/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webdeployments/deployments/{deploymentId}/configurations** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/webdeployments/token/revoke** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webdeployments/deployments** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/webdeployments/deployments** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/webmessaging/messages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/coaching/appointments/{appointmentId}/annotations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/coaching/appointments/{appointmentId}/annotations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/coaching/appointments/{appointmentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/coaching/appointments/{appointmentId}/statuses** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/coaching/appointments/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/coaching/appointments** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/coaching/notifications/{notificationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/coaching/notifications/{notificationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/coaching/notifications** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/coaching/scheduleslots/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/coaching/appointments/me** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/development/activities/{activityId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/development/activities** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/users/development/activities/me** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/development/activities/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/employeeengagement/celebrations/{celebrationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/employeeengagement/celebrations/{celebrationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/employeeengagement/celebrations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/learning/assessments/scoring** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/learning/assignments/aggregates/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/assignments/{assignmentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/assignments** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/assignments/me** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/learning/assignments/bulkadd** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/learning/assignments/bulkremove** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/assignments/{assignmentId}/steps/{stepId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/learning/assignments/{assignmentId}/steps/{stepId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/learning/rules/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/modules/{moduleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/learning/modules/{moduleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/modules/{moduleId}/preview** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/modules/{moduleId}/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/modules/{moduleId}/versions/{versionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/modules/coverart/{coverArtId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/modules** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/learning/modules** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/modules/assignments** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/modules/{moduleId}/rule** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/learning/scorm** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/learning/scorm/{scormId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/employeeengagement/recognitions/{recognitionId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/employeeengagement/recognitions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/widgets/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/widgets/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/widgets/deployments/{deploymentId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/widgets/deployments** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/timeoffrequests/estimate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/divisionviews** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/agents/{agentId}/managementunit** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/agents/me/managementunit** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/agents** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/adherence/explanations/{explanationId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/adherence/explanations** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/adherence/explanations/query** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/adherence/historical/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/adherence/historical** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/adherence/historical/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/adherence** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/agents/me/possibleworkshifts** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/alternativeshifts/offers/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/alternativeshifts/trades** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/alternativeshifts/trades** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/calendar/url/ics** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/calendar/url/ics** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/calendar/url/ics** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/timeofflimits/available/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/timeoffrequests** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/timeoffrequests** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/workplanbids** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/workplanbids/{bidId}/preferences** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/workplanbids/{bidId}/preferences** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/workplanbids/{bidId}/workplans** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/alternativeshifts/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/agentschedules/mine** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/schedules** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/shifttrades** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/notifications** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/notifications/update** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/historicaldata/deletejob** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/historicaldata/deletejob** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/historicaldata/importstatus** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/agents/integrations/hris/query** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/workforcemanagement/agents/{agentId}/integrations/hris** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/integrations/hris** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/schedulingjobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/shrinkage/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/timeoffbalance/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/users/workplanbidranks/bulk** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/users/{userId}/workplanbidranks** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/users/{userId}/workplanbidranks** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/taskmanagement/workbins/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workbins/{workbinId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/taskmanagement/workitems/query/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/{workitemId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/taskmanagement/workitems/{workitemId}/assignment** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/schemas/{schemaId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/schemas** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/{workitemId}/wrapups** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/taskmanagement/worktypes/{worktypeId}/statuses** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/taskmanagement/worktypes/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/actions/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/actions/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/actions/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/agentcopilots/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/bots/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/bots/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/bots/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/conversations/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/evaluations/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/flowexecutions/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/flows/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/flows/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/journeys/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/knowledge/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/resolutions/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/surveys/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/taskmanagement/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/transcripts/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/analytics/users/aggregates/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/users/aggregates/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/chats/users/{userId}/messages/pins** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/externalsources/{externalSourceId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/externalcontacts/externalsources/{externalSourceId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/externalcontacts/externalsources** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/videos/meetings/{meetingId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/videos/meetings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/videos/{conferenceId}/details** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/conversations/{conversationId}/summaries** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}/draft/function** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/integrations/actions/{actionId}/draft/function** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/integrations/actions/{actionId}/draft/function/upload** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/{actionId}/function** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/integrations/actions/functions/runtimes** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/users/me/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/chats/users/me/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/chats/users/{userId}/settings** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/chats/users/{userId}/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/journey/outcomes/attributions/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/outcomes/attributions/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/languageunderstanding/settings** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/documentation/all/search** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/utilization/tags/{tagId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/routing/utilization/tags/{tagId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/utilization/tags/{tagId}/agents** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/routing/utilization/tags** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/routing/utilization/tags** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/groups/dynamicsettings/preview** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/groups/{groupId}/dynamicsettings** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/groups/{groupId}/dynamicsettings** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/groups/{groupId}/dynamicsettings** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/translations/languages** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/search/conversation/target** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/users/search/queuemembers/manage** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workbins/{workbinId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workbins/{workbinId}/history** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/taskmanagement/workitems/query** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/{workitemId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/workitems/{workitemId}/history** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/taskmanagement/worktypes/{worktypeId}/history** (1 change)
+
+* Response 409 was added
+
+**Image** (1 change)
+
+* Model was added
+
+**ViewFilter** (1 change)
+
+* Enum value Deleted was added to property dashboardType
+
+**ArticlesFilter** (1 change)
+
+* Model was added
+
+**CategoriesFilter** (1 change)
+
+* Model was added
+
+**CategoryEntity** (1 change)
+
+* Model was added
+
+**LabelEntity** (1 change)
+
+* Model was added
+
+**LabelsFilter** (1 change)
+
+* Model was added
+
+**UserReferenceEntityListing** (1 change)
+
+* Model was added
+
+**CallbackMediaSettings** (6 changes)
+
+* Optional property mode was added
+* Optional property pacingModifier was added
+* Optional property liveVoiceReactionType was added
+* Optional property liveVoiceFlow was added
+* Optional property answeringMachineReactionType was added
+* Optional property answeringMachineFlow was added
+
+**EmailMediaSettings** (1 change)
+
+* Model was added
+
+**ContactIdentifier** (1 change)
+
+* Enum value SocialInstagram was added to property type
+
+**DataSchema** (1 change)
+
+* Enum value CONVERSATION was added to property appliesTo
+
+**ConversationAssociation** (1 change)
+
+* Enum value INTERNAL_MESSAGE was added to property mediaType
+
+**CsvJobResponse** (1 change)
+
+* Model was added
+
+**CsvJobRequest** (1 change)
+
+* Model was added
+
+**CsvMappingEntry** (1 change)
+
+* Model was added
+
+**CsvSettings** (1 change)
+
+* Model was added
+
+**Listing** (1 change)
+
+* Model was added
+
+**CsvUploadDetailsResponse** (1 change)
+
+* Model was added
+
+**ValidationError** (1 change)
+
+* Model was added
+
+**ValidationResult** (1 change)
+
+* Model was added
+
+**CsvUploadPreviewResponse** (1 change)
+
+* Model was added
+
+**CsvUploadResponse** (1 change)
+
+* Model was added
+
+**Header** (1 change)
+
+* Model was added
+
+**CsvUploadRequest** (1 change)
+
+* Model was added
+
+**Evaluation** (1 change)
+
+* Enum value INTERNAL_MESSAGE was added to property mediaType
+
+**Campaign** (1 change)
+
+* Optional property skillColumns was added
+
+**CampaignRuleAction** (2 changes)
+
+* Enum value setCampaignMessagesPerMinute was added to property actionType
+* Enum value changeCampaignTemplate was added to property actionType
+
+**CampaignRuleParameters** (3 changes)
+
+* Optional property messagesPerMinute was added
+* Optional property smsContentTemplate was added
+* Optional property emailContentTemplate was added
+
+**CampaignRuleWarning** (1 change)
+
+* Model was added
+
+**CampaignRuleWarningParameters** (1 change)
+
+* Model was added
+
+**MessagingCampaign** (1 change)
+
+* Enum value forced_stopping was added to property campaignStatus
+
+**DocumentBodyListBlockWithHighlight** (1 change)
+
+* Model was added
+
+**DocumentBodyListWithHighlight** (1 change)
+
+* Model was added
+
+**DocumentBodyTableCellBlockWithHighlight** (1 change)
+
+* Model was added
+
+**DocumentBodyTableRowBlockWithHighlight** (1 change)
+
+* Model was added
+
+**DocumentBodyTableWithHighlight** (1 change)
+
+* Model was added
+
+**DocumentListContentBlockWithHighlight** (1 change)
+
+* Model was added
+
+**DocumentTableContentBlockWithHighlight** (1 change)
+
+* Model was added
+
+**ContentFileResponse** (1 change)
+
+* Model was added
+
+**DocumentBodyResponse** (1 change)
+
+* Model was added
+
+**DocumentVariationResponse** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentDescriptor** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentCreateRequest** (1 change)
+
+* Model was added
+
+**ContentFileRequest** (1 change)
+
+* Model was added
+
+**DocumentBodyRequest** (1 change)
+
+* Model was added
+
+**DocumentVariationRequest** (1 change)
+
+* Model was added
+
+**DocumentVariationResponseListing** (1 change)
+
+* Model was added
+
+**NamedEntityTypeMechanism** (4 changes)
+
+* Enum value AI was added to property type
+* Optional property subType was added
+* Optional property maxLength was added
+* Optional property examples was added
+
+**NamedEntityTypeMechanismExample** (1 change)
+
+* Model was added
+
+**TrusteeReferenceList** (1 change)
+
+* Model was added
+
+**EvaluationResponse** (1 change)
+
+* Enum value INTERNAL_MESSAGE was added to property mediaType
+
+**Survey** (3 changes)
+
+* Optional property surveyType was added
+* Optional property missingRequiredAnswer was added
+* Optional property flow was added
+
+**RecordingAttachment** (1 change)
+
+* Model was added
+
+**RecordingNotificationTemplate** (1 change)
+
+* Model was added
+
+**RecordingTemplateBody** (1 change)
+
+* Model was added
+
+**RecordingTemplateButton** (1 change)
+
+* Model was added
+
+**RecordingTemplateFooter** (1 change)
+
+* Model was added
+
+**RecordingTemplateHeader** (1 change)
+
+* Model was added
+
+**Button** (1 change)
+
+* Model was added
+
+**MessageFooter** (1 change)
+
+* Model was added
+
+**MessageHeader** (1 change)
+
+* Model was added
+
+**ChatFavorite** (1 change)
+
+* Model was added
+
+**ChatItem** (1 change)
+
+* Model was added
+
+**ChatItemCursorListing** (1 change)
+
+* Model was added
+
+**ChatPresence** (1 change)
+
+* Model was added
+
+**ChatUserRef** (1 change)
+
+* Model was added
+
+**WebDeploymentFlowEntityRef** (1 change)
+
+* Model was added
+
+**RoutePathResponse** (1 change)
+
+* Enum value Workitem was added to property mediaType
+
+**BuIntradayDataGroup** (1 change)
+
+* Enum value Workitem was added to property mediaType
+
+**RoutePathRequest** (1 change)
+
+* Enum value Workitem was added to property mediaType
+
+**WorkitemQueryJobCreate** (3 changes)
+
+* Optional property queryFilters was added
+* Optional property dateIntervalStart was added
+* Optional property dateIntervalEnd was added
+
+**WorkitemQueryJobQueryFilters** (1 change)
+
+* Model was added
+
+**WorkitemQueryJobQueryFiltersCriteria** (1 change)
+
+* Model was added
+
+**WorkitemQueryJobQueryFiltersPredicate** (1 change)
+
+* Model was added
+
+**WorkitemRuleSettings** (1 change)
+
+* Optional property flowRulesEnabled was added
+
+**Worktype** (2 changes)
+
+* Optional property ruleSettings was added
+* Optional property flow was added
+
+**WorktypeUpdate** (1 change)
+
+* Optional property ruleSettings was added
+
+**WorktypeCreate** (1 change)
+
+* Optional property ruleSettings was added
+
+**ResolutionAggregateQueryPredicate** (1 change)
+
+* Enum value wrapUpDate was added to property dimension
+
+**ResolutionAsyncAggregationQuery** (1 change)
+
+* Enum value wrapUpDate was added to property alternateTimeDimension
+
+**WorktypeVersion** (2 changes)
+
+* Optional property ruleSettings was added
+* Optional property flow was added
+
+
+# Point Changes (269 changes)
+
+**POST /api/v2/authorization/divisions/{divisionId}/restore** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/authorization/divisions** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/analytics/dataretention/settings** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/analytics/reporting/dashboards/users/bulk/remove** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/users/{userId}/callforwarding** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/users/{userId}/callforwarding** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/externalcontacts/contacts/{contactId}/identifiers** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/externalcontacts/contacts/schemas** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/externalcontacts/merge/contacts** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/externalcontacts/organizations/schemas** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/conversations/{conversationId}/secureattributes** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/conversations/{conversationId}/secureattributes** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/calls** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/emails/{conversationId}/messages** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/conversations/emails/{conversationId}/messages/draft** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/messages/agentless** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/messaging/integrations/facebook** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/messaging/integrations/instagram** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/conversations/{conversationId}/suggestions/feedback** (1 change)
+
+* Description was changed
+
+**PUT /api/v2/flows/datatables/{datatableId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/flows/datatables/{datatableId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows/datatables** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows/datatables/{datatableId}/rows** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/outbound/campaigns/{campaignId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/campaignrules/{campaignRuleId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/outbound/campaigns** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/contactlists/{contactListId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/contactlisttemplates/{contactListTemplateId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/outbound/contactlisttemplates** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/outbound/contactlists** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/dnclists/{dncListId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/outbound/filespecificationtemplates/bulk** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/outbound/filespecificationtemplates** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/importtemplates/{importTemplateId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/outbound/importtemplates** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/outbound/importtemplates** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/outbound/settings** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/rulesets/{ruleSetId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/sequences/{sequenceId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/schedules/sequences/{sequenceId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/outbound/wrapupcodemappings** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/locations/{locationId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/employeeperformance/externalmetrics/definitions/{metricId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/employeeperformance/externalmetrics/definitions/{metricId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/integrations/{integrationId}/config/current** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/journey/actionmaps/{actionMapId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/actionmaps** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/journey/actiontemplates/{actionTemplateId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/actiontemplates** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/journey/outcomes/{outcomeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/outcomes** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/outcomes/predictors** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/journey/segments/{segmentId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/segments** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/journey/views/{viewId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/journey/views/{viewId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/journey/views/{viewId}/versions/{versionId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/journey/views/{viewId}/versions/{versionId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/views/{viewId}/versions** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/journey/views** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/views** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/languageunderstanding/domains/{domainId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/deployments/{deploymentId}/actionevent** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/deployments/{deploymentId}/appevents** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/journey/deployments/{deploymentId}/webevents** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/presence/definitions/{definitionId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/presence/definitions** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/presence/settings** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/presence/sources/{sourceId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/presence/sources/{sourceId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/presence/sources** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/users/{userId}/presences/purecloud** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/users/{userId}/presences/{sourceId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/quality/forms/evaluations/{formId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/quality/forms/evaluations/{formId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/quality/forms/evaluations** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/quality/forms/surveys/{formId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/quality/forms/surveys/{formId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/quality/forms/surveys** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/quality/forms/{formId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/quality/forms/{formId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/quality/forms** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/quality/publishedforms** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/routing/skills** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/routing/utilization** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/routing/utilization** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/routing/sms/phonenumbers/import** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/routing/sms/phonenumbers/{addressId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/routing/sms/phonenumbers/{addressId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/routing/sms/phonenumbers** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/routing/users/{userId}/utilization** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/routing/users/{userId}/utilization** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/scim/v2/users/{userId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/speechandtextanalytics/categories** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/speechandtextanalytics/categories/{categoryId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/speechandtextanalytics/programs/general/jobs** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/speechandtextanalytics/programs/{programId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/speechandtextanalytics/programs** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/speechandtextanalytics/topics/{topicId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/speechandtextanalytics/topics/{topicId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/speechandtextanalytics/topics** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/{edgeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/telephony/providers/edges/{edgeId}/unpair** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/didpools/{didPoolId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/telephony/providers/edges/didpools** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/telephony/providers/edges/extensionpools** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/phones/{phoneId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/sites/{siteId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/telephony/providers/edges/sites/{siteId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/telephony/providers/edges/trunkbasesettings** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/users/{userId}/externalid** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/users/{userId}/routingskills/{skillId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/users/{userId}/station/defaultstation/{stationId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/users/{userId}/station/associatedstation/{stationId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/users** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/voicemail/messages/{messageId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/voicemail/messages/{messageId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/voicemail/messages** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/voicemail/policy** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/architect/dependencytracking/build** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/architect/emergencygroups/{emergencyGroupId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows/actions/publish** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows/actions/checkout** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows/actions/deactivate** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows/actions/revert** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/flows/milestones/{milestoneId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/flows/milestones/{milestoneId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows/milestones** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/flows/outcomes/{flowOutcomeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows/outcomes** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/flows/{flowId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/flows/{flowId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/flows/{flowId}/versions/{versionId}/configuration** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/flows/{flowId}/versions** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/flows** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/flows** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/architect/grammars/{grammarId}/languages** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/grammars/{grammarId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/architect/grammars/{grammarId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/architect/grammars** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/architect/ivrs/{ivrId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/ivrs/{ivrId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/architect/prompts/{promptId}/resources** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/architect/prompts/{promptId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/prompts/{promptId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/architect/prompts** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/prompts** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/architect/schedulegroups/{scheduleGroupId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/architect/schedules/{scheduleId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/schedules/{scheduleId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/architect/systemprompts/{promptId}/resources** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/webchat/deployments** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/webdeployments/configurations/{configurationId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/coaching/appointments/{appointmentId}/conversations** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/coaching/appointments/{appointmentId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/coaching/appointments/{appointmentId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/coaching/appointments/{appointmentId}/status** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/coaching/appointments** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/learning/assignments/{assignmentId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/learning/assignments/{assignmentId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/learning/assignments** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/learning/assignments/{assignmentId}/reschedule** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/learning/assignments/{assignmentId}/reset** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/learning/assignments/{assignmentId}/reassign** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/learning/modules/{moduleId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/learning/modules/{moduleId}/preview** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/learning/modules/{moduleId}/publish** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/learning/modules/{moduleId}/jobs** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/learning/modules/{moduleId}/users/{userId}/assignments** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/learning/modules/{moduleId}/rule** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/learning/scheduleslots/query** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/widgets/deployments** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/workforcemanagement/historicaldata/validate** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/taskmanagement/workbins/{workbinId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/taskmanagement/workbins/{workbinId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/workbins** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/workitems** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/workitems/{workitemId}/disconnect** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/workitems/{workitemId}/terminate** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/taskmanagement/workitems/{workitemId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/taskmanagement/workitems/{workitemId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/taskmanagement/workitems/schemas/{schemaId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/taskmanagement/workitems/schemas/{schemaId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/workitems/schemas** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**DELETE /api/v2/taskmanagement/worktypes/{worktypeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/taskmanagement/worktypes/{worktypeId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/worktypes** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**PUT /api/v2/externalcontacts/externalsources/{externalSourceId}** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/externalcontacts/externalsources** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.
+
+**POST /api/v2/routing/sms/phonenumbers/alphanumeric** (1 change)
+
+* Response 409 was changed from Conflict to The request conflicts with the current state of the target resource.

@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi#getOrgauthorizationTrusteeUserRoles) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles | Get Trustee User Roles
 [**getOrgauthorizationTrusteeUsers**](OrganizationAuthorizationApi#getOrgauthorizationTrusteeUsers) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users | The list of trustee users for this organization (i.e. users granted access to this organization).
 [**getOrgauthorizationTrustees**](OrganizationAuthorizationApi#getOrgauthorizationTrustees) | **GET** /api/v2/orgauthorization/trustees | The list of trustees for this organization (i.e. organizations granted access to this organization).
+[**getOrgauthorizationTrusteesCare**](OrganizationAuthorizationApi#getOrgauthorizationTrusteesCare) | **GET** /api/v2/orgauthorization/trustees/care | Get Customer Care organization ids.
 [**getOrgauthorizationTrusteesDefault**](OrganizationAuthorizationApi#getOrgauthorizationTrusteesDefault) | **GET** /api/v2/orgauthorization/trustees/default | Get organization authorization trust with Customer Care, if one exists.
 [**getOrgauthorizationTrustor**](OrganizationAuthorizationApi#getOrgauthorizationTrustor) | **GET** /api/v2/orgauthorization/trustors/{trustorOrgId} | Get Org Trust
 [**getOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi#getOrgauthorizationTrustorCloneduser) | **GET** /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} | Get Cloned User
@@ -42,6 +43,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOrgauthorizationTrusteeUsers**](OrganizationAuthorizationApi#postOrgauthorizationTrusteeUsers) | **POST** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users | Add a user to the trust.
 [**postOrgauthorizationTrustees**](OrganizationAuthorizationApi#postOrgauthorizationTrustees) | **POST** /api/v2/orgauthorization/trustees | Create a new organization authorization trust. This is required to grant other organizations access to your organization.
 [**postOrgauthorizationTrusteesAudits**](OrganizationAuthorizationApi#postOrgauthorizationTrusteesAudits) | **POST** /api/v2/orgauthorization/trustees/audits | Get Org Trustee Audits
+[**postOrgauthorizationTrusteesCare**](OrganizationAuthorizationApi#postOrgauthorizationTrusteesCare) | **POST** /api/v2/orgauthorization/trustees/care | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
 [**postOrgauthorizationTrusteesDefault**](OrganizationAuthorizationApi#postOrgauthorizationTrusteesDefault) | **POST** /api/v2/orgauthorization/trustees/default | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
 [**postOrgauthorizationTrustorAudits**](OrganizationAuthorizationApi#postOrgauthorizationTrustorAudits) | **POST** /api/v2/orgauthorization/trustor/audits | Get Org Trustor Audits
 [**putOrgauthorizationTrustee**](OrganizationAuthorizationApi#putOrgauthorizationTrustee) | **PUT** /api/v2/orgauthorization/trustees/{trusteeOrgId} | Update Org Trust
@@ -1202,6 +1204,52 @@ apiInstance.getOrgauthorizationTrustees(opts)
 **TrustEntityListing**
 
 
+## getOrgauthorizationTrusteesCare
+
+> TrusteeReferenceList getOrgauthorizationTrusteesCare()
+
+
+GET /api/v2/orgauthorization/trustees/care
+
+Get Customer Care organization ids.
+
+Requires ANY permissions:
+
+* authorization:orgTrustee:view
+* authorization:orgTrusteeUser:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+apiInstance.getOrgauthorizationTrusteesCare()
+  .then((data) => {
+    console.log(`getOrgauthorizationTrusteesCare success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrusteesCare');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**TrusteeReferenceList**
+
+
 ## getOrgauthorizationTrusteesDefault
 
 > Trustee getOrgauthorizationTrusteesDefault()
@@ -1935,6 +1983,65 @@ apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
 **Object**
 
 
+## postOrgauthorizationTrusteesCare
+
+> TrustEntityListing postOrgauthorizationTrusteesCare(opts)
+
+
+POST /api/v2/orgauthorization/trustees/care
+
+Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+
+Requires ALL permissions:
+
+* authorization:orgTrustee:add
+* authorization:orgTrusteeUser:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let opts = { 
+  'assignDefaultRole': true, // Boolean | Assign Admin role to default pairing with Customer Care
+  'autoExpire': true, // Boolean | Automatically expire pairing after 30 days
+  'assignFullAccess': true, // Boolean | Grant Customer Care full access to the organization
+  'allowTrustedUserAccess': true // Boolean | Make Customer Care a Trusted User
+};
+
+apiInstance.postOrgauthorizationTrusteesCare(opts)
+  .then((data) => {
+    console.log(`postOrgauthorizationTrusteesCare success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOrgauthorizationTrusteesCare');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assignDefaultRole** | **Boolean** | Assign Admin role to default pairing with Customer Care | [optional]  |
+ **autoExpire** | **Boolean** | Automatically expire pairing after 30 days | [optional]  |
+ **assignFullAccess** | **Boolean** | Grant Customer Care full access to the organization | [optional]  |
+ **allowTrustedUserAccess** | **Boolean** | Make Customer Care a Trusted User | [optional]  |
+
+### Return type
+
+**TrustEntityListing**
+
+
 ## postOrgauthorizationTrusteesDefault
 
 > Trustee postOrgauthorizationTrusteesDefault(opts)
@@ -2474,4 +2581,4 @@ apiInstance.putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 **TrustUser**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

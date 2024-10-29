@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -4698,9 +4698,10 @@ class ConversationsApi {
 
 	/**
 	 * Suggestion feedback.
-	 * 
+	 * Google Agent Assist offering within Genesys will no longer be supported
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} body SuggestionFeedback
+	 * @deprecated
 	 */
 	postConversationSuggestionsFeedback(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set

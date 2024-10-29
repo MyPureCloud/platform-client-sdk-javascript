@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 206.0.0
+	 * @version 207.0.0
 	 */
 
 	/**
@@ -856,6 +856,7 @@ class AnalyticsApi {
 	 * @param {Number} opts.pageSize  (default to 25)
 	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
 	 * @param {Object} opts.state Only list users of this state
+	 * @param {Boolean} opts.deletedOnly Only list deleted dashboards that are still recoverable
 	 */
 	getAnalyticsReportingDashboardsUsers(opts) { 
 		opts = opts || {};
@@ -865,7 +866,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/dashboards/users', 
 			'GET', 
 			{  },
-			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'state': opts['state'] },
+			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'state': opts['state'],'deletedOnly': opts['deletedOnly'] },
 			{  },
 			{  },
 			null, 
@@ -987,6 +988,7 @@ class AnalyticsApi {
 	 * @param {Number} opts.pageSize  (default to 50)
 	 * @param {Boolean} opts.publicOnly If true, retrieve only public dashboards
 	 * @param {Boolean} opts.favoriteOnly If true, retrieve only favorite dashboards
+	 * @param {Boolean} opts.deletedOnly If true, retrieve only deleted dashboards that are still recoverable
 	 * @param {String} opts.name retrieve dashboards that match with given name
 	 */
 	getAnalyticsReportingSettingsUserDashboards(userId, opts) { 
@@ -1001,7 +1003,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/settings/users/{userId}/dashboards', 
 			'GET', 
 			{ 'userId': userId },
-			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'publicOnly': opts['publicOnly'],'favoriteOnly': opts['favoriteOnly'],'name': opts['name'] },
+			{ 'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'publicOnly': opts['publicOnly'],'favoriteOnly': opts['favoriteOnly'],'deletedOnly': opts['deletedOnly'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -2091,7 +2093,7 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Bulk delete dashboards owned by other user(s)
+	 * Bulk soft delete dashboards owned by other user(s)
 	 * 
 	 * @param {Array.<String>} body List of userIds
 	 */
@@ -2141,7 +2143,7 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Bulk remove dashboard configurations
+	 * Bulk soft delete dashboard configurations
 	 * 
 	 * @param {Object} body 
 	 */
@@ -2327,7 +2329,6 @@ class AnalyticsApi {
 	 * Query for task management aggregates
 	 * 
 	 * @param {Object} body query
-	 * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTaskmanagementAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
