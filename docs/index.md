@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@206.0.0
+Documentation version purecloud-platform-client-v2@207.0.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/206.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/207.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/206.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/207.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -346,6 +346,79 @@ JSON:
 }
 ```
 
+The Genesys Cloud Login and API URL path can be overridden if necessary (i.e. if the Genesys Cloud requests must be sent through to an intermediate API gateway or equivalent).
+
+This can be achieved defining a "gateway" configuration, in the INI or the JSON configuration file.
+
+* "host" is the address of your gateway.
+* "protocol" is not mandatory. It will default to "https" if the parameter is not defined or empty.
+* "port" is not mandatory. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater or equal to 0).
+* "path_params_login" and "path_params_api" are not mandatory. They will be appended to the gateway url path if these parameters are defined and non empty (for Login requests and for API requests).
+* "username" and "password" are not used at this stage. This is for a possible future use.
+
+With the configuration below, this would result in:
+
+* Login requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/oauth/token")
+* API requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforapi" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/api/v2/users/me")
+
+INI:
+
+```ini
+[logging]
+log_level = trace
+log_format = text
+log_to_console = false
+log_file_path = /var/log/javascriptsdk.log
+log_response_body = false
+log_request_body = false
+[reauthentication]
+refresh_access_token = true
+refresh_token_wait_max = 10
+[general]
+live_reload_config = true
+host = https://api.mypurecloud.com
+[gateway]
+host = mygateway.mydomain.myextension
+protocol = https
+port = 1443
+path_params_login = myadditionalpathforlogin
+path_params_api = myadditionalpathforapi
+username = username
+password = password
+```
+
+JSON:
+
+```json
+{
+    "logging": {
+        "log_level": "trace",
+        "log_format": "text",
+        "log_to_console": false,
+        "log_file_path": "/var/log/javascriptsdk.log",
+        "log_response_body": false,
+        "log_request_body": false
+    },
+    "reauthentication": {
+        "refresh_access_token": true,
+        "refresh_token_wait_max": 10
+    },
+    "general": {
+        "live_reload_config": true,
+        "host": "https://api.mypurecloud.com"
+    },
+    "gateway": {
+        "host": "mygateway.mydomain.myextension",
+        "protocol": "https",
+        "port": 1443,
+        "path_params_login": "myadditionalpathforlogin",
+        "path_params_api": "myadditionalpathforapi",
+        "username": "username",
+        "password": "password"
+    }
+}
+```
+
 ## Environments
 
 If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance with the PureCloudRegionHosts object.
@@ -354,6 +427,30 @@ If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. my
 const client = platformClient.ApiClient.instance;
 client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
 ```
+
+### Setting an intermediate Gateway
+
+The Genesys Cloud Login and API URL path can be overridden if necessary (i.e. if the Genesys Cloud requests must be sent through to an intermediate API gateway or equivalent).
+
+This can be achieved setting the gateway configuration on the `ApiClient` instance.
+
+```javascript
+const client = platformClient.ApiClient.instance;
+client.setGateway({host: 'mygateway.mydomain.myextension', protocol: 'https', port: 1443, path_params_login: 'myadditionalpathforlogin', path_params_api: 'myadditionalpathforapi'});
+
+// If you need, you can later remove the Gateway Configuration and fallback to the Enviroment setting using: client.setGateway();
+```
+
+* "host" is the address of your gateway.
+* "protocol" is not mandatory. It will default to "https" if the parameter is not defined or empty.
+* "port" is not mandatory. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater or equal to 0).
+* "path_params_login" and "path_params_api" are not mandatory. They will be appended to the gateway url path if these parameters are defined and non empty (for Login requests and for API requests).
+* "username" and "password" are not used at this stage. This is for a possible future use.
+
+With the configuration below, this would result in:
+
+* Login requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/oauth/token")
+* API requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforapi" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/api/v2/users/me")
 
 
 ## Access Token persistence

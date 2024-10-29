@@ -8528,10 +8528,15 @@ apiInstance.postConversationSuggestionEngagement(conversationId, suggestionId, b
 
 > void postConversationSuggestionsFeedback(conversationId, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/{conversationId}/suggestions/feedback
 
 Suggestion feedback.
+
+Google Agent Assist offering within Genesys will no longer be supported
 
 Requires ANY permissions:
 
@@ -12783,4 +12788,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

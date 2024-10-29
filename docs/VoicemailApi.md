@@ -21,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getVoicemailPolicy**](VoicemailApi#getVoicemailPolicy) | **GET** /api/v2/voicemail/policy | Get a policy
 [**getVoicemailQueueMessages**](VoicemailApi#getVoicemailQueueMessages) | **GET** /api/v2/voicemail/queues/{queueId}/messages | List voicemail messages
 [**getVoicemailSearch**](VoicemailApi#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
+[**getVoicemailUserMailbox**](VoicemailApi#getVoicemailUserMailbox) | **GET** /api/v2/voicemail/users/{userId}/mailbox | Get a user's mailbox information
+[**getVoicemailUserMessages**](VoicemailApi#getVoicemailUserMessages) | **GET** /api/v2/voicemail/users/{userId}/messages | List voicemail messages
 [**getVoicemailUserpolicy**](VoicemailApi#getVoicemailUserpolicy) | **GET** /api/v2/voicemail/userpolicies/{userId} | Get a user's voicemail policy
 [**patchVoicemailGroupPolicy**](VoicemailApi#patchVoicemailGroupPolicy) | **PATCH** /api/v2/voicemail/groups/{groupId}/policy | Update a group's voicemail policy
 [**patchVoicemailMePolicy**](VoicemailApi#patchVoicemailMePolicy) | **PATCH** /api/v2/voicemail/me/policy | Update the current user's voicemail policy
@@ -770,6 +772,112 @@ apiInstance.getVoicemailSearch(q64, opts)
 **VoicemailsSearchResponse**
 
 
+## getVoicemailUserMailbox
+
+> VoicemailMailboxInfo getVoicemailUserMailbox(userId)
+
+
+GET /api/v2/voicemail/users/{userId}/mailbox
+
+Get a user's mailbox information
+
+Requires ANY permissions:
+
+* voicemail:mailbox:viewOther
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.VoicemailApi();
+
+let userId = "userId_example"; // String | userId
+
+apiInstance.getVoicemailUserMailbox(userId)
+  .then((data) => {
+    console.log(`getVoicemailUserMailbox success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailUserMailbox');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | userId |  |
+
+### Return type
+
+**VoicemailMailboxInfo**
+
+
+## getVoicemailUserMessages
+
+> VoicemailMessageEntityListing getVoicemailUserMessages(userId, opts)
+
+
+GET /api/v2/voicemail/users/{userId}/messages
+
+List voicemail messages
+
+Requires ANY permissions:
+
+* voicemail:voicemail:viewOther
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.VoicemailApi();
+
+let userId = "userId_example"; // String | User ID
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getVoicemailUserMessages(userId, opts)
+  .then((data) => {
+    console.log(`getVoicemailUserMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailUserMessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+
+### Return type
+
+**VoicemailMessageEntityListing**
+
+
 ## getVoicemailUserpolicy
 
 > VoicemailUserPolicy getVoicemailUserpolicy(userId)
@@ -1273,4 +1381,4 @@ apiInstance.putVoicemailUserpolicy(userId, body)
 **VoicemailUserPolicy**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

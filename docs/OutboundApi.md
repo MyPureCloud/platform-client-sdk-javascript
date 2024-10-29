@@ -116,6 +116,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundCallanalysisresponsesets**](OutboundApi#postOutboundCallanalysisresponsesets) | **POST** /api/v2/outbound/callanalysisresponsesets | Create a dialer call analysis response set.
 [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi#postOutboundCampaignAgentownedmappingpreview) | **POST** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview | Initiate request for a preview of how agents will be mapped to this campaign's contact list.
 [**postOutboundCampaignCallbackSchedule**](OutboundApi#postOutboundCampaignCallbackSchedule) | **POST** /api/v2/outbound/campaigns/{campaignId}/callback/schedule | Schedule a Callback for a Dialer Campaign (Deprecated)
+[**postOutboundCampaignStart**](OutboundApi#postOutboundCampaignStart) | **POST** /api/v2/outbound/campaigns/{campaignId}/start | Start the campaign
+[**postOutboundCampaignStop**](OutboundApi#postOutboundCampaignStop) | **POST** /api/v2/outbound/campaigns/{campaignId}/stop | Stop the campaign
 [**postOutboundCampaignrules**](OutboundApi#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
 [**postOutboundCampaigns**](OutboundApi#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
 [**postOutboundCampaignsProgress**](OutboundApi#postOutboundCampaignsProgress) | **POST** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns
@@ -142,6 +144,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundFilespecificationtemplates**](OutboundApi#postOutboundFilespecificationtemplates) | **POST** /api/v2/outbound/filespecificationtemplates | Create File Specification Template
 [**postOutboundImporttemplates**](OutboundApi#postOutboundImporttemplates) | **POST** /api/v2/outbound/importtemplates | Create Import Template
 [**postOutboundImporttemplatesBulkAdd**](OutboundApi#postOutboundImporttemplatesBulkAdd) | **POST** /api/v2/outbound/importtemplates/bulk/add | Add multiple import templates
+[**postOutboundMessagingcampaignStart**](OutboundApi#postOutboundMessagingcampaignStart) | **POST** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start | Start the campaign
+[**postOutboundMessagingcampaignStop**](OutboundApi#postOutboundMessagingcampaignStop) | **POST** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop | Stop the campaign
 [**postOutboundMessagingcampaigns**](OutboundApi#postOutboundMessagingcampaigns) | **POST** /api/v2/outbound/messagingcampaigns | Create a Messaging Campaign
 [**postOutboundMessagingcampaignsProgress**](OutboundApi#postOutboundMessagingcampaignsProgress) | **POST** /api/v2/outbound/messagingcampaigns/progress | Get progress for a list of messaging campaigns
 [**postOutboundRulesets**](OutboundApi#postOutboundRulesets) | **POST** /api/v2/outbound/rulesets | Create a Rule Set.
@@ -6141,6 +6145,106 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 **ContactCallbackRequest**
 
 
+## postOutboundCampaignStart
+
+> void postOutboundCampaignStart(campaignId)
+
+
+POST /api/v2/outbound/campaigns/{campaignId}/start
+
+Start the campaign
+
+Requires ANY permissions:
+
+* outbound:campaign:start
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+
+apiInstance.postOutboundCampaignStart(campaignId)
+  .then(() => {
+    console.log('postOutboundCampaignStart returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundCampaignStart');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## postOutboundCampaignStop
+
+> void postOutboundCampaignStop(campaignId)
+
+
+POST /api/v2/outbound/campaigns/{campaignId}/stop
+
+Stop the campaign
+
+Requires ANY permissions:
+
+* outbound:campaign:stop
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+
+apiInstance.postOutboundCampaignStop(campaignId)
+  .then(() => {
+    console.log('postOutboundCampaignStop returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundCampaignStop');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+
+### Return type
+
+void (no response body)
+
+
 ## postOutboundCampaignrules
 
 > CampaignRule postOutboundCampaignrules(body)
@@ -7479,6 +7583,112 @@ apiInstance.postOutboundImporttemplatesBulkAdd(body)
 ### Return type
 
 **ImportTemplateEntityListing**
+
+
+## postOutboundMessagingcampaignStart
+
+> void postOutboundMessagingcampaignStart(messagingCampaignId)
+
+
+POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start
+
+Start the campaign
+
+Documented permissions are applicable based on campaign type.
+
+Requires ANY permissions:
+
+* outbound:messagingCampaign:start
+* outbound:emailCampaign:start
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.postOutboundMessagingcampaignStart(messagingCampaignId)
+  .then(() => {
+    console.log('postOutboundMessagingcampaignStart returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundMessagingcampaignStart');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## postOutboundMessagingcampaignStop
+
+> void postOutboundMessagingcampaignStop(messagingCampaignId)
+
+
+POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop
+
+Stop the campaign
+
+Documented permissions are applicable based on campaign type.
+
+Requires ANY permissions:
+
+* outbound:messagingCampaign:stop
+* outbound:emailCampaign:stop
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.postOutboundMessagingcampaignStop(messagingCampaignId)
+  .then(() => {
+    console.log('postOutboundMessagingcampaignStop returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundMessagingcampaignStop');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+
+### Return type
+
+void (no response body)
 
 
 ## postOutboundMessagingcampaigns
@@ -8830,4 +9040,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

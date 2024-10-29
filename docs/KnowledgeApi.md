@@ -669,8 +669,6 @@ DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{so
 
 Delete Salesforce Knowledge integration source
 
-deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:delete
@@ -723,8 +721,6 @@ DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{so
 
 Delete ServiceNow Knowledge integration source
 
-deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:delete
@@ -776,8 +772,6 @@ void (no response body)
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
 
 Delete synchronization job
-
-deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -993,8 +987,6 @@ apiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)
 GET /api/v2/knowledge/integrations/{integrationId}/options
 
 Get sync options available for a knowledge-connect integration
-
-getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1399,7 +1391,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId,
 
 ## getKnowledgeKnowledgebaseDocumentVariation
 
-> DocumentVariation getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts)
+> DocumentVariationResponse getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}
@@ -1452,12 +1444,12 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, docu
 
 ### Return type
 
-**DocumentVariation**
+**DocumentVariationResponse**
 
 
 ## getKnowledgeKnowledgebaseDocumentVariations
 
-> DocumentVariationListing getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, opts)
+> DocumentVariationResponseListing getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations
@@ -1514,7 +1506,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documen
 
 ### Return type
 
-**DocumentVariationListing**
+**DocumentVariationResponseListing**
 
 
 ## getKnowledgeKnowledgebaseDocumentVersion
@@ -2558,8 +2550,6 @@ GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations
 
 Get operations
 
-getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:importExportOperationsList:view
@@ -2627,8 +2617,6 @@ apiInstance.getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts)
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query
 
 Get ids of operation creator users and oauth clients
-
-getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -2738,8 +2726,6 @@ GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources
 
 Get Knowledge integration sources
 
-getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:view
@@ -2798,8 +2784,6 @@ GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourc
 
 Get Salesforce Knowledge integration source
 
-getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:view
@@ -2856,8 +2840,6 @@ GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourc
 
 Get ServiceNow Knowledge integration source
 
-getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:view
@@ -2913,8 +2895,6 @@ apiInstance.getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
 
 Get synchronization job report
-
-getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -3530,7 +3510,7 @@ apiInstance.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseI
 
 ## patchKnowledgeKnowledgebaseDocumentVariation
 
-> DocumentVariation patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
+> DocumentVariationResponse patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
 
 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}
@@ -3581,7 +3561,7 @@ apiInstance.patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, do
 
 ### Return type
 
-**DocumentVariation**
+**DocumentVariationResponse**
 
 
 ## patchKnowledgeKnowledgebaseDocumentsSearchSearchId
@@ -4047,8 +4027,6 @@ void (no response body)
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}
 
 Update synchronization job
-
-patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -4762,7 +4740,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, document
 
 ## postKnowledgeKnowledgebaseDocumentVariations
 
-> DocumentVariation postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
+> DocumentVariationResponse postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations
@@ -4812,7 +4790,7 @@ apiInstance.postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, docume
 
 ### Return type
 
-**DocumentVariation**
+**DocumentVariationResponse**
 
 
 ## postKnowledgeKnowledgebaseDocumentVersions
@@ -6088,8 +6066,6 @@ POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce
 
 Create Salesforce Knowledge integration source
 
-postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:add
@@ -6141,8 +6117,6 @@ apiInstance.postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body)
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync
 
 Start sync on Salesforce Knowledge integration source
-
-postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -6196,8 +6170,6 @@ POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow
 
 Create ServiceNow Knowledge integration source
 
-postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:add
@@ -6250,8 +6222,6 @@ POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sour
 
 Start synchronization on ServiceNow Knowledge integration source
 
-postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:edit
@@ -6303,8 +6273,6 @@ apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBas
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs
 
 Create synchronization job
-
-postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -6462,8 +6430,6 @@ PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourc
 
 Update Salesforce Knowledge integration source
 
-putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:edit
@@ -6518,8 +6484,6 @@ PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourc
 
 Update ServiceNow Knowledge integration source
 
-putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:integrationSource:edit
@@ -6565,4 +6529,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

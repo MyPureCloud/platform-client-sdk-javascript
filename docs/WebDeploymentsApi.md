@@ -477,7 +477,7 @@ apiInstance.getWebdeploymentsDeployment(deploymentId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
- **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: supportedContent |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: supportedContent, flowDetails |
 
 ### Return type
 
@@ -984,4 +984,4 @@ apiInstance.putWebdeploymentsDeployment(deploymentId, deployment)
 **WebDeployment**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

@@ -6650,4 +6650,4 @@ apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body
 **TrunkBase**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

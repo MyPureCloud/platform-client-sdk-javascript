@@ -65,7 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowInstancesSettingsLoglevels**](ArchitectApi#getFlowInstancesSettingsLoglevels) | **GET** /api/v2/flows/{flowId}/instances/settings/loglevels | Retrieves the log level for a flow by flow id.
 [**getFlowLatestconfiguration**](ArchitectApi#getFlowLatestconfiguration) | **GET** /api/v2/flows/{flowId}/latestconfiguration | Get the latest configuration for flow
 [**getFlowVersion**](ArchitectApi#getFlowVersion) | **GET** /api/v2/flows/{flowId}/versions/{versionId} | Get flow version
-[**getFlowVersionConfiguration**](ArchitectApi#getFlowVersionConfiguration) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/configuration | Create flow version configuration
+[**getFlowVersionConfiguration**](ArchitectApi#getFlowVersionConfiguration) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/configuration | Get flow version configuration
 [**getFlowVersionHealth**](ArchitectApi#getFlowVersionHealth) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/health | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
 [**getFlowVersionIntentHealth**](ArchitectApi#getFlowVersionIntentHealth) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health | Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
 [**getFlowVersionIntentUtteranceHealth**](ArchitectApi#getFlowVersionIntentUtteranceHealth) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health | Get health metrics associated with a specific utterance of an intent.
@@ -3498,7 +3498,7 @@ apiInstance.getFlowVersion(flowId, versionId, opts)
 
 GET /api/v2/flows/{flowId}/versions/{versionId}/configuration
 
-Create flow version configuration
+Get flow version configuration
 
 Requires ANY permissions:
 
@@ -8022,4 +8022,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_

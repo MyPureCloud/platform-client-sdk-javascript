@@ -83,9 +83,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
 [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
 [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
-[**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk delete dashboards owned by other user(s)
+[**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk soft delete dashboards owned by other user(s)
 [**postAnalyticsReportingExports**](AnalyticsApi#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
-[**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk remove dashboard configurations
+[**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk soft delete dashboard configurations
 [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery) | **POST** /api/v2/analytics/reporting/settings/dashboards/query | Query dashboard configurations
 [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
 [**postAnalyticsRoutingActivityQuery**](AnalyticsApi#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
@@ -1767,7 +1767,8 @@ let opts = {
   'pageNumber': 1, // Number | 
   'pageSize': 25, // Number | 
   'id': ["id_example"], // [String] | A list of user IDs to fetch by bulk
-  'state': "state_example" // String | Only list users of this state
+  'state': "state_example", // String | Only list users of this state
+  'deletedOnly': true // Boolean | Only list deleted dashboards that are still recoverable
 };
 
 apiInstance.getAnalyticsReportingDashboardsUsers(opts)
@@ -1790,6 +1791,7 @@ apiInstance.getAnalyticsReportingDashboardsUsers(opts)
  **pageSize** | **Number** |  | [optional] [default to 25] |
  **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
  **state** | **String** | Only list users of this state | [optional] <br />**Values**: active, inactive |
+ **deletedOnly** | **Boolean** | Only list deleted dashboards that are still recoverable | [optional]  |
 
 ### Return type
 
@@ -1988,7 +1990,7 @@ apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboar
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dashboardType** | **String** | List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
+ **dashboardType** | **String** | List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites, Deleted |
  **dashboardAccessFilter** | **String** | Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
  **name** | **String** | name of the dashboard | [optional]  |
  **sortBy** | **String** |  | [optional] [default to desc] |
@@ -2033,6 +2035,7 @@ let opts = {
   'pageSize': 50, // Number | 
   'publicOnly': true, // Boolean | If true, retrieve only public dashboards
   'favoriteOnly': true, // Boolean | If true, retrieve only favorite dashboards
+  'deletedOnly': true, // Boolean | If true, retrieve only deleted dashboards that are still recoverable
   'name': "name_example" // String | retrieve dashboards that match with given name
 };
 
@@ -2057,6 +2060,7 @@ apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
  **pageSize** | **Number** |  | [optional] [default to 50] |
  **publicOnly** | **Boolean** | If true, retrieve only public dashboards | [optional]  |
  **favoriteOnly** | **Boolean** | If true, retrieve only favorite dashboards | [optional]  |
+ **deletedOnly** | **Boolean** | If true, retrieve only deleted dashboards that are still recoverable | [optional]  |
  **name** | **String** | retrieve dashboards that match with given name | [optional]  |
 
 ### Return type
@@ -4200,7 +4204,7 @@ apiInstance.postAnalyticsRatelimitsAggregatesQuery(body)
 
 POST /api/v2/analytics/reporting/dashboards/users/bulk/remove
 
-Bulk delete dashboards owned by other user(s)
+Bulk soft delete dashboards owned by other user(s)
 
 Requires ANY permissions:
 
@@ -4303,7 +4307,7 @@ apiInstance.postAnalyticsReportingExports(body)
 
 POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove
 
-Bulk remove dashboard configurations
+Bulk soft delete dashboard configurations
 
 Requires ALL permissions:
 
@@ -4666,8 +4670,6 @@ apiInstance.postAnalyticsTaskmanagementAggregatesJobs(body)
 POST /api/v2/analytics/taskmanagement/aggregates/query
 
 Query for task management aggregates
-
-postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -5226,4 +5228,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@206.0.0_
+_purecloud-platform-client-v2@207.0.0_
