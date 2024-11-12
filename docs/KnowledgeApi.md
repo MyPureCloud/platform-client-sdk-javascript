@@ -1419,7 +1419,8 @@ let documentVariationId = "documentVariationId_example"; // String | Globally un
 let documentId = "documentId_example"; // String | Globally unique identifier for a document.
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
 let opts = { 
-  'documentState': "documentState_example" // String | The state of the document.
+  'documentState': "documentState_example", // String | The state of the document.
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts)
@@ -1441,6 +1442,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, docu
  **documentId** | **String** | Globally unique identifier for a document. |  |
  **knowledgeBaseId** | **String** | Globally unique identifier for a knowledge base. |  |
  **documentState** | **String** | The state of the document. | [optional] <br />**Values**: Draft, Published |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: contentUrl |
 
 ### Return type
 
@@ -1479,7 +1481,8 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'documentState': "documentState_example" // String | The state of the document.
+  'documentState': "documentState_example", // String | The state of the document.
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected.
 };
 
 apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, opts)
@@ -1503,6 +1506,7 @@ apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documen
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **documentState** | **String** | The state of the document. | [optional] <br />**Values**: Draft, Published |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: contentUrl |
 
 ### Return type
 
@@ -6529,4 +6533,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@207.0.0_
+_purecloud-platform-client-v2@208.0.0_

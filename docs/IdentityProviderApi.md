@@ -1845,4 +1845,4 @@ apiInstance.putIdentityprovidersSalesforce(body)
 **IdentityProvider**
 
 
-_purecloud-platform-client-v2@207.0.0_
+_purecloud-platform-client-v2@208.0.0_

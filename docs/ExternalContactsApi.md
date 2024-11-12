@@ -257,8 +257,6 @@ DELETE /api/v2/externalcontacts/externalsources/{externalSourceId}
 
 Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
 
-deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * externalContacts:externalSource:delete
@@ -603,7 +601,7 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
 
 ### Return type
 
@@ -768,7 +766,7 @@ apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
 
 ### Return type
 
@@ -829,7 +827,7 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
 
 ### Return type
 
@@ -864,7 +862,7 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
+  'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
 
 apiInstance.getExternalcontactsContactUnresolved(contactId, opts)
@@ -883,7 +881,7 @@ apiInstance.getExternalcontactsContactUnresolved(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
- **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, division |
 
 ### Return type
 
@@ -944,7 +942,7 @@ apiInstance.getExternalcontactsContacts(opts)
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
 
 ### Return type
 
@@ -1157,8 +1155,6 @@ GET /api/v2/externalcontacts/externalsources/{externalSourceId}
 
 Fetch an External Source
 
-getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * externalContacts:externalSource:view
@@ -1210,8 +1206,6 @@ apiInstance.getExternalcontactsExternalsource(externalSourceId)
 GET /api/v2/externalcontacts/externalsources
 
 Fetch a list of External Sources
-
-getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1499,7 +1493,7 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 let opts = { 
-  'expand': ["expand_example"], // [String] | which fields, if any, to expand (externalDataSources)
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
   'includeTrustors': true // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 };
 
@@ -1519,7 +1513,7 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
- **expand** | **[String]** | which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 
 ### Return type
@@ -1583,7 +1577,7 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
 
 ### Return type
 
@@ -1640,7 +1634,7 @@ apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
 
 ### Return type
 
@@ -1701,7 +1695,7 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. createDate:asc, createDate:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
 
 ### Return type
 
@@ -1761,7 +1755,7 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
  **externalOrganizationId** | **String** | External Organization ID |  |
  **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
  **sortOrder** | **String** | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc | [optional]  |
 
 ### Return type
@@ -1826,7 +1820,7 @@ apiInstance.getExternalcontactsOrganizations(opts)
  **q** | **String** | Search query | [optional]  |
  **trustorId** | **[String]** | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested | [optional]  |
  **sortOrder** | **String** | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 
 ### Return type
@@ -2079,7 +2073,7 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
 
 ### Return type
 
@@ -2133,7 +2127,7 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **lookupVal** | **String** | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
- **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources |
+ **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources, division |
 
 ### Return type
 
@@ -3483,8 +3477,6 @@ POST /api/v2/externalcontacts/externalsources
 
 Create an External Source
 
-postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * externalContacts:externalSource:add
@@ -3576,7 +3568,7 @@ apiInstance.postExternalcontactsIdentifierlookup(identifier, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **identifier** | **Object** |  |  |
- **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources |
+ **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources, division |
 
 ### Return type
 
@@ -4214,8 +4206,6 @@ PUT /api/v2/externalcontacts/externalsources/{externalSourceId}
 
 Update an External Source
 
-putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * externalContacts:externalSource:edit
@@ -4576,4 +4566,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@207.0.0_
+_purecloud-platform-client-v2@208.0.0_
