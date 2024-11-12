@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 207.0.0
+	 * @version 208.0.0
 	 */
 
 	/**
@@ -299,8 +299,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {String} fileName Name of schema file to be retrieved for this draft.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	getIntegrationsActionDraftSchema(actionId, fileName) { 
+	getIntegrationsActionDraftSchema(actionId, fileName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftSchema';
@@ -314,7 +318,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}', 
 			'GET', 
 			{ 'actionId': actionId,'fileName': fileName },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			null, 
@@ -410,8 +414,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {String} fileName Name of schema file to be retrieved for this action.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	getIntegrationsActionSchema(actionId, fileName) { 
+	getIntegrationsActionSchema(actionId, fileName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionSchema';
@@ -425,7 +433,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/schemas/{fileName}', 
 			'GET', 
 			{ 'actionId': actionId,'fileName': fileName },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			null, 
@@ -1962,8 +1970,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	postIntegrationsActionDraftTest(actionId, body) { 
+	postIntegrationsActionDraftTest(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftTest';
@@ -1977,7 +1989,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/draft/test', 
 			'POST', 
 			{ 'actionId': actionId },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			body, 
@@ -1992,8 +2004,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	postIntegrationsActionExecute(actionId, body) { 
+	postIntegrationsActionExecute(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionExecute';
@@ -2007,7 +2023,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/execute', 
 			'POST', 
 			{ 'actionId': actionId },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			body, 
@@ -2022,8 +2038,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	postIntegrationsActionTest(actionId, body) { 
+	postIntegrationsActionTest(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionTest';
@@ -2037,7 +2057,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/test', 
 			'POST', 
 			{ 'actionId': actionId },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			body, 

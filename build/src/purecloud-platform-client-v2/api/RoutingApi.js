@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 207.0.0
+	 * @version 208.0.0
 	 */
 
 	/**
@@ -590,7 +590,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Remove routing language from user
+	 * Remove a routing language from a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
@@ -620,7 +620,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Remove routing skill from user
+	 * Remove a routing skill from a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
@@ -2399,7 +2399,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * List routing language for user
+	 * List routing languages assigned to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
@@ -2430,7 +2430,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * List routing skills for user
+	 * List routing skills assigned to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
@@ -2892,7 +2892,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update routing language proficiency or state.
+	 * Update an assigned routing language's proficiency
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
@@ -2927,7 +2927,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Add bulk routing language to user. Max limit 50 languages
+	 * Assign multiple routing languages to a user. Max 50 routing languages in request body
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Language
@@ -2957,7 +2957,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Bulk add routing skills to user
+	 * Assign multiple routing skills to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
@@ -3653,7 +3653,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Add routing language to user
+	 * Assign a routing language to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Language
@@ -3683,7 +3683,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Add routing skill to user
+	 * Assign a routing skill to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Skill
@@ -4083,7 +4083,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update routing skill proficiency or state.
+	 * Update an assigned routing skill's proficiency
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
@@ -4118,7 +4118,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Replace all routing skills assigned to a user
+	 * Assign multiple routing skills to a user, replacing any current assignments
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill

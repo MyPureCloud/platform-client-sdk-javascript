@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 207.0.0
+	 * @version 208.0.0
 	 */
 
 	/**
@@ -162,6 +162,31 @@ class JourneyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/journey/views/{viewId}', 
+			'DELETE', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the Schedule of a JourneyView
+	 * used for long descriptions
+	 * @param {String} viewId Journey View Id
+	 */
+	deleteJourneyViewSchedules(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling deleteJourneyViewSchedules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/schedules', 
 			'DELETE', 
 			{ 'viewId': viewId },
 			{  },
@@ -823,6 +848,31 @@ class JourneyApi {
 	}
 
 	/**
+	 * Get the Schedule for a JourneyView
+	 * used for long descriptions
+	 * @param {String} viewId Journey View Id
+	 */
+	getJourneyViewSchedules(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewSchedules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/schedules', 
+			'GET', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Journey View by ID and version
 	 * 
 	 * @param {String} viewId viewId
@@ -1158,6 +1208,31 @@ class JourneyApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'interval': opts['interval'],'statuses': opts['statuses'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the journey schedules for an organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber The number of the page to return (default to 1)
+	 * @param {Number} opts.pageSize Max number of entities to return (default to 25)
+	 */
+	getJourneyViewsSchedules(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/schedules', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -1686,6 +1761,36 @@ class JourneyApi {
 	}
 
 	/**
+	 * Add a new Schedule to a JourneyView
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {Object} body journeyViewSchedule
+	 */
+	postJourneyViewSchedules(viewId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling postJourneyViewSchedules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyViewSchedules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/schedules', 
+			'POST', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Submit a job request for a journey view version.
 	 * used for long descriptions
 	 * @param {String} viewId Journey View Id
@@ -1788,6 +1893,36 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the Schedule for a JourneyView
+	 * used for long descriptions
+	 * @param {String} viewId Journey View Id
+	 * @param {Object} body journeyViewSchedule
+	 */
+	putJourneyViewSchedules(viewId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null) {
+			throw 'Missing the required parameter "viewId" when calling putJourneyViewSchedules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putJourneyViewSchedules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/schedules', 
+			'PUT', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 207.0.0
+	 * @version 208.0.0
 	 */
 
 	/**
@@ -764,6 +764,7 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Globally unique identifier for a knowledge base.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.documentState The state of the document.
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 */
 	getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -785,7 +786,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}', 
 			'GET', 
 			{ 'documentVariationId': documentVariationId,'documentId': documentId,'knowledgeBaseId': knowledgeBaseId },
-			{ 'documentState': opts['documentState'] },
+			{ 'documentState': opts['documentState'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -805,6 +806,7 @@ class KnowledgeApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.documentState The state of the document.
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 */
 	getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
@@ -822,7 +824,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'documentState': opts['documentState'] },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'documentState': opts['documentState'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

@@ -638,7 +638,7 @@ apiInstance.getIntegrationsActionDraftFunction(actionId)
 
 ## getIntegrationsActionDraftSchema
 
-> JsonSchemaDocument getIntegrationsActionDraftSchema(actionId, fileName)
+> JsonSchemaDocument getIntegrationsActionDraftSchema(actionId, fileName, opts)
 
 
 GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}
@@ -665,8 +665,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let fileName = "fileName_example"; // String | Name of schema file to be retrieved for this draft.
+let opts = { 
+  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+};
 
-apiInstance.getIntegrationsActionDraftSchema(actionId, fileName)
+apiInstance.getIntegrationsActionDraftSchema(actionId, fileName, opts)
   .then((data) => {
     console.log(`getIntegrationsActionDraftSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -683,6 +686,7 @@ apiInstance.getIntegrationsActionDraftSchema(actionId, fileName)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **fileName** | **String** | Name of schema file to be retrieved for this draft. |  |
+ **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
 
 ### Return type
 
@@ -846,7 +850,7 @@ apiInstance.getIntegrationsActionFunction(actionId)
 
 ## getIntegrationsActionSchema
 
-> JsonSchemaDocument getIntegrationsActionSchema(actionId, fileName)
+> JsonSchemaDocument getIntegrationsActionSchema(actionId, fileName, opts)
 
 
 GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}
@@ -873,8 +877,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let fileName = "fileName_example"; // String | Name of schema file to be retrieved for this action.
+let opts = { 
+  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+};
 
-apiInstance.getIntegrationsActionSchema(actionId, fileName)
+apiInstance.getIntegrationsActionSchema(actionId, fileName, opts)
   .then((data) => {
     console.log(`getIntegrationsActionSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -891,6 +898,7 @@ apiInstance.getIntegrationsActionSchema(actionId, fileName)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **fileName** | **String** | Name of schema file to be retrieved for this action. |  |
+ **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
 
 ### Return type
 
@@ -3876,7 +3884,7 @@ apiInstance.postIntegrationsActionDraftPublish(actionId, body)
 
 ## postIntegrationsActionDraftTest
 
-> TestExecutionResult postIntegrationsActionDraftTest(actionId, body)
+> TestExecutionResult postIntegrationsActionDraftTest(actionId, body, opts)
 
 
 POST /api/v2/integrations/actions/{actionId}/draft/test
@@ -3902,8 +3910,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = null; // {String: Object} | Map of parameters used for variable substitution.
+let opts = { 
+  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+};
 
-apiInstance.postIntegrationsActionDraftTest(actionId, body)
+apiInstance.postIntegrationsActionDraftTest(actionId, body, opts)
   .then((data) => {
     console.log(`postIntegrationsActionDraftTest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3920,6 +3931,7 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
+ **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
 
 ### Return type
 
@@ -3928,7 +3940,7 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body)
 
 ## postIntegrationsActionExecute
 
-> **Object** postIntegrationsActionExecute(actionId, body)
+> **Object** postIntegrationsActionExecute(actionId, body, opts)
 
 
 POST /api/v2/integrations/actions/{actionId}/execute
@@ -3955,8 +3967,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = null; // {String: Object} | Map of parameters used for variable substitution.
+let opts = { 
+  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+};
 
-apiInstance.postIntegrationsActionExecute(actionId, body)
+apiInstance.postIntegrationsActionExecute(actionId, body, opts)
   .then((data) => {
     console.log(`postIntegrationsActionExecute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3973,6 +3988,7 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
+ **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
 
 ### Return type
 
@@ -3981,7 +3997,7 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
 
 ## postIntegrationsActionTest
 
-> TestExecutionResult postIntegrationsActionTest(actionId, body)
+> TestExecutionResult postIntegrationsActionTest(actionId, body, opts)
 
 
 POST /api/v2/integrations/actions/{actionId}/test
@@ -4008,8 +4024,11 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = null; // {String: Object} | Map of parameters used for variable substitution.
+let opts = { 
+  'flatten': false // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
+};
 
-apiInstance.postIntegrationsActionTest(actionId, body)
+apiInstance.postIntegrationsActionTest(actionId, body, opts)
   .then((data) => {
     console.log(`postIntegrationsActionTest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4026,6 +4045,7 @@ apiInstance.postIntegrationsActionTest(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
+ **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false] |
 
 ### Return type
 
@@ -4722,4 +4742,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@207.0.0_
+_purecloud-platform-client-v2@208.0.0_

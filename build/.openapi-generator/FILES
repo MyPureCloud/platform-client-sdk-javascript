@@ -257,6 +257,7 @@ docs/deleteJourneyOutcome-example.txt
 docs/deleteJourneyOutcomesPredictor-example.txt
 docs/deleteJourneySegment-example.txt
 docs/deleteJourneyView-example.txt
+docs/deleteJourneyViewSchedules-example.txt
 docs/deleteKnowledgeKnowledgebase-example.txt
 docs/deleteKnowledgeKnowledgebaseCategory-example.txt
 docs/deleteKnowledgeKnowledgebaseDocument-example.txt
@@ -972,6 +973,7 @@ docs/getJourneySession-example.txt
 docs/getJourneySessionEvents-example.txt
 docs/getJourneySessionOutcomescores-example.txt
 docs/getJourneyView-example.txt
+docs/getJourneyViewSchedules-example.txt
 docs/getJourneyViewVersion-example.txt
 docs/getJourneyViewVersionChart-example.txt
 docs/getJourneyViewVersionChartVersion-example.txt
@@ -983,6 +985,7 @@ docs/getJourneyViews-example.txt
 docs/getJourneyViewsEventdefinition-example.txt
 docs/getJourneyViewsEventdefinitions-example.txt
 docs/getJourneyViewsJobs-example.txt
+docs/getJourneyViewsSchedules-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
@@ -1486,6 +1489,8 @@ docs/getTelephonyProvidersEdgesSiteOutboundroute-example.txt
 docs/getTelephonyProvidersEdgesSiteOutboundroutes-example.txt
 docs/getTelephonyProvidersEdgesSiteSiteconnections-example.txt
 docs/getTelephonyProvidersEdgesSites-example.txt
+docs/getTelephonyProvidersEdgesSitesSearch-example.txt
+docs/getTelephonyProvidersEdgesSitesSearch-example.txt
 docs/getTelephonyProvidersEdgesTimezones-example.txt
 docs/getTelephonyProvidersEdgesTrunk-example.txt
 docs/getTelephonyProvidersEdgesTrunkMetrics-example.txt
@@ -2208,6 +2213,7 @@ docs/postJourneyOutcomes-example.txt
 docs/postJourneyOutcomesAttributionsJobs-example.txt
 docs/postJourneyOutcomesPredictors-example.txt
 docs/postJourneySegments-example.txt
+docs/postJourneyViewSchedules-example.txt
 docs/postJourneyViewVersionJobs-example.txt
 docs/postJourneyViewVersions-example.txt
 docs/postJourneyViews-example.txt
@@ -2464,6 +2470,8 @@ docs/postTelephonyProvidersEdgesPhones-example.txt
 docs/postTelephonyProvidersEdgesPhonesReboot-example.txt
 docs/postTelephonyProvidersEdgesSiteOutboundroutes-example.txt
 docs/postTelephonyProvidersEdgesSites-example.txt
+docs/postTelephonyProvidersEdgesSitesSearch-example.txt
+docs/postTelephonyProvidersEdgesSitesSearch-example.txt
 docs/postTelephonyProvidersEdgesTrunkbasesettings-example.txt
 docs/postTelephonySiptracesDownload-example.txt
 docs/postTextbotsBotflowsSessionTurns-example.txt
@@ -2685,6 +2693,7 @@ docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
 docs/putIntegrationsSpeechTtsSettings-example.txt
 docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
+docs/putJourneyViewSchedules-example.txt
 docs/putJourneyViewVersion-example.txt
 docs/putKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
 docs/putKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt

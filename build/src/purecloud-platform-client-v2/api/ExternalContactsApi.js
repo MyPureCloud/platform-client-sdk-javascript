@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 207.0.0
+	 * @version 208.0.0
 	 */
 
 	/**
@@ -104,7 +104,6 @@ class ExternalContactsApi {
 	 * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
 	 * 
 	 * @param {String} externalSourceId External Source ID
-	 * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteExternalcontactsExternalsource(externalSourceId) { 
 		// verify the required parameter 'externalSourceId' is set
@@ -412,7 +411,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} contactId ExternalContact ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
 	getExternalcontactsContactUnresolved(contactId, opts) { 
 		opts = opts || {};
@@ -568,7 +567,6 @@ class ExternalContactsApi {
 	 * Fetch an External Source
 	 * 
 	 * @param {String} externalSourceId External Source ID
-	 * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsExternalsource(externalSourceId) { 
 		// verify the required parameter 'externalSourceId' is set
@@ -598,7 +596,6 @@ class ExternalContactsApi {
 	 * @param {Number} opts.limit The number of ExternalSources per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.name Filter by external source name. Filtering is prefix filtering and not an exact match
 	 * @param {Boolean} opts.active Filter by active status of external source
-	 * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getExternalcontactsExternalsources(opts) { 
 		opts = opts || {};
@@ -724,7 +721,7 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalDataSources)
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
 	 */
 	getExternalcontactsOrganization(externalOrganizationId, opts) { 
@@ -1732,7 +1729,6 @@ class ExternalContactsApi {
 	 * Create an External Source
 	 * 
 	 * @param {Object} body External Source
-	 * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postExternalcontactsExternalsources(body) { 
 		// verify the required parameter 'body' is set
@@ -2118,7 +2114,6 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} externalSourceId External Source ID
 	 * @param {Object} body External Source
-	 * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putExternalcontactsExternalsource(externalSourceId, body) { 
 		// verify the required parameter 'externalSourceId' is set

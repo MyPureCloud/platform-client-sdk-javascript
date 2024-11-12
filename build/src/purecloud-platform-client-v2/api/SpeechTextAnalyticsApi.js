@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 207.0.0
+	 * @version 208.0.0
 	 */
 
 	/**
@@ -824,13 +824,13 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
-	 * Translate all communication(s) for an interaction.
+	 * Translate a single interaction recording (or an email conversation)
 	 * 
 	 * @param {String} languageId Target translation language
 	 * @param {String} conversationId Conversation id
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.communicationId Communication id associated with the conversation
-	 * @param {String} opts.recordingId Recording id associated with the communication
+	 * @param {String} opts.communicationId Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
+	 * @param {String} opts.recordingId Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
 	 * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts) { 
