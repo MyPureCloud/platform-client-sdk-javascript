@@ -1,253 +1,456 @@
-Platform API version: 8610
+Platform API version: 8669
 
 
 
 
-# Major Changes (12 changes)
+# Major Changes (9 changes)
 
-**POST /api/v2/integrations/actions/{actionId}/draft/test** (1 change)
+**/api/v2/routing/sms/phonenumbers/{addressId}** (1 change)
 
-* Parameter flatten was added
+* Path /api/v2/routing/sms/phonenumbers/{addressId} was removed
 
-**GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}** (1 change)
+**GET /api/v2/knowledge/integrations/{integrationId}/options** (1 change)
 
-* Parameter flatten was added
+* Parameter knowledgeBaseIds was added
 
-**POST /api/v2/integrations/actions/{actionId}/execute** (1 change)
+**GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime** (1 change)
 
-* Parameter flatten was added
+* Parameter labelId was added
 
-**POST /api/v2/integrations/actions/{actionId}/test** (1 change)
+**GET /api/v2/quality/agents/activity** (1 change)
 
-* Parameter flatten was added
+* Parameter userState was added
 
-**GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}** (1 change)
+**GET /api/v2/quality/evaluations/query** (1 change)
 
-* Parameter flatten was added
+* Parameter includeDeletedUsers was added
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}** (1 change)
+**CampaignSchedule** (1 change)
 
-* Parameter expand was added
+* Property campaign was changed from DomainEntityRef to DivisionedDomainEntityRef
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations** (1 change)
+**EmailCampaignSchedule** (1 change)
 
-* Parameter expand was added
+* Property emailCampaign was changed from DomainEntityRef to DivisionedDomainEntityRef
 
-**MessagingTemplateRequest** (1 change)
+**MessagingCampaignSchedule** (1 change)
 
-* Model MessagingTemplateRequest was removed
+* Property messagingCampaign was changed from DomainEntityRef to DivisionedDomainEntityRef
 
-**AdditionalMessage** (1 change)
+**ValidationServiceRequest** (1 change)
 
-* Property messagingTemplate was changed from MessagingTemplateRequest to SendMessagingTemplateRequest
-
-**SendAgentlessOutboundMessageResponse** (1 change)
-
-* Property messagingTemplate was changed from MessagingTemplateRequest to SendMessagingTemplateRequest
-
-**SendAgentlessOutboundMessageRequest** (1 change)
-
-* Property messagingTemplate was changed from MessagingTemplateRequest to SendMessagingTemplateRequest
-
-**ContentFileResponse** (1 change)
-
-* Required property contentUrl was added
+* Property fileName was removed
 
 
-# Minor Changes (45 changes)
+# Minor Changes (119 changes)
 
-**/api/v2/journey/views/schedules** (2 changes)
+**/api/v2/usage/events/query** (2 changes)
 
 * Path was added
-* Operation GET was added
-
-**/api/v2/journey/views/{viewId}/schedules** (5 changes)
-
-* Path was added
-* Operation GET was added
 * Operation POST was added
+
+**/api/v2/usage/events/aggregates/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**POST /api/v2/routing/email/domains/{domainName}/routes** (1 change)
+
+* Response 202 was added
+
+**/api/v2/routing/sms/phonenumbers/{phoneNumberId}** (4 changes)
+
+* Path was added
+* Operation GET was added
 * Operation PUT was added
 * Operation DELETE was added
 
-**/api/v2/telephony/providers/edges/sites/search** (3 changes)
+**GET /api/v2/voicemail/me/mailbox** (1 change)
+
+* Response 502 was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}** (5 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions/{dataIngestionRuleVersion}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}** (5 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions/{dataIngestionRuleVersion}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}** (5 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions/{dataIngestionRuleVersion}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/socialmedia/topics/{topicId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/socialmedia/topics** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**EmailCommunicationSentMessageEvent** (1 change)
+**OrgAuthSettings** (1 change)
 
-* Model was added
+* Optional property inactivityTimeoutExclusions was added
 
-**ReportingTurn** (1 change)
+**AgentCopilotAggregateQueryPredicate** (1 change)
 
-* Enum value PartialCollection was added to property askActionResult
+* Enum value hasAnswerHighlight was added to property dimension
+
+**AgentCopilotAggregationQuery** (1 change)
+
+* Enum value hasAnswerHighlight was added to property groupBy
 
 **ViewFilter** (2 changes)
 
-* Optional property workitemsStatuses was added
-* Optional property slideshowIds was added
+* Enum value apple was added to property messageTypes
+* Optional property conferenced was added
 
-**WorkitemStatusFilter** (1 change)
+**ReportingExportJobResponse** (1 change)
 
-* Model was added
+* Enum value AGENT_COPILOT_PERFORMANCE_VIEW was added to property viewType
 
-**ReportingExportJobResponse** (2 changes)
+**ReportingExportMetadataJobResponse** (1 change)
 
-* Enum value DASHBOARD_SLIDESHOWS was added to property viewType
-* Enum value DASHBOARD_SLIDESHOWS_DETAIL was added to property viewType
+* Enum value AGENT_COPILOT_PERFORMANCE_VIEW was added to property viewType
 
-**ReportingExportMetadataJobResponse** (2 changes)
+**ReportingExportJobRequest** (1 change)
 
-* Enum value DASHBOARD_SLIDESHOWS was added to property viewType
-* Enum value DASHBOARD_SLIDESHOWS_DETAIL was added to property viewType
+* Enum value AGENT_COPILOT_PERFORMANCE_VIEW was added to property viewType
 
-**ReportingExportJobRequest** (2 changes)
+**EvaluationForm** (1 change)
 
-* Enum value DASHBOARD_SLIDESHOWS was added to property viewType
-* Enum value DASHBOARD_SLIDESHOWS_DETAIL was added to property viewType
+* Optional property evaluationSettings was added
 
-**Limit** (2 changes)
+**EvaluationSettings** (4 changes)
 
-* Enum value business.rules was added to property namespace
-* Enum value gamification was added to property namespace
+* Optional property revisionsEnabled was added
+* Optional property disputesEnabled was added
+* Optional property disputesAllowedPerEvaluation was added
+* Optional property disputesAssignees was added
 
-**ExternalContact** (1 change)
+**EvaluationSettingsAssignee** (2 changes)
 
-* Optional property externalIds was added
+* Optional property user was added
+* Optional property type was added
 
-**InstagramId** (1 change)
+**WrapupCode** (1 change)
 
-* Optional property handle was added
+* Optional property description was added
 
 **Session** (1 change)
 
-* Optional property lastScreen was added
+* Optional property divisionIds was added
 
-**Campaign** (1 change)
+**ConversationEventTyping** (1 change)
 
-* Optional property agentOwnedColumn was added
+* duration is no longer readonly
 
-**ConversationNotificationTemplateButton** (1 change)
+**MessagingIntegration** (1 change)
 
-* Model was added
+* Enum value Failed was added to property status
 
-**SendMessagingTemplateRequest** (1 change)
-
-* Model was added
-
-**JourneyViewSchedule** (1 change)
+**OpenMessagingIdentityResolutionConfig** (1 change)
 
 * Model was added
 
-**JourneyViewScheduleListing** (1 change)
+**WhatsAppIntegration** (1 change)
+
+* Enum value Failed was added to property status
+
+**CampaignRuleCondition** (1 change)
+
+* Enum value campaignContactsMessaged was added to property conditionType
+
+**CampaignRuleWarningParameters** (1 change)
+
+* Enum value campaignContactsMessaged was added to property conditionType
+
+**DivisionedDomainEntityRef** (1 change)
 
 * Model was added
 
-**ApprovalNamespace** (2 changes)
+**JourneyViewElement** (1 change)
 
-* Enum value business.rules was added to property namespace
-* Enum value gamification was added to property namespace
+* Optional property displayAttributes was added
 
-**LimitChangeRequestDetails** (2 changes)
-
-* Enum value business.rules was added to property namespace
-* Enum value gamification was added to property namespace
-
-**StatusChange** (2 changes)
-
-* Enum value business.rules was added to property namespace
-* Enum value gamification was added to property namespace
-
-**SitesSearchResponse** (1 change)
+**JourneyViewElementDisplayAttributes** (1 change)
 
 * Model was added
 
-**SiteSearchCriteria** (1 change)
+**KnowledgeIntegrationFilter** (1 change)
+
+* Optional property action was added
+
+**KnowledgeExportJobDocumentsFilter** (1 change)
+
+* Optional property includeDocumentsWithFileBody was added
+
+**Miner** (1 change)
+
+* Enum value nl-nl was added to property language
+
+**KnowledgeGuestSession** (1 change)
+
+* Optional property journeySessionId was added
+
+**EventQueryResponse** (1 change)
 
 * Model was added
 
-**SiteSearchRequest** (1 change)
+**OperationalEvent** (1 change)
 
 * Model was added
 
-**Dependency** (1 change)
-
-* Enum value DECISIONTABLE was added to property type
-
-**DependencyObject** (1 change)
-
-* Enum value DECISIONTABLE was added to property type
-
-**MonthlyPlanningPeriodSettings** (1 change)
+**EventQueryRequest** (1 change)
 
 * Model was added
 
-**ValueWrapperMonthlyPlanningPeriodSettings** (1 change)
+**EventAggregatesResponse** (1 change)
 
 * Model was added
 
-**WorkitemStatus** (1 change)
+**EventDefinitionAggregates** (1 change)
 
-* Optional property autoTerminateWorkitem was added
+* Model was added
+
+**EventAggregatesQueryRequest** (1 change)
+
+* Model was added
+
+**PredictionResults** (1 change)
+
+* Optional property label was added
+
+**BatchDownloadJobStatusResult** (1 change)
+
+* Optional property status was added
+
+**EvaluationFormResponse** (1 change)
+
+* Optional property evaluationSettings was added
+
+**WrapupCodeRequest** (1 change)
+
+* Optional property description was added
+
+**ScimV2EnterpriseUser** (1 change)
+
+* Optional property dateHire was added
+
+**UserMe** (1 change)
+
+* Optional property autoAnswerSettings was added
+
+**ArchitectJobStateResponse** (1 change)
+
+* Enum value Export was added to property command
+
+**SupportCenterLabelFilter** (1 change)
+
+* Model was added
+
+**SupportCenterSettings** (1 change)
+
+* Optional property labelFilter was added
+
+**WorkitemScriptReference** (1 change)
+
+* Model was added
+
+**WorkitemOnAttributeChangeRule** (1 change)
+
+* Enum value Date was added to property type
+
+**WorkitemOnCreateRule** (1 change)
+
+* Enum value Date was added to property type
+
+**AgentCopilotAsyncAggregationQuery** (1 change)
+
+* Enum value hasAnswerHighlight was added to property groupBy
+
+**FacebookDataIngestionRuleResponse** (1 change)
+
+* Model was added
+
+**DataIngestionRuleStatusPatchRequest** (1 change)
+
+* Model was added
+
+**FacebookDataIngestionRuleRequest** (1 change)
+
+* Model was added
+
+**FacebookDataIngestionRuleVersionResponse** (1 change)
+
+* Model was added
+
+**FacebookDataIngestionRuleVersionResponseEntityListing** (1 change)
+
+* Model was added
+
+**OpenDataIngestionRuleResponse** (1 change)
+
+* Model was added
+
+**OpenDataIngestionRuleRequest** (1 change)
+
+* Model was added
+
+**OpenDataIngestionRuleVersionResponse** (1 change)
+
+* Model was added
+
+**OpenDataIngestionRuleVersionResponseEntityListing** (1 change)
+
+* Model was added
+
+**TwitterDataIngestionRuleResponse** (1 change)
+
+* Model was added
+
+**TwitterDataIngestionRuleRequest** (1 change)
+
+* Model was added
+
+**TwitterDataIngestionRuleVersionResponse** (1 change)
+
+* Model was added
+
+**TwitterDataIngestionRuleVersionResponseEntityListing** (1 change)
+
+* Model was added
+
+**DataIngestionRules** (1 change)
+
+* Model was added
+
+**SocialTopicResponse** (1 change)
+
+* Model was added
+
+**SocialTopicPatchRequest** (1 change)
+
+* Model was added
+
+**SocialTopicRequest** (1 change)
+
+* Model was added
+
+**SocialTopicResponseEntityListing** (1 change)
+
+* Model was added
+
+**WorkitemDelta** (1 change)
+
+* Optional property scriptId was added
+
+**WorktypeDelta** (1 change)
+
+* Optional property defaultScriptId was added
 
 
-# Point Changes (16 changes)
+# Point Changes (10 changes)
 
-**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
+**GET /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns** (1 change)
 
-* Description was changed for parameter expand
+* Description was changed
 
-**GET /api/v2/externalcontacts/contacts/{contactId}/unresolved** (1 change)
+**GET /api/v2/analytics/botflows/{botFlowId}/reportingturns** (1 change)
 
-* Description was changed for parameter expand
+* Description was changed
 
-**DELETE /api/v2/users/{userId}/routinglanguages/{languageId}** (1 change)
+**GET /api/v2/analytics/botflows/{botFlowId}/sessions** (1 change)
 
-* Summary was changed
+* Description was changed
 
-**PATCH /api/v2/users/{userId}/routinglanguages/{languageId}** (1 change)
+**POST /api/v2/routing/email/domains/{domainName}/routes** (1 change)
 
-* Summary was changed
+* Response 200 was changed from successful operation to Route create completed.
 
-**GET /api/v2/users/{userId}/routinglanguages** (1 change)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search** (1 change)
 
-* Summary was changed
+* Description was changed for parameter weekDateId
 
-**POST /api/v2/users/{userId}/routinglanguages** (1 change)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades** (1 change)
 
-* Summary was changed
+* Description was changed for parameter weekDateId
 
-**PATCH /api/v2/users/{userId}/routinglanguages/bulk** (1 change)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades** (1 change)
 
-* Summary was changed
+* Description was changed for parameter weekDateId
 
-**PUT /api/v2/users/{userId}/routingskills/{skillId}** (1 change)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk** (1 change)
 
-* Summary was changed
+* Description was changed for parameter weekDateId
 
-**DELETE /api/v2/users/{userId}/routingskills/{skillId}** (1 change)
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}** (1 change)
 
-* Summary was changed
+* Description was changed for parameter weekDateId
 
-**GET /api/v2/users/{userId}/routingskills** (1 change)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match** (1 change)
 
-* Summary was changed
-
-**POST /api/v2/users/{userId}/routingskills** (1 change)
-
-* Summary was changed
-
-**PUT /api/v2/users/{userId}/routingskills/bulk** (1 change)
-
-* Summary was changed
-
-**PATCH /api/v2/users/{userId}/routingskills/bulk** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}** (3 changes)
-
-* Summary was changed
-* Description was changed for parameter communicationId
-* Description was changed for parameter recordingId
+* Description was changed for parameter weekDateId

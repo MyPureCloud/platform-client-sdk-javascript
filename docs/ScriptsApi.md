@@ -243,7 +243,7 @@ apiInstance.getScripts(opts)
  **name** | **String** | Name filter | [optional]  |
  **feature** | **String** | Feature filter | [optional]  |
  **flowId** | **String** | Secure flow id filter | [optional]  |
- **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
+ **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate, name |
  **sortOrder** | **String** | SortOrder | [optional] <br />**Values**: ascending, descending |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
@@ -313,7 +313,7 @@ apiInstance.getScriptsDivisionviews(opts)
  **name** | **String** | Name filter | [optional]  |
  **feature** | **String** | Feature filter | [optional]  |
  **flowId** | **String** | Secure flow id filter | [optional]  |
- **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
+ **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate, name |
  **sortOrder** | **String** | SortOrder | [optional] <br />**Values**: ascending, descending |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
@@ -841,4 +841,4 @@ apiInstance.postScriptsPublished(opts)
 **Script**
 
 
-_purecloud-platform-client-v2@208.0.0_
+_purecloud-platform-client-v2@209.0.0_
