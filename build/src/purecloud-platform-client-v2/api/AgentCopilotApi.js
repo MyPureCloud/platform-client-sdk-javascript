@@ -5,7 +5,7 @@ class AgentCopilotApi {
 	/**
 	 * AgentCopilot service.
 	 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-	 * @version 208.0.0
+	 * @version 209.0.0
 	 */
 
 	/**

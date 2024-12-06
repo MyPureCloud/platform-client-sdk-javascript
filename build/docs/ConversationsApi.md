@@ -1693,8 +1693,6 @@ GET /api/v2/conversations/{conversationId}/summaries
 
 Get the summaries of the conversation.
 
-getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * conversation:summary:view
@@ -12788,4 +12786,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@208.0.0_
+_purecloud-platform-client-v2@209.0.0_

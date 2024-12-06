@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingSkill**](RoutingApi#deleteRoutingSkill) | **DELETE** /api/v2/routing/skills/{skillId} | Delete Routing Skill
 [**deleteRoutingSkillgroup**](RoutingApi#deleteRoutingSkillgroup) | **DELETE** /api/v2/routing/skillgroups/{skillGroupId} | Remove skill group definition
 [**deleteRoutingSmsAddress**](RoutingApi#deleteRoutingSmsAddress) | **DELETE** /api/v2/routing/sms/addresses/{addressId} | Delete an Address by Id for SMS
-[**deleteRoutingSmsPhonenumber**](RoutingApi#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
+[**deleteRoutingSmsPhonenumber**](RoutingApi#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Delete a phone number provisioned for SMS.
 [**deleteRoutingUserDirectroutingbackupSettings**](RoutingApi#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingUserUtilization**](RoutingApi#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteRoutingUtilization**](RoutingApi#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
@@ -79,7 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSmsAddress**](RoutingApi#getRoutingSmsAddress) | **GET** /api/v2/routing/sms/addresses/{addressId} | Get an Address by Id for SMS
 [**getRoutingSmsAddresses**](RoutingApi#getRoutingSmsAddresses) | **GET** /api/v2/routing/sms/addresses | Get a list of Addresses for SMS
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
-[**getRoutingSmsPhonenumber**](RoutingApi#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{addressId} | Get a phone number provisioned for SMS.
+[**getRoutingSmsPhonenumber**](RoutingApi#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Get a phone number provisioned for SMS.
 [**getRoutingSmsPhonenumbers**](RoutingApi#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
 [**getRoutingUserDirectroutingbackupSettings**](RoutingApi#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
 [**getRoutingUserUtilization**](RoutingApi#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
@@ -148,7 +148,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingQueue**](RoutingApi#putRoutingQueue) | **PUT** /api/v2/routing/queues/{queueId} | Update a queue
 [**putRoutingSettings**](RoutingApi#putRoutingSettings) | **PUT** /api/v2/routing/settings | Update an organization's routing settings
 [**putRoutingSettingsTranscription**](RoutingApi#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
-[**putRoutingSmsPhonenumber**](RoutingApi#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{addressId} | Update a phone number provisioned for SMS.
+[**putRoutingSmsPhonenumber**](RoutingApi#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Update a phone number provisioned for SMS.
 [**putRoutingUserDirectroutingbackupSettings**](RoutingApi#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
 [**putRoutingUserUtilization**](RoutingApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingUtilization**](RoutingApi#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
@@ -919,10 +919,10 @@ void (no response body)
 
 ## deleteRoutingSmsPhonenumber
 
-> void deleteRoutingSmsPhonenumber(addressId)
+> void deleteRoutingSmsPhonenumber(phoneNumberId)
 
 
-DELETE /api/v2/routing/sms/phonenumbers/{addressId}
+DELETE /api/v2/routing/sms/phonenumbers/{phoneNumberId}
 
 Delete a phone number provisioned for SMS.
 
@@ -943,9 +943,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
 
-let addressId = "addressId_example"; // String | Address ID
+let phoneNumberId = "phoneNumberId_example"; // String | phone number
 
-apiInstance.deleteRoutingSmsPhonenumber(addressId)
+apiInstance.deleteRoutingSmsPhonenumber(phoneNumberId)
   .then(() => {
     console.log('deleteRoutingSmsPhonenumber returned successfully.');
   })
@@ -960,7 +960,7 @@ apiInstance.deleteRoutingSmsPhonenumber(addressId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **addressId** | **String** | Address ID |  |
+ **phoneNumberId** | **String** | phone number |  |
 
 ### Return type
 
@@ -2888,7 +2888,7 @@ apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
 
 ## getRoutingQueueMediatypeEstimatedwaittime
 
-> EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
+> EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts)
 
 
 GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime
@@ -2914,8 +2914,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | queueId
 let mediaType = "mediaType_example"; // String | mediaType
+let opts = { 
+  'labelId': "labelId_example" // String | Unique id that represents the interaction label used with media type for EWT calculation
+};
 
-apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
+apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts)
   .then((data) => {
     console.log(`getRoutingQueueMediatypeEstimatedwaittime success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2931,7 +2934,8 @@ apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | queueId |  |
- **mediaType** | **String** | mediaType |  |
+ **mediaType** | **String** | mediaType | <br />**Values**: all, call, chat, callback, email, videoComm, message |
+ **labelId** | **String** | Unique id that represents the interaction label used with media type for EWT calculation | [optional]  |
 
 ### Return type
 
@@ -4024,10 +4028,10 @@ apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opt
 
 ## getRoutingSmsPhonenumber
 
-> SmsPhoneNumber getRoutingSmsPhonenumber(addressId, opts)
+> SmsPhoneNumber getRoutingSmsPhonenumber(phoneNumberId, opts)
 
 
-GET /api/v2/routing/sms/phonenumbers/{addressId}
+GET /api/v2/routing/sms/phonenumbers/{phoneNumberId}
 
 Get a phone number provisioned for SMS.
 
@@ -4048,12 +4052,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
 
-let addressId = "addressId_example"; // String | Address ID
+let phoneNumberId = "phoneNumberId_example"; // String | phone number
 let opts = { 
   'expand': "expand_example" // String | Expand response with additional information
 };
 
-apiInstance.getRoutingSmsPhonenumber(addressId, opts)
+apiInstance.getRoutingSmsPhonenumber(phoneNumberId, opts)
   .then((data) => {
     console.log(`getRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4068,7 +4072,7 @@ apiInstance.getRoutingSmsPhonenumber(addressId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **addressId** | **String** | Address ID |  |
+ **phoneNumberId** | **String** | phone number |  |
  **expand** | **String** | Expand response with additional information | [optional] <br />**Values**: compliance, supportedContent |
 
 ### Return type
@@ -7700,10 +7704,10 @@ apiInstance.putRoutingSettingsTranscription(body)
 
 ## putRoutingSmsPhonenumber
 
-> SmsPhoneNumber putRoutingSmsPhonenumber(addressId, body)
+> SmsPhoneNumber putRoutingSmsPhonenumber(phoneNumberId, body)
 
 
-PUT /api/v2/routing/sms/phonenumbers/{addressId}
+PUT /api/v2/routing/sms/phonenumbers/{phoneNumberId}
 
 Update a phone number provisioned for SMS.
 
@@ -7724,10 +7728,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
 
-let addressId = "addressId_example"; // String | Address ID
+let phoneNumberId = "phoneNumberId_example"; // String | phone number
 let body = {}; // Object | SmsPhoneNumber
 
-apiInstance.putRoutingSmsPhonenumber(addressId, body)
+apiInstance.putRoutingSmsPhonenumber(phoneNumberId, body)
   .then((data) => {
     console.log(`putRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7742,7 +7746,7 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **addressId** | **String** | Address ID |  |
+ **phoneNumberId** | **String** | phone number |  |
  **body** | **Object** | SmsPhoneNumber |  |
 
 ### Return type
@@ -8114,4 +8118,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@208.0.0_
+_purecloud-platform-client-v2@209.0.0_

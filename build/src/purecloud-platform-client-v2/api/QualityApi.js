@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 208.0.0
+	 * @version 209.0.0
 	 */
 
 	/**
@@ -290,6 +290,7 @@ class QualityApi {
 	 * @param {String} opts.group group id
 	 * @param {String} opts.agentTeamId team id of agents requested
 	 * @param {String} opts.formContextId shared id between form versions
+	 * @param {Object} opts.userState 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. (default to Legacy)
 	 */
 	getQualityAgentsActivity(opts) { 
 		opts = opts || {};
@@ -299,7 +300,7 @@ class QualityApi {
 			'/api/v2/quality/agents/activity', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'agentTeamId': opts['agentTeamId'],'formContextId': opts['formContextId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'agentTeamId': opts['agentTeamId'],'formContextId': opts['formContextId'],'userState': opts['userState'] },
 			{  },
 			{  },
 			null, 
@@ -514,6 +515,7 @@ class QualityApi {
 	 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
 	 * @param {Number} opts.maximum the maximum number of results to return
 	 * @param {String} opts.sortOrder NOTE: Does not work when conversationId is supplied.
+	 * @param {Boolean} opts.includeDeletedUsers Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. (default to false)
 	 */
 	getQualityEvaluationsQuery(opts) { 
 		opts = opts || {};
@@ -523,7 +525,7 @@ class QualityApi {
 			'/api/v2/quality/evaluations/query', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'agentTeamId': opts['agentTeamId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'agentTeamId': opts['agentTeamId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'],'includeDeletedUsers': opts['includeDeletedUsers'] },
 			{  },
 			{  },
 			null, 

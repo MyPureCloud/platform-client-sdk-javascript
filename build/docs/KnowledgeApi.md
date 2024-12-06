@@ -981,7 +981,7 @@ apiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)
 
 ## getKnowledgeIntegrationOptions
 
-> KnowledgeIntegrationOptionsResponse getKnowledgeIntegrationOptions(integrationId)
+> KnowledgeIntegrationOptionsResponse getKnowledgeIntegrationOptions(integrationId, opts)
 
 
 GET /api/v2/knowledge/integrations/{integrationId}/options
@@ -1006,8 +1006,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'knowledgeBaseIds': ["knowledgeBaseIds_example"] // [String] | Narrowing down filtering option results by knowledge base.
+};
 
-apiInstance.getKnowledgeIntegrationOptions(integrationId)
+apiInstance.getKnowledgeIntegrationOptions(integrationId, opts)
   .then((data) => {
     console.log(`getKnowledgeIntegrationOptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1023,6 +1026,7 @@ apiInstance.getKnowledgeIntegrationOptions(integrationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **knowledgeBaseIds** | **[String]** | Narrowing down filtering option results by knowledge base. | [optional]  |
 
 ### Return type
 
@@ -6533,4 +6537,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@208.0.0_
+_purecloud-platform-client-v2@209.0.0_

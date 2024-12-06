@@ -2,6 +2,7 @@ import platformClient = require('purecloud-platform-client-v2');
 
 declare module 'purecloud-platform-client-v2' {
 	export const ApiClient: ApiClientClass;
+	export const PureCloudRegionHosts: Record<string, string>;
 }
 
 declare class ApiClientClass {
@@ -92,18 +93,19 @@ declare class Logger {
 	setLogger(): void;
 }
 
-declare class AgentAssistantsApi {  
-  	deleteAssistant(assistantId: string): Promise<void>; 
-  	deleteAssistantQueue(assistantId: string, queueId: string): Promise<void>; 
-  	deleteAssistantQueues(assistantId: string, opts?: AgentAssistantsApi.deleteAssistantQueuesOptions): Promise<void>; 
-  	getAssistant(assistantId: string, opts?: AgentAssistantsApi.getAssistantOptions): Promise<Models.Assistant>; 
-  	getAssistantQueue(assistantId: string, queueId: string, opts?: AgentAssistantsApi.getAssistantQueueOptions): Promise<Models.AssistantQueue>; 
-  	getAssistantQueues(assistantId: string, opts?: AgentAssistantsApi.getAssistantQueuesOptions): Promise<Models.AssistantQueueListing>; 
-  	getAssistants(opts?: AgentAssistantsApi.getAssistantsOptions): Promise<Models.AssistantListing>; 
-  	getAssistantsQueues(opts?: AgentAssistantsApi.getAssistantsQueuesOptions): Promise<Models.AssistantQueueListing>; 
-  	patchAssistant(assistantId: string, body: Models.Assistant): Promise<Models.Assistant>; 
-  	patchAssistantQueues(assistantId: string, body: Array<Models.AssistantQueue>): Promise<Models.AssistantQueueListing>; 
-  	postAssistants(body: Models.Assistant): Promise<Models.Assistant>; 
+declare class AgentAssistantsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteAssistant(assistantId: string): Promise<void>;
+  	deleteAssistantQueue(assistantId: string, queueId: string): Promise<void>;
+  	deleteAssistantQueues(assistantId: string, opts?: AgentAssistantsApi.deleteAssistantQueuesOptions): Promise<void>;
+  	getAssistant(assistantId: string, opts?: AgentAssistantsApi.getAssistantOptions): Promise<Models.Assistant>;
+  	getAssistantQueue(assistantId: string, queueId: string, opts?: AgentAssistantsApi.getAssistantQueueOptions): Promise<Models.AssistantQueue>;
+  	getAssistantQueues(assistantId: string, opts?: AgentAssistantsApi.getAssistantQueuesOptions): Promise<Models.AssistantQueueListing>;
+  	getAssistants(opts?: AgentAssistantsApi.getAssistantsOptions): Promise<Models.AssistantListing>;
+  	getAssistantsQueues(opts?: AgentAssistantsApi.getAssistantsQueuesOptions): Promise<Models.AssistantQueueListing>;
+  	patchAssistant(assistantId: string, body: Models.Assistant): Promise<Models.Assistant>;
+  	patchAssistantQueues(assistantId: string, body: Array<Models.AssistantQueue>): Promise<Models.AssistantQueueListing>;
+  	postAssistants(body: Models.Assistant): Promise<Models.Assistant>;
   	putAssistantQueue(assistantId: string, queueId: string, body: Models.AssistantQueue): Promise<Models.AssistantQueue>;
 }
 
@@ -139,48 +141,51 @@ declare namespace AgentAssistantsApi {
 	}
 }
 
-declare class AgentCopilotApi {  
-  	getAssistantCopilot(assistantId: string): Promise<Models.Copilot>; 
+declare class AgentCopilotApi {
+	constructor(apiClient?: ApiClientClass);
+  	getAssistantCopilot(assistantId: string): Promise<Models.Copilot>;
   	putAssistantCopilot(assistantId: string, body: Models.Copilot): Promise<Models.Copilot>;
 }
 
 declare namespace AgentCopilotApi { 
 }
 
-declare class AgentUIApi {  
-  	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string): Promise<void>; 
-  	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string): Promise<Models.AutoAnswerSettings>; 
-  	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string, body: Models.AutoAnswerSettings): Promise<Models.AutoAnswerSettings>; 
+declare class AgentUIApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string): Promise<void>;
+  	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string): Promise<Models.AutoAnswerSettings>;
+  	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string, body: Models.AutoAnswerSettings): Promise<Models.AutoAnswerSettings>;
   	putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string, body: Models.AutoAnswerSettings): Promise<Models.AutoAnswerSettings>;
 }
 
 declare namespace AgentUIApi { 
 }
 
-declare class AlertingApi {  
-  	deleteAlertingAlert(alertId: string): Promise<void>; 
-  	deleteAlertingInteractionstatsAlert(alertId: string): Promise<void>; 
-  	deleteAlertingInteractionstatsRule(ruleId: string): Promise<void>; 
-  	deleteAlertingRule(ruleId: string): Promise<void>; 
-  	getAlertingAlert(alertId: string): Promise<Models.CommonAlert>; 
-  	getAlertingAlertsActive(): Promise<Models.ActiveAlertCount>; 
-  	getAlertingInteractionstatsAlert(alertId: string, opts?: AlertingApi.getAlertingInteractionstatsAlertOptions): Promise<Models.InteractionStatsAlert>; 
-  	getAlertingInteractionstatsAlerts(opts?: AlertingApi.getAlertingInteractionstatsAlertsOptions): Promise<Models.InteractionStatsAlertContainer>; 
-  	getAlertingInteractionstatsAlertsUnread(): Promise<Models.UnreadMetric>; 
-  	getAlertingInteractionstatsRule(ruleId: string, opts?: AlertingApi.getAlertingInteractionstatsRuleOptions): Promise<Models.InteractionStatsRule>; 
-  	getAlertingInteractionstatsRules(opts?: AlertingApi.getAlertingInteractionstatsRulesOptions): Promise<Models.InteractionStatsRuleContainer>; 
-  	getAlertingRule(ruleId: string): Promise<Models.CommonRule>; 
-  	patchAlertingAlert(alertId: string, opts?: AlertingApi.patchAlertingAlertOptions): Promise<Models.CommonAlert>; 
-  	patchAlertingAlertsBulk(body: Models.CommonAlertBulkUpdateRequest): Promise<Models.BulkResponse>; 
-  	patchAlertingRulesBulk(body: Models.CommonRuleBulkUpdateNotificationsRequest): Promise<Models.BulkResponse>; 
-  	postAlertingAlertsQuery(opts?: AlertingApi.postAlertingAlertsQueryOptions): Promise<Models.AlertListing>; 
-  	postAlertingInteractionstatsRules(body: Models.InteractionStatsRule, opts?: AlertingApi.postAlertingInteractionstatsRulesOptions): Promise<Models.InteractionStatsRule>; 
-  	postAlertingRules(body: Models.CommonRule): Promise<Models.CommonRule>; 
-  	postAlertingRulesBulkRemove(body: Models.CommonRuleBulkDeleteRequest): Promise<Models.BulkResponse>; 
-  	postAlertingRulesQuery(opts?: AlertingApi.postAlertingRulesQueryOptions): Promise<Models.CommonRuleContainer>; 
-  	putAlertingAlert(alertId: string, opts?: AlertingApi.putAlertingAlertOptions): Promise<Models.UnreadStatus>; 
-  	putAlertingInteractionstatsAlert(alertId: string, body: Models.UnreadStatus, opts?: AlertingApi.putAlertingInteractionstatsAlertOptions): Promise<Models.UnreadStatus>; 
-  	putAlertingInteractionstatsRule(ruleId: string, body: Models.InteractionStatsRule, opts?: AlertingApi.putAlertingInteractionstatsRuleOptions): Promise<Models.InteractionStatsRule>; 
+declare class AlertingApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteAlertingAlert(alertId: string): Promise<void>;
+  	deleteAlertingInteractionstatsAlert(alertId: string): Promise<void>;
+  	deleteAlertingInteractionstatsRule(ruleId: string): Promise<void>;
+  	deleteAlertingRule(ruleId: string): Promise<void>;
+  	getAlertingAlert(alertId: string): Promise<Models.CommonAlert>;
+  	getAlertingAlertsActive(): Promise<Models.ActiveAlertCount>;
+  	getAlertingInteractionstatsAlert(alertId: string, opts?: AlertingApi.getAlertingInteractionstatsAlertOptions): Promise<Models.InteractionStatsAlert>;
+  	getAlertingInteractionstatsAlerts(opts?: AlertingApi.getAlertingInteractionstatsAlertsOptions): Promise<Models.InteractionStatsAlertContainer>;
+  	getAlertingInteractionstatsAlertsUnread(): Promise<Models.UnreadMetric>;
+  	getAlertingInteractionstatsRule(ruleId: string, opts?: AlertingApi.getAlertingInteractionstatsRuleOptions): Promise<Models.InteractionStatsRule>;
+  	getAlertingInteractionstatsRules(opts?: AlertingApi.getAlertingInteractionstatsRulesOptions): Promise<Models.InteractionStatsRuleContainer>;
+  	getAlertingRule(ruleId: string): Promise<Models.CommonRule>;
+  	patchAlertingAlert(alertId: string, opts?: AlertingApi.patchAlertingAlertOptions): Promise<Models.CommonAlert>;
+  	patchAlertingAlertsBulk(body: Models.CommonAlertBulkUpdateRequest): Promise<Models.BulkResponse>;
+  	patchAlertingRulesBulk(body: Models.CommonRuleBulkUpdateNotificationsRequest): Promise<Models.BulkResponse>;
+  	postAlertingAlertsQuery(opts?: AlertingApi.postAlertingAlertsQueryOptions): Promise<Models.AlertListing>;
+  	postAlertingInteractionstatsRules(body: Models.InteractionStatsRule, opts?: AlertingApi.postAlertingInteractionstatsRulesOptions): Promise<Models.InteractionStatsRule>;
+  	postAlertingRules(body: Models.CommonRule): Promise<Models.CommonRule>;
+  	postAlertingRulesBulkRemove(body: Models.CommonRuleBulkDeleteRequest): Promise<Models.BulkResponse>;
+  	postAlertingRulesQuery(opts?: AlertingApi.postAlertingRulesQueryOptions): Promise<Models.CommonRuleContainer>;
+  	putAlertingAlert(alertId: string, opts?: AlertingApi.putAlertingAlertOptions): Promise<Models.UnreadStatus>;
+  	putAlertingInteractionstatsAlert(alertId: string, body: Models.UnreadStatus, opts?: AlertingApi.putAlertingInteractionstatsAlertOptions): Promise<Models.UnreadStatus>;
+  	putAlertingInteractionstatsRule(ruleId: string, body: Models.InteractionStatsRule, opts?: AlertingApi.putAlertingInteractionstatsRuleOptions): Promise<Models.InteractionStatsRule>;
   	putAlertingRule(ruleId: string, body: Models.ModifiableRuleProperties): Promise<Models.CommonRule>;
 }
 
@@ -220,103 +225,104 @@ declare namespace AlertingApi {
 	}
 }
 
-declare class AnalyticsApi {  
-  	deleteAnalyticsConversationsDetailsJob(jobId: string): Promise<void>; 
-  	deleteAnalyticsUsersDetailsJob(jobId: string): Promise<void>; 
-  	getAnalyticsActionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsActionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsActionsAggregatesJobResultsOptions): Promise<Models.ActionAsyncAggregateQueryResponse>; 
-  	getAnalyticsAgentcopilotsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsAgentcopilotsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsAgentcopilotsAggregatesJobResultsOptions): Promise<Models.AgentCopilotAsyncAggregateQueryResponse>; 
-  	getAnalyticsBotflowDivisionsReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowDivisionsReportingturnsOptions): Promise<Models.ReportingTurnsResponse>; 
-  	getAnalyticsBotflowReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowReportingturnsOptions): Promise<Models.ReportingTurnsResponse>; 
-  	getAnalyticsBotflowSessions(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowSessionsOptions): Promise<Models.SessionsResponse>; 
-  	getAnalyticsBotsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsBotsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsBotsAggregatesJobResultsOptions): Promise<Models.BotAsyncAggregateQueryResponse>; 
-  	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversationWithoutAttributes>; 
-  	getAnalyticsConversationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsConversationsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsConversationsAggregatesJobResultsOptions): Promise<Models.ConversationAsyncAggregateQueryResponse>; 
-  	getAnalyticsConversationsDetails(opts?: AnalyticsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
-  	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>; 
-  	getAnalyticsConversationsDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
-  	getAnalyticsDataretentionSettings(): Promise<Models.AnalyticsDataRetentionResponse>; 
-  	getAnalyticsEvaluationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsEvaluationsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsEvaluationsAggregatesJobResultsOptions): Promise<Models.EvaluationAsyncAggregateQueryResponse>; 
-  	getAnalyticsFlowexecutionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsFlowexecutionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsFlowexecutionsAggregatesJobResultsOptions): Promise<Models.FlowExecutionAsyncAggregateQueryResponse>; 
-  	getAnalyticsFlowsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsFlowsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsFlowsAggregatesJobResultsOptions): Promise<Models.FlowAsyncAggregateQueryResponse>; 
-  	getAnalyticsJourneysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsJourneysAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsJourneysAggregatesJobResultsOptions): Promise<Models.JourneyAsyncAggregateQueryResponse>; 
-  	getAnalyticsKnowledgeAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsKnowledgeAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsKnowledgeAggregatesJobResultsOptions): Promise<Models.KnowledgeAsyncAggregateQueryResponse>; 
-  	getAnalyticsReportingDashboardsUser(userId: string): Promise<Models.DashboardUser>; 
-  	getAnalyticsReportingDashboardsUsers(opts?: AnalyticsApi.getAnalyticsReportingDashboardsUsersOptions): Promise<Models.DashboardUserListing>; 
-  	getAnalyticsReportingExports(opts?: AnalyticsApi.getAnalyticsReportingExportsOptions): Promise<Models.ReportingExportJobListing>; 
-  	getAnalyticsReportingExportsMetadata(): Promise<Models.ReportingExportMetadataJobListing>; 
-  	getAnalyticsReportingSettings(): Promise<Models.AnalyticsReportingSettings>; 
-  	getAnalyticsReportingSettingsDashboardsQuery(dashboardType: string, dashboardAccessFilter: string, opts?: AnalyticsApi.getAnalyticsReportingSettingsDashboardsQueryOptions): Promise<Models.DashboardConfigurationListing>; 
-  	getAnalyticsReportingSettingsUserDashboards(userId: string, opts?: AnalyticsApi.getAnalyticsReportingSettingsUserDashboardsOptions): Promise<Models.DashboardConfigurationListing>; 
-  	getAnalyticsResolutionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsResolutionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsResolutionsAggregatesJobResultsOptions): Promise<Models.ResolutionAsyncAggregateQueryResponse>; 
-  	getAnalyticsSurveysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsSurveysAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsSurveysAggregatesJobResultsOptions): Promise<Models.SurveyAsyncAggregateQueryResponse>; 
-  	getAnalyticsTaskmanagementAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsTaskmanagementAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsTaskmanagementAggregatesJobResultsOptions): Promise<Models.TaskManagementAsyncAggregateQueryResponse>; 
-  	getAnalyticsTranscriptsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsTranscriptsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsTranscriptsAggregatesJobResultsOptions): Promise<Models.TranscriptAsyncAggregateQueryResponse>; 
-  	getAnalyticsUsersAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsUsersAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsUsersAggregatesJobResultsOptions): Promise<Models.UserAsyncAggregateQueryResponse>; 
-  	getAnalyticsUsersDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsUsersDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsUsersDetailsJobResultsOptions): Promise<Models.AnalyticsUserDetailsAsyncQueryResponse>; 
-  	getAnalyticsUsersDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
-  	patchAnalyticsReportingSettings(body: Models.AnalyticsReportingSettings): Promise<Models.AnalyticsReportingSettings>; 
-  	postAnalyticsActionsAggregatesJobs(body: Models.ActionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsActionsAggregatesQuery(body: Models.ActionAggregationQuery): Promise<Models.ActionAggregateQueryResponse>; 
-  	postAnalyticsAgentcopilotsAggregatesJobs(body: Models.AgentCopilotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsAgentcopilotsAggregatesQuery(body: Models.AgentCopilotAggregationQuery): Promise<Models.AgentCopilotAggregateQueryResponse>; 
-  	postAnalyticsBotsAggregatesJobs(body: Models.BotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsBotsAggregatesQuery(body: Models.BotAggregationQuery): Promise<Models.BotAggregateQueryResponse>; 
-  	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
-  	postAnalyticsConversationsActivityQuery(body: Models.ConversationActivityQuery, opts?: AnalyticsApi.postAnalyticsConversationsActivityQueryOptions): Promise<Models.ConversationActivityResponse>; 
-  	postAnalyticsConversationsAggregatesJobs(body: Models.ConversationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
-  	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>; 
-  	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
-  	postAnalyticsEvaluationsAggregatesJobs(body: Models.EvaluationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>; 
-  	postAnalyticsFlowexecutionsAggregatesJobs(body: Models.FlowExecutionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsFlowexecutionsAggregatesQuery(body: Models.FlowExecutionAggregationQuery): Promise<Models.FlowExecutionAggregateQueryResponse>; 
-  	postAnalyticsFlowsActivityQuery(body: Models.FlowActivityQuery, opts?: AnalyticsApi.postAnalyticsFlowsActivityQueryOptions): Promise<Models.FlowActivityResponse>; 
-  	postAnalyticsFlowsAggregatesJobs(body: Models.FlowAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsFlowsAggregatesQuery(body: Models.FlowAggregationQuery): Promise<Models.FlowAggregateQueryResponse>; 
-  	postAnalyticsFlowsObservationsQuery(body: Models.FlowObservationQuery): Promise<Models.FlowObservationQueryResponse>; 
-  	postAnalyticsJourneysAggregatesJobs(body: Models.JourneyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>; 
-  	postAnalyticsKnowledgeAggregatesJobs(body: Models.KnowledgeAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsKnowledgeAggregatesQuery(body: Models.KnowledgeAggregationQuery): Promise<Models.KnowledgeAggregateQueryResponse>; 
-  	postAnalyticsQueuesObservationsQuery(body: Models.QueueObservationQuery): Promise<Models.QueueObservationQueryResponse>; 
-  	postAnalyticsRatelimitsAggregatesQuery(body: Models.RateLimitAggregationQuery): Promise<Models.RateLimitAggregateQueryResponse>; 
-  	postAnalyticsReportingDashboardsUsersBulkRemove(body: Array<string>): Promise<void>; 
-  	postAnalyticsReportingExports(body: Models.ReportingExportJobRequest): Promise<Models.ReportingExportJobResponse>; 
-  	postAnalyticsReportingSettingsDashboardsBulkRemove(body: Models.DashboardConfigurationBulkRequest): Promise<void>; 
-  	postAnalyticsReportingSettingsDashboardsQuery(body: Models.DashboardConfigurationQueryRequest): Promise<Models.DashboardConfigurationListing>; 
-  	postAnalyticsResolutionsAggregatesJobs(body: Models.ResolutionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsRoutingActivityQuery(body: Models.RoutingActivityQuery, opts?: AnalyticsApi.postAnalyticsRoutingActivityQueryOptions): Promise<Models.RoutingActivityResponse>; 
-  	postAnalyticsSurveysAggregatesJobs(body: Models.SurveyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsSurveysAggregatesQuery(body: Models.SurveyAggregationQuery): Promise<Models.SurveyAggregateQueryResponse>; 
-  	postAnalyticsTaskmanagementAggregatesJobs(body: Models.TaskManagementAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsTaskmanagementAggregatesQuery(body: Models.TaskManagementAggregationQuery): Promise<Models.TaskManagementAggregateQueryResponse>; 
-  	postAnalyticsTeamsActivityQuery(body: Models.TeamActivityQuery, opts?: AnalyticsApi.postAnalyticsTeamsActivityQueryOptions): Promise<Models.TeamActivityResponse>; 
-  	postAnalyticsTranscriptsAggregatesJobs(body: Models.TranscriptAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsTranscriptsAggregatesQuery(body: Models.TranscriptAggregationQuery): Promise<Models.TranscriptAggregateQueryResponse>; 
-  	postAnalyticsUsersActivityQuery(body: Models.UserActivityQuery, opts?: AnalyticsApi.postAnalyticsUsersActivityQueryOptions): Promise<Models.UserActivityResponse>; 
-  	postAnalyticsUsersAggregatesJobs(body: Models.UserAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsUsersAggregatesQuery(body: Models.UserAggregationQuery): Promise<Models.UserAggregateQueryResponse>; 
-  	postAnalyticsUsersDetailsJobs(body: Models.AsyncUserDetailsQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsUsersDetailsQuery(body: Models.UserDetailsQuery): Promise<Models.AnalyticsUserDetailsQueryResponse>; 
-  	postAnalyticsUsersObservationsQuery(body: Models.UserObservationQuery): Promise<Models.UserObservationQueryResponse>; 
+declare class AnalyticsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteAnalyticsConversationsDetailsJob(jobId: string): Promise<void>;
+  	deleteAnalyticsUsersDetailsJob(jobId: string): Promise<void>;
+  	getAnalyticsActionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsActionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsActionsAggregatesJobResultsOptions): Promise<Models.ActionAsyncAggregateQueryResponse>;
+  	getAnalyticsAgentcopilotsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsAgentcopilotsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsAgentcopilotsAggregatesJobResultsOptions): Promise<Models.AgentCopilotAsyncAggregateQueryResponse>;
+  	getAnalyticsBotflowDivisionsReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowDivisionsReportingturnsOptions): Promise<Models.ReportingTurnsResponse>;
+  	getAnalyticsBotflowReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowReportingturnsOptions): Promise<Models.ReportingTurnsResponse>;
+  	getAnalyticsBotflowSessions(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowSessionsOptions): Promise<Models.SessionsResponse>;
+  	getAnalyticsBotsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsBotsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsBotsAggregatesJobResultsOptions): Promise<Models.BotAsyncAggregateQueryResponse>;
+  	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversationWithoutAttributes>;
+  	getAnalyticsConversationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsConversationsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsConversationsAggregatesJobResultsOptions): Promise<Models.ConversationAsyncAggregateQueryResponse>;
+  	getAnalyticsConversationsDetails(opts?: AnalyticsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>;
+  	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>;
+  	getAnalyticsConversationsDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>;
+  	getAnalyticsDataretentionSettings(): Promise<Models.AnalyticsDataRetentionResponse>;
+  	getAnalyticsEvaluationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsEvaluationsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsEvaluationsAggregatesJobResultsOptions): Promise<Models.EvaluationAsyncAggregateQueryResponse>;
+  	getAnalyticsFlowexecutionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsFlowexecutionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsFlowexecutionsAggregatesJobResultsOptions): Promise<Models.FlowExecutionAsyncAggregateQueryResponse>;
+  	getAnalyticsFlowsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsFlowsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsFlowsAggregatesJobResultsOptions): Promise<Models.FlowAsyncAggregateQueryResponse>;
+  	getAnalyticsJourneysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsJourneysAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsJourneysAggregatesJobResultsOptions): Promise<Models.JourneyAsyncAggregateQueryResponse>;
+  	getAnalyticsKnowledgeAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsKnowledgeAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsKnowledgeAggregatesJobResultsOptions): Promise<Models.KnowledgeAsyncAggregateQueryResponse>;
+  	getAnalyticsReportingDashboardsUser(userId: string): Promise<Models.DashboardUser>;
+  	getAnalyticsReportingDashboardsUsers(opts?: AnalyticsApi.getAnalyticsReportingDashboardsUsersOptions): Promise<Models.DashboardUserListing>;
+  	getAnalyticsReportingExports(opts?: AnalyticsApi.getAnalyticsReportingExportsOptions): Promise<Models.ReportingExportJobListing>;
+  	getAnalyticsReportingExportsMetadata(): Promise<Models.ReportingExportMetadataJobListing>;
+  	getAnalyticsReportingSettings(): Promise<Models.AnalyticsReportingSettings>;
+  	getAnalyticsReportingSettingsDashboardsQuery(dashboardType: string, dashboardAccessFilter: string, opts?: AnalyticsApi.getAnalyticsReportingSettingsDashboardsQueryOptions): Promise<Models.DashboardConfigurationListing>;
+  	getAnalyticsReportingSettingsUserDashboards(userId: string, opts?: AnalyticsApi.getAnalyticsReportingSettingsUserDashboardsOptions): Promise<Models.DashboardConfigurationListing>;
+  	getAnalyticsResolutionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsResolutionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsResolutionsAggregatesJobResultsOptions): Promise<Models.ResolutionAsyncAggregateQueryResponse>;
+  	getAnalyticsSurveysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsSurveysAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsSurveysAggregatesJobResultsOptions): Promise<Models.SurveyAsyncAggregateQueryResponse>;
+  	getAnalyticsTaskmanagementAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsTaskmanagementAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsTaskmanagementAggregatesJobResultsOptions): Promise<Models.TaskManagementAsyncAggregateQueryResponse>;
+  	getAnalyticsTranscriptsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsTranscriptsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsTranscriptsAggregatesJobResultsOptions): Promise<Models.TranscriptAsyncAggregateQueryResponse>;
+  	getAnalyticsUsersAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsUsersAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsUsersAggregatesJobResultsOptions): Promise<Models.UserAsyncAggregateQueryResponse>;
+  	getAnalyticsUsersDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsUsersDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsUsersDetailsJobResultsOptions): Promise<Models.AnalyticsUserDetailsAsyncQueryResponse>;
+  	getAnalyticsUsersDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>;
+  	patchAnalyticsReportingSettings(body: Models.AnalyticsReportingSettings): Promise<Models.AnalyticsReportingSettings>;
+  	postAnalyticsActionsAggregatesJobs(body: Models.ActionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsActionsAggregatesQuery(body: Models.ActionAggregationQuery): Promise<Models.ActionAggregateQueryResponse>;
+  	postAnalyticsAgentcopilotsAggregatesJobs(body: Models.AgentCopilotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsAgentcopilotsAggregatesQuery(body: Models.AgentCopilotAggregationQuery): Promise<Models.AgentCopilotAggregateQueryResponse>;
+  	postAnalyticsBotsAggregatesJobs(body: Models.BotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsBotsAggregatesQuery(body: Models.BotAggregationQuery): Promise<Models.BotAggregateQueryResponse>;
+  	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>;
+  	postAnalyticsConversationsActivityQuery(body: Models.ConversationActivityQuery, opts?: AnalyticsApi.postAnalyticsConversationsActivityQueryOptions): Promise<Models.ConversationActivityResponse>;
+  	postAnalyticsConversationsAggregatesJobs(body: Models.ConversationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>;
+  	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>;
+  	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>;
+  	postAnalyticsEvaluationsAggregatesJobs(body: Models.EvaluationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>;
+  	postAnalyticsFlowexecutionsAggregatesJobs(body: Models.FlowExecutionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsFlowexecutionsAggregatesQuery(body: Models.FlowExecutionAggregationQuery): Promise<Models.FlowExecutionAggregateQueryResponse>;
+  	postAnalyticsFlowsActivityQuery(body: Models.FlowActivityQuery, opts?: AnalyticsApi.postAnalyticsFlowsActivityQueryOptions): Promise<Models.FlowActivityResponse>;
+  	postAnalyticsFlowsAggregatesJobs(body: Models.FlowAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsFlowsAggregatesQuery(body: Models.FlowAggregationQuery): Promise<Models.FlowAggregateQueryResponse>;
+  	postAnalyticsFlowsObservationsQuery(body: Models.FlowObservationQuery): Promise<Models.FlowObservationQueryResponse>;
+  	postAnalyticsJourneysAggregatesJobs(body: Models.JourneyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>;
+  	postAnalyticsKnowledgeAggregatesJobs(body: Models.KnowledgeAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsKnowledgeAggregatesQuery(body: Models.KnowledgeAggregationQuery): Promise<Models.KnowledgeAggregateQueryResponse>;
+  	postAnalyticsQueuesObservationsQuery(body: Models.QueueObservationQuery): Promise<Models.QueueObservationQueryResponse>;
+  	postAnalyticsRatelimitsAggregatesQuery(body: Models.RateLimitAggregationQuery): Promise<Models.RateLimitAggregateQueryResponse>;
+  	postAnalyticsReportingDashboardsUsersBulkRemove(body: Array<string>): Promise<void>;
+  	postAnalyticsReportingExports(body: Models.ReportingExportJobRequest): Promise<Models.ReportingExportJobResponse>;
+  	postAnalyticsReportingSettingsDashboardsBulkRemove(body: Models.DashboardConfigurationBulkRequest): Promise<void>;
+  	postAnalyticsReportingSettingsDashboardsQuery(body: Models.DashboardConfigurationQueryRequest): Promise<Models.DashboardConfigurationListing>;
+  	postAnalyticsResolutionsAggregatesJobs(body: Models.ResolutionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsRoutingActivityQuery(body: Models.RoutingActivityQuery, opts?: AnalyticsApi.postAnalyticsRoutingActivityQueryOptions): Promise<Models.RoutingActivityResponse>;
+  	postAnalyticsSurveysAggregatesJobs(body: Models.SurveyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsSurveysAggregatesQuery(body: Models.SurveyAggregationQuery): Promise<Models.SurveyAggregateQueryResponse>;
+  	postAnalyticsTaskmanagementAggregatesJobs(body: Models.TaskManagementAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsTaskmanagementAggregatesQuery(body: Models.TaskManagementAggregationQuery): Promise<Models.TaskManagementAggregateQueryResponse>;
+  	postAnalyticsTeamsActivityQuery(body: Models.TeamActivityQuery, opts?: AnalyticsApi.postAnalyticsTeamsActivityQueryOptions): Promise<Models.TeamActivityResponse>;
+  	postAnalyticsTranscriptsAggregatesJobs(body: Models.TranscriptAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsTranscriptsAggregatesQuery(body: Models.TranscriptAggregationQuery): Promise<Models.TranscriptAggregateQueryResponse>;
+  	postAnalyticsUsersActivityQuery(body: Models.UserActivityQuery, opts?: AnalyticsApi.postAnalyticsUsersActivityQueryOptions): Promise<Models.UserActivityResponse>;
+  	postAnalyticsUsersAggregatesJobs(body: Models.UserAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsUsersAggregatesQuery(body: Models.UserAggregationQuery): Promise<Models.UserAggregateQueryResponse>;
+  	postAnalyticsUsersDetailsJobs(body: Models.AsyncUserDetailsQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsUsersDetailsQuery(body: Models.UserDetailsQuery): Promise<Models.AnalyticsUserDetailsQueryResponse>;
+  	postAnalyticsUsersObservationsQuery(body: Models.UserObservationQuery): Promise<Models.UserObservationQueryResponse>;
   	putAnalyticsDataretentionSettings(body: Models.UpdateAnalyticsDataRetentionRequest): Promise<Models.AnalyticsDataRetentionResponse>;
 }
 
@@ -448,147 +454,148 @@ declare namespace AnalyticsApi {
 	}
 }
 
-declare class ArchitectApi {  
-  	deleteArchitectEmergencygroup(emergencyGroupId: string): Promise<void>; 
-  	deleteArchitectGrammar(grammarId: string): Promise<object>; 
-  	deleteArchitectGrammarLanguage(grammarId: string, languageCode: string): Promise<void>; 
-  	deleteArchitectGrammarLanguageFilesDtmf(grammarId: string, languageCode: string): Promise<void>; 
-  	deleteArchitectGrammarLanguageFilesVoice(grammarId: string, languageCode: string): Promise<void>; 
-  	deleteArchitectIvr(ivrId: string): Promise<void>; 
-  	deleteArchitectPrompt(promptId: string, opts?: ArchitectApi.deleteArchitectPromptOptions): Promise<void>; 
-  	deleteArchitectPromptResource(promptId: string, languageCode: string): Promise<void>; 
-  	deleteArchitectPromptResourceAudio(promptId: string, languageCode: string): Promise<void>; 
-  	deleteArchitectPrompts(id: Array<string>): Promise<Models.Operation>; 
-  	deleteArchitectSchedule(scheduleId: string): Promise<void>; 
-  	deleteArchitectSchedulegroup(scheduleGroupId: string): Promise<void>; 
-  	deleteArchitectSystempromptResource(promptId: string, languageCode: string): Promise<void>; 
-  	deleteFlow(flowId: string): Promise<void>; 
-  	deleteFlowInstancesSettingsLoglevels(flowId: string): Promise<void>; 
-  	deleteFlows(id: Array<string>): Promise<Models.Operation>; 
-  	deleteFlowsDatatable(datatableId: string, opts?: ArchitectApi.deleteFlowsDatatableOptions): Promise<void>; 
-  	deleteFlowsDatatableRow(datatableId: string, rowId: string): Promise<void>; 
-  	deleteFlowsInstancesSettingsLoglevelsDefault(): Promise<void>; 
-  	deleteFlowsMilestone(milestoneId: string): Promise<object>; 
-  	getArchitectDependencytracking(name: string, opts?: ArchitectApi.getArchitectDependencytrackingOptions): Promise<Models.DependencyObjectEntityListing>; 
-  	getArchitectDependencytrackingBuild(): Promise<Models.DependencyStatus>; 
-  	getArchitectDependencytrackingConsumedresources(id: string, version: string, objectType: string, opts?: ArchitectApi.getArchitectDependencytrackingConsumedresourcesOptions): Promise<Models.ConsumedResourcesEntityListing>; 
-  	getArchitectDependencytrackingConsumingresources(id: string, objectType: string, opts?: ArchitectApi.getArchitectDependencytrackingConsumingresourcesOptions): Promise<Models.ConsumingResourcesEntityListing>; 
-  	getArchitectDependencytrackingDeletedresourceconsumers(opts?: ArchitectApi.getArchitectDependencytrackingDeletedresourceconsumersOptions): Promise<Models.DependencyObjectEntityListing>; 
-  	getArchitectDependencytrackingObject(id: string, opts?: ArchitectApi.getArchitectDependencytrackingObjectOptions): Promise<Models.DependencyObject>; 
-  	getArchitectDependencytrackingType(typeId: string): Promise<Models.DependencyType>; 
-  	getArchitectDependencytrackingTypes(opts?: ArchitectApi.getArchitectDependencytrackingTypesOptions): Promise<Models.DependencyTypeEntityListing>; 
-  	getArchitectDependencytrackingUpdatedresourceconsumers(opts?: ArchitectApi.getArchitectDependencytrackingUpdatedresourceconsumersOptions): Promise<Models.DependencyObjectEntityListing>; 
-  	getArchitectEmergencygroup(emergencyGroupId: string): Promise<Models.EmergencyGroup>; 
-  	getArchitectEmergencygroups(opts?: ArchitectApi.getArchitectEmergencygroupsOptions): Promise<Models.EmergencyGroupListing>; 
-  	getArchitectEmergencygroupsDivisionviews(opts?: ArchitectApi.getArchitectEmergencygroupsDivisionviewsOptions): Promise<Models.EmergencyGroupDivisionViewEntityListing>; 
-  	getArchitectGrammar(grammarId: string, opts?: ArchitectApi.getArchitectGrammarOptions): Promise<Models.Grammar>; 
-  	getArchitectGrammarLanguage(grammarId: string, languageCode: string): Promise<Models.GrammarLanguage>; 
-  	getArchitectGrammars(opts?: ArchitectApi.getArchitectGrammarsOptions): Promise<Models.GrammarListing>; 
-  	getArchitectIvr(ivrId: string): Promise<Models.IVR>; 
-  	getArchitectIvrs(opts?: ArchitectApi.getArchitectIvrsOptions): Promise<Models.IVREntityListing>; 
-  	getArchitectIvrsDivisionviews(opts?: ArchitectApi.getArchitectIvrsDivisionviewsOptions): Promise<Models.IVRDivisionViewEntityListing>; 
-  	getArchitectPrompt(promptId: string, opts?: ArchitectApi.getArchitectPromptOptions): Promise<Models.Prompt>; 
-  	getArchitectPromptHistoryHistoryId(promptId: string, historyId: string, opts?: ArchitectApi.getArchitectPromptHistoryHistoryIdOptions): Promise<Models.HistoryListing>; 
-  	getArchitectPromptResource(promptId: string, languageCode: string): Promise<Models.PromptAsset>; 
-  	getArchitectPromptResources(promptId: string, opts?: ArchitectApi.getArchitectPromptResourcesOptions): Promise<Models.PromptAssetEntityListing>; 
-  	getArchitectPrompts(opts?: ArchitectApi.getArchitectPromptsOptions): Promise<Models.PromptEntityListing>; 
-  	getArchitectSchedule(scheduleId: string): Promise<Models.Schedule>; 
-  	getArchitectSchedulegroup(scheduleGroupId: string): Promise<Models.ScheduleGroup>; 
-  	getArchitectSchedulegroups(opts?: ArchitectApi.getArchitectSchedulegroupsOptions): Promise<Models.ScheduleGroupEntityListing>; 
-  	getArchitectSchedulegroupsDivisionviews(opts?: ArchitectApi.getArchitectSchedulegroupsDivisionviewsOptions): Promise<Models.ScheduleGroupDivisionViewEntityListing>; 
-  	getArchitectSchedules(opts?: ArchitectApi.getArchitectSchedulesOptions): Promise<Models.ScheduleEntityListing>; 
-  	getArchitectSchedulesDivisionviews(opts?: ArchitectApi.getArchitectSchedulesDivisionviewsOptions): Promise<Models.ScheduleDivisionViewEntityListing>; 
-  	getArchitectSystemprompt(promptId: string, opts?: ArchitectApi.getArchitectSystempromptOptions): Promise<Models.SystemPrompt>; 
-  	getArchitectSystempromptHistoryHistoryId(promptId: string, historyId: string, opts?: ArchitectApi.getArchitectSystempromptHistoryHistoryIdOptions): Promise<Models.HistoryListing>; 
-  	getArchitectSystempromptResource(promptId: string, languageCode: string): Promise<Models.SystemPromptAsset>; 
-  	getArchitectSystempromptResources(promptId: string, opts?: ArchitectApi.getArchitectSystempromptResourcesOptions): Promise<Models.SystemPromptAssetEntityListing>; 
-  	getArchitectSystemprompts(opts?: ArchitectApi.getArchitectSystempromptsOptions): Promise<Models.SystemPromptEntityListing>; 
-  	getFlow(flowId: string, opts?: ArchitectApi.getFlowOptions): Promise<Models.Flow>; 
-  	getFlowHistoryHistoryId(flowId: string, historyId: string, opts?: ArchitectApi.getFlowHistoryHistoryIdOptions): Promise<Models.HistoryListing>; 
-  	getFlowInstancesSettingsLoglevels(flowId: string, opts?: ArchitectApi.getFlowInstancesSettingsLoglevelsOptions): Promise<Models.FlowSettingsResponse>; 
-  	getFlowLatestconfiguration(flowId: string, opts?: ArchitectApi.getFlowLatestconfigurationOptions): Promise<object>; 
-  	getFlowVersion(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionOptions): Promise<Models.FlowVersion>; 
-  	getFlowVersionConfiguration(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionConfigurationOptions): Promise<object>; 
-  	getFlowVersionHealth(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionHealthOptions): Promise<Models.FlowHealth>; 
-  	getFlowVersionIntentHealth(flowId: string, versionId: string, intentId: string, language: string): Promise<Models.FlowHealthIntent>; 
-  	getFlowVersionIntentUtteranceHealth(flowId: string, versionId: string, intentId: string, utteranceId: string, language: string): Promise<Models.FlowHealthUtterance>; 
-  	getFlowVersions(flowId: string, opts?: ArchitectApi.getFlowVersionsOptions): Promise<Models.FlowVersionEntityListing>; 
-  	getFlows(opts?: ArchitectApi.getFlowsOptions): Promise<Models.FlowEntityListing>; 
-  	getFlowsDatatable(datatableId: string, opts?: ArchitectApi.getFlowsDatatableOptions): Promise<Models.DataTable>; 
-  	getFlowsDatatableExportJob(datatableId: string, exportJobId: string): Promise<Models.DataTableExportJob>; 
-  	getFlowsDatatableImportJob(datatableId: string, importJobId: string): Promise<Models.DataTableImportJob>; 
-  	getFlowsDatatableImportJobs(datatableId: string, opts?: ArchitectApi.getFlowsDatatableImportJobsOptions): Promise<Models.DataTableImportEntityListing>; 
-  	getFlowsDatatableRow(datatableId: string, rowId: string, opts?: ArchitectApi.getFlowsDatatableRowOptions): Promise<{ [key: string]: object; }>; 
-  	getFlowsDatatableRows(datatableId: string, opts?: ArchitectApi.getFlowsDatatableRowsOptions): Promise<Models.DataTableRowEntityListing>; 
-  	getFlowsDatatables(opts?: ArchitectApi.getFlowsDatatablesOptions): Promise<Models.DataTablesDomainEntityListing>; 
-  	getFlowsDatatablesDivisionview(datatableId: string, opts?: ArchitectApi.getFlowsDatatablesDivisionviewOptions): Promise<Models.DataTable>; 
-  	getFlowsDatatablesDivisionviews(opts?: ArchitectApi.getFlowsDatatablesDivisionviewsOptions): Promise<Models.DataTablesDomainEntityListing>; 
-  	getFlowsDivisionviews(opts?: ArchitectApi.getFlowsDivisionviewsOptions): Promise<Models.FlowDivisionViewEntityListing>; 
-  	getFlowsExecution(flowExecutionId: string): Promise<Models.FlowRuntimeExecution>; 
-  	getFlowsInstance(instanceId: string, opts?: ArchitectApi.getFlowsInstanceOptions): Promise<Models.GetFlowExecutionDataJobResult>; 
-  	getFlowsInstancesJob(jobId: string): Promise<Models.GetFlowExecutionDataJobResult>; 
-  	getFlowsInstancesQuerycapabilities(opts?: ArchitectApi.getFlowsInstancesQuerycapabilitiesOptions): Promise<Models.FlowsQueryCriteriaResponse>; 
-  	getFlowsInstancesSettingsExecutiondata(): Promise<Models.ExecutionDataFlowSettingsResponse>; 
-  	getFlowsInstancesSettingsLoglevels(opts?: ArchitectApi.getFlowsInstancesSettingsLoglevelsOptions): Promise<Models.FlowSettingsResponseEntityListing>; 
-  	getFlowsInstancesSettingsLoglevelsCharacteristics(): Promise<Models.FlowLogLevelCharacteristicsDefinitions>; 
-  	getFlowsInstancesSettingsLoglevelsDefault(opts?: ArchitectApi.getFlowsInstancesSettingsLoglevelsDefaultOptions): Promise<Models.FlowSettingsResponse>; 
-  	getFlowsJob(jobId: string, opts?: ArchitectApi.getFlowsJobOptions): Promise<Models.ArchitectJobStateResponse>; 
-  	getFlowsMilestone(milestoneId: string): Promise<Models.FlowMilestone>; 
-  	getFlowsMilestones(opts?: ArchitectApi.getFlowsMilestonesOptions): Promise<Models.FlowMilestoneListing>; 
-  	getFlowsMilestonesDivisionviews(opts?: ArchitectApi.getFlowsMilestonesDivisionviewsOptions): Promise<Models.FlowMilestoneDivisionViewEntityListing>; 
-  	getFlowsOutcome(flowOutcomeId: string): Promise<Models.FlowOutcome>; 
-  	getFlowsOutcomes(opts?: ArchitectApi.getFlowsOutcomesOptions): Promise<Models.FlowOutcomeListing>; 
-  	getFlowsOutcomesDivisionviews(opts?: ArchitectApi.getFlowsOutcomesDivisionviewsOptions): Promise<Models.FlowOutcomeDivisionViewEntityListing>; 
-  	patchArchitectGrammar(grammarId: string, opts?: ArchitectApi.patchArchitectGrammarOptions): Promise<Models.Grammar>; 
-  	patchArchitectGrammarLanguage(grammarId: string, languageCode: string, opts?: ArchitectApi.patchArchitectGrammarLanguageOptions): Promise<Models.GrammarLanguage>; 
-  	patchFlowsInstancesSettingsExecutiondata(body: Models.ExecutionDataSettingsRequest): Promise<Models.ExecutionDataFlowSettingsResponse>; 
-  	postArchitectDependencytrackingBuild(): Promise<void>; 
-  	postArchitectEmergencygroups(body: Models.EmergencyGroup): Promise<Models.EmergencyGroup>; 
-  	postArchitectGrammarLanguageFilesDtmf(grammarId: string, languageCode: string, body: Models.GrammarFileUploadRequest): Promise<Models.UploadUrlResponse>; 
-  	postArchitectGrammarLanguageFilesVoice(grammarId: string, languageCode: string, body: Models.GrammarFileUploadRequest): Promise<Models.UploadUrlResponse>; 
-  	postArchitectGrammarLanguages(grammarId: string, body: Models.GrammarLanguage): Promise<Models.GrammarLanguage>; 
-  	postArchitectGrammars(body: Models.Grammar): Promise<Models.Grammar>; 
-  	postArchitectIvrs(body: Models.IVR): Promise<Models.IVR>; 
-  	postArchitectPromptHistory(promptId: string): Promise<Models.Operation>; 
-  	postArchitectPromptResources(promptId: string, body: Models.PromptAssetCreate): Promise<Models.PromptAsset>; 
-  	postArchitectPrompts(body: Models.Prompt): Promise<Models.Prompt>; 
-  	postArchitectSchedulegroups(body: Models.ScheduleGroup): Promise<Models.ScheduleGroup>; 
-  	postArchitectSchedules(body: Models.Schedule): Promise<Models.Schedule>; 
-  	postArchitectSystempromptHistory(promptId: string): Promise<Models.Operation>; 
-  	postArchitectSystempromptResources(promptId: string, body: Models.SystemPromptAsset): Promise<Models.SystemPromptAsset>; 
-  	postFlowHistory(flowId: string): Promise<Models.Operation>; 
-  	postFlowInstancesSettingsLoglevels(flowId: string, body: Models.FlowLogLevelRequest, opts?: ArchitectApi.postFlowInstancesSettingsLoglevelsOptions): Promise<Models.FlowSettingsResponse>; 
-  	postFlowVersions(flowId: string, body: object): Promise<Models.FlowVersion>; 
-  	postFlows(body: Models.Flow, opts?: ArchitectApi.postFlowsOptions): Promise<Models.Flow>; 
-  	postFlowsActionsCheckin(flow: string): Promise<Models.Operation>; 
-  	postFlowsActionsCheckout(flow: string): Promise<Models.Flow>; 
-  	postFlowsActionsDeactivate(flow: string): Promise<Models.Flow>; 
-  	postFlowsActionsPublish(flow: string, opts?: ArchitectApi.postFlowsActionsPublishOptions): Promise<Models.Operation>; 
-  	postFlowsActionsRevert(flow: string): Promise<Models.Flow>; 
-  	postFlowsActionsUnlock(flow: string): Promise<Models.Flow>; 
-  	postFlowsDatatableExportJobs(datatableId: string): Promise<Models.DataTableExportJob>; 
-  	postFlowsDatatableImportJobs(datatableId: string, body: Models.DataTableImportJob): Promise<Models.DataTableImportJob>; 
-  	postFlowsDatatableRows(datatableId: string, dataTableRow: object): Promise<{ [key: string]: object; }>; 
-  	postFlowsDatatables(body: Models.DataTable): Promise<Models.DataTable>; 
-  	postFlowsExecutions(flowLaunchRequest: Models.FlowExecutionLaunchRequest): Promise<Models.FlowExecutionLaunchResponse>; 
-  	postFlowsInstancesJobs(body: Models.ExecutionDataRequest, opts?: ArchitectApi.postFlowsInstancesJobsOptions): Promise<Models.GetFlowExecutionDataJobResult>; 
-  	postFlowsInstancesQuery(body: Models.CriteriaQuery, opts?: ArchitectApi.postFlowsInstancesQueryOptions): Promise<Models.FlowResultEntityListing>; 
-  	postFlowsJobs(): Promise<Models.RegisterArchitectJobResponse>; 
-  	postFlowsMilestones(opts?: ArchitectApi.postFlowsMilestonesOptions): Promise<Models.FlowMilestone>; 
-  	postFlowsOutcomes(opts?: ArchitectApi.postFlowsOutcomesOptions): Promise<Models.FlowOutcome>; 
-  	putArchitectEmergencygroup(emergencyGroupId: string, body: Models.EmergencyGroup): Promise<Models.EmergencyGroup>; 
-  	putArchitectIvr(ivrId: string, body: Models.IVR): Promise<Models.IVR>; 
-  	putArchitectPrompt(promptId: string, body: Models.Prompt): Promise<Models.Prompt>; 
-  	putArchitectPromptResource(promptId: string, languageCode: string, body: Models.PromptAsset): Promise<Models.PromptAsset>; 
-  	putArchitectSchedule(scheduleId: string, body: Models.Schedule): Promise<Models.Schedule>; 
-  	putArchitectSchedulegroup(scheduleGroupId: string, body: Models.ScheduleGroup): Promise<Models.ScheduleGroup>; 
-  	putArchitectSystempromptResource(promptId: string, languageCode: string, body: Models.SystemPromptAsset): Promise<Models.SystemPromptAsset>; 
-  	putFlow(flowId: string, body: Models.Flow): Promise<Models.Flow>; 
-  	putFlowInstancesSettingsLoglevels(flowId: string, body: Models.FlowLogLevelRequest, opts?: ArchitectApi.putFlowInstancesSettingsLoglevelsOptions): Promise<Models.FlowSettingsResponse>; 
-  	putFlowsDatatable(datatableId: string, body: Models.DataTable, opts?: ArchitectApi.putFlowsDatatableOptions): Promise<Models.DataTable>; 
-  	putFlowsDatatableRow(datatableId: string, rowId: string, opts?: ArchitectApi.putFlowsDatatableRowOptions): Promise<{ [key: string]: object; }>; 
-  	putFlowsInstancesSettingsLoglevelsDefault(body: Models.FlowLogLevelRequest, opts?: ArchitectApi.putFlowsInstancesSettingsLoglevelsDefaultOptions): Promise<Models.FlowSettingsResponse>; 
-  	putFlowsMilestone(milestoneId: string, opts?: ArchitectApi.putFlowsMilestoneOptions): Promise<Models.FlowMilestone>; 
+declare class ArchitectApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteArchitectEmergencygroup(emergencyGroupId: string): Promise<void>;
+  	deleteArchitectGrammar(grammarId: string): Promise<object>;
+  	deleteArchitectGrammarLanguage(grammarId: string, languageCode: string): Promise<void>;
+  	deleteArchitectGrammarLanguageFilesDtmf(grammarId: string, languageCode: string): Promise<void>;
+  	deleteArchitectGrammarLanguageFilesVoice(grammarId: string, languageCode: string): Promise<void>;
+  	deleteArchitectIvr(ivrId: string): Promise<void>;
+  	deleteArchitectPrompt(promptId: string, opts?: ArchitectApi.deleteArchitectPromptOptions): Promise<void>;
+  	deleteArchitectPromptResource(promptId: string, languageCode: string): Promise<void>;
+  	deleteArchitectPromptResourceAudio(promptId: string, languageCode: string): Promise<void>;
+  	deleteArchitectPrompts(id: Array<string>): Promise<Models.Operation>;
+  	deleteArchitectSchedule(scheduleId: string): Promise<void>;
+  	deleteArchitectSchedulegroup(scheduleGroupId: string): Promise<void>;
+  	deleteArchitectSystempromptResource(promptId: string, languageCode: string): Promise<void>;
+  	deleteFlow(flowId: string): Promise<void>;
+  	deleteFlowInstancesSettingsLoglevels(flowId: string): Promise<void>;
+  	deleteFlows(id: Array<string>): Promise<Models.Operation>;
+  	deleteFlowsDatatable(datatableId: string, opts?: ArchitectApi.deleteFlowsDatatableOptions): Promise<void>;
+  	deleteFlowsDatatableRow(datatableId: string, rowId: string): Promise<void>;
+  	deleteFlowsInstancesSettingsLoglevelsDefault(): Promise<void>;
+  	deleteFlowsMilestone(milestoneId: string): Promise<object>;
+  	getArchitectDependencytracking(name: string, opts?: ArchitectApi.getArchitectDependencytrackingOptions): Promise<Models.DependencyObjectEntityListing>;
+  	getArchitectDependencytrackingBuild(): Promise<Models.DependencyStatus>;
+  	getArchitectDependencytrackingConsumedresources(id: string, version: string, objectType: string, opts?: ArchitectApi.getArchitectDependencytrackingConsumedresourcesOptions): Promise<Models.ConsumedResourcesEntityListing>;
+  	getArchitectDependencytrackingConsumingresources(id: string, objectType: string, opts?: ArchitectApi.getArchitectDependencytrackingConsumingresourcesOptions): Promise<Models.ConsumingResourcesEntityListing>;
+  	getArchitectDependencytrackingDeletedresourceconsumers(opts?: ArchitectApi.getArchitectDependencytrackingDeletedresourceconsumersOptions): Promise<Models.DependencyObjectEntityListing>;
+  	getArchitectDependencytrackingObject(id: string, opts?: ArchitectApi.getArchitectDependencytrackingObjectOptions): Promise<Models.DependencyObject>;
+  	getArchitectDependencytrackingType(typeId: string): Promise<Models.DependencyType>;
+  	getArchitectDependencytrackingTypes(opts?: ArchitectApi.getArchitectDependencytrackingTypesOptions): Promise<Models.DependencyTypeEntityListing>;
+  	getArchitectDependencytrackingUpdatedresourceconsumers(opts?: ArchitectApi.getArchitectDependencytrackingUpdatedresourceconsumersOptions): Promise<Models.DependencyObjectEntityListing>;
+  	getArchitectEmergencygroup(emergencyGroupId: string): Promise<Models.EmergencyGroup>;
+  	getArchitectEmergencygroups(opts?: ArchitectApi.getArchitectEmergencygroupsOptions): Promise<Models.EmergencyGroupListing>;
+  	getArchitectEmergencygroupsDivisionviews(opts?: ArchitectApi.getArchitectEmergencygroupsDivisionviewsOptions): Promise<Models.EmergencyGroupDivisionViewEntityListing>;
+  	getArchitectGrammar(grammarId: string, opts?: ArchitectApi.getArchitectGrammarOptions): Promise<Models.Grammar>;
+  	getArchitectGrammarLanguage(grammarId: string, languageCode: string): Promise<Models.GrammarLanguage>;
+  	getArchitectGrammars(opts?: ArchitectApi.getArchitectGrammarsOptions): Promise<Models.GrammarListing>;
+  	getArchitectIvr(ivrId: string): Promise<Models.IVR>;
+  	getArchitectIvrs(opts?: ArchitectApi.getArchitectIvrsOptions): Promise<Models.IVREntityListing>;
+  	getArchitectIvrsDivisionviews(opts?: ArchitectApi.getArchitectIvrsDivisionviewsOptions): Promise<Models.IVRDivisionViewEntityListing>;
+  	getArchitectPrompt(promptId: string, opts?: ArchitectApi.getArchitectPromptOptions): Promise<Models.Prompt>;
+  	getArchitectPromptHistoryHistoryId(promptId: string, historyId: string, opts?: ArchitectApi.getArchitectPromptHistoryHistoryIdOptions): Promise<Models.HistoryListing>;
+  	getArchitectPromptResource(promptId: string, languageCode: string): Promise<Models.PromptAsset>;
+  	getArchitectPromptResources(promptId: string, opts?: ArchitectApi.getArchitectPromptResourcesOptions): Promise<Models.PromptAssetEntityListing>;
+  	getArchitectPrompts(opts?: ArchitectApi.getArchitectPromptsOptions): Promise<Models.PromptEntityListing>;
+  	getArchitectSchedule(scheduleId: string): Promise<Models.Schedule>;
+  	getArchitectSchedulegroup(scheduleGroupId: string): Promise<Models.ScheduleGroup>;
+  	getArchitectSchedulegroups(opts?: ArchitectApi.getArchitectSchedulegroupsOptions): Promise<Models.ScheduleGroupEntityListing>;
+  	getArchitectSchedulegroupsDivisionviews(opts?: ArchitectApi.getArchitectSchedulegroupsDivisionviewsOptions): Promise<Models.ScheduleGroupDivisionViewEntityListing>;
+  	getArchitectSchedules(opts?: ArchitectApi.getArchitectSchedulesOptions): Promise<Models.ScheduleEntityListing>;
+  	getArchitectSchedulesDivisionviews(opts?: ArchitectApi.getArchitectSchedulesDivisionviewsOptions): Promise<Models.ScheduleDivisionViewEntityListing>;
+  	getArchitectSystemprompt(promptId: string, opts?: ArchitectApi.getArchitectSystempromptOptions): Promise<Models.SystemPrompt>;
+  	getArchitectSystempromptHistoryHistoryId(promptId: string, historyId: string, opts?: ArchitectApi.getArchitectSystempromptHistoryHistoryIdOptions): Promise<Models.HistoryListing>;
+  	getArchitectSystempromptResource(promptId: string, languageCode: string): Promise<Models.SystemPromptAsset>;
+  	getArchitectSystempromptResources(promptId: string, opts?: ArchitectApi.getArchitectSystempromptResourcesOptions): Promise<Models.SystemPromptAssetEntityListing>;
+  	getArchitectSystemprompts(opts?: ArchitectApi.getArchitectSystempromptsOptions): Promise<Models.SystemPromptEntityListing>;
+  	getFlow(flowId: string, opts?: ArchitectApi.getFlowOptions): Promise<Models.Flow>;
+  	getFlowHistoryHistoryId(flowId: string, historyId: string, opts?: ArchitectApi.getFlowHistoryHistoryIdOptions): Promise<Models.HistoryListing>;
+  	getFlowInstancesSettingsLoglevels(flowId: string, opts?: ArchitectApi.getFlowInstancesSettingsLoglevelsOptions): Promise<Models.FlowSettingsResponse>;
+  	getFlowLatestconfiguration(flowId: string, opts?: ArchitectApi.getFlowLatestconfigurationOptions): Promise<object>;
+  	getFlowVersion(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionOptions): Promise<Models.FlowVersion>;
+  	getFlowVersionConfiguration(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionConfigurationOptions): Promise<object>;
+  	getFlowVersionHealth(flowId: string, versionId: string, opts?: ArchitectApi.getFlowVersionHealthOptions): Promise<Models.FlowHealth>;
+  	getFlowVersionIntentHealth(flowId: string, versionId: string, intentId: string, language: string): Promise<Models.FlowHealthIntent>;
+  	getFlowVersionIntentUtteranceHealth(flowId: string, versionId: string, intentId: string, utteranceId: string, language: string): Promise<Models.FlowHealthUtterance>;
+  	getFlowVersions(flowId: string, opts?: ArchitectApi.getFlowVersionsOptions): Promise<Models.FlowVersionEntityListing>;
+  	getFlows(opts?: ArchitectApi.getFlowsOptions): Promise<Models.FlowEntityListing>;
+  	getFlowsDatatable(datatableId: string, opts?: ArchitectApi.getFlowsDatatableOptions): Promise<Models.DataTable>;
+  	getFlowsDatatableExportJob(datatableId: string, exportJobId: string): Promise<Models.DataTableExportJob>;
+  	getFlowsDatatableImportJob(datatableId: string, importJobId: string): Promise<Models.DataTableImportJob>;
+  	getFlowsDatatableImportJobs(datatableId: string, opts?: ArchitectApi.getFlowsDatatableImportJobsOptions): Promise<Models.DataTableImportEntityListing>;
+  	getFlowsDatatableRow(datatableId: string, rowId: string, opts?: ArchitectApi.getFlowsDatatableRowOptions): Promise<{ [key: string]: object; }>;
+  	getFlowsDatatableRows(datatableId: string, opts?: ArchitectApi.getFlowsDatatableRowsOptions): Promise<Models.DataTableRowEntityListing>;
+  	getFlowsDatatables(opts?: ArchitectApi.getFlowsDatatablesOptions): Promise<Models.DataTablesDomainEntityListing>;
+  	getFlowsDatatablesDivisionview(datatableId: string, opts?: ArchitectApi.getFlowsDatatablesDivisionviewOptions): Promise<Models.DataTable>;
+  	getFlowsDatatablesDivisionviews(opts?: ArchitectApi.getFlowsDatatablesDivisionviewsOptions): Promise<Models.DataTablesDomainEntityListing>;
+  	getFlowsDivisionviews(opts?: ArchitectApi.getFlowsDivisionviewsOptions): Promise<Models.FlowDivisionViewEntityListing>;
+  	getFlowsExecution(flowExecutionId: string): Promise<Models.FlowRuntimeExecution>;
+  	getFlowsInstance(instanceId: string, opts?: ArchitectApi.getFlowsInstanceOptions): Promise<Models.GetFlowExecutionDataJobResult>;
+  	getFlowsInstancesJob(jobId: string): Promise<Models.GetFlowExecutionDataJobResult>;
+  	getFlowsInstancesQuerycapabilities(opts?: ArchitectApi.getFlowsInstancesQuerycapabilitiesOptions): Promise<Models.FlowsQueryCriteriaResponse>;
+  	getFlowsInstancesSettingsExecutiondata(): Promise<Models.ExecutionDataFlowSettingsResponse>;
+  	getFlowsInstancesSettingsLoglevels(opts?: ArchitectApi.getFlowsInstancesSettingsLoglevelsOptions): Promise<Models.FlowSettingsResponseEntityListing>;
+  	getFlowsInstancesSettingsLoglevelsCharacteristics(): Promise<Models.FlowLogLevelCharacteristicsDefinitions>;
+  	getFlowsInstancesSettingsLoglevelsDefault(opts?: ArchitectApi.getFlowsInstancesSettingsLoglevelsDefaultOptions): Promise<Models.FlowSettingsResponse>;
+  	getFlowsJob(jobId: string, opts?: ArchitectApi.getFlowsJobOptions): Promise<Models.ArchitectJobStateResponse>;
+  	getFlowsMilestone(milestoneId: string): Promise<Models.FlowMilestone>;
+  	getFlowsMilestones(opts?: ArchitectApi.getFlowsMilestonesOptions): Promise<Models.FlowMilestoneListing>;
+  	getFlowsMilestonesDivisionviews(opts?: ArchitectApi.getFlowsMilestonesDivisionviewsOptions): Promise<Models.FlowMilestoneDivisionViewEntityListing>;
+  	getFlowsOutcome(flowOutcomeId: string): Promise<Models.FlowOutcome>;
+  	getFlowsOutcomes(opts?: ArchitectApi.getFlowsOutcomesOptions): Promise<Models.FlowOutcomeListing>;
+  	getFlowsOutcomesDivisionviews(opts?: ArchitectApi.getFlowsOutcomesDivisionviewsOptions): Promise<Models.FlowOutcomeDivisionViewEntityListing>;
+  	patchArchitectGrammar(grammarId: string, opts?: ArchitectApi.patchArchitectGrammarOptions): Promise<Models.Grammar>;
+  	patchArchitectGrammarLanguage(grammarId: string, languageCode: string, opts?: ArchitectApi.patchArchitectGrammarLanguageOptions): Promise<Models.GrammarLanguage>;
+  	patchFlowsInstancesSettingsExecutiondata(body: Models.ExecutionDataSettingsRequest): Promise<Models.ExecutionDataFlowSettingsResponse>;
+  	postArchitectDependencytrackingBuild(): Promise<void>;
+  	postArchitectEmergencygroups(body: Models.EmergencyGroup): Promise<Models.EmergencyGroup>;
+  	postArchitectGrammarLanguageFilesDtmf(grammarId: string, languageCode: string, body: Models.GrammarFileUploadRequest): Promise<Models.UploadUrlResponse>;
+  	postArchitectGrammarLanguageFilesVoice(grammarId: string, languageCode: string, body: Models.GrammarFileUploadRequest): Promise<Models.UploadUrlResponse>;
+  	postArchitectGrammarLanguages(grammarId: string, body: Models.GrammarLanguage): Promise<Models.GrammarLanguage>;
+  	postArchitectGrammars(body: Models.Grammar): Promise<Models.Grammar>;
+  	postArchitectIvrs(body: Models.IVR): Promise<Models.IVR>;
+  	postArchitectPromptHistory(promptId: string): Promise<Models.Operation>;
+  	postArchitectPromptResources(promptId: string, body: Models.PromptAssetCreate): Promise<Models.PromptAsset>;
+  	postArchitectPrompts(body: Models.Prompt): Promise<Models.Prompt>;
+  	postArchitectSchedulegroups(body: Models.ScheduleGroup): Promise<Models.ScheduleGroup>;
+  	postArchitectSchedules(body: Models.Schedule): Promise<Models.Schedule>;
+  	postArchitectSystempromptHistory(promptId: string): Promise<Models.Operation>;
+  	postArchitectSystempromptResources(promptId: string, body: Models.SystemPromptAsset): Promise<Models.SystemPromptAsset>;
+  	postFlowHistory(flowId: string): Promise<Models.Operation>;
+  	postFlowInstancesSettingsLoglevels(flowId: string, body: Models.FlowLogLevelRequest, opts?: ArchitectApi.postFlowInstancesSettingsLoglevelsOptions): Promise<Models.FlowSettingsResponse>;
+  	postFlowVersions(flowId: string, body: object): Promise<Models.FlowVersion>;
+  	postFlows(body: Models.Flow, opts?: ArchitectApi.postFlowsOptions): Promise<Models.Flow>;
+  	postFlowsActionsCheckin(flow: string): Promise<Models.Operation>;
+  	postFlowsActionsCheckout(flow: string): Promise<Models.Flow>;
+  	postFlowsActionsDeactivate(flow: string): Promise<Models.Flow>;
+  	postFlowsActionsPublish(flow: string, opts?: ArchitectApi.postFlowsActionsPublishOptions): Promise<Models.Operation>;
+  	postFlowsActionsRevert(flow: string): Promise<Models.Flow>;
+  	postFlowsActionsUnlock(flow: string): Promise<Models.Flow>;
+  	postFlowsDatatableExportJobs(datatableId: string): Promise<Models.DataTableExportJob>;
+  	postFlowsDatatableImportJobs(datatableId: string, body: Models.DataTableImportJob): Promise<Models.DataTableImportJob>;
+  	postFlowsDatatableRows(datatableId: string, dataTableRow: object): Promise<{ [key: string]: object; }>;
+  	postFlowsDatatables(body: Models.DataTable): Promise<Models.DataTable>;
+  	postFlowsExecutions(flowLaunchRequest: Models.FlowExecutionLaunchRequest): Promise<Models.FlowExecutionLaunchResponse>;
+  	postFlowsInstancesJobs(body: Models.ExecutionDataRequest, opts?: ArchitectApi.postFlowsInstancesJobsOptions): Promise<Models.GetFlowExecutionDataJobResult>;
+  	postFlowsInstancesQuery(body: Models.CriteriaQuery, opts?: ArchitectApi.postFlowsInstancesQueryOptions): Promise<Models.FlowResultEntityListing>;
+  	postFlowsJobs(): Promise<Models.RegisterArchitectJobResponse>;
+  	postFlowsMilestones(opts?: ArchitectApi.postFlowsMilestonesOptions): Promise<Models.FlowMilestone>;
+  	postFlowsOutcomes(opts?: ArchitectApi.postFlowsOutcomesOptions): Promise<Models.FlowOutcome>;
+  	putArchitectEmergencygroup(emergencyGroupId: string, body: Models.EmergencyGroup): Promise<Models.EmergencyGroup>;
+  	putArchitectIvr(ivrId: string, body: Models.IVR): Promise<Models.IVR>;
+  	putArchitectPrompt(promptId: string, body: Models.Prompt): Promise<Models.Prompt>;
+  	putArchitectPromptResource(promptId: string, languageCode: string, body: Models.PromptAsset): Promise<Models.PromptAsset>;
+  	putArchitectSchedule(scheduleId: string, body: Models.Schedule): Promise<Models.Schedule>;
+  	putArchitectSchedulegroup(scheduleGroupId: string, body: Models.ScheduleGroup): Promise<Models.ScheduleGroup>;
+  	putArchitectSystempromptResource(promptId: string, languageCode: string, body: Models.SystemPromptAsset): Promise<Models.SystemPromptAsset>;
+  	putFlow(flowId: string, body: Models.Flow): Promise<Models.Flow>;
+  	putFlowInstancesSettingsLoglevels(flowId: string, body: Models.FlowLogLevelRequest, opts?: ArchitectApi.putFlowInstancesSettingsLoglevelsOptions): Promise<Models.FlowSettingsResponse>;
+  	putFlowsDatatable(datatableId: string, body: Models.DataTable, opts?: ArchitectApi.putFlowsDatatableOptions): Promise<Models.DataTable>;
+  	putFlowsDatatableRow(datatableId: string, rowId: string, opts?: ArchitectApi.putFlowsDatatableRowOptions): Promise<{ [key: string]: object; }>;
+  	putFlowsInstancesSettingsLoglevelsDefault(body: Models.FlowLogLevelRequest, opts?: ArchitectApi.putFlowsInstancesSettingsLoglevelsDefaultOptions): Promise<Models.FlowSettingsResponse>;
+  	putFlowsMilestone(milestoneId: string, opts?: ArchitectApi.putFlowsMilestoneOptions): Promise<Models.FlowMilestone>;
   	putFlowsOutcome(flowOutcomeId: string, opts?: ArchitectApi.putFlowsOutcomeOptions): Promise<Models.Operation>;
 }
 
@@ -998,13 +1005,14 @@ declare namespace ArchitectApi {
 	}
 }
 
-declare class AuditApi {  
-  	getAuditsQueryRealtimeServicemapping(): Promise<Models.AuditQueryServiceMapping>; 
-  	getAuditsQueryServicemapping(): Promise<Models.AuditQueryServiceMapping>; 
-  	getAuditsQueryTransactionId(transactionId: string): Promise<Models.AuditQueryExecutionStatusResponse>; 
-  	getAuditsQueryTransactionIdResults(transactionId: string, opts?: AuditApi.getAuditsQueryTransactionIdResultsOptions): Promise<Models.AuditQueryExecutionResultsResponse>; 
-  	postAuditsQuery(body: Models.AuditQueryRequest): Promise<Models.AuditQueryExecutionStatusResponse>; 
-  	postAuditsQueryRealtime(body: Models.AuditRealtimeQueryRequest, opts?: AuditApi.postAuditsQueryRealtimeOptions): Promise<Models.AuditRealtimeQueryResultsResponse>; 
+declare class AuditApi {
+	constructor(apiClient?: ApiClientClass);
+  	getAuditsQueryRealtimeServicemapping(): Promise<Models.AuditQueryServiceMapping>;
+  	getAuditsQueryServicemapping(): Promise<Models.AuditQueryServiceMapping>;
+  	getAuditsQueryTransactionId(transactionId: string): Promise<Models.AuditQueryExecutionStatusResponse>;
+  	getAuditsQueryTransactionIdResults(transactionId: string, opts?: AuditApi.getAuditsQueryTransactionIdResultsOptions): Promise<Models.AuditQueryExecutionResultsResponse>;
+  	postAuditsQuery(body: Models.AuditQueryRequest): Promise<Models.AuditQueryExecutionStatusResponse>;
+  	postAuditsQueryRealtime(body: Models.AuditRealtimeQueryRequest, opts?: AuditApi.postAuditsQueryRealtimeOptions): Promise<Models.AuditRealtimeQueryResultsResponse>;
   	postAuditsQueryRealtimeRelated(body: Models.AuditRealtimeRelatedRequest, opts?: AuditApi.postAuditsQueryRealtimeRelatedOptions): Promise<Models.AuditRealtimeRelatedResultsResponse>;
 }
 
@@ -1023,50 +1031,51 @@ declare namespace AuditApi {
 	}
 }
 
-declare class AuthorizationApi {  
-  	deleteAuthorizationDivision(divisionId: string, opts?: AuthorizationApi.deleteAuthorizationDivisionOptions): Promise<void>; 
-  	deleteAuthorizationRole(roleId: string): Promise<void>; 
-  	deleteAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string): Promise<void>; 
-  	getAuthorizationDivision(divisionId: string, opts?: AuthorizationApi.getAuthorizationDivisionOptions): Promise<Models.AuthzDivision>; 
-  	getAuthorizationDivisionGrants(divisionId: string, opts?: AuthorizationApi.getAuthorizationDivisionGrantsOptions): Promise<Models.AuthzDivisionGrantEntityListing>; 
-  	getAuthorizationDivisions(opts?: AuthorizationApi.getAuthorizationDivisionsOptions): Promise<Models.AuthzDivisionEntityListing>; 
-  	getAuthorizationDivisionsHome(): Promise<Models.AuthzDivision>; 
-  	getAuthorizationDivisionsLimit(): Promise<number>; 
-  	getAuthorizationDivisionspermittedMe(permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedMeOptions): Promise<Array<Models.AuthzDivision>>; 
-  	getAuthorizationDivisionspermittedPagedMe(permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedPagedMeOptions): Promise<Models.DivsPermittedEntityListing>; 
-  	getAuthorizationDivisionspermittedPagedSubjectId(subjectId: string, permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedPagedSubjectIdOptions): Promise<Models.DivsPermittedEntityListing>; 
-  	getAuthorizationPermissions(opts?: AuthorizationApi.getAuthorizationPermissionsOptions): Promise<Models.PermissionCollectionEntityListing>; 
-  	getAuthorizationProducts(): Promise<Models.OrganizationProductEntityListing>; 
-  	getAuthorizationRole(roleId: string, opts?: AuthorizationApi.getAuthorizationRoleOptions): Promise<Models.DomainOrganizationRole>; 
-  	getAuthorizationRoleComparedefaultRightRoleId(leftRoleId: string, rightRoleId: string): Promise<Models.DomainOrgRoleDifference>; 
-  	getAuthorizationRoleSubjectgrants(roleId: string, opts?: AuthorizationApi.getAuthorizationRoleSubjectgrantsOptions): Promise<Models.SubjectDivisionGrantsEntityListing>; 
-  	getAuthorizationRoleUsers(roleId: string, opts?: AuthorizationApi.getAuthorizationRoleUsersOptions): Promise<Models.UserReferenceEntityListing>; 
-  	getAuthorizationRoles(opts?: AuthorizationApi.getAuthorizationRolesOptions): Promise<Models.OrganizationRoleEntityListing>; 
-  	getAuthorizationRolesSettings(): Promise<Models.RoleSettings>; 
-  	getAuthorizationSettings(): Promise<Models.AuthorizationSettings>; 
-  	getAuthorizationSubject(subjectId: string, opts?: AuthorizationApi.getAuthorizationSubjectOptions): Promise<Models.AuthzSubject>; 
-  	getAuthorizationSubjectsMe(opts?: AuthorizationApi.getAuthorizationSubjectsMeOptions): Promise<Models.AuthzSubject>; 
-  	getAuthorizationSubjectsRolecounts(opts?: AuthorizationApi.getAuthorizationSubjectsRolecountsOptions): Promise<{ [key: string]: object; }>; 
-  	getUserRoles(subjectId: string): Promise<Models.UserAuthorization>; 
-  	patchAuthorizationRole(roleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrganizationRole>; 
-  	patchAuthorizationSettings(body: Models.AuthorizationSettings): Promise<Models.AuthorizationSettings>; 
-  	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>; 
-  	postAuthorizationDivisionRestore(divisionId: string, opts?: AuthorizationApi.postAuthorizationDivisionRestoreOptions): Promise<Models.AuthzDivision>; 
-  	postAuthorizationDivisions(body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
-  	postAuthorizationRole(roleId: string, body: Models.SubjectDivisions, opts?: AuthorizationApi.postAuthorizationRoleOptions): Promise<void>; 
-  	postAuthorizationRoleComparedefaultRightRoleId(leftRoleId: string, rightRoleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrgRoleDifference>; 
-  	postAuthorizationRoles(body: Models.DomainOrganizationRoleCreate): Promise<Models.DomainOrganizationRole>; 
-  	postAuthorizationRolesDefault(opts?: AuthorizationApi.postAuthorizationRolesDefaultOptions): Promise<Models.OrganizationRoleEntityListing>; 
-  	postAuthorizationSubjectBulkadd(subjectId: string, body: Models.RoleDivisionGrants, opts?: AuthorizationApi.postAuthorizationSubjectBulkaddOptions): Promise<void>; 
-  	postAuthorizationSubjectBulkremove(subjectId: string, body: Models.RoleDivisionGrants): Promise<void>; 
-  	postAuthorizationSubjectBulkreplace(subjectId: string, body: Models.RoleDivisionGrants, opts?: AuthorizationApi.postAuthorizationSubjectBulkreplaceOptions): Promise<void>; 
-  	postAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string, opts?: AuthorizationApi.postAuthorizationSubjectDivisionRoleOptions): Promise<void>; 
-  	putAuthorizationDivision(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
-  	putAuthorizationRole(roleId: string, body: Models.DomainOrganizationRoleUpdate): Promise<Models.DomainOrganizationRole>; 
-  	putAuthorizationRoleUsersAdd(roleId: string, body: Array<string>): Promise<Array<string>>; 
-  	putAuthorizationRoleUsersRemove(roleId: string, body: Array<string>): Promise<Array<string>>; 
-  	putAuthorizationRolesDefault(body: Array<Models.DomainOrganizationRole>): Promise<Models.OrganizationRoleEntityListing>; 
-  	putAuthorizationRolesSettings(body: Models.RoleSettings): Promise<Models.RoleSettings>; 
+declare class AuthorizationApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteAuthorizationDivision(divisionId: string, opts?: AuthorizationApi.deleteAuthorizationDivisionOptions): Promise<void>;
+  	deleteAuthorizationRole(roleId: string): Promise<void>;
+  	deleteAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string): Promise<void>;
+  	getAuthorizationDivision(divisionId: string, opts?: AuthorizationApi.getAuthorizationDivisionOptions): Promise<Models.AuthzDivision>;
+  	getAuthorizationDivisionGrants(divisionId: string, opts?: AuthorizationApi.getAuthorizationDivisionGrantsOptions): Promise<Models.AuthzDivisionGrantEntityListing>;
+  	getAuthorizationDivisions(opts?: AuthorizationApi.getAuthorizationDivisionsOptions): Promise<Models.AuthzDivisionEntityListing>;
+  	getAuthorizationDivisionsHome(): Promise<Models.AuthzDivision>;
+  	getAuthorizationDivisionsLimit(): Promise<number>;
+  	getAuthorizationDivisionspermittedMe(permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedMeOptions): Promise<Array<Models.AuthzDivision>>;
+  	getAuthorizationDivisionspermittedPagedMe(permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedPagedMeOptions): Promise<Models.DivsPermittedEntityListing>;
+  	getAuthorizationDivisionspermittedPagedSubjectId(subjectId: string, permission: string, opts?: AuthorizationApi.getAuthorizationDivisionspermittedPagedSubjectIdOptions): Promise<Models.DivsPermittedEntityListing>;
+  	getAuthorizationPermissions(opts?: AuthorizationApi.getAuthorizationPermissionsOptions): Promise<Models.PermissionCollectionEntityListing>;
+  	getAuthorizationProducts(): Promise<Models.OrganizationProductEntityListing>;
+  	getAuthorizationRole(roleId: string, opts?: AuthorizationApi.getAuthorizationRoleOptions): Promise<Models.DomainOrganizationRole>;
+  	getAuthorizationRoleComparedefaultRightRoleId(leftRoleId: string, rightRoleId: string): Promise<Models.DomainOrgRoleDifference>;
+  	getAuthorizationRoleSubjectgrants(roleId: string, opts?: AuthorizationApi.getAuthorizationRoleSubjectgrantsOptions): Promise<Models.SubjectDivisionGrantsEntityListing>;
+  	getAuthorizationRoleUsers(roleId: string, opts?: AuthorizationApi.getAuthorizationRoleUsersOptions): Promise<Models.UserReferenceEntityListing>;
+  	getAuthorizationRoles(opts?: AuthorizationApi.getAuthorizationRolesOptions): Promise<Models.OrganizationRoleEntityListing>;
+  	getAuthorizationRolesSettings(): Promise<Models.RoleSettings>;
+  	getAuthorizationSettings(): Promise<Models.AuthorizationSettings>;
+  	getAuthorizationSubject(subjectId: string, opts?: AuthorizationApi.getAuthorizationSubjectOptions): Promise<Models.AuthzSubject>;
+  	getAuthorizationSubjectsMe(opts?: AuthorizationApi.getAuthorizationSubjectsMeOptions): Promise<Models.AuthzSubject>;
+  	getAuthorizationSubjectsRolecounts(opts?: AuthorizationApi.getAuthorizationSubjectsRolecountsOptions): Promise<{ [key: string]: object; }>;
+  	getUserRoles(subjectId: string): Promise<Models.UserAuthorization>;
+  	patchAuthorizationRole(roleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrganizationRole>;
+  	patchAuthorizationSettings(body: Models.AuthorizationSettings): Promise<Models.AuthorizationSettings>;
+  	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>;
+  	postAuthorizationDivisionRestore(divisionId: string, opts?: AuthorizationApi.postAuthorizationDivisionRestoreOptions): Promise<Models.AuthzDivision>;
+  	postAuthorizationDivisions(body: Models.AuthzDivision): Promise<Models.AuthzDivision>;
+  	postAuthorizationRole(roleId: string, body: Models.SubjectDivisions, opts?: AuthorizationApi.postAuthorizationRoleOptions): Promise<void>;
+  	postAuthorizationRoleComparedefaultRightRoleId(leftRoleId: string, rightRoleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrgRoleDifference>;
+  	postAuthorizationRoles(body: Models.DomainOrganizationRoleCreate): Promise<Models.DomainOrganizationRole>;
+  	postAuthorizationRolesDefault(opts?: AuthorizationApi.postAuthorizationRolesDefaultOptions): Promise<Models.OrganizationRoleEntityListing>;
+  	postAuthorizationSubjectBulkadd(subjectId: string, body: Models.RoleDivisionGrants, opts?: AuthorizationApi.postAuthorizationSubjectBulkaddOptions): Promise<void>;
+  	postAuthorizationSubjectBulkremove(subjectId: string, body: Models.RoleDivisionGrants): Promise<void>;
+  	postAuthorizationSubjectBulkreplace(subjectId: string, body: Models.RoleDivisionGrants, opts?: AuthorizationApi.postAuthorizationSubjectBulkreplaceOptions): Promise<void>;
+  	postAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string, opts?: AuthorizationApi.postAuthorizationSubjectDivisionRoleOptions): Promise<void>;
+  	putAuthorizationDivision(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>;
+  	putAuthorizationRole(roleId: string, body: Models.DomainOrganizationRoleUpdate): Promise<Models.DomainOrganizationRole>;
+  	putAuthorizationRoleUsersAdd(roleId: string, body: Array<string>): Promise<Array<string>>;
+  	putAuthorizationRoleUsersRemove(roleId: string, body: Array<string>): Promise<Array<string>>;
+  	putAuthorizationRolesDefault(body: Array<Models.DomainOrganizationRole>): Promise<Models.OrganizationRoleEntityListing>;
+  	putAuthorizationRolesSettings(body: Models.RoleSettings): Promise<Models.RoleSettings>;
   	putUserRoles(subjectId: string, body: Array<string>): Promise<Models.UserAuthorization>;
 }
 
@@ -1167,8 +1176,9 @@ declare namespace AuthorizationApi {
 	}
 }
 
-declare class BillingApi {  
-  	getBillingReportsBillableusage(startDate: string, endDate: string): Promise<Models.BillingUsageReport>; 
+declare class BillingApi {
+	constructor(apiClient?: ApiClientClass);
+  	getBillingReportsBillableusage(startDate: string, endDate: string): Promise<Models.BillingUsageReport>;
   	getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId: string, opts?: BillingApi.getBillingTrusteebillingoverviewTrustorOrgIdOptions): Promise<Models.TrusteeBillingOverview>;
 }
 
@@ -1178,8 +1188,9 @@ declare namespace BillingApi {
 	}
 }
 
-declare class CarrierServicesApi {  
-  	getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber: string): Promise<Models.EmergencyLocation>; 
+declare class CarrierServicesApi {
+	constructor(apiClient?: ApiClientClass);
+  	getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber: string): Promise<Models.EmergencyLocation>;
   	postCarrierservicesIntegrationsEmergencylocationsMe(opts?: CarrierServicesApi.postCarrierservicesIntegrationsEmergencylocationsMeOptions): Promise<Models.EmergencyLocation>;
 }
 
@@ -1189,38 +1200,39 @@ declare namespace CarrierServicesApi {
 	}
 }
 
-declare class ChatApi {  
-  	deleteChatsRoomMessage(roomJid: string, messageId: string): Promise<void>; 
-  	deleteChatsRoomMessagesPin(roomJid: string, pinnedMessageId: string): Promise<void>; 
-  	deleteChatsRoomParticipant(roomJid: string, userId: string): Promise<void>; 
-  	deleteChatsUserMessage(userId: string, messageId: string): Promise<void>; 
-  	deleteChatsUserMessagesPin(userId: string, pinnedMessageId: string): Promise<void>; 
-  	getChatsMessage(messageId: string): Promise<Models.ChatMessageResponse>; 
-  	getChatsRoom(roomJid: string): Promise<Models.Room>; 
-  	getChatsRoomMessage(roomJid: string, messageIds: string): Promise<Models.ChatMessageEntityListing>; 
-  	getChatsRoomMessages(roomJid: string, opts?: ChatApi.getChatsRoomMessagesOptions): Promise<Models.ChatMessageEntityListing>; 
-  	getChatsRoomParticipant(roomJid: string, participantJid: string): Promise<Models.RoomParticipant>; 
-  	getChatsRoomParticipants(roomJid: string): Promise<Models.RoomParticipantsResponse>; 
-  	getChatsSettings(): Promise<Models.ChatSettings>; 
-  	getChatsThreadMessages(threadId: string, opts?: ChatApi.getChatsThreadMessagesOptions): Promise<Models.ChatMessageEntityListing>; 
-  	getChatsUser(userId: string): Promise<Models.OneOnOne>; 
-  	getChatsUserMessage(userId: string, messageIds: string): Promise<Models.ChatMessageEntityListing>; 
-  	getChatsUserMessages(userId: string, opts?: ChatApi.getChatsUserMessagesOptions): Promise<Models.ChatMessageResponse>; 
-  	getChatsUserSettings(userId: string): Promise<Models.ChatUserSettings>; 
-  	getChatsUsersMeSettings(): Promise<Models.ChatUserSettings>; 
-  	patchChatsRoom(roomJid: string, body: Models.RoomUpdateRequest): Promise<void>; 
-  	patchChatsRoomMessage(roomJid: string, messageId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
-  	patchChatsSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>; 
-  	patchChatsUserMessage(userId: string, messageId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
-  	patchChatsUserSettings(userId: string, body: Models.ChatUserSettings): Promise<Models.ChatUserSettings>; 
-  	patchChatsUsersMeSettings(body: Models.ChatUserSettings): Promise<Models.ChatUserSettings>; 
-  	postChatsRoomMessages(roomJid: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
-  	postChatsRoomMessagesPins(roomJid: string, body: Models.PinnedMessageRequest): Promise<void>; 
-  	postChatsRoomParticipant(roomJid: string, userId: string): Promise<void>; 
-  	postChatsRooms(body: Models.CreateRoomRequest): Promise<Models.CreateRoomResponse>; 
-  	postChatsUserMessages(userId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>; 
-  	postChatsUserMessagesPins(userId: string, body: Models.PinnedMessageRequest): Promise<void>; 
-  	putChatsMessageReactions(messageId: string, body: Models.ChatReactionUpdate): Promise<void>; 
+declare class ChatApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteChatsRoomMessage(roomJid: string, messageId: string): Promise<void>;
+  	deleteChatsRoomMessagesPin(roomJid: string, pinnedMessageId: string): Promise<void>;
+  	deleteChatsRoomParticipant(roomJid: string, userId: string): Promise<void>;
+  	deleteChatsUserMessage(userId: string, messageId: string): Promise<void>;
+  	deleteChatsUserMessagesPin(userId: string, pinnedMessageId: string): Promise<void>;
+  	getChatsMessage(messageId: string): Promise<Models.ChatMessageResponse>;
+  	getChatsRoom(roomJid: string): Promise<Models.Room>;
+  	getChatsRoomMessage(roomJid: string, messageIds: string): Promise<Models.ChatMessageEntityListing>;
+  	getChatsRoomMessages(roomJid: string, opts?: ChatApi.getChatsRoomMessagesOptions): Promise<Models.ChatMessageEntityListing>;
+  	getChatsRoomParticipant(roomJid: string, participantJid: string): Promise<Models.RoomParticipant>;
+  	getChatsRoomParticipants(roomJid: string): Promise<Models.RoomParticipantsResponse>;
+  	getChatsSettings(): Promise<Models.ChatSettings>;
+  	getChatsThreadMessages(threadId: string, opts?: ChatApi.getChatsThreadMessagesOptions): Promise<Models.ChatMessageEntityListing>;
+  	getChatsUser(userId: string): Promise<Models.OneOnOne>;
+  	getChatsUserMessage(userId: string, messageIds: string): Promise<Models.ChatMessageEntityListing>;
+  	getChatsUserMessages(userId: string, opts?: ChatApi.getChatsUserMessagesOptions): Promise<Models.ChatMessageResponse>;
+  	getChatsUserSettings(userId: string): Promise<Models.ChatUserSettings>;
+  	getChatsUsersMeSettings(): Promise<Models.ChatUserSettings>;
+  	patchChatsRoom(roomJid: string, body: Models.RoomUpdateRequest): Promise<void>;
+  	patchChatsRoomMessage(roomJid: string, messageId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>;
+  	patchChatsSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>;
+  	patchChatsUserMessage(userId: string, messageId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>;
+  	patchChatsUserSettings(userId: string, body: Models.ChatUserSettings): Promise<Models.ChatUserSettings>;
+  	patchChatsUsersMeSettings(body: Models.ChatUserSettings): Promise<Models.ChatUserSettings>;
+  	postChatsRoomMessages(roomJid: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>;
+  	postChatsRoomMessagesPins(roomJid: string, body: Models.PinnedMessageRequest): Promise<void>;
+  	postChatsRoomParticipant(roomJid: string, userId: string): Promise<void>;
+  	postChatsRooms(body: Models.CreateRoomRequest): Promise<Models.CreateRoomResponse>;
+  	postChatsUserMessages(userId: string, body: Models.SendMessageBody): Promise<Models.ChatSendMessageResponse>;
+  	postChatsUserMessagesPins(userId: string, body: Models.PinnedMessageRequest): Promise<void>;
+  	putChatsMessageReactions(messageId: string, body: Models.ChatReactionUpdate): Promise<void>;
   	putChatsSettings(body: Models.ChatSettings): Promise<Models.ChatSettings>;
 }
 
@@ -1242,25 +1254,26 @@ declare namespace ChatApi {
 	}
 }
 
-declare class CoachingApi {  
-  	deleteCoachingAppointment(appointmentId: string): Promise<Models.CoachingAppointmentReference>; 
-  	deleteCoachingAppointmentAnnotation(appointmentId: string, annotationId: string): Promise<void>; 
-  	getCoachingAppointment(appointmentId: string): Promise<Models.CoachingAppointmentResponse>; 
-  	getCoachingAppointmentAnnotation(appointmentId: string, annotationId: string): Promise<Models.CoachingAnnotation>; 
-  	getCoachingAppointmentAnnotations(appointmentId: string, opts?: CoachingApi.getCoachingAppointmentAnnotationsOptions): Promise<Models.CoachingAnnotationList>; 
-  	getCoachingAppointmentStatuses(appointmentId: string, opts?: CoachingApi.getCoachingAppointmentStatusesOptions): Promise<Models.CoachingAppointmentStatusResponseList>; 
-  	getCoachingAppointments(userIds: Array<string>, opts?: CoachingApi.getCoachingAppointmentsOptions): Promise<Models.CoachingAppointmentResponseList>; 
-  	getCoachingAppointmentsMe(opts?: CoachingApi.getCoachingAppointmentsMeOptions): Promise<Models.CoachingAppointmentResponseList>; 
-  	getCoachingNotification(notificationId: string, opts?: CoachingApi.getCoachingNotificationOptions): Promise<Models.CoachingNotification>; 
-  	getCoachingNotifications(opts?: CoachingApi.getCoachingNotificationsOptions): Promise<Models.CoachingNotificationList>; 
-  	patchCoachingAppointment(appointmentId: string, body: Models.UpdateCoachingAppointmentRequest): Promise<Models.CoachingAppointmentResponse>; 
-  	patchCoachingAppointmentAnnotation(appointmentId: string, annotationId: string, body: Models.CoachingAnnotation): Promise<Models.CoachingAnnotation>; 
-  	patchCoachingAppointmentStatus(appointmentId: string, body: Models.CoachingAppointmentStatusRequest): Promise<Models.CoachingAppointmentStatusResponse>; 
-  	patchCoachingNotification(notificationId: string, body: Models.CoachingNotification): Promise<Models.CoachingNotification>; 
-  	postCoachingAppointmentAnnotations(appointmentId: string, body: Models.CoachingAnnotationCreateRequest): Promise<Models.CoachingAnnotation>; 
-  	postCoachingAppointmentConversations(appointmentId: string, body: Models.AddConversationRequest): Promise<Models.AddConversationResponse>; 
-  	postCoachingAppointments(body: Models.CreateCoachingAppointmentRequest): Promise<Models.CoachingAppointmentResponse>; 
-  	postCoachingAppointmentsAggregatesQuery(body: Models.CoachingAppointmentAggregateRequest): Promise<Models.CoachingAppointmentAggregateResponse>; 
+declare class CoachingApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteCoachingAppointment(appointmentId: string): Promise<Models.CoachingAppointmentReference>;
+  	deleteCoachingAppointmentAnnotation(appointmentId: string, annotationId: string): Promise<void>;
+  	getCoachingAppointment(appointmentId: string): Promise<Models.CoachingAppointmentResponse>;
+  	getCoachingAppointmentAnnotation(appointmentId: string, annotationId: string): Promise<Models.CoachingAnnotation>;
+  	getCoachingAppointmentAnnotations(appointmentId: string, opts?: CoachingApi.getCoachingAppointmentAnnotationsOptions): Promise<Models.CoachingAnnotationList>;
+  	getCoachingAppointmentStatuses(appointmentId: string, opts?: CoachingApi.getCoachingAppointmentStatusesOptions): Promise<Models.CoachingAppointmentStatusResponseList>;
+  	getCoachingAppointments(userIds: Array<string>, opts?: CoachingApi.getCoachingAppointmentsOptions): Promise<Models.CoachingAppointmentResponseList>;
+  	getCoachingAppointmentsMe(opts?: CoachingApi.getCoachingAppointmentsMeOptions): Promise<Models.CoachingAppointmentResponseList>;
+  	getCoachingNotification(notificationId: string, opts?: CoachingApi.getCoachingNotificationOptions): Promise<Models.CoachingNotification>;
+  	getCoachingNotifications(opts?: CoachingApi.getCoachingNotificationsOptions): Promise<Models.CoachingNotificationList>;
+  	patchCoachingAppointment(appointmentId: string, body: Models.UpdateCoachingAppointmentRequest): Promise<Models.CoachingAppointmentResponse>;
+  	patchCoachingAppointmentAnnotation(appointmentId: string, annotationId: string, body: Models.CoachingAnnotation): Promise<Models.CoachingAnnotation>;
+  	patchCoachingAppointmentStatus(appointmentId: string, body: Models.CoachingAppointmentStatusRequest): Promise<Models.CoachingAppointmentStatusResponse>;
+  	patchCoachingNotification(notificationId: string, body: Models.CoachingNotification): Promise<Models.CoachingNotification>;
+  	postCoachingAppointmentAnnotations(appointmentId: string, body: Models.CoachingAnnotationCreateRequest): Promise<Models.CoachingAnnotation>;
+  	postCoachingAppointmentConversations(appointmentId: string, body: Models.AddConversationRequest): Promise<Models.AddConversationResponse>;
+  	postCoachingAppointments(body: Models.CreateCoachingAppointmentRequest): Promise<Models.CoachingAppointmentResponse>;
+  	postCoachingAppointmentsAggregatesQuery(body: Models.CoachingAppointmentAggregateRequest): Promise<Models.CoachingAppointmentAggregateResponse>;
   	postCoachingScheduleslotsQuery(body: Models.CoachingSlotsRequest): Promise<Models.CoachingSlotsResponse>;
 }
 
@@ -1307,42 +1320,43 @@ declare namespace CoachingApi {
 	}
 }
 
-declare class ContentManagementApi {  
-  	deleteContentmanagementDocument(documentId: string, opts?: ContentManagementApi.deleteContentmanagementDocumentOptions): Promise<void>; 
-  	deleteContentmanagementShare(shareId: string): Promise<void>; 
-  	deleteContentmanagementStatusStatusId(statusId: string): Promise<void>; 
-  	deleteContentmanagementWorkspace(workspaceId: string, opts?: ContentManagementApi.deleteContentmanagementWorkspaceOptions): Promise<void>; 
-  	deleteContentmanagementWorkspaceMember(workspaceId: string, memberId: string): Promise<void>; 
-  	deleteContentmanagementWorkspaceTagvalue(workspaceId: string, tagId: string): Promise<void>; 
-  	getContentmanagementDocument(documentId: string, opts?: ContentManagementApi.getContentmanagementDocumentOptions): Promise<Models.Document>; 
-  	getContentmanagementDocumentContent(documentId: string, opts?: ContentManagementApi.getContentmanagementDocumentContentOptions): Promise<Models.DownloadResponse>; 
-  	getContentmanagementDocuments(workspaceId: string, opts?: ContentManagementApi.getContentmanagementDocumentsOptions): Promise<Models.DocumentEntityListing>; 
-  	getContentmanagementQuery(queryPhrase: string, opts?: ContentManagementApi.getContentmanagementQueryOptions): Promise<Models.QueryResults>; 
-  	getContentmanagementSecurityprofile(securityProfileId: string): Promise<Models.SecurityProfile>; 
-  	getContentmanagementSecurityprofiles(): Promise<Models.SecurityProfileEntityListing>; 
-  	getContentmanagementShare(shareId: string, opts?: ContentManagementApi.getContentmanagementShareOptions): Promise<Models.Share>; 
-  	getContentmanagementSharedSharedId(sharedId: string, opts?: ContentManagementApi.getContentmanagementSharedSharedIdOptions): Promise<Models.SharedResponse>; 
-  	getContentmanagementShares(opts?: ContentManagementApi.getContentmanagementSharesOptions): Promise<Models.ShareEntityListing>; 
-  	getContentmanagementStatus(opts?: ContentManagementApi.getContentmanagementStatusOptions): Promise<Models.CommandStatusEntityListing>; 
-  	getContentmanagementStatusStatusId(statusId: string): Promise<Models.CommandStatus>; 
-  	getContentmanagementUsage(): Promise<Models.Usage>; 
-  	getContentmanagementWorkspace(workspaceId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceOptions): Promise<Models.Workspace>; 
-  	getContentmanagementWorkspaceDocuments(workspaceId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceDocumentsOptions): Promise<Models.DocumentEntityListing>; 
-  	getContentmanagementWorkspaceMember(workspaceId: string, memberId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceMemberOptions): Promise<Models.WorkspaceMember>; 
-  	getContentmanagementWorkspaceMembers(workspaceId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceMembersOptions): Promise<Models.WorkspaceMemberEntityListing>; 
-  	getContentmanagementWorkspaceTagvalue(workspaceId: string, tagId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceTagvalueOptions): Promise<Models.TagValue>; 
-  	getContentmanagementWorkspaceTagvalues(workspaceId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceTagvaluesOptions): Promise<Models.TagValueEntityListing>; 
-  	getContentmanagementWorkspaces(opts?: ContentManagementApi.getContentmanagementWorkspacesOptions): Promise<Models.WorkspaceEntityListing>; 
-  	postContentmanagementDocument(documentId: string, body: Models.DocumentUpdate, opts?: ContentManagementApi.postContentmanagementDocumentOptions): Promise<Models.Document>; 
-  	postContentmanagementDocumentContent(documentId: string, body: Models.ReplaceRequest, opts?: ContentManagementApi.postContentmanagementDocumentContentOptions): Promise<Models.ReplaceResponse>; 
-  	postContentmanagementDocuments(body: Models.DocumentUpload, opts?: ContentManagementApi.postContentmanagementDocumentsOptions): Promise<Models.Document>; 
-  	postContentmanagementQuery(body: Models.QueryRequest, opts?: ContentManagementApi.postContentmanagementQueryOptions): Promise<Models.QueryResults>; 
-  	postContentmanagementShares(body: Models.CreateShareRequest): Promise<Models.CreateShareResponse>; 
-  	postContentmanagementWorkspaceTagvalues(workspaceId: string, body: Models.TagValue): Promise<Models.TagValue>; 
-  	postContentmanagementWorkspaceTagvaluesQuery(workspaceId: string, body: Models.TagQueryRequest, opts?: ContentManagementApi.postContentmanagementWorkspaceTagvaluesQueryOptions): Promise<Models.TagValueEntityListing>; 
-  	postContentmanagementWorkspaces(body: Models.WorkspaceCreate): Promise<Models.Workspace>; 
-  	putContentmanagementWorkspace(workspaceId: string, body: Models.Workspace): Promise<Models.Workspace>; 
-  	putContentmanagementWorkspaceMember(workspaceId: string, memberId: string, body: Models.WorkspaceMember): Promise<Models.WorkspaceMember>; 
+declare class ContentManagementApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteContentmanagementDocument(documentId: string, opts?: ContentManagementApi.deleteContentmanagementDocumentOptions): Promise<void>;
+  	deleteContentmanagementShare(shareId: string): Promise<void>;
+  	deleteContentmanagementStatusStatusId(statusId: string): Promise<void>;
+  	deleteContentmanagementWorkspace(workspaceId: string, opts?: ContentManagementApi.deleteContentmanagementWorkspaceOptions): Promise<void>;
+  	deleteContentmanagementWorkspaceMember(workspaceId: string, memberId: string): Promise<void>;
+  	deleteContentmanagementWorkspaceTagvalue(workspaceId: string, tagId: string): Promise<void>;
+  	getContentmanagementDocument(documentId: string, opts?: ContentManagementApi.getContentmanagementDocumentOptions): Promise<Models.Document>;
+  	getContentmanagementDocumentContent(documentId: string, opts?: ContentManagementApi.getContentmanagementDocumentContentOptions): Promise<Models.DownloadResponse>;
+  	getContentmanagementDocuments(workspaceId: string, opts?: ContentManagementApi.getContentmanagementDocumentsOptions): Promise<Models.DocumentEntityListing>;
+  	getContentmanagementQuery(queryPhrase: string, opts?: ContentManagementApi.getContentmanagementQueryOptions): Promise<Models.QueryResults>;
+  	getContentmanagementSecurityprofile(securityProfileId: string): Promise<Models.SecurityProfile>;
+  	getContentmanagementSecurityprofiles(): Promise<Models.SecurityProfileEntityListing>;
+  	getContentmanagementShare(shareId: string, opts?: ContentManagementApi.getContentmanagementShareOptions): Promise<Models.Share>;
+  	getContentmanagementSharedSharedId(sharedId: string, opts?: ContentManagementApi.getContentmanagementSharedSharedIdOptions): Promise<Models.SharedResponse>;
+  	getContentmanagementShares(opts?: ContentManagementApi.getContentmanagementSharesOptions): Promise<Models.ShareEntityListing>;
+  	getContentmanagementStatus(opts?: ContentManagementApi.getContentmanagementStatusOptions): Promise<Models.CommandStatusEntityListing>;
+  	getContentmanagementStatusStatusId(statusId: string): Promise<Models.CommandStatus>;
+  	getContentmanagementUsage(): Promise<Models.Usage>;
+  	getContentmanagementWorkspace(workspaceId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceOptions): Promise<Models.Workspace>;
+  	getContentmanagementWorkspaceDocuments(workspaceId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceDocumentsOptions): Promise<Models.DocumentEntityListing>;
+  	getContentmanagementWorkspaceMember(workspaceId: string, memberId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceMemberOptions): Promise<Models.WorkspaceMember>;
+  	getContentmanagementWorkspaceMembers(workspaceId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceMembersOptions): Promise<Models.WorkspaceMemberEntityListing>;
+  	getContentmanagementWorkspaceTagvalue(workspaceId: string, tagId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceTagvalueOptions): Promise<Models.TagValue>;
+  	getContentmanagementWorkspaceTagvalues(workspaceId: string, opts?: ContentManagementApi.getContentmanagementWorkspaceTagvaluesOptions): Promise<Models.TagValueEntityListing>;
+  	getContentmanagementWorkspaces(opts?: ContentManagementApi.getContentmanagementWorkspacesOptions): Promise<Models.WorkspaceEntityListing>;
+  	postContentmanagementDocument(documentId: string, body: Models.DocumentUpdate, opts?: ContentManagementApi.postContentmanagementDocumentOptions): Promise<Models.Document>;
+  	postContentmanagementDocumentContent(documentId: string, body: Models.ReplaceRequest, opts?: ContentManagementApi.postContentmanagementDocumentContentOptions): Promise<Models.ReplaceResponse>;
+  	postContentmanagementDocuments(body: Models.DocumentUpload, opts?: ContentManagementApi.postContentmanagementDocumentsOptions): Promise<Models.Document>;
+  	postContentmanagementQuery(body: Models.QueryRequest, opts?: ContentManagementApi.postContentmanagementQueryOptions): Promise<Models.QueryResults>;
+  	postContentmanagementShares(body: Models.CreateShareRequest): Promise<Models.CreateShareResponse>;
+  	postContentmanagementWorkspaceTagvalues(workspaceId: string, body: Models.TagValue): Promise<Models.TagValue>;
+  	postContentmanagementWorkspaceTagvaluesQuery(workspaceId: string, body: Models.TagQueryRequest, opts?: ContentManagementApi.postContentmanagementWorkspaceTagvaluesQueryOptions): Promise<Models.TagValueEntityListing>;
+  	postContentmanagementWorkspaces(body: Models.WorkspaceCreate): Promise<Models.Workspace>;
+  	putContentmanagementWorkspace(workspaceId: string, body: Models.Workspace): Promise<Models.Workspace>;
+  	putContentmanagementWorkspaceMember(workspaceId: string, memberId: string, body: Models.WorkspaceMember): Promise<Models.WorkspaceMember>;
   	putContentmanagementWorkspaceTagvalue(workspaceId: string, tagId: string, body: Models.TagValue): Promise<Models.TagValue>;
 }
 
@@ -1446,244 +1460,245 @@ declare namespace ContentManagementApi {
 	}
 }
 
-declare class ConversationsApi {  
-  	deleteAnalyticsConversationsDetailsJob(jobId: string): Promise<void>; 
-  	deleteConversationParticipantCode(conversationId: string, participantId: string, addCommunicationCode: string): Promise<void>; 
-  	deleteConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>; 
-  	deleteConversationsCallParticipantConsult(conversationId: string, participantId: string): Promise<void>; 
-  	deleteConversationsEmailMessagesDraftAttachment(conversationId: string, attachmentId: string): Promise<void>; 
-  	deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId: string): Promise<void>; 
-  	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string): Promise<void>; 
-  	deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string): Promise<void>; 
-  	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string): Promise<void>; 
-  	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string): Promise<Models.WhatsAppIntegration>; 
-  	deleteConversationsMessagingSetting(messageSettingId: string): Promise<void>; 
-  	deleteConversationsMessagingSettingsDefault(): Promise<void>; 
-  	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<void>; 
-  	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversationWithoutAttributes>; 
-  	getAnalyticsConversationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsConversationsAggregatesJobResults(jobId: string, opts?: ConversationsApi.getAnalyticsConversationsAggregatesJobResultsOptions): Promise<Models.ConversationAsyncAggregateQueryResponse>; 
-  	getAnalyticsConversationsDetails(opts?: ConversationsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
-  	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: ConversationsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>; 
-  	getAnalyticsConversationsDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
-  	getConversation(conversationId: string): Promise<Models.Conversation>; 
-  	getConversationParticipantSecureivrsession(conversationId: string, participantId: string, secureSessionId: string): Promise<Models.SecureSession>; 
-  	getConversationParticipantSecureivrsessions(conversationId: string, participantId: string): Promise<Models.SecureSessionEntityListing>; 
-  	getConversationParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
-  	getConversationSecureattributes(conversationId: string): Promise<Models.ConversationSecureAttributes>; 
-  	getConversationSuggestion(conversationId: string, suggestionId: string): Promise<Models.Suggestion>; 
-  	getConversationSuggestions(conversationId: string, opts?: ConversationsApi.getConversationSuggestionsOptions): Promise<Models.SuggestionListing>; 
-  	getConversationSummaries(conversationId: string): Promise<Models.ConversationSummariesGetResponse>; 
-  	getConversations(opts?: ConversationsApi.getConversationsOptions): Promise<Models.ConversationEntityListing>; 
-  	getConversationsCall(conversationId: string): Promise<Models.CallConversation>; 
-  	getConversationsCallParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCallParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsCallParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCallParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsCallParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
-  	getConversationsCallback(conversationId: string): Promise<Models.CallbackConversation>; 
-  	getConversationsCallbackParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCallbackParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsCallbackParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCallbackParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsCallbackParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
-  	getConversationsCallbacks(): Promise<Models.CallbackConversationEntityListing>; 
-  	getConversationsCalls(): Promise<Models.CallConversationEntityListing>; 
-  	getConversationsCallsHistory(opts?: ConversationsApi.getConversationsCallsHistoryOptions): Promise<Models.CallHistoryConversationEntityListing>; 
-  	getConversationsCallsMaximumconferenceparties(): Promise<Models.MaxParticipants>; 
-  	getConversationsChat(conversationId: string): Promise<Models.ChatConversation>; 
-  	getConversationsChatMessage(conversationId: string, messageId: string): Promise<Models.WebChatMessage>; 
-  	getConversationsChatMessages(conversationId: string, opts?: ConversationsApi.getConversationsChatMessagesOptions): Promise<Models.WebChatMessageEntityList>; 
-  	getConversationsChatParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsChatParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsChatParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsChatParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsChatParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
-  	getConversationsChats(): Promise<Models.ChatConversationEntityListing>; 
-  	getConversationsCobrowsesession(conversationId: string): Promise<Models.CobrowseConversation>; 
-  	getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCobrowsesessionParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsCobrowsesessionParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCobrowsesessionParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsCobrowsesessionParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
-  	getConversationsCobrowsesessions(): Promise<Models.CobrowseConversationEntityListing>; 
-  	getConversationsEmail(conversationId: string): Promise<Models.EmailConversation>; 
-  	getConversationsEmailMessage(conversationId: string, messageId: string): Promise<Models.EmailMessage>; 
-  	getConversationsEmailMessages(conversationId: string): Promise<Models.EmailMessagePreviewListing>; 
-  	getConversationsEmailMessagesDraft(conversationId: string): Promise<Models.EmailMessage>; 
-  	getConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsEmailParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsEmailParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsEmailParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsEmailParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
-  	getConversationsEmailSettings(conversationId: string): Promise<Models.EmailsSettings>; 
-  	getConversationsEmails(): Promise<Models.EmailConversationEntityListing>; 
-  	getConversationsKeyconfiguration(keyconfigurationsId: string): Promise<Models.ConversationEncryptionConfiguration>; 
-  	getConversationsKeyconfigurations(): Promise<Models.ConversationEncryptionConfigurationListing>; 
-  	getConversationsMessage(conversationId: string): Promise<Models.MessageConversation>; 
-  	getConversationsMessageCommunicationMessagesMediaMediaId(conversationId: string, communicationId: string, mediaId: string): Promise<Models.MessageMediaData>; 
-  	getConversationsMessageDetails(messageId: string, opts?: ConversationsApi.getConversationsMessageDetailsOptions): Promise<Models.MessageData>; 
-  	getConversationsMessageMessage(conversationId: string, messageId: string, opts?: ConversationsApi.getConversationsMessageMessageOptions): Promise<Models.MessageData>; 
-  	getConversationsMessageParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsMessageParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsMessageParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsMessageParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsMessageParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
-  	getConversationsMessages(): Promise<Models.MessageConversationEntityListing>; 
-  	getConversationsMessagesCachedmedia(opts?: ConversationsApi.getConversationsMessagesCachedmediaOptions): Promise<Models.CachedMediaItemEntityListing>; 
-  	getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId: string): Promise<Models.CachedMediaItem>; 
-  	getConversationsMessagingFacebookApp(): Promise<Models.FacebookAppCredentials>; 
-  	getConversationsMessagingFacebookPermissions(): Promise<Models.FacebookPermissionEntityListing>; 
-  	getConversationsMessagingIntegrations(opts?: ConversationsApi.getConversationsMessagingIntegrationsOptions): Promise<Models.MessagingIntegrationEntityListing>; 
-  	getConversationsMessagingIntegrationsFacebook(opts?: ConversationsApi.getConversationsMessagingIntegrationsFacebookOptions): Promise<Models.FacebookIntegrationEntityListing>; 
-  	getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsFacebookIntegrationIdOptions): Promise<Models.FacebookIntegration>; 
-  	getConversationsMessagingIntegrationsInstagram(opts?: ConversationsApi.getConversationsMessagingIntegrationsInstagramOptions): Promise<Models.InstagramIntegrationEntityListing>; 
-  	getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsInstagramIntegrationIdOptions): Promise<Models.InstagramIntegration>; 
-  	getConversationsMessagingIntegrationsOpen(opts?: ConversationsApi.getConversationsMessagingIntegrationsOpenOptions): Promise<Models.OpenIntegrationEntityListing>; 
-  	getConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsOpenIntegrationIdOptions): Promise<Models.OpenIntegration>; 
-  	getConversationsMessagingIntegrationsWhatsapp(opts?: ConversationsApi.getConversationsMessagingIntegrationsWhatsappOptions): Promise<Models.WhatsAppIntegrationEntityListing>; 
-  	getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsWhatsappIntegrationIdOptions): Promise<Models.WhatsAppIntegration>; 
-  	getConversationsMessagingSetting(messageSettingId: string): Promise<Models.MessagingSetting>; 
-  	getConversationsMessagingSettings(opts?: ConversationsApi.getConversationsMessagingSettingsOptions): Promise<Models.MessagingConfigListing>; 
-  	getConversationsMessagingSettingsDefault(): Promise<Models.MessagingSetting>; 
-  	getConversationsMessagingSupportedcontent(opts?: ConversationsApi.getConversationsMessagingSupportedcontentOptions): Promise<Models.SupportedContentListing>; 
-  	getConversationsMessagingSupportedcontentDefault(): Promise<Models.SupportedContent>; 
-  	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<Models.SupportedContent>; 
-  	getConversationsMessagingThreadingtimeline(): Promise<Models.ConversationThreadingWindow>; 
-  	getConversationsScreenshareParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsScreenshareParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsSettings(): Promise<Models.Settings>; 
-  	getConversationsSocialParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsSocialParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsVideoDetails(conferenceId: string): Promise<Models.VideoConferenceDetails>; 
-  	getConversationsVideoParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsVideoParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>; 
-  	getConversationsVideosMeeting(meetingId: string): Promise<Models.MeetingIdRecord>; 
-  	patchConversationParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
-  	patchConversationParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<void>; 
-  	patchConversationSecureattributes(conversationId: string, body: Models.ConversationSecureAttributes): Promise<string>; 
-  	patchConversationUtilizationlabel(conversationId: string, body: Models.ConversationUtilizationLabelUpdate): Promise<string>; 
-  	patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.AfterCallWorkUpdate): Promise<Models.AfterCallWorkUpdate>; 
-  	patchConversationsCall(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
-  	patchConversationsCallParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
-  	patchConversationsCallParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>; 
-  	patchConversationsCallParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>; 
-  	patchConversationsCallParticipantConsult(conversationId: string, participantId: string, body: Models.ConsultTransferUpdate): Promise<Models.ConsultTransferResponse>; 
-  	patchConversationsCallback(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
-  	patchConversationsCallbackParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
-  	patchConversationsCallbackParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>; 
-  	patchConversationsCallbackParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>; 
-  	patchConversationsCallbacks(body: Models.PatchCallbackRequest): Promise<Models.PatchCallbackResponse>; 
-  	patchConversationsChat(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
-  	patchConversationsChatParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
-  	patchConversationsChatParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>; 
-  	patchConversationsChatParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>; 
-  	patchConversationsCobrowsesession(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
-  	patchConversationsCobrowsesessionParticipant(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsCobrowsesessionParticipantOptions): Promise<void>; 
-  	patchConversationsCobrowsesessionParticipantAttributes(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsCobrowsesessionParticipantAttributesOptions): Promise<Models.ParticipantAttributes>; 
-  	patchConversationsCobrowsesessionParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>; 
-  	patchConversationsEmail(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
-  	patchConversationsEmailMessagesDraft(conversationId: string, opts?: ConversationsApi.patchConversationsEmailMessagesDraftOptions): Promise<Models.EmailMessage>; 
-  	patchConversationsEmailParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
-  	patchConversationsEmailParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>; 
-  	patchConversationsEmailParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>; 
-  	patchConversationsEmailParticipantParkingstate(conversationId: string, participantId: string, body: Models.ParkingStateRequest): Promise<void>; 
-  	patchConversationsMessage(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
-  	patchConversationsMessageParticipant(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsMessageParticipantOptions): Promise<void>; 
-  	patchConversationsMessageParticipantAttributes(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsMessageParticipantAttributesOptions): Promise<Models.ParticipantAttributes>; 
-  	patchConversationsMessageParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>; 
-  	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string, body: Models.FacebookIntegrationUpdateRequest): Promise<Models.FacebookIntegration>; 
-  	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string, body: Models.InstagramIntegrationUpdateRequest): Promise<Models.InstagramIntegration>; 
-  	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string, body: Models.OpenIntegrationUpdateRequest): Promise<Models.OpenIntegration>; 
-  	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId: string, body: Models.WhatsAppEmbeddedSignupIntegrationActivationRequest): Promise<Models.WhatsAppIntegration>; 
-  	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, body: Models.WhatsAppIntegrationUpdateRequest): Promise<Models.WhatsAppIntegration>; 
-  	patchConversationsMessagingSetting(messageSettingId: string, body: Models.MessagingSettingPatchRequest): Promise<Models.MessagingSetting>; 
-  	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string, body: Models.SupportedContent): Promise<Models.SupportedContent>; 
-  	patchConversationsSettings(body: Models.Settings): Promise<void>; 
-  	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
-  	postAnalyticsConversationsActivityQuery(body: Models.ConversationActivityQuery, opts?: ConversationsApi.postAnalyticsConversationsActivityQueryOptions): Promise<Models.ConversationActivityResponse>; 
-  	postAnalyticsConversationsAggregatesJobs(body: Models.ConversationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
-  	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>; 
-  	postConversationAssign(conversationId: string, body: Models.ConversationUser): Promise<string>; 
-  	postConversationBarge(conversationId: string): Promise<void>; 
-  	postConversationCobrowse(conversationId: string): Promise<Models.CobrowseWebMessagingSession>; 
-  	postConversationDisconnect(conversationId: string): Promise<string>; 
-  	postConversationParticipantCallbacks(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantCallbacksOptions): Promise<void>; 
-  	postConversationParticipantDigits(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantDigitsOptions): Promise<void>; 
-  	postConversationParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
-  	postConversationParticipantReplaceAgent(conversationId: string, participantId: string, body: Models.TransferToAgentRequest): Promise<void>; 
-  	postConversationParticipantReplaceExternal(conversationId: string, participantId: string, body: Models.TransferToExternalRequest): Promise<void>; 
-  	postConversationParticipantReplaceQueue(conversationId: string, participantId: string, body: Models.TransferToQueueRequest): Promise<void>; 
-  	postConversationParticipantSecureivrsessions(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantSecureivrsessionsOptions): Promise<Models.SecureSession>; 
-  	postConversationSuggestionEngagement(conversationId: string, suggestionId: string, body: Models.SuggestionEngagement): Promise<Models.SuggestionEngagement>; 
-  	postConversationSuggestionsFeedback(conversationId: string, body: Models.Feedback): Promise<void>; 
-  	postConversationSummaryFeedback(conversationId: string, summaryId: string, opts?: ConversationsApi.postConversationSummaryFeedbackOptions): Promise<void>; 
-  	postConversationsCall(conversationId: string, body: Models.CallCommand): Promise<Models.Conversation>; 
-  	postConversationsCallParticipantBarge(conversationId: string, participantId: string): Promise<void>; 
-  	postConversationsCallParticipantCoach(conversationId: string, participantId: string): Promise<void>; 
-  	postConversationsCallParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCallParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsCallParticipantConsult(conversationId: string, participantId: string, body: Models.ConsultTransfer): Promise<Models.ConsultTransferResponse>; 
-  	postConversationsCallParticipantConsultAgent(conversationId: string, participantId: string, body: Models.ConsultTransferToAgent): Promise<Models.ConsultTransferResponse>; 
-  	postConversationsCallParticipantConsultExternal(conversationId: string, participantId: string, body: Models.ConsultTransferToExternal): Promise<Models.ConsultTransferResponse>; 
-  	postConversationsCallParticipantConsultQueue(conversationId: string, participantId: string, body: Models.ConsultTransferToQueue): Promise<Models.ConsultTransferResponse>; 
-  	postConversationsCallParticipantMonitor(conversationId: string, participantId: string): Promise<void>; 
-  	postConversationsCallParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
-  	postConversationsCallParticipants(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
-  	postConversationsCallbackParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCallbackParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsCallbackParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
-  	postConversationsCallbacks(body: Models.CreateCallbackCommand): Promise<Models.CreateCallbackResponse>; 
-  	postConversationsCallbacksBulkDisconnect(body: Models.BulkCallbackDisconnectRequest): Promise<void>; 
-  	postConversationsCallbacksBulkUpdate(body: Models.BulkCallbackPatchRequest): Promise<Models.BulkCallbackPatchResponse>; 
-  	postConversationsCalls(body: Models.CreateCallRequest): Promise<Models.CreateCallResponse>; 
-  	postConversationsChatCommunicationMessages(conversationId: string, communicationId: string, body: Models.CreateWebChatMessageRequest): Promise<Models.WebChatMessage>; 
-  	postConversationsChatCommunicationTyping(conversationId: string, communicationId: string): Promise<Models.WebChatTyping>; 
-  	postConversationsChatParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsChatParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsChatParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
-  	postConversationsChats(body: Models.CreateWebChatRequest): Promise<Models.ChatConversation>; 
-  	postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCobrowsesessionParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsCobrowsesessionParticipantReplace(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationsCobrowsesessionParticipantReplaceOptions): Promise<void>; 
-  	postConversationsEmailInboundmessages(conversationId: string, body: Models.InboundMessageRequest): Promise<Models.EmailConversation>; 
-  	postConversationsEmailMessages(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessageReply>; 
-  	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId: string, body: Models.CopyAttachmentsRequest): Promise<Models.EmailMessage>; 
-  	postConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsEmailParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsEmailParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
-  	postConversationsEmailReconnect(conversationId: string): Promise<void>; 
-  	postConversationsEmails(body: Models.CreateEmailRequest): Promise<Models.EmailConversation>; 
-  	postConversationsEmailsAgentless(body: Models.AgentlessEmailSendRequestDto): Promise<Models.AgentlessEmailSendResponseDto>; 
-  	postConversationsFaxes(body: Models.FaxSendRequest): Promise<Models.FaxSendResponse>; 
-  	postConversationsKeyconfigurations(body: Models.ConversationEncryptionConfiguration): Promise<Models.ConversationEncryptionConfiguration>; 
-  	postConversationsKeyconfigurationsValidate(body: Models.ConversationEncryptionConfiguration): Promise<Models.ConversationEncryptionConfiguration>; 
-  	postConversationsMessageCommunicationMessages(conversationId: string, communicationId: string, body: Models.AdditionalMessage, opts?: ConversationsApi.postConversationsMessageCommunicationMessagesOptions): Promise<Models.MessageData>; 
-  	postConversationsMessageCommunicationMessagesMedia(conversationId: string, communicationId: string): Promise<Models.MessageMediaData>; 
-  	postConversationsMessageCommunicationTyping(conversationId: string, communicationId: string, body: Models.MessageTypingEventRequest): Promise<void>; 
-  	postConversationsMessageInboundOpenEvent(integrationId: string, body: Models.OpenInboundNormalizedEvent): Promise<Models.OpenEventNormalizedMessage>; 
-  	postConversationsMessageInboundOpenMessage(integrationId: string, body: Models.OpenInboundNormalizedMessage, opts?: ConversationsApi.postConversationsMessageInboundOpenMessageOptions): Promise<Models.OpenMessageNormalizedMessage>; 
-  	postConversationsMessageInboundOpenReceipt(integrationId: string, body: Models.OpenInboundNormalizedReceipt): Promise<Models.OpenReceiptNormalizedMessage>; 
-  	postConversationsMessageMessagesBulk(conversationId: string, opts?: ConversationsApi.postConversationsMessageMessagesBulkOptions): Promise<Models.TextMessageListing>; 
-  	postConversationsMessageParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsMessageParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsMessageParticipantMonitor(conversationId: string, participantId: string): Promise<void>; 
-  	postConversationsMessageParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
-  	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.CreateOutboundMessagingConversationResponse>; 
-  	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest): Promise<Models.SendAgentlessOutboundMessageResponse>; 
-  	postConversationsMessagesInboundOpen(body: Models.OpenNormalizedMessage): Promise<Models.OpenNormalizedMessage>; 
-  	postConversationsMessagingIntegrationsFacebook(body: Models.FacebookIntegrationRequest): Promise<Models.FacebookIntegration>; 
-  	postConversationsMessagingIntegrationsInstagram(body: Models.InstagramIntegrationRequest): Promise<Models.InstagramIntegration>; 
-  	postConversationsMessagingIntegrationsOpen(body: Models.OpenIntegrationRequest): Promise<Models.OpenIntegration>; 
-  	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
-  	postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body: Models.WhatsAppEmbeddedSignupIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
-  	postConversationsMessagingSettings(body: Models.MessagingSettingRequest): Promise<Models.MessagingSetting>; 
-  	postConversationsMessagingSupportedcontent(body: Models.SupportedContent): Promise<Models.SupportedContent>; 
-  	postConversationsParticipantsAttributesSearch(body: Models.ConversationParticipantSearchRequest): Promise<Models.JsonCursorSearchResponse>; 
-  	postConversationsScreenshareParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsScreenshareParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsSocialParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsSocialParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsVideoParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsVideoParticipantCommunicationWrapupOptions): Promise<void>; 
-  	postConversationsVideosMeetings(body: Models.GenerateMeetingIdRequest): Promise<Models.MeetingIdRecord>; 
-  	putConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>; 
-  	putConversationSecureattributes(conversationId: string, body: Models.ConversationSecureAttributes): Promise<string>; 
-  	putConversationTags(conversationId: string, body: Models.ConversationTagsUpdate): Promise<string>; 
-  	putConversationsCallParticipantCommunicationUuidata(conversationId: string, participantId: string, communicationId: string, body: Models.SetUuiDataRequest): Promise<object>; 
-  	putConversationsCallRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
-  	putConversationsCallbackRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
-  	putConversationsChatRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
-  	putConversationsCobrowsesessionRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
-  	putConversationsEmailMessagesDraft(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessage>; 
-  	putConversationsEmailRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
-  	putConversationsKeyconfiguration(keyconfigurationsId: string, body: Models.ConversationEncryptionConfiguration): Promise<Models.ConversationEncryptionConfiguration>; 
-  	putConversationsMessageRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
-  	putConversationsMessagingSettingsDefault(body: Models.MessagingSettingDefaultRequest): Promise<Models.MessagingSetting>; 
-  	putConversationsMessagingSupportedcontentDefault(body: Models.SupportedContentReference): Promise<Models.SupportedContent>; 
-  	putConversationsMessagingThreadingtimeline(body: Models.ConversationThreadingWindow): Promise<Models.ConversationThreadingWindow>; 
-  	putConversationsScreenshareRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
-  	putConversationsSocialRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>; 
+declare class ConversationsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteAnalyticsConversationsDetailsJob(jobId: string): Promise<void>;
+  	deleteConversationParticipantCode(conversationId: string, participantId: string, addCommunicationCode: string): Promise<void>;
+  	deleteConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>;
+  	deleteConversationsCallParticipantConsult(conversationId: string, participantId: string): Promise<void>;
+  	deleteConversationsEmailMessagesDraftAttachment(conversationId: string, attachmentId: string): Promise<void>;
+  	deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId: string): Promise<void>;
+  	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string): Promise<void>;
+  	deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string): Promise<void>;
+  	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string): Promise<void>;
+  	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string): Promise<Models.WhatsAppIntegration>;
+  	deleteConversationsMessagingSetting(messageSettingId: string): Promise<void>;
+  	deleteConversationsMessagingSettingsDefault(): Promise<void>;
+  	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<void>;
+  	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversationWithoutAttributes>;
+  	getAnalyticsConversationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsConversationsAggregatesJobResults(jobId: string, opts?: ConversationsApi.getAnalyticsConversationsAggregatesJobResultsOptions): Promise<Models.ConversationAsyncAggregateQueryResponse>;
+  	getAnalyticsConversationsDetails(opts?: ConversationsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>;
+  	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsConversationsDetailsJobResults(jobId: string, opts?: ConversationsApi.getAnalyticsConversationsDetailsJobResultsOptions): Promise<Models.AnalyticsConversationAsyncQueryResponse>;
+  	getAnalyticsConversationsDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>;
+  	getConversation(conversationId: string): Promise<Models.Conversation>;
+  	getConversationParticipantSecureivrsession(conversationId: string, participantId: string, secureSessionId: string): Promise<Models.SecureSession>;
+  	getConversationParticipantSecureivrsessions(conversationId: string, participantId: string): Promise<Models.SecureSessionEntityListing>;
+  	getConversationParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>;
+  	getConversationSecureattributes(conversationId: string): Promise<Models.ConversationSecureAttributes>;
+  	getConversationSuggestion(conversationId: string, suggestionId: string): Promise<Models.Suggestion>;
+  	getConversationSuggestions(conversationId: string, opts?: ConversationsApi.getConversationSuggestionsOptions): Promise<Models.SuggestionListing>;
+  	getConversationSummaries(conversationId: string): Promise<Models.ConversationSummariesGetResponse>;
+  	getConversations(opts?: ConversationsApi.getConversationsOptions): Promise<Models.ConversationEntityListing>;
+  	getConversationsCall(conversationId: string): Promise<Models.CallConversation>;
+  	getConversationsCallParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCallParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsCallParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCallParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsCallParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>;
+  	getConversationsCallback(conversationId: string): Promise<Models.CallbackConversation>;
+  	getConversationsCallbackParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCallbackParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsCallbackParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCallbackParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsCallbackParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>;
+  	getConversationsCallbacks(): Promise<Models.CallbackConversationEntityListing>;
+  	getConversationsCalls(): Promise<Models.CallConversationEntityListing>;
+  	getConversationsCallsHistory(opts?: ConversationsApi.getConversationsCallsHistoryOptions): Promise<Models.CallHistoryConversationEntityListing>;
+  	getConversationsCallsMaximumconferenceparties(): Promise<Models.MaxParticipants>;
+  	getConversationsChat(conversationId: string): Promise<Models.ChatConversation>;
+  	getConversationsChatMessage(conversationId: string, messageId: string): Promise<Models.WebChatMessage>;
+  	getConversationsChatMessages(conversationId: string, opts?: ConversationsApi.getConversationsChatMessagesOptions): Promise<Models.WebChatMessageEntityList>;
+  	getConversationsChatParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsChatParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsChatParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsChatParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsChatParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>;
+  	getConversationsChats(): Promise<Models.ChatConversationEntityListing>;
+  	getConversationsCobrowsesession(conversationId: string): Promise<Models.CobrowseConversation>;
+  	getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsCobrowsesessionParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsCobrowsesessionParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsCobrowsesessionParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsCobrowsesessionParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>;
+  	getConversationsCobrowsesessions(): Promise<Models.CobrowseConversationEntityListing>;
+  	getConversationsEmail(conversationId: string): Promise<Models.EmailConversation>;
+  	getConversationsEmailMessage(conversationId: string, messageId: string): Promise<Models.EmailMessage>;
+  	getConversationsEmailMessages(conversationId: string): Promise<Models.EmailMessagePreviewListing>;
+  	getConversationsEmailMessagesDraft(conversationId: string): Promise<Models.EmailMessage>;
+  	getConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsEmailParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsEmailParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsEmailParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsEmailParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>;
+  	getConversationsEmailSettings(conversationId: string): Promise<Models.EmailsSettings>;
+  	getConversationsEmails(): Promise<Models.EmailConversationEntityListing>;
+  	getConversationsKeyconfiguration(keyconfigurationsId: string): Promise<Models.ConversationEncryptionConfiguration>;
+  	getConversationsKeyconfigurations(): Promise<Models.ConversationEncryptionConfigurationListing>;
+  	getConversationsMessage(conversationId: string): Promise<Models.MessageConversation>;
+  	getConversationsMessageCommunicationMessagesMediaMediaId(conversationId: string, communicationId: string, mediaId: string): Promise<Models.MessageMediaData>;
+  	getConversationsMessageDetails(messageId: string, opts?: ConversationsApi.getConversationsMessageDetailsOptions): Promise<Models.MessageData>;
+  	getConversationsMessageMessage(conversationId: string, messageId: string, opts?: ConversationsApi.getConversationsMessageMessageOptions): Promise<Models.MessageData>;
+  	getConversationsMessageParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsMessageParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsMessageParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsMessageParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsMessageParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>;
+  	getConversationsMessages(): Promise<Models.MessageConversationEntityListing>;
+  	getConversationsMessagesCachedmedia(opts?: ConversationsApi.getConversationsMessagesCachedmediaOptions): Promise<Models.CachedMediaItemEntityListing>;
+  	getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId: string): Promise<Models.CachedMediaItem>;
+  	getConversationsMessagingFacebookApp(): Promise<Models.FacebookAppCredentials>;
+  	getConversationsMessagingFacebookPermissions(): Promise<Models.FacebookPermissionEntityListing>;
+  	getConversationsMessagingIntegrations(opts?: ConversationsApi.getConversationsMessagingIntegrationsOptions): Promise<Models.MessagingIntegrationEntityListing>;
+  	getConversationsMessagingIntegrationsFacebook(opts?: ConversationsApi.getConversationsMessagingIntegrationsFacebookOptions): Promise<Models.FacebookIntegrationEntityListing>;
+  	getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsFacebookIntegrationIdOptions): Promise<Models.FacebookIntegration>;
+  	getConversationsMessagingIntegrationsInstagram(opts?: ConversationsApi.getConversationsMessagingIntegrationsInstagramOptions): Promise<Models.InstagramIntegrationEntityListing>;
+  	getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsInstagramIntegrationIdOptions): Promise<Models.InstagramIntegration>;
+  	getConversationsMessagingIntegrationsOpen(opts?: ConversationsApi.getConversationsMessagingIntegrationsOpenOptions): Promise<Models.OpenIntegrationEntityListing>;
+  	getConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsOpenIntegrationIdOptions): Promise<Models.OpenIntegration>;
+  	getConversationsMessagingIntegrationsWhatsapp(opts?: ConversationsApi.getConversationsMessagingIntegrationsWhatsappOptions): Promise<Models.WhatsAppIntegrationEntityListing>;
+  	getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsWhatsappIntegrationIdOptions): Promise<Models.WhatsAppIntegration>;
+  	getConversationsMessagingSetting(messageSettingId: string): Promise<Models.MessagingSetting>;
+  	getConversationsMessagingSettings(opts?: ConversationsApi.getConversationsMessagingSettingsOptions): Promise<Models.MessagingConfigListing>;
+  	getConversationsMessagingSettingsDefault(): Promise<Models.MessagingSetting>;
+  	getConversationsMessagingSupportedcontent(opts?: ConversationsApi.getConversationsMessagingSupportedcontentOptions): Promise<Models.SupportedContentListing>;
+  	getConversationsMessagingSupportedcontentDefault(): Promise<Models.SupportedContent>;
+  	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<Models.SupportedContent>;
+  	getConversationsMessagingThreadingtimeline(): Promise<Models.ConversationThreadingWindow>;
+  	getConversationsScreenshareParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsScreenshareParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsSettings(): Promise<Models.Settings>;
+  	getConversationsSocialParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsSocialParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsVideoDetails(conferenceId: string): Promise<Models.VideoConferenceDetails>;
+  	getConversationsVideoParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.getConversationsVideoParticipantCommunicationWrapupOptions): Promise<Models.AssignedWrapupCode>;
+  	getConversationsVideosMeeting(meetingId: string): Promise<Models.MeetingIdRecord>;
+  	patchConversationParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>;
+  	patchConversationParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<void>;
+  	patchConversationSecureattributes(conversationId: string, body: Models.ConversationSecureAttributes): Promise<string>;
+  	patchConversationUtilizationlabel(conversationId: string, body: Models.ConversationUtilizationLabelUpdate): Promise<string>;
+  	patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.AfterCallWorkUpdate): Promise<Models.AfterCallWorkUpdate>;
+  	patchConversationsCall(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>;
+  	patchConversationsCallParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>;
+  	patchConversationsCallParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>;
+  	patchConversationsCallParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>;
+  	patchConversationsCallParticipantConsult(conversationId: string, participantId: string, body: Models.ConsultTransferUpdate): Promise<Models.ConsultTransferResponse>;
+  	patchConversationsCallback(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>;
+  	patchConversationsCallbackParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>;
+  	patchConversationsCallbackParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>;
+  	patchConversationsCallbackParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>;
+  	patchConversationsCallbacks(body: Models.PatchCallbackRequest): Promise<Models.PatchCallbackResponse>;
+  	patchConversationsChat(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>;
+  	patchConversationsChatParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>;
+  	patchConversationsChatParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>;
+  	patchConversationsChatParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>;
+  	patchConversationsCobrowsesession(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>;
+  	patchConversationsCobrowsesessionParticipant(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsCobrowsesessionParticipantOptions): Promise<void>;
+  	patchConversationsCobrowsesessionParticipantAttributes(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsCobrowsesessionParticipantAttributesOptions): Promise<Models.ParticipantAttributes>;
+  	patchConversationsCobrowsesessionParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>;
+  	patchConversationsEmail(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>;
+  	patchConversationsEmailMessagesDraft(conversationId: string, opts?: ConversationsApi.patchConversationsEmailMessagesDraftOptions): Promise<Models.EmailMessage>;
+  	patchConversationsEmailParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>;
+  	patchConversationsEmailParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<Models.ParticipantAttributes>;
+  	patchConversationsEmailParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>;
+  	patchConversationsEmailParticipantParkingstate(conversationId: string, participantId: string, body: Models.ParkingStateRequest): Promise<void>;
+  	patchConversationsMessage(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>;
+  	patchConversationsMessageParticipant(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsMessageParticipantOptions): Promise<void>;
+  	patchConversationsMessageParticipantAttributes(conversationId: string, participantId: string, opts?: ConversationsApi.patchConversationsMessageParticipantAttributesOptions): Promise<Models.ParticipantAttributes>;
+  	patchConversationsMessageParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<object>;
+  	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string, body: Models.FacebookIntegrationUpdateRequest): Promise<Models.FacebookIntegration>;
+  	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId: string, body: Models.InstagramIntegrationUpdateRequest): Promise<Models.InstagramIntegration>;
+  	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string, body: Models.OpenIntegrationUpdateRequest): Promise<Models.OpenIntegration>;
+  	patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId: string, body: Models.WhatsAppEmbeddedSignupIntegrationActivationRequest): Promise<Models.WhatsAppIntegration>;
+  	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, body: Models.WhatsAppIntegrationUpdateRequest): Promise<Models.WhatsAppIntegration>;
+  	patchConversationsMessagingSetting(messageSettingId: string, body: Models.MessagingSettingPatchRequest): Promise<Models.MessagingSetting>;
+  	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string, body: Models.SupportedContent): Promise<Models.SupportedContent>;
+  	patchConversationsSettings(body: Models.Settings): Promise<void>;
+  	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>;
+  	postAnalyticsConversationsActivityQuery(body: Models.ConversationActivityQuery, opts?: ConversationsApi.postAnalyticsConversationsActivityQueryOptions): Promise<Models.ConversationActivityResponse>;
+  	postAnalyticsConversationsAggregatesJobs(body: Models.ConversationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>;
+  	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>;
+  	postConversationAssign(conversationId: string, body: Models.ConversationUser): Promise<string>;
+  	postConversationBarge(conversationId: string): Promise<void>;
+  	postConversationCobrowse(conversationId: string): Promise<Models.CobrowseWebMessagingSession>;
+  	postConversationDisconnect(conversationId: string): Promise<string>;
+  	postConversationParticipantCallbacks(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantCallbacksOptions): Promise<void>;
+  	postConversationParticipantDigits(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantDigitsOptions): Promise<void>;
+  	postConversationParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
+  	postConversationParticipantReplaceAgent(conversationId: string, participantId: string, body: Models.TransferToAgentRequest): Promise<void>;
+  	postConversationParticipantReplaceExternal(conversationId: string, participantId: string, body: Models.TransferToExternalRequest): Promise<void>;
+  	postConversationParticipantReplaceQueue(conversationId: string, participantId: string, body: Models.TransferToQueueRequest): Promise<void>;
+  	postConversationParticipantSecureivrsessions(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantSecureivrsessionsOptions): Promise<Models.SecureSession>;
+  	postConversationSuggestionEngagement(conversationId: string, suggestionId: string, body: Models.SuggestionEngagement): Promise<Models.SuggestionEngagement>;
+  	postConversationSuggestionsFeedback(conversationId: string, body: Models.Feedback): Promise<void>;
+  	postConversationSummaryFeedback(conversationId: string, summaryId: string, opts?: ConversationsApi.postConversationSummaryFeedbackOptions): Promise<void>;
+  	postConversationsCall(conversationId: string, body: Models.CallCommand): Promise<Models.Conversation>;
+  	postConversationsCallParticipantBarge(conversationId: string, participantId: string): Promise<void>;
+  	postConversationsCallParticipantCoach(conversationId: string, participantId: string): Promise<void>;
+  	postConversationsCallParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCallParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsCallParticipantConsult(conversationId: string, participantId: string, body: Models.ConsultTransfer): Promise<Models.ConsultTransferResponse>;
+  	postConversationsCallParticipantConsultAgent(conversationId: string, participantId: string, body: Models.ConsultTransferToAgent): Promise<Models.ConsultTransferResponse>;
+  	postConversationsCallParticipantConsultExternal(conversationId: string, participantId: string, body: Models.ConsultTransferToExternal): Promise<Models.ConsultTransferResponse>;
+  	postConversationsCallParticipantConsultQueue(conversationId: string, participantId: string, body: Models.ConsultTransferToQueue): Promise<Models.ConsultTransferResponse>;
+  	postConversationsCallParticipantMonitor(conversationId: string, participantId: string): Promise<void>;
+  	postConversationsCallParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
+  	postConversationsCallParticipants(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>;
+  	postConversationsCallbackParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCallbackParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsCallbackParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
+  	postConversationsCallbacks(body: Models.CreateCallbackCommand): Promise<Models.CreateCallbackResponse>;
+  	postConversationsCallbacksBulkDisconnect(body: Models.BulkCallbackDisconnectRequest): Promise<void>;
+  	postConversationsCallbacksBulkUpdate(body: Models.BulkCallbackPatchRequest): Promise<Models.BulkCallbackPatchResponse>;
+  	postConversationsCalls(body: Models.CreateCallRequest): Promise<Models.CreateCallResponse>;
+  	postConversationsChatCommunicationMessages(conversationId: string, communicationId: string, body: Models.CreateWebChatMessageRequest): Promise<Models.WebChatMessage>;
+  	postConversationsChatCommunicationTyping(conversationId: string, communicationId: string): Promise<Models.WebChatTyping>;
+  	postConversationsChatParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsChatParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsChatParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
+  	postConversationsChats(body: Models.CreateWebChatRequest): Promise<Models.ChatConversation>;
+  	postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsCobrowsesessionParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsCobrowsesessionParticipantReplace(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationsCobrowsesessionParticipantReplaceOptions): Promise<void>;
+  	postConversationsEmailInboundmessages(conversationId: string, body: Models.InboundMessageRequest): Promise<Models.EmailConversation>;
+  	postConversationsEmailMessages(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessageReply>;
+  	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId: string, body: Models.CopyAttachmentsRequest): Promise<Models.EmailMessage>;
+  	postConversationsEmailParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsEmailParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsEmailParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
+  	postConversationsEmailReconnect(conversationId: string): Promise<void>;
+  	postConversationsEmails(body: Models.CreateEmailRequest): Promise<Models.EmailConversation>;
+  	postConversationsEmailsAgentless(body: Models.AgentlessEmailSendRequestDto): Promise<Models.AgentlessEmailSendResponseDto>;
+  	postConversationsFaxes(body: Models.FaxSendRequest): Promise<Models.FaxSendResponse>;
+  	postConversationsKeyconfigurations(body: Models.ConversationEncryptionConfiguration): Promise<Models.ConversationEncryptionConfiguration>;
+  	postConversationsKeyconfigurationsValidate(body: Models.ConversationEncryptionConfiguration): Promise<Models.ConversationEncryptionConfiguration>;
+  	postConversationsMessageCommunicationMessages(conversationId: string, communicationId: string, body: Models.AdditionalMessage, opts?: ConversationsApi.postConversationsMessageCommunicationMessagesOptions): Promise<Models.MessageData>;
+  	postConversationsMessageCommunicationMessagesMedia(conversationId: string, communicationId: string): Promise<Models.MessageMediaData>;
+  	postConversationsMessageCommunicationTyping(conversationId: string, communicationId: string, body: Models.MessageTypingEventRequest): Promise<void>;
+  	postConversationsMessageInboundOpenEvent(integrationId: string, body: Models.OpenInboundNormalizedEvent): Promise<Models.OpenEventNormalizedMessage>;
+  	postConversationsMessageInboundOpenMessage(integrationId: string, body: Models.OpenInboundNormalizedMessage, opts?: ConversationsApi.postConversationsMessageInboundOpenMessageOptions): Promise<Models.OpenMessageNormalizedMessage>;
+  	postConversationsMessageInboundOpenReceipt(integrationId: string, body: Models.OpenInboundNormalizedReceipt): Promise<Models.OpenReceiptNormalizedMessage>;
+  	postConversationsMessageMessagesBulk(conversationId: string, opts?: ConversationsApi.postConversationsMessageMessagesBulkOptions): Promise<Models.TextMessageListing>;
+  	postConversationsMessageParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsMessageParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsMessageParticipantMonitor(conversationId: string, participantId: string): Promise<void>;
+  	postConversationsMessageParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
+  	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.CreateOutboundMessagingConversationResponse>;
+  	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest): Promise<Models.SendAgentlessOutboundMessageResponse>;
+  	postConversationsMessagesInboundOpen(body: Models.OpenNormalizedMessage): Promise<Models.OpenNormalizedMessage>;
+  	postConversationsMessagingIntegrationsFacebook(body: Models.FacebookIntegrationRequest): Promise<Models.FacebookIntegration>;
+  	postConversationsMessagingIntegrationsInstagram(body: Models.InstagramIntegrationRequest): Promise<Models.InstagramIntegration>;
+  	postConversationsMessagingIntegrationsOpen(body: Models.OpenIntegrationRequest): Promise<Models.OpenIntegration>;
+  	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest): Promise<Models.WhatsAppIntegration>;
+  	postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body: Models.WhatsAppEmbeddedSignupIntegrationRequest): Promise<Models.WhatsAppIntegration>;
+  	postConversationsMessagingSettings(body: Models.MessagingSettingRequest): Promise<Models.MessagingSetting>;
+  	postConversationsMessagingSupportedcontent(body: Models.SupportedContent): Promise<Models.SupportedContent>;
+  	postConversationsParticipantsAttributesSearch(body: Models.ConversationParticipantSearchRequest): Promise<Models.JsonCursorSearchResponse>;
+  	postConversationsScreenshareParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsScreenshareParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsSocialParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsSocialParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsVideoParticipantCommunicationWrapup(conversationId: string, participantId: string, communicationId: string, opts?: ConversationsApi.postConversationsVideoParticipantCommunicationWrapupOptions): Promise<void>;
+  	postConversationsVideosMeetings(body: Models.GenerateMeetingIdRequest): Promise<Models.MeetingIdRecord>;
+  	putConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>;
+  	putConversationSecureattributes(conversationId: string, body: Models.ConversationSecureAttributes): Promise<string>;
+  	putConversationTags(conversationId: string, body: Models.ConversationTagsUpdate): Promise<string>;
+  	putConversationsCallParticipantCommunicationUuidata(conversationId: string, participantId: string, communicationId: string, body: Models.SetUuiDataRequest): Promise<object>;
+  	putConversationsCallRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
+  	putConversationsCallbackRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
+  	putConversationsChatRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
+  	putConversationsCobrowsesessionRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
+  	putConversationsEmailMessagesDraft(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessage>;
+  	putConversationsEmailRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
+  	putConversationsKeyconfiguration(keyconfigurationsId: string, body: Models.ConversationEncryptionConfiguration): Promise<Models.ConversationEncryptionConfiguration>;
+  	putConversationsMessageRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
+  	putConversationsMessagingSettingsDefault(body: Models.MessagingSettingDefaultRequest): Promise<Models.MessagingSetting>;
+  	putConversationsMessagingSupportedcontentDefault(body: Models.SupportedContentReference): Promise<Models.SupportedContent>;
+  	putConversationsMessagingThreadingtimeline(body: Models.ConversationThreadingWindow): Promise<Models.ConversationThreadingWindow>;
+  	putConversationsScreenshareRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
+  	putConversationsSocialRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
   	putConversationsVideoRecordingstate(conversationId: string, body: Models.SetRecordingState): Promise<string>;
 }
 
@@ -1909,16 +1924,18 @@ declare namespace ConversationsApi {
 	}
 }
 
-declare class DataExtensionsApi {  
-  	getDataextensionsCoretype(coretypeName: string): Promise<Models.Coretype>; 
-  	getDataextensionsCoretypes(): Promise<Models.CoretypeListing>; 
+declare class DataExtensionsApi {
+	constructor(apiClient?: ApiClientClass);
+  	getDataextensionsCoretype(coretypeName: string): Promise<Models.Coretype>;
+  	getDataextensionsCoretypes(): Promise<Models.CoretypeListing>;
   	getDataextensionsLimits(): Promise<Models.SchemaQuantityLimits>;
 }
 
 declare namespace DataExtensionsApi { 
 }
 
-declare class DownloadsApi {  
+declare class DownloadsApi {
+	constructor(apiClient?: ApiClientClass);
   	getDownload(downloadId: string, opts?: DownloadsApi.getDownloadOptions): Promise<Models.UrlResponse>;
 }
 
@@ -1930,8 +1947,9 @@ declare namespace DownloadsApi {
 	}
 }
 
-declare class EmailsApi {  
-  	getEmailsSettings(): Promise<Models.EmailSettings>; 
+declare class EmailsApi {
+	constructor(apiClient?: ApiClientClass);
+  	getEmailsSettings(): Promise<Models.EmailSettings>;
   	patchEmailsSettings(opts?: EmailsApi.patchEmailsSettingsOptions): Promise<Models.EmailSettings>;
 }
 
@@ -1941,11 +1959,12 @@ declare namespace EmailsApi {
 	}
 }
 
-declare class EmployeeEngagementApi {  
-  	deleteEmployeeengagementCelebration(celebrationId: string): Promise<void>; 
-  	getEmployeeengagementCelebrations(opts?: EmployeeEngagementApi.getEmployeeengagementCelebrationsOptions): Promise<Models.GetCelebrationListing>; 
-  	getEmployeeengagementRecognition(recognitionId: string): Promise<Models.Recognition>; 
-  	patchEmployeeengagementCelebration(celebrationId: string, body: Models.CelebrationStateParam): Promise<void>; 
+declare class EmployeeEngagementApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteEmployeeengagementCelebration(celebrationId: string): Promise<void>;
+  	getEmployeeengagementCelebrations(opts?: EmployeeEngagementApi.getEmployeeengagementCelebrationsOptions): Promise<Models.GetCelebrationListing>;
+  	getEmployeeengagementRecognition(recognitionId: string): Promise<Models.Recognition>;
+  	patchEmployeeengagementCelebration(celebrationId: string, body: Models.CelebrationStateParam): Promise<void>;
   	postEmployeeengagementRecognitions(body: Models.CreateRecognition): Promise<Models.RecognitionBase>;
 }
 
@@ -1956,100 +1975,102 @@ declare namespace EmployeeEngagementApi {
 	}
 }
 
-declare class EventsApi {  
-  	postEventsConversations(body: Models.BatchConversationEventRequest): Promise<Models.BatchEventResponse>; 
-  	postEventsUsersPresence(body: Models.BatchUserPresenceEventRequest): Promise<Models.BatchEventResponse>; 
+declare class EventsApi {
+	constructor(apiClient?: ApiClientClass);
+  	postEventsConversations(body: Models.BatchConversationEventRequest): Promise<Models.BatchEventResponse>;
+  	postEventsUsersPresence(body: Models.BatchUserPresenceEventRequest): Promise<Models.BatchEventResponse>;
   	postEventsUsersRoutingstatus(body: Models.BatchUserRoutingStatusEventRequest): Promise<Models.BatchEventResponse>;
 }
 
 declare namespace EventsApi { 
 }
 
-declare class ExternalContactsApi {  
-  	deleteExternalcontactsContact(contactId: string): Promise<object>; 
-  	deleteExternalcontactsContactNote(contactId: string, noteId: string): Promise<object>; 
-  	deleteExternalcontactsContactsSchema(schemaId: string): Promise<void>; 
-  	deleteExternalcontactsExternalsource(externalSourceId: string): Promise<object>; 
-  	deleteExternalcontactsImportCsvSetting(settingsId: string): Promise<void>; 
-  	deleteExternalcontactsOrganization(externalOrganizationId: string): Promise<object>; 
-  	deleteExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string): Promise<object>; 
-  	deleteExternalcontactsOrganizationTrustor(externalOrganizationId: string): Promise<void>; 
-  	deleteExternalcontactsRelationship(relationshipId: string): Promise<object>; 
-  	getExternalcontactsContact(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactOptions): Promise<Models.ExternalContact>; 
-  	getExternalcontactsContactIdentifiers(contactId: string): Promise<Models.EntityListing>; 
-  	getExternalcontactsContactJourneySessions(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactJourneySessionsOptions): Promise<Models.SessionListing>; 
-  	getExternalcontactsContactNote(contactId: string, noteId: string, opts?: ExternalContactsApi.getExternalcontactsContactNoteOptions): Promise<Models.Note>; 
-  	getExternalcontactsContactNotes(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactNotesOptions): Promise<Models.NoteListing>; 
-  	getExternalcontactsContactUnresolved(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactUnresolvedOptions): Promise<Models.ExternalContact>; 
-  	getExternalcontactsContacts(opts?: ExternalContactsApi.getExternalcontactsContactsOptions): Promise<Models.ContactListing>; 
-  	getExternalcontactsContactsSchema(schemaId: string): Promise<Models.DataSchema>; 
-  	getExternalcontactsContactsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>; 
-  	getExternalcontactsContactsSchemaVersions(schemaId: string): Promise<Models.DataSchema>; 
-  	getExternalcontactsContactsSchemas(): Promise<Models.DataSchemaListing>; 
-  	getExternalcontactsExternalsource(externalSourceId: string): Promise<Models.ExternalSource>; 
-  	getExternalcontactsExternalsources(opts?: ExternalContactsApi.getExternalcontactsExternalsourcesOptions): Promise<Models.CursorExternalSourceListing>; 
-  	getExternalcontactsImportCsvSetting(settingsId: string): Promise<Models.CsvSettings>; 
-  	getExternalcontactsImportCsvSettings(opts?: ExternalContactsApi.getExternalcontactsImportCsvSettingsOptions): Promise<Models.Listing>; 
-  	getExternalcontactsImportCsvUploadDetails(uploadId: string): Promise<Models.CsvUploadDetailsResponse>; 
-  	getExternalcontactsImportCsvUploadPreview(uploadId: string): Promise<Models.CsvUploadPreviewResponse>; 
-  	getExternalcontactsOrganization(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationOptions): Promise<Models.ExternalOrganization>; 
-  	getExternalcontactsOrganizationContacts(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationContactsOptions): Promise<Models.ContactListing>; 
-  	getExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNoteOptions): Promise<Models.Note>; 
-  	getExternalcontactsOrganizationNotes(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNotesOptions): Promise<Models.NoteListing>; 
-  	getExternalcontactsOrganizationRelationships(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationRelationshipsOptions): Promise<Models.RelationshipListing>; 
-  	getExternalcontactsOrganizations(opts?: ExternalContactsApi.getExternalcontactsOrganizationsOptions): Promise<Models.ExternalOrganizationListing>; 
-  	getExternalcontactsOrganizationsSchema(schemaId: string): Promise<Models.DataSchema>; 
-  	getExternalcontactsOrganizationsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>; 
-  	getExternalcontactsOrganizationsSchemaVersions(schemaId: string): Promise<Models.DataSchema>; 
-  	getExternalcontactsOrganizationsSchemas(): Promise<Models.DataSchemaListing>; 
-  	getExternalcontactsRelationship(relationshipId: string, opts?: ExternalContactsApi.getExternalcontactsRelationshipOptions): Promise<Models.Relationship>; 
-  	getExternalcontactsReversewhitepageslookup(lookupVal: string, opts?: ExternalContactsApi.getExternalcontactsReversewhitepageslookupOptions): Promise<Models.ReverseWhitepagesLookupResult>; 
-  	getExternalcontactsScanContacts(opts?: ExternalContactsApi.getExternalcontactsScanContactsOptions): Promise<Models.CursorContactListing>; 
-  	getExternalcontactsScanNotes(opts?: ExternalContactsApi.getExternalcontactsScanNotesOptions): Promise<Models.CursorNoteListing>; 
-  	getExternalcontactsScanOrganizations(opts?: ExternalContactsApi.getExternalcontactsScanOrganizationsOptions): Promise<Models.CursorOrganizationListing>; 
-  	getExternalcontactsScanRelationships(opts?: ExternalContactsApi.getExternalcontactsScanRelationshipsOptions): Promise<Models.CursorRelationshipListing>; 
-  	patchExternalcontactsContactIdentifiers(contactId: string, body: Models.IdentifierClaimRequest): Promise<Models.ContactIdentifier>; 
-  	postExternalcontactsBulkContacts(body: Models.BulkIdsRequest): Promise<Models.BulkFetchContactsResponse>; 
-  	postExternalcontactsBulkContactsAdd(body: Models.BulkContactsRequest): Promise<Models.BulkContactsResponse>; 
-  	postExternalcontactsBulkContactsRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>; 
-  	postExternalcontactsBulkContactsUnresolved(body: Models.BulkIdsRequest): Promise<Models.BulkFetchContactsResponse>; 
-  	postExternalcontactsBulkContactsUpdate(body: Models.BulkContactsRequest): Promise<Models.BulkContactsResponse>; 
-  	postExternalcontactsBulkNotes(body: Models.BulkIdsRequest): Promise<Models.BulkFetchNotesResponse>; 
-  	postExternalcontactsBulkNotesAdd(body: Models.BulkNotesRequest): Promise<Models.BulkNotesResponse>; 
-  	postExternalcontactsBulkNotesRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>; 
-  	postExternalcontactsBulkNotesUpdate(body: Models.BulkNotesRequest): Promise<Models.BulkNotesResponse>; 
-  	postExternalcontactsBulkOrganizations(body: Models.BulkIdsRequest): Promise<Models.BulkFetchOrganizationsResponse>; 
-  	postExternalcontactsBulkOrganizationsAdd(body: Models.BulkOrganizationsRequest): Promise<Models.BulkOrganizationsResponse>; 
-  	postExternalcontactsBulkOrganizationsRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>; 
-  	postExternalcontactsBulkOrganizationsUpdate(body: Models.BulkOrganizationsRequest): Promise<Models.BulkOrganizationsResponse>; 
-  	postExternalcontactsBulkRelationships(body: Models.BulkIdsRequest): Promise<Models.BulkFetchRelationshipsResponse>; 
-  	postExternalcontactsBulkRelationshipsAdd(body: Models.BulkRelationshipsRequest): Promise<Models.BulkRelationshipsResponse>; 
-  	postExternalcontactsBulkRelationshipsRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>; 
-  	postExternalcontactsBulkRelationshipsUpdate(body: Models.BulkRelationshipsRequest): Promise<Models.BulkRelationshipsResponse>; 
-  	postExternalcontactsContactNotes(contactId: string, body: Models.Note): Promise<Models.Note>; 
-  	postExternalcontactsContactPromotion(contactId: string): Promise<Models.ExternalContact>; 
-  	postExternalcontactsContacts(body: Models.ExternalContact): Promise<Models.ExternalContact>; 
-  	postExternalcontactsContactsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>; 
-  	postExternalcontactsExternalsources(body: Models.ExternalSource): Promise<Models.ExternalSource>; 
-  	postExternalcontactsIdentifierlookup(identifier: Models.ContactIdentifier, opts?: ExternalContactsApi.postExternalcontactsIdentifierlookupOptions): Promise<Models.ExternalContact>; 
-  	postExternalcontactsImportCsvJobs(body: Models.CsvJobRequest): Promise<Models.CsvJobResponse>; 
-  	postExternalcontactsImportCsvSettings(body: Models.CsvSettings): Promise<Models.CsvSettings>; 
-  	postExternalcontactsImportCsvUploads(body: Models.CsvUploadRequest): Promise<Models.CsvUploadResponse>; 
-  	postExternalcontactsMergeContacts(body: Models.MergeRequest): Promise<Models.ExternalContact>; 
-  	postExternalcontactsOrganizationNotes(externalOrganizationId: string, body: Models.Note): Promise<Models.Note>; 
-  	postExternalcontactsOrganizations(body: Models.ExternalOrganization): Promise<Models.ExternalOrganization>; 
-  	postExternalcontactsOrganizationsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>; 
-  	postExternalcontactsRelationships(body: Models.Relationship): Promise<Models.Relationship>; 
-  	putExternalcontactsContact(contactId: string, body: Models.ExternalContact): Promise<Models.ExternalContact>; 
-  	putExternalcontactsContactNote(contactId: string, noteId: string, body: Models.Note): Promise<Models.Note>; 
-  	putExternalcontactsContactsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>; 
-  	putExternalcontactsConversation(conversationId: string, body: Models.ConversationAssociation): Promise<void>; 
-  	putExternalcontactsExternalsource(externalSourceId: string, body: Models.ExternalSource): Promise<Models.ExternalSource>; 
-  	putExternalcontactsImportCsvSetting(settingsId: string, body: Models.CsvSettings): Promise<Models.CsvSettings>; 
-  	putExternalcontactsOrganization(externalOrganizationId: string, body: Models.ExternalOrganization): Promise<Models.ExternalOrganization>; 
-  	putExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string, body: Models.Note): Promise<Models.Note>; 
-  	putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId: string, trustorId: string): Promise<Models.ExternalOrganizationTrustorLink>; 
-  	putExternalcontactsOrganizationsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>; 
+declare class ExternalContactsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteExternalcontactsContact(contactId: string): Promise<object>;
+  	deleteExternalcontactsContactNote(contactId: string, noteId: string): Promise<object>;
+  	deleteExternalcontactsContactsSchema(schemaId: string): Promise<void>;
+  	deleteExternalcontactsExternalsource(externalSourceId: string): Promise<object>;
+  	deleteExternalcontactsImportCsvSetting(settingsId: string): Promise<void>;
+  	deleteExternalcontactsOrganization(externalOrganizationId: string): Promise<object>;
+  	deleteExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string): Promise<object>;
+  	deleteExternalcontactsOrganizationTrustor(externalOrganizationId: string): Promise<void>;
+  	deleteExternalcontactsRelationship(relationshipId: string): Promise<object>;
+  	getExternalcontactsContact(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactOptions): Promise<Models.ExternalContact>;
+  	getExternalcontactsContactIdentifiers(contactId: string): Promise<Models.EntityListing>;
+  	getExternalcontactsContactJourneySessions(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactJourneySessionsOptions): Promise<Models.SessionListing>;
+  	getExternalcontactsContactNote(contactId: string, noteId: string, opts?: ExternalContactsApi.getExternalcontactsContactNoteOptions): Promise<Models.Note>;
+  	getExternalcontactsContactNotes(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactNotesOptions): Promise<Models.NoteListing>;
+  	getExternalcontactsContactUnresolved(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactUnresolvedOptions): Promise<Models.ExternalContact>;
+  	getExternalcontactsContacts(opts?: ExternalContactsApi.getExternalcontactsContactsOptions): Promise<Models.ContactListing>;
+  	getExternalcontactsContactsSchema(schemaId: string): Promise<Models.DataSchema>;
+  	getExternalcontactsContactsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>;
+  	getExternalcontactsContactsSchemaVersions(schemaId: string): Promise<Models.DataSchema>;
+  	getExternalcontactsContactsSchemas(): Promise<Models.DataSchemaListing>;
+  	getExternalcontactsExternalsource(externalSourceId: string): Promise<Models.ExternalSource>;
+  	getExternalcontactsExternalsources(opts?: ExternalContactsApi.getExternalcontactsExternalsourcesOptions): Promise<Models.CursorExternalSourceListing>;
+  	getExternalcontactsImportCsvSetting(settingsId: string): Promise<Models.CsvSettings>;
+  	getExternalcontactsImportCsvSettings(opts?: ExternalContactsApi.getExternalcontactsImportCsvSettingsOptions): Promise<Models.Listing>;
+  	getExternalcontactsImportCsvUploadDetails(uploadId: string): Promise<Models.CsvUploadDetailsResponse>;
+  	getExternalcontactsImportCsvUploadPreview(uploadId: string): Promise<Models.CsvUploadPreviewResponse>;
+  	getExternalcontactsOrganization(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationOptions): Promise<Models.ExternalOrganization>;
+  	getExternalcontactsOrganizationContacts(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationContactsOptions): Promise<Models.ContactListing>;
+  	getExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNoteOptions): Promise<Models.Note>;
+  	getExternalcontactsOrganizationNotes(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNotesOptions): Promise<Models.NoteListing>;
+  	getExternalcontactsOrganizationRelationships(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationRelationshipsOptions): Promise<Models.RelationshipListing>;
+  	getExternalcontactsOrganizations(opts?: ExternalContactsApi.getExternalcontactsOrganizationsOptions): Promise<Models.ExternalOrganizationListing>;
+  	getExternalcontactsOrganizationsSchema(schemaId: string): Promise<Models.DataSchema>;
+  	getExternalcontactsOrganizationsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>;
+  	getExternalcontactsOrganizationsSchemaVersions(schemaId: string): Promise<Models.DataSchema>;
+  	getExternalcontactsOrganizationsSchemas(): Promise<Models.DataSchemaListing>;
+  	getExternalcontactsRelationship(relationshipId: string, opts?: ExternalContactsApi.getExternalcontactsRelationshipOptions): Promise<Models.Relationship>;
+  	getExternalcontactsReversewhitepageslookup(lookupVal: string, opts?: ExternalContactsApi.getExternalcontactsReversewhitepageslookupOptions): Promise<Models.ReverseWhitepagesLookupResult>;
+  	getExternalcontactsScanContacts(opts?: ExternalContactsApi.getExternalcontactsScanContactsOptions): Promise<Models.CursorContactListing>;
+  	getExternalcontactsScanNotes(opts?: ExternalContactsApi.getExternalcontactsScanNotesOptions): Promise<Models.CursorNoteListing>;
+  	getExternalcontactsScanOrganizations(opts?: ExternalContactsApi.getExternalcontactsScanOrganizationsOptions): Promise<Models.CursorOrganizationListing>;
+  	getExternalcontactsScanRelationships(opts?: ExternalContactsApi.getExternalcontactsScanRelationshipsOptions): Promise<Models.CursorRelationshipListing>;
+  	patchExternalcontactsContactIdentifiers(contactId: string, body: Models.IdentifierClaimRequest): Promise<Models.ContactIdentifier>;
+  	postExternalcontactsBulkContacts(body: Models.BulkIdsRequest): Promise<Models.BulkFetchContactsResponse>;
+  	postExternalcontactsBulkContactsAdd(body: Models.BulkContactsRequest): Promise<Models.BulkContactsResponse>;
+  	postExternalcontactsBulkContactsRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>;
+  	postExternalcontactsBulkContactsUnresolved(body: Models.BulkIdsRequest): Promise<Models.BulkFetchContactsResponse>;
+  	postExternalcontactsBulkContactsUpdate(body: Models.BulkContactsRequest): Promise<Models.BulkContactsResponse>;
+  	postExternalcontactsBulkNotes(body: Models.BulkIdsRequest): Promise<Models.BulkFetchNotesResponse>;
+  	postExternalcontactsBulkNotesAdd(body: Models.BulkNotesRequest): Promise<Models.BulkNotesResponse>;
+  	postExternalcontactsBulkNotesRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>;
+  	postExternalcontactsBulkNotesUpdate(body: Models.BulkNotesRequest): Promise<Models.BulkNotesResponse>;
+  	postExternalcontactsBulkOrganizations(body: Models.BulkIdsRequest): Promise<Models.BulkFetchOrganizationsResponse>;
+  	postExternalcontactsBulkOrganizationsAdd(body: Models.BulkOrganizationsRequest): Promise<Models.BulkOrganizationsResponse>;
+  	postExternalcontactsBulkOrganizationsRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>;
+  	postExternalcontactsBulkOrganizationsUpdate(body: Models.BulkOrganizationsRequest): Promise<Models.BulkOrganizationsResponse>;
+  	postExternalcontactsBulkRelationships(body: Models.BulkIdsRequest): Promise<Models.BulkFetchRelationshipsResponse>;
+  	postExternalcontactsBulkRelationshipsAdd(body: Models.BulkRelationshipsRequest): Promise<Models.BulkRelationshipsResponse>;
+  	postExternalcontactsBulkRelationshipsRemove(body: Models.BulkIdsRequest): Promise<Models.BulkDeleteResponse>;
+  	postExternalcontactsBulkRelationshipsUpdate(body: Models.BulkRelationshipsRequest): Promise<Models.BulkRelationshipsResponse>;
+  	postExternalcontactsContactNotes(contactId: string, body: Models.Note): Promise<Models.Note>;
+  	postExternalcontactsContactPromotion(contactId: string): Promise<Models.ExternalContact>;
+  	postExternalcontactsContacts(body: Models.ExternalContact): Promise<Models.ExternalContact>;
+  	postExternalcontactsContactsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>;
+  	postExternalcontactsExternalsources(body: Models.ExternalSource): Promise<Models.ExternalSource>;
+  	postExternalcontactsIdentifierlookup(identifier: Models.ContactIdentifier, opts?: ExternalContactsApi.postExternalcontactsIdentifierlookupOptions): Promise<Models.ExternalContact>;
+  	postExternalcontactsImportCsvJobs(body: Models.CsvJobRequest): Promise<Models.CsvJobResponse>;
+  	postExternalcontactsImportCsvSettings(body: Models.CsvSettings): Promise<Models.CsvSettings>;
+  	postExternalcontactsImportCsvUploads(body: Models.CsvUploadRequest): Promise<Models.CsvUploadResponse>;
+  	postExternalcontactsMergeContacts(body: Models.MergeRequest): Promise<Models.ExternalContact>;
+  	postExternalcontactsOrganizationNotes(externalOrganizationId: string, body: Models.Note): Promise<Models.Note>;
+  	postExternalcontactsOrganizations(body: Models.ExternalOrganization): Promise<Models.ExternalOrganization>;
+  	postExternalcontactsOrganizationsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>;
+  	postExternalcontactsRelationships(body: Models.Relationship): Promise<Models.Relationship>;
+  	putExternalcontactsContact(contactId: string, body: Models.ExternalContact): Promise<Models.ExternalContact>;
+  	putExternalcontactsContactNote(contactId: string, noteId: string, body: Models.Note): Promise<Models.Note>;
+  	putExternalcontactsContactsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>;
+  	putExternalcontactsConversation(conversationId: string, body: Models.ConversationAssociation): Promise<void>;
+  	putExternalcontactsExternalsource(externalSourceId: string, body: Models.ExternalSource): Promise<Models.ExternalSource>;
+  	putExternalcontactsImportCsvSetting(settingsId: string, body: Models.CsvSettings): Promise<Models.CsvSettings>;
+  	putExternalcontactsOrganization(externalOrganizationId: string, body: Models.ExternalOrganization): Promise<Models.ExternalOrganization>;
+  	putExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string, body: Models.Note): Promise<Models.Note>;
+  	putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId: string, trustorId: string): Promise<Models.ExternalOrganizationTrustorLink>;
+  	putExternalcontactsOrganizationsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>;
   	putExternalcontactsRelationship(relationshipId: string, body: Models.Relationship): Promise<Models.Relationship>;
 }
 
@@ -2154,14 +2175,15 @@ declare namespace ExternalContactsApi {
 	}
 }
 
-declare class FaxApi {  
-  	deleteFaxDocument(documentId: string): Promise<void>; 
-  	getFaxDocument(documentId: string): Promise<Models.FaxDocument>; 
-  	getFaxDocumentContent(documentId: string): Promise<Models.DownloadResponse>; 
-  	getFaxDocuments(opts?: FaxApi.getFaxDocumentsOptions): Promise<Models.FaxDocumentEntityListing>; 
-  	getFaxSettings(): Promise<Models.FaxConfig>; 
-  	getFaxSummary(): Promise<Models.FaxSummary>; 
-  	putFaxDocument(documentId: string, body: Models.FaxDocument): Promise<Models.FaxDocument>; 
+declare class FaxApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteFaxDocument(documentId: string): Promise<void>;
+  	getFaxDocument(documentId: string): Promise<Models.FaxDocument>;
+  	getFaxDocumentContent(documentId: string): Promise<Models.DownloadResponse>;
+  	getFaxDocuments(opts?: FaxApi.getFaxDocumentsOptions): Promise<Models.FaxDocumentEntityListing>;
+  	getFaxSettings(): Promise<Models.FaxConfig>;
+  	getFaxSummary(): Promise<Models.FaxSummary>;
+  	putFaxDocument(documentId: string, body: Models.FaxDocument): Promise<Models.FaxDocument>;
   	putFaxSettings(opts?: FaxApi.putFaxSettingsOptions): Promise<Models.FaxConfig>;
 }
 
@@ -2175,12 +2197,13 @@ declare namespace FaxApi {
 	}
 }
 
-declare class FlowsApi {  
-  	getAnalyticsFlowsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsFlowsAggregatesJobResults(jobId: string, opts?: FlowsApi.getAnalyticsFlowsAggregatesJobResultsOptions): Promise<Models.FlowAsyncAggregateQueryResponse>; 
-  	postAnalyticsFlowsActivityQuery(body: Models.FlowActivityQuery, opts?: FlowsApi.postAnalyticsFlowsActivityQueryOptions): Promise<Models.FlowActivityResponse>; 
-  	postAnalyticsFlowsAggregatesJobs(body: Models.FlowAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsFlowsAggregatesQuery(body: Models.FlowAggregationQuery): Promise<Models.FlowAggregateQueryResponse>; 
+declare class FlowsApi {
+	constructor(apiClient?: ApiClientClass);
+  	getAnalyticsFlowsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsFlowsAggregatesJobResults(jobId: string, opts?: FlowsApi.getAnalyticsFlowsAggregatesJobResultsOptions): Promise<Models.FlowAsyncAggregateQueryResponse>;
+  	postAnalyticsFlowsActivityQuery(body: Models.FlowActivityQuery, opts?: FlowsApi.postAnalyticsFlowsActivityQueryOptions): Promise<Models.FlowActivityResponse>;
+  	postAnalyticsFlowsAggregatesJobs(body: Models.FlowAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsFlowsAggregatesQuery(body: Models.FlowAggregationQuery): Promise<Models.FlowAggregateQueryResponse>;
   	postAnalyticsFlowsObservationsQuery(body: Models.FlowObservationQuery): Promise<Models.FlowObservationQueryResponse>;
 }
 
@@ -2194,69 +2217,70 @@ declare namespace FlowsApi {
 	}
 }
 
-declare class GamificationApi {  
-  	deleteEmployeeperformanceExternalmetricsDefinition(metricId: string): Promise<void>; 
-  	getEmployeeperformanceExternalmetricsDefinition(metricId: string): Promise<Models.ExternalMetricDefinition>; 
-  	getEmployeeperformanceExternalmetricsDefinitions(opts?: GamificationApi.getEmployeeperformanceExternalmetricsDefinitionsOptions): Promise<Models.ExternalMetricDefinitionListing>; 
-  	getGamificationInsights(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, primaryPeriodStartWorkday: string, opts?: GamificationApi.getGamificationInsightsOptions): Promise<Models.InsightsSummary>; 
-  	getGamificationInsightsDetails(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, primaryPeriodStartWorkday: string): Promise<Models.InsightsDetails>; 
-  	getGamificationInsightsGroupsTrends(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.InsightsTrend>; 
-  	getGamificationInsightsGroupsTrendsAll(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.InsightsTrend>; 
-  	getGamificationInsightsMembers(filterType: string, filterId: string, granularity: string, startWorkday: string): Promise<Models.InsightsAgents>; 
-  	getGamificationInsightsTrends(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.UserInsightsTrend>; 
-  	getGamificationInsightsUserDetails(userId: string, filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, primaryPeriodStartWorkday: string): Promise<Models.InsightsDetails>; 
-  	getGamificationInsightsUserTrends(userId: string, filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.UserInsightsTrend>; 
-  	getGamificationLeaderboard(startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationLeaderboardOptions): Promise<Models.Leaderboard>; 
-  	getGamificationLeaderboardAll(filterType: string, filterId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationLeaderboardAllOptions): Promise<Models.Leaderboard>; 
-  	getGamificationLeaderboardAllBestpoints(filterType: string, filterId: string): Promise<Models.OverallBestPoints>; 
-  	getGamificationLeaderboardBestpoints(): Promise<Models.OverallBestPoints>; 
-  	getGamificationMetricdefinition(metricDefinitionId: string): Promise<Models.MetricDefinition>; 
-  	getGamificationMetricdefinitions(): Promise<Models.GetMetricDefinitionsResponse>; 
-  	getGamificationProfile(profileId: string): Promise<Models.PerformanceProfile>; 
-  	getGamificationProfileMembers(profileId: string): Promise<Models.MemberListing>; 
-  	getGamificationProfileMetric(profileId: string, metricId: string, opts?: GamificationApi.getGamificationProfileMetricOptions): Promise<Models.Metric>; 
-  	getGamificationProfileMetrics(profileId: string, opts?: GamificationApi.getGamificationProfileMetricsOptions): Promise<Models.GetMetricResponse>; 
-  	getGamificationProfileMetricsObjectivedetails(profileId: string, opts?: GamificationApi.getGamificationProfileMetricsObjectivedetailsOptions): Promise<Models.GetMetricsResponse>; 
-  	getGamificationProfiles(): Promise<Models.GetProfilesResponse>; 
-  	getGamificationProfilesUser(userId: string, opts?: GamificationApi.getGamificationProfilesUserOptions): Promise<Models.PerformanceProfile>; 
-  	getGamificationProfilesUsersMe(opts?: GamificationApi.getGamificationProfilesUsersMeOptions): Promise<Models.PerformanceProfile>; 
-  	getGamificationScorecards(workday: string, opts?: GamificationApi.getGamificationScorecardsOptions): Promise<Models.WorkdayMetricListing>; 
-  	getGamificationScorecardsAttendance(startWorkday: string, endWorkday: string): Promise<Models.AttendanceStatusListing>; 
-  	getGamificationScorecardsBestpoints(): Promise<Models.UserBestPoints>; 
-  	getGamificationScorecardsPointsAlltime(endWorkday: string): Promise<Models.AllTimePoints>; 
-  	getGamificationScorecardsPointsAverage(workday: string): Promise<Models.SingleWorkdayAveragePoints>; 
-  	getGamificationScorecardsPointsTrends(startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsPointsTrendsOptions): Promise<Models.WorkdayPointsTrend>; 
-  	getGamificationScorecardsProfileMetricUserValuesTrends(profileId: string, metricId: string, userId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsProfileMetricUserValuesTrendsOptions): Promise<Models.MetricValueTrendAverage>; 
-  	getGamificationScorecardsProfileMetricUsersValuesTrends(profileId: string, metricId: string, filterType: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsProfileMetricUsersValuesTrendsOptions): Promise<Models.MetricValueTrendAverage>; 
-  	getGamificationScorecardsProfileMetricValuesTrends(profileId: string, metricId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsProfileMetricValuesTrendsOptions): Promise<Models.MetricValueTrendAverage>; 
-  	getGamificationScorecardsUser(userId: string, workday: string, opts?: GamificationApi.getGamificationScorecardsUserOptions): Promise<Models.WorkdayMetricListing>; 
-  	getGamificationScorecardsUserAttendance(userId: string, startWorkday: string, endWorkday: string): Promise<Models.AttendanceStatusListing>; 
-  	getGamificationScorecardsUserBestpoints(userId: string): Promise<Models.UserBestPoints>; 
-  	getGamificationScorecardsUserPointsAlltime(userId: string, endWorkday: string): Promise<Models.AllTimePoints>; 
-  	getGamificationScorecardsUserPointsTrends(userId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsUserPointsTrendsOptions): Promise<Models.WorkdayPointsTrend>; 
-  	getGamificationScorecardsUserValuesTrends(userId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsUserValuesTrendsOptions): Promise<Models.WorkdayValuesTrend>; 
-  	getGamificationScorecardsUsersPointsAverage(filterType: string, filterId: string, workday: string): Promise<Models.SingleWorkdayAveragePoints>; 
-  	getGamificationScorecardsUsersValuesAverage(filterType: string, filterId: string, workday: string, opts?: GamificationApi.getGamificationScorecardsUsersValuesAverageOptions): Promise<Models.SingleWorkdayAverageValues>; 
-  	getGamificationScorecardsUsersValuesTrends(filterType: string, filterId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsUsersValuesTrendsOptions): Promise<Models.WorkdayValuesTrend>; 
-  	getGamificationScorecardsValuesAverage(workday: string, opts?: GamificationApi.getGamificationScorecardsValuesAverageOptions): Promise<Models.SingleWorkdayAverageValues>; 
-  	getGamificationScorecardsValuesTrends(startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsValuesTrendsOptions): Promise<Models.WorkdayValuesTrend>; 
-  	getGamificationStatus(): Promise<Models.GamificationStatus>; 
-  	getGamificationTemplate(templateId: string): Promise<Models.ObjectiveTemplate>; 
-  	getGamificationTemplates(): Promise<Models.GetTemplatesResponse>; 
-  	patchEmployeeperformanceExternalmetricsDefinition(metricId: string, body: Models.ExternalMetricDefinitionUpdateRequest): Promise<Models.ExternalMetricDefinition>; 
-  	postEmployeeperformanceExternalmetricsData(opts?: GamificationApi.postEmployeeperformanceExternalmetricsDataOptions): Promise<Models.ExternalMetricDataWriteResponse>; 
-  	postEmployeeperformanceExternalmetricsDefinitions(opts?: GamificationApi.postEmployeeperformanceExternalmetricsDefinitionsOptions): Promise<Models.ExternalMetricDefinition>; 
-  	postGamificationProfileActivate(profileId: string): Promise<Models.PerformanceProfile>; 
-  	postGamificationProfileDeactivate(profileId: string): Promise<Models.PerformanceProfile>; 
-  	postGamificationProfileMembers(profileId: string, body: Models.AssignUsers): Promise<Models.Assignment>; 
-  	postGamificationProfileMembersValidate(profileId: string, body: Models.ValidateAssignUsers): Promise<Models.AssignmentValidation>; 
-  	postGamificationProfileMetricLink(sourceProfileId: string, sourceMetricId: string, body: Models.TargetPerformanceProfile): Promise<Models.Metric>; 
-  	postGamificationProfileMetrics(profileId: string, body: Models.CreateMetric): Promise<Models.Metric>; 
-  	postGamificationProfiles(body: Models.CreatePerformanceProfile, opts?: GamificationApi.postGamificationProfilesOptions): Promise<Models.PerformanceProfile>; 
-  	postGamificationProfilesUserQuery(userId: string, body: Models.UserProfilesInDateRangeRequest): Promise<Models.UserProfilesInDateRange>; 
-  	postGamificationProfilesUsersMeQuery(body: Models.UserProfilesInDateRangeRequest): Promise<Models.UserProfilesInDateRange>; 
-  	putGamificationProfile(profileId: string, opts?: GamificationApi.putGamificationProfileOptions): Promise<Models.PerformanceProfile>; 
-  	putGamificationProfileMetric(profileId: string, metricId: string, body: Models.CreateMetric): Promise<Models.Metric>; 
+declare class GamificationApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteEmployeeperformanceExternalmetricsDefinition(metricId: string): Promise<void>;
+  	getEmployeeperformanceExternalmetricsDefinition(metricId: string): Promise<Models.ExternalMetricDefinition>;
+  	getEmployeeperformanceExternalmetricsDefinitions(opts?: GamificationApi.getEmployeeperformanceExternalmetricsDefinitionsOptions): Promise<Models.ExternalMetricDefinitionListing>;
+  	getGamificationInsights(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, primaryPeriodStartWorkday: string, opts?: GamificationApi.getGamificationInsightsOptions): Promise<Models.InsightsSummary>;
+  	getGamificationInsightsDetails(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, primaryPeriodStartWorkday: string): Promise<Models.InsightsDetails>;
+  	getGamificationInsightsGroupsTrends(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.InsightsTrend>;
+  	getGamificationInsightsGroupsTrendsAll(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.InsightsTrend>;
+  	getGamificationInsightsMembers(filterType: string, filterId: string, granularity: string, startWorkday: string): Promise<Models.InsightsAgents>;
+  	getGamificationInsightsTrends(filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.UserInsightsTrend>;
+  	getGamificationInsightsUserDetails(userId: string, filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, primaryPeriodStartWorkday: string): Promise<Models.InsightsDetails>;
+  	getGamificationInsightsUserTrends(userId: string, filterType: string, filterId: string, granularity: string, comparativePeriodStartWorkday: string, comparativePeriodEndWorkday: string, primaryPeriodStartWorkday: string, primaryPeriodEndWorkday: string): Promise<Models.UserInsightsTrend>;
+  	getGamificationLeaderboard(startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationLeaderboardOptions): Promise<Models.Leaderboard>;
+  	getGamificationLeaderboardAll(filterType: string, filterId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationLeaderboardAllOptions): Promise<Models.Leaderboard>;
+  	getGamificationLeaderboardAllBestpoints(filterType: string, filterId: string): Promise<Models.OverallBestPoints>;
+  	getGamificationLeaderboardBestpoints(): Promise<Models.OverallBestPoints>;
+  	getGamificationMetricdefinition(metricDefinitionId: string): Promise<Models.MetricDefinition>;
+  	getGamificationMetricdefinitions(): Promise<Models.GetMetricDefinitionsResponse>;
+  	getGamificationProfile(profileId: string): Promise<Models.PerformanceProfile>;
+  	getGamificationProfileMembers(profileId: string): Promise<Models.MemberListing>;
+  	getGamificationProfileMetric(profileId: string, metricId: string, opts?: GamificationApi.getGamificationProfileMetricOptions): Promise<Models.Metric>;
+  	getGamificationProfileMetrics(profileId: string, opts?: GamificationApi.getGamificationProfileMetricsOptions): Promise<Models.GetMetricResponse>;
+  	getGamificationProfileMetricsObjectivedetails(profileId: string, opts?: GamificationApi.getGamificationProfileMetricsObjectivedetailsOptions): Promise<Models.GetMetricsResponse>;
+  	getGamificationProfiles(): Promise<Models.GetProfilesResponse>;
+  	getGamificationProfilesUser(userId: string, opts?: GamificationApi.getGamificationProfilesUserOptions): Promise<Models.PerformanceProfile>;
+  	getGamificationProfilesUsersMe(opts?: GamificationApi.getGamificationProfilesUsersMeOptions): Promise<Models.PerformanceProfile>;
+  	getGamificationScorecards(workday: string, opts?: GamificationApi.getGamificationScorecardsOptions): Promise<Models.WorkdayMetricListing>;
+  	getGamificationScorecardsAttendance(startWorkday: string, endWorkday: string): Promise<Models.AttendanceStatusListing>;
+  	getGamificationScorecardsBestpoints(): Promise<Models.UserBestPoints>;
+  	getGamificationScorecardsPointsAlltime(endWorkday: string): Promise<Models.AllTimePoints>;
+  	getGamificationScorecardsPointsAverage(workday: string): Promise<Models.SingleWorkdayAveragePoints>;
+  	getGamificationScorecardsPointsTrends(startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsPointsTrendsOptions): Promise<Models.WorkdayPointsTrend>;
+  	getGamificationScorecardsProfileMetricUserValuesTrends(profileId: string, metricId: string, userId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsProfileMetricUserValuesTrendsOptions): Promise<Models.MetricValueTrendAverage>;
+  	getGamificationScorecardsProfileMetricUsersValuesTrends(profileId: string, metricId: string, filterType: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsProfileMetricUsersValuesTrendsOptions): Promise<Models.MetricValueTrendAverage>;
+  	getGamificationScorecardsProfileMetricValuesTrends(profileId: string, metricId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsProfileMetricValuesTrendsOptions): Promise<Models.MetricValueTrendAverage>;
+  	getGamificationScorecardsUser(userId: string, workday: string, opts?: GamificationApi.getGamificationScorecardsUserOptions): Promise<Models.WorkdayMetricListing>;
+  	getGamificationScorecardsUserAttendance(userId: string, startWorkday: string, endWorkday: string): Promise<Models.AttendanceStatusListing>;
+  	getGamificationScorecardsUserBestpoints(userId: string): Promise<Models.UserBestPoints>;
+  	getGamificationScorecardsUserPointsAlltime(userId: string, endWorkday: string): Promise<Models.AllTimePoints>;
+  	getGamificationScorecardsUserPointsTrends(userId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsUserPointsTrendsOptions): Promise<Models.WorkdayPointsTrend>;
+  	getGamificationScorecardsUserValuesTrends(userId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsUserValuesTrendsOptions): Promise<Models.WorkdayValuesTrend>;
+  	getGamificationScorecardsUsersPointsAverage(filterType: string, filterId: string, workday: string): Promise<Models.SingleWorkdayAveragePoints>;
+  	getGamificationScorecardsUsersValuesAverage(filterType: string, filterId: string, workday: string, opts?: GamificationApi.getGamificationScorecardsUsersValuesAverageOptions): Promise<Models.SingleWorkdayAverageValues>;
+  	getGamificationScorecardsUsersValuesTrends(filterType: string, filterId: string, startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsUsersValuesTrendsOptions): Promise<Models.WorkdayValuesTrend>;
+  	getGamificationScorecardsValuesAverage(workday: string, opts?: GamificationApi.getGamificationScorecardsValuesAverageOptions): Promise<Models.SingleWorkdayAverageValues>;
+  	getGamificationScorecardsValuesTrends(startWorkday: string, endWorkday: string, opts?: GamificationApi.getGamificationScorecardsValuesTrendsOptions): Promise<Models.WorkdayValuesTrend>;
+  	getGamificationStatus(): Promise<Models.GamificationStatus>;
+  	getGamificationTemplate(templateId: string): Promise<Models.ObjectiveTemplate>;
+  	getGamificationTemplates(): Promise<Models.GetTemplatesResponse>;
+  	patchEmployeeperformanceExternalmetricsDefinition(metricId: string, body: Models.ExternalMetricDefinitionUpdateRequest): Promise<Models.ExternalMetricDefinition>;
+  	postEmployeeperformanceExternalmetricsData(opts?: GamificationApi.postEmployeeperformanceExternalmetricsDataOptions): Promise<Models.ExternalMetricDataWriteResponse>;
+  	postEmployeeperformanceExternalmetricsDefinitions(opts?: GamificationApi.postEmployeeperformanceExternalmetricsDefinitionsOptions): Promise<Models.ExternalMetricDefinition>;
+  	postGamificationProfileActivate(profileId: string): Promise<Models.PerformanceProfile>;
+  	postGamificationProfileDeactivate(profileId: string): Promise<Models.PerformanceProfile>;
+  	postGamificationProfileMembers(profileId: string, body: Models.AssignUsers): Promise<Models.Assignment>;
+  	postGamificationProfileMembersValidate(profileId: string, body: Models.ValidateAssignUsers): Promise<Models.AssignmentValidation>;
+  	postGamificationProfileMetricLink(sourceProfileId: string, sourceMetricId: string, body: Models.TargetPerformanceProfile): Promise<Models.Metric>;
+  	postGamificationProfileMetrics(profileId: string, body: Models.CreateMetric): Promise<Models.Metric>;
+  	postGamificationProfiles(body: Models.CreatePerformanceProfile, opts?: GamificationApi.postGamificationProfilesOptions): Promise<Models.PerformanceProfile>;
+  	postGamificationProfilesUserQuery(userId: string, body: Models.UserProfilesInDateRangeRequest): Promise<Models.UserProfilesInDateRange>;
+  	postGamificationProfilesUsersMeQuery(body: Models.UserProfilesInDateRangeRequest): Promise<Models.UserProfilesInDateRange>;
+  	putGamificationProfile(profileId: string, opts?: GamificationApi.putGamificationProfileOptions): Promise<Models.PerformanceProfile>;
+  	putGamificationProfileMetric(profileId: string, metricId: string, body: Models.CreateMetric): Promise<Models.Metric>;
   	putGamificationStatus(status: Models.GamificationStatus): Promise<Models.GamificationStatus>;
 }
 
@@ -2353,10 +2377,11 @@ declare namespace GamificationApi {
 	}
 }
 
-declare class GeneralDataProtectionRegulationApi {  
-  	getGdprRequest(requestId: string): Promise<Models.GDPRRequest>; 
-  	getGdprRequests(opts?: GeneralDataProtectionRegulationApi.getGdprRequestsOptions): Promise<Models.GDPRRequestEntityListing>; 
-  	getGdprSubjects(searchType: string, searchValue: string): Promise<Models.GDPRSubjectEntityListing>; 
+declare class GeneralDataProtectionRegulationApi {
+	constructor(apiClient?: ApiClientClass);
+  	getGdprRequest(requestId: string): Promise<Models.GDPRRequest>;
+  	getGdprRequests(opts?: GeneralDataProtectionRegulationApi.getGdprRequestsOptions): Promise<Models.GDPRRequestEntityListing>;
+  	getGdprSubjects(searchType: string, searchValue: string): Promise<Models.GDPRSubjectEntityListing>;
   	postGdprRequests(body: Models.GDPRRequest, opts?: GeneralDataProtectionRegulationApi.postGdprRequestsOptions): Promise<Models.GDPRRequest>;
 }
 
@@ -2370,32 +2395,34 @@ declare namespace GeneralDataProtectionRegulationApi {
 	}
 }
 
-declare class GeolocationApi {  
-  	getGeolocationsSettings(): Promise<Models.GeolocationSettings>; 
-  	getUserGeolocation(userId: string, clientId: string): Promise<Models.Geolocation>; 
-  	patchGeolocationsSettings(body: Models.GeolocationSettings): Promise<Models.GeolocationSettings>; 
+declare class GeolocationApi {
+	constructor(apiClient?: ApiClientClass);
+  	getGeolocationsSettings(): Promise<Models.GeolocationSettings>;
+  	getUserGeolocation(userId: string, clientId: string): Promise<Models.Geolocation>;
+  	patchGeolocationsSettings(body: Models.GeolocationSettings): Promise<Models.GeolocationSettings>;
   	patchUserGeolocation(userId: string, clientId: string, body: Models.Geolocation): Promise<Models.Geolocation>;
 }
 
 declare namespace GeolocationApi { 
 }
 
-declare class GreetingsApi {  
-  	deleteGreeting(greetingId: string): Promise<void>; 
-  	getGreeting(greetingId: string): Promise<Models.Greeting>; 
-  	getGreetingMedia(greetingId: string, opts?: GreetingsApi.getGreetingMediaOptions): Promise<Models.GreetingMediaInfo>; 
-  	getGreetings(opts?: GreetingsApi.getGreetingsOptions): Promise<Models.DomainEntityListing>; 
-  	getGreetingsDefaults(): Promise<Models.DefaultGreetingList>; 
-  	getGroupGreetings(groupId: string, opts?: GreetingsApi.getGroupGreetingsOptions): Promise<Models.GreetingListing>; 
-  	getGroupGreetingsDefaults(groupId: string): Promise<Models.DefaultGreetingList>; 
-  	getUserGreetings(userId: string, opts?: GreetingsApi.getUserGreetingsOptions): Promise<Models.DomainEntityListing>; 
-  	getUserGreetingsDefaults(userId: string): Promise<Models.DefaultGreetingList>; 
-  	postGreetings(body: Models.Greeting): Promise<Models.Greeting>; 
-  	postGroupGreetings(groupId: string, body: Models.Greeting): Promise<Models.Greeting>; 
-  	postUserGreetings(userId: string, body: Models.Greeting): Promise<Models.Greeting>; 
-  	putGreeting(greetingId: string, body: Models.Greeting): Promise<Models.Greeting>; 
-  	putGreetingsDefaults(body: Models.DefaultGreetingList): Promise<Models.DefaultGreetingList>; 
-  	putGroupGreetingsDefaults(groupId: string, body: Models.DefaultGreetingList): Promise<Models.DefaultGreetingList>; 
+declare class GreetingsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteGreeting(greetingId: string): Promise<void>;
+  	getGreeting(greetingId: string): Promise<Models.Greeting>;
+  	getGreetingMedia(greetingId: string, opts?: GreetingsApi.getGreetingMediaOptions): Promise<Models.GreetingMediaInfo>;
+  	getGreetings(opts?: GreetingsApi.getGreetingsOptions): Promise<Models.DomainEntityListing>;
+  	getGreetingsDefaults(): Promise<Models.DefaultGreetingList>;
+  	getGroupGreetings(groupId: string, opts?: GreetingsApi.getGroupGreetingsOptions): Promise<Models.GreetingListing>;
+  	getGroupGreetingsDefaults(groupId: string): Promise<Models.DefaultGreetingList>;
+  	getUserGreetings(userId: string, opts?: GreetingsApi.getUserGreetingsOptions): Promise<Models.DomainEntityListing>;
+  	getUserGreetingsDefaults(userId: string): Promise<Models.DefaultGreetingList>;
+  	postGreetings(body: Models.Greeting): Promise<Models.Greeting>;
+  	postGroupGreetings(groupId: string, body: Models.Greeting): Promise<Models.Greeting>;
+  	postUserGreetings(userId: string, body: Models.Greeting): Promise<Models.Greeting>;
+  	putGreeting(greetingId: string, body: Models.Greeting): Promise<Models.Greeting>;
+  	putGreetingsDefaults(body: Models.DefaultGreetingList): Promise<Models.DefaultGreetingList>;
+  	putGroupGreetingsDefaults(groupId: string, body: Models.DefaultGreetingList): Promise<Models.DefaultGreetingList>;
   	putUserGreetingsDefaults(userId: string, body: Models.DefaultGreetingList): Promise<Models.DefaultGreetingList>;
 }
 
@@ -2417,24 +2444,25 @@ declare namespace GreetingsApi {
 	}
 }
 
-declare class GroupsApi {  
-  	deleteGroup(groupId: string): Promise<void>; 
-  	deleteGroupDynamicsettings(groupId: string): Promise<void>; 
-  	deleteGroupMembers(groupId: string, ids: string): Promise<object>; 
-  	getFieldconfig(type: string): Promise<Models.FieldConfig>; 
-  	getGroup(groupId: string): Promise<Models.Group>; 
-  	getGroupDynamicsettings(groupId: string): Promise<Models.DynamicGroupDefinition>; 
-  	getGroupIndividuals(groupId: string): Promise<Models.UserEntityListing>; 
-  	getGroupMembers(groupId: string, opts?: GroupsApi.getGroupMembersOptions): Promise<Models.UserEntityListing>; 
-  	getGroupProfile(groupId: string, opts?: GroupsApi.getGroupProfileOptions): Promise<Models.GroupProfile>; 
-  	getGroups(opts?: GroupsApi.getGroupsOptions): Promise<Models.GroupEntityListing>; 
-  	getGroupsSearch(q64: string, opts?: GroupsApi.getGroupsSearchOptions): Promise<Models.GroupsSearchResponse>; 
-  	getProfilesGroups(opts?: GroupsApi.getProfilesGroupsOptions): Promise<Models.GroupProfileEntityListing>; 
-  	postGroupMembers(groupId: string, body: Models.GroupMembersUpdate): Promise<object>; 
-  	postGroups(body: Models.GroupCreate): Promise<Models.Group>; 
-  	postGroupsDynamicsettingsPreview(body: Models.DynamicGroupQuery): Promise<Models.DynamicGroupQueryPreview>; 
-  	postGroupsSearch(body: Models.GroupSearchRequest): Promise<Models.GroupsSearchResponse>; 
-  	putGroup(groupId: string, opts?: GroupsApi.putGroupOptions): Promise<Models.Group>; 
+declare class GroupsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteGroup(groupId: string): Promise<void>;
+  	deleteGroupDynamicsettings(groupId: string): Promise<void>;
+  	deleteGroupMembers(groupId: string, ids: string): Promise<object>;
+  	getFieldconfig(type: string): Promise<Models.FieldConfig>;
+  	getGroup(groupId: string): Promise<Models.Group>;
+  	getGroupDynamicsettings(groupId: string): Promise<Models.DynamicGroupDefinition>;
+  	getGroupIndividuals(groupId: string): Promise<Models.UserEntityListing>;
+  	getGroupMembers(groupId: string, opts?: GroupsApi.getGroupMembersOptions): Promise<Models.UserEntityListing>;
+  	getGroupProfile(groupId: string, opts?: GroupsApi.getGroupProfileOptions): Promise<Models.GroupProfile>;
+  	getGroups(opts?: GroupsApi.getGroupsOptions): Promise<Models.GroupEntityListing>;
+  	getGroupsSearch(q64: string, opts?: GroupsApi.getGroupsSearchOptions): Promise<Models.GroupsSearchResponse>;
+  	getProfilesGroups(opts?: GroupsApi.getProfilesGroupsOptions): Promise<Models.GroupProfileEntityListing>;
+  	postGroupMembers(groupId: string, body: Models.GroupMembersUpdate): Promise<object>;
+  	postGroups(body: Models.GroupCreate): Promise<Models.Group>;
+  	postGroupsDynamicsettingsPreview(body: Models.DynamicGroupQuery): Promise<Models.DynamicGroupQueryPreview>;
+  	postGroupsSearch(body: Models.GroupSearchRequest): Promise<Models.GroupsSearchResponse>;
+  	putGroup(groupId: string, opts?: GroupsApi.putGroupOptions): Promise<Models.Group>;
   	putGroupDynamicsettings(groupId: string, body: Models.DynamicGroupQuery): Promise<void>;
 }
 
@@ -2470,55 +2498,57 @@ declare namespace GroupsApi {
 	}
 }
 
-declare class IdentityProviderApi {  
-  	deleteIdentityprovider(providerId: string): Promise<void>; 
-  	deleteIdentityprovidersAdfs(): Promise<object>; 
-  	deleteIdentityprovidersCic(): Promise<object>; 
-  	deleteIdentityprovidersGeneric(): Promise<object>; 
-  	deleteIdentityprovidersGsuite(): Promise<object>; 
-  	deleteIdentityprovidersIdentitynow(): Promise<object>; 
-  	deleteIdentityprovidersOkta(): Promise<object>; 
-  	deleteIdentityprovidersOnelogin(): Promise<object>; 
-  	deleteIdentityprovidersPing(): Promise<object>; 
-  	deleteIdentityprovidersPurecloud(): Promise<object>; 
-  	deleteIdentityprovidersPureengage(): Promise<object>; 
-  	deleteIdentityprovidersSalesforce(): Promise<object>; 
-  	getIdentityprovider(providerId: string): Promise<Models.CustomProvider>; 
-  	getIdentityproviders(): Promise<Models.IdentityProviderEntityListing>; 
-  	getIdentityprovidersAdfs(): Promise<Models.ADFS>; 
-  	getIdentityprovidersCic(): Promise<Models.CustomerInteractionCenter>; 
-  	getIdentityprovidersGeneric(): Promise<Models.GenericSAML>; 
-  	getIdentityprovidersGsuite(): Promise<Models.GSuite>; 
-  	getIdentityprovidersIdentitynow(): Promise<Models.IdentityNow>; 
-  	getIdentityprovidersOkta(): Promise<Models.Okta>; 
-  	getIdentityprovidersOnelogin(): Promise<Models.OneLogin>; 
-  	getIdentityprovidersPing(): Promise<Models.PingIdentity>; 
-  	getIdentityprovidersPurecloud(): Promise<Models.PureCloud>; 
-  	getIdentityprovidersPureengage(): Promise<Models.PureEngage>; 
-  	getIdentityprovidersSalesforce(): Promise<Models.Salesforce>; 
-  	postIdentityproviders(body: Models.CustomProvider): Promise<Models.CustomProvider>; 
-  	putIdentityprovider(providerId: string, body: Models.CustomProvider): Promise<Models.CustomProvider>; 
-  	putIdentityprovidersAdfs(body: Models.ADFS): Promise<Models.IdentityProvider>; 
-  	putIdentityprovidersCic(body: Models.CustomerInteractionCenter): Promise<Models.IdentityProvider>; 
-  	putIdentityprovidersGeneric(body: Models.GenericSAML): Promise<Models.IdentityProvider>; 
-  	putIdentityprovidersGsuite(body: Models.GSuite): Promise<Models.IdentityProvider>; 
-  	putIdentityprovidersIdentitynow(body: Models.IdentityNow): Promise<Models.IdentityNow>; 
-  	putIdentityprovidersOkta(body: Models.Okta): Promise<Models.IdentityProvider>; 
-  	putIdentityprovidersOnelogin(body: Models.OneLogin): Promise<Models.IdentityProvider>; 
-  	putIdentityprovidersPing(body: Models.PingIdentity): Promise<Models.IdentityProvider>; 
-  	putIdentityprovidersPurecloud(body: Models.PureCloud): Promise<Models.IdentityProvider>; 
-  	putIdentityprovidersPureengage(body: Models.PureEngage): Promise<Models.IdentityProvider>; 
+declare class IdentityProviderApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteIdentityprovider(providerId: string): Promise<void>;
+  	deleteIdentityprovidersAdfs(): Promise<object>;
+  	deleteIdentityprovidersCic(): Promise<object>;
+  	deleteIdentityprovidersGeneric(): Promise<object>;
+  	deleteIdentityprovidersGsuite(): Promise<object>;
+  	deleteIdentityprovidersIdentitynow(): Promise<object>;
+  	deleteIdentityprovidersOkta(): Promise<object>;
+  	deleteIdentityprovidersOnelogin(): Promise<object>;
+  	deleteIdentityprovidersPing(): Promise<object>;
+  	deleteIdentityprovidersPurecloud(): Promise<object>;
+  	deleteIdentityprovidersPureengage(): Promise<object>;
+  	deleteIdentityprovidersSalesforce(): Promise<object>;
+  	getIdentityprovider(providerId: string): Promise<Models.CustomProvider>;
+  	getIdentityproviders(): Promise<Models.IdentityProviderEntityListing>;
+  	getIdentityprovidersAdfs(): Promise<Models.ADFS>;
+  	getIdentityprovidersCic(): Promise<Models.CustomerInteractionCenter>;
+  	getIdentityprovidersGeneric(): Promise<Models.GenericSAML>;
+  	getIdentityprovidersGsuite(): Promise<Models.GSuite>;
+  	getIdentityprovidersIdentitynow(): Promise<Models.IdentityNow>;
+  	getIdentityprovidersOkta(): Promise<Models.Okta>;
+  	getIdentityprovidersOnelogin(): Promise<Models.OneLogin>;
+  	getIdentityprovidersPing(): Promise<Models.PingIdentity>;
+  	getIdentityprovidersPurecloud(): Promise<Models.PureCloud>;
+  	getIdentityprovidersPureengage(): Promise<Models.PureEngage>;
+  	getIdentityprovidersSalesforce(): Promise<Models.Salesforce>;
+  	postIdentityproviders(body: Models.CustomProvider): Promise<Models.CustomProvider>;
+  	putIdentityprovider(providerId: string, body: Models.CustomProvider): Promise<Models.CustomProvider>;
+  	putIdentityprovidersAdfs(body: Models.ADFS): Promise<Models.IdentityProvider>;
+  	putIdentityprovidersCic(body: Models.CustomerInteractionCenter): Promise<Models.IdentityProvider>;
+  	putIdentityprovidersGeneric(body: Models.GenericSAML): Promise<Models.IdentityProvider>;
+  	putIdentityprovidersGsuite(body: Models.GSuite): Promise<Models.IdentityProvider>;
+  	putIdentityprovidersIdentitynow(body: Models.IdentityNow): Promise<Models.IdentityNow>;
+  	putIdentityprovidersOkta(body: Models.Okta): Promise<Models.IdentityProvider>;
+  	putIdentityprovidersOnelogin(body: Models.OneLogin): Promise<Models.IdentityProvider>;
+  	putIdentityprovidersPing(body: Models.PingIdentity): Promise<Models.IdentityProvider>;
+  	putIdentityprovidersPurecloud(body: Models.PureCloud): Promise<Models.IdentityProvider>;
+  	putIdentityprovidersPureengage(body: Models.PureEngage): Promise<Models.IdentityProvider>;
   	putIdentityprovidersSalesforce(body: Models.Salesforce): Promise<Models.IdentityProvider>;
 }
 
 declare namespace IdentityProviderApi { 
 }
 
-declare class InfrastructureAsCodeApi {  
-  	getInfrastructureascodeAccelerator(acceleratorId: string, opts?: InfrastructureAsCodeApi.getInfrastructureascodeAcceleratorOptions): Promise<Models.AcceleratorSpecification>; 
-  	getInfrastructureascodeAccelerators(opts?: InfrastructureAsCodeApi.getInfrastructureascodeAcceleratorsOptions): Promise<Models.AcceleratorList>; 
-  	getInfrastructureascodeJob(jobId: string, opts?: InfrastructureAsCodeApi.getInfrastructureascodeJobOptions): Promise<Models.InfrastructureascodeJob>; 
-  	getInfrastructureascodeJobs(opts?: InfrastructureAsCodeApi.getInfrastructureascodeJobsOptions): Promise<Models.InfrastructureascodeJob>; 
+declare class InfrastructureAsCodeApi {
+	constructor(apiClient?: ApiClientClass);
+  	getInfrastructureascodeAccelerator(acceleratorId: string, opts?: InfrastructureAsCodeApi.getInfrastructureascodeAcceleratorOptions): Promise<Models.AcceleratorSpecification>;
+  	getInfrastructureascodeAccelerators(opts?: InfrastructureAsCodeApi.getInfrastructureascodeAcceleratorsOptions): Promise<Models.AcceleratorList>;
+  	getInfrastructureascodeJob(jobId: string, opts?: InfrastructureAsCodeApi.getInfrastructureascodeJobOptions): Promise<Models.InfrastructureascodeJob>;
+  	getInfrastructureascodeJobs(opts?: InfrastructureAsCodeApi.getInfrastructureascodeJobsOptions): Promise<Models.InfrastructureascodeJob>;
   	postInfrastructureascodeJobs(body: Models.AcceleratorInput): Promise<Models.InfrastructureascodeJob>;
 }
 
@@ -2552,91 +2582,92 @@ declare namespace InfrastructureAsCodeApi {
 	}
 }
 
-declare class IntegrationsApi {  
-  	deleteIntegration(integrationId: string): Promise<Models.Integration>; 
-  	deleteIntegrationsAction(actionId: string): Promise<void>; 
-  	deleteIntegrationsActionDraft(actionId: string): Promise<void>; 
-  	deleteIntegrationsCredential(credentialId: string): Promise<void>; 
-  	getIntegration(integrationId: string, opts?: IntegrationsApi.getIntegrationOptions): Promise<Models.Integration>; 
-  	getIntegrationConfigCurrent(integrationId: string): Promise<Models.IntegrationConfiguration>; 
-  	getIntegrations(opts?: IntegrationsApi.getIntegrationsOptions): Promise<Models.IntegrationEntityListing>; 
-  	getIntegrationsAction(actionId: string, opts?: IntegrationsApi.getIntegrationsActionOptions): Promise<Models.Action>; 
-  	getIntegrationsActionDraft(actionId: string, opts?: IntegrationsApi.getIntegrationsActionDraftOptions): Promise<Models.Action>; 
-  	getIntegrationsActionDraftFunction(actionId: string): Promise<Models.FunctionConfig>; 
-  	getIntegrationsActionDraftSchema(actionId: string, fileName: string, opts?: IntegrationsApi.getIntegrationsActionDraftSchemaOptions): Promise<Models.JsonSchemaDocument>; 
-  	getIntegrationsActionDraftTemplate(actionId: string, fileName: string): Promise<string>; 
-  	getIntegrationsActionDraftValidation(actionId: string): Promise<Models.DraftValidationResult>; 
-  	getIntegrationsActionFunction(actionId: string): Promise<Models.FunctionConfig>; 
-  	getIntegrationsActionSchema(actionId: string, fileName: string, opts?: IntegrationsApi.getIntegrationsActionSchemaOptions): Promise<Models.JsonSchemaDocument>; 
-  	getIntegrationsActionTemplate(actionId: string, fileName: string): Promise<string>; 
-  	getIntegrationsActions(opts?: IntegrationsApi.getIntegrationsActionsOptions): Promise<Models.ActionEntityListing>; 
-  	getIntegrationsActionsCategories(opts?: IntegrationsApi.getIntegrationsActionsCategoriesOptions): Promise<Models.CategoryEntityListing>; 
-  	getIntegrationsActionsCertificates(opts?: IntegrationsApi.getIntegrationsActionsCertificatesOptions): Promise<Models.ActionCertificateListing>; 
-  	getIntegrationsActionsCertificatesTruststore(): Promise<Models.TrustedCertificates>; 
-  	getIntegrationsActionsDrafts(opts?: IntegrationsApi.getIntegrationsActionsDraftsOptions): Promise<Models.ActionEntityListing>; 
-  	getIntegrationsActionsFunctionsRuntimes(): Promise<Array<Models.FunctionRuntime>>; 
-  	getIntegrationsBotconnectorIntegrationIdBot(integrationId: string, botId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotOptions): Promise<Models.BotConnectorBot>; 
-  	getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId: string, botId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotVersionsOptions): Promise<Models.BotConnectorBotVersionSummaryEntityListing>; 
-  	getIntegrationsBotconnectorIntegrationIdBots(integrationId: string): Promise<Models.BotList>; 
-  	getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotsSummariesOptions): Promise<Models.BotConnectorBotSummaryEntityListing>; 
-  	getIntegrationsClientapps(opts?: IntegrationsApi.getIntegrationsClientappsOptions): Promise<Models.ClientAppEntityListing>; 
-  	getIntegrationsClientappsUnifiedcommunications(opts?: IntegrationsApi.getIntegrationsClientappsUnifiedcommunicationsOptions): Promise<Models.UCIntegrationListing>; 
-  	getIntegrationsCredential(credentialId: string): Promise<Models.Credential>; 
-  	getIntegrationsCredentials(opts?: IntegrationsApi.getIntegrationsCredentialsOptions): Promise<Models.CredentialInfoListing>; 
-  	getIntegrationsCredentialsTypes(): Promise<Models.CredentialTypeListing>; 
-  	getIntegrationsSpeechAudioconnector(opts?: IntegrationsApi.getIntegrationsSpeechAudioconnectorOptions): Promise<Models.AudioConnectorIntegrationEntityListing>; 
-  	getIntegrationsSpeechAudioconnectorIntegrationId(integrationId: string): Promise<Models.AudioConnectorIntegration>; 
-  	getIntegrationsSpeechDialogflowAgent(agentId: string): Promise<Models.DialogflowAgent>; 
-  	getIntegrationsSpeechDialogflowAgents(opts?: IntegrationsApi.getIntegrationsSpeechDialogflowAgentsOptions): Promise<Models.DialogflowAgentSummaryEntityListing>; 
-  	getIntegrationsSpeechDialogflowcxAgent(agentId: string): Promise<Models.DialogflowCXAgent>; 
-  	getIntegrationsSpeechDialogflowcxAgents(opts?: IntegrationsApi.getIntegrationsSpeechDialogflowcxAgentsOptions): Promise<Models.DialogflowCXAgentSummaryEntityListing>; 
-  	getIntegrationsSpeechLexBotAlias(aliasId: string): Promise<Models.LexBotAlias>; 
-  	getIntegrationsSpeechLexBotBotIdAliases(botId: string, opts?: IntegrationsApi.getIntegrationsSpeechLexBotBotIdAliasesOptions): Promise<Models.LexBotAliasEntityListing>; 
-  	getIntegrationsSpeechLexBots(opts?: IntegrationsApi.getIntegrationsSpeechLexBotsOptions): Promise<Models.LexBotEntityListing>; 
-  	getIntegrationsSpeechLexv2BotAlias(aliasId: string): Promise<Models.LexV2BotAlias>; 
-  	getIntegrationsSpeechLexv2BotBotIdAliases(botId: string, opts?: IntegrationsApi.getIntegrationsSpeechLexv2BotBotIdAliasesOptions): Promise<Models.LexV2BotAliasEntityListing>; 
-  	getIntegrationsSpeechLexv2Bots(opts?: IntegrationsApi.getIntegrationsSpeechLexv2BotsOptions): Promise<Models.LexV2BotEntityListing>; 
-  	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId: string, botId: string, opts?: IntegrationsApi.getIntegrationsSpeechNuanceNuanceIntegrationIdBotOptions): Promise<Models.NuanceBot>; 
-  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId: string, botId: string, jobId: string): Promise<Models.AsyncJob>; 
-  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId: string, botId: string, jobId: string): Promise<Models.NuanceBot>; 
-  	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId: string, opts?: IntegrationsApi.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsOptions): Promise<Models.NuanceBotEntityListing>; 
-  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId: string, jobId: string): Promise<Models.AsyncJob>; 
-  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId: string, jobId: string): Promise<Models.NuanceBotEntityListing>; 
-  	getIntegrationsSpeechSttEngine(engineId: string): Promise<Models.SttEngineEntity>; 
-  	getIntegrationsSpeechSttEngines(opts?: IntegrationsApi.getIntegrationsSpeechSttEnginesOptions): Promise<Models.SttEngineEntityListing>; 
-  	getIntegrationsSpeechTtsEngine(engineId: string, opts?: IntegrationsApi.getIntegrationsSpeechTtsEngineOptions): Promise<Models.TtsEngineEntity>; 
-  	getIntegrationsSpeechTtsEngineVoice(engineId: string, voiceId: string): Promise<Models.TtsVoiceEntity>; 
-  	getIntegrationsSpeechTtsEngineVoices(engineId: string, opts?: IntegrationsApi.getIntegrationsSpeechTtsEngineVoicesOptions): Promise<Models.TtsVoiceEntityListing>; 
-  	getIntegrationsSpeechTtsEngines(opts?: IntegrationsApi.getIntegrationsSpeechTtsEnginesOptions): Promise<Models.TtsEngineEntityListing>; 
-  	getIntegrationsSpeechTtsSettings(): Promise<Models.TtsSettings>; 
-  	getIntegrationsType(typeId: string): Promise<Models.IntegrationType>; 
-  	getIntegrationsTypeConfigschema(typeId: string, configType: string): Promise<Models.JsonSchemaDocument>; 
-  	getIntegrationsTypes(opts?: IntegrationsApi.getIntegrationsTypesOptions): Promise<Models.IntegrationTypeEntityListing>; 
-  	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId: string): Promise<Models.UnifiedCommunicationsIntegration>; 
-  	getIntegrationsUnifiedcommunicationsClientapps(opts?: IntegrationsApi.getIntegrationsUnifiedcommunicationsClientappsOptions): Promise<Models.UnifiedCommunicationsIntegrationListing>; 
-  	getIntegrationsUserapps(opts?: IntegrationsApi.getIntegrationsUserappsOptions): Promise<Models.UserAppEntityListing>; 
-  	patchIntegration(integrationId: string, opts?: IntegrationsApi.patchIntegrationOptions): Promise<Models.Integration>; 
-  	patchIntegrationsAction(actionId: string, body: Models.UpdateActionInput): Promise<Models.Action>; 
-  	patchIntegrationsActionDraft(actionId: string, body: Models.UpdateDraftInput): Promise<Models.Action>; 
-  	postIntegrations(opts?: IntegrationsApi.postIntegrationsOptions): Promise<Models.Integration>; 
-  	postIntegrationsActionDraft(actionId: string): Promise<Models.Action>; 
-  	postIntegrationsActionDraftFunctionUpload(actionId: string, body: Models.FunctionUploadRequest): Promise<Models.FunctionUploadResponse>; 
-  	postIntegrationsActionDraftPublish(actionId: string, body: Models.PublishDraftInput): Promise<Models.Action>; 
-  	postIntegrationsActionDraftTest(actionId: string, body: object, opts?: IntegrationsApi.postIntegrationsActionDraftTestOptions): Promise<Models.TestExecutionResult>; 
-  	postIntegrationsActionExecute(actionId: string, body: object, opts?: IntegrationsApi.postIntegrationsActionExecuteOptions): Promise<object>; 
-  	postIntegrationsActionTest(actionId: string, body: object, opts?: IntegrationsApi.postIntegrationsActionTestOptions): Promise<Models.TestExecutionResult>; 
-  	postIntegrationsActions(body: Models.PostActionInput): Promise<Models.Action>; 
-  	postIntegrationsActionsDrafts(body: Models.PostActionInput): Promise<Models.Action>; 
-  	postIntegrationsCredentials(opts?: IntegrationsApi.postIntegrationsCredentialsOptions): Promise<Models.CredentialInfo>; 
-  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId: string, botId: string, opts?: IntegrationsApi.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsOptions): Promise<Models.AsyncJob>; 
-  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId: string, opts?: IntegrationsApi.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsOptions): Promise<Models.AsyncJob>; 
-  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId: string, settings: Models.BotExecutionConfiguration): Promise<void>; 
-  	putIntegrationConfigCurrent(integrationId: string, opts?: IntegrationsApi.putIntegrationConfigCurrentOptions): Promise<Models.IntegrationConfiguration>; 
-  	putIntegrationsActionDraftFunction(actionId: string, body: Models.Function): Promise<Models.FunctionConfig>; 
-  	putIntegrationsBotconnectorIntegrationIdBots(integrationId: string, botList: Models.BotList): Promise<void>; 
-  	putIntegrationsCredential(credentialId: string, opts?: IntegrationsApi.putIntegrationsCredentialOptions): Promise<Models.CredentialInfo>; 
-  	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId: string, settings: Models.NuanceBotLaunchSettings): Promise<void>; 
-  	putIntegrationsSpeechTtsSettings(body: Models.TtsSettings): Promise<Models.TtsSettings>; 
+declare class IntegrationsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteIntegration(integrationId: string): Promise<Models.Integration>;
+  	deleteIntegrationsAction(actionId: string): Promise<void>;
+  	deleteIntegrationsActionDraft(actionId: string): Promise<void>;
+  	deleteIntegrationsCredential(credentialId: string): Promise<void>;
+  	getIntegration(integrationId: string, opts?: IntegrationsApi.getIntegrationOptions): Promise<Models.Integration>;
+  	getIntegrationConfigCurrent(integrationId: string): Promise<Models.IntegrationConfiguration>;
+  	getIntegrations(opts?: IntegrationsApi.getIntegrationsOptions): Promise<Models.IntegrationEntityListing>;
+  	getIntegrationsAction(actionId: string, opts?: IntegrationsApi.getIntegrationsActionOptions): Promise<Models.Action>;
+  	getIntegrationsActionDraft(actionId: string, opts?: IntegrationsApi.getIntegrationsActionDraftOptions): Promise<Models.Action>;
+  	getIntegrationsActionDraftFunction(actionId: string): Promise<Models.FunctionConfig>;
+  	getIntegrationsActionDraftSchema(actionId: string, fileName: string, opts?: IntegrationsApi.getIntegrationsActionDraftSchemaOptions): Promise<Models.JsonSchemaDocument>;
+  	getIntegrationsActionDraftTemplate(actionId: string, fileName: string): Promise<string>;
+  	getIntegrationsActionDraftValidation(actionId: string): Promise<Models.DraftValidationResult>;
+  	getIntegrationsActionFunction(actionId: string): Promise<Models.FunctionConfig>;
+  	getIntegrationsActionSchema(actionId: string, fileName: string, opts?: IntegrationsApi.getIntegrationsActionSchemaOptions): Promise<Models.JsonSchemaDocument>;
+  	getIntegrationsActionTemplate(actionId: string, fileName: string): Promise<string>;
+  	getIntegrationsActions(opts?: IntegrationsApi.getIntegrationsActionsOptions): Promise<Models.ActionEntityListing>;
+  	getIntegrationsActionsCategories(opts?: IntegrationsApi.getIntegrationsActionsCategoriesOptions): Promise<Models.CategoryEntityListing>;
+  	getIntegrationsActionsCertificates(opts?: IntegrationsApi.getIntegrationsActionsCertificatesOptions): Promise<Models.ActionCertificateListing>;
+  	getIntegrationsActionsCertificatesTruststore(): Promise<Models.TrustedCertificates>;
+  	getIntegrationsActionsDrafts(opts?: IntegrationsApi.getIntegrationsActionsDraftsOptions): Promise<Models.ActionEntityListing>;
+  	getIntegrationsActionsFunctionsRuntimes(): Promise<Array<Models.FunctionRuntime>>;
+  	getIntegrationsBotconnectorIntegrationIdBot(integrationId: string, botId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotOptions): Promise<Models.BotConnectorBot>;
+  	getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId: string, botId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotVersionsOptions): Promise<Models.BotConnectorBotVersionSummaryEntityListing>;
+  	getIntegrationsBotconnectorIntegrationIdBots(integrationId: string): Promise<Models.BotList>;
+  	getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotsSummariesOptions): Promise<Models.BotConnectorBotSummaryEntityListing>;
+  	getIntegrationsClientapps(opts?: IntegrationsApi.getIntegrationsClientappsOptions): Promise<Models.ClientAppEntityListing>;
+  	getIntegrationsClientappsUnifiedcommunications(opts?: IntegrationsApi.getIntegrationsClientappsUnifiedcommunicationsOptions): Promise<Models.UCIntegrationListing>;
+  	getIntegrationsCredential(credentialId: string): Promise<Models.Credential>;
+  	getIntegrationsCredentials(opts?: IntegrationsApi.getIntegrationsCredentialsOptions): Promise<Models.CredentialInfoListing>;
+  	getIntegrationsCredentialsTypes(): Promise<Models.CredentialTypeListing>;
+  	getIntegrationsSpeechAudioconnector(opts?: IntegrationsApi.getIntegrationsSpeechAudioconnectorOptions): Promise<Models.AudioConnectorIntegrationEntityListing>;
+  	getIntegrationsSpeechAudioconnectorIntegrationId(integrationId: string): Promise<Models.AudioConnectorIntegration>;
+  	getIntegrationsSpeechDialogflowAgent(agentId: string): Promise<Models.DialogflowAgent>;
+  	getIntegrationsSpeechDialogflowAgents(opts?: IntegrationsApi.getIntegrationsSpeechDialogflowAgentsOptions): Promise<Models.DialogflowAgentSummaryEntityListing>;
+  	getIntegrationsSpeechDialogflowcxAgent(agentId: string): Promise<Models.DialogflowCXAgent>;
+  	getIntegrationsSpeechDialogflowcxAgents(opts?: IntegrationsApi.getIntegrationsSpeechDialogflowcxAgentsOptions): Promise<Models.DialogflowCXAgentSummaryEntityListing>;
+  	getIntegrationsSpeechLexBotAlias(aliasId: string): Promise<Models.LexBotAlias>;
+  	getIntegrationsSpeechLexBotBotIdAliases(botId: string, opts?: IntegrationsApi.getIntegrationsSpeechLexBotBotIdAliasesOptions): Promise<Models.LexBotAliasEntityListing>;
+  	getIntegrationsSpeechLexBots(opts?: IntegrationsApi.getIntegrationsSpeechLexBotsOptions): Promise<Models.LexBotEntityListing>;
+  	getIntegrationsSpeechLexv2BotAlias(aliasId: string): Promise<Models.LexV2BotAlias>;
+  	getIntegrationsSpeechLexv2BotBotIdAliases(botId: string, opts?: IntegrationsApi.getIntegrationsSpeechLexv2BotBotIdAliasesOptions): Promise<Models.LexV2BotAliasEntityListing>;
+  	getIntegrationsSpeechLexv2Bots(opts?: IntegrationsApi.getIntegrationsSpeechLexv2BotsOptions): Promise<Models.LexV2BotEntityListing>;
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId: string, botId: string, opts?: IntegrationsApi.getIntegrationsSpeechNuanceNuanceIntegrationIdBotOptions): Promise<Models.NuanceBot>;
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId: string, botId: string, jobId: string): Promise<Models.AsyncJob>;
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId: string, botId: string, jobId: string): Promise<Models.NuanceBot>;
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId: string, opts?: IntegrationsApi.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsOptions): Promise<Models.NuanceBotEntityListing>;
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId: string, jobId: string): Promise<Models.AsyncJob>;
+  	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId: string, jobId: string): Promise<Models.NuanceBotEntityListing>;
+  	getIntegrationsSpeechSttEngine(engineId: string): Promise<Models.SttEngineEntity>;
+  	getIntegrationsSpeechSttEngines(opts?: IntegrationsApi.getIntegrationsSpeechSttEnginesOptions): Promise<Models.SttEngineEntityListing>;
+  	getIntegrationsSpeechTtsEngine(engineId: string, opts?: IntegrationsApi.getIntegrationsSpeechTtsEngineOptions): Promise<Models.TtsEngineEntity>;
+  	getIntegrationsSpeechTtsEngineVoice(engineId: string, voiceId: string): Promise<Models.TtsVoiceEntity>;
+  	getIntegrationsSpeechTtsEngineVoices(engineId: string, opts?: IntegrationsApi.getIntegrationsSpeechTtsEngineVoicesOptions): Promise<Models.TtsVoiceEntityListing>;
+  	getIntegrationsSpeechTtsEngines(opts?: IntegrationsApi.getIntegrationsSpeechTtsEnginesOptions): Promise<Models.TtsEngineEntityListing>;
+  	getIntegrationsSpeechTtsSettings(): Promise<Models.TtsSettings>;
+  	getIntegrationsType(typeId: string): Promise<Models.IntegrationType>;
+  	getIntegrationsTypeConfigschema(typeId: string, configType: string): Promise<Models.JsonSchemaDocument>;
+  	getIntegrationsTypes(opts?: IntegrationsApi.getIntegrationsTypesOptions): Promise<Models.IntegrationTypeEntityListing>;
+  	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId: string): Promise<Models.UnifiedCommunicationsIntegration>;
+  	getIntegrationsUnifiedcommunicationsClientapps(opts?: IntegrationsApi.getIntegrationsUnifiedcommunicationsClientappsOptions): Promise<Models.UnifiedCommunicationsIntegrationListing>;
+  	getIntegrationsUserapps(opts?: IntegrationsApi.getIntegrationsUserappsOptions): Promise<Models.UserAppEntityListing>;
+  	patchIntegration(integrationId: string, opts?: IntegrationsApi.patchIntegrationOptions): Promise<Models.Integration>;
+  	patchIntegrationsAction(actionId: string, body: Models.UpdateActionInput): Promise<Models.Action>;
+  	patchIntegrationsActionDraft(actionId: string, body: Models.UpdateDraftInput): Promise<Models.Action>;
+  	postIntegrations(opts?: IntegrationsApi.postIntegrationsOptions): Promise<Models.Integration>;
+  	postIntegrationsActionDraft(actionId: string): Promise<Models.Action>;
+  	postIntegrationsActionDraftFunctionUpload(actionId: string, body: Models.FunctionUploadRequest): Promise<Models.FunctionUploadResponse>;
+  	postIntegrationsActionDraftPublish(actionId: string, body: Models.PublishDraftInput): Promise<Models.Action>;
+  	postIntegrationsActionDraftTest(actionId: string, body: object, opts?: IntegrationsApi.postIntegrationsActionDraftTestOptions): Promise<Models.TestExecutionResult>;
+  	postIntegrationsActionExecute(actionId: string, body: object, opts?: IntegrationsApi.postIntegrationsActionExecuteOptions): Promise<object>;
+  	postIntegrationsActionTest(actionId: string, body: object, opts?: IntegrationsApi.postIntegrationsActionTestOptions): Promise<Models.TestExecutionResult>;
+  	postIntegrationsActions(body: Models.PostActionInput): Promise<Models.Action>;
+  	postIntegrationsActionsDrafts(body: Models.PostActionInput): Promise<Models.Action>;
+  	postIntegrationsCredentials(opts?: IntegrationsApi.postIntegrationsCredentialsOptions): Promise<Models.CredentialInfo>;
+  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId: string, botId: string, opts?: IntegrationsApi.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsOptions): Promise<Models.AsyncJob>;
+  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId: string, opts?: IntegrationsApi.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsOptions): Promise<Models.AsyncJob>;
+  	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId: string, settings: Models.BotExecutionConfiguration): Promise<void>;
+  	putIntegrationConfigCurrent(integrationId: string, opts?: IntegrationsApi.putIntegrationConfigCurrentOptions): Promise<Models.IntegrationConfiguration>;
+  	putIntegrationsActionDraftFunction(actionId: string, body: Models.Function): Promise<Models.FunctionConfig>;
+  	putIntegrationsBotconnectorIntegrationIdBots(integrationId: string, botList: Models.BotList): Promise<void>;
+  	putIntegrationsCredential(credentialId: string, opts?: IntegrationsApi.putIntegrationsCredentialOptions): Promise<Models.CredentialInfo>;
+  	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId: string, settings: Models.NuanceBotLaunchSettings): Promise<void>;
+  	putIntegrationsSpeechTtsSettings(body: Models.TtsSettings): Promise<Models.TtsSettings>;
   	putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId: string, body: Array<Models.UCThirdPartyPresence>): Promise<string>;
 }
 
@@ -2871,76 +2902,77 @@ declare namespace IntegrationsApi {
 	}
 }
 
-declare class JourneyApi {  
-  	deleteJourneyActionmap(actionMapId: string): Promise<void>; 
-  	deleteJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.deleteJourneyActiontemplateOptions): Promise<void>; 
-  	deleteJourneyOutcome(outcomeId: string): Promise<void>; 
-  	deleteJourneyOutcomesPredictor(predictorId: string): Promise<void>; 
-  	deleteJourneySegment(segmentId: string): Promise<void>; 
-  	deleteJourneyView(viewId: string): Promise<void>; 
-  	deleteJourneyViewSchedules(viewId: string): Promise<Models.JourneyViewSchedule>; 
-  	getAnalyticsJourneysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsJourneysAggregatesJobResults(jobId: string, opts?: JourneyApi.getAnalyticsJourneysAggregatesJobResultsOptions): Promise<Models.JourneyAsyncAggregateQueryResponse>; 
-  	getExternalcontactsContactJourneySessions(contactId: string, opts?: JourneyApi.getExternalcontactsContactJourneySessionsOptions): Promise<Models.SessionListing>; 
-  	getJourneyActionmap(actionMapId: string): Promise<Models.ActionMap>; 
-  	getJourneyActionmaps(opts?: JourneyApi.getJourneyActionmapsOptions): Promise<Models.ActionMapListing>; 
-  	getJourneyActionmapsEstimatesJob(jobId: string): Promise<string>; 
-  	getJourneyActionmapsEstimatesJobResults(jobId: string): Promise<Models.ActionMapEstimateResult>; 
-  	getJourneyActiontarget(actionTargetId: string): Promise<Models.ActionTarget>; 
-  	getJourneyActiontargets(opts?: JourneyApi.getJourneyActiontargetsOptions): Promise<Models.ActionTargetListing>; 
-  	getJourneyActiontemplate(actionTemplateId: string): Promise<Models.ActionTemplate>; 
-  	getJourneyActiontemplates(opts?: JourneyApi.getJourneyActiontemplatesOptions): Promise<Models.ActionTemplateListing>; 
-  	getJourneyDeploymentCustomerPing(deploymentId: string, customerCookieId: string, opts?: JourneyApi.getJourneyDeploymentCustomerPingOptions): Promise<Models.DeploymentPing>; 
-  	getJourneyOutcome(outcomeId: string): Promise<Models.Outcome>; 
-  	getJourneyOutcomes(opts?: JourneyApi.getJourneyOutcomesOptions): Promise<Models.OutcomeListing>; 
-  	getJourneyOutcomesAttributionsJob(jobId: string): Promise<Models.OutcomeAttributionJobStateResponse>; 
-  	getJourneyOutcomesAttributionsJobResults(jobId: string): Promise<Models.OutcomeAttributionResponseListing>; 
-  	getJourneyOutcomesPredictor(predictorId: string): Promise<Models.OutcomePredictor>; 
-  	getJourneyOutcomesPredictors(): Promise<Models.OutcomePredictorListing>; 
-  	getJourneySegment(segmentId: string): Promise<Models.JourneySegment>; 
-  	getJourneySegments(opts?: JourneyApi.getJourneySegmentsOptions): Promise<Models.SegmentListing>; 
-  	getJourneySession(sessionId: string): Promise<Models.Session>; 
-  	getJourneySessionEvents(sessionId: string, opts?: JourneyApi.getJourneySessionEventsOptions): Promise<Models.EventListing>; 
-  	getJourneySessionOutcomescores(sessionId: string): Promise<Models.OutcomeScoresResult>; 
-  	getJourneyView(viewId: string): Promise<Models.JourneyView>; 
-  	getJourneyViewSchedules(viewId: string): Promise<Models.JourneyViewSchedule>; 
-  	getJourneyViewVersion(viewId: string, versionId: string): Promise<Models.JourneyView>; 
-  	getJourneyViewVersionChart(viewId: string, journeyViewVersion: string, chartId: string): Promise<Models.JourneyViewChart>; 
-  	getJourneyViewVersionChartVersion(viewId: string, journeyViewVersion: string, chartId: string, chartVersion: string): Promise<Models.JourneyViewChart>; 
-  	getJourneyViewVersionJob(viewId: string, journeyVersionId: string, jobId: string): Promise<Models.JourneyViewJob>; 
-  	getJourneyViewVersionJobResults(viewId: string, journeyViewVersion: string, jobId: string): Promise<Models.JourneyViewResult>; 
-  	getJourneyViewVersionJobResultsChart(viewId: string, journeyVersionId: string, jobId: string, chartId: string): Promise<Models.JourneyViewChartResult>; 
-  	getJourneyViewVersionJobsLatest(viewId: string, journeyVersionId: string): Promise<Models.JourneyViewJob>; 
-  	getJourneyViews(opts?: JourneyApi.getJourneyViewsOptions): Promise<Models.JourneyViewListing>; 
-  	getJourneyViewsEventdefinition(eventDefinitionId: string): Promise<Models.JourneyEventDefinition>; 
-  	getJourneyViewsEventdefinitions(): Promise<Models.JourneyEventDefinitionListing>; 
-  	getJourneyViewsJobs(opts?: JourneyApi.getJourneyViewsJobsOptions): Promise<Models.JourneyViewJobListing>; 
-  	getJourneyViewsSchedules(opts?: JourneyApi.getJourneyViewsSchedulesOptions): Promise<Models.JourneyViewScheduleListing>; 
-  	patchJourneyActionmap(actionMapId: string, opts?: JourneyApi.patchJourneyActionmapOptions): Promise<Models.ActionMap>; 
-  	patchJourneyActiontarget(actionTargetId: string, opts?: JourneyApi.patchJourneyActiontargetOptions): Promise<Models.ActionTarget>; 
-  	patchJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.patchJourneyActiontemplateOptions): Promise<Models.ActionTemplate>; 
-  	patchJourneyOutcome(outcomeId: string, opts?: JourneyApi.patchJourneyOutcomeOptions): Promise<Models.Outcome>; 
-  	patchJourneySegment(segmentId: string, opts?: JourneyApi.patchJourneySegmentOptions): Promise<Models.JourneySegment>; 
-  	patchJourneyViewVersionJob(viewId: string, journeyVersionId: string, jobId: string, body: Models.JourneyViewJob): Promise<Models.JourneyViewJob>; 
-  	postAnalyticsJourneysAggregatesJobs(body: Models.JourneyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>; 
-  	postJourneyActionmaps(opts?: JourneyApi.postJourneyActionmapsOptions): Promise<Models.ActionMap>; 
-  	postJourneyActionmapsEstimatesJobs(body: Models.ActionMapEstimateRequest): Promise<Models.EstimateJobAsyncResponse>; 
-  	postJourneyActiontemplates(opts?: JourneyApi.postJourneyActiontemplatesOptions): Promise<Models.ActionTemplate>; 
-  	postJourneyDeploymentActionevent(deploymentId: string, body: Models.ActionEventRequest): Promise<void>; 
-  	postJourneyDeploymentAppevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentAppeventsOptions): Promise<Models.AppEventResponse>; 
-  	postJourneyDeploymentWebevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentWebeventsOptions): Promise<Models.WebEventResponse>; 
-  	postJourneyFlowsPathsQuery(opts?: JourneyApi.postJourneyFlowsPathsQueryOptions): Promise<Models.FlowPaths>; 
-  	postJourneyOutcomes(opts?: JourneyApi.postJourneyOutcomesOptions): Promise<Models.Outcome>; 
-  	postJourneyOutcomesAttributionsJobs(opts?: JourneyApi.postJourneyOutcomesAttributionsJobsOptions): Promise<Models.OutcomeAttributionAsyncResponse>; 
-  	postJourneyOutcomesPredictors(opts?: JourneyApi.postJourneyOutcomesPredictorsOptions): Promise<Models.OutcomePredictor>; 
-  	postJourneySegments(opts?: JourneyApi.postJourneySegmentsOptions): Promise<Models.JourneySegment>; 
-  	postJourneyViewSchedules(viewId: string, body: Models.JourneyViewSchedule): Promise<Models.JourneyViewSchedule>; 
-  	postJourneyViewVersionJobs(viewId: string, journeyVersionId: string): Promise<Models.JourneyViewJob>; 
-  	postJourneyViewVersions(viewId: string, body: Models.JourneyView): Promise<Models.JourneyView>; 
-  	postJourneyViews(body: Models.JourneyView): Promise<Models.JourneyView>; 
-  	postJourneyViewsEncodingsValidate(opts?: JourneyApi.postJourneyViewsEncodingsValidateOptions): Promise<Models.EntityListing>; 
-  	putJourneyViewSchedules(viewId: string, body: Models.JourneyViewSchedule): Promise<Models.JourneyViewSchedule>; 
+declare class JourneyApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteJourneyActionmap(actionMapId: string): Promise<void>;
+  	deleteJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.deleteJourneyActiontemplateOptions): Promise<void>;
+  	deleteJourneyOutcome(outcomeId: string): Promise<void>;
+  	deleteJourneyOutcomesPredictor(predictorId: string): Promise<void>;
+  	deleteJourneySegment(segmentId: string): Promise<void>;
+  	deleteJourneyView(viewId: string): Promise<void>;
+  	deleteJourneyViewSchedules(viewId: string): Promise<Models.JourneyViewSchedule>;
+  	getAnalyticsJourneysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsJourneysAggregatesJobResults(jobId: string, opts?: JourneyApi.getAnalyticsJourneysAggregatesJobResultsOptions): Promise<Models.JourneyAsyncAggregateQueryResponse>;
+  	getExternalcontactsContactJourneySessions(contactId: string, opts?: JourneyApi.getExternalcontactsContactJourneySessionsOptions): Promise<Models.SessionListing>;
+  	getJourneyActionmap(actionMapId: string): Promise<Models.ActionMap>;
+  	getJourneyActionmaps(opts?: JourneyApi.getJourneyActionmapsOptions): Promise<Models.ActionMapListing>;
+  	getJourneyActionmapsEstimatesJob(jobId: string): Promise<string>;
+  	getJourneyActionmapsEstimatesJobResults(jobId: string): Promise<Models.ActionMapEstimateResult>;
+  	getJourneyActiontarget(actionTargetId: string): Promise<Models.ActionTarget>;
+  	getJourneyActiontargets(opts?: JourneyApi.getJourneyActiontargetsOptions): Promise<Models.ActionTargetListing>;
+  	getJourneyActiontemplate(actionTemplateId: string): Promise<Models.ActionTemplate>;
+  	getJourneyActiontemplates(opts?: JourneyApi.getJourneyActiontemplatesOptions): Promise<Models.ActionTemplateListing>;
+  	getJourneyDeploymentCustomerPing(deploymentId: string, customerCookieId: string, opts?: JourneyApi.getJourneyDeploymentCustomerPingOptions): Promise<Models.DeploymentPing>;
+  	getJourneyOutcome(outcomeId: string): Promise<Models.Outcome>;
+  	getJourneyOutcomes(opts?: JourneyApi.getJourneyOutcomesOptions): Promise<Models.OutcomeListing>;
+  	getJourneyOutcomesAttributionsJob(jobId: string): Promise<Models.OutcomeAttributionJobStateResponse>;
+  	getJourneyOutcomesAttributionsJobResults(jobId: string): Promise<Models.OutcomeAttributionResponseListing>;
+  	getJourneyOutcomesPredictor(predictorId: string): Promise<Models.OutcomePredictor>;
+  	getJourneyOutcomesPredictors(): Promise<Models.OutcomePredictorListing>;
+  	getJourneySegment(segmentId: string): Promise<Models.JourneySegment>;
+  	getJourneySegments(opts?: JourneyApi.getJourneySegmentsOptions): Promise<Models.SegmentListing>;
+  	getJourneySession(sessionId: string): Promise<Models.Session>;
+  	getJourneySessionEvents(sessionId: string, opts?: JourneyApi.getJourneySessionEventsOptions): Promise<Models.EventListing>;
+  	getJourneySessionOutcomescores(sessionId: string): Promise<Models.OutcomeScoresResult>;
+  	getJourneyView(viewId: string): Promise<Models.JourneyView>;
+  	getJourneyViewSchedules(viewId: string): Promise<Models.JourneyViewSchedule>;
+  	getJourneyViewVersion(viewId: string, versionId: string): Promise<Models.JourneyView>;
+  	getJourneyViewVersionChart(viewId: string, journeyViewVersion: string, chartId: string): Promise<Models.JourneyViewChart>;
+  	getJourneyViewVersionChartVersion(viewId: string, journeyViewVersion: string, chartId: string, chartVersion: string): Promise<Models.JourneyViewChart>;
+  	getJourneyViewVersionJob(viewId: string, journeyVersionId: string, jobId: string): Promise<Models.JourneyViewJob>;
+  	getJourneyViewVersionJobResults(viewId: string, journeyViewVersion: string, jobId: string): Promise<Models.JourneyViewResult>;
+  	getJourneyViewVersionJobResultsChart(viewId: string, journeyVersionId: string, jobId: string, chartId: string): Promise<Models.JourneyViewChartResult>;
+  	getJourneyViewVersionJobsLatest(viewId: string, journeyVersionId: string): Promise<Models.JourneyViewJob>;
+  	getJourneyViews(opts?: JourneyApi.getJourneyViewsOptions): Promise<Models.JourneyViewListing>;
+  	getJourneyViewsEventdefinition(eventDefinitionId: string): Promise<Models.JourneyEventDefinition>;
+  	getJourneyViewsEventdefinitions(): Promise<Models.JourneyEventDefinitionListing>;
+  	getJourneyViewsJobs(opts?: JourneyApi.getJourneyViewsJobsOptions): Promise<Models.JourneyViewJobListing>;
+  	getJourneyViewsSchedules(opts?: JourneyApi.getJourneyViewsSchedulesOptions): Promise<Models.JourneyViewScheduleListing>;
+  	patchJourneyActionmap(actionMapId: string, opts?: JourneyApi.patchJourneyActionmapOptions): Promise<Models.ActionMap>;
+  	patchJourneyActiontarget(actionTargetId: string, opts?: JourneyApi.patchJourneyActiontargetOptions): Promise<Models.ActionTarget>;
+  	patchJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.patchJourneyActiontemplateOptions): Promise<Models.ActionTemplate>;
+  	patchJourneyOutcome(outcomeId: string, opts?: JourneyApi.patchJourneyOutcomeOptions): Promise<Models.Outcome>;
+  	patchJourneySegment(segmentId: string, opts?: JourneyApi.patchJourneySegmentOptions): Promise<Models.JourneySegment>;
+  	patchJourneyViewVersionJob(viewId: string, journeyVersionId: string, jobId: string, body: Models.JourneyViewJob): Promise<Models.JourneyViewJob>;
+  	postAnalyticsJourneysAggregatesJobs(body: Models.JourneyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>;
+  	postJourneyActionmaps(opts?: JourneyApi.postJourneyActionmapsOptions): Promise<Models.ActionMap>;
+  	postJourneyActionmapsEstimatesJobs(body: Models.ActionMapEstimateRequest): Promise<Models.EstimateJobAsyncResponse>;
+  	postJourneyActiontemplates(opts?: JourneyApi.postJourneyActiontemplatesOptions): Promise<Models.ActionTemplate>;
+  	postJourneyDeploymentActionevent(deploymentId: string, body: Models.ActionEventRequest): Promise<void>;
+  	postJourneyDeploymentAppevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentAppeventsOptions): Promise<Models.AppEventResponse>;
+  	postJourneyDeploymentWebevents(deploymentId: string, opts?: JourneyApi.postJourneyDeploymentWebeventsOptions): Promise<Models.WebEventResponse>;
+  	postJourneyFlowsPathsQuery(opts?: JourneyApi.postJourneyFlowsPathsQueryOptions): Promise<Models.FlowPaths>;
+  	postJourneyOutcomes(opts?: JourneyApi.postJourneyOutcomesOptions): Promise<Models.Outcome>;
+  	postJourneyOutcomesAttributionsJobs(opts?: JourneyApi.postJourneyOutcomesAttributionsJobsOptions): Promise<Models.OutcomeAttributionAsyncResponse>;
+  	postJourneyOutcomesPredictors(opts?: JourneyApi.postJourneyOutcomesPredictorsOptions): Promise<Models.OutcomePredictor>;
+  	postJourneySegments(opts?: JourneyApi.postJourneySegmentsOptions): Promise<Models.JourneySegment>;
+  	postJourneyViewSchedules(viewId: string, body: Models.JourneyViewSchedule): Promise<Models.JourneyViewSchedule>;
+  	postJourneyViewVersionJobs(viewId: string, journeyVersionId: string): Promise<Models.JourneyViewJob>;
+  	postJourneyViewVersions(viewId: string, body: Models.JourneyView): Promise<Models.JourneyView>;
+  	postJourneyViews(body: Models.JourneyView): Promise<Models.JourneyView>;
+  	postJourneyViewsEncodingsValidate(opts?: JourneyApi.postJourneyViewsEncodingsValidateOptions): Promise<Models.EntityListing>;
+  	putJourneyViewSchedules(viewId: string, body: Models.JourneyViewSchedule): Promise<Models.JourneyViewSchedule>;
   	putJourneyViewVersion(viewId: string, versionId: string, body: Models.JourneyView): Promise<Models.JourneyView>;
 }
 
@@ -3072,121 +3104,122 @@ declare namespace JourneyApi {
 	}
 }
 
-declare class KnowledgeApi {  
-  	deleteKnowledgeKnowledgebase(knowledgeBaseId: string): Promise<Models.KnowledgeBase>; 
-  	deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string): Promise<Models.CategoryResponse>; 
-  	deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string): Promise<void>; 
-  	deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string): Promise<void>; 
-  	deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId: string, exportJobId: string): Promise<void>; 
-  	deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string): Promise<void>; 
-  	deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string): Promise<Models.LabelResponse>; 
-  	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeCategory>; 
-  	deleteKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeDocument>; 
-  	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string): Promise<void>; 
-  	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string): Promise<void>; 
-  	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string): Promise<void>; 
-  	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string): Promise<void>; 
-  	getKnowledgeGuestSessionCategories(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionCategoriesOptions): Promise<Models.GuestCategoryResponseListing>; 
-  	getKnowledgeGuestSessionDocument(sessionId: string, documentId: string): Promise<Models.KnowledgeGuestDocumentResponse>; 
-  	getKnowledgeGuestSessionDocuments(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionDocumentsOptions): Promise<Models.KnowledgeGuestDocumentResponseListing>; 
-  	getKnowledgeIntegrationOptions(integrationId: string): Promise<Models.KnowledgeIntegrationOptionsResponse>; 
-  	getKnowledgeKnowledgebase(knowledgeBaseId: string): Promise<Models.KnowledgeBase>; 
-  	getKnowledgeKnowledgebaseCategories(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseCategoriesOptions): Promise<Models.CategoryResponseListing>; 
-  	getKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string): Promise<Models.CategoryResponse>; 
-  	getKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentOptions): Promise<Models.KnowledgeDocumentResponse>; 
-  	getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentFeedbackOptions): Promise<Models.KnowledgeDocumentFeedbackResponseListing>; 
-  	getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId: string, documentId: string, feedbackId: string): Promise<Models.KnowledgeDocumentFeedbackResponse>; 
-  	getKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVariationOptions): Promise<Models.DocumentVariationResponse>; 
-  	getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVariationsOptions): Promise<Models.DocumentVariationResponseListing>; 
-  	getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId: string, documentId: string, versionId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionOptions): Promise<Models.KnowledgeDocumentVersion>; 
-  	getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId: string, documentId: string, versionId: string, variationId: string): Promise<Models.KnowledgeDocumentVersionVariation>; 
-  	getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId: string, documentId: string, versionId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionVariationsOptions): Promise<Models.KnowledgeDocumentVersionVariationListing>; 
-  	getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionsOptions): Promise<Models.KnowledgeDocumentVersionListing>; 
-  	getKnowledgeKnowledgebaseDocuments(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentsOptions): Promise<Models.KnowledgeDocumentResponseListing>; 
-  	getKnowledgeKnowledgebaseExportJob(knowledgeBaseId: string, exportJobId: string): Promise<Models.KnowledgeExportJobResponse>; 
-  	getKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseImportJobOptions): Promise<Models.KnowledgeImportJobResponse>; 
-  	getKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string): Promise<Models.LabelResponse>; 
-  	getKnowledgeKnowledgebaseLabels(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLabelsOptions): Promise<Models.LabelListing>; 
-  	getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageCategoriesOptions): Promise<Models.CategoryListing>; 
-  	getKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeExtendedCategory>; 
-  	getKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeDocument>; 
-  	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId: string, knowledgeBaseId: string, languageCode: string, uploadId: string): Promise<Models.KnowledgeDocumentContentUpload>; 
-  	getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageDocumentsOptions): Promise<Models.DocumentListing>; 
-  	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string): Promise<Models.KnowledgeImport>; 
-  	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId: string, languageCode: string, trainingId: string): Promise<Models.KnowledgeTraining>; 
-  	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageTrainingsOptions): Promise<Models.TrainingListing>; 
-  	getKnowledgeKnowledgebaseOperations(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseOperationsOptions): Promise<Models.OperationListing>; 
-  	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId: string): Promise<Models.OperationCreatorUserResponse>; 
-  	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseParseJobOptions): Promise<Models.KnowledgeParseJobResponse>; 
-  	getKnowledgeKnowledgebaseSources(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesOptions): Promise<Array<Models.SourceBaseResponse>>; 
-  	getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesSalesforceSourceIdOptions): Promise<Models.SalesforceSourceResponse>; 
-  	getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesServicenowSourceIdOptions): Promise<Models.ServiceNowSourceResponse>; 
-  	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string): Promise<Models.KnowledgeSyncJobResponse>; 
-  	getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId: string, groupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupOptions): Promise<Models.UnansweredGroup>; 
-  	getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroupOptions): Promise<Models.UnansweredPhraseGroup>; 
-  	getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupsOptions): Promise<Models.UnansweredGroups>; 
-  	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>; 
-  	getKnowledgeKnowledgebases(opts?: KnowledgeApi.getKnowledgeKnowledgebasesOptions): Promise<Models.KnowledgeBaseListing>; 
-  	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId: string, searchId: string, body: Models.SearchUpdateRequest): Promise<void>; 
-  	patchKnowledgeKnowledgebase(knowledgeBaseId: string, body: Models.KnowledgeBaseUpdateRequest): Promise<Models.KnowledgeBase>; 
-  	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string, body: Models.CategoryUpdateRequest): Promise<Models.CategoryResponse>; 
-  	patchKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentReq): Promise<Models.KnowledgeDocumentResponse>; 
-  	patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId: string, documentId: string, feedbackId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdOptions): Promise<Models.KnowledgeDocumentFeedbackResponse>; 
-  	patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string, body: Models.DocumentVariationRequest): Promise<Models.DocumentVariationResponse>; 
-  	patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId: string, searchId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseDocumentsSearchSearchIdOptions): Promise<void>; 
-  	patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string, body: Models.ImportStatusRequest): Promise<Models.KnowledgeImportJobResponse>; 
-  	patchKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string, body: Models.LabelUpdateRequest): Promise<Models.LabelResponse>; 
-  	patchKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>; 
-  	patchKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>; 
-  	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Array<Models.KnowledgeDocumentBulkRequest>): Promise<Models.DocumentListing>; 
-  	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string, body: Models.ImportStatusRequest): Promise<Models.KnowledgeImport>; 
-  	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestPatch): Promise<void>; 
-  	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string, body: Models.SyncStatusRequest): Promise<Models.KnowledgeSyncJobResponse>; 
-  	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, body: Models.UnansweredPhraseGroupPatchRequestBody): Promise<Models.UnansweredPhraseGroupUpdateResponse>; 
-  	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
-  	postKnowledgeGuestSessionDocumentCopies(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentCopiesOptions): Promise<void>; 
-  	postKnowledgeGuestSessionDocumentFeedback(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentFeedbackOptions): Promise<Models.KnowledgeGuestDocumentFeedback>; 
-  	postKnowledgeGuestSessionDocumentViews(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentViewsOptions): Promise<void>; 
-  	postKnowledgeGuestSessionDocumentsAnswers(sessionId: string, body: Models.KnowledgeDocumentsAnswerFilter): Promise<Models.KnowledgeGuestAnswerDocumentsResponse>; 
-  	postKnowledgeGuestSessionDocumentsPresentations(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsPresentationsOptions): Promise<void>; 
-  	postKnowledgeGuestSessionDocumentsSearch(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsSearchOptions): Promise<Models.KnowledgeDocumentGuestSearch>; 
-  	postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeGuestDocumentSuggestion>; 
-  	postKnowledgeGuestSessions(body: Models.KnowledgeGuestSession): Promise<Models.KnowledgeGuestSession>; 
-  	postKnowledgeKnowledgebaseCategories(knowledgeBaseId: string, body: Models.CategoryCreateRequest): Promise<Models.CategoryResponse>; 
-  	postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentCopiesOptions): Promise<void>; 
-  	postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentFeedbackOptions): Promise<Models.KnowledgeDocumentFeedbackResponse>; 
-  	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId: string, documentId: string, body: Models.DocumentVariationRequest): Promise<Models.DocumentVariationResponse>; 
-  	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentVersion): Promise<Models.KnowledgeDocumentVersion>; 
-  	postKnowledgeKnowledgebaseDocumentViews(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentViewsOptions): Promise<void>; 
-  	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId: string, body: Models.KnowledgeDocumentCreateRequest): Promise<Models.KnowledgeDocumentResponse>; 
-  	postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId: string, body: Models.KnowledgeDocumentsAnswerFilter): Promise<Models.KnowledgeAnswerDocumentsResponse>; 
-  	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkRemoveRequest): Promise<Models.BulkResponse>; 
-  	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkUpdateRequest): Promise<Models.BulkResponse>; 
-  	postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsPresentationsOptions): Promise<void>; 
-  	postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsQueryOptions): Promise<Models.KnowledgeDocumentQueryResponse>; 
-  	postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchOptions): Promise<Models.KnowledgeDocumentSearch>; 
-  	postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeDocumentSuggestion>; 
-  	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkVersionAddRequest): Promise<Models.BulkResponse>; 
-  	postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId: string, body: Models.KnowledgeExportJobRequest): Promise<Models.KnowledgeExportJobResponse>; 
-  	postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId: string, body: Models.KnowledgeImportJobRequest): Promise<Models.KnowledgeImportJobResponse>; 
-  	postKnowledgeKnowledgebaseLabels(knowledgeBaseId: string, body: Models.LabelCreateRequest): Promise<Models.LabelResponse>; 
-  	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>; 
-  	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentContentUpload): Promise<Models.KnowledgeDocumentContentUpload>; 
-  	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>; 
-  	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeImport): Promise<Models.KnowledgeImport>; 
-  	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId: string, languageCode: string, trainingId: string): Promise<Models.KnowledgeTraining>; 
-  	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeTraining>; 
-  	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestImport): Promise<void>; 
-  	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId: string, body: Models.KnowledgeParseJobRequest): Promise<Models.KnowledgeParseJobResponse>; 
-  	postKnowledgeKnowledgebaseSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseSearchOptions): Promise<Models.KnowledgeSearchResponse>; 
-  	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId: string, body: Models.SalesforceSourceRequest): Promise<Models.KnowledgeSyncJobResponse>; 
-  	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId: string, sourceId: string): Promise<Models.SourceSyncResponse>; 
-  	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId: string, body: Models.ServiceNowSourceRequest): Promise<Models.KnowledgeSyncJobResponse>; 
-  	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId: string, sourceId: string): Promise<Models.SourceSyncResponse>; 
-  	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId: string, body: Models.KnowledgeSyncJobRequest): Promise<Models.KnowledgeSyncJobResponse>; 
-  	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>; 
-  	postKnowledgeKnowledgebases(body: Models.KnowledgeBaseCreateRequest): Promise<Models.KnowledgeBase>; 
-  	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string, body: Models.SalesforceSourceRequest): Promise<Models.SalesforceSourceResponse>; 
+declare class KnowledgeApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteKnowledgeKnowledgebase(knowledgeBaseId: string): Promise<Models.KnowledgeBase>;
+  	deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string): Promise<Models.CategoryResponse>;
+  	deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string): Promise<void>;
+  	deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string): Promise<void>;
+  	deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId: string, exportJobId: string): Promise<void>;
+  	deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string): Promise<void>;
+  	deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string): Promise<Models.LabelResponse>;
+  	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeCategory>;
+  	deleteKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeDocument>;
+  	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string): Promise<void>;
+  	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string): Promise<void>;
+  	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string): Promise<void>;
+  	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string): Promise<void>;
+  	getKnowledgeGuestSessionCategories(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionCategoriesOptions): Promise<Models.GuestCategoryResponseListing>;
+  	getKnowledgeGuestSessionDocument(sessionId: string, documentId: string): Promise<Models.KnowledgeGuestDocumentResponse>;
+  	getKnowledgeGuestSessionDocuments(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionDocumentsOptions): Promise<Models.KnowledgeGuestDocumentResponseListing>;
+  	getKnowledgeIntegrationOptions(integrationId: string, opts?: KnowledgeApi.getKnowledgeIntegrationOptionsOptions): Promise<Models.KnowledgeIntegrationOptionsResponse>;
+  	getKnowledgeKnowledgebase(knowledgeBaseId: string): Promise<Models.KnowledgeBase>;
+  	getKnowledgeKnowledgebaseCategories(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseCategoriesOptions): Promise<Models.CategoryResponseListing>;
+  	getKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string): Promise<Models.CategoryResponse>;
+  	getKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentOptions): Promise<Models.KnowledgeDocumentResponse>;
+  	getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentFeedbackOptions): Promise<Models.KnowledgeDocumentFeedbackResponseListing>;
+  	getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId: string, documentId: string, feedbackId: string): Promise<Models.KnowledgeDocumentFeedbackResponse>;
+  	getKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVariationOptions): Promise<Models.DocumentVariationResponse>;
+  	getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVariationsOptions): Promise<Models.DocumentVariationResponseListing>;
+  	getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId: string, documentId: string, versionId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionOptions): Promise<Models.KnowledgeDocumentVersion>;
+  	getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId: string, documentId: string, versionId: string, variationId: string): Promise<Models.KnowledgeDocumentVersionVariation>;
+  	getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId: string, documentId: string, versionId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionVariationsOptions): Promise<Models.KnowledgeDocumentVersionVariationListing>;
+  	getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionsOptions): Promise<Models.KnowledgeDocumentVersionListing>;
+  	getKnowledgeKnowledgebaseDocuments(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentsOptions): Promise<Models.KnowledgeDocumentResponseListing>;
+  	getKnowledgeKnowledgebaseExportJob(knowledgeBaseId: string, exportJobId: string): Promise<Models.KnowledgeExportJobResponse>;
+  	getKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseImportJobOptions): Promise<Models.KnowledgeImportJobResponse>;
+  	getKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string): Promise<Models.LabelResponse>;
+  	getKnowledgeKnowledgebaseLabels(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLabelsOptions): Promise<Models.LabelListing>;
+  	getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageCategoriesOptions): Promise<Models.CategoryListing>;
+  	getKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeExtendedCategory>;
+  	getKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeDocument>;
+  	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId: string, knowledgeBaseId: string, languageCode: string, uploadId: string): Promise<Models.KnowledgeDocumentContentUpload>;
+  	getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageDocumentsOptions): Promise<Models.DocumentListing>;
+  	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string): Promise<Models.KnowledgeImport>;
+  	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId: string, languageCode: string, trainingId: string): Promise<Models.KnowledgeTraining>;
+  	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageTrainingsOptions): Promise<Models.TrainingListing>;
+  	getKnowledgeKnowledgebaseOperations(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseOperationsOptions): Promise<Models.OperationListing>;
+  	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId: string): Promise<Models.OperationCreatorUserResponse>;
+  	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseParseJobOptions): Promise<Models.KnowledgeParseJobResponse>;
+  	getKnowledgeKnowledgebaseSources(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesOptions): Promise<Array<Models.SourceBaseResponse>>;
+  	getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesSalesforceSourceIdOptions): Promise<Models.SalesforceSourceResponse>;
+  	getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseSourcesServicenowSourceIdOptions): Promise<Models.ServiceNowSourceResponse>;
+  	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string): Promise<Models.KnowledgeSyncJobResponse>;
+  	getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId: string, groupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupOptions): Promise<Models.UnansweredGroup>;
+  	getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroupOptions): Promise<Models.UnansweredPhraseGroup>;
+  	getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupsOptions): Promise<Models.UnansweredGroups>;
+  	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>;
+  	getKnowledgeKnowledgebases(opts?: KnowledgeApi.getKnowledgeKnowledgebasesOptions): Promise<Models.KnowledgeBaseListing>;
+  	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId: string, searchId: string, body: Models.SearchUpdateRequest): Promise<void>;
+  	patchKnowledgeKnowledgebase(knowledgeBaseId: string, body: Models.KnowledgeBaseUpdateRequest): Promise<Models.KnowledgeBase>;
+  	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string, body: Models.CategoryUpdateRequest): Promise<Models.CategoryResponse>;
+  	patchKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentReq): Promise<Models.KnowledgeDocumentResponse>;
+  	patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId: string, documentId: string, feedbackId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdOptions): Promise<Models.KnowledgeDocumentFeedbackResponse>;
+  	patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string, body: Models.DocumentVariationRequest): Promise<Models.DocumentVariationResponse>;
+  	patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId: string, searchId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseDocumentsSearchSearchIdOptions): Promise<void>;
+  	patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string, body: Models.ImportStatusRequest): Promise<Models.KnowledgeImportJobResponse>;
+  	patchKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string, body: Models.LabelUpdateRequest): Promise<Models.LabelResponse>;
+  	patchKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>;
+  	patchKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>;
+  	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Array<Models.KnowledgeDocumentBulkRequest>): Promise<Models.DocumentListing>;
+  	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string, body: Models.ImportStatusRequest): Promise<Models.KnowledgeImport>;
+  	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestPatch): Promise<void>;
+  	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId: string, syncJobId: string, body: Models.SyncStatusRequest): Promise<Models.KnowledgeSyncJobResponse>;
+  	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, body: Models.UnansweredPhraseGroupPatchRequestBody): Promise<Models.UnansweredPhraseGroupUpdateResponse>;
+  	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
+  	postKnowledgeGuestSessionDocumentCopies(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentCopiesOptions): Promise<void>;
+  	postKnowledgeGuestSessionDocumentFeedback(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentFeedbackOptions): Promise<Models.KnowledgeGuestDocumentFeedback>;
+  	postKnowledgeGuestSessionDocumentViews(sessionId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentViewsOptions): Promise<void>;
+  	postKnowledgeGuestSessionDocumentsAnswers(sessionId: string, body: Models.KnowledgeDocumentsAnswerFilter): Promise<Models.KnowledgeGuestAnswerDocumentsResponse>;
+  	postKnowledgeGuestSessionDocumentsPresentations(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsPresentationsOptions): Promise<void>;
+  	postKnowledgeGuestSessionDocumentsSearch(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsSearchOptions): Promise<Models.KnowledgeDocumentGuestSearch>;
+  	postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeGuestDocumentSuggestion>;
+  	postKnowledgeGuestSessions(body: Models.KnowledgeGuestSession): Promise<Models.KnowledgeGuestSession>;
+  	postKnowledgeKnowledgebaseCategories(knowledgeBaseId: string, body: Models.CategoryCreateRequest): Promise<Models.CategoryResponse>;
+  	postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentCopiesOptions): Promise<void>;
+  	postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentFeedbackOptions): Promise<Models.KnowledgeDocumentFeedbackResponse>;
+  	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId: string, documentId: string, body: Models.DocumentVariationRequest): Promise<Models.DocumentVariationResponse>;
+  	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentVersion): Promise<Models.KnowledgeDocumentVersion>;
+  	postKnowledgeKnowledgebaseDocumentViews(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentViewsOptions): Promise<void>;
+  	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId: string, body: Models.KnowledgeDocumentCreateRequest): Promise<Models.KnowledgeDocumentResponse>;
+  	postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId: string, body: Models.KnowledgeDocumentsAnswerFilter): Promise<Models.KnowledgeAnswerDocumentsResponse>;
+  	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkRemoveRequest): Promise<Models.BulkResponse>;
+  	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkUpdateRequest): Promise<Models.BulkResponse>;
+  	postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsPresentationsOptions): Promise<void>;
+  	postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsQueryOptions): Promise<Models.KnowledgeDocumentQueryResponse>;
+  	postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchOptions): Promise<Models.KnowledgeDocumentSearch>;
+  	postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeDocumentSuggestion>;
+  	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId: string, body: Models.KnowledgeDocumentBulkVersionAddRequest): Promise<Models.BulkResponse>;
+  	postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId: string, body: Models.KnowledgeExportJobRequest): Promise<Models.KnowledgeExportJobResponse>;
+  	postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId: string, body: Models.KnowledgeImportJobRequest): Promise<Models.KnowledgeImportJobResponse>;
+  	postKnowledgeKnowledgebaseLabels(knowledgeBaseId: string, body: Models.LabelCreateRequest): Promise<Models.LabelResponse>;
+  	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>;
+  	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentContentUpload): Promise<Models.KnowledgeDocumentContentUpload>;
+  	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>;
+  	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeImport): Promise<Models.KnowledgeImport>;
+  	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId: string, languageCode: string, trainingId: string): Promise<Models.KnowledgeTraining>;
+  	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeTraining>;
+  	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId: string, parseJobId: string, body: Models.KnowledgeParseJobRequestImport): Promise<void>;
+  	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId: string, body: Models.KnowledgeParseJobRequest): Promise<Models.KnowledgeParseJobResponse>;
+  	postKnowledgeKnowledgebaseSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseSearchOptions): Promise<Models.KnowledgeSearchResponse>;
+  	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId: string, body: Models.SalesforceSourceRequest): Promise<Models.KnowledgeSyncJobResponse>;
+  	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId: string, sourceId: string): Promise<Models.SourceSyncResponse>;
+  	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId: string, body: Models.ServiceNowSourceRequest): Promise<Models.KnowledgeSyncJobResponse>;
+  	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId: string, sourceId: string): Promise<Models.SourceSyncResponse>;
+  	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId: string, body: Models.KnowledgeSyncJobRequest): Promise<Models.KnowledgeSyncJobResponse>;
+  	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>;
+  	postKnowledgeKnowledgebases(body: Models.KnowledgeBaseCreateRequest): Promise<Models.KnowledgeBase>;
+  	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId: string, sourceId: string, body: Models.SalesforceSourceRequest): Promise<Models.SalesforceSourceResponse>;
   	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId: string, sourceId: string, body: Models.ServiceNowSourceRequest): Promise<Models.ServiceNowSourceResponse>;
 }
 
@@ -3205,6 +3238,9 @@ declare namespace KnowledgeApi {
 	export interface getKnowledgeGuestSessionDocumentsOptions { 
 		"categoryId"?: Array<string>;
 		"pageSize"?: number;
+	}
+	export interface getKnowledgeIntegrationOptionsOptions { 
+		"knowledgeBaseIds"?: Array<string>;
 	}
 	export interface getKnowledgeKnowledgebaseCategoriesOptions { 
 		"before"?: string;
@@ -3410,40 +3446,41 @@ declare namespace KnowledgeApi {
 	}
 }
 
-declare class LanguageUnderstandingApi {  
-  	deleteLanguageunderstandingDomain(domainId: string): Promise<void>; 
-  	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId: string, feedbackId: string): Promise<void>; 
-  	deleteLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string): Promise<void>; 
-  	deleteLanguageunderstandingMiner(minerId: string): Promise<void>; 
-  	deleteLanguageunderstandingMinerDraft(minerId: string, draftId: string): Promise<void>; 
-  	getLanguageunderstandingDomain(domainId: string): Promise<Models.NluDomain>; 
-  	getLanguageunderstandingDomainFeedback(domainId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainFeedbackOptions): Promise<Models.NluFeedbackListing>; 
-  	getLanguageunderstandingDomainFeedbackFeedbackId(domainId: string, feedbackId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainFeedbackFeedbackIdOptions): Promise<Models.NluFeedbackResponse>; 
-  	getLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainVersionOptions): Promise<Models.NluDomainVersion>; 
-  	getLanguageunderstandingDomainVersionReport(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersionQualityReport>; 
-  	getLanguageunderstandingDomainVersions(domainId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainVersionsOptions): Promise<Models.NluDomainVersionListing>; 
-  	getLanguageunderstandingDomains(opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainsOptions): Promise<Models.NluDomainListing>; 
-  	getLanguageunderstandingMiner(minerId: string): Promise<Models.Miner>; 
-  	getLanguageunderstandingMinerDraft(minerId: string, draftId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingMinerDraftOptions): Promise<Models.Draft>; 
-  	getLanguageunderstandingMinerDrafts(minerId: string): Promise<Models.DraftListing>; 
-  	getLanguageunderstandingMinerIntent(minerId: string, intentId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingMinerIntentOptions): Promise<Models.MinerIntent>; 
-  	getLanguageunderstandingMinerIntents(minerId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingMinerIntentsOptions): Promise<Models.MinedIntentsListing>; 
-  	getLanguageunderstandingMinerTopic(minerId: string, topicId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingMinerTopicOptions): Promise<Models.MinerTopic>; 
-  	getLanguageunderstandingMinerTopicPhrase(minerId: string, topicId: string, phraseId: string): Promise<Models.MinerTopicPhrase>; 
-  	getLanguageunderstandingMinerTopics(minerId: string): Promise<Models.MinerTopicsListing>; 
-  	getLanguageunderstandingMiners(opts?: LanguageUnderstandingApi.getLanguageunderstandingMinersOptions): Promise<Models.MinerListing>; 
-  	getLanguageunderstandingSettings(): Promise<Models.NluOrganization>; 
-  	patchLanguageunderstandingDomain(domainId: string, body: Models.NluDomain): Promise<Models.NluDomain>; 
-  	patchLanguageunderstandingMinerDraft(minerId: string, draftId: string, opts?: LanguageUnderstandingApi.patchLanguageunderstandingMinerDraftOptions): Promise<Models.Draft>; 
-  	postLanguageunderstandingDomainFeedback(domainId: string, body: Models.NluFeedbackRequest): Promise<Models.NluFeedbackResponse>; 
-  	postLanguageunderstandingDomainVersionDetect(domainId: string, domainVersionId: string, body: Models.NluDetectionRequest): Promise<Models.NluDetectionResponse>; 
-  	postLanguageunderstandingDomainVersionPublish(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersion>; 
-  	postLanguageunderstandingDomainVersionTrain(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersionTrainingResponse>; 
-  	postLanguageunderstandingDomainVersions(domainId: string, body: Models.NluDomainVersion, opts?: LanguageUnderstandingApi.postLanguageunderstandingDomainVersionsOptions): Promise<Models.NluDomainVersion>; 
-  	postLanguageunderstandingDomains(body: Models.NluDomain): Promise<Models.NluDomain>; 
-  	postLanguageunderstandingMinerDrafts(minerId: string, body: Models.Draft): Promise<Models.Draft>; 
-  	postLanguageunderstandingMinerExecute(minerId: string, opts?: LanguageUnderstandingApi.postLanguageunderstandingMinerExecuteOptions): Promise<Models.Miner>; 
-  	postLanguageunderstandingMiners(body: Models.Miner): Promise<Models.Miner>; 
+declare class LanguageUnderstandingApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteLanguageunderstandingDomain(domainId: string): Promise<void>;
+  	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId: string, feedbackId: string): Promise<void>;
+  	deleteLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string): Promise<void>;
+  	deleteLanguageunderstandingMiner(minerId: string): Promise<void>;
+  	deleteLanguageunderstandingMinerDraft(minerId: string, draftId: string): Promise<void>;
+  	getLanguageunderstandingDomain(domainId: string): Promise<Models.NluDomain>;
+  	getLanguageunderstandingDomainFeedback(domainId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainFeedbackOptions): Promise<Models.NluFeedbackListing>;
+  	getLanguageunderstandingDomainFeedbackFeedbackId(domainId: string, feedbackId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainFeedbackFeedbackIdOptions): Promise<Models.NluFeedbackResponse>;
+  	getLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainVersionOptions): Promise<Models.NluDomainVersion>;
+  	getLanguageunderstandingDomainVersionReport(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersionQualityReport>;
+  	getLanguageunderstandingDomainVersions(domainId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainVersionsOptions): Promise<Models.NluDomainVersionListing>;
+  	getLanguageunderstandingDomains(opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainsOptions): Promise<Models.NluDomainListing>;
+  	getLanguageunderstandingMiner(minerId: string): Promise<Models.Miner>;
+  	getLanguageunderstandingMinerDraft(minerId: string, draftId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingMinerDraftOptions): Promise<Models.Draft>;
+  	getLanguageunderstandingMinerDrafts(minerId: string): Promise<Models.DraftListing>;
+  	getLanguageunderstandingMinerIntent(minerId: string, intentId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingMinerIntentOptions): Promise<Models.MinerIntent>;
+  	getLanguageunderstandingMinerIntents(minerId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingMinerIntentsOptions): Promise<Models.MinedIntentsListing>;
+  	getLanguageunderstandingMinerTopic(minerId: string, topicId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingMinerTopicOptions): Promise<Models.MinerTopic>;
+  	getLanguageunderstandingMinerTopicPhrase(minerId: string, topicId: string, phraseId: string): Promise<Models.MinerTopicPhrase>;
+  	getLanguageunderstandingMinerTopics(minerId: string): Promise<Models.MinerTopicsListing>;
+  	getLanguageunderstandingMiners(opts?: LanguageUnderstandingApi.getLanguageunderstandingMinersOptions): Promise<Models.MinerListing>;
+  	getLanguageunderstandingSettings(): Promise<Models.NluOrganization>;
+  	patchLanguageunderstandingDomain(domainId: string, body: Models.NluDomain): Promise<Models.NluDomain>;
+  	patchLanguageunderstandingMinerDraft(minerId: string, draftId: string, opts?: LanguageUnderstandingApi.patchLanguageunderstandingMinerDraftOptions): Promise<Models.Draft>;
+  	postLanguageunderstandingDomainFeedback(domainId: string, body: Models.NluFeedbackRequest): Promise<Models.NluFeedbackResponse>;
+  	postLanguageunderstandingDomainVersionDetect(domainId: string, domainVersionId: string, body: Models.NluDetectionRequest): Promise<Models.NluDetectionResponse>;
+  	postLanguageunderstandingDomainVersionPublish(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersion>;
+  	postLanguageunderstandingDomainVersionTrain(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersionTrainingResponse>;
+  	postLanguageunderstandingDomainVersions(domainId: string, body: Models.NluDomainVersion, opts?: LanguageUnderstandingApi.postLanguageunderstandingDomainVersionsOptions): Promise<Models.NluDomainVersion>;
+  	postLanguageunderstandingDomains(body: Models.NluDomain): Promise<Models.NluDomain>;
+  	postLanguageunderstandingMinerDrafts(minerId: string, body: Models.Draft): Promise<Models.Draft>;
+  	postLanguageunderstandingMinerExecute(minerId: string, opts?: LanguageUnderstandingApi.postLanguageunderstandingMinerExecuteOptions): Promise<Models.Miner>;
+  	postLanguageunderstandingMiners(body: Models.Miner): Promise<Models.Miner>;
   	putLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string, body: Models.NluDomainVersion): Promise<Models.NluDomainVersion>;
 }
 
@@ -3504,14 +3541,15 @@ declare namespace LanguageUnderstandingApi {
 	}
 }
 
-declare class LanguagesApi {  
-  	deleteLanguage(languageId: string): Promise<void>; 
-  	getLanguage(languageId: string): Promise<Models.Language>; 
-  	getLanguages(opts?: LanguagesApi.getLanguagesOptions): Promise<Models.LanguageEntityListing>; 
-  	getLanguagesTranslations(): Promise<Models.AvailableTranslations>; 
-  	getLanguagesTranslationsBuiltin(language: string): Promise<{ [key: string]: object; }>; 
-  	getLanguagesTranslationsOrganization(language: string): Promise<{ [key: string]: object; }>; 
-  	getLanguagesTranslationsUser(userId: string): Promise<{ [key: string]: object; }>; 
+declare class LanguagesApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteLanguage(languageId: string): Promise<void>;
+  	getLanguage(languageId: string): Promise<Models.Language>;
+  	getLanguages(opts?: LanguagesApi.getLanguagesOptions): Promise<Models.LanguageEntityListing>;
+  	getLanguagesTranslations(): Promise<Models.AvailableTranslations>;
+  	getLanguagesTranslationsBuiltin(language: string): Promise<{ [key: string]: object; }>;
+  	getLanguagesTranslationsOrganization(language: string): Promise<{ [key: string]: object; }>;
+  	getLanguagesTranslationsUser(userId: string): Promise<{ [key: string]: object; }>;
   	postLanguages(body: Models.Language): Promise<Models.Language>;
 }
 
@@ -3524,41 +3562,42 @@ declare namespace LanguagesApi {
 	}
 }
 
-declare class LearningApi {  
-  	deleteLearningAssignment(assignmentId: string): Promise<void>; 
-  	deleteLearningModule(moduleId: string): Promise<void>; 
-  	getLearningAssignment(assignmentId: string, opts?: LearningApi.getLearningAssignmentOptions): Promise<Models.LearningAssignment>; 
-  	getLearningAssignmentStep(assignmentId: string, stepId: string, opts?: LearningApi.getLearningAssignmentStepOptions): Promise<Models.LearningAssignmentStep>; 
-  	getLearningAssignments(opts?: LearningApi.getLearningAssignmentsOptions): Promise<Models.LearningAssignmentsDomainEntity>; 
-  	getLearningAssignmentsMe(opts?: LearningApi.getLearningAssignmentsMeOptions): Promise<Models.LearningAssignmentsDomainEntity>; 
-  	getLearningModule(moduleId: string, opts?: LearningApi.getLearningModuleOptions): Promise<Models.LearningModule>; 
-  	getLearningModuleJob(moduleId: string, jobId: string): Promise<Models.LearningModuleJobResponse>; 
-  	getLearningModulePreview(moduleId: string): Promise<Models.LearningModulePreviewGetResponse>; 
-  	getLearningModuleRule(moduleId: string): Promise<Models.LearningModuleRule>; 
-  	getLearningModuleVersion(moduleId: string, versionId: string, opts?: LearningApi.getLearningModuleVersionOptions): Promise<Models.LearningModule>; 
-  	getLearningModules(opts?: LearningApi.getLearningModulesOptions): Promise<Models.LearningModulesDomainEntityListing>; 
-  	getLearningModulesAssignments(userIds: Array<string>, opts?: LearningApi.getLearningModulesAssignmentsOptions): Promise<Models.AssignedLearningModuleDomainEntityListing>; 
-  	getLearningModulesCoverartCoverArtId(coverArtId: string): Promise<Models.LearningModuleCoverArtResponse>; 
-  	getLearningScormScormId(scormId: string): Promise<Models.LearningScormResponse>; 
-  	patchLearningAssignment(assignmentId: string, opts?: LearningApi.patchLearningAssignmentOptions): Promise<Models.LearningAssignment>; 
-  	patchLearningAssignmentReschedule(assignmentId: string, opts?: LearningApi.patchLearningAssignmentRescheduleOptions): Promise<Models.LearningAssignment>; 
-  	patchLearningAssignmentStep(assignmentId: string, stepId: string, opts?: LearningApi.patchLearningAssignmentStepOptions): Promise<Models.LearningAssignmentStep>; 
-  	patchLearningModuleUserAssignments(moduleId: string, userId: string, body: Models.LearningAssignmentExternalUpdate): Promise<Models.LearningAssignment>; 
-  	postLearningAssessmentsScoring(body: Models.LearningAssessmentScoringRequest): Promise<Models.AssessmentScoringSet>; 
-  	postLearningAssignmentReassign(assignmentId: string): Promise<Models.LearningAssignment>; 
-  	postLearningAssignmentReset(assignmentId: string): Promise<Models.LearningAssignment>; 
-  	postLearningAssignments(opts?: LearningApi.postLearningAssignmentsOptions): Promise<Models.LearningAssignment>; 
-  	postLearningAssignmentsAggregatesQuery(body: Models.LearningAssignmentAggregateParam): Promise<Models.LearningAssignmentAggregateResponse>; 
-  	postLearningAssignmentsBulkadd(opts?: LearningApi.postLearningAssignmentsBulkaddOptions): Promise<Models.LearningAssignmentBulkAddResponse>; 
-  	postLearningAssignmentsBulkremove(opts?: LearningApi.postLearningAssignmentsBulkremoveOptions): Promise<Models.LearningAssignmentBulkRemoveResponse>; 
-  	postLearningModuleJobs(moduleId: string, body: Models.LearningModuleJobRequest): Promise<Models.LearningModuleJobResponse>; 
-  	postLearningModulePublish(moduleId: string, opts?: LearningApi.postLearningModulePublishOptions): Promise<Models.LearningModulePublishResponse>; 
-  	postLearningModules(body: Models.LearningModuleRequest): Promise<Models.LearningModule>; 
-  	postLearningRulesQuery(pageSize: number, pageNumber: number, body: Models.LearningAssignmentUserQuery): Promise<Models.LearningAssignmentUserListing>; 
-  	postLearningScheduleslotsQuery(body: Models.LearningScheduleSlotsQueryRequest): Promise<Models.LearningScheduleSlotsQueryResponse>; 
-  	postLearningScorm(opts?: LearningApi.postLearningScormOptions): Promise<Models.LearningScormUploadResponse>; 
-  	putLearningModule(moduleId: string, body: Models.LearningModuleRequest): Promise<Models.LearningModule>; 
-  	putLearningModulePreview(moduleId: string, body: Models.LearningModulePreviewUpdateRequest): Promise<Models.LearningModulePreviewUpdateResponse>; 
+declare class LearningApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteLearningAssignment(assignmentId: string): Promise<void>;
+  	deleteLearningModule(moduleId: string): Promise<void>;
+  	getLearningAssignment(assignmentId: string, opts?: LearningApi.getLearningAssignmentOptions): Promise<Models.LearningAssignment>;
+  	getLearningAssignmentStep(assignmentId: string, stepId: string, opts?: LearningApi.getLearningAssignmentStepOptions): Promise<Models.LearningAssignmentStep>;
+  	getLearningAssignments(opts?: LearningApi.getLearningAssignmentsOptions): Promise<Models.LearningAssignmentsDomainEntity>;
+  	getLearningAssignmentsMe(opts?: LearningApi.getLearningAssignmentsMeOptions): Promise<Models.LearningAssignmentsDomainEntity>;
+  	getLearningModule(moduleId: string, opts?: LearningApi.getLearningModuleOptions): Promise<Models.LearningModule>;
+  	getLearningModuleJob(moduleId: string, jobId: string): Promise<Models.LearningModuleJobResponse>;
+  	getLearningModulePreview(moduleId: string): Promise<Models.LearningModulePreviewGetResponse>;
+  	getLearningModuleRule(moduleId: string): Promise<Models.LearningModuleRule>;
+  	getLearningModuleVersion(moduleId: string, versionId: string, opts?: LearningApi.getLearningModuleVersionOptions): Promise<Models.LearningModule>;
+  	getLearningModules(opts?: LearningApi.getLearningModulesOptions): Promise<Models.LearningModulesDomainEntityListing>;
+  	getLearningModulesAssignments(userIds: Array<string>, opts?: LearningApi.getLearningModulesAssignmentsOptions): Promise<Models.AssignedLearningModuleDomainEntityListing>;
+  	getLearningModulesCoverartCoverArtId(coverArtId: string): Promise<Models.LearningModuleCoverArtResponse>;
+  	getLearningScormScormId(scormId: string): Promise<Models.LearningScormResponse>;
+  	patchLearningAssignment(assignmentId: string, opts?: LearningApi.patchLearningAssignmentOptions): Promise<Models.LearningAssignment>;
+  	patchLearningAssignmentReschedule(assignmentId: string, opts?: LearningApi.patchLearningAssignmentRescheduleOptions): Promise<Models.LearningAssignment>;
+  	patchLearningAssignmentStep(assignmentId: string, stepId: string, opts?: LearningApi.patchLearningAssignmentStepOptions): Promise<Models.LearningAssignmentStep>;
+  	patchLearningModuleUserAssignments(moduleId: string, userId: string, body: Models.LearningAssignmentExternalUpdate): Promise<Models.LearningAssignment>;
+  	postLearningAssessmentsScoring(body: Models.LearningAssessmentScoringRequest): Promise<Models.AssessmentScoringSet>;
+  	postLearningAssignmentReassign(assignmentId: string): Promise<Models.LearningAssignment>;
+  	postLearningAssignmentReset(assignmentId: string): Promise<Models.LearningAssignment>;
+  	postLearningAssignments(opts?: LearningApi.postLearningAssignmentsOptions): Promise<Models.LearningAssignment>;
+  	postLearningAssignmentsAggregatesQuery(body: Models.LearningAssignmentAggregateParam): Promise<Models.LearningAssignmentAggregateResponse>;
+  	postLearningAssignmentsBulkadd(opts?: LearningApi.postLearningAssignmentsBulkaddOptions): Promise<Models.LearningAssignmentBulkAddResponse>;
+  	postLearningAssignmentsBulkremove(opts?: LearningApi.postLearningAssignmentsBulkremoveOptions): Promise<Models.LearningAssignmentBulkRemoveResponse>;
+  	postLearningModuleJobs(moduleId: string, body: Models.LearningModuleJobRequest): Promise<Models.LearningModuleJobResponse>;
+  	postLearningModulePublish(moduleId: string, opts?: LearningApi.postLearningModulePublishOptions): Promise<Models.LearningModulePublishResponse>;
+  	postLearningModules(body: Models.LearningModuleRequest): Promise<Models.LearningModule>;
+  	postLearningRulesQuery(pageSize: number, pageNumber: number, body: Models.LearningAssignmentUserQuery): Promise<Models.LearningAssignmentUserListing>;
+  	postLearningScheduleslotsQuery(body: Models.LearningScheduleSlotsQueryRequest): Promise<Models.LearningScheduleSlotsQueryResponse>;
+  	postLearningScorm(opts?: LearningApi.postLearningScormOptions): Promise<Models.LearningScormUploadResponse>;
+  	putLearningModule(moduleId: string, body: Models.LearningModuleRequest): Promise<Models.LearningModule>;
+  	putLearningModulePreview(moduleId: string, body: Models.LearningModulePreviewUpdateRequest): Promise<Models.LearningModulePreviewUpdateResponse>;
   	putLearningModuleRule(moduleId: string, body: Models.LearningModuleRule): Promise<Models.LearningModuleRule>;
 }
 
@@ -3657,15 +3696,16 @@ declare namespace LearningApi {
 	}
 }
 
-declare class LicenseApi {  
-  	getLicenseDefinition(licenseId: string): Promise<Models.LicenseDefinition>; 
-  	getLicenseDefinitions(): Promise<Array<Models.LicenseDefinition>>; 
-  	getLicenseToggle(featureName: string): Promise<Models.LicenseOrgToggle>; 
-  	getLicenseUser(userId: string): Promise<Models.LicenseUser>; 
-  	getLicenseUsers(opts?: LicenseApi.getLicenseUsersOptions): Promise<Models.UserLicensesEntityListing>; 
-  	postLicenseInfer(opts?: LicenseApi.postLicenseInferOptions): Promise<Array<string>>; 
-  	postLicenseOrganization(opts?: LicenseApi.postLicenseOrganizationOptions): Promise<Array<Models.LicenseUpdateStatus>>; 
-  	postLicenseToggle(featureName: string): Promise<Models.LicenseOrgToggle>; 
+declare class LicenseApi {
+	constructor(apiClient?: ApiClientClass);
+  	getLicenseDefinition(licenseId: string): Promise<Models.LicenseDefinition>;
+  	getLicenseDefinitions(): Promise<Array<Models.LicenseDefinition>>;
+  	getLicenseToggle(featureName: string): Promise<Models.LicenseOrgToggle>;
+  	getLicenseUser(userId: string): Promise<Models.LicenseUser>;
+  	getLicenseUsers(opts?: LicenseApi.getLicenseUsersOptions): Promise<Models.UserLicensesEntityListing>;
+  	postLicenseInfer(opts?: LicenseApi.postLicenseInferOptions): Promise<Array<string>>;
+  	postLicenseOrganization(opts?: LicenseApi.postLicenseOrganizationOptions): Promise<Array<Models.LicenseUpdateStatus>>;
+  	postLicenseToggle(featureName: string): Promise<Models.LicenseOrgToggle>;
   	postLicenseUsers(opts?: LicenseApi.postLicenseUsersOptions): Promise<{ [key: string]: object; }>;
 }
 
@@ -3685,14 +3725,15 @@ declare namespace LicenseApi {
 	}
 }
 
-declare class LocationsApi {  
-  	deleteLocation(locationId: string): Promise<void>; 
-  	getLocation(locationId: string, opts?: LocationsApi.getLocationOptions): Promise<Models.LocationDefinition>; 
-  	getLocationSublocations(locationId: string): Promise<Models.LocationEntityListing>; 
-  	getLocations(opts?: LocationsApi.getLocationsOptions): Promise<Models.LocationEntityListing>; 
-  	getLocationsSearch(q64: string, opts?: LocationsApi.getLocationsSearchOptions): Promise<Models.LocationsSearchResponse>; 
-  	patchLocation(locationId: string, body: Models.LocationUpdateDefinition): Promise<Models.LocationDefinition>; 
-  	postLocations(body: Models.LocationCreateDefinition): Promise<Models.LocationDefinition>; 
+declare class LocationsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteLocation(locationId: string): Promise<void>;
+  	getLocation(locationId: string, opts?: LocationsApi.getLocationOptions): Promise<Models.LocationDefinition>;
+  	getLocationSublocations(locationId: string): Promise<Models.LocationEntityListing>;
+  	getLocations(opts?: LocationsApi.getLocationsOptions): Promise<Models.LocationEntityListing>;
+  	getLocationsSearch(q64: string, opts?: LocationsApi.getLocationsSearchOptions): Promise<Models.LocationsSearchResponse>;
+  	patchLocation(locationId: string, body: Models.LocationUpdateDefinition): Promise<Models.LocationDefinition>;
+  	postLocations(body: Models.LocationCreateDefinition): Promise<Models.LocationDefinition>;
   	postLocationsSearch(body: Models.LocationSearchRequest): Promise<Models.LocationsSearchResponse>;
 }
 
@@ -3711,13 +3752,14 @@ declare namespace LocationsApi {
 	}
 }
 
-declare class LogCaptureApi {  
-  	deleteDiagnosticsLogcaptureBrowserUser(userId: string): Promise<void>; 
-  	getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId: string): Promise<Models.LogCaptureDownloadExecutionResponse>; 
-  	getDiagnosticsLogcaptureBrowserUser(userId: string): Promise<Models.LogCaptureUserConfiguration>; 
-  	getDiagnosticsLogcaptureBrowserUsers(opts?: LogCaptureApi.getDiagnosticsLogcaptureBrowserUsersOptions): Promise<Models.PagelessEntityListing>; 
-  	postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(opts?: LogCaptureApi.postDiagnosticsLogcaptureBrowserEntriesDownloadJobsOptions): Promise<Models.LogCaptureDownloadExecutionResponse>; 
-  	postDiagnosticsLogcaptureBrowserEntriesQuery(opts?: LogCaptureApi.postDiagnosticsLogcaptureBrowserEntriesQueryOptions): Promise<Models.LogCaptureQueryResponse>; 
+declare class LogCaptureApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteDiagnosticsLogcaptureBrowserUser(userId: string): Promise<void>;
+  	getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId: string): Promise<Models.LogCaptureDownloadExecutionResponse>;
+  	getDiagnosticsLogcaptureBrowserUser(userId: string): Promise<Models.LogCaptureUserConfiguration>;
+  	getDiagnosticsLogcaptureBrowserUsers(opts?: LogCaptureApi.getDiagnosticsLogcaptureBrowserUsersOptions): Promise<Models.PagelessEntityListing>;
+  	postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(opts?: LogCaptureApi.postDiagnosticsLogcaptureBrowserEntriesDownloadJobsOptions): Promise<Models.LogCaptureDownloadExecutionResponse>;
+  	postDiagnosticsLogcaptureBrowserEntriesQuery(opts?: LogCaptureApi.postDiagnosticsLogcaptureBrowserEntriesQueryOptions): Promise<Models.LogCaptureQueryResponse>;
   	postDiagnosticsLogcaptureBrowserUser(userId: string, opts?: LogCaptureApi.postDiagnosticsLogcaptureBrowserUserOptions): Promise<Models.LogCaptureUserConfiguration>;
 }
 
@@ -3739,19 +3781,20 @@ declare namespace LogCaptureApi {
 	}
 }
 
-declare class MessagingApi {  
-  	deleteMessagingSetting(messageSettingId: string): Promise<void>; 
-  	deleteMessagingSettingsDefault(): Promise<void>; 
-  	deleteMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<void>; 
-  	getMessagingSetting(messageSettingId: string): Promise<Models.MessagingSetting>; 
-  	getMessagingSettings(opts?: MessagingApi.getMessagingSettingsOptions): Promise<Models.MessagingConfigListing>; 
-  	getMessagingSettingsDefault(): Promise<Models.MessagingSetting>; 
-  	getMessagingSupportedcontent(opts?: MessagingApi.getMessagingSupportedcontentOptions): Promise<Models.SupportedContentListing>; 
-  	getMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<Models.SupportedContent>; 
-  	patchMessagingSetting(messageSettingId: string, body: Models.MessagingSettingRequest): Promise<Models.MessagingSetting>; 
-  	patchMessagingSupportedcontentSupportedContentId(supportedContentId: string, body: Models.SupportedContent): Promise<Models.SupportedContent>; 
-  	postMessagingSettings(body: Models.MessagingSettingRequest): Promise<Models.MessagingSetting>; 
-  	postMessagingSupportedcontent(body: Models.SupportedContent): Promise<Models.SupportedContent>; 
+declare class MessagingApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteMessagingSetting(messageSettingId: string): Promise<void>;
+  	deleteMessagingSettingsDefault(): Promise<void>;
+  	deleteMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<void>;
+  	getMessagingSetting(messageSettingId: string): Promise<Models.MessagingSetting>;
+  	getMessagingSettings(opts?: MessagingApi.getMessagingSettingsOptions): Promise<Models.MessagingConfigListing>;
+  	getMessagingSettingsDefault(): Promise<Models.MessagingSetting>;
+  	getMessagingSupportedcontent(opts?: MessagingApi.getMessagingSupportedcontentOptions): Promise<Models.SupportedContentListing>;
+  	getMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<Models.SupportedContent>;
+  	patchMessagingSetting(messageSettingId: string, body: Models.MessagingSettingRequest): Promise<Models.MessagingSetting>;
+  	patchMessagingSupportedcontentSupportedContentId(supportedContentId: string, body: Models.SupportedContent): Promise<Models.SupportedContent>;
+  	postMessagingSettings(body: Models.MessagingSettingRequest): Promise<Models.MessagingSetting>;
+  	postMessagingSupportedcontent(body: Models.SupportedContent): Promise<Models.SupportedContent>;
   	putMessagingSettingsDefault(body: Models.MessagingSettingDefaultRequest): Promise<Models.MessagingSetting>;
 }
 
@@ -3766,11 +3809,12 @@ declare namespace MessagingApi {
 	}
 }
 
-declare class MobileDevicesApi {  
-  	deleteMobiledevice(deviceId: string): Promise<void>; 
-  	getMobiledevice(deviceId: string): Promise<Models.UserDevice>; 
-  	getMobiledevices(opts?: MobileDevicesApi.getMobiledevicesOptions): Promise<Models.DirectoryUserDevicesListing>; 
-  	postMobiledevices(body: Models.UserDevice): Promise<Models.UserDevice>; 
+declare class MobileDevicesApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteMobiledevice(deviceId: string): Promise<void>;
+  	getMobiledevice(deviceId: string): Promise<Models.UserDevice>;
+  	getMobiledevices(opts?: MobileDevicesApi.getMobiledevicesOptions): Promise<Models.DirectoryUserDevicesListing>;
+  	postMobiledevices(body: Models.UserDevice): Promise<Models.UserDevice>;
   	putMobiledevice(deviceId: string, opts?: MobileDevicesApi.putMobiledeviceOptions): Promise<Models.UserDevice>;
 }
 
@@ -3785,14 +3829,15 @@ declare namespace MobileDevicesApi {
 	}
 }
 
-declare class NotificationsApi {  
-  	deleteNotificationsChannelSubscriptions(channelId: string): Promise<void>; 
-  	getNotificationsAvailabletopics(opts?: NotificationsApi.getNotificationsAvailabletopicsOptions): Promise<Models.AvailableTopicEntityListing>; 
-  	getNotificationsChannelSubscriptions(channelId: string): Promise<Models.ChannelTopicEntityListing>; 
-  	getNotificationsChannels(opts?: NotificationsApi.getNotificationsChannelsOptions): Promise<Models.ChannelEntityListing>; 
-  	headNotificationsChannel(channelId: string): Promise<void>; 
-  	postNotificationsChannelSubscriptions(channelId: string, body: Array<Models.ChannelTopic>, opts?: NotificationsApi.postNotificationsChannelSubscriptionsOptions): Promise<Models.ChannelTopicEntityListing>; 
-  	postNotificationsChannels(): Promise<Models.Channel>; 
+declare class NotificationsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteNotificationsChannelSubscriptions(channelId: string): Promise<void>;
+  	getNotificationsAvailabletopics(opts?: NotificationsApi.getNotificationsAvailabletopicsOptions): Promise<Models.AvailableTopicEntityListing>;
+  	getNotificationsChannelSubscriptions(channelId: string): Promise<Models.ChannelTopicEntityListing>;
+  	getNotificationsChannels(opts?: NotificationsApi.getNotificationsChannelsOptions): Promise<Models.ChannelEntityListing>;
+  	headNotificationsChannel(channelId: string): Promise<void>;
+  	postNotificationsChannelSubscriptions(channelId: string, body: Array<Models.ChannelTopic>, opts?: NotificationsApi.postNotificationsChannelSubscriptionsOptions): Promise<Models.ChannelTopicEntityListing>;
+  	postNotificationsChannels(): Promise<Models.Channel>;
   	putNotificationsChannelSubscriptions(channelId: string, body: Array<Models.ChannelTopic>, opts?: NotificationsApi.putNotificationsChannelSubscriptionsOptions): Promise<Models.ChannelTopicEntityListing>;
 }
 
@@ -3812,19 +3857,20 @@ declare namespace NotificationsApi {
 	}
 }
 
-declare class OAuthApi {  
-  	deleteOauthClient(clientId: string): Promise<void>; 
-  	getOauthAuthorization(clientId: string, opts?: OAuthApi.getOauthAuthorizationOptions): Promise<Models.OAuthAuthorization>; 
-  	getOauthAuthorizations(opts?: OAuthApi.getOauthAuthorizationsOptions): Promise<Models.OAuthAuthorizationListing>; 
-  	getOauthClient(clientId: string): Promise<Models.OAuthClient>; 
-  	getOauthClientUsageQueryResult(executionId: string, clientId: string): Promise<Models.ApiUsageQueryResult>; 
-  	getOauthClientUsageSummary(clientId: string, opts?: OAuthApi.getOauthClientUsageSummaryOptions): Promise<Models.UsageExecutionResult>; 
-  	getOauthClients(): Promise<Models.OAuthClientEntityListing>; 
-  	getOauthScope(scopeId: string, opts?: OAuthApi.getOauthScopeOptions): Promise<Models.OAuthScope>; 
-  	getOauthScopes(opts?: OAuthApi.getOauthScopesOptions): Promise<Models.OAuthScopeListing>; 
-  	postOauthClientSecret(clientId: string): Promise<Models.OAuthClient>; 
-  	postOauthClientUsageQuery(clientId: string, body: Models.ApiUsageClientQuery): Promise<Models.UsageExecutionResult>; 
-  	postOauthClients(body: Models.OAuthClientRequest): Promise<Models.OAuthClient>; 
+declare class OAuthApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteOauthClient(clientId: string): Promise<void>;
+  	getOauthAuthorization(clientId: string, opts?: OAuthApi.getOauthAuthorizationOptions): Promise<Models.OAuthAuthorization>;
+  	getOauthAuthorizations(opts?: OAuthApi.getOauthAuthorizationsOptions): Promise<Models.OAuthAuthorizationListing>;
+  	getOauthClient(clientId: string): Promise<Models.OAuthClient>;
+  	getOauthClientUsageQueryResult(executionId: string, clientId: string): Promise<Models.ApiUsageQueryResult>;
+  	getOauthClientUsageSummary(clientId: string, opts?: OAuthApi.getOauthClientUsageSummaryOptions): Promise<Models.UsageExecutionResult>;
+  	getOauthClients(): Promise<Models.OAuthClientEntityListing>;
+  	getOauthScope(scopeId: string, opts?: OAuthApi.getOauthScopeOptions): Promise<Models.OAuthScope>;
+  	getOauthScopes(opts?: OAuthApi.getOauthScopesOptions): Promise<Models.OAuthScopeListing>;
+  	postOauthClientSecret(clientId: string): Promise<Models.OAuthClient>;
+  	postOauthClientUsageQuery(clientId: string, body: Models.ApiUsageClientQuery): Promise<Models.UsageExecutionResult>;
+  	postOauthClients(body: Models.OAuthClientRequest): Promise<Models.OAuthClient>;
   	putOauthClient(clientId: string, body: Models.OAuthClientRequest): Promise<Models.OAuthClient>;
 }
 
@@ -3846,15 +3892,16 @@ declare namespace OAuthApi {
 	}
 }
 
-declare class ObjectsApi {  
-  	deleteAuthorizationDivision(divisionId: string, opts?: ObjectsApi.deleteAuthorizationDivisionOptions): Promise<void>; 
-  	getAuthorizationDivision(divisionId: string, opts?: ObjectsApi.getAuthorizationDivisionOptions): Promise<Models.AuthzDivision>; 
-  	getAuthorizationDivisions(opts?: ObjectsApi.getAuthorizationDivisionsOptions): Promise<Models.AuthzDivisionEntityListing>; 
-  	getAuthorizationDivisionsHome(): Promise<Models.AuthzDivision>; 
-  	getAuthorizationDivisionsLimit(): Promise<number>; 
-  	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>; 
-  	postAuthorizationDivisionRestore(divisionId: string, opts?: ObjectsApi.postAuthorizationDivisionRestoreOptions): Promise<Models.AuthzDivision>; 
-  	postAuthorizationDivisions(body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
+declare class ObjectsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteAuthorizationDivision(divisionId: string, opts?: ObjectsApi.deleteAuthorizationDivisionOptions): Promise<void>;
+  	getAuthorizationDivision(divisionId: string, opts?: ObjectsApi.getAuthorizationDivisionOptions): Promise<Models.AuthzDivision>;
+  	getAuthorizationDivisions(opts?: ObjectsApi.getAuthorizationDivisionsOptions): Promise<Models.AuthzDivisionEntityListing>;
+  	getAuthorizationDivisionsHome(): Promise<Models.AuthzDivision>;
+  	getAuthorizationDivisionsLimit(): Promise<number>;
+  	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>;
+  	postAuthorizationDivisionRestore(divisionId: string, opts?: ObjectsApi.postAuthorizationDivisionRestoreOptions): Promise<Models.AuthzDivision>;
+  	postAuthorizationDivisions(body: Models.AuthzDivision): Promise<Models.AuthzDivision>;
   	putAuthorizationDivision(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>;
 }
 
@@ -3881,35 +3928,48 @@ declare namespace ObjectsApi {
 	}
 }
 
-declare class OperationalEventsApi {  
-  	getUsageEventsDefinition(eventDefinitionId: string): Promise<Models.EventDefinition>; 
+declare class OperationalEventsApi {
+	constructor(apiClient?: ApiClientClass);
+  	getUsageEventsDefinition(eventDefinitionId: string): Promise<Models.EventDefinition>;
   	getUsageEventsDefinitions(): Promise<Models.EventDefinitionListing>;
+  	postUsageEventsAggregatesQuery(opts?: OperationalEventsApi.postUsageEventsAggregatesQueryOptions): Promise<Models.EventAggregatesResponse>;
+  	postUsageEventsQuery(opts?: OperationalEventsApi.postUsageEventsQueryOptions): Promise<Models.EventQueryResponse>;
 }
 
 declare namespace OperationalEventsApi { 
+	export interface postUsageEventsAggregatesQueryOptions { 
+		"body"?: Models.EventAggregatesQueryRequest;
+	}
+	export interface postUsageEventsQueryOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"body"?: Models.EventQueryRequest;
+	}
 }
 
-declare class OrganizationApi {  
-  	getFieldconfig(type: string): Promise<Models.FieldConfig>; 
-  	getOrganizationsAuthenticationSettings(): Promise<Models.OrgAuthSettings>; 
-  	getOrganizationsEmbeddedintegration(): Promise<Models.EmbeddedIntegration>; 
-  	getOrganizationsIpaddressauthentication(): Promise<Models.IpAddressAuthentication>; 
-  	getOrganizationsLimitsChangerequest(requestId: string): Promise<Models.LimitChangeRequestDetails>; 
-  	getOrganizationsLimitsChangerequests(opts?: OrganizationApi.getOrganizationsLimitsChangerequestsOptions): Promise<Models.LimitChangeRequestsEntityListing>; 
-  	getOrganizationsLimitsDocs(): Promise<Models.LimitDocumentation>; 
-  	getOrganizationsLimitsDocsFreetrial(): Promise<Models.FreeTrialLimitDocs>; 
-  	getOrganizationsLimitsNamespace(namespaceName: string): Promise<Models.LimitsEntityListing>; 
-  	getOrganizationsLimitsNamespaceCounts(namespaceName: string, opts?: OrganizationApi.getOrganizationsLimitsNamespaceCountsOptions): Promise<Models.LimitCountListing>; 
-  	getOrganizationsLimitsNamespaceDefaults(namespaceName: string): Promise<Models.LimitsEntityListing>; 
-  	getOrganizationsLimitsNamespaceLimitCounts(namespaceName: string, limitName: string, opts?: OrganizationApi.getOrganizationsLimitsNamespaceLimitCountsOptions): Promise<Models.LimitCountListing>; 
-  	getOrganizationsLimitsNamespaces(opts?: OrganizationApi.getOrganizationsLimitsNamespacesOptions): Promise<object>; 
-  	getOrganizationsMe(): Promise<Models.Organization>; 
-  	getOrganizationsWhitelist(): Promise<Models.OrgWhitelistSettings>; 
-  	patchOrganizationsAuthenticationSettings(body: Models.OrgAuthSettings): Promise<Models.OrgAuthSettings>; 
-  	patchOrganizationsFeature(featureName: string, enabled: Models.FeatureState): Promise<Models.OrganizationFeatures>; 
-  	putOrganizationsEmbeddedintegration(body: Models.EmbeddedIntegration): Promise<Models.EmbeddedIntegration>; 
-  	putOrganizationsIpaddressauthentication(body: Models.IpAddressAuthentication): Promise<Models.IpAddressAuthentication>; 
-  	putOrganizationsMe(opts?: OrganizationApi.putOrganizationsMeOptions): Promise<Models.Organization>; 
+declare class OrganizationApi {
+	constructor(apiClient?: ApiClientClass);
+  	getFieldconfig(type: string): Promise<Models.FieldConfig>;
+  	getOrganizationsAuthenticationSettings(): Promise<Models.OrgAuthSettings>;
+  	getOrganizationsEmbeddedintegration(): Promise<Models.EmbeddedIntegration>;
+  	getOrganizationsIpaddressauthentication(): Promise<Models.IpAddressAuthentication>;
+  	getOrganizationsLimitsChangerequest(requestId: string): Promise<Models.LimitChangeRequestDetails>;
+  	getOrganizationsLimitsChangerequests(opts?: OrganizationApi.getOrganizationsLimitsChangerequestsOptions): Promise<Models.LimitChangeRequestsEntityListing>;
+  	getOrganizationsLimitsDocs(): Promise<Models.LimitDocumentation>;
+  	getOrganizationsLimitsDocsFreetrial(): Promise<Models.FreeTrialLimitDocs>;
+  	getOrganizationsLimitsNamespace(namespaceName: string): Promise<Models.LimitsEntityListing>;
+  	getOrganizationsLimitsNamespaceCounts(namespaceName: string, opts?: OrganizationApi.getOrganizationsLimitsNamespaceCountsOptions): Promise<Models.LimitCountListing>;
+  	getOrganizationsLimitsNamespaceDefaults(namespaceName: string): Promise<Models.LimitsEntityListing>;
+  	getOrganizationsLimitsNamespaceLimitCounts(namespaceName: string, limitName: string, opts?: OrganizationApi.getOrganizationsLimitsNamespaceLimitCountsOptions): Promise<Models.LimitCountListing>;
+  	getOrganizationsLimitsNamespaces(opts?: OrganizationApi.getOrganizationsLimitsNamespacesOptions): Promise<object>;
+  	getOrganizationsMe(): Promise<Models.Organization>;
+  	getOrganizationsWhitelist(): Promise<Models.OrgWhitelistSettings>;
+  	patchOrganizationsAuthenticationSettings(body: Models.OrgAuthSettings): Promise<Models.OrgAuthSettings>;
+  	patchOrganizationsFeature(featureName: string, enabled: Models.FeatureState): Promise<Models.OrganizationFeatures>;
+  	putOrganizationsEmbeddedintegration(body: Models.EmbeddedIntegration): Promise<Models.EmbeddedIntegration>;
+  	putOrganizationsIpaddressauthentication(body: Models.IpAddressAuthentication): Promise<Models.IpAddressAuthentication>;
+  	putOrganizationsMe(opts?: OrganizationApi.putOrganizationsMeOptions): Promise<Models.Organization>;
   	putOrganizationsWhitelist(body: Models.OrgWhitelistSettings): Promise<Models.OrgWhitelistSettings>;
 }
 
@@ -3940,54 +4000,55 @@ declare namespace OrganizationApi {
 	}
 }
 
-declare class OrganizationAuthorizationApi {  
-  	deleteOrgauthorizationTrustee(trusteeOrgId: string): Promise<void>; 
-  	deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
-  	deleteOrgauthorizationTrusteeGroup(trusteeOrgId: string, trusteeGroupId: string): Promise<void>; 
-  	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string): Promise<void>; 
-  	deleteOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
-  	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
-  	deleteOrgauthorizationTrustees(id: Array<string>): Promise<void>; 
-  	deleteOrgauthorizationTrustor(trustorOrgId: string): Promise<void>; 
-  	deleteOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<void>; 
-  	deleteOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<void>; 
-  	deleteOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<void>; 
-  	deleteOrgauthorizationTrustors(id: Array<string>): Promise<void>; 
-  	getOrgauthorizationPairing(pairingId: string): Promise<Models.TrustRequest>; 
-  	getOrgauthorizationTrustee(trusteeOrgId: string): Promise<Models.Trustee>; 
-  	getOrgauthorizationTrusteeClonedusers(trusteeOrgId: string): Promise<Models.ClonedUserEntityListing>; 
-  	getOrgauthorizationTrusteeGroup(trusteeOrgId: string, trusteeGroupId: string): Promise<Models.TrustGroup>; 
-  	getOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string): Promise<Models.UserAuthorization>; 
-  	getOrgauthorizationTrusteeGroups(trusteeOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteeGroupsOptions): Promise<Models.TrustGroupEntityListing>; 
-  	getOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>; 
-  	getOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<Models.UserAuthorization>; 
-  	getOrgauthorizationTrusteeUsers(trusteeOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteeUsersOptions): Promise<Models.TrustUserEntityListing>; 
-  	getOrgauthorizationTrustees(opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteesOptions): Promise<Models.TrustEntityListing>; 
-  	getOrgauthorizationTrusteesCare(): Promise<Models.TrusteeReferenceList>; 
-  	getOrgauthorizationTrusteesDefault(): Promise<Models.Trustee>; 
-  	getOrgauthorizationTrustor(trustorOrgId: string): Promise<Models.Trustor>; 
-  	getOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<Models.ClonedUser>; 
-  	getOrgauthorizationTrustorClonedusers(trustorOrgId: string): Promise<Models.ClonedUserEntityListing>; 
-  	getOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<Models.TrustGroup>; 
-  	getOrgauthorizationTrustorGroups(trustorOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorGroupsOptions): Promise<Models.TrustGroupEntityListing>; 
-  	getOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>; 
-  	getOrgauthorizationTrustorUsers(trustorOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorUsersOptions): Promise<Models.TrustUserEntityListing>; 
-  	getOrgauthorizationTrustors(opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorsOptions): Promise<Models.TrustorEntityListing>; 
-  	postOrgauthorizationPairings(body: Models.TrustRequestCreate): Promise<Models.TrustRequest>; 
-  	postOrgauthorizationTrusteeGroups(trusteeOrgId: string, body: Models.TrustMemberCreate): Promise<Models.TrustGroup>; 
-  	postOrgauthorizationTrusteeUsers(trusteeOrgId: string, body: Models.TrustMemberCreate): Promise<Models.TrustUser>; 
-  	postOrgauthorizationTrustees(body: Models.TrustCreate): Promise<Models.Trustee>; 
-  	postOrgauthorizationTrusteesAudits(body: Models.TrusteeAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesAuditsOptions): Promise<object>; 
-  	postOrgauthorizationTrusteesCare(opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesCareOptions): Promise<Models.TrustEntityListing>; 
-  	postOrgauthorizationTrusteesDefault(opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesDefaultOptions): Promise<Models.Trustee>; 
-  	postOrgauthorizationTrustorAudits(body: Models.TrustorAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrustorAuditsOptions): Promise<object>; 
-  	putOrgauthorizationTrustee(trusteeOrgId: string, body: Models.TrustUpdate): Promise<Models.Trustee>; 
-  	putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId: string, trusteeGroupId: string, body: Models.RoleDivisionGrants): Promise<Models.UserAuthorization>; 
-  	putOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
-  	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId: string, trusteeUserId: string, body: Models.RoleDivisionGrants): Promise<Models.UserAuthorization>; 
-  	putOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
-  	putOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<Models.ClonedUser>; 
-  	putOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<Models.TrustGroup>; 
+declare class OrganizationAuthorizationApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteOrgauthorizationTrustee(trusteeOrgId: string): Promise<void>;
+  	deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId: string, trusteeUserId: string): Promise<void>;
+  	deleteOrgauthorizationTrusteeGroup(trusteeOrgId: string, trusteeGroupId: string): Promise<void>;
+  	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string): Promise<void>;
+  	deleteOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<void>;
+  	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<void>;
+  	deleteOrgauthorizationTrustees(id: Array<string>): Promise<void>;
+  	deleteOrgauthorizationTrustor(trustorOrgId: string): Promise<void>;
+  	deleteOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<void>;
+  	deleteOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<void>;
+  	deleteOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<void>;
+  	deleteOrgauthorizationTrustors(id: Array<string>): Promise<void>;
+  	getOrgauthorizationPairing(pairingId: string): Promise<Models.TrustRequest>;
+  	getOrgauthorizationTrustee(trusteeOrgId: string): Promise<Models.Trustee>;
+  	getOrgauthorizationTrusteeClonedusers(trusteeOrgId: string): Promise<Models.ClonedUserEntityListing>;
+  	getOrgauthorizationTrusteeGroup(trusteeOrgId: string, trusteeGroupId: string): Promise<Models.TrustGroup>;
+  	getOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string): Promise<Models.UserAuthorization>;
+  	getOrgauthorizationTrusteeGroups(trusteeOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteeGroupsOptions): Promise<Models.TrustGroupEntityListing>;
+  	getOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>;
+  	getOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<Models.UserAuthorization>;
+  	getOrgauthorizationTrusteeUsers(trusteeOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteeUsersOptions): Promise<Models.TrustUserEntityListing>;
+  	getOrgauthorizationTrustees(opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteesOptions): Promise<Models.TrustEntityListing>;
+  	getOrgauthorizationTrusteesCare(): Promise<Models.TrusteeReferenceList>;
+  	getOrgauthorizationTrusteesDefault(): Promise<Models.Trustee>;
+  	getOrgauthorizationTrustor(trustorOrgId: string): Promise<Models.Trustor>;
+  	getOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<Models.ClonedUser>;
+  	getOrgauthorizationTrustorClonedusers(trustorOrgId: string): Promise<Models.ClonedUserEntityListing>;
+  	getOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<Models.TrustGroup>;
+  	getOrgauthorizationTrustorGroups(trustorOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorGroupsOptions): Promise<Models.TrustGroupEntityListing>;
+  	getOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>;
+  	getOrgauthorizationTrustorUsers(trustorOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorUsersOptions): Promise<Models.TrustUserEntityListing>;
+  	getOrgauthorizationTrustors(opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorsOptions): Promise<Models.TrustorEntityListing>;
+  	postOrgauthorizationPairings(body: Models.TrustRequestCreate): Promise<Models.TrustRequest>;
+  	postOrgauthorizationTrusteeGroups(trusteeOrgId: string, body: Models.TrustMemberCreate): Promise<Models.TrustGroup>;
+  	postOrgauthorizationTrusteeUsers(trusteeOrgId: string, body: Models.TrustMemberCreate): Promise<Models.TrustUser>;
+  	postOrgauthorizationTrustees(body: Models.TrustCreate): Promise<Models.Trustee>;
+  	postOrgauthorizationTrusteesAudits(body: Models.TrusteeAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesAuditsOptions): Promise<object>;
+  	postOrgauthorizationTrusteesCare(opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesCareOptions): Promise<Models.TrustEntityListing>;
+  	postOrgauthorizationTrusteesDefault(opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesDefaultOptions): Promise<Models.Trustee>;
+  	postOrgauthorizationTrustorAudits(body: Models.TrustorAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrustorAuditsOptions): Promise<object>;
+  	putOrgauthorizationTrustee(trusteeOrgId: string, body: Models.TrustUpdate): Promise<Models.Trustee>;
+  	putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId: string, trusteeGroupId: string, body: Models.RoleDivisionGrants): Promise<Models.UserAuthorization>;
+  	putOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string, body: Array<string>): Promise<Models.UserAuthorization>;
+  	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId: string, trusteeUserId: string, body: Models.RoleDivisionGrants): Promise<Models.UserAuthorization>;
+  	putOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string, body: Array<string>): Promise<Models.UserAuthorization>;
+  	putOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<Models.ClonedUser>;
+  	putOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<Models.TrustGroup>;
   	putOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>;
 }
 
@@ -4040,172 +4101,173 @@ declare namespace OrganizationAuthorizationApi {
 	}
 }
 
-declare class OutboundApi {  
-  	deleteOutboundAttemptlimit(attemptLimitsId: string): Promise<void>; 
-  	deleteOutboundCallabletimeset(callableTimeSetId: string): Promise<void>; 
-  	deleteOutboundCallanalysisresponseset(callAnalysisSetId: string): Promise<void>; 
-  	deleteOutboundCampaign(campaignId: string): Promise<Models.Campaign>; 
-  	deleteOutboundCampaignProgress(campaignId: string): Promise<void>; 
-  	deleteOutboundCampaignrule(campaignRuleId: string): Promise<void>; 
-  	deleteOutboundContactlist(contactListId: string): Promise<void>; 
-  	deleteOutboundContactlistContact(contactListId: string, contactId: string): Promise<void>; 
-  	deleteOutboundContactlistContacts(contactListId: string, contactIds: Array<string>): Promise<void>; 
-  	deleteOutboundContactlistfilter(contactListFilterId: string): Promise<void>; 
-  	deleteOutboundContactlists(id: Array<string>): Promise<void>; 
-  	deleteOutboundContactlisttemplate(contactListTemplateId: string): Promise<void>; 
-  	deleteOutboundContactlisttemplates(id: Array<string>): Promise<void>; 
-  	deleteOutboundDigitalruleset(digitalRuleSetId: string): Promise<void>; 
-  	deleteOutboundDnclist(dncListId: string): Promise<void>; 
-  	deleteOutboundDnclistCustomexclusioncolumns(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistCustomexclusioncolumnsOptions): Promise<void>; 
-  	deleteOutboundDnclistEmailaddresses(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistEmailaddressesOptions): Promise<void>; 
-  	deleteOutboundDnclistPhonenumbers(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistPhonenumbersOptions): Promise<void>; 
-  	deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId: string): Promise<void>; 
-  	deleteOutboundFilespecificationtemplatesBulk(id: Array<string>): Promise<void>; 
-  	deleteOutboundImporttemplate(importTemplateId: string): Promise<void>; 
-  	deleteOutboundImporttemplates(id: Array<string>): Promise<void>; 
-  	deleteOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>; 
-  	deleteOutboundMessagingcampaignProgress(messagingCampaignId: string): Promise<void>; 
-  	deleteOutboundRuleset(ruleSetId: string): Promise<void>; 
-  	deleteOutboundSchedulesCampaign(campaignId: string): Promise<void>; 
-  	deleteOutboundSchedulesEmailcampaign(emailCampaignId: string): Promise<void>; 
-  	deleteOutboundSchedulesMessagingcampaign(messagingCampaignId: string): Promise<void>; 
-  	deleteOutboundSchedulesSequence(sequenceId: string): Promise<void>; 
-  	deleteOutboundSequence(sequenceId: string): Promise<void>; 
-  	getOutboundAttemptlimit(attemptLimitsId: string): Promise<Models.AttemptLimits>; 
-  	getOutboundAttemptlimits(opts?: OutboundApi.getOutboundAttemptlimitsOptions): Promise<Models.AttemptLimitsEntityListing>; 
-  	getOutboundCallabletimeset(callableTimeSetId: string): Promise<Models.CallableTimeSet>; 
-  	getOutboundCallabletimesets(opts?: OutboundApi.getOutboundCallabletimesetsOptions): Promise<Models.CallableTimeSetEntityListing>; 
-  	getOutboundCallanalysisresponseset(callAnalysisSetId: string): Promise<Models.ResponseSet>; 
-  	getOutboundCallanalysisresponsesets(opts?: OutboundApi.getOutboundCallanalysisresponsesetsOptions): Promise<Models.ResponseSetEntityListing>; 
-  	getOutboundCampaign(campaignId: string): Promise<Models.Campaign>; 
-  	getOutboundCampaignAgentownedmappingpreviewResults(campaignId: string): Promise<Models.AgentOwnedMappingPreviewListing>; 
-  	getOutboundCampaignDiagnostics(campaignId: string): Promise<Models.CampaignDiagnostics>; 
-  	getOutboundCampaignInteractions(campaignId: string): Promise<Models.CampaignInteractions>; 
-  	getOutboundCampaignLinedistribution(campaignId: string, opts?: OutboundApi.getOutboundCampaignLinedistributionOptions): Promise<Models.CampaignOutboundLinesDistribution>; 
-  	getOutboundCampaignProgress(campaignId: string): Promise<Models.CampaignProgress>; 
-  	getOutboundCampaignSkillcombinations(campaignId: string, opts?: OutboundApi.getOutboundCampaignSkillcombinationsOptions): Promise<Models.PagedSkillCombinationListing>; 
-  	getOutboundCampaignStats(campaignId: string): Promise<Models.CampaignStats>; 
-  	getOutboundCampaignrule(campaignRuleId: string): Promise<Models.CampaignRule>; 
-  	getOutboundCampaignrules(opts?: OutboundApi.getOutboundCampaignrulesOptions): Promise<Models.CampaignRuleEntityListing>; 
-  	getOutboundCampaigns(opts?: OutboundApi.getOutboundCampaignsOptions): Promise<Models.CampaignEntityListing>; 
-  	getOutboundCampaignsAll(opts?: OutboundApi.getOutboundCampaignsAllOptions): Promise<Models.CommonCampaignEntityListing>; 
-  	getOutboundCampaignsAllDivisionviews(opts?: OutboundApi.getOutboundCampaignsAllDivisionviewsOptions): Promise<Models.CommonCampaignDivisionViewEntityListing>; 
-  	getOutboundCampaignsDivisionview(campaignId: string): Promise<Models.CampaignDivisionView>; 
-  	getOutboundCampaignsDivisionviews(opts?: OutboundApi.getOutboundCampaignsDivisionviewsOptions): Promise<Models.CampaignDivisionViewListing>; 
-  	getOutboundContactlist(contactListId: string, opts?: OutboundApi.getOutboundContactlistOptions): Promise<Models.ContactList>; 
-  	getOutboundContactlistContact(contactListId: string, contactId: string): Promise<Models.DialerContact>; 
-  	getOutboundContactlistContactsBulkJob(contactListId: string, jobId: string): Promise<Models.ContactsBulkOperationJob>; 
-  	getOutboundContactlistContactsBulkJobs(contactListId: string): Promise<Models.ContactsBulkOperationJobListing>; 
-  	getOutboundContactlistExport(contactListId: string, opts?: OutboundApi.getOutboundContactlistExportOptions): Promise<Models.ExportUri>; 
-  	getOutboundContactlistImportstatus(contactListId: string): Promise<Models.ImportStatus>; 
-  	getOutboundContactlistTimezonemappingpreview(contactListId: string): Promise<Models.TimeZoneMappingPreview>; 
-  	getOutboundContactlistfilter(contactListFilterId: string): Promise<Models.ContactListFilter>; 
-  	getOutboundContactlistfilters(opts?: OutboundApi.getOutboundContactlistfiltersOptions): Promise<Models.ContactListFilterEntityListing>; 
-  	getOutboundContactlists(opts?: OutboundApi.getOutboundContactlistsOptions): Promise<Models.ContactListEntityListing>; 
-  	getOutboundContactlistsDivisionview(contactListId: string, opts?: OutboundApi.getOutboundContactlistsDivisionviewOptions): Promise<Models.ContactListDivisionView>; 
-  	getOutboundContactlistsDivisionviews(opts?: OutboundApi.getOutboundContactlistsDivisionviewsOptions): Promise<Models.ContactListDivisionViewListing>; 
-  	getOutboundContactlisttemplate(contactListTemplateId: string): Promise<Models.ContactListTemplate>; 
-  	getOutboundContactlisttemplates(opts?: OutboundApi.getOutboundContactlisttemplatesOptions): Promise<Models.ContactListTemplateEntityListing>; 
-  	getOutboundDigitalruleset(digitalRuleSetId: string): Promise<Models.DigitalRuleSet>; 
-  	getOutboundDigitalrulesets(opts?: OutboundApi.getOutboundDigitalrulesetsOptions): Promise<Models.DigitalRuleSetEntityListing>; 
-  	getOutboundDnclist(dncListId: string, opts?: OutboundApi.getOutboundDnclistOptions): Promise<Models.DncList>; 
-  	getOutboundDnclistExport(dncListId: string, opts?: OutboundApi.getOutboundDnclistExportOptions): Promise<Models.ExportUri>; 
-  	getOutboundDnclistImportstatus(dncListId: string): Promise<Models.ImportStatus>; 
-  	getOutboundDnclists(opts?: OutboundApi.getOutboundDnclistsOptions): Promise<Models.DncListEntityListing>; 
-  	getOutboundDnclistsDivisionview(dncListId: string, opts?: OutboundApi.getOutboundDnclistsDivisionviewOptions): Promise<Models.DncListDivisionView>; 
-  	getOutboundDnclistsDivisionviews(opts?: OutboundApi.getOutboundDnclistsDivisionviewsOptions): Promise<Models.DncListDivisionViewListing>; 
-  	getOutboundEvent(eventId: string): Promise<Models.EventLog>; 
-  	getOutboundEvents(opts?: OutboundApi.getOutboundEventsOptions): Promise<Models.DialerEventEntityListing>; 
-  	getOutboundFilespecificationtemplate(fileSpecificationTemplateId: string): Promise<Models.FileSpecificationTemplate>; 
-  	getOutboundFilespecificationtemplates(opts?: OutboundApi.getOutboundFilespecificationtemplatesOptions): Promise<Models.FileSpecificationTemplateEntityListing>; 
-  	getOutboundImporttemplate(importTemplateId: string, opts?: OutboundApi.getOutboundImporttemplateOptions): Promise<Models.ImportTemplate>; 
-  	getOutboundImporttemplateImportstatus(importTemplateId: string, opts?: OutboundApi.getOutboundImporttemplateImportstatusOptions): Promise<Models.ImportStatus>; 
-  	getOutboundImporttemplates(opts?: OutboundApi.getOutboundImporttemplatesOptions): Promise<Models.ImportTemplateEntityListing>; 
-  	getOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>; 
-  	getOutboundMessagingcampaignDiagnostics(messagingCampaignId: string): Promise<Models.MessagingCampaignDiagnostics>; 
-  	getOutboundMessagingcampaignProgress(messagingCampaignId: string): Promise<Models.CampaignProgress>; 
-  	getOutboundMessagingcampaigns(opts?: OutboundApi.getOutboundMessagingcampaignsOptions): Promise<Models.MessagingCampaignEntityListing>; 
-  	getOutboundMessagingcampaignsDivisionview(messagingCampaignId: string): Promise<Models.MessagingCampaignDivisionView>; 
-  	getOutboundMessagingcampaignsDivisionviews(opts?: OutboundApi.getOutboundMessagingcampaignsDivisionviewsOptions): Promise<Models.MessagingCampaignDivisionViewEntityListing>; 
-  	getOutboundRuleset(ruleSetId: string): Promise<Models.RuleSet>; 
-  	getOutboundRulesets(opts?: OutboundApi.getOutboundRulesetsOptions): Promise<Models.RuleSetEntityListing>; 
-  	getOutboundSchedulesCampaign(campaignId: string): Promise<Models.CampaignSchedule>; 
-  	getOutboundSchedulesCampaigns(): Promise<Array<Models.CampaignSchedule>>; 
-  	getOutboundSchedulesEmailcampaign(emailCampaignId: string): Promise<Models.EmailCampaignSchedule>; 
-  	getOutboundSchedulesEmailcampaigns(): Promise<Models.EmailCampaignScheduleEntityListing>; 
-  	getOutboundSchedulesMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaignSchedule>; 
-  	getOutboundSchedulesMessagingcampaigns(): Promise<Models.MessagingCampaignScheduleEntityListing>; 
-  	getOutboundSchedulesSequence(sequenceId: string): Promise<Models.SequenceSchedule>; 
-  	getOutboundSchedulesSequences(): Promise<Array<Models.SequenceSchedule>>; 
-  	getOutboundSequence(sequenceId: string): Promise<Models.CampaignSequence>; 
-  	getOutboundSequences(opts?: OutboundApi.getOutboundSequencesOptions): Promise<Models.CampaignSequenceEntityListing>; 
-  	getOutboundSettings(): Promise<Models.OutboundSettings>; 
-  	getOutboundWrapupcodemappings(): Promise<Models.WrapUpCodeMapping>; 
-  	patchOutboundCampaign(campaignId: string, body: Models.CampaignPatchRequest): Promise<void>; 
-  	patchOutboundDnclistCustomexclusioncolumns(dncListId: string, body: Models.DncPatchCustomExclusionColumnsRequest): Promise<void>; 
-  	patchOutboundDnclistEmailaddresses(dncListId: string, body: Models.DncPatchEmailsRequest): Promise<void>; 
-  	patchOutboundDnclistPhonenumbers(dncListId: string, body: Models.DncPatchPhoneNumbersRequest): Promise<void>; 
-  	patchOutboundSettings(body: Models.OutboundSettings): Promise<void>; 
-  	postOutboundAttemptlimits(body: Models.AttemptLimits): Promise<Models.AttemptLimits>; 
-  	postOutboundCallabletimesets(body: Models.CallableTimeSet): Promise<Models.CallableTimeSet>; 
-  	postOutboundCallanalysisresponsesets(body: Models.ResponseSet): Promise<Models.ResponseSet>; 
-  	postOutboundCampaignAgentownedmappingpreview(campaignId: string): Promise<object>; 
-  	postOutboundCampaignCallbackSchedule(campaignId: string, body: Models.ContactCallbackRequest): Promise<Models.ContactCallbackRequest>; 
-  	postOutboundCampaignStart(campaignId: string): Promise<void>; 
-  	postOutboundCampaignStop(campaignId: string): Promise<void>; 
-  	postOutboundCampaignrules(body: Models.CampaignRule): Promise<Models.CampaignRule>; 
-  	postOutboundCampaigns(body: Models.Campaign): Promise<Models.Campaign>; 
-  	postOutboundCampaignsProgress(body: Array<string>): Promise<Array<Models.CampaignProgress>>; 
-  	postOutboundContactlistClear(contactListId: string): Promise<void>; 
-  	postOutboundContactlistContacts(contactListId: string, body: Array<Models.WritableDialerContact>, opts?: OutboundApi.postOutboundContactlistContactsOptions): Promise<Array<Models.DialerContact>>; 
-  	postOutboundContactlistContactsBulk(contactListId: string, body: Array<string>): Promise<Array<Models.DialerContact>>; 
-  	postOutboundContactlistContactsBulkRemove(contactListId: string, body: Models.ContactBulkSearchParameters): Promise<Models.ContactsBulkOperationJob>; 
-  	postOutboundContactlistContactsBulkUpdate(contactListId: string, body: Models.ContactBulkEditRequest): Promise<Models.ContactsBulkOperationJob>; 
-  	postOutboundContactlistContactsSearch(contactListId: string, body: Models.ContactListingRequest): Promise<Models.ContactListingResponse>; 
-  	postOutboundContactlistExport(contactListId: string, opts?: OutboundApi.postOutboundContactlistExportOptions): Promise<Models.DomainEntityRef>; 
-  	postOutboundContactlistfilters(body: Models.ContactListFilter): Promise<Models.ContactListFilter>; 
-  	postOutboundContactlistfiltersBulkRetrieve(body: Models.ContactListFilterBulkRetrieveBody): Promise<Models.ContactListFilterEntityListing>; 
-  	postOutboundContactlistfiltersPreview(body: Models.ContactListFilter): Promise<Models.FilterPreviewResponse>; 
-  	postOutboundContactlists(body: Models.ContactList): Promise<Models.ContactList>; 
-  	postOutboundContactlisttemplates(body: Models.ContactListTemplate): Promise<Models.ContactListTemplate>; 
-  	postOutboundContactlisttemplatesBulkAdd(body: Array<Models.ContactListTemplate>): Promise<Models.ContactListTemplateEntityListing>; 
-  	postOutboundContactlisttemplatesBulkRetrieve(body: Models.ContactListTemplateBulkRetrieveBody): Promise<Models.ContactListTemplateEntityListing>; 
-  	postOutboundConversationDnc(conversationId: string): Promise<void>; 
-  	postOutboundDigitalrulesets(body: Models.DigitalRuleSet): Promise<Models.DigitalRuleSet>; 
-  	postOutboundDnclistEmailaddresses(dncListId: string, body: Array<string>): Promise<void>; 
-  	postOutboundDnclistExport(dncListId: string): Promise<Models.DomainEntityRef>; 
-  	postOutboundDnclistPhonenumbers(dncListId: string, body: Array<string>, opts?: OutboundApi.postOutboundDnclistPhonenumbersOptions): Promise<void>; 
-  	postOutboundDnclists(body: Models.DncListCreate): Promise<Models.DncList>; 
-  	postOutboundFilespecificationtemplates(body: Models.FileSpecificationTemplate): Promise<Models.FileSpecificationTemplate>; 
-  	postOutboundImporttemplates(body: Models.ImportTemplate): Promise<Models.ImportTemplate>; 
-  	postOutboundImporttemplatesBulkAdd(body: Array<Models.ImportTemplate>): Promise<Models.ImportTemplateEntityListing>; 
-  	postOutboundMessagingcampaignStart(messagingCampaignId: string): Promise<void>; 
-  	postOutboundMessagingcampaignStop(messagingCampaignId: string): Promise<void>; 
-  	postOutboundMessagingcampaigns(body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>; 
-  	postOutboundMessagingcampaignsProgress(body: Array<string>): Promise<Array<Models.CampaignProgress>>; 
-  	postOutboundRulesets(body: Models.RuleSet): Promise<Models.RuleSet>; 
-  	postOutboundSequences(body: Models.CampaignSequence): Promise<Models.CampaignSequence>; 
-  	putOutboundAttemptlimit(attemptLimitsId: string, body: Models.AttemptLimits): Promise<Models.AttemptLimits>; 
-  	putOutboundCallabletimeset(callableTimeSetId: string, body: Models.CallableTimeSet): Promise<Models.CallableTimeSet>; 
-  	putOutboundCallanalysisresponseset(callAnalysisSetId: string, body: Models.ResponseSet): Promise<Models.ResponseSet>; 
-  	putOutboundCampaign(campaignId: string, body: Models.Campaign): Promise<Models.Campaign>; 
-  	putOutboundCampaignAgent(campaignId: string, userId: string, body: Models.Agent): Promise<string>; 
-  	putOutboundCampaignrule(campaignRuleId: string, body: Models.CampaignRule): Promise<Models.CampaignRule>; 
-  	putOutboundContactlist(contactListId: string, body: Models.ContactList): Promise<Models.ContactList>; 
-  	putOutboundContactlistContact(contactListId: string, contactId: string, body: Models.DialerContact): Promise<Models.DialerContact>; 
-  	putOutboundContactlistfilter(contactListFilterId: string, body: Models.ContactListFilter): Promise<Models.ContactListFilter>; 
-  	putOutboundContactlisttemplate(contactListTemplateId: string, body: Models.ContactListTemplate): Promise<Models.ContactListTemplate>; 
-  	putOutboundDigitalruleset(digitalRuleSetId: string, body: Models.DigitalRuleSet): Promise<Models.DigitalRuleSet>; 
-  	putOutboundDnclist(dncListId: string, body: Models.DncList): Promise<Models.DncList>; 
-  	putOutboundFilespecificationtemplate(fileSpecificationTemplateId: string, body: Models.FileSpecificationTemplate): Promise<Models.FileSpecificationTemplate>; 
-  	putOutboundImporttemplate(importTemplateId: string, body: Models.ImportTemplate): Promise<Models.ImportTemplate>; 
-  	putOutboundMessagingcampaign(messagingCampaignId: string, body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>; 
-  	putOutboundRuleset(ruleSetId: string, body: Models.RuleSet): Promise<Models.RuleSet>; 
-  	putOutboundSchedulesCampaign(campaignId: string, body: Models.CampaignSchedule): Promise<Models.CampaignSchedule>; 
-  	putOutboundSchedulesEmailcampaign(emailCampaignId: string, body: Models.EmailCampaignSchedule): Promise<Models.EmailCampaignSchedule>; 
-  	putOutboundSchedulesMessagingcampaign(messagingCampaignId: string, body: Models.MessagingCampaignSchedule): Promise<Models.MessagingCampaignSchedule>; 
-  	putOutboundSchedulesSequence(sequenceId: string, body: Models.SequenceSchedule): Promise<Models.SequenceSchedule>; 
-  	putOutboundSequence(sequenceId: string, body: Models.CampaignSequence): Promise<Models.CampaignSequence>; 
+declare class OutboundApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteOutboundAttemptlimit(attemptLimitsId: string): Promise<void>;
+  	deleteOutboundCallabletimeset(callableTimeSetId: string): Promise<void>;
+  	deleteOutboundCallanalysisresponseset(callAnalysisSetId: string): Promise<void>;
+  	deleteOutboundCampaign(campaignId: string): Promise<Models.Campaign>;
+  	deleteOutboundCampaignProgress(campaignId: string): Promise<void>;
+  	deleteOutboundCampaignrule(campaignRuleId: string): Promise<void>;
+  	deleteOutboundContactlist(contactListId: string): Promise<void>;
+  	deleteOutboundContactlistContact(contactListId: string, contactId: string): Promise<void>;
+  	deleteOutboundContactlistContacts(contactListId: string, contactIds: Array<string>): Promise<void>;
+  	deleteOutboundContactlistfilter(contactListFilterId: string): Promise<void>;
+  	deleteOutboundContactlists(id: Array<string>): Promise<void>;
+  	deleteOutboundContactlisttemplate(contactListTemplateId: string): Promise<void>;
+  	deleteOutboundContactlisttemplates(id: Array<string>): Promise<void>;
+  	deleteOutboundDigitalruleset(digitalRuleSetId: string): Promise<void>;
+  	deleteOutboundDnclist(dncListId: string): Promise<void>;
+  	deleteOutboundDnclistCustomexclusioncolumns(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistCustomexclusioncolumnsOptions): Promise<void>;
+  	deleteOutboundDnclistEmailaddresses(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistEmailaddressesOptions): Promise<void>;
+  	deleteOutboundDnclistPhonenumbers(dncListId: string, opts?: OutboundApi.deleteOutboundDnclistPhonenumbersOptions): Promise<void>;
+  	deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId: string): Promise<void>;
+  	deleteOutboundFilespecificationtemplatesBulk(id: Array<string>): Promise<void>;
+  	deleteOutboundImporttemplate(importTemplateId: string): Promise<void>;
+  	deleteOutboundImporttemplates(id: Array<string>): Promise<void>;
+  	deleteOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>;
+  	deleteOutboundMessagingcampaignProgress(messagingCampaignId: string): Promise<void>;
+  	deleteOutboundRuleset(ruleSetId: string): Promise<void>;
+  	deleteOutboundSchedulesCampaign(campaignId: string): Promise<void>;
+  	deleteOutboundSchedulesEmailcampaign(emailCampaignId: string): Promise<void>;
+  	deleteOutboundSchedulesMessagingcampaign(messagingCampaignId: string): Promise<void>;
+  	deleteOutboundSchedulesSequence(sequenceId: string): Promise<void>;
+  	deleteOutboundSequence(sequenceId: string): Promise<void>;
+  	getOutboundAttemptlimit(attemptLimitsId: string): Promise<Models.AttemptLimits>;
+  	getOutboundAttemptlimits(opts?: OutboundApi.getOutboundAttemptlimitsOptions): Promise<Models.AttemptLimitsEntityListing>;
+  	getOutboundCallabletimeset(callableTimeSetId: string): Promise<Models.CallableTimeSet>;
+  	getOutboundCallabletimesets(opts?: OutboundApi.getOutboundCallabletimesetsOptions): Promise<Models.CallableTimeSetEntityListing>;
+  	getOutboundCallanalysisresponseset(callAnalysisSetId: string): Promise<Models.ResponseSet>;
+  	getOutboundCallanalysisresponsesets(opts?: OutboundApi.getOutboundCallanalysisresponsesetsOptions): Promise<Models.ResponseSetEntityListing>;
+  	getOutboundCampaign(campaignId: string): Promise<Models.Campaign>;
+  	getOutboundCampaignAgentownedmappingpreviewResults(campaignId: string): Promise<Models.AgentOwnedMappingPreviewListing>;
+  	getOutboundCampaignDiagnostics(campaignId: string): Promise<Models.CampaignDiagnostics>;
+  	getOutboundCampaignInteractions(campaignId: string): Promise<Models.CampaignInteractions>;
+  	getOutboundCampaignLinedistribution(campaignId: string, opts?: OutboundApi.getOutboundCampaignLinedistributionOptions): Promise<Models.CampaignOutboundLinesDistribution>;
+  	getOutboundCampaignProgress(campaignId: string): Promise<Models.CampaignProgress>;
+  	getOutboundCampaignSkillcombinations(campaignId: string, opts?: OutboundApi.getOutboundCampaignSkillcombinationsOptions): Promise<Models.PagedSkillCombinationListing>;
+  	getOutboundCampaignStats(campaignId: string): Promise<Models.CampaignStats>;
+  	getOutboundCampaignrule(campaignRuleId: string): Promise<Models.CampaignRule>;
+  	getOutboundCampaignrules(opts?: OutboundApi.getOutboundCampaignrulesOptions): Promise<Models.CampaignRuleEntityListing>;
+  	getOutboundCampaigns(opts?: OutboundApi.getOutboundCampaignsOptions): Promise<Models.CampaignEntityListing>;
+  	getOutboundCampaignsAll(opts?: OutboundApi.getOutboundCampaignsAllOptions): Promise<Models.CommonCampaignEntityListing>;
+  	getOutboundCampaignsAllDivisionviews(opts?: OutboundApi.getOutboundCampaignsAllDivisionviewsOptions): Promise<Models.CommonCampaignDivisionViewEntityListing>;
+  	getOutboundCampaignsDivisionview(campaignId: string): Promise<Models.CampaignDivisionView>;
+  	getOutboundCampaignsDivisionviews(opts?: OutboundApi.getOutboundCampaignsDivisionviewsOptions): Promise<Models.CampaignDivisionViewListing>;
+  	getOutboundContactlist(contactListId: string, opts?: OutboundApi.getOutboundContactlistOptions): Promise<Models.ContactList>;
+  	getOutboundContactlistContact(contactListId: string, contactId: string): Promise<Models.DialerContact>;
+  	getOutboundContactlistContactsBulkJob(contactListId: string, jobId: string): Promise<Models.ContactsBulkOperationJob>;
+  	getOutboundContactlistContactsBulkJobs(contactListId: string): Promise<Models.ContactsBulkOperationJobListing>;
+  	getOutboundContactlistExport(contactListId: string, opts?: OutboundApi.getOutboundContactlistExportOptions): Promise<Models.ExportUri>;
+  	getOutboundContactlistImportstatus(contactListId: string): Promise<Models.ImportStatus>;
+  	getOutboundContactlistTimezonemappingpreview(contactListId: string): Promise<Models.TimeZoneMappingPreview>;
+  	getOutboundContactlistfilter(contactListFilterId: string): Promise<Models.ContactListFilter>;
+  	getOutboundContactlistfilters(opts?: OutboundApi.getOutboundContactlistfiltersOptions): Promise<Models.ContactListFilterEntityListing>;
+  	getOutboundContactlists(opts?: OutboundApi.getOutboundContactlistsOptions): Promise<Models.ContactListEntityListing>;
+  	getOutboundContactlistsDivisionview(contactListId: string, opts?: OutboundApi.getOutboundContactlistsDivisionviewOptions): Promise<Models.ContactListDivisionView>;
+  	getOutboundContactlistsDivisionviews(opts?: OutboundApi.getOutboundContactlistsDivisionviewsOptions): Promise<Models.ContactListDivisionViewListing>;
+  	getOutboundContactlisttemplate(contactListTemplateId: string): Promise<Models.ContactListTemplate>;
+  	getOutboundContactlisttemplates(opts?: OutboundApi.getOutboundContactlisttemplatesOptions): Promise<Models.ContactListTemplateEntityListing>;
+  	getOutboundDigitalruleset(digitalRuleSetId: string): Promise<Models.DigitalRuleSet>;
+  	getOutboundDigitalrulesets(opts?: OutboundApi.getOutboundDigitalrulesetsOptions): Promise<Models.DigitalRuleSetEntityListing>;
+  	getOutboundDnclist(dncListId: string, opts?: OutboundApi.getOutboundDnclistOptions): Promise<Models.DncList>;
+  	getOutboundDnclistExport(dncListId: string, opts?: OutboundApi.getOutboundDnclistExportOptions): Promise<Models.ExportUri>;
+  	getOutboundDnclistImportstatus(dncListId: string): Promise<Models.ImportStatus>;
+  	getOutboundDnclists(opts?: OutboundApi.getOutboundDnclistsOptions): Promise<Models.DncListEntityListing>;
+  	getOutboundDnclistsDivisionview(dncListId: string, opts?: OutboundApi.getOutboundDnclistsDivisionviewOptions): Promise<Models.DncListDivisionView>;
+  	getOutboundDnclistsDivisionviews(opts?: OutboundApi.getOutboundDnclistsDivisionviewsOptions): Promise<Models.DncListDivisionViewListing>;
+  	getOutboundEvent(eventId: string): Promise<Models.EventLog>;
+  	getOutboundEvents(opts?: OutboundApi.getOutboundEventsOptions): Promise<Models.DialerEventEntityListing>;
+  	getOutboundFilespecificationtemplate(fileSpecificationTemplateId: string): Promise<Models.FileSpecificationTemplate>;
+  	getOutboundFilespecificationtemplates(opts?: OutboundApi.getOutboundFilespecificationtemplatesOptions): Promise<Models.FileSpecificationTemplateEntityListing>;
+  	getOutboundImporttemplate(importTemplateId: string, opts?: OutboundApi.getOutboundImporttemplateOptions): Promise<Models.ImportTemplate>;
+  	getOutboundImporttemplateImportstatus(importTemplateId: string, opts?: OutboundApi.getOutboundImporttemplateImportstatusOptions): Promise<Models.ImportStatus>;
+  	getOutboundImporttemplates(opts?: OutboundApi.getOutboundImporttemplatesOptions): Promise<Models.ImportTemplateEntityListing>;
+  	getOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>;
+  	getOutboundMessagingcampaignDiagnostics(messagingCampaignId: string): Promise<Models.MessagingCampaignDiagnostics>;
+  	getOutboundMessagingcampaignProgress(messagingCampaignId: string): Promise<Models.CampaignProgress>;
+  	getOutboundMessagingcampaigns(opts?: OutboundApi.getOutboundMessagingcampaignsOptions): Promise<Models.MessagingCampaignEntityListing>;
+  	getOutboundMessagingcampaignsDivisionview(messagingCampaignId: string): Promise<Models.MessagingCampaignDivisionView>;
+  	getOutboundMessagingcampaignsDivisionviews(opts?: OutboundApi.getOutboundMessagingcampaignsDivisionviewsOptions): Promise<Models.MessagingCampaignDivisionViewEntityListing>;
+  	getOutboundRuleset(ruleSetId: string): Promise<Models.RuleSet>;
+  	getOutboundRulesets(opts?: OutboundApi.getOutboundRulesetsOptions): Promise<Models.RuleSetEntityListing>;
+  	getOutboundSchedulesCampaign(campaignId: string): Promise<Models.CampaignSchedule>;
+  	getOutboundSchedulesCampaigns(): Promise<Array<Models.CampaignSchedule>>;
+  	getOutboundSchedulesEmailcampaign(emailCampaignId: string): Promise<Models.EmailCampaignSchedule>;
+  	getOutboundSchedulesEmailcampaigns(): Promise<Models.EmailCampaignScheduleEntityListing>;
+  	getOutboundSchedulesMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaignSchedule>;
+  	getOutboundSchedulesMessagingcampaigns(): Promise<Models.MessagingCampaignScheduleEntityListing>;
+  	getOutboundSchedulesSequence(sequenceId: string): Promise<Models.SequenceSchedule>;
+  	getOutboundSchedulesSequences(): Promise<Array<Models.SequenceSchedule>>;
+  	getOutboundSequence(sequenceId: string): Promise<Models.CampaignSequence>;
+  	getOutboundSequences(opts?: OutboundApi.getOutboundSequencesOptions): Promise<Models.CampaignSequenceEntityListing>;
+  	getOutboundSettings(): Promise<Models.OutboundSettings>;
+  	getOutboundWrapupcodemappings(): Promise<Models.WrapUpCodeMapping>;
+  	patchOutboundCampaign(campaignId: string, body: Models.CampaignPatchRequest): Promise<void>;
+  	patchOutboundDnclistCustomexclusioncolumns(dncListId: string, body: Models.DncPatchCustomExclusionColumnsRequest): Promise<void>;
+  	patchOutboundDnclistEmailaddresses(dncListId: string, body: Models.DncPatchEmailsRequest): Promise<void>;
+  	patchOutboundDnclistPhonenumbers(dncListId: string, body: Models.DncPatchPhoneNumbersRequest): Promise<void>;
+  	patchOutboundSettings(body: Models.OutboundSettings): Promise<void>;
+  	postOutboundAttemptlimits(body: Models.AttemptLimits): Promise<Models.AttemptLimits>;
+  	postOutboundCallabletimesets(body: Models.CallableTimeSet): Promise<Models.CallableTimeSet>;
+  	postOutboundCallanalysisresponsesets(body: Models.ResponseSet): Promise<Models.ResponseSet>;
+  	postOutboundCampaignAgentownedmappingpreview(campaignId: string): Promise<object>;
+  	postOutboundCampaignCallbackSchedule(campaignId: string, body: Models.ContactCallbackRequest): Promise<Models.ContactCallbackRequest>;
+  	postOutboundCampaignStart(campaignId: string): Promise<void>;
+  	postOutboundCampaignStop(campaignId: string): Promise<void>;
+  	postOutboundCampaignrules(body: Models.CampaignRule): Promise<Models.CampaignRule>;
+  	postOutboundCampaigns(body: Models.Campaign): Promise<Models.Campaign>;
+  	postOutboundCampaignsProgress(body: Array<string>): Promise<Array<Models.CampaignProgress>>;
+  	postOutboundContactlistClear(contactListId: string): Promise<void>;
+  	postOutboundContactlistContacts(contactListId: string, body: Array<Models.WritableDialerContact>, opts?: OutboundApi.postOutboundContactlistContactsOptions): Promise<Array<Models.DialerContact>>;
+  	postOutboundContactlistContactsBulk(contactListId: string, body: Array<string>): Promise<Array<Models.DialerContact>>;
+  	postOutboundContactlistContactsBulkRemove(contactListId: string, body: Models.ContactBulkSearchParameters): Promise<Models.ContactsBulkOperationJob>;
+  	postOutboundContactlistContactsBulkUpdate(contactListId: string, body: Models.ContactBulkEditRequest): Promise<Models.ContactsBulkOperationJob>;
+  	postOutboundContactlistContactsSearch(contactListId: string, body: Models.ContactListingRequest): Promise<Models.ContactListingResponse>;
+  	postOutboundContactlistExport(contactListId: string, opts?: OutboundApi.postOutboundContactlistExportOptions): Promise<Models.DomainEntityRef>;
+  	postOutboundContactlistfilters(body: Models.ContactListFilter): Promise<Models.ContactListFilter>;
+  	postOutboundContactlistfiltersBulkRetrieve(body: Models.ContactListFilterBulkRetrieveBody): Promise<Models.ContactListFilterEntityListing>;
+  	postOutboundContactlistfiltersPreview(body: Models.ContactListFilter): Promise<Models.FilterPreviewResponse>;
+  	postOutboundContactlists(body: Models.ContactList): Promise<Models.ContactList>;
+  	postOutboundContactlisttemplates(body: Models.ContactListTemplate): Promise<Models.ContactListTemplate>;
+  	postOutboundContactlisttemplatesBulkAdd(body: Array<Models.ContactListTemplate>): Promise<Models.ContactListTemplateEntityListing>;
+  	postOutboundContactlisttemplatesBulkRetrieve(body: Models.ContactListTemplateBulkRetrieveBody): Promise<Models.ContactListTemplateEntityListing>;
+  	postOutboundConversationDnc(conversationId: string): Promise<void>;
+  	postOutboundDigitalrulesets(body: Models.DigitalRuleSet): Promise<Models.DigitalRuleSet>;
+  	postOutboundDnclistEmailaddresses(dncListId: string, body: Array<string>): Promise<void>;
+  	postOutboundDnclistExport(dncListId: string): Promise<Models.DomainEntityRef>;
+  	postOutboundDnclistPhonenumbers(dncListId: string, body: Array<string>, opts?: OutboundApi.postOutboundDnclistPhonenumbersOptions): Promise<void>;
+  	postOutboundDnclists(body: Models.DncListCreate): Promise<Models.DncList>;
+  	postOutboundFilespecificationtemplates(body: Models.FileSpecificationTemplate): Promise<Models.FileSpecificationTemplate>;
+  	postOutboundImporttemplates(body: Models.ImportTemplate): Promise<Models.ImportTemplate>;
+  	postOutboundImporttemplatesBulkAdd(body: Array<Models.ImportTemplate>): Promise<Models.ImportTemplateEntityListing>;
+  	postOutboundMessagingcampaignStart(messagingCampaignId: string): Promise<void>;
+  	postOutboundMessagingcampaignStop(messagingCampaignId: string): Promise<void>;
+  	postOutboundMessagingcampaigns(body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>;
+  	postOutboundMessagingcampaignsProgress(body: Array<string>): Promise<Array<Models.CampaignProgress>>;
+  	postOutboundRulesets(body: Models.RuleSet): Promise<Models.RuleSet>;
+  	postOutboundSequences(body: Models.CampaignSequence): Promise<Models.CampaignSequence>;
+  	putOutboundAttemptlimit(attemptLimitsId: string, body: Models.AttemptLimits): Promise<Models.AttemptLimits>;
+  	putOutboundCallabletimeset(callableTimeSetId: string, body: Models.CallableTimeSet): Promise<Models.CallableTimeSet>;
+  	putOutboundCallanalysisresponseset(callAnalysisSetId: string, body: Models.ResponseSet): Promise<Models.ResponseSet>;
+  	putOutboundCampaign(campaignId: string, body: Models.Campaign): Promise<Models.Campaign>;
+  	putOutboundCampaignAgent(campaignId: string, userId: string, body: Models.Agent): Promise<string>;
+  	putOutboundCampaignrule(campaignRuleId: string, body: Models.CampaignRule): Promise<Models.CampaignRule>;
+  	putOutboundContactlist(contactListId: string, body: Models.ContactList): Promise<Models.ContactList>;
+  	putOutboundContactlistContact(contactListId: string, contactId: string, body: Models.DialerContact): Promise<Models.DialerContact>;
+  	putOutboundContactlistfilter(contactListFilterId: string, body: Models.ContactListFilter): Promise<Models.ContactListFilter>;
+  	putOutboundContactlisttemplate(contactListTemplateId: string, body: Models.ContactListTemplate): Promise<Models.ContactListTemplate>;
+  	putOutboundDigitalruleset(digitalRuleSetId: string, body: Models.DigitalRuleSet): Promise<Models.DigitalRuleSet>;
+  	putOutboundDnclist(dncListId: string, body: Models.DncList): Promise<Models.DncList>;
+  	putOutboundFilespecificationtemplate(fileSpecificationTemplateId: string, body: Models.FileSpecificationTemplate): Promise<Models.FileSpecificationTemplate>;
+  	putOutboundImporttemplate(importTemplateId: string, body: Models.ImportTemplate): Promise<Models.ImportTemplate>;
+  	putOutboundMessagingcampaign(messagingCampaignId: string, body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>;
+  	putOutboundRuleset(ruleSetId: string, body: Models.RuleSet): Promise<Models.RuleSet>;
+  	putOutboundSchedulesCampaign(campaignId: string, body: Models.CampaignSchedule): Promise<Models.CampaignSchedule>;
+  	putOutboundSchedulesEmailcampaign(emailCampaignId: string, body: Models.EmailCampaignSchedule): Promise<Models.EmailCampaignSchedule>;
+  	putOutboundSchedulesMessagingcampaign(messagingCampaignId: string, body: Models.MessagingCampaignSchedule): Promise<Models.MessagingCampaignSchedule>;
+  	putOutboundSchedulesSequence(sequenceId: string, body: Models.SequenceSchedule): Promise<Models.SequenceSchedule>;
+  	putOutboundSequence(sequenceId: string, body: Models.CampaignSequence): Promise<Models.CampaignSequence>;
   	putOutboundWrapupcodemappings(body: Models.WrapUpCodeMapping): Promise<Models.WrapUpCodeMapping>;
 }
 
@@ -4494,33 +4556,34 @@ declare namespace OutboundApi {
 	}
 }
 
-declare class PresenceApi {  
-  	deletePresenceDefinition0(definitionId: string): Promise<void>; 
-  	deletePresenceSource(sourceId: string): Promise<void>; 
-  	deletePresencedefinition(presenceId: string): Promise<void>; 
-  	getPresenceDefinition0(definitionId: string, opts?: PresenceApi.getPresenceDefinition0Options): Promise<Models.OrganizationPresenceDefinition>; 
-  	getPresenceDefinitions0(opts?: PresenceApi.getPresenceDefinitions0Options): Promise<Models.OrganizationPresenceDefinitionEntityListing>; 
-  	getPresenceSettings(): Promise<Models.PresenceSettings>; 
-  	getPresenceSource(sourceId: string): Promise<Models.Source>; 
-  	getPresenceSources(opts?: PresenceApi.getPresenceSourcesOptions): Promise<Models.SourceEntityListing>; 
-  	getPresenceUserPrimarysource(userId: string): Promise<Models.UserPrimarySource>; 
-  	getPresencedefinition(presenceId: string, opts?: PresenceApi.getPresencedefinitionOptions): Promise<Models.OrganizationPresence>; 
-  	getPresencedefinitions(opts?: PresenceApi.getPresencedefinitionsOptions): Promise<Models.OrganizationPresenceEntityListing>; 
-  	getSystempresences(): Promise<Array<Models.SystemPresence>>; 
-  	getUserPresence(userId: string, sourceId: string): Promise<Models.UserPresence>; 
-  	getUserPresencesPurecloud(userId: string): Promise<Models.UserPresence>; 
-  	getUsersPresenceBulk(sourceId: string, opts?: PresenceApi.getUsersPresenceBulkOptions): Promise<Array<Models.UcUserPresence>>; 
-  	getUsersPresencesPurecloudBulk(opts?: PresenceApi.getUsersPresencesPurecloudBulkOptions): Promise<Array<Models.UcUserPresence>>; 
-  	patchUserPresence(userId: string, sourceId: string, body: Models.UserPresence): Promise<Models.UserPresence>; 
-  	patchUserPresencesPurecloud(userId: string, body: Models.UserPresence): Promise<Models.UserPresence>; 
-  	postPresenceDefinitions0(body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>; 
-  	postPresenceSources(body: Models.Source): Promise<Models.Source>; 
-  	postPresencedefinitions(body: Models.OrganizationPresence): Promise<Models.OrganizationPresence>; 
-  	putPresenceDefinition0(definitionId: string, body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>; 
-  	putPresenceSettings(body: Models.PresenceSettings): Promise<Models.PresenceSettings>; 
-  	putPresenceSource(sourceId: string, body: Models.Source): Promise<Models.Source>; 
-  	putPresenceUserPrimarysource(userId: string, body: Models.UserPrimarySource): Promise<Models.UserPrimarySource>; 
-  	putPresencedefinition(presenceId: string, body: Models.OrganizationPresence): Promise<Models.OrganizationPresence>; 
+declare class PresenceApi {
+	constructor(apiClient?: ApiClientClass);
+  	deletePresenceDefinition0(definitionId: string): Promise<void>;
+  	deletePresenceSource(sourceId: string): Promise<void>;
+  	deletePresencedefinition(presenceId: string): Promise<void>;
+  	getPresenceDefinition0(definitionId: string, opts?: PresenceApi.getPresenceDefinition0Options): Promise<Models.OrganizationPresenceDefinition>;
+  	getPresenceDefinitions0(opts?: PresenceApi.getPresenceDefinitions0Options): Promise<Models.OrganizationPresenceDefinitionEntityListing>;
+  	getPresenceSettings(): Promise<Models.PresenceSettings>;
+  	getPresenceSource(sourceId: string): Promise<Models.Source>;
+  	getPresenceSources(opts?: PresenceApi.getPresenceSourcesOptions): Promise<Models.SourceEntityListing>;
+  	getPresenceUserPrimarysource(userId: string): Promise<Models.UserPrimarySource>;
+  	getPresencedefinition(presenceId: string, opts?: PresenceApi.getPresencedefinitionOptions): Promise<Models.OrganizationPresence>;
+  	getPresencedefinitions(opts?: PresenceApi.getPresencedefinitionsOptions): Promise<Models.OrganizationPresenceEntityListing>;
+  	getSystempresences(): Promise<Array<Models.SystemPresence>>;
+  	getUserPresence(userId: string, sourceId: string): Promise<Models.UserPresence>;
+  	getUserPresencesPurecloud(userId: string): Promise<Models.UserPresence>;
+  	getUsersPresenceBulk(sourceId: string, opts?: PresenceApi.getUsersPresenceBulkOptions): Promise<Array<Models.UcUserPresence>>;
+  	getUsersPresencesPurecloudBulk(opts?: PresenceApi.getUsersPresencesPurecloudBulkOptions): Promise<Array<Models.UcUserPresence>>;
+  	patchUserPresence(userId: string, sourceId: string, body: Models.UserPresence): Promise<Models.UserPresence>;
+  	patchUserPresencesPurecloud(userId: string, body: Models.UserPresence): Promise<Models.UserPresence>;
+  	postPresenceDefinitions0(body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>;
+  	postPresenceSources(body: Models.Source): Promise<Models.Source>;
+  	postPresencedefinitions(body: Models.OrganizationPresence): Promise<Models.OrganizationPresence>;
+  	putPresenceDefinition0(definitionId: string, body: Models.OrganizationPresenceDefinition): Promise<Models.OrganizationPresenceDefinition>;
+  	putPresenceSettings(body: Models.PresenceSettings): Promise<Models.PresenceSettings>;
+  	putPresenceSource(sourceId: string, body: Models.Source): Promise<Models.Source>;
+  	putPresenceUserPrimarysource(userId: string, body: Models.UserPrimarySource): Promise<Models.UserPrimarySource>;
+  	putPresencedefinition(presenceId: string, body: Models.OrganizationPresence): Promise<Models.OrganizationPresence>;
   	putUsersPresencesBulk(body: Array<Models.MutableUserPresence>): Promise<Array<Models.UserPresence>>;
 }
 
@@ -4553,14 +4616,15 @@ declare namespace PresenceApi {
 	}
 }
 
-declare class ProcessAutomationApi {  
-  	deleteProcessautomationTrigger(triggerId: string): Promise<void>; 
-  	getProcessautomationTrigger(triggerId: string): Promise<Models.Trigger>; 
-  	getProcessautomationTriggers(opts?: ProcessAutomationApi.getProcessautomationTriggersOptions): Promise<Models.TriggerEntityListing>; 
-  	getProcessautomationTriggersTopics(opts?: ProcessAutomationApi.getProcessautomationTriggersTopicsOptions): Promise<Models.TopicCursorEntityListing>; 
-  	postProcessautomationTriggerTest(triggerId: string, opts?: ProcessAutomationApi.postProcessautomationTriggerTestOptions): Promise<Models.TestModeResults>; 
-  	postProcessautomationTriggers(body: Models.CreateTriggerRequest): Promise<Models.Trigger>; 
-  	postProcessautomationTriggersTopicTest(topicName: string, opts?: ProcessAutomationApi.postProcessautomationTriggersTopicTestOptions): Promise<Models.TestModeEventResults>; 
+declare class ProcessAutomationApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteProcessautomationTrigger(triggerId: string): Promise<void>;
+  	getProcessautomationTrigger(triggerId: string): Promise<Models.Trigger>;
+  	getProcessautomationTriggers(opts?: ProcessAutomationApi.getProcessautomationTriggersOptions): Promise<Models.TriggerEntityListing>;
+  	getProcessautomationTriggersTopics(opts?: ProcessAutomationApi.getProcessautomationTriggersTopicsOptions): Promise<Models.TopicCursorEntityListing>;
+  	postProcessautomationTriggerTest(triggerId: string, opts?: ProcessAutomationApi.postProcessautomationTriggerTestOptions): Promise<Models.TestModeResults>;
+  	postProcessautomationTriggers(body: Models.CreateTriggerRequest): Promise<Models.Trigger>;
+  	postProcessautomationTriggersTopicTest(topicName: string, opts?: ProcessAutomationApi.postProcessautomationTriggersTopicTestOptions): Promise<Models.TestModeEventResults>;
   	putProcessautomationTrigger(triggerId: string, body: Models.UpdateTriggerRequest): Promise<Models.Trigger>;
 }
 
@@ -4586,68 +4650,69 @@ declare namespace ProcessAutomationApi {
 	}
 }
 
-declare class QualityApi {  
-  	deleteQualityCalibration(calibrationId: string, calibratorId: string): Promise<Models.Calibration>; 
-  	deleteQualityConversationEvaluation(conversationId: string, evaluationId: string, opts?: QualityApi.deleteQualityConversationEvaluationOptions): Promise<Models.EvaluationResponse>; 
-  	deleteQualityForm(formId: string): Promise<void>; 
-  	deleteQualityFormsEvaluation(formId: string): Promise<void>; 
-  	deleteQualityFormsSurvey(formId: string): Promise<void>; 
-  	getAnalyticsEvaluationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsEvaluationsAggregatesJobResults(jobId: string, opts?: QualityApi.getAnalyticsEvaluationsAggregatesJobResultsOptions): Promise<Models.EvaluationAsyncAggregateQueryResponse>; 
-  	getAnalyticsSurveysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsSurveysAggregatesJobResults(jobId: string, opts?: QualityApi.getAnalyticsSurveysAggregatesJobResultsOptions): Promise<Models.SurveyAsyncAggregateQueryResponse>; 
-  	getQualityAgentsActivity(opts?: QualityApi.getQualityAgentsActivityOptions): Promise<Models.AgentActivityEntityListing>; 
-  	getQualityCalibration(calibrationId: string, opts?: QualityApi.getQualityCalibrationOptions): Promise<Models.Calibration>; 
-  	getQualityCalibrations(calibratorId: string, opts?: QualityApi.getQualityCalibrationsOptions): Promise<Models.CalibrationEntityListing>; 
-  	getQualityConversationEvaluation(conversationId: string, evaluationId: string, opts?: QualityApi.getQualityConversationEvaluationOptions): Promise<Models.EvaluationResponse>; 
-  	getQualityConversationSurveys(conversationId: string): Promise<Array<Models.Survey>>; 
-  	getQualityConversationsAuditsQueryTransactionId(transactionId: string): Promise<Models.QualityAuditQueryExecutionStatusResponse>; 
-  	getQualityConversationsAuditsQueryTransactionIdResults(transactionId: string, opts?: QualityApi.getQualityConversationsAuditsQueryTransactionIdResultsOptions): Promise<Models.QualityAuditQueryExecutionResultsResponse>; 
-  	getQualityEvaluationsQuery(opts?: QualityApi.getQualityEvaluationsQueryOptions): Promise<Models.EvaluationEntityListing>; 
-  	getQualityEvaluatorsActivity(opts?: QualityApi.getQualityEvaluatorsActivityOptions): Promise<Models.EvaluatorActivityEntityListing>; 
-  	getQualityForm(formId: string): Promise<Models.EvaluationFormResponse>; 
-  	getQualityFormVersions(formId: string, opts?: QualityApi.getQualityFormVersionsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
-  	getQualityForms(opts?: QualityApi.getQualityFormsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
-  	getQualityFormsEvaluation(formId: string): Promise<Models.EvaluationFormResponse>; 
-  	getQualityFormsEvaluationVersions(formId: string, opts?: QualityApi.getQualityFormsEvaluationVersionsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
-  	getQualityFormsEvaluations(opts?: QualityApi.getQualityFormsEvaluationsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
-  	getQualityFormsEvaluationsBulkContexts(contextId: Array<string>): Promise<Array<Models.EvaluationFormResponse>>; 
-  	getQualityFormsSurvey(formId: string): Promise<Models.SurveyForm>; 
-  	getQualityFormsSurveyVersions(formId: string, opts?: QualityApi.getQualityFormsSurveyVersionsOptions): Promise<Models.SurveyFormEntityListing>; 
-  	getQualityFormsSurveys(opts?: QualityApi.getQualityFormsSurveysOptions): Promise<Models.SurveyFormEntityListing>; 
-  	getQualityFormsSurveysBulk(id: Array<string>): Promise<Models.SurveyFormEntityListing>; 
-  	getQualityFormsSurveysBulkContexts(contextId: Array<string>, opts?: QualityApi.getQualityFormsSurveysBulkContextsOptions): Promise<Array<Models.SurveyForm>>; 
-  	getQualityPublishedform(formId: string): Promise<Models.EvaluationFormResponse>; 
-  	getQualityPublishedforms(opts?: QualityApi.getQualityPublishedformsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
-  	getQualityPublishedformsEvaluation(formId: string): Promise<Models.EvaluationFormResponse>; 
-  	getQualityPublishedformsEvaluations(opts?: QualityApi.getQualityPublishedformsEvaluationsOptions): Promise<Models.EvaluationFormResponseEntityListing>; 
-  	getQualityPublishedformsSurvey(formId: string): Promise<Models.SurveyForm>; 
-  	getQualityPublishedformsSurveys(opts?: QualityApi.getQualityPublishedformsSurveysOptions): Promise<Models.SurveyFormEntityListing>; 
-  	getQualitySurvey(surveyId: string): Promise<Models.Survey>; 
-  	getQualitySurveysScorable(customerSurveyUrl: string): Promise<Models.ScorableSurvey>; 
-  	patchQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>; 
-  	postAnalyticsEvaluationsAggregatesJobs(body: Models.EvaluationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>; 
-  	postAnalyticsSurveysAggregatesJobs(body: Models.SurveyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsSurveysAggregatesQuery(body: Models.SurveyAggregationQuery): Promise<Models.SurveyAggregateQueryResponse>; 
-  	postQualityCalibrations(body: Models.CalibrationCreate, opts?: QualityApi.postQualityCalibrationsOptions): Promise<Models.Calibration>; 
-  	postQualityConversationEvaluations(conversationId: string, body: Models.EvaluationCreateBody, opts?: QualityApi.postQualityConversationEvaluationsOptions): Promise<Models.Evaluation>; 
-  	postQualityConversationsAuditsQuery(body: Models.QMAuditQueryRequest): Promise<Models.QualityAuditQueryExecutionStatusResponse>; 
-  	postQualityEvaluationsAggregatesQueryMe(body: Models.EvaluationAggregationQueryMe): Promise<Models.EvaluationAggregateQueryResponse>; 
-  	postQualityEvaluationsScoring(body: Models.EvaluationFormAndScoringSet): Promise<Models.EvaluationScoringSet>; 
-  	postQualityForms(body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
-  	postQualityFormsEvaluations(body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
-  	postQualityFormsSurveys(body: Models.SurveyForm): Promise<Models.SurveyForm>; 
-  	postQualityPublishedforms(body: Models.PublishForm): Promise<Models.EvaluationFormResponse>; 
-  	postQualityPublishedformsEvaluations(body: Models.PublishForm): Promise<Models.EvaluationFormResponse>; 
-  	postQualityPublishedformsSurveys(body: Models.PublishForm): Promise<Models.SurveyForm>; 
-  	postQualitySurveysScoring(body: Models.SurveyFormAndScoringSet): Promise<Models.SurveyScoringSet>; 
-  	putQualityCalibration(calibrationId: string, body: Models.Calibration): Promise<Models.Calibration>; 
-  	putQualityConversationEvaluation(conversationId: string, evaluationId: string, body: Models.Evaluation, opts?: QualityApi.putQualityConversationEvaluationOptions): Promise<Models.EvaluationResponse>; 
-  	putQualityForm(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
-  	putQualityFormsEvaluation(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>; 
-  	putQualityFormsEvaluationAiscoringSettings(formId: string, body: Models.AiScoringSettings): Promise<Models.AiScoringSettings>; 
-  	putQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>; 
+declare class QualityApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteQualityCalibration(calibrationId: string, calibratorId: string): Promise<Models.Calibration>;
+  	deleteQualityConversationEvaluation(conversationId: string, evaluationId: string, opts?: QualityApi.deleteQualityConversationEvaluationOptions): Promise<Models.EvaluationResponse>;
+  	deleteQualityForm(formId: string): Promise<void>;
+  	deleteQualityFormsEvaluation(formId: string): Promise<void>;
+  	deleteQualityFormsSurvey(formId: string): Promise<void>;
+  	getAnalyticsEvaluationsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsEvaluationsAggregatesJobResults(jobId: string, opts?: QualityApi.getAnalyticsEvaluationsAggregatesJobResultsOptions): Promise<Models.EvaluationAsyncAggregateQueryResponse>;
+  	getAnalyticsSurveysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsSurveysAggregatesJobResults(jobId: string, opts?: QualityApi.getAnalyticsSurveysAggregatesJobResultsOptions): Promise<Models.SurveyAsyncAggregateQueryResponse>;
+  	getQualityAgentsActivity(opts?: QualityApi.getQualityAgentsActivityOptions): Promise<Models.AgentActivityEntityListing>;
+  	getQualityCalibration(calibrationId: string, opts?: QualityApi.getQualityCalibrationOptions): Promise<Models.Calibration>;
+  	getQualityCalibrations(calibratorId: string, opts?: QualityApi.getQualityCalibrationsOptions): Promise<Models.CalibrationEntityListing>;
+  	getQualityConversationEvaluation(conversationId: string, evaluationId: string, opts?: QualityApi.getQualityConversationEvaluationOptions): Promise<Models.EvaluationResponse>;
+  	getQualityConversationSurveys(conversationId: string): Promise<Array<Models.Survey>>;
+  	getQualityConversationsAuditsQueryTransactionId(transactionId: string): Promise<Models.QualityAuditQueryExecutionStatusResponse>;
+  	getQualityConversationsAuditsQueryTransactionIdResults(transactionId: string, opts?: QualityApi.getQualityConversationsAuditsQueryTransactionIdResultsOptions): Promise<Models.QualityAuditQueryExecutionResultsResponse>;
+  	getQualityEvaluationsQuery(opts?: QualityApi.getQualityEvaluationsQueryOptions): Promise<Models.EvaluationEntityListing>;
+  	getQualityEvaluatorsActivity(opts?: QualityApi.getQualityEvaluatorsActivityOptions): Promise<Models.EvaluatorActivityEntityListing>;
+  	getQualityForm(formId: string): Promise<Models.EvaluationFormResponse>;
+  	getQualityFormVersions(formId: string, opts?: QualityApi.getQualityFormVersionsOptions): Promise<Models.EvaluationFormResponseEntityListing>;
+  	getQualityForms(opts?: QualityApi.getQualityFormsOptions): Promise<Models.EvaluationFormResponseEntityListing>;
+  	getQualityFormsEvaluation(formId: string): Promise<Models.EvaluationFormResponse>;
+  	getQualityFormsEvaluationVersions(formId: string, opts?: QualityApi.getQualityFormsEvaluationVersionsOptions): Promise<Models.EvaluationFormResponseEntityListing>;
+  	getQualityFormsEvaluations(opts?: QualityApi.getQualityFormsEvaluationsOptions): Promise<Models.EvaluationFormResponseEntityListing>;
+  	getQualityFormsEvaluationsBulkContexts(contextId: Array<string>): Promise<Array<Models.EvaluationFormResponse>>;
+  	getQualityFormsSurvey(formId: string): Promise<Models.SurveyForm>;
+  	getQualityFormsSurveyVersions(formId: string, opts?: QualityApi.getQualityFormsSurveyVersionsOptions): Promise<Models.SurveyFormEntityListing>;
+  	getQualityFormsSurveys(opts?: QualityApi.getQualityFormsSurveysOptions): Promise<Models.SurveyFormEntityListing>;
+  	getQualityFormsSurveysBulk(id: Array<string>): Promise<Models.SurveyFormEntityListing>;
+  	getQualityFormsSurveysBulkContexts(contextId: Array<string>, opts?: QualityApi.getQualityFormsSurveysBulkContextsOptions): Promise<Array<Models.SurveyForm>>;
+  	getQualityPublishedform(formId: string): Promise<Models.EvaluationFormResponse>;
+  	getQualityPublishedforms(opts?: QualityApi.getQualityPublishedformsOptions): Promise<Models.EvaluationFormResponseEntityListing>;
+  	getQualityPublishedformsEvaluation(formId: string): Promise<Models.EvaluationFormResponse>;
+  	getQualityPublishedformsEvaluations(opts?: QualityApi.getQualityPublishedformsEvaluationsOptions): Promise<Models.EvaluationFormResponseEntityListing>;
+  	getQualityPublishedformsSurvey(formId: string): Promise<Models.SurveyForm>;
+  	getQualityPublishedformsSurveys(opts?: QualityApi.getQualityPublishedformsSurveysOptions): Promise<Models.SurveyFormEntityListing>;
+  	getQualitySurvey(surveyId: string): Promise<Models.Survey>;
+  	getQualitySurveysScorable(customerSurveyUrl: string): Promise<Models.ScorableSurvey>;
+  	patchQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>;
+  	postAnalyticsEvaluationsAggregatesJobs(body: Models.EvaluationAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>;
+  	postAnalyticsSurveysAggregatesJobs(body: Models.SurveyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsSurveysAggregatesQuery(body: Models.SurveyAggregationQuery): Promise<Models.SurveyAggregateQueryResponse>;
+  	postQualityCalibrations(body: Models.CalibrationCreate, opts?: QualityApi.postQualityCalibrationsOptions): Promise<Models.Calibration>;
+  	postQualityConversationEvaluations(conversationId: string, body: Models.EvaluationCreateBody, opts?: QualityApi.postQualityConversationEvaluationsOptions): Promise<Models.Evaluation>;
+  	postQualityConversationsAuditsQuery(body: Models.QMAuditQueryRequest): Promise<Models.QualityAuditQueryExecutionStatusResponse>;
+  	postQualityEvaluationsAggregatesQueryMe(body: Models.EvaluationAggregationQueryMe): Promise<Models.EvaluationAggregateQueryResponse>;
+  	postQualityEvaluationsScoring(body: Models.EvaluationFormAndScoringSet): Promise<Models.EvaluationScoringSet>;
+  	postQualityForms(body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>;
+  	postQualityFormsEvaluations(body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>;
+  	postQualityFormsSurveys(body: Models.SurveyForm): Promise<Models.SurveyForm>;
+  	postQualityPublishedforms(body: Models.PublishForm): Promise<Models.EvaluationFormResponse>;
+  	postQualityPublishedformsEvaluations(body: Models.PublishForm): Promise<Models.EvaluationFormResponse>;
+  	postQualityPublishedformsSurveys(body: Models.PublishForm): Promise<Models.SurveyForm>;
+  	postQualitySurveysScoring(body: Models.SurveyFormAndScoringSet): Promise<Models.SurveyScoringSet>;
+  	putQualityCalibration(calibrationId: string, body: Models.Calibration): Promise<Models.Calibration>;
+  	putQualityConversationEvaluation(conversationId: string, evaluationId: string, body: Models.Evaluation, opts?: QualityApi.putQualityConversationEvaluationOptions): Promise<Models.EvaluationResponse>;
+  	putQualityForm(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>;
+  	putQualityFormsEvaluation(formId: string, body: Models.EvaluationForm): Promise<Models.EvaluationFormResponse>;
+  	putQualityFormsEvaluationAiscoringSettings(formId: string, body: Models.AiScoringSettings): Promise<Models.AiScoringSettings>;
+  	putQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>;
   	putQualitySurveysScorable(customerSurveyUrl: string, body: Models.ScorableSurvey): Promise<Models.ScorableSurvey>;
 }
 
@@ -4676,6 +4741,7 @@ declare namespace QualityApi {
 		"group"?: string;
 		"agentTeamId"?: string;
 		"formContextId"?: string;
+		"userState"?: string;
 	}
 	export interface getQualityCalibrationOptions { 
 		"calibratorId"?: string;
@@ -4720,6 +4786,7 @@ declare namespace QualityApi {
 		"expandAnswerTotalScores"?: boolean;
 		"maximum"?: number;
 		"sortOrder"?: string;
+		"includeDeletedUsers"?: boolean;
 	}
 	export interface getQualityEvaluatorsActivityOptions { 
 		"pageSize"?: number;
@@ -4810,65 +4877,66 @@ declare namespace QualityApi {
 	}
 }
 
-declare class RecordingApi {  
-  	deleteConversationRecordingAnnotation(conversationId: string, recordingId: string, annotationId: string): Promise<void>; 
-  	deleteOrphanrecording(orphanId: string): Promise<Models.OrphanRecording>; 
-  	deleteRecordingCrossplatformMediaretentionpolicies(ids: string): Promise<void>; 
-  	deleteRecordingCrossplatformMediaretentionpolicy(policyId: string): Promise<void>; 
-  	deleteRecordingJob(jobId: string): Promise<void>; 
-  	deleteRecordingMediaretentionpolicies(ids: string): Promise<void>; 
-  	deleteRecordingMediaretentionpolicy(policyId: string): Promise<void>; 
-  	getConversationRecording(conversationId: string, recordingId: string, opts?: RecordingApi.getConversationRecordingOptions): Promise<Models.Recording>; 
-  	getConversationRecordingAnnotation(conversationId: string, recordingId: string, annotationId: string): Promise<Models.Annotation>; 
-  	getConversationRecordingAnnotations(conversationId: string, recordingId: string): Promise<Array<Models.Annotation>>; 
-  	getConversationRecordingmetadata(conversationId: string): Promise<Array<Models.RecordingMetadata>>; 
-  	getConversationRecordingmetadataRecordingId(conversationId: string, recordingId: string): Promise<Models.RecordingMetadata>; 
-  	getConversationRecordings(conversationId: string, opts?: RecordingApi.getConversationRecordingsOptions): Promise<Array<Models.Recording>>; 
-  	getOrphanrecording(orphanId: string): Promise<Models.OrphanRecording>; 
-  	getOrphanrecordingMedia(orphanId: string, opts?: RecordingApi.getOrphanrecordingMediaOptions): Promise<Models.Recording>; 
-  	getOrphanrecordings(opts?: RecordingApi.getOrphanrecordingsOptions): Promise<Models.OrphanRecordingListing>; 
-  	getRecordingBatchrequest(jobId: string): Promise<Models.BatchDownloadJobStatusResult>; 
-  	getRecordingCrossplatformMediaretentionpolicies(opts?: RecordingApi.getRecordingCrossplatformMediaretentionpoliciesOptions): Promise<Models.PolicyEntityListing>; 
-  	getRecordingCrossplatformMediaretentionpolicy(policyId: string): Promise<Models.CrossPlatformPolicy>; 
-  	getRecordingJob(jobId: string): Promise<Models.RecordingJob>; 
-  	getRecordingJobFailedrecordings(jobId: string, opts?: RecordingApi.getRecordingJobFailedrecordingsOptions): Promise<Models.FailedRecordingEntityListing>; 
-  	getRecordingJobs(opts?: RecordingApi.getRecordingJobsOptions): Promise<Models.RecordingJobEntityListing>; 
-  	getRecordingKeyconfiguration(keyConfigurationId: string): Promise<Models.RecordingEncryptionConfiguration>; 
-  	getRecordingKeyconfigurations(): Promise<Models.RecordingEncryptionConfigurationListing>; 
-  	getRecordingMediaretentionpolicies(opts?: RecordingApi.getRecordingMediaretentionpoliciesOptions): Promise<Models.PolicyEntityListing>; 
-  	getRecordingMediaretentionpolicy(policyId: string): Promise<Models.Policy>; 
-  	getRecordingRecordingkeys(opts?: RecordingApi.getRecordingRecordingkeysOptions): Promise<Models.EncryptionKeyEntityListing>; 
-  	getRecordingRecordingkeysRotationschedule(): Promise<Models.KeyRotationSchedule>; 
-  	getRecordingSettings(opts?: RecordingApi.getRecordingSettingsOptions): Promise<Models.RecordingSettings>; 
-  	getRecordingUploadsReport(reportId: string): Promise<Models.RecordingUploadReport>; 
-  	getRecordingsRetentionQuery(retentionThresholdDays: number, opts?: RecordingApi.getRecordingsRetentionQueryOptions): Promise<Models.RecordingRetentionCursorEntityListing>; 
-  	getRecordingsScreensessions(opts?: RecordingApi.getRecordingsScreensessionsOptions): Promise<Models.ScreenRecordingSessionListing>; 
-  	getRecordingsScreensessionsDetails(): Promise<Models.ScreenRecordingActiveSessions>; 
-  	patchRecordingCrossplatformMediaretentionpolicy(policyId: string, body: Models.CrossPlatformPolicyUpdate): Promise<Models.CrossPlatformPolicy>; 
-  	patchRecordingMediaretentionpolicy(policyId: string, body: Models.PolicyUpdate): Promise<Models.Policy>; 
-  	patchRecordingsScreensession(recordingSessionId: string, opts?: RecordingApi.patchRecordingsScreensessionOptions): Promise<void>; 
-  	postConversationRecordingAnnotations(conversationId: string, recordingId: string, body: Models.Annotation): Promise<Models.Annotation>; 
-  	postRecordingBatchrequests(body: Models.BatchDownloadJobSubmission): Promise<Models.BatchDownloadJobSubmissionResult>; 
-  	postRecordingCrossplatformMediaretentionpolicies(body: Models.CrossPlatformPolicyCreate): Promise<Models.CrossPlatformPolicy>; 
-  	postRecordingJobs(body: Models.RecordingJobsQuery): Promise<Models.RecordingJob>; 
-  	postRecordingKeyconfigurations(body: Models.RecordingEncryptionConfiguration): Promise<Models.RecordingEncryptionConfiguration>; 
-  	postRecordingKeyconfigurationsValidate(body: Models.RecordingEncryptionConfiguration): Promise<Models.RecordingEncryptionConfiguration>; 
-  	postRecordingLocalkeys(body: Models.LocalEncryptionKeyRequest): Promise<Models.EncryptionKey>; 
-  	postRecordingMediaretentionpolicies(body: Models.PolicyCreate): Promise<Models.Policy>; 
-  	postRecordingRecordingkeys(): Promise<Models.EncryptionKey>; 
-  	postRecordingUploadsReports(body: Models.RecordingUploadReportRequest): Promise<Models.RecordingUploadReport>; 
-  	postRecordingsDeletionprotection(body: Models.ConversationDeletionProtectionQuery): Promise<Array<Models.AddressableEntityRef>>; 
-  	postRecordingsScreensessionsAcknowledge(body: Models.AcknowledgeScreenRecordingRequest): Promise<void>; 
-  	postRecordingsScreensessionsMetadata(body: Models.ScreenRecordingMetaDataRequest): Promise<void>; 
-  	putConversationRecording(conversationId: string, recordingId: string, body: Models.Recording, opts?: RecordingApi.putConversationRecordingOptions): Promise<Models.Recording>; 
-  	putConversationRecordingAnnotation(conversationId: string, recordingId: string, annotationId: string, body: Models.Annotation): Promise<Models.Annotation>; 
-  	putOrphanrecording(orphanId: string, opts?: RecordingApi.putOrphanrecordingOptions): Promise<Models.Recording>; 
-  	putRecordingCrossplatformMediaretentionpolicy(policyId: string, body: Models.CrossPlatformPolicy): Promise<Models.CrossPlatformPolicy>; 
-  	putRecordingJob(jobId: string, body: Models.ExecuteRecordingJobsQuery): Promise<Models.RecordingJob>; 
-  	putRecordingKeyconfiguration(keyConfigurationId: string, body: Models.RecordingEncryptionConfiguration): Promise<Models.RecordingEncryptionConfiguration>; 
-  	putRecordingMediaretentionpolicy(policyId: string, body: Models.Policy): Promise<Models.Policy>; 
-  	putRecordingRecordingkeysRotationschedule(body: Models.KeyRotationSchedule): Promise<Models.KeyRotationSchedule>; 
-  	putRecordingSettings(body: Models.RecordingSettings): Promise<Models.RecordingSettings>; 
+declare class RecordingApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteConversationRecordingAnnotation(conversationId: string, recordingId: string, annotationId: string): Promise<void>;
+  	deleteOrphanrecording(orphanId: string): Promise<Models.OrphanRecording>;
+  	deleteRecordingCrossplatformMediaretentionpolicies(ids: string): Promise<void>;
+  	deleteRecordingCrossplatformMediaretentionpolicy(policyId: string): Promise<void>;
+  	deleteRecordingJob(jobId: string): Promise<void>;
+  	deleteRecordingMediaretentionpolicies(ids: string): Promise<void>;
+  	deleteRecordingMediaretentionpolicy(policyId: string): Promise<void>;
+  	getConversationRecording(conversationId: string, recordingId: string, opts?: RecordingApi.getConversationRecordingOptions): Promise<Models.Recording>;
+  	getConversationRecordingAnnotation(conversationId: string, recordingId: string, annotationId: string): Promise<Models.Annotation>;
+  	getConversationRecordingAnnotations(conversationId: string, recordingId: string): Promise<Array<Models.Annotation>>;
+  	getConversationRecordingmetadata(conversationId: string): Promise<Array<Models.RecordingMetadata>>;
+  	getConversationRecordingmetadataRecordingId(conversationId: string, recordingId: string): Promise<Models.RecordingMetadata>;
+  	getConversationRecordings(conversationId: string, opts?: RecordingApi.getConversationRecordingsOptions): Promise<Array<Models.Recording>>;
+  	getOrphanrecording(orphanId: string): Promise<Models.OrphanRecording>;
+  	getOrphanrecordingMedia(orphanId: string, opts?: RecordingApi.getOrphanrecordingMediaOptions): Promise<Models.Recording>;
+  	getOrphanrecordings(opts?: RecordingApi.getOrphanrecordingsOptions): Promise<Models.OrphanRecordingListing>;
+  	getRecordingBatchrequest(jobId: string): Promise<Models.BatchDownloadJobStatusResult>;
+  	getRecordingCrossplatformMediaretentionpolicies(opts?: RecordingApi.getRecordingCrossplatformMediaretentionpoliciesOptions): Promise<Models.PolicyEntityListing>;
+  	getRecordingCrossplatformMediaretentionpolicy(policyId: string): Promise<Models.CrossPlatformPolicy>;
+  	getRecordingJob(jobId: string): Promise<Models.RecordingJob>;
+  	getRecordingJobFailedrecordings(jobId: string, opts?: RecordingApi.getRecordingJobFailedrecordingsOptions): Promise<Models.FailedRecordingEntityListing>;
+  	getRecordingJobs(opts?: RecordingApi.getRecordingJobsOptions): Promise<Models.RecordingJobEntityListing>;
+  	getRecordingKeyconfiguration(keyConfigurationId: string): Promise<Models.RecordingEncryptionConfiguration>;
+  	getRecordingKeyconfigurations(): Promise<Models.RecordingEncryptionConfigurationListing>;
+  	getRecordingMediaretentionpolicies(opts?: RecordingApi.getRecordingMediaretentionpoliciesOptions): Promise<Models.PolicyEntityListing>;
+  	getRecordingMediaretentionpolicy(policyId: string): Promise<Models.Policy>;
+  	getRecordingRecordingkeys(opts?: RecordingApi.getRecordingRecordingkeysOptions): Promise<Models.EncryptionKeyEntityListing>;
+  	getRecordingRecordingkeysRotationschedule(): Promise<Models.KeyRotationSchedule>;
+  	getRecordingSettings(opts?: RecordingApi.getRecordingSettingsOptions): Promise<Models.RecordingSettings>;
+  	getRecordingUploadsReport(reportId: string): Promise<Models.RecordingUploadReport>;
+  	getRecordingsRetentionQuery(retentionThresholdDays: number, opts?: RecordingApi.getRecordingsRetentionQueryOptions): Promise<Models.RecordingRetentionCursorEntityListing>;
+  	getRecordingsScreensessions(opts?: RecordingApi.getRecordingsScreensessionsOptions): Promise<Models.ScreenRecordingSessionListing>;
+  	getRecordingsScreensessionsDetails(): Promise<Models.ScreenRecordingActiveSessions>;
+  	patchRecordingCrossplatformMediaretentionpolicy(policyId: string, body: Models.CrossPlatformPolicyUpdate): Promise<Models.CrossPlatformPolicy>;
+  	patchRecordingMediaretentionpolicy(policyId: string, body: Models.PolicyUpdate): Promise<Models.Policy>;
+  	patchRecordingsScreensession(recordingSessionId: string, opts?: RecordingApi.patchRecordingsScreensessionOptions): Promise<void>;
+  	postConversationRecordingAnnotations(conversationId: string, recordingId: string, body: Models.Annotation): Promise<Models.Annotation>;
+  	postRecordingBatchrequests(body: Models.BatchDownloadJobSubmission): Promise<Models.BatchDownloadJobSubmissionResult>;
+  	postRecordingCrossplatformMediaretentionpolicies(body: Models.CrossPlatformPolicyCreate): Promise<Models.CrossPlatformPolicy>;
+  	postRecordingJobs(body: Models.RecordingJobsQuery): Promise<Models.RecordingJob>;
+  	postRecordingKeyconfigurations(body: Models.RecordingEncryptionConfiguration): Promise<Models.RecordingEncryptionConfiguration>;
+  	postRecordingKeyconfigurationsValidate(body: Models.RecordingEncryptionConfiguration): Promise<Models.RecordingEncryptionConfiguration>;
+  	postRecordingLocalkeys(body: Models.LocalEncryptionKeyRequest): Promise<Models.EncryptionKey>;
+  	postRecordingMediaretentionpolicies(body: Models.PolicyCreate): Promise<Models.Policy>;
+  	postRecordingRecordingkeys(): Promise<Models.EncryptionKey>;
+  	postRecordingUploadsReports(body: Models.RecordingUploadReportRequest): Promise<Models.RecordingUploadReport>;
+  	postRecordingsDeletionprotection(body: Models.ConversationDeletionProtectionQuery): Promise<Array<Models.AddressableEntityRef>>;
+  	postRecordingsScreensessionsAcknowledge(body: Models.AcknowledgeScreenRecordingRequest): Promise<void>;
+  	postRecordingsScreensessionsMetadata(body: Models.ScreenRecordingMetaDataRequest): Promise<void>;
+  	putConversationRecording(conversationId: string, recordingId: string, body: Models.Recording, opts?: RecordingApi.putConversationRecordingOptions): Promise<Models.Recording>;
+  	putConversationRecordingAnnotation(conversationId: string, recordingId: string, annotationId: string, body: Models.Annotation): Promise<Models.Annotation>;
+  	putOrphanrecording(orphanId: string, opts?: RecordingApi.putOrphanrecordingOptions): Promise<Models.Recording>;
+  	putRecordingCrossplatformMediaretentionpolicy(policyId: string, body: Models.CrossPlatformPolicy): Promise<Models.CrossPlatformPolicy>;
+  	putRecordingJob(jobId: string, body: Models.ExecuteRecordingJobsQuery): Promise<Models.RecordingJob>;
+  	putRecordingKeyconfiguration(keyConfigurationId: string, body: Models.RecordingEncryptionConfiguration): Promise<Models.RecordingEncryptionConfiguration>;
+  	putRecordingMediaretentionpolicy(policyId: string, body: Models.Policy): Promise<Models.Policy>;
+  	putRecordingRecordingkeysRotationschedule(body: Models.KeyRotationSchedule): Promise<Models.KeyRotationSchedule>;
+  	putRecordingSettings(body: Models.RecordingSettings): Promise<Models.RecordingSettings>;
   	putRecordingsDeletionprotection(opts?: RecordingApi.putRecordingsDeletionprotectionOptions): Promise<void>;
 }
 
@@ -4980,24 +5048,25 @@ declare namespace RecordingApi {
 	}
 }
 
-declare class ResponseManagementApi {  
-  	deleteResponsemanagementLibrary(libraryId: string): Promise<void>; 
-  	deleteResponsemanagementResponse(responseId: string): Promise<void>; 
-  	deleteResponsemanagementResponseasset(responseAssetId: string): Promise<void>; 
-  	getResponsemanagementLibraries(opts?: ResponseManagementApi.getResponsemanagementLibrariesOptions): Promise<Models.LibraryEntityListing>; 
-  	getResponsemanagementLibrary(libraryId: string): Promise<Models.Library>; 
-  	getResponsemanagementResponse(responseId: string, opts?: ResponseManagementApi.getResponsemanagementResponseOptions): Promise<Models.Response>; 
-  	getResponsemanagementResponseasset(responseAssetId: string): Promise<Models.ResponseAsset>; 
-  	getResponsemanagementResponseassetsStatusStatusId(statusId: string): Promise<Models.ResponseAssetStatus>; 
-  	getResponsemanagementResponses(libraryId: string, opts?: ResponseManagementApi.getResponsemanagementResponsesOptions): Promise<Models.ResponseEntityListing>; 
-  	postResponsemanagementLibraries(body: Models.Library): Promise<Models.Library>; 
-  	postResponsemanagementLibrariesBulk(body: Models.LibraryBatchRequest): Promise<Models.LibraryEntityListing>; 
-  	postResponsemanagementResponseassetsSearch(body: Models.ResponseAssetSearchRequest, opts?: ResponseManagementApi.postResponsemanagementResponseassetsSearchOptions): Promise<Models.ResponseAssetSearchResults>; 
-  	postResponsemanagementResponseassetsUploads(body: Models.CreateResponseAssetRequest): Promise<Models.CreateResponseAssetResponse>; 
-  	postResponsemanagementResponses(body: Models.Response, opts?: ResponseManagementApi.postResponsemanagementResponsesOptions): Promise<Models.Response>; 
-  	postResponsemanagementResponsesQuery(body: Models.ResponseQueryRequest): Promise<Models.ResponseQueryResults>; 
-  	putResponsemanagementLibrary(libraryId: string, body: Models.Library): Promise<Models.Library>; 
-  	putResponsemanagementResponse(responseId: string, body: Models.Response, opts?: ResponseManagementApi.putResponsemanagementResponseOptions): Promise<Models.Response>; 
+declare class ResponseManagementApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteResponsemanagementLibrary(libraryId: string): Promise<void>;
+  	deleteResponsemanagementResponse(responseId: string): Promise<void>;
+  	deleteResponsemanagementResponseasset(responseAssetId: string): Promise<void>;
+  	getResponsemanagementLibraries(opts?: ResponseManagementApi.getResponsemanagementLibrariesOptions): Promise<Models.LibraryEntityListing>;
+  	getResponsemanagementLibrary(libraryId: string): Promise<Models.Library>;
+  	getResponsemanagementResponse(responseId: string, opts?: ResponseManagementApi.getResponsemanagementResponseOptions): Promise<Models.Response>;
+  	getResponsemanagementResponseasset(responseAssetId: string): Promise<Models.ResponseAsset>;
+  	getResponsemanagementResponseassetsStatusStatusId(statusId: string): Promise<Models.ResponseAssetStatus>;
+  	getResponsemanagementResponses(libraryId: string, opts?: ResponseManagementApi.getResponsemanagementResponsesOptions): Promise<Models.ResponseEntityListing>;
+  	postResponsemanagementLibraries(body: Models.Library): Promise<Models.Library>;
+  	postResponsemanagementLibrariesBulk(body: Models.LibraryBatchRequest): Promise<Models.LibraryEntityListing>;
+  	postResponsemanagementResponseassetsSearch(body: Models.ResponseAssetSearchRequest, opts?: ResponseManagementApi.postResponsemanagementResponseassetsSearchOptions): Promise<Models.ResponseAssetSearchResults>;
+  	postResponsemanagementResponseassetsUploads(body: Models.CreateResponseAssetRequest): Promise<Models.CreateResponseAssetResponse>;
+  	postResponsemanagementResponses(body: Models.Response, opts?: ResponseManagementApi.postResponsemanagementResponsesOptions): Promise<Models.Response>;
+  	postResponsemanagementResponsesQuery(body: Models.ResponseQueryRequest): Promise<Models.ResponseQueryResults>;
+  	putResponsemanagementLibrary(libraryId: string, body: Models.Library): Promise<Models.Library>;
+  	putResponsemanagementResponse(responseId: string, body: Models.Response, opts?: ResponseManagementApi.putResponsemanagementResponseOptions): Promise<Models.Response>;
   	putResponsemanagementResponseasset(responseAssetId: string, body: Models.ResponseAssetRequest): Promise<Models.ResponseAsset>;
 }
 
@@ -5027,156 +5096,157 @@ declare namespace ResponseManagementApi {
 	}
 }
 
-declare class RoutingApi {  
-  	deleteRoutingAssessment(assessmentId: string): Promise<void>; 
-  	deleteRoutingDirectroutingbackupSettingsMe(): Promise<void>; 
-  	deleteRoutingEmailDomain(domainId: string): Promise<void>; 
-  	deleteRoutingEmailDomainRoute(domainName: string, routeId: string): Promise<void>; 
-  	deleteRoutingEmailOutboundDomain(domainId: string): Promise<void>; 
-  	deleteRoutingLanguage(languageId: string): Promise<void>; 
-  	deleteRoutingPredictor(predictorId: string): Promise<void>; 
-  	deleteRoutingQueue(queueId: string, opts?: RoutingApi.deleteRoutingQueueOptions): Promise<void>; 
-  	deleteRoutingQueueMember(queueId: string, memberId: string): Promise<void>; 
-  	deleteRoutingQueueUser(queueId: string, memberId: string): Promise<void>; 
-  	deleteRoutingQueueWrapupcode(queueId: string, codeId: string): Promise<void>; 
-  	deleteRoutingSettings(): Promise<void>; 
-  	deleteRoutingSkill(skillId: string): Promise<void>; 
-  	deleteRoutingSkillgroup(skillGroupId: string): Promise<void>; 
-  	deleteRoutingSmsAddress(addressId: string): Promise<void>; 
-  	deleteRoutingSmsPhonenumber(addressId: string): Promise<void>; 
-  	deleteRoutingUserDirectroutingbackupSettings(userId: string): Promise<void>; 
-  	deleteRoutingUserUtilization(userId: string): Promise<void>; 
-  	deleteRoutingUtilization(): Promise<void>; 
-  	deleteRoutingUtilizationLabel(labelId: string, opts?: RoutingApi.deleteRoutingUtilizationLabelOptions): Promise<void>; 
-  	deleteRoutingUtilizationTag(tagId: string, opts?: RoutingApi.deleteRoutingUtilizationTagOptions): Promise<void>; 
-  	deleteRoutingWrapupcode(codeId: string): Promise<void>; 
-  	deleteUserRoutinglanguage(userId: string, languageId: string): Promise<void>; 
-  	deleteUserRoutingskill(userId: string, skillId: string): Promise<void>; 
-  	getRoutingAssessment(assessmentId: string): Promise<Models.BenefitAssessment>; 
-  	getRoutingAssessments(opts?: RoutingApi.getRoutingAssessmentsOptions): Promise<Models.AssessmentListing>; 
-  	getRoutingAssessmentsJob(jobId: string): Promise<Models.BenefitAssessmentJob>; 
-  	getRoutingAssessmentsJobs(opts?: RoutingApi.getRoutingAssessmentsJobsOptions): Promise<Models.AssessmentJobListing>; 
-  	getRoutingAvailablemediatypes(): Promise<Models.AvailableMediaTypeEntityListing>; 
-  	getRoutingDirectroutingbackupSettingsMe(): Promise<Models.AgentDirectRoutingBackupSettings>; 
-  	getRoutingEmailDomain(domainId: string): Promise<Models.InboundDomain>; 
-  	getRoutingEmailDomainRoute(domainName: string, routeId: string): Promise<Models.InboundRoute>; 
-  	getRoutingEmailDomainRoutes(domainName: string, opts?: RoutingApi.getRoutingEmailDomainRoutesOptions): Promise<Models.InboundRouteEntityListing>; 
-  	getRoutingEmailDomains(opts?: RoutingApi.getRoutingEmailDomainsOptions): Promise<Models.InboundDomainEntityListing>; 
-  	getRoutingEmailOutboundDomain(domainId: string): Promise<Models.OutboundDomain>; 
-  	getRoutingEmailOutboundDomainActivation(domainId: string): Promise<Models.EmailOutboundDomainResult>; 
-  	getRoutingEmailOutboundDomainSearch(domainId: string): Promise<Models.OutboundDomain>; 
-  	getRoutingEmailOutboundDomains(opts?: RoutingApi.getRoutingEmailOutboundDomainsOptions): Promise<Models.OutboundDomainEntityListing>; 
-  	getRoutingEmailSetup(): Promise<Models.EmailSetup>; 
-  	getRoutingLanguage(languageId: string): Promise<Models.Language>; 
-  	getRoutingLanguages(opts?: RoutingApi.getRoutingLanguagesOptions): Promise<Models.LanguageEntityListing>; 
-  	getRoutingMessageRecipient(recipientId: string): Promise<Models.Recipient>; 
-  	getRoutingMessageRecipients(opts?: RoutingApi.getRoutingMessageRecipientsOptions): Promise<Models.RecipientListing>; 
-  	getRoutingPredictor(predictorId: string): Promise<Models.Predictor>; 
-  	getRoutingPredictorModelFeatures(predictorId: string, modelId: string): Promise<Models.PredictorModelFeatureListing>; 
-  	getRoutingPredictorModels(predictorId: string): Promise<Models.PredictorModels>; 
-  	getRoutingPredictors(opts?: RoutingApi.getRoutingPredictorsOptions): Promise<Models.PredictorListing>; 
-  	getRoutingPredictorsKeyperformanceindicators(opts?: RoutingApi.getRoutingPredictorsKeyperformanceindicatorsOptions): Promise<Array<Models.KeyPerformanceIndicator>>; 
-  	getRoutingQueue(queueId: string): Promise<Models.Queue>; 
-  	getRoutingQueueAssistant(queueId: string, opts?: RoutingApi.getRoutingQueueAssistantOptions): Promise<Models.AssistantQueue>; 
-  	getRoutingQueueComparisonperiod(queueId: string, comparisonPeriodId: string): Promise<Models.ComparisonPeriod>; 
-  	getRoutingQueueComparisonperiods(queueId: string): Promise<Models.ComparisonPeriodListing>; 
-  	getRoutingQueueEstimatedwaittime(queueId: string, opts?: RoutingApi.getRoutingQueueEstimatedwaittimeOptions): Promise<Models.EstimatedWaitTimePredictions>; 
-  	getRoutingQueueMediatypeEstimatedwaittime(queueId: string, mediaType: string): Promise<Models.EstimatedWaitTimePredictions>; 
-  	getRoutingQueueMembers(queueId: string, opts?: RoutingApi.getRoutingQueueMembersOptions): Promise<Models.QueueMemberEntityListing>; 
-  	getRoutingQueueUsers(queueId: string, opts?: RoutingApi.getRoutingQueueUsersOptions): Promise<Models.QueueMemberEntityListingV1>; 
-  	getRoutingQueueWrapupcodes(queueId: string, opts?: RoutingApi.getRoutingQueueWrapupcodesOptions): Promise<Models.WrapupCodeEntityListing>; 
-  	getRoutingQueues(opts?: RoutingApi.getRoutingQueuesOptions): Promise<Models.QueueEntityListing>; 
-  	getRoutingQueuesDivisionviews(opts?: RoutingApi.getRoutingQueuesDivisionviewsOptions): Promise<Models.QueueEntityListing>; 
-  	getRoutingQueuesDivisionviewsAll(opts?: RoutingApi.getRoutingQueuesDivisionviewsAllOptions): Promise<Models.QueueEntityListing>; 
-  	getRoutingQueuesMe(opts?: RoutingApi.getRoutingQueuesMeOptions): Promise<Models.UserQueueEntityListing>; 
-  	getRoutingSettings(): Promise<Models.RoutingSettings>; 
-  	getRoutingSettingsContactcenter(): Promise<Models.ContactCenterSettings>; 
-  	getRoutingSettingsTranscription(): Promise<Models.TranscriptionSettings>; 
-  	getRoutingSkill(skillId: string): Promise<Models.RoutingSkill>; 
-  	getRoutingSkillgroup(skillGroupId: string): Promise<Models.SkillGroup>; 
-  	getRoutingSkillgroupMembers(skillGroupId: string, opts?: RoutingApi.getRoutingSkillgroupMembersOptions): Promise<Models.SkillGroupMemberEntityListing>; 
-  	getRoutingSkillgroupMembersDivisions(skillGroupId: string, opts?: RoutingApi.getRoutingSkillgroupMembersDivisionsOptions): Promise<Models.SkillGroupMemberDivisionList>; 
-  	getRoutingSkillgroups(opts?: RoutingApi.getRoutingSkillgroupsOptions): Promise<Models.SkillGroupEntityListing>; 
-  	getRoutingSkills(opts?: RoutingApi.getRoutingSkillsOptions): Promise<Models.SkillEntityListing>; 
-  	getRoutingSmsAddress(addressId: string): Promise<Models.SmsAddress>; 
-  	getRoutingSmsAddresses(opts?: RoutingApi.getRoutingSmsAddressesOptions): Promise<Models.SmsAddressEntityListing>; 
-  	getRoutingSmsAvailablephonenumbers(countryCode: string, phoneNumberType: string, opts?: RoutingApi.getRoutingSmsAvailablephonenumbersOptions): Promise<Models.SMSAvailablePhoneNumberEntityListing>; 
-  	getRoutingSmsPhonenumber(addressId: string, opts?: RoutingApi.getRoutingSmsPhonenumberOptions): Promise<Models.SmsPhoneNumber>; 
-  	getRoutingSmsPhonenumbers(opts?: RoutingApi.getRoutingSmsPhonenumbersOptions): Promise<Models.SmsPhoneNumberEntityListing>; 
-  	getRoutingUserDirectroutingbackupSettings(userId: string): Promise<Models.AgentDirectRoutingBackupSettings>; 
-  	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilizationResponse>; 
-  	getRoutingUtilization(): Promise<Models.UtilizationResponse>; 
-  	getRoutingUtilizationLabel(labelId: string): Promise<Models.UtilizationLabel>; 
-  	getRoutingUtilizationLabelAgents(labelId: string): Promise<Array<object>>; 
-  	getRoutingUtilizationLabels(opts?: RoutingApi.getRoutingUtilizationLabelsOptions): Promise<Models.UtilizationLabelEntityListing>; 
-  	getRoutingUtilizationTag(tagId: string): Promise<Models.UtilizationTag>; 
-  	getRoutingUtilizationTagAgents(tagId: string): Promise<Array<object>>; 
-  	getRoutingUtilizationTags(opts?: RoutingApi.getRoutingUtilizationTagsOptions): Promise<Models.UtilizationTagEntityListing>; 
-  	getRoutingWrapupcode(codeId: string): Promise<Models.WrapupCode>; 
-  	getRoutingWrapupcodes(opts?: RoutingApi.getRoutingWrapupcodesOptions): Promise<Models.WrapupCodeEntityListing>; 
-  	getRoutingWrapupcodesDivisionview(codeId: string): Promise<Models.WrapupCode>; 
-  	getRoutingWrapupcodesDivisionviews(opts?: RoutingApi.getRoutingWrapupcodesDivisionviewsOptions): Promise<Models.WrapupCodeEntityListing>; 
-  	getUserQueues(userId: string, opts?: RoutingApi.getUserQueuesOptions): Promise<Models.UserQueueEntityListing>; 
-  	getUserRoutinglanguages(userId: string, opts?: RoutingApi.getUserRoutinglanguagesOptions): Promise<Models.UserLanguageEntityListing>; 
-  	getUserRoutingskills(userId: string, opts?: RoutingApi.getUserRoutingskillsOptions): Promise<Models.UserSkillEntityListing>; 
-  	getUserSkillgroups(userId: string, opts?: RoutingApi.getUserSkillgroupsOptions): Promise<Models.UserSkillGroupEntityListing>; 
-  	patchRoutingConversation(conversationId: string, body: Models.RoutingConversationAttributesRequest): Promise<Models.RoutingConversationAttributesResponse>; 
-  	patchRoutingEmailDomain(domainId: string, body: Models.InboundDomainPatchRequest): Promise<Models.InboundDomain>; 
-  	patchRoutingEmailDomainValidate(domainId: string, body: Models.InboundDomainPatchRequest): Promise<Models.InboundDomain>; 
-  	patchRoutingPredictor(predictorId: string, opts?: RoutingApi.patchRoutingPredictorOptions): Promise<Models.Predictor>; 
-  	patchRoutingQueueMember(queueId: string, memberId: string, body: Models.QueueMember): Promise<void>; 
-  	patchRoutingQueueMembers(queueId: string, body: Array<Models.QueueMember>): Promise<Models.QueueMemberEntityListing>; 
-  	patchRoutingQueueUser(queueId: string, memberId: string, body: Models.QueueMember): Promise<void>; 
-  	patchRoutingQueueUsers(queueId: string, body: Array<Models.QueueMember>): Promise<Models.QueueMemberEntityListingV1>; 
-  	patchRoutingSettingsContactcenter(body: Models.ContactCenterSettings): Promise<void>; 
-  	patchRoutingSettingsTranscription(body: Models.TranscriptionSettings): Promise<Models.TranscriptionSettings>; 
-  	patchRoutingSkillgroup(skillGroupId: string, body: Models.SkillGroup): Promise<Models.SkillGroup>; 
-  	patchUserQueue(queueId: string, userId: string, body: Models.UserQueue): Promise<Models.UserQueue>; 
-  	patchUserQueues(userId: string, body: Array<Models.UserQueue>, opts?: RoutingApi.patchUserQueuesOptions): Promise<Models.UserQueueEntityListing>; 
-  	patchUserRoutinglanguage(userId: string, languageId: string, body: Models.UserRoutingLanguage): Promise<Models.UserRoutingLanguage>; 
-  	patchUserRoutinglanguagesBulk(userId: string, body: Array<Models.UserRoutingLanguagePost>): Promise<Models.UserLanguageEntityListing>; 
-  	patchUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>; 
-  	postAnalyticsQueuesObservationsQuery(body: Models.QueueObservationQuery): Promise<Models.QueueObservationQueryResponse>; 
-  	postAnalyticsRoutingActivityQuery(body: Models.RoutingActivityQuery, opts?: RoutingApi.postAnalyticsRoutingActivityQueryOptions): Promise<Models.RoutingActivityResponse>; 
-  	postRoutingAssessments(opts?: RoutingApi.postRoutingAssessmentsOptions): Promise<Models.BenefitAssessment>; 
-  	postRoutingAssessmentsJobs(opts?: RoutingApi.postRoutingAssessmentsJobsOptions): Promise<Models.BenefitAssessmentJob>; 
-  	postRoutingEmailDomainRoutes(domainName: string, body: Models.InboundRoute): Promise<Models.InboundRoute>; 
-  	postRoutingEmailDomainTestconnection(domainId: string, opts?: RoutingApi.postRoutingEmailDomainTestconnectionOptions): Promise<Models.TestMessage>; 
-  	postRoutingEmailDomains(body: Models.InboundDomain): Promise<Models.InboundDomain>; 
-  	postRoutingEmailOutboundDomains(body: Models.OutboundDomain): Promise<Models.EmailOutboundDomainResult>; 
-  	postRoutingEmailOutboundDomainsSimulated(body: Models.OutboundDomain): Promise<Models.EmailOutboundDomainResult>; 
-  	postRoutingLanguages(body: Models.Language): Promise<Models.Language>; 
-  	postRoutingPredictors(opts?: RoutingApi.postRoutingPredictorsOptions): Promise<Models.Predictor>; 
-  	postRoutingQueueMembers(queueId: string, body: Array<Models.WritableEntity>, opts?: RoutingApi.postRoutingQueueMembersOptions): Promise<void>; 
-  	postRoutingQueueUsers(queueId: string, body: Array<Models.WritableEntity>, opts?: RoutingApi.postRoutingQueueUsersOptions): Promise<void>; 
-  	postRoutingQueueWrapupcodes(queueId: string, body: Array<Models.WrapUpCodeReference>): Promise<Array<Models.WrapupCode>>; 
-  	postRoutingQueues(body: Models.CreateQueueRequest): Promise<Models.Queue>; 
-  	postRoutingSkillgroupMembersDivisions(skillGroupId: string, opts?: RoutingApi.postRoutingSkillgroupMembersDivisionsOptions): Promise<void>; 
-  	postRoutingSkillgroups(body: Models.SkillGroupWithMemberDivisions): Promise<Models.SkillGroupWithMemberDivisions>; 
-  	postRoutingSkills(body: Models.RoutingSkill): Promise<Models.RoutingSkill>; 
-  	postRoutingSmsAddresses(body: Models.SmsAddressProvision): Promise<Models.SmsAddress>; 
-  	postRoutingSmsPhonenumbers(body: Models.SmsPhoneNumberProvision): Promise<Models.SmsPhoneNumber>; 
-  	postRoutingSmsPhonenumbersAlphanumeric(body: Models.SmsAlphanumericProvision): Promise<Models.SmsPhoneNumber>; 
-  	postRoutingSmsPhonenumbersImport(body: Models.SmsPhoneNumberImport): Promise<Models.SmsPhoneNumber>; 
-  	postRoutingUtilizationLabels(body: Models.CreateUtilizationLabelRequest): Promise<Models.UtilizationLabel>; 
-  	postRoutingUtilizationTags(body: Models.CreateUtilizationTagRequest): Promise<Models.UtilizationTag>; 
-  	postRoutingWrapupcodes(body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>; 
-  	postUserRoutinglanguages(userId: string, body: Models.UserRoutingLanguagePost): Promise<Models.UserRoutingLanguage>; 
-  	postUserRoutingskills(userId: string, body: Models.UserRoutingSkillPost): Promise<Models.UserRoutingSkill>; 
-  	putRoutingDirectroutingbackupSettingsMe(body: Models.AgentDirectRoutingBackupSettings): Promise<Models.AgentDirectRoutingBackupSettings>; 
-  	putRoutingEmailDomainRoute(domainName: string, routeId: string, body: Models.InboundRoute): Promise<Models.InboundRoute>; 
-  	putRoutingEmailOutboundDomainActivation(domainId: string): Promise<Models.EmailOutboundDomainResult>; 
-  	putRoutingMessageRecipient(recipientId: string, body: Models.RecipientRequest): Promise<Models.Recipient>; 
-  	putRoutingQueue(queueId: string, body: Models.QueueRequest): Promise<Models.Queue>; 
-  	putRoutingSettings(body: Models.RoutingSettings): Promise<Models.RoutingSettings>; 
-  	putRoutingSettingsTranscription(body: Models.TranscriptionSettings): Promise<Models.TranscriptionSettings>; 
-  	putRoutingSmsPhonenumber(addressId: string, body: Models.SmsPhoneNumber): Promise<Models.SmsPhoneNumber>; 
-  	putRoutingUserDirectroutingbackupSettings(userId: string, body: Models.AgentDirectRoutingBackupSettings): Promise<Models.AgentDirectRoutingBackupSettings>; 
-  	putRoutingUserUtilization(userId: string, body: Models.UtilizationRequest): Promise<Models.AgentMaxUtilizationResponse>; 
-  	putRoutingUtilization(body: Models.UtilizationRequest): Promise<Models.UtilizationResponse>; 
-  	putRoutingUtilizationLabel(labelId: string, body: Models.UpdateUtilizationLabelRequest): Promise<Models.UtilizationLabel>; 
-  	putRoutingWrapupcode(codeId: string, body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>; 
-  	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>; 
+declare class RoutingApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteRoutingAssessment(assessmentId: string): Promise<void>;
+  	deleteRoutingDirectroutingbackupSettingsMe(): Promise<void>;
+  	deleteRoutingEmailDomain(domainId: string): Promise<void>;
+  	deleteRoutingEmailDomainRoute(domainName: string, routeId: string): Promise<void>;
+  	deleteRoutingEmailOutboundDomain(domainId: string): Promise<void>;
+  	deleteRoutingLanguage(languageId: string): Promise<void>;
+  	deleteRoutingPredictor(predictorId: string): Promise<void>;
+  	deleteRoutingQueue(queueId: string, opts?: RoutingApi.deleteRoutingQueueOptions): Promise<void>;
+  	deleteRoutingQueueMember(queueId: string, memberId: string): Promise<void>;
+  	deleteRoutingQueueUser(queueId: string, memberId: string): Promise<void>;
+  	deleteRoutingQueueWrapupcode(queueId: string, codeId: string): Promise<void>;
+  	deleteRoutingSettings(): Promise<void>;
+  	deleteRoutingSkill(skillId: string): Promise<void>;
+  	deleteRoutingSkillgroup(skillGroupId: string): Promise<void>;
+  	deleteRoutingSmsAddress(addressId: string): Promise<void>;
+  	deleteRoutingSmsPhonenumber(phoneNumberId: string): Promise<void>;
+  	deleteRoutingUserDirectroutingbackupSettings(userId: string): Promise<void>;
+  	deleteRoutingUserUtilization(userId: string): Promise<void>;
+  	deleteRoutingUtilization(): Promise<void>;
+  	deleteRoutingUtilizationLabel(labelId: string, opts?: RoutingApi.deleteRoutingUtilizationLabelOptions): Promise<void>;
+  	deleteRoutingUtilizationTag(tagId: string, opts?: RoutingApi.deleteRoutingUtilizationTagOptions): Promise<void>;
+  	deleteRoutingWrapupcode(codeId: string): Promise<void>;
+  	deleteUserRoutinglanguage(userId: string, languageId: string): Promise<void>;
+  	deleteUserRoutingskill(userId: string, skillId: string): Promise<void>;
+  	getRoutingAssessment(assessmentId: string): Promise<Models.BenefitAssessment>;
+  	getRoutingAssessments(opts?: RoutingApi.getRoutingAssessmentsOptions): Promise<Models.AssessmentListing>;
+  	getRoutingAssessmentsJob(jobId: string): Promise<Models.BenefitAssessmentJob>;
+  	getRoutingAssessmentsJobs(opts?: RoutingApi.getRoutingAssessmentsJobsOptions): Promise<Models.AssessmentJobListing>;
+  	getRoutingAvailablemediatypes(): Promise<Models.AvailableMediaTypeEntityListing>;
+  	getRoutingDirectroutingbackupSettingsMe(): Promise<Models.AgentDirectRoutingBackupSettings>;
+  	getRoutingEmailDomain(domainId: string): Promise<Models.InboundDomain>;
+  	getRoutingEmailDomainRoute(domainName: string, routeId: string): Promise<Models.InboundRoute>;
+  	getRoutingEmailDomainRoutes(domainName: string, opts?: RoutingApi.getRoutingEmailDomainRoutesOptions): Promise<Models.InboundRouteEntityListing>;
+  	getRoutingEmailDomains(opts?: RoutingApi.getRoutingEmailDomainsOptions): Promise<Models.InboundDomainEntityListing>;
+  	getRoutingEmailOutboundDomain(domainId: string): Promise<Models.OutboundDomain>;
+  	getRoutingEmailOutboundDomainActivation(domainId: string): Promise<Models.EmailOutboundDomainResult>;
+  	getRoutingEmailOutboundDomainSearch(domainId: string): Promise<Models.OutboundDomain>;
+  	getRoutingEmailOutboundDomains(opts?: RoutingApi.getRoutingEmailOutboundDomainsOptions): Promise<Models.OutboundDomainEntityListing>;
+  	getRoutingEmailSetup(): Promise<Models.EmailSetup>;
+  	getRoutingLanguage(languageId: string): Promise<Models.Language>;
+  	getRoutingLanguages(opts?: RoutingApi.getRoutingLanguagesOptions): Promise<Models.LanguageEntityListing>;
+  	getRoutingMessageRecipient(recipientId: string): Promise<Models.Recipient>;
+  	getRoutingMessageRecipients(opts?: RoutingApi.getRoutingMessageRecipientsOptions): Promise<Models.RecipientListing>;
+  	getRoutingPredictor(predictorId: string): Promise<Models.Predictor>;
+  	getRoutingPredictorModelFeatures(predictorId: string, modelId: string): Promise<Models.PredictorModelFeatureListing>;
+  	getRoutingPredictorModels(predictorId: string): Promise<Models.PredictorModels>;
+  	getRoutingPredictors(opts?: RoutingApi.getRoutingPredictorsOptions): Promise<Models.PredictorListing>;
+  	getRoutingPredictorsKeyperformanceindicators(opts?: RoutingApi.getRoutingPredictorsKeyperformanceindicatorsOptions): Promise<Array<Models.KeyPerformanceIndicator>>;
+  	getRoutingQueue(queueId: string): Promise<Models.Queue>;
+  	getRoutingQueueAssistant(queueId: string, opts?: RoutingApi.getRoutingQueueAssistantOptions): Promise<Models.AssistantQueue>;
+  	getRoutingQueueComparisonperiod(queueId: string, comparisonPeriodId: string): Promise<Models.ComparisonPeriod>;
+  	getRoutingQueueComparisonperiods(queueId: string): Promise<Models.ComparisonPeriodListing>;
+  	getRoutingQueueEstimatedwaittime(queueId: string, opts?: RoutingApi.getRoutingQueueEstimatedwaittimeOptions): Promise<Models.EstimatedWaitTimePredictions>;
+  	getRoutingQueueMediatypeEstimatedwaittime(queueId: string, mediaType: string, opts?: RoutingApi.getRoutingQueueMediatypeEstimatedwaittimeOptions): Promise<Models.EstimatedWaitTimePredictions>;
+  	getRoutingQueueMembers(queueId: string, opts?: RoutingApi.getRoutingQueueMembersOptions): Promise<Models.QueueMemberEntityListing>;
+  	getRoutingQueueUsers(queueId: string, opts?: RoutingApi.getRoutingQueueUsersOptions): Promise<Models.QueueMemberEntityListingV1>;
+  	getRoutingQueueWrapupcodes(queueId: string, opts?: RoutingApi.getRoutingQueueWrapupcodesOptions): Promise<Models.WrapupCodeEntityListing>;
+  	getRoutingQueues(opts?: RoutingApi.getRoutingQueuesOptions): Promise<Models.QueueEntityListing>;
+  	getRoutingQueuesDivisionviews(opts?: RoutingApi.getRoutingQueuesDivisionviewsOptions): Promise<Models.QueueEntityListing>;
+  	getRoutingQueuesDivisionviewsAll(opts?: RoutingApi.getRoutingQueuesDivisionviewsAllOptions): Promise<Models.QueueEntityListing>;
+  	getRoutingQueuesMe(opts?: RoutingApi.getRoutingQueuesMeOptions): Promise<Models.UserQueueEntityListing>;
+  	getRoutingSettings(): Promise<Models.RoutingSettings>;
+  	getRoutingSettingsContactcenter(): Promise<Models.ContactCenterSettings>;
+  	getRoutingSettingsTranscription(): Promise<Models.TranscriptionSettings>;
+  	getRoutingSkill(skillId: string): Promise<Models.RoutingSkill>;
+  	getRoutingSkillgroup(skillGroupId: string): Promise<Models.SkillGroup>;
+  	getRoutingSkillgroupMembers(skillGroupId: string, opts?: RoutingApi.getRoutingSkillgroupMembersOptions): Promise<Models.SkillGroupMemberEntityListing>;
+  	getRoutingSkillgroupMembersDivisions(skillGroupId: string, opts?: RoutingApi.getRoutingSkillgroupMembersDivisionsOptions): Promise<Models.SkillGroupMemberDivisionList>;
+  	getRoutingSkillgroups(opts?: RoutingApi.getRoutingSkillgroupsOptions): Promise<Models.SkillGroupEntityListing>;
+  	getRoutingSkills(opts?: RoutingApi.getRoutingSkillsOptions): Promise<Models.SkillEntityListing>;
+  	getRoutingSmsAddress(addressId: string): Promise<Models.SmsAddress>;
+  	getRoutingSmsAddresses(opts?: RoutingApi.getRoutingSmsAddressesOptions): Promise<Models.SmsAddressEntityListing>;
+  	getRoutingSmsAvailablephonenumbers(countryCode: string, phoneNumberType: string, opts?: RoutingApi.getRoutingSmsAvailablephonenumbersOptions): Promise<Models.SMSAvailablePhoneNumberEntityListing>;
+  	getRoutingSmsPhonenumber(phoneNumberId: string, opts?: RoutingApi.getRoutingSmsPhonenumberOptions): Promise<Models.SmsPhoneNumber>;
+  	getRoutingSmsPhonenumbers(opts?: RoutingApi.getRoutingSmsPhonenumbersOptions): Promise<Models.SmsPhoneNumberEntityListing>;
+  	getRoutingUserDirectroutingbackupSettings(userId: string): Promise<Models.AgentDirectRoutingBackupSettings>;
+  	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilizationResponse>;
+  	getRoutingUtilization(): Promise<Models.UtilizationResponse>;
+  	getRoutingUtilizationLabel(labelId: string): Promise<Models.UtilizationLabel>;
+  	getRoutingUtilizationLabelAgents(labelId: string): Promise<Array<object>>;
+  	getRoutingUtilizationLabels(opts?: RoutingApi.getRoutingUtilizationLabelsOptions): Promise<Models.UtilizationLabelEntityListing>;
+  	getRoutingUtilizationTag(tagId: string): Promise<Models.UtilizationTag>;
+  	getRoutingUtilizationTagAgents(tagId: string): Promise<Array<object>>;
+  	getRoutingUtilizationTags(opts?: RoutingApi.getRoutingUtilizationTagsOptions): Promise<Models.UtilizationTagEntityListing>;
+  	getRoutingWrapupcode(codeId: string): Promise<Models.WrapupCode>;
+  	getRoutingWrapupcodes(opts?: RoutingApi.getRoutingWrapupcodesOptions): Promise<Models.WrapupCodeEntityListing>;
+  	getRoutingWrapupcodesDivisionview(codeId: string): Promise<Models.WrapupCode>;
+  	getRoutingWrapupcodesDivisionviews(opts?: RoutingApi.getRoutingWrapupcodesDivisionviewsOptions): Promise<Models.WrapupCodeEntityListing>;
+  	getUserQueues(userId: string, opts?: RoutingApi.getUserQueuesOptions): Promise<Models.UserQueueEntityListing>;
+  	getUserRoutinglanguages(userId: string, opts?: RoutingApi.getUserRoutinglanguagesOptions): Promise<Models.UserLanguageEntityListing>;
+  	getUserRoutingskills(userId: string, opts?: RoutingApi.getUserRoutingskillsOptions): Promise<Models.UserSkillEntityListing>;
+  	getUserSkillgroups(userId: string, opts?: RoutingApi.getUserSkillgroupsOptions): Promise<Models.UserSkillGroupEntityListing>;
+  	patchRoutingConversation(conversationId: string, body: Models.RoutingConversationAttributesRequest): Promise<Models.RoutingConversationAttributesResponse>;
+  	patchRoutingEmailDomain(domainId: string, body: Models.InboundDomainPatchRequest): Promise<Models.InboundDomain>;
+  	patchRoutingEmailDomainValidate(domainId: string, body: Models.InboundDomainPatchRequest): Promise<Models.InboundDomain>;
+  	patchRoutingPredictor(predictorId: string, opts?: RoutingApi.patchRoutingPredictorOptions): Promise<Models.Predictor>;
+  	patchRoutingQueueMember(queueId: string, memberId: string, body: Models.QueueMember): Promise<void>;
+  	patchRoutingQueueMembers(queueId: string, body: Array<Models.QueueMember>): Promise<Models.QueueMemberEntityListing>;
+  	patchRoutingQueueUser(queueId: string, memberId: string, body: Models.QueueMember): Promise<void>;
+  	patchRoutingQueueUsers(queueId: string, body: Array<Models.QueueMember>): Promise<Models.QueueMemberEntityListingV1>;
+  	patchRoutingSettingsContactcenter(body: Models.ContactCenterSettings): Promise<void>;
+  	patchRoutingSettingsTranscription(body: Models.TranscriptionSettings): Promise<Models.TranscriptionSettings>;
+  	patchRoutingSkillgroup(skillGroupId: string, body: Models.SkillGroup): Promise<Models.SkillGroup>;
+  	patchUserQueue(queueId: string, userId: string, body: Models.UserQueue): Promise<Models.UserQueue>;
+  	patchUserQueues(userId: string, body: Array<Models.UserQueue>, opts?: RoutingApi.patchUserQueuesOptions): Promise<Models.UserQueueEntityListing>;
+  	patchUserRoutinglanguage(userId: string, languageId: string, body: Models.UserRoutingLanguage): Promise<Models.UserRoutingLanguage>;
+  	patchUserRoutinglanguagesBulk(userId: string, body: Array<Models.UserRoutingLanguagePost>): Promise<Models.UserLanguageEntityListing>;
+  	patchUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>;
+  	postAnalyticsQueuesObservationsQuery(body: Models.QueueObservationQuery): Promise<Models.QueueObservationQueryResponse>;
+  	postAnalyticsRoutingActivityQuery(body: Models.RoutingActivityQuery, opts?: RoutingApi.postAnalyticsRoutingActivityQueryOptions): Promise<Models.RoutingActivityResponse>;
+  	postRoutingAssessments(opts?: RoutingApi.postRoutingAssessmentsOptions): Promise<Models.BenefitAssessment>;
+  	postRoutingAssessmentsJobs(opts?: RoutingApi.postRoutingAssessmentsJobsOptions): Promise<Models.BenefitAssessmentJob>;
+  	postRoutingEmailDomainRoutes(domainName: string, body: Models.InboundRoute): Promise<Models.InboundRoute>;
+  	postRoutingEmailDomainTestconnection(domainId: string, opts?: RoutingApi.postRoutingEmailDomainTestconnectionOptions): Promise<Models.TestMessage>;
+  	postRoutingEmailDomains(body: Models.InboundDomain): Promise<Models.InboundDomain>;
+  	postRoutingEmailOutboundDomains(body: Models.OutboundDomain): Promise<Models.EmailOutboundDomainResult>;
+  	postRoutingEmailOutboundDomainsSimulated(body: Models.OutboundDomain): Promise<Models.EmailOutboundDomainResult>;
+  	postRoutingLanguages(body: Models.Language): Promise<Models.Language>;
+  	postRoutingPredictors(opts?: RoutingApi.postRoutingPredictorsOptions): Promise<Models.Predictor>;
+  	postRoutingQueueMembers(queueId: string, body: Array<Models.WritableEntity>, opts?: RoutingApi.postRoutingQueueMembersOptions): Promise<void>;
+  	postRoutingQueueUsers(queueId: string, body: Array<Models.WritableEntity>, opts?: RoutingApi.postRoutingQueueUsersOptions): Promise<void>;
+  	postRoutingQueueWrapupcodes(queueId: string, body: Array<Models.WrapUpCodeReference>): Promise<Array<Models.WrapupCode>>;
+  	postRoutingQueues(body: Models.CreateQueueRequest): Promise<Models.Queue>;
+  	postRoutingSkillgroupMembersDivisions(skillGroupId: string, opts?: RoutingApi.postRoutingSkillgroupMembersDivisionsOptions): Promise<void>;
+  	postRoutingSkillgroups(body: Models.SkillGroupWithMemberDivisions): Promise<Models.SkillGroupWithMemberDivisions>;
+  	postRoutingSkills(body: Models.RoutingSkill): Promise<Models.RoutingSkill>;
+  	postRoutingSmsAddresses(body: Models.SmsAddressProvision): Promise<Models.SmsAddress>;
+  	postRoutingSmsPhonenumbers(body: Models.SmsPhoneNumberProvision): Promise<Models.SmsPhoneNumber>;
+  	postRoutingSmsPhonenumbersAlphanumeric(body: Models.SmsAlphanumericProvision): Promise<Models.SmsPhoneNumber>;
+  	postRoutingSmsPhonenumbersImport(body: Models.SmsPhoneNumberImport): Promise<Models.SmsPhoneNumber>;
+  	postRoutingUtilizationLabels(body: Models.CreateUtilizationLabelRequest): Promise<Models.UtilizationLabel>;
+  	postRoutingUtilizationTags(body: Models.CreateUtilizationTagRequest): Promise<Models.UtilizationTag>;
+  	postRoutingWrapupcodes(body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>;
+  	postUserRoutinglanguages(userId: string, body: Models.UserRoutingLanguagePost): Promise<Models.UserRoutingLanguage>;
+  	postUserRoutingskills(userId: string, body: Models.UserRoutingSkillPost): Promise<Models.UserRoutingSkill>;
+  	putRoutingDirectroutingbackupSettingsMe(body: Models.AgentDirectRoutingBackupSettings): Promise<Models.AgentDirectRoutingBackupSettings>;
+  	putRoutingEmailDomainRoute(domainName: string, routeId: string, body: Models.InboundRoute): Promise<Models.InboundRoute>;
+  	putRoutingEmailOutboundDomainActivation(domainId: string): Promise<Models.EmailOutboundDomainResult>;
+  	putRoutingMessageRecipient(recipientId: string, body: Models.RecipientRequest): Promise<Models.Recipient>;
+  	putRoutingQueue(queueId: string, body: Models.QueueRequest): Promise<Models.Queue>;
+  	putRoutingSettings(body: Models.RoutingSettings): Promise<Models.RoutingSettings>;
+  	putRoutingSettingsTranscription(body: Models.TranscriptionSettings): Promise<Models.TranscriptionSettings>;
+  	putRoutingSmsPhonenumber(phoneNumberId: string, body: Models.SmsPhoneNumber): Promise<Models.SmsPhoneNumber>;
+  	putRoutingUserDirectroutingbackupSettings(userId: string, body: Models.AgentDirectRoutingBackupSettings): Promise<Models.AgentDirectRoutingBackupSettings>;
+  	putRoutingUserUtilization(userId: string, body: Models.UtilizationRequest): Promise<Models.AgentMaxUtilizationResponse>;
+  	putRoutingUtilization(body: Models.UtilizationRequest): Promise<Models.UtilizationResponse>;
+  	putRoutingUtilizationLabel(labelId: string, body: Models.UpdateUtilizationLabelRequest): Promise<Models.UtilizationLabel>;
+  	putRoutingWrapupcode(codeId: string, body: Models.WrapupCodeRequest): Promise<Models.WrapupCode>;
+  	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>;
   	putUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>;
 }
 
@@ -5243,6 +5313,9 @@ declare namespace RoutingApi {
 	}
 	export interface getRoutingQueueEstimatedwaittimeOptions { 
 		"conversationId"?: string;
+	}
+	export interface getRoutingQueueMediatypeEstimatedwaittimeOptions { 
+		"labelId"?: string;
 	}
 	export interface getRoutingQueueMembersOptions { 
 		"pageNumber"?: number;
@@ -5437,36 +5510,37 @@ declare namespace RoutingApi {
 	}
 }
 
-declare class SCIMApi {  
-  	deleteScimUser(userId: string, opts?: SCIMApi.deleteScimUserOptions): Promise<object>; 
-  	deleteScimV2User(userId: string, opts?: SCIMApi.deleteScimV2UserOptions): Promise<object>; 
-  	getScimGroup(groupId: string, opts?: SCIMApi.getScimGroupOptions): Promise<Models.ScimV2Group>; 
-  	getScimGroups(opts?: SCIMApi.getScimGroupsOptions): Promise<Models.ScimGroupListResponse>; 
-  	getScimResourcetype(resourceType: string): Promise<Models.ScimConfigResourceType>; 
-  	getScimResourcetypes(): Promise<Models.ScimConfigResourceTypesListResponse>; 
-  	getScimSchema(schemaId: string): Promise<Models.ScimV2SchemaDefinition>; 
-  	getScimSchemas(opts?: SCIMApi.getScimSchemasOptions): Promise<Models.ScimV2SchemaListResponse>; 
-  	getScimServiceproviderconfig(opts?: SCIMApi.getScimServiceproviderconfigOptions): Promise<Models.ScimServiceProviderConfig>; 
-  	getScimUser(userId: string, opts?: SCIMApi.getScimUserOptions): Promise<Models.ScimV2User>; 
-  	getScimUsers(opts?: SCIMApi.getScimUsersOptions): Promise<Models.ScimUserListResponse>; 
-  	getScimV2Group(groupId: string, opts?: SCIMApi.getScimV2GroupOptions): Promise<Models.ScimV2Group>; 
-  	getScimV2Groups(filter: string, opts?: SCIMApi.getScimV2GroupsOptions): Promise<Models.ScimGroupListResponse>; 
-  	getScimV2Resourcetype(resourceType: string): Promise<Models.ScimConfigResourceType>; 
-  	getScimV2Resourcetypes(): Promise<Models.ScimConfigResourceTypesListResponse>; 
-  	getScimV2Schema(schemaId: string): Promise<Models.ScimV2SchemaDefinition>; 
-  	getScimV2Schemas(opts?: SCIMApi.getScimV2SchemasOptions): Promise<Models.ScimV2SchemaListResponse>; 
-  	getScimV2Serviceproviderconfig(opts?: SCIMApi.getScimV2ServiceproviderconfigOptions): Promise<Models.ScimServiceProviderConfig>; 
-  	getScimV2User(userId: string, opts?: SCIMApi.getScimV2UserOptions): Promise<Models.ScimV2User>; 
-  	getScimV2Users(opts?: SCIMApi.getScimV2UsersOptions): Promise<Models.ScimUserListResponse>; 
-  	patchScimGroup(groupId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimGroupOptions): Promise<Models.ScimV2Group>; 
-  	patchScimUser(userId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimUserOptions): Promise<Models.ScimV2User>; 
-  	patchScimV2Group(groupId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimV2GroupOptions): Promise<Models.ScimV2Group>; 
-  	patchScimV2User(userId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimV2UserOptions): Promise<Models.ScimV2User>; 
-  	postScimUsers(body: Models.ScimV2CreateUser): Promise<Models.ScimV2User>; 
-  	postScimV2Users(body: Models.ScimV2CreateUser): Promise<Models.ScimV2User>; 
-  	putScimGroup(groupId: string, body: Models.ScimV2Group, opts?: SCIMApi.putScimGroupOptions): Promise<Models.ScimV2Group>; 
-  	putScimUser(userId: string, body: Models.ScimV2User, opts?: SCIMApi.putScimUserOptions): Promise<Models.ScimV2User>; 
-  	putScimV2Group(groupId: string, body: Models.ScimV2Group, opts?: SCIMApi.putScimV2GroupOptions): Promise<Models.ScimV2Group>; 
+declare class SCIMApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteScimUser(userId: string, opts?: SCIMApi.deleteScimUserOptions): Promise<object>;
+  	deleteScimV2User(userId: string, opts?: SCIMApi.deleteScimV2UserOptions): Promise<object>;
+  	getScimGroup(groupId: string, opts?: SCIMApi.getScimGroupOptions): Promise<Models.ScimV2Group>;
+  	getScimGroups(opts?: SCIMApi.getScimGroupsOptions): Promise<Models.ScimGroupListResponse>;
+  	getScimResourcetype(resourceType: string): Promise<Models.ScimConfigResourceType>;
+  	getScimResourcetypes(): Promise<Models.ScimConfigResourceTypesListResponse>;
+  	getScimSchema(schemaId: string): Promise<Models.ScimV2SchemaDefinition>;
+  	getScimSchemas(opts?: SCIMApi.getScimSchemasOptions): Promise<Models.ScimV2SchemaListResponse>;
+  	getScimServiceproviderconfig(opts?: SCIMApi.getScimServiceproviderconfigOptions): Promise<Models.ScimServiceProviderConfig>;
+  	getScimUser(userId: string, opts?: SCIMApi.getScimUserOptions): Promise<Models.ScimV2User>;
+  	getScimUsers(opts?: SCIMApi.getScimUsersOptions): Promise<Models.ScimUserListResponse>;
+  	getScimV2Group(groupId: string, opts?: SCIMApi.getScimV2GroupOptions): Promise<Models.ScimV2Group>;
+  	getScimV2Groups(filter: string, opts?: SCIMApi.getScimV2GroupsOptions): Promise<Models.ScimGroupListResponse>;
+  	getScimV2Resourcetype(resourceType: string): Promise<Models.ScimConfigResourceType>;
+  	getScimV2Resourcetypes(): Promise<Models.ScimConfigResourceTypesListResponse>;
+  	getScimV2Schema(schemaId: string): Promise<Models.ScimV2SchemaDefinition>;
+  	getScimV2Schemas(opts?: SCIMApi.getScimV2SchemasOptions): Promise<Models.ScimV2SchemaListResponse>;
+  	getScimV2Serviceproviderconfig(opts?: SCIMApi.getScimV2ServiceproviderconfigOptions): Promise<Models.ScimServiceProviderConfig>;
+  	getScimV2User(userId: string, opts?: SCIMApi.getScimV2UserOptions): Promise<Models.ScimV2User>;
+  	getScimV2Users(opts?: SCIMApi.getScimV2UsersOptions): Promise<Models.ScimUserListResponse>;
+  	patchScimGroup(groupId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimGroupOptions): Promise<Models.ScimV2Group>;
+  	patchScimUser(userId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimUserOptions): Promise<Models.ScimV2User>;
+  	patchScimV2Group(groupId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimV2GroupOptions): Promise<Models.ScimV2Group>;
+  	patchScimV2User(userId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimV2UserOptions): Promise<Models.ScimV2User>;
+  	postScimUsers(body: Models.ScimV2CreateUser): Promise<Models.ScimV2User>;
+  	postScimV2Users(body: Models.ScimV2CreateUser): Promise<Models.ScimV2User>;
+  	putScimGroup(groupId: string, body: Models.ScimV2Group, opts?: SCIMApi.putScimGroupOptions): Promise<Models.ScimV2Group>;
+  	putScimUser(userId: string, body: Models.ScimV2User, opts?: SCIMApi.putScimUserOptions): Promise<Models.ScimV2User>;
+  	putScimV2Group(groupId: string, body: Models.ScimV2Group, opts?: SCIMApi.putScimV2GroupOptions): Promise<Models.ScimV2Group>;
   	putScimV2User(userId: string, body: Models.ScimV2User, opts?: SCIMApi.putScimV2UserOptions): Promise<Models.ScimV2User>;
 }
 
@@ -5562,7 +5636,8 @@ declare namespace SCIMApi {
 	}
 }
 
-declare class ScreenRecordingApi {  
+declare class ScreenRecordingApi {
+	constructor(apiClient?: ApiClientClass);
   	postScreenrecordingToken(opts?: ScreenRecordingApi.postScreenrecordingTokenOptions): Promise<Models.SignedData>;
 }
 
@@ -5572,20 +5647,21 @@ declare namespace ScreenRecordingApi {
 	}
 }
 
-declare class ScriptsApi {  
-  	getScript(scriptId: string): Promise<Models.Script>; 
-  	getScriptPage(scriptId: string, pageId: string, opts?: ScriptsApi.getScriptPageOptions): Promise<Models.Page>; 
-  	getScriptPages(scriptId: string, opts?: ScriptsApi.getScriptPagesOptions): Promise<Array<Models.Page>>; 
-  	getScripts(opts?: ScriptsApi.getScriptsOptions): Promise<Models.ScriptEntityListing>; 
-  	getScriptsDivisionviews(opts?: ScriptsApi.getScriptsDivisionviewsOptions): Promise<Models.ScriptEntityListing>; 
-  	getScriptsPublished(opts?: ScriptsApi.getScriptsPublishedOptions): Promise<Models.ScriptEntityListing>; 
-  	getScriptsPublishedDivisionviews(opts?: ScriptsApi.getScriptsPublishedDivisionviewsOptions): Promise<Models.ScriptEntityListing>; 
-  	getScriptsPublishedScriptId(scriptId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdOptions): Promise<Models.Script>; 
-  	getScriptsPublishedScriptIdPage(scriptId: string, pageId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdPageOptions): Promise<Models.Page>; 
-  	getScriptsPublishedScriptIdPages(scriptId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdPagesOptions): Promise<Array<Models.Page>>; 
-  	getScriptsPublishedScriptIdVariables(scriptId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdVariablesOptions): Promise<object>; 
-  	getScriptsUploadStatus(uploadId: string, opts?: ScriptsApi.getScriptsUploadStatusOptions): Promise<Models.ImportScriptStatusResponse>; 
-  	postScriptExport(scriptId: string, opts?: ScriptsApi.postScriptExportOptions): Promise<Models.ExportScriptResponse>; 
+declare class ScriptsApi {
+	constructor(apiClient?: ApiClientClass);
+  	getScript(scriptId: string): Promise<Models.Script>;
+  	getScriptPage(scriptId: string, pageId: string, opts?: ScriptsApi.getScriptPageOptions): Promise<Models.Page>;
+  	getScriptPages(scriptId: string, opts?: ScriptsApi.getScriptPagesOptions): Promise<Array<Models.Page>>;
+  	getScripts(opts?: ScriptsApi.getScriptsOptions): Promise<Models.ScriptEntityListing>;
+  	getScriptsDivisionviews(opts?: ScriptsApi.getScriptsDivisionviewsOptions): Promise<Models.ScriptEntityListing>;
+  	getScriptsPublished(opts?: ScriptsApi.getScriptsPublishedOptions): Promise<Models.ScriptEntityListing>;
+  	getScriptsPublishedDivisionviews(opts?: ScriptsApi.getScriptsPublishedDivisionviewsOptions): Promise<Models.ScriptEntityListing>;
+  	getScriptsPublishedScriptId(scriptId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdOptions): Promise<Models.Script>;
+  	getScriptsPublishedScriptIdPage(scriptId: string, pageId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdPageOptions): Promise<Models.Page>;
+  	getScriptsPublishedScriptIdPages(scriptId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdPagesOptions): Promise<Array<Models.Page>>;
+  	getScriptsPublishedScriptIdVariables(scriptId: string, opts?: ScriptsApi.getScriptsPublishedScriptIdVariablesOptions): Promise<object>;
+  	getScriptsUploadStatus(uploadId: string, opts?: ScriptsApi.getScriptsUploadStatusOptions): Promise<Models.ImportScriptStatusResponse>;
+  	postScriptExport(scriptId: string, opts?: ScriptsApi.postScriptExportOptions): Promise<Models.ExportScriptResponse>;
   	postScriptsPublished(opts?: ScriptsApi.postScriptsPublishedOptions): Promise<Models.Script>;
 }
 
@@ -5667,33 +5743,34 @@ declare namespace ScriptsApi {
 	}
 }
 
-declare class SearchApi {  
-  	getDocumentationGknSearch(q64: string): Promise<Models.GKNDocumentationSearchResponse>; 
-  	getDocumentationSearch(q64: string): Promise<Models.DocumentationSearchResponse>; 
-  	getGroupsSearch(q64: string, opts?: SearchApi.getGroupsSearchOptions): Promise<Models.GroupsSearchResponse>; 
-  	getLocationsSearch(q64: string, opts?: SearchApi.getLocationsSearchOptions): Promise<Models.LocationsSearchResponse>; 
-  	getSearch(q64: string, opts?: SearchApi.getSearchOptions): Promise<Models.JsonNodeSearchResponse>; 
-  	getSearchSuggest(q64: string, opts?: SearchApi.getSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>; 
-  	getTelephonyProvidersEdgesSitesSearch(q64: string, opts?: SearchApi.getTelephonyProvidersEdgesSitesSearchOptions): Promise<Models.SitesSearchResponse>; 
-  	getUsersSearch(q64: string, opts?: SearchApi.getUsersSearchOptions): Promise<Models.UsersSearchResponse>; 
-  	getVoicemailSearch(q64: string, opts?: SearchApi.getVoicemailSearchOptions): Promise<Models.VoicemailsSearchResponse>; 
-  	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
-  	postConversationsParticipantsAttributesSearch(body: Models.ConversationParticipantSearchRequest): Promise<Models.JsonCursorSearchResponse>; 
-  	postDocumentationAllSearch(body: Models.DocumentationV2SearchRequest): Promise<Models.JsonNodeSearchResponse>; 
-  	postDocumentationGknSearch(body: Models.GKNDocumentationSearchRequest): Promise<Models.GKNDocumentationSearchResponse>; 
-  	postDocumentationSearch(body: Models.DocumentationSearchRequest): Promise<Models.DocumentationSearchResponse>; 
-  	postGroupsSearch(body: Models.GroupSearchRequest): Promise<Models.GroupsSearchResponse>; 
-  	postKnowledgeKnowledgebaseSearch(knowledgeBaseId: string, opts?: SearchApi.postKnowledgeKnowledgebaseSearchOptions): Promise<Models.KnowledgeSearchResponse>; 
-  	postLocationsSearch(body: Models.LocationSearchRequest): Promise<Models.LocationsSearchResponse>; 
-  	postSearch(body: Models.SearchRequest, opts?: SearchApi.postSearchOptions): Promise<Models.JsonNodeSearchResponse>; 
-  	postSearchSuggest(body: Models.SuggestSearchRequest, opts?: SearchApi.postSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>; 
-  	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>; 
-  	postTeamsSearch(body: Models.TeamSearchRequest): Promise<Models.TeamsSearchResponse>; 
-  	postTelephonyProvidersEdgesSitesSearch(body: Models.SiteSearchRequest): Promise<Models.SitesSearchResponse>; 
-  	postUsersSearch(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
-  	postUsersSearchConversationTarget(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
-  	postUsersSearchQueuemembersManage(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
-  	postUsersSearchTeamsAssign(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
+declare class SearchApi {
+	constructor(apiClient?: ApiClientClass);
+  	getDocumentationGknSearch(q64: string): Promise<Models.GKNDocumentationSearchResponse>;
+  	getDocumentationSearch(q64: string): Promise<Models.DocumentationSearchResponse>;
+  	getGroupsSearch(q64: string, opts?: SearchApi.getGroupsSearchOptions): Promise<Models.GroupsSearchResponse>;
+  	getLocationsSearch(q64: string, opts?: SearchApi.getLocationsSearchOptions): Promise<Models.LocationsSearchResponse>;
+  	getSearch(q64: string, opts?: SearchApi.getSearchOptions): Promise<Models.JsonNodeSearchResponse>;
+  	getSearchSuggest(q64: string, opts?: SearchApi.getSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>;
+  	getTelephonyProvidersEdgesSitesSearch(q64: string, opts?: SearchApi.getTelephonyProvidersEdgesSitesSearchOptions): Promise<Models.SitesSearchResponse>;
+  	getUsersSearch(q64: string, opts?: SearchApi.getUsersSearchOptions): Promise<Models.UsersSearchResponse>;
+  	getVoicemailSearch(q64: string, opts?: SearchApi.getVoicemailSearchOptions): Promise<Models.VoicemailsSearchResponse>;
+  	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>;
+  	postConversationsParticipantsAttributesSearch(body: Models.ConversationParticipantSearchRequest): Promise<Models.JsonCursorSearchResponse>;
+  	postDocumentationAllSearch(body: Models.DocumentationV2SearchRequest): Promise<Models.JsonNodeSearchResponse>;
+  	postDocumentationGknSearch(body: Models.GKNDocumentationSearchRequest): Promise<Models.GKNDocumentationSearchResponse>;
+  	postDocumentationSearch(body: Models.DocumentationSearchRequest): Promise<Models.DocumentationSearchResponse>;
+  	postGroupsSearch(body: Models.GroupSearchRequest): Promise<Models.GroupsSearchResponse>;
+  	postKnowledgeKnowledgebaseSearch(knowledgeBaseId: string, opts?: SearchApi.postKnowledgeKnowledgebaseSearchOptions): Promise<Models.KnowledgeSearchResponse>;
+  	postLocationsSearch(body: Models.LocationSearchRequest): Promise<Models.LocationsSearchResponse>;
+  	postSearch(body: Models.SearchRequest, opts?: SearchApi.postSearchOptions): Promise<Models.JsonNodeSearchResponse>;
+  	postSearchSuggest(body: Models.SuggestSearchRequest, opts?: SearchApi.postSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>;
+  	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>;
+  	postTeamsSearch(body: Models.TeamSearchRequest): Promise<Models.TeamsSearchResponse>;
+  	postTelephonyProvidersEdgesSitesSearch(body: Models.SiteSearchRequest): Promise<Models.SitesSearchResponse>;
+  	postUsersSearch(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>;
+  	postUsersSearchConversationTarget(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>;
+  	postUsersSearchQueuemembersManage(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>;
+  	postUsersSearchTeamsAssign(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>;
   	postVoicemailSearch(body: Models.VoicemailSearchRequest): Promise<Models.VoicemailsSearchResponse>;
 }
 
@@ -5733,14 +5810,15 @@ declare namespace SearchApi {
 	}
 }
 
-declare class SettingsApi {  
-  	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string): Promise<void>; 
-  	getEmailsSettings(): Promise<Models.EmailSettings>; 
-  	getSettingsExecutiondata(): Promise<Models.ExecutionDataGlobalSettingsResponse>; 
-  	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string): Promise<Models.AutoAnswerSettings>; 
-  	patchEmailsSettings(opts?: SettingsApi.patchEmailsSettingsOptions): Promise<Models.EmailSettings>; 
-  	patchSettingsExecutiondata(body: Models.ExecutionDataSettingsRequest): Promise<Models.ExecutionDataGlobalSettingsResponse>; 
-  	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string, body: Models.AutoAnswerSettings): Promise<Models.AutoAnswerSettings>; 
+declare class SettingsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string): Promise<void>;
+  	getEmailsSettings(): Promise<Models.EmailSettings>;
+  	getSettingsExecutiondata(): Promise<Models.ExecutionDataGlobalSettingsResponse>;
+  	getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string): Promise<Models.AutoAnswerSettings>;
+  	patchEmailsSettings(opts?: SettingsApi.patchEmailsSettingsOptions): Promise<Models.EmailSettings>;
+  	patchSettingsExecutiondata(body: Models.ExecutionDataSettingsRequest): Promise<Models.ExecutionDataGlobalSettingsResponse>;
+  	patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string, body: Models.AutoAnswerSettings): Promise<Models.AutoAnswerSettings>;
   	putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId: string, body: Models.AutoAnswerSettings): Promise<Models.AutoAnswerSettings>;
 }
 
@@ -5750,57 +5828,178 @@ declare namespace SettingsApi {
 	}
 }
 
-declare class SpeechTextAnalyticsApi {  
-  	deleteSpeechandtextanalyticsCategory(categoryId: string): Promise<void>; 
-  	deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string): Promise<void>; 
-  	deleteSpeechandtextanalyticsProgram(programId: string, opts?: SpeechTextAnalyticsApi.deleteSpeechandtextanalyticsProgramOptions): Promise<Models.DeleteProgramResponse>; 
-  	deleteSpeechandtextanalyticsSentimentfeedback(): Promise<void>; 
-  	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId: string): Promise<void>; 
-  	deleteSpeechandtextanalyticsTopic(topicId: string): Promise<void>; 
-  	getSpeechandtextanalyticsCategories(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsCategoriesOptions): Promise<Models.CategoriesEntityListing>; 
-  	getSpeechandtextanalyticsCategory(categoryId: string): Promise<Models.StaCategory>; 
-  	getSpeechandtextanalyticsConversation(conversationId: string): Promise<Models.ConversationMetrics>; 
-  	getSpeechandtextanalyticsConversationCategories(conversationId: string, opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsConversationCategoriesOptions): Promise<Models.ConversationCategoriesEntityListing>; 
-  	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId: string, communicationId: string): Promise<Models.TranscriptUrl>; 
-  	getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId: string, communicationId: string): Promise<Models.TranscriptUrls>; 
-  	getSpeechandtextanalyticsDictionaryfeedback(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsDictionaryfeedbackOptions): Promise<Models.DictionaryFeedbackEntityListing>; 
-  	getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string): Promise<Models.DictionaryFeedback>; 
-  	getSpeechandtextanalyticsProgram(programId: string): Promise<Models.Program>; 
-  	getSpeechandtextanalyticsProgramMappings(programId: string): Promise<Models.ProgramMappings>; 
-  	getSpeechandtextanalyticsProgramTranscriptionengines(programId: string): Promise<Models.ProgramTranscriptionEngines>; 
-  	getSpeechandtextanalyticsPrograms(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsOptions): Promise<Models.ProgramsEntityListing>; 
-  	getSpeechandtextanalyticsProgramsGeneralJob(jobId: string): Promise<Models.GeneralProgramJob>; 
-  	getSpeechandtextanalyticsProgramsMappings(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsMappingsOptions): Promise<Models.ProgramsMappingsEntityListing>; 
-  	getSpeechandtextanalyticsProgramsPublishjob(jobId: string): Promise<Models.ProgramJob>; 
-  	getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(): Promise<Models.SupportedDialectsEntityListing>; 
-  	getSpeechandtextanalyticsProgramsUnpublished(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsUnpublishedOptions): Promise<Models.UnpublishedProgramsEntityListing>; 
-  	getSpeechandtextanalyticsSentimentDialects(): Promise<Models.EntityListing>; 
-  	getSpeechandtextanalyticsSentimentfeedback(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsSentimentfeedbackOptions): Promise<Models.SentimentFeedbackEntityListing>; 
-  	getSpeechandtextanalyticsSettings(): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
-  	getSpeechandtextanalyticsTopic(topicId: string): Promise<Models.Topic>; 
-  	getSpeechandtextanalyticsTopics(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsOptions): Promise<Models.TopicsEntityListing>; 
-  	getSpeechandtextanalyticsTopicsDialects(): Promise<Models.EntityListing>; 
-  	getSpeechandtextanalyticsTopicsGeneral(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralOptions): Promise<Models.GeneralTopicsEntityListing>; 
-  	getSpeechandtextanalyticsTopicsGeneralStatus(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralStatusOptions): Promise<Models.UnifiedGeneralTopicEntityListing>; 
-  	getSpeechandtextanalyticsTopicsPublishjob(jobId: string): Promise<Models.TopicJob>; 
-  	getSpeechandtextanalyticsTranslationsLanguageConversation(languageId: string, conversationId: string, opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTranslationsLanguageConversationOptions): Promise<Models.CommunicationTranslationList>; 
-  	getSpeechandtextanalyticsTranslationsLanguages(): Promise<Models.TranslateSupportedLanguageList>; 
-  	patchSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
-  	postSpeechandtextanalyticsCategories(body: Models.CategoryRequest): Promise<Models.StaCategory>; 
-  	postSpeechandtextanalyticsDictionaryfeedback(body: Models.DictionaryFeedback): Promise<Models.DictionaryFeedback>; 
-  	postSpeechandtextanalyticsPrograms(body: Models.ProgramRequest): Promise<Models.Program>; 
-  	postSpeechandtextanalyticsProgramsGeneralJobs(body: Models.GeneralProgramJobRequest): Promise<Models.GeneralProgramJob>; 
-  	postSpeechandtextanalyticsProgramsPublishjobs(body: Models.ProgramJobRequest): Promise<Models.ProgramJob>; 
-  	postSpeechandtextanalyticsSentimentfeedback(body: Models.SentimentFeedback): Promise<Models.SentimentFeedback>; 
-  	postSpeechandtextanalyticsTopics(body: Models.TopicRequest): Promise<Models.Topic>; 
-  	postSpeechandtextanalyticsTopicsPublishjobs(body: Models.TopicJobRequest): Promise<Models.TopicJob>; 
-  	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>; 
-  	putSpeechandtextanalyticsCategory(categoryId: string, body: Models.CategoryRequest): Promise<Models.StaCategory>; 
-  	putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string, opts?: SpeechTextAnalyticsApi.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdOptions): Promise<Models.DictionaryFeedback>; 
-  	putSpeechandtextanalyticsProgram(programId: string, body: Models.ProgramRequest): Promise<Models.Program>; 
-  	putSpeechandtextanalyticsProgramMappings(programId: string, body: Models.ProgramMappingsRequest): Promise<Models.ProgramMappings>; 
-  	putSpeechandtextanalyticsProgramTranscriptionengines(programId: string, body: Models.TranscriptionEnginesRequest): Promise<Models.ProgramTranscriptionEngines>; 
-  	putSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
+declare class SocialMediaApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteSocialmediaTopic(topicId: string, opts?: SocialMediaApi.deleteSocialmediaTopicOptions): Promise<void>;
+  	deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId: string, facebookIngestionRuleId: string, opts?: SocialMediaApi.deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions): Promise<void>;
+  	deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId: string, openId: string, opts?: SocialMediaApi.deleteSocialmediaTopicDataingestionrulesOpenOpenIdOptions): Promise<void>;
+  	deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId: string, twitterIngestionRuleId: string, opts?: SocialMediaApi.deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions): Promise<void>;
+  	getSocialmediaTopic(topicId: string, opts?: SocialMediaApi.getSocialmediaTopicOptions): Promise<Models.SocialTopicResponse>;
+  	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId: string, facebookIngestionRuleId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions): Promise<Models.FacebookDataIngestionRuleResponse>;
+  	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion(topicId: string, facebookIngestionRuleId: string, dataIngestionRuleVersion: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionOptions): Promise<Models.FacebookDataIngestionRuleVersionResponse>;
+  	getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions(topicId: string, facebookIngestionRuleId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsOptions): Promise<Models.FacebookDataIngestionRuleVersionResponseEntityListing>;
+  	getSocialmediaTopicDataingestionrulesOpenOpenId(topicId: string, openId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesOpenOpenIdOptions): Promise<Models.OpenDataIngestionRuleResponse>;
+  	getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId: string, openId: string, dataIngestionRuleVersion: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesOpenOpenIdVersionOptions): Promise<Models.OpenDataIngestionRuleVersionResponse>;
+  	getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId: string, openId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesOpenOpenIdVersionsOptions): Promise<Models.OpenDataIngestionRuleVersionResponseEntityListing>;
+  	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId: string, twitterIngestionRuleId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions): Promise<Models.TwitterDataIngestionRuleResponse>;
+  	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion(topicId: string, twitterIngestionRuleId: string, dataIngestionRuleVersion: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersionOptions): Promise<Models.TwitterDataIngestionRuleVersionResponse>;
+  	getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions(topicId: string, twitterIngestionRuleId: string, opts?: SocialMediaApi.getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersionsOptions): Promise<Models.TwitterDataIngestionRuleVersionResponseEntityListing>;
+  	getSocialmediaTopics(opts?: SocialMediaApi.getSocialmediaTopicsOptions): Promise<Models.SocialTopicResponseEntityListing>;
+  	patchSocialmediaTopic(topicId: string, opts?: SocialMediaApi.patchSocialmediaTopicOptions): Promise<Models.SocialTopicResponse>;
+  	patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId: string, facebookIngestionRuleId: string, opts?: SocialMediaApi.patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions): Promise<Models.FacebookDataIngestionRuleResponse>;
+  	patchSocialmediaTopicDataingestionrulesOpenOpenId(topicId: string, openId: string, opts?: SocialMediaApi.patchSocialmediaTopicDataingestionrulesOpenOpenIdOptions): Promise<Models.OpenDataIngestionRuleResponse>;
+  	patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId: string, twitterIngestionRuleId: string, opts?: SocialMediaApi.patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions): Promise<Models.TwitterDataIngestionRuleResponse>;
+  	postSocialmediaTopicDataingestionrulesFacebook(topicId: string, opts?: SocialMediaApi.postSocialmediaTopicDataingestionrulesFacebookOptions): Promise<Models.FacebookDataIngestionRuleResponse>;
+  	postSocialmediaTopicDataingestionrulesOpen(topicId: string, opts?: SocialMediaApi.postSocialmediaTopicDataingestionrulesOpenOptions): Promise<Models.OpenDataIngestionRuleResponse>;
+  	postSocialmediaTopicDataingestionrulesTwitter(topicId: string, opts?: SocialMediaApi.postSocialmediaTopicDataingestionrulesTwitterOptions): Promise<Models.TwitterDataIngestionRuleResponse>;
+  	postSocialmediaTopics(opts?: SocialMediaApi.postSocialmediaTopicsOptions): Promise<Models.SocialTopicResponse>;
+  	putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId: string, facebookIngestionRuleId: string, opts?: SocialMediaApi.putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions): Promise<Models.FacebookDataIngestionRuleResponse>;
+  	putSocialmediaTopicDataingestionrulesOpenOpenId(topicId: string, openId: string, opts?: SocialMediaApi.putSocialmediaTopicDataingestionrulesOpenOpenIdOptions): Promise<Models.OpenDataIngestionRuleResponse>;
+  	putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId: string, twitterIngestionRuleId: string, opts?: SocialMediaApi.putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions): Promise<Models.TwitterDataIngestionRuleResponse>;
+}
+
+declare namespace SocialMediaApi { 
+	export interface deleteSocialmediaTopicOptions { 
+		"hardDelete"?: boolean;
+	}
+	export interface deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions { 
+		"hardDelete"?: boolean;
+	}
+	export interface deleteSocialmediaTopicDataingestionrulesOpenOpenIdOptions { 
+		"hardDelete"?: boolean;
+	}
+	export interface deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions { 
+		"hardDelete"?: boolean;
+	}
+	export interface getSocialmediaTopicOptions { 
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions { 
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionOptions { 
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersionsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesOpenOpenIdOptions { 
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesOpenOpenIdVersionOptions { 
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesOpenOpenIdVersionsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions { 
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersionOptions { 
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersionsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"includeDeleted"?: boolean;
+	}
+	export interface getSocialmediaTopicsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"divisionIds"?: Array<string>;
+		"includeDeleted"?: boolean;
+	}
+	export interface patchSocialmediaTopicOptions { 
+		"body"?: Models.SocialTopicPatchRequest;
+	}
+	export interface patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions { 
+		"body"?: Models.DataIngestionRuleStatusPatchRequest;
+	}
+	export interface patchSocialmediaTopicDataingestionrulesOpenOpenIdOptions { 
+		"body"?: Models.DataIngestionRuleStatusPatchRequest;
+	}
+	export interface patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions { 
+		"body"?: Models.DataIngestionRuleStatusPatchRequest;
+	}
+	export interface postSocialmediaTopicDataingestionrulesFacebookOptions { 
+		"body"?: Models.FacebookDataIngestionRuleRequest;
+	}
+	export interface postSocialmediaTopicDataingestionrulesOpenOptions { 
+		"body"?: Models.OpenDataIngestionRuleRequest;
+	}
+	export interface postSocialmediaTopicDataingestionrulesTwitterOptions { 
+		"body"?: Models.TwitterDataIngestionRuleRequest;
+	}
+	export interface postSocialmediaTopicsOptions { 
+		"body"?: Models.SocialTopicRequest;
+	}
+	export interface putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdOptions { 
+		"body"?: Models.FacebookDataIngestionRuleRequest;
+	}
+	export interface putSocialmediaTopicDataingestionrulesOpenOpenIdOptions { 
+		"body"?: Models.OpenDataIngestionRuleRequest;
+	}
+	export interface putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdOptions { 
+		"body"?: Models.TwitterDataIngestionRuleRequest;
+	}
+}
+
+declare class SpeechTextAnalyticsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteSpeechandtextanalyticsCategory(categoryId: string): Promise<void>;
+  	deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string): Promise<void>;
+  	deleteSpeechandtextanalyticsProgram(programId: string, opts?: SpeechTextAnalyticsApi.deleteSpeechandtextanalyticsProgramOptions): Promise<Models.DeleteProgramResponse>;
+  	deleteSpeechandtextanalyticsSentimentfeedback(): Promise<void>;
+  	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId: string): Promise<void>;
+  	deleteSpeechandtextanalyticsTopic(topicId: string): Promise<void>;
+  	getSpeechandtextanalyticsCategories(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsCategoriesOptions): Promise<Models.CategoriesEntityListing>;
+  	getSpeechandtextanalyticsCategory(categoryId: string): Promise<Models.StaCategory>;
+  	getSpeechandtextanalyticsConversation(conversationId: string): Promise<Models.ConversationMetrics>;
+  	getSpeechandtextanalyticsConversationCategories(conversationId: string, opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsConversationCategoriesOptions): Promise<Models.ConversationCategoriesEntityListing>;
+  	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId: string, communicationId: string): Promise<Models.TranscriptUrl>;
+  	getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId: string, communicationId: string): Promise<Models.TranscriptUrls>;
+  	getSpeechandtextanalyticsDictionaryfeedback(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsDictionaryfeedbackOptions): Promise<Models.DictionaryFeedbackEntityListing>;
+  	getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string): Promise<Models.DictionaryFeedback>;
+  	getSpeechandtextanalyticsProgram(programId: string): Promise<Models.Program>;
+  	getSpeechandtextanalyticsProgramMappings(programId: string): Promise<Models.ProgramMappings>;
+  	getSpeechandtextanalyticsProgramTranscriptionengines(programId: string): Promise<Models.ProgramTranscriptionEngines>;
+  	getSpeechandtextanalyticsPrograms(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsOptions): Promise<Models.ProgramsEntityListing>;
+  	getSpeechandtextanalyticsProgramsGeneralJob(jobId: string): Promise<Models.GeneralProgramJob>;
+  	getSpeechandtextanalyticsProgramsMappings(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsMappingsOptions): Promise<Models.ProgramsMappingsEntityListing>;
+  	getSpeechandtextanalyticsProgramsPublishjob(jobId: string): Promise<Models.ProgramJob>;
+  	getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(): Promise<Models.SupportedDialectsEntityListing>;
+  	getSpeechandtextanalyticsProgramsUnpublished(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsUnpublishedOptions): Promise<Models.UnpublishedProgramsEntityListing>;
+  	getSpeechandtextanalyticsSentimentDialects(): Promise<Models.EntityListing>;
+  	getSpeechandtextanalyticsSentimentfeedback(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsSentimentfeedbackOptions): Promise<Models.SentimentFeedbackEntityListing>;
+  	getSpeechandtextanalyticsSettings(): Promise<Models.SpeechTextAnalyticsSettingsResponse>;
+  	getSpeechandtextanalyticsTopic(topicId: string): Promise<Models.Topic>;
+  	getSpeechandtextanalyticsTopics(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsOptions): Promise<Models.TopicsEntityListing>;
+  	getSpeechandtextanalyticsTopicsDialects(): Promise<Models.EntityListing>;
+  	getSpeechandtextanalyticsTopicsGeneral(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralOptions): Promise<Models.GeneralTopicsEntityListing>;
+  	getSpeechandtextanalyticsTopicsGeneralStatus(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralStatusOptions): Promise<Models.UnifiedGeneralTopicEntityListing>;
+  	getSpeechandtextanalyticsTopicsPublishjob(jobId: string): Promise<Models.TopicJob>;
+  	getSpeechandtextanalyticsTranslationsLanguageConversation(languageId: string, conversationId: string, opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTranslationsLanguageConversationOptions): Promise<Models.CommunicationTranslationList>;
+  	getSpeechandtextanalyticsTranslationsLanguages(): Promise<Models.TranslateSupportedLanguageList>;
+  	patchSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>;
+  	postSpeechandtextanalyticsCategories(body: Models.CategoryRequest): Promise<Models.StaCategory>;
+  	postSpeechandtextanalyticsDictionaryfeedback(body: Models.DictionaryFeedback): Promise<Models.DictionaryFeedback>;
+  	postSpeechandtextanalyticsPrograms(body: Models.ProgramRequest): Promise<Models.Program>;
+  	postSpeechandtextanalyticsProgramsGeneralJobs(body: Models.GeneralProgramJobRequest): Promise<Models.GeneralProgramJob>;
+  	postSpeechandtextanalyticsProgramsPublishjobs(body: Models.ProgramJobRequest): Promise<Models.ProgramJob>;
+  	postSpeechandtextanalyticsSentimentfeedback(body: Models.SentimentFeedback): Promise<Models.SentimentFeedback>;
+  	postSpeechandtextanalyticsTopics(body: Models.TopicRequest): Promise<Models.Topic>;
+  	postSpeechandtextanalyticsTopicsPublishjobs(body: Models.TopicJobRequest): Promise<Models.TopicJob>;
+  	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>;
+  	putSpeechandtextanalyticsCategory(categoryId: string, body: Models.CategoryRequest): Promise<Models.StaCategory>;
+  	putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId: string, opts?: SpeechTextAnalyticsApi.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdOptions): Promise<Models.DictionaryFeedback>;
+  	putSpeechandtextanalyticsProgram(programId: string, body: Models.ProgramRequest): Promise<Models.Program>;
+  	putSpeechandtextanalyticsProgramMappings(programId: string, body: Models.ProgramMappingsRequest): Promise<Models.ProgramMappings>;
+  	putSpeechandtextanalyticsProgramTranscriptionengines(programId: string, body: Models.TranscriptionEnginesRequest): Promise<Models.ProgramTranscriptionEngines>;
+  	putSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>;
   	putSpeechandtextanalyticsTopic(topicId: string, body: Models.TopicRequest): Promise<Models.Topic>;
 }
 
@@ -5866,9 +6065,10 @@ declare namespace SpeechTextAnalyticsApi {
 	}
 }
 
-declare class StationsApi {  
-  	deleteStationAssociateduser(stationId: string): Promise<void>; 
-  	getStation(stationId: string): Promise<Models.Station>; 
+declare class StationsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteStationAssociateduser(stationId: string): Promise<void>;
+  	getStation(stationId: string): Promise<Models.Station>;
   	getStations(opts?: StationsApi.getStationsOptions): Promise<Models.StationEntityListing>;
 }
 
@@ -5885,10 +6085,11 @@ declare namespace StationsApi {
 	}
 }
 
-declare class SuggestApi {  
-  	getSearch(q64: string, opts?: SuggestApi.getSearchOptions): Promise<Models.JsonNodeSearchResponse>; 
-  	getSearchSuggest(q64: string, opts?: SuggestApi.getSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>; 
-  	postSearch(body: Models.SearchRequest, opts?: SuggestApi.postSearchOptions): Promise<Models.JsonNodeSearchResponse>; 
+declare class SuggestApi {
+	constructor(apiClient?: ApiClientClass);
+  	getSearch(q64: string, opts?: SuggestApi.getSearchOptions): Promise<Models.JsonNodeSearchResponse>;
+  	getSearchSuggest(q64: string, opts?: SuggestApi.getSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>;
+  	postSearch(body: Models.SearchRequest, opts?: SuggestApi.postSearchOptions): Promise<Models.JsonNodeSearchResponse>;
   	postSearchSuggest(body: Models.SuggestSearchRequest, opts?: SuggestApi.postSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>;
 }
 
@@ -5909,63 +6110,64 @@ declare namespace SuggestApi {
 	}
 }
 
-declare class TaskManagementApi {  
-  	deleteTaskmanagementWorkbin(workbinId: string): Promise<void>; 
-  	deleteTaskmanagementWorkitem(workitemId: string): Promise<void>; 
-  	deleteTaskmanagementWorkitemsSchema(schemaId: string): Promise<void>; 
-  	deleteTaskmanagementWorktype(worktypeId: string): Promise<void>; 
-  	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string): Promise<void>; 
-  	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string): Promise<void>; 
-  	deleteTaskmanagementWorktypeStatus(worktypeId: string, statusId: string): Promise<void>; 
-  	getTaskmanagementWorkbin(workbinId: string): Promise<Models.Workbin>; 
-  	getTaskmanagementWorkbinHistory(workbinId: string, opts?: TaskManagementApi.getTaskmanagementWorkbinHistoryOptions): Promise<Models.WorkbinChangeListing>; 
-  	getTaskmanagementWorkbinVersion(workbinId: string, entityVersion: number): Promise<Models.WorkbinVersion>; 
-  	getTaskmanagementWorkbinVersions(workbinId: string, opts?: TaskManagementApi.getTaskmanagementWorkbinVersionsOptions): Promise<Models.WorkbinVersionListing>; 
-  	getTaskmanagementWorkitem(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemOptions): Promise<Models.Workitem>; 
-  	getTaskmanagementWorkitemHistory(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemHistoryOptions): Promise<Models.WorkitemChangeListing>; 
-  	getTaskmanagementWorkitemUserWrapups(workitemId: string, userId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemUserWrapupsOptions): Promise<Models.WorkitemWrapup>; 
-  	getTaskmanagementWorkitemVersion(workitemId: string, entityVersion: number): Promise<Models.WorkitemVersion>; 
-  	getTaskmanagementWorkitemVersions(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemVersionsOptions): Promise<Models.WorkitemVersionListing>; 
-  	getTaskmanagementWorkitemWrapups(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemWrapupsOptions): Promise<Models.WorkitemWrapupEntityListing>; 
-  	getTaskmanagementWorkitemsQueryJob(jobId: string): Promise<Models.WorkitemQueryJobResponse>; 
-  	getTaskmanagementWorkitemsQueryJobResults(jobId: string): Promise<Models.WorkitemPagedEntityListing>; 
-  	getTaskmanagementWorkitemsSchema(schemaId: string): Promise<Models.DataSchema>; 
-  	getTaskmanagementWorkitemsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>; 
-  	getTaskmanagementWorkitemsSchemaVersions(schemaId: string): Promise<Models.DataSchema>; 
-  	getTaskmanagementWorkitemsSchemas(): Promise<Models.DataSchemaListing>; 
-  	getTaskmanagementWorktype(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeOptions): Promise<Models.Worktype>; 
-  	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string): Promise<Models.WorkitemOnAttributeChangeRule>; 
-  	getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeFlowsOnattributechangeRulesOptions): Promise<Models.WorkitemOnAttributeChangeRuleListing>; 
-  	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string): Promise<Models.WorkitemOnCreateRule>; 
-  	getTaskmanagementWorktypeFlowsOncreateRules(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeFlowsOncreateRulesOptions): Promise<Models.WorkitemOnCreateRuleListing>; 
-  	getTaskmanagementWorktypeHistory(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeHistoryOptions): Promise<Models.WorktypeChangeListing>; 
-  	getTaskmanagementWorktypeStatus(worktypeId: string, statusId: string): Promise<Models.WorkitemStatus>; 
-  	getTaskmanagementWorktypeStatuses(worktypeId: string): Promise<Models.WorkitemStatusListing>; 
-  	getTaskmanagementWorktypeVersion(worktypeId: string, entityVersion: number): Promise<Models.WorktypeVersion>; 
-  	getTaskmanagementWorktypeVersions(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeVersionsOptions): Promise<Models.WorktypeVersionListing>; 
-  	patchTaskmanagementWorkbin(workbinId: string, body: Models.WorkbinUpdate): Promise<Models.Workbin>; 
-  	patchTaskmanagementWorkitem(workitemId: string, body: Models.WorkitemUpdate): Promise<Models.Workitem>; 
-  	patchTaskmanagementWorkitemAssignment(workitemId: string, body: Models.WorkitemManualAssign): Promise<void>; 
-  	patchTaskmanagementWorkitemUserWrapups(workitemId: string, userId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>; 
-  	patchTaskmanagementWorkitemUsersMeWrapups(workitemId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>; 
-  	patchTaskmanagementWorktype(worktypeId: string, body: Models.WorktypeUpdate): Promise<Models.Worktype>; 
-  	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string, body: Models.WorkitemOnAttributeChangeRuleUpdate): Promise<Models.WorkitemOnAttributeChangeRule>; 
-  	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string, body: Models.WorkitemOnCreateRuleUpdate): Promise<Models.WorkitemOnCreateRule>; 
-  	patchTaskmanagementWorktypeStatus(worktypeId: string, statusId: string, body: Models.WorkitemStatusUpdate): Promise<Models.WorkitemStatus>; 
-  	postTaskmanagementWorkbins(body: Models.WorkbinCreate): Promise<Models.Workbin>; 
-  	postTaskmanagementWorkbinsQuery(body: Models.WorkbinQueryRequest): Promise<Models.WorkbinQueryEntityListing>; 
-  	postTaskmanagementWorkitemAcdCancel(workitemId: string): Promise<Models.Workitem>; 
-  	postTaskmanagementWorkitemDisconnect(workitemId: string): Promise<Models.Workitem>; 
-  	postTaskmanagementWorkitemTerminate(workitemId: string, opts?: TaskManagementApi.postTaskmanagementWorkitemTerminateOptions): Promise<Models.Workitem>; 
-  	postTaskmanagementWorkitems(body: Models.WorkitemCreate): Promise<Models.Workitem>; 
-  	postTaskmanagementWorkitemsQuery(body: Models.WorkitemQueryPostRequest): Promise<Models.WorkitemPostQueryEntityListing>; 
-  	postTaskmanagementWorkitemsQueryJobs(body: Models.WorkitemQueryJobCreate): Promise<Models.WorkitemQueryJobResponse>; 
-  	postTaskmanagementWorkitemsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>; 
-  	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId: string, body: Models.WorkitemOnAttributeChangeRuleCreate): Promise<Models.WorkitemOnAttributeChangeRule>; 
-  	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId: string, body: Models.WorkitemOnCreateRuleCreate): Promise<Models.WorkitemOnCreateRule>; 
-  	postTaskmanagementWorktypeStatuses(worktypeId: string, body: Models.WorkitemStatusCreate): Promise<Models.WorkitemStatus>; 
-  	postTaskmanagementWorktypes(body: Models.WorktypeCreate): Promise<Models.Worktype>; 
-  	postTaskmanagementWorktypesQuery(body: Models.WorktypeQueryRequest): Promise<Models.WorktypeQueryEntityListing>; 
+declare class TaskManagementApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteTaskmanagementWorkbin(workbinId: string): Promise<void>;
+  	deleteTaskmanagementWorkitem(workitemId: string): Promise<void>;
+  	deleteTaskmanagementWorkitemsSchema(schemaId: string): Promise<void>;
+  	deleteTaskmanagementWorktype(worktypeId: string): Promise<void>;
+  	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string): Promise<void>;
+  	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string): Promise<void>;
+  	deleteTaskmanagementWorktypeStatus(worktypeId: string, statusId: string): Promise<void>;
+  	getTaskmanagementWorkbin(workbinId: string): Promise<Models.Workbin>;
+  	getTaskmanagementWorkbinHistory(workbinId: string, opts?: TaskManagementApi.getTaskmanagementWorkbinHistoryOptions): Promise<Models.WorkbinChangeListing>;
+  	getTaskmanagementWorkbinVersion(workbinId: string, entityVersion: number): Promise<Models.WorkbinVersion>;
+  	getTaskmanagementWorkbinVersions(workbinId: string, opts?: TaskManagementApi.getTaskmanagementWorkbinVersionsOptions): Promise<Models.WorkbinVersionListing>;
+  	getTaskmanagementWorkitem(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemOptions): Promise<Models.Workitem>;
+  	getTaskmanagementWorkitemHistory(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemHistoryOptions): Promise<Models.WorkitemChangeListing>;
+  	getTaskmanagementWorkitemUserWrapups(workitemId: string, userId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemUserWrapupsOptions): Promise<Models.WorkitemWrapup>;
+  	getTaskmanagementWorkitemVersion(workitemId: string, entityVersion: number): Promise<Models.WorkitemVersion>;
+  	getTaskmanagementWorkitemVersions(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemVersionsOptions): Promise<Models.WorkitemVersionListing>;
+  	getTaskmanagementWorkitemWrapups(workitemId: string, opts?: TaskManagementApi.getTaskmanagementWorkitemWrapupsOptions): Promise<Models.WorkitemWrapupEntityListing>;
+  	getTaskmanagementWorkitemsQueryJob(jobId: string): Promise<Models.WorkitemQueryJobResponse>;
+  	getTaskmanagementWorkitemsQueryJobResults(jobId: string): Promise<Models.WorkitemPagedEntityListing>;
+  	getTaskmanagementWorkitemsSchema(schemaId: string): Promise<Models.DataSchema>;
+  	getTaskmanagementWorkitemsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>;
+  	getTaskmanagementWorkitemsSchemaVersions(schemaId: string): Promise<Models.DataSchema>;
+  	getTaskmanagementWorkitemsSchemas(): Promise<Models.DataSchemaListing>;
+  	getTaskmanagementWorktype(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeOptions): Promise<Models.Worktype>;
+  	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string): Promise<Models.WorkitemOnAttributeChangeRule>;
+  	getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeFlowsOnattributechangeRulesOptions): Promise<Models.WorkitemOnAttributeChangeRuleListing>;
+  	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string): Promise<Models.WorkitemOnCreateRule>;
+  	getTaskmanagementWorktypeFlowsOncreateRules(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeFlowsOncreateRulesOptions): Promise<Models.WorkitemOnCreateRuleListing>;
+  	getTaskmanagementWorktypeHistory(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeHistoryOptions): Promise<Models.WorktypeChangeListing>;
+  	getTaskmanagementWorktypeStatus(worktypeId: string, statusId: string): Promise<Models.WorkitemStatus>;
+  	getTaskmanagementWorktypeStatuses(worktypeId: string): Promise<Models.WorkitemStatusListing>;
+  	getTaskmanagementWorktypeVersion(worktypeId: string, entityVersion: number): Promise<Models.WorktypeVersion>;
+  	getTaskmanagementWorktypeVersions(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeVersionsOptions): Promise<Models.WorktypeVersionListing>;
+  	patchTaskmanagementWorkbin(workbinId: string, body: Models.WorkbinUpdate): Promise<Models.Workbin>;
+  	patchTaskmanagementWorkitem(workitemId: string, body: Models.WorkitemUpdate): Promise<Models.Workitem>;
+  	patchTaskmanagementWorkitemAssignment(workitemId: string, body: Models.WorkitemManualAssign): Promise<void>;
+  	patchTaskmanagementWorkitemUserWrapups(workitemId: string, userId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>;
+  	patchTaskmanagementWorkitemUsersMeWrapups(workitemId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>;
+  	patchTaskmanagementWorktype(worktypeId: string, body: Models.WorktypeUpdate): Promise<Models.Worktype>;
+  	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string, body: Models.WorkitemOnAttributeChangeRuleUpdate): Promise<Models.WorkitemOnAttributeChangeRule>;
+  	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string, body: Models.WorkitemOnCreateRuleUpdate): Promise<Models.WorkitemOnCreateRule>;
+  	patchTaskmanagementWorktypeStatus(worktypeId: string, statusId: string, body: Models.WorkitemStatusUpdate): Promise<Models.WorkitemStatus>;
+  	postTaskmanagementWorkbins(body: Models.WorkbinCreate): Promise<Models.Workbin>;
+  	postTaskmanagementWorkbinsQuery(body: Models.WorkbinQueryRequest): Promise<Models.WorkbinQueryEntityListing>;
+  	postTaskmanagementWorkitemAcdCancel(workitemId: string): Promise<Models.Workitem>;
+  	postTaskmanagementWorkitemDisconnect(workitemId: string): Promise<Models.Workitem>;
+  	postTaskmanagementWorkitemTerminate(workitemId: string, opts?: TaskManagementApi.postTaskmanagementWorkitemTerminateOptions): Promise<Models.Workitem>;
+  	postTaskmanagementWorkitems(body: Models.WorkitemCreate): Promise<Models.Workitem>;
+  	postTaskmanagementWorkitemsQuery(body: Models.WorkitemQueryPostRequest): Promise<Models.WorkitemPostQueryEntityListing>;
+  	postTaskmanagementWorkitemsQueryJobs(body: Models.WorkitemQueryJobCreate): Promise<Models.WorkitemQueryJobResponse>;
+  	postTaskmanagementWorkitemsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>;
+  	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId: string, body: Models.WorkitemOnAttributeChangeRuleCreate): Promise<Models.WorkitemOnAttributeChangeRule>;
+  	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId: string, body: Models.WorkitemOnCreateRuleCreate): Promise<Models.WorkitemOnCreateRule>;
+  	postTaskmanagementWorktypeStatuses(worktypeId: string, body: Models.WorkitemStatusCreate): Promise<Models.WorkitemStatus>;
+  	postTaskmanagementWorktypes(body: Models.WorktypeCreate): Promise<Models.Worktype>;
+  	postTaskmanagementWorktypesQuery(body: Models.WorktypeQueryRequest): Promise<Models.WorktypeQueryEntityListing>;
   	putTaskmanagementWorkitemsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>;
 }
 
@@ -6032,16 +6234,17 @@ declare namespace TaskManagementApi {
 	}
 }
 
-declare class TeamsApi {  
-  	deleteTeam(teamId: string): Promise<void>; 
-  	deleteTeamMembers(teamId: string, id: string): Promise<void>; 
-  	getTeam(teamId: string, opts?: TeamsApi.getTeamOptions): Promise<Models.Team>; 
-  	getTeamMembers(teamId: string, opts?: TeamsApi.getTeamMembersOptions): Promise<Models.TeamMemberEntityListing>; 
-  	getTeams(opts?: TeamsApi.getTeamsOptions): Promise<Models.TeamEntityListing>; 
-  	patchTeam(teamId: string, body: Models.Team): Promise<Models.Team>; 
-  	postAnalyticsTeamsActivityQuery(body: Models.TeamActivityQuery, opts?: TeamsApi.postAnalyticsTeamsActivityQueryOptions): Promise<Models.TeamActivityResponse>; 
-  	postTeamMembers(teamId: string, body: Models.TeamMembers): Promise<Models.TeamMemberAddListingResponse>; 
-  	postTeams(body: Models.Team): Promise<Models.Team>; 
+declare class TeamsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteTeam(teamId: string): Promise<void>;
+  	deleteTeamMembers(teamId: string, id: string): Promise<void>;
+  	getTeam(teamId: string, opts?: TeamsApi.getTeamOptions): Promise<Models.Team>;
+  	getTeamMembers(teamId: string, opts?: TeamsApi.getTeamMembersOptions): Promise<Models.TeamMemberEntityListing>;
+  	getTeams(opts?: TeamsApi.getTeamsOptions): Promise<Models.TeamEntityListing>;
+  	patchTeam(teamId: string, body: Models.Team): Promise<Models.Team>;
+  	postAnalyticsTeamsActivityQuery(body: Models.TeamActivityQuery, opts?: TeamsApi.postAnalyticsTeamsActivityQueryOptions): Promise<Models.TeamActivityResponse>;
+  	postTeamMembers(teamId: string, body: Models.TeamMembers): Promise<Models.TeamMemberAddListingResponse>;
+  	postTeams(body: Models.Team): Promise<Models.Team>;
   	postTeamsSearch(body: Models.TeamSearchRequest): Promise<Models.TeamsSearchResponse>;
 }
 
@@ -6068,12 +6271,13 @@ declare namespace TeamsApi {
 	}
 }
 
-declare class TelephonyApi {  
-  	getTelephonyMediaregions(): Promise<Models.MediaRegions>; 
-  	getTelephonySipmessagesConversation(conversationId: string): Promise<Models.Callmessage>; 
-  	getTelephonySipmessagesConversationHeaders(conversationId: string, opts?: TelephonyApi.getTelephonySipmessagesConversationHeadersOptions): Promise<Models.Callheader>; 
-  	getTelephonySiptraces(dateStart: string, dateEnd: string, opts?: TelephonyApi.getTelephonySiptracesOptions): Promise<Models.SipSearchResult>; 
-  	getTelephonySiptracesDownloadDownloadId(downloadId: string): Promise<Models.SignedUrlResponse>; 
+declare class TelephonyApi {
+	constructor(apiClient?: ApiClientClass);
+  	getTelephonyMediaregions(): Promise<Models.MediaRegions>;
+  	getTelephonySipmessagesConversation(conversationId: string): Promise<Models.Callmessage>;
+  	getTelephonySipmessagesConversationHeaders(conversationId: string, opts?: TelephonyApi.getTelephonySipmessagesConversationHeadersOptions): Promise<Models.Callheader>;
+  	getTelephonySiptraces(dateStart: string, dateEnd: string, opts?: TelephonyApi.getTelephonySiptracesOptions): Promise<Models.SipSearchResult>;
+  	getTelephonySiptracesDownloadDownloadId(downloadId: string): Promise<Models.SignedUrlResponse>;
   	postTelephonySiptracesDownload(sIPSearchPublicRequest: Models.SIPSearchPublicRequest): Promise<Models.SipDownloadResponse>;
 }
 
@@ -6089,131 +6293,132 @@ declare namespace TelephonyApi {
 	}
 }
 
-declare class TelephonyProvidersEdgeApi {  
-  	deleteTelephonyProvidersEdge(edgeId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgeLogicalinterface(edgeId: string, interfaceId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgeSoftwareupdate(edgeId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesAlertablepresences(): Promise<void>; 
-  	deleteTelephonyProvidersEdgesCertificateauthority(certificateId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesDidpool(didPoolId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesPhone(phoneId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesSite(siteId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesSiteOutboundroute(siteId: string, outboundRouteId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId: string): Promise<void>; 
-  	getTelephonyProvidersEdge(edgeId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeOptions): Promise<Models.Edge>; 
-  	getTelephonyProvidersEdgeDiagnosticNslookup(edgeId: string): Promise<Models.EdgeNetworkDiagnosticResponse>; 
-  	getTelephonyProvidersEdgeDiagnosticPing(edgeId: string): Promise<Models.EdgeNetworkDiagnosticResponse>; 
-  	getTelephonyProvidersEdgeDiagnosticRoute(edgeId: string): Promise<Models.EdgeNetworkDiagnosticResponse>; 
-  	getTelephonyProvidersEdgeDiagnosticTracepath(edgeId: string): Promise<Models.EdgeNetworkDiagnosticResponse>; 
-  	getTelephonyProvidersEdgeLogicalinterface(edgeId: string, interfaceId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeLogicalinterfaceOptions): Promise<Models.DomainLogicalInterface>; 
-  	getTelephonyProvidersEdgeLogicalinterfaces(edgeId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeLogicalinterfacesOptions): Promise<Models.LogicalInterfaceEntityListing>; 
-  	getTelephonyProvidersEdgeLogsJob(edgeId: string, jobId: string): Promise<Models.EdgeLogsJob>; 
-  	getTelephonyProvidersEdgeMetrics(edgeId: string): Promise<Models.EdgeMetrics>; 
-  	getTelephonyProvidersEdgePhysicalinterface(edgeId: string, interfaceId: string): Promise<Models.DomainPhysicalInterface>; 
-  	getTelephonyProvidersEdgePhysicalinterfaces(edgeId: string): Promise<Models.PhysicalInterfaceEntityListing>; 
-  	getTelephonyProvidersEdgeSetuppackage(edgeId: string): Promise<Models.VmPairingInfo>; 
-  	getTelephonyProvidersEdgeSoftwareupdate(edgeId: string): Promise<Models.DomainEdgeSoftwareUpdateDto>; 
-  	getTelephonyProvidersEdgeSoftwareversions(edgeId: string): Promise<Models.DomainEdgeSoftwareVersionDtoEntityListing>; 
-  	getTelephonyProvidersEdgeTrunks(edgeId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeTrunksOptions): Promise<Models.TrunkEntityListing>; 
-  	getTelephonyProvidersEdges(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesOptions): Promise<Models.EdgeEntityListing>; 
-  	getTelephonyProvidersEdgesAlertablepresences(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesAlertablepresencesOptions): Promise<Models.AlertablePresences>; 
-  	getTelephonyProvidersEdgesCertificateauthorities(): Promise<Models.CertificateAuthorityEntityListing>; 
-  	getTelephonyProvidersEdgesCertificateauthority(certificateId: string): Promise<Models.DomainCertificateAuthority>; 
-  	getTelephonyProvidersEdgesDid(didId: string): Promise<Models.DID>; 
-  	getTelephonyProvidersEdgesDidpool(didPoolId: string): Promise<Models.DIDPool>; 
-  	getTelephonyProvidersEdgesDidpools(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesDidpoolsOptions): Promise<Models.DIDPoolEntityListing>; 
-  	getTelephonyProvidersEdgesDidpoolsDids(type: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesDidpoolsDidsOptions): Promise<Models.DIDNumberEntityListing>; 
-  	getTelephonyProvidersEdgesDids(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesDidsOptions): Promise<Models.DIDEntityListing>; 
-  	getTelephonyProvidersEdgesEdgegroup(edgeGroupId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesEdgegroupOptions): Promise<Models.EdgeGroup>; 
-  	getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId: string, edgetrunkbaseId: string): Promise<Models.EdgeTrunkBase>; 
-  	getTelephonyProvidersEdgesEdgegroups(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesEdgegroupsOptions): Promise<Models.EdgeGroupEntityListing>; 
-  	getTelephonyProvidersEdgesEdgeversionreport(): Promise<Models.EdgeVersionReport>; 
-  	getTelephonyProvidersEdgesExpired(): Promise<Models.ExpiredEdgeListing>; 
-  	getTelephonyProvidersEdgesExtension(extensionId: string): Promise<Models.Extension>; 
-  	getTelephonyProvidersEdgesExtensionpool(extensionPoolId: string): Promise<Models.ExtensionPool>; 
-  	getTelephonyProvidersEdgesExtensionpools(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionpoolsOptions): Promise<Models.ExtensionPoolEntityListing>; 
-  	getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionpoolsDivisionviewsOptions): Promise<Models.ExtensionPoolDivisionViewEntityListing>; 
-  	getTelephonyProvidersEdgesExtensions(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionsOptions): Promise<Models.ExtensionEntityListing>; 
-  	getTelephonyProvidersEdgesLine(lineId: string): Promise<Models.Line>; 
-  	getTelephonyProvidersEdgesLinebasesetting(lineBaseId: string): Promise<Models.LineBase>; 
-  	getTelephonyProvidersEdgesLinebasesettings(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesLinebasesettingsOptions): Promise<Models.LineBaseEntityListing>; 
-  	getTelephonyProvidersEdgesLines(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesLinesOptions): Promise<Models.LineEntityListing>; 
-  	getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId: string): Promise<Models.Line>; 
-  	getTelephonyProvidersEdgesLogicalinterfaces(edgeIds: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesLogicalinterfacesOptions): Promise<Models.LogicalInterfaceEntityListing>; 
-  	getTelephonyProvidersEdgesMediastatisticsConversation(conversationId: string): Promise<Models.MediaStatisticsListing>; 
-  	getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId: string, communicationId: string): Promise<Models.MediaStatistics>; 
-  	getTelephonyProvidersEdgesMetrics(edgeIds: string): Promise<Array<Models.EdgeMetrics>>; 
-  	getTelephonyProvidersEdgesOutboundroutes(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesOutboundroutesOptions): Promise<Models.OutboundRouteEntityListing>; 
-  	getTelephonyProvidersEdgesPhone(phoneId: string): Promise<Models.Phone>; 
-  	getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId: string): Promise<Models.PhoneBase>; 
-  	getTelephonyProvidersEdgesPhonebasesettings(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesPhonebasesettingsOptions): Promise<Models.PhoneBaseEntityListing>; 
-  	getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesOptions): Promise<Models.PhoneMetaBaseEntityListing>; 
-  	getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId: string): Promise<Models.PhoneBase>; 
-  	getTelephonyProvidersEdgesPhones(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesPhonesOptions): Promise<Models.PhoneEntityListing>; 
-  	getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId: string): Promise<Models.Phone>; 
-  	getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds: string): Promise<Models.PhysicalInterfaceEntityListing>; 
-  	getTelephonyProvidersEdgesSite(siteId: string): Promise<Models.Site>; 
-  	getTelephonyProvidersEdgesSiteNumberplan(siteId: string, numberPlanId: string): Promise<Models.NumberPlan>; 
-  	getTelephonyProvidersEdgesSiteNumberplans(siteId: string): Promise<Array<Models.NumberPlan>>; 
-  	getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesSiteNumberplansClassificationsOptions): Promise<Array<string>>; 
-  	getTelephonyProvidersEdgesSiteOutboundroute(siteId: string, outboundRouteId: string): Promise<Models.OutboundRouteBase>; 
-  	getTelephonyProvidersEdgesSiteOutboundroutes(siteId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesSiteOutboundroutesOptions): Promise<Models.OutboundRouteBaseEntityListing>; 
-  	getTelephonyProvidersEdgesSiteSiteconnections(siteId: string): Promise<Models.SiteConnections>; 
-  	getTelephonyProvidersEdgesSites(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesSitesOptions): Promise<Models.SiteEntityListing>; 
-  	getTelephonyProvidersEdgesSitesSearch(q64: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesSitesSearchOptions): Promise<Models.SitesSearchResponse>; 
-  	getTelephonyProvidersEdgesTimezones(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTimezonesOptions): Promise<Models.TimeZoneEntityListing>; 
-  	getTelephonyProvidersEdgesTrunk(trunkId: string): Promise<Models.Trunk>; 
-  	getTelephonyProvidersEdgesTrunkMetrics(trunkId: string): Promise<Models.TrunkMetrics>; 
-  	getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunkbasesettingOptions): Promise<Models.TrunkBase>; 
-  	getTelephonyProvidersEdgesTrunkbasesettings(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunkbasesettingsOptions): Promise<Models.TrunkBaseEntityListing>; 
-  	getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesOptions): Promise<Models.TrunkMetabaseEntityListing>; 
-  	getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId: string): Promise<Models.TrunkBase>; 
-  	getTelephonyProvidersEdgesTrunks(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunksOptions): Promise<Models.TrunkEntityListing>; 
-  	getTelephonyProvidersEdgesTrunksMetrics(trunkIds: string): Promise<Array<Models.TrunkMetrics>>; 
-  	getTelephonyProvidersEdgesTrunkswithrecording(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunkswithrecordingOptions): Promise<Models.TrunkRecordingEnabledCount>; 
-  	patchTelephonyProvidersEdgesSiteSiteconnections(siteId: string, body: Models.DisableSiteConnectionsRequest): Promise<Models.SiteConnections>; 
-  	postTelephonyProvidersEdgeDiagnosticNslookup(edgeId: string, body: Models.EdgeNetworkDiagnosticRequest): Promise<Models.EdgeNetworkDiagnostic>; 
-  	postTelephonyProvidersEdgeDiagnosticPing(edgeId: string, body: Models.EdgeNetworkDiagnosticRequest): Promise<Models.EdgeNetworkDiagnostic>; 
-  	postTelephonyProvidersEdgeDiagnosticRoute(edgeId: string, body: Models.EdgeNetworkDiagnosticRequest): Promise<Models.EdgeNetworkDiagnostic>; 
-  	postTelephonyProvidersEdgeDiagnosticTracepath(edgeId: string, body: Models.EdgeNetworkDiagnosticRequest): Promise<Models.EdgeNetworkDiagnostic>; 
-  	postTelephonyProvidersEdgeLogicalinterfaces(edgeId: string, body: Models.DomainLogicalInterface): Promise<Models.DomainLogicalInterface>; 
-  	postTelephonyProvidersEdgeLogsJobUpload(edgeId: string, jobId: string, body: Models.EdgeLogsJobUploadRequest): Promise<void>; 
-  	postTelephonyProvidersEdgeLogsJobs(edgeId: string, body: Models.EdgeLogsJobRequest): Promise<Models.EdgeLogsJobResponse>; 
-  	postTelephonyProvidersEdgeReboot(edgeId: string, opts?: TelephonyProvidersEdgeApi.postTelephonyProvidersEdgeRebootOptions): Promise<string>; 
-  	postTelephonyProvidersEdgeSoftwareupdate(edgeId: string, body: Models.DomainEdgeSoftwareUpdateDto): Promise<Models.DomainEdgeSoftwareUpdateDto>; 
-  	postTelephonyProvidersEdgeStatuscode(edgeId: string, opts?: TelephonyProvidersEdgeApi.postTelephonyProvidersEdgeStatuscodeOptions): Promise<string>; 
-  	postTelephonyProvidersEdgeUnpair(edgeId: string): Promise<string>; 
-  	postTelephonyProvidersEdges(body: Models.Edge): Promise<Models.Edge>; 
-  	postTelephonyProvidersEdgesAddressvalidation(body: Models.ValidateAddressRequest): Promise<Models.ValidateAddressResponse>; 
-  	postTelephonyProvidersEdgesCertificateauthorities(body: Models.DomainCertificateAuthority): Promise<Models.DomainCertificateAuthority>; 
-  	postTelephonyProvidersEdgesDidpools(body: Models.DIDPool): Promise<Models.DIDPool>; 
-  	postTelephonyProvidersEdgesEdgegroups(body: Models.EdgeGroup): Promise<Models.EdgeGroup>; 
-  	postTelephonyProvidersEdgesExtensionpools(body: Models.ExtensionPool): Promise<Models.ExtensionPool>; 
-  	postTelephonyProvidersEdgesPhoneReboot(phoneId: string): Promise<void>; 
-  	postTelephonyProvidersEdgesPhonebasesettings(body: Models.PhoneBase): Promise<Models.PhoneBase>; 
-  	postTelephonyProvidersEdgesPhones(body: Models.Phone): Promise<Models.Phone>; 
-  	postTelephonyProvidersEdgesPhonesReboot(body: Models.PhonesReboot): Promise<void>; 
-  	postTelephonyProvidersEdgesSiteOutboundroutes(siteId: string, body: Models.OutboundRouteBase): Promise<Models.OutboundRouteBase>; 
-  	postTelephonyProvidersEdgesSites(body: Models.Site): Promise<Models.Site>; 
-  	postTelephonyProvidersEdgesSitesSearch(body: Models.SiteSearchRequest): Promise<Models.SitesSearchResponse>; 
-  	postTelephonyProvidersEdgesTrunkbasesettings(body: Models.TrunkBase): Promise<Models.TrunkBase>; 
-  	putTelephonyProvidersEdge(edgeId: string, body: Models.Edge): Promise<Models.Edge>; 
-  	putTelephonyProvidersEdgeLogicalinterface(edgeId: string, interfaceId: string, body: Models.DomainLogicalInterface): Promise<Models.DomainLogicalInterface>; 
-  	putTelephonyProvidersEdgesAlertablepresences(body: Models.AlertablePresences): Promise<void>; 
-  	putTelephonyProvidersEdgesCertificateauthority(certificateId: string, body: Models.DomainCertificateAuthority): Promise<Models.DomainCertificateAuthority>; 
-  	putTelephonyProvidersEdgesDidpool(didPoolId: string, body: Models.DIDPool): Promise<Models.DIDPool>; 
-  	putTelephonyProvidersEdgesEdgegroup(edgeGroupId: string, body: Models.EdgeGroup): Promise<Models.EdgeGroup>; 
-  	putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId: string, edgetrunkbaseId: string, body: Models.EdgeTrunkBase): Promise<Models.EdgeTrunkBase>; 
-  	putTelephonyProvidersEdgesExtensionpool(extensionPoolId: string, body: Models.ExtensionPool): Promise<Models.ExtensionPool>; 
-  	putTelephonyProvidersEdgesPhone(phoneId: string, body: Models.Phone): Promise<Models.Phone>; 
-  	putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId: string, body: Models.PhoneBase): Promise<Models.PhoneBase>; 
-  	putTelephonyProvidersEdgesSite(siteId: string, body: Models.Site): Promise<Models.Site>; 
-  	putTelephonyProvidersEdgesSiteNumberplans(siteId: string, body: Array<Models.NumberPlan>): Promise<Array<Models.NumberPlan>>; 
-  	putTelephonyProvidersEdgesSiteOutboundroute(siteId: string, outboundRouteId: string, body: Models.OutboundRouteBase): Promise<Models.OutboundRouteBase>; 
-  	putTelephonyProvidersEdgesSiteSiteconnections(siteId: string, body: Models.SiteConnections): Promise<Models.SiteConnections>; 
+declare class TelephonyProvidersEdgeApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteTelephonyProvidersEdge(edgeId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgeLogicalinterface(edgeId: string, interfaceId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgeSoftwareupdate(edgeId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesAlertablepresences(): Promise<void>;
+  	deleteTelephonyProvidersEdgesCertificateauthority(certificateId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesDidpool(didPoolId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesPhone(phoneId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesSite(siteId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesSiteOutboundroute(siteId: string, outboundRouteId: string): Promise<void>;
+  	deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId: string): Promise<void>;
+  	getTelephonyProvidersEdge(edgeId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeOptions): Promise<Models.Edge>;
+  	getTelephonyProvidersEdgeDiagnosticNslookup(edgeId: string): Promise<Models.EdgeNetworkDiagnosticResponse>;
+  	getTelephonyProvidersEdgeDiagnosticPing(edgeId: string): Promise<Models.EdgeNetworkDiagnosticResponse>;
+  	getTelephonyProvidersEdgeDiagnosticRoute(edgeId: string): Promise<Models.EdgeNetworkDiagnosticResponse>;
+  	getTelephonyProvidersEdgeDiagnosticTracepath(edgeId: string): Promise<Models.EdgeNetworkDiagnosticResponse>;
+  	getTelephonyProvidersEdgeLogicalinterface(edgeId: string, interfaceId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeLogicalinterfaceOptions): Promise<Models.DomainLogicalInterface>;
+  	getTelephonyProvidersEdgeLogicalinterfaces(edgeId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeLogicalinterfacesOptions): Promise<Models.LogicalInterfaceEntityListing>;
+  	getTelephonyProvidersEdgeLogsJob(edgeId: string, jobId: string): Promise<Models.EdgeLogsJob>;
+  	getTelephonyProvidersEdgeMetrics(edgeId: string): Promise<Models.EdgeMetrics>;
+  	getTelephonyProvidersEdgePhysicalinterface(edgeId: string, interfaceId: string): Promise<Models.DomainPhysicalInterface>;
+  	getTelephonyProvidersEdgePhysicalinterfaces(edgeId: string): Promise<Models.PhysicalInterfaceEntityListing>;
+  	getTelephonyProvidersEdgeSetuppackage(edgeId: string): Promise<Models.VmPairingInfo>;
+  	getTelephonyProvidersEdgeSoftwareupdate(edgeId: string): Promise<Models.DomainEdgeSoftwareUpdateDto>;
+  	getTelephonyProvidersEdgeSoftwareversions(edgeId: string): Promise<Models.DomainEdgeSoftwareVersionDtoEntityListing>;
+  	getTelephonyProvidersEdgeTrunks(edgeId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgeTrunksOptions): Promise<Models.TrunkEntityListing>;
+  	getTelephonyProvidersEdges(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesOptions): Promise<Models.EdgeEntityListing>;
+  	getTelephonyProvidersEdgesAlertablepresences(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesAlertablepresencesOptions): Promise<Models.AlertablePresences>;
+  	getTelephonyProvidersEdgesCertificateauthorities(): Promise<Models.CertificateAuthorityEntityListing>;
+  	getTelephonyProvidersEdgesCertificateauthority(certificateId: string): Promise<Models.DomainCertificateAuthority>;
+  	getTelephonyProvidersEdgesDid(didId: string): Promise<Models.DID>;
+  	getTelephonyProvidersEdgesDidpool(didPoolId: string): Promise<Models.DIDPool>;
+  	getTelephonyProvidersEdgesDidpools(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesDidpoolsOptions): Promise<Models.DIDPoolEntityListing>;
+  	getTelephonyProvidersEdgesDidpoolsDids(type: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesDidpoolsDidsOptions): Promise<Models.DIDNumberEntityListing>;
+  	getTelephonyProvidersEdgesDids(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesDidsOptions): Promise<Models.DIDEntityListing>;
+  	getTelephonyProvidersEdgesEdgegroup(edgeGroupId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesEdgegroupOptions): Promise<Models.EdgeGroup>;
+  	getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId: string, edgetrunkbaseId: string): Promise<Models.EdgeTrunkBase>;
+  	getTelephonyProvidersEdgesEdgegroups(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesEdgegroupsOptions): Promise<Models.EdgeGroupEntityListing>;
+  	getTelephonyProvidersEdgesEdgeversionreport(): Promise<Models.EdgeVersionReport>;
+  	getTelephonyProvidersEdgesExpired(): Promise<Models.ExpiredEdgeListing>;
+  	getTelephonyProvidersEdgesExtension(extensionId: string): Promise<Models.Extension>;
+  	getTelephonyProvidersEdgesExtensionpool(extensionPoolId: string): Promise<Models.ExtensionPool>;
+  	getTelephonyProvidersEdgesExtensionpools(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionpoolsOptions): Promise<Models.ExtensionPoolEntityListing>;
+  	getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionpoolsDivisionviewsOptions): Promise<Models.ExtensionPoolDivisionViewEntityListing>;
+  	getTelephonyProvidersEdgesExtensions(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionsOptions): Promise<Models.ExtensionEntityListing>;
+  	getTelephonyProvidersEdgesLine(lineId: string): Promise<Models.Line>;
+  	getTelephonyProvidersEdgesLinebasesetting(lineBaseId: string): Promise<Models.LineBase>;
+  	getTelephonyProvidersEdgesLinebasesettings(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesLinebasesettingsOptions): Promise<Models.LineBaseEntityListing>;
+  	getTelephonyProvidersEdgesLines(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesLinesOptions): Promise<Models.LineEntityListing>;
+  	getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId: string): Promise<Models.Line>;
+  	getTelephonyProvidersEdgesLogicalinterfaces(edgeIds: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesLogicalinterfacesOptions): Promise<Models.LogicalInterfaceEntityListing>;
+  	getTelephonyProvidersEdgesMediastatisticsConversation(conversationId: string): Promise<Models.MediaStatisticsListing>;
+  	getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId: string, communicationId: string): Promise<Models.MediaStatistics>;
+  	getTelephonyProvidersEdgesMetrics(edgeIds: string): Promise<Array<Models.EdgeMetrics>>;
+  	getTelephonyProvidersEdgesOutboundroutes(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesOutboundroutesOptions): Promise<Models.OutboundRouteEntityListing>;
+  	getTelephonyProvidersEdgesPhone(phoneId: string): Promise<Models.Phone>;
+  	getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId: string): Promise<Models.PhoneBase>;
+  	getTelephonyProvidersEdgesPhonebasesettings(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesPhonebasesettingsOptions): Promise<Models.PhoneBaseEntityListing>;
+  	getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesOptions): Promise<Models.PhoneMetaBaseEntityListing>;
+  	getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId: string): Promise<Models.PhoneBase>;
+  	getTelephonyProvidersEdgesPhones(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesPhonesOptions): Promise<Models.PhoneEntityListing>;
+  	getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId: string): Promise<Models.Phone>;
+  	getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds: string): Promise<Models.PhysicalInterfaceEntityListing>;
+  	getTelephonyProvidersEdgesSite(siteId: string): Promise<Models.Site>;
+  	getTelephonyProvidersEdgesSiteNumberplan(siteId: string, numberPlanId: string): Promise<Models.NumberPlan>;
+  	getTelephonyProvidersEdgesSiteNumberplans(siteId: string): Promise<Array<Models.NumberPlan>>;
+  	getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesSiteNumberplansClassificationsOptions): Promise<Array<string>>;
+  	getTelephonyProvidersEdgesSiteOutboundroute(siteId: string, outboundRouteId: string): Promise<Models.OutboundRouteBase>;
+  	getTelephonyProvidersEdgesSiteOutboundroutes(siteId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesSiteOutboundroutesOptions): Promise<Models.OutboundRouteBaseEntityListing>;
+  	getTelephonyProvidersEdgesSiteSiteconnections(siteId: string): Promise<Models.SiteConnections>;
+  	getTelephonyProvidersEdgesSites(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesSitesOptions): Promise<Models.SiteEntityListing>;
+  	getTelephonyProvidersEdgesSitesSearch(q64: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesSitesSearchOptions): Promise<Models.SitesSearchResponse>;
+  	getTelephonyProvidersEdgesTimezones(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTimezonesOptions): Promise<Models.TimeZoneEntityListing>;
+  	getTelephonyProvidersEdgesTrunk(trunkId: string): Promise<Models.Trunk>;
+  	getTelephonyProvidersEdgesTrunkMetrics(trunkId: string): Promise<Models.TrunkMetrics>;
+  	getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId: string, opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunkbasesettingOptions): Promise<Models.TrunkBase>;
+  	getTelephonyProvidersEdgesTrunkbasesettings(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunkbasesettingsOptions): Promise<Models.TrunkBaseEntityListing>;
+  	getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesOptions): Promise<Models.TrunkMetabaseEntityListing>;
+  	getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId: string): Promise<Models.TrunkBase>;
+  	getTelephonyProvidersEdgesTrunks(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunksOptions): Promise<Models.TrunkEntityListing>;
+  	getTelephonyProvidersEdgesTrunksMetrics(trunkIds: string): Promise<Array<Models.TrunkMetrics>>;
+  	getTelephonyProvidersEdgesTrunkswithrecording(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesTrunkswithrecordingOptions): Promise<Models.TrunkRecordingEnabledCount>;
+  	patchTelephonyProvidersEdgesSiteSiteconnections(siteId: string, body: Models.DisableSiteConnectionsRequest): Promise<Models.SiteConnections>;
+  	postTelephonyProvidersEdgeDiagnosticNslookup(edgeId: string, body: Models.EdgeNetworkDiagnosticRequest): Promise<Models.EdgeNetworkDiagnostic>;
+  	postTelephonyProvidersEdgeDiagnosticPing(edgeId: string, body: Models.EdgeNetworkDiagnosticRequest): Promise<Models.EdgeNetworkDiagnostic>;
+  	postTelephonyProvidersEdgeDiagnosticRoute(edgeId: string, body: Models.EdgeNetworkDiagnosticRequest): Promise<Models.EdgeNetworkDiagnostic>;
+  	postTelephonyProvidersEdgeDiagnosticTracepath(edgeId: string, body: Models.EdgeNetworkDiagnosticRequest): Promise<Models.EdgeNetworkDiagnostic>;
+  	postTelephonyProvidersEdgeLogicalinterfaces(edgeId: string, body: Models.DomainLogicalInterface): Promise<Models.DomainLogicalInterface>;
+  	postTelephonyProvidersEdgeLogsJobUpload(edgeId: string, jobId: string, body: Models.EdgeLogsJobUploadRequest): Promise<void>;
+  	postTelephonyProvidersEdgeLogsJobs(edgeId: string, body: Models.EdgeLogsJobRequest): Promise<Models.EdgeLogsJobResponse>;
+  	postTelephonyProvidersEdgeReboot(edgeId: string, opts?: TelephonyProvidersEdgeApi.postTelephonyProvidersEdgeRebootOptions): Promise<string>;
+  	postTelephonyProvidersEdgeSoftwareupdate(edgeId: string, body: Models.DomainEdgeSoftwareUpdateDto): Promise<Models.DomainEdgeSoftwareUpdateDto>;
+  	postTelephonyProvidersEdgeStatuscode(edgeId: string, opts?: TelephonyProvidersEdgeApi.postTelephonyProvidersEdgeStatuscodeOptions): Promise<string>;
+  	postTelephonyProvidersEdgeUnpair(edgeId: string): Promise<string>;
+  	postTelephonyProvidersEdges(body: Models.Edge): Promise<Models.Edge>;
+  	postTelephonyProvidersEdgesAddressvalidation(body: Models.ValidateAddressRequest): Promise<Models.ValidateAddressResponse>;
+  	postTelephonyProvidersEdgesCertificateauthorities(body: Models.DomainCertificateAuthority): Promise<Models.DomainCertificateAuthority>;
+  	postTelephonyProvidersEdgesDidpools(body: Models.DIDPool): Promise<Models.DIDPool>;
+  	postTelephonyProvidersEdgesEdgegroups(body: Models.EdgeGroup): Promise<Models.EdgeGroup>;
+  	postTelephonyProvidersEdgesExtensionpools(body: Models.ExtensionPool): Promise<Models.ExtensionPool>;
+  	postTelephonyProvidersEdgesPhoneReboot(phoneId: string): Promise<void>;
+  	postTelephonyProvidersEdgesPhonebasesettings(body: Models.PhoneBase): Promise<Models.PhoneBase>;
+  	postTelephonyProvidersEdgesPhones(body: Models.Phone): Promise<Models.Phone>;
+  	postTelephonyProvidersEdgesPhonesReboot(body: Models.PhonesReboot): Promise<void>;
+  	postTelephonyProvidersEdgesSiteOutboundroutes(siteId: string, body: Models.OutboundRouteBase): Promise<Models.OutboundRouteBase>;
+  	postTelephonyProvidersEdgesSites(body: Models.Site): Promise<Models.Site>;
+  	postTelephonyProvidersEdgesSitesSearch(body: Models.SiteSearchRequest): Promise<Models.SitesSearchResponse>;
+  	postTelephonyProvidersEdgesTrunkbasesettings(body: Models.TrunkBase): Promise<Models.TrunkBase>;
+  	putTelephonyProvidersEdge(edgeId: string, body: Models.Edge): Promise<Models.Edge>;
+  	putTelephonyProvidersEdgeLogicalinterface(edgeId: string, interfaceId: string, body: Models.DomainLogicalInterface): Promise<Models.DomainLogicalInterface>;
+  	putTelephonyProvidersEdgesAlertablepresences(body: Models.AlertablePresences): Promise<void>;
+  	putTelephonyProvidersEdgesCertificateauthority(certificateId: string, body: Models.DomainCertificateAuthority): Promise<Models.DomainCertificateAuthority>;
+  	putTelephonyProvidersEdgesDidpool(didPoolId: string, body: Models.DIDPool): Promise<Models.DIDPool>;
+  	putTelephonyProvidersEdgesEdgegroup(edgeGroupId: string, body: Models.EdgeGroup): Promise<Models.EdgeGroup>;
+  	putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId: string, edgetrunkbaseId: string, body: Models.EdgeTrunkBase): Promise<Models.EdgeTrunkBase>;
+  	putTelephonyProvidersEdgesExtensionpool(extensionPoolId: string, body: Models.ExtensionPool): Promise<Models.ExtensionPool>;
+  	putTelephonyProvidersEdgesPhone(phoneId: string, body: Models.Phone): Promise<Models.Phone>;
+  	putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId: string, body: Models.PhoneBase): Promise<Models.PhoneBase>;
+  	putTelephonyProvidersEdgesSite(siteId: string, body: Models.Site): Promise<Models.Site>;
+  	putTelephonyProvidersEdgesSiteNumberplans(siteId: string, body: Array<Models.NumberPlan>): Promise<Array<Models.NumberPlan>>;
+  	putTelephonyProvidersEdgesSiteOutboundroute(siteId: string, outboundRouteId: string, body: Models.OutboundRouteBase): Promise<Models.OutboundRouteBase>;
+  	putTelephonyProvidersEdgesSiteSiteconnections(siteId: string, body: Models.SiteConnections): Promise<Models.SiteConnections>;
   	putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId: string, body: Models.TrunkBase): Promise<Models.TrunkBase>;
 }
 
@@ -6425,10 +6630,11 @@ declare namespace TelephonyProvidersEdgeApi {
 	}
 }
 
-declare class TextbotsApi {  
-  	getTextbotsBotsSearch(opts?: TextbotsApi.getTextbotsBotsSearchOptions): Promise<Models.BotSearchResponseEntityListing>; 
-  	postTextbotsBotflowsSessionTurns(sessionId: string, turnRequest: Models.TextBotFlowTurnRequest): Promise<Models.TextBotFlowTurnResponse>; 
-  	postTextbotsBotflowsSessions(launchRequest: Models.TextBotFlowLaunchRequest): Promise<Models.TextBotFlowLaunchResponse>; 
+declare class TextbotsApi {
+	constructor(apiClient?: ApiClientClass);
+  	getTextbotsBotsSearch(opts?: TextbotsApi.getTextbotsBotsSearchOptions): Promise<Models.BotSearchResponseEntityListing>;
+  	postTextbotsBotflowsSessionTurns(sessionId: string, turnRequest: Models.TextBotFlowTurnRequest): Promise<Models.TextBotFlowTurnResponse>;
+  	postTextbotsBotflowsSessions(launchRequest: Models.TextBotFlowLaunchRequest): Promise<Models.TextBotFlowLaunchResponse>;
   	postTextbotsBotsExecute(postTextRequest: Models.PostTextRequest): Promise<Models.PostTextResponse>;
 }
 
@@ -6441,12 +6647,13 @@ declare namespace TextbotsApi {
 	}
 }
 
-declare class TokensApi {  
-  	deleteToken(userId: string): Promise<void>; 
-  	deleteTokensMe(): Promise<void>; 
-  	getTokensMe(opts?: TokensApi.getTokensMeOptions): Promise<Models.TokenInfo>; 
-  	getTokensTimeout(): Promise<Models.IdleTokenTimeout>; 
-  	headTokensMe(): Promise<void>; 
+declare class TokensApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteToken(userId: string): Promise<void>;
+  	deleteTokensMe(): Promise<void>;
+  	getTokensMe(opts?: TokensApi.getTokensMeOptions): Promise<Models.TokenInfo>;
+  	getTokensTimeout(): Promise<Models.IdleTokenTimeout>;
+  	headTokensMe(): Promise<void>;
   	putTokensTimeout(opts?: TokensApi.putTokensTimeoutOptions): Promise<Models.IdleTokenTimeout>;
 }
 
@@ -6459,28 +6666,30 @@ declare namespace TokensApi {
 	}
 }
 
-declare class UploadsApi {  
-  	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>; 
-  	postIntegrationsActionDraftFunctionUpload(actionId: string, body: Models.FunctionUploadRequest): Promise<Models.FunctionUploadResponse>; 
-  	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
-  	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>; 
-  	postLanguageunderstandingMinerUploads(minerId: string, body: object): Promise<Models.UploadUrlResponse>; 
-  	postUploadsLearningCoverart(body: Models.LearningCoverArtUploadUrlRequest): Promise<Models.UploadUrlResponse>; 
-  	postUploadsPublicassetsImages(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
-  	postUploadsRecordings(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
+declare class UploadsApi {
+	constructor(apiClient?: ApiClientClass);
+  	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId: string, jobId: string): Promise<Models.GetUploadSourceUrlJobStatusResponse>;
+  	postIntegrationsActionDraftFunctionUpload(actionId: string, body: Models.FunctionUploadRequest): Promise<Models.FunctionUploadResponse>;
+  	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
+  	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId: string, body: Models.CreateUploadSourceUrlJobRequest): Promise<Models.CreateUploadSourceUrlJobResponse>;
+  	postLanguageunderstandingMinerUploads(minerId: string, body: object): Promise<Models.UploadUrlResponse>;
+  	postUploadsLearningCoverart(body: Models.LearningCoverArtUploadUrlRequest): Promise<Models.UploadUrlResponse>;
+  	postUploadsPublicassetsImages(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
+  	postUploadsRecordings(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
   	postUploadsWorkforcemanagementHistoricaldataCsv(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
 }
 
 declare namespace UploadsApi { 
 }
 
-declare class UsageApi {  
-  	getOauthClientUsageQueryResult(executionId: string, clientId: string): Promise<Models.ApiUsageQueryResult>; 
-  	getOauthClientUsageSummary(clientId: string, opts?: UsageApi.getOauthClientUsageSummaryOptions): Promise<Models.UsageExecutionResult>; 
-  	getUsageQueryExecutionIdResults(executionId: string): Promise<Models.ApiUsageQueryResult>; 
-  	getUsageSimplesearchExecutionIdResults(executionId: string, opts?: UsageApi.getUsageSimplesearchExecutionIdResultsOptions): Promise<Models.ApiUsageQueryResult>; 
-  	postOauthClientUsageQuery(clientId: string, body: Models.ApiUsageClientQuery): Promise<Models.UsageExecutionResult>; 
-  	postUsageQuery(body: Models.ApiUsageOrganizationQuery): Promise<Models.UsageExecutionResult>; 
+declare class UsageApi {
+	constructor(apiClient?: ApiClientClass);
+  	getOauthClientUsageQueryResult(executionId: string, clientId: string): Promise<Models.ApiUsageQueryResult>;
+  	getOauthClientUsageSummary(clientId: string, opts?: UsageApi.getOauthClientUsageSummaryOptions): Promise<Models.UsageExecutionResult>;
+  	getUsageQueryExecutionIdResults(executionId: string): Promise<Models.ApiUsageQueryResult>;
+  	getUsageSimplesearchExecutionIdResults(executionId: string, opts?: UsageApi.getUsageSimplesearchExecutionIdResultsOptions): Promise<Models.ApiUsageQueryResult>;
+  	postOauthClientUsageQuery(clientId: string, body: Models.ApiUsageClientQuery): Promise<Models.UsageExecutionResult>;
+  	postUsageQuery(body: Models.ApiUsageOrganizationQuery): Promise<Models.UsageExecutionResult>;
   	postUsageSimplesearch(body: Models.ApiUsageSimpleSearch): Promise<Models.UsageExecutionResult>;
 }
 
@@ -6494,13 +6703,14 @@ declare namespace UsageApi {
 	}
 }
 
-declare class UserRecordingsApi {  
-  	deleteUserrecording(recordingId: string): Promise<void>; 
-  	getUserrecording(recordingId: string, opts?: UserRecordingsApi.getUserrecordingOptions): Promise<Models.UserRecording>; 
-  	getUserrecordingMedia(recordingId: string, opts?: UserRecordingsApi.getUserrecordingMediaOptions): Promise<Models.DownloadResponse>; 
-  	getUserrecordingTranscoding(recordingId: string, opts?: UserRecordingsApi.getUserrecordingTranscodingOptions): Promise<Models.DownloadResponse>; 
-  	getUserrecordings(opts?: UserRecordingsApi.getUserrecordingsOptions): Promise<Models.UserRecordingEntityListing>; 
-  	getUserrecordingsSummary(): Promise<Models.FaxSummary>; 
+declare class UserRecordingsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteUserrecording(recordingId: string): Promise<void>;
+  	getUserrecording(recordingId: string, opts?: UserRecordingsApi.getUserrecordingOptions): Promise<Models.UserRecording>;
+  	getUserrecordingMedia(recordingId: string, opts?: UserRecordingsApi.getUserrecordingMediaOptions): Promise<Models.DownloadResponse>;
+  	getUserrecordingTranscoding(recordingId: string, opts?: UserRecordingsApi.getUserrecordingTranscodingOptions): Promise<Models.DownloadResponse>;
+  	getUserrecordings(opts?: UserRecordingsApi.getUserrecordingsOptions): Promise<Models.UserRecordingEntityListing>;
+  	getUserrecordingsSummary(): Promise<Models.FaxSummary>;
   	putUserrecording(recordingId: string, body: Models.UserRecording, opts?: UserRecordingsApi.putUserrecordingOptions): Promise<Models.UserRecording>;
 }
 
@@ -6525,104 +6735,105 @@ declare namespace UserRecordingsApi {
 	}
 }
 
-declare class UsersApi {  
-  	deleteAnalyticsUsersDetailsJob(jobId: string): Promise<void>; 
-  	deleteAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string): Promise<void>; 
-  	deleteRoutingDirectroutingbackupSettingsMe(): Promise<void>; 
-  	deleteRoutingUserDirectroutingbackupSettings(userId: string): Promise<void>; 
-  	deleteRoutingUserUtilization(userId: string): Promise<void>; 
-  	deleteUser(userId: string): Promise<object>; 
-  	deleteUserRoutinglanguage(userId: string, languageId: string): Promise<void>; 
-  	deleteUserRoutingskill(userId: string, skillId: string): Promise<void>; 
-  	deleteUserStationAssociatedstation(userId: string): Promise<void>; 
-  	deleteUserStationDefaultstation(userId: string): Promise<void>; 
-  	deleteUserVerifier(userId: string, verifierId: string): Promise<void>; 
-  	getAnalyticsUsersAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsUsersAggregatesJobResults(jobId: string, opts?: UsersApi.getAnalyticsUsersAggregatesJobResultsOptions): Promise<Models.UserAsyncAggregateQueryResponse>; 
-  	getAnalyticsUsersDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
-  	getAnalyticsUsersDetailsJobResults(jobId: string, opts?: UsersApi.getAnalyticsUsersDetailsJobResultsOptions): Promise<Models.AnalyticsUserDetailsAsyncQueryResponse>; 
-  	getAnalyticsUsersDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
-  	getAuthorizationDivisionspermittedMe(permission: string, opts?: UsersApi.getAuthorizationDivisionspermittedMeOptions): Promise<Array<Models.AuthzDivision>>; 
-  	getAuthorizationDivisionspermittedPagedMe(permission: string, opts?: UsersApi.getAuthorizationDivisionspermittedPagedMeOptions): Promise<Models.DivsPermittedEntityListing>; 
-  	getAuthorizationDivisionspermittedPagedSubjectId(subjectId: string, permission: string, opts?: UsersApi.getAuthorizationDivisionspermittedPagedSubjectIdOptions): Promise<Models.DivsPermittedEntityListing>; 
-  	getAuthorizationSubject(subjectId: string, opts?: UsersApi.getAuthorizationSubjectOptions): Promise<Models.AuthzSubject>; 
-  	getAuthorizationSubjectsMe(opts?: UsersApi.getAuthorizationSubjectsMeOptions): Promise<Models.AuthzSubject>; 
-  	getFieldconfig(type: string): Promise<Models.FieldConfig>; 
-  	getProfilesUsers(opts?: UsersApi.getProfilesUsersOptions): Promise<Models.UserProfileEntityListing>; 
-  	getRoutingDirectroutingbackupSettingsMe(): Promise<Models.AgentDirectRoutingBackupSettings>; 
-  	getRoutingUserDirectroutingbackupSettings(userId: string): Promise<Models.AgentDirectRoutingBackupSettings>; 
-  	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilizationResponse>; 
-  	getUser(userId: string, opts?: UsersApi.getUserOptions): Promise<Models.User>; 
-  	getUserAdjacents(userId: string, opts?: UsersApi.getUserAdjacentsOptions): Promise<Models.Adjacents>; 
-  	getUserCallforwarding(userId: string): Promise<Models.CallForwarding>; 
-  	getUserDirectreports(userId: string, opts?: UsersApi.getUserDirectreportsOptions): Promise<Array<Models.User>>; 
-  	getUserFavorites(userId: string, opts?: UsersApi.getUserFavoritesOptions): Promise<Models.UserEntityListing>; 
-  	getUserGeolocation(userId: string, clientId: string): Promise<Models.Geolocation>; 
-  	getUserOutofoffice(userId: string): Promise<Models.OutOfOffice>; 
-  	getUserProfile(userId: string, opts?: UsersApi.getUserProfileOptions): Promise<Models.UserProfile>; 
-  	getUserProfileskills(userId: string): Promise<Array<string>>; 
-  	getUserQueues(userId: string, opts?: UsersApi.getUserQueuesOptions): Promise<Models.UserQueueEntityListing>; 
-  	getUserRoles(subjectId: string): Promise<Models.UserAuthorization>; 
-  	getUserRoutinglanguages(userId: string, opts?: UsersApi.getUserRoutinglanguagesOptions): Promise<Models.UserLanguageEntityListing>; 
-  	getUserRoutingskills(userId: string, opts?: UsersApi.getUserRoutingskillsOptions): Promise<Models.UserSkillEntityListing>; 
-  	getUserRoutingstatus(userId: string): Promise<Models.RoutingStatus>; 
-  	getUserSkillgroups(userId: string, opts?: UsersApi.getUserSkillgroupsOptions): Promise<Models.UserSkillGroupEntityListing>; 
-  	getUserState(userId: string): Promise<Models.UserState>; 
-  	getUserStation(userId: string): Promise<Models.UserStations>; 
-  	getUserSuperiors(userId: string, opts?: UsersApi.getUserSuperiorsOptions): Promise<Array<Models.User>>; 
-  	getUserTrustors(userId: string, opts?: UsersApi.getUserTrustorsOptions): Promise<Models.TrustorEntityListing>; 
-  	getUserVerifiers(userId: string): Promise<Models.VerifierEntityListing>; 
-  	getUsers(opts?: UsersApi.getUsersOptions): Promise<Models.UserEntityListing>; 
-  	getUsersChatsMe(opts?: UsersApi.getUsersChatsMeOptions): Promise<Models.ChatItemCursorListing>; 
-  	getUsersDevelopmentActivities(opts?: UsersApi.getUsersDevelopmentActivitiesOptions): Promise<Models.DevelopmentActivityListing>; 
-  	getUsersDevelopmentActivitiesMe(opts?: UsersApi.getUsersDevelopmentActivitiesMeOptions): Promise<Models.DevelopmentActivityListing>; 
-  	getUsersDevelopmentActivity(activityId: string, type: string): Promise<Models.DevelopmentActivity>; 
-  	getUsersMe(opts?: UsersApi.getUsersMeOptions): Promise<Models.UserMe>; 
-  	getUsersSearch(q64: string, opts?: UsersApi.getUsersSearchOptions): Promise<Models.UsersSearchResponse>; 
-  	patchUser(userId: string, body: Models.UpdateUser): Promise<Models.User>; 
-  	patchUserCallforwarding(userId: string, body: Models.CallForwarding): Promise<Models.CallForwarding>; 
-  	patchUserGeolocation(userId: string, clientId: string, body: Models.Geolocation): Promise<Models.Geolocation>; 
-  	patchUserQueue(queueId: string, userId: string, body: Models.UserQueue): Promise<Models.UserQueue>; 
-  	patchUserQueues(userId: string, body: Array<Models.UserQueue>, opts?: UsersApi.patchUserQueuesOptions): Promise<Models.UserQueueEntityListing>; 
-  	patchUserRoutinglanguage(userId: string, languageId: string, body: Models.UserRoutingLanguage): Promise<Models.UserRoutingLanguage>; 
-  	patchUserRoutinglanguagesBulk(userId: string, body: Array<Models.UserRoutingLanguagePost>): Promise<Models.UserLanguageEntityListing>; 
-  	patchUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>; 
-  	patchUsersBulk(body: Array<Models.PatchUser>): Promise<Models.UserEntityListing>; 
-  	postAnalyticsUsersActivityQuery(body: Models.UserActivityQuery, opts?: UsersApi.postAnalyticsUsersActivityQueryOptions): Promise<Models.UserActivityResponse>; 
-  	postAnalyticsUsersAggregatesJobs(body: Models.UserAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsUsersAggregatesQuery(body: Models.UserAggregationQuery): Promise<Models.UserAggregateQueryResponse>; 
-  	postAnalyticsUsersDetailsJobs(body: Models.AsyncUserDetailsQuery): Promise<Models.AsyncQueryResponse>; 
-  	postAnalyticsUsersDetailsQuery(body: Models.UserDetailsQuery): Promise<Models.AnalyticsUserDetailsQueryResponse>; 
-  	postAnalyticsUsersObservationsQuery(body: Models.UserObservationQuery): Promise<Models.UserObservationQueryResponse>; 
-  	postAuthorizationSubjectBulkadd(subjectId: string, body: Models.RoleDivisionGrants, opts?: UsersApi.postAuthorizationSubjectBulkaddOptions): Promise<void>; 
-  	postAuthorizationSubjectBulkremove(subjectId: string, body: Models.RoleDivisionGrants): Promise<void>; 
-  	postAuthorizationSubjectBulkreplace(subjectId: string, body: Models.RoleDivisionGrants, opts?: UsersApi.postAuthorizationSubjectBulkreplaceOptions): Promise<void>; 
-  	postAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string, opts?: UsersApi.postAuthorizationSubjectDivisionRoleOptions): Promise<void>; 
-  	postUserExternalid(userId: string, body: Models.UserExternalIdentifier): Promise<Array<Models.UserExternalIdentifier>>; 
-  	postUserInvite(userId: string, opts?: UsersApi.postUserInviteOptions): Promise<void>; 
-  	postUserPassword(userId: string, body: Models.ChangePasswordRequest): Promise<void>; 
-  	postUserRoutinglanguages(userId: string, body: Models.UserRoutingLanguagePost): Promise<Models.UserRoutingLanguage>; 
-  	postUserRoutingskills(userId: string, body: Models.UserRoutingSkillPost): Promise<Models.UserRoutingSkill>; 
-  	postUsers(body: Models.CreateUser): Promise<Models.User>; 
-  	postUsersDevelopmentActivitiesAggregatesQuery(body: Models.DevelopmentActivityAggregateParam): Promise<Models.DevelopmentActivityAggregateResponse>; 
-  	postUsersMePassword(body: Models.ChangeMyPasswordRequest): Promise<void>; 
-  	postUsersSearch(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
-  	postUsersSearchConversationTarget(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
-  	postUsersSearchQueuemembersManage(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
-  	postUsersSearchTeamsAssign(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
-  	putRoutingDirectroutingbackupSettingsMe(body: Models.AgentDirectRoutingBackupSettings): Promise<Models.AgentDirectRoutingBackupSettings>; 
-  	putRoutingUserDirectroutingbackupSettings(userId: string, body: Models.AgentDirectRoutingBackupSettings): Promise<Models.AgentDirectRoutingBackupSettings>; 
-  	putRoutingUserUtilization(userId: string, body: Models.UtilizationRequest): Promise<Models.AgentMaxUtilizationResponse>; 
-  	putUserCallforwarding(userId: string, body: Models.CallForwarding): Promise<Models.CallForwarding>; 
-  	putUserOutofoffice(userId: string, body: Models.OutOfOffice): Promise<Models.OutOfOffice>; 
-  	putUserProfileskills(userId: string, body: Array<string>): Promise<Array<string>>; 
-  	putUserRoles(subjectId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
-  	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>; 
-  	putUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>; 
-  	putUserRoutingstatus(userId: string, body: Models.RoutingStatus): Promise<Models.RoutingStatus>; 
-  	putUserState(userId: string, body: Models.UserState): Promise<Models.UserState>; 
-  	putUserStationAssociatedstationStationId(userId: string, stationId: string): Promise<void>; 
-  	putUserStationDefaultstationStationId(userId: string, stationId: string): Promise<void>; 
+declare class UsersApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteAnalyticsUsersDetailsJob(jobId: string): Promise<void>;
+  	deleteAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string): Promise<void>;
+  	deleteRoutingDirectroutingbackupSettingsMe(): Promise<void>;
+  	deleteRoutingUserDirectroutingbackupSettings(userId: string): Promise<void>;
+  	deleteRoutingUserUtilization(userId: string): Promise<void>;
+  	deleteUser(userId: string): Promise<object>;
+  	deleteUserRoutinglanguage(userId: string, languageId: string): Promise<void>;
+  	deleteUserRoutingskill(userId: string, skillId: string): Promise<void>;
+  	deleteUserStationAssociatedstation(userId: string): Promise<void>;
+  	deleteUserStationDefaultstation(userId: string): Promise<void>;
+  	deleteUserVerifier(userId: string, verifierId: string): Promise<void>;
+  	getAnalyticsUsersAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsUsersAggregatesJobResults(jobId: string, opts?: UsersApi.getAnalyticsUsersAggregatesJobResultsOptions): Promise<Models.UserAsyncAggregateQueryResponse>;
+  	getAnalyticsUsersDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsUsersDetailsJobResults(jobId: string, opts?: UsersApi.getAnalyticsUsersDetailsJobResultsOptions): Promise<Models.AnalyticsUserDetailsAsyncQueryResponse>;
+  	getAnalyticsUsersDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>;
+  	getAuthorizationDivisionspermittedMe(permission: string, opts?: UsersApi.getAuthorizationDivisionspermittedMeOptions): Promise<Array<Models.AuthzDivision>>;
+  	getAuthorizationDivisionspermittedPagedMe(permission: string, opts?: UsersApi.getAuthorizationDivisionspermittedPagedMeOptions): Promise<Models.DivsPermittedEntityListing>;
+  	getAuthorizationDivisionspermittedPagedSubjectId(subjectId: string, permission: string, opts?: UsersApi.getAuthorizationDivisionspermittedPagedSubjectIdOptions): Promise<Models.DivsPermittedEntityListing>;
+  	getAuthorizationSubject(subjectId: string, opts?: UsersApi.getAuthorizationSubjectOptions): Promise<Models.AuthzSubject>;
+  	getAuthorizationSubjectsMe(opts?: UsersApi.getAuthorizationSubjectsMeOptions): Promise<Models.AuthzSubject>;
+  	getFieldconfig(type: string): Promise<Models.FieldConfig>;
+  	getProfilesUsers(opts?: UsersApi.getProfilesUsersOptions): Promise<Models.UserProfileEntityListing>;
+  	getRoutingDirectroutingbackupSettingsMe(): Promise<Models.AgentDirectRoutingBackupSettings>;
+  	getRoutingUserDirectroutingbackupSettings(userId: string): Promise<Models.AgentDirectRoutingBackupSettings>;
+  	getRoutingUserUtilization(userId: string): Promise<Models.AgentMaxUtilizationResponse>;
+  	getUser(userId: string, opts?: UsersApi.getUserOptions): Promise<Models.User>;
+  	getUserAdjacents(userId: string, opts?: UsersApi.getUserAdjacentsOptions): Promise<Models.Adjacents>;
+  	getUserCallforwarding(userId: string): Promise<Models.CallForwarding>;
+  	getUserDirectreports(userId: string, opts?: UsersApi.getUserDirectreportsOptions): Promise<Array<Models.User>>;
+  	getUserFavorites(userId: string, opts?: UsersApi.getUserFavoritesOptions): Promise<Models.UserEntityListing>;
+  	getUserGeolocation(userId: string, clientId: string): Promise<Models.Geolocation>;
+  	getUserOutofoffice(userId: string): Promise<Models.OutOfOffice>;
+  	getUserProfile(userId: string, opts?: UsersApi.getUserProfileOptions): Promise<Models.UserProfile>;
+  	getUserProfileskills(userId: string): Promise<Array<string>>;
+  	getUserQueues(userId: string, opts?: UsersApi.getUserQueuesOptions): Promise<Models.UserQueueEntityListing>;
+  	getUserRoles(subjectId: string): Promise<Models.UserAuthorization>;
+  	getUserRoutinglanguages(userId: string, opts?: UsersApi.getUserRoutinglanguagesOptions): Promise<Models.UserLanguageEntityListing>;
+  	getUserRoutingskills(userId: string, opts?: UsersApi.getUserRoutingskillsOptions): Promise<Models.UserSkillEntityListing>;
+  	getUserRoutingstatus(userId: string): Promise<Models.RoutingStatus>;
+  	getUserSkillgroups(userId: string, opts?: UsersApi.getUserSkillgroupsOptions): Promise<Models.UserSkillGroupEntityListing>;
+  	getUserState(userId: string): Promise<Models.UserState>;
+  	getUserStation(userId: string): Promise<Models.UserStations>;
+  	getUserSuperiors(userId: string, opts?: UsersApi.getUserSuperiorsOptions): Promise<Array<Models.User>>;
+  	getUserTrustors(userId: string, opts?: UsersApi.getUserTrustorsOptions): Promise<Models.TrustorEntityListing>;
+  	getUserVerifiers(userId: string): Promise<Models.VerifierEntityListing>;
+  	getUsers(opts?: UsersApi.getUsersOptions): Promise<Models.UserEntityListing>;
+  	getUsersChatsMe(opts?: UsersApi.getUsersChatsMeOptions): Promise<Models.ChatItemCursorListing>;
+  	getUsersDevelopmentActivities(opts?: UsersApi.getUsersDevelopmentActivitiesOptions): Promise<Models.DevelopmentActivityListing>;
+  	getUsersDevelopmentActivitiesMe(opts?: UsersApi.getUsersDevelopmentActivitiesMeOptions): Promise<Models.DevelopmentActivityListing>;
+  	getUsersDevelopmentActivity(activityId: string, type: string): Promise<Models.DevelopmentActivity>;
+  	getUsersMe(opts?: UsersApi.getUsersMeOptions): Promise<Models.UserMe>;
+  	getUsersSearch(q64: string, opts?: UsersApi.getUsersSearchOptions): Promise<Models.UsersSearchResponse>;
+  	patchUser(userId: string, body: Models.UpdateUser): Promise<Models.User>;
+  	patchUserCallforwarding(userId: string, body: Models.CallForwarding): Promise<Models.CallForwarding>;
+  	patchUserGeolocation(userId: string, clientId: string, body: Models.Geolocation): Promise<Models.Geolocation>;
+  	patchUserQueue(queueId: string, userId: string, body: Models.UserQueue): Promise<Models.UserQueue>;
+  	patchUserQueues(userId: string, body: Array<Models.UserQueue>, opts?: UsersApi.patchUserQueuesOptions): Promise<Models.UserQueueEntityListing>;
+  	patchUserRoutinglanguage(userId: string, languageId: string, body: Models.UserRoutingLanguage): Promise<Models.UserRoutingLanguage>;
+  	patchUserRoutinglanguagesBulk(userId: string, body: Array<Models.UserRoutingLanguagePost>): Promise<Models.UserLanguageEntityListing>;
+  	patchUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>;
+  	patchUsersBulk(body: Array<Models.PatchUser>): Promise<Models.UserEntityListing>;
+  	postAnalyticsUsersActivityQuery(body: Models.UserActivityQuery, opts?: UsersApi.postAnalyticsUsersActivityQueryOptions): Promise<Models.UserActivityResponse>;
+  	postAnalyticsUsersAggregatesJobs(body: Models.UserAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsUsersAggregatesQuery(body: Models.UserAggregationQuery): Promise<Models.UserAggregateQueryResponse>;
+  	postAnalyticsUsersDetailsJobs(body: Models.AsyncUserDetailsQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsUsersDetailsQuery(body: Models.UserDetailsQuery): Promise<Models.AnalyticsUserDetailsQueryResponse>;
+  	postAnalyticsUsersObservationsQuery(body: Models.UserObservationQuery): Promise<Models.UserObservationQueryResponse>;
+  	postAuthorizationSubjectBulkadd(subjectId: string, body: Models.RoleDivisionGrants, opts?: UsersApi.postAuthorizationSubjectBulkaddOptions): Promise<void>;
+  	postAuthorizationSubjectBulkremove(subjectId: string, body: Models.RoleDivisionGrants): Promise<void>;
+  	postAuthorizationSubjectBulkreplace(subjectId: string, body: Models.RoleDivisionGrants, opts?: UsersApi.postAuthorizationSubjectBulkreplaceOptions): Promise<void>;
+  	postAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string, opts?: UsersApi.postAuthorizationSubjectDivisionRoleOptions): Promise<void>;
+  	postUserExternalid(userId: string, body: Models.UserExternalIdentifier): Promise<Array<Models.UserExternalIdentifier>>;
+  	postUserInvite(userId: string, opts?: UsersApi.postUserInviteOptions): Promise<void>;
+  	postUserPassword(userId: string, body: Models.ChangePasswordRequest): Promise<void>;
+  	postUserRoutinglanguages(userId: string, body: Models.UserRoutingLanguagePost): Promise<Models.UserRoutingLanguage>;
+  	postUserRoutingskills(userId: string, body: Models.UserRoutingSkillPost): Promise<Models.UserRoutingSkill>;
+  	postUsers(body: Models.CreateUser): Promise<Models.User>;
+  	postUsersDevelopmentActivitiesAggregatesQuery(body: Models.DevelopmentActivityAggregateParam): Promise<Models.DevelopmentActivityAggregateResponse>;
+  	postUsersMePassword(body: Models.ChangeMyPasswordRequest): Promise<void>;
+  	postUsersSearch(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>;
+  	postUsersSearchConversationTarget(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>;
+  	postUsersSearchQueuemembersManage(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>;
+  	postUsersSearchTeamsAssign(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>;
+  	putRoutingDirectroutingbackupSettingsMe(body: Models.AgentDirectRoutingBackupSettings): Promise<Models.AgentDirectRoutingBackupSettings>;
+  	putRoutingUserDirectroutingbackupSettings(userId: string, body: Models.AgentDirectRoutingBackupSettings): Promise<Models.AgentDirectRoutingBackupSettings>;
+  	putRoutingUserUtilization(userId: string, body: Models.UtilizationRequest): Promise<Models.AgentMaxUtilizationResponse>;
+  	putUserCallforwarding(userId: string, body: Models.CallForwarding): Promise<Models.CallForwarding>;
+  	putUserOutofoffice(userId: string, body: Models.OutOfOffice): Promise<Models.OutOfOffice>;
+  	putUserProfileskills(userId: string, body: Array<string>): Promise<Array<string>>;
+  	putUserRoles(subjectId: string, body: Array<string>): Promise<Models.UserAuthorization>;
+  	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>;
+  	putUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>;
+  	putUserRoutingstatus(userId: string, body: Models.RoutingStatus): Promise<Models.RoutingStatus>;
+  	putUserState(userId: string, body: Models.UserState): Promise<Models.UserState>;
+  	putUserStationAssociatedstationStationId(userId: string, stationId: string): Promise<void>;
+  	putUserStationDefaultstationStationId(userId: string, stationId: string): Promise<void>;
   	putUserVerifier(userId: string, verifierId: string, body: Models.UpdateVerifierRequest): Promise<Models.Verifier>;
 }
 
@@ -6780,10 +6991,11 @@ declare namespace UsersApi {
 	}
 }
 
-declare class UtilitiesApi {  
-  	getDate(): Promise<Models.ServerDate>; 
-  	getIpranges(): Promise<Models.IpAddressRangeListing>; 
-  	getTimezones(opts?: UtilitiesApi.getTimezonesOptions): Promise<Models.TimeZoneEntityListing>; 
+declare class UtilitiesApi {
+	constructor(apiClient?: ApiClientClass);
+  	getDate(): Promise<Models.ServerDate>;
+  	getIpranges(): Promise<Models.IpAddressRangeListing>;
+  	getTimezones(opts?: UtilitiesApi.getTimezonesOptions): Promise<Models.TimeZoneEntityListing>;
   	postCertificateDetails(body: Models.Certificate): Promise<Models.ParsedCertificate>;
 }
 
@@ -6794,33 +7006,34 @@ declare namespace UtilitiesApi {
 	}
 }
 
-declare class VoicemailApi {  
-  	deleteVoicemailMessage(messageId: string): Promise<void>; 
-  	deleteVoicemailMessages(): Promise<void>; 
-  	getVoicemailGroupMailbox(groupId: string): Promise<Models.VoicemailMailboxInfo>; 
-  	getVoicemailGroupMessages(groupId: string, opts?: VoicemailApi.getVoicemailGroupMessagesOptions): Promise<Models.VoicemailMessageEntityListing>; 
-  	getVoicemailGroupPolicy(groupId: string): Promise<Models.VoicemailGroupPolicy>; 
-  	getVoicemailMailbox(): Promise<Models.VoicemailMailboxInfo>; 
-  	getVoicemailMeMailbox(): Promise<Models.VoicemailMailboxInfo>; 
-  	getVoicemailMeMessages(opts?: VoicemailApi.getVoicemailMeMessagesOptions): Promise<Models.VoicemailMessageEntityListing>; 
-  	getVoicemailMePolicy(): Promise<Models.VoicemailUserPolicy>; 
-  	getVoicemailMessage(messageId: string, opts?: VoicemailApi.getVoicemailMessageOptions): Promise<Models.VoicemailMessage>; 
-  	getVoicemailMessageMedia(messageId: string, opts?: VoicemailApi.getVoicemailMessageMediaOptions): Promise<Models.VoicemailMediaInfo>; 
-  	getVoicemailMessages(opts?: VoicemailApi.getVoicemailMessagesOptions): Promise<Models.VoicemailMessageEntityListing>; 
-  	getVoicemailPolicy(): Promise<Models.VoicemailOrganizationPolicy>; 
-  	getVoicemailQueueMessages(queueId: string, opts?: VoicemailApi.getVoicemailQueueMessagesOptions): Promise<Models.VoicemailMessageEntityListing>; 
-  	getVoicemailSearch(q64: string, opts?: VoicemailApi.getVoicemailSearchOptions): Promise<Models.VoicemailsSearchResponse>; 
-  	getVoicemailUserMailbox(userId: string): Promise<Models.VoicemailMailboxInfo>; 
-  	getVoicemailUserMessages(userId: string, opts?: VoicemailApi.getVoicemailUserMessagesOptions): Promise<Models.VoicemailMessageEntityListing>; 
-  	getVoicemailUserpolicy(userId: string): Promise<Models.VoicemailUserPolicy>; 
-  	patchVoicemailGroupPolicy(groupId: string, body: Models.VoicemailGroupPolicy): Promise<Models.VoicemailGroupPolicy>; 
-  	patchVoicemailMePolicy(body: Models.VoicemailUserPolicy): Promise<Models.VoicemailUserPolicy>; 
-  	patchVoicemailMessage(messageId: string, body: Models.VoicemailMessage): Promise<Models.VoicemailMessage>; 
-  	patchVoicemailUserpolicy(userId: string, body: Models.VoicemailUserPolicy): Promise<Models.VoicemailUserPolicy>; 
-  	postVoicemailMessages(opts?: VoicemailApi.postVoicemailMessagesOptions): Promise<Models.VoicemailMessage>; 
-  	postVoicemailSearch(body: Models.VoicemailSearchRequest): Promise<Models.VoicemailsSearchResponse>; 
-  	putVoicemailMessage(messageId: string, body: Models.VoicemailMessage): Promise<Models.VoicemailMessage>; 
-  	putVoicemailPolicy(body: Models.VoicemailOrganizationPolicy): Promise<Models.VoicemailOrganizationPolicy>; 
+declare class VoicemailApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteVoicemailMessage(messageId: string): Promise<void>;
+  	deleteVoicemailMessages(): Promise<void>;
+  	getVoicemailGroupMailbox(groupId: string): Promise<Models.VoicemailMailboxInfo>;
+  	getVoicemailGroupMessages(groupId: string, opts?: VoicemailApi.getVoicemailGroupMessagesOptions): Promise<Models.VoicemailMessageEntityListing>;
+  	getVoicemailGroupPolicy(groupId: string): Promise<Models.VoicemailGroupPolicy>;
+  	getVoicemailMailbox(): Promise<Models.VoicemailMailboxInfo>;
+  	getVoicemailMeMailbox(): Promise<Models.VoicemailMailboxInfo>;
+  	getVoicemailMeMessages(opts?: VoicemailApi.getVoicemailMeMessagesOptions): Promise<Models.VoicemailMessageEntityListing>;
+  	getVoicemailMePolicy(): Promise<Models.VoicemailUserPolicy>;
+  	getVoicemailMessage(messageId: string, opts?: VoicemailApi.getVoicemailMessageOptions): Promise<Models.VoicemailMessage>;
+  	getVoicemailMessageMedia(messageId: string, opts?: VoicemailApi.getVoicemailMessageMediaOptions): Promise<Models.VoicemailMediaInfo>;
+  	getVoicemailMessages(opts?: VoicemailApi.getVoicemailMessagesOptions): Promise<Models.VoicemailMessageEntityListing>;
+  	getVoicemailPolicy(): Promise<Models.VoicemailOrganizationPolicy>;
+  	getVoicemailQueueMessages(queueId: string, opts?: VoicemailApi.getVoicemailQueueMessagesOptions): Promise<Models.VoicemailMessageEntityListing>;
+  	getVoicemailSearch(q64: string, opts?: VoicemailApi.getVoicemailSearchOptions): Promise<Models.VoicemailsSearchResponse>;
+  	getVoicemailUserMailbox(userId: string): Promise<Models.VoicemailMailboxInfo>;
+  	getVoicemailUserMessages(userId: string, opts?: VoicemailApi.getVoicemailUserMessagesOptions): Promise<Models.VoicemailMessageEntityListing>;
+  	getVoicemailUserpolicy(userId: string): Promise<Models.VoicemailUserPolicy>;
+  	patchVoicemailGroupPolicy(groupId: string, body: Models.VoicemailGroupPolicy): Promise<Models.VoicemailGroupPolicy>;
+  	patchVoicemailMePolicy(body: Models.VoicemailUserPolicy): Promise<Models.VoicemailUserPolicy>;
+  	patchVoicemailMessage(messageId: string, body: Models.VoicemailMessage): Promise<Models.VoicemailMessage>;
+  	patchVoicemailUserpolicy(userId: string, body: Models.VoicemailUserPolicy): Promise<Models.VoicemailUserPolicy>;
+  	postVoicemailMessages(opts?: VoicemailApi.postVoicemailMessagesOptions): Promise<Models.VoicemailMessage>;
+  	postVoicemailSearch(body: Models.VoicemailSearchRequest): Promise<Models.VoicemailsSearchResponse>;
+  	putVoicemailMessage(messageId: string, body: Models.VoicemailMessage): Promise<Models.VoicemailMessage>;
+  	putVoicemailPolicy(body: Models.VoicemailOrganizationPolicy): Promise<Models.VoicemailOrganizationPolicy>;
   	putVoicemailUserpolicy(userId: string, body: Models.VoicemailUserPolicy): Promise<Models.VoicemailUserPolicy>;
 }
 
@@ -6859,25 +7072,26 @@ declare namespace VoicemailApi {
 	}
 }
 
-declare class WebChatApi {  
-  	deleteWebchatDeployment(deploymentId: string): Promise<void>; 
-  	deleteWebchatGuestConversationMember(conversationId: string, memberId: string): Promise<void>; 
-  	deleteWebchatSettings(): Promise<void>; 
-  	getWebchatDeployment(deploymentId: string): Promise<Models.WebChatDeployment>; 
-  	getWebchatDeployments(): Promise<Models.WebChatDeploymentEntityListing>; 
-  	getWebchatGuestConversationMediarequest(conversationId: string, mediaRequestId: string): Promise<Models.WebChatGuestMediaRequest>; 
-  	getWebchatGuestConversationMediarequests(conversationId: string): Promise<Models.WebChatGuestMediaRequestEntityList>; 
-  	getWebchatGuestConversationMember(conversationId: string, memberId: string): Promise<Models.WebChatMemberInfo>; 
-  	getWebchatGuestConversationMembers(conversationId: string, opts?: WebChatApi.getWebchatGuestConversationMembersOptions): Promise<Models.WebChatMemberInfoEntityList>; 
-  	getWebchatGuestConversationMessage(conversationId: string, messageId: string): Promise<Models.WebChatMessage>; 
-  	getWebchatGuestConversationMessages(conversationId: string, opts?: WebChatApi.getWebchatGuestConversationMessagesOptions): Promise<Models.WebChatMessageEntityList>; 
-  	getWebchatSettings(): Promise<Models.WebChatSettings>; 
-  	patchWebchatGuestConversationMediarequest(conversationId: string, mediaRequestId: string, body: Models.WebChatGuestMediaRequest): Promise<Models.WebChatGuestMediaRequest>; 
-  	postWebchatDeployments(body: Models.WebChatDeployment): Promise<Models.WebChatDeployment>; 
-  	postWebchatGuestConversationMemberMessages(conversationId: string, memberId: string, body: Models.CreateWebChatMessageRequest): Promise<Models.WebChatMessage>; 
-  	postWebchatGuestConversationMemberTyping(conversationId: string, memberId: string): Promise<Models.WebChatTyping>; 
-  	postWebchatGuestConversations(body: Models.CreateWebChatConversationRequest): Promise<Models.CreateWebChatConversationResponse>; 
-  	putWebchatDeployment(deploymentId: string, body: Models.WebChatDeployment): Promise<Models.WebChatDeployment>; 
+declare class WebChatApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteWebchatDeployment(deploymentId: string): Promise<void>;
+  	deleteWebchatGuestConversationMember(conversationId: string, memberId: string): Promise<void>;
+  	deleteWebchatSettings(): Promise<void>;
+  	getWebchatDeployment(deploymentId: string): Promise<Models.WebChatDeployment>;
+  	getWebchatDeployments(): Promise<Models.WebChatDeploymentEntityListing>;
+  	getWebchatGuestConversationMediarequest(conversationId: string, mediaRequestId: string): Promise<Models.WebChatGuestMediaRequest>;
+  	getWebchatGuestConversationMediarequests(conversationId: string): Promise<Models.WebChatGuestMediaRequestEntityList>;
+  	getWebchatGuestConversationMember(conversationId: string, memberId: string): Promise<Models.WebChatMemberInfo>;
+  	getWebchatGuestConversationMembers(conversationId: string, opts?: WebChatApi.getWebchatGuestConversationMembersOptions): Promise<Models.WebChatMemberInfoEntityList>;
+  	getWebchatGuestConversationMessage(conversationId: string, messageId: string): Promise<Models.WebChatMessage>;
+  	getWebchatGuestConversationMessages(conversationId: string, opts?: WebChatApi.getWebchatGuestConversationMessagesOptions): Promise<Models.WebChatMessageEntityList>;
+  	getWebchatSettings(): Promise<Models.WebChatSettings>;
+  	patchWebchatGuestConversationMediarequest(conversationId: string, mediaRequestId: string, body: Models.WebChatGuestMediaRequest): Promise<Models.WebChatGuestMediaRequest>;
+  	postWebchatDeployments(body: Models.WebChatDeployment): Promise<Models.WebChatDeployment>;
+  	postWebchatGuestConversationMemberMessages(conversationId: string, memberId: string, body: Models.CreateWebChatMessageRequest): Promise<Models.WebChatMessage>;
+  	postWebchatGuestConversationMemberTyping(conversationId: string, memberId: string): Promise<Models.WebChatTyping>;
+  	postWebchatGuestConversations(body: Models.CreateWebChatConversationRequest): Promise<Models.CreateWebChatConversationResponse>;
+  	putWebchatDeployment(deploymentId: string, body: Models.WebChatDeployment): Promise<Models.WebChatDeployment>;
   	putWebchatSettings(body: Models.WebChatSettings): Promise<Models.WebChatSettings>;
 }
 
@@ -6895,25 +7109,26 @@ declare namespace WebChatApi {
 	}
 }
 
-declare class WebDeploymentsApi {  
-  	deleteWebdeploymentsConfiguration(configurationId: string): Promise<void>; 
-  	deleteWebdeploymentsDeployment(deploymentId: string): Promise<void>; 
-  	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId: string, sessionId: string): Promise<object>; 
-  	deleteWebdeploymentsTokenRevoke(opts?: WebDeploymentsApi.deleteWebdeploymentsTokenRevokeOptions): Promise<void>; 
-  	getWebdeploymentsConfigurationVersion(configurationId: string, versionId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
-  	getWebdeploymentsConfigurationVersions(configurationId: string): Promise<Models.WebDeploymentConfigurationVersionEntityListing>; 
-  	getWebdeploymentsConfigurationVersionsDraft(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
-  	getWebdeploymentsConfigurations(opts?: WebDeploymentsApi.getWebdeploymentsConfigurationsOptions): Promise<Models.WebDeploymentConfigurationVersionEntityListing>; 
-  	getWebdeploymentsDeployment(deploymentId: string, opts?: WebDeploymentsApi.getWebdeploymentsDeploymentOptions): Promise<Models.WebDeployment>; 
-  	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId: string, sessionId: string): Promise<Models.CobrowseWebMessagingSession>; 
-  	getWebdeploymentsDeploymentConfigurations(deploymentId: string, opts?: WebDeploymentsApi.getWebdeploymentsDeploymentConfigurationsOptions): Promise<Models.WebDeploymentActiveConfigurationOnDeployment>; 
-  	getWebdeploymentsDeployments(opts?: WebDeploymentsApi.getWebdeploymentsDeploymentsOptions): Promise<Models.ExpandableWebDeploymentEntityListing>; 
-  	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
-  	postWebdeploymentsConfigurations(configurationVersion: Models.WebDeploymentConfigurationVersion): Promise<Models.WebDeploymentConfigurationVersion>; 
-  	postWebdeploymentsDeployments(deployment: Models.WebDeployment): Promise<Models.WebDeployment>; 
-  	postWebdeploymentsTokenOauthcodegrantjwtexchange(body: Models.WebDeploymentsOAuthExchangeRequest): Promise<Models.WebDeploymentsAuthorizationResponse>; 
-  	postWebdeploymentsTokenRefresh(opts?: WebDeploymentsApi.postWebdeploymentsTokenRefreshOptions): Promise<Models.SignedData>; 
-  	putWebdeploymentsConfigurationVersionsDraft(configurationId: string, configurationVersion: Models.WebDeploymentConfigurationVersion): Promise<Models.WebDeploymentConfigurationVersion>; 
+declare class WebDeploymentsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteWebdeploymentsConfiguration(configurationId: string): Promise<void>;
+  	deleteWebdeploymentsDeployment(deploymentId: string): Promise<void>;
+  	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId: string, sessionId: string): Promise<object>;
+  	deleteWebdeploymentsTokenRevoke(opts?: WebDeploymentsApi.deleteWebdeploymentsTokenRevokeOptions): Promise<void>;
+  	getWebdeploymentsConfigurationVersion(configurationId: string, versionId: string): Promise<Models.WebDeploymentConfigurationVersion>;
+  	getWebdeploymentsConfigurationVersions(configurationId: string): Promise<Models.WebDeploymentConfigurationVersionEntityListing>;
+  	getWebdeploymentsConfigurationVersionsDraft(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>;
+  	getWebdeploymentsConfigurations(opts?: WebDeploymentsApi.getWebdeploymentsConfigurationsOptions): Promise<Models.WebDeploymentConfigurationVersionEntityListing>;
+  	getWebdeploymentsDeployment(deploymentId: string, opts?: WebDeploymentsApi.getWebdeploymentsDeploymentOptions): Promise<Models.WebDeployment>;
+  	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId: string, sessionId: string): Promise<Models.CobrowseWebMessagingSession>;
+  	getWebdeploymentsDeploymentConfigurations(deploymentId: string, opts?: WebDeploymentsApi.getWebdeploymentsDeploymentConfigurationsOptions): Promise<Models.WebDeploymentActiveConfigurationOnDeployment>;
+  	getWebdeploymentsDeployments(opts?: WebDeploymentsApi.getWebdeploymentsDeploymentsOptions): Promise<Models.ExpandableWebDeploymentEntityListing>;
+  	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>;
+  	postWebdeploymentsConfigurations(configurationVersion: Models.WebDeploymentConfigurationVersion): Promise<Models.WebDeploymentConfigurationVersion>;
+  	postWebdeploymentsDeployments(deployment: Models.WebDeployment): Promise<Models.WebDeployment>;
+  	postWebdeploymentsTokenOauthcodegrantjwtexchange(body: Models.WebDeploymentsOAuthExchangeRequest): Promise<Models.WebDeploymentsAuthorizationResponse>;
+  	postWebdeploymentsTokenRefresh(opts?: WebDeploymentsApi.postWebdeploymentsTokenRefreshOptions): Promise<Models.SignedData>;
+  	putWebdeploymentsConfigurationVersionsDraft(configurationId: string, configurationVersion: Models.WebDeploymentConfigurationVersion): Promise<Models.WebDeploymentConfigurationVersion>;
   	putWebdeploymentsDeployment(deploymentId: string, deployment: Models.WebDeployment): Promise<Models.WebDeployment>;
 }
 
@@ -6940,7 +7155,8 @@ declare namespace WebDeploymentsApi {
 	}
 }
 
-declare class WebMessagingApi {  
+declare class WebMessagingApi {
+	constructor(apiClient?: ApiClientClass);
   	getWebmessagingMessages(opts?: WebMessagingApi.getWebmessagingMessagesOptions): Promise<Models.WebMessagingMessageEntityList>;
 }
 
@@ -6951,255 +7167,257 @@ declare namespace WebMessagingApi {
 	}
 }
 
-declare class WidgetsApi {  
-  	deleteWidgetsDeployment(deploymentId: string): Promise<void>; 
-  	getWidgetsDeployment(deploymentId: string): Promise<Models.WidgetDeployment>; 
-  	getWidgetsDeployments(): Promise<Models.WidgetDeploymentEntityListing>; 
-  	postWidgetsDeployments(body: Models.WidgetDeployment): Promise<Models.WidgetDeployment>; 
+declare class WidgetsApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteWidgetsDeployment(deploymentId: string): Promise<void>;
+  	getWidgetsDeployment(deploymentId: string): Promise<Models.WidgetDeployment>;
+  	getWidgetsDeployments(): Promise<Models.WidgetDeploymentEntityListing>;
+  	postWidgetsDeployments(body: Models.WidgetDeployment): Promise<Models.WidgetDeployment>;
   	putWidgetsDeployment(deploymentId: string, body: Models.WidgetDeployment): Promise<Models.WidgetDeployment>;
 }
 
 declare namespace WidgetsApi { 
 }
 
-declare class WorkforceManagementApi {  
-  	deleteWorkforcemanagementBusinessunit(businessUnitId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId: string, staffingGroupId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId: string, timeOffLimitId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId: string, timeOffPlanId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.BuAsyncScheduleResponse>; 
-  	deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId: string, weekDateId: string, forecastId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string): Promise<void>; 
-  	deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string): Promise<void>; 
-  	deleteWorkforcemanagementCalendarUrlIcs(): Promise<void>; 
-  	deleteWorkforcemanagementManagementunit(managementUnitId: string): Promise<void>; 
-  	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string): Promise<void>; 
-  	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string): Promise<void>; 
-  	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string): Promise<void>; 
-  	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string): Promise<void>; 
-  	getWorkforcemanagementAdherence(userId: Array<string>): Promise<Array<Models.UserScheduleAdherence>>; 
-  	getWorkforcemanagementAdherenceExplanation(explanationId: string): Promise<Models.AdherenceExplanationResponse>; 
-  	getWorkforcemanagementAdherenceExplanationsJob(jobId: string): Promise<Models.AdherenceExplanationJob>; 
-  	getWorkforcemanagementAdherenceHistoricalBulkJob(jobId: string): Promise<Models.WfmHistoricalAdherenceBulkResponse>; 
-  	getWorkforcemanagementAdherenceHistoricalJob(jobId: string): Promise<Models.WfmHistoricalAdherenceResponse>; 
-  	getWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string): Promise<Models.AdherenceExplanationResponse>; 
-  	getWorkforcemanagementAgentManagementunit(agentId: string): Promise<Models.AgentManagementUnitReference>; 
-  	getWorkforcemanagementAgentsMeManagementunit(): Promise<Models.AgentManagementUnitReference>; 
-  	getWorkforcemanagementAlternativeshiftsOffersJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>; 
-  	getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>; 
-  	getWorkforcemanagementAlternativeshiftsSettings(): Promise<Models.AlternativeShiftBuSettingsResponse>; 
-  	getWorkforcemanagementAlternativeshiftsTrade(tradeId: string): Promise<Models.AlternativeShiftTradeResponse>; 
-  	getWorkforcemanagementAlternativeshiftsTrades(opts?: WorkforceManagementApi.getWorkforcemanagementAlternativeshiftsTradesOptions): Promise<Models.ListAlternativeShiftTradesResponse>; 
-  	getWorkforcemanagementAlternativeshiftsTradesJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>; 
-  	getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>; 
-  	getWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
-  	getWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string): Promise<Models.BusinessUnitActivityCode>; 
-  	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCodeListing>; 
-  	getWorkforcemanagementBusinessunitActivityplan(businessUnitId: string, activityPlanId: string): Promise<Models.ActivityPlanResponse>; 
-  	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId: string, activityPlanId: string, jobId: string): Promise<Models.ActivityPlanRunJobResponse>; 
-  	getWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplansOptions): Promise<Models.ActivityPlanListing>; 
-  	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId: string): Promise<Models.ActivityPlanJobListing>; 
-  	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId: string): Promise<Models.AlternativeShiftBuSettingsResponse>; 
-  	getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId: string, tradeId: string): Promise<Models.AlternativeShiftTradeResponse>; 
-  	getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId: string, jobId: string): Promise<Models.BuAlternativeShiftJobResponse>; 
-  	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId: string, _date: string): Promise<Models.WfmIntradayPlanningGroupListing>; 
-  	getWorkforcemanagementBusinessunitManagementunits(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitManagementunitsOptions): Promise<Models.ManagementUnitListing>; 
-  	getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string): Promise<Models.PlanningGroup>; 
-  	getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId: string): Promise<Models.PlanningGroupList>; 
-  	getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string): Promise<Models.BuScheduleRun>; 
-  	getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId: string, runId: string, managementUnitIds: Array<string>, expand: Array<string>): Promise<Models.BuRescheduleResult>; 
-  	getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId: string): Promise<Models.BuScheduleRunListing>; 
-  	getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>; 
-  	getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitServicegoaltemplatesOptions): Promise<Models.ServiceGoalTemplateList>; 
-  	getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId: string, staffingGroupId: string): Promise<Models.StaffingGroupResponse>; 
-  	getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitStaffinggroupsOptions): Promise<Models.StaffingGroupListing>; 
-  	getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId: string, timeOffLimitId: string): Promise<Models.BuTimeOffLimitResponse>; 
-  	getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitTimeofflimitsOptions): Promise<Models.BuTimeOffLimitListing>; 
-  	getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId: string, timeOffPlanId: string): Promise<Models.BuTimeOffPlanResponse>; 
-  	getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitTimeoffplansOptions): Promise<Models.BuTimeOffPlanListing>; 
-  	getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekScheduleOptions): Promise<Models.BuScheduleMetadata>; 
-  	getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.ScheduleGenerationResult>; 
-  	getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastOptions): Promise<Models.BuHeadcountForecastResponse>; 
-  	getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId: string, weekId: string, scheduleId: string, agentId: string): Promise<Models.BuAgentScheduleHistoryResponse>; 
-  	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.PerformancePredictionResponse>; 
-  	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId: string, weekId: string, scheduleId: string, recalculationId: string): Promise<Models.PerformancePredictionRecalculationResponse>; 
-  	getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId: string, weekId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekSchedulesOptions): Promise<Models.BuScheduleListing>; 
-  	getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastOptions): Promise<Models.BuShortTermForecast>; 
-  	getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastDataOptions): Promise<Models.BuForecastResultResponse>; 
-  	getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId: string, weekDateId: string, forecastId: string): Promise<Models.BuForecastGenerationResult>; 
-  	getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataOptions): Promise<Models.LongTermForecastResultResponse>; 
-  	getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId: string, weekDateId: string, forecastId: string): Promise<Models.ForecastPlanningGroupsResponse>; 
-  	getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementOptions): Promise<Models.BuForecastStaffingRequirementsResultResponse>; 
-  	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId: string, weekDateId: string): Promise<Models.BuShortTermForecastListing>; 
-  	getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string): Promise<Models.WorkPlanBid>; 
-  	getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string): Promise<Models.WorkPlanBidGroupResponse>; 
-  	getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId: string, bidId: string, bidGroupId: string): Promise<Models.AdminAgentWorkPlanPreferenceResponse>; 
-  	getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId: string, bidId: string): Promise<Models.WorkPlanBidGroupSummaryList>; 
-  	getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId: string): Promise<Models.WorkPlanBidListResponse>; 
-  	getWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnitListing>; 
-  	getWorkforcemanagementBusinessunitsDivisionviews(opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitsDivisionviewsOptions): Promise<Models.BusinessUnitListing>; 
-  	getWorkforcemanagementCalendarDataIcs(calendarId: string): Promise<string>; 
-  	getWorkforcemanagementCalendarUrlIcs(): Promise<Models.CalendarUrlResponse>; 
-  	getWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>; 
-  	getWorkforcemanagementHistoricaldataImportstatus(): Promise<Models.HistoricalImportStatusListing>; 
-  	getWorkforcemanagementIntegrationsHris(): Promise<Models.WfmIntegrationListing>; 
-  	getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId: string): Promise<Models.HrisTimeOffTypesJobResponse>; 
-  	getWorkforcemanagementManagementunit(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitOptions): Promise<Models.ManagementUnit>; 
-  	getWorkforcemanagementManagementunitActivitycodes(managementUnitId: string): Promise<Models.ActivityCodeContainer>; 
-  	getWorkforcemanagementManagementunitAdherence(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitAdherenceOptions): Promise<Models.UserScheduleAdherenceListing>; 
-  	getWorkforcemanagementManagementunitAgent(managementUnitId: string, agentId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitAgentOptions): Promise<Models.WfmAgent>; 
-  	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId: string, agentId: string): Promise<Models.ShiftTradeListResponse>; 
-  	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId: string): Promise<Models.ShiftTradeMatchesSummaryResponse>; 
-  	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId: string): Promise<Models.WfmUserEntityListing>; 
-  	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string): Promise<Models.TimeOffLimit>; 
-  	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId: string): Promise<Models.TimeOffLimitListing>; 
-  	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string): Promise<Models.TimeOffPlan>; 
-  	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId: string): Promise<Models.TimeOffPlanListing>; 
-  	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId: string, userId: string, timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>; 
-  	getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId: string, userId: string, timeOffRequestId: string): Promise<Models.QueryTimeOffLimitValuesResponse>; 
-  	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId: string, userId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitUserTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
-  	getWorkforcemanagementManagementunitUsers(managementUnitId: string): Promise<Models.WfmUserEntityListing>; 
-  	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekScheduleOptions): Promise<Models.WeekScheduleResponse>; 
-  	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId: string, weekId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekSchedulesOptions): Promise<Models.WeekScheduleListResponse>; 
-  	getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId: string, weekDateId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekShifttradesOptions): Promise<Models.WeekShiftTradeListResponse>; 
-  	getWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>; 
-  	getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string): Promise<Models.WorkPlanRotationResponse>; 
-  	getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWorkplanrotationsOptions): Promise<Models.WorkPlanRotationListResponse>; 
-  	getWorkforcemanagementManagementunitWorkplans(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWorkplansOptions): Promise<Models.WorkPlanListResponse>; 
-  	getWorkforcemanagementManagementunits(opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitsOptions): Promise<Models.ManagementUnitListing>; 
-  	getWorkforcemanagementManagementunitsDivisionviews(opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitsDivisionviewsOptions): Promise<Models.ManagementUnitListing>; 
-  	getWorkforcemanagementNotifications(): Promise<Models.NotificationsResponse>; 
-  	getWorkforcemanagementSchedulingjob(jobId: string): Promise<Models.SchedulingStatusResponse>; 
-  	getWorkforcemanagementShifttrades(): Promise<Models.ShiftTradeListResponse>; 
-  	getWorkforcemanagementShrinkageJob(jobId: string): Promise<Models.WfmHistoricalShrinkageResponse>; 
-  	getWorkforcemanagementTimeoffbalanceJob(jobId: string): Promise<Models.TimeOffBalanceJobResponse>; 
-  	getWorkforcemanagementTimeoffrequest(timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>; 
-  	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId: string): Promise<Models.WaitlistPositionListing>; 
-  	getWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.getWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
-  	getWorkforcemanagementUserWorkplanbidranks(userId: string): Promise<Models.WorkPlanBidRanks>; 
-  	getWorkforcemanagementWorkplanbidPreferences(bidId: string): Promise<Models.AgentWorkPlanBiddingPreferenceResponse>; 
-  	getWorkforcemanagementWorkplanbidWorkplans(bidId: string): Promise<Models.AgentWorkPlanListResponse>; 
-  	getWorkforcemanagementWorkplanbids(): Promise<Models.AgentWorkPlanBids>; 
-  	patchWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string, body: Models.UpdateAdherenceExplanationStatusRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
-  	patchWorkforcemanagementAlternativeshiftsTrade(tradeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementAlternativeshiftsTradeOptions): Promise<Models.AlternativeShiftTradeResponse>; 
-  	patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body: Models.AdminBulkUpdateAlternativeShiftTradeStateRequest): Promise<Models.AlternativeShiftAsyncResponse>; 
-  	patchWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
-  	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitActivitycodeOptions): Promise<Models.BusinessUnitActivityCode>; 
-  	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId: string, activityPlanId: string, body: Models.UpdateActivityPlanRequest): Promise<Models.ActivityPlanResponse>; 
-  	patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitAlternativeshiftsSettingsOptions): Promise<Models.AlternativeShiftBuSettingsResponse>; 
-  	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitPlanninggroupOptions): Promise<Models.PlanningGroup>; 
-  	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitSchedulingRunOptions): Promise<void>; 
-  	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>; 
-  	patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId: string, staffingGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitStaffinggroupOptions): Promise<Models.StaffingGroupResponse>; 
-  	patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId: string, timeOffPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitTimeoffplanOptions): Promise<Models.BuTimeOffPlanResponse>; 
-  	patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string, body: Models.UpdateWorkPlanBid): Promise<Models.WorkPlanBid>; 
-  	patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitWorkplanbidGroupOptions): Promise<Models.WorkPlanBidGroupResponse>; 
-  	patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId: string, bidId: string, bidGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesOptions): Promise<Models.AdminAgentWorkPlanPreferenceResponse>; 
-  	patchWorkforcemanagementManagementunit(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitOptions): Promise<Models.ManagementUnit>; 
-  	patchWorkforcemanagementManagementunitAgents(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitAgentsOptions): Promise<void>; 
-  	patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitAgentsWorkplansBulkOptions): Promise<Models.UpdateMuAgentWorkPlansBatchResponse>; 
-  	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeofflimitOptions): Promise<Models.TimeOffLimit>; 
-  	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeoffplanOptions): Promise<Models.TimeOffPlan>; 
-  	patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId: string, timeOffRequestId: string, userId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusOptions): Promise<Models.UserTimeOffIntegrationStatusResponse>; 
-  	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId: string, userId: string, timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitUserTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>; 
-  	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId: string, weekDateId: string, tradeId: string, body: Models.PatchShiftTradeRequest): Promise<Models.ShiftTradeResponse>; 
-  	patchWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>; 
-  	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanrotationOptions): Promise<Models.WorkPlanRotationResponse>; 
-  	patchWorkforcemanagementTimeoffrequest(timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>; 
-  	patchWorkforcemanagementUserWorkplanbidranks(userId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementUserWorkplanbidranksOptions): Promise<Models.WorkPlanBidRanks>; 
-  	patchWorkforcemanagementUsersWorkplanbidranksBulk(body: Array<Models.WorkPlanBidRanks>): Promise<Models.EntityListing>; 
-  	patchWorkforcemanagementWorkplanbidPreferences(bidId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementWorkplanbidPreferencesOptions): Promise<Models.AgentWorkPlanBiddingPreferenceResponse>; 
-  	postWorkforcemanagementAdherenceExplanations(body: Models.AddAdherenceExplanationAgentRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
-  	postWorkforcemanagementAdherenceExplanationsQuery(body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceExplanationsQueryOptions): Promise<Models.QueryAdherenceExplanationsResponse>; 
-  	postWorkforcemanagementAdherenceHistorical(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
-  	postWorkforcemanagementAdherenceHistoricalBulk(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalBulkOptions): Promise<Models.WfmHistoricalAdherenceBulkResponse>; 
-  	postWorkforcemanagementAgentAdherenceExplanations(agentId: string, body: Models.AddAdherenceExplanationAdminRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
-  	postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId: string, body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAgentAdherenceExplanationsQueryOptions): Promise<Models.AgentQueryAdherenceExplanationsResponse>; 
-  	postWorkforcemanagementAgents(opts?: WorkforceManagementApi.postWorkforcemanagementAgentsOptions): Promise<Models.MoveAgentsResponse>; 
-  	postWorkforcemanagementAgentsIntegrationsHrisQuery(opts?: WorkforceManagementApi.postWorkforcemanagementAgentsIntegrationsHrisQueryOptions): Promise<Models.AgentsIntegrationsListing>; 
-  	postWorkforcemanagementAgentsMePossibleworkshifts(body: Models.AgentPossibleWorkShiftsRequest): Promise<Models.AgentPossibleWorkShiftsResponse>; 
-  	postWorkforcemanagementAgentschedulesMine(opts?: WorkforceManagementApi.postWorkforcemanagementAgentschedulesMineOptions): Promise<Models.BuCurrentAgentScheduleSearchResponse>; 
-  	postWorkforcemanagementAlternativeshiftsOffersJobs(body: Models.AlternativeShiftOffersRequest): Promise<Models.AlternativeShiftAsyncResponse>; 
-  	postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body: Models.AlternativeShiftSearchOffersRequest): Promise<Models.AlternativeShiftAsyncResponse>; 
-  	postWorkforcemanagementAlternativeshiftsTrades(body: Models.CreateAlternativeShiftTradeRequest): Promise<Models.AlternativeShiftTradeResponse>; 
-  	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCode>; 
-  	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId: string, activityPlanId: string): Promise<Models.ActivityPlanJobResponse>; 
-  	postWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, body: Models.CreateActivityPlanRequest): Promise<Models.ActivityPlanResponse>; 
-  	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId: string, body: Models.BuQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAdherenceExplanationsQueryOptions): Promise<Models.BuQueryAdherenceExplanationsResponse>; 
-  	postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>; 
-  	postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId: string, body: Models.SearchAlternativeShiftTradesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchOptions): Promise<Models.BuListAlternativeShiftTradesResponse>; 
-  	postWorkforcemanagementBusinessunitIntraday(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitIntradayOptions): Promise<Models.AsyncIntradayResponse>; 
-  	postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitPlanninggroupsOptions): Promise<Models.PlanningGroup>; 
-  	postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitServicegoaltemplatesOptions): Promise<Models.ServiceGoalTemplate>; 
-  	postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitStaffinggroupsOptions): Promise<Models.StaffingGroupResponse>; 
-  	postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitStaffinggroupsQueryOptions): Promise<Models.UserStaffingGroupListing>; 
-  	postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitTimeofflimitsOptions): Promise<Models.BuTimeOffLimitResponse>; 
-  	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitTimeofflimitsValuesQueryOptions): Promise<Models.BuTimeOffLimitValuesResponse>; 
-  	postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitTimeoffplansOptions): Promise<Models.BuTimeOffPlanResponse>; 
-  	postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuQueryAgentSchedulesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryOptions): Promise<Models.BuAsyncAgentSchedulesQueryResponse>; 
-  	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuCopyScheduleRequest): Promise<Models.BuAsyncScheduleResponse>; 
-  	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsOptions): Promise<Models.PerformancePredictionRecalculationResponse>; 
-  	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlOptions): Promise<Models.PerformancePredictionRecalculationUploadResponse>; 
-  	postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuRescheduleRequest): Promise<Models.BuAsyncScheduleRunResponse>; 
-  	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId: string, weekId: string, scheduleId: string, body: Models.ProcessScheduleUpdateUploadRequest): Promise<Models.BuAsyncScheduleResponse>; 
-  	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId: string, weekId: string, scheduleId: string, body: Models.UploadUrlRequestBody): Promise<Models.UpdateScheduleUploadResponse>; 
-  	postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId: string, weekId: string, body: Models.BuCreateBlankScheduleRequest): Promise<Models.BuScheduleMetadata>; 
-  	postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId: string, weekId: string, body: Models.BuGenerateScheduleRequest): Promise<Models.BuAsyncScheduleRunResponse>; 
-  	postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId: string, weekId: string, body: Models.WfmProcessUploadRequest): Promise<Models.ScheduleUploadProcessingResponse>; 
-  	postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId: string, weekId: string, body: Models.UploadUrlRequestBody): Promise<Models.ImportScheduleUploadResponse>; 
-  	postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId: string, weekDateId: string, forecastId: string, body: Models.CopyBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastCopyOptions): Promise<Models.AsyncForecastOperationResult>; 
-  	postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId: string, weekDateId: string, body: Models.GenerateBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateOptions): Promise<Models.AsyncForecastOperationResult>; 
-  	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId: string, weekDateId: string, body: Models.WfmProcessUploadRequest): Promise<Models.ImportForecastResponse>; 
-  	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId: string, weekDateId: string, body: Models.UploadUrlRequestBody): Promise<Models.ImportForecastUploadResponse>; 
-  	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId: string, bidId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidCopyOptions): Promise<Models.WorkPlanBid>; 
-  	postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId: string, bidId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidGroupsOptions): Promise<Models.WorkPlanBidGroupResponse>; 
-  	postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidsOptions): Promise<Models.WorkPlanBid>; 
-  	postWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnitResponse>; 
-  	postWorkforcemanagementCalendarUrlIcs(opts?: WorkforceManagementApi.postWorkforcemanagementCalendarUrlIcsOptions): Promise<Models.CalendarUrlResponse>; 
-  	postWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>; 
-  	postWorkforcemanagementHistoricaldataValidate(opts?: WorkforceManagementApi.postWorkforcemanagementHistoricaldataValidateOptions): Promise<void>; 
-  	postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId: string): Promise<Models.HrisTimeOffTypesResponse>; 
-  	postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitAgentsWorkplansQueryOptions): Promise<Models.AgentsWorkPlansResponse>; 
-  	postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>; 
-  	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitHistoricaladherencequeryOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
-  	postWorkforcemanagementManagementunitMove(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitMoveOptions): Promise<Models.MoveManagementUnitResponse>; 
-  	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitSchedulesSearchOptions): Promise<Models.UserScheduleContainer>; 
-  	postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitShrinkageJobsOptions): Promise<Models.WfmHistoricalShrinkageResponse>; 
-  	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeofflimitsOptions): Promise<Models.TimeOffLimit>; 
-  	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeofflimitsValuesQueryOptions): Promise<Models.QueryTimeOffLimitValuesResponse>; 
-  	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffplansOptions): Promise<Models.TimeOffPlan>; 
-  	postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
-  	postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryOptions): Promise<Models.UserTimeOffIntegrationStatusResponseListing>; 
-  	postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsQueryOptions): Promise<Models.TimeOffRequestListing>; 
-  	postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryOptions): Promise<Models.WaitlistPositionListing>; 
-  	postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId: string, userId: string, body: Models.TimeOffBalanceRequest): Promise<Models.TimeOffBalancesResponse>; 
-  	postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId: string, userId: string, timeOffRequestId: string): Promise<Models.TimeOffBalancesResponse>; 
-  	postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId: string, userId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimateOptions): Promise<Models.EstimateAvailableTimeOffResponse>; 
-  	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId: string, weekDateId: string, tradeId: string, body: Models.MatchShiftTradeRequest): Promise<Models.MatchShiftTradeResponse>; 
-  	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId: string, weekDateId: string, body: Models.AddShiftTradeRequest): Promise<Models.ShiftTradeResponse>; 
-  	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId: string, weekDateId: string, body: Models.SearchShiftTradesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekShifttradesSearchOptions): Promise<Models.SearchShiftTradesResponse>; 
-  	postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId: string, weekDateId: string, body: Models.BulkShiftTradeStateUpdateRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekShifttradesStateBulkOptions): Promise<Models.BulkUpdateShiftTradeStateResponse>; 
-  	postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanCopyOptions): Promise<Models.WorkPlan>; 
-  	postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanValidateOptions): Promise<Models.ValidateWorkPlanResponse>; 
-  	postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId: string, workPlanRotationId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanrotationCopyOptions): Promise<Models.WorkPlanRotationResponse>; 
-  	postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanrotationsOptions): Promise<Models.WorkPlanRotationResponse>; 
-  	postWorkforcemanagementManagementunitWorkplans(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplansOptions): Promise<Models.WorkPlan>; 
-  	postWorkforcemanagementManagementunits(opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitsOptions): Promise<Models.ManagementUnit>; 
-  	postWorkforcemanagementNotificationsUpdate(opts?: WorkforceManagementApi.postWorkforcemanagementNotificationsUpdateOptions): Promise<Models.UpdateNotificationsResponse>; 
-  	postWorkforcemanagementSchedules(opts?: WorkforceManagementApi.postWorkforcemanagementSchedulesOptions): Promise<Models.UserScheduleContainer>; 
-  	postWorkforcemanagementTeamAdherenceHistorical(teamId: string, opts?: WorkforceManagementApi.postWorkforcemanagementTeamAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
-  	postWorkforcemanagementTeamShrinkageJobs(teamId: string, opts?: WorkforceManagementApi.postWorkforcemanagementTeamShrinkageJobsOptions): Promise<Models.WfmHistoricalShrinkageResponse>; 
-  	postWorkforcemanagementTimeoffbalanceJobs(body: Models.TimeOffBalanceRequest): Promise<Models.TimeOffBalancesResponse>; 
-  	postWorkforcemanagementTimeofflimitsAvailableQuery(opts?: WorkforceManagementApi.postWorkforcemanagementTimeofflimitsAvailableQueryOptions): Promise<Models.AvailableTimeOffResponse>; 
-  	postWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestResponse>; 
-  	postWorkforcemanagementTimeoffrequestsEstimate(opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffrequestsEstimateOptions): Promise<Models.EstimateAvailableTimeOffResponse>; 
-  	postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffrequestsIntegrationstatusQueryOptions): Promise<Models.TimeOffIntegrationStatusResponseListing>; 
-  	putWorkforcemanagementAgentIntegrationsHris(agentId: string, body: Models.AgentIntegrationsRequest): Promise<Models.AgentIntegrationsResponse>; 
-  	putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.putWorkforcemanagementBusinessunitTimeofflimitValuesOptions): Promise<Models.BuTimeOffLimitResponse>; 
+declare class WorkforceManagementApi {
+	constructor(apiClient?: ApiClientClass);
+  	deleteWorkforcemanagementBusinessunit(businessUnitId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId: string, staffingGroupId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId: string, timeOffLimitId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId: string, timeOffPlanId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.BuAsyncScheduleResponse>;
+  	deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId: string, weekDateId: string, forecastId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string): Promise<void>;
+  	deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string): Promise<void>;
+  	deleteWorkforcemanagementCalendarUrlIcs(): Promise<void>;
+  	deleteWorkforcemanagementManagementunit(managementUnitId: string): Promise<void>;
+  	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string): Promise<void>;
+  	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string): Promise<void>;
+  	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string): Promise<void>;
+  	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string): Promise<void>;
+  	getWorkforcemanagementAdherence(userId: Array<string>): Promise<Array<Models.UserScheduleAdherence>>;
+  	getWorkforcemanagementAdherenceExplanation(explanationId: string): Promise<Models.AdherenceExplanationResponse>;
+  	getWorkforcemanagementAdherenceExplanationsJob(jobId: string): Promise<Models.AdherenceExplanationJob>;
+  	getWorkforcemanagementAdherenceHistoricalBulkJob(jobId: string): Promise<Models.WfmHistoricalAdherenceBulkResponse>;
+  	getWorkforcemanagementAdherenceHistoricalJob(jobId: string): Promise<Models.WfmHistoricalAdherenceResponse>;
+  	getWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string): Promise<Models.AdherenceExplanationResponse>;
+  	getWorkforcemanagementAgentManagementunit(agentId: string): Promise<Models.AgentManagementUnitReference>;
+  	getWorkforcemanagementAgentsMeManagementunit(): Promise<Models.AgentManagementUnitReference>;
+  	getWorkforcemanagementAlternativeshiftsOffersJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>;
+  	getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>;
+  	getWorkforcemanagementAlternativeshiftsSettings(): Promise<Models.AlternativeShiftBuSettingsResponse>;
+  	getWorkforcemanagementAlternativeshiftsTrade(tradeId: string): Promise<Models.AlternativeShiftTradeResponse>;
+  	getWorkforcemanagementAlternativeshiftsTrades(opts?: WorkforceManagementApi.getWorkforcemanagementAlternativeshiftsTradesOptions): Promise<Models.ListAlternativeShiftTradesResponse>;
+  	getWorkforcemanagementAlternativeshiftsTradesJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>;
+  	getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId: string): Promise<Models.AlternativeShiftJobResponse>;
+  	getWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>;
+  	getWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string): Promise<Models.BusinessUnitActivityCode>;
+  	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCodeListing>;
+  	getWorkforcemanagementBusinessunitActivityplan(businessUnitId: string, activityPlanId: string): Promise<Models.ActivityPlanResponse>;
+  	getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId: string, activityPlanId: string, jobId: string): Promise<Models.ActivityPlanRunJobResponse>;
+  	getWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitActivityplansOptions): Promise<Models.ActivityPlanListing>;
+  	getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId: string): Promise<Models.ActivityPlanJobListing>;
+  	getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId: string): Promise<Models.AlternativeShiftBuSettingsResponse>;
+  	getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId: string, tradeId: string): Promise<Models.AlternativeShiftTradeResponse>;
+  	getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId: string, jobId: string): Promise<Models.BuAlternativeShiftJobResponse>;
+  	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId: string, _date: string): Promise<Models.WfmIntradayPlanningGroupListing>;
+  	getWorkforcemanagementBusinessunitManagementunits(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitManagementunitsOptions): Promise<Models.ManagementUnitListing>;
+  	getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string): Promise<Models.PlanningGroup>;
+  	getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId: string): Promise<Models.PlanningGroupList>;
+  	getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string): Promise<Models.BuScheduleRun>;
+  	getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId: string, runId: string, managementUnitIds: Array<string>, expand: Array<string>): Promise<Models.BuRescheduleResult>;
+  	getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId: string): Promise<Models.BuScheduleRunListing>;
+  	getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>;
+  	getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitServicegoaltemplatesOptions): Promise<Models.ServiceGoalTemplateList>;
+  	getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId: string, staffingGroupId: string): Promise<Models.StaffingGroupResponse>;
+  	getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitStaffinggroupsOptions): Promise<Models.StaffingGroupListing>;
+  	getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId: string, timeOffLimitId: string): Promise<Models.BuTimeOffLimitResponse>;
+  	getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitTimeofflimitsOptions): Promise<Models.BuTimeOffLimitListing>;
+  	getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId: string, timeOffPlanId: string): Promise<Models.BuTimeOffPlanResponse>;
+  	getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitTimeoffplansOptions): Promise<Models.BuTimeOffPlanListing>;
+  	getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekScheduleOptions): Promise<Models.BuScheduleMetadata>;
+  	getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.ScheduleGenerationResult>;
+  	getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastOptions): Promise<Models.BuHeadcountForecastResponse>;
+  	getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId: string, weekId: string, scheduleId: string, agentId: string): Promise<Models.BuAgentScheduleHistoryResponse>;
+  	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId: string, weekId: string, scheduleId: string): Promise<Models.PerformancePredictionResponse>;
+  	getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId: string, weekId: string, scheduleId: string, recalculationId: string): Promise<Models.PerformancePredictionRecalculationResponse>;
+  	getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId: string, weekId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekSchedulesOptions): Promise<Models.BuScheduleListing>;
+  	getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastOptions): Promise<Models.BuShortTermForecast>;
+  	getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastDataOptions): Promise<Models.BuForecastResultResponse>;
+  	getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId: string, weekDateId: string, forecastId: string): Promise<Models.BuForecastGenerationResult>;
+  	getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataOptions): Promise<Models.LongTermForecastResultResponse>;
+  	getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId: string, weekDateId: string, forecastId: string): Promise<Models.ForecastPlanningGroupsResponse>;
+  	getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementOptions): Promise<Models.BuForecastStaffingRequirementsResultResponse>;
+  	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId: string, weekDateId: string): Promise<Models.BuShortTermForecastListing>;
+  	getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string): Promise<Models.WorkPlanBid>;
+  	getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string): Promise<Models.WorkPlanBidGroupResponse>;
+  	getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId: string, bidId: string, bidGroupId: string): Promise<Models.AdminAgentWorkPlanPreferenceResponse>;
+  	getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId: string, bidId: string): Promise<Models.WorkPlanBidGroupSummaryList>;
+  	getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId: string): Promise<Models.WorkPlanBidListResponse>;
+  	getWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnitListing>;
+  	getWorkforcemanagementBusinessunitsDivisionviews(opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitsDivisionviewsOptions): Promise<Models.BusinessUnitListing>;
+  	getWorkforcemanagementCalendarDataIcs(calendarId: string): Promise<string>;
+  	getWorkforcemanagementCalendarUrlIcs(): Promise<Models.CalendarUrlResponse>;
+  	getWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>;
+  	getWorkforcemanagementHistoricaldataImportstatus(): Promise<Models.HistoricalImportStatusListing>;
+  	getWorkforcemanagementIntegrationsHris(): Promise<Models.WfmIntegrationListing>;
+  	getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId: string): Promise<Models.HrisTimeOffTypesJobResponse>;
+  	getWorkforcemanagementManagementunit(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitOptions): Promise<Models.ManagementUnit>;
+  	getWorkforcemanagementManagementunitActivitycodes(managementUnitId: string): Promise<Models.ActivityCodeContainer>;
+  	getWorkforcemanagementManagementunitAdherence(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitAdherenceOptions): Promise<Models.UserScheduleAdherenceListing>;
+  	getWorkforcemanagementManagementunitAgent(managementUnitId: string, agentId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitAgentOptions): Promise<Models.WfmAgent>;
+  	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId: string, agentId: string): Promise<Models.ShiftTradeListResponse>;
+  	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId: string): Promise<Models.ShiftTradeMatchesSummaryResponse>;
+  	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId: string): Promise<Models.WfmUserEntityListing>;
+  	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string): Promise<Models.TimeOffLimit>;
+  	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId: string): Promise<Models.TimeOffLimitListing>;
+  	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string): Promise<Models.TimeOffPlan>;
+  	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId: string): Promise<Models.TimeOffPlanListing>;
+  	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId: string, userId: string, timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>;
+  	getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId: string, userId: string, timeOffRequestId: string): Promise<Models.QueryTimeOffLimitValuesResponse>;
+  	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId: string, userId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitUserTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>;
+  	getWorkforcemanagementManagementunitUsers(managementUnitId: string): Promise<Models.WfmUserEntityListing>;
+  	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekScheduleOptions): Promise<Models.WeekScheduleResponse>;
+  	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId: string, weekId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekSchedulesOptions): Promise<Models.WeekScheduleListResponse>;
+  	getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId: string, weekDateId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekShifttradesOptions): Promise<Models.WeekShiftTradeListResponse>;
+  	getWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>;
+  	getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string): Promise<Models.WorkPlanRotationResponse>;
+  	getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWorkplanrotationsOptions): Promise<Models.WorkPlanRotationListResponse>;
+  	getWorkforcemanagementManagementunitWorkplans(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWorkplansOptions): Promise<Models.WorkPlanListResponse>;
+  	getWorkforcemanagementManagementunits(opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitsOptions): Promise<Models.ManagementUnitListing>;
+  	getWorkforcemanagementManagementunitsDivisionviews(opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitsDivisionviewsOptions): Promise<Models.ManagementUnitListing>;
+  	getWorkforcemanagementNotifications(): Promise<Models.NotificationsResponse>;
+  	getWorkforcemanagementSchedulingjob(jobId: string): Promise<Models.SchedulingStatusResponse>;
+  	getWorkforcemanagementShifttrades(): Promise<Models.ShiftTradeListResponse>;
+  	getWorkforcemanagementShrinkageJob(jobId: string): Promise<Models.WfmHistoricalShrinkageResponse>;
+  	getWorkforcemanagementTimeoffbalanceJob(jobId: string): Promise<Models.TimeOffBalanceJobResponse>;
+  	getWorkforcemanagementTimeoffrequest(timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>;
+  	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId: string): Promise<Models.WaitlistPositionListing>;
+  	getWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.getWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>;
+  	getWorkforcemanagementUserWorkplanbidranks(userId: string): Promise<Models.WorkPlanBidRanks>;
+  	getWorkforcemanagementWorkplanbidPreferences(bidId: string): Promise<Models.AgentWorkPlanBiddingPreferenceResponse>;
+  	getWorkforcemanagementWorkplanbidWorkplans(bidId: string): Promise<Models.AgentWorkPlanListResponse>;
+  	getWorkforcemanagementWorkplanbids(): Promise<Models.AgentWorkPlanBids>;
+  	patchWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string, body: Models.UpdateAdherenceExplanationStatusRequest): Promise<Models.AdherenceExplanationAsyncResponse>;
+  	patchWorkforcemanagementAlternativeshiftsTrade(tradeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementAlternativeshiftsTradeOptions): Promise<Models.AlternativeShiftTradeResponse>;
+  	patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body: Models.AdminBulkUpdateAlternativeShiftTradeStateRequest): Promise<Models.AlternativeShiftAsyncResponse>;
+  	patchWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>;
+  	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitActivitycodeOptions): Promise<Models.BusinessUnitActivityCode>;
+  	patchWorkforcemanagementBusinessunitActivityplan(businessUnitId: string, activityPlanId: string, body: Models.UpdateActivityPlanRequest): Promise<Models.ActivityPlanResponse>;
+  	patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitAlternativeshiftsSettingsOptions): Promise<Models.AlternativeShiftBuSettingsResponse>;
+  	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitPlanninggroupOptions): Promise<Models.PlanningGroup>;
+  	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitSchedulingRunOptions): Promise<void>;
+  	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>;
+  	patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId: string, staffingGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitStaffinggroupOptions): Promise<Models.StaffingGroupResponse>;
+  	patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId: string, timeOffPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitTimeoffplanOptions): Promise<Models.BuTimeOffPlanResponse>;
+  	patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId: string, bidId: string, body: Models.UpdateWorkPlanBid): Promise<Models.WorkPlanBid>;
+  	patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId: string, bidId: string, bidGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitWorkplanbidGroupOptions): Promise<Models.WorkPlanBidGroupResponse>;
+  	patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId: string, bidId: string, bidGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesOptions): Promise<Models.AdminAgentWorkPlanPreferenceResponse>;
+  	patchWorkforcemanagementManagementunit(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitOptions): Promise<Models.ManagementUnit>;
+  	patchWorkforcemanagementManagementunitAgents(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitAgentsOptions): Promise<void>;
+  	patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitAgentsWorkplansBulkOptions): Promise<Models.UpdateMuAgentWorkPlansBatchResponse>;
+  	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeofflimitOptions): Promise<Models.TimeOffLimit>;
+  	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeoffplanOptions): Promise<Models.TimeOffPlan>;
+  	patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId: string, timeOffRequestId: string, userId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusOptions): Promise<Models.UserTimeOffIntegrationStatusResponse>;
+  	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId: string, userId: string, timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitUserTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>;
+  	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId: string, weekDateId: string, tradeId: string, body: Models.PatchShiftTradeRequest): Promise<Models.ShiftTradeResponse>;
+  	patchWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>;
+  	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanrotationOptions): Promise<Models.WorkPlanRotationResponse>;
+  	patchWorkforcemanagementTimeoffrequest(timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>;
+  	patchWorkforcemanagementUserWorkplanbidranks(userId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementUserWorkplanbidranksOptions): Promise<Models.WorkPlanBidRanks>;
+  	patchWorkforcemanagementUsersWorkplanbidranksBulk(body: Array<Models.WorkPlanBidRanks>): Promise<Models.EntityListing>;
+  	patchWorkforcemanagementWorkplanbidPreferences(bidId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementWorkplanbidPreferencesOptions): Promise<Models.AgentWorkPlanBiddingPreferenceResponse>;
+  	postWorkforcemanagementAdherenceExplanations(body: Models.AddAdherenceExplanationAgentRequest): Promise<Models.AdherenceExplanationAsyncResponse>;
+  	postWorkforcemanagementAdherenceExplanationsQuery(body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceExplanationsQueryOptions): Promise<Models.QueryAdherenceExplanationsResponse>;
+  	postWorkforcemanagementAdherenceHistorical(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>;
+  	postWorkforcemanagementAdherenceHistoricalBulk(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalBulkOptions): Promise<Models.WfmHistoricalAdherenceBulkResponse>;
+  	postWorkforcemanagementAgentAdherenceExplanations(agentId: string, body: Models.AddAdherenceExplanationAdminRequest): Promise<Models.AdherenceExplanationAsyncResponse>;
+  	postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId: string, body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAgentAdherenceExplanationsQueryOptions): Promise<Models.AgentQueryAdherenceExplanationsResponse>;
+  	postWorkforcemanagementAgents(opts?: WorkforceManagementApi.postWorkforcemanagementAgentsOptions): Promise<Models.MoveAgentsResponse>;
+  	postWorkforcemanagementAgentsIntegrationsHrisQuery(opts?: WorkforceManagementApi.postWorkforcemanagementAgentsIntegrationsHrisQueryOptions): Promise<Models.AgentsIntegrationsListing>;
+  	postWorkforcemanagementAgentsMePossibleworkshifts(body: Models.AgentPossibleWorkShiftsRequest): Promise<Models.AgentPossibleWorkShiftsResponse>;
+  	postWorkforcemanagementAgentschedulesMine(opts?: WorkforceManagementApi.postWorkforcemanagementAgentschedulesMineOptions): Promise<Models.BuCurrentAgentScheduleSearchResponse>;
+  	postWorkforcemanagementAlternativeshiftsOffersJobs(body: Models.AlternativeShiftOffersRequest): Promise<Models.AlternativeShiftAsyncResponse>;
+  	postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body: Models.AlternativeShiftSearchOffersRequest): Promise<Models.AlternativeShiftAsyncResponse>;
+  	postWorkforcemanagementAlternativeshiftsTrades(body: Models.CreateAlternativeShiftTradeRequest): Promise<Models.AlternativeShiftTradeResponse>;
+  	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCode>;
+  	postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId: string, activityPlanId: string): Promise<Models.ActivityPlanJobResponse>;
+  	postWorkforcemanagementBusinessunitActivityplans(businessUnitId: string, body: Models.CreateActivityPlanRequest): Promise<Models.ActivityPlanResponse>;
+  	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId: string, body: Models.BuQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAdherenceExplanationsQueryOptions): Promise<Models.BuQueryAdherenceExplanationsResponse>;
+  	postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>;
+  	postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId: string, body: Models.SearchAlternativeShiftTradesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchOptions): Promise<Models.BuListAlternativeShiftTradesResponse>;
+  	postWorkforcemanagementBusinessunitIntraday(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitIntradayOptions): Promise<Models.AsyncIntradayResponse>;
+  	postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitPlanninggroupsOptions): Promise<Models.PlanningGroup>;
+  	postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitServicegoaltemplatesOptions): Promise<Models.ServiceGoalTemplate>;
+  	postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitStaffinggroupsOptions): Promise<Models.StaffingGroupResponse>;
+  	postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitStaffinggroupsQueryOptions): Promise<Models.UserStaffingGroupListing>;
+  	postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitTimeofflimitsOptions): Promise<Models.BuTimeOffLimitResponse>;
+  	postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitTimeofflimitsValuesQueryOptions): Promise<Models.BuTimeOffLimitValuesResponse>;
+  	postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitTimeoffplansOptions): Promise<Models.BuTimeOffPlanResponse>;
+  	postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuQueryAgentSchedulesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryOptions): Promise<Models.BuAsyncAgentSchedulesQueryResponse>;
+  	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuCopyScheduleRequest): Promise<Models.BuAsyncScheduleResponse>;
+  	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsOptions): Promise<Models.PerformancePredictionRecalculationResponse>;
+  	postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurlOptions): Promise<Models.PerformancePredictionRecalculationUploadResponse>;
+  	postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuRescheduleRequest): Promise<Models.BuAsyncScheduleRunResponse>;
+  	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId: string, weekId: string, scheduleId: string, body: Models.ProcessScheduleUpdateUploadRequest): Promise<Models.BuAsyncScheduleResponse>;
+  	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId: string, weekId: string, scheduleId: string, body: Models.UploadUrlRequestBody): Promise<Models.UpdateScheduleUploadResponse>;
+  	postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId: string, weekId: string, body: Models.BuCreateBlankScheduleRequest): Promise<Models.BuScheduleMetadata>;
+  	postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId: string, weekId: string, body: Models.BuGenerateScheduleRequest): Promise<Models.BuAsyncScheduleRunResponse>;
+  	postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId: string, weekId: string, body: Models.WfmProcessUploadRequest): Promise<Models.ScheduleUploadProcessingResponse>;
+  	postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId: string, weekId: string, body: Models.UploadUrlRequestBody): Promise<Models.ImportScheduleUploadResponse>;
+  	postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId: string, weekDateId: string, forecastId: string, body: Models.CopyBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastCopyOptions): Promise<Models.AsyncForecastOperationResult>;
+  	postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId: string, weekDateId: string, body: Models.GenerateBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateOptions): Promise<Models.AsyncForecastOperationResult>;
+  	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId: string, weekDateId: string, body: Models.WfmProcessUploadRequest): Promise<Models.ImportForecastResponse>;
+  	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId: string, weekDateId: string, body: Models.UploadUrlRequestBody): Promise<Models.ImportForecastUploadResponse>;
+  	postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId: string, bidId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidCopyOptions): Promise<Models.WorkPlanBid>;
+  	postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId: string, bidId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidGroupsOptions): Promise<Models.WorkPlanBidGroupResponse>;
+  	postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWorkplanbidsOptions): Promise<Models.WorkPlanBid>;
+  	postWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnitResponse>;
+  	postWorkforcemanagementCalendarUrlIcs(opts?: WorkforceManagementApi.postWorkforcemanagementCalendarUrlIcsOptions): Promise<Models.CalendarUrlResponse>;
+  	postWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>;
+  	postWorkforcemanagementHistoricaldataValidate(opts?: WorkforceManagementApi.postWorkforcemanagementHistoricaldataValidateOptions): Promise<void>;
+  	postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId: string): Promise<Models.HrisTimeOffTypesResponse>;
+  	postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitAgentsWorkplansQueryOptions): Promise<Models.AgentsWorkPlansResponse>;
+  	postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>;
+  	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitHistoricaladherencequeryOptions): Promise<Models.WfmHistoricalAdherenceResponse>;
+  	postWorkforcemanagementManagementunitMove(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitMoveOptions): Promise<Models.MoveManagementUnitResponse>;
+  	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitSchedulesSearchOptions): Promise<Models.UserScheduleContainer>;
+  	postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitShrinkageJobsOptions): Promise<Models.WfmHistoricalShrinkageResponse>;
+  	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeofflimitsOptions): Promise<Models.TimeOffLimit>;
+  	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeofflimitsValuesQueryOptions): Promise<Models.QueryTimeOffLimitValuesResponse>;
+  	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffplansOptions): Promise<Models.TimeOffPlan>;
+  	postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>;
+  	postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQueryOptions): Promise<Models.UserTimeOffIntegrationStatusResponseListing>;
+  	postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsQueryOptions): Promise<Models.TimeOffRequestListing>;
+  	postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryOptions): Promise<Models.WaitlistPositionListing>;
+  	postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId: string, userId: string, body: Models.TimeOffBalanceRequest): Promise<Models.TimeOffBalancesResponse>;
+  	postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId: string, userId: string, timeOffRequestId: string): Promise<Models.TimeOffBalancesResponse>;
+  	postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId: string, userId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimateOptions): Promise<Models.EstimateAvailableTimeOffResponse>;
+  	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId: string, weekDateId: string, tradeId: string, body: Models.MatchShiftTradeRequest): Promise<Models.MatchShiftTradeResponse>;
+  	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId: string, weekDateId: string, body: Models.AddShiftTradeRequest): Promise<Models.ShiftTradeResponse>;
+  	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId: string, weekDateId: string, body: Models.SearchShiftTradesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekShifttradesSearchOptions): Promise<Models.SearchShiftTradesResponse>;
+  	postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId: string, weekDateId: string, body: Models.BulkShiftTradeStateUpdateRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekShifttradesStateBulkOptions): Promise<Models.BulkUpdateShiftTradeStateResponse>;
+  	postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanCopyOptions): Promise<Models.WorkPlan>;
+  	postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanValidateOptions): Promise<Models.ValidateWorkPlanResponse>;
+  	postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId: string, workPlanRotationId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanrotationCopyOptions): Promise<Models.WorkPlanRotationResponse>;
+  	postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanrotationsOptions): Promise<Models.WorkPlanRotationResponse>;
+  	postWorkforcemanagementManagementunitWorkplans(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplansOptions): Promise<Models.WorkPlan>;
+  	postWorkforcemanagementManagementunits(opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitsOptions): Promise<Models.ManagementUnit>;
+  	postWorkforcemanagementNotificationsUpdate(opts?: WorkforceManagementApi.postWorkforcemanagementNotificationsUpdateOptions): Promise<Models.UpdateNotificationsResponse>;
+  	postWorkforcemanagementSchedules(opts?: WorkforceManagementApi.postWorkforcemanagementSchedulesOptions): Promise<Models.UserScheduleContainer>;
+  	postWorkforcemanagementTeamAdherenceHistorical(teamId: string, opts?: WorkforceManagementApi.postWorkforcemanagementTeamAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>;
+  	postWorkforcemanagementTeamShrinkageJobs(teamId: string, opts?: WorkforceManagementApi.postWorkforcemanagementTeamShrinkageJobsOptions): Promise<Models.WfmHistoricalShrinkageResponse>;
+  	postWorkforcemanagementTimeoffbalanceJobs(body: Models.TimeOffBalanceRequest): Promise<Models.TimeOffBalancesResponse>;
+  	postWorkforcemanagementTimeofflimitsAvailableQuery(opts?: WorkforceManagementApi.postWorkforcemanagementTimeofflimitsAvailableQueryOptions): Promise<Models.AvailableTimeOffResponse>;
+  	postWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestResponse>;
+  	postWorkforcemanagementTimeoffrequestsEstimate(opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffrequestsEstimateOptions): Promise<Models.EstimateAvailableTimeOffResponse>;
+  	postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffrequestsIntegrationstatusQueryOptions): Promise<Models.TimeOffIntegrationStatusResponseListing>;
+  	putWorkforcemanagementAgentIntegrationsHris(agentId: string, body: Models.AgentIntegrationsRequest): Promise<Models.AgentIntegrationsResponse>;
+  	putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.putWorkforcemanagementBusinessunitTimeofflimitValuesOptions): Promise<Models.BuTimeOffLimitResponse>;
   	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.putWorkforcemanagementManagementunitTimeofflimitValuesOptions): Promise<Models.TimeOffLimit>;
 }
 
@@ -7612,11 +7830,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -7813,11 +8031,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -7842,11 +8060,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -7937,11 +8155,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -7994,11 +8212,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8020,11 +8238,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8533,11 +8751,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8916,11 +9134,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9991,11 +10209,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -10159,11 +10377,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -10232,11 +10450,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -10432,11 +10650,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -10626,6 +10844,7 @@ declare namespace Models {
 		"expectedResultCount"?: number;
 		"resultCount"?: number;
 		"errorCount"?: number;
+		"status"?: string;
 		"results"?: Array<Models.BatchDownloadJobResult>;
 		"selfUri"?: string;
 	}
@@ -10806,11 +11025,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -10825,11 +11044,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -11917,11 +12136,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -11980,11 +12199,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12083,11 +12302,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12145,11 +12364,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12294,11 +12513,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12386,11 +12605,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12554,11 +12773,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12567,11 +12786,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12704,11 +12923,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12753,7 +12972,7 @@ declare namespace Models {
 		"version"?: number;
 		"intervals": Array<Models.ScheduleInterval>;
 		"timeZone": string;
-		"campaign": Models.DomainEntityRef;
+		"campaign": Models.DivisionedDomainEntityRef;
 		"selfUri"?: string;
 	}
 	
@@ -12776,11 +12995,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12836,11 +13055,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12949,11 +13168,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13026,11 +13245,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13228,11 +13447,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13276,11 +13495,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13327,11 +13546,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13373,11 +13592,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13419,11 +13638,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13579,11 +13798,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13637,11 +13856,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13650,11 +13869,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13699,11 +13918,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13935,11 +14154,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13948,11 +14167,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14107,11 +14326,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14120,11 +14339,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14156,11 +14375,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14209,11 +14428,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14223,9 +14442,9 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"partialResults"?: boolean;
+		"nextUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"pageCount"?: number;
@@ -14245,11 +14464,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"contactsCount"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15136,11 +15355,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15835,11 +16054,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17336,6 +17555,7 @@ declare namespace Models {
 		"wrapUpCodes"?: Array<Models.ConversationSummaryTopicVirtualAgentsConversationWrapUpCode>;
 		"triggerSource"?: Models.ConversationSummaryTopicVirtualAgentsTriggerSource;
 		"lastEditedBy"?: Models.ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant;
+		"errorType"?: string;
 	}
 	
 	export interface ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant { 
@@ -18250,11 +18470,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18277,11 +18497,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18627,11 +18847,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18651,11 +18871,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18685,11 +18905,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18730,11 +18950,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18759,11 +18979,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18795,6 +19015,16 @@ declare namespace Models {
 	
 	export interface DataAvailabilityResponse { 
 		"dataAvailabilityDate"?: string;
+	}
+	
+	export interface DataIngestionRuleStatusPatchRequest { 
+		"status": string;
+	}
+	
+	export interface DataIngestionRules { 
+		"twitter"?: Array<Models.TwitterDataIngestionRuleResponse>;
+		"open"?: Array<Models.OpenDataIngestionRuleResponse>;
+		"facebook"?: Array<Models.FacebookDataIngestionRuleResponse>;
 	}
 	
 	export interface DataSchema { 
@@ -18866,11 +19096,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18879,11 +19109,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18968,11 +19198,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -19001,11 +19231,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -19138,11 +19368,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -19572,11 +19802,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -19841,11 +20071,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -19873,11 +20103,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -19996,11 +20226,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20026,11 +20256,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20084,17 +20314,23 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface DivisionedDomainEntityRef { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface DivsPermittedEntityListing { 
 		"entities"?: Array<Models.AuthzDivision>;
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
 		"allDivsPermitted"?: boolean;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20152,11 +20388,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20165,11 +20401,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20496,11 +20732,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20817,11 +21053,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20836,11 +21072,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20849,11 +21085,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20862,11 +21098,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20875,11 +21111,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21287,11 +21523,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21321,11 +21557,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21652,7 +21888,7 @@ declare namespace Models {
 		"version"?: number;
 		"intervals": Array<Models.ScheduleInterval>;
 		"timeZone"?: string;
-		"emailCampaign": Models.DomainEntityRef;
+		"emailCampaign": Models.DivisionedDomainEntityRef;
 		"selfUri"?: string;
 	}
 	
@@ -21661,11 +21897,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21736,11 +21972,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21915,11 +22151,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22060,11 +22296,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22073,11 +22309,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22122,11 +22358,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22465,11 +22701,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22481,6 +22717,7 @@ declare namespace Models {
 		"contextId"?: string;
 		"questionGroups": Array<Models.EvaluationQuestionGroup>;
 		"publishedVersions"?: Models.DomainEntityListingEvaluationForm;
+		"evaluationSettings"?: Models.EvaluationSettings;
 		"selfUri"?: string;
 	}
 	
@@ -22497,6 +22734,7 @@ declare namespace Models {
 		"contextId"?: string;
 		"questionGroups"?: Array<Models.EvaluationQuestionGroup>;
 		"weightMode"?: string;
+		"evaluationSettings"?: Models.EvaluationSettings;
 		"publishedVersions"?: Models.DomainEntityListingEvaluationForm;
 		"selfUri"?: string;
 	}
@@ -22506,11 +22744,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22687,9 +22925,15 @@ declare namespace Models {
 	}
 	
 	export interface EvaluationSettings { 
+		"revisionsEnabled"?: boolean;
+		"disputesEnabled"?: boolean;
+		"disputesAllowedPerEvaluation"?: number;
+		"disputesAssignees"?: Array<Models.EvaluationSettingsAssignee>;
 	}
 	
 	export interface EvaluationSettingsAssignee { 
+		"user"?: Models.UserReferenceWithName;
+		"type"?: string;
 	}
 	
 	export interface EvaluationSource { 
@@ -22724,11 +22968,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22755,6 +22999,15 @@ declare namespace Models {
 		"createdDate": string;
 	}
 	
+	export interface EventAggregatesQueryRequest { 
+		"interval": string;
+	}
+	
+	export interface EventAggregatesResponse { 
+		"interval"?: string;
+		"eventDefinitionAggregates"?: Array<Models.EventDefinitionAggregates>;
+	}
+	
 	export interface EventCondition { 
 		"key": string;
 		"values": Array<string>;
@@ -22768,6 +23021,11 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"description"?: string;
+	}
+	
+	export interface EventDefinitionAggregates { 
+		"eventDefinition"?: Models.AddressableEntityRef;
+		"eventCount"?: number;
 	}
 	
 	export interface EventDefinitionListing { 
@@ -22807,6 +23065,20 @@ declare namespace Models {
 		"messageParams"?: { [key: string]: object; };
 		"documentationUri"?: string;
 		"resourceURIs"?: Array<string>;
+	}
+	
+	export interface EventQueryRequest { 
+		"interval": string;
+		"eventDefinitionIds"?: Array<string>;
+		"searchTerm"?: string;
+		"sortOrder"?: string;
+	}
+	
+	export interface EventQueryResponse { 
+		"entities"?: Array<Models.OperationalEvent>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface EventSession { 
@@ -22932,11 +23204,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22971,11 +23243,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22985,11 +23257,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23131,6 +23403,7 @@ declare namespace Models {
 	export interface ExternalContactsContactChangedTopicInstagramId { 
 		"ids"?: Array<Models.ExternalContactsContactChangedTopicInstagramScopedId>;
 		"displayName"?: string;
+		"handle"?: string;
 	}
 	
 	export interface ExternalContactsContactChangedTopicInstagramScopedId { 
@@ -23464,6 +23737,7 @@ declare namespace Models {
 	export interface ExternalContactsUnresolvedContactChangedTopicInstagramId { 
 		"ids"?: Array<Models.ExternalContactsUnresolvedContactChangedTopicInstagramScopedId>;
 		"displayName"?: string;
+		"handle"?: string;
 	}
 	
 	export interface ExternalContactsUnresolvedContactChangedTopicInstagramScopedId { 
@@ -23610,11 +23884,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23656,11 +23930,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"partialResults"?: boolean;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23689,6 +23963,49 @@ declare namespace Models {
 	
 	export interface FacebookAppCredentials { 
 		"id": string;
+	}
+	
+	export interface FacebookDataIngestionRuleRequest { 
+		"name": string;
+		"description"?: string;
+		"integrationId": string;
+	}
+	
+	export interface FacebookDataIngestionRuleResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"status"?: string;
+		"version"?: number;
+		"integrationId"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface FacebookDataIngestionRuleVersionResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"status"?: string;
+		"version"?: number;
+		"integrationId"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface FacebookDataIngestionRuleVersionResponseEntityListing { 
+		"entities"?: Array<Models.FacebookDataIngestionRuleVersionResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface FacebookId { 
@@ -23722,11 +24039,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23819,11 +24136,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23872,11 +24189,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24021,11 +24338,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24264,11 +24581,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24303,11 +24620,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24625,11 +24942,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24638,11 +24955,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24733,11 +25050,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24746,11 +25063,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24790,11 +25107,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24828,11 +25145,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -24890,11 +25207,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -25075,11 +25392,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -25101,11 +25418,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -25325,11 +25642,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -25443,11 +25760,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -25483,11 +25800,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -25561,11 +25878,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -25607,11 +25924,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26025,11 +26342,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26039,11 +26356,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26078,11 +26395,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26203,11 +26520,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26240,11 +26557,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26298,11 +26615,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26516,11 +26833,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26593,11 +26910,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26645,11 +26962,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26700,11 +27017,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26730,11 +27047,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27631,6 +27948,7 @@ declare namespace Models {
 		"id": string;
 		"name": string;
 		"attributes": Models.JourneyViewElementAttributes;
+		"displayAttributes"?: Models.JourneyViewElementDisplayAttributes;
 		"filter"?: Models.JourneyViewElementFilter;
 		"followedBy"?: Array<Models.JourneyViewLink>;
 	}
@@ -27639,6 +27957,12 @@ declare namespace Models {
 		"type": string;
 		"id"?: string;
 		"source"?: string;
+	}
+	
+	export interface JourneyViewElementDisplayAttributes { 
+		"x": number;
+		"y": number;
+		"col": number;
 	}
 	
 	export interface JourneyViewElementFilter { 
@@ -27688,11 +28012,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27714,11 +28038,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27760,11 +28084,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28857,6 +29181,7 @@ declare namespace Models {
 		"interval"?: string;
 		"entities"?: Array<Models.Entity>;
 		"sourceId"?: string;
+		"includeDocumentsWithFileBody"?: boolean;
 	}
 	
 	export interface KnowledgeExportJobFilter { 
@@ -29071,6 +29396,7 @@ declare namespace Models {
 		"customerId": string;
 		"pageUrl"?: string;
 		"contexts"?: Array<Models.KnowledgeGuestSessionContext>;
+		"journeySessionId"?: string;
 	}
 	
 	export interface KnowledgeGuestSessionApp { 
@@ -29172,6 +29498,7 @@ declare namespace Models {
 	export interface KnowledgeIntegrationFilter { 
 		"name"?: string;
 		"type"?: string;
+		"action"?: string;
 		"values"?: Array<Models.KnowledgeIntegrationFilterValue>;
 	}
 	
@@ -29447,11 +29774,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29734,11 +30061,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"unfilteredTotal"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29752,11 +30079,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29999,11 +30326,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30116,11 +30443,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30129,11 +30456,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30178,11 +30505,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30191,11 +30518,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30233,11 +30560,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30388,11 +30715,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30402,11 +30729,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30637,11 +30964,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30742,11 +31069,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30793,10 +31120,10 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 		"selfUri"?: string;
 	}
@@ -31114,11 +31441,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31321,11 +31648,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31334,11 +31661,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31350,7 +31677,7 @@ declare namespace Models {
 		"version"?: number;
 		"intervals": Array<Models.ScheduleInterval>;
 		"timeZone"?: string;
-		"messagingCampaign": Models.DomainEntityRef;
+		"messagingCampaign": Models.DivisionedDomainEntityRef;
 		"selfUri"?: string;
 	}
 	
@@ -31359,11 +31686,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31397,11 +31724,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31473,11 +31800,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32088,11 +32415,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32119,11 +32446,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32143,11 +32470,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32219,11 +32546,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"partialResults"?: boolean;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32290,11 +32617,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32428,11 +32755,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32602,6 +32929,49 @@ declare namespace Models {
 		"filename"?: string;
 	}
 	
+	export interface OpenDataIngestionRuleRequest { 
+		"name": string;
+		"description"?: string;
+		"externalSource": Models.DomainEntityRef;
+	}
+	
+	export interface OpenDataIngestionRuleResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"status"?: string;
+		"version"?: number;
+		"externalSource"?: Models.DomainEntityRef;
+		"selfUri"?: string;
+	}
+	
+	export interface OpenDataIngestionRuleVersionResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"status"?: string;
+		"version"?: number;
+		"externalSource"?: Models.DomainEntityRef;
+		"selfUri"?: string;
+	}
+	
+	export interface OpenDataIngestionRuleVersionResponseEntityListing { 
+		"entities"?: Array<Models.OpenDataIngestionRuleVersionResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface OpenEvent { 
 		"eventType": string;
 	}
@@ -32678,11 +33048,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32747,6 +33117,12 @@ declare namespace Models {
 		"lastName"?: string;
 		"image"?: string;
 		"email"?: string;
+	}
+	
+	export interface OpenMessagingIdentityResolutionConfig { 
+		"id"?: string;
+		"resolveIdentities": boolean;
+		"selfUri"?: string;
 	}
 	
 	export interface OpenMessagingToRecipient { 
@@ -32838,6 +33214,19 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface OperationalEvent { 
+		"eventDefinition"?: Models.AddressableEntityRef;
+		"entityId"?: string;
+		"entityName"?: string;
+		"previousValue"?: string;
+		"currentValue"?: string;
+		"errorCode"?: string;
+		"parentEntityId"?: string;
+		"conversation"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"entityVersion"?: string;
+	}
+	
 	export interface OperationalEventNotificationTopicEventEntity { 
 		"id"?: string;
 		"name"?: string;
@@ -32874,6 +33263,7 @@ declare namespace Models {
 		"domainAllowlist"?: Array<string>;
 		"ipAddressAllowlist"?: Array<string>;
 		"passwordRequirements"?: Models.PasswordRequirements;
+		"inactivityTimeoutExclusions"?: Array<string>;
 	}
 	
 	export interface OrgOAuthClient { 
@@ -33007,11 +33397,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -33028,11 +33418,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -33060,11 +33450,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -33141,11 +33531,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -33465,11 +33855,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -33479,11 +33869,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -33595,11 +33985,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34233,11 +34623,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34307,11 +34697,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34386,11 +34776,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34412,11 +34802,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34490,11 +34880,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34611,11 +35001,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34705,6 +35095,7 @@ declare namespace Models {
 		"intent"?: string;
 		"formula": string;
 		"estimatedWaitTimeSeconds": number;
+		"label"?: Models.AddressableEntityRef;
 	}
 	
 	export interface PredictiveRouting { 
@@ -34922,16 +35313,16 @@ declare namespace Models {
 	export interface ProgramsEntityListing { 
 		"entities"?: Array<Models.ListedProgram>;
 		"pageSize"?: number;
-		"selfUri"?: string;
 		"nextUri"?: string;
+		"selfUri"?: string;
 		"pageCount"?: number;
 	}
 	
 	export interface ProgramsMappingsEntityListing { 
 		"entities"?: Array<Models.ProgramMappings>;
 		"pageSize"?: number;
-		"selfUri"?: string;
 		"nextUri"?: string;
+		"selfUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34999,11 +35390,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -35012,11 +35403,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -38128,11 +38519,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -38159,10 +38550,10 @@ declare namespace Models {
 		"entities"?: Array<Models.QueueMember>;
 		"pageNumber"?: number;
 		"pageSize"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 	}
 	
 	export interface QueueMemberEntityListingV1 { 
@@ -38170,11 +38561,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -38399,11 +38790,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -38602,11 +38993,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -38818,11 +39209,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"partialResults"?: boolean;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -38888,11 +39279,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -38960,11 +39351,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -39356,11 +39747,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -39369,11 +39760,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -39423,11 +39814,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -39748,11 +40139,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -39851,11 +40242,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -39865,11 +40256,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -39937,11 +40328,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -39951,11 +40342,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -40217,6 +40608,7 @@ declare namespace Models {
 		"department"?: string;
 		"manager"?: Models.Manager;
 		"employeeNumber"?: string;
+		"dateHire"?: string;
 	}
 	
 	export interface ScimV2Group { 
@@ -40349,11 +40741,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -40409,11 +40801,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -40531,11 +40923,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -40583,11 +40975,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -40775,6 +41167,7 @@ declare namespace Models {
 		"lastUserDisconnectType"?: string;
 		"lastAcdOutcome"?: string;
 		"authenticated": boolean;
+		"divisionIds"?: Array<string>;
 		"lastScreen"?: string;
 		"selfUri"?: string;
 		"createdDate": string;
@@ -40890,11 +41283,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -41141,11 +41534,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -41194,11 +41587,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -41306,11 +41699,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -41387,11 +41780,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -41458,6 +41851,43 @@ declare namespace Models {
 	export interface SocialKeyword { 
 		"includes"?: Array<string>;
 		"excludes"?: Array<string>;
+	}
+	
+	export interface SocialTopicPatchRequest { 
+		"name"?: string;
+		"description"?: string;
+		"divisionId"?: string;
+	}
+	
+	export interface SocialTopicRequest { 
+		"name": string;
+		"description"?: string;
+		"divisionId": string;
+	}
+	
+	export interface SocialTopicResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"divisionId"?: string;
+		"status"?: string;
+		"dataIngestionRules"?: Models.DataIngestionRules;
+		"selfUri"?: string;
+	}
+	
+	export interface SocialTopicResponseEntityListing { 
+		"entities"?: Array<Models.SocialTopicResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface SortItem { 
@@ -41709,11 +42139,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -41781,11 +42211,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -41802,11 +42232,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -41994,6 +42424,10 @@ declare namespace Models {
 		"defaultUrl": string;
 	}
 	
+	export interface SupportCenterLabelFilter { 
+		"labels"?: Array<Models.AddressableEntityRef>;
+	}
+	
 	export interface SupportCenterModuleSetting { 
 		"type": string;
 		"enabled": boolean;
@@ -42013,6 +42447,7 @@ declare namespace Models {
 		"routerType"?: string;
 		"screens": Array<Models.SupportCenterScreen>;
 		"enabledCategories": Array<Models.SupportCenterCategory>;
+		"labelFilter"?: Models.SupportCenterLabelFilter;
 		"styleSetting": Models.SupportCenterStyleSetting;
 		"feedback"?: Models.SupportCenterFeedbackSettings;
 	}
@@ -42039,11 +42474,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -42222,11 +42657,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -42333,11 +42768,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -42346,11 +42781,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -42373,11 +42808,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43051,11 +43486,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43153,8 +43588,8 @@ declare namespace Models {
 		"entities"?: Array<Models.ListedTopic>;
 		"pageSize"?: number;
 		"total"?: number;
-		"selfUri"?: string;
 		"nextUri"?: string;
+		"selfUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43562,11 +43997,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43581,11 +44016,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43651,11 +44086,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"totalNumberOfEntities"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43734,11 +44169,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43768,11 +44203,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43853,11 +44288,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43948,11 +44383,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -43972,11 +44407,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -44000,11 +44435,57 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface TwitterDataIngestionRuleRequest { 
+		"name": string;
+		"description"?: string;
+		"searchTerms": string;
+		"countries"?: Array<string>;
+	}
+	
+	export interface TwitterDataIngestionRuleResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"searchTerms"?: string;
+		"countries"?: Array<string>;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"status"?: string;
+		"version"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface TwitterDataIngestionRuleVersionResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"searchTerms"?: string;
+		"countries"?: Array<string>;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"status"?: string;
+		"version"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface TwitterDataIngestionRuleVersionResponseEntityListing { 
+		"entities"?: Array<Models.TwitterDataIngestionRuleVersionResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
 		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"firstUri"?: string;
+		"selfUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -44047,11 +44528,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -44140,11 +44621,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -44160,8 +44641,8 @@ declare namespace Models {
 	export interface UnpublishedProgramsEntityListing { 
 		"entities"?: Array<Models.Program>;
 		"pageSize"?: number;
-		"selfUri"?: string;
 		"nextUri"?: string;
+		"selfUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -44672,11 +45153,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -44839,11 +45320,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -44929,11 +45410,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -44992,6 +45473,7 @@ declare namespace Models {
 		"workPlanBidRanks"?: Models.WorkPlanBidRanks;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
+		"autoAnswerSettings"?: Models.AutoAnswerSettings;
 		"acdAutoAnswer"?: boolean;
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
@@ -45101,11 +45583,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -45168,11 +45650,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -45197,11 +45679,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -45405,11 +45887,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -45572,11 +46054,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -45601,11 +46083,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -46046,7 +46528,6 @@ declare namespace Models {
 	export interface ValidationServiceRequest { 
 		"dateImportEnded": string;
 		"uploadKey": string;
-		"fileName"?: string;
 	}
 	
 	export interface ValueWrapperActivityPlanServiceGoalImpactOverrides { 
@@ -46357,6 +46838,7 @@ declare namespace Models {
 		"socialClassifications"?: Array<string>;
 		"filterUsersByManagerIds"?: Array<string>;
 		"slideshowIds"?: Array<string>;
+		"conferenced"?: boolean;
 	}
 	
 	export interface VisibilityCondition { 
@@ -46466,11 +46948,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -46682,11 +47164,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -48506,11 +48988,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -49144,14 +49626,14 @@ declare namespace Models {
 		"customFields"?: { [key: string]: object; };
 		"queueId"?: string;
 		"assigneeId"?: string;
-		"wrapupCode"?: string;
 		"scoredAgents"?: Array<Models.WorkitemScoredAgentRequest>;
 		"languageId"?: string;
-		"utilizationLabelId"?: string;
 		"externalContactId"?: string;
 		"externalTag"?: string;
 		"skillIds"?: Array<string>;
 		"preferredAgentIds"?: Array<string>;
+		"wrapupCode"?: string;
+		"utilizationLabelId"?: string;
 	}
 	
 	export interface WorkitemDelta { 
@@ -49181,6 +49663,7 @@ declare namespace Models {
 		"dateModified"?: Models.WorkitemsAttributeChangeInstant;
 		"modifiedBy"?: Models.WorkitemsAttributeChangeString;
 		"statusCategory"?: Models.WorkitemsAttributeChangeWorkitemStatusCategory;
+		"scriptId"?: Models.WorkitemsAttributeChangeString;
 	}
 	
 	export interface WorkitemFilter { 
@@ -49386,6 +49869,12 @@ declare namespace Models {
 	export interface WorkitemScoredAgentRequest { 
 		"id"?: string;
 		"score"?: number;
+	}
+	
+	export interface WorkitemScriptReference { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface WorkitemStatus { 
@@ -49833,11 +50322,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -49858,11 +50347,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -49947,6 +50436,7 @@ declare namespace Models {
 		"serviceLevelTarget"?: Models.WorkitemsAttributeChangeInteger;
 		"dateModified"?: Models.WorkitemsAttributeChangeInstant;
 		"modifiedBy"?: Models.WorkitemsAttributeChangeString;
+		"defaultScriptId"?: Models.WorkitemsAttributeChangeString;
 	}
 	
 	export interface WorktypeQueryEntityListing { 
@@ -50067,6 +50557,7 @@ declare namespace Models {
 		"id"?: string;
 		"name": string;
 		"division"?: Models.StarrableDivision;
+		"description"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"createdBy"?: string;
@@ -50079,11 +50570,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"nextUri"?: string;
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
-		"nextUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -50095,6 +50586,7 @@ declare namespace Models {
 		"id"?: string;
 		"name": string;
 		"division"?: Models.WritableStarrableDivision;
+		"description"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"createdBy"?: string;

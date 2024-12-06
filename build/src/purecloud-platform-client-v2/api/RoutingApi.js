@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 208.0.0
+	 * @version 209.0.0
 	 */
 
 	/**
@@ -413,18 +413,18 @@ class RoutingApi {
 	/**
 	 * Delete a phone number provisioned for SMS.
 	 * 
-	 * @param {String} addressId Address ID
+	 * @param {String} phoneNumberId phone number
 	 */
-	deleteRoutingSmsPhonenumber(addressId) { 
-		// verify the required parameter 'addressId' is set
-		if (addressId === undefined || addressId === null) {
-			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsPhonenumber';
+	deleteRoutingSmsPhonenumber(phoneNumberId) { 
+		// verify the required parameter 'phoneNumberId' is set
+		if (phoneNumberId === undefined || phoneNumberId === null) {
+			throw 'Missing the required parameter "phoneNumberId" when calling deleteRoutingSmsPhonenumber';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/routing/sms/phonenumbers/{addressId}', 
+			'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
 			'DELETE', 
-			{ 'addressId': addressId },
+			{ 'phoneNumberId': phoneNumberId },
 			{  },
 			{  },
 			{  },
@@ -1403,9 +1403,13 @@ class RoutingApi {
 	 * Get Estimated Wait Time
 	 * 
 	 * @param {String} queueId queueId
-	 * @param {String} mediaType mediaType
+	 * @param {Object} mediaType mediaType
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.labelId Unique id that represents the interaction label used with media type for EWT calculation
 	 */
-	getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType) { 
+	getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null) {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueMediatypeEstimatedwaittime';
@@ -1419,7 +1423,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime', 
 			'GET', 
 			{ 'queueId': queueId,'mediaType': mediaType },
-			{  },
+			{ 'labelId': opts['labelId'] },
 			{  },
 			{  },
 			null, 
@@ -1970,22 +1974,22 @@ class RoutingApi {
 	/**
 	 * Get a phone number provisioned for SMS.
 	 * 
-	 * @param {String} addressId Address ID
+	 * @param {String} phoneNumberId phone number
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand response with additional information
 	 */
-	getRoutingSmsPhonenumber(addressId, opts) { 
+	getRoutingSmsPhonenumber(phoneNumberId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'addressId' is set
-		if (addressId === undefined || addressId === null) {
-			throw 'Missing the required parameter "addressId" when calling getRoutingSmsPhonenumber';
+		// verify the required parameter 'phoneNumberId' is set
+		if (phoneNumberId === undefined || phoneNumberId === null) {
+			throw 'Missing the required parameter "phoneNumberId" when calling getRoutingSmsPhonenumber';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/routing/sms/phonenumbers/{addressId}', 
+			'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
 			'GET', 
-			{ 'addressId': addressId },
+			{ 'phoneNumberId': phoneNumberId },
 			{ 'expand': opts['expand'] },
 			{  },
 			{  },
@@ -3910,13 +3914,13 @@ class RoutingApi {
 	/**
 	 * Update a phone number provisioned for SMS.
 	 * 
-	 * @param {String} addressId Address ID
+	 * @param {String} phoneNumberId phone number
 	 * @param {Object} body SmsPhoneNumber
 	 */
-	putRoutingSmsPhonenumber(addressId, body) { 
-		// verify the required parameter 'addressId' is set
-		if (addressId === undefined || addressId === null) {
-			throw 'Missing the required parameter "addressId" when calling putRoutingSmsPhonenumber';
+	putRoutingSmsPhonenumber(phoneNumberId, body) { 
+		// verify the required parameter 'phoneNumberId' is set
+		if (phoneNumberId === undefined || phoneNumberId === null) {
+			throw 'Missing the required parameter "phoneNumberId" when calling putRoutingSmsPhonenumber';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
@@ -3924,9 +3928,9 @@ class RoutingApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/routing/sms/phonenumbers/{addressId}', 
+			'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
 			'PUT', 
-			{ 'addressId': addressId },
+			{ 'phoneNumberId': phoneNumberId },
 			{  },
 			{  },
 			{  },

@@ -590,7 +590,8 @@ let opts = {
   'name': "name_example", // String | name
   'group': "group_example", // String | group id
   'agentTeamId': "agentTeamId_example", // String | team id of agents requested
-  'formContextId': "formContextId_example" // String | shared id between form versions
+  'formContextId': "formContextId_example", // String | shared id between form versions
+  'userState': "Legacy" // String | 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states.
 };
 
 apiInstance.getQualityAgentsActivity(opts)
@@ -622,6 +623,7 @@ apiInstance.getQualityAgentsActivity(opts)
  **group** | **String** | group id | [optional]  |
  **agentTeamId** | **String** | team id of agents requested | [optional]  |
  **formContextId** | **String** | shared id between form versions | [optional]  |
+ **userState** | **String** | 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. | [optional] [default to Legacy]<br />**Values**: Any, Legacy |
 
 ### Return type
 
@@ -1019,7 +1021,8 @@ let opts = {
   'agentHasRead': true, // Boolean | agent has the evaluation
   'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
   'maximum': 3.4, // Number | the maximum number of results to return
-  'sortOrder': "sortOrder_example" // String | NOTE: Does not work when conversationId is supplied.
+  'sortOrder': "sortOrder_example", // String | NOTE: Does not work when conversationId is supplied.
+  'includeDeletedUsers': false // Boolean | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false.
 };
 
 apiInstance.getQualityEvaluationsQuery(opts)
@@ -1056,6 +1059,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. | [optional]  |
  **maximum** | **Number** | the maximum number of results to return | [optional]  |
  **sortOrder** | **String** | NOTE: Does not work when conversationId is supplied. | [optional]  |
+ **includeDeletedUsers** | **Boolean** | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. | [optional] [default to false] |
 
 ### Return type
 
@@ -3484,4 +3488,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@208.0.0_
+_purecloud-platform-client-v2@209.0.0_

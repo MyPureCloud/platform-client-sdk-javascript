@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 208.0.0
+	 * @version 209.0.0
 	 */
 
 	/**
@@ -791,7 +791,6 @@ class ConversationsApi {
 	 * Get the summaries of the conversation.
 	 * 
 	 * @param {String} conversationId Conversation ID
-	 * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getConversationSummaries(conversationId) { 
 		// verify the required parameter 'conversationId' is set

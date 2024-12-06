@@ -59,6 +59,7 @@ import ScreenRecordingApi from './api/ScreenRecordingApi.js';
 import ScriptsApi from './api/ScriptsApi.js';
 import SearchApi from './api/SearchApi.js';
 import SettingsApi from './api/SettingsApi.js';
+import SocialMediaApi from './api/SocialMediaApi.js';
 import SpeechTextAnalyticsApi from './api/SpeechTextAnalyticsApi.js';
 import StationsApi from './api/StationsApi.js';
 import SuggestApi from './api/SuggestApi.js';
@@ -111,7 +112,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 208.0.0
+ * @version 209.0.0
  */
 class platformClient {
 	constructor() {
@@ -415,6 +416,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SettingsApi}
 		 */
 		this.SettingsApi = SettingsApi;
+		/**
+		 * The SocialMediaApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/SocialMediaApi}
+		 */
+		this.SocialMediaApi = SocialMediaApi;
 		/**
 		 * The SpeechTextAnalyticsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}

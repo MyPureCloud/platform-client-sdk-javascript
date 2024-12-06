@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 208.0.0
+	 * @version 209.0.0
 	 */
 
 	/**
@@ -529,8 +529,12 @@ class KnowledgeApi {
 	 * Get sync options available for a knowledge-connect integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.knowledgeBaseIds Narrowing down filtering option results by knowledge base.
 	 */
-	getKnowledgeIntegrationOptions(integrationId) { 
+	getKnowledgeIntegrationOptions(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
 			throw 'Missing the required parameter "integrationId" when calling getKnowledgeIntegrationOptions';
@@ -540,7 +544,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/integrations/{integrationId}/options', 
 			'GET', 
 			{ 'integrationId': integrationId },
-			{  },
+			{ 'knowledgeBaseIds': this.apiClient.buildCollectionParam(opts['knowledgeBaseIds'], 'multi') },
 			{  },
 			{  },
 			null, 

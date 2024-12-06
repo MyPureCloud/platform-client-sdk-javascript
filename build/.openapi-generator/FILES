@@ -116,6 +116,8 @@ docs/SearchApi.json
 docs/SearchApi.md
 docs/SettingsApi.json
 docs/SettingsApi.md
+docs/SocialMediaApi.json
+docs/SocialMediaApi.md
 docs/SpeechTextAnalyticsApi.json
 docs/SpeechTextAnalyticsApi.md
 docs/StationsApi.json
@@ -373,6 +375,10 @@ docs/deleteRoutingUtilizationTag-example.txt
 docs/deleteRoutingWrapupcode-example.txt
 docs/deleteScimUser-example.txt
 docs/deleteScimV2User-example.txt
+docs/deleteSocialmediaTopic-example.txt
+docs/deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/deleteSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
+docs/deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
 docs/deleteSpeechandtextanalyticsCategory-example.txt
 docs/deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/deleteSpeechandtextanalyticsProgram-example.txt
@@ -1368,6 +1374,17 @@ docs/getSearch-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSearchSuggest-example.txt
 docs/getSettingsExecutiondata-example.txt
+docs/getSocialmediaTopic-example.txt
+docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion-example.txt
+docs/getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions-example.txt
+docs/getSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
+docs/getSocialmediaTopicDataingestionrulesOpenOpenIdVersion-example.txt
+docs/getSocialmediaTopicDataingestionrulesOpenOpenIdVersions-example.txt
+docs/getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
+docs/getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion-example.txt
+docs/getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions-example.txt
+docs/getSocialmediaTopics-example.txt
 docs/getSpeechandtextanalyticsCategories-example.txt
 docs/getSpeechandtextanalyticsCategory-example.txt
 docs/getSpeechandtextanalyticsConversation-example.txt
@@ -1831,6 +1848,10 @@ docs/patchScimUser-example.txt
 docs/patchScimV2Group-example.txt
 docs/patchScimV2User-example.txt
 docs/patchSettingsExecutiondata-example.txt
+docs/patchSocialmediaTopic-example.txt
+docs/patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/patchSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
+docs/patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
 docs/patchSpeechandtextanalyticsSettings-example.txt
 docs/patchTaskmanagementWorkbin-example.txt
 docs/patchTaskmanagementWorkitem-example.txt
@@ -2419,6 +2440,10 @@ docs/postSearch-example.txt
 docs/postSearch-example.txt
 docs/postSearchSuggest-example.txt
 docs/postSearchSuggest-example.txt
+docs/postSocialmediaTopicDataingestionrulesFacebook-example.txt
+docs/postSocialmediaTopicDataingestionrulesOpen-example.txt
+docs/postSocialmediaTopicDataingestionrulesTwitter-example.txt
+docs/postSocialmediaTopics-example.txt
 docs/postSpeechandtextanalyticsCategories-example.txt
 docs/postSpeechandtextanalyticsDictionaryfeedback-example.txt
 docs/postSpeechandtextanalyticsPrograms-example.txt
@@ -2481,6 +2506,8 @@ docs/postUploadsLearningCoverart-example.txt
 docs/postUploadsPublicassetsImages-example.txt
 docs/postUploadsRecordings-example.txt
 docs/postUploadsWorkforcemanagementHistoricaldataCsv-example.txt
+docs/postUsageEventsAggregatesQuery-example.txt
+docs/postUsageEventsQuery-example.txt
 docs/postUsageQuery-example.txt
 docs/postUsageSimplesearch-example.txt
 docs/postUserExternalid-example.txt
@@ -2783,6 +2810,9 @@ docs/putScimGroup-example.txt
 docs/putScimUser-example.txt
 docs/putScimV2Group-example.txt
 docs/putScimV2User-example.txt
+docs/putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId-example.txt
+docs/putSocialmediaTopicDataingestionrulesOpenOpenId-example.txt
+docs/putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId-example.txt
 docs/putSpeechandtextanalyticsCategory-example.txt
 docs/putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/putSpeechandtextanalyticsProgram-example.txt
@@ -2901,6 +2931,7 @@ src/purecloud-platform-client-v2/api/ScreenRecordingApi.js
 src/purecloud-platform-client-v2/api/ScriptsApi.js
 src/purecloud-platform-client-v2/api/SearchApi.js
 src/purecloud-platform-client-v2/api/SettingsApi.js
+src/purecloud-platform-client-v2/api/SocialMediaApi.js
 src/purecloud-platform-client-v2/api/SpeechTextAnalyticsApi.js
 src/purecloud-platform-client-v2/api/StationsApi.js
 src/purecloud-platform-client-v2/api/SuggestApi.js

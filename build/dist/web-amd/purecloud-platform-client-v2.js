@@ -483,7 +483,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 208.0.0
+	 * @version 209.0.0
 	 */
 	class ApiClient {
 		/**
@@ -1927,7 +1927,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentAssistants service.
 		 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -2303,7 +2303,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentCopilot service.
 		 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -2379,7 +2379,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentUI service.
 		 * @module purecloud-platform-client-v2/api/AgentUIApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -2510,7 +2510,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -3171,7 +3171,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -3350,7 +3350,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * Get Reporting Turns (division aware).
-		 * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+		 * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. It is expected that the client will URL encode the request URI once only. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. The nextUri value in the response is already URL encoded (so it doesnt need to be encoded again). Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 		 * @param {String} botFlowId ID of the bot flow.
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
@@ -3385,7 +3385,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * Get Reporting Turns.
-		 * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+		 * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. It is expected that the client will URL encode the request URI once only. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. The nextUri value in the response is already URL encoded (so it doesnt need to be encoded again). Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 		 * @param {String} botFlowId ID of the bot flow.
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
@@ -3421,7 +3421,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 		/**
 		 * Get Bot Flow Sessions.
-		 * Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+		 * Returns the bot flow sessions in reverse chronological order from the date they were created. It is expected that the client will URL encode the request URI once only. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. The nextUri value in the response is already URL encoded (so it doesnt need to be encoded again). Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 		 * @param {String} botFlowId ID of the bot flow.
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
@@ -5784,7 +5784,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -9906,7 +9906,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -10107,7 +10107,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -11390,7 +11390,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -11470,7 +11470,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -11540,7 +11540,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -12476,7 +12476,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -13053,7 +13053,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -14134,7 +14134,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -14920,7 +14920,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get the summaries of the conversation.
 		 * 
 		 * @param {String} conversationId Conversation ID
-		 * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 		 */
 		getConversationSummaries(conversationId) { 
 			// verify the required parameter 'conversationId' is set
@@ -21276,7 +21275,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -21362,7 +21361,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -21414,7 +21413,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Emails service.
 		 * @module purecloud-platform-client-v2/api/EmailsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -21479,7 +21478,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * EmployeeEngagement service.
 		 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -21630,7 +21629,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -21726,7 +21725,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -24051,7 +24050,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -24266,7 +24265,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -24449,7 +24448,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -26535,7 +26534,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -26665,7 +26664,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -26796,7 +26795,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -27251,7 +27250,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -27770,7 +27769,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -28631,7 +28630,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -28798,7 +28797,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -31240,7 +31239,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -33205,7 +33204,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -33729,8 +33728,12 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get sync options available for a knowledge-connect integration
 		 * 
 		 * @param {String} integrationId Integration ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.knowledgeBaseIds Narrowing down filtering option results by knowledge base.
 		 */
-		getKnowledgeIntegrationOptions(integrationId) { 
+		getKnowledgeIntegrationOptions(integrationId, opts) { 
+			opts = opts || {};
+			
 			// verify the required parameter 'integrationId' is set
 			if (integrationId === undefined || integrationId === null) {
 				throw 'Missing the required parameter "integrationId" when calling getKnowledgeIntegrationOptions';
@@ -33740,7 +33743,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/knowledge/integrations/{integrationId}/options', 
 				'GET', 
 				{ 'integrationId': integrationId },
-				{  },
+				{ 'knowledgeBaseIds': this.apiClient.buildCollectionParam(opts['knowledgeBaseIds'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -37077,7 +37080,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -38111,7 +38114,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -38333,7 +38336,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -39362,7 +39365,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -39600,7 +39603,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -39836,7 +39839,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LogCapture service.
 		 * @module purecloud-platform-client-v2/api/LogCaptureApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -40036,7 +40039,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -40395,7 +40398,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -40546,7 +40549,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -40779,7 +40782,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -41145,7 +41148,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -41415,7 +41418,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OperationalEvents service.
 		 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -41475,13 +41478,64 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			);
 		}
 
+		/**
+		 * Get aggregates for operational events in a timeframe.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 */
+		postUsageEventsAggregatesQuery(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/usage/events/aggregates/query', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Query operational events in a timeframe.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+		 * @param {Object} opts.body 
+		 */
+		postUsageEventsQuery(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/usage/events/query', 
+				'POST', 
+				{  },
+				{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
 	}
 
 	class OrganizationApi {
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -42023,7 +42077,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -43417,7 +43471,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -47964,7 +48018,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -48708,7 +48762,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -48947,7 +49001,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -49232,6 +49286,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.group group id
 		 * @param {String} opts.agentTeamId team id of agents requested
 		 * @param {String} opts.formContextId shared id between form versions
+		 * @param {Object} opts.userState 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. (default to Legacy)
 		 */
 		getQualityAgentsActivity(opts) { 
 			opts = opts || {};
@@ -49241,7 +49296,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/quality/agents/activity', 
 				'GET', 
 				{  },
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'agentTeamId': opts['agentTeamId'],'formContextId': opts['formContextId'] },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'agentTeamId': opts['agentTeamId'],'formContextId': opts['formContextId'],'userState': opts['userState'] },
 				{  },
 				{  },
 				null, 
@@ -49456,6 +49511,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
 		 * @param {Number} opts.maximum the maximum number of results to return
 		 * @param {String} opts.sortOrder NOTE: Does not work when conversationId is supplied.
+		 * @param {Boolean} opts.includeDeletedUsers Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. (default to false)
 		 */
 		getQualityEvaluationsQuery(opts) { 
 			opts = opts || {};
@@ -49465,7 +49521,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/quality/evaluations/query', 
 				'GET', 
 				{  },
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'agentTeamId': opts['agentTeamId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'agentTeamId': opts['agentTeamId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'],'includeDeletedUsers': opts['includeDeletedUsers'] },
 				{  },
 				{  },
 				null, 
@@ -50733,7 +50789,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -52392,7 +52448,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -52902,7 +52958,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -53310,18 +53366,18 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Delete a phone number provisioned for SMS.
 		 * 
-		 * @param {String} addressId Address ID
+		 * @param {String} phoneNumberId phone number
 		 */
-		deleteRoutingSmsPhonenumber(addressId) { 
-			// verify the required parameter 'addressId' is set
-			if (addressId === undefined || addressId === null) {
-				throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsPhonenumber';
+		deleteRoutingSmsPhonenumber(phoneNumberId) { 
+			// verify the required parameter 'phoneNumberId' is set
+			if (phoneNumberId === undefined || phoneNumberId === null) {
+				throw 'Missing the required parameter "phoneNumberId" when calling deleteRoutingSmsPhonenumber';
 			}
 
 			return this.apiClient.callApi(
-				'/api/v2/routing/sms/phonenumbers/{addressId}', 
+				'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
 				'DELETE', 
-				{ 'addressId': addressId },
+				{ 'phoneNumberId': phoneNumberId },
 				{  },
 				{  },
 				{  },
@@ -54300,9 +54356,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Get Estimated Wait Time
 		 * 
 		 * @param {String} queueId queueId
-		 * @param {String} mediaType mediaType
+		 * @param {Object} mediaType mediaType
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.labelId Unique id that represents the interaction label used with media type for EWT calculation
 		 */
-		getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType) { 
+		getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts) { 
+			opts = opts || {};
+			
 			// verify the required parameter 'queueId' is set
 			if (queueId === undefined || queueId === null) {
 				throw 'Missing the required parameter "queueId" when calling getRoutingQueueMediatypeEstimatedwaittime';
@@ -54316,7 +54376,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime', 
 				'GET', 
 				{ 'queueId': queueId,'mediaType': mediaType },
-				{  },
+				{ 'labelId': opts['labelId'] },
 				{  },
 				{  },
 				null, 
@@ -54867,22 +54927,22 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Get a phone number provisioned for SMS.
 		 * 
-		 * @param {String} addressId Address ID
+		 * @param {String} phoneNumberId phone number
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.expand Expand response with additional information
 		 */
-		getRoutingSmsPhonenumber(addressId, opts) { 
+		getRoutingSmsPhonenumber(phoneNumberId, opts) { 
 			opts = opts || {};
 			
-			// verify the required parameter 'addressId' is set
-			if (addressId === undefined || addressId === null) {
-				throw 'Missing the required parameter "addressId" when calling getRoutingSmsPhonenumber';
+			// verify the required parameter 'phoneNumberId' is set
+			if (phoneNumberId === undefined || phoneNumberId === null) {
+				throw 'Missing the required parameter "phoneNumberId" when calling getRoutingSmsPhonenumber';
 			}
 
 			return this.apiClient.callApi(
-				'/api/v2/routing/sms/phonenumbers/{addressId}', 
+				'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
 				'GET', 
-				{ 'addressId': addressId },
+				{ 'phoneNumberId': phoneNumberId },
 				{ 'expand': opts['expand'] },
 				{  },
 				{  },
@@ -56807,13 +56867,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Update a phone number provisioned for SMS.
 		 * 
-		 * @param {String} addressId Address ID
+		 * @param {String} phoneNumberId phone number
 		 * @param {Object} body SmsPhoneNumber
 		 */
-		putRoutingSmsPhonenumber(addressId, body) { 
-			// verify the required parameter 'addressId' is set
-			if (addressId === undefined || addressId === null) {
-				throw 'Missing the required parameter "addressId" when calling putRoutingSmsPhonenumber';
+		putRoutingSmsPhonenumber(phoneNumberId, body) { 
+			// verify the required parameter 'phoneNumberId' is set
+			if (phoneNumberId === undefined || phoneNumberId === null) {
+				throw 'Missing the required parameter "phoneNumberId" when calling putRoutingSmsPhonenumber';
 			}
 			// verify the required parameter 'body' is set
 			if (body === undefined || body === null) {
@@ -56821,9 +56881,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			}
 
 			return this.apiClient.callApi(
-				'/api/v2/routing/sms/phonenumbers/{addressId}', 
+				'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
 				'PUT', 
-				{ 'addressId': addressId },
+				{ 'phoneNumberId': phoneNumberId },
 				{  },
 				{  },
 				{  },
@@ -57050,7 +57110,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -57927,7 +57987,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ScreenRecording service.
 		 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -57972,7 +58032,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -58416,7 +58476,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -59159,7 +59219,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Settings service.
 		 * @module purecloud-platform-client-v2/api/SettingsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -59375,11 +59435,916 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	}
 
+	class SocialMediaApi {
+		/**
+		 * SocialMedia service.
+		 * @module purecloud-platform-client-v2/api/SocialMediaApi
+		 * @version 209.0.0
+		 */
+
+		/**
+		 * Constructs a new SocialMediaApi. 
+		 * @alias module:purecloud-platform-client-v2/api/SocialMediaApi
+		 * @class
+		 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+		 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+		 */
+		constructor(apiClient) {
+			this.apiClient = apiClient || ApiClient.instance;
+		}
+
+
+		/**
+		 * Delete a social topic.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.hardDelete Determines whether a Social topic should be soft-deleted or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+		 * deleteSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteSocialmediaTopic(topicId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopic';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}', 
+				'DELETE', 
+				{ 'topicId': topicId },
+				{ 'hardDelete': opts['hardDelete'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a Facebook data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.hardDelete Determines whether a Facebook data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+		 * deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
+			}
+			// verify the required parameter 'facebookIngestionRuleId' is set
+			if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+				throw 'Missing the required parameter "facebookIngestionRuleId" when calling deleteSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
+				'DELETE', 
+				{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+				{ 'hardDelete': opts['hardDelete'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a open data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} openId openId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.hardDelete Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+		 * deleteSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesOpenOpenId';
+			}
+			// verify the required parameter 'openId' is set
+			if (openId === undefined || openId === null) {
+				throw 'Missing the required parameter "openId" when calling deleteSocialmediaTopicDataingestionrulesOpenOpenId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}', 
+				'DELETE', 
+				{ 'topicId': topicId,'openId': openId },
+				{ 'hardDelete': opts['hardDelete'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a X (formally Twitter) data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.hardDelete Determines whether a X (formally Twitter) data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (default to false)
+		 * deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
+			}
+			// verify the required parameter 'twitterIngestionRuleId' is set
+			if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+				throw 'Missing the required parameter "twitterIngestionRuleId" when calling deleteSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}', 
+				'DELETE', 
+				{ 'topicId': topicId,'twitterIngestionRuleId': twitterIngestionRuleId },
+				{ 'hardDelete': opts['hardDelete'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a single social topic.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopic(topicId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopic';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}', 
+				'GET', 
+				{ 'topicId': topicId },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a single Facebook data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
+			}
+			// verify the required parameter 'facebookIngestionRuleId' is set
+			if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+				throw 'Missing the required parameter "facebookIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
+				'GET', 
+				{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a single Facebook data ingestion rule version.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
+		 * @param {String} dataIngestionRuleVersion version
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+		 * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion(topicId, facebookIngestionRuleId, dataIngestionRuleVersion, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion';
+			}
+			// verify the required parameter 'facebookIngestionRuleId' is set
+			if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+				throw 'Missing the required parameter "facebookIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion';
+			}
+			// verify the required parameter 'dataIngestionRuleVersion' is set
+			if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null) {
+				throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions/{dataIngestionRuleVersion}', 
+				'GET', 
+				{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId,'dataIngestionRuleVersion': dataIngestionRuleVersion },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the Facebook data ingestion rule versions.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions(topicId, facebookIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions';
+			}
+			// verify the required parameter 'facebookIngestionRuleId' is set
+			if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+				throw 'Missing the required parameter "facebookIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleIdVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions', 
+				'GET', 
+				{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a single open data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} openId openId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenId';
+			}
+			// verify the required parameter 'openId' is set
+			if (openId === undefined || openId === null) {
+				throw 'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}', 
+				'GET', 
+				{ 'topicId': topicId,'openId': openId },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a single Open data ingestion rule version.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} openId openId
+		 * @param {String} dataIngestionRuleVersion version
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+		 * getSocialmediaTopicDataingestionrulesOpenOpenIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesOpenOpenIdVersion(topicId, openId, dataIngestionRuleVersion, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersion';
+			}
+			// verify the required parameter 'openId' is set
+			if (openId === undefined || openId === null) {
+				throw 'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersion';
+			}
+			// verify the required parameter 'dataIngestionRuleVersion' is set
+			if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null) {
+				throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions/{dataIngestionRuleVersion}', 
+				'GET', 
+				{ 'topicId': topicId,'openId': openId,'dataIngestionRuleVersion': dataIngestionRuleVersion },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the Open data ingestion rule versions.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} openId openId
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopicDataingestionrulesOpenOpenIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesOpenOpenIdVersions(topicId, openId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersions';
+			}
+			// verify the required parameter 'openId' is set
+			if (openId === undefined || openId === null) {
+				throw 'Missing the required parameter "openId" when calling getSocialmediaTopicDataingestionrulesOpenOpenIdVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions', 
+				'GET', 
+				{ 'topicId': topicId,'openId': openId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a single X (formally Twitter) data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
+			}
+			// verify the required parameter 'twitterIngestionRuleId' is set
+			if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+				throw 'Missing the required parameter "twitterIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}', 
+				'GET', 
+				{ 'topicId': topicId,'twitterIngestionRuleId': twitterIngestionRuleId },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a single X (formally Twitter) data ingestion rule version.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
+		 * @param {String} dataIngestionRuleVersion version
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted item in the result.
+		 * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion(topicId, twitterIngestionRuleId, dataIngestionRuleVersion, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion';
+			}
+			// verify the required parameter 'twitterIngestionRuleId' is set
+			if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+				throw 'Missing the required parameter "twitterIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion';
+			}
+			// verify the required parameter 'dataIngestionRuleVersion' is set
+			if (dataIngestionRuleVersion === undefined || dataIngestionRuleVersion === null) {
+				throw 'Missing the required parameter "dataIngestionRuleVersion" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersion';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions/{dataIngestionRuleVersion}', 
+				'GET', 
+				{ 'topicId': topicId,'twitterIngestionRuleId': twitterIngestionRuleId,'dataIngestionRuleVersion': dataIngestionRuleVersion },
+				{ 'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get the Open data ingestion rule versions.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions(topicId, twitterIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions';
+			}
+			// verify the required parameter 'twitterIngestionRuleId' is set
+			if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+				throw 'Missing the required parameter "twitterIngestionRuleId" when calling getSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleIdVersions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions', 
+				'GET', 
+				{ 'topicId': topicId,'twitterIngestionRuleId': twitterIngestionRuleId },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Retrieve all social topics.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Array.<String>} opts.divisionIds One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
+		 * @param {Boolean} opts.includeDeleted Determines whether to include soft-deleted items in the result.
+		 * getSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		getSocialmediaTopics(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics', 
+				'GET', 
+				{  },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi'),'includeDeleted': opts['includeDeleted'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a social topic.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * patchSocialmediaTopic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchSocialmediaTopic(topicId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopic';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}', 
+				'PATCH', 
+				{ 'topicId': topicId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the status of a Facebook data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
+			}
+			// verify the required parameter 'facebookIngestionRuleId' is set
+			if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+				throw 'Missing the required parameter "facebookIngestionRuleId" when calling patchSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
+				'PATCH', 
+				{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the status of a open data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} openId openId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * patchSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesOpenOpenId';
+			}
+			// verify the required parameter 'openId' is set
+			if (openId === undefined || openId === null) {
+				throw 'Missing the required parameter "openId" when calling patchSocialmediaTopicDataingestionrulesOpenOpenId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}', 
+				'PATCH', 
+				{ 'topicId': topicId,'openId': openId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the status of a X (formally Twitter) data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
+			}
+			// verify the required parameter 'twitterIngestionRuleId' is set
+			if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+				throw 'Missing the required parameter "twitterIngestionRuleId" when calling patchSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}', 
+				'PATCH', 
+				{ 'topicId': topicId,'twitterIngestionRuleId': twitterIngestionRuleId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create an Facebook data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * postSocialmediaTopicDataingestionrulesFacebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postSocialmediaTopicDataingestionrulesFacebook(topicId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesFacebook';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook', 
+				'POST', 
+				{ 'topicId': topicId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create an open data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * postSocialmediaTopicDataingestionrulesOpen is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postSocialmediaTopicDataingestionrulesOpen(topicId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesOpen';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open', 
+				'POST', 
+				{ 'topicId': topicId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create an twitter data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * postSocialmediaTopicDataingestionrulesTwitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postSocialmediaTopicDataingestionrulesTwitter(topicId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling postSocialmediaTopicDataingestionrulesTwitter';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter', 
+				'POST', 
+				{ 'topicId': topicId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a social topic.
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * postSocialmediaTopics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		postSocialmediaTopics(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics', 
+				'POST', 
+				{  },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the Facebook data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} facebookIngestionRuleId facebookIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId(topicId, facebookIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
+			}
+			// verify the required parameter 'facebookIngestionRuleId' is set
+			if (facebookIngestionRuleId === undefined || facebookIngestionRuleId === null) {
+				throw 'Missing the required parameter "facebookIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesFacebookFacebookIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}', 
+				'PUT', 
+				{ 'topicId': topicId,'facebookIngestionRuleId': facebookIngestionRuleId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the open data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} openId openId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * putSocialmediaTopicDataingestionrulesOpenOpenId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		putSocialmediaTopicDataingestionrulesOpenOpenId(topicId, openId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesOpenOpenId';
+			}
+			// verify the required parameter 'openId' is set
+			if (openId === undefined || openId === null) {
+				throw 'Missing the required parameter "openId" when calling putSocialmediaTopicDataingestionrulesOpenOpenId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}', 
+				'PUT', 
+				{ 'topicId': topicId,'openId': openId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update the X (formally Twitter) data ingestion rule.
+		 * 
+		 * @param {String} topicId topicId
+		 * @param {String} twitterIngestionRuleId twitterIngestionRuleId
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body 
+		 * putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+		 */
+		putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId(topicId, twitterIngestionRuleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'topicId' is set
+			if (topicId === undefined || topicId === null) {
+				throw 'Missing the required parameter "topicId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
+			}
+			// verify the required parameter 'twitterIngestionRuleId' is set
+			if (twitterIngestionRuleId === undefined || twitterIngestionRuleId === null) {
+				throw 'Missing the required parameter "twitterIngestionRuleId" when calling putSocialmediaTopicDataingestionrulesTwitterTwitterIngestionRuleId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}', 
+				'PUT', 
+				{ 'topicId': topicId,'twitterIngestionRuleId': twitterIngestionRuleId },
+				{  },
+				{  },
+				{  },
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+	}
+
 	class SpeechTextAnalyticsApi {
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -60714,7 +61679,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -60816,7 +61781,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -60955,7 +61920,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TaskManagement service.
 		 * @module purecloud-platform-client-v2/api/TaskManagementApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -62619,7 +63584,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -62924,7 +63889,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -63106,7 +64071,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -66557,7 +67522,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -66685,7 +67650,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -66839,7 +67804,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -67108,7 +68073,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -67323,7 +68288,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -67538,7 +68503,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -70367,7 +71332,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -70478,7 +71443,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -71200,7 +72165,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -71751,7 +72716,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -72278,7 +73243,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -72324,7 +73289,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -72470,7 +73435,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 208.0.0
+		 * @version 209.0.0
 		 */
 
 		/**
@@ -75506,7 +76471,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Gets all the shift trades for a given week
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
 		 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
@@ -76732,7 +77697,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Updates a shift trade. This route can only be called by the initiating agent
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 		 * @param {String} tradeId The ID of the shift trade to update
 		 * @param {Object} body body
 		 */
@@ -78992,7 +79957,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Matches a shift trade. This route can only be called by the receiving agent
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 		 * @param {String} tradeId The ID of the shift trade to update
 		 * @param {Object} body body
 		 */
@@ -79032,7 +79997,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Adds a shift trade
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 		 * @param {Object} body body
 		 */
 		postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body) { 
@@ -79067,7 +80032,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Searches for potential shift trade matches for the current agent
 		 * 
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
@@ -79106,7 +80071,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * Updates the state of a batch of shift trades
 		 * Admin functionality is not supported with "mine".
 		 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 		 * @param {Object} body body
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -79684,7 +80649,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 208.0.0
+	 * @version 209.0.0
 	 */
 	class platformClient {
 		constructor() {
@@ -79988,6 +80953,11 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			 * @property {module:purecloud-platform-client-v2/api/SettingsApi}
 			 */
 			this.SettingsApi = SettingsApi;
+			/**
+			 * The SocialMediaApi service constructor.
+			 * @property {module:purecloud-platform-client-v2/api/SocialMediaApi}
+			 */
+			this.SocialMediaApi = SocialMediaApi;
 			/**
 			 * The SpeechTextAnalyticsApi service constructor.
 			 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}
