@@ -1340,7 +1340,7 @@ apiInstance.getTaskmanagementWorktype(worktypeId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **worktypeId** | **String** | Worktype id |  |
- **expands** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow |
+ **expands** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow, defaultScript |
 
 ### Return type
 
@@ -3085,4 +3085,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@209.0.0_
+_purecloud-platform-client-v2@210.0.0_

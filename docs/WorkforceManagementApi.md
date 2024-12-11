@@ -5708,7 +5708,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(
 
 ## getWorkforcemanagementManagementunitUserTimeoffrequests
 
-> TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
+> TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests
@@ -5734,11 +5734,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
-let opts = { 
-  'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
-};
 
-apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5755,7 +5752,6 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUn
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
- **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 
 ### Return type
 
@@ -6685,7 +6681,7 @@ apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequest
 
 ## getWorkforcemanagementTimeoffrequests
 
-> TimeOffRequestList getWorkforcemanagementTimeoffrequests(opts)
+> TimeOffRequestList getWorkforcemanagementTimeoffrequests()
 
 
 GET /api/v2/workforcemanagement/timeoffrequests
@@ -6710,11 +6706,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
-};
-
-apiInstance.getWorkforcemanagementTimeoffrequests(opts)
+apiInstance.getWorkforcemanagementTimeoffrequests()
   .then((data) => {
     console.log(`getWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6726,10 +6718,7 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -13352,4 +13341,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@209.0.0_
+_purecloud-platform-client-v2@210.0.0_

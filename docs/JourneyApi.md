@@ -394,8 +394,6 @@ DELETE /api/v2/journey/views/{viewId}/schedules
 
 Delete the Schedule of a JourneyView
 
-used for long descriptions
-
 Requires ALL permissions:
 
 * journey:viewsSchedule:delete
@@ -1741,8 +1739,6 @@ GET /api/v2/journey/views/{viewId}/schedules
 
 Get the Schedule for a JourneyView
 
-used for long descriptions
-
 Requires ALL permissions:
 
 * journey:viewsSchedule:view
@@ -1957,8 +1953,6 @@ GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}
 
 Get the job for a journey view version.
 
-used for long descriptions
-
 Requires ALL permissions:
 
 * journey:viewsJobs:view
@@ -2012,8 +2006,6 @@ apiInstance.getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
 GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results
 
 Get the result of a job for a journey view version.
-
-used for long descriptions
 
 Requires ALL permissions:
 
@@ -2124,8 +2116,6 @@ apiInstance.getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId
 GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest
 
 Get the latest job of a journey view version.
-
-used for long descriptions
 
 Requires ALL permissions:
 
@@ -2715,8 +2705,6 @@ apiInstance.patchJourneySegment(segmentId, opts)
 PATCH /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}
 
 Update the job for a journey view version. Only the status can be changed and only to Cancelled
-
-used for long descriptions
 
 Requires ALL permissions:
 
@@ -3489,8 +3477,6 @@ POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs
 
 Submit a job request for a journey view version.
 
-used for long descriptions
-
 Requires ALL permissions:
 
 * journey:viewsJobs:add
@@ -3701,8 +3687,6 @@ PUT /api/v2/journey/views/{viewId}/schedules
 
 Update the Schedule for a JourneyView
 
-used for long descriptions
-
 Requires ALL permissions:
 
 * journey:viewsSchedule:edit
@@ -3802,4 +3786,4 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body)
 **JourneyView**
 
 
-_purecloud-platform-client-v2@209.0.0_
+_purecloud-platform-client-v2@210.0.0_
