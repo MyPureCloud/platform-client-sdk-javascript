@@ -16,6 +16,7 @@ import CoachingApi from './api/CoachingApi.js';
 import ContentManagementApi from './api/ContentManagementApi.js';
 import ConversationsApi from './api/ConversationsApi.js';
 import DataExtensionsApi from './api/DataExtensionsApi.js';
+import DataPrivacyApi from './api/DataPrivacyApi.js';
 import DownloadsApi from './api/DownloadsApi.js';
 import EmailsApi from './api/EmailsApi.js';
 import EmployeeEngagementApi from './api/EmployeeEngagementApi.js';
@@ -112,7 +113,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 209.0.0
+ * @version 210.0.0
  */
 class platformClient {
 	constructor() {
@@ -201,6 +202,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/DataExtensionsApi}
 		 */
 		this.DataExtensionsApi = DataExtensionsApi;
+		/**
+		 * The DataPrivacyApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/DataPrivacyApi}
+		 */
+		this.DataPrivacyApi = DataPrivacyApi;
 		/**
 		 * The DownloadsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/DownloadsApi}

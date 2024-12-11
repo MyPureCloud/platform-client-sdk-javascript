@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 209.0.0
+	 * @version 210.0.0
 	 */
 
 	/**
@@ -2905,12 +2905,8 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
 	 */
-	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts) { 
-		opts = opts || {};
-		
+	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
@@ -2924,7 +2920,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'userId': userId },
-			{ 'recentlyReviewed': opts['recentlyReviewed'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -3415,18 +3411,14 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of time off requests for the current user
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
 	 */
-	getWorkforcemanagementTimeoffrequests(opts) { 
-		opts = opts || {};
-		
+	getWorkforcemanagementTimeoffrequests() { 
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/timeoffrequests', 
 			'GET', 
 			{  },
-			{ 'recentlyReviewed': opts['recentlyReviewed'] },
+			{  },
 			{  },
 			{  },
 			null, 

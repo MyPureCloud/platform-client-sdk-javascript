@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteExternalcontactsContactsSchema**](ExternalContactsApi#deleteExternalcontactsContactsSchema) | **DELETE** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Delete a schema
 [**deleteExternalcontactsExternalsource**](ExternalContactsApi#deleteExternalcontactsExternalsource) | **DELETE** /api/v2/externalcontacts/externalsources/{externalSourceId} | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
 [**deleteExternalcontactsImportCsvSetting**](ExternalContactsApi#deleteExternalcontactsImportCsvSetting) | **DELETE** /api/v2/externalcontacts/import/csv/settings/{settingsId} | Delete settings for CSV import
+[**deleteExternalcontactsImportSetting**](ExternalContactsApi#deleteExternalcontactsImportSetting) | **DELETE** /api/v2/externalcontacts/import/settings/{settingsId} | Delete Settings
 [**deleteExternalcontactsOrganization**](ExternalContactsApi#deleteExternalcontactsOrganization) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Delete an external organization
 [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi#deleteExternalcontactsOrganizationNote) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Delete a note for an external organization
 [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi#deleteExternalcontactsOrganizationTrustor) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor | Unlink the Trustor for this External Organization
@@ -32,6 +33,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsImportCsvSettings**](ExternalContactsApi#getExternalcontactsImportCsvSettings) | **GET** /api/v2/externalcontacts/import/csv/settings | Retrieve all settings for organization filtered by externalSettingsId if provided
 [**getExternalcontactsImportCsvUploadDetails**](ExternalContactsApi#getExternalcontactsImportCsvUploadDetails) | **GET** /api/v2/externalcontacts/import/csv/uploads/{uploadId}/details | Get details for CSV upload
 [**getExternalcontactsImportCsvUploadPreview**](ExternalContactsApi#getExternalcontactsImportCsvUploadPreview) | **GET** /api/v2/externalcontacts/import/csv/uploads/{uploadId}/preview | Get preview for CSV upload
+[**getExternalcontactsImportJob**](ExternalContactsApi#getExternalcontactsImportJob) | **GET** /api/v2/externalcontacts/import/jobs/{jobId} | Get job based on id
+[**getExternalcontactsImportJobs**](ExternalContactsApi#getExternalcontactsImportJobs) | **GET** /api/v2/externalcontacts/import/jobs | List jobs for organization
+[**getExternalcontactsImportSetting**](ExternalContactsApi#getExternalcontactsImportSetting) | **GET** /api/v2/externalcontacts/import/settings/{settingsId} | Get setting based on id
+[**getExternalcontactsImportSettings**](ExternalContactsApi#getExternalcontactsImportSettings) | **GET** /api/v2/externalcontacts/import/settings | List settings for organization
 [**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
 [**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
 [**getExternalcontactsOrganizationNote**](ExternalContactsApi#getExternalcontactsOrganizationNote) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Fetch a note for an external organization
@@ -75,6 +80,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsImportCsvJobs**](ExternalContactsApi#postExternalcontactsImportCsvJobs) | **POST** /api/v2/externalcontacts/import/csv/jobs | Create CSV import job
 [**postExternalcontactsImportCsvSettings**](ExternalContactsApi#postExternalcontactsImportCsvSettings) | **POST** /api/v2/externalcontacts/import/csv/settings | Create settings for CSV import
 [**postExternalcontactsImportCsvUploads**](ExternalContactsApi#postExternalcontactsImportCsvUploads) | **POST** /api/v2/externalcontacts/import/csv/uploads | Get url for CSV upload
+[**postExternalcontactsImportJobs**](ExternalContactsApi#postExternalcontactsImportJobs) | **POST** /api/v2/externalcontacts/import/jobs | Create a new job
+[**postExternalcontactsImportSettings**](ExternalContactsApi#postExternalcontactsImportSettings) | **POST** /api/v2/externalcontacts/import/settings | Create a new settings
 [**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
 [**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
 [**postExternalcontactsOrganizations**](ExternalContactsApi#postExternalcontactsOrganizations) | **POST** /api/v2/externalcontacts/organizations | Create an external organization
@@ -86,6 +93,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putExternalcontactsConversation**](ExternalContactsApi#putExternalcontactsConversation) | **PUT** /api/v2/externalcontacts/conversations/{conversationId} | Associate/disassociate an external contact with a conversation
 [**putExternalcontactsExternalsource**](ExternalContactsApi#putExternalcontactsExternalsource) | **PUT** /api/v2/externalcontacts/externalsources/{externalSourceId} | Update an External Source
 [**putExternalcontactsImportCsvSetting**](ExternalContactsApi#putExternalcontactsImportCsvSetting) | **PUT** /api/v2/externalcontacts/import/csv/settings/{settingsId} | Update settings for CSV import
+[**putExternalcontactsImportJob**](ExternalContactsApi#putExternalcontactsImportJob) | **PUT** /api/v2/externalcontacts/import/jobs/{jobId} | Update Job's workflow status
+[**putExternalcontactsImportSetting**](ExternalContactsApi#putExternalcontactsImportSetting) | **PUT** /api/v2/externalcontacts/import/settings/{settingsId} | Update settings
 [**putExternalcontactsOrganization**](ExternalContactsApi#putExternalcontactsOrganization) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update an external organization
 [**putExternalcontactsOrganizationNote**](ExternalContactsApi#putExternalcontactsOrganizationNote) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update a note for an external organization
 [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi#putExternalcontactsOrganizationTrustorTrustorId) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} | Links a Trustor with an External Organization
@@ -332,6 +341,56 @@ apiInstance.deleteExternalcontactsImportCsvSetting(settingsId)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteExternalcontactsImportCsvSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **settingsId** | **String** | Settings id |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteExternalcontactsImportSetting
+
+> void deleteExternalcontactsImportSetting(settingsId)
+
+
+DELETE /api/v2/externalcontacts/import/settings/{settingsId}
+
+Delete Settings
+
+Requires ANY permissions:
+
+* externalContacts:importSettings:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let settingsId = "settingsId_example"; // String | Settings id
+
+apiInstance.deleteExternalcontactsImportSetting(settingsId)
+  .then(() => {
+    console.log('deleteExternalcontactsImportSetting returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsImportSetting');
     console.error(err);
   });
 ```
@@ -610,7 +669,7 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 
 ## getExternalcontactsContactIdentifiers
 
-> EntityListing getExternalcontactsContactIdentifiers(contactId)
+> ContactIdentifierListing getExternalcontactsContactIdentifiers(contactId)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/identifiers
@@ -655,7 +714,7 @@ apiInstance.getExternalcontactsContactIdentifiers(contactId)
 
 ### Return type
 
-**EntityListing**
+**ContactIdentifierListing**
 
 
 ## getExternalcontactsContactJourneySessions
@@ -1462,6 +1521,222 @@ apiInstance.getExternalcontactsImportCsvUploadPreview(uploadId)
 ### Return type
 
 **CsvUploadPreviewResponse**
+
+
+## getExternalcontactsImportJob
+
+> ContactImportJobResponse getExternalcontactsImportJob(jobId)
+
+
+GET /api/v2/externalcontacts/import/jobs/{jobId}
+
+Get job based on id
+
+Requires ANY permissions:
+
+* externalContacts:importJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let jobId = "jobId_example"; // String | Job id
+
+apiInstance.getExternalcontactsImportJob(jobId)
+  .then((data) => {
+    console.log(`getExternalcontactsImportJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsImportJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Job id |  |
+
+### Return type
+
+**ContactImportJobResponse**
+
+
+## getExternalcontactsImportJobs
+
+> ContactImportJobEntityListing getExternalcontactsImportJobs(opts)
+
+
+GET /api/v2/externalcontacts/import/jobs
+
+List jobs for organization
+
+Requires ANY permissions:
+
+* externalContacts:importJob:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "25", // String | Number of entities to return. Maximum of 100.
+  'sortOrder': "Ascending", // String | Direction of sorting.
+  'jobStatus': "jobStatus_example" // String | Search term to filter by jobStatus
+};
+
+apiInstance.getExternalcontactsImportJobs(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsImportJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsImportJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional] [default to 25] |
+ **sortOrder** | **String** | Direction of sorting. | [optional] [default to Ascending]<br />**Values**: Ascending, Descending |
+ **jobStatus** | **String** | Search term to filter by jobStatus | [optional] <br />**Values**: Created, Running, Completed, Failed, Cancelled |
+
+### Return type
+
+**ContactImportJobEntityListing**
+
+
+## getExternalcontactsImportSetting
+
+> ContactImportSettings getExternalcontactsImportSetting(settingsId)
+
+
+GET /api/v2/externalcontacts/import/settings/{settingsId}
+
+Get setting based on id
+
+Requires ANY permissions:
+
+* externalContacts:importSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let settingsId = "settingsId_example"; // String | Settings id
+
+apiInstance.getExternalcontactsImportSetting(settingsId)
+  .then((data) => {
+    console.log(`getExternalcontactsImportSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsImportSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **settingsId** | **String** | Settings id |  |
+
+### Return type
+
+**ContactImportSettings**
+
+
+## getExternalcontactsImportSettings
+
+> ContactImportSettingsEntityListing getExternalcontactsImportSettings(opts)
+
+
+GET /api/v2/externalcontacts/import/settings
+
+List settings for organization
+
+Requires ANY permissions:
+
+* externalContacts:importSettings:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "25", // String | Number of entities to return. Maximum of 100.
+  'sortOrder': "Ascending", // String | Direction of sorting.
+  'name': "name_example" // String | Search term to filter by settings name
+};
+
+apiInstance.getExternalcontactsImportSettings(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsImportSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsImportSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional] [default to 25] |
+ **sortOrder** | **String** | Direction of sorting. | [optional] [default to Ascending]<br />**Values**: Ascending, Descending |
+ **name** | **String** | Search term to filter by settings name | [optional]  |
+
+### Return type
+
+**ContactImportSettingsEntityListing**
 
 
 ## getExternalcontactsOrganization
@@ -3725,6 +4000,106 @@ apiInstance.postExternalcontactsImportCsvUploads(body)
 **CsvUploadResponse**
 
 
+## postExternalcontactsImportJobs
+
+> ContactImportJobResponse postExternalcontactsImportJobs(body)
+
+
+POST /api/v2/externalcontacts/import/jobs
+
+Create a new job
+
+Requires ANY permissions:
+
+* externalContacts:importJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Job
+
+apiInstance.postExternalcontactsImportJobs(body)
+  .then((data) => {
+    console.log(`postExternalcontactsImportJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsImportJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Job |  |
+
+### Return type
+
+**ContactImportJobResponse**
+
+
+## postExternalcontactsImportSettings
+
+> ContactImportSettings postExternalcontactsImportSettings(body)
+
+
+POST /api/v2/externalcontacts/import/settings
+
+Create a new settings
+
+Requires ANY permissions:
+
+* externalContacts:importSettings:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Setting
+
+apiInstance.postExternalcontactsImportSettings(body)
+  .then((data) => {
+    console.log(`postExternalcontactsImportSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsImportSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Setting |  |
+
+### Return type
+
+**ContactImportSettings**
+
+
 ## postExternalcontactsMergeContacts
 
 > ExternalContact postExternalcontactsMergeContacts(body)
@@ -4301,6 +4676,110 @@ apiInstance.putExternalcontactsImportCsvSetting(settingsId, body)
 **CsvSettings**
 
 
+## putExternalcontactsImportJob
+
+> ContactImportJobStatusUpdateResponse putExternalcontactsImportJob(jobId, body)
+
+
+PUT /api/v2/externalcontacts/import/jobs/{jobId}
+
+Update Job's workflow status
+
+Requires ANY permissions:
+
+* externalContacts:importJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let jobId = "jobId_example"; // String | Job id
+let body = {}; // Object | Status of the Job's workflow
+
+apiInstance.putExternalcontactsImportJob(jobId, body)
+  .then((data) => {
+    console.log(`putExternalcontactsImportJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsImportJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Job id |  |
+ **body** | **Object** | Status of the Job's workflow |  |
+
+### Return type
+
+**ContactImportJobStatusUpdateResponse**
+
+
+## putExternalcontactsImportSetting
+
+> ContactImportSettings putExternalcontactsImportSetting(settingsId, body)
+
+
+PUT /api/v2/externalcontacts/import/settings/{settingsId}
+
+Update settings
+
+Requires ANY permissions:
+
+* externalContacts:importSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let settingsId = "settingsId_example"; // String | Settings id
+let body = {}; // Object | Setting
+
+apiInstance.putExternalcontactsImportSetting(settingsId, body)
+  .then((data) => {
+    console.log(`putExternalcontactsImportSetting success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsImportSetting');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **settingsId** | **String** | Settings id |  |
+ **body** | **Object** | Setting |  |
+
+### Return type
+
+**ContactImportSettings**
+
+
 ## putExternalcontactsOrganization
 
 > ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, body)
@@ -4566,4 +5045,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@209.0.0_
+_purecloud-platform-client-v2@210.0.0_

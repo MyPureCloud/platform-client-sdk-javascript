@@ -577,6 +577,10 @@
       "class": "OutOfOfficeEventOutOfOffice"
     },
     {
+      "topic": "v2.users.{id}.persistentconnection",
+      "class": "PersistentConnectionChangeTopicPersistentConnectionChangeEvent"
+    },
+    {
       "topic": "v2.users.{id}.presence",
       "class": "PresenceEventUserPresence"
     },

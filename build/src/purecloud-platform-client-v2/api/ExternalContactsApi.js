@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 209.0.0
+	 * @version 210.0.0
 	 */
 
 	/**
@@ -138,6 +138,31 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/import/csv/settings/{settingsId}', 
+			'DELETE', 
+			{ 'settingsId': settingsId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Settings
+	 * 
+	 * @param {String} settingsId Settings id
+	 */
+	deleteExternalcontactsImportSetting(settingsId) { 
+		// verify the required parameter 'settingsId' is set
+		if (settingsId === undefined || settingsId === null) {
+			throw 'Missing the required parameter "settingsId" when calling deleteExternalcontactsImportSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/settings/{settingsId}', 
 			'DELETE', 
 			{ 'settingsId': settingsId },
 			{  },
@@ -707,6 +732,110 @@ class ExternalContactsApi {
 			'GET', 
 			{ 'uploadId': uploadId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get job based on id
+	 * 
+	 * @param {String} jobId Job id
+	 */
+	getExternalcontactsImportJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getExternalcontactsImportJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List jobs for organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. (default to 25)
+	 * @param {Object} opts.sortOrder Direction of sorting. (default to Ascending)
+	 * @param {Object} opts.jobStatus Search term to filter by jobStatus
+	 */
+	getExternalcontactsImportJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/jobs', 
+			'GET', 
+			{  },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'jobStatus': opts['jobStatus'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get setting based on id
+	 * 
+	 * @param {String} settingsId Settings id
+	 */
+	getExternalcontactsImportSetting(settingsId) { 
+		// verify the required parameter 'settingsId' is set
+		if (settingsId === undefined || settingsId === null) {
+			throw 'Missing the required parameter "settingsId" when calling getExternalcontactsImportSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/settings/{settingsId}', 
+			'GET', 
+			{ 'settingsId': settingsId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List settings for organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. (default to 25)
+	 * @param {Object} opts.sortOrder Direction of sorting. (default to Ascending)
+	 * @param {String} opts.name Search term to filter by settings name
+	 */
+	getExternalcontactsImportSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/settings', 
+			'GET', 
+			{  },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -1855,6 +1984,56 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Create a new job
+	 * 
+	 * @param {Object} body Job
+	 */
+	postExternalcontactsImportJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsImportJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new settings
+	 * 
+	 * @param {Object} body Setting
+	 */
+	postExternalcontactsImportSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsImportSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/settings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Merge two contacts into a new contact record
 	 * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
 	 * @param {Object} body MergeRequest
@@ -2157,6 +2336,66 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/import/csv/settings/{settingsId}', 
+			'PUT', 
+			{ 'settingsId': settingsId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Job's workflow status
+	 * 
+	 * @param {String} jobId Job id
+	 * @param {Object} body Status of the Job's workflow
+	 */
+	putExternalcontactsImportJob(jobId, body) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling putExternalcontactsImportJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putExternalcontactsImportJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/jobs/{jobId}', 
+			'PUT', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update settings
+	 * 
+	 * @param {String} settingsId Settings id
+	 * @param {Object} body Setting
+	 */
+	putExternalcontactsImportSetting(settingsId, body) { 
+		// verify the required parameter 'settingsId' is set
+		if (settingsId === undefined || settingsId === null) {
+			throw 'Missing the required parameter "settingsId" when calling putExternalcontactsImportSetting';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putExternalcontactsImportSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/import/settings/{settingsId}', 
 			'PUT', 
 			{ 'settingsId': settingsId },
 			{  },

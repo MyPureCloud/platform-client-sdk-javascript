@@ -30,6 +30,8 @@ docs/ConversationsApi.json
 docs/ConversationsApi.md
 docs/DataExtensionsApi.json
 docs/DataExtensionsApi.md
+docs/DataPrivacyApi.json
+docs/DataPrivacyApi.md
 docs/DownloadsApi.json
 docs/DownloadsApi.md
 docs/EmailsApi.json
@@ -213,6 +215,7 @@ docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/deleteConversationsMessagingSetting-example.txt
 docs/deleteConversationsMessagingSettingsDefault-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/deleteDataprivacyMaskingrule-example.txt
 docs/deleteDiagnosticsLogcaptureBrowserUser-example.txt
 docs/deleteEmployeeengagementCelebration-example.txt
 docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
@@ -221,6 +224,7 @@ docs/deleteExternalcontactsContactNote-example.txt
 docs/deleteExternalcontactsContactsSchema-example.txt
 docs/deleteExternalcontactsExternalsource-example.txt
 docs/deleteExternalcontactsImportCsvSetting-example.txt
+docs/deleteExternalcontactsImportSetting-example.txt
 docs/deleteExternalcontactsOrganization-example.txt
 docs/deleteExternalcontactsOrganizationNote-example.txt
 docs/deleteExternalcontactsOrganizationTrustor-example.txt
@@ -728,6 +732,8 @@ docs/getConversationsVideosMeeting-example.txt
 docs/getDataextensionsCoretype-example.txt
 docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
+docs/getDataprivacyMaskingrule-example.txt
+docs/getDataprivacyMaskingrules-example.txt
 docs/getDate-example.txt
 docs/getDiagnosticsLogcaptureBrowserEntriesDownloadJob-example.txt
 docs/getDiagnosticsLogcaptureBrowserUser-example.txt
@@ -759,6 +765,10 @@ docs/getExternalcontactsImportCsvSetting-example.txt
 docs/getExternalcontactsImportCsvSettings-example.txt
 docs/getExternalcontactsImportCsvUploadDetails-example.txt
 docs/getExternalcontactsImportCsvUploadPreview-example.txt
+docs/getExternalcontactsImportJob-example.txt
+docs/getExternalcontactsImportJobs-example.txt
+docs/getExternalcontactsImportSetting-example.txt
+docs/getExternalcontactsImportSettings-example.txt
 docs/getExternalcontactsOrganization-example.txt
 docs/getExternalcontactsOrganizationContacts-example.txt
 docs/getExternalcontactsOrganizationNote-example.txt
@@ -1780,6 +1790,7 @@ docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSetting-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchConversationsSettings-example.txt
+docs/patchDataprivacyMaskingrule-example.txt
 docs/patchEmailsSettings-example.txt
 docs/patchEmailsSettings-example.txt
 docs/patchEmployeeengagementCelebration-example.txt
@@ -2127,6 +2138,8 @@ docs/postConversationsScreenshareParticipantCommunicationWrapup-example.txt
 docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideosMeetings-example.txt
+docs/postDataprivacyMaskingrules-example.txt
+docs/postDataprivacyMaskingrulesValidate-example.txt
 docs/postDiagnosticsLogcaptureBrowserEntriesDownloadJobs-example.txt
 docs/postDiagnosticsLogcaptureBrowserEntriesQuery-example.txt
 docs/postDiagnosticsLogcaptureBrowserUser-example.txt
@@ -2165,6 +2178,8 @@ docs/postExternalcontactsIdentifierlookup-example.txt
 docs/postExternalcontactsImportCsvJobs-example.txt
 docs/postExternalcontactsImportCsvSettings-example.txt
 docs/postExternalcontactsImportCsvUploads-example.txt
+docs/postExternalcontactsImportJobs-example.txt
+docs/postExternalcontactsImportSettings-example.txt
 docs/postExternalcontactsMergeContacts-example.txt
 docs/postExternalcontactsOrganizationNotes-example.txt
 docs/postExternalcontactsOrganizations-example.txt
@@ -2679,6 +2694,8 @@ docs/putExternalcontactsContactsSchema-example.txt
 docs/putExternalcontactsConversation-example.txt
 docs/putExternalcontactsExternalsource-example.txt
 docs/putExternalcontactsImportCsvSetting-example.txt
+docs/putExternalcontactsImportJob-example.txt
+docs/putExternalcontactsImportSetting-example.txt
 docs/putExternalcontactsOrganization-example.txt
 docs/putExternalcontactsOrganizationNote-example.txt
 docs/putExternalcontactsOrganizationTrustorTrustorId-example.txt
@@ -2888,6 +2905,7 @@ src/purecloud-platform-client-v2/api/CoachingApi.js
 src/purecloud-platform-client-v2/api/ContentManagementApi.js
 src/purecloud-platform-client-v2/api/ConversationsApi.js
 src/purecloud-platform-client-v2/api/DataExtensionsApi.js
+src/purecloud-platform-client-v2/api/DataPrivacyApi.js
 src/purecloud-platform-client-v2/api/DownloadsApi.js
 src/purecloud-platform-client-v2/api/EmailsApi.js
 src/purecloud-platform-client-v2/api/EmployeeEngagementApi.js

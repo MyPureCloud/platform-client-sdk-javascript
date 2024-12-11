@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 209.0.0
+	 * @version 210.0.0
 	 */
 
 	/**
@@ -176,7 +176,7 @@ class JourneyApi {
 
 	/**
 	 * Delete the Schedule of a JourneyView
-	 * used for long descriptions
+	 * 
 	 * @param {String} viewId Journey View Id
 	 */
 	deleteJourneyViewSchedules(viewId) { 
@@ -849,7 +849,7 @@ class JourneyApi {
 
 	/**
 	 * Get the Schedule for a JourneyView
-	 * used for long descriptions
+	 * 
 	 * @param {String} viewId Journey View Id
 	 */
 	getJourneyViewSchedules(viewId) { 
@@ -979,7 +979,7 @@ class JourneyApi {
 
 	/**
 	 * Get the job for a journey view version.
-	 * used for long descriptions
+	 * 
 	 * @param {String} viewId Journey View Id
 	 * @param {String} journeyVersionId Journey View Version
 	 * @param {String} jobId JobId
@@ -1014,7 +1014,7 @@ class JourneyApi {
 
 	/**
 	 * Get the result of a job for a journey view version.
-	 * used for long descriptions
+	 * 
 	 * @param {String} viewId JourneyViewResult id
 	 * @param {String} journeyViewVersion Journey View Version
 	 * @param {String} jobId Id of the executing job
@@ -1089,7 +1089,7 @@ class JourneyApi {
 
 	/**
 	 * Get the latest job of a journey view version.
-	 * used for long descriptions
+	 * 
 	 * @param {String} viewId Journey View Id
 	 * @param {String} journeyVersionId Journey View Version
 	 */
@@ -1389,7 +1389,7 @@ class JourneyApi {
 
 	/**
 	 * Update the job for a journey view version. Only the status can be changed and only to Cancelled
-	 * used for long descriptions
+	 * 
 	 * @param {String} viewId Journey View Id
 	 * @param {String} journeyVersionId Journey View Version
 	 * @param {String} jobId JobId
@@ -1792,7 +1792,7 @@ class JourneyApi {
 
 	/**
 	 * Submit a job request for a journey view version.
-	 * used for long descriptions
+	 * 
 	 * @param {String} viewId Journey View Id
 	 * @param {String} journeyVersionId Journey View Version
 	 */
@@ -1901,7 +1901,7 @@ class JourneyApi {
 
 	/**
 	 * Update the Schedule for a JourneyView
-	 * used for long descriptions
+	 * 
 	 * @param {String} viewId Journey View Id
 	 * @param {Object} body journeyViewSchedule
 	 */
