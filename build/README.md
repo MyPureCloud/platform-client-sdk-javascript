@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@210.0.0
+Documentation version purecloud-platform-client-v2@211.0.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/210.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/211.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/210.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/211.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -558,6 +558,55 @@ agent = new HttpsProxyAgent({
   proxy: proxyUrl,
 });
 client.setProxyAgent(agent)
+```
+
+### Using MTLS authentication via a Gateway
+
+If there is MTLS authentication that need to be set for a gateway server (i.e. if the Genesys Cloud requests must be sent through an intermediate API gateway or equivalent, with MTLS enabled), you can use setMTLSCertificates to set the httpsAgent.
+
+An example using `setMTLSCertificates` to setup MTLS for gateway is shown below
+
+```javascript
+const client = platformClient.ApiClient.instance;
+client.setGateway({host: 'mygateway.mydomain.myextension', protocol: 'https', port: 1443, path_params_login: 'myadditionalpathforlogin', path_params_api: 'myadditionalpathforapi'});
+
+client.setMTLSCertificates('mtls-test/localhost.cert.pem', 'mtls-test/localhost.key.pem', 'mtls-test/ca-chain.cert.pem')
+```
+
+Please do note, these are used for setting a new proxy agent for the gateway server configuration.
+
+If you want a custom proxy agent with MTLS , you can still use setProxyAgent method on client instance and inject your own httpsAgent.
+The responsibility of setting the agent options inside the custom proxy agent will be with the caller.
+
+Use Either setMTLSCertificates, or setProxyAgent or setHttpClient based on your use case, as the properties will be overridden based on what is invoked last.
+
+### Inject custom Http Client
+
+By default the SDK will use axios as default http client.
+If you want to inject a new third party/custom implementation of client , you set the httpclient instance
+
+The CustomHttpClient should be an instance of AbstractHttpClient defined in the SDK. which will implement the request method.
+Please find an example for the same.
+
+```javascript
+
+class CustomHttpClient extends AbstractHttpClient{
+
+    constructor() {
+        super();
+        this._axiosInstance = axios.create({});
+    }
+
+    request(options) {
+        return this._axiosInstance.request(options);
+    }
+}
+
+
+const client = platformClient.ApiClient.instance;
+
+httpClient = new CustomHttpClient();
+client.setHttpClient(httpClient)
 ```
 
 ## Versioning

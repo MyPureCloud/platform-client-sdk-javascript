@@ -9,6 +9,7 @@ declare class ApiClientClass {
 	instance: ApiClientClass;
 	config: Configuration;
     private proxyAgent: any;
+    httpClient: AbstractHttpClient;
 
 	callApi(path: string, httpMethod: string, pathParams: { [key: string]: string; }, queryParams: { [key: string]: object; }, headerParams: { [key: string]: object; }, formParams: { [key: string]: object; }, bodyParam: any, authNames: Array<string>, contentTypes: Array<string>, accepts: Array<string>): Promise<any>;
 	loginClientCredentialsGrant(clientId: string, clientSecret: string): Promise<AuthData>;
@@ -27,6 +28,11 @@ declare class ApiClientClass {
 	setReturnExtendedResponses(returnExtended: boolean): void;
 	setStorageKey(storageKey: string): void;
 	setProxyAgent(agent: any): void;
+
+	setHttpClient(httpClient: AbstractHttpClient): void;
+	getHttpClient(): AbstractHttpClient;
+	setMTLSCertificates(certPath: string, keyPath:string, caPath:string): void;
+	setMTLSContents(certContent: string, keyContent: string, caContent: string): void;
 }
 
 declare class LoginImplicitGrantOptions {
@@ -78,6 +84,45 @@ declare class Configuration {
 	setEnvironment(environment: string): void;
 	setGateway(gateway: GatewayConfiguration): void;
 	getConfUrl(pathType: string, regionUrl: string): string;
+}
+
+declare class HttpRequestOptions {
+	url: string;
+	method: string;
+	headers?:Record<string, any>;
+	params?:Record<string, any>;
+	data?: any;
+	timeout: number;
+
+	constructor(url: string, method: string, headers: Record<string, any>, params: Record<string, any>, data: any, timeout?: number);
+	setUrl(url: string): void;
+	setMethod(method: string): void;
+	setData(data: any): void;
+	setParams(params: Record<string, any>): void;
+	setHeaders(headers: Record<string, any>): void;
+	setTimeout(timeout: number): void;
+}
+
+declare abstract class AbstractHttpClient {
+    httpsAgent: any;
+	timeout: number;
+
+	constructor();
+	setTimeout(timeout: number): void;
+	setHttpsAgent(httpsAgent: any): void;
+	abstract request(httpRequestOptions: HttpRequestOptions): Promise<any>;
+}
+
+declare class DefaultHttpClient {
+    httpsAgent: any;
+	timeout: number;
+    _axiosInstance: any;
+
+    constructor(timeout?: number, httpsAgent?: any);
+	setTimeout(timeout: number): void;
+	setHttpsAgent(httpsAgent: any): void;
+	request(httpRequestOptions: HttpRequestOptions): Promise<any>;
+    toAxiosConfig(httpRequestOptions: RequestOptions): any;
 }
 
 declare class Logger {

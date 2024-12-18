@@ -199,6 +199,8 @@ class Configuration {
 		}
 	}
 
+
+
 	setEnvironment(env) {
 		// Default value
 		if (env) this.environment = env;

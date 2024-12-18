@@ -1,7 +1,8 @@
-define(['axios', 'qs'], (function (axios, qs) { 'use strict';
+define(['https', 'axios', 'qs'], (function (https, axios, qs) { 'use strict';
 
 	function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+	var https__default = /*#__PURE__*/_interopDefaultLegacy(https);
 	var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
 	var qs__default = /*#__PURE__*/_interopDefaultLegacy(qs);
 
@@ -423,6 +424,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			}
 		}
 
+
+
 		setEnvironment(env) {
 			// Default value
 			if (env) this.environment = env;
@@ -481,9 +484,141 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 	}
 
+	class AbstractHttpClient {
+
+	    constructor() {
+	        this.timeout = 16000;
+	    }
+
+	    setTimeout(timeout) {
+	        if (timeout === null || timeout === undefined || typeof timeout !== 'number') {
+	            throw new Error("The 'timeout' property must be a number");
+	        }
+	        this.timeout = timeout;
+	    }
+
+	    setHttpsAgent(httpsAgent) {
+	        if (httpsAgent && typeof httpsAgent !== 'object') {
+	            throw new Error("The 'httpsAgent' property must be an object");
+	        }
+	        this.httpsAgent = httpsAgent;
+	    }
+
+	    request(httpRequestOptions) {
+	        throw new Error("method must be implemented");
+	    }
+	}
+
+	class HttpRequestOptions {
+
+	    constructor(url, method, headers, params, data, timeout) {
+	        this.setUrl(url);
+	        this.setMethod(method);
+	        if (headers) {
+	            this.setHeaders(headers);
+	        }
+	        if (params) {
+	            this.setParams(params);
+	        }
+	        if (data) {
+	            this.setData(data);
+	        }
+	        if (timeout !== null && timeout !== undefined) this.setTimeout(timeout);
+	        else this.timeout = 16000;
+	    }
+
+	    // Mandatory fields with validation
+	    setUrl(url) {
+	        if (!url) throw new Error("The 'url' property is required");
+	        this.url = url;
+	    }
+
+	    setMethod(method) {
+	        const validMethods = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'];
+	        if (!method || !validMethods.includes(method.toUpperCase())) {
+	            throw new Error("The 'method' property is invalid or missing");
+	        }
+	        this.method = method.toUpperCase();
+	    }
+
+	    setData(data) {
+	        if (data === undefined || data === null) {
+	            throw new Error("The 'data' property is required");
+	        }
+	        this.data = data;
+	    }
+
+	    // Optional fields
+	    setParams(params) {
+	        if (params && typeof params !== 'object') {
+	            throw new Error("The 'params' property must be an object");
+	        }
+	        this.params = params;
+	    }
+
+	    // Optional fields
+	    setHeaders(headers) {
+	        if (headers && typeof headers !== 'object') {
+	            throw new Error("The 'headers' property must be an object");
+	        }
+	        this.headers = headers;
+	    }
+
+	    setTimeout(timeout) {
+	        if (timeout === undefined || timeout === null || typeof timeout !== 'number') {
+	            throw new Error("The 'timeout' property must be a number");
+	        }
+	        this.timeout = timeout;
+	    }
+
+	}
+
+	// Default client is Axios
+	class DefaultHttpClient extends AbstractHttpClient{
+
+	    constructor(timeout, httpsAgent) {
+	        super();
+	        if (timeout !== null && timeout !== undefined) this.setTimeout(timeout);
+	        else this.timeout = 16000;
+	        if (httpsAgent !== null && httpsAgent !== undefined) this.setHttpsAgent(httpsAgent);
+	        else this.httpsAgent;
+	        this._axiosInstance = axios__default["default"].create({});
+	    }
+
+	    request(httpRequestOptions) {
+	        if(!(httpRequestOptions instanceof HttpRequestOptions)) {
+	            throw new Error(`httpRequestOptions must be instance of HttpRequestOptions `);
+	        }
+	        const config = this.toAxiosConfig(httpRequestOptions);
+	        return this._axiosInstance.request(config);
+	    }
+
+	    // Method to generate Axios-compatible config
+	    toAxiosConfig(httpRequestOptions) {
+	        if (!httpRequestOptions.url || !httpRequestOptions.method) {
+	            throw new Error(
+	                "Mandatory fields 'url' and 'method' must be set before making a request"
+	            );
+	        }
+
+	        var config = {
+	            url: httpRequestOptions.url,
+	            method: httpRequestOptions.method
+	        };
+
+	        if (httpRequestOptions.params) config.params = httpRequestOptions.params;
+	        if (httpRequestOptions.headers) config.headers = httpRequestOptions.headers;
+	        if(httpRequestOptions.data) config.data = httpRequestOptions.data;
+	        if (this.timeout != null && this.timeout != undefined) config.timeout = this.timeout;
+	        if (this.httpsAgent) config.httpsAgent = this.httpsAgent;
+
+	        return config;
+	    }
+	}
+
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 210.0.0
+	 * @version 211.0.0
 	 */
 	class ApiClient {
 		/**
@@ -588,6 +723,9 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			// Transparently request a new access token when it expires (Code Authorization only)
 			this.refreshInProgress = false;
 
+			this.httpClient;
+			this.proxyAgent;
+
 			this.config = new Configuration();
 
 			if (typeof(window) !== 'undefined') window.ApiClient = this;
@@ -681,6 +819,87 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			this.config.setEnvironment(environment);
 		}
 
+	    /**
+	     * @description Sets the dynamic HttpClient used by the client
+	     * @param {object} httpClient - HttpClient to be injected
+	     */
+	    setHttpClient(httpClient) {
+	        if (!(httpClient instanceof AbstractHttpClient)) {
+	            throw new Error("httpclient must be an instance of AbstractHttpClient. See DefaultltHttpClient for a prototype");
+	        }
+	        this.httpClient = httpClient;
+	    }
+
+		/**
+	     * @description Gets the HttpClient used by the client
+	     */
+		getHttpClient() {
+			if (this.httpClient) {
+				return this.httpClient;
+			} else {
+				this.httpClient =  new DefaultHttpClient(this.timeout, this.proxyAgent);
+				return this.httpClient;
+			}
+	    }
+
+	    /**
+	      * @description Sets the certificate paths if MTLS authentication is needed
+	      * @param {string} certPath - path for certs
+	      * @param {string} keyPath - path for key
+	      * @param {string} caPath - path for public certs
+	      */
+		setMTLSCertificates(certPath, keyPath, caPath) {
+		    if (typeof window === 'undefined') {
+		    	const agentOptions = {};
+				if (certPath) {
+					agentOptions.cert = require('fs').readFileSync(certPath);
+				}
+
+				if (keyPath) {
+					agentOptions.key = require('fs').readFileSync(keyPath);
+				}
+
+				if (caPath) {
+					agentOptions.ca = require('fs').readFileSync(caPath);
+				}
+
+				agentOptions.rejectUnauthorized = true;
+
+				this.proxyAgent = new https__default["default"].Agent(agentOptions);
+				const httpClient = this.getHttpClient();
+				httpClient.setHttpsAgent(this.proxyAgent);
+		    } else {
+		         throw new Error("Custom Agent Paths/ File System Access are not supported on Browser. Use setMTLSContents instead");
+		    }
+	    }
+
+	    /**
+	     * @description Sets the certificate content if MTLS authentication is needed
+	     * @param {string} certContent - content for certs
+	     * @param {string} keyContent - content for key
+	     * @param {string} caContent - content for public certs
+	     */
+	    setMTLSContents(certContent, keyContent, caContent) {
+			const agentOptions = {};
+			if (certContent) {
+				agentOptions.cert = certContent;
+			}
+
+			if (keyContent) {
+				agentOptions.key = keyContent;
+			}
+
+			if (caContent) {
+				agentOptions.ca = caContent;
+			}
+
+			agentOptions.rejectUnauthorized = true;
+
+			this.proxyAgent = new https__default["default"].Agent(agentOptions);
+			const httpClient = this.getHttpClient();
+			httpClient.setHttpsAgent(this.proxyAgent);
+	    }
+
 		/**
 		 * @description Sets the gateway used by the session
 		 * @param {object} gateway - Gateway Configuration interface
@@ -771,14 +990,11 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				const headers = {
 					'Authorization': `Basic ${authHeader}`
 				};
-				axios__default["default"]({
-					method: `POST`,
-					url: `${loginBasePath}/oauth/token`,
-					headers: headers,
-					data: 'grant_type=client_credentials',
-					httpsAgent: this.proxyAgent
-				})
-					.then((response) => {
+
+	            var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, 'grant_type=client_credentials', this.timeout);
+	            const httpClient = this.getHttpClient();
+				httpClient.request(requestOptions)
+				       .then((response) => {
 						// Logging
 						this.config.logger.log(
 							'trace',
@@ -922,20 +1138,18 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 			this.clientId = clientId;
 			var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
 			return new Promise((resolve, reject) => {
-				var request = axios__default["default"]({
-					method: `POST`,
-					url: `${loginBasePath}/oauth/token`,
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded'
-					},
-					data: qs__default["default"].stringify({ grant_type: 'authorization_code',
-										            code: authCode,
-													code_verifier: codeVerifier,
-													client_id: clientId,
-													redirect_uri: redirectUri })
-				});
+	            var headers = {
+	                'Content-Type': 'application/x-www-form-urlencoded'
+	            };
+	            var data = qs__default["default"].stringify({ grant_type: 'authorization_code',
+	                code: authCode,
+	                code_verifier: codeVerifier,
+	                client_id: clientId,
+	                redirect_uri: redirectUri });
 
-				request.proxy = this.proxy;
+				var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, data, this.timeout);
+	            const httpClient = this.getHttpClient();
+
 				var bodyParam = {
 					grant_type: 'authorization_code',
 	                code: authCode,
@@ -944,7 +1158,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	                redirect_uri: redirectUri,
 				};
 				// Handle response
-				request
+				httpClient.request(requestOptions)
 				.then((response) => {
 					// Logging
 					this.config.logger.log(
@@ -952,7 +1166,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 						response.status,
 						'POST',
 						`${loginBasePath}/oauth/token`,
-						request.headers,
+						requestOptions.headers,
 						response.headers,
 						bodyParam,
 						undefined
@@ -962,7 +1176,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 						response.status,
 						'POST',
 						`${loginBasePath}/oauth/token`,
-						request.headers,
+						requestOptions.headers,
 						undefined,
 						bodyParam,
 						undefined
@@ -986,7 +1200,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 							error.response.status,
 							'POST',
 							`${loginBasePath}/oauth/token`,
-							request.headers,
+							requestOptions.headers,
 							error.response.headers,
 							bodyParam,
 							error.response.data
@@ -1126,7 +1340,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	                      this._testTokenAccess()
 	                      .then(() => {
 	                        if (!this.authData.state && query.state)
-	                          this.authData.state = query.state;	
+	                          this.authData.state = query.state;
 							// remove codeVerifier from session storage
 							if (this.hasLocalStorage) {
 								sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
@@ -1373,17 +1587,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 */
 		_formAuthRequest(encodedData, data) {
 			var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
-			var request = axios__default["default"]({
-				method: `POST`,
-				url: `${loginBasePath}/oauth/token`,
-				headers: {
-					'Authorization': 'Basic ' + encodedData,
-					'Content-Type': 'application/x-www-form-urlencoded'
-				},
-				data: qs__default["default"].stringify(data)
-			});
-
-			return request;
+			var headers = {
+				'Authorization': 'Basic ' + encodedData,
+				'Content-Type': 'application/x-www-form-urlencoded'
+			};
+			var requestOptions = new HttpRequestOptions(loginBasePath, `POST`, headers, null, qs__default["default"].stringify(data), this.timeout);
+			const httpClient = this.getHttpClient();
+			return httpClient.request(requestOptions);
 		}
 
 		/**
@@ -1778,15 +1988,15 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 								data[auth.name] = auth.apiKey;
 							}
 							if (auth['in'] === 'header') {
-								request.headers = this.addHeaders(request.headers, data);
+								request.headers =  this.addHeaders(request.headers, data);
 							} else {
-								request.params = this.serialize(data);
+								request.setParams(this.serialize(data));
 							}
 						}
 						break;
 					case 'oauth2':
 						if (auth.accessToken) {
-							request.headers = this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
+							request.headers =  this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
 						}
 						break;
 					default:
@@ -1796,12 +2006,17 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		}
 
 		/**
-		 * @description Sets the proxy agent axios will use for requests 
+		 * @description Sets the proxy agent axios will use for requests
 		 * @param {any} agent - The proxy agent
 		 */
 		setProxyAgent(agent) {
 			this.proxyAgent = agent;
+			const httpClient = this.getHttpClient();
+			httpClient.setHttpsAgent(this.proxyAgent);
 		}
+
+
+
 
 		/**
 		 * Invokes the REST service using the supplied settings and parameters.
@@ -1823,13 +2038,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				sendRequest(this);
 				function sendRequest(that) {
 					var url = that.buildUrl(path, pathParams);
-					var request = {
-						method: httpMethod,
-						url: url,	
-						httpsAgent: that.proxyAgent,
-						timeout: that.timeout,
-						params: that.serialize(queryParams)
-					};
+				    var request = new HttpRequestOptions(url, httpMethod, null, that.serialize(queryParams), null, that.timeout);
 
 					// apply authentications
 					that.applyAuthToRequest(request, authNames);
@@ -1847,7 +2056,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 					}
 
 					if (contentType === 'application/x-www-form-urlencoded') {
-						request.data = that.normalizeParams(formParams);
+						request.setData(that.normalizeParams(formParams));
 					} else if (contentType == 'multipart/form-data') {
 						var _formParams = that.normalizeParams(formParams);
 						for (var key in _formParams) {
@@ -1855,18 +2064,20 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 								// Looks like axios handles files and forms the same way
 								var formData = new FormData();
 								formData.set(key, _formParams[key]);
-								request.data = formData;
+								request.setData(formData);
 							}
 						}
 					} else if (bodyParam) {
-						request.data = bodyParam;
+						request.setData(bodyParam);
 					}
 
 					var accept = that.jsonPreferredMime(accepts);
 					if (accept) {
 						request.headers['Accept'] = accept;
 					}
-					axios__default["default"].request(request)
+
+					const httpClient = that.getHttpClient();
+					httpClient.request(request)
 						.then((response) => {
 							// Build response object
 							var data = (that.returnExtended === true) ? {
@@ -1887,8 +2098,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 						})
 						.catch((error) => {
 							var data = error;
-							if (error.response && error.response.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
-								that._handleExpiredAccessToken()
+							if (error.response && error.response.status == 401 && that.config.refresh_access_token && that.authData.refreshToken && that.authData.refreshToken !== "") {
+							    that._handleExpiredAccessToken()
 									.then(() => {
 										sendRequest(that);
 									})
@@ -1927,7 +2138,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentAssistants service.
 		 * @module purecloud-platform-client-v2/api/AgentAssistantsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -2303,7 +2514,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentCopilot service.
 		 * @module purecloud-platform-client-v2/api/AgentCopilotApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -2379,7 +2590,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * AgentUI service.
 		 * @module purecloud-platform-client-v2/api/AgentUIApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -2510,7 +2721,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -3171,7 +3382,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -5784,7 +5995,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -9906,7 +10117,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -10107,7 +10318,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -11390,7 +11601,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -11470,7 +11681,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * CarrierServices service.
 		 * @module purecloud-platform-client-v2/api/CarrierServicesApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -11540,7 +11751,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -12476,7 +12687,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -13053,7 +13264,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -14134,7 +14345,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -21275,7 +21486,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -21361,7 +21572,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataPrivacy service.
 		 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -21531,7 +21742,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Downloads service.
 		 * @module purecloud-platform-client-v2/api/DownloadsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -21583,7 +21794,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Emails service.
 		 * @module purecloud-platform-client-v2/api/EmailsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -21648,7 +21859,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * EmployeeEngagement service.
 		 * @module purecloud-platform-client-v2/api/EmployeeEngagementApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -21799,7 +22010,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Events service.
 		 * @module purecloud-platform-client-v2/api/EventsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -21895,7 +22106,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -24459,7 +24670,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -24674,7 +24885,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -24857,7 +25068,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -26943,7 +27154,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -27073,7 +27284,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -27204,7 +27415,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -27659,7 +27870,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -28178,7 +28389,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -29039,7 +29250,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * InfrastructureAsCode service.
 		 * @module purecloud-platform-client-v2/api/InfrastructureAsCodeApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -29206,7 +29417,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -31648,7 +31859,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -33613,7 +33824,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -37489,7 +37700,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -38523,7 +38734,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -38745,7 +38956,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -39774,7 +39985,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -40012,7 +40223,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -40248,7 +40459,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LogCapture service.
 		 * @module purecloud-platform-client-v2/api/LogCaptureApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -40448,7 +40659,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -40807,7 +41018,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -40958,7 +41169,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -41191,7 +41402,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -41557,7 +41768,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -41827,7 +42038,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OperationalEvents service.
 		 * @module purecloud-platform-client-v2/api/OperationalEventsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -41944,7 +42155,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -42486,7 +42697,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -43880,7 +44091,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -48427,7 +48638,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -49171,7 +49382,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ProcessAutomation service.
 		 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -49410,7 +49621,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -51198,7 +51409,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -52857,7 +53068,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -53367,7 +53578,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -57519,7 +57730,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -58396,7 +58607,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ScreenRecording service.
 		 * @module purecloud-platform-client-v2/api/ScreenRecordingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -58441,7 +58652,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -58885,7 +59096,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -59628,7 +59839,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Settings service.
 		 * @module purecloud-platform-client-v2/api/SettingsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -59848,7 +60059,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SocialMedia service.
 		 * @module purecloud-platform-client-v2/api/SocialMediaApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -60753,7 +60964,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -62088,7 +62299,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -62190,7 +62401,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -62329,7 +62540,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TaskManagement service.
 		 * @module purecloud-platform-client-v2/api/TaskManagementApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -63993,7 +64204,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -64298,7 +64509,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -64480,7 +64691,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -67931,7 +68142,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -68059,7 +68270,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -68213,7 +68424,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -68482,7 +68693,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -68697,7 +68908,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -68912,7 +69123,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -71741,7 +71952,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -71852,7 +72063,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -72574,7 +72785,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -73125,7 +73336,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -73652,7 +73863,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -73698,7 +73909,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -73844,7 +74055,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 210.0.0
+		 * @version 211.0.0
 		 */
 
 		/**
@@ -81050,7 +81261,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 210.0.0
+	 * @version 211.0.0
 	 */
 	class platformClient {
 		constructor() {
