@@ -6537,4 +6537,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@211.0.0_
+_purecloud-platform-client-v2@211.1.0_
