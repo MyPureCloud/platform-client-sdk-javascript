@@ -7,7 +7,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 211.0.0
+ * @version 211.1.0
  */
 class ApiClient {
 	/**
@@ -980,7 +980,7 @@ class ApiClient {
 			'Authorization': 'Basic ' + encodedData,
 			'Content-Type': 'application/x-www-form-urlencoded'
 		};
-		var requestOptions = new HttpRequestOptions(loginBasePath, `POST`, headers, null, qs.stringify(data), this.timeout);
+		var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, qs.stringify(data), this.timeout);
 		const httpClient = this.getHttpClient();
 		return httpClient.request(requestOptions);
 	}
