@@ -103,7 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
 [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | **PATCH** /api/v2/routing/predictors/{predictorId} | Update single predictor.
 [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
-[**patchRoutingQueueMembers**](RoutingApi#patchRoutingQueueMembers) | **PATCH** /api/v2/routing/queues/{queueId}/members | Join or unjoin a set of users for a queue
+[**patchRoutingQueueMembers**](RoutingApi#patchRoutingQueueMembers) | **PATCH** /api/v2/routing/queues/{queueId}/members | Join or unjoin a set of up to 100 users for a queue
 [**patchRoutingQueueUser**](RoutingApi#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 [**patchRoutingQueueUsers**](RoutingApi#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 [**patchRoutingSettingsContactcenter**](RoutingApi#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
@@ -4861,8 +4861,6 @@ Get queues for user
 Requires ANY permissions:
 
 * routing:queue:view
-* routing:queue:join
-* routing:queueMember:manage
 
 ### Example Usage
 
@@ -5356,7 +5354,7 @@ void (no response body)
 
 PATCH /api/v2/routing/queues/{queueId}/members
 
-Join or unjoin a set of users for a queue
+Join or unjoin a set of up to 100 users for a queue
 
 Requires ANY permissions:
 
@@ -8118,4 +8116,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@211.1.0_
+_purecloud-platform-client-v2@212.0.0_

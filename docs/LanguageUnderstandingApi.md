@@ -1200,8 +1200,6 @@ GET /api/v2/languageunderstanding/settings
 
 Get Organization Configuration
 
-getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * languageUnderstanding:settings:view
@@ -1880,4 +1878,4 @@ apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, bod
 **NluDomainVersion**
 
 
-_purecloud-platform-client-v2@211.1.0_
+_purecloud-platform-client-v2@212.0.0_
