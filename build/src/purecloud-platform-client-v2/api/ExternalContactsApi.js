@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 211.1.0
+	 * @version 212.0.0
 	 */
 
 	/**
@@ -1881,10 +1881,11 @@ class ExternalContactsApi {
 
 	/**
 	 * Fetch a contact using an identifier type and value.
-	 * Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
+	 * NOTE: Deprecated. Please use /api/v2/externalcontacts/identifierlookup/contacts as an alternative endpoint instead. Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
 	 * @param {Object} identifier 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand which field, if any, to expand
+	 * @deprecated
 	 */
 	postExternalcontactsIdentifierlookup(identifier, opts) { 
 		opts = opts || {};

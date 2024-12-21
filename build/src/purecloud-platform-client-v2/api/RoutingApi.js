@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 211.1.0
+	 * @version 212.0.0
 	 */
 
 	/**
@@ -2650,7 +2650,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Join or unjoin a set of users for a queue
+	 * Join or unjoin a set of up to 100 users for a queue
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members

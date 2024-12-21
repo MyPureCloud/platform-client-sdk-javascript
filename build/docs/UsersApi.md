@@ -1951,8 +1951,6 @@ Get queues for user
 Requires ANY permissions:
 
 * routing:queue:view
-* routing:queue:join
-* routing:queueMember:manage
 
 ### Example Usage
 
@@ -5326,4 +5324,4 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 **Verifier**
 
 
-_purecloud-platform-client-v2@211.1.0_
+_purecloud-platform-client-v2@212.0.0_

@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 211.1.0
+	 * @version 212.0.0
 	 */
 
 	/**
@@ -648,7 +648,6 @@ class LanguageUnderstandingApi {
 	/**
 	 * Get Organization Configuration
 	 * 
-	 * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getLanguageunderstandingSettings() { 
 

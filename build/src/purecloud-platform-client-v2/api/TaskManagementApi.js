@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 211.1.0
+	 * @version 212.0.0
 	 */
 
 	/**
@@ -110,6 +110,36 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/worktypes/{worktypeId}', 
 			'DELETE', 
 			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a date based rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}', 
+			'DELETE', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
 			{  },
 			{  },
 			{  },
@@ -703,6 +733,66 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Get a date based rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}', 
+			'GET', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all date based rules for a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 */
+	getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsDatebasedRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get an attribute change rule
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -1159,6 +1249,41 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Update the attributes of a date based rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 * @param {Object} body Rule
+	 */
+	patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null) {
+			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}', 
+			'PATCH', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the attributes of a rule
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -1483,6 +1608,36 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/workitems/schemas', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a date based rule to a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} body Rule
+	 */
+	postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null) {
+			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsDatebasedRules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeFlowsDatebasedRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules', 
+			'POST', 
+			{ 'worktypeId': worktypeId },
 			{  },
 			{  },
 			{  },

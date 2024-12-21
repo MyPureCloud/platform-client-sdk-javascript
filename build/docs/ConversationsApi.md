@@ -11102,7 +11102,7 @@ apiInstance.postConversationsMessages(body)
 
 ## postConversationsMessagesAgentless
 
-> SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(body)
+> SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(body, opts)
 
 
 POST /api/v2/conversations/messages/agentless
@@ -11129,8 +11129,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Create agentless outbound messaging request
+let opts = { 
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, messagingTemplate)
+};
 
-apiInstance.postConversationsMessagesAgentless(body)
+apiInstance.postConversationsMessagesAgentless(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagesAgentless success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11146,6 +11149,7 @@ apiInstance.postConversationsMessagesAgentless(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create agentless outbound messaging request |  |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, messagingTemplate) | [optional] [default to false] |
 
 ### Return type
 
@@ -12786,4 +12790,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@211.1.0_
+_purecloud-platform-client-v2@212.0.0_

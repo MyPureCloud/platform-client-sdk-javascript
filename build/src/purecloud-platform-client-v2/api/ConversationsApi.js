@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 211.1.0
+	 * @version 212.0.0
 	 */
 
 	/**
@@ -6212,8 +6212,12 @@ class ConversationsApi {
 	 * Send an agentless outbound message
 	 * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and toAddress specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
 	 * @param {Object} body Create agentless outbound messaging request
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, messagingTemplate) (default to false)
 	 */
-	postConversationsMessagesAgentless(body) { 
+	postConversationsMessagesAgentless(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagesAgentless';
@@ -6223,7 +6227,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/agentless', 
 			'POST', 
 			{  },
-			{  },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
 			{  },
 			{  },
 			body, 

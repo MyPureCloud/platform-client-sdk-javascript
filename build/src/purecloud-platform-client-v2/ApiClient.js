@@ -7,7 +7,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 211.1.0
+ * @version 212.0.0
  */
 class ApiClient {
 	/**

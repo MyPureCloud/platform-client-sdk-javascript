@@ -394,6 +394,7 @@ docs/deleteTaskmanagementWorkbin-example.txt
 docs/deleteTaskmanagementWorkitem-example.txt
 docs/deleteTaskmanagementWorkitemsSchema-example.txt
 docs/deleteTaskmanagementWorktype-example.txt
+docs/deleteTaskmanagementWorktypeFlowsDatebasedRule-example.txt
 docs/deleteTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
 docs/deleteTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/deleteTaskmanagementWorktypeStatus-example.txt
@@ -463,6 +464,7 @@ docs/getAlertingInteractionstatsRules-example.txt
 docs/getAlertingRule-example.txt
 docs/getAnalyticsActionsAggregatesJob-example.txt
 docs/getAnalyticsActionsAggregatesJobResults-example.txt
+docs/getAnalyticsAgentStatus-example.txt
 docs/getAnalyticsAgentcopilotsAggregatesJob-example.txt
 docs/getAnalyticsAgentcopilotsAggregatesJobResults-example.txt
 docs/getAnalyticsBotflowDivisionsReportingturns-example.txt
@@ -510,6 +512,8 @@ docs/getAnalyticsReportingSettingsDashboardsQuery-example.txt
 docs/getAnalyticsReportingSettingsUserDashboards-example.txt
 docs/getAnalyticsResolutionsAggregatesJob-example.txt
 docs/getAnalyticsResolutionsAggregatesJobResults-example.txt
+docs/getAnalyticsSummariesAggregatesJob-example.txt
+docs/getAnalyticsSummariesAggregatesJobResults-example.txt
 docs/getAnalyticsSurveysAggregatesJob-example.txt
 docs/getAnalyticsSurveysAggregatesJob-example.txt
 docs/getAnalyticsSurveysAggregatesJobResults-example.txt
@@ -1443,6 +1447,8 @@ docs/getTaskmanagementWorkitemsSchemaVersion-example.txt
 docs/getTaskmanagementWorkitemsSchemaVersions-example.txt
 docs/getTaskmanagementWorkitemsSchemas-example.txt
 docs/getTaskmanagementWorktype-example.txt
+docs/getTaskmanagementWorktypeFlowsDatebasedRule-example.txt
+docs/getTaskmanagementWorktypeFlowsDatebasedRules-example.txt
 docs/getTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
 docs/getTaskmanagementWorktypeFlowsOnattributechangeRules-example.txt
 docs/getTaskmanagementWorktypeFlowsOncreateRule-example.txt
@@ -1870,6 +1876,7 @@ docs/patchTaskmanagementWorkitemAssignment-example.txt
 docs/patchTaskmanagementWorkitemUserWrapups-example.txt
 docs/patchTaskmanagementWorkitemUsersMeWrapups-example.txt
 docs/patchTaskmanagementWorktype-example.txt
+docs/patchTaskmanagementWorktypeFlowsDatebasedRule-example.txt
 docs/patchTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
 docs/patchTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/patchTaskmanagementWorktypeStatus-example.txt
@@ -1937,6 +1944,8 @@ docs/postAnalyticsActionsAggregatesJobs-example.txt
 docs/postAnalyticsActionsAggregatesQuery-example.txt
 docs/postAnalyticsAgentcopilotsAggregatesJobs-example.txt
 docs/postAnalyticsAgentcopilotsAggregatesQuery-example.txt
+docs/postAnalyticsAgentsStatusCounts-example.txt
+docs/postAnalyticsAgentsStatusQuery-example.txt
 docs/postAnalyticsBotsAggregatesJobs-example.txt
 docs/postAnalyticsBotsAggregatesQuery-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
@@ -1983,6 +1992,8 @@ docs/postAnalyticsReportingSettingsDashboardsQuery-example.txt
 docs/postAnalyticsResolutionsAggregatesJobs-example.txt
 docs/postAnalyticsRoutingActivityQuery-example.txt
 docs/postAnalyticsRoutingActivityQuery-example.txt
+docs/postAnalyticsSummariesAggregatesJobs-example.txt
+docs/postAnalyticsSummariesAggregatesQuery-example.txt
 docs/postAnalyticsSurveysAggregatesJobs-example.txt
 docs/postAnalyticsSurveysAggregatesJobs-example.txt
 docs/postAnalyticsSurveysAggregatesQuery-example.txt
@@ -2478,6 +2489,7 @@ docs/postTaskmanagementWorkitems-example.txt
 docs/postTaskmanagementWorkitemsQuery-example.txt
 docs/postTaskmanagementWorkitemsQueryJobs-example.txt
 docs/postTaskmanagementWorkitemsSchemas-example.txt
+docs/postTaskmanagementWorktypeFlowsDatebasedRules-example.txt
 docs/postTaskmanagementWorktypeFlowsOnattributechangeRules-example.txt
 docs/postTaskmanagementWorktypeFlowsOncreateRules-example.txt
 docs/postTaskmanagementWorktypeStatuses-example.txt

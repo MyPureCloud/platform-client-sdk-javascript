@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**getAnalyticsActionsAggregatesJob**](AnalyticsApi#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
 [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsAgentStatus**](AnalyticsApi#getAnalyticsAgentStatus) | **GET** /api/v2/analytics/agents/{userId}/status | Get an agent and their active sessions by user ID
 [**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJob) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Get status for async query for agent copilot aggregates
 [**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJobResults) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi#getAnalyticsBotflowDivisionsReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns | Get Reporting Turns (division aware).
@@ -44,6 +45,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi#getAnalyticsReportingSettingsUserDashboards) | **GET** /api/v2/analytics/reporting/settings/users/{userId}/dashboards | Get list of dashboards for an user
 [**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi#getAnalyticsResolutionsAggregatesJob) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Get status for async query for resolution aggregates
 [**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi#getAnalyticsResolutionsAggregatesJobResults) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsSummariesAggregatesJob**](AnalyticsApi#getAnalyticsSummariesAggregatesJob) | **GET** /api/v2/analytics/summaries/aggregates/jobs/{jobId} | Get status for async query for summary aggregates
+[**getAnalyticsSummariesAggregatesJobResults**](AnalyticsApi#getAnalyticsSummariesAggregatesJobResults) | **GET** /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsSurveysAggregatesJob**](AnalyticsApi#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
 [**getAnalyticsSurveysAggregatesJobResults**](AnalyticsApi#getAnalyticsSurveysAggregatesJobResults) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi#getAnalyticsTaskmanagementAggregatesJob) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} | Get status for async query for task management aggregates
@@ -60,6 +63,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsActionsAggregatesQuery**](AnalyticsApi#postAnalyticsActionsAggregatesQuery) | **POST** /api/v2/analytics/actions/aggregates/query | Query for action aggregates
 [**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesJobs) | **POST** /api/v2/analytics/agentcopilots/aggregates/jobs | Query for agent copilot aggregates asynchronously
 [**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesQuery) | **POST** /api/v2/analytics/agentcopilots/aggregates/query | Query for agent copilot aggregates
+[**postAnalyticsAgentsStatusCounts**](AnalyticsApi#postAnalyticsAgentsStatusCounts) | **POST** /api/v2/analytics/agents/status/counts | Count agents by segment type
+[**postAnalyticsAgentsStatusQuery**](AnalyticsApi#postAnalyticsAgentsStatusQuery) | **POST** /api/v2/analytics/agents/status/query | Retrieve the top 50 agents matching the query filters
 [**postAnalyticsBotsAggregatesJobs**](AnalyticsApi#postAnalyticsBotsAggregatesJobs) | **POST** /api/v2/analytics/bots/aggregates/jobs | Query for bot aggregates asynchronously
 [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
 [**postAnalyticsConversationDetailsProperties**](AnalyticsApi#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
@@ -89,6 +94,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery) | **POST** /api/v2/analytics/reporting/settings/dashboards/query | Query dashboard configurations
 [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
 [**postAnalyticsRoutingActivityQuery**](AnalyticsApi#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
+[**postAnalyticsSummariesAggregatesJobs**](AnalyticsApi#postAnalyticsSummariesAggregatesJobs) | **POST** /api/v2/analytics/summaries/aggregates/jobs | Query for summary aggregates asynchronously
+[**postAnalyticsSummariesAggregatesQuery**](AnalyticsApi#postAnalyticsSummariesAggregatesQuery) | **POST** /api/v2/analytics/summaries/aggregates/query | Query for summary aggregates
 [**postAnalyticsSurveysAggregatesJobs**](AnalyticsApi#postAnalyticsSurveysAggregatesJobs) | **POST** /api/v2/analytics/surveys/aggregates/jobs | Query for survey aggregates asynchronously
 [**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
 [**postAnalyticsTaskmanagementAggregatesJobs**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesJobs) | **POST** /api/v2/analytics/taskmanagement/aggregates/jobs | Query for task management aggregates asynchronously
@@ -315,6 +322,58 @@ apiInstance.getAnalyticsActionsAggregatesJobResults(jobId, opts)
 ### Return type
 
 **ActionAsyncAggregateQueryResponse**
+
+
+## getAnalyticsAgentStatus
+
+> AnalyticsAgentStateAgentResponse getAnalyticsAgentStatus(userId)
+
+
+GET /api/v2/analytics/agents/{userId}/status
+
+Get an agent and their active sessions by user ID
+
+getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentState:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let userId = "userId_example"; // String | userId
+
+apiInstance.getAnalyticsAgentStatus(userId)
+  .then((data) => {
+    console.log(`getAnalyticsAgentStatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgentStatus');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | userId |  |
+
+### Return type
+
+**AnalyticsAgentStateAgentResponse**
 
 
 ## getAnalyticsAgentcopilotsAggregatesJob
@@ -2176,6 +2235,114 @@ apiInstance.getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
 **ResolutionAsyncAggregateQueryResponse**
 
 
+## getAnalyticsSummariesAggregatesJob
+
+> AsyncQueryStatus getAnalyticsSummariesAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}
+
+Get status for async query for summary aggregates
+
+getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsSummariesAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsSummariesAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsSummariesAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsSummariesAggregatesJobResults
+
+> SummaryAsyncAggregateQueryResponse getAnalyticsSummariesAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsSummariesAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsSummariesAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsSummariesAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+**SummaryAsyncAggregateQueryResponse**
+
+
 ## getAnalyticsSurveysAggregatesJob
 
 > AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId)
@@ -3013,6 +3180,110 @@ apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body)
 ### Return type
 
 **AgentCopilotAggregateQueryResponse**
+
+
+## postAnalyticsAgentsStatusCounts
+
+> AnalyticsAgentStateCountsResponse postAnalyticsAgentsStatusCounts(body)
+
+
+POST /api/v2/analytics/agents/status/counts
+
+Count agents by segment type
+
+postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentState:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsAgentsStatusCounts(body)
+  .then((data) => {
+    console.log(`postAnalyticsAgentsStatusCounts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentsStatusCounts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AnalyticsAgentStateCountsResponse**
+
+
+## postAnalyticsAgentsStatusQuery
+
+> AnalyticsAgentStateQueryResponse postAnalyticsAgentsStatusQuery(body)
+
+
+POST /api/v2/analytics/agents/status/query
+
+Retrieve the top 50 agents matching the query filters
+
+postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentState:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsAgentsStatusQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsAgentsStatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentsStatusQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AnalyticsAgentStateQueryResponse**
 
 
 ## postAnalyticsBotsAggregatesJobs
@@ -4508,6 +4779,110 @@ apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
 **RoutingActivityResponse**
 
 
+## postAnalyticsSummariesAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsSummariesAggregatesJobs(body)
+
+
+POST /api/v2/analytics/summaries/aggregates/jobs
+
+Query for summary aggregates asynchronously
+
+postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsSummariesAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsSummariesAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsSummariesAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postAnalyticsSummariesAggregatesQuery
+
+> SummaryAggregateQueryResponse postAnalyticsSummariesAggregatesQuery(body)
+
+
+POST /api/v2/analytics/summaries/aggregates/query
+
+Query for summary aggregates
+
+postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsSummariesAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsSummariesAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsSummariesAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**SummaryAggregateQueryResponse**
+
+
 ## postAnalyticsSurveysAggregatesJobs
 
 > AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body)
@@ -5228,4 +5603,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@211.1.0_
+_purecloud-platform-client-v2@212.0.0_

@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 211.1.0
+	 * @version 212.0.0
 	 */
 
 	/**
@@ -117,6 +117,32 @@ class AnalyticsApi {
 			'GET', 
 			{ 'jobId': jobId },
 			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an agent and their active sessions by user ID
+	 * 
+	 * @param {String} userId userId
+	 * getAnalyticsAgentStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsAgentStatus(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getAnalyticsAgentStatus';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agents/{userId}/status', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1070,6 +1096,62 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Get status for async query for summary aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsSummariesAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsSummariesAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/summaries/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsSummariesAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsSummariesAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/summaries/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get status for async query for survey aggregates
 	 * 
 	 * @param {String} jobId jobId
@@ -1483,6 +1565,58 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/agentcopilots/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Count agents by segment type
+	 * 
+	 * @param {Object} body query
+	 * postAnalyticsAgentsStatusCounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsAgentsStatusCounts(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsAgentsStatusCounts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agents/status/counts', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve the top 50 agents matching the query filters
+	 * 
+	 * @param {Object} body query
+	 * postAnalyticsAgentsStatusQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsAgentsStatusQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsAgentsStatusQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/agents/status/query', 
 			'POST', 
 			{  },
 			{  },
@@ -2239,6 +2373,58 @@ class AnalyticsApi {
 			'POST', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for summary aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsSummariesAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsSummariesAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/summaries/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for summary aggregates
+	 * 
+	 * @param {Object} body query
+	 * postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsSummariesAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsSummariesAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/summaries/aggregates/query', 
+			'POST', 
+			{  },
+			{  },
 			{  },
 			{  },
 			body, 

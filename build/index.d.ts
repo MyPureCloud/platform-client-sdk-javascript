@@ -276,6 +276,7 @@ declare class AnalyticsApi {
   	deleteAnalyticsUsersDetailsJob(jobId: string): Promise<void>;
   	getAnalyticsActionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
   	getAnalyticsActionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsActionsAggregatesJobResultsOptions): Promise<Models.ActionAsyncAggregateQueryResponse>;
+  	getAnalyticsAgentStatus(userId: string): Promise<Models.AnalyticsAgentStateAgentResponse>;
   	getAnalyticsAgentcopilotsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
   	getAnalyticsAgentcopilotsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsAgentcopilotsAggregatesJobResultsOptions): Promise<Models.AgentCopilotAsyncAggregateQueryResponse>;
   	getAnalyticsBotflowDivisionsReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowDivisionsReportingturnsOptions): Promise<Models.ReportingTurnsResponse>;
@@ -310,6 +311,8 @@ declare class AnalyticsApi {
   	getAnalyticsReportingSettingsUserDashboards(userId: string, opts?: AnalyticsApi.getAnalyticsReportingSettingsUserDashboardsOptions): Promise<Models.DashboardConfigurationListing>;
   	getAnalyticsResolutionsAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
   	getAnalyticsResolutionsAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsResolutionsAggregatesJobResultsOptions): Promise<Models.ResolutionAsyncAggregateQueryResponse>;
+  	getAnalyticsSummariesAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
+  	getAnalyticsSummariesAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsSummariesAggregatesJobResultsOptions): Promise<Models.SummaryAsyncAggregateQueryResponse>;
   	getAnalyticsSurveysAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
   	getAnalyticsSurveysAggregatesJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsSurveysAggregatesJobResultsOptions): Promise<Models.SurveyAsyncAggregateQueryResponse>;
   	getAnalyticsTaskmanagementAggregatesJob(jobId: string): Promise<Models.AsyncQueryStatus>;
@@ -326,6 +329,8 @@ declare class AnalyticsApi {
   	postAnalyticsActionsAggregatesQuery(body: Models.ActionAggregationQuery): Promise<Models.ActionAggregateQueryResponse>;
   	postAnalyticsAgentcopilotsAggregatesJobs(body: Models.AgentCopilotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
   	postAnalyticsAgentcopilotsAggregatesQuery(body: Models.AgentCopilotAggregationQuery): Promise<Models.AgentCopilotAggregateQueryResponse>;
+  	postAnalyticsAgentsStatusCounts(body: Models.AgentStateCountsRequest): Promise<Models.AnalyticsAgentStateCountsResponse>;
+  	postAnalyticsAgentsStatusQuery(body: Models.AgentStateQueryRequest): Promise<Models.AnalyticsAgentStateQueryResponse>;
   	postAnalyticsBotsAggregatesJobs(body: Models.BotAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
   	postAnalyticsBotsAggregatesQuery(body: Models.BotAggregationQuery): Promise<Models.BotAggregateQueryResponse>;
   	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>;
@@ -355,6 +360,8 @@ declare class AnalyticsApi {
   	postAnalyticsReportingSettingsDashboardsQuery(body: Models.DashboardConfigurationQueryRequest): Promise<Models.DashboardConfigurationListing>;
   	postAnalyticsResolutionsAggregatesJobs(body: Models.ResolutionAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
   	postAnalyticsRoutingActivityQuery(body: Models.RoutingActivityQuery, opts?: AnalyticsApi.postAnalyticsRoutingActivityQueryOptions): Promise<Models.RoutingActivityResponse>;
+  	postAnalyticsSummariesAggregatesJobs(body: Models.SummaryAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
+  	postAnalyticsSummariesAggregatesQuery(body: Models.SummaryAggregationQuery): Promise<Models.SummaryAggregateQueryResponse>;
   	postAnalyticsSurveysAggregatesJobs(body: Models.SurveyAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
   	postAnalyticsSurveysAggregatesQuery(body: Models.SurveyAggregationQuery): Promise<Models.SurveyAggregateQueryResponse>;
   	postAnalyticsTaskmanagementAggregatesJobs(body: Models.TaskManagementAsyncAggregationQuery): Promise<Models.AsyncQueryResponse>;
@@ -459,6 +466,9 @@ declare namespace AnalyticsApi {
 		"name"?: string;
 	}
 	export interface getAnalyticsResolutionsAggregatesJobResultsOptions { 
+		"cursor"?: string;
+	}
+	export interface getAnalyticsSummariesAggregatesJobResultsOptions { 
 		"cursor"?: string;
 	}
 	export interface getAnalyticsSurveysAggregatesJobResultsOptions { 
@@ -1713,7 +1723,7 @@ declare class ConversationsApi {
   	postConversationsMessageParticipantMonitor(conversationId: string, participantId: string): Promise<void>;
   	postConversationsMessageParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>;
   	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.CreateOutboundMessagingConversationResponse>;
-  	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest): Promise<Models.SendAgentlessOutboundMessageResponse>;
+  	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest, opts?: ConversationsApi.postConversationsMessagesAgentlessOptions): Promise<Models.SendAgentlessOutboundMessageResponse>;
   	postConversationsMessagesInboundOpen(body: Models.OpenNormalizedMessage): Promise<Models.OpenNormalizedMessage>;
   	postConversationsMessagingIntegrationsFacebook(body: Models.FacebookIntegrationRequest): Promise<Models.FacebookIntegration>;
   	postConversationsMessagingIntegrationsInstagram(body: Models.InstagramIntegrationRequest): Promise<Models.InstagramIntegration>;
@@ -1957,6 +1967,9 @@ declare namespace ConversationsApi {
 	}
 	export interface postConversationsMessageParticipantCommunicationWrapupOptions { 
 		"body"?: Models.WrapupInput;
+	}
+	export interface postConversationsMessagesAgentlessOptions { 
+		"useNormalizedMessage"?: boolean;
 	}
 	export interface postConversationsScreenshareParticipantCommunicationWrapupOptions { 
 		"body"?: Models.WrapupInput;
@@ -6198,6 +6211,7 @@ declare class TaskManagementApi {
   	deleteTaskmanagementWorkitem(workitemId: string): Promise<void>;
   	deleteTaskmanagementWorkitemsSchema(schemaId: string): Promise<void>;
   	deleteTaskmanagementWorktype(worktypeId: string): Promise<void>;
+  	deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId: string, ruleId: string): Promise<void>;
   	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string): Promise<void>;
   	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string): Promise<void>;
   	deleteTaskmanagementWorktypeStatus(worktypeId: string, statusId: string): Promise<void>;
@@ -6218,6 +6232,8 @@ declare class TaskManagementApi {
   	getTaskmanagementWorkitemsSchemaVersions(schemaId: string): Promise<Models.DataSchema>;
   	getTaskmanagementWorkitemsSchemas(): Promise<Models.DataSchemaListing>;
   	getTaskmanagementWorktype(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeOptions): Promise<Models.Worktype>;
+  	getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId: string, ruleId: string): Promise<Models.WorkitemDateBasedRule>;
+  	getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeFlowsDatebasedRulesOptions): Promise<Models.WorkitemDateBasedRuleListing>;
   	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string): Promise<Models.WorkitemOnAttributeChangeRule>;
   	getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId: string, opts?: TaskManagementApi.getTaskmanagementWorktypeFlowsOnattributechangeRulesOptions): Promise<Models.WorkitemOnAttributeChangeRuleListing>;
   	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string): Promise<Models.WorkitemOnCreateRule>;
@@ -6233,6 +6249,7 @@ declare class TaskManagementApi {
   	patchTaskmanagementWorkitemUserWrapups(workitemId: string, userId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>;
   	patchTaskmanagementWorkitemUsersMeWrapups(workitemId: string, body: Models.WorkitemWrapupUpdate): Promise<Models.WorkitemWrapup>;
   	patchTaskmanagementWorktype(worktypeId: string, body: Models.WorktypeUpdate): Promise<Models.Worktype>;
+  	patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId: string, ruleId: string, body: Models.WorkitemDateBasedRuleUpdate): Promise<Models.WorkitemDateBasedRule>;
   	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId: string, ruleId: string, body: Models.WorkitemOnAttributeChangeRuleUpdate): Promise<Models.WorkitemOnAttributeChangeRule>;
   	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId: string, ruleId: string, body: Models.WorkitemOnCreateRuleUpdate): Promise<Models.WorkitemOnCreateRule>;
   	patchTaskmanagementWorktypeStatus(worktypeId: string, statusId: string, body: Models.WorkitemStatusUpdate): Promise<Models.WorkitemStatus>;
@@ -6245,6 +6262,7 @@ declare class TaskManagementApi {
   	postTaskmanagementWorkitemsQuery(body: Models.WorkitemQueryPostRequest): Promise<Models.WorkitemPostQueryEntityListing>;
   	postTaskmanagementWorkitemsQueryJobs(body: Models.WorkitemQueryJobCreate): Promise<Models.WorkitemQueryJobResponse>;
   	postTaskmanagementWorkitemsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>;
+  	postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId: string, body: Models.WorkitemDateBasedRuleCreate): Promise<Models.WorkitemDateBasedRule>;
   	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId: string, body: Models.WorkitemOnAttributeChangeRuleCreate): Promise<Models.WorkitemOnAttributeChangeRule>;
   	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId: string, body: Models.WorkitemOnCreateRuleCreate): Promise<Models.WorkitemOnCreateRule>;
   	postTaskmanagementWorktypeStatuses(worktypeId: string, body: Models.WorkitemStatusCreate): Promise<Models.WorkitemStatus>;
@@ -6291,6 +6309,10 @@ declare namespace TaskManagementApi {
 	}
 	export interface getTaskmanagementWorktypeOptions { 
 		"expands"?: Array<string>;
+	}
+	export interface getTaskmanagementWorktypeFlowsDatebasedRulesOptions { 
+		"after"?: string;
+		"pageSize"?: number;
 	}
 	export interface getTaskmanagementWorktypeFlowsOnattributechangeRulesOptions { 
 		"after"?: string;
@@ -9019,6 +9041,57 @@ declare namespace Models {
 		"onQueueLengthMinutesPerInterval": Array<number>;
 	}
 	
+	export interface AgentStateAgentQueryClause { 
+		"type": string;
+		"predicates": Array<Models.AgentStateAgentQueryPredicate>;
+	}
+	
+	export interface AgentStateAgentQueryPredicate { 
+		"dimension": string;
+		"value": string;
+	}
+	
+	export interface AgentStateCountsRequest { 
+		"userFilter"?: Models.AgentStateUserFilter;
+		"sessionFilter"?: Models.AgentStateSessionFilter;
+	}
+	
+	export interface AgentStateQueryRequest { 
+		"userFilter"?: Models.AgentStateUserFilter;
+		"sessionFilter"?: Models.AgentStateSessionFilter;
+		"userOrderBy"?: string;
+		"userOrder"?: string;
+		"sessionOrderBy"?: string;
+		"sessionOrder"?: string;
+	}
+	
+	export interface AgentStateSegmentTypeCount { 
+		"segmentType"?: string;
+		"count"?: number;
+	}
+	
+	export interface AgentStateSessionFilter { 
+		"type": string;
+		"clauses"?: Array<Models.AgentStateSessionQueryClause>;
+		"predicates"?: Array<Models.AgentStateSessionQueryPredicate>;
+	}
+	
+	export interface AgentStateSessionQueryClause { 
+		"type": string;
+		"predicates": Array<Models.AgentStateSessionQueryPredicate>;
+	}
+	
+	export interface AgentStateSessionQueryPredicate { 
+		"dimension": string;
+		"value": string;
+	}
+	
+	export interface AgentStateUserFilter { 
+		"type": string;
+		"clauses"?: Array<Models.AgentStateAgentQueryClause>;
+		"predicates"?: Array<Models.AgentStateAgentQueryPredicate>;
+	}
+	
 	export interface AgentTimeOffRequestPatch { 
 		"markedAsRead"?: boolean;
 		"status"?: string;
@@ -9401,6 +9474,36 @@ declare namespace Models {
 	export interface AnalyticsAgentGroup { 
 		"agentGroupId"?: string;
 		"agentGroupType"?: string;
+	}
+	
+	export interface AnalyticsAgentStateAgentResponse { 
+		"userId"?: string;
+		"divisionId"?: string;
+		"userName"?: string;
+		"managerId"?: string;
+		"sessionCount"?: number;
+		"sessions"?: Array<Models.AnalyticsAgentStateAgentSessionResult>;
+	}
+	
+	export interface AnalyticsAgentStateAgentSessionResult { 
+		"conversationId"?: string;
+		"sessionId"?: string;
+		"sessionStart"?: string;
+		"segmentStart"?: string;
+		"segmentType"?: string;
+		"routedQueueId"?: string;
+		"requestedRoutingSkillIds"?: Array<string>;
+		"requestedLanguageId"?: string;
+		"originatingDirection"?: string;
+		"mediaType"?: string;
+	}
+	
+	export interface AnalyticsAgentStateCountsResponse { 
+		"counts"?: Array<Models.AgentStateSegmentTypeCount>;
+	}
+	
+	export interface AnalyticsAgentStateQueryResponse { 
+		"entities"?: Array<Models.AnalyticsAgentStateAgentResponse>;
 	}
 	
 	export interface AnalyticsConversation { 
@@ -13044,7 +13147,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"version"?: number;
 		"intervals": Array<Models.ScheduleInterval>;
-		"timeZone": string;
+		"timeZone"?: string;
 		"campaign": Models.DivisionedDomainEntityRef;
 		"selfUri"?: string;
 	}
@@ -18906,6 +19009,7 @@ declare namespace Models {
 		"nameIdentifierFormat"?: string;
 		"ssoBinding"?: string;
 		"signAuthnRequests"?: boolean;
+		"providerName"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -22096,13 +22200,6 @@ declare namespace Models {
 		"disconnectType": string;
 	}
 	
-	export interface EmailCommunicationRepliedEvent { 
-		"eventId": string;
-		"eventDateTime": string;
-		"conversationId": string;
-		"communicationId": string;
-	}
-	
 	export interface EmailCommunicationSentMessageEvent { 
 		"eventId": string;
 		"eventDateTime": string;
@@ -24084,6 +24181,14 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ExternalOrganizationIdentifier { 
+		"id"?: string;
+		"type": string;
+		"value": string;
+		"dateCreated"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface ExternalOrganizationListing { 
 		"entities"?: Array<Models.ExternalOrganization>;
 		"pageSize"?: number;
@@ -25233,6 +25338,8 @@ declare namespace Models {
 	
 	export interface FlowPaths { 
 		"category": string;
+		"dateStart"?: string;
+		"dateEnd"?: string;
 		"elements": { [key: string]: Models.FlowPathsElement; };
 	}
 	
@@ -41282,7 +41389,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"version"?: number;
 		"intervals": Array<Models.ScheduleInterval>;
-		"timeZone": string;
+		"timeZone"?: string;
 		"sequence": Models.DomainEntityRef;
 		"selfUri"?: string;
 	}
@@ -42590,6 +42697,75 @@ declare namespace Models {
 		"script"?: Models.AddressableEntityRef;
 		"page"?: Models.AddressableEntityRef;
 		"data"?: { [key: string]: string; };
+	}
+	
+	export interface SummaryAggregateDataContainer { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatisticalResponse>;
+	}
+	
+	export interface SummaryAggregateQueryClause { 
+		"type": string;
+		"predicates": Array<Models.SummaryAggregateQueryPredicate>;
+	}
+	
+	export interface SummaryAggregateQueryFilter { 
+		"type": string;
+		"clauses"?: Array<Models.SummaryAggregateQueryClause>;
+		"predicates"?: Array<Models.SummaryAggregateQueryPredicate>;
+	}
+	
+	export interface SummaryAggregateQueryPredicate { 
+		"type"?: string;
+		"dimension"?: string;
+		"operator"?: string;
+		"value"?: string;
+		"range"?: Models.NumericRange;
+	}
+	
+	export interface SummaryAggregateQueryResponse { 
+		"results"?: Array<Models.SummaryAggregateDataContainer>;
+	}
+	
+	export interface SummaryAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.SummaryAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.SummaryAggregationView>;
+		"alternateTimeDimension"?: string;
+		"queryType"?: string;
+		"limit"?: number;
+	}
+	
+	export interface SummaryAggregationView { 
+		"target": string;
+		"name": string;
+		"function": string;
+		"range"?: Models.AggregationRange;
+	}
+	
+	export interface SummaryAsyncAggregateQueryResponse { 
+		"results"?: Array<Models.SummaryAggregateDataContainer>;
+		"cursor"?: string;
+	}
+	
+	export interface SummaryAsyncAggregationQuery { 
+		"interval": string;
+		"granularity"?: string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"filter"?: Models.SummaryAggregateQueryFilter;
+		"metrics": Array<string>;
+		"flattenMultivaluedDimensions"?: boolean;
+		"views"?: Array<Models.SummaryAggregationView>;
+		"alternateTimeDimension"?: string;
+		"queryType"?: string;
+		"limit"?: number;
+		"pageSize"?: number;
 	}
 	
 	export interface SummaryGenerationConfig { 
@@ -49157,6 +49333,12 @@ declare namespace Models {
 		"entities"?: Array<Models.WhatsAppAvailablePhoneNumberDetails>;
 	}
 	
+	export interface WhatsAppConfig { 
+		"whatsAppColumns": Array<string>;
+		"whatsAppIntegration": Models.AddressableEntityRef;
+		"contentTemplate": Models.DomainEntityRef;
+	}
+	
 	export interface WhatsAppDefinition { 
 		"name": string;
 		"namespace"?: string;
@@ -49857,6 +50039,44 @@ declare namespace Models {
 		"utilizationLabelId"?: string;
 		"scoredAgents"?: Array<Models.WorkitemScoredAgentRequest>;
 		"preferredAgentIds"?: Array<string>;
+	}
+	
+	export interface WorkitemDateBasedCondition { 
+		"attribute": string;
+		"relativeMinutesToInvocation": number;
+	}
+	
+	export interface WorkitemDateBasedConditionUpdate { 
+		"attribute"?: string;
+		"relativeMinutesToInvocation"?: number;
+	}
+	
+	export interface WorkitemDateBasedRule { 
+		"id"?: string;
+		"name"?: string;
+		"type"?: string;
+		"action"?: Models.WorkitemRuleAction;
+		"worktype"?: Models.WorktypeReference;
+		"condition"?: Models.WorkitemDateBasedCondition;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkitemDateBasedRuleCreate { 
+		"name": string;
+		"condition": Models.WorkitemDateBasedCondition;
+	}
+	
+	export interface WorkitemDateBasedRuleListing { 
+		"entities"?: Array<Models.WorkitemDateBasedRule>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"after"?: string;
+	}
+	
+	export interface WorkitemDateBasedRuleUpdate { 
+		"name"?: string;
+		"condition"?: Models.WorkitemDateBasedConditionUpdate;
 	}
 	
 	export interface WorkitemDelta { 
