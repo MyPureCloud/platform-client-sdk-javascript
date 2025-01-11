@@ -8,6 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteTaskmanagementWorkbin**](TaskManagementApi#deleteTaskmanagementWorkbin) | **DELETE** /api/v2/taskmanagement/workbins/{workbinId} | Delete a workbin
 [**deleteTaskmanagementWorkitem**](TaskManagementApi#deleteTaskmanagementWorkitem) | **DELETE** /api/v2/taskmanagement/workitems/{workitemId} | Delete a workitem
+[**deleteTaskmanagementWorkitemsBulkAddJob**](TaskManagementApi#deleteTaskmanagementWorkitemsBulkAddJob) | **DELETE** /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId} | Delete a bulk add job
+[**deleteTaskmanagementWorkitemsBulkTerminateJob**](TaskManagementApi#deleteTaskmanagementWorkitemsBulkTerminateJob) | **DELETE** /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId} | Delete a Bulk job
 [**deleteTaskmanagementWorkitemsSchema**](TaskManagementApi#deleteTaskmanagementWorkitemsSchema) | **DELETE** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Delete a schema
 [**deleteTaskmanagementWorktype**](TaskManagementApi#deleteTaskmanagementWorktype) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId} | Delete a worktype
 [**deleteTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsDatebasedRule) | **DELETE** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId} | Delete a date based rule
@@ -24,6 +26,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTaskmanagementWorkitemVersion**](TaskManagementApi#getTaskmanagementWorkitemVersion) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion} | Get a version of a workitem
 [**getTaskmanagementWorkitemVersions**](TaskManagementApi#getTaskmanagementWorkitemVersions) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/versions | Get all versions of a workitem
 [**getTaskmanagementWorkitemWrapups**](TaskManagementApi#getTaskmanagementWorkitemWrapups) | **GET** /api/v2/taskmanagement/workitems/{workitemId}/wrapups | Get all wrapup codes added for all users for a workitem.
+[**getTaskmanagementWorkitemsBulkAddJob**](TaskManagementApi#getTaskmanagementWorkitemsBulkAddJob) | **GET** /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId} | Get the bulk add job associated with the job id.
+[**getTaskmanagementWorkitemsBulkAddJobResults**](TaskManagementApi#getTaskmanagementWorkitemsBulkAddJobResults) | **GET** /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results | Get bulk add job results.
+[**getTaskmanagementWorkitemsBulkJobsUsersMe**](TaskManagementApi#getTaskmanagementWorkitemsBulkJobsUsersMe) | **GET** /api/v2/taskmanagement/workitems/bulk/jobs/users/me | Get bulk jobs created by the currently logged in user.
+[**getTaskmanagementWorkitemsBulkTerminateJob**](TaskManagementApi#getTaskmanagementWorkitemsBulkTerminateJob) | **GET** /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId} | Get the bulk job associated with the job id.
+[**getTaskmanagementWorkitemsBulkTerminateJobResults**](TaskManagementApi#getTaskmanagementWorkitemsBulkTerminateJobResults) | **GET** /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results | Get bulk terminate job results.
 [**getTaskmanagementWorkitemsQueryJob**](TaskManagementApi#getTaskmanagementWorkitemsQueryJob) | **GET** /api/v2/taskmanagement/workitems/query/jobs/{jobId} | Get the workitem query job associated with the job id.
 [**getTaskmanagementWorkitemsQueryJobResults**](TaskManagementApi#getTaskmanagementWorkitemsQueryJobResults) | **GET** /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results | Get results from for workitem query job 
 [**getTaskmanagementWorkitemsSchema**](TaskManagementApi#getTaskmanagementWorkitemsSchema) | **GET** /api/v2/taskmanagement/workitems/schemas/{schemaId} | Get a schema
@@ -47,6 +54,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchTaskmanagementWorkitemAssignment**](TaskManagementApi#patchTaskmanagementWorkitemAssignment) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/assignment | Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 [**patchTaskmanagementWorkitemUserWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUserWrapups) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups | Add/Remove a wrapup code for a given user in a workitem.
 [**patchTaskmanagementWorkitemUsersMeWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUsersMeWrapups) | **PATCH** /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups | Add/Remove a wrapup code for the current user in a workitem.
+[**patchTaskmanagementWorkitemsBulkAddJob**](TaskManagementApi#patchTaskmanagementWorkitemsBulkAddJob) | **PATCH** /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId} | Update workitem bulk add job.
+[**patchTaskmanagementWorkitemsBulkTerminateJob**](TaskManagementApi#patchTaskmanagementWorkitemsBulkTerminateJob) | **PATCH** /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId} | Update workitem bulk terminate job.
 [**patchTaskmanagementWorktype**](TaskManagementApi#patchTaskmanagementWorktype) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId} | Update the attributes of a worktype
 [**patchTaskmanagementWorktypeFlowsDatebasedRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsDatebasedRule) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId} | Update the attributes of a date based rule
 [**patchTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsOnattributechangeRule) | **PATCH** /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId} | Update the attributes of a rule
@@ -58,6 +67,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTaskmanagementWorkitemDisconnect**](TaskManagementApi#postTaskmanagementWorkitemDisconnect) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/disconnect | Disconnect the assignee of the workitem
 [**postTaskmanagementWorkitemTerminate**](TaskManagementApi#postTaskmanagementWorkitemTerminate) | **POST** /api/v2/taskmanagement/workitems/{workitemId}/terminate | Terminate a workitem
 [**postTaskmanagementWorkitems**](TaskManagementApi#postTaskmanagementWorkitems) | **POST** /api/v2/taskmanagement/workitems | Create a workitem
+[**postTaskmanagementWorkitemsBulkAddJobs**](TaskManagementApi#postTaskmanagementWorkitemsBulkAddJobs) | **POST** /api/v2/taskmanagement/workitems/bulk/add/jobs | Create a workitem bulk add job.
+[**postTaskmanagementWorkitemsBulkTerminateJobs**](TaskManagementApi#postTaskmanagementWorkitemsBulkTerminateJobs) | **POST** /api/v2/taskmanagement/workitems/bulk/terminate/jobs | Create a workitem bulk terminate job.
 [**postTaskmanagementWorkitemsQuery**](TaskManagementApi#postTaskmanagementWorkitemsQuery) | **POST** /api/v2/taskmanagement/workitems/query | Query for workitems
 [**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi#postTaskmanagementWorkitemsQueryJobs) | **POST** /api/v2/taskmanagement/workitems/query/jobs | Create a workitem query job
 [**postTaskmanagementWorkitemsSchemas**](TaskManagementApi#postTaskmanagementWorkitemsSchemas) | **POST** /api/v2/taskmanagement/workitems/schemas | Create a schema
@@ -165,6 +176,106 @@ apiInstance.deleteTaskmanagementWorkitem(workitemId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workitemId** | **String** | Workitem ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteTaskmanagementWorkitemsBulkAddJob
+
+> void deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+
+
+DELETE /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}
+
+Delete a bulk add job
+
+Requires ANY permissions:
+
+* workitems:bulkAddJob:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+
+apiInstance.deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+  .then(() => {
+    console.log('deleteTaskmanagementWorkitemsBulkAddJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteTaskmanagementWorkitemsBulkAddJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bulkJobId** | **String** | Bulk job id |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteTaskmanagementWorkitemsBulkTerminateJob
+
+> void deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+
+
+DELETE /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}
+
+Delete a Bulk job
+
+Requires ALL permissions:
+
+* workitems:bulkTerminateJob:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+
+apiInstance.deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+  .then(() => {
+    console.log('deleteTaskmanagementWorkitemsBulkTerminateJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteTaskmanagementWorkitemsBulkTerminateJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bulkJobId** | **String** | Bulk job id |  |
 
 ### Return type
 
@@ -1051,6 +1162,264 @@ apiInstance.getTaskmanagementWorkitemWrapups(workitemId, opts)
 ### Return type
 
 **WorkitemWrapupEntityListing**
+
+
+## getTaskmanagementWorkitemsBulkAddJob
+
+> BulkJob getTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+
+
+GET /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}
+
+Get the bulk add job associated with the job id.
+
+Requires ANY permissions:
+
+* workitems:bulkAddJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+
+apiInstance.getTaskmanagementWorkitemsBulkAddJob(bulkJobId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsBulkAddJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsBulkAddJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bulkJobId** | **String** | Bulk job id |  |
+
+### Return type
+
+**BulkJob**
+
+
+## getTaskmanagementWorkitemsBulkAddJobResults
+
+> BulkJobAddResponse getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId)
+
+
+GET /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results
+
+Get bulk add job results.
+
+Requires ANY permissions:
+
+* workitems:bulkAddJobResults:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+
+apiInstance.getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsBulkAddJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsBulkAddJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bulkJobId** | **String** | Bulk job id |  |
+
+### Return type
+
+**BulkJobAddResponse**
+
+
+## getTaskmanagementWorkitemsBulkJobsUsersMe
+
+> BulkJobsListing getTaskmanagementWorkitemsBulkJobsUsersMe(opts)
+
+
+GET /api/v2/taskmanagement/workitems/bulk/jobs/users/me
+
+Get bulk jobs created by the currently logged in user.
+
+Requires ANY permissions:
+
+* workitems:bulkJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+  'sortOrder': "descending", // String | Ascending or descending sort order
+  'action': "action_example" // String | The bulk job action.
+};
+
+apiInstance.getTaskmanagementWorkitemsBulkJobsUsersMe(opts)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsBulkJobsUsersMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsBulkJobsUsersMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **Number** | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending |
+ **action** | **String** | The bulk job action. | [optional] <br />**Values**: TerminateWorkitems, AddWorkitems |
+
+### Return type
+
+**BulkJobsListing**
+
+
+## getTaskmanagementWorkitemsBulkTerminateJob
+
+> BulkJob getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+
+
+GET /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}
+
+Get the bulk job associated with the job id.
+
+Requires ALL permissions:
+
+* workitems:bulkTerminateJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+
+apiInstance.getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsBulkTerminateJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsBulkTerminateJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bulkJobId** | **String** | Bulk job id |  |
+
+### Return type
+
+**BulkJob**
+
+
+## getTaskmanagementWorkitemsBulkTerminateJobResults
+
+> BulkJobTerminateResultsResponse getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)
+
+
+GET /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results
+
+Get bulk terminate job results.
+
+Requires ALL permissions:
+
+* workitems:bulkTerminateJobResults:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+
+apiInstance.getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)
+  .then((data) => {
+    console.log(`getTaskmanagementWorkitemsBulkTerminateJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTaskmanagementWorkitemsBulkTerminateJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bulkJobId** | **String** | Bulk job id |  |
+
+### Return type
+
+**BulkJobTerminateResultsResponse**
 
 
 ## getTaskmanagementWorkitemsQueryJob
@@ -2270,6 +2639,110 @@ apiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 **WorkitemWrapup**
 
 
+## patchTaskmanagementWorkitemsBulkAddJob
+
+> BulkJob patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)
+
+
+PATCH /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}
+
+Update workitem bulk add job.
+
+Requires ANY permissions:
+
+* workitems:bulkAddJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+let body = {}; // Object | Bulk add job update request
+
+apiInstance.patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)
+  .then((data) => {
+    console.log(`patchTaskmanagementWorkitemsBulkAddJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchTaskmanagementWorkitemsBulkAddJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bulkJobId** | **String** | Bulk job id |  |
+ **body** | **Object** | Bulk add job update request |  |
+
+### Return type
+
+**BulkJob**
+
+
+## patchTaskmanagementWorkitemsBulkTerminateJob
+
+> BulkJob patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)
+
+
+PATCH /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}
+
+Update workitem bulk terminate job.
+
+Requires ALL permissions:
+
+* workitems:bulkTerminateJob:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let bulkJobId = "bulkJobId_example"; // String | Bulk job id
+let body = {}; // Object | Bulk job update request
+
+apiInstance.patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)
+  .then((data) => {
+    console.log(`patchTaskmanagementWorkitemsBulkTerminateJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchTaskmanagementWorkitemsBulkTerminateJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bulkJobId** | **String** | Bulk job id |  |
+ **body** | **Object** | Bulk job update request |  |
+
+### Return type
+
+**BulkJob**
+
+
 ## patchTaskmanagementWorktype
 
 > Worktype patchTaskmanagementWorktype(worktypeId, body)
@@ -2842,6 +3315,106 @@ apiInstance.postTaskmanagementWorkitems(body)
 **Workitem**
 
 
+## postTaskmanagementWorkitemsBulkAddJobs
+
+> BulkJob postTaskmanagementWorkitemsBulkAddJobs(body)
+
+
+POST /api/v2/taskmanagement/workitems/bulk/add/jobs
+
+Create a workitem bulk add job.
+
+Requires ANY permissions:
+
+* workitems:bulkAddJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let body = {}; // Object | Bulk job definition.
+
+apiInstance.postTaskmanagementWorkitemsBulkAddJobs(body)
+  .then((data) => {
+    console.log(`postTaskmanagementWorkitemsBulkAddJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTaskmanagementWorkitemsBulkAddJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Bulk job definition. |  |
+
+### Return type
+
+**BulkJob**
+
+
+## postTaskmanagementWorkitemsBulkTerminateJobs
+
+> BulkJob postTaskmanagementWorkitemsBulkTerminateJobs(body)
+
+
+POST /api/v2/taskmanagement/workitems/bulk/terminate/jobs
+
+Create a workitem bulk terminate job.
+
+Requires ALL permissions:
+
+* workitems:bulkTerminateJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TaskManagementApi();
+
+let body = {}; // Object | Bulk job definition.
+
+apiInstance.postTaskmanagementWorkitemsBulkTerminateJobs(body)
+  .then((data) => {
+    console.log(`postTaskmanagementWorkitemsBulkTerminateJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTaskmanagementWorkitemsBulkTerminateJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Bulk job definition. |  |
+
+### Return type
+
+**BulkJob**
+
+
 ## postTaskmanagementWorkitemsQuery
 
 > WorkitemPostQueryEntityListing postTaskmanagementWorkitemsQuery(body)
@@ -3356,4 +3929,4 @@ apiInstance.putTaskmanagementWorkitemsSchema(schemaId, body)
 **DataSchema**
 
 
-_purecloud-platform-client-v2@212.0.0_
+_purecloud-platform-client-v2@212.1.0_

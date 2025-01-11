@@ -2675,6 +2675,7 @@ Requires ANY permissions:
 * outbound:campaign:view
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example Usage
 
@@ -2719,7 +2720,7 @@ apiInstance.getOutboundCampaignsAll(opts)
  **id** | **[String]** | Campaign ID(s) | [optional]  |
  **name** | **String** | Campaign name(s) | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
- **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice |
+ **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice, whatsapp |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 
 ### Return type
@@ -2741,6 +2742,7 @@ Requires ANY permissions:
 * outbound:campaign:search
 * outbound:messagingCampaign:search
 * outbound:emailCampaign:search
+* outbound:whatsAppCampaign:search
 
 ### Example Usage
 
@@ -2785,7 +2787,7 @@ apiInstance.getOutboundCampaignsAllDivisionviews(opts)
  **id** | **[String]** | Campaign ID(s) | [optional]  |
  **name** | **String** | Campaign name(s) | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
- **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice |
+ **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice, whatsapp |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 
 ### Return type
@@ -9051,4 +9053,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@212.0.0_
+_purecloud-platform-client-v2@212.1.0_
