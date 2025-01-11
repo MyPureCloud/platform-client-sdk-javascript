@@ -1,5 +1,8 @@
 
 import PureCloudRegionHosts from './PureCloudRegionHosts.js';
+import DefaultHttpClient from './DefaultHttpClient.js';
+import AbstractHttpClient from './AbstractHttpClient.js';
+import HttpRequestOptions from './HttpRequestOptions.js';
 import ApiClient from './ApiClient.js';
 import AgentAssistantsApi from './api/AgentAssistantsApi.js';
 import AgentCopilotApi from './api/AgentCopilotApi.js';
@@ -113,7 +116,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 212.0.0
+ * @version 212.1.0
  */
 class platformClient {
 	constructor() {
@@ -532,8 +535,10 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/MyPureCloudRegionHost}
 		 */
 		this.PureCloudRegionHosts = PureCloudRegionHosts;
-		
-		
+
+		this.AbstractHttpClient = AbstractHttpClient;
+		this.DefaultHttpClient = DefaultHttpClient;
+		this.HttpRequestOptions = HttpRequestOptions;
 	}
 }
 

@@ -1,5 +1,4 @@
 import Configuration from './configuration.js';
-import https from 'https';
 import DefaultHttpClient from './DefaultHttpClient.js';
 import AbstractHttpClient from './AbstractHttpClient.js';
 import HttpRequestOptions from './HttpRequestOptions.js';
@@ -7,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 212.0.0
+ * @version 212.1.0
  */
 class ApiClient {
 	/**
@@ -254,11 +253,11 @@ class ApiClient {
 
 			agentOptions.rejectUnauthorized = true
 
-			this.proxyAgent = new https.Agent(agentOptions);
+			this.proxyAgent = new require('https').Agent(agentOptions);
 			const httpClient = this.getHttpClient();
 			httpClient.setHttpsAgent(this.proxyAgent);
 	    } else {
-	         throw new Error("Custom Agent Paths/ File System Access are not supported on Browser. Use setMTLSContents instead");
+	         throw new Error("MTLS authentication is managed by the Browser itself. MTLS certificates cannot be set via code on Browser.");
 	    }
     }
 
@@ -269,24 +268,28 @@ class ApiClient {
      * @param {string} caContent - content for public certs
      */
     setMTLSContents(certContent, keyContent, caContent) {
-		const agentOptions = {}
-		if (certContent) {
-			agentOptions.cert = certContent;
-		}
+		if (typeof window === 'undefined') {
+	    	const agentOptions = {}
+			if (certContent) {
+				agentOptions.cert = certContent;
+			}
 
-		if (keyContent) {
-			agentOptions.key = keyContent;
-		}
+			if (keyContent) {
+				agentOptions.key = keyContent;
+			}
 
-		if (caContent) {
-			agentOptions.ca = caContent;
-		}
+			if (caContent) {
+				agentOptions.ca = caContent;
+			}
 
-		agentOptions.rejectUnauthorized = true
+			agentOptions.rejectUnauthorized = true
 
-		this.proxyAgent = new https.Agent(agentOptions);
-		const httpClient = this.getHttpClient();
-		httpClient.setHttpsAgent(this.proxyAgent);
+			this.proxyAgent = new require('https').Agent(agentOptions);
+			const httpClient = this.getHttpClient();
+			httpClient.setHttpsAgent(this.proxyAgent);
+	    } else {
+	         throw new Error("MTLS authentication is managed by the Browser itself. MTLS certificates cannot be set via code on Browser.");
+	    }
     }
 
 	/**

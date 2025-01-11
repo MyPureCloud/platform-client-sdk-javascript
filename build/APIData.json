@@ -2219,6 +2219,20 @@
     "return": "AsyncQueryResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AnalyticsApi();\n\nlet body = {}; // Object | query\n\n// Query for resolution aggregates asynchronously\napiInstance.postAnalyticsResolutionsAggregatesJobs(body)\n  .then((data) => {\n    console.log(`postAnalyticsResolutionsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postAnalyticsResolutionsAggregatesJobs\");\n    console.error(err);\n  });"
   },
+  "postanalyticsresolutionsaggregatesquery": {
+    "operationId": "postanalyticsresolutionsaggregatesquery",
+    "functionName": "postAnalyticsResolutionsAggregatesQuery",
+    "signature": "postAnalyticsResolutionsAggregatesQuery(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ResolutionAggregateQueryResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AnalyticsApi();\n\nlet body = {}; // Object | query\n\n// Query for resolution aggregates\napiInstance.postAnalyticsResolutionsAggregatesQuery(body)\n  .then((data) => {\n    console.log(`postAnalyticsResolutionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postAnalyticsResolutionsAggregatesQuery\");\n    console.error(err);\n  });"
+  },
   "postanalyticsroutingactivityquery": {
     "operationId": "postanalyticsroutingactivityquery",
     "functionName": "postAnalyticsRoutingActivityQuery",
@@ -15493,6 +15507,60 @@
     ],
     "return": "InsightsAgents",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet startWorkday = \"startWorkday_example\"; // String | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Query users in a profile during a period of time\napiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)\n  .then((data) => {\n    console.log(`getGamificationInsightsMembers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsMembers\");\n    console.error(err);\n  });"
+  },
+  "getgamificationinsightsrankings": {
+    "operationId": "getgamificationinsightsrankings",
+    "functionName": "getGamificationInsightsRankings",
+    "signature": "getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds)",
+    "parameters": [
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "comparativePeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "primaryPeriodStartWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "sortKey",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "sortMetricId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sectionSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "userIds",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "InsightsRankings",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type.\nlet granularity = \"granularity_example\"; // String | Granularity\nlet comparativePeriodStartWorkday = \"comparativePeriodStartWorkday_example\"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet primaryPeriodStartWorkday = \"primaryPeriodStartWorkday_example\"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet sortKey = \"sortKey_example\"; // String | Sort key\nlet opts = { \n  \"sortMetricId\": \"sortMetricId_example\", // String | Sort Metric Id\n  \"sectionSize\": 3.4, // Number | The number of top and bottom users to return before ties\n  \"userIds\": \"userIds_example\" // String | A list of up to 100 comma-separated user Ids\n};\n\n// Get insights rankings\napiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts)\n  .then((data) => {\n    console.log(`getGamificationInsightsRankings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationInsightsRankings\");\n    console.error(err);\n  });"
   },
   "getgamificationinsightstrends": {
     "operationId": "getgamificationinsightstrends",
@@ -40626,6 +40694,32 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet workitemId = \"workitemId_example\"; // String | Workitem ID\n\n// Delete a workitem\napiInstance.deleteTaskmanagementWorkitem(workitemId)\n  .then(() => {\n    console.log(\"deleteTaskmanagementWorkitem returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteTaskmanagementWorkitem\");\n    console.error(err);\n  });"
   },
+  "deletetaskmanagementworkitemsbulkaddjob": {
+    "operationId": "deletetaskmanagementworkitemsbulkaddjob",
+    "functionName": "deleteTaskmanagementWorkitemsBulkAddJob",
+    "signature": "deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId)",
+    "parameters": [
+      {
+        "name": "bulkJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet bulkJobId = \"bulkJobId_example\"; // String | Bulk job id\n\n// Delete a bulk add job\napiInstance.deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId)\n  .then(() => {\n    console.log(\"deleteTaskmanagementWorkitemsBulkAddJob returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteTaskmanagementWorkitemsBulkAddJob\");\n    console.error(err);\n  });"
+  },
+  "deletetaskmanagementworkitemsbulkterminatejob": {
+    "operationId": "deletetaskmanagementworkitemsbulkterminatejob",
+    "functionName": "deleteTaskmanagementWorkitemsBulkTerminateJob",
+    "signature": "deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)",
+    "parameters": [
+      {
+        "name": "bulkJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet bulkJobId = \"bulkJobId_example\"; // String | Bulk job id\n\n// Delete a Bulk job\napiInstance.deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)\n  .then(() => {\n    console.log(\"deleteTaskmanagementWorkitemsBulkTerminateJob returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteTaskmanagementWorkitemsBulkTerminateJob\");\n    console.error(err);\n  });"
+  },
   "deletetaskmanagementworkitemsschema": {
     "operationId": "deletetaskmanagementworkitemsschema",
     "functionName": "deleteTaskmanagementWorkitemsSchema",
@@ -40983,6 +41077,91 @@
     ],
     "return": "WorkitemWrapupEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet workitemId = \"workitemId_example\"; // String | The ID of the Workitem.\nlet opts = { \n  \"expands\": \"expands_example\", // String | Which fields, if any, to expand.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50.\n  \"sortOrder\": \"descending\" // String | Ascending or descending sort order\n};\n\n// Get all wrapup codes added for all users for a workitem.\napiInstance.getTaskmanagementWorkitemWrapups(workitemId, opts)\n  .then((data) => {\n    console.log(`getTaskmanagementWorkitemWrapups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTaskmanagementWorkitemWrapups\");\n    console.error(err);\n  });"
+  },
+  "gettaskmanagementworkitemsbulkaddjob": {
+    "operationId": "gettaskmanagementworkitemsbulkaddjob",
+    "functionName": "getTaskmanagementWorkitemsBulkAddJob",
+    "signature": "getTaskmanagementWorkitemsBulkAddJob(bulkJobId)",
+    "parameters": [
+      {
+        "name": "bulkJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet bulkJobId = \"bulkJobId_example\"; // String | Bulk job id\n\n// Get the bulk add job associated with the job id.\napiInstance.getTaskmanagementWorkitemsBulkAddJob(bulkJobId)\n  .then((data) => {\n    console.log(`getTaskmanagementWorkitemsBulkAddJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTaskmanagementWorkitemsBulkAddJob\");\n    console.error(err);\n  });"
+  },
+  "gettaskmanagementworkitemsbulkaddjobresults": {
+    "operationId": "gettaskmanagementworkitemsbulkaddjobresults",
+    "functionName": "getTaskmanagementWorkitemsBulkAddJobResults",
+    "signature": "getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId)",
+    "parameters": [
+      {
+        "name": "bulkJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJobAddResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet bulkJobId = \"bulkJobId_example\"; // String | Bulk job id\n\n// Get bulk add job results.\napiInstance.getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId)\n  .then((data) => {\n    console.log(`getTaskmanagementWorkitemsBulkAddJobResults success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTaskmanagementWorkitemsBulkAddJobResults\");\n    console.error(err);\n  });"
+  },
+  "gettaskmanagementworkitemsbulkjobsusersme": {
+    "operationId": "gettaskmanagementworkitemsbulkjobsusersme",
+    "functionName": "getTaskmanagementWorkitemsBulkJobsUsersMe",
+    "signature": "getTaskmanagementWorkitemsBulkJobsUsersMe(after, pageSize, sortOrder, action)",
+    "parameters": [
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "sortOrder",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "action",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "BulkJobsListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet opts = { \n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": 25, // Number | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.\n  \"sortOrder\": \"descending\", // String | Ascending or descending sort order\n  \"action\": \"action_example\" // String | The bulk job action.\n};\n\n// Get bulk jobs created by the currently logged in user.\napiInstance.getTaskmanagementWorkitemsBulkJobsUsersMe(opts)\n  .then((data) => {\n    console.log(`getTaskmanagementWorkitemsBulkJobsUsersMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTaskmanagementWorkitemsBulkJobsUsersMe\");\n    console.error(err);\n  });"
+  },
+  "gettaskmanagementworkitemsbulkterminatejob": {
+    "operationId": "gettaskmanagementworkitemsbulkterminatejob",
+    "functionName": "getTaskmanagementWorkitemsBulkTerminateJob",
+    "signature": "getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)",
+    "parameters": [
+      {
+        "name": "bulkJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet bulkJobId = \"bulkJobId_example\"; // String | Bulk job id\n\n// Get the bulk job associated with the job id.\napiInstance.getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId)\n  .then((data) => {\n    console.log(`getTaskmanagementWorkitemsBulkTerminateJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTaskmanagementWorkitemsBulkTerminateJob\");\n    console.error(err);\n  });"
+  },
+  "gettaskmanagementworkitemsbulkterminatejobresults": {
+    "operationId": "gettaskmanagementworkitemsbulkterminatejobresults",
+    "functionName": "getTaskmanagementWorkitemsBulkTerminateJobResults",
+    "signature": "getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)",
+    "parameters": [
+      {
+        "name": "bulkJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJobTerminateResultsResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet bulkJobId = \"bulkJobId_example\"; // String | Bulk job id\n\n// Get bulk terminate job results.\napiInstance.getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId)\n  .then((data) => {\n    console.log(`getTaskmanagementWorkitemsBulkTerminateJobResults success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTaskmanagementWorkitemsBulkTerminateJobResults\");\n    console.error(err);\n  });"
   },
   "gettaskmanagementworkitemsqueryjob": {
     "operationId": "gettaskmanagementworkitemsqueryjob",
@@ -41428,6 +41607,44 @@
     "return": "WorkitemWrapup",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet workitemId = \"workitemId_example\"; // String | The ID of the Workitem.\nlet body = {}; // Object | Request body to add/remove the wrapup code for workitem\n\n// Add/Remove a wrapup code for the current user in a workitem.\napiInstance.patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)\n  .then((data) => {\n    console.log(`patchTaskmanagementWorkitemUsersMeWrapups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchTaskmanagementWorkitemUsersMeWrapups\");\n    console.error(err);\n  });"
   },
+  "patchtaskmanagementworkitemsbulkaddjob": {
+    "operationId": "patchtaskmanagementworkitemsbulkaddjob",
+    "functionName": "patchTaskmanagementWorkitemsBulkAddJob",
+    "signature": "patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)",
+    "parameters": [
+      {
+        "name": "bulkJobId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet bulkJobId = \"bulkJobId_example\"; // String | Bulk job id\nlet body = {}; // Object | Bulk add job update request\n\n// Update workitem bulk add job.\napiInstance.patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body)\n  .then((data) => {\n    console.log(`patchTaskmanagementWorkitemsBulkAddJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchTaskmanagementWorkitemsBulkAddJob\");\n    console.error(err);\n  });"
+  },
+  "patchtaskmanagementworkitemsbulkterminatejob": {
+    "operationId": "patchtaskmanagementworkitemsbulkterminatejob",
+    "functionName": "patchTaskmanagementWorkitemsBulkTerminateJob",
+    "signature": "patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)",
+    "parameters": [
+      {
+        "name": "bulkJobId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet bulkJobId = \"bulkJobId_example\"; // String | Bulk job id\nlet body = {}; // Object | Bulk job update request\n\n// Update workitem bulk terminate job.\napiInstance.patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body)\n  .then((data) => {\n    console.log(`patchTaskmanagementWorkitemsBulkTerminateJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchTaskmanagementWorkitemsBulkTerminateJob\");\n    console.error(err);\n  });"
+  },
   "patchtaskmanagementworktype": {
     "operationId": "patchtaskmanagementworktype",
     "functionName": "patchTaskmanagementWorktype",
@@ -41631,6 +41848,34 @@
     ],
     "return": "Workitem",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet body = {}; // Object | Workitem\n\n// Create a workitem\napiInstance.postTaskmanagementWorkitems(body)\n  .then((data) => {\n    console.log(`postTaskmanagementWorkitems success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postTaskmanagementWorkitems\");\n    console.error(err);\n  });"
+  },
+  "posttaskmanagementworkitemsbulkaddjobs": {
+    "operationId": "posttaskmanagementworkitemsbulkaddjobs",
+    "functionName": "postTaskmanagementWorkitemsBulkAddJobs",
+    "signature": "postTaskmanagementWorkitemsBulkAddJobs(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet body = {}; // Object | Bulk job definition.\n\n// Create a workitem bulk add job.\napiInstance.postTaskmanagementWorkitemsBulkAddJobs(body)\n  .then((data) => {\n    console.log(`postTaskmanagementWorkitemsBulkAddJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postTaskmanagementWorkitemsBulkAddJobs\");\n    console.error(err);\n  });"
+  },
+  "posttaskmanagementworkitemsbulkterminatejobs": {
+    "operationId": "posttaskmanagementworkitemsbulkterminatejobs",
+    "functionName": "postTaskmanagementWorkitemsBulkTerminateJobs",
+    "signature": "postTaskmanagementWorkitemsBulkTerminateJobs(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TaskManagementApi();\n\nlet body = {}; // Object | Bulk job definition.\n\n// Create a workitem bulk terminate job.\napiInstance.postTaskmanagementWorkitemsBulkTerminateJobs(body)\n  .then((data) => {\n    console.log(`postTaskmanagementWorkitemsBulkTerminateJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postTaskmanagementWorkitemsBulkTerminateJobs\");\n    console.error(err);\n  });"
   },
   "posttaskmanagementworkitemsquery": {
     "operationId": "posttaskmanagementworkitemsquery",
@@ -47726,6 +47971,63 @@
     ],
     "return": "WfmIntradayPlanningGroupListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet _date = \"_date_example\"; // String | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\n// Get intraday planning groups for the given date\napiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitIntradayPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitIntradayPlanninggroups\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitmainforecastcontinuousforecastsession": {
+    "operationId": "getworkforcemanagementbusinessunitmainforecastcontinuousforecastsession",
+    "functionName": "getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession",
+    "signature": "getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ContinuousForecastGetSessionResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | \n\n// Get the latest session for the business unit ID\napiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitmainforecastcontinuousforecastsessionsessionid": {
+    "operationId": "getworkforcemanagementbusinessunitmainforecastcontinuousforecastsessionsessionid",
+    "functionName": "getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId",
+    "signature": "getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ContinuousForecastSessionResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | \nlet sessionId = \"sessionId_example\"; // String | \n\n// Get the session details for the session ID\napiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementbusinessunitmainforecastcontinuousforecastsessionsessionidsnapshotsnapshotid": {
+    "operationId": "getworkforcemanagementbusinessunitmainforecastcontinuousforecastsessionsessionidsnapshotsnapshotid",
+    "functionName": "getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId",
+    "signature": "getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "snapshotId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ContinuousForecastSnapshotResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | \nlet sessionId = \"sessionId_example\"; // String | \nlet snapshotId = \"snapshotId_example\"; // String | \n\n// Get the snapshot details for the snapshot ID\napiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId)\n  .then((data) => {\n    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId\");\n    console.error(err);\n  });"
   },
   "getworkforcemanagementbusinessunitmanagementunits": {
     "operationId": "getworkforcemanagementbusinessunitmanagementunits",

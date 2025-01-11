@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 212.0.0
+	 * @version 212.1.0
 	 */
 
 	/**
@@ -60,6 +60,56 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/workitems/{workitemId}', 
 			'DELETE', 
 			{ 'workitemId': workitemId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a bulk add job
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null) {
+			throw 'Missing the required parameter "bulkJobId" when calling deleteTaskmanagementWorkitemsBulkAddJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}', 
+			'DELETE', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Bulk job
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null) {
+			throw 'Missing the required parameter "bulkJobId" when calling deleteTaskmanagementWorkitemsBulkTerminateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}', 
+			'DELETE', 
+			{ 'bulkJobId': bulkJobId },
 			{  },
 			{  },
 			{  },
@@ -544,6 +594,133 @@ class TaskManagementApi {
 			'GET', 
 			{ 'workitemId': workitemId },
 			{ 'expands': opts['expands'],'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the bulk add job associated with the job id.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	getTaskmanagementWorkitemsBulkAddJob(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null) {
+			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkAddJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}', 
+			'GET', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk add job results.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null) {
+			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkAddJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results', 
+			'GET', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk jobs created by the currently logged in user.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object} opts.action The bulk job action.
+	 */
+	getTaskmanagementWorkitemsBulkJobsUsersMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/jobs/users/me', 
+			'GET', 
+			{  },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'action': opts['action'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the bulk job associated with the job id.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null) {
+			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkTerminateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}', 
+			'GET', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk terminate job results.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null) {
+			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkTerminateJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results', 
+			'GET', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1219,6 +1396,66 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Update workitem bulk add job.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} body Bulk add job update request
+	 */
+	patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null) {
+			throw 'Missing the required parameter "bulkJobId" when calling patchTaskmanagementWorkitemsBulkAddJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkitemsBulkAddJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}', 
+			'PATCH', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update workitem bulk terminate job.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} body Bulk job update request
+	 */
+	patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null) {
+			throw 'Missing the required parameter "bulkJobId" when calling patchTaskmanagementWorkitemsBulkTerminateJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkitemsBulkTerminateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}', 
+			'PATCH', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the attributes of a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -1530,6 +1767,56 @@ class TaskManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workitems', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a workitem bulk add job.
+	 * 
+	 * @param {Object} body Bulk job definition.
+	 */
+	postTaskmanagementWorkitemsBulkAddJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsBulkAddJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a workitem bulk terminate job.
+	 * 
+	 * @param {Object} body Bulk job definition.
+	 */
+	postTaskmanagementWorkitemsBulkTerminateJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsBulkTerminateJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs', 
 			'POST', 
 			{  },
 			{  },

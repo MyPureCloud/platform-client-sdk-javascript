@@ -93,6 +93,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk soft delete dashboard configurations
 [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery) | **POST** /api/v2/analytics/reporting/settings/dashboards/query | Query dashboard configurations
 [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
+[**postAnalyticsResolutionsAggregatesQuery**](AnalyticsApi#postAnalyticsResolutionsAggregatesQuery) | **POST** /api/v2/analytics/resolutions/aggregates/query | Query for resolution aggregates
 [**postAnalyticsRoutingActivityQuery**](AnalyticsApi#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
 [**postAnalyticsSummariesAggregatesJobs**](AnalyticsApi#postAnalyticsSummariesAggregatesJobs) | **POST** /api/v2/analytics/summaries/aggregates/jobs | Query for summary aggregates asynchronously
 [**postAnalyticsSummariesAggregatesQuery**](AnalyticsApi#postAnalyticsSummariesAggregatesQuery) | **POST** /api/v2/analytics/summaries/aggregates/query | Query for summary aggregates
@@ -4723,6 +4724,56 @@ apiInstance.postAnalyticsResolutionsAggregatesJobs(body)
 **AsyncQueryResponse**
 
 
+## postAnalyticsResolutionsAggregatesQuery
+
+> ResolutionAggregateQueryResponse postAnalyticsResolutionsAggregatesQuery(body)
+
+
+POST /api/v2/analytics/resolutions/aggregates/query
+
+Query for resolution aggregates
+
+Requires ANY permissions:
+
+* analytics:resolutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsResolutionsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsResolutionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsResolutionsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**ResolutionAggregateQueryResponse**
+
+
 ## postAnalyticsRoutingActivityQuery
 
 > RoutingActivityResponse postAnalyticsRoutingActivityQuery(body, opts)
@@ -5603,4 +5654,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@212.0.0_
+_purecloud-platform-client-v2@212.1.0_

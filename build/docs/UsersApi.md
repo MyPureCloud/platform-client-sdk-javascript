@@ -5324,4 +5324,4 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 **Verifier**
 
 
-_purecloud-platform-client-v2@212.0.0_
+_purecloud-platform-client-v2@212.1.0_

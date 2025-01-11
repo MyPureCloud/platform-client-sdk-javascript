@@ -392,6 +392,8 @@ docs/deleteSpeechandtextanalyticsTopic-example.txt
 docs/deleteStationAssociateduser-example.txt
 docs/deleteTaskmanagementWorkbin-example.txt
 docs/deleteTaskmanagementWorkitem-example.txt
+docs/deleteTaskmanagementWorkitemsBulkAddJob-example.txt
+docs/deleteTaskmanagementWorkitemsBulkTerminateJob-example.txt
 docs/deleteTaskmanagementWorkitemsSchema-example.txt
 docs/deleteTaskmanagementWorktype-example.txt
 docs/deleteTaskmanagementWorktypeFlowsDatebasedRule-example.txt
@@ -838,6 +840,7 @@ docs/getGamificationInsightsDetails-example.txt
 docs/getGamificationInsightsGroupsTrends-example.txt
 docs/getGamificationInsightsGroupsTrendsAll-example.txt
 docs/getGamificationInsightsMembers-example.txt
+docs/getGamificationInsightsRankings-example.txt
 docs/getGamificationInsightsTrends-example.txt
 docs/getGamificationInsightsUserDetails-example.txt
 docs/getGamificationInsightsUserTrends-example.txt
@@ -1440,6 +1443,11 @@ docs/getTaskmanagementWorkitemUserWrapups-example.txt
 docs/getTaskmanagementWorkitemVersion-example.txt
 docs/getTaskmanagementWorkitemVersions-example.txt
 docs/getTaskmanagementWorkitemWrapups-example.txt
+docs/getTaskmanagementWorkitemsBulkAddJob-example.txt
+docs/getTaskmanagementWorkitemsBulkAddJobResults-example.txt
+docs/getTaskmanagementWorkitemsBulkJobsUsersMe-example.txt
+docs/getTaskmanagementWorkitemsBulkTerminateJob-example.txt
+docs/getTaskmanagementWorkitemsBulkTerminateJobResults-example.txt
 docs/getTaskmanagementWorkitemsQueryJob-example.txt
 docs/getTaskmanagementWorkitemsQueryJobResults-example.txt
 docs/getTaskmanagementWorkitemsSchema-example.txt
@@ -1656,6 +1664,9 @@ docs/getWorkforcemanagementBusinessunitAlternativeshiftsSettings-example.txt
 docs/getWorkforcemanagementBusinessunitAlternativeshiftsTrade-example.txt
 docs/getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob-example.txt
 docs/getWorkforcemanagementBusinessunitIntradayPlanninggroups-example.txt
+docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession-example.txt
+docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId-example.txt
+docs/getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId-example.txt
 docs/getWorkforcemanagementBusinessunitManagementunits-example.txt
 docs/getWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/getWorkforcemanagementBusinessunitPlanninggroups-example.txt
@@ -1875,6 +1886,8 @@ docs/patchTaskmanagementWorkitem-example.txt
 docs/patchTaskmanagementWorkitemAssignment-example.txt
 docs/patchTaskmanagementWorkitemUserWrapups-example.txt
 docs/patchTaskmanagementWorkitemUsersMeWrapups-example.txt
+docs/patchTaskmanagementWorkitemsBulkAddJob-example.txt
+docs/patchTaskmanagementWorkitemsBulkTerminateJob-example.txt
 docs/patchTaskmanagementWorktype-example.txt
 docs/patchTaskmanagementWorktypeFlowsDatebasedRule-example.txt
 docs/patchTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
@@ -1990,6 +2003,7 @@ docs/postAnalyticsReportingExports-example.txt
 docs/postAnalyticsReportingSettingsDashboardsBulkRemove-example.txt
 docs/postAnalyticsReportingSettingsDashboardsQuery-example.txt
 docs/postAnalyticsResolutionsAggregatesJobs-example.txt
+docs/postAnalyticsResolutionsAggregatesQuery-example.txt
 docs/postAnalyticsRoutingActivityQuery-example.txt
 docs/postAnalyticsRoutingActivityQuery-example.txt
 docs/postAnalyticsSummariesAggregatesJobs-example.txt
@@ -2486,6 +2500,8 @@ docs/postTaskmanagementWorkitemAcdCancel-example.txt
 docs/postTaskmanagementWorkitemDisconnect-example.txt
 docs/postTaskmanagementWorkitemTerminate-example.txt
 docs/postTaskmanagementWorkitems-example.txt
+docs/postTaskmanagementWorkitemsBulkAddJobs-example.txt
+docs/postTaskmanagementWorkitemsBulkTerminateJobs-example.txt
 docs/postTaskmanagementWorkitemsQuery-example.txt
 docs/postTaskmanagementWorkitemsQueryJobs-example.txt
 docs/postTaskmanagementWorkitemsSchemas-example.txt

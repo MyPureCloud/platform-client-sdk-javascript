@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 212.0.0
+	 * @version 212.1.0
 	 */
 
 	/**
@@ -335,6 +335,62 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'startWorkday': startWorkday },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get insights rankings
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} sortKey Sort key
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.sortMetricId Sort Metric Id
+	 * @param {Number} opts.sectionSize The number of top and bottom users to return before ties
+	 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
+	 */
+	getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'sortKey' is set
+		if (sortKey === undefined || sortKey === null) {
+			throw 'Missing the required parameter "sortKey" when calling getGamificationInsightsRankings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/rankings', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'sortKey': sortKey,'sortMetricId': opts['sortMetricId'],'sectionSize': opts['sectionSize'],'userIds': opts['userIds'] },
 			{  },
 			{  },
 			null, 
