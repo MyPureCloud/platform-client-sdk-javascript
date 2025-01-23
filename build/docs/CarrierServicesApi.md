@@ -109,4 +109,4 @@ apiInstance.postCarrierservicesIntegrationsEmergencylocationsMe(opts)
 **EmergencyLocation**
 
 
-_purecloud-platform-client-v2@212.1.0_
+_purecloud-platform-client-v2@213.0.0_

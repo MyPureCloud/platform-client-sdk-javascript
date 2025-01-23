@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 212.1.0
+	 * @version 213.0.0
 	 */
 
 	/**
@@ -1181,8 +1181,9 @@ class ConversationsApi {
 
 	/**
 	 * Get chat conversation
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
+	 * @deprecated
 	 */
 	getConversationsChat(conversationId) { 
 		// verify the required parameter 'conversationId' is set
@@ -1206,9 +1207,10 @@ class ConversationsApi {
 
 	/**
 	 * Get a web chat conversation message
-	 * The current user must be involved with the conversation to get its messages.
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
+	 * @deprecated
 	 */
 	getConversationsChatMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
@@ -1236,13 +1238,14 @@ class ConversationsApi {
 
 	/**
 	 * Get the messages of a chat conversation.
-	 * The current user must be involved with the conversation to get its messages.
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 	 * @param {String} conversationId conversationId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after If specified, get the messages chronologically after the id of this message
 	 * @param {String} opts.before If specified, get the messages chronologically before the id of this message
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
 	 * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
+	 * @deprecated
 	 */
 	getConversationsChatMessages(conversationId, opts) { 
 		opts = opts || {};
@@ -1268,12 +1271,13 @@ class ConversationsApi {
 
 	/**
 	 * Get the wrap-up for this conversation communication. 
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 * @deprecated
 	 */
 	getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -1307,11 +1311,12 @@ class ConversationsApi {
 
 	/**
 	 * Get the wrap-up for this conversation participant. 
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 * @deprecated
 	 */
 	getConversationsChatParticipantWrapup(conversationId, participantId, opts) { 
 		opts = opts || {};
@@ -1341,9 +1346,10 @@ class ConversationsApi {
 
 	/**
 	 * Get list of wrapup codes for this conversation participant
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
+	 * @deprecated
 	 */
 	getConversationsChatParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
@@ -1371,7 +1377,8 @@ class ConversationsApi {
 
 	/**
 	 * Get active chat conversations for the logged in user
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+	 * @deprecated
 	 */
 	getConversationsChats() { 
 
@@ -3293,9 +3300,10 @@ class ConversationsApi {
 
 	/**
 	 * Update a conversation by disconnecting all of the participants
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
+	 * @deprecated
 	 */
 	patchConversationsChat(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -3323,10 +3331,11 @@ class ConversationsApi {
 
 	/**
 	 * Update conversation participant
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Update request
+	 * @deprecated
 	 */
 	patchConversationsChatParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -3358,10 +3367,11 @@ class ConversationsApi {
 
 	/**
 	 * Update the attributes on a conversation participant.
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Participant attributes
+	 * @deprecated
 	 */
 	patchConversationsChatParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -3393,11 +3403,12 @@ class ConversationsApi {
 
 	/**
 	 * Update conversation participant's communication by disconnecting it.
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
+	 * @deprecated
 	 */
 	patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5300,10 +5311,11 @@ class ConversationsApi {
 
 	/**
 	 * Send a message on behalf of a communication in a chat conversation.
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
+	 * @deprecated
 	 */
 	postConversationsChatCommunicationMessages(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5335,9 +5347,10 @@ class ConversationsApi {
 
 	/**
 	 * Send a typing-indicator on behalf of a communication in a chat conversation.
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
+	 * @deprecated
 	 */
 	postConversationsChatCommunicationTyping(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
@@ -5365,12 +5378,13 @@ class ConversationsApi {
 
 	/**
 	 * Apply wrap-up for this conversation communication
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Wrap-up
+	 * @deprecated
 	 */
 	postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
 		opts = opts || {};
@@ -5404,10 +5418,11 @@ class ConversationsApi {
 
 	/**
 	 * Replace this participant with the specified user and/or address
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} body Transfer request
+	 * @deprecated
 	 */
 	postConversationsChatParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -5439,8 +5454,9 @@ class ConversationsApi {
 
 	/**
 	 * Create a web chat conversation
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {Object} body Create web chat request
+	 * @deprecated
 	 */
 	postConversationsChats(body) { 
 		// verify the required parameter 'body' is set
@@ -6800,9 +6816,10 @@ class ConversationsApi {
 
 	/**
 	 * Update a conversation by setting its recording state
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body SetRecordingState
+	 * @deprecated
 	 */
 	putConversationsChatRecordingstate(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set

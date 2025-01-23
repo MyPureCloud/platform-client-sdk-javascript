@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 212.1.0
+	 * @version 213.0.0
 	 */
 
 	/**

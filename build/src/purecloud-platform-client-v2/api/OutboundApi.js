@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 212.1.0
+	 * @version 213.0.0
 	 */
 
 	/**
@@ -2302,6 +2302,8 @@ class OutboundApi {
 	 * @param {Object} opts.type Campaign Type
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
 	 * @param {Array.<String>} opts.id A list of messaging campaign ids to bulk fetch
+	 * @param {String} opts.contentTemplateId Content template ID
+	 * @param {Object} opts.campaignStatus Campaign Status
 	 */
 	getOutboundMessagingcampaigns(opts) { 
 		opts = opts || {};
@@ -2311,7 +2313,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
 			{  },
 			{  },
 			null, 
@@ -2357,6 +2359,8 @@ class OutboundApi {
 	 * @param {Object} opts.type Campaign Type
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
+	 * @param {String} opts.contentTemplateId Content template ID
+	 * @param {Object} opts.campaignStatus Campaign Status
 	 */
 	getOutboundMessagingcampaignsDivisionviews(opts) { 
 		opts = opts || {};
@@ -2366,7 +2370,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns/divisionviews', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
 			{  },
 			{  },
 			null, 

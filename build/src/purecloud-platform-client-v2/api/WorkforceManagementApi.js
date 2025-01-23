@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 212.1.0
+	 * @version 213.0.0
 	 */
 
 	/**
@@ -2559,6 +2559,31 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/historicaldata/importstatus', 
 			'GET', 
 			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves status of the historical data imports associated with job id
+	 * 
+	 * @param {String} jobId The job Id of the historical data import request
+	 */
+	getWorkforcemanagementHistoricaldataImportstatusJobId(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementHistoricaldataImportstatusJobId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/importstatus/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
 			{  },
 			{  },
 			{  },

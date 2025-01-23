@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 212.1.0
+	 * @version 213.0.0
 	 */
 
 	/**
@@ -974,6 +974,7 @@ class AnalyticsApi {
 	 * @param {Object} dashboardAccessFilter Filter dashboard based on the owner of dashboard
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name name of the dashboard
+	 * @param {Object} opts.dashboardState List dashboard of given state (default to Active)
 	 * @param {String} opts.sortBy  (default to desc)
 	 * @param {Number} opts.pageNumber  (default to 1)
 	 * @param {Number} opts.pageSize  (default to 9)
@@ -994,7 +995,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/settings/dashboards/query', 
 			'GET', 
 			{  },
-			{ 'name': opts['name'],'dashboardType': dashboardType,'dashboardAccessFilter': dashboardAccessFilter,'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{ 'name': opts['name'],'dashboardType': dashboardType,'dashboardState': opts['dashboardState'],'dashboardAccessFilter': dashboardAccessFilter,'sortBy': opts['sortBy'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 

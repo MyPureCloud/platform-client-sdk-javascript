@@ -5,7 +5,7 @@ class DataPrivacyApi {
 	/**
 	 * DataPrivacy service.
 	 * @module purecloud-platform-client-v2/api/DataPrivacyApi
-	 * @version 212.1.0
+	 * @version 213.0.0
 	 */
 
 	/**

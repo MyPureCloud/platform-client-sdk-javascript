@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 212.1.0
+	 * @version 213.0.0
 	 */
 
 	/**

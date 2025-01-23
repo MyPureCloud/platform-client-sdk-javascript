@@ -154,7 +154,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GroupsApi();
 
 let groupId = "groupId_example"; // String | Group ID
-let ids = "ids_example"; // String | Comma separated list of userIds to remove
+let ids = "ids_example"; // String | Comma separated list of userIds to remove. A maximum of 50 members are allowed per request.
 
 apiInstance.deleteGroupMembers(groupId, ids)
   .then((data) => {
@@ -172,7 +172,7 @@ apiInstance.deleteGroupMembers(groupId, ids)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
- **ids** | **String** | Comma separated list of userIds to remove |  |
+ **ids** | **String** | Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. |  |
 
 ### Return type
 
@@ -977,4 +977,4 @@ apiInstance.putGroupDynamicsettings(groupId, body)
 void (no response body)
 
 
-_purecloud-platform-client-v2@212.1.0_
+_purecloud-platform-client-v2@213.0.0_

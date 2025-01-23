@@ -1378,7 +1378,7 @@
   "getanalyticsreportingsettingsdashboardsquery": {
     "operationId": "getanalyticsreportingsettingsdashboardsquery",
     "functionName": "getAnalyticsReportingSettingsDashboardsQuery",
-    "signature": "getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize)",
+    "signature": "getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, name, dashboardState, sortBy, pageNumber, pageSize)",
     "parameters": [
       {
         "name": "dashboardType",
@@ -1392,6 +1392,11 @@
       },
       {
         "name": "name",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "dashboardState",
         "type": "String",
         "required": "false"
       },
@@ -1412,7 +1417,7 @@
       }
     ],
     "return": "DashboardConfigurationListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AnalyticsApi();\n\nlet dashboardType = \"dashboardType_example\"; // String | List dashboard of given type\nlet dashboardAccessFilter = \"dashboardAccessFilter_example\"; // String | Filter dashboard based on the owner of dashboard\nlet opts = { \n  \"name\": \"name_example\", // String | name of the dashboard\n  \"sortBy\": \"desc\", // String | \n  \"pageNumber\": 1, // Number | \n  \"pageSize\": 9 // Number | \n};\n\n// Get list of dashboard configurations\napiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)\n  .then((data) => {\n    console.log(`getAnalyticsReportingSettingsDashboardsQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAnalyticsReportingSettingsDashboardsQuery\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AnalyticsApi();\n\nlet dashboardType = \"dashboardType_example\"; // String | List dashboard of given type\nlet dashboardAccessFilter = \"dashboardAccessFilter_example\"; // String | Filter dashboard based on the owner of dashboard\nlet opts = { \n  \"name\": \"name_example\", // String | name of the dashboard\n  \"dashboardState\": \"Active\", // String | List dashboard of given state\n  \"sortBy\": \"desc\", // String | \n  \"pageNumber\": 1, // Number | \n  \"pageSize\": 9 // Number | \n};\n\n// Get list of dashboard configurations\napiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)\n  .then((data) => {\n    console.log(`getAnalyticsReportingSettingsDashboardsQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAnalyticsReportingSettingsDashboardsQuery\");\n    console.error(err);\n  });"
   },
   "getanalyticsreportingsettingsuserdashboards": {
     "operationId": "getanalyticsreportingsettingsuserdashboards",
@@ -17194,7 +17199,7 @@
       }
     ],
     "return": "Object",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GroupsApi();\n\nlet groupId = \"groupId_example\"; // String | Group ID\nlet ids = \"ids_example\"; // String | Comma separated list of userIds to remove\n\n// Remove members\napiInstance.deleteGroupMembers(groupId, ids)\n  .then((data) => {\n    console.log(`deleteGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteGroupMembers\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GroupsApi();\n\nlet groupId = \"groupId_example\"; // String | Group ID\nlet ids = \"ids_example\"; // String | Comma separated list of userIds to remove. A maximum of 50 members are allowed per request.\n\n// Remove members\napiInstance.deleteGroupMembers(groupId, ids)\n  .then((data) => {\n    console.log(`deleteGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteGroupMembers\");\n    console.error(err);\n  });"
   },
   "getfieldconfig": {
     "operationId": "getfieldconfig",
@@ -29949,7 +29954,7 @@
   "getoutboundmessagingcampaigns": {
     "operationId": "getoutboundmessagingcampaigns",
     "functionName": "getOutboundMessagingcampaigns",
-    "signature": "getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id)",
+    "signature": "getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id, contentTemplateId, campaignStatus)",
     "parameters": [
       {
         "name": "pageSize",
@@ -30000,10 +30005,20 @@
         "name": "id",
         "type": "[String]",
         "required": "false"
+      },
+      {
+        "name": "contentTemplateId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "campaignStatus",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "MessagingCampaignEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size. The max that will be returned is 100.\n  \"pageNumber\": 1, // Number | Page number\n  \"sortBy\": \"name\", // String | The field to sort by\n  \"sortOrder\": \"ascending\", // String | The direction to sort\n  \"name\": \"name_example\", // String | Name\n  \"contactListId\": \"contactListId_example\", // String | Contact List ID\n  \"divisionId\": [\"divisionId_example\"], // [String] | Division ID(s)\n  \"type\": \"type_example\", // String | Campaign Type\n  \"senderSmsPhoneNumber\": \"senderSmsPhoneNumber_example\", // String | Sender SMS Phone Number\n  \"id\": [\"id_example\"] // [String] | A list of messaging campaign ids to bulk fetch\n};\n\n// Query a list of Messaging Campaigns\napiInstance.getOutboundMessagingcampaigns(opts)\n  .then((data) => {\n    console.log(`getOutboundMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundMessagingcampaigns\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size. The max that will be returned is 100.\n  \"pageNumber\": 1, // Number | Page number\n  \"sortBy\": \"name\", // String | The field to sort by\n  \"sortOrder\": \"ascending\", // String | The direction to sort\n  \"name\": \"name_example\", // String | Name\n  \"contactListId\": \"contactListId_example\", // String | Contact List ID\n  \"divisionId\": [\"divisionId_example\"], // [String] | Division ID(s)\n  \"type\": \"type_example\", // String | Campaign Type\n  \"senderSmsPhoneNumber\": \"senderSmsPhoneNumber_example\", // String | Sender SMS Phone Number\n  \"id\": [\"id_example\"], // [String] | A list of messaging campaign ids to bulk fetch\n  \"contentTemplateId\": \"contentTemplateId_example\", // String | Content template ID\n  \"campaignStatus\": \"campaignStatus_example\" // String | Campaign Status\n};\n\n// Query a list of Messaging Campaigns\napiInstance.getOutboundMessagingcampaigns(opts)\n  .then((data) => {\n    console.log(`getOutboundMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundMessagingcampaigns\");\n    console.error(err);\n  });"
   },
   "getoutboundmessagingcampaignsdivisionview": {
     "operationId": "getoutboundmessagingcampaignsdivisionview",
@@ -30022,7 +30037,7 @@
   "getoutboundmessagingcampaignsdivisionviews": {
     "operationId": "getoutboundmessagingcampaignsdivisionviews",
     "functionName": "getOutboundMessagingcampaignsDivisionviews",
-    "signature": "getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber)",
+    "signature": "getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber, contentTemplateId, campaignStatus)",
     "parameters": [
       {
         "name": "pageSize",
@@ -30058,10 +30073,20 @@
         "name": "senderSmsPhoneNumber",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "contentTemplateId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "campaignStatus",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "MessagingCampaignDivisionViewEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size. The max that will be returned is 100.\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"a\", // String | The direction to sort\n  \"name\": \"name_example\", // String | Name\n  \"type\": \"type_example\", // String | Campaign Type\n  \"id\": [\"id_example\"], // [String] | id\n  \"senderSmsPhoneNumber\": \"senderSmsPhoneNumber_example\" // String | Sender SMS Phone Number\n};\n\n// Query a list of basic Messaging Campaign information objects\napiInstance.getOutboundMessagingcampaignsDivisionviews(opts)\n  .then((data) => {\n    console.log(`getOutboundMessagingcampaignsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundMessagingcampaignsDivisionviews\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size. The max that will be returned is 100.\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"a\", // String | The direction to sort\n  \"name\": \"name_example\", // String | Name\n  \"type\": \"type_example\", // String | Campaign Type\n  \"id\": [\"id_example\"], // [String] | id\n  \"senderSmsPhoneNumber\": \"senderSmsPhoneNumber_example\", // String | Sender SMS Phone Number\n  \"contentTemplateId\": \"contentTemplateId_example\", // String | Content template ID\n  \"campaignStatus\": \"campaignStatus_example\" // String | Campaign Status\n};\n\n// Query a list of basic Messaging Campaign information objects\napiInstance.getOutboundMessagingcampaignsDivisionviews(opts)\n  .then((data) => {\n    console.log(`getOutboundMessagingcampaignsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundMessagingcampaignsDivisionviews\");\n    console.error(err);\n  });"
   },
   "getoutboundruleset": {
     "operationId": "getoutboundruleset",
@@ -48859,6 +48884,20 @@
     "return": "HistoricalImportStatusListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\n// Retrieves status of the historical data imports of the organization\napiInstance.getWorkforcemanagementHistoricaldataImportstatus()\n  .then((data) => {\n    console.log(`getWorkforcemanagementHistoricaldataImportstatus success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementHistoricaldataImportstatus\");\n    console.error(err);\n  });"
   },
+  "getworkforcemanagementhistoricaldataimportstatusjobid": {
+    "operationId": "getworkforcemanagementhistoricaldataimportstatusjobid",
+    "functionName": "getWorkforcemanagementHistoricaldataImportstatusJobId",
+    "signature": "getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)",
+    "parameters": [
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "HistoricalImportStatusJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet jobId = \"jobId_example\"; // String | The job Id of the historical data import request\n\n// Retrieves status of the historical data imports associated with job id\napiInstance.getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)\n  .then((data) => {\n    console.log(`getWorkforcemanagementHistoricaldataImportstatusJobId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementHistoricaldataImportstatusJobId\");\n    console.error(err);\n  });"
+  },
   "getworkforcemanagementintegrationshris": {
     "operationId": "getworkforcemanagementintegrationshris",
     "functionName": "getWorkforcemanagementIntegrationsHris",
@@ -51226,7 +51265,8 @@
         "required": "false"
       }
     ],
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Trigger validation process for historical import\napiInstance.postWorkforcemanagementHistoricaldataValidate(opts)\n  .then(() => {\n    console.log(\"postWorkforcemanagementHistoricaldataValidate returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementHistoricaldataValidate\");\n    console.error(err);\n  });"
+    "return": "ValidationServiceAsyncResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Trigger validation process for historical import\napiInstance.postWorkforcemanagementHistoricaldataValidate(opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementHistoricaldataValidate success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementHistoricaldataValidate\");\n    console.error(err);\n  });"
   },
   "postworkforcemanagementintegrationshritimeofftypesjobs": {
     "operationId": "postworkforcemanagementintegrationshritimeofftypesjobs",

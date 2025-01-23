@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 212.1.0
+	 * @version 213.0.0
 	 */
 
 	/**
@@ -75,7 +75,7 @@ class GroupsApi {
 	 * Remove members
 	 * 
 	 * @param {String} groupId Group ID
-	 * @param {String} ids Comma separated list of userIds to remove
+	 * @param {String} ids Comma separated list of userIds to remove. A maximum of 50 members are allowed per request.
 	 */
 	deleteGroupMembers(groupId, ids) { 
 		// verify the required parameter 'groupId' is set
