@@ -4781,7 +4781,9 @@ let opts = {
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'type': "type_example", // String | Campaign Type
   'senderSmsPhoneNumber': "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
-  'id': ["id_example"] // [String] | A list of messaging campaign ids to bulk fetch
+  'id': ["id_example"], // [String] | A list of messaging campaign ids to bulk fetch
+  'contentTemplateId': "contentTemplateId_example", // String | Content template ID
+  'campaignStatus': "campaignStatus_example" // String | Campaign Status
 };
 
 apiInstance.getOutboundMessagingcampaigns(opts)
@@ -4809,6 +4811,8 @@ apiInstance.getOutboundMessagingcampaigns(opts)
  **type** | **String** | Campaign Type | [optional] <br />**Values**: EMAIL, SMS, WHATSAPP |
  **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
  **id** | **[String]** | A list of messaging campaign ids to bulk fetch | [optional]  |
+ **contentTemplateId** | **String** | Content template ID | [optional]  |
+ **campaignStatus** | **String** | Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
 
 ### Return type
 
@@ -4904,7 +4908,9 @@ let opts = {
   'name': "name_example", // String | Name
   'type': "type_example", // String | Campaign Type
   'id': ["id_example"], // [String] | id
-  'senderSmsPhoneNumber': "senderSmsPhoneNumber_example" // String | Sender SMS Phone Number
+  'senderSmsPhoneNumber': "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
+  'contentTemplateId': "contentTemplateId_example", // String | Content template ID
+  'campaignStatus': "campaignStatus_example" // String | Campaign Status
 };
 
 apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
@@ -4929,6 +4935,8 @@ apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
  **type** | **String** | Campaign Type | [optional] <br />**Values**: EMAIL, SMS, WHATSAPP |
  **id** | **[String]** | id | [optional]  |
  **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
+ **contentTemplateId** | **String** | Content template ID | [optional]  |
+ **campaignStatus** | **String** | Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
 
 ### Return type
 
@@ -9053,4 +9061,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@212.1.0_
+_purecloud-platform-client-v2@213.0.0_

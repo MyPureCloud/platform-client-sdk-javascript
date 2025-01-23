@@ -92,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#getWorkforcemanagementCalendarUrlIcs) | **GET** /api/v2/workforcemanagement/calendar/url/ics | Get existing calendar link for the current user
 [**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataDeletejob) | **GET** /api/v2/workforcemanagement/historicaldata/deletejob | Retrieves delete job status for historical data imports of the organization
 [**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatus) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus | Retrieves status of the historical data imports of the organization
+[**getWorkforcemanagementHistoricaldataImportstatusJobId**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatusJobId) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus/{jobId} | Retrieves status of the historical data imports associated with job id
 [**getWorkforcemanagementIntegrationsHris**](WorkforceManagementApi#getWorkforcemanagementIntegrationsHris) | **GET** /api/v2/workforcemanagement/integrations/hris | Get integrations
 [**getWorkforcemanagementIntegrationsHrisTimeofftypesJob**](WorkforceManagementApi#getWorkforcemanagementIntegrationsHrisTimeofftypesJob) | **GET** /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId} | Query the results of time off types job
 [**getWorkforcemanagementManagementunit**](WorkforceManagementApi#getWorkforcemanagementManagementunit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Get management unit
@@ -4980,6 +4981,56 @@ This endpoint does not need any parameter.
 ### Return type
 
 **HistoricalImportStatusListing**
+
+
+## getWorkforcemanagementHistoricaldataImportstatusJobId
+
+> HistoricalImportStatusJobResponse getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
+
+
+GET /api/v2/workforcemanagement/historicaldata/importstatus/{jobId}
+
+Retrieves status of the historical data imports associated with job id
+
+Requires ALL permissions:
+
+* wfm:historicalData:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The job Id of the historical data import request
+
+apiInstance.getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementHistoricaldataImportstatusJobId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementHistoricaldataImportstatusJobId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The job Id of the historical data import request |  |
+
+### Return type
+
+**HistoricalImportStatusJobResponse**
 
 
 ## getWorkforcemanagementIntegrationsHris
@@ -11310,7 +11361,7 @@ This endpoint does not need any parameter.
 
 ## postWorkforcemanagementHistoricaldataValidate
 
-> void postWorkforcemanagementHistoricaldataValidate(opts)
+> ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(opts)
 
 
 POST /api/v2/workforcemanagement/historicaldata/validate
@@ -11339,8 +11390,8 @@ let opts = {
 };
 
 apiInstance.postWorkforcemanagementHistoricaldataValidate(opts)
-  .then(() => {
-    console.log('postWorkforcemanagementHistoricaldataValidate returned successfully.');
+  .then((data) => {
+    console.log(`postWorkforcemanagementHistoricaldataValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling postWorkforcemanagementHistoricaldataValidate');
@@ -11357,7 +11408,7 @@ apiInstance.postWorkforcemanagementHistoricaldataValidate(opts)
 
 ### Return type
 
-void (no response body)
+**ValidationServiceAsyncResponse**
 
 
 ## postWorkforcemanagementIntegrationsHriTimeofftypesJobs
@@ -13506,4 +13557,4 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 **TimeOffLimit**
 
 
-_purecloud-platform-client-v2@212.1.0_
+_purecloud-platform-client-v2@213.0.0_

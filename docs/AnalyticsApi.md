@@ -2030,6 +2030,7 @@ let dashboardType = "dashboardType_example"; // String | List dashboard of given
 let dashboardAccessFilter = "dashboardAccessFilter_example"; // String | Filter dashboard based on the owner of dashboard
 let opts = { 
   'name': "name_example", // String | name of the dashboard
+  'dashboardState': "Active", // String | List dashboard of given state
   'sortBy': "desc", // String | 
   'pageNumber': 1, // Number | 
   'pageSize': 9 // Number | 
@@ -2050,9 +2051,10 @@ apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboar
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dashboardType** | **String** | List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites, Deleted |
+ **dashboardType** | **String** | List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
  **dashboardAccessFilter** | **String** | Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
  **name** | **String** | name of the dashboard | [optional]  |
+ **dashboardState** | **String** | List dashboard of given state | [optional] [default to Active]<br />**Values**: Active, Deleted |
  **sortBy** | **String** |  | [optional] [default to desc] |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** |  | [optional] [default to 9] |
@@ -5654,4 +5656,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@212.1.0_
+_purecloud-platform-client-v2@213.0.0_
