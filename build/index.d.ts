@@ -122,7 +122,7 @@ declare class DefaultHttpClient {
 	setTimeout(timeout: number): void;
 	setHttpsAgent(httpsAgent: any): void;
 	request(httpRequestOptions: HttpRequestOptions): Promise<any>;
-    toAxiosConfig(httpRequestOptions: RequestOptions): any;
+    toAxiosConfig(httpRequestOptions: HttpRequestOptions): any;
 }
 
 declare class Logger {
