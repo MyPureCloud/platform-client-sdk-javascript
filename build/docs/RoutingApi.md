@@ -148,7 +148,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingQueue**](RoutingApi#putRoutingQueue) | **PUT** /api/v2/routing/queues/{queueId} | Update a queue
 [**putRoutingSettings**](RoutingApi#putRoutingSettings) | **PUT** /api/v2/routing/settings | Update an organization's routing settings
 [**putRoutingSettingsTranscription**](RoutingApi#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
-[**putRoutingSmsPhonenumber**](RoutingApi#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Update a phone number provisioned for SMS.
 [**putRoutingUserDirectroutingbackupSettings**](RoutingApi#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
 [**putRoutingUserUtilization**](RoutingApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingUtilization**](RoutingApi#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
@@ -7700,58 +7699,6 @@ apiInstance.putRoutingSettingsTranscription(body)
 **TranscriptionSettings**
 
 
-## putRoutingSmsPhonenumber
-
-> SmsPhoneNumber putRoutingSmsPhonenumber(phoneNumberId, body)
-
-
-PUT /api/v2/routing/sms/phonenumbers/{phoneNumberId}
-
-Update a phone number provisioned for SMS.
-
-Requires ALL permissions:
-
-* sms:phoneNumber:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let phoneNumberId = "phoneNumberId_example"; // String | phone number
-let body = {}; // Object | SmsPhoneNumber
-
-apiInstance.putRoutingSmsPhonenumber(phoneNumberId, body)
-  .then((data) => {
-    console.log(`putRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putRoutingSmsPhonenumber');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **phoneNumberId** | **String** | phone number |  |
- **body** | **Object** | SmsPhoneNumber |  |
-
-### Return type
-
-**SmsPhoneNumber**
-
-
 ## putRoutingUserDirectroutingbackupSettings
 
 > AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
@@ -8116,4 +8063,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@213.1.0_
+_purecloud-platform-client-v2@214.0.0_

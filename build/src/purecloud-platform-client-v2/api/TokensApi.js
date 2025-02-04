@@ -5,7 +5,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 213.1.0
+	 * @version 214.0.0
 	 */
 
 	/**

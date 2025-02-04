@@ -18,15 +18,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsConversationCategories**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCategories) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/categories | Get the list of detected Speech and Text Analytics categories of conversation
 [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
 [**getSpeechandtextanalyticsConversationCommunicationTranscripturls**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscripturls) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
+[**getSpeechandtextanalyticsConversationSummaries**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationSummaries) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/summaries | Get conversation summaries by conversation id.
 [**getSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedback) | **GET** /api/v2/speechandtextanalytics/dictionaryfeedback | Get the list of Speech and Text Analytics dictionary feedbacks
 [**getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | **GET** /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} | Get a Speech and Text Analytics dictionary feedback by id
 [**getSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgram) | **GET** /api/v2/speechandtextanalytics/programs/{programId} | Get a Speech and Text Analytics program by id
 [**getSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramMappings) | **GET** /api/v2/speechandtextanalytics/programs/{programId}/mappings | Get Speech and Text Analytics program mappings to queues and flows by id
+[**getSpeechandtextanalyticsProgramSettingsInsights**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramSettingsInsights) | **GET** /api/v2/speechandtextanalytics/programs/{programId}/settings/insights | Get AI Insights settings of a program
 [**getSpeechandtextanalyticsProgramTranscriptionengines**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramTranscriptionengines) | **GET** /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines | Get transcription engine settings of a program
 [**getSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsPrograms) | **GET** /api/v2/speechandtextanalytics/programs | Get the list of Speech and Text Analytics programs
 [**getSpeechandtextanalyticsProgramsGeneralJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsGeneralJob) | **GET** /api/v2/speechandtextanalytics/programs/general/jobs/{jobId} | Get a Speech and Text Analytics general program job by id
 [**getSpeechandtextanalyticsProgramsMappings**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsMappings) | **GET** /api/v2/speechandtextanalytics/programs/mappings | Get the list of Speech and Text Analytics programs mappings to queues and flows
 [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsPublishjob) | **GET** /api/v2/speechandtextanalytics/programs/publishjobs/{jobId} | Get a Speech and Text Analytics publish programs job by id
+[**getSpeechandtextanalyticsProgramsSettingsInsights**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsSettingsInsights) | **GET** /api/v2/speechandtextanalytics/programs/settings/insights | Get the list of program AI Insights settings for the organization
 [**getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTranscriptionenginesDialects) | **GET** /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects | Get supported dialects for each transcription engine
 [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsUnpublished) | **GET** /api/v2/speechandtextanalytics/programs/unpublished | Get the list of Speech and Text Analytics unpublished programs
 [**getSpeechandtextanalyticsSentimentDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsSentimentDialects) | **GET** /api/v2/speechandtextanalytics/sentiment/dialects | Get the list of Speech and Text Analytics sentiment supported dialects
@@ -54,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | **PUT** /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} | Update existing Speech and Text Analytics dictionary feedback by id
 [**putSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsProgram) | **PUT** /api/v2/speechandtextanalytics/programs/{programId} | Update existing Speech and Text Analytics program
 [**putSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsProgramMappings) | **PUT** /api/v2/speechandtextanalytics/programs/{programId}/mappings | Set Speech and Text Analytics program mappings to queues and flows
+[**putSpeechandtextanalyticsProgramSettingsInsights**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsProgramSettingsInsights) | **PUT** /api/v2/speechandtextanalytics/programs/{programId}/settings/insights | Update AI Insights settings of a program
 [**putSpeechandtextanalyticsProgramTranscriptionengines**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsProgramTranscriptionengines) | **PUT** /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines | Update transcription engine settings of a program
 [**putSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsSettings) | **PUT** /api/v2/speechandtextanalytics/settings | Update Speech And Text Analytics Settings
 [**putSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi#putSpeechandtextanalyticsTopic) | **PUT** /api/v2/speechandtextanalytics/topics/{topicId} | Update existing Speech and Text Analytics topic
@@ -684,6 +688,58 @@ apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturls(con
 **TranscriptUrls**
 
 
+## getSpeechandtextanalyticsConversationSummaries
+
+> SpeechTextAnalyticsConversationSummaryListing getSpeechandtextanalyticsConversationSummaries(conversationId)
+
+
+GET /api/v2/speechandtextanalytics/conversations/{conversationId}/summaries
+
+Get conversation summaries by conversation id.
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:aiSummary:view
+* recording:recording:view
+* recording:recording:viewSensitiveData
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let conversationId = "conversationId_example"; // String | The conversation ID of the summaries
+
+apiInstance.getSpeechandtextanalyticsConversationSummaries(conversationId)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsConversationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsConversationSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | The conversation ID of the summaries |  |
+
+### Return type
+
+**SpeechTextAnalyticsConversationSummaryListing**
+
+
 ## getSpeechandtextanalyticsDictionaryfeedback
 
 > DictionaryFeedbackEntityListing getSpeechandtextanalyticsDictionaryfeedback(opts)
@@ -888,6 +944,57 @@ apiInstance.getSpeechandtextanalyticsProgramMappings(programId)
 ### Return type
 
 **ProgramMappings**
+
+
+## getSpeechandtextanalyticsProgramSettingsInsights
+
+> ProgramInsightsSettings getSpeechandtextanalyticsProgramSettingsInsights(programId)
+
+
+GET /api/v2/speechandtextanalytics/programs/{programId}/settings/insights
+
+Get AI Insights settings of a program
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:program:view
+* speechAndTextAnalytics:insightsSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let programId = "programId_example"; // String | The id of the program
+
+apiInstance.getSpeechandtextanalyticsProgramSettingsInsights(programId)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsProgramSettingsInsights success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsProgramSettingsInsights');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | The id of the program |  |
+
+### Return type
+
+**ProgramInsightsSettings**
 
 
 ## getSpeechandtextanalyticsProgramTranscriptionengines
@@ -1151,6 +1258,63 @@ apiInstance.getSpeechandtextanalyticsProgramsPublishjob(jobId)
 ### Return type
 
 **ProgramJob**
+
+
+## getSpeechandtextanalyticsProgramsSettingsInsights
+
+> ProgramInsightsSettingsEntityListing getSpeechandtextanalyticsProgramsSettingsInsights(opts)
+
+
+GET /api/v2/speechandtextanalytics/programs/settings/insights
+
+Get the list of program AI Insights settings for the organization
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:program:view
+* speechAndTextAnalytics:insightsSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let opts = { 
+  'pageSize': 100, // Number | The page size for the listing. The max that will be returned is 100.
+  'pageNumber': 1, // Number | The page number for the listing
+  'programIds': ["programIds_example"] // [String] | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+};
+
+apiInstance.getSpeechandtextanalyticsProgramsSettingsInsights(opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsProgramsSettingsInsights success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsProgramsSettingsInsights');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The page size for the listing. The max that will be returned is 100. | [optional] [default to 100] |
+ **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
+ **programIds** | **[String]** | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed. | [optional]  |
+
+### Return type
+
+**ProgramInsightsSettingsEntityListing**
 
 
 ## getSpeechandtextanalyticsProgramsTranscriptionenginesDialects
@@ -2524,6 +2688,59 @@ apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body)
 **ProgramMappings**
 
 
+## putSpeechandtextanalyticsProgramSettingsInsights
+
+> ProgramInsightsSettings putSpeechandtextanalyticsProgramSettingsInsights(programId, body)
+
+
+PUT /api/v2/speechandtextanalytics/programs/{programId}/settings/insights
+
+Update AI Insights settings of a program
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:program:edit
+* speechAndTextAnalytics:insightsSettings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let programId = "programId_example"; // String | The id of the program
+let body = {}; // Object | Program AI Insights setting
+
+apiInstance.putSpeechandtextanalyticsProgramSettingsInsights(programId, body)
+  .then((data) => {
+    console.log(`putSpeechandtextanalyticsProgramSettingsInsights success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putSpeechandtextanalyticsProgramSettingsInsights');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | The id of the program |  |
+ **body** | **Object** | Program AI Insights setting |  |
+
+### Return type
+
+**ProgramInsightsSettings**
+
+
 ## putSpeechandtextanalyticsProgramTranscriptionengines
 
 > ProgramTranscriptionEngines putSpeechandtextanalyticsProgramTranscriptionengines(programId, body)
@@ -2678,4 +2895,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@213.1.0_
+_purecloud-platform-client-v2@214.0.0_

@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 213.1.0
+	 * @version 214.0.0
 	 */
 
 	/**
@@ -339,6 +339,31 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get conversation summaries by conversation id.
+	 * 
+	 * @param {String} conversationId The conversation ID of the summaries
+	 */
+	getSpeechandtextanalyticsConversationSummaries(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationSummaries';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of Speech and Text Analytics dictionary feedbacks
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -427,6 +452,31 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}/mappings', 
+			'GET', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get AI Insights settings of a program
+	 * 
+	 * @param {String} programId The id of the program
+	 */
+	getSpeechandtextanalyticsProgramSettingsInsights(programId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramSettingsInsights';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/settings/insights', 
 			'GET', 
 			{ 'programId': programId },
 			{  },
@@ -556,6 +606,32 @@ class SpeechTextAnalyticsApi {
 			'GET', 
 			{ 'jobId': jobId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of program AI Insights settings for the organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 100. (default to 100)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {Array.<String>} opts.programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+	 */
+	getSpeechandtextanalyticsProgramsSettingsInsights(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/settings/insights', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'programIds': this.apiClient.buildCollectionParam(opts['programIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1237,6 +1313,36 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}/mappings', 
+			'PUT', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update AI Insights settings of a program
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} body Program AI Insights setting
+	 */
+	putSpeechandtextanalyticsProgramSettingsInsights(programId, body) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramSettingsInsights';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsProgramSettingsInsights';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/settings/insights', 
 			'PUT', 
 			{ 'programId': programId },
 			{  },

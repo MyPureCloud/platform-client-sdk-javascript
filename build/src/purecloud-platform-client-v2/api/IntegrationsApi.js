@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 213.1.0
+	 * @version 214.0.0
 	 */
 
 	/**
@@ -272,7 +272,6 @@ class IntegrationsApi {
 	 * Get draft function settings for Action
 	 * 
 	 * @param {String} actionId actionId
-	 * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsActionDraftFunction(actionId) { 
 		// verify the required parameter 'actionId' is set
@@ -387,7 +386,6 @@ class IntegrationsApi {
 	 * Get published function settings for Action
 	 * 
 	 * @param {String} actionId actionId
-	 * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsActionFunction(actionId) { 
 		// verify the required parameter 'actionId' is set
@@ -619,7 +617,6 @@ class IntegrationsApi {
 	/**
 	 * Get action function settings for Action
 	 * 
-	 * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsActionsFunctionsRuntimes() { 
 
@@ -1909,7 +1906,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to request URL upload.
-	 * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsActionDraftFunctionUpload(actionId, body) { 
 		// verify the required parameter 'actionId' is set
@@ -2271,7 +2267,6 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to update function settings.
-	 * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putIntegrationsActionDraftFunction(actionId, body) { 
 		// verify the required parameter 'actionId' is set

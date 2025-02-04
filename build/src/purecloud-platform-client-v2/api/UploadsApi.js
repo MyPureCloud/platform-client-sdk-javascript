@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 213.1.0
+	 * @version 214.0.0
 	 */
 
 	/**
@@ -56,7 +56,6 @@ class UploadsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to request URL upload.
-	 * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsActionDraftFunctionUpload(actionId, body) { 
 		// verify the required parameter 'actionId' is set

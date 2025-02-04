@@ -161,6 +161,7 @@ docs/WidgetsApi.md
 docs/WorkforceManagementApi.json
 docs/WorkforceManagementApi.md
 docs/deleteAlertingAlert-example.txt
+docs/deleteAlertingAlertsAll-example.txt
 docs/deleteAlertingInteractionstatsAlert-example.txt
 docs/deleteAlertingInteractionstatsRule-example.txt
 docs/deleteAlertingRule-example.txt
@@ -418,6 +419,7 @@ docs/deleteTelephonyProvidersEdgesTrunkbasesetting-example.txt
 docs/deleteToken-example.txt
 docs/deleteTokensMe-example.txt
 docs/deleteUser-example.txt
+docs/deleteUserExternalidAuthorityNameExternalKey-example.txt
 docs/deleteUserRoutinglanguage-example.txt
 docs/deleteUserRoutinglanguage-example.txt
 docs/deleteUserRoutingskill-example.txt
@@ -1408,15 +1410,18 @@ docs/getSpeechandtextanalyticsConversation-example.txt
 docs/getSpeechandtextanalyticsConversationCategories-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturl-example.txt
 docs/getSpeechandtextanalyticsConversationCommunicationTranscripturls-example.txt
+docs/getSpeechandtextanalyticsConversationSummaries-example.txt
 docs/getSpeechandtextanalyticsDictionaryfeedback-example.txt
 docs/getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/getSpeechandtextanalyticsProgram-example.txt
 docs/getSpeechandtextanalyticsProgramMappings-example.txt
+docs/getSpeechandtextanalyticsProgramSettingsInsights-example.txt
 docs/getSpeechandtextanalyticsProgramTranscriptionengines-example.txt
 docs/getSpeechandtextanalyticsPrograms-example.txt
 docs/getSpeechandtextanalyticsProgramsGeneralJob-example.txt
 docs/getSpeechandtextanalyticsProgramsMappings-example.txt
 docs/getSpeechandtextanalyticsProgramsPublishjob-example.txt
+docs/getSpeechandtextanalyticsProgramsSettingsInsights-example.txt
 docs/getSpeechandtextanalyticsProgramsTranscriptionenginesDialects-example.txt
 docs/getSpeechandtextanalyticsProgramsUnpublished-example.txt
 docs/getSpeechandtextanalyticsSentimentDialects-example.txt
@@ -1558,6 +1563,8 @@ docs/getUser-example.txt
 docs/getUserAdjacents-example.txt
 docs/getUserCallforwarding-example.txt
 docs/getUserDirectreports-example.txt
+docs/getUserExternalid-example.txt
+docs/getUserExternalidAuthorityName-example.txt
 docs/getUserFavorites-example.txt
 docs/getUserGeolocation-example.txt
 docs/getUserGeolocation-example.txt
@@ -1596,6 +1603,7 @@ docs/getUsersChatsMe-example.txt
 docs/getUsersDevelopmentActivities-example.txt
 docs/getUsersDevelopmentActivitiesMe-example.txt
 docs/getUsersDevelopmentActivity-example.txt
+docs/getUsersExternalidAuthorityNameExternalKey-example.txt
 docs/getUsersMe-example.txt
 docs/getUsersPresenceBulk-example.txt
 docs/getUsersPresencesPurecloudBulk-example.txt
@@ -1748,6 +1756,7 @@ docs/getWorkforcemanagementWorkplanbids-example.txt
 docs/headNotificationsChannel-example.txt
 docs/headTokensMe-example.txt
 docs/patchAlertingAlert-example.txt
+docs/patchAlertingAlertsAll-example.txt
 docs/patchAlertingAlertsBulk-example.txt
 docs/patchAlertingRulesBulk-example.txt
 docs/patchAnalyticsReportingSettings-example.txt
@@ -2844,7 +2853,6 @@ docs/putRoutingMessageRecipient-example.txt
 docs/putRoutingQueue-example.txt
 docs/putRoutingSettings-example.txt
 docs/putRoutingSettingsTranscription-example.txt
-docs/putRoutingSmsPhonenumber-example.txt
 docs/putRoutingUserDirectroutingbackupSettings-example.txt
 docs/putRoutingUserDirectroutingbackupSettings-example.txt
 docs/putRoutingUserUtilization-example.txt
@@ -2863,6 +2871,7 @@ docs/putSpeechandtextanalyticsCategory-example.txt
 docs/putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId-example.txt
 docs/putSpeechandtextanalyticsProgram-example.txt
 docs/putSpeechandtextanalyticsProgramMappings-example.txt
+docs/putSpeechandtextanalyticsProgramSettingsInsights-example.txt
 docs/putSpeechandtextanalyticsProgramTranscriptionengines-example.txt
 docs/putSpeechandtextanalyticsSettings-example.txt
 docs/putSpeechandtextanalyticsTopic-example.txt

@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 213.1.0
+	 * @version 214.0.0
 	 */
 
 	/**
@@ -165,6 +165,41 @@ class UsersApi {
 			'/api/v2/users/{userId}', 
 			'DELETE', 
 			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the external identifier for user.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {String} authorityName Authority Name
+	 * @param {String} externalKey External Key
+	 */
+	deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteUserExternalidAuthorityNameExternalKey';
+		}
+		// verify the required parameter 'authorityName' is set
+		if (authorityName === undefined || authorityName === null) {
+			throw 'Missing the required parameter "authorityName" when calling deleteUserExternalidAuthorityNameExternalKey';
+		}
+		// verify the required parameter 'externalKey' is set
+		if (externalKey === undefined || externalKey === null) {
+			throw 'Missing the required parameter "externalKey" when calling deleteUserExternalidAuthorityNameExternalKey';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}', 
+			'DELETE', 
+			{ 'userId': userId,'authorityName': authorityName,'externalKey': externalKey },
 			{  },
 			{  },
 			{  },
@@ -837,6 +872,61 @@ class UsersApi {
 	}
 
 	/**
+	 * Get the external identifiers for a user.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getUserExternalid(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserExternalid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/externalid', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the external identifier of user for an authority.
+	 * Authority name and external key are case sensitive.
+	 * @param {String} userId User ID
+	 * @param {String} authorityName Authority Name
+	 */
+	getUserExternalidAuthorityName(userId, authorityName) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserExternalidAuthorityName';
+		}
+		// verify the required parameter 'authorityName' is set
+		if (authorityName === undefined || authorityName === null) {
+			throw 'Missing the required parameter "authorityName" when calling getUserExternalidAuthorityName';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/externalid/{authorityName}', 
+			'GET', 
+			{ 'userId': userId,'authorityName': authorityName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Deprecated; will be revived with new contract
 	 * 
 	 * @param {String} userId User ID
@@ -1436,6 +1526,40 @@ class UsersApi {
 			'GET', 
 			{ 'activityId': activityId },
 			{ 'type': type },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user associated with external identifier.
+	 * Authority name and external key are case sensitive.
+	 * @param {String} authorityName Authority Name
+	 * @param {String} externalKey External Key
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'authorityName' is set
+		if (authorityName === undefined || authorityName === null) {
+			throw 'Missing the required parameter "authorityName" when calling getUsersExternalidAuthorityNameExternalKey';
+		}
+		// verify the required parameter 'externalKey' is set
+		if (externalKey === undefined || externalKey === null) {
+			throw 'Missing the required parameter "externalKey" when calling getUsersExternalidAuthorityNameExternalKey';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/externalid/{authorityName}/{externalKey}', 
+			'GET', 
+			{ 'authorityName': authorityName,'externalKey': externalKey },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
