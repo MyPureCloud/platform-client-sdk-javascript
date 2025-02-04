@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingUserDirectroutingbackupSettings**](UsersApi#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 [**deleteRoutingUserUtilization**](UsersApi#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteUser**](UsersApi#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
+[**deleteUserExternalidAuthorityNameExternalKey**](UsersApi#deleteUserExternalidAuthorityNameExternalKey) | **DELETE** /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} | Delete the external identifier for user.
 [**deleteUserRoutinglanguage**](UsersApi#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove a routing language from a user
 [**deleteUserRoutingskill**](UsersApi#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove a routing skill from a user
 [**deleteUserStationAssociatedstation**](UsersApi#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
@@ -36,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserAdjacents**](UsersApi#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
 [**getUserCallforwarding**](UsersApi#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user's CallForwarding
 [**getUserDirectreports**](UsersApi#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
+[**getUserExternalid**](UsersApi#getUserExternalid) | **GET** /api/v2/users/{userId}/externalid | Get the external identifiers for a user.
+[**getUserExternalidAuthorityName**](UsersApi#getUserExternalidAuthorityName) | **GET** /api/v2/users/{userId}/externalid/{authorityName} | Get the external identifier of user for an authority.
 [**getUserFavorites**](UsersApi#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Deprecated; will be revived with new contract
 [**getUserGeolocation**](UsersApi#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
 [**getUserOutofoffice**](UsersApi#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
@@ -57,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersDevelopmentActivities**](UsersApi#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
 [**getUsersDevelopmentActivitiesMe**](UsersApi#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
 [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
+[**getUsersExternalidAuthorityNameExternalKey**](UsersApi#getUsersExternalidAuthorityNameExternalKey) | **GET** /api/v2/users/externalid/{authorityName}/{externalKey} | Get the user associated with external identifier.
 [**getUsersMe**](UsersApi#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
 [**getUsersSearch**](UsersApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**patchUser**](UsersApi#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
@@ -406,6 +410,60 @@ apiInstance.deleteUser(userId)
 ### Return type
 
 **Object**
+
+
+## deleteUserExternalidAuthorityNameExternalKey
+
+> void deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+
+
+DELETE /api/v2/users/{userId}/externalid/{authorityName}/{externalKey}
+
+Delete the external identifier for user.
+
+Requires ANY permissions:
+
+* directory:user:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let authorityName = "authorityName_example"; // String | Authority Name
+let externalKey = "externalKey_example"; // String | External Key
+
+apiInstance.deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+  .then(() => {
+    console.log('deleteUserExternalidAuthorityNameExternalKey returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserExternalidAuthorityNameExternalKey');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **authorityName** | **String** | Authority Name |  |
+ **externalKey** | **String** | External Key |  |
+
+### Return type
+
+void (no response body)
 
 
 ## deleteUserRoutinglanguage
@@ -1671,6 +1729,106 @@ apiInstance.getUserDirectreports(userId, opts)
 **[User]**
 
 
+## getUserExternalid
+
+> [UserExternalIdentifier] getUserExternalid(userId)
+
+
+GET /api/v2/users/{userId}/externalid
+
+Get the external identifiers for a user.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getUserExternalid(userId)
+  .then((data) => {
+    console.log(`getUserExternalid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserExternalid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+
+### Return type
+
+**[UserExternalIdentifier]**
+
+
+## getUserExternalidAuthorityName
+
+> UserExternalIdentifier getUserExternalidAuthorityName(userId, authorityName)
+
+
+GET /api/v2/users/{userId}/externalid/{authorityName}
+
+Get the external identifier of user for an authority.
+
+Authority name and external key are case sensitive.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let authorityName = "authorityName_example"; // String | Authority Name
+
+apiInstance.getUserExternalidAuthorityName(userId, authorityName)
+  .then((data) => {
+    console.log(`getUserExternalidAuthorityName success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserExternalidAuthorityName');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **authorityName** | **String** | Authority Name |  |
+
+### Return type
+
+**UserExternalIdentifier**
+
+
 ## getUserFavorites
 
 > UserEntityListing getUserFavorites(userId, opts)
@@ -2846,6 +3004,62 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 ### Return type
 
 **DevelopmentActivity**
+
+
+## getUsersExternalidAuthorityNameExternalKey
+
+> User getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts)
+
+
+GET /api/v2/users/externalid/{authorityName}/{externalKey}
+
+Get the user associated with external identifier.
+
+Authority name and external key are case sensitive.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let authorityName = "authorityName_example"; // String | Authority Name
+let externalKey = "externalKey_example"; // String | External Key
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+apiInstance.getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts)
+  .then((data) => {
+    console.log(`getUsersExternalidAuthorityNameExternalKey success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersExternalidAuthorityNameExternalKey');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **authorityName** | **String** | Authority Name |  |
+ **externalKey** | **String** | External Key |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+
+### Return type
+
+**User**
 
 
 ## getUsersMe
@@ -5324,4 +5538,4 @@ apiInstance.putUserVerifier(userId, verifierId, body)
 **Verifier**
 
 
-_purecloud-platform-client-v2@213.1.0_
+_purecloud-platform-client-v2@214.0.0_

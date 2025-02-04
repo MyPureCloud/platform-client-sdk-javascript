@@ -81,8 +81,6 @@ POST /api/v2/integrations/actions/{actionId}/draft/function/upload
 
 Create upload presigned URL for draft function package file.
 
-postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:actionFunction:edit
@@ -482,4 +480,4 @@ apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body)
 **UploadUrlResponse**
 
 
-_purecloud-platform-client-v2@213.1.0_
+_purecloud-platform-client-v2@214.0.0_

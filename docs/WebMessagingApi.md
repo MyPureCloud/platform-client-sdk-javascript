@@ -59,4 +59,4 @@ apiInstance.getWebmessagingMessages(opts)
 **WebMessagingMessageEntityList**
 
 
-_purecloud-platform-client-v2@213.1.0_
+_purecloud-platform-client-v2@214.0.0_

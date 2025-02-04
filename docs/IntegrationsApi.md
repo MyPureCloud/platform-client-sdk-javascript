@@ -593,8 +593,6 @@ GET /api/v2/integrations/actions/{actionId}/draft/function
 
 Get draft function settings for Action
 
-getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:actionFunction:view
@@ -804,8 +802,6 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
 GET /api/v2/integrations/actions/{actionId}/function
 
 Get published function settings for Action
-
-getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1276,8 +1272,6 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 GET /api/v2/integrations/actions/functions/runtimes
 
 Get action function settings for Action
-
-getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3785,8 +3779,6 @@ POST /api/v2/integrations/actions/{actionId}/draft/function/upload
 
 Create upload presigned URL for draft function package file.
 
-postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:actionFunction:edit
@@ -4435,8 +4427,6 @@ PUT /api/v2/integrations/actions/{actionId}/draft/function
 
 Update draft function settings.
 
-putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * integrations:actionFunction:edit
@@ -4742,4 +4732,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@213.1.0_
+_purecloud-platform-client-v2@214.0.0_

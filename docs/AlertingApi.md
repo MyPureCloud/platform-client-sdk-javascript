@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteAlertingAlert**](AlertingApi#deleteAlertingAlert) | **DELETE** /api/v2/alerting/alerts/{alertId} | Delete an alert
+[**deleteAlertingAlertsAll**](AlertingApi#deleteAlertingAlertsAll) | **DELETE** /api/v2/alerting/alerts/all | Delete all alerts for the user
 [**deleteAlertingInteractionstatsAlert**](AlertingApi#deleteAlertingInteractionstatsAlert) | **DELETE** /api/v2/alerting/interactionstats/alerts/{alertId} | Delete an interaction stats alert
 [**deleteAlertingInteractionstatsRule**](AlertingApi#deleteAlertingInteractionstatsRule) | **DELETE** /api/v2/alerting/interactionstats/rules/{ruleId} | Delete an interaction stats rule
 [**deleteAlertingRule**](AlertingApi#deleteAlertingRule) | **DELETE** /api/v2/alerting/rules/{ruleId} | Delete a rule.
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAlertingInteractionstatsRules**](AlertingApi#getAlertingInteractionstatsRules) | **GET** /api/v2/alerting/interactionstats/rules | Get an interaction stats rule list
 [**getAlertingRule**](AlertingApi#getAlertingRule) | **GET** /api/v2/alerting/rules/{ruleId} | Get a rule.
 [**patchAlertingAlert**](AlertingApi#patchAlertingAlert) | **PATCH** /api/v2/alerting/alerts/{alertId} | Allows an entity to mute/snooze an alert or update the unread status of the alert.
+[**patchAlertingAlertsAll**](AlertingApi#patchAlertingAlertsAll) | **PATCH** /api/v2/alerting/alerts/all | Updates all alerts
 [**patchAlertingAlertsBulk**](AlertingApi#patchAlertingAlertsBulk) | **PATCH** /api/v2/alerting/alerts/bulk | Bulk alert updates
 [**patchAlertingRulesBulk**](AlertingApi#patchAlertingRulesBulk) | **PATCH** /api/v2/alerting/rules/bulk | Bulk update of notification lists
 [**postAlertingAlertsQuery**](AlertingApi#postAlertingAlertsQuery) | **POST** /api/v2/alerting/alerts/query | Gets a paged list of alerts. The max page size is 50
@@ -81,6 +83,51 @@ apiInstance.deleteAlertingAlert(alertId)
 ### Return type
 
 void (no response body)
+
+
+## deleteAlertingAlertsAll
+
+> **Object** deleteAlertingAlertsAll()
+
+
+DELETE /api/v2/alerting/alerts/all
+
+Delete all alerts for the user
+
+Requires ALL permissions:
+
+* alerting:alert:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+apiInstance.deleteAlertingAlertsAll()
+  .then((data) => {
+    console.log(`deleteAlertingAlertsAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAlertingAlertsAll');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Object**
 
 
 ## deleteAlertingInteractionstatsAlert
@@ -727,6 +774,58 @@ apiInstance.patchAlertingAlert(alertId, opts)
 **CommonAlert**
 
 
+## patchAlertingAlertsAll
+
+> **Object** patchAlertingAlertsAll(opts)
+
+
+PATCH /api/v2/alerting/alerts/all
+
+Updates all alerts
+
+Requires ALL permissions:
+
+* alerting:alert:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AlertingApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchAlertingAlertsAll(opts)
+  .then((data) => {
+    console.log(`patchAlertingAlertsAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchAlertingAlertsAll');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+**Object**
+
+
 ## patchAlertingAlertsBulk
 
 > BulkResponse patchAlertingAlertsBulk(body)
@@ -1318,4 +1417,4 @@ apiInstance.putAlertingRule(ruleId, body)
 **CommonRule**
 
 
-_purecloud-platform-client-v2@213.1.0_
+_purecloud-platform-client-v2@214.0.0_
