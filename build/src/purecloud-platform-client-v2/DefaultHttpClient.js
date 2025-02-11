@@ -14,6 +14,47 @@ class DefaultHttpClient extends AbstractHttpClient{
         this._axiosInstance = axios.create({});
     }
 
+
+    enableHooks() {
+        if (this.preHook && typeof this.preHook === 'function') {
+
+            if (this.requestInterceptorId !== undefined) {
+                axios.interceptors.request.eject(this.requestInterceptorId);
+            }
+
+            this.requestInterceptorId = this._axiosInstance.interceptors.request.use(
+                async (config) => {
+                        config = await this.preHook(config); // Call the custom pre-hook
+                        return config
+                },
+                (error) => {
+                    // Handle errors before the request is sent
+                    console.error('Request Pre-Hook Error:', error.message);
+                    return Promise.reject(error);
+                }
+            );
+        }
+
+        if (this.postHook && typeof this.postHook === 'function') {
+            // Response interceptor (for post-hooks)
+            if (this.responseInterceptorId !== undefined) {
+                axios.interceptors.response.eject(this.responseInterceptorId);
+            }
+
+            this.responseInterceptorId = this._axiosInstance.interceptors.response.use(
+                async (response) => {
+                        response = await this.postHook(response); // Call the custom post-hook
+                        return response
+                },
+                async (error) => {
+                    console.error('Post-Hook: Response Error', error.message);
+                    // Optionally call post-hook in case of errors
+                    return Promise.reject(error);
+                }
+            );
+        }
+    }
+
     request(httpRequestOptions) {
         if(!(httpRequestOptions instanceof HttpRequestOptions)) {
             throw new Error(`httpRequestOptions must be instance of HttpRequestOptions `);

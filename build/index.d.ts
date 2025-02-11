@@ -111,6 +111,9 @@ declare abstract class AbstractHttpClient {
 	setTimeout(timeout: number): void;
 	setHttpsAgent(httpsAgent: any): void;
 	abstract request(httpRequestOptions: HttpRequestOptions): Promise<any>;
+    setPreHook(hookFunction: (config: any) =>  Promise<any>): void;
+    setPostHook(hookFunction: (response: any) => Promise<any>): void;
+    abstract enableHooks(): void;
 }
 
 declare class DefaultHttpClient {
@@ -121,8 +124,11 @@ declare class DefaultHttpClient {
     constructor(timeout?: number, httpsAgent?: any);
 	setTimeout(timeout: number): void;
 	setHttpsAgent(httpsAgent: any): void;
+	setPreHook(hookFunction: (config: any) =>   Promise<any>): void;
+    setPostHook(hookFunction: (response: any) => Promise<any>): void;
 	request(httpRequestOptions: HttpRequestOptions): Promise<any>;
     toAxiosConfig(httpRequestOptions: HttpRequestOptions): any;
+    enableHooks(): void;
 }
 
 declare class Logger {

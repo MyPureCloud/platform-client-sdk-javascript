@@ -6,7 +6,7 @@ import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 214.0.0
+ * @version 215.0.0
  */
 class ApiClient {
 	/**
@@ -262,6 +262,24 @@ class ApiClient {
     }
 
     /**
+         * @description Sets preHook functions for the httpClient
+         * @param {string} preHook - method definition for prehook
+         */
+        setPreHook(preHook) {
+    		const httpClient = this.getHttpClient();
+    		httpClient.setPreHook(preHook);
+        }
+
+    /**
+          * @description Sets postHook functions for the httpClient
+          * @param {string} postHook - method definition for posthook
+          */
+         setPostHook(postHook) {
+        	const httpClient = this.getHttpClient();
+        	httpClient.setPostHook(postHook);
+         }
+
+    /**
      * @description Sets the certificate content if MTLS authentication is needed
      * @param {string} certContent - content for certs
      * @param {string} keyContent - content for key
@@ -291,6 +309,8 @@ class ApiClient {
 	         throw new Error("MTLS authentication is managed by the Browser itself. MTLS certificates cannot be set via code on Browser.");
 	    }
     }
+
+
 
 	/**
 	 * @description Sets the gateway used by the session
