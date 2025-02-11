@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@214.0.0
+Documentation version purecloud-platform-client-v2@215.0.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/214.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/215.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/214.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/215.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -621,6 +621,34 @@ const client = platformClient.ApiClient.instance;
 
 httpClient = new CustomHttpClient();
 client.setHttpClient(httpClient)
+```
+### Using Pre Commit and Post Commit Hooks
+
+For any custom requirements like pre validations or post cleanups (for ex: OCSP and CRL validation), we can inject the prehook and posthook functions.
+The SDK's default client will make sure the injected hook functions are executed.
+
+```javascript
+
+async function PreHook(config) {
+	try {
+		console.log("Running Pre-Hook: Certificate Revocation Checks");
+
+        // custom validation logics
+
+		console.log("Certificate validated successfully.");
+		return config;
+	} catch (error) {
+		console.error("Pre-Hook Validation Failed:", error.message);
+		throw error; // Reject request if validation fails
+	}
+}
+
+const client = platformClient.ApiClient.instance;
+client.setGateway({host: 'mygateway.mydomain.myextension', protocol: 'https', port: 1443, path_params_login: 'myadditionalpathforlogin', path_params_api: 'myadditionalpathforapi'});
+
+client.setMTLSContents(cert.pem, key, caChainCert) // cert.pem, key, caChainCert are contents of the respective keys here. If you have a passphrase encoded data, please decode it and then pass the information to this method.
+
+client.setPreHook(PreHook)
 ```
 
 ## Versioning

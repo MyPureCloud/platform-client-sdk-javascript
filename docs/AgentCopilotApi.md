@@ -113,4 +113,4 @@ apiInstance.putAssistantCopilot(assistantId, body)
 **Copilot**
 
 
-_purecloud-platform-client-v2@214.0.0_
+_purecloud-platform-client-v2@215.0.0_
