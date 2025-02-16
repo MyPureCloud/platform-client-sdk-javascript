@@ -41,7 +41,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingsScreensessionsDetails**](RecordingApi#getRecordingsScreensessionsDetails) | **GET** /api/v2/recordings/screensessions/details | Retrieves an object containing the total number of concurrent active screen recordings
 [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
 [**patchRecordingMediaretentionpolicy**](RecordingApi#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
-[**patchRecordingsScreensession**](RecordingApi#patchRecordingsScreensession) | **PATCH** /api/v2/recordings/screensessions/{recordingSessionId} | Update a screen recording session
 [**postConversationRecordingAnnotations**](RecordingApi#postConversationRecordingAnnotations) | **POST** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation
 [**postRecordingBatchrequests**](RecordingApi#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
 [**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi#postRecordingCrossplatformMediaretentionpolicies) | **POST** /api/v2/recording/crossplatform/mediaretentionpolicies | Create media retention policy
@@ -1982,65 +1981,6 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 **Policy**
 
 
-## patchRecordingsScreensession
-
-> void patchRecordingsScreensession(recordingSessionId, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-PATCH /api/v2/recordings/screensessions/{recordingSessionId}
-
-Update a screen recording session
-
-This API is deprecated and the functionality to stop screen recording will be no longer supported.
-
-Requires ANY permissions:
-
-* recording:screenRecording:stop
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let recordingSessionId = "recordingSessionId_example"; // String | Screen recording session ID
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.patchRecordingsScreensession(recordingSessionId, opts)
-  .then(() => {
-    console.log('patchRecordingsScreensession returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchRecordingsScreensession');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **recordingSessionId** | **String** | Screen recording session ID |  |
- **body** | **Object** |  | [optional]  |
-
-### Return type
-
-void (no response body)
-
-
 ## postConversationRecordingAnnotations
 
 > Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
@@ -3240,4 +3180,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@215.0.0_
+_purecloud-platform-client-v2@216.0.0_

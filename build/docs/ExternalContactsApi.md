@@ -1525,7 +1525,7 @@ apiInstance.getExternalcontactsImportCsvUploadPreview(uploadId)
 
 ## getExternalcontactsImportJob
 
-> ContactImportJobResponse getExternalcontactsImportJob(jobId)
+> ContactImportJobResponse getExternalcontactsImportJob(jobId, opts)
 
 
 GET /api/v2/externalcontacts/import/jobs/{jobId}
@@ -1550,8 +1550,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let jobId = "jobId_example"; // String | Job id
+let opts = { 
+  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+};
 
-apiInstance.getExternalcontactsImportJob(jobId)
+apiInstance.getExternalcontactsImportJob(jobId, opts)
   .then((data) => {
     console.log(`getExternalcontactsImportJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1567,6 +1570,7 @@ apiInstance.getExternalcontactsImportJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Job id |  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: division |
 
 ### Return type
 
@@ -1600,6 +1604,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "25", // String | Number of entities to return. Maximum of 100.
   'sortOrder': "Ascending", // String | Direction of sorting.
@@ -1621,6 +1626,7 @@ apiInstance.getExternalcontactsImportJobs(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: division |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional] [default to 25] |
  **sortOrder** | **String** | Direction of sorting. | [optional] [default to Ascending]<br />**Values**: Ascending, Descending |
@@ -5048,4 +5054,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@215.0.0_
+_purecloud-platform-client-v2@216.0.0_

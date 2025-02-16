@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 215.0.0
+	 * @version 216.0.0
 	 */
 
 	/**
@@ -40,6 +40,37 @@ class AuthorizationApi {
 			'DELETE', 
 			{ 'divisionId': divisionId },
 			{ 'force': opts['force'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an access control policy
+	 * 
+	 * @param {String} targetName The domain:entity:action target to which the policy is applied
+	 * @param {String} subjectId The ID of the subject to which the policy is applied
+	 * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null) {
+			throw 'Missing the required parameter "targetName" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
+		}
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}', 
+			'DELETE', 
+			{ 'targetName': targetName,'subjectId': subjectId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -354,6 +385,198 @@ class AuthorizationApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'queryType': opts['queryType'],'query': opts['query'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a page of access policies for an organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPolicies(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies', 
+			'GET', 
+			{  },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a page of access policies for a given subject
+	 * 
+	 * @param {String} subjectId The ID of the subject to which policies are applied
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPoliciesSubjectSubjectId(subjectId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationPoliciesSubjectSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/subject/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a page of access policies for a given policy target
+	 * 
+	 * @param {String} targetName The domain:entity:action resource target to which policies are applied
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPoliciesTarget(targetName, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null) {
+			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}', 
+			'GET', 
+			{ 'targetName': targetName },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an access control policy for a specified resource target and subject
+	 * 
+	 * @param {String} targetName The domain:entity:action resource target to which the policy is applied
+	 * @param {String} subjectId The ID of the subject to which the policy is applied
+	 * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null) {
+			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
+		}
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}', 
+			'GET', 
+			{ 'targetName': targetName,'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a map of policy targets to valid attributes for those targets
+	 * 
+	 * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPoliciesTargets() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an access control policy with the specified policy ID
+	 * 
+	 * @param {String} policyId The ID of the policy to retrieve
+	 * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPolicy(policyId) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/{policyId}', 
+			'GET', 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of attributes used to evaluate an access control policy with the specified policy ID
+	 * 
+	 * @param {String} policyId The ID of the policy to retrieve attributes
+	 * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPolicyAttributes(policyId) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicyAttributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/{policyId}/attributes', 
+			'GET', 
+			{ 'policyId': policyId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -828,6 +1051,99 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Add an access control policy for a specified resource target and subject
+	 * 
+	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
+	 * @param {Object} body Access control policy
+	 * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAuthorizationPoliciesTarget(targetName, body) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null) {
+			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTarget';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationPoliciesTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}', 
+			'POST', 
+			{ 'targetName': targetName },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate the conditions and attributes of an access control policy for a specified resource target
+	 * 
+	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
+	 * @param {Object} body Access control policy
+	 * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAuthorizationPoliciesTargetValidate(targetName, body) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null) {
+			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTargetValidate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationPoliciesTargetValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}/validate', 
+			'POST', 
+			{ 'targetName': targetName },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Simulate a request and evaluate the specified policy ID against the provided values
+	 * 
+	 * @param {String} policyId The ID of the policy to test the simulated data against
+	 * @param {Object} body A map of attribute names to type and simulated data value
+	 * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAuthorizationPolicySimulate(policyId, body) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling postAuthorizationPolicySimulate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationPolicySimulate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/{policyId}/simulate', 
+			'POST', 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Bulk-grant subjects and divisions with an organization role.
 	 * 
 	 * @param {String} roleId Role ID
@@ -1102,6 +1418,68 @@ class AuthorizationApi {
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'PUT', 
 			{ 'divisionId': divisionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add an access control policy for a specified resource target and subject, overwriting any existing policy
+	 * 
+	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
+	 * @param {Object} body Access control policy
+	 * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putAuthorizationPoliciesTarget(targetName, body) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null) {
+			throw 'Missing the required parameter "targetName" when calling putAuthorizationPoliciesTarget';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAuthorizationPoliciesTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}', 
+			'PUT', 
+			{ 'targetName': targetName },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an access control policy with a given ID
+	 * 
+	 * @param {String} policyId The ID of the policy to update
+	 * @param {Object} body Access control policy
+	 * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putAuthorizationPolicy(policyId, body) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling putAuthorizationPolicy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAuthorizationPolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/{policyId}', 
+			'PUT', 
+			{ 'policyId': policyId },
 			{  },
 			{  },
 			{  },

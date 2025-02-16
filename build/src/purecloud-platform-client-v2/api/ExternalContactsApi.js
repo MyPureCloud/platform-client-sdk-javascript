@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 215.0.0
+	 * @version 216.0.0
 	 */
 
 	/**
@@ -745,8 +745,12 @@ class ExternalContactsApi {
 	 * Get job based on id
 	 * 
 	 * @param {String} jobId Job id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
-	getExternalcontactsImportJob(jobId) { 
+	getExternalcontactsImportJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
 			throw 'Missing the required parameter "jobId" when calling getExternalcontactsImportJob';
@@ -756,7 +760,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/import/jobs/{jobId}', 
 			'GET', 
 			{ 'jobId': jobId },
-			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -770,6 +774,7 @@ class ExternalContactsApi {
 	 * List jobs for organization
 	 * 
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 100. (default to 25)
 	 * @param {Object} opts.sortOrder Direction of sorting. (default to Ascending)
@@ -783,7 +788,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/import/jobs', 
 			'GET', 
 			{  },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'jobStatus': opts['jobStatus'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'jobStatus': opts['jobStatus'] },
 			{  },
 			{  },
 			null, 

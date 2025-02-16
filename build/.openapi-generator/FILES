@@ -187,6 +187,7 @@ docs/deleteAssistantQueue-example.txt
 docs/deleteAssistantQueues-example.txt
 docs/deleteAuthorizationDivision-example.txt
 docs/deleteAuthorizationDivision-example.txt
+docs/deleteAuthorizationPoliciesTargetSubjectSubjectId-example.txt
 docs/deleteAuthorizationRole-example.txt
 docs/deleteAuthorizationSubjectDivisionRole-example.txt
 docs/deleteAuthorizationSubjectDivisionRole-example.txt
@@ -596,6 +597,13 @@ docs/getAuthorizationDivisionspermittedPagedMe-example.txt
 docs/getAuthorizationDivisionspermittedPagedSubjectId-example.txt
 docs/getAuthorizationDivisionspermittedPagedSubjectId-example.txt
 docs/getAuthorizationPermissions-example.txt
+docs/getAuthorizationPolicies-example.txt
+docs/getAuthorizationPoliciesSubjectSubjectId-example.txt
+docs/getAuthorizationPoliciesTarget-example.txt
+docs/getAuthorizationPoliciesTargetSubjectSubjectId-example.txt
+docs/getAuthorizationPoliciesTargets-example.txt
+docs/getAuthorizationPolicy-example.txt
+docs/getAuthorizationPolicyAttributes-example.txt
 docs/getAuthorizationProducts-example.txt
 docs/getAuthorizationRole-example.txt
 docs/getAuthorizationRoleComparedefaultRightRoleId-example.txt
@@ -1007,6 +1015,7 @@ docs/getJourneyViewVersionJobResults-example.txt
 docs/getJourneyViewVersionJobResultsChart-example.txt
 docs/getJourneyViewVersionJobsLatest-example.txt
 docs/getJourneyViews-example.txt
+docs/getJourneyViewsDataDetails-example.txt
 docs/getJourneyViewsEventdefinition-example.txt
 docs/getJourneyViewsEventdefinitions-example.txt
 docs/getJourneyViewsJobs-example.txt
@@ -1712,6 +1721,8 @@ docs/getWorkforcemanagementBusinessunits-example.txt
 docs/getWorkforcemanagementBusinessunitsDivisionviews-example.txt
 docs/getWorkforcemanagementCalendarDataIcs-example.txt
 docs/getWorkforcemanagementCalendarUrlIcs-example.txt
+docs/getWorkforcemanagementHistoricaldataBulkRemoveJob-example.txt
+docs/getWorkforcemanagementHistoricaldataBulkRemoveJobs-example.txt
 docs/getWorkforcemanagementHistoricaldataDeletejob-example.txt
 docs/getWorkforcemanagementHistoricaldataImportstatus-example.txt
 docs/getWorkforcemanagementHistoricaldataImportstatusJobId-example.txt
@@ -1869,7 +1880,6 @@ docs/patchOutboundSettings-example.txt
 docs/patchQualityFormsSurvey-example.txt
 docs/patchRecordingCrossplatformMediaretentionpolicy-example.txt
 docs/patchRecordingMediaretentionpolicy-example.txt
-docs/patchRecordingsScreensession-example.txt
 docs/patchRoutingConversation-example.txt
 docs/patchRoutingEmailDomain-example.txt
 docs/patchRoutingEmailDomainValidate-example.txt
@@ -2064,6 +2074,9 @@ docs/postAuthorizationDivisionRestore-example.txt
 docs/postAuthorizationDivisionRestore-example.txt
 docs/postAuthorizationDivisions-example.txt
 docs/postAuthorizationDivisions-example.txt
+docs/postAuthorizationPoliciesTarget-example.txt
+docs/postAuthorizationPoliciesTargetValidate-example.txt
+docs/postAuthorizationPolicySimulate-example.txt
 docs/postAuthorizationRole-example.txt
 docs/postAuthorizationRoleComparedefaultRightRoleId-example.txt
 docs/postAuthorizationRoles-example.txt
@@ -2642,6 +2655,7 @@ docs/postWorkforcemanagementBusinessunitWorkplanbidGroups-example.txt
 docs/postWorkforcemanagementBusinessunitWorkplanbids-example.txt
 docs/postWorkforcemanagementBusinessunits-example.txt
 docs/postWorkforcemanagementCalendarUrlIcs-example.txt
+docs/postWorkforcemanagementHistoricaldataBulkRemoveJobs-example.txt
 docs/postWorkforcemanagementHistoricaldataDeletejob-example.txt
 docs/postWorkforcemanagementHistoricaldataValidate-example.txt
 docs/postWorkforcemanagementIntegrationsHriTimeofftypesJobs-example.txt
@@ -2696,6 +2710,8 @@ docs/putAssistantCopilot-example.txt
 docs/putAssistantQueue-example.txt
 docs/putAuthorizationDivision-example.txt
 docs/putAuthorizationDivision-example.txt
+docs/putAuthorizationPoliciesTarget-example.txt
+docs/putAuthorizationPolicy-example.txt
 docs/putAuthorizationRole-example.txt
 docs/putAuthorizationRoleUsersAdd-example.txt
 docs/putAuthorizationRoleUsersRemove-example.txt

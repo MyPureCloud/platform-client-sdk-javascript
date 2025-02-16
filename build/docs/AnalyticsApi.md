@@ -4893,8 +4893,6 @@ POST /api/v2/analytics/summaries/aggregates/query
 
 Query for summary aggregates
 
-postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * analytics:summaryAggregate:view
@@ -5656,4 +5654,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@215.0.0_
+_purecloud-platform-client-v2@216.0.0_

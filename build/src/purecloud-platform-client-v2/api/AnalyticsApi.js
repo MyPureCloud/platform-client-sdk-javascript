@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 215.0.0
+	 * @version 216.0.0
 	 */
 
 	/**
@@ -2438,7 +2438,6 @@ class AnalyticsApi {
 	 * Query for summary aggregates
 	 * 
 	 * @param {Object} body query
-	 * postAnalyticsSummariesAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsSummariesAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set

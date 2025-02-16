@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 215.0.0
+	 * @version 216.0.0
 	 */
 
 	/**
@@ -1136,6 +1136,26 @@ class JourneyApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'nameOrCreatedBy': opts['nameOrCreatedBy'],'expand': opts['expand'],'id': opts['id'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about the data available for journey queries including oldest and newest event dates
+	 * 
+	 */
+	getJourneyViewsDataDetails() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/data/details', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 

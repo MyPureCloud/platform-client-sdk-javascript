@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 215.0.0
+	 * @version 216.0.0
 	 */
 
 	/**
@@ -2517,6 +2517,51 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/calendar/url/ics', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves delete job status for historical data imports associated with the job id
+	 * 
+	 * @param {String} jobId The job ID of the historical data delete request
+	 */
+	getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementHistoricaldataBulkRemoveJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves all delete job status for historical data
+	 * 
+	 */
+	getWorkforcemanagementHistoricaldataBulkRemoveJobs() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs', 
 			'GET', 
 			{  },
 			{  },
@@ -6072,6 +6117,30 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the list of the historical data import entries
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementHistoricaldataBulkRemoveJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

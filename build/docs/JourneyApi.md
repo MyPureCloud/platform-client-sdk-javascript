@@ -46,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyViewVersionJobResultsChart**](JourneyApi#getJourneyViewVersionJobResultsChart) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId} | Get the chart result associated with a journey view job.
 [**getJourneyViewVersionJobsLatest**](JourneyApi#getJourneyViewVersionJobsLatest) | **GET** /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest | Get the latest job of a journey view version.
 [**getJourneyViews**](JourneyApi#getJourneyViews) | **GET** /api/v2/journey/views | Get a list of Journey Views
+[**getJourneyViewsDataDetails**](JourneyApi#getJourneyViewsDataDetails) | **GET** /api/v2/journey/views/data/details | Get details about the data available for journey queries including oldest and newest event dates
 [**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | **GET** /api/v2/journey/views/eventdefinitions/{eventDefinitionId} | Get an Event Definition
 [**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | **GET** /api/v2/journey/views/eventdefinitions | Get a list of Event Definitions
 [**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | **GET** /api/v2/journey/views/jobs | Get the jobs for an organization.
@@ -2220,6 +2221,51 @@ apiInstance.getJourneyViews(opts)
 **JourneyViewListing**
 
 
+## getJourneyViewsDataDetails
+
+> DataRange getJourneyViewsDataDetails()
+
+
+GET /api/v2/journey/views/data/details
+
+Get details about the data available for journey queries including oldest and newest event dates
+
+Requires ALL permissions:
+
+* journey:dataDetails:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+apiInstance.getJourneyViewsDataDetails()
+  .then((data) => {
+    console.log(`getJourneyViewsDataDetails success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyViewsDataDetails');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**DataRange**
+
+
 ## getJourneyViewsEventdefinition
 
 > JourneyEventDefinition getJourneyViewsEventdefinition(eventDefinitionId)
@@ -3786,4 +3832,4 @@ apiInstance.putJourneyViewVersion(viewId, versionId, body)
 **JourneyView**
 
 
-_purecloud-platform-client-v2@215.0.0_
+_purecloud-platform-client-v2@216.0.0_

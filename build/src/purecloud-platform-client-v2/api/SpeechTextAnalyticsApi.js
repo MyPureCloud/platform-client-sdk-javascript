@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 215.0.0
+	 * @version 216.0.0
 	 */
 
 	/**
@@ -173,12 +173,12 @@ class SpeechTextAnalyticsApi {
 	 * Get the list of Speech and Text Analytics categories
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 50. (default to 25)
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 25. (default to 25)
 	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
 	 * @param {String} opts.name The category name filter applied to the listing
 	 * @param {Object} opts.sortOrder The sort order for the listing (default to asc)
 	 * @param {Object} opts.sortBy The field to sort by for the listing (default to name)
-	 * @param {Array.<String>} opts.ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+	 * @param {Array.<String>} opts.ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.
 	 */
 	getSpeechandtextanalyticsCategories(opts) { 
 		opts = opts || {};

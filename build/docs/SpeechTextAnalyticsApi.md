@@ -390,12 +390,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
-  'pageSize': 25, // Number | The page size for the listing. The max that will be returned is 50.
+  'pageSize': 25, // Number | The page size for the listing. The max that will be returned is 25.
   'pageNumber': 1, // Number | The page number for the listing
   'name': "name_example", // String | The category name filter applied to the listing
   'sortOrder': "asc", // String | The sort order for the listing
   'sortBy': "name", // String | The field to sort by for the listing
-  'ids': ["ids_example"] // [String] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+  'ids': ["ids_example"] // [String] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.
 };
 
 apiInstance.getSpeechandtextanalyticsCategories(opts)
@@ -413,12 +413,12 @@ apiInstance.getSpeechandtextanalyticsCategories(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] |
+ **pageSize** | **Number** | The page size for the listing. The max that will be returned is 25. | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
  **name** | **String** | The category name filter applied to the listing | [optional]  |
  **sortOrder** | **String** | The sort order for the listing | [optional] [default to asc]<br />**Values**: asc, desc |
  **sortBy** | **String** | The field to sort by for the listing | [optional] [default to name]<br />**Values**: name, description |
- **ids** | **[String]** | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+ **ids** | **[String]** | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed. | [optional]  |
 
 ### Return type
 
@@ -2895,4 +2895,4 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 **Topic**
 
 
-_purecloud-platform-client-v2@215.0.0_
+_purecloud-platform-client-v2@216.0.0_
