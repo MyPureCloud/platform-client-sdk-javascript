@@ -50,12 +50,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
 [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 [**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | **GET** /api/v2/externalcontacts/scan/contacts | Scan for external contacts using paging
+[**getExternalcontactsScanContactsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanContactsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/contacts/divisionviews/all | Scan for external contacts using paging
 [**getExternalcontactsScanNotes**](ExternalContactsApi#getExternalcontactsScanNotes) | **GET** /api/v2/externalcontacts/scan/notes | Scan for notes using paging
+[**getExternalcontactsScanNotesDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanNotesDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/notes/divisionviews/all | Scan for notes using paging
 [**getExternalcontactsScanOrganizations**](ExternalContactsApi#getExternalcontactsScanOrganizations) | **GET** /api/v2/externalcontacts/scan/organizations | Scan for external organizations using paging
+[**getExternalcontactsScanOrganizationsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanOrganizationsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/organizations/divisionviews/all | Scan for external organizations using paging
 [**getExternalcontactsScanRelationships**](ExternalContactsApi#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
+[**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/relationships/divisionviews/all | Scan for relationships
 [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
 [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
 [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
+[**postExternalcontactsBulkContactsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkContactsDivisionviews) | **POST** /api/v2/externalcontacts/bulk/contacts/divisionviews | Bulk fetch contacts across divisions
 [**postExternalcontactsBulkContactsRemove**](ExternalContactsApi#postExternalcontactsBulkContactsRemove) | **POST** /api/v2/externalcontacts/bulk/contacts/remove | Bulk remove contacts
 [**postExternalcontactsBulkContactsUnresolved**](ExternalContactsApi#postExternalcontactsBulkContactsUnresolved) | **POST** /api/v2/externalcontacts/bulk/contacts/unresolved | Bulk fetch unresolved ancestor contacts
 [**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi#postExternalcontactsBulkContactsUpdate) | **POST** /api/v2/externalcontacts/bulk/contacts/update | Bulk update contacts
@@ -65,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsBulkNotesUpdate**](ExternalContactsApi#postExternalcontactsBulkNotesUpdate) | **POST** /api/v2/externalcontacts/bulk/notes/update | Bulk update notes
 [**postExternalcontactsBulkOrganizations**](ExternalContactsApi#postExternalcontactsBulkOrganizations) | **POST** /api/v2/externalcontacts/bulk/organizations | Bulk fetch organizations
 [**postExternalcontactsBulkOrganizationsAdd**](ExternalContactsApi#postExternalcontactsBulkOrganizationsAdd) | **POST** /api/v2/externalcontacts/bulk/organizations/add | Bulk add organizations
+[**postExternalcontactsBulkOrganizationsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkOrganizationsDivisionviews) | **POST** /api/v2/externalcontacts/bulk/organizations/divisionviews | Bulk fetch organizations across divisions
 [**postExternalcontactsBulkOrganizationsRemove**](ExternalContactsApi#postExternalcontactsBulkOrganizationsRemove) | **POST** /api/v2/externalcontacts/bulk/organizations/remove | Bulk remove organizations
 [**postExternalcontactsBulkOrganizationsUpdate**](ExternalContactsApi#postExternalcontactsBulkOrganizationsUpdate) | **POST** /api/v2/externalcontacts/bulk/organizations/update | Bulk update organizations
 [**postExternalcontactsBulkRelationships**](ExternalContactsApi#postExternalcontactsBulkRelationships) | **POST** /api/v2/externalcontacts/bulk/relationships | Bulk fetch relationships
@@ -979,7 +985,8 @@ let opts = {
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
   'sortOrder': "sortOrder_example", // String | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'divisionIds': ["divisionIds_example"] // [String] | which divisions to search, up to 50
 };
 
 apiInstance.getExternalcontactsContacts(opts)
@@ -1002,6 +1009,7 @@ apiInstance.getExternalcontactsContacts(opts)
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
+ **divisionIds** | **[String]** | which divisions to search, up to 50 | [optional]  |
 
 ### Return type
 
@@ -2078,7 +2086,8 @@ let opts = {
   'trustorId': ["trustorId_example"], // [String] | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
   'sortOrder': "sortOrder_example", // String | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc
   'expand': ["expand_example"], // [String] | which fields, if any, to expand
-  'includeTrustors': true // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
+  'includeTrustors': true, // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
+  'divisionIds': ["divisionIds_example"] // [String] | which divisions to search, up to 50
 };
 
 apiInstance.getExternalcontactsOrganizations(opts)
@@ -2103,6 +2112,7 @@ apiInstance.getExternalcontactsOrganizations(opts)
  **sortOrder** | **String** | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division, identifiers, externalSources |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
+ **divisionIds** | **[String]** | which divisions to search, up to 50 | [optional]  |
 
 ### Return type
 
@@ -2389,7 +2399,8 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
 let opts = { 
-  'expand': ["expand_example"] // [String] | which field, if any, to expand
+  'expand': ["expand_example"], // [String] | which field, if any, to expand
+  'divisionId': "*" // String | Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value
 };
 
 apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
@@ -2409,6 +2420,7 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **lookupVal** | **String** | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
  **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources, division |
+ **divisionId** | **String** | Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value | [optional] [default to *] |
 
 ### Return type
 
@@ -2444,7 +2456,8 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
   'limit': 3.4, // Number | The number of contacts per page; must be between 10 and 200, default is 100
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'divisionId': "*" // String | The division to scan over
 };
 
 apiInstance.getExternalcontactsScanContacts(opts)
@@ -2453,6 +2466,63 @@ apiInstance.getExternalcontactsScanContacts(opts)
   })
   .catch((err) => {
     console.log('There was a failure calling getExternalcontactsScanContacts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | The number of contacts per page; must be between 10 and 200, default is 100 | [optional]  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **divisionId** | **String** | The division to scan over | [optional] [default to *] |
+
+### Return type
+
+**CursorContactListing**
+
+
+## getExternalcontactsScanContactsDivisionviewsAll
+
+> CursorContactListing getExternalcontactsScanContactsDivisionviewsAll(opts)
+
+
+GET /api/v2/externalcontacts/scan/contacts/divisionviews/all
+
+Scan for external contacts using paging
+
+getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* externalContacts:contact:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 3.4, // Number | The number of contacts per page; must be between 10 and 200, default is 100
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+};
+
+apiInstance.getExternalcontactsScanContactsDivisionviewsAll(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanContactsDivisionviewsAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsScanContactsDivisionviewsAll');
     console.error(err);
   });
 ```
@@ -2499,7 +2569,8 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
   'limit': 3.4, // Number | The number of notes per page; must be between 10 and 200, default is 100
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'divisionId': "*" // String | The division to scan over
 };
 
 apiInstance.getExternalcontactsScanNotes(opts)
@@ -2508,6 +2579,63 @@ apiInstance.getExternalcontactsScanNotes(opts)
   })
   .catch((err) => {
     console.log('There was a failure calling getExternalcontactsScanNotes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | The number of notes per page; must be between 10 and 200, default is 100 | [optional]  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **divisionId** | **String** | The division to scan over | [optional] [default to *] |
+
+### Return type
+
+**CursorNoteListing**
+
+
+## getExternalcontactsScanNotesDivisionviewsAll
+
+> CursorNoteListing getExternalcontactsScanNotesDivisionviewsAll(opts)
+
+
+GET /api/v2/externalcontacts/scan/notes/divisionviews/all
+
+Scan for notes using paging
+
+getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* externalContacts:contact:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 3.4, // Number | The number of notes per page; must be between 10 and 200, default is 100
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+};
+
+apiInstance.getExternalcontactsScanNotesDivisionviewsAll(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanNotesDivisionviewsAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsScanNotesDivisionviewsAll');
     console.error(err);
   });
 ```
@@ -2554,7 +2682,8 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
   'limit': 3.4, // Number | The number of organizations per page; must be between 10 and 200, default is 100
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'divisionId': "*" // String | The division to scan over
 };
 
 apiInstance.getExternalcontactsScanOrganizations(opts)
@@ -2563,6 +2692,63 @@ apiInstance.getExternalcontactsScanOrganizations(opts)
   })
   .catch((err) => {
     console.log('There was a failure calling getExternalcontactsScanOrganizations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | The number of organizations per page; must be between 10 and 200, default is 100 | [optional]  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **divisionId** | **String** | The division to scan over | [optional] [default to *] |
+
+### Return type
+
+**CursorOrganizationListing**
+
+
+## getExternalcontactsScanOrganizationsDivisionviewsAll
+
+> CursorOrganizationListing getExternalcontactsScanOrganizationsDivisionviewsAll(opts)
+
+
+GET /api/v2/externalcontacts/scan/organizations/divisionviews/all
+
+Scan for external organizations using paging
+
+getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* externalContacts:externalOrganization:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 3.4, // Number | The number of organizations per page; must be between 10 and 200, default is 100
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+};
+
+apiInstance.getExternalcontactsScanOrganizationsDivisionviewsAll(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanOrganizationsDivisionviewsAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsScanOrganizationsDivisionviewsAll');
     console.error(err);
   });
 ```
@@ -2609,7 +2795,8 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
   'limit': 3.4, // Number | The number of relationships per page; must be between 10 and 200, default is 100
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'divisionId': "*" // String | The division to scan over
 };
 
 apiInstance.getExternalcontactsScanRelationships(opts)
@@ -2618,6 +2805,63 @@ apiInstance.getExternalcontactsScanRelationships(opts)
   })
   .catch((err) => {
     console.log('There was a failure calling getExternalcontactsScanRelationships');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | The number of relationships per page; must be between 10 and 200, default is 100 | [optional]  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **divisionId** | **String** | The division to scan over | [optional] [default to *] |
+
+### Return type
+
+**CursorRelationshipListing**
+
+
+## getExternalcontactsScanRelationshipsDivisionviewsAll
+
+> CursorRelationshipListing getExternalcontactsScanRelationshipsDivisionviewsAll(opts)
+
+
+GET /api/v2/externalcontacts/scan/relationships/divisionviews/all
+
+Scan for relationships
+
+getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* externalContacts:contact:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 3.4, // Number | The number of relationships per page; must be between 10 and 200, default is 100
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+};
+
+apiInstance.getExternalcontactsScanRelationshipsDivisionviewsAll(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanRelationshipsDivisionviewsAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsScanRelationshipsDivisionviewsAll');
     console.error(err);
   });
 ```
@@ -2785,6 +3029,58 @@ apiInstance.postExternalcontactsBulkContactsAdd(body)
 ### Return type
 
 **BulkContactsResponse**
+
+
+## postExternalcontactsBulkContactsDivisionviews
+
+> BulkFetchContactsResponse postExternalcontactsBulkContactsDivisionviews(body)
+
+
+POST /api/v2/externalcontacts/bulk/contacts/divisionviews
+
+Bulk fetch contacts across divisions
+
+postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:contact:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Contact ids
+
+apiInstance.postExternalcontactsBulkContactsDivisionviews(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkContactsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkContactsDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contact ids |  |
+
+### Return type
+
+**BulkFetchContactsResponse**
 
 
 ## postExternalcontactsBulkContactsRemove
@@ -3239,6 +3535,58 @@ apiInstance.postExternalcontactsBulkOrganizationsAdd(body)
 ### Return type
 
 **BulkOrganizationsResponse**
+
+
+## postExternalcontactsBulkOrganizationsDivisionviews
+
+> BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizationsDivisionviews(body)
+
+
+POST /api/v2/externalcontacts/bulk/organizations/divisionviews
+
+Bulk fetch organizations across divisions
+
+postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Organizations ids
+
+apiInstance.postExternalcontactsBulkOrganizationsDivisionviews(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkOrganizationsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkOrganizationsDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Organizations ids |  |
+
+### Return type
+
+**BulkFetchOrganizationsResponse**
 
 
 ## postExternalcontactsBulkOrganizationsRemove
@@ -5054,4 +5402,4 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 **Relationship**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

@@ -83,6 +83,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#getConversationsMessagesCachedmediaCachedMediaItemId) | **GET** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item
 [**getConversationsMessagingFacebookApp**](ConversationsApi#getConversationsMessagingFacebookApp) | **GET** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id
 [**getConversationsMessagingFacebookPermissions**](ConversationsApi#getConversationsMessagingFacebookPermissions) | **GET** /api/v2/conversations/messaging/facebook/permissions | Get a list of Facebook Permissions
+[**getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Get Facebook messaging integration identity resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Get an open messaging integration Identity Resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Get a whatsApp integration Identity Resolution settings
 [**getConversationsMessagingIntegrations**](ConversationsApi#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
 [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
 [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
@@ -238,6 +241,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsEmailRecordingstate**](ConversationsApi#putConversationsEmailRecordingstate) | **PUT** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsKeyconfiguration**](ConversationsApi#putConversationsKeyconfiguration) | **PUT** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations
 [**putConversationsMessageRecordingstate**](ConversationsApi#putConversationsMessageRecordingstate) | **PUT** /api/v2/conversations/messages/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Create an identity resolution settings for a Facebook messaging integration
+[**putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Update an open messaging integration Identity Resolution settings
+[**putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Update a whatsApp integration Identity Resolution settings
 [**putConversationsMessagingSettingsDefault**](ConversationsApi#putConversationsMessagingSettingsDefault) | **PUT** /api/v2/conversations/messaging/settings/default | Set the organization's default setting that may be applied to to integrations without settings
 [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization's default supported content profile that may be assigned to an integration when it is created.
 [**putConversationsMessagingThreadingtimeline**](ConversationsApi#putConversationsMessagingThreadingtimeline) | **PUT** /api/v2/conversations/messaging/threadingtimeline | Update conversation threading window timeline for each messaging type
@@ -4201,6 +4207,165 @@ This endpoint does not need any parameter.
 ### Return type
 
 **FacebookPermissionEntityListing**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}
+
+Get Facebook messaging integration identity resolution settings
+
+getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionFacebook:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
+
+> OpenMessagingIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}
+
+Get an open messaging integration Identity Resolution settings
+
+getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionOpen:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**OpenMessagingIdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
+
+Get a whatsApp integration Identity Resolution settings
+
+getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionWhatsApp:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
 
 
 ## getConversationsMessagingIntegrations
@@ -12300,10 +12465,15 @@ apiInstance.putConversationsChatRecordingstate(conversationId, body)
 
 > **&#39;String&#39;** putConversationsCobrowsesessionRecordingstate(conversationId, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate
 
 Update a conversation by setting its recording state
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -12552,6 +12722,171 @@ apiInstance.putConversationsMessageRecordingstate(conversationId, body)
 ### Return type
 
 **&#39;String&#39;**
+
+
+## putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}
+
+Create an identity resolution settings for a Facebook messaging integration
+
+putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionFacebook:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | IdentityResolutionConfig
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | IdentityResolutionConfig |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
+
+> OpenMessagingIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}
+
+Update an open messaging integration Identity Resolution settings
+
+putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionOpen:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | 
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**OpenMessagingIdentityResolutionConfig**
+
+
+## putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
+
+Update a whatsApp integration Identity Resolution settings
+
+putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionWhatsApp:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | 
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**IdentityResolutionConfig**
 
 
 ## putConversationsMessagingSettingsDefault
@@ -12871,4 +13206,4 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

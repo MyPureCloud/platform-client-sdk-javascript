@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -25,7 +25,6 @@ class UploadsApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} jobId Upload job ID
-	 * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -111,7 +110,6 @@ class UploadsApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body uploadRequest
-	 * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set

@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -234,6 +234,7 @@ class OrganizationApi {
 	 * @param {String} opts.cursor Cursor provided when retrieving the last page
 	 * @param {String} opts.entityId entity id of the count
 	 * @param {String} opts.userId userid of the count
+	 * @deprecated
 	 */
 	getOrganizationsLimitsNamespaceCounts(namespaceName, opts) { 
 		opts = opts || {};
@@ -291,6 +292,7 @@ class OrganizationApi {
 	 * @param {String} opts.entityId entity id of the count
 	 * @param {String} opts.userId userid of the count
 	 * @param {String} opts.cursor Cursor provided when retrieving the last page
+	 * @deprecated
 	 */
 	getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, opts) { 
 		opts = opts || {};

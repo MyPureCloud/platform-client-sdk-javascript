@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -217,7 +217,7 @@ class RecordingApi {
 	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. Valid values:ZIP,NONE (default to ZIP)
 	 * @param {Object} opts.download requesting a download format of the recording. Valid values:true,false (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
-	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
+	 * @param {String} opts.locale The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 	 */
 	getConversationRecording(conversationId, recordingId, opts) { 
@@ -374,6 +374,7 @@ class RecordingApi {
 	 * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
 	 * @param {Object} opts.formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (default to WEBM)
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+	 * @param {String} opts.locale The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
 	 */
 	getConversationRecordings(conversationId, opts) { 
 		opts = opts || {};
@@ -387,7 +388,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings', 
 			'GET', 
 			{ 'conversationId': conversationId },
-			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') },
+			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi'),'locale': opts['locale'] },
 			{  },
 			{  },
 			null, 
@@ -880,32 +881,6 @@ class RecordingApi {
 			'GET', 
 			{  },
 			{ 'retentionThresholdDays': retentionThresholdDays,'cursor': opts['cursor'],'pageSize': opts['pageSize'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves a paged listing of screen recording sessions
-	 * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @deprecated
-	 */
-	getRecordingsScreensessions(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/recordings/screensessions', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 

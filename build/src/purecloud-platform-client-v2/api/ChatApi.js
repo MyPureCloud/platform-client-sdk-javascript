@@ -5,7 +5,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -479,7 +479,6 @@ class ChatApi {
 	 * Get a user's chat settings
 	 * 
 	 * @param {String} userId User ID
-	 * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsUserSettings(userId) { 
 		// verify the required parameter 'userId' is set
@@ -504,7 +503,6 @@ class ChatApi {
 	/**
 	 * Get a user's chat settings
 	 * 
-	 * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getChatsUsersMeSettings() { 
 
@@ -652,7 +650,6 @@ class ChatApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body 
-	 * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchChatsUserSettings(userId, body) { 
 		// verify the required parameter 'userId' is set
@@ -682,7 +679,6 @@ class ChatApi {
 	 * Update a user's chat settings
 	 * 
 	 * @param {Object} body 
-	 * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchChatsUsersMeSettings(body) { 
 		// verify the required parameter 'body' is set

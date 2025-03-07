@@ -27,8 +27,6 @@ GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}
 
 Get content upload from URL job status
 
-getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:uploadSourceUrlJob:view
@@ -182,8 +180,6 @@ apiInstance.postKnowledgeDocumentuploads(body)
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs
 
 Create content upload from URL job
-
-postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -480,4 +476,4 @@ apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body)
 **UploadUrlResponse**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

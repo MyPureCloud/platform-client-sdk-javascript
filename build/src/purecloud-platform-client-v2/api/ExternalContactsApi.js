@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -469,6 +469,7 @@ class ExternalContactsApi {
 	 * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
 	 * @param {String} opts.sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
+	 * @param {Array.<String>} opts.divisionIds which divisions to search, up to 50
 	 */
 	getExternalcontactsContacts(opts) { 
 		opts = opts || {};
@@ -478,7 +479,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/contacts', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1022,6 +1023,7 @@ class ExternalContactsApi {
 	 * @param {String} opts.sortOrder The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
+	 * @param {Array.<String>} opts.divisionIds which divisions to search, up to 50
 	 */
 	getExternalcontactsOrganizations(opts) { 
 		opts = opts || {};
@@ -1031,7 +1033,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/organizations', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'trustorId': this.apiClient.buildCollectionParam(opts['trustorId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'trustorId': this.apiClient.buildCollectionParam(opts['trustorId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'],'divisionIds': this.apiClient.buildCollectionParam(opts['divisionIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1176,6 +1178,7 @@ class ExternalContactsApi {
 	 * @param {String} lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand which field, if any, to expand
+	 * @param {String} opts.divisionId Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (default to *)
 	 */
 	getExternalcontactsReversewhitepageslookup(lookupVal, opts) { 
 		opts = opts || {};
@@ -1189,7 +1192,7 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/reversewhitepageslookup', 
 			'GET', 
 			{  },
-			{ 'lookupVal': lookupVal,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'lookupVal': lookupVal,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'divisionId': opts['divisionId'] },
 			{  },
 			{  },
 			null, 
@@ -1205,6 +1208,7 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.limit The number of contacts per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * @param {String} opts.divisionId The division to scan over (default to *)
 	 */
 	getExternalcontactsScanContacts(opts) { 
 		opts = opts || {};
@@ -1212,6 +1216,32 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/scan/contacts', 
+			'GET', 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'],'divisionId': opts['divisionId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scan for external contacts using paging
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit The number of contacts per page; must be between 10 and 200, default is 100
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * getExternalcontactsScanContactsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsScanContactsDivisionviewsAll(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/scan/contacts/divisionviews/all', 
 			'GET', 
 			{  },
 			{ 'limit': opts['limit'],'cursor': opts['cursor'] },
@@ -1230,6 +1260,7 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.limit The number of notes per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * @param {String} opts.divisionId The division to scan over (default to *)
 	 */
 	getExternalcontactsScanNotes(opts) { 
 		opts = opts || {};
@@ -1237,6 +1268,32 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/scan/notes', 
+			'GET', 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'],'divisionId': opts['divisionId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scan for notes using paging
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit The number of notes per page; must be between 10 and 200, default is 100
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * getExternalcontactsScanNotesDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsScanNotesDivisionviewsAll(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/scan/notes/divisionviews/all', 
 			'GET', 
 			{  },
 			{ 'limit': opts['limit'],'cursor': opts['cursor'] },
@@ -1255,6 +1312,7 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.limit The number of organizations per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * @param {String} opts.divisionId The division to scan over (default to *)
 	 */
 	getExternalcontactsScanOrganizations(opts) { 
 		opts = opts || {};
@@ -1262,6 +1320,32 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/scan/organizations', 
+			'GET', 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'],'divisionId': opts['divisionId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scan for external organizations using paging
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit The number of organizations per page; must be between 10 and 200, default is 100
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * getExternalcontactsScanOrganizationsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsScanOrganizationsDivisionviewsAll(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/scan/organizations/divisionviews/all', 
 			'GET', 
 			{  },
 			{ 'limit': opts['limit'],'cursor': opts['cursor'] },
@@ -1280,6 +1364,7 @@ class ExternalContactsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.limit The number of relationships per page; must be between 10 and 200, default is 100
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * @param {String} opts.divisionId The division to scan over (default to *)
 	 */
 	getExternalcontactsScanRelationships(opts) { 
 		opts = opts || {};
@@ -1287,6 +1372,32 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/scan/relationships', 
+			'GET', 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'],'divisionId': opts['divisionId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scan for relationships
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit The number of relationships per page; must be between 10 and 200, default is 100
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 * getExternalcontactsScanRelationshipsDivisionviewsAll is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getExternalcontactsScanRelationshipsDivisionviewsAll(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/scan/relationships/divisionviews/all', 
 			'GET', 
 			{  },
 			{ 'limit': opts['limit'],'cursor': opts['cursor'] },
@@ -1367,6 +1478,32 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/contacts/add', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk fetch contacts across divisions
+	 * 
+	 * @param {Object} body Contact ids
+	 * postExternalcontactsBulkContactsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsBulkContactsDivisionviews(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkContactsDivisionviews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/contacts/divisionviews', 
 			'POST', 
 			{  },
 			{  },
@@ -1592,6 +1729,32 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/organizations/add', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk fetch organizations across divisions
+	 * 
+	 * @param {Object} body Organizations ids
+	 * postExternalcontactsBulkOrganizationsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postExternalcontactsBulkOrganizationsDivisionviews(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkOrganizationsDivisionviews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/organizations/divisionviews', 
 			'POST', 
 			{  },
 			{  },

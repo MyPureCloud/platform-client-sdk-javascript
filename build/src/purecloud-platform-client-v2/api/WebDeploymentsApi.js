@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -319,6 +319,32 @@ class WebDeploymentsApi {
 	}
 
 	/**
+	 * Get a deployment identity resolution setting.
+	 * 
+	 * @param {String} deploymentId The deployment ID
+	 * getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getWebdeploymentsDeploymentIdentityresolution(deploymentId) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/identityresolution', 
+			'GET', 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get deployments
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -520,6 +546,37 @@ class WebDeploymentsApi {
 			{  },
 			{  },
 			deployment, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update identity resolution settings for a deployment.
+	 * 
+	 * @param {String} deploymentId The deployment ID
+	 * @param {Object} body 
+	 * putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putWebdeploymentsDeploymentIdentityresolution(deploymentId, body) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling putWebdeploymentsDeploymentIdentityresolution';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putWebdeploymentsDeploymentIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/identityresolution', 
+			'PUT', 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

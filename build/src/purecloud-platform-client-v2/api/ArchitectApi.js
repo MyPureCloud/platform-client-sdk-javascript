@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -1023,6 +1023,32 @@ class ArchitectApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/architect/ivrs/{ivrId}', 
+			'GET', 
+			{ 'ivrId': ivrId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an IVR IdentityResolutionConfig.
+	 * 
+	 * @param {String} ivrId IVR id
+	 * getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getArchitectIvrIdentityresolution(ivrId) { 
+		// verify the required parameter 'ivrId' is set
+		if (ivrId === undefined || ivrId === null) {
+			throw 'Missing the required parameter "ivrId" when calling getArchitectIvrIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/ivrs/{ivrId}/identityresolution', 
 			'GET', 
 			{ 'ivrId': ivrId },
 			{  },
@@ -2310,6 +2336,35 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Fetch Architect Export Job Status
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 */
+	getFlowsExportJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getFlowsExportJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/export/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Start a process (job) to prepare a download of a singular flow execution data instance by Id
 	 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
 	 * @param {String} instanceId Instance ID
@@ -3556,6 +3611,31 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Register Architect Export Job
+	 * 
+	 * @param {Object} body 
+	 */
+	postFlowsExportJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsExportJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/export/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Start a process (job) that will prepare a list of execution data IDs for download.
 	 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
 	 * @param {Object} body Requested Flow Ids
@@ -3730,6 +3810,37 @@ class ArchitectApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/architect/ivrs/{ivrId}', 
+			'PUT', 
+			{ 'ivrId': ivrId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an IVR IdentityResolutionConfig.
+	 * 
+	 * @param {String} ivrId IVR id
+	 * @param {Object} body 
+	 * putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putArchitectIvrIdentityresolution(ivrId, body) { 
+		// verify the required parameter 'ivrId' is set
+		if (ivrId === undefined || ivrId === null) {
+			throw 'Missing the required parameter "ivrId" when calling putArchitectIvrIdentityresolution';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putArchitectIvrIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/ivrs/{ivrId}/identityresolution', 
 			'PUT', 
 			{ 'ivrId': ivrId },
 			{  },

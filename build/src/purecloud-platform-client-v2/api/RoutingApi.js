@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -847,6 +847,37 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get a route identity resolution setting.
+	 * 
+	 * @param {String} domainName email domain
+	 * @param {String} routeId route ID
+	 * getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingEmailDomainRouteIdentityresolution(domainName, routeId) { 
+		// verify the required parameter 'domainName' is set
+		if (domainName === undefined || domainName === null) {
+			throw 'Missing the required parameter "domainName" when calling getRoutingEmailDomainRouteIdentityresolution';
+		}
+		// verify the required parameter 'routeId' is set
+		if (routeId === undefined || routeId === null) {
+			throw 'Missing the required parameter "routeId" when calling getRoutingEmailDomainRouteIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution', 
+			'GET', 
+			{ 'domainName': domainName,'routeId': routeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get routes
 	 * 
 	 * @param {String} domainName email domain
@@ -1390,6 +1421,32 @@ class RoutingApi {
 			'GET', 
 			{ 'queueId': queueId },
 			{ 'conversationId': opts['conversationId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Queue IdentityResolution Settings.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingQueueIdentityresolution(queueId) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/identityresolution', 
+			'GET', 
+			{ 'queueId': queueId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1962,6 +2019,32 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{ 'countryCode': countryCode,'region': opts['region'],'city': opts['city'],'areaCode': opts['areaCode'],'phoneNumberType': phoneNumberType,'pattern': opts['pattern'],'addressRequirement': opts['addressRequirement'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a SMS identity resolution settings.
+	 * 
+	 * @param {String} addressId Address ID
+	 * getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingSmsIdentityresolutionPhonenumber(addressId) { 
+		// verify the required parameter 'addressId' is set
+		if (addressId === undefined || addressId === null) {
+			throw 'Missing the required parameter "addressId" when calling getRoutingSmsIdentityresolutionPhonenumber';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}', 
+			'GET', 
+			{ 'addressId': addressId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -3777,6 +3860,42 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update identity resolution settings for a route.
+	 * 
+	 * @param {String} domainName email domain
+	 * @param {String} routeId route ID
+	 * @param {Object} body 
+	 * putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body) { 
+		// verify the required parameter 'domainName' is set
+		if (domainName === undefined || domainName === null) {
+			throw 'Missing the required parameter "domainName" when calling putRoutingEmailDomainRouteIdentityresolution';
+		}
+		// verify the required parameter 'routeId' is set
+		if (routeId === undefined || routeId === null) {
+			throw 'Missing the required parameter "routeId" when calling putRoutingEmailDomainRouteIdentityresolution';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingEmailDomainRouteIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution', 
+			'PUT', 
+			{ 'domainName': domainName,'routeId': routeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Request an activation status (cname + dkim) update of an outbound domain
 	 * 
 	 * @param {String} domainId domain ID
@@ -3862,6 +3981,37 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update Queue IdentityResolution Settings.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 * putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putRoutingQueueIdentityresolution(queueId, body) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling putRoutingQueueIdentityresolution';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingQueueIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/identityresolution', 
+			'PUT', 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an organization's routing settings
 	 * 
 	 * @param {Object} body Organization Settings
@@ -3901,6 +4051,37 @@ class RoutingApi {
 			'/api/v2/routing/settings/transcription', 
 			'PUT', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an SMS identity resolution settings.
+	 * 
+	 * @param {String} addressId Address ID
+	 * @param {Object} body 
+	 * putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putRoutingSmsIdentityresolutionPhonenumber(addressId, body) { 
+		// verify the required parameter 'addressId' is set
+		if (addressId === undefined || addressId === null) {
+			throw 'Missing the required parameter "addressId" when calling putRoutingSmsIdentityresolutionPhonenumber';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingSmsIdentityresolutionPhonenumber';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}', 
+			'PUT', 
+			{ 'addressId': addressId },
 			{  },
 			{  },
 			{  },

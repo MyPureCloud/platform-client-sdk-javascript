@@ -2676,8 +2676,6 @@ GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}
 
 Get parse job report
 
-getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:importJob:view
@@ -3135,8 +3133,6 @@ apiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}
 
 Get content upload from URL job status
-
-getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -3979,8 +3975,6 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, 
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}
 
 Send update to the parse operation
-
-patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -5907,8 +5901,6 @@ POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/
 
 Import the parsed articles
 
-postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:importJob:edit
@@ -5962,8 +5954,6 @@ void (no response body)
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs
 
 Create parse job
-
-postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -6119,7 +6109,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync
 
-> SourceSyncResponse postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId)
+> SourceSyncResponse postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync
@@ -6145,8 +6135,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'body': null // Object | 
+};
 
-apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId)
+apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6163,6 +6156,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBas
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
+ **body** | **Object** |  | [optional]  |
 
 ### Return type
 
@@ -6223,7 +6217,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body)
 
 ## postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync
 
-> SourceSyncResponse postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId)
+> SourceSyncResponse postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync
@@ -6249,8 +6243,11 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let sourceId = "sourceId_example"; // String | Source ID
+let opts = { 
+  'body': null // Object | 
+};
 
-apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId)
+apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6267,6 +6264,7 @@ apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBas
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **sourceId** | **String** | Source ID |  |
+ **body** | **Object** |  | [optional]  |
 
 ### Return type
 
@@ -6333,8 +6331,6 @@ apiInstance.postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs
 
 Create content upload from URL job
-
-postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -6537,4 +6533,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -214,6 +214,7 @@ class IntegrationsApi {
 	 * @param {String} actionId actionId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
+	 * @param {Object} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 * @param {Object} opts.includeConfig Return config in response. (default to false)
 	 */
 	getIntegrationsAction(actionId, opts) { 
@@ -228,7 +229,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}', 
 			'GET', 
 			{ 'actionId': actionId },
-			{ 'expand': opts['expand'],'includeConfig': opts['includeConfig'] },
+			{ 'expand': opts['expand'],'flatten': opts['flatten'],'includeConfig': opts['includeConfig'] },
 			{  },
 			{  },
 			null, 
@@ -244,6 +245,7 @@ class IntegrationsApi {
 	 * @param {String} actionId actionId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
+	 * @param {Object} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 * @param {Object} opts.includeConfig Return config in response. (default to false)
 	 */
 	getIntegrationsActionDraft(actionId, opts) { 
@@ -258,7 +260,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/draft', 
 			'GET', 
 			{ 'actionId': actionId },
-			{ 'expand': opts['expand'],'includeConfig': opts['includeConfig'] },
+			{ 'expand': opts['expand'],'flatten': opts['flatten'],'includeConfig': opts['includeConfig'] },
 			{  },
 			{  },
 			null, 

@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -25,7 +25,7 @@ class ObjectsApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.force Force delete this division as well as the grants and objects associated with it (default to false)
+	 * @param {Boolean} opts.force DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. (default to false)
 	 */
 	deleteAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
@@ -189,15 +189,16 @@ class ObjectsApi {
 	 * Recreate a previously deleted division.
 	 * 
 	 * @param {String} divisionId Division ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Recreated division data
+	 * @param {Object} body Recreated division data
 	 */
-	postAuthorizationDivisionRestore(divisionId, opts) { 
-		opts = opts || {};
-		
+	postAuthorizationDivisionRestore(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationDivisionRestore';
 		}
 
 		return this.apiClient.callApi(
@@ -207,7 +208,7 @@ class ObjectsApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

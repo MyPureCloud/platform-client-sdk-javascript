@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -882,7 +882,7 @@ class AnalyticsApi {
 	 * @param {Number} opts.pageSize  (default to 25)
 	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
 	 * @param {Object} opts.state Only list users of this state
-	 * @param {Boolean} opts.deletedOnly Only list deleted dashboards that are still recoverable
+	 * @param {Boolean} opts.deletedOnly Only list users with deleted dashboards
 	 */
 	getAnalyticsReportingDashboardsUsers(opts) { 
 		opts = opts || {};

@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -1536,7 +1536,6 @@ class KnowledgeApi {
 	 * @param {String} parseJobId Parse job ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
-	 * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts) { 
 		opts = opts || {};
@@ -1806,7 +1805,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} jobId Upload job ID
-	 * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -2347,7 +2345,6 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} parseJobId Parse job ID
 	 * @param {Object} body 
-	 * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3508,7 +3505,6 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} parseJobId Parse job ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3543,7 +3539,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
@@ -3634,8 +3629,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
 	 */
-	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId) { 
+	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
@@ -3652,7 +3651,7 @@ class KnowledgeApi {
 			{  },
 			{  },
 			{  },
-			null, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -3694,8 +3693,12 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
 	 */
-	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId) { 
+	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
@@ -3712,7 +3715,7 @@ class KnowledgeApi {
 			{  },
 			{  },
 			{  },
-			null, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -3754,7 +3757,6 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body uploadRequest
-	 * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set

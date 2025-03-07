@@ -5,7 +5,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -66,58 +66,6 @@ class AlertingApi {
 	}
 
 	/**
-	 * Delete an interaction stats alert
-	 * Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
-	 * @param {String} alertId Alert ID
-	 * @deprecated
-	 */
-	deleteAlertingInteractionstatsAlert(alertId) { 
-		// verify the required parameter 'alertId' is set
-		if (alertId === undefined || alertId === null) {
-			throw 'Missing the required parameter "alertId" when calling deleteAlertingInteractionstatsAlert';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/alerts/{alertId}', 
-			'DELETE', 
-			{ 'alertId': alertId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an interaction stats rule
-	 * Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
-	 * @param {String} ruleId Rule ID
-	 * @deprecated
-	 */
-	deleteAlertingInteractionstatsRule(ruleId) { 
-		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling deleteAlertingInteractionstatsRule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/rules/{ruleId}', 
-			'DELETE', 
-			{ 'ruleId': ruleId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Delete a rule.
 	 * 
 	 * @param {String} ruleId Rule Id
@@ -158,158 +106,6 @@ class AlertingApi {
 			'GET', 
 			{ 'alertId': alertId },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets active alert count for a user
-	 * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to Count and alertStatus to Active in the request body.
-	 * @deprecated
-	 */
-	getAlertingAlertsActive() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/alerts/active', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an interaction stats alert
-	 * Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
-	 * @param {String} alertId Alert ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @deprecated
-	 */
-	getAlertingInteractionstatsAlert(alertId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'alertId' is set
-		if (alertId === undefined || alertId === null) {
-			throw 'Missing the required parameter "alertId" when calling getAlertingInteractionstatsAlert';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/alerts/{alertId}', 
-			'GET', 
-			{ 'alertId': alertId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get interaction stats alert list
-	 * Apps should migrate to use POST /api/v2/alerting/alerts/query.
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @deprecated
-	 */
-	getAlertingInteractionstatsAlerts(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/alerts', 
-			'GET', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets user unread count of interaction stats alerts
-	 * Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to Count and viewStatus to Unread in the request body.
-	 * @deprecated
-	 */
-	getAlertingInteractionstatsAlertsUnread() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/alerts/unread', 
-			'GET', 
-			{  },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an interaction stats rule
-	 * Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
-	 * @param {String} ruleId Rule ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @deprecated
-	 */
-	getAlertingInteractionstatsRule(ruleId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling getAlertingInteractionstatsRule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/rules/{ruleId}', 
-			'GET', 
-			{ 'ruleId': ruleId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an interaction stats rule list
-	 * Apps should migrate to use POST /api/v2/alerting/rules/query.
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @deprecated
-	 */
-	getAlertingInteractionstatsRules(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/rules', 
-			'GET', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -472,36 +268,6 @@ class AlertingApi {
 	}
 
 	/**
-	 * Create an interaction stats rule
-	 * Apps should migrate to use POST /api/v2/alerting/rules.
-	 * @param {Object} body AlertingRule
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @deprecated
-	 */
-	postAlertingInteractionstatsRules(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAlertingInteractionstatsRules';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/rules', 
-			'POST', 
-			{  },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a Rule.
 	 * 
 	 * @param {Object} body rule to be created
@@ -598,76 +364,6 @@ class AlertingApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an interaction stats alert read status
-	 * Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
-	 * @param {String} alertId Alert ID
-	 * @param {Object} body InteractionStatsAlert
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @deprecated
-	 */
-	putAlertingInteractionstatsAlert(alertId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'alertId' is set
-		if (alertId === undefined || alertId === null) {
-			throw 'Missing the required parameter "alertId" when calling putAlertingInteractionstatsAlert';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAlertingInteractionstatsAlert';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/alerts/{alertId}', 
-			'PUT', 
-			{ 'alertId': alertId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an interaction stats rule
-	 * Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
-	 * @param {String} ruleId Rule ID
-	 * @param {Object} body AlertingRule
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @deprecated
-	 */
-	putAlertingInteractionstatsRule(ruleId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'ruleId' is set
-		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling putAlertingInteractionstatsRule';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAlertingInteractionstatsRule';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/alerting/interactionstats/rules/{ruleId}', 
-			'PUT', 
-			{ 'ruleId': ruleId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

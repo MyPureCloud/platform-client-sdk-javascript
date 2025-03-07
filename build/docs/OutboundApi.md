@@ -5859,7 +5859,7 @@ void (no response body)
 
 ## patchOutboundSettings
 
-> void patchOutboundSettings(body)
+> void patchOutboundSettings(body, opts)
 
 
 PATCH /api/v2/outbound/settings
@@ -5884,8 +5884,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | outboundSettings
+let opts = { 
+  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+};
 
-apiInstance.patchOutboundSettings(body)
+apiInstance.patchOutboundSettings(body, opts)
   .then(() => {
     console.log('patchOutboundSettings returned successfully.');
   })
@@ -5901,6 +5904,7 @@ apiInstance.patchOutboundSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | outboundSettings |  |
+ **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
@@ -6316,7 +6320,7 @@ apiInstance.postOutboundCampaignrules(body)
 
 ## postOutboundCampaigns
 
-> Campaign postOutboundCampaigns(body)
+> Campaign postOutboundCampaigns(body, opts)
 
 
 POST /api/v2/outbound/campaigns
@@ -6341,8 +6345,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | Campaign
+let opts = { 
+  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+};
 
-apiInstance.postOutboundCampaigns(body)
+apiInstance.postOutboundCampaigns(body, opts)
   .then((data) => {
     console.log(`postOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6358,6 +6365,7 @@ apiInstance.postOutboundCampaigns(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Campaign |  |
+ **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
@@ -8073,7 +8081,7 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 ## putOutboundCampaign
 
-> Campaign putOutboundCampaign(campaignId, body)
+> Campaign putOutboundCampaign(campaignId, body, opts)
 
 
 PUT /api/v2/outbound/campaigns/{campaignId}
@@ -8099,8 +8107,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
 let body = {}; // Object | Campaign
+let opts = { 
+  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+};
 
-apiInstance.putOutboundCampaign(campaignId, body)
+apiInstance.putOutboundCampaign(campaignId, body, opts)
   .then((data) => {
     console.log(`putOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8117,6 +8128,7 @@ apiInstance.putOutboundCampaign(campaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
  **body** | **Object** | Campaign |  |
+ **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
@@ -9063,4 +9075,4 @@ apiInstance.putOutboundWrapupcodemappings(body)
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

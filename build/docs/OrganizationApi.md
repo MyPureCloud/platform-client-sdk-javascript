@@ -474,6 +474,9 @@ apiInstance.getOrganizationsLimitsNamespace(namespaceName)
 
 > LimitCountListing getOrganizationsLimitsNamespaceCounts(namespaceName, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/organizations/limits/namespaces/{namespaceName}/counts
 
@@ -582,6 +585,9 @@ apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName)
 
 > LimitCountListing getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts
 
@@ -1098,4 +1104,4 @@ apiInstance.putOrganizationsWhitelist(body)
 **OrgWhitelistSettings**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

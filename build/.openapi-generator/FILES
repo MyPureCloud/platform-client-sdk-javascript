@@ -162,8 +162,6 @@ docs/WorkforceManagementApi.json
 docs/WorkforceManagementApi.md
 docs/deleteAlertingAlert-example.txt
 docs/deleteAlertingAlertsAll-example.txt
-docs/deleteAlertingInteractionstatsAlert-example.txt
-docs/deleteAlertingInteractionstatsRule-example.txt
 docs/deleteAlertingRule-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
 docs/deleteAnalyticsConversationsDetailsJob-example.txt
@@ -460,12 +458,6 @@ docs/deleteWorkforcemanagementManagementunitTimeoffplan-example.txt
 docs/deleteWorkforcemanagementManagementunitWorkplan-example.txt
 docs/deleteWorkforcemanagementManagementunitWorkplanrotation-example.txt
 docs/getAlertingAlert-example.txt
-docs/getAlertingAlertsActive-example.txt
-docs/getAlertingInteractionstatsAlert-example.txt
-docs/getAlertingInteractionstatsAlerts-example.txt
-docs/getAlertingInteractionstatsAlertsUnread-example.txt
-docs/getAlertingInteractionstatsRule-example.txt
-docs/getAlertingInteractionstatsRules-example.txt
 docs/getAlertingRule-example.txt
 docs/getAnalyticsActionsAggregatesJob-example.txt
 docs/getAnalyticsActionsAggregatesJobResults-example.txt
@@ -553,6 +545,7 @@ docs/getArchitectGrammar-example.txt
 docs/getArchitectGrammarLanguage-example.txt
 docs/getArchitectGrammars-example.txt
 docs/getArchitectIvr-example.txt
+docs/getArchitectIvrIdentityresolution-example.txt
 docs/getArchitectIvrs-example.txt
 docs/getArchitectIvrsDivisionviews-example.txt
 docs/getArchitectPrompt-example.txt
@@ -723,6 +716,9 @@ docs/getConversationsMessagesCachedmedia-example.txt
 docs/getConversationsMessagesCachedmediaCachedMediaItemId-example.txt
 docs/getConversationsMessagingFacebookApp-example.txt
 docs/getConversationsMessagingFacebookPermissions-example.txt
+docs/getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId-example.txt
+docs/getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId-example.txt
+docs/getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId-example.txt
 docs/getConversationsMessagingIntegrations-example.txt
 docs/getConversationsMessagingIntegrationsFacebook-example.txt
 docs/getConversationsMessagingIntegrationsFacebookIntegrationId-example.txt
@@ -798,9 +794,13 @@ docs/getExternalcontactsOrganizationsSchemas-example.txt
 docs/getExternalcontactsRelationship-example.txt
 docs/getExternalcontactsReversewhitepageslookup-example.txt
 docs/getExternalcontactsScanContacts-example.txt
+docs/getExternalcontactsScanContactsDivisionviewsAll-example.txt
 docs/getExternalcontactsScanNotes-example.txt
+docs/getExternalcontactsScanNotesDivisionviewsAll-example.txt
 docs/getExternalcontactsScanOrganizations-example.txt
+docs/getExternalcontactsScanOrganizationsDivisionviewsAll-example.txt
 docs/getExternalcontactsScanRelationships-example.txt
+docs/getExternalcontactsScanRelationshipsDivisionviewsAll-example.txt
 docs/getFaxDocument-example.txt
 docs/getFaxDocumentContent-example.txt
 docs/getFaxDocuments-example.txt
@@ -831,6 +831,7 @@ docs/getFlowsDatatablesDivisionview-example.txt
 docs/getFlowsDatatablesDivisionviews-example.txt
 docs/getFlowsDivisionviews-example.txt
 docs/getFlowsExecution-example.txt
+docs/getFlowsExportJob-example.txt
 docs/getFlowsInstance-example.txt
 docs/getFlowsInstancesJob-example.txt
 docs/getFlowsInstancesQuerycapabilities-example.txt
@@ -1292,7 +1293,6 @@ docs/getRecordingRecordingkeysRotationschedule-example.txt
 docs/getRecordingSettings-example.txt
 docs/getRecordingUploadsReport-example.txt
 docs/getRecordingsRetentionQuery-example.txt
-docs/getRecordingsScreensessions-example.txt
 docs/getRecordingsScreensessionsDetails-example.txt
 docs/getResponsemanagementLibraries-example.txt
 docs/getResponsemanagementLibrary-example.txt
@@ -1309,6 +1309,7 @@ docs/getRoutingDirectroutingbackupSettingsMe-example.txt
 docs/getRoutingDirectroutingbackupSettingsMe-example.txt
 docs/getRoutingEmailDomain-example.txt
 docs/getRoutingEmailDomainRoute-example.txt
+docs/getRoutingEmailDomainRouteIdentityresolution-example.txt
 docs/getRoutingEmailDomainRoutes-example.txt
 docs/getRoutingEmailDomains-example.txt
 docs/getRoutingEmailOutboundDomain-example.txt
@@ -1330,6 +1331,7 @@ docs/getRoutingQueueAssistant-example.txt
 docs/getRoutingQueueComparisonperiod-example.txt
 docs/getRoutingQueueComparisonperiods-example.txt
 docs/getRoutingQueueEstimatedwaittime-example.txt
+docs/getRoutingQueueIdentityresolution-example.txt
 docs/getRoutingQueueMediatypeEstimatedwaittime-example.txt
 docs/getRoutingQueueMembers-example.txt
 docs/getRoutingQueueUsers-example.txt
@@ -1350,6 +1352,7 @@ docs/getRoutingSkills-example.txt
 docs/getRoutingSmsAddress-example.txt
 docs/getRoutingSmsAddresses-example.txt
 docs/getRoutingSmsAvailablephonenumbers-example.txt
+docs/getRoutingSmsIdentityresolutionPhonenumber-example.txt
 docs/getRoutingSmsPhonenumber-example.txt
 docs/getRoutingSmsPhonenumbers-example.txt
 docs/getRoutingUserDirectroutingbackupSettings-example.txt
@@ -1651,6 +1654,7 @@ docs/getWebdeploymentsConfigurations-example.txt
 docs/getWebdeploymentsDeployment-example.txt
 docs/getWebdeploymentsDeploymentCobrowseSessionId-example.txt
 docs/getWebdeploymentsDeploymentConfigurations-example.txt
+docs/getWebdeploymentsDeploymentIdentityresolution-example.txt
 docs/getWebdeploymentsDeployments-example.txt
 docs/getWebmessagingMessages-example.txt
 docs/getWidgetsDeployment-example.txt
@@ -1969,7 +1973,6 @@ docs/patchWorkforcemanagementUserWorkplanbidranks-example.txt
 docs/patchWorkforcemanagementUsersWorkplanbidranksBulk-example.txt
 docs/patchWorkforcemanagementWorkplanbidPreferences-example.txt
 docs/postAlertingAlertsQuery-example.txt
-docs/postAlertingInteractionstatsRules-example.txt
 docs/postAlertingRules-example.txt
 docs/postAlertingRulesBulkRemove-example.txt
 docs/postAlertingRulesQuery-example.txt
@@ -2202,6 +2205,7 @@ docs/postEventsUsersPresence-example.txt
 docs/postEventsUsersRoutingstatus-example.txt
 docs/postExternalcontactsBulkContacts-example.txt
 docs/postExternalcontactsBulkContactsAdd-example.txt
+docs/postExternalcontactsBulkContactsDivisionviews-example.txt
 docs/postExternalcontactsBulkContactsRemove-example.txt
 docs/postExternalcontactsBulkContactsUnresolved-example.txt
 docs/postExternalcontactsBulkContactsUpdate-example.txt
@@ -2211,6 +2215,7 @@ docs/postExternalcontactsBulkNotesRemove-example.txt
 docs/postExternalcontactsBulkNotesUpdate-example.txt
 docs/postExternalcontactsBulkOrganizations-example.txt
 docs/postExternalcontactsBulkOrganizationsAdd-example.txt
+docs/postExternalcontactsBulkOrganizationsDivisionviews-example.txt
 docs/postExternalcontactsBulkOrganizationsRemove-example.txt
 docs/postExternalcontactsBulkOrganizationsUpdate-example.txt
 docs/postExternalcontactsBulkRelationships-example.txt
@@ -2248,6 +2253,7 @@ docs/postFlowsDatatableImportJobs-example.txt
 docs/postFlowsDatatableRows-example.txt
 docs/postFlowsDatatables-example.txt
 docs/postFlowsExecutions-example.txt
+docs/postFlowsExportJobs-example.txt
 docs/postFlowsInstancesJobs-example.txt
 docs/postFlowsInstancesQuery-example.txt
 docs/postFlowsJobs-example.txt
@@ -2695,12 +2701,11 @@ docs/postWorkforcemanagementTimeoffrequests-example.txt
 docs/postWorkforcemanagementTimeoffrequestsEstimate-example.txt
 docs/postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery-example.txt
 docs/putAlertingAlert-example.txt
-docs/putAlertingInteractionstatsAlert-example.txt
-docs/putAlertingInteractionstatsRule-example.txt
 docs/putAlertingRule-example.txt
 docs/putAnalyticsDataretentionSettings-example.txt
 docs/putArchitectEmergencygroup-example.txt
 docs/putArchitectIvr-example.txt
+docs/putArchitectIvrIdentityresolution-example.txt
 docs/putArchitectPrompt-example.txt
 docs/putArchitectPromptResource-example.txt
 docs/putArchitectSchedule-example.txt
@@ -2736,6 +2741,9 @@ docs/putConversationsEmailMessagesDraft-example.txt
 docs/putConversationsEmailRecordingstate-example.txt
 docs/putConversationsKeyconfiguration-example.txt
 docs/putConversationsMessageRecordingstate-example.txt
+docs/putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId-example.txt
+docs/putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId-example.txt
+docs/putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId-example.txt
 docs/putConversationsMessagingSettingsDefault-example.txt
 docs/putConversationsMessagingSupportedcontentDefault-example.txt
 docs/putConversationsMessagingThreadingtimeline-example.txt
@@ -2864,11 +2872,14 @@ docs/putResponsemanagementResponseasset-example.txt
 docs/putRoutingDirectroutingbackupSettingsMe-example.txt
 docs/putRoutingDirectroutingbackupSettingsMe-example.txt
 docs/putRoutingEmailDomainRoute-example.txt
+docs/putRoutingEmailDomainRouteIdentityresolution-example.txt
 docs/putRoutingEmailOutboundDomainActivation-example.txt
 docs/putRoutingMessageRecipient-example.txt
 docs/putRoutingQueue-example.txt
+docs/putRoutingQueueIdentityresolution-example.txt
 docs/putRoutingSettings-example.txt
 docs/putRoutingSettingsTranscription-example.txt
+docs/putRoutingSmsIdentityresolutionPhonenumber-example.txt
 docs/putRoutingUserDirectroutingbackupSettings-example.txt
 docs/putRoutingUserDirectroutingbackupSettings-example.txt
 docs/putRoutingUserUtilization-example.txt
@@ -2934,6 +2945,7 @@ docs/putWebchatDeployment-example.txt
 docs/putWebchatSettings-example.txt
 docs/putWebdeploymentsConfigurationVersionsDraft-example.txt
 docs/putWebdeploymentsDeployment-example.txt
+docs/putWebdeploymentsDeploymentIdentityresolution-example.txt
 docs/putWidgetsDeployment-example.txt
 docs/putWorkforcemanagementAgentIntegrationsHris-example.txt
 docs/putWorkforcemanagementBusinessunitTimeofflimitValues-example.txt

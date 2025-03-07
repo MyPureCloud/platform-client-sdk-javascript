@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 216.0.0
+	 * @version 217.0.0
 	 */
 
 	/**
@@ -2834,8 +2834,12 @@ class OutboundApi {
 	 * Update the outbound settings for this organization
 	 * 
 	 * @param {Object} body outboundSettings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
 	 */
-	patchOutboundSettings(body) { 
+	patchOutboundSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchOutboundSettings';
@@ -2845,7 +2849,7 @@ class OutboundApi {
 			'/api/v2/outbound/settings', 
 			'PATCH', 
 			{  },
-			{  },
+			{ 'useMaxCallsPerAgentDecimal': opts['useMaxCallsPerAgentDecimal'] },
 			{  },
 			{  },
 			body, 
@@ -3065,8 +3069,12 @@ class OutboundApi {
 	 * Create a campaign.
 	 * 
 	 * @param {Object} body Campaign
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
 	 */
-	postOutboundCampaigns(body) { 
+	postOutboundCampaigns(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundCampaigns';
@@ -3076,7 +3084,7 @@ class OutboundApi {
 			'/api/v2/outbound/campaigns', 
 			'POST', 
 			{  },
-			{  },
+			{ 'useMaxCallsPerAgentDecimal': opts['useMaxCallsPerAgentDecimal'] },
 			{  },
 			{  },
 			body, 
@@ -3980,8 +3988,12 @@ class OutboundApi {
 	 * 
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body Campaign
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
 	 */
-	putOutboundCampaign(campaignId, body) { 
+	putOutboundCampaign(campaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundCampaign';
@@ -3995,7 +4007,7 @@ class OutboundApi {
 			'/api/v2/outbound/campaigns/{campaignId}', 
 			'PUT', 
 			{ 'campaignId': campaignId },
-			{  },
+			{ 'useMaxCallsPerAgentDecimal': opts['useMaxCallsPerAgentDecimal'] },
 			{  },
 			{  },
 			body, 

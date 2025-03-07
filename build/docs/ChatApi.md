@@ -903,8 +903,6 @@ GET /api/v2/chats/users/{userId}/settings
 
 Get a user's chat settings
 
-getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:usersettings:view
@@ -955,8 +953,6 @@ apiInstance.getChatsUserSettings(userId)
 GET /api/v2/chats/users/me/settings
 
 Get a user's chat settings
-
-getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires NO permissions:
 
@@ -1214,8 +1210,6 @@ PATCH /api/v2/chats/users/{userId}/settings
 
 Update a user's chat settings
 
-patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * chat:usersettings:edit
@@ -1268,8 +1262,6 @@ apiInstance.patchChatsUserSettings(userId, body)
 PATCH /api/v2/chats/users/me/settings
 
 Update a user's chat settings
-
-patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires NO permissions:
 
@@ -1731,4 +1723,4 @@ apiInstance.putChatsSettings(body)
 **ChatSettings**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_
