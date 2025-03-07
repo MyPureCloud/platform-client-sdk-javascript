@@ -1828,7 +1828,7 @@ let opts = {
   'pageSize': 25, // Number | 
   'id': ["id_example"], // [String] | A list of user IDs to fetch by bulk
   'state': "state_example", // String | Only list users of this state
-  'deletedOnly': true // Boolean | Only list deleted dashboards that are still recoverable
+  'deletedOnly': true // Boolean | Only list users with deleted dashboards
 };
 
 apiInstance.getAnalyticsReportingDashboardsUsers(opts)
@@ -1851,7 +1851,7 @@ apiInstance.getAnalyticsReportingDashboardsUsers(opts)
  **pageSize** | **Number** |  | [optional] [default to 25] |
  **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
  **state** | **String** | Only list users of this state | [optional] <br />**Values**: active, inactive |
- **deletedOnly** | **Boolean** | Only list deleted dashboards that are still recoverable | [optional]  |
+ **deletedOnly** | **Boolean** | Only list users with deleted dashboards | [optional]  |
 
 ### Return type
 
@@ -5654,4 +5654,4 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 **AnalyticsDataRetentionResponse**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

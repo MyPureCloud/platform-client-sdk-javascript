@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWebdeploymentsDeployment**](WebDeploymentsApi#getWebdeploymentsDeployment) | **GET** /api/v2/webdeployments/deployments/{deploymentId} | Get a deployment
 [**getWebdeploymentsDeploymentCobrowseSessionId**](WebDeploymentsApi#getWebdeploymentsDeploymentCobrowseSessionId) | **GET** /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId} | Retrieves a cobrowse session
 [**getWebdeploymentsDeploymentConfigurations**](WebDeploymentsApi#getWebdeploymentsDeploymentConfigurations) | **GET** /api/v2/webdeployments/deployments/{deploymentId}/configurations | Get active configuration for a given deployment
+[**getWebdeploymentsDeploymentIdentityresolution**](WebDeploymentsApi#getWebdeploymentsDeploymentIdentityresolution) | **GET** /api/v2/webdeployments/deployments/{deploymentId}/identityresolution | Get a deployment identity resolution setting.
 [**getWebdeploymentsDeployments**](WebDeploymentsApi#getWebdeploymentsDeployments) | **GET** /api/v2/webdeployments/deployments | Get deployments
 [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi#postWebdeploymentsConfigurationVersionsDraftPublish) | **POST** /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish | Publish the configuration draft and create a new version
 [**postWebdeploymentsConfigurations**](WebDeploymentsApi#postWebdeploymentsConfigurations) | **POST** /api/v2/webdeployments/configurations | Create a configuration draft
@@ -25,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWebdeploymentsTokenRefresh**](WebDeploymentsApi#postWebdeploymentsTokenRefresh) | **POST** /api/v2/webdeployments/token/refresh | Refresh a JWT.
 [**putWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi#putWebdeploymentsConfigurationVersionsDraft) | **PUT** /api/v2/webdeployments/configurations/{configurationId}/versions/draft | Update the configuration draft
 [**putWebdeploymentsDeployment**](WebDeploymentsApi#putWebdeploymentsDeployment) | **PUT** /api/v2/webdeployments/deployments/{deploymentId} | Update a deployment
+[**putWebdeploymentsDeploymentIdentityresolution**](WebDeploymentsApi#putWebdeploymentsDeploymentIdentityresolution) | **PUT** /api/v2/webdeployments/deployments/{deploymentId}/identityresolution | Update identity resolution settings for a deployment.
 
 
 
@@ -585,6 +587,59 @@ apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
 **WebDeploymentActiveConfigurationOnDeployment**
 
 
+## getWebdeploymentsDeploymentIdentityresolution
+
+> IdentityResolutionConfig getWebdeploymentsDeploymentIdentityresolution(deploymentId)
+
+
+GET /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
+
+Get a deployment identity resolution setting.
+
+getWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* webDeployments:deployment:view
+* webDeployments:identityResolution:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let deploymentId = "deploymentId_example"; // String | The deployment ID
+
+apiInstance.getWebdeploymentsDeploymentIdentityresolution(deploymentId)
+  .then((data) => {
+    console.log(`getWebdeploymentsDeploymentIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWebdeploymentsDeploymentIdentityresolution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deploymentId** | **String** | The deployment ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
 ## getWebdeploymentsDeployments
 
 > ExpandableWebDeploymentEntityListing getWebdeploymentsDeployments(opts)
@@ -984,4 +1039,59 @@ apiInstance.putWebdeploymentsDeployment(deploymentId, deployment)
 **WebDeployment**
 
 
-_purecloud-platform-client-v2@216.0.0_
+## putWebdeploymentsDeploymentIdentityresolution
+
+> IdentityResolutionConfig putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
+
+
+PUT /api/v2/webdeployments/deployments/{deploymentId}/identityresolution
+
+Update identity resolution settings for a deployment.
+
+putWebdeploymentsDeploymentIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* webDeployments:deployment:edit
+* webDeployments:identityResolution:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let deploymentId = "deploymentId_example"; // String | The deployment ID
+let body = {}; // Object | 
+
+apiInstance.putWebdeploymentsDeploymentIdentityresolution(deploymentId, body)
+  .then((data) => {
+    console.log(`putWebdeploymentsDeploymentIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putWebdeploymentsDeploymentIdentityresolution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deploymentId** | **String** | The deployment ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+_purecloud-platform-client-v2@217.0.0_

@@ -94,7 +94,7 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let opts = { 
-  'force': false // Boolean | Force delete this division as well as the grants and objects associated with it
+  'force': false // Boolean | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
 };
 
 apiInstance.deleteAuthorizationDivision(divisionId, opts)
@@ -113,7 +113,7 @@ apiInstance.deleteAuthorizationDivision(divisionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **force** | **Boolean** | Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
+ **force** | **Boolean** | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. | [optional] [default to false] |
 
 ### Return type
 
@@ -1963,7 +1963,7 @@ void (no response body)
 
 ## postAuthorizationDivisionRestore
 
-> AuthzDivision postAuthorizationDivisionRestore(divisionId, opts)
+> AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/restore
@@ -1988,11 +1988,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
-let opts = { 
-  'body': {} // Object | Recreated division data
-};
+let body = {}; // Object | Recreated division data
 
-apiInstance.postAuthorizationDivisionRestore(divisionId, opts)
+apiInstance.postAuthorizationDivisionRestore(divisionId, body)
   .then((data) => {
     console.log(`postAuthorizationDivisionRestore success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2008,7 +2006,7 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **body** | **Object** | Recreated division data | [optional]  |
+ **body** | **Object** | Recreated division data |  |
 
 ### Return type
 
@@ -3143,4 +3141,4 @@ apiInstance.putUserRoles(subjectId, body)
 **UserAuthorization**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

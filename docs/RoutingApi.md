@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingDirectroutingbackupSettingsMe**](RoutingApi#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
 [**getRoutingEmailDomain**](RoutingApi#getRoutingEmailDomain) | **GET** /api/v2/routing/email/domains/{domainId} | Get domain
 [**getRoutingEmailDomainRoute**](RoutingApi#getRoutingEmailDomainRoute) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Get a route
+[**getRoutingEmailDomainRouteIdentityresolution**](RoutingApi#getRoutingEmailDomainRouteIdentityresolution) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution | Get a route identity resolution setting.
 [**getRoutingEmailDomainRoutes**](RoutingApi#getRoutingEmailDomainRoutes) | **GET** /api/v2/routing/email/domains/{domainName}/routes | Get routes
 [**getRoutingEmailDomains**](RoutingApi#getRoutingEmailDomains) | **GET** /api/v2/routing/email/domains | Get domains
 [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | **GET** /api/v2/routing/email/outbound/domains/{domainId} | Get domain
@@ -59,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueueComparisonperiod**](RoutingApi#getRoutingQueueComparisonperiod) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId} | Get a Comparison Period.
 [**getRoutingQueueComparisonperiods**](RoutingApi#getRoutingQueueComparisonperiods) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods | Get list of comparison periods
 [**getRoutingQueueEstimatedwaittime**](RoutingApi#getRoutingQueueEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/estimatedwaittime | Get Estimated Wait Time
+[**getRoutingQueueIdentityresolution**](RoutingApi#getRoutingQueueIdentityresolution) | **GET** /api/v2/routing/queues/{queueId}/identityresolution | Get Queue IdentityResolution Settings.
 [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi#getRoutingQueueMediatypeEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime | Get Estimated Wait Time
 [**getRoutingQueueMembers**](RoutingApi#getRoutingQueueMembers) | **GET** /api/v2/routing/queues/{queueId}/members | Get the members of this queue.
 [**getRoutingQueueUsers**](RoutingApi#getRoutingQueueUsers) | **GET** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
@@ -79,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSmsAddress**](RoutingApi#getRoutingSmsAddress) | **GET** /api/v2/routing/sms/addresses/{addressId} | Get an Address by Id for SMS
 [**getRoutingSmsAddresses**](RoutingApi#getRoutingSmsAddresses) | **GET** /api/v2/routing/sms/addresses | Get a list of Addresses for SMS
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
+[**getRoutingSmsIdentityresolutionPhonenumber**](RoutingApi#getRoutingSmsIdentityresolutionPhonenumber) | **GET** /api/v2/routing/sms/identityresolution/phonenumbers/{addressId} | Get a SMS identity resolution settings.
 [**getRoutingSmsPhonenumber**](RoutingApi#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{phoneNumberId} | Get a phone number provisioned for SMS.
 [**getRoutingSmsPhonenumbers**](RoutingApi#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
 [**getRoutingUserDirectroutingbackupSettings**](RoutingApi#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
@@ -143,11 +146,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUserRoutingskills**](RoutingApi#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Assign a routing skill to a user
 [**putRoutingDirectroutingbackupSettingsMe**](RoutingApi#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
 [**putRoutingEmailDomainRoute**](RoutingApi#putRoutingEmailDomainRoute) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Update a route
+[**putRoutingEmailDomainRouteIdentityresolution**](RoutingApi#putRoutingEmailDomainRouteIdentityresolution) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution | Update identity resolution settings for a route.
 [**putRoutingEmailOutboundDomainActivation**](RoutingApi#putRoutingEmailOutboundDomainActivation) | **PUT** /api/v2/routing/email/outbound/domains/{domainId}/activation | Request an activation status (cname + dkim) update of an outbound domain
 [**putRoutingMessageRecipient**](RoutingApi#putRoutingMessageRecipient) | **PUT** /api/v2/routing/message/recipients/{recipientId} | Update a recipient
 [**putRoutingQueue**](RoutingApi#putRoutingQueue) | **PUT** /api/v2/routing/queues/{queueId} | Update a queue
+[**putRoutingQueueIdentityresolution**](RoutingApi#putRoutingQueueIdentityresolution) | **PUT** /api/v2/routing/queues/{queueId}/identityresolution | Update Queue IdentityResolution Settings.
 [**putRoutingSettings**](RoutingApi#putRoutingSettings) | **PUT** /api/v2/routing/settings | Update an organization's routing settings
 [**putRoutingSettingsTranscription**](RoutingApi#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
+[**putRoutingSmsIdentityresolutionPhonenumber**](RoutingApi#putRoutingSmsIdentityresolutionPhonenumber) | **PUT** /api/v2/routing/sms/identityresolution/phonenumbers/{addressId} | Update an SMS identity resolution settings.
 [**putRoutingUserDirectroutingbackupSettings**](RoutingApi#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
 [**putRoutingUserUtilization**](RoutingApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingUtilization**](RoutingApi#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
@@ -1779,6 +1785,61 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
 **InboundRoute**
 
 
+## getRoutingEmailDomainRouteIdentityresolution
+
+> IdentityResolutionConfig getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
+
+
+GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution
+
+Get a route identity resolution setting.
+
+getRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* routing:email:manage
+* routing:identityResolution:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainName = "domainName_example"; // String | email domain
+let routeId = "routeId_example"; // String | route ID
+
+apiInstance.getRoutingEmailDomainRouteIdentityresolution(domainName, routeId)
+  .then((data) => {
+    console.log(`getRoutingEmailDomainRouteIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailDomainRouteIdentityresolution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainName** | **String** | email domain |  |
+ **routeId** | **String** | route ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
 ## getRoutingEmailDomainRoutes
 
 > InboundRouteEntityListing getRoutingEmailDomainRoutes(domainName, opts)
@@ -2883,6 +2944,59 @@ apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
 ### Return type
 
 **EstimatedWaitTimePredictions**
+
+
+## getRoutingQueueIdentityresolution
+
+> IdentityResolutionQueueConfig getRoutingQueueIdentityresolution(queueId)
+
+
+GET /api/v2/routing/queues/{queueId}/identityresolution
+
+Get Queue IdentityResolution Settings.
+
+getRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* routing:queue:view
+* routing:identityResolution:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+
+apiInstance.getRoutingQueueIdentityresolution(queueId)
+  .then((data) => {
+    console.log(`getRoutingQueueIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueIdentityresolution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+
+### Return type
+
+**IdentityResolutionQueueConfig**
 
 
 ## getRoutingQueueMediatypeEstimatedwaittime
@@ -4023,6 +4137,59 @@ apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opt
 ### Return type
 
 **SMSAvailablePhoneNumberEntityListing**
+
+
+## getRoutingSmsIdentityresolutionPhonenumber
+
+> IdentityResolutionConfig getRoutingSmsIdentityresolutionPhonenumber(addressId)
+
+
+GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
+
+Get a SMS identity resolution settings.
+
+getRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* sms:phoneNumber:view
+* routing:identityResolution:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let addressId = "addressId_example"; // String | Address ID
+
+apiInstance.getRoutingSmsIdentityresolutionPhonenumber(addressId)
+  .then((data) => {
+    console.log(`getRoutingSmsIdentityresolutionPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSmsIdentityresolutionPhonenumber');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **addressId** | **String** | Address ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
 
 
 ## getRoutingSmsPhonenumber
@@ -7445,6 +7612,63 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 **InboundRoute**
 
 
+## putRoutingEmailDomainRouteIdentityresolution
+
+> IdentityResolutionConfig putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
+
+
+PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution
+
+Update identity resolution settings for a route.
+
+putRoutingEmailDomainRouteIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* routing:email:manage
+* routing:identityResolution:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainName = "domainName_example"; // String | email domain
+let routeId = "routeId_example"; // String | route ID
+let body = {}; // Object | 
+
+apiInstance.putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body)
+  .then((data) => {
+    console.log(`putRoutingEmailDomainRouteIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingEmailDomainRouteIdentityresolution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainName** | **String** | email domain |  |
+ **routeId** | **String** | route ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
 ## putRoutingEmailOutboundDomainActivation
 
 > EmailOutboundDomainResult putRoutingEmailOutboundDomainActivation(domainId)
@@ -7599,6 +7823,61 @@ apiInstance.putRoutingQueue(queueId, body)
 **Queue**
 
 
+## putRoutingQueueIdentityresolution
+
+> IdentityResolutionQueueConfig putRoutingQueueIdentityresolution(queueId, body)
+
+
+PUT /api/v2/routing/queues/{queueId}/identityresolution
+
+Update Queue IdentityResolution Settings.
+
+putRoutingQueueIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* routing:queue:edit
+* routing:identityResolution:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let body = {}; // Object | 
+
+apiInstance.putRoutingQueueIdentityresolution(queueId, body)
+  .then((data) => {
+    console.log(`putRoutingQueueIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingQueueIdentityresolution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**IdentityResolutionQueueConfig**
+
+
 ## putRoutingSettings
 
 > RoutingSettings putRoutingSettings(body)
@@ -7697,6 +7976,61 @@ apiInstance.putRoutingSettingsTranscription(body)
 ### Return type
 
 **TranscriptionSettings**
+
+
+## putRoutingSmsIdentityresolutionPhonenumber
+
+> IdentityResolutionConfig putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
+
+
+PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
+
+Update an SMS identity resolution settings.
+
+putRoutingSmsIdentityresolutionPhonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* sms:phoneNumber:edit
+* routing:identityResolution:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let addressId = "addressId_example"; // String | Address ID
+let body = {}; // Object | 
+
+apiInstance.putRoutingSmsIdentityresolutionPhonenumber(addressId, body)
+  .then((data) => {
+    console.log(`putRoutingSmsIdentityresolutionPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingSmsIdentityresolutionPhonenumber');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **addressId** | **String** | Address ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**IdentityResolutionConfig**
 
 
 ## putRoutingUserDirectroutingbackupSettings
@@ -8063,4 +8397,4 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 **UserSkillEntityListing**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

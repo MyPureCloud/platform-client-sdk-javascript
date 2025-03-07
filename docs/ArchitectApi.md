@@ -42,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getArchitectGrammarLanguage**](ArchitectApi#getArchitectGrammarLanguage) | **GET** /api/v2/architect/grammars/{grammarId}/languages/{languageCode} | Get a grammar language.
 [**getArchitectGrammars**](ArchitectApi#getArchitectGrammars) | **GET** /api/v2/architect/grammars | Get a pageable list of grammars, filtered by query parameters
 [**getArchitectIvr**](ArchitectApi#getArchitectIvr) | **GET** /api/v2/architect/ivrs/{ivrId} | Get an IVR config.
+[**getArchitectIvrIdentityresolution**](ArchitectApi#getArchitectIvrIdentityresolution) | **GET** /api/v2/architect/ivrs/{ivrId}/identityresolution | Get an IVR IdentityResolutionConfig.
 [**getArchitectIvrs**](ArchitectApi#getArchitectIvrs) | **GET** /api/v2/architect/ivrs | Get IVR configs.
 [**getArchitectIvrsDivisionviews**](ArchitectApi#getArchitectIvrsDivisionviews) | **GET** /api/v2/architect/ivrs/divisionviews | Get a pageable list of basic ivr configuration information objects filterable by query parameters.
 [**getArchitectPrompt**](ArchitectApi#getArchitectPrompt) | **GET** /api/v2/architect/prompts/{promptId} | Get specified user prompt
@@ -82,6 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsDatatablesDivisionviews**](ArchitectApi#getFlowsDatatablesDivisionviews) | **GET** /api/v2/flows/datatables/divisionviews | Retrieve a list of datatables for the org
 [**getFlowsDivisionviews**](ArchitectApi#getFlowsDivisionviews) | **GET** /api/v2/flows/divisionviews | Get a pageable list of basic flow information objects filterable by query parameters.
 [**getFlowsExecution**](ArchitectApi#getFlowsExecution) | **GET** /api/v2/flows/executions/{flowExecutionId} | Get a flow execution's details. Flow execution details are available for several days after the flow is started.
+[**getFlowsExportJob**](ArchitectApi#getFlowsExportJob) | **GET** /api/v2/flows/export/jobs/{jobId} | Fetch Architect Export Job Status
 [**getFlowsInstance**](ArchitectApi#getFlowsInstance) | **GET** /api/v2/flows/instances/{instanceId} | Start a process (job) to prepare a download of a singular flow execution data instance by Id
 [**getFlowsInstancesJob**](ArchitectApi#getFlowsInstancesJob) | **GET** /api/v2/flows/instances/jobs/{jobId} | Get the status and/or results of an asynchronous flow execution data retrieval job
 [**getFlowsInstancesQuerycapabilities**](ArchitectApi#getFlowsInstancesQuerycapabilities) | **GET** /api/v2/flows/instances/querycapabilities | Retrieve a list of capabilities that the org can use to query for execution data
@@ -128,6 +130,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsDatatableRows**](ArchitectApi#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
 [**postFlowsDatatables**](ArchitectApi#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
 [**postFlowsExecutions**](ArchitectApi#postFlowsExecutions) | **POST** /api/v2/flows/executions | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
+[**postFlowsExportJobs**](ArchitectApi#postFlowsExportJobs) | **POST** /api/v2/flows/export/jobs | Register Architect Export Job
 [**postFlowsInstancesJobs**](ArchitectApi#postFlowsInstancesJobs) | **POST** /api/v2/flows/instances/jobs | Start a process (job) that will prepare a list of execution data IDs for download.
 [**postFlowsInstancesQuery**](ArchitectApi#postFlowsInstancesQuery) | **POST** /api/v2/flows/instances/query | Query the database of existing flow histories to look for particular flow criteria
 [**postFlowsJobs**](ArchitectApi#postFlowsJobs) | **POST** /api/v2/flows/jobs | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
@@ -135,6 +138,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsOutcomes**](ArchitectApi#postFlowsOutcomes) | **POST** /api/v2/flows/outcomes | Create a flow outcome
 [**putArchitectEmergencygroup**](ArchitectApi#putArchitectEmergencygroup) | **PUT** /api/v2/architect/emergencygroups/{emergencyGroupId} | Updates a emergency group by ID
 [**putArchitectIvr**](ArchitectApi#putArchitectIvr) | **PUT** /api/v2/architect/ivrs/{ivrId} | Update an IVR Config.
+[**putArchitectIvrIdentityresolution**](ArchitectApi#putArchitectIvrIdentityresolution) | **PUT** /api/v2/architect/ivrs/{ivrId}/identityresolution | Update an IVR IdentityResolutionConfig.
 [**putArchitectPrompt**](ArchitectApi#putArchitectPrompt) | **PUT** /api/v2/architect/prompts/{promptId} | Update specified user prompt
 [**putArchitectPromptResource**](ArchitectApi#putArchitectPromptResource) | **PUT** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Update specified user prompt resource
 [**putArchitectSchedule**](ArchitectApi#putArchitectSchedule) | **PUT** /api/v2/architect/schedules/{scheduleId} | Update schedule by ID
@@ -2115,6 +2119,59 @@ apiInstance.getArchitectIvr(ivrId)
 ### Return type
 
 **IVR**
+
+
+## getArchitectIvrIdentityresolution
+
+> IdentityResolutionConfig getArchitectIvrIdentityresolution(ivrId)
+
+
+GET /api/v2/architect/ivrs/{ivrId}/identityresolution
+
+Get an IVR IdentityResolutionConfig.
+
+getArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* routing:callRoute:view
+* routing:identityResolution:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let ivrId = "ivrId_example"; // String | IVR id
+
+apiInstance.getArchitectIvrIdentityresolution(ivrId)
+  .then((data) => {
+    console.log(`getArchitectIvrIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectIvrIdentityresolution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ivrId** | **String** | IVR id |  |
+
+### Return type
+
+**IdentityResolutionConfig**
 
 
 ## getArchitectIvrs
@@ -4524,6 +4581,60 @@ apiInstance.getFlowsExecution(flowExecutionId)
 ### Return type
 
 **FlowRuntimeExecution**
+
+
+## getFlowsExportJob
+
+> ArchitectExportJobStateResponse getFlowsExportJob(jobId, opts)
+
+
+GET /api/v2/flows/export/jobs/{jobId}
+
+Fetch Architect Export Job Status
+
+Requires ALL permissions:
+
+* architect:jobExport:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+};
+
+apiInstance.getFlowsExportJob(jobId, opts)
+  .then((data) => {
+    console.log(`getFlowsExportJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsExportJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Job ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: messages |
+
+### Return type
+
+**ArchitectExportJobStateResponse**
 
 
 ## getFlowsInstance
@@ -6996,6 +7107,56 @@ apiInstance.postFlowsExecutions(flowLaunchRequest)
 **FlowExecutionLaunchResponse**
 
 
+## postFlowsExportJobs
+
+> RegisterArchitectExportJobResponse postFlowsExportJobs(body)
+
+
+POST /api/v2/flows/export/jobs
+
+Register Architect Export Job
+
+Requires ALL permissions:
+
+* architect:jobExport:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let body = {}; // Object | 
+
+apiInstance.postFlowsExportJobs(body)
+  .then((data) => {
+    console.log(`postFlowsExportJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsExportJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**RegisterArchitectExportJobResponse**
+
+
 ## postFlowsInstancesJobs
 
 > GetFlowExecutionDataJobResult postFlowsInstancesJobs(body, opts)
@@ -7363,6 +7524,61 @@ apiInstance.putArchitectIvr(ivrId, body)
 ### Return type
 
 **IVR**
+
+
+## putArchitectIvrIdentityresolution
+
+> IdentityResolutionConfig putArchitectIvrIdentityresolution(ivrId, body)
+
+
+PUT /api/v2/architect/ivrs/{ivrId}/identityresolution
+
+Update an IVR IdentityResolutionConfig.
+
+putArchitectIvrIdentityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* routing:callRoute:edit
+* routing:identityResolution:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let ivrId = "ivrId_example"; // String | IVR id
+let body = {}; // Object | 
+
+apiInstance.putArchitectIvrIdentityresolution(ivrId, body)
+  .then((data) => {
+    console.log(`putArchitectIvrIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putArchitectIvrIdentityresolution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ivrId** | **String** | IVR id |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**IdentityResolutionConfig**
 
 
 ## putArchitectPrompt
@@ -8022,4 +8238,4 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 **Operation**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

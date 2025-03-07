@@ -37,7 +37,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingSettings**](RecordingApi#getRecordingSettings) | **GET** /api/v2/recording/settings | Get the Recording Settings for the Organization
 [**getRecordingUploadsReport**](RecordingApi#getRecordingUploadsReport) | **GET** /api/v2/recording/uploads/reports/{reportId} | Get the status of a recording upload status report
 [**getRecordingsRetentionQuery**](RecordingApi#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
-[**getRecordingsScreensessions**](RecordingApi#getRecordingsScreensessions) | **GET** /api/v2/recordings/screensessions | Retrieves a paged listing of screen recording sessions
 [**getRecordingsScreensessionsDetails**](RecordingApi#getRecordingsScreensessionsDetails) | **GET** /api/v2/recordings/screensessions/details | Retrieves an object containing the total number of concurrent active screen recordings
 [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
 [**patchRecordingMediaretentionpolicy**](RecordingApi#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
@@ -461,7 +460,7 @@ let opts = {
   'messageFormatId': "ZIP", // String | The desired media format when downloading a message recording. Valid values:ZIP,NONE
   'download': false, // Boolean | requesting a download format of the recording. Valid values:true,false
   'fileName': "fileName_example", // String | the name of the downloaded fileName
-  'locale': "locale_example", // String | The locale for the requested file when downloading, as an ISO 639-1 code
+  'locale': "locale_example", // String | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
   'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 };
 
@@ -488,7 +487,7 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
  **messageFormatId** | **String** | The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
  **download** | **Boolean** | requesting a download format of the recording. Valid values:true,false | [optional] [default to false]<br />**Values**: true, false |
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
- **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
+ **locale** | **String** | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
 
 ### Return type
@@ -737,7 +736,8 @@ let conversationId = "conversationId_example"; // String | Conversation ID
 let opts = { 
   'maxWaitMs': 5000, // Number | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
   'formatId': "WEBM", // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
-  'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+  'mediaFormats': ["mediaFormats_example"], // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+  'locale': "locale_example" // String | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
 };
 
 apiInstance.getConversationRecordings(conversationId, opts)
@@ -759,6 +759,7 @@ apiInstance.getConversationRecordings(conversationId, opts)
  **maxWaitMs** | **Number** | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
  **formatId** | **String** | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
+ **locale** | **String** | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
 
 ### Return type
 
@@ -1771,65 +1772,6 @@ apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, opts)
 ### Return type
 
 **RecordingRetentionCursorEntityListing**
-
-
-## getRecordingsScreensessions
-
-> ScreenRecordingSessionListing getRecordingsScreensessions(opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-GET /api/v2/recordings/screensessions
-
-Retrieves a paged listing of screen recording sessions
-
-Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-
-Requires ANY permissions:
-
-* recording:screenRecording:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getRecordingsScreensessions(opts)
-  .then((data) => {
-    console.log(`getRecordingsScreensessions success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRecordingsScreensessions');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-
-### Return type
-
-**ScreenRecordingSessionListing**
 
 
 ## getRecordingsScreensessionsDetails
@@ -3180,4 +3122,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_

@@ -500,6 +500,7 @@ let apiInstance = new platformClient.IntegrationsApi();
 let actionId = "actionId_example"; // String | actionId
 let opts = { 
   'expand': "expand_example", // String | Indicates a field in the response which should be expanded.
+  'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
   'includeConfig': false // Boolean | Return config in response.
 };
 
@@ -520,6 +521,7 @@ apiInstance.getIntegrationsAction(actionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
+ **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false]<br />**Values**: true, false |
  **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
 
 ### Return type
@@ -557,6 +559,7 @@ let apiInstance = new platformClient.IntegrationsApi();
 let actionId = "actionId_example"; // String | actionId
 let opts = { 
   'expand': "expand_example", // String | Indicates a field in the response which should be expanded.
+  'flatten': false, // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
   'includeConfig': false // Boolean | Return config in response.
 };
 
@@ -577,6 +580,7 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
+ **flatten** | **Boolean** | Indicates the response should be reformatted, based on Architect's flattening format. | [optional] [default to false]<br />**Values**: true, false |
  **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
 
 ### Return type
@@ -4732,4 +4736,4 @@ apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegration
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@216.0.0_
+_purecloud-platform-client-v2@217.0.0_
