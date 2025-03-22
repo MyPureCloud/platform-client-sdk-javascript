@@ -3344,8 +3344,6 @@ PUT /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings
 
 Update the AI Scoring settings of an evaluation form.
 
-putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ANY permissions:
 
 * quality:evaluationForm:aiScoringEdit
@@ -3488,4 +3486,4 @@ apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
 **ScorableSurvey**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

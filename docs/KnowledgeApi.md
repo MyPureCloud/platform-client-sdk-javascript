@@ -2244,8 +2244,6 @@ GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/
 
 Get document content upload status
 
-getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:document:edit
@@ -5019,8 +5017,6 @@ POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove
 
 Bulk remove documents.
 
-postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:document:delete
@@ -5072,8 +5068,6 @@ apiInstance.postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update
 
 Bulk update documents.
-
-postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -5347,8 +5341,6 @@ POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/
 
 Bulk add document versions.
 
-postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Requires ALL permissions:
 
 * knowledge:documentVersion:add
@@ -5616,8 +5608,6 @@ This resource has been deprecated
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads
 
 Upload Article Content
-
-postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -6533,4 +6523,4 @@ apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, 
 **ServiceNowSourceResponse**
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_

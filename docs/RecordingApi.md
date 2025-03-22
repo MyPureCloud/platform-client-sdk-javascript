@@ -737,7 +737,8 @@ let opts = {
   'maxWaitMs': 5000, // Number | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
   'formatId': "WEBM", // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
   'mediaFormats': ["mediaFormats_example"], // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
-  'locale': "locale_example" // String | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
+  'locale': "locale_example", // String | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
+  'includePauseAnnotationsForScreenRecordings': false // Boolean | Include applicable Secure Pause annotations from all audio recordings to all screen recordings
 };
 
 apiInstance.getConversationRecordings(conversationId, opts)
@@ -760,6 +761,7 @@ apiInstance.getConversationRecordings(conversationId, opts)
  **formatId** | **String** | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
  **locale** | **String** | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
+ **includePauseAnnotationsForScreenRecordings** | **Boolean** | Include applicable Secure Pause annotations from all audio recordings to all screen recordings | [optional] [default to false] |
 
 ### Return type
 
@@ -3122,4 +3124,4 @@ apiInstance.putRecordingsDeletionprotection(opts)
 void (no response body)
 
 
-_purecloud-platform-client-v2@217.0.0_
+_purecloud-platform-client-v2@218.0.0_
